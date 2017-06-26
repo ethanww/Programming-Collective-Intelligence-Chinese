@@ -1,0 +1,471 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Diff,1981,AT&amp;T,Alfred Aho,Ampersand,August 1990,BSD,Bell Labs,Binary files,Cmp,Command line option" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Diff - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Diff";
+			var wgTitle = "Diff";
+			var wgArticleId = 79673;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Diff</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<dl>
+<dd><span class="plainlinks"><i>The correct title of this article is <b>diff</b>. The initial letter is capitalized due to <a  title="Wikipedia:Naming conventions (technical restrictions)">technical restrictions</a>.</i></span></dd>
+</dl>
+<p>In <a href="/wiki/Computing.html" title="Computing">computing</a>, <b><tt>diff</tt></b> is a <a href="/wiki/File_comparison.html" title="File comparison">file comparison</a> utility for <a href="/wiki/Unix.html" title="Unix">Unix</a> systems that outputs the differences between two files. The program displays the changes made per line for text files. Modern implementations also support <a href="/wiki/Binary_files.html" title="Binary files">binary files</a>. The output is called a <i>diff</i> or more commonly a <b>patch</b> since the output can be applied with the program <tt><a href="/wiki/Patch_%28Unix%29.html" title="Patch (Unix)">patch</a></tt>. The output of similar file comparison utilities are also called a "diff". Like the use of "grep" as a verb for searching for anything, the word <i>diff</i> is used in <a href="/wiki/Jargon.html" title="Jargon">jargon</a> as a verb for calculating any difference.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Usage</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Example</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">2.1</span> <span class="toctext">Normal output</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.2</span> <span class="toctext">Context format</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.3</span> <span class="toctext">Unified format</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">History</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Variations</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Usage">edit</a>]</div>
+<p><a name="Usage" id="Usage"></a></p>
+<h2>Usage</h2>
+<p>It is invoked from the command line with the names of two files: <tt>diff <i>original</i> <i>new</i></tt>. The output of the command represents the changes required to make the <i>original</i> file become the <i>new</i> file.</p>
+<p>If <i>original</i> and <i>new</i> are directories, then diff will be run on each file that exists in both directories. An option, <tt>-r</tt>, will descend any matching subdirectories to compare files between directories.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Example">edit</a>]</div>
+<p><a name="Example" id="Example"></a></p>
+<h2>Example</h2>
+<p>The following shows the contents of two files (<i>original_file.txt</i> and <i>new_file.txt</i>) that are used in the following examples. The files are compared with the diff command to show the variety of output formats of diff.</p>
+<table class="prettytable">
+<tr valign="top">
+<td>
+<p><i>original_file.txt</i>:</p>
+<pre>
+ This part of the
+ document has stayed the
+ same from version to
+ version.  It shouldn't
+ be shown if it doesn't
+ change.  Otherwise, that
+ would not be helping to
+ compress the size of the
+ changes.
+ 
+ This paragraph contains
+ text that is outdated.
+ It will deleted in the
+ near future.
+ 
+ It is important to spell
+ check this dokument. On
+ the other hand, a
+ misspelled word isn't
+ the end of the world.
+ Nothing in the rest of
+ this paragraph needs to
+ be changed.  Things can
+ be added after it.
+</pre></td>
+<td>
+<p><i>new_file.txt</i>:</p>
+<pre>
+ This is an important
+ notice! It should
+ therefore be located at
+ the beginning of this
+ document!
+ 
+ This part of the
+ document has stayed the
+ same from version to
+ version.  It shouldn't
+ be shown if it doesn't
+ change.  Otherwise, that
+ would not be helping to
+ compress anything.
+ 
+ It is important to spell
+ check this document. On
+ the other hand, a
+ misspelled word isn't
+ the end of the world.
+ Nothing in the rest of
+ this paragraph needs to
+ be changed.
+ 
+ This paragraph contains
+ important new additions
+ to this document.
+</pre></td>
+</tr>
+</table>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Normal output">edit</a>]</div>
+<p><a name="Normal_output" id="Normal_output"></a></p>
+<h3>Normal output</h3>
+<p>The command <tt>diff original_file.txt new_file.txt</tt> produces the following output:</p>
+<pre>
+ 0a1,6
+ &gt; This is an important
+ &gt; notice! It should
+ &gt; therefore be located at
+ &gt; the beginning of this
+ &gt; document!
+ &gt;
+ 8,14c14
+ &lt; compress the size of the
+ &lt; changes.
+ &lt;
+ &lt; This paragraph contains
+ &lt; text that is outdated.
+ &lt; It will deleted in the
+ &lt; near future.
+ ---
+ &gt; compress anything.
+ 17c17
+ &lt; check this dokument. On
+ ---
+ &gt; check this document. On
+ 24a25,28
+ &gt;
+ &gt; This paragraph contains
+ &gt; important new additions
+ &gt; to this document.
+</pre>
+<p>In this <i>normal diff output</i>, <b>a</b> stands for <i>added</i>, <b>d</b> for <i>deleted</i> and <b>c</b> for <i>changed</i>. By default, lines common to both files are not shown. Lines that have moved will show up as added on their new location and as deleted on their old location.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Context format">edit</a>]</div>
+<p><a name="Context_format" id="Context_format"></a></p>
+<h3>Context format</h3>
+<p>In the <i>context format</i>, any changed lines are shown alongside unchanged lines before and after. The inclusion of any number of unchanged lines provides a <i>context</i> to the patch. This output is accepted as input to the <a href="/wiki/Patch_%28Unix%29.html" title="Patch (Unix)">patch</a> program. The format introduces greater readability for humans and reliability when applying the patch. In files that have been modified, the patch program can figure out where the intended location a change should be applied regardless if the line numbers no longer correspond. This intelligent behavior isn't possible with the traditional diff output.</p>
+<p>The number of unchanged lines shown above and below a change <i>hunk</i> can be defined by the user, even zero, but three lines is typically the default. If the context of unchanged lines in a hunk overlap with an adjacent hunk, then diff will avoid duplicating the unchanged lines and merge the hunks into a single hunk.</p>
+<p>A "!" represents a change between lines that correspond in the two files. A "+" represents the addition of a line, while a blank space represents an unchanged line. At the beginning of the patch is the file information, including the full path and a <a href="/wiki/Time_stamp.html" title="Time stamp">time stamp</a>. At the beginning of each hunk are the line numbers that apply for the corresponding change in the files.</p>
+<p>The command <tt>diff -c original_file.txt new_file.txt</tt> produces the following output, where</p>
+<pre>
+ *** /path/to/original_file.txt <i>timestamp</i>
+ --- /path/to/new_file.txt      <i>timestamp</i>
+ ***************
+ *** 1,3 ****
+ --- 1,9 ----
+ + This is an important
+ + notice! It should
+ + therefore be located at
+ + the beginning of this
+ + document!
+ +
+   This part of the
+   document has stayed the
+   same from version to
+ ***************
+ *** 5,20 ****
+   be shown if it doesn't
+   change.  Otherwise, that
+   would not be helping to
+ ! compress the size of the
+ ! changes.
+ !
+ ! This paragraph contains
+ ! text that is outdated.
+ ! It will deleted in the
+ ! near future.
+ 
+   It is important to spell
+ ! check this dokument. On
+   the other hand, a
+   misspelled word isn't
+   the end of the world.
+ --- 11,20 ----
+   be shown if it doesn't
+   change.  Otherwise, that
+   would not be helping to
+ ! compress anything.
+ 
+   It is important to spell
+ ! check this document. On
+   the other hand, a
+   misspelled word isn't
+   the end of the world.
+ ***************
+ *** 22,24 ****
+ --- 22,28 ----
+   this paragraph needs to
+   be changed.  Things can
+   be added after it.
+ +
+ + This paragraph contains
+ + important new additions
+ + to this document.
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Unified format">edit</a>]</div>
+<p><a name="Unified_format" id="Unified_format"></a></p>
+<h3>Unified format</h3>
+<p>The <i>unified format</i> (or <i>unidiff</i>) inherits the technical improvements made by the context format, with a more human-readable result. Unified format is usually invoked using the "-u" <a href="/wiki/Command_line_option.html" title="Command line option">command line option</a>.</p>
+<p>It starts with the same two-line <a href="/wiki/Header.html" title="Header">header</a> as the context format, except that the original file is preceded by '---' and the new file is preceded by '+++'. Following this are one or more 'change hunks' (chunks) that contain the line differences in the file. The unchanged, contextual lines are preceded by a space (' '), addition lines are preceded by a plus ('+'), and deletion lines are preceded by a minus ('-').</p>
+<p>A chunk begins with range information and is immediately followed with the line additions, line deletions, and any number of the contextual lines. The range information is surrounded by double-<a href="/wiki/Ampersand.html" title="Ampersand">ampersands</a>. The chunk range information contains two chunk ranges. The one preceded by a minus symbol is the range for the chunk of the original file, and the range for the new file is preceded by a plus symbol. The ranges specify the line numbers in the respective files for that change hunk.</p>
+<p>The command <tt>diff -u original_file.txt new_file.txt</tt> produces the following output:</p>
+<pre>
+ --- original_file.txt <i>timestamp</i>
+ +++ new_file.txt      <i>timestamp</i>
+ @@ -1,3 +1,9 @@
+ +This is an important
+ +notice! It should
+ +therefore be located at
+ +the beginning of this
+ +document!
+ +
+  This part of the
+  document has stayed the
+  same from version to
+ @@ -5,16 +11,10 @@
+  be shown if it doesn't
+  change.  Otherwise, that
+  would not be helping to
+ -compress the size of the
+ -changes.
+ -
+ -This paragraph contains
+ -text that is outdated.
+ -It will deleted in the
+ -near future.
+ +compress anything.
+ 
+  It is important to spell
+ -check this dokument. On
+ +check this document. On
+  the other hand, a
+  misspelled word isn't
+  the end of the world.
+ @@ -22,3 +22,7 @@
+  this paragraph needs to
+  be changed.  Things can
+  be added after it.
+ +
+ +This paragraph contains
+ +important new additions
+ +to this document.
+</pre>
+<p>There are some modifications and extensions to the unified format that are used and understood by certain programs and in certain contexts. For example, some <a href="/wiki/Revision_control_system.html" title="Revision control system">revision control systems</a> specify a revision/version number (or 'working copy') instead of a timestamp in the diff's header section. Some tools allow diffs for several different files to be merged into one, using a header for each modified file that may look something like this:</p>
+<pre>
+Index: path/to/file.cpp
+===================================================================
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: History">edit</a>]</div>
+<p><a name="History" id="History"></a></p>
+<h2>History</h2>
+<p>The <b>diff</b> program was developed in the early 1970s on the <a href="/wiki/Unix.html" title="Unix">Unix</a> operating system which was emerging from <a href="/wiki/AT%26T.html" title="AT&amp;T">AT&amp;T</a> <a href="/wiki/Bell_Labs.html" title="Bell Labs">Bell Labs</a> in Murray Hill, New Jersey. The final version, first shipped with the 5th Edition of Unix in 1974, was entirely written by <a href="/wiki/Douglas_McIlroy.html" title="Douglas McIlroy">Douglas McIlroy</a>. This research was published in a 1976 paper co-written with <a  class="new" title="James W. Hunt">James W. Hunt</a> who developed an initial prototype of diff.</p>
+<p>McIlroy's work was preceded and influenced by <a href="/wiki/Stephen_C._Johnson.html" title="Stephen C. Johnson">Steve Johnson</a>'s comparison program on <a href="/wiki/GECOS.html" title="GECOS">GECOS</a> and <a href="/wiki/Mike_Lesk.html" title="Mike Lesk">Mike Lesk</a>'s <b>proof</b> program. <b>Proof</b> originated on Unix and produced line-by-line changes like diff and even used angle-brackets ("&gt;" and "&lt;") for presenting line insertions and deletions in the program's output. The <a href="/wiki/Heuristic.html" title="Heuristic">heuristics</a> used in these early applications were, however, deemed unreliable. The potential usefulness of a diff tool provoked McIlroy into researching and designing a more robust tool that could be used in a variety of tasks but perform well in the processing and space limitations of the <a href="/wiki/PDP-11.html" title="PDP-11">PDP-11</a>'s hardware. His approach resulted from collaboration also with individuals at Bell Labs including <a href="/wiki/Alfred_Aho.html" title="Alfred Aho">Alfred Aho</a>, <a  class="new" title="Elliot Pinson">Elliot Pinson</a>, <a href="/wiki/Jeffrey_Ullman.html" title="Jeffrey Ullman">Jeffrey Ullman</a>, and <a  class="new" title="Harold S. Stone">Harold S. Stone</a>.</p>
+<p>In the context of Unix, the use of the <a href="/wiki/Ed_%28Unix%29.html" title="Ed (Unix)">ed</a> line editor provided diff with the natural ability to create machine-usable "edit scripts". These edit scripts, when saved to a file, can, along with the original file, be reconstituted by <b>ed</b> into the modified file in its entirety. This greatly reduced the space necessary to maintain multiple versions of a file. McIlroy considered writing a post-processor for diff where a variety of output formats could be designed and implemented, but he found it more frugal and simpler to have diff be responsible for generating the syntax and reverse-order input accepted by the <b>ed</b> command. In 1985, <a href="/wiki/Larry_Wall.html" title="Larry Wall">Larry Wall</a> composed a separate utility, <a href="/wiki/Patch_%28Unix%29.html" title="Patch (Unix)">patch</a>, that generalized and extended the ability to modify files with diff output.</p>
+<p>In diff's early years, common uses included comparing changes in the source of software code and markup for technical documents, verifying program debugging output, comparing filesystem listings and analyzing computer assembly code. The output targeted for <b>ed</b> was motivated to provide compression for a sequence of modifications made to a file. The <a href="/wiki/SCCS.html" title="SCCS">Source Code Control System</a> (SCCS) emerged in the late 1970s as a direct consequence of this development.</p>
+<p>A conceptual predecessor of diff includes <a href="/wiki/Project_Xanadu.html" title="Project Xanadu">Project Xanadu</a>, a hypertext project established in 1960 that had envisioned a version tracking system necessary for its "transpointing windows" feature. As part of this feature, file differences were subsumed in the expansive term "<a href="/wiki/Transclusion.html" title="Transclusion">transclusion</a>", when a document has included in it parts of other documents or revisions.</p>
+<p>In the digital realm of the humanities, computer comparison systems were understood to have been created for working on literary works published as large volumes.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Variations">edit</a>]</div>
+<p><a name="Variations" id="Variations"></a></p>
+<h2>Variations</h2>
+<p>Most diff implementations remain outwardly unchanged since 1975. The modifications include improvements to the core algorithm, the addition of useful features to the command, and the design of new output formats. The basic algorithm is described in the papers <i>An O(ND) Difference Algorithm and its Variations</i> by Eugene W. Myers and in <i>A File Comparison Program</i> by Webb Miller and Myers. The algorithm was independently discovered and described in <i>Algorithms for Approximate String Matching</i>, by <a  class="new" title="E. Ukkonen">E. Ukkonen</a>. The first editions of the diff program were designed for line comparisons of text files expecting the <a href="/wiki/Newline.html" title="Newline">newline</a> character to delimit lines. By the 1980s, support for binary files resulted in a shift in the application's design and implementation.</p>
+<p>Postprocessors <b>sdiff</b> and <b>diffmk</b> render side-by-side diff listings and applied change marks to printed documents, respectively. Both were developed elsewhere in Bell Labs in or before <a href="/wiki/1981.html" title="1981">1981</a>.</p>
+<p>The <a href="/wiki/BSD.html" title="BSD">Berkeley distribution of Unix</a> made a point of adding the context format (-C) and the ability to recurse on filesystem directory structures (-r), adding those features in 2.8 BSD, released in <a href="/wiki/July_1981.html" title="July 1981">July 1981</a>. The context format of diff introduced at Berkeley helped with distributing patches for source code that may have been changed minimally.</p>
+<p><a href="/wiki/Diff3.html" title="Diff3">Diff3</a> compares one file against two other files. It was originally developed by <a  class="new" title="Paul Jensen">Paul Jensen</a> to reconcile changes made by two persons editing a common source. It is seldom invoked directly and is largely subsumed by the <a  class="new" title="Merge (Unix)">merge</a> program. However, it is used internally by many <a href="/wiki/Revision_control.html" title="Revision control">revision control</a> systems.</p>
+<p>Unified context diffs were originally developed by <a href="/wiki/Wayne_Davison.html" title="Wayne Davison">Wayne Davison</a> in <a href="/wiki/August_1990.html" title="August 1990">August 1990</a> (in <b>unidiff</b> which appeared in Volume 14 of comp.sources.misc). <a href="/wiki/Richard_Stallman.html" title="Richard Stallman">Richard Stallman</a> added unified diff support to the <a href="/wiki/GNU.html" title="GNU">GNU Project</a>'s diff utility one month later, and the feature debuted in <b>GNU diff</b> 1.15, released in <a href="/wiki/January_1991.html" title="January 1991">January 1991</a>. GNU diff has since generalized the context format to allow arbitrary formatting of diffs. GNU diff and diff3 are included in the <b>diffutils</b> package with other diff and <a href="/wiki/Patch_%28Unix%29.html" title="Patch (Unix)">patch</a> related utilities. <a href="/wiki/Emacs.html" title="Emacs">Emacs</a> has <a href="/wiki/Ediff.html" title="Ediff">Ediff</a> for showing the changes a patch would provide in a user interface that combines interactive editing and merging capabilities for patch files.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Cmp.html" title="Cmp">"cmp" command</a></li>
+<li><a href="/wiki/Delta_encoding.html" title="Delta encoding">Delta encoding</a></li>
+<li><a href="/wiki/Levenshtein_distance.html" title="Levenshtein distance">Levenshtein distance</a></li>
+<li><a href="/wiki/Longest_common_subsequence_problem.html" title="Longest common subsequence problem">Longest common subsequence problem</a></li>
+<li><a href="/wiki/Microsoft_File_Compare.html" title="Microsoft File Compare">Microsoft File Compare</a></li>
+<li><a href="/wiki/Patch_%28Unix%29.html" title="Patch (Unix)">Patch</a></li>
+<li><a href="/wiki/Revision_Control_System.html" title="Revision Control System">Revision Control System</a></li>
+<li><a href="/wiki/Rsync.html" title="Rsync">rsync</a></li>
+<li><a href="/wiki/Software_configuration_management.html" title="Software configuration management">Software configuration management</a></li>
+<li><a href="/wiki/Source_Code_Control_System.html" title="Source Code Control System">Source Code Control System</a></li>
+<li><a href="/wiki/Tkdiff.html" title="Tkdiff">tkdiff</a></li>
+<li><a href="/wiki/List_of_Unix_programs.html" title="List of Unix programs">List of Unix programs</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<ul>
+<li><cite style="font-style:normal"><a  class="new" title="Paul Heckel">Paul Heckel</a> (April 1978). "A technique for isolating differences between files". <i>Communications of the ACM</i> <b>21</b> (4): 264-268.</cite><a  class="external autonumber" title="http://doi.acm.org/10.1145/359460.359467">[1]</a></li>
+<li><cite style="font-style:normal">James W. Hunt and M. Douglas McIlroy (June 1976). "<a  class="external text" title="http://www.cs.dartmouth.edu/~doug/">An Algorithm for Differential File Comparison</a>". <i>Computing Science Technical Report, Bell Laboratories</i> <b>41</b>.</cite></li>
+<li><cite class="book" style="font-style:normal">David MacKenzie, Paul Eggert, and Richard Stallman (1997). <i><a  class="external text" title="http://www.gnu.org/software/diffutils/manual/">Comparing and Merging Files with GNU Diff and Patch</a></i>. <a  class="internal">ISBN 0-9541617-5-0</a>.</cite></li>
+<li><cite style="font-style:normal">E. Myers (1986). "<a  class="external text" title="http://citeseer.ist.psu.edu/myers86ond.html">An O(ND) Difference Algorithm and Its Variations</a>". <i>Algorithmica</i> <b>1</b> (2): 251-266.</cite></li>
+<li><cite style="font-style:normal">Webb Miller and Eugene W. Myers (1985). "A File Comparison Program". <i>Software — Practice and Experience</i> <b>15</b> (11): 1025-1040.</cite></li>
+<li><cite style="font-style:normal">E. Ukkonen (1985). "Algorithms for Approximate String Matching". <i>Information and Control</i> <b>64</b>: 100-118.</cite></li>
+<li>A generic implementation of the Myers SES/LCS algorithm with the Hirschberg linear space refinement <a  class="external text" title="http://www.ioplex.com/~miallen/libmba/dl/src/diff.c">(C source code)</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://unixhelp.ed.ac.uk/CGI/man-cgi?diff">diff(1)</a> - The program's <a href="/wiki/Manpage.html" title="Manpage">manpage</a></li>
+<li><a  class="external text" title="http://www.gnu.org/software/diffutils/diffutils.html">GNU Diff utilities</a>. Made available by the <a href="/wiki/Free_Software_Foundation.html" title="Free Software Foundation">Free Software Foundation</a>. Free Documentation. Free source code.</li>
+<li><a  class="external text" title="http://www.iconv.com/diff.htm">Online interface to the <i>diff</i> program</a></li>
+<li><a  class="external text" title="http://www.incava.org/projects/java-diff/">java-diff</a> - A diff library implemented in <a href="/wiki/Java_%28programming_language%29.html" title="Java (programming language)">Java</a></li>
+</ul>
+
+<!-- 
+Pre-expand include size: 13640 bytes
+Post-expand include size: 3800 bytes
+Template argument size: 3598 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:79673-0!1!0!default!!en!2 and timestamp 20060910152059 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Unix software">Unix software</a></span> | <span dir='ltr'><a  title="Category:Free file comparison tools">Free file comparison tools</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Diff.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-da"><a >Dansk</a></li>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-fi"><a >Suomi</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 06:52, 10 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv66 in 0.082 secs. --></body></html>

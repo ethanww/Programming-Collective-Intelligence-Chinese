@@ -1,0 +1,372 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Formal grammar,1950s,1956,1970s,Abstract structure,Abstract syntax tree,Algorithm,Algorithms,Alphabet (computer science),Ambiguous grammar,Attribute grammar" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Formal grammar - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Formal_grammar";
+			var wgTitle = "Formal grammar";
+			var wgArticleId = 10995;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Formal grammar</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<div class="messagebox cleanup metadata"><b>This article or section is in need of attention from an expert on the subject</b>.<br />
+Please help recruit one, or <span class="plainlinks"><a  class="external text" title="http://en.wikipedia.org/w/index.php?title=Formal_grammar&amp;action=edit">improve this page yourself</a></span> if you can. See <a  title="Talk:Formal grammar">discussion page</a> for details.</div>
+<p>In <a href="/wiki/Computer_science.html" title="Computer science">computer science</a> and <a href="/wiki/Linguistics.html" title="Linguistics">linguistics</a>, a <b>formal grammar</b> is an <a href="/wiki/Abstract_structure.html" title="Abstract structure">abstract structure</a> that describes a <a href="/wiki/Formal_language.html" title="Formal language">formal language</a> precisely, i.e., a set of rules that mathematically delineates a (usually <a href="/wiki/Infinity.html" title="Infinity">infinite</a>) <a href="/wiki/Set.html" title="Set">set</a> of finite-length <a href="/wiki/String_%28computer_science%29.html" title="String (computer science)">strings</a> over an (usually <a  class="extiw" title="wiktionary:finite">finite</a>) <a href="/wiki/Alphabet_%28computer_science%29.html" title="Alphabet (computer science)">alphabet</a>. Formal grammars are so named by analogy to <a href="/wiki/Grammar.html" title="Grammar">grammar</a> in human languages.</p>
+<p>Formal grammars fall into two main categories: <i>generative</i> and <i>analytic</i>.</p>
+<ul>
+<li>A <a href="/wiki/Generative_grammar.html" title="Generative grammar">generative grammar</a>, the best-known kind, is a set of rules by which all possible <a href="/wiki/String_%28computer_science%29.html" title="String (computer science)">strings</a> in the language to be described can be <i>generated</i> by successively <a href="/wiki/Rewriting.html" title="Rewriting">rewriting</a> strings starting from a designated start symbol. A generative grammar in effect formalizes an <a href="/wiki/Algorithm.html" title="Algorithm">algorithm</a> that <i>generates</i> strings in the language.</li>
+</ul>
+<ul>
+<li>An <b>analytic grammar</b>, in contrast, is a set of rules that assumes an arbitrary string to be given as <i>input</i>, and which successively <i>reduces</i> or <i>analyzes</i> that input string yielding a final <a href="/wiki/Boolean_datatype.html" title="Boolean datatype">boolean</a>, "yes/no" result, indicating whether or not the input string is a member of the language described by the grammar. An analytic grammar in effect formally describes a <a href="/wiki/Parsing.html" title="Parsing">parser</a> for a language.</li>
+</ul>
+<p>In short, an analytic grammar describes how to <i>read</i> a language, whereas a generative grammar describes how to <i>write</i> it.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Generative grammars</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">1.1</span> <span class="toctext">Formal definition</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.2</span> <span class="toctext">Example</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.3</span> <span class="toctext">The Chomsky hierarchy</span></a>
+<ul>
+<li class="toclevel-3"><a ><span class="tocnumber">1.3.1</span> <span class="toctext">Context-free grammars</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">1.3.2</span> <span class="toctext">Regular grammars</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">1.3.3</span> <span class="toctext">Regular vs. context-free languages</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.4</span> <span class="toctext">Other forms of generative grammars</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Analytic grammars</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Generative grammars">edit</a>]</div>
+<p><a name="Generative_grammars" id="Generative_grammars"></a></p>
+<h2>Generative grammars</h2>
+<p>A generative grammar consists of a set of rules for transforming strings. To generate a string in the language, one begins with a string consisting of only a single "start" symbol, and then successively applies the rules (any number of times, in any order) to rewrite this string. The language consists of all the strings that can be generated in this manner. Any particular sequence of legal choices taken during this rewriting process yields one particular string in the language, and if there are multiple different ways of generating a single string, then the grammar is said to be <a href="/wiki/Ambiguous_grammar.html" title="Ambiguous grammar">ambiguous</a>.</p>
+<p>For example, assume the alphabet consists of '<span class="texhtml"><i>a</i></span>' and '<span class="texhtml"><i>b</i></span>', the start symbol is '<span class="texhtml"><i>S</i></span>' and we have the following rules:</p>
+<dl>
+<dd>1. <img class='tex' src="http://upload.wikimedia.org/math/5/f/5/5f5808e6cd0adcb91e181c4e8d2049b8.png" alt="S \longrightarrow aSb" /></dd>
+<dd>2. <img class='tex' src="http://upload.wikimedia.org/math/d/a/3/da323cfb7c2c229cefaa2c3b47290f3e.png" alt="S \longrightarrow ba" /></dd>
+</dl>
+<p>then we start with "<span class="texhtml"><i>S</i></span>", and can choose a rule to apply to it. If we choose rule 1, we replace '<span class="texhtml"><i>S</i></span>' with '<span class="texhtml"><i>a</i><i>S</i><i>b</i></span>' and obtain "<span class="texhtml"><i>a</i><i>S</i><i>b</i></span>". If we choose rule 1 again, we replace '<span class="texhtml"><i>S</i></span>' with '<span class="texhtml"><i>a</i><i>S</i><i>b</i></span>' and obtain "<span class="texhtml"><i>a</i><i>a</i><i>S</i><i>b</i><i>b</i></span>". This process is repeated until we only have symbols from the alphabet (i.e., '<span class="texhtml"><i>a</i></span>' and '<span class="texhtml"><i>b</i></span>'). Finishing off our example, if we now choose rule 2, we replace '<span class="texhtml"><i>S</i></span>' with '<span class="texhtml"><i>b</i><i>a</i></span>' and obtain "<span class="texhtml"><i>a</i><i>a</i><i>b</i><i>a</i><i>b</i><i>b</i></span>", and are done. We can write this series of choices more briefly, using symbols: <img class='tex' src="http://upload.wikimedia.org/math/1/7/f/17f8e46887e960ed9a6f2f11fe4fa427.png" alt="S \longrightarrow aSb \longrightarrow aaSbb \longrightarrow aababb" />. The language of the grammar is the set of all the strings that can be generated using this process: <img class='tex' src="http://upload.wikimedia.org/math/9/5/9/959ed916e0946ab1529aaefcec200b37.png" alt="\left \{ba, abab, aababb, aaababbb, ...\right \}" />.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Formal definition">edit</a>]</div>
+<p><a name="Formal_definition" id="Formal_definition"></a></p>
+<h3>Formal definition</h3>
+<p>In the classic formalization of generative grammars first proposed by <a href="/wiki/Noam_Chomsky.html" title="Noam Chomsky">Noam Chomsky</a> in the <a href="/wiki/1950s.html" title="1950s">1950s</a>, a grammar <i>G</i> consists of the following components:</p>
+<ul>
+<li>A finite set <span class="texhtml"><i>N</i></span> of <i><a href="/wiki/Nonterminal_symbol.html" title="Nonterminal symbol">nonterminal symbols</a></i>.</li>
+<li>A finite set <span class="texhtml">Σ</span> of <i><a href="/wiki/Terminal_symbol.html" title="Terminal symbol">terminal symbols</a></i> that is <a href="/wiki/Disjoint.html" title="Disjoint">disjoint</a> from <span class="texhtml"><i>N</i></span>.</li>
+<li>A finite set <span class="texhtml"><i>P</i></span> of <i>production rules</i> of the form</li>
+</ul>
+<dl>
+<dd>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/f/e/6/fe6d8674d11cbcf5f25fa6076a306151.png" alt="(\Sigma \cup N)^{*} N (\Sigma \cup N)^{*} \longrightarrow (\Sigma \cup N)^{*}" /></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>where <span class="texhtml"><sup>*</sup></span> is the <a href="/wiki/Kleene_star.html" title="Kleene star">Kleene star</a> operator and <img class='tex' src="http://upload.wikimedia.org/math/4/3/2/432c1df69e11aba7c5c5070e7578609f.png" alt="\cup" /> denotes <a href="/wiki/Union_%28set_theory%29.html" title="Union (set theory)">set union</a>. Note that the left-hand side of a production rule is a string containing at least one nonterminal symbol, whereas the right-hand side is an arbitrary string over the nonterminal and terminal symbols.</dd>
+</dl>
+<ul>
+<li>A symbol <span class="texhtml"><i>S</i></span> in <span class="texhtml"><i>N</i></span> that is indicated as the <i>start symbol</i>.</li>
+</ul>
+<p>Usually such a formal grammar <span class="texhtml"><i>G</i></span> is simply summarized as the quad-tuple <span class="texhtml">(<i>N</i>,Σ,<i>P</i>,<i>S</i>)</span>.</p>
+<p>The <i>language</i> of a formal grammar <span class="texhtml"><i>G</i> = (<i>N</i>,Σ,<i>P</i>,<i>S</i>)</span>, denoted as <img class='tex' src="http://upload.wikimedia.org/math/1/7/4/1747c9b4a6a267e82c2cbc19001043f2.png" alt="\boldsymbol{L}(G)" />, is defined as all those strings over <span class="texhtml">Σ</span> that can be generated by starting with the start symbol <span class="texhtml"><i>S</i></span> and then applying the production rules in <span class="texhtml"><i>P</i></span> until no more nonterminal symbols are present.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Example">edit</a>]</div>
+<p><a name="Example" id="Example"></a></p>
+<h3>Example</h3>
+<p><i>For these examples, formal languages are specified using <a href="/wiki/Set-builder_notation.html" title="Set-builder notation">set-builder notation</a>.</i></p>
+<p>Consider, for example, the grammar <span class="texhtml"><i>G</i></span> with <img class='tex' src="http://upload.wikimedia.org/math/2/b/6/2b631b62f7e6c73e2da99a9dfcad1c5d.png" alt="N = \left \{S, B\right \}" />, <img class='tex' src="http://upload.wikimedia.org/math/3/2/0/32063895b55e6c8bc795d092ff9bd434.png" alt="\Sigma = \left \{a, b, c\right \}" />, <span class="texhtml"><i>P</i></span> consisting of the following production rules</p>
+<dl>
+<dd>1. <img class='tex' src="http://upload.wikimedia.org/math/8/7/7/8772a0cd47bb0c933757f2fce249d1cb.png" alt="S \longrightarrow aBSc" /></dd>
+<dd>2. <img class='tex' src="http://upload.wikimedia.org/math/8/b/6/8b68faf9d30f2368d6ed064663bed876.png" alt="S \longrightarrow abc" /></dd>
+<dd>3. <img class='tex' src="http://upload.wikimedia.org/math/f/9/e/f9e7aea9d999762397e8990c18800d44.png" alt="Ba \longrightarrow aB" /></dd>
+<dd>4. <img class='tex' src="http://upload.wikimedia.org/math/7/0/1/701e0a98d9afdb367138d072411e4ef0.png" alt="Bb \longrightarrow bb" /></dd>
+</dl>
+<p>and the nonterminal symbol <span class="texhtml"><i>S</i></span> as the start symbol. Some examples of the derivation of strings in <img class='tex' src="http://upload.wikimedia.org/math/1/7/4/1747c9b4a6a267e82c2cbc19001043f2.png" alt="\boldsymbol{L}(G)" /> are:</p>
+<ul>
+<li><img class='tex' src="http://upload.wikimedia.org/math/a/c/f/acf7df6005d0238fd4ed2199bf21c945.png" alt="\boldsymbol{S} \longrightarrow (2) abc" /></li>
+<li><img class='tex' src="http://upload.wikimedia.org/math/9/4/f/94fc54df93c08d9bf3812106c2c0886a.png" alt="\boldsymbol{S} \longrightarrow (1) aB\boldsymbol{S}c \longrightarrow (2) a\boldsymbol{Ba}bcc \longrightarrow (3) aa\boldsymbol{Bb}cc \longrightarrow (4) aabbcc" /></li>
+<li><img class='tex' src="http://upload.wikimedia.org/math/5/f/b/5fb487e558697efc0ae786d43515d086.png" alt="\boldsymbol{S} \longrightarrow (1) aB\boldsymbol{S}c \longrightarrow (1) aBaB\boldsymbol{S}cc \longrightarrow (2) a\boldsymbol{Ba}Babccc \longrightarrow (3) aaB\boldsymbol{Ba}bccc\longrightarrow (3) aa\boldsymbol{Ba}Bbccc" /><img class='tex' src="http://upload.wikimedia.org/math/7/9/3/7937be7a00d50513fd45e7a065fefe25.png" alt="\longrightarrow (3) aaaB\boldsymbol{Bb}ccc \longrightarrow (4) aaa\boldsymbol{Bb}bccc \longrightarrow (4) aaabbbccc" /></li>
+</ul>
+<p>(where the used production rules are indicated in brackets and the replaced part is each time indicated in bold).</p>
+<p>It is clear that this grammar defines the language <img class='tex' src="http://upload.wikimedia.org/math/4/6/8/4689a7c863be022e1f6368709afd2c5d.png" alt="\left \{ a^{n}b^{n}c^{n} | n &gt; 0 \right \}" /> where <span class="texhtml"><i>a</i><sup><i>n</i></sup></span> denotes a string of n <span class="texhtml"><i>a</i></span>'s. Thus, the entire language consists of any positive number of 'a's, followed by the same number of 'b's followed by the same number of 'c's.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: The Chomsky hierarchy">edit</a>]</div>
+<p><a name="The_Chomsky_hierarchy" id="The_Chomsky_hierarchy"></a></p>
+<h3>The Chomsky hierarchy</h3>
+<p>When <a href="/wiki/Noam_Chomsky.html" title="Noam Chomsky">Noam Chomsky</a> first formalized generative grammars in <a href="/wiki/1956.html" title="1956">1956</a>, he classified them into four types now known as the <a href="/wiki/Chomsky_hierarchy.html" title="Chomsky hierarchy">Chomsky hierarchy</a>. The difference between these types is that they have increasingly strict production rules and can express fewer formal languages. Two important types are <i><a href="/wiki/Context-free_grammar.html" title="Context-free grammar">context-free grammars</a></i> and <i><a href="/wiki/Regular_grammar.html" title="Regular grammar">regular grammars</a></i>. The languages that can be described with such a grammar are called <i><a href="/wiki/Context-free_language.html" title="Context-free language">context-free languages</a></i> and <i><a href="/wiki/Regular_language.html" title="Regular language">regular languages</a></i>, respectively. Although much less powerful than unrestricted grammars, which can in fact express any language that can be accepted by a <a href="/wiki/Turing_machine.html" title="Turing machine">Turing machine</a>, these two restricted types of grammars are most often used because <a href="/wiki/Parsing.html" title="Parsing">parsers</a> for them can be efficiently implemented. For example, for context-free grammars there are well-known algorithms to generate efficient <a href="/wiki/LL_parser.html" title="LL parser">LL parsers</a> and <a href="/wiki/LR_parser.html" title="LR parser">LR parsers</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Context-free grammars">edit</a>]</div>
+<p><a name="Context-free_grammars" id="Context-free_grammars"></a></p>
+<h4>Context-free grammars</h4>
+<p>In <a href="/wiki/Context-free_grammar.html" title="Context-free grammar">context-free grammars</a>, the left hand side of a production rule may only be formed by a single non-terminal symbol. The language defined above is not a context-free language, but for example the language <img class='tex' src="http://upload.wikimedia.org/math/1/a/c/1ac821f2e1c64c2b5500a1973935f944.png" alt="\left \{ a^{n}b^{n} | n &gt; 0 \right \}" /> (any positive number of 'a's followed by the same number of 'b's) is, as it can be defined by the grammar <span class="texhtml"><i>G</i>2</span> with <img class='tex' src="http://upload.wikimedia.org/math/f/5/f/f5f7d755a902e5c60a27eac02c91ae86.png" alt="N=\left \{S\right \}" />, <img class='tex' src="http://upload.wikimedia.org/math/f/5/4/f542641f010013ad0f863c8dabbba46e.png" alt="\Sigma=\left \{a,b\right \}" />, <span class="texhtml"><i>S</i></span> the start symbol, and the following production rules:</p>
+<dl>
+<dd>1. <img class='tex' src="http://upload.wikimedia.org/math/5/f/5/5f5808e6cd0adcb91e181c4e8d2049b8.png" alt="S \longrightarrow aSb" /></dd>
+<dd>2. <img class='tex' src="http://upload.wikimedia.org/math/2/f/f/2ff8cb6ec6a103c8b5f1b0003410893d.png" alt="S \longrightarrow ab" /></dd>
+</dl>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Regular grammars">edit</a>]</div>
+<p><a name="Regular_grammars" id="Regular_grammars"></a></p>
+<h4>Regular grammars</h4>
+<p>In <a href="/wiki/Regular_grammar.html" title="Regular grammar">regular grammars</a>, the left hand side is again only a single non-terminal symbol, but now the right-hand side is also restricted: It may be nothing, or a single terminal symbol, or a single terminal symbol followed by a non-terminal symbol, but nothing else. (Sometimes a broader definition is used: one can allow longer strings of terminals or single non-terminals without anything else, making languages <a href="/wiki/Syntactic_sugar.html" title="Syntactic sugar">easier to denote</a> while still defining the same class of languages.)</p>
+<p>The language defined above is not regular, but the language <img class='tex' src="http://upload.wikimedia.org/math/8/9/9/899f3f5ac659783afd9ea8b12a5adc04.png" alt="\left \{ a^{n}b^{m} | m,n &gt; 0 \right \}" /> (any positive number of 'a's followed by any positive number of 'b's, where the numbers may be different) is, as it can be defined by the grammar <span class="texhtml"><i>G</i>3</span> with <img class='tex' src="http://upload.wikimedia.org/math/6/2/e/62ef91f92db3b07605683a8a7018c103.png" alt="N=\left \{S, A,B\right \}" />, <img class='tex' src="http://upload.wikimedia.org/math/f/5/4/f542641f010013ad0f863c8dabbba46e.png" alt="\Sigma=\left \{a,b\right \}" />, <span class="texhtml"><i>S</i></span> the start symbol, and the following production rules:</p>
+<dl>
+<dd>1. <img class='tex' src="http://upload.wikimedia.org/math/e/d/4/ed42f0daa5f2fc3bf2277e546bf5b05d.png" alt="S \longrightarrow aA" /></dd>
+<dd>2. <img class='tex' src="http://upload.wikimedia.org/math/1/9/4/194c2e8c2cfddd5a0605f4f87f0f3967.png" alt="A \longrightarrow aA" /></dd>
+<dd>3. <img class='tex' src="http://upload.wikimedia.org/math/5/5/b/55b1a5faee636f5b4d19497c2026cc4a.png" alt="A \longrightarrow bB" /></dd>
+<dd>4. <img class='tex' src="http://upload.wikimedia.org/math/1/8/0/1804f5a91a4be55e6e349a7b463e7eed.png" alt="B \longrightarrow bB" /></dd>
+<dd>5. <img class='tex' src="http://upload.wikimedia.org/math/6/3/4/6343be6684825e4cc6b3731d5f6e5cac.png" alt="B \longrightarrow \epsilon" /></dd>
+</dl>
+<p>(where <span class="texhtml">ε</span> denotes the empty string, i.e. the string of length 0).</p>
+<p>In practice, regular grammars are commonly expressed using <a href="/wiki/Regular_expression.html" title="Regular expression">regular expressions</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Regular vs. context-free languages">edit</a>]</div>
+<p><a name="Regular_vs._context-free_languages" id="Regular_vs._context-free_languages"></a></p>
+<h4>Regular vs. context-free languages</h4>
+<p>Aside from the differences in production rules required to generate the two languages, the key high-level difference between <img class='tex' src="http://upload.wikimedia.org/math/1/a/c/1ac821f2e1c64c2b5500a1973935f944.png" alt="\left \{ a^{n}b^{n} | n &gt; 0 \right \}" /> (context-free) and <img class='tex' src="http://upload.wikimedia.org/math/3/e/2/3e284814c85379a74fb556673202e14f.png" alt="\left \{ a^{n}b^{m} | n,m &gt; 0 \right \}" /> (regular) is the specification that the number of 'a's and the number of 'b's must be equal in the context-free language. Thus, any <a href="/wiki/Automata_theory.html" title="Automata theory">automaton</a> attempting to recognize the context-free language must necessarily keep track of more information than one that is attempting to recognize the regular language. The latter does not have to count the number of 'a's or 'b's, it just has to make sure there are more than zero of each.</p>
+<p>For more detail, see <a href="/wiki/Context-free_language.html" title="Context-free language">context-free language</a> and <a href="/wiki/Regular_language.html" title="Regular language">regular language</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Other forms of generative grammars">edit</a>]</div>
+<p><a name="Other_forms_of_generative_grammars" id="Other_forms_of_generative_grammars"></a></p>
+<h3>Other forms of generative grammars</h3>
+<p>Many extensions and variations on Chomsky's original hierarchy of formal grammars have been developed more recently, both by linguists and by computer scientists, usually either in order to increase their expressive power or in order to make them easier to analyze or <a href="/wiki/Parsing.html" title="Parsing">parse</a>. Of course these two goals tend to be at odds: the more expressive a grammar formalism is, the harder it is to analyze or parse using automated tools. Some forms of grammars more recently developed include:</p>
+<ul>
+<li><a href="/wiki/Tree-adjoining_grammar.html" title="Tree-adjoining grammar">Tree-adjoining grammars</a> increase the expressiveness of conventional generative grammars by allowing rewrite rules to operate on <a href="/wiki/Parse_tree.html" title="Parse tree">parse trees</a> instead of just strings.</li>
+<li><a  class="new" title="Affix grammar">Affix grammars</a> and <a href="/wiki/Attribute_grammar.html" title="Attribute grammar">attribute grammars</a> allow rewrite rules to be augmented with semantic attributes and operations, useful both for increasing grammar expressiveness and for constructing practical language translation tools.</li>
+</ul>
+<p>A yearly conference is devoted to formal grammars: <a  class="external autonumber" title="http://www.formalgrammar.tk">[1]</a></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Analytic grammars">edit</a>]</div>
+<p><a name="Analytic_grammars" id="Analytic_grammars"></a></p>
+<h2>Analytic grammars</h2>
+<p>Though there is a tremendous body of literature on <a href="/wiki/Parsing.html" title="Parsing">parsing</a> <a href="/wiki/Algorithms.html" title="Algorithms">algorithms</a>, most of these algorithms assume that the language to be parsed is initially <i>described</i> by means of a <i>generative</i> formal grammar, and that the goal is to transform this generative grammar into a working parser. An alternative approach is to formalize the language in terms of an <b>analytic grammar</b> in the first place, which more directly corresponds to the structure of a parser for the language. Examples of analytic grammar formalisms include the following:</p>
+<ul>
+<li><a  class="external text" title="http://languagemachine.sourceforge.net">The Language Machine</a> directly implements unrestricted analytic grammars. Substitution rules are used to transform an input to produce outputs and behaviour. The system can also produce <a  class="external text" title="http://languagemachine.sourceforge.net/picturebook.html">the lm-diagram</a> which shows what happens when the rules of an unrestricted analytic grammar are being applied.</li>
+<li><a href="/wiki/Top-down_parsing_language.html" title="Top-down parsing language">Top-down parsing language</a> (TDPL): a highly minimalist analytic grammar formalism developed in the early <a href="/wiki/1970s.html" title="1970s">1970s</a> to study the behavior of <a href="/wiki/Top-down_parsing.html" title="Top-down parsing">top-down parsers</a>.</li>
+<li><a href="/wiki/Parsing_expression_grammar.html" title="Parsing expression grammar">Parsing expression grammars</a> (PEGs): a more recent generalization of TDPL designed around the practical <a  class="new" title="Expressiveness">expressiveness</a> needs of <a href="/wiki/Programming_language.html" title="Programming language">programming language</a> and <a href="/wiki/Compiler.html" title="Compiler">compiler</a> writers.</li>
+<li><a href="/wiki/Link_grammar.html" title="Link grammar">Link grammars</a>: a form of analytic grammar designed for <a href="/wiki/Linguistics.html" title="Linguistics">linguistics</a>, which derives syntactic structure by examining the positional relationships between pairs of words.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Abstract_syntax_tree.html" title="Abstract syntax tree">Abstract syntax tree</a></li>
+<li><a href="/wiki/Ambiguous_grammar.html" title="Ambiguous grammar">Ambiguous grammar</a></li>
+<li><a href="/wiki/Concrete_syntax_tree.html" title="Concrete syntax tree">Concrete syntax tree</a></li>
+<li><a href="/wiki/L-system.html" title="L-system">L-system</a></li>
+</ul>
+<table align="center" border="0" cellpadding="2" cellspacing="0" class="toccolours">
+<tr>
+<th colspan="4" style="background:#ddd;"><a href="/wiki/Automata_theory.html" title="Automata theory">Automata theory</a>: <a href="/wiki/Formal_language.html" title="Formal language">formal languages</a> and <strong class="selflink">formal grammars</strong></th>
+</tr>
+<tr align="left">
+<th style="border-bottom:2px solid"><b><a href="/wiki/Chomsky_hierarchy.html" title="Chomsky hierarchy">Chomsky<br />
+hierarchy</a></b></th>
+<th style="border-bottom:2px solid"><b><strong class="selflink">Grammars</strong></b></th>
+<th style="border-bottom:2px solid"><b><a href="/wiki/Formal_language.html" title="Formal language">Languages</a></b></th>
+<th style="border-bottom:2px solid"><b>Minimal<br />
+<a href="/wiki/Finite_state_machine.html" title="Finite state machine">automaton</a></b></th>
+</tr>
+<tr align="left">
+<td>Type-0</td>
+<td><a href="/wiki/Unrestricted_grammar.html" title="Unrestricted grammar">Unrestricted</a></td>
+<td><a href="/wiki/Recursively_enumerable_language.html" title="Recursively enumerable language">Recursively enumerable</a></td>
+<td><a href="/wiki/Turing_machine.html" title="Turing machine">Turing machine</a></td>
+</tr>
+<tr align="left">
+<td>n/a</td>
+<td>(no common name)</td>
+<td><a href="/wiki/Recursive_language.html" title="Recursive language">Recursive</a></td>
+<td><a href="/wiki/Machine_that_always_halts.html" title="Machine that always halts">Decider</a></td>
+</tr>
+<tr align="left">
+<td>Type-1</td>
+<td><a href="/wiki/Context-sensitive_grammar.html" title="Context-sensitive grammar">Context-sensitive</a></td>
+<td><a href="/wiki/Context-sensitive_language.html" title="Context-sensitive language">Context-sensitive</a></td>
+<td><a href="/wiki/Linear_bounded_automaton.html" title="Linear bounded automaton">Linear-bounded</a></td>
+</tr>
+<tr align="left">
+<td>Type-2</td>
+<td><a href="/wiki/Context-free_grammar.html" title="Context-free grammar">Context-free</a></td>
+<td><a href="/wiki/Context-free_language.html" title="Context-free language">Context-free</a></td>
+<td><a href="/wiki/Pushdown_automaton.html" title="Pushdown automaton">Pushdown</a></td>
+</tr>
+<tr align="left">
+<td>Type-3</td>
+<td><a href="/wiki/Regular_grammar.html" title="Regular grammar">Regular</a></td>
+<td><a href="/wiki/Regular_language.html" title="Regular language">Regular</a></td>
+<td><a href="/wiki/Finite_automaton.html" title="Finite automaton">Finite</a></td>
+</tr>
+<tr>
+<th style="border-top:2px solid" colspan="4"><small>Each category of languages or grammars is a <a href="/wiki/Subset.html" title="Subset">proper subset</a> of the category directly above it.</small></th>
+</tr>
+</table>
+
+<!-- 
+Pre-expand include size: 3105 bytes
+Post-expand include size: 2024 bytes
+Template argument size: 138 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:10995-0!1!0!default!!en!2 and timestamp 20060910153237 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Pages needing expert attention">Pages needing expert attention</a></span> | <span dir='ltr'><a  title="Category:Formal languages">Formal languages</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Formal_grammar.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-bs"><a >Bosanski</a></li>
+				<li class="interwiki-cs"><a >Česky</a></li>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-el"><a >Ελληνικά</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-pt"><a >Português</a></li>
+				<li class="interwiki-fi"><a >Suomi</a></li>
+				<li class="interwiki-zh"><a >中文</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 04:15, 3 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv55 in 0.463 secs. --></body></html>

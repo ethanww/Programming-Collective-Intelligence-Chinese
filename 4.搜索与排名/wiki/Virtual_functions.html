@@ -1,0 +1,300 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Virtual function,Virtual table,C++,Declaration (computer science),Implementation inheritance,Inheritance (computer science),Inheritance semantics,Interface (computer science),Java programming language,Method (computer science),Multiple inheritance" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Virtual function - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Virtual_function";
+			var wgTitle = "Virtual function";
+			var wgArticleId = 374664;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Virtual function</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub">(Redirected from <a  title="Virtual functions">Virtual functions</a>)</div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>A <b>virtual function</b> or <b>virtual <a href="/wiki/Method_%28computer_science%29.html" title="Method (computer science)">method</a></b> is an important part of the <a href="/wiki/Polymorphism_%28computer_science%29.html" title="Polymorphism (computer science)">polymorphism</a> portion of <a href="/wiki/Object-oriented_programming.html" title="Object-oriented programming">object-oriented programming</a> (OOP). A virtual function allows a derived class to override functions in classes it inherits from – even when the derived class is cast as the type of object from which it inherits.</p>
+<p>In OOP when a derived class inherits from a base class, an object of the derived class may be referred to (or cast) as either being the base class type or the derived class type. If there are base class functions overridden by the derived class, a problem then arises when a derived object has been cast as the base class type. When a derived object is referred to as being of the base's type, the desired function call behavior is ambiguous.</p>
+<p>The distinction between virtual and not virtual is provided to solve this issue. If the function in question is designated "virtual" then the derived class's function would be called (if it exists). If it is not virtual, the base class's function would be called.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Example</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Abstract classes and pure virtual functions</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">2.1</span> <span class="toctext">C++</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Virtual Destructors as a special case</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Example">edit</a>]</div>
+<p><a name="Example" id="Example"></a></p>
+<h2>Example</h2>
+<p>For example, a base class <code>Animal</code> could have a virtual function <code>eat</code>. Subclass <code>Fish</code> would implement <code>eat()</code> differently than subclass <code>Wolf</code>, but you can invoke <code>eat()</code> on any class instance referred to as Animal, and get the <code>eat()</code> behavior of the specific subclass.</p>
+<p>This allows a programmer to process a list of objects of class <code>Animal</code>, telling each in turn to eat (by calling <code>eat()</code>), <a href="/wiki/Polymorphism_%28computer_science%29.html" title="Polymorphism (computer science)">with no knowledge of what kind</a> of animal may be in the list. You also do not need to have knowledge of how each animal eats, or what the complete set of possible animal types might be.</p>
+<p>The following is an example in C++:</p>
+<pre>
+#include &lt;iostream&gt;
+
+class Animal
+{
+public:
+   virtual void eat() { std::cout &lt;&lt; "I eat like a generic Animal.\n"; }
+};
+
+class Wolf : public Animal
+{
+public:
+   void eat() { std::cout &lt;&lt; "I eat like a wolf!\n"; }
+};
+
+class Fish : public Animal
+{
+public:
+   void eat() { std::cout &lt;&lt; "I eat like a fish!\n"; }
+};
+
+class OtherAnimal : public Animal
+{
+};
+
+int main()
+{
+   Animal *anAnimal[4];
+   anAnimal[0] = new Animal();
+   anAnimal[1] = new Wolf();
+   anAnimal[2] = new Fish();
+   anAnimal[3] = new OtherAnimal();
+
+   for(int i = 0; i &lt; 4; i++)
+       anAnimal[i]-&gt;eat();
+
+   return 0;
+}
+</pre>
+<p>output:</p>
+<pre>
+I eat like a generic Animal.
+I eat like a wolf!
+I eat like a fish!
+I eat like a generic Animal.
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Abstract classes and pure virtual functions">edit</a>]</div>
+<p><a name="Abstract_classes_and_pure_virtual_functions" id="Abstract_classes_and_pure_virtual_functions"></a></p>
+<h2>Abstract classes and pure virtual functions</h2>
+<p>A <b>pure virtual function</b> or <b>pure virtual method</b> is a <strong class="selflink">virtual function</strong> that has a <a href="/wiki/Declaration_%28computer_science%29.html" title="Declaration (computer science)">declaration</a> (signature), but no definition (implementation). This is often used in a base class which is a conceptual abstraction of the classes that inherit from it such that it is nonsensical to define the particular function. Such classes are referred to as "abstract" and cannot be instantiated since they have an undefined function. An example might be a base class "MathSymbol" which has a virtual function <code>doOperation()</code>. You might then derive class "Plus" or "Minus" which would define <code>doOperation()</code>, but defining <code>doOperation()</code> wouldn't make sense in the "MathSymbol" class.</p>
+<p>Pure virtual functions are also used where the method declarations are being used to define an <a href="/wiki/Interface_%28computer_science%29.html" title="Interface (computer science)">interface</a> for which derived classes will supply all implementations. An abstract class serving as an interface contains only pure virtual functions, and not any data members or ordinary methods. Use of purely abstract classes as interfaces works in C++ as it supports <a href="/wiki/Multiple_inheritance.html" title="Multiple inheritance">multiple inheritance</a>. Because many OO languages do not support <a href="/wiki/Multiple_inheritance.html" title="Multiple inheritance">multiple inheritance</a> they often provide a separate interface mechanism. This is seen in <a href="/wiki/Java_programming_language.html" title="Java programming language">Java</a> for example.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: C++">edit</a>]</div>
+<p><a name="C.2B.2B" id="C.2B.2B"></a></p>
+<h3>C++</h3>
+<p>In <a href="/wiki/C%2B%2B.html" title="C++">C++</a>, virtual functions can be explicitly marked as having no implementation by using a special syntax (example: <code>class B{virtual void apurevirtualfunction() = 0;}</code> ), and are then called <i>pure virtual functions</i>. The function prototype then serves as a stub that provides only the signature of the eventual implementing method. The actual definition or definitions will be provided later as overridden functions in derived classes. (The compiler knows which method implementation to call at runtime by creating a list of pointers to all the virtual functions, called the <code>vtable</code> or <a href="/wiki/Virtual_table.html" title="Virtual table">virtual table</a>.)</p>
+<p><br />
+<b>Start addition by Ashish Pandya (ashish_engineer81@yahoo.com)</b></p>
+<hr />
+<p><br />
+We can write the definition for the pure virtual function and can use it with out having its [object]. So the old tradition which is saying that pure virtual function can not have a body is wrong.</p>
+<p>This type of facility is used to initialize/change the base class members before initializing the derived class members.</p>
+<p>Here I have given the example of that...... Please check it by compling.......</p>
+<pre>
+#include &lt;iostream.h&gt;
+
+class CBase
+{
+  CBase(){ }
+  virtual ~CBase() { }
+  virtual void fnPureVirtualFunction() = 0
+  {
+     //Do some initializing............
+     cout&lt;&lt;endl&lt;&lt;"Hi am a Pure Virtual Function from the base class"; 
+  }
+
+};
+
+class CDerived : public CBase
+{
+  CDerived(){ }
+  ~CDerived() { }
+  void fnPureVirtualFunction() //Overriding the Base class function....
+  {
+     //Call to Pure Virtual Function in Base............
+     CBase::fnPureVirtualFunction(); 
+  }
+
+};
+
+void main()
+{
+  CDerived clDerived;     //Defining the Object of Base class..
+  clDerived.fnPureVirtualFunction(); //call the member function..
+}
+</pre>
+<p><b>Addition completed by</b> :: <b>ashish pandya &lt; ashish_engineer81@yahoo.com &gt;</b></p>
+<hr />
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Virtual Destructors as a special case">edit</a>]</div>
+<p><a name="Virtual_Destructors_as_a_special_case" id="Virtual_Destructors_as_a_special_case"></a></p>
+<h2>Virtual Destructors as a special case</h2>
+<p>Often OO languages treat virtual destructors as a special case. In the case that a destructor is virtual, instead of calling just the derived class's destructor, the base' class destructor is called as well. This is because destructors are primarily used to clean up resource allocations, and the base class which may have "private" resources which would otherwise be impossible to clean-up and would create a resource leak.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Inheritance_%28computer_science%29.html" title="Inheritance (computer science)">Inheritance (computer science)</a></li>
+<li><a href="/wiki/Implementation_inheritance.html" title="Implementation inheritance">Implementation inheritance</a></li>
+<li><a href="/wiki/Inheritance_semantics.html" title="Inheritance semantics">Inheritance semantics</a></li>
+<li><a href="/wiki/Superclass_%28computer_science%29.html" title="Superclass (computer science)">Superclass (computer science)</a></li>
+<li><a href="/wiki/Virtual_inheritance.html" title="Virtual inheritance">Virtual inheritance</a></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:374664-0!1!0!default!!en!2 and timestamp 20060910074300 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:Object-oriented programming">Object-oriented programming</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Virtual_function.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 07:41, 10 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv44 in 0.093 secs. --></body></html>

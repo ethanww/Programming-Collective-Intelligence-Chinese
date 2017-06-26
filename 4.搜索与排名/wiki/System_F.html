@@ -1,0 +1,243 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="System F,Church numeral,Computer scientist,Curry-Howard isomorphism,Decision problem,Ferry Corsten,Functional programming languages,Haskell programming language,Higher-order function,Hindley-Milner,IEEE" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>System F - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "System_F";
+			var wgTitle = "System F";
+			var wgArticleId = 767637;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">System F</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<dl>
+<dd><i>For the electronic dance music artist, see <a href="/wiki/Ferry_Corsten.html" title="Ferry Corsten">Ferry Corsten</a></i></dd>
+</dl>
+<p><b>System F</b>, also known as the <b>polymorphic lambda calculus</b> or the <b>second-order lambda calculus</b>, is a <a href="/wiki/Typed_lambda_calculus.html" title="Typed lambda calculus">typed lambda calculus</a>. It was discovered independently by the <a href="/wiki/Logician.html" title="Logician">logician</a> <a href="/wiki/Jean-Yves_Girard.html" title="Jean-Yves Girard">Jean-Yves Girard</a> and the <a href="/wiki/Computer_scientist.html" title="Computer scientist">computer scientist</a> <a href="/wiki/John_C._Reynolds.html" title="John C. Reynolds">John C. Reynolds</a>. System F formalizes the notion of parametric <a href="/wiki/Polymorphism_%28computer_science%29.html" title="Polymorphism (computer science)">polymorphism</a> in <a href="/wiki/Programming_language.html" title="Programming language">programming languages</a>.</p>
+<p>Just as the <a href="/wiki/Lambda_calculus.html" title="Lambda calculus">lambda calculus</a> has variables ranging over functions, and binders for them, the second-order lambda calculus has variables ranging over <i>types</i>, and binders for them.</p>
+<p>As an example, the fact that the identity function can have any type of the form A→ A would be formalized in System F as the judgement</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/2/e/6/2e6f32013b2b634f0d3b1e2f047a2f8c.png" alt="\vdash \Lambda\alpha. \lambda x^\alpha.x: \forall\alpha.\alpha \to \alpha" /></dd>
+</dl>
+<p>where α is a <a href="/wiki/Type_variable.html" title="Type variable">type variable</a>.</p>
+<p>Under the <a href="/wiki/Curry-Howard_isomorphism.html" title="Curry-Howard isomorphism">Curry-Howard isomorphism</a>, System F corresponds to a <a href="/wiki/Second-order_logic.html" title="Second-order logic">second-order logic</a>.</p>
+<p>System F, together with even more expressive lambda calculi, can be seen as part of the <a href="/wiki/Lambda_cube.html" title="Lambda cube">lambda cube</a>.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Logic and predicates</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">System F Structures</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Use in programming languages</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Logic and predicates">edit</a>]</div>
+<p><a name="Logic_and_predicates" id="Logic_and_predicates"></a></p>
+<h2>Logic and predicates</h2>
+<p>The <i>Boolean</i> type is defined as: <img class='tex' src="http://upload.wikimedia.org/math/5/1/a/51aded2560367d449a69fb65ffb2fe39.png" alt="\forall\alpha.\alpha \to \alpha \to \alpha" />, where α is a <a href="/wiki/Type_variable.html" title="Type variable">type variable</a>. This produces the following two definitions for the boolean values <tt>TRUE</tt> and <tt>FALSE</tt>:</p>
+<dl>
+<dd>TRUE&#160;:= <span class="texhtml">Λα.λ<i>x</i><sup>α</sup>λ<i>y</i><sup>α</sup>.<i>x</i></span></dd>
+<dd>FALSE&#160;:= <span class="texhtml">Λα.λ<i>x</i><sup>α</sup>λ<i>y</i><sup>α</sup>.<i>y</i></span></dd>
+</dl>
+<p>Then, with these two λ-terms, we can define some logic operators:</p>
+<dl>
+<dd>AND&#160;:= <span class="texhtml">λ<i>x</i><sup><i>B</i><i>o</i><i>o</i><i>l</i><i>e</i><i>a</i><i>n</i></sup>λ<i>y</i><sup><i>B</i><i>o</i><i>o</i><i>l</i><i>e</i><i>a</i><i>n</i></sup>.((<i>x</i>(<i>B</i><i>o</i><i>o</i><i>l</i><i>e</i><i>a</i><i>n</i>))<i>y</i>)<i>F</i><i>A</i><i>L</i><i>S</i><i>E</i></span></dd>
+<dd>OR&#160;:= <span class="texhtml">λ<i>x</i><sup><i>B</i><i>o</i><i>o</i><i>l</i><i>e</i><i>a</i><i>n</i></sup>λ<i>y</i><sup><i>B</i><i>o</i><i>o</i><i>l</i><i>e</i><i>a</i><i>n</i></sup>.((<i>x</i>(<i>B</i><i>o</i><i>o</i><i>l</i><i>e</i><i>a</i><i>n</i>))<i>T</i><i>R</i><i>U</i><i>E</i>)<i>y</i></span></dd>
+<dd>NOT&#160;:= <span class="texhtml">λ<i>x</i><sup><i>B</i><i>o</i><i>o</i><i>l</i><i>e</i><i>a</i><i>n</i></sup>.((<i>x</i>(<i>B</i><i>o</i><i>o</i><i>l</i><i>e</i><i>a</i><i>n</i>))<i>F</i><i>A</i><i>L</i><i>S</i><i>E</i>)<i>T</i><i>R</i><i>U</i><i>E</i></span></dd>
+</dl>
+<p>There really is no need for a <i>IFTHENELSE</i> function as one can just use raw Boolean typed terms as decision functions. However, if one is requested:</p>
+<dl>
+<dd>IFTHENELSE&#160;:= <span class="texhtml">Λα.λ<i>x</i><sup><i>B</i><i>o</i><i>o</i><i>l</i><i>e</i><i>a</i><i>n</i></sup>λ<i>y</i><sup>α</sup>λ<i>z</i><sup>α</sup>.((<i>x</i>(α))<i>y</i>)<i>z</i></span></dd>
+</dl>
+<p>will do. A <i>predicate</i> is a function which returns a boolean value. The most fundamental predicate is <tt>ISZERO</tt> which returns <tt>TRUE</tt> if and only if its argument is the Church numeral <tt>0</tt>:</p>
+<dl>
+<dd><tt>ISZERO&#160;:= λ <i>n</i>. <i>n</i> (λ <i>x</i>. FALSE) TRUE</tt></dd>
+</dl>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: System F Structures">edit</a>]</div>
+<p><a name="System_F_Structures" id="System_F_Structures"></a></p>
+<h2>System F Structures</h2>
+<p>System F allows recursive constructions to be embedded in a natural manner, related to that in <a href="/wiki/Martin-L%C3%B6f%27s_type_theory.html" title="Martin-Löf's type theory">Martin-Löf's type theory</a>. Suppose you want to create an abstract structure (call it S). The first thing you'll need are constructors. These will be functions whose type will be</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/8/8/6/886239dda40abc4c51a18e1d2f56404c.png" alt="K_1\rightarrow K_2\rightarrow\dots\rightarrow S" />.</dd>
+</dl>
+<p>Recursivity is manifested when <span class="texhtml"><i>S</i></span> itself appears within one of the types <span class="texhtml"><i>K</i><sub><i>i</i></sub></span>. If you have <span class="texhtml"><i>m</i></span> of these constructors, you can define the type of <span class="texhtml"><i>S</i></span> as:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/7/1/6/716b1e0202bf98800918007570cbc4e3.png" alt="\forall \alpha.(K_1^1[\alpha/S]\rightarrow\dots\rightarrow \alpha)\dots\rightarrow(K_1^m[\alpha/S]\rightarrow\dots\rightarrow \alpha)\rightarrow \alpha" /></dd>
+</dl>
+<p>For instance, the natural numbers can be defined as an inductive datatype <span class="texhtml"><i>N</i></span> with constructors</p>
+<dl>
+<dd><span class="texhtml"><i>z</i><i>e</i><i>r</i><i>o</i>:N</span></dd>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/b/8/1/b81828e27e462b770a0693e4b6e369b9.png" alt="\mathit{succ}&#160;: \mathrm{N} \to \mathrm{N}" /></dd>
+</dl>
+<p>The System F type corresponding to this structure is <img class='tex' src="http://upload.wikimedia.org/math/b/6/e/b6e5f71637ec21cf45c27bb0c3af4759.png" alt="\forall \alpha. \alpha \to (\alpha \to \alpha) \to \alpha" />. The terms of this type comprise a typed version of the <a href="/wiki/Church_numeral.html" title="Church numeral">Church numerals</a>, the first few of which are:</p>
+<dl>
+<dd><tt>0&#160;:=</tt> <img class='tex' src="http://upload.wikimedia.org/math/0/5/6/05620cd0461cde1c1c5d9058a968b691.png" alt="\Lambda \alpha . \lambda x^\alpha . \lambda f^{\alpha\to\alpha} . x" /></dd>
+<dd><tt>1&#160;:=</tt> <img class='tex' src="http://upload.wikimedia.org/math/3/3/1/3315cf3b5cac62453a78b3fa6bd00912.png" alt="\Lambda \alpha . \lambda x^\alpha . \lambda f^{\alpha\to\alpha} . f x" /></dd>
+<dd><tt>2&#160;:=</tt> <img class='tex' src="http://upload.wikimedia.org/math/1/2/5/125ba55be954906294852e666d71447a.png" alt="\Lambda \alpha . \lambda x^\alpha . \lambda f^{\alpha\to\alpha} . f (f x)" /></dd>
+<dd><tt>3&#160;:=</tt> <img class='tex' src="http://upload.wikimedia.org/math/1/1/1/111e5609d49a19bbd7a0ebf58df4540d.png" alt="\Lambda \alpha . \lambda x^\alpha . \lambda f^{\alpha\to\alpha} . f (f (f x))" /></dd>
+</dl>
+<p>If we reverse the order of the curried arguments (<i>i.e.,</i> <img class='tex' src="http://upload.wikimedia.org/math/9/3/b/93b99a35fc240d030580504d06e1759f.png" alt="\forall \alpha. (\alpha \to \alpha) \to \alpha \to \alpha" />), then the Church numeral for <span class="texhtml"><i>n</i></span> is a function that takes a function <tt><i>f</i></tt> as argument and returns the <span class="texhtml"><i>n</i><sup>th</sup></span> power of <tt><i>f</i></tt>. That is to say, a Church numeral is a <a href="/wiki/Higher-order_function.html" title="Higher-order function">higher-order function</a> -- it takes a single-argument function <tt><i>f</i></tt>, and returns another single-argument function.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Use in programming languages">edit</a>]</div>
+<p><a name="Use_in_programming_languages" id="Use_in_programming_languages"></a></p>
+<h2>Use in programming languages</h2>
+<p>The version of System F used in this article is as an explicitly-typed, or Church-style, calculus. The typing information contained in λ-terms makes <a href="/wiki/Type-checking.html" title="Type-checking">type-checking</a> straightforward. <a  class="new" title="Joe Wells">Joe Wells</a> (1994) settled an "embarrassing open problem" by proving that type checking is <a href="/wiki/Decision_problem.html" title="Decision problem">undecidable</a> for a Curry-style variant of System F, that is, one that lacks explicit typing annotations. <a  class="external autonumber" title="http://www.cee.hw.ac.uk/~jbw/research-summary.html">[1]</a> <a  class="external autonumber" title="http://www.church-project.org/reports/Wells:APAL-1999-v98-no-note.html">[2]</a></p>
+<p>Wells' result implies that <a href="/wiki/Type_inference.html" title="Type inference">type inference</a> for System F is impossible. A restriction of System F known as "<a href="/wiki/Hindley-Milner.html" title="Hindley-Milner">Hindley-Milner</a>", or simply "HM", does have an easy type inference algorithm and is used for many <a href="/wiki/Strongly_typed.html" title="Strongly typed">strongly typed</a> <a href="/wiki/Functional_programming_languages.html" title="Functional programming languages">functional programming languages</a> such as <a href="/wiki/Haskell_programming_language.html" title="Haskell programming language">Haskell</a> and <a href="/wiki/ML_programming_language.html" title="ML programming language">ML</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<ul>
+<li>Girard, Lafont and Taylor, 1997. <a  class="external text" title="http://www.cs.man.ac.uk/~pt/stable/prot.pdf"><i>Proofs and Types</i></a>. Cambridge University Press.</li>
+<li>J. B. Wells. "Typability and type checking in the second-order lambda-calculus are equivalent and undecidable." In <i>Proceedings of the 9th Annual <a href="/wiki/IEEE.html" title="IEEE">IEEE</a> Symposium on Logic in Computer Science (LICS),</i> pages 176-185, 1994. <a  class="external autonumber" title="http://www.macs.hw.ac.uk/~jbw/papers/Wells:Typability-and-Type-Checking-in-the-Second-Order-Lambda-Calculus-Are-Equivalent-and-Undecidable:LICS-1994.ps.gz">[3]</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://www.site.uottawa.ca/~fbinard/Intuitionism/TypeTheory/SystemF/">Summary of System F</a> by Frank Binard.</li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:767637-0!1!0!default!!en!2 and timestamp 20060906022310 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Mathematical logic">Mathematical logic</a></span> | <span dir='ltr'><a  title="Category:Lambda calculus">Lambda calculus</a></span> | <span dir='ltr'><a  title="Category:Type theory">Type theory</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/System_F.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 10:59, 22 June 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv33 in 0.085 secs. --></body></html>

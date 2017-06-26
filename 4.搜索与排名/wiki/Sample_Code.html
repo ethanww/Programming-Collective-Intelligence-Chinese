@@ -1,0 +1,489 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="COMPASS/Sample Code,COMPASS,Calendar,Computer terminal,Categorization,Category,Glossary,Guide to layout,Manual of Style" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>COMPASS/Sample Code - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "COMPASS/Sample_Code";
+			var wgTitle = "COMPASS/Sample Code";
+			var wgArticleId = 2538051;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">COMPASS/Sample Code</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<div class="messagebox cleanup metadata">
+<p>Please <b><a  title="Wikipedia:Glossary">wikify</a></b> (format) this article or section as suggested in the <a  title="Wikipedia:Guide to layout">Guide to layout</a> and the <a  title="Wikipedia:Manual of Style">Manual of Style</a>.</p>
+<small>Remove this template after wikifying. This article has been tagged since <b>August 2006</b>.</small></div>
+<p>This <b><a href="/wiki/COMPASS.html" title="COMPASS">COMPASS</a> sample code</b> displays the <a href="/wiki/Calendar.html" title="Calendar">calendar</a> of the year given as a parameter on the <a href="/wiki/Computer_terminal.html" title="Computer terminal">terminal</a>. If no parameter is given, then the calendar of the current year is displayed.</p>
+<pre>
+          IDENT  CALEND,FWA 
+          ABS 
+          SST 
+          ENTRY  CALEND,RFL=
+          SYSCOM B1 
+          TITLE  DISPLAY CALENDAR OF A SPECIFIC YEAR. 
+          COMMENT  DISPLAY CALENDAR OF A SPECIFIC YEAR. 
+ CALEND   SPACE  4,10 
+***       CALEND - DISPLAY CALENDAR OF A SPECIFIC YEAR. 
+* 
+*              THIS PROGRAM DISPLAYS ON THE TERMINAL THE CALENDAR OF
+*         THE YEAR GIVEN AS A PARAMETER.  IF NO PARAMETER IS GIVEN
+*         THEN THE CALENDAR OF THE CURRENT YEAR IS DISPLAYED. 
+          SPACE  4,10 
+***       CONTROL STATEMENT CALL. 
+* 
+*         CALEND, YEAR. 
+* 
+*         YEAR :  MUST BE IN THE FORMAT:  CYM.  (EACH PART IS OPTIONAL.)
+*           C: MAY BE G (FOR GREGORIAN) OR J (FOR JULIAN CALENDAR). 
+*                DEFAULT IS  G. 
+*           Y: A 1 TO 7-DIGIT NUMBER INDICATING THE YEAR YOU WANT TO
+*                DISPLAY THE CALENDAR OF.  IF IT IS NOT IN THE RANGE
+*                [ 0 .. 9999 ] (FOR GREGORIAN) OR [ 0 .. 6999 ] (FOR
+*                JULIAN CALENDAR) IT IS PUT IN THIS RANGE.  DEFAULT IS
+*                THE CURRENT YEAR.
+*           M: MAY BE D (INDICATING THAT Y IS DECIMAL) OR B (INDICATING 
+*                IT IS OCTAL).  DEFAULT IS D. 
+* 
+*         CALEND.     DISPLAYS CURRENT GREGORIAN CALENDAR.
+*         CALEND, J.  DISPLAYS CURRENT JULIAN CALENDAR. 
+          SPACE  4,10 
+          ORG    110B 
+ FWA      BSS    0
+  
+*         CONSTANT. 
+ BUFL     EQU    401B 
+  
+*         FET.
+ F        BSS    0
+ ZZZZZG0  FILEB  FBUF,BUFL,DTY=2RTT 
+  
+*         STRUCTURED CONTANTS.
+*         MONTH LENGTHS 
+ DPM  VFD  5/31,5/29,5/31,5/30,5/31,5/30,5/31,5/31,5/30,5/31,5/30,5/31
+ +    VFD  5/31,5/28,5/31,5/30,5/31,5/30,5/31,5/31,5/30,5/31,5/30,5/31
+  
+*         DAY NAMES.
+ DAYT     DATA   L*SUN* 
+          DATA   L*MON* 
+          DATA   L*TUE* 
+          DATA   L*WED* 
+          DATA   L*THU* 
+          DATA   L*FRI* 
+          DATA   L*SAT* 
+  
+*         CALENDAR TYPES. 
+ CT       DATA   A*GREGORIAN* 
+          DATA   A*JULIAN*
+  
+*         OUTPUT STRINGS. 
+ HDR1     DATA   20H
+          DATA   C*XXXXXXXXXX CALENDAR FOR XXXX*
+          DATA   0
+          DATA   C*       J A N U A R Y    F E B R U A R Y      M A R C 
+,H         A P R I L* 
+ HDR1L    EQU    *-HDR1 
+  
+ HDR2     DATA   0
+          DATA   C*           M A Y            J U N E           J U L Y
+,         A U G U S T*
+ HDR2L    EQU    *-HDR2 
+  
+ HDR3     DATA   0
+          DATA   C*     S E P T E M B E R   O C T O B E R    N O V E M B
+, E R   D E C E M B E R*
+ HDR3L    EQU    *-HDR3 
+  
+ LINE     BSS    0
+          DUP    77,1 
+          DATA   1R 
+ LINEL    EQU    *-LINE 
+  
+ W4M      SPACE  4,10 
+**        W4M - WRITE A 4-MONTH ROW OF THE CALENDAR.
+* 
+*         ENTRY  (X5) = 5/LENGTH OF FIRST MONTH, 5/LENGTH OF SECOND...
+*                (X0) = 48/X, 12/START DAY OF FIRST MONTH 
+  
+ W4M      SUBR               ENTRY / EXIT 
+          MX4    -12
+          BX0    -X4*X0 
+          SB4    4           MONTHS PER ROW 
+ W4M1     LX5    5
+          MX7    -5 
+          BX6    -X7*X5      LENGTH OF MONTH
+          BX2    -X4*X0      START DAY OF MONTH 
+          IX3    X2+X6       SUM THEM 
+          SX2    7           TAKE MOD 7 
+          SX1    X3 
+          IX1    X1/X2
+          SX2    X1 
+          LX2    3           *8 
+          IX2    X2-X1       *7 
+          IX3    X3-X2       START DAY OF NEXT MONTH
+          LX0    12 
+          BX0    X0+X3
+          SB4    B4-B1
+          NE     B4,W4M1     REPEAT FOR 4 MONTHS
+          SA0    B0          LINE COUNTER 
+ W4M2     LX0    60-12*4
+          LX5    60-5*4 
+          SB4    B0+         MONTH COUNTER
+          SB3    4           MONTHS PER LINE
+          SB5    6           DAYS PER MONTH PER LINE
+ W4M3     MX7    -12
+          BX3    -X7*X0      START DAY OF THIS MONTH
+          LX0    12 
+          MX7    -5 
+          LX5    5
+          BX4    -X7*X5      LENGTH OF THIS MONTH 
+          SB6    B0+         DAY COUNTER
+ W4M4     SX7    1R 
+          SB2    B6+B6
+          SB2    B2+B6       3*B6 
+          SX1    B4 
+          LX1    4           16*B4
+          SB2    B2+B4
+          SB2    B2+B4
+          SX1    X1+B2
+          SX1    X1+LINE+6   X1 = LINE + 18*B4 + 3*B6 + 6 
+          SA7    X1          INITIALIZE TO BLANKS 
+          SA7    A7+B1
+          SB7    B6+B6       2*B6 
+          SB7    B7+B7       4*B6 
+          SB7    B7+B7       8*B6 
+          SB7    B7-B6       7*B6 
+          SB7    B7+A0
+          SB2    X3 
+          SB7    B7-B2
+          SB7    B7+B1       DAY NUMBER = 7*B6 + A0 - X3 + 1
+          LT     B7,B1,W4M7  IF NULL ENTRY (B7 .LE. 0)
+          SB2    X4          LENGTH OF MONTH
+          GT     B7,B2,W4M7  IF NULL ENTRY (B7 .GT. X4) 
+          SB2    10 
+          LT     B7,B2,W4M6  IF ONE CHARACTER 
+          SX7    1R0
+ W4M5     SB7    B7-B2
+          SX7    X7+B1
+          GE     B7,B2,W4M5  UNTIL B7 &lt; 10
+          SA7    X1+
+ W4M6     SX7    B7+1R0 
+          SA7    X1+1 
+ W4M7     SB6    B6+B1
+          NE     B6,B5,W4M4  NEXT DAY 
+          SB4    B4+B1
+          NE     B4,B3,W4M3  NEXT MONTH 
+          SA1    DAYT+A0     SET DAY NAME 
+          MX2    -6 
+          LX1    6
+          BX7    -X2*X1 
+          SA7    LINE+1 
+          LX1    6
+          BX7    -X2*X1 
+          SA7    A7+B1
+          LX1    6
+          BX7    -X2*X1 
+          SA7    A7+B1
+          WRITES F,LINE,LINEL 
+          SA0    A0+1        INCREMENT LINE NUMBER
+          SB7    A0-7        CHECK IF .EQ. 7
+          NE     B7,W4M2     NEXT LINE
+          JP     W4MX        RETURN 
+ CALEND   SPACE  4,10 
+*         MAIN PROGRAM. 
+  
+ CALEND   SB1    1
+          SA2    ACTR        NUMBER OF PARAMETERS 
+          SB2    X2+
+          LE     B2,B1,CAL1  IF ONE OR ZERO PARAMETERS
+          SX1    =C* TOO MANY PARAMETERS.*
+          EQ     ERR         ABORT
+  
+ CAL1     R=     A1,ARGR
+          MX4    42 
+          BX2    X4*X1       GET PARAMETER
+          LX2    6
+          BX3    -X4*X2      GET FIRST CHARACTER
+          BX5    X4*X2       REST OF PARAMETER (YEAR) 
+          SB7    B1          DECIMAL BASE FOR CONVERSION
+          SB6    B1          INDICATE JULIAN CALENDAR 
+          SB3    X3-1RJ 
+          EQ     B3,CAL1.1   IF JULIAN CALENDAR 
+          SB6    B0+         INDICATE GREGORIAN CALENDAR
+          SB3    X3-1RG 
+          EQ     B3,CAL1.1   IF GREGORIAN CALENDAR
+          BX5    X4*X1       IF NO CALENDAR TYPE SPECIFIED (GREGORIAN)
+  
+ CAL1.1   ZR     X5,CAL2     IF NO YEAR (DEF. CURRENT YEAR) 
+          RJ     DXB         CONVERT TO BINARY
+          SX1    =C* ERROR IN PARAMETER.* 
+          NZ     X4,ERR      IF CONVERSION ERROR
+          ZR     X6,ERR      IF 0 YEAR
+          SX2    10000
+          EQ     B6,CAL1.2   IF GREGORIAN CALENDAR
+          SX2    7000        IF JULIAN CALENDAR 
+ CAL1.2   SX4    X2 
+          BX7    X6 
+          IX2    X7/X2
+          IX2    X2*X4
+          IX6    X6-X2       YEAR MOD (10000 OR 7000) 
+          EQ     CAL2.1      CONTINUE BELOW 
+  
+ CAL2     SA0    B6 
+          PDATE  CALEND      GET CURRENT DATE 
+          SB6    A0 
+          MX4    -6 
+          SA1    CALEND 
+          AX1    30 
+          BX3    -X4*X1 
+          SX6    X3+1970     CURRENT YEAR 
+ CAL2.1   EQ     B6,CAL3     IF GREGORIAN CALENDAR
+  
+*         JULIAN.  (X6) = YEAR IN [ 0 .. 6999 ].
+  
+          SX3    28 
+          SX4    X3 
+          SX5    X6          SAVE YEAR IN X5
+          IX6    X6/X3
+          IX6    X6*X4
+          IX6    X5-X6       YEAR MOD 28
+          MX4    -2 
+          BX4    -X4*X6      MOD 4
+          CX4    X4 
+          CX4    X4 
+          SA0    DPM+X4 
+          SX4    X6+19
+          AX4    2           / 4
+          IX0    X6+X4       KYR
+          EQ     CAL6        CONTINUE TO TAKE MOD 7 
+  
+*         GREGORIAN.  (X6) = YEAR IN [ 0 .. 9999 ]. 
+  
+ CAL3     SA0    DPM+1       ASSUME NOT LEAP YEAR 
+          SX3    400
+          SX4    X3 
+          SX5    X6          SAVE YEAR IN X5
+          IX6    X6/X3
+          IX6    X6*X4
+          IX6    X5-X6       YEAR MOD 400 (MYR) 
+          SX1    X6          SAVE MYR IN X1 
+          AX6    2           MYR/4
+          SX3    100
+          SX4    X1 
+          IX4    X4/X3       MYR/100
+          IX0    X1+X6
+          IX0    X0-X4       (KYR) = MYR + MYR/4 - MYR/100
+          SX6    X5 
+          SX3    100
+          IX6    X6/X3
+          SX3    100
+          IX6    X6*X3
+          IX6    X5-X6       YEAR MOD 100 
+          ZR     X6,CAL4     IF / 100 CHECK ALSO IF / 400 
+          MX7    -2 
+          BX7    -X7*X5      YEAR MOD 4 
+          ZR     X7,CAL5     IF /  4 (LEAP YEAR)
+          EQ     CAL6        NOT LEAP 
+  
+ CAL4     NZ     X1,CAL6     IF NOT LEAP (NOT / 400)
+ CAL5     SX0    X0+6 
+          SA0    DPM         LEAP YEAR
+  
+*         GREGORIAN OR JULIAN CALENDAR. 
+  
+ CAL6     SX3    7
+          BX6    X0 
+          IX6    X6/X3
+          SX3    X6 
+          LX3    3           *8 
+          IX6    X3-X6       *7 
+          IX0    X0-X6       KYR MOD 7 (1ST JANUARY)
+          SA1    CT+B6
+          BX6    X1 
+          SA6    HDR1+2      SET CALENDAR TYPE
+          SX1    X5+10000    ZERO PAD FROM LEFT 
+          MX5    24          PREPARE MASK 
+          LX5    -24
+          RJ     CDD         CONVERT YEAR TO DISPLAY CODE 
+          LX6    12 
+          BX7    X5*X6
+          SA1    HDR1+4 
+          BX6    -X5*X1 
+          BX7    X6+X7
+          SA7    A1+         PUT YEAR IN HEADER 
+          RETURN F,R
+          PROTECT  ,ON
+          REQUEST  F,U,N
+          WRITEW F,HDR1,HDR1L 
+          SA5    A0          GET DPM OR DPM+1 
+          RJ     W4M
+          WRITEW F,HDR2,HDR2L 
+          RJ     W4M
+          WRITEW F,HDR3,HDR3L 
+          RJ     W4M
+          WRITER F,R
+          MESSAGE  HDR2,1,R 
+          ENDRUN
+  
+ ERR      MESSAGE  X1,3,R 
+          ABORT 
+  
+*         EXTERNAL TEXT.
+  
+ COMCPL   XTEXT  COMCCDD
+ COMCPL   XTEXT  COMCCIO
+ COMCPL   XTEXT  COMCCPM
+ COMCPL   XTEXT  COMCDXB
+ COMCPL   XTEXT  COMCLFM
+ COMCPL   XTEXT  COMCSYS
+ COMCPL   XTEXT  COMCWTS
+ COMCPL   XTEXT  COMCWTW
+ BUFFERS  SPACE  4,10 
+          USE    BUFFERS
+ FBUF     EQU    *
+ RFL=     EQU    FBUF+BUFL+10 
+          LIST   -R 
+  
+          END 
+</pre>
+<div class="messagebox cleanup metadata">This article belongs in one or more <b><a  title="Wikipedia:Category">categories</a></b>. Please <a  title="Wikipedia:Categorization">categorize</a> this article to list it with similar topics.<br />
+<small>Remove this template after categorizing. This article has been tagged since <b>August 2006</b>.</small></div>
+
+<!-- 
+Pre-expand include size: 2328 bytes
+Post-expand include size: 999 bytes
+Template argument size: 88 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:2538051-0!1!0!default!!en!2 and timestamp 20060910152218 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:All pages needing to be wikified">All pages needing to be wikified</a></span> | <span dir='ltr'><a  title="Category:Wikify from August 2006">Wikify from August 2006</a></span> | <span dir='ltr'><a  title="Category:Uncategorized from August 2006">Uncategorized from August 2006</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/COMPASS/Sample_Code.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 10:10, 31 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv82 in 0.284 secs. --></body></html>

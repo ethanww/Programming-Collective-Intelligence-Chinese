@@ -1,0 +1,395 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Fortran language features,Backward compatibility,Binary-coded decimal,Coding standards,Control flow,Deprecation,Floating point,Fortran,Free-form language,IBM 704,Key punch" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Fortran language features - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Fortran_language_features";
+			var wgTitle = "Fortran language features";
+			var wgArticleId = 6341538;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Fortran language features</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<dl>
+<dd>
+<div class="noprint"><i>Main article: <a href="/wiki/Fortran#Language_features.html" title="Fortran">Fortran#Language features</a></i></div>
+</dd>
+</dl>
+<p>The following subsections are not intended to be a comprehensive overview of the Fortran language; that role properly belongs to any of the excellent Fortran textbooks that are available. Rather, the following describe some of the more salient features of the language, particularly those peculiar to Fortran. Although both old and new features are described, few of the historic features are used in modern programs. Still, most have been retained in the language to maintain <a href="/wiki/Backward_compatibility.html" title="Backward compatibility">backward compatibility</a>.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Fixed-form source</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Treatment of blanks</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Statement numbers and GOTO statements</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Free-form source</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Identifiers</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">Implicit typing</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">The arithmetic IF statement</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">8</span> <span class="toctext">More IF statements</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">9</span> <span class="toctext">The CASE statement</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">10</span> <span class="toctext">The ENTRY statement</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">11</span> <span class="toctext">The assigned GOTO statement</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">12</span> <span class="toctext">Notes</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Fixed-form source">edit</a>]</div>
+<p><a name="Fixed-form_source" id="Fixed-form_source"></a></p>
+<h3>Fixed-form source</h3>
+<div class="thumb tright">
+<div style="width:322px;"><a  class="internal" title="Fortran punch card, with column markings"><img src="http://upload.wikimedia.org/wikipedia/en/thumb/8/84/Hollerith_card.jpg/320px-Hollerith_card.jpg" alt="Fortran punch card, with column markings" width="320" height="143" longdesc="/wiki/Image:Hollerith_card.jpg" /></a>
+<div class="thumbcaption">
+<div class="magnify" style="float:right"><a  class="internal" title="Enlarge"><img src="/skins-1.5/common/images/magnify-clip.png" width="15" height="11" alt="Enlarge" /></a></div>
+Fortran punch card, with column markings</div>
+</div>
+</div>
+<p>Early FORTRAN programs were handwritten on <i>coding form</i>s specially designed for the purpose or on plain paper and then punched on <a href="/wiki/Punch_cards.html" title="Punch cards">punch cards</a>. Each punch card had 80 columns, numbered 1–80, and represented a single line of source input. Formatting rules were rigid:</p>
+<ul>
+<li>If a <code>C</code> (or asterisk, as permitted by FORTRAN 77) was punched in column 1, the card was a comment line, ignored by the compiler</li>
+<li>A numeric statement label (in the range <code>1</code>–<code>99999</code>) could be punched in columns 1–5 if needed</li>
+<li>If any (non-blank) character other than zero was punched in column 6, the card was taken to be a continuation of the previous statement. The maximum number of continuation lines was standardized to 19 with FORTRAN 77</li>
+<li>The contents of columns 7–72 were treated as a statement (or a continuation of the previous statement in the case of a continuation card)</li>
+<li>Columns 73–80 were completely ignored by the compiler. These columns were often used for sequence numbers, as a precaution in case the card deck should get dropped or out of order. (With programs consisting of hundreds to thousands of lines, this was a serious issue.) Some source code tools would also use these columns to record modification history. It might seem those eight blank columns reflected intentional design. Not so. Those 8 blank columns were an artifact of the <a href="/wiki/IBM_704.html" title="IBM 704">IBM 704</a>. A machine with a 36 bit word, the commonly used card reader control panel read a punched card row by row, two words to a row. Two times 36 is 72; columns 73-80 could not be read.</li>
+</ul>
+<p>As programs moved to magnetic media, and interactive terminals replaced <a href="/wiki/Key_punch.html" title="Key punch">keypunches</a> and card readers, fixed-form source became increasingly restrictive. Fixed form also allowed certain errors to be silently accepted by compilers, leading to hidden bugs. Fortran 90 introduced <a  title="">free-form source</a> to resolve these problems. As of Fortran 95, fixed-form source is now considered a <a href="/wiki/Deprecation.html" title="Deprecation">deprecated</a> feature of the language.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Treatment of blanks">edit</a>]</div>
+<p><a name="Treatment_of_blanks" id="Treatment_of_blanks"></a></p>
+<h3>Treatment of blanks</h3>
+<p>Blanks, in general, were not significant in fixed-form FORTRAN programs. For example, the <code>GOTO</code> statement could equivalently be (and very often was) punched as <code>GO TO</code>. Likewise, a statement such as<sup id="_ref-0" class="reference"><a  title="">[1]</a></sup></p>
+<pre>
+DO 1 I = 1, 10
+</pre>
+<p>could equivalently be punched as:</p>
+<pre>
+DO1I=1,10
+</pre>
+<p>Minor typos could lead to wildly different semantics; for example, if the comma above were inadvertently punched as a period, the above statement (intended to implement a <code>DO</code> loop) would be interpreted as the assignment statement</p>
+<pre>
+DO1I = 1.10
+</pre>
+<p>This would not be flagged by the compiler as an error, due to the <i>implicit typing</i> mechanism (see <a  title="">below</a>) which allows variables to be declared by their first use. (As of Fortran 90, implicit typing can be disabled.). Computer folklore has attributed, incorrectly, the loss of an early U.S.A. rocket to such an error. See <a  class="external free" title="http://catless.ncl.ac.uk/Risks/9.54.html#subj1">http://catless.ncl.ac.uk/Risks/9.54.html#subj1</a>.</p>
+<p>In addition, in order to save the <a href="/wiki/Key_punch.html" title="Key punch">keypunch</a> operator the trouble of punching lots of zeroes in input data cards, blanks in numeric data fields were, depending on the context and on the particular compiler, interpreted by FORTRAN input statements as zeroes.</p>
+<p>As part of the Fortran 90 <a  title="">free-form source</a> form, blank significance is now required. The older rules were retained for the now-<a href="/wiki/Deprecation.html" title="Deprecation">deprecated</a> fixed-form source.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Statement numbers and GOTO statements">edit</a>]</div>
+<p><a name="Statement_numbers_and_GOTO_statements" id="Statement_numbers_and_GOTO_statements"></a></p>
+<h3>Statement numbers and <code>GOTO</code> statements</h3>
+<p>Early FORTRAN programs (prior to Fortran 90) relied heavily on statement numbers and the <code>GOTO</code> statement to implement control structures. For example, the number immediately following the <code>DO</code> keyword above specified the statement number of the last statement enclosed in the body of the <code>DO</code> loop.</p>
+<p>Using the <code>IF</code> statement combined with the <code>GOTO</code> statement, it was possible to implement looping constructs such as a <i>while (condition) do ...</i> construct (with the test at the top, illustrated here using the <i>block</i> <code>IF</code> <i>statement</i> introduced with FORTRAN 77):</p>
+<pre>
+    1 IF (condition) THEN
+        executable_statements
+        GOTO 1
+      END IF
+</pre>
+<p>as well as a <i>repeat ... until (condition)</i> construct (with the test at the bottom, illustrated here using the <i>logical</i> <code>IF</code> <i>statement</i> introduced with FORTRAN 66):</p>
+<pre>
+    1 executable_statements
+      IF (.NOT.condition) GOTO 1
+</pre>
+<p>Statement numbers were also required as targets to handle I/O exceptions, such as those handled by the <code>END=</code> and <code>ERR=</code> specifiers in I/O statements such as <code>READ</code> and <code>WRITE</code>, among others.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Free-form source">edit</a>]</div>
+<p><a name="Free-form_source" id="Free-form_source"></a></p>
+<h3>Free-form source</h3>
+<p>Fortran 90 introduced <a href="/wiki/Free-form_language.html" title="Free-form language">free-form</a> source input, which removed almost all the column-based restrictions on the input layout discussed above. Lines could be as many as 132 characters long. Blanks were now significant as token delimiters. Statements could be continued on following lines by ending incomplete lines with <code>&amp;</code>.</p>
+<p>As of Fortran 95, the older <a  title="">fixed-form source</a> is considered <a href="/wiki/Deprecation.html" title="Deprecation">deprecated</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Identifiers">edit</a>]</div>
+<p><a name="Identifiers" id="Identifiers"></a></p>
+<h3>Identifiers</h3>
+<p>Names of identifiers in early compilers were usually limited to the number of alphanumeric characters that fit in one machine <a href="/wiki/Word_%28computer_science%29.html" title="Word (computer science)">word</a>; six characters was typical (the original <a href="/wiki/IBM_704.html" title="IBM 704">IBM 704</a> used 36-bit machine words, and alphanumeric characters were encoded in 6-bit <a href="/wiki/Binary-coded_decimal#IBM_and_BCD.html" title="Binary-coded decimal">binary-coded decimal</a>, packed six characters per word). However, the maximum could be as few as three characters, depending on the machine.</p>
+<p>Both the FORTRAN 66 and FORTRAN 77 standards required compilers to support at least six characters for identifiers, though many compilers supported longer identifiers. Fortran 90 guaranteed support for identifiers of up to 31 characters, while Fortran 2003 extended this support to 63 characters.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Implicit typing">edit</a>]</div>
+<p><a name="Implicit_typing" id="Implicit_typing"></a></p>
+<h3>Implicit typing</h3>
+<p>By default, numeric variables did not need to be declared before use; their declaration was implicit with their first appearance in a program. Furthermore, variables whose names began with any of the letters from <code>I</code> through <code>N</code> were implicitly assumed to be INTEGER variables, whereas all other variables were assumed to be REALs. (In mathematics, the symbols <i>i</i> through <i>n</i> are typically used as (integer) subscripts and superscripts.) This <i>implicit typing</i> mechanism could be overridden using an <code>IMPLICIT</code> statement to change the default types associated with variables based on their initial letter.</p>
+<p>Alternatively, explicit variable declarations could be used to declare the types of variables. Explicit declarations were also necessary for variables of type other than <code>REAL</code> and <code>INTEGER</code> (namely, for the <code>DOUBLE PRECISION</code>, <code>COMPLEX</code>, <code>LOGICAL</code>, and <code>CHARACTER</code> data types).</p>
+<p>Because simply mistyping a variable name effectively caused a new variable to be declared according to the implicit typing rules above (assuming the mistyped name was not previously declared), later compilers provided an <code>IMPLICIT NONE</code> statement to allow turning off the implicit typing mechanism, requiring all variables to be declared before use. The <code>IMPLICIT NONE</code> statement became standard with Fortran 90. Most Fortran <a href="/wiki/Coding_standards.html" title="Coding standards">coding standards</a> mandate the use of <code>IMPLICIT NONE</code>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: The arithmetic IF statement">edit</a>]</div>
+<p><a name="The_arithmetic_IF_statement" id="The_arithmetic_IF_statement"></a></p>
+<h3>The arithmetic <code>IF</code> statement</h3>
+<p>In the earliest versions of Fortran, the only conditional branching statement provided was the three-way <i>arithmetic</i> <code>IF</code> <i>statement</i>:</p>
+<pre>
+      IF (expression) n1, n2, n3
+</pre>
+<p>The conditional expression was an INTEGER- or REAL-valued numeric expression, and control would be passed to statement number <i>n1</i>, <i>n2</i>, or <i>n3</i> depending on whether the expression was negative, zero, or positive, respectively.<sup id="_ref-1" class="reference"><a  title="">[2]</a></sup></p>
+<p>Although seemingly arcane, the arithmetic <code>IF</code> statement was convenient shorthand for branching based on the three possible conditions of <span class="texhtml"><i>x</i> &lt; <i>y</i></span>, <span class="texhtml"><i>x</i> = <i>y</i></span>, or <span class="texhtml"><i>x</i> &gt; <i>y</i></span>, in the case where the test expression was of the form <code>X - Y</code>. Thus, one was often taught mentally to view a statement of the form</p>
+<pre>
+      IF (X - Y) 100, 200, 300
+</pre>
+<p>as FORTRAN idiom for the following group of equivalent statements (here, expressed as logical <code>IF</code> statements, which were not introduced until FORTRAN 66):</p>
+<pre>
+      IF (X .LT. Y) GO TO 100
+      IF (X .EQ. Y) GO TO 200
+      IF (X .GT. Y) GO TO 300
+</pre>
+<p>Obviously, in the case of "less-than-or-equal-to" or "greater-than-or-equal-to," the first two or last two, respectively, of the <code>GOTO</code> targets would be the same.</p>
+<p>(With the introduction of the more modern forms of <code>IF</code> statements described below, the <i>arithmetic</i> <code>IF</code> statement is very seldom seen in modern Fortran programs.)</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: More IF statements">edit</a>]</div>
+<p><a name="More_IF_statements" id="More_IF_statements"></a></p>
+<h3>More <code>IF</code> statements</h3>
+<p>As alluded to previously, FORTRAN 66 introduced the <i>logical</i> <code>IF</code> <i>statement</i>, which allows a single Fortran statement, including the <code>GOTO</code> statement, to be conditionally executed:</p>
+<pre>
+      IF (expression) executable_statement
+</pre>
+<p>FORTRAN 77 introduced the <i>block</i> <code>IF</code> <i>statement</i> with optional <code>ELSE IF</code> and <code>ELSE</code> clauses to support <a href="/wiki/Structured_programming.html" title="Structured programming">structured programming</a>:</p>
+<pre>
+      IF (expression) THEN
+          executable_statements
+      ELSE IF (expression) THEN
+          executable_statements
+      ELSE
+          executable_statements
+      END IF
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: The CASE statement">edit</a>]</div>
+<p><a name="The_CASE_statement" id="The_CASE_statement"></a></p>
+<h3>The <code>CASE</code> statement</h3>
+<p>Fortran 90 introduced the <code>case</code> selection structure to implement multi-way branches. The following artificial example mimics the arithmetic <code>IF</code> statement above (but only in the case of an integer-valued test expression, as values such as <span class="texhtml">− 0.5</span> or <span class="texhtml">+ 0.5</span> would fall through the cracks in this example):</p>
+<pre>
+      select case(i - j)
+          case(:-1)
+              ! Former code jumped to by GOTO 100
+          case(0)
+              ! Former code jumped to by GOTO 200
+          case(1:)
+              ! Former code jumped to by GOTO 300
+      end select
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: The ENTRY statement">edit</a>]</div>
+<p><a name="The_ENTRY_statement" id="The_ENTRY_statement"></a></p>
+<h3>The <code>ENTRY</code> statement</h3>
+<p>The earliest versions of FORTRAN were developed before modern recommended practices on topics such as control flow had matured. One example is the <code>ENTRY</code> statement, which allows a program to invoke a subprogram at an arbitrary point, violating the <i>single-entry</i> <a href="/wiki/Control_flow.html" title="Control flow">control flow</a> philosophy of modern programming practice. In the example below, <code>FUN</code> is a function expecting three variable arguments, while <code>FUNALT</code> is an alternate entry point invoked with only two arguments; for illustration, the third argument is given a default value for the alternate entry point:</p>
+<pre>
+      FUNCTION FUN(A, B, OPTARG)
+          statements specific to FUN
+          GOTO 1
+      ENTRY FUNALT(A, B)
+          OPTARG = 0
+          statements specific to FUNALT
+    1     statements common to both
+          RETURN
+      END
+</pre>
+<p>Equally as interesting, FORTRAN also supports <i>alternate</i> <code>RETURN</code>, where a subprogram can specify an alternate point to which to return, rather than the original point at which the subprogram was invoked.</p>
+<p>As of Fortran 95, both the <code>ENTRY</code> statement and alternate <code>RETURN</code> are now considered <a href="/wiki/Deprecation.html" title="Deprecation">deprecated</a> features.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: The assigned GOTO statement">edit</a>]</div>
+<p><a name="The_assigned_GOTO_statement" id="The_assigned_GOTO_statement"></a></p>
+<h3>The assigned <code>GOTO</code> statement</h3>
+<p>In this feature of historic Fortran, a variable may be assigned a statement label (typically implemented as a code pointer) for subsequent use as branch destination or to specify a format statement.</p>
+<pre>
+      INTEGER NEXT
+      ASSIGN 45 TO NEXT
+   10 GOTO NEXT
+   15 ASSIGN 90 TO NEXT
+      GOTO 10
+   25 ASSIGN 15 TO NEXT
+      GOTO 10
+   35 ASSIGN 25 TO NEXT
+      GOTO 10
+   45 ASSIGN 35 TO NEXT
+      GOTO 10
+   90 CONTINUE
+</pre>
+<p>This contrived example jumps to statement 45 (after the first <code>ASSIGN</code>), which reassigns the variable and jumps to 10 to execute the indirect jump to 35, and so on until statement 15 breaks out to the <code>CONTINUE</code> at statement 90.</p>
+<p>More usefully, <code>FORMAT</code> statements may be assigned:</p>
+<pre>
+      SUBROUTINE OCCURR(N)
+        INTEGER IFMT
+   10   FORMAT ('No occurrences found.')
+   11   FORMAT ('One occurrence found.')
+   12   FORMAT (I4, ' occurrences found.')
+*       If N &lt; 1, goto 20; if N = 1, goto 21; if N &gt; 1, goto 22
+        IF (N - 1) 20, 21, 22
+   20   ASSIGN 10 TO IFMT
+        GOTO 30
+   21   ASSIGN 11 TO IFMT
+        GOTO 30
+   22   ASSIGN 12 TO IFMT
+   30   PRINT IFMT, N
+        RETURN
+      END
+</pre>
+<p>Many implementations did not protect against invalid assignments or the use of assigned variables, even allowing arithmetic. The following code fragment illustrates some possible constructs that could potentially be found acceptable to a Fortran compiler, but would almost certainly lead to a program crash when executed.</p>
+<pre>
+      SUBROUTINE CRASH4
+        INTEGER IDEST
+
+*       Jump to random location pointed to by uninitialized var. IDEST
+        GOTO IDEST
+   10   FORMAT ('Message')
+        ASSIGN 10 TO IDEST
+
+*       Invalid jump to data
+        GOTO IDEST
+   20   CONTINUE
+        ASSIGN 20 TO IDEST
+
+*       Attempt to use machine code at label 20 as format specification
+*         (almost certain to give an "invalid format" error at runtime)
+        PRINT IDEST
+   30   ASSIGN 30 TO IDEST
+        IDEST = 3 * IDEST
+
+*       A random jump likely to fault on illegal instructions or data
+        GOTO IDEST
+      END
+</pre>
+<p>As of Fortran 95, the assigned <code>GOTO</code> statement has become obsolete.<sup id="_ref-2" class="reference"><a  title="">[3]</a></sup></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Notes">edit</a>]</div>
+<p><a name="Notes" id="Notes"></a></p>
+<h2>Notes</h2>
+<ol class="references">
+<li id="_note-0"><b><a  title="">^</a></b> With FORTRAN 77, it became standard practice to insert a comma between the first statement number and the <code>DO</code> variable; however, this comma could be omitted for compatibility with FORTRAN 66.</li>
+<li id="_note-1"><b><a  title="">^</a></b> Note that in the case of a REAL-valued expression, the usual caveat regarding tests for floating-point equality applies, <i>i.e.</i>, an expression mathematically expected to evaluate to zero may not exactly equal zero due to <a href="/wiki/Round-off_error.html" title="Round-off error">round-off error</a> and the limited internal precision of <a href="/wiki/Floating_point.html" title="Floating point">floating-point arithmetic</a>.</li>
+<li id="_note-2"><b><a  title="">^</a></b> <a  class="external text" title="http://publib.boulder.ibm.com/infocenter/macxhelp/v6v81/index.jsp?topic=/com.ibm.xlf81m.doc/pgs/lr127.htm">"GO TO (assigned)" page</a> from the <a  class="external text" title="http://publib.boulder.ibm.com/infocenter/macxhelp/v6v81/">IBM XL Fortran Advanced Edition for Mac OS X Version 8.1</a> online documentation.</li>
+</ol>
+
+<!-- 
+Pre-expand include size: 1775 bytes
+Post-expand include size: 147 bytes
+Template argument size: 161 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:6341538-0!1!0!default!!en!2 and timestamp 20060910001003 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+						<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Fortran_language_features.html">Article</a></li>
+				 <li id="ca-talk" class="new"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 14:40, 30 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv101 in 0.213 secs. --></body></html>

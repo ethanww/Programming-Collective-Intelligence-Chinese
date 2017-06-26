@@ -1,0 +1,588 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Aspect-oriented programming,AOSD,ActionScript,Advice in aspect-oriented programming,AspectC++,AspectJ,AspectWerkz,Aspect (computer science),C++,CFront,COMEFROM" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Aspect-oriented programming - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Aspect-oriented_programming";
+			var wgTitle = "Aspect-oriented programming";
+			var wgArticleId = 145329;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Aspect-oriented programming</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>In <a href="/wiki/Software_engineering.html" title="Software engineering">software engineering</a>, the <a href="/wiki/Programming_paradigm.html" title="Programming paradigm">programming paradigms</a> of <b>aspect-oriented programming</b> (<b>AOP</b>), and <b>aspect-oriented software development</b> (<b>AOSD</b>) attempt to aid programmers in the <a href="/wiki/Separation_of_concerns.html" title="Separation of concerns">separation of concerns</a>, specifically <a href="/wiki/Cross-cutting_concern.html" title="Cross-cutting concern">cross-cutting concerns</a>, as an advance in <a href="/wiki/Modularity_%28programming%29.html" title="Modularity (programming)">modularization</a>. AOP does so using primarily language changes, while AOSD uses a combination of language, environment, and methodology.</p>
+<p>Separation of concerns entails breaking down a program into distinct parts that overlap in functionality as little as possible. All programming methodologies—including <a href="/wiki/Procedural_programming.html" title="Procedural programming">procedural programming</a> and <a href="/wiki/Object-oriented_programming.html" title="Object-oriented programming">object-oriented programming</a>—support some separation and encapsulation of <i>concerns</i> (or any area of interest or focus) into single entities. For example, procedures, packages, classes, and methods all help programmers <a href="/wiki/Encapsulation.html" title="Encapsulation">encapsulate</a> concerns into single entities. But some concerns defy these forms of encapsulation. Software engineers call these <i>crosscutting concerns</i>, because they cut across many modules in a program.</p>
+<p><a href="/wiki/Data_logging.html" title="Data logging">Logging</a> offers one example of a crosscutting concern, because a logging strategy necessarily affects every single logged part of the system. Logging thereby <i>crosscuts</i> all logged classes and methods.</p>
+<p><a href="/wiki/Gregor_Kiczales.html" title="Gregor Kiczales">Gregor Kiczales</a> and his team at <a href="/wiki/Xerox_PARC.html" title="Xerox PARC">Xerox PARC</a> originated the concept of AOP. This team also developed the first and most popular AOP language, <a href="/wiki/AspectJ.html" title="AspectJ">AspectJ</a>. IBM's research team emphasized the continuity of the practice of modularizing concerns with past programming practice, and offered the more powerful (but less usable) <a  class="new" title="HyperJ">HyperJ</a> and <a  class="new" title="Concern Manipulation Environment">Concern Manipulation Environment</a>, which have not seen wide usage. The examples here and in most discussions of AOP use <a href="/wiki/AspectJ.html" title="AspectJ">AspectJ</a>, if only as a <a href="/wiki/Lingua_franca.html" title="Lingua franca">lingua franca</a> for expressing crosscutting that is otherwise implemented.</p>
+<p>Any AOP language has some crosscutting expressions that encapsulate the concern in one place. The difference between AOP languages lies in the power, safety, and usability of the constructs provided. E.g., interceptors that specify the methods to intercept express a limited form of crosscutting, without much support for type-safety or debugging. AspectJ has a number of such expressions and encapsulates them in a special class, an <a href="/wiki/Aspect_%28computer_science%29.html" title="Aspect (computer science)">aspect</a>. For example, an aspect can alter the behavior of the base code (the non-aspect part of a program) by applying <a href="/wiki/Advice_in_aspect-oriented_programming.html" title="Advice in aspect-oriented programming">advice</a> (additional behavior) at various <a href="/wiki/Join_point.html" title="Join point">join points</a> (points in a program) specified in a quantification or query called a <a href="/wiki/Pointcut.html" title="Pointcut">pointcut</a> (that detects whether a given join point matches). An aspect can also make binary-compatible structural changes to other classes, like adding members or parents.</p>
+<p>Many AOP languages support method executions and field references as join points. In them the developer can write a pointcut to match, for example, all field-set operations on specific fields, and code to run when the field is actually set. Some also support things like defining a method in an aspect on another class. AOP languages can be compared based on the join points they expose, the language they use to specify the join points, the operations permitted at the join points, and the structural enhancements that can be expressed.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Motivation and basic concepts</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Join Point Models</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">2.1</span> <span class="toctext">AspectJ's join point model</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.2</span> <span class="toctext">Other potential Join Point Models</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.3</span> <span class="toctext">Inter-Type Declarations</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Implementation</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">AOP and other programming paradigms</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Problems when adopting AOP</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">Implementations</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">8</span> <span class="toctext">Publications</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">9</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Motivation and basic concepts">edit</a>]</div>
+<p><a name="Motivation_and_basic_concepts" id="Motivation_and_basic_concepts"></a></p>
+<h2>Motivation and basic concepts</h2>
+<p>Some code is <i>scattered</i> or <i>tangled</i>, making it harder to understand and maintain. It is scattered when one concern (like logging) is spread over a number of modules (e.g., classes and methods). That means to change logging can require modifying all affected modules. Modules end up tangled with multiple concerns (e.g., account processing, logging, and security). That means changing one module entails understanding all the tangled concerns.</p>
+<p>For example, consider a banking application with a conceptually very simple method for transferring an amount from one account to another:</p>
+<pre>
+void transfer(Account fromAccount, Account toAccount, int amount) {
+  if (fromAccount.getBalance() &lt; amount) {
+    throw new InsufficientFundsException();
+  }
+ 
+  fromAccount.withdraw(amount);
+  toAccount.deposit(amount);
+}
+</pre>
+<p><small>(the examples appear in a <a href="/wiki/Java_programming_language.html" title="Java programming language">Java</a>-like syntax, since at the time of writing, an overwhelming majority of AOP-related research and work takes place in Java or in Java-variants.)</small></p>
+<p>However, in a real-world banking application, this transfer method seems far from adequate. It requires security checks to verify that the current user has the authorization to perform this operation. The operation should be in a <a href="/wiki/Database_transaction.html" title="Database transaction">database transaction</a> in order to prevent accidental data loss. For diagnostics, the operation should be logged to the system log. And so on. A simplified version with all those new concerns would look somewhat like this:</p>
+<pre>
+void transfer(Account fromAccount, Account toAccount, int amount) {
+  if (!getCurrentUser().canPerform(OP_TRANSFER)) {
+    throw new SecurityException();
+  }
+ 
+  if (amount &lt; 0) {
+    throw new NegativeTransferException();
+  }
+  if (fromAccount.getBalance() &lt; amount) {
+    throw new InsufficientFundsException();
+  }
+ 
+  Transaction tx = database.newTransaction();
+ 
+  try {
+     fromAccount.withdraw(amount);
+     toAccount.deposit(amount);
+     tx.commit();
+     systemLog.logOperation(OP_TRANSFER, fromAccount, toAccount, amount);
+  }
+  catch(Exception e) {
+     tx.rollback();
+  }
+}
+</pre>
+<p>The code has lost its elegance and simplicity because the various new concerns have become <i>tangled</i> with the basic functionality (sometimes called the <i>business logic concern</i>). Transactions, security, and logging all exemplify <i>cross-cutting concerns</i>.</p>
+<p>Also consider what happens if we suddenly need to change (for example) the security considerations for the application. In the program's current version, security-related operations appear <i>scattered</i> across numerous methods, and such a change would require a major effort.</p>
+<p>Therefore, we find that unlike the core concerns of the system, the cross-cutting concerns do not get properly encapsulated in their own modules. This increases the system complexity and makes maintenance considerably more difficult.</p>
+<p>AOP attempts to solve this problem by allowing the programmer to express cross-cutting concerns in stand-alone modules called <i>aspects</i>. Aspects can contain advice (code joined to specified points in the program) and inter-type declarations (structural members added to other classes). For example, a security module can include advice that performs a security check before accessing a bank account. The <a href="/wiki/Pointcut.html" title="Pointcut">pointcut</a> defines the times (<a href="/wiki/Join_point.html" title="Join point">join points</a>) that a bank account can be accessed, and the code in the advice body defines how the security check is implemented. That way, both the check and the places can be maintained in one place. Further, a good pointcut can anticipate later program changes, so if another developer creates a new method to access the bank account, the advice will apply to the new method when it executes.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Join Point Models">edit</a>]</div>
+<p><a name="Join_Point_Models" id="Join_Point_Models"></a></p>
+<h2>Join Point Models</h2>
+<p>The advice-related component of an aspect-oriented language defines a <b>join point model</b> (JPM). A JPM defines three things:</p>
+<ul>
+<li>When the advice can run. These are called <i><a href="/wiki/Join_point.html" title="Join point">join points</a></i> because they are points in a running program where additional behavior can be usefully joined. A join point needs to be addressable and understandable by an ordinary programmer to be useful. (It should also be stable across inconsequential program changes in order for an aspect to be stable across such changes.)</li>
+</ul>
+<ul>
+<li>A way to specify (or <i>quantify</i>) join points, called <i><a href="/wiki/Pointcut.html" title="Pointcut">pointcuts</a></i>. Pointcuts determine whether a given join point matches. Most useful pointcut languages use a syntax like the base language (e.g., Java signatures are used for AspectJ) and allow reuse through naming and combination.</li>
+</ul>
+<ul>
+<li>A means of specifying code to run at a join point. In <a href="/wiki/AspectJ.html" title="AspectJ">AspectJ</a>, this is called <i><a href="/wiki/Advice_in_aspect-oriented_programming.html" title="Advice in aspect-oriented programming">advice</a></i>, and can run before, after, and around join points.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: AspectJ's join point model">edit</a>]</div>
+<p><a name="AspectJ.27s_join_point_model" id="AspectJ.27s_join_point_model"></a></p>
+<h3>AspectJ's join point model</h3>
+<ul>
+<li>The join points in AspectJ include method or constructor call or execution, the initialization of a class or object, field read and write access, exception handlers, etc. They do not include loops, super calls, throws clauses, multiple statements, etc.</li>
+</ul>
+<ul>
+<li>Pointcuts are specified by combinations of primitive pointcut designators (PCD's).</li>
+</ul>
+<dl>
+<dd>"Kinded" PCD's match a particular kind of join point (e.g., method execution) and tend to take as input a Java-like signature. One such pointcut looks like this:</dd>
+</dl>
+<pre>
+ execution(* set*(*) )
+</pre>
+<dl>
+<dd>This pointcut matches a method-execution join point if the method name starts with "set" and there is exactly one argument of any type.</dd>
+</dl>
+<p>"Dynamic" PCD's check runtime types and bind variables. For example</p>
+<pre>
+  this(Point)
+</pre>
+<dl>
+<dd>This pointcut matches when the currently-executing object is an instance of class <code>Point</code>. Note that the unqualified name of a class can be used via Java's normal type lookup.</dd>
+</dl>
+<p>"Scope" PCD's limit the lexical scope of the join point. For example</p>
+<pre>
+ within(com.company.*)
+</pre>
+<dl>
+<dd>This pointcut matches any join point in any type in the com.company package. The <i>*</i> is one form of the wildcards that can be used to match many things with one signature.</dd>
+</dl>
+<p>Pointcuts can be composed and named for reuse. For example</p>
+<p>pointcut set() : execution(* set*(*) ) &amp;&amp; this(Point) &amp;&amp; within(com.company.*);</p>
+<dl>
+<dd>This pointcut matches a method-execution join point if the method name starts with "set" and this is an instance of type <code>Point</code> in the <code>com.company</code> package. It can be referred to using the name "set()".</dd>
+</dl>
+<ul>
+<li>Advice specifies to run (before, after, or around) at a join point (specified with a pointcut) certain code (specified like code in a method). Advice is invoked automatically by the AOP runtime when the pointcut matches the join point. Here is an example of this:</li>
+</ul>
+<pre>
+ <code>after() : set() {
+   Display.update();
+ }</code>
+</pre>
+<dl>
+<dd>This is effectively saying, "if the <i>set()</i> pointcut matches the join point, run the code <code>Display.update()</code> after the join point completes."</dd>
+</dl>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Other potential Join Point Models">edit</a>]</div>
+<p><a name="Other_potential_Join_Point_Models" id="Other_potential_Join_Point_Models"></a></p>
+<h3>Other potential Join Point Models</h3>
+<p>There are other kinds of JPMs. All advice languages can be defined in terms of their JPM. For example a hypothetical aspect language for <a href="/wiki/Unified_Modeling_Language.html" title="Unified Modeling Language">UML</a> may have the following JPM:</p>
+<ul>
+<li>Join points are all model elements.</li>
+</ul>
+<ul>
+<li>Pointcuts are some boolean expression combining the model elements.</li>
+</ul>
+<ul>
+<li>The means of affect at these points are a visualization of all the matched join points.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Inter-Type Declarations">edit</a>]</div>
+<p><a name="Inter-Type_Declarations" id="Inter-Type_Declarations"></a></p>
+<h3>Inter-Type Declarations</h3>
+<p><i>inter-type declarations</i> provide a way to express crosscutting concerns affecting the structure of modules. Also known as <a  class="new" title="Open classes">open classes</a>, this enables programmers to declare in one place members or parents of another class, typically in order to combine all the code related to a concern in one aspect. For example, if the crosscutting display-update concern were instead implemented using visitors, an inter-type declaration using the <a href="/wiki/Visitor_pattern.html" title="Visitor pattern">visitor pattern</a> looks like this in AspectJ:</p>
+<pre>
+ aspect DisplayUpdate {
+   void Point.acceptVisitor(Visitor v) {
+     v.visit(this);
+   }
+   // other crosscutting code...
+ }
+</pre>
+<dl>
+<dd>This code snippet adds the <code>acceptVisitor</code> method to the <code>Point</code> class.</dd>
+</dl>
+<p>It is a requirement that any structural additions be compatible with the original class, so that clients of the existing class continue to operate, unless the AOP implementation can expect to control all clients at all times.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Implementation">edit</a>]</div>
+<p><a name="Implementation" id="Implementation"></a></p>
+<h2>Implementation</h2>
+<p>There are two different ways AOP programs can affect other programs, depending on the underlying languages and environments: (1) a combined program is produced, valid in the original language and indistinguishable from an ordinary program to the ultimate interpreter; and (2) the ultimate interpreter or environment is updated to understand and implement AOP features. The difficulty of changing environments means most implementations produce compatible combination programs through a process that has come to be known as <i>weaving</i>. The same AOP language can be implemented through a variety of weaving techniques, so the semantics of a language should never be understood in terms of the weaving implementation. The weaving approach ultimately affects only the usability of an implementation - how fast it is and how aspects are deployed. However, this usability can strongly impact the adoption of a language.</p>
+<p>Source-level weaving can be implemented using preprocessors (as C++ was implemented originally in <a href="/wiki/CFront.html" title="CFront">CFront</a>) that require access to program source files. However, Java's well-defined binary form enables bytecode weavers to work with any Java program in .class-file form. Bytecode weavers can be deployed during the build process or, if the weave model is per-class, during class loading. AspectJ started with source-level weaving in 2001, delivered a per-class bytecode weaver in 2002, and offered advanced load-time support after the integration of <a href="/wiki/AspectWerkz.html" title="AspectWerkz">AspectWerkz</a> in 2005.</p>
+<p>Any solution that combines programs at runtime has to provide views that segregate them properly to maintain the programmer's segregated model. Java's bytecode support for multiple source files enables any debugger to step through a properly woven .class file in a source editor. However, some third-party decompilers are unable to process woven code because they expect code produced by Javac rather than all supported bytecode forms (see also "<a  title="">Problems</a>", below).</p>
+<p>Cohen and Gil have produced a novel alternative: they present the notion of <a  class="new" title="Deploy-time">deploy-time</a> weaving<a  class="external autonumber" title="http://www.forum2.org/tal/AspectJ2EE.pdf">[1]</a>. This basically implies post-processing, but rather than patching the generated code, they suggest <i>subclassing</i> existing classes so that the modifications are introduced by method-overriding. The existing classes remain untouched, even at runtime, and all existing tools (debuggers, profilers, etc.) can be used during development. A similar approach has already proven itself in the implementation of many <a href="/wiki/J2EE.html" title="J2EE">J2EE</a> application servers, such as <a href="/wiki/IBM.html" title="IBM">IBM</a>'s <a href="/wiki/WebSphere.html" title="WebSphere">WebSphere</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: AOP and other programming paradigms">edit</a>]</div>
+<p><a name="AOP_and_other_programming_paradigms" id="AOP_and_other_programming_paradigms"></a></p>
+<h2>AOP and other programming paradigms</h2>
+<p>Aspects emerged out of <a href="/wiki/Object-oriented_programming.html" title="Object-oriented programming">object-oriented programming</a> and computational reflection. AOP languages have functionality similar to, but more restricted than <a href="/wiki/Meta-object_protocol.html" title="Meta-object protocol">meta-object protocols</a>. Aspects relate closely to programming concepts like <a href="/wiki/Subjects_%28programming%29.html" title="Subjects (programming)">subjects</a>, <a href="/wiki/Mixin.html" title="Mixin">mixins</a>, and <a href="/wiki/Delegation_%28programming%29.html" title="Delegation (programming)">delegation</a>. Other ways of using aspect-oriented programming paradigms include <a  class="new" title="Composition Filters">Composition Filters</a> and the hyperslices approach. Since at least the 1970's, developers have been using forms of interception and dispatch-patching that are similar to some of the implementation techniques for AOP, but these never had the semantics that the crosscutting specifications were written in one place.</p>
+<p>Designers have considered alternative ways to achieve separation of code, such as <a href="/wiki/C_Sharp_programming_language.html" title="C Sharp programming language">C#</a>'s partial types. However, such approaches lack a quantification mechanism enabling programmers to reach several join points of the code with one declarative statement.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Problems when adopting AOP">edit</a>]</div>
+<p><a name="Problems_when_adopting_AOP" id="Problems_when_adopting_AOP"></a></p>
+<h2>Problems when adopting AOP</h2>
+<table class="messagebox" style="max-width: 46em; background: #ffdddd;">
+<tr>
+<td>
+<div class="floatnone"><span><a  class="image" title=""><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Unbalanced_scales.svg/40px-Unbalanced_scales.svg.png" alt="" width="40" height="35" longdesc="/wiki/Image:Unbalanced_scales.svg" /></a></span></div>
+</td>
+<td><b>The <a  title="Wikipedia:Neutral point of view">neutrality</a> of this article or section may be compromised by "<a  title="Wikipedia:Avoid weasel words">weasel words</a>".</b><br />
+Please see the relevant discussion on the <a  title="Talk:Aspect-oriented programming">talk page</a>.</td>
+</tr>
+</table>
+<p>Programmers need to be able to read code and understand what's happening in order to prevent errors. While they have grown accustomed to ignoring the details of method dispatch or container-supplied behaviors, many are uncomfortable with the idea that an unrelated aspect can come along later and add behavior to their code, particularly when their code offers certain guarantees warranted at some cost by analysis and testing. They view the binary form as final. These programmers object to all forms of bytecode weaving, but AOP implementations are the most threatening because they are the most prevalent. The answer for them in Java is to sign and seal the .jar files and prevent environments from deploying weaving class loaders affecting their code, but in some cases they cannot control the deployment environment.</p>
+<p>Understanding crosscutting concerns can be difficult without proper support for visualizing both static structure and the dynamic flow of a program. Concerns with <a href="/wiki/Debug.html" title="Debug">debugging</a> have largely been solved through debugger's adherence to Sun's standards for specifying source files. Visualizing crosscutting concerns is just beginning to be supported in IDE's, as is support for aspect code assist and refactoring.</p>
+<p>Given the power of AOP, if a programmer makes a legal mistake in expressing crosscutting, it can lead to widespread program failure. Conversely, another programmer may change the join points in a program -- e.g., by renaming or moving methods -- in ways that were not anticipated by the aspect writer, with unintended consequences. One advantage of modularizing crosscutting concerns is enabling one programmer to affect the entire system easily; as a result, such problems present as a conflict over responsibility between two or more developers for a given failure, which exacerbates the issue. In any case, the solution for these problems is much easier in the presence of AOP, since only the aspect need be changed, whereas the corresponding problems without AOP can be quite difficult to fix.</p>
+<p>Bytecode decompilation and weaving has grown as an implementation method for many approaches including model-based programming. Early implementations of that technology can address only the subset of Java bytecode produced by Javac, the standard compiler, and thus fail when encountering valid bytecode produced by weavers that would never be produced by Javac. These problems can take some time to sort out since there are few developers familiar with bytecode internals. In the meantime, programming teams might have to choose between two incompatible development technologies.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Implementations">edit</a>]</div>
+<p><a name="Implementations" id="Implementations"></a></p>
+<h2>Implementations</h2>
+<table cellspacing="0" cellpadding="0" class="" style="background-color: transparent; width: 100%">
+<tr>
+<td width="50%" align="left" valign="top">
+<ul>
+<li>For <a href="/wiki/C_Sharp_programming_language.html" title="C Sharp programming language">C#</a>/<a href="/wiki/Visual_Basic_.NET.html" title="Visual Basic .NET">VB.NET</a>:
+<ul>
+<li><a  class="external text" title="http://www.puzzleframework.com/forum/forum.aspx?Forum=24">Puzzle.NAspect</a></li>
+<li><a  class="external text" title="http://sourceforge.net/projects/aspectdng/">AspectDNG</a></li>
+<li><a  class="external text" title="http://aspectsharp.sourceforge.net/">Aspect#</a></li>
+<li><a  class="external text" title="http://theagiledeveloper.com/articles/Encase.aspx">Encase</a></li>
+<li><a  class="external text" title="http://composestar.sourceforge.net/">Compose*</a></li>
+<li><a  class="external text" title="http://www.seasar.org/en/dotnet/">Seasar.NET</a></li>
+<li><a  class="external text" title="http://dotspect.tigris.org/">DotSpect (.SPECT)</a></li>
+<li><a  class="external text" title="http://www.springframework.net/">The Spring.NET Framework</a> as part of its functionality</li>
+<li><a  class="external text" title="http://janus.cs.utwente.nl/twiki/bin/view/AOSDNET/CharacterizationOfExistingApproaches">An exaustive analysis</a> on <a href="/wiki/AOSD.html" title="AOSD">AOSD</a> solutions for .NET is available from Twente University</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>For <a href="/wiki/Java_programming_language.html" title="Java programming language">Java</a>:
+<ul>
+<li><a href="/wiki/AspectJ.html" title="AspectJ">AspectJ</a> (<a  class="external autonumber" title="http://eclipse.org/aspectj/">[2]</a>)</li>
+<li><a  class="external text" title="http://aspectwerkz.codehaus.org/">AspectWerkz (Now merged with AspectJ)</a></li>
+<li><a  class="external text" title="http://jakarta.apache.org/bcel/">Byte Code Engineering Library</a></li>
+<li><a  class="external text" title="http://www.caesarj.org">CaesarJ</a></li>
+<li><a  class="external text" title="http://dynaop.dev.java.net/">Dynaop</a></li>
+<li><a  class="external text" title="http://jac.objectweb.org">JAC</a></li>
+<li><a href="/wiki/Hivemind_%28software%29.html" title="Hivemind (software)">Jakarta Hivemind</a></li>
+<li><a  class="external text" title="http://www.csg.is.titech.ac.jp/~chiba/javassist/">Javassist Home Page</a></li>
+<li><a  class="external text" title="http://ssel.vub.ac.be/jasco/">JAsCo (and AWED)</a></li>
+<li><a  class="external text" title="http://www.ics.uci.edu/~trungcn/jaml/">JAML</a></li>
+<li><a  class="external text" title="http://labs.jboss.com/portal/jbossaop/index.html">JBoss AOP</a></li>
+<li><a  class="external text" title="http://www.objectteams.org/">Object Teams</a></li>
+<li><a  class="external text" title="http://prose.ethz.ch/">PROSE</a></li>
+<li><a  class="external text" title="http://reflex.dcc.uchile.cl/">Reflex</a></li>
+<li><a  class="external text" title="http://www.aspectbench.org/">The AspectBench Compiler for AspectJ (abc)</a></li>
+<li><a  class="external text" title="http://www.springframework.org/">The Spring Framework</a> as part of its functionality</li>
+<li><a href="/wiki/Seasar.html" title="Seasar">Seasar</a></li>
+<li><a  class="external text" title="http://roots.iai.uni-bonn.de/research/jmangler/">The JMangler Project</a></li>
+<li><a  class="external text" title="http://injectj.sourceforge.net/">InjectJ</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>For <a href="/wiki/JavaScript.html" title="JavaScript">JavaScript</a>:
+<ul>
+<li><a  class="external text" title="http://www.jroller.com/page/deep?entry=aop_fun_with_javascript">AOP Fun with JavaScript</a></li>
+<li><a  class="external text" title="http://dojotoolkit.org">Dojo Toolkit</a></li>
+<li><a  class="external text" title="http://aspectes.tigris.org/">Aspectes</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>For <a href="/wiki/C_programming_language.html" title="C programming language">C</a>/<a href="/wiki/C%2B%2B.html" title="C++">C++</a>:
+<ul>
+<li><a href="/wiki/AspectC%2B%2B.html" title="AspectC++">AspectC++</a> (<a  class="external autonumber" title="http://www.aspectc.org/">[3]</a>)</li>
+<li><a  class="external text" title="http://www.pnp-software.com/XWeaver/index.html">XWeaver project</a></li>
+<li><a  class="external text" title="http://wwwiti.cs.uni-magdeburg.de/iti_db/forschung/fop/featurec/">FeatureC++</a></li>
+<li><a  class="external text" title="http://www.cs.ubc.ca/labs/spl/projects/aspectc.html">AspectC</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>For <a href="/wiki/Lua_programming_language.html" title="Lua programming language">Lua</a>:
+<ul>
+<li><a  class="external text" title="http://luaforge.net/projects/aspectlua/">AspectLua</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>For <a  class="new" title="Hardware Verification">HVL</a>:
+<ul>
+<li>'e' (IEEE 1647)</li>
+</ul>
+</li>
+</ul>
+<p><br /></p>
+</td>
+<td width="50%" align="left" valign="top">
+<ul>
+<li>For <a href="/wiki/Python_programming_language.html" title="Python programming language">Python</a>:
+<ul>
+<li><a  class="external text" title="http://www.cs.tut.fi/~ask/aspects/aspects.html">Lightweight Python AOP</a></li>
+<li><a  class="external text" title="http://www.logilab.org/projects/aspects">Logilab's aspect module</a></li>
+<li><a  class="external text" title="http://zope.org/Members/pje/Wikis/TransWarp/AOPTutorial/HomePage">Python/Transwarp AOP Tutorial</a> (Replaced by PEAK)</li>
+<li><a  class="external text" title="http://peak.telecommunity.com/">PEAK</a></li>
+<li><a  class="external text" title="http://pythius.sourceforge.net/">Pythius</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>For <a href="/wiki/Ruby_programming_language.html" title="Ruby programming language">Ruby</a>:
+<ul>
+<li><a  class="external text" title="http://aspectr.sourceforge.net/">AspectR</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>For <a href="/wiki/PHP.html" title="PHP">PHP</a>:
+<ul>
+<li><a  class="external text" title="http://phpaspect.org">PHPaspect</a></li>
+<li><a  class="external text" title="http://www.aophp.net/">Aspect-Oriented PHP</a></li>
+<li><a  class="external text" title="http://www.seasar.org/en/php5/index.html">Seasar.PHP</a></li>
+<li><a  class="external text" title="http://www.phpclasses.org/browse/package/2633.html">AOP API for PHP</a></li>
+<li><a  class="external text" title="http://www.phpclasses.org/browse/package/3215.html">Transparent PHP AOP</a></li>
+<li><a  class="external text" title="http://www.sebastian-bergmann.de/AspectPHP/">AspectPHP</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>For <a href="/wiki/Perl.html" title="Perl">Perl</a>:
+<ul>
+<li><a  class="external text" title="http://search.cpan.org/perldoc?Aspect">The Aspect Module</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>For <a href="/wiki/Common_Lisp.html" title="Common Lisp">Common Lisp</a>:
+<ul>
+<li><a  class="external text" title="http://common-lisp.net/project/closer/aspectl.html">AspectL</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>For <a href="/wiki/Cocoa_%28software%29.html" title="Cocoa (software)">Cocoa</a>:
+<ul>
+<li><a  class="external text" title="http://www.ood.neu.edu/aspectcocoa/">AspectCocoa</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>For <a href="/wiki/XML.html" title="XML">XML</a>:
+<ul>
+<li><a  class="external text" title="http://www.aspectXML.org">AspectXML</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>For <a href="/wiki/Squeak.html" title="Squeak">Squeak</a> Smalltalk
+<ul>
+<li><a  class="external text" title="http://www.prakinf.tu-ilmenau.de/~hirsch/Projects/Squeak/AspectS/">AspectS</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>For <a href="/wiki/ColdFusion.html" title="ColdFusion">ColdFusion</a>:
+<ul>
+<li><a  class="external text" title="http://www.coldspringframework.org">ColdSpring</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>For <a href="/wiki/ActionScript.html" title="ActionScript">Flash ActionScript 2.0</a>
+<ul>
+<li><a  class="external text" title="http://www.as2lib.org/">as2lib</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>For <a href="/wiki/Cobol.html" title="Cobol">Cobol</a>:</li>
+</ul>
+<p>Write your own preprocessing system.</p>
+<ul>
+<li>For More Info (real-world implementations):
+<ul>
+<li><a  class="external text" title="http://www.aosd.net">AOSD.net</a></li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+</table>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Programming_paradigm.html" title="Programming paradigm">Programming paradigms</a></li>
+<li><a href="/wiki/Stability_Model.html" title="Stability Model">Stability Model</a></li>
+<li><a href="/wiki/Executable_UML.html" title="Executable UML">Executable UML</a></li>
+<li><a href="/wiki/COMEFROM.html" title="COMEFROM">COMEFROM</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Publications">edit</a>]</div>
+<p><a name="Publications" id="Publications"></a></p>
+<h2>Publications</h2>
+<ul>
+<li><cite class="book" style="font-style:normal" id="Reference-Kiczales-1997">Kiczales, Gregor; John Lamping, Anurag Mendhekar, Chris Maeda, Cristina Lopes, Jean-Marc Loingtier, and John Irwin (1997). “<a  class="external text" title="http://citeseer.ist.psu.edu/kiczales97aspectoriented.html">Aspect-Oriented Programming</a>”, <i>Proceedings of the European Conference on Object-Oriented Programming, vol.1241</i>, pp.220–242.</cite> The paper originating AOP.</li>
+<li><cite class="book" style="font-style:normal"><a  class="new" title="Robert E. Filman">Filman, Robert E.</a>; <a  class="new" title="Tzilla Elrad">Tzilla Elrad</a>, <a href="/wiki/Siobhan_Clarke.html" title="Siobhan Clarke">Siobhan Clarke</a>, and <a  class="new" title="Mehmet Aksit">Mehmet Aksit</a>. <i>Aspect-Oriented Software Development</i>. <a  class="internal">ISBN 0-32121-976-7</a>.</cite></li>
+<li><cite class="book" style="font-style:normal"><a  class="new" title="Renaud Pawlak">Pawlak, Renaud</a>; <a  class="new" title="Lionel Seinturier">Lionel Seinturier</a>, and <a  class="new" title="Jean-Philippe Retaillé">Jean-Philippe Retaillé</a>. <i>Foundations of AOP for J2EE Development</i>. <a  class="internal">ISBN 1-59059-507-6</a>.</cite></li>
+<li><cite class="book" style="font-style:normal"><a  class="new" title="Ramnivas Laddad">Laddad, Ramnivas</a>. <i>AspectJ in Action: Practical Aspect-Oriented Programming</i>. <a  class="internal">ISBN 1-93011-093-6</a>.</cite></li>
+<li><cite class="book" style="font-style:normal"><a href="/wiki/Ivar_Jacobson.html" title="Ivar Jacobson">Jacobson, Ivar</a>; and <a  class="new" title="Pan-Wei Ng">Pan-Wei Ng</a>. <i>Aspect-Oriented Software Development with Use Cases</i>. <a  class="internal">ISBN 0-321-26888-1</a>.</cite></li>
+<li><a  class="external text" title="http://www.cmsdevelopment.com/en/articles/aosdinphp/">Aspect-oriented Software Development and PHP, Dmitry Sheiko, 2006</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://aosd.net/conference">Aspect-Oriented Software Development</a> (annual conference about AOP)</li>
+<li><a  class="external text" title="http://aosd.net/wiki">AOSD Wiki</a> (Wiki specifically devoted to AOP)</li>
+<li><a  class="external text" title="http://eclipse.org/aspectj/">AspectJ</a> (Java implementation)
+<ul>
+<li><a  class="external autonumber" title="http://www.eclipse.org/aspectj/doc/released/progguide/index.html">[4]</a> AspectJ Programming Guide</li>
+</ul>
+</li>
+<li><a  class="external text" title="http://www.aspectbench.org/">The AspectBench Compiler for AspectJ</a> (another Java implementation)</li>
+<li><a  class="external autonumber" title="http://www.ibm.com/developerworks/views/java/libraryview.jsp?search_by=AOP@work:">[5]</a> (Series of IBM developerWorks articles on AOP)]</li>
+<li><a  class="external text" title="http://www.aopworld.com">AOPWorld.com</a> (Source of information on AOP and its related technologies)</li>
+<li><a  class="external text" title="http://www.javaworld.com/javaworld/jw-01-2002/jw-0118-aspect.html">A detailed series of articles about the basics of aspect-oriented programming and AspectJ</a></li>
+<li><a  class="external text" title="http://www.codefez.com/Home/tabid/36/articleType/ArticleView/articleId/98/AspectOrientedProgrammingwithTacobymarchoffman.aspx">Introduction to Aspect Oriented Programming with RemObjects Taco</a></li>
+<li><a  class="external text" title="http://www.cis.uab.edu/gray/Research/C-SAW/">Constraint-Specification Aspect Weaver</a></li>
+<li><a  class="external text" title="http://www.devx.com/Java/Article/28422">Aspect- vs. Object-Oriented Programming: Which Technique, When?</a></li>
+<li><a  class="external text" title="http://www.cs.tut.fi/~ask/aspects/aspects.html">Light-weight Approach to AOP for Python</a></li>
+<li><a  class="external text" title="http://video.google.com/videoplay?docid=8566923311315412414&amp;q=engEDU">Gregor Kiczales, Professor of Computer Science, explaining AOP</a> (57min, video)</li>
+</ul>
+
+<!-- 
+Pre-expand include size: 15589 bytes
+Post-expand include size: 4735 bytes
+Template argument size: 4203 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:145329-0!1!0!default!!en!2 and timestamp 20060910140900 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Articles with weasel words">Articles with weasel words</a></span> | <span dir='ltr'><a  title="Category:Aspect-oriented programming">Aspect-oriented programming</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Aspect-oriented_programming.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-cs"><a >Česky</a></li>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-nl"><a >Nederlands</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-pt"><a >Português</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+				<li class="interwiki-zh"><a >中文</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 20:45, 9 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv32 in 0.125 secs. --></body></html>

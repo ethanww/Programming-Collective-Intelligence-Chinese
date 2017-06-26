@@ -1,0 +1,257 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Constraint programming,Alphametic,Arc consistency,Backtracking,Boolean algebra,C++,Constraint logic programming,Constraint propagation,Constraint satisfaction problem,ECLiPSe,Finite set" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Constraint programming - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Constraint_programming";
+			var wgTitle = "Constraint programming";
+			var wgArticleId = 189899;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Constraint programming</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p><b>Constraint programming</b> is a <a href="/wiki/Programming_paradigm.html" title="Programming paradigm">programming paradigm</a> where relations between variables can be stated in the form of constraints. Constraints differ from the common primitives of other programming languages in that they do not specify a step or sequence of steps to execute but rather the properties of a solution to be found. The constraints used in constraint programming are of various kinds: those used in <a href="/wiki/Constraint_satisfaction_problem.html" title="Constraint satisfaction problem">constraint satisfaction problems</a>, those solved by the <a href="/wiki/Simplex_algorithm.html" title="Simplex algorithm">simplex algorithm</a>, and others. Constraints are usually embedded within a programming language or provided via separate <a href="/wiki/Software_libraries.html" title="Software libraries">software libraries</a>.</p>
+<p>Constraint programming began with <a href="/wiki/Constraint_logic_programming.html" title="Constraint logic programming">constraint logic programming</a>, which embeds constraints into a <a href="/wiki/Logic_program.html" title="Logic program">logic program</a>. This variant of logic programming is due to Jaffar and Lassez, who extended in 1987 a specific class of constraints that were introduced in <a  class="new" title="Prolog II">Prolog II</a>. The first implementations of constraint logic programming were <a  class="new" title="Prolog III">Prolog III</a>, <a  class="new" title="CLP(R)">CLP(R)</a>, and <a  class="new" title="CHIP programming languages">CHIP</a>. Several constraint logic programming interpreters exist today, for example <a href="/wiki/GNU_Prolog.html" title="GNU Prolog">GNU Prolog</a>.</p>
+<p>Other than logic programming, constraints can be mixed with <a href="/wiki/Functional_programming.html" title="Functional programming">functional programming</a>, <a href="/wiki/Term_rewriting.html" title="Term rewriting">term rewriting</a>, and <a href="/wiki/Imperative_language.html" title="Imperative language">imperative languages</a>. Constraints in functional programming are implemented in the <a href="/wiki/Multi-paradigm_programming_language.html" title="Multi-paradigm programming language">multi-paradigm programming language</a> <a href="/wiki/Oz_programming_language.html" title="Oz programming language">Oz</a>. Constraints are embedded in an imperative language in <a href="/wiki/Kaleidoscope_programming_language.html" title="Kaleidoscope programming language">Kaleidoscope</a>. However, constraints are implemented in imperative languages mostly via <b>constraint solving toolkits</b>, which are separate <a href="/wiki/Software_library.html" title="Software library">libraries</a> for an existing imperative language. <a  class="new" title="ILOG Solver">ILOG Solver</a> is an example of such a constraint programming library for <a href="/wiki/C%2B%2B.html" title="C++">C++</a>.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Constraint logic programming</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Domains</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Imperative constraint programming</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Constraint logic programming">edit</a>]</div>
+<p><a name="Constraint_logic_programming" id="Constraint_logic_programming"></a></p>
+<h2>Constraint logic programming</h2>
+<dl>
+<dd>
+<div class="noprint"><i>Main article: <a href="/wiki/Constraint_logic_programming.html" title="Constraint logic programming">Constraint logic programming</a></i></div>
+</dd>
+</dl>
+<p>Constraint programming is an embedding of constraints in a host language. The first host languages used were <a href="/wiki/Logic_programming.html" title="Logic programming">logic programming</a> languages, so the field was initially called <i>constraint logic programming</i>. The two paradigms share many important features, like logical variables and <a href="/wiki/Backtracking.html" title="Backtracking">backtracking</a>. Today most <a href="/wiki/Prolog.html" title="Prolog">Prolog</a> implementations include one or more libraries for constraint logic programming.</p>
+<p>Constraint programming is related to <a href="/wiki/Logic_programming.html" title="Logic programming">logic programming</a> and, since both are <a href="/wiki/Turing-complete.html" title="Turing-complete">Turing-complete</a>, any logic program can be translated into an equivalent constraint program and <i>vice versa</i>. Logic programs are sometimes converted to constraint programs since a constraint solving program may perform better than a logic derivation program, and it might be desirable to perform this <a href="/wiki/Translation.html" title="Translation">translation</a> before executing a logic program.</p>
+<p>The difference between the two is largely in their styles and approaches to modeling the world. Some problems are more natural (and thus, simpler) to write as logic programs, while some are more natural to write as constraint programs.</p>
+<p>The constraint programming approach is to search for a state of the world in which a large number of constraints are satisfied at the same time. A problem is typically stated as a state of the world containing a number of unknown variables. The constraint program searches for values for all the variables.</p>
+<p>Temporal concurrent constraint programming (TCC) and non-deterministic temporal concurrent constraint programming (NTCC) are variants of constraint programming that can deal with time.</p>
+<p>Some popular constraint logic languages are:</p>
+<ul>
+<li><a  class="external text" title="http://www.probp.com/">B-Prolog</a> (<a href="/wiki/Prolog.html" title="Prolog">Prolog</a> based, proprietary)</li>
+<li><a  class="external text" title="http://www.cosytec.com/production_scheduling/chip/optimization_product_chip.htm">CHIP V5</a> (Prolog based, also includes C++ and C libraries, proprietary)</li>
+<li><a  class="external text" title="http://clip.dia.fi.upm.es/Software/Ciao/">Ciao Prolog</a> (Prolog based, Free software: GPL/LGPL)</li>
+<li><a href="/wiki/ECLiPSe.html" title="ECLiPSe">ECLiPSe</a> (Prolog based, proprietary)</li>
+<li><a  class="external text" title="http://www.sics.se/isl/sicstuswww/site/index.html">SICStus</a> (Prolog based, proprietary)</li>
+<li><a href="/wiki/GNU_Prolog.html" title="GNU Prolog">GNU Prolog</a></li>
+<li><a  class="external text" title="http://www.ncc.up.pt/~vsc/Yap/documentation.html#SEC91">YAP Prolog</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Domains">edit</a>]</div>
+<p><a name="Domains" id="Domains"></a></p>
+<h2>Domains</h2>
+<p>The constraints used in constraint programming are typically over some specific domains. Some popular domains for constraint programming are:</p>
+<ul>
+<li><a href="/wiki/Boolean_algebra.html" title="Boolean algebra">boolean</a> domains, where only true/false constraints apply</li>
+<li><a href="/wiki/Integer.html" title="Integer">integer</a> domains, <a href="/wiki/Rational_numbers.html" title="Rational numbers">rational</a> domains</li>
+<li><a href="/wiki/Linear_algebra.html" title="Linear algebra">linear</a> domains, where only <a href="/wiki/Linear.html" title="Linear">linear</a> functions are described and analyzed (although approaches to <a href="/wiki/Non-linear.html" title="Non-linear">non-linear</a> problems do exist)</li>
+<li><a  class="extiw" title="wiktionary:finite">finite</a> domains, where constraints are defined over <a href="/wiki/Finite_set.html" title="Finite set">finite sets</a></li>
+<li>mixed domains, involving two or more of the above</li>
+</ul>
+<p>Finite domains is one of the most successful domains of constraint programming. In some areas (like <a href="/wiki/Operations_research.html" title="Operations research">operations research</a>) constraint programming is often identified with constraint programming over finite domains.</p>
+<p>Finite domain solvers are useful for solving <a href="/wiki/Constraint_satisfaction_problem.html" title="Constraint satisfaction problem">constraint satisfaction problems</a>, and are often based on <a href="/wiki/Arc_consistency.html" title="Arc consistency">arc consistency</a> or one of its approximations.</p>
+<p>The syntax for expressing constraints over finite domains depends on the host language. The following is a program that solves the classical <a href="/wiki/Alphametic.html" title="Alphametic">alphametic</a> puzzle SEND+MORE=MONEY in constraint logic programming:</p>
+<pre>
+sendmore(Digits) :-
+   Digits = [S,E,N,D,M,O,R,Y],     % Create variables
+   Digits <b>::</b> [0..9],               % Associate domains to variables
+   S <b>#\=</b> 0,                        % Constraint: S must be different from 0
+   M <b>#\=</b> 0,
+   <b>alldifferent</b>(Digits),           % all the elements must take different values
+                1000*S + 100*E + 10*N + D     % Other constraints
+              + 1000*M + 100*O + 10*R + E
+   <b>#=</b> 10000*M + 1000*O + 100*N + 10*E + Y,
+   <b>labeling</b>(Digits).               % Start the search
+</pre>
+<p>The interpreter creates a variable for each letter in the puzzle. The symbol <code>::</code> is used to specify the domains of these variables, so that they range over the set of values {0,1,2,3, ..., 9}. The constraints S#\=0 and M#\=0 means that these two variables cannot take the value zero. When the interpreter evaluates these constraints, it reduces the domains of these two variables by removing the value 0 from them. Then, the constraint alldifferent(Digits) is considered; it does not reduce any domain, so it is simply stored. The last constraint specifies that the digits assigned to the letters must be such that "SEND+MORE=MONEY" holds when each letter is replaced by its corresponding digit. From this constraint, the solver infers that M=1. All stored constraints involving variable M are awaken: in this case, <a href="/wiki/Constraint_propagation.html" title="Constraint propagation">constraint propagation</a> on the <code>alldifferent</code> constraint removes value 1 from the domain of all the remaining variables. Constraint propagation may solve the problem by reducing all domains to a single value, it may prove that the problem has no solution by reducing a domain to the empty set, but may also terminate without proving satisfiability or unsatisfiability. The <b>labeling</b> literals are used to actually perform search for a solution.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Imperative constraint programming">edit</a>]</div>
+<p><a name="Imperative_constraint_programming" id="Imperative_constraint_programming"></a></p>
+<h2>Imperative constraint programming</h2>
+<p>Constraint programming is often realized in imperative programming via a separate library. Some popular libraries for constraint programming are:</p>
+<ul>
+<li><a  class="external text" title="http://choco.sourceforge.net/">Choco</a> (<a href="/wiki/Java_programming_language.html" title="Java programming language">Java</a> library, free software: X11 style)</li>
+<li><a  class="external text" title="http://www.research.microsoft.com/~youssefh/DisolverWeb/Disolver.html">Disolver</a> (<a href="/wiki/C%2B%2B.html" title="C++">C++</a> library, proprietary)</li>
+<li><a  class="external text" title="http://www.gecode.org/">Gecode</a> (C++ library, free software: X11 style)</li>
+<li><a  class="external text" title="http://www.ilog.com/products/solver/">ILOG Solver</a> (C++ library, proprietary)</li>
+<li><a  class="external text" title="http://www.koalog.com/">Koalog Constraint Solver</a> (Java library, proprietary)</li>
+<li><a href="/wiki/Minion_%28solver%29.html" title="Minion (solver)">Minion</a> (C++ program, GPL)</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://kti.ms.mff.cuni.cz/~bartak/constraints/index.html">On-Line Guide to Constraint Programming</a></li>
+<li><a  class="external text" title="http://pubsonline.informs.org/feature/pdfs/0092.2102.01.3106.29.pdf">Program Does Not Equal Program: Constraint Programming and its Relationship to Mathematical Programming</a></li>
+<li><a  class="external text" title="http://www.mozart-oz.org/">Mozart</a> (<a href="/wiki/Oz_programming_language.html" title="Oz programming language">Oz</a> based, Free software: X11 style)</li>
+<li><a  class="external text" title="http://www.4c.ucc.ie">Cork Constraint Computation Centre (4C)</a></li>
+<li><a  class="external text" title="http://www.cr2g.org">Constraint Research and Reading Group (UTEP)</a></li>
+</ul>
+
+<!-- 
+Pre-expand include size: 1775 bytes
+Post-expand include size: 152 bytes
+Template argument size: 170 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:189899-0!1!0!default!!en!2 and timestamp 20060906011001 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Logic programming">Logic programming</a></span> | <span dir='ltr'><a  title="Category:Constraint satisfaction">Constraint satisfaction</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Constraint_programming.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 12:05, 21 June 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv36 in 0.110 secs. --></body></html>

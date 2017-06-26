@@ -1,0 +1,243 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Spaghetti code,Accumulate and fire,Anti-pattern,Assembly language,BASIC programming language,Branch (computer science),Control flow,Control structure,DIGITAL Command Language,Edsger Dijkstra,For loop" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Spaghetti code - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Spaghetti_code";
+			var wgTitle = "Spaghetti code";
+			var wgArticleId = 28732;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Spaghetti code</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<div class="thumb tright">
+<div style="width:182px;"><a  class="internal" title="A plate of spaghetti."><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Spaghetti.jpg/180px-Spaghetti.jpg" alt="A plate of spaghetti." width="180" height="183" longdesc="/wiki/Image:Spaghetti.jpg" /></a>
+<div class="thumbcaption">
+<div class="magnify" style="float:right"><a  class="internal" title="Enlarge"><img src="/skins-1.5/common/images/magnify-clip.png" width="15" height="11" alt="Enlarge" /></a></div>
+A plate of <a href="/wiki/Spaghetti.html" title="Spaghetti">spaghetti</a>.</div>
+</div>
+</div>
+<p><b>Spaghetti code</b> is a pejorative term for <a href="/wiki/Source_code.html" title="Source code">source code</a> which has a complex and tangled <a href="/wiki/Control_structure.html" title="Control structure">control structure</a>, especially one using many <a href="/wiki/GOTO.html" title="GOTO">GOTOs</a>, exceptions, threads, or other "unstructured" <a href="/wiki/Branch_%28computer_science%29.html" title="Branch (computer science)">branching</a> constructs.</p>
+<p>It is named such because program flow tends to look like a bowl of <a href="/wiki/Spaghetti.html" title="Spaghetti">spaghetti</a>, i.e. twisted and tangled. Also called <i><a href="/wiki/Kangaroo.html" title="Kangaroo">kangaroo</a> code</i> because such code has so many jumps in it.</p>
+<p>Spaghetti code is an example of an <a href="/wiki/Anti-pattern.html" title="Anti-pattern">anti-pattern</a>.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Examples</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Assembly and script languages</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Examples">edit</a>]</div>
+<p><a name="Examples" id="Examples"></a></p>
+<h2>Examples</h2>
+<p>Below is an example of what would be considered a trivial example of spaghetti code in <a href="/wiki/BASIC_programming_language.html" title="BASIC programming language">BASIC</a>. The program prints the numbers 1 to 10 to the screen along with their square. Notice that indentation is not needed and that the program's goto statements create a reliance on line numbers. Also observe the unpredictable way the flow of execution jumps from one area to another. Real-world occurrences of spaghetti code are more complex and can add greatly to a program's maintenance costs.</p>
+<pre>
+10 dim i
+20 i = 0
+30 i = i + 1
+40 if i &lt;= 10 then goto 90
+50 if i &gt; 10 then goto 70
+60 goto 30
+70 print "Program Completed."
+80 end
+90 print i; " squared = "; i * i
+100 goto 30
+</pre>
+<p>Here is the same code written in a <a href="/wiki/Structured_programming.html" title="Structured programming">structured programming</a> style:</p>
+<pre>
+dim i
+for i = 1 to 10
+    print i; " squared = "; i * i
+next i
+print "Program Completed."
+</pre>
+<p>The program jumps from one area to another but this jumping is predictable and formal. This is because using <a href="/wiki/For_loop.html" title="For loop">for loops</a> and <a href="/wiki/Subroutine.html" title="Subroutine">functions</a> are standard ways of providing <a href="/wiki/Control_flow.html" title="Control flow">flow control</a> whereas the <i>goto</i> statement encourages arbitrary flow control. Though this example is small, real world programs are composed of many lines of code and are difficult to maintain when written in a spaghetti code fashion.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Assembly and script languages">edit</a>]</div>
+<p><a name="Assembly_and_script_languages" id="Assembly_and_script_languages"></a></p>
+<h2>Assembly and script languages</h2>
+<p>When using the many forms of <a href="/wiki/Assembly_language.html" title="Assembly language">assembly language</a> (and also the underlying <a href="/wiki/Machine_code.html" title="Machine code">machine code</a>) the danger of writing spaghetti code is especially great. This is because they are <a href="/wiki/Low-level_programming_language.html" title="Low-level programming language">low level programming languages</a> where equivalents for structured control flow statements such as <a href="/wiki/For_loop.html" title="For loop">for loops</a> and <a href="/wiki/While_loop.html" title="While loop">while loops</a> seldom exist. Many scripting languages have the same deficiences: this applies to the <code>.bat</code>-language of Microsoft Windows and <a href="/wiki/DIGITAL_Command_Language.html" title="DIGITAL Command Language">DCL</a> on <a href="/wiki/OpenVMS.html" title="OpenVMS">VMS</a>.</p>
+<p>Nonetheless, adopting the same discipline as in <a href="/wiki/Structured_programming.html" title="Structured programming">structured programming</a> can greatly improve the readability and maintainability of such code. This may take the form of conventions limiting the use of <code>go to</code> to correspond to the standard structures, or use of a set of assembler macros for <code>if</code> and <code>loop</code> constructs. Most assembly languages also provide a <a href="/wiki/Function_stack.html" title="Function stack">function stack</a>, and <a href="/wiki/Subroutine.html" title="Subroutine">function</a> call mechanisms which can be used to gain the advantages of <a href="/wiki/Procedural_programming.html" title="Procedural programming">procedural programming</a>. Macros can again be used to support a standardised form of parameter passing, to avoid the <a href="/wiki/Accumulate_and_fire.html" title="Accumulate and fire">accumulate and fire</a> anti-pattern.</p>
+<p>Programs written in <a href="/wiki/High-level_programming_language.html" title="High-level programming language">higher-level languages</a> with high-level constructs such as <i>for loops</i> (as in the second example above) are often compiled into assembly or machine code. When this process occurs, the high-level constructs are translated into low-level "spaghetti code" which may resemble the first example above in terms of control flow. But because compilers must be faithful to high-level constructs in the source code, the problems that plague languages like BASIC do not haunt higher-level languages. It does, however, mean that debugging even mildly optimised code with a source-level debugger can be surprisingly confusing.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Structured_programming.html" title="Structured programming">Structured programming</a> Coding without <code>goto</code>, e.g. using only loop, sequence and alternate structures.</li>
+<li><a href="/wiki/International_Obfuscated_C_Code_Contest.html" title="International Obfuscated C Code Contest">International Obfuscated C Code Contest</a> A competition to produce pleasingly obscure C code.</li>
+<li><a href="/wiki/Ravioli_code.html" title="Ravioli code">Ravioli code</a> Code using too many small and heavily interrelated objects.</li>
+<li><a href="/wiki/Lasagna_code.html" title="Lasagna code">Lasagna code</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<p><span class="boilerplate" id="foldoc"><i>This article was originally based on material from the <a href="/wiki/Free_On-line_Dictionary_of_Computing.html" title="Free On-line Dictionary of Computing">Free On-line Dictionary of Computing</a>, which is <a  title="Wikipedia:Foldoc license">licensed</a> under the <a href="/wiki/GNU_Free_Documentation_License.html" title="GNU Free Documentation License">GFDL</a>.</i></span></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://www.acm.org/classics/oct95/">Go To Statement Considered Harmful</a>. The classic repudiation of spaghetti code by <a href="/wiki/Edsger_Dijkstra.html" title="Edsger Dijkstra">Edsger Dijkstra</a>.</li>
+<li><a  class="external text" title="http://thedailywtf.com/">The Daily WTF - Curious Perversions In Information Technology</a></li>
+<li><a  class="external text" title="http://www.fortran.com/fortran/come_from.html"><i>We don't know where to GOTO if we don't know where we've COME FROM</i> by R. Lawrence Clark from DATAMATION, December, 1973</a></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:28732-0!1!0!default!!en!2 and timestamp 20060910152443 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:FOLDOC sourced articles">FOLDOC sourced articles</a></span> | <span dir='ltr'><a  title="Category:Anti-patterns">Anti-patterns</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Spaghetti_code.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-ko"><a >한국어</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-he"><a >עברית</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-sv"><a >Svenska</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 21:05, 3 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv68 in 0.467 secs. --></body></html>

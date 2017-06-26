@@ -1,0 +1,375 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Job Control Language,Virtual storage,DOS/VSE,ISAM,MVS,IBM mainframe utility programs,OS/360,Z/OS,IBM mainframe,Scripting programming language,Job Entry Subsystem 2/3" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Job Control Language - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Job_Control_Language";
+			var wgTitle = "Job Control Language";
+			var wgArticleId = 391487;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Job Control Language</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<dl>
+<dd>
+<div class="dablink"><i>JCL redirects here. See <a href="/wiki/National_Junior_Classical_League.html" title="National Junior Classical League">National Junior Classical League</a> for the student honor society.</i></div>
+</dd>
+</dl>
+<p><b>Job Control Language (JCL)</b> is a <a href="/wiki/Scripting_programming_language.html" title="Scripting programming language">scripting language</a> used on <a href="/wiki/IBM_mainframe.html" title="IBM mainframe">IBM mainframe</a> operating systems to instruct the <a href="/wiki/Job_Entry_Subsystem_2/3.html" title="Job Entry Subsystem 2/3">Job Entry Subsystem</a> (that is, JES2 or JES3) on how to run a <a href="/wiki/Batch_processing.html" title="Batch processing">batch program</a> or start a subsystem.</p>
+<p>JCL is characterized by a pair of slashes "<tt>//</tt>" that indicate the start of each statement. The slashes date back from when <a href="/wiki/Punched_card.html" title="Punched card">punched cards</a> were used to submit JCL code for execution. If the cards were mistakenly put back to front in the reader the slashes wouldn't be read first (instead, the sequence numbers would be), so the card deck could be rejected.</p>
+<p>For backward compatibility, the basic syntax of JCL for <a href="/wiki/Z/OS.html" title="Z/OS">z/OS</a> hasn't changed since the 1960s. It is the same as JCL for <a href="/wiki/OS/360.html" title="OS/360">OS/360</a>.</p>
+<p><a href="/wiki/DOS/VSE.html" title="DOS/VSE">DOS/VSE</a> also has a JCL language. Its syntax is entirely different, the only similarity being that statements still start with two slashes: "<tt>//</tt>".</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Syntax</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">1.1</span> <span class="toctext">Identifier field</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.2</span> <span class="toctext">Name field</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.3</span> <span class="toctext">Operation field</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.4</span> <span class="toctext">Parameter or operand field</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.5</span> <span class="toctext">Comments field</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Jobs</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">JOB</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">EXEC PGM</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">EXEC PROC</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">DD</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">Procedures</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">8</span> <span class="toctext">Conditional processing</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">9</span> <span class="toctext">Example</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">10</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Syntax">edit</a>]</div>
+<p><a name="Syntax" id="Syntax"></a></p>
+<h2>Syntax</h2>
+<p>A JCL statement consists of one or more 80-byte records.</p>
+<p>JCL must be in uppercase.</p>
+<p>JCL must be in columns 1–71 (except comments, see below). Often columns 73–80 are used for sequence numbers.</p>
+<p>To continue a line longer than 71 characters (except comments, see below), the first line is finished after a comma, and the next line started between columns 4 and 16 (with the usual "<tt>//</tt>" in the first two columns).</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Identifier field">edit</a>]</div>
+<p><a name="Identifier_field" id="Identifier_field"></a></p>
+<h3>Identifier field</h3>
+<p>JCL starts with a "<tt>//</tt>" in columns 1–2, except:</p>
+<ul>
+<li>"<tt>/*</tt>" or another delimiter defined by the user</li>
+<li>"<tt>//*</tt>" which signifies the entire line is a comment</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Name field">edit</a>]</div>
+<p><a name="Name_field" id="Name_field"></a></p>
+<h3>Name field</h3>
+<p>The name field identifies a statement so that other statements can refer to it. This must begin in column 3 and be from 1 to 8 characters long. Only uppercase alphabetics, numbers, or "national" characters ("#", "@", and "$") may be used. The name may not begin with a number.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Operation field">edit</a>]</div>
+<p><a name="Operation_field" id="Operation_field"></a></p>
+<h3>Operation field</h3>
+<p>The operation or command to perform must be preceded and followed by at least one blank.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Parameter or operand field">edit</a>]</div>
+<p><a name="Parameter_or_operand_field" id="Parameter_or_operand_field"></a></p>
+<h3>Parameter or operand field</h3>
+<p>Keyword parameters (THING=STUFF) may appear in any order, after any positional parameters; most of them are optional. There must be no spaces between parameters, or what follows will be interpreted as a comment (spacing in examples has been left for readability). Must be preceded by at least one blank.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Comments field">edit</a>]</div>
+<p><a name="Comments_field" id="Comments_field"></a></p>
+<h3>Comments field</h3>
+<p>Comments on the same line as JCL statements follow the parameter field, and are separated from it by at least one blank.</p>
+<p>To continue comments which would exceed column 71, non-blank is coded in column 72 ("<tt>X</tt>" is a de-facto standard), followed by "<tt>//</tt> " in columns 1–3 of the next line.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Jobs">edit</a>]</div>
+<p><a name="Jobs" id="Jobs"></a></p>
+<h2>Jobs</h2>
+<p>Every “Job” starts with a JOB statement and ends with an empty "<tt>//</tt>" card image. Each “Step” within a “Job” has one EXEC statement and any number of DD statements, one for each dataset accessed. The following is a brief description of these, and a few other JCL statements. Jobname, stepname, progname, procstepname, procname and ddname are from 1 to 8 alpha-numeric characters, starting with an alphabetic character. Some installations may have further restrictions, especially about jobnames. Not all parameters have been described. //./</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: JOB">edit</a>]</div>
+<p><a name="JOB" id="JOB"></a></p>
+<h2>JOB</h2>
+<pre>
+//jobname JOB (accounting information),CLASS=x,MSGCLASS=x,REGION=nK,TIME=(m,s),notify=id
+</pre>
+<p>Accounting information is installation-dependent, and may be enclosed between brackets or quotation marks. It is typically used for charging departments according to CPU and I/O use.</p>
+<p>The CLASS parameter determines in which “initiator” the job will run, and determines default values for region-size, priority, maximum CPU time allowed, etc.</p>
+<p>The MSGCLASS parameter determines how job output is to be printed or filed.</p>
+<p>The REGION parameter specifies the maximum amount of <a href="/wiki/Virtual_storage.html" title="Virtual storage">virtual storage</a> that the job may use. An amount of K or M may be specified, within installation limits specified by the job-class.</p>
+<p>The TIME parameter specified the maximum total CPU usage (in minutes, seconds) that may be used by all steps of the job. The maximum allowed is normally 1439 minutes — the value 1440 means that the job will not be timed.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: EXEC PGM">edit</a>]</div>
+<p><a name="EXEC_PGM" id="EXEC_PGM"></a></p>
+<h2>EXEC PGM</h2>
+<pre>
+//stepname EXEC PGM=progname,PARM='parm',COND=condition,REGION=n,TIME=(m,s)
+</pre>
+<p>Progname is the name of the program to be executed. If JOBLIB or STEPLIB were specified, the program will be searched in the libraries specified in DD statements prior to standard “linklist” libraries. (see below).</p>
+<p>The PARM parameter is used to pass optional data to the program. At program execution time, register 1 points to a parameter list.</p>
+<p>The COND parameter specifies those conditions under which the job-step is to be skipped, and NOT run. It often causes confusion and has been replaced by IF statements in recent releases of the operating system.</p>
+<p>REGION and TIME parameters are as for the JOB statements but apply to a single job-step.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: EXEC PROC">edit</a>]</div>
+<p><a name="EXEC_PROC" id="EXEC_PROC"></a></p>
+<h2>EXEC PROC</h2>
+<pre>
+//procstepname EXEC PROC=procname,param1=foo, ...
+</pre>
+<p>or</p>
+<pre>
+//procstepname EXEC procname,param1=foo, ...
+</pre>
+<p>Procname is either the name of a catalogued or in-stream procedure (see below). The values of param1, etc. depend on what symbolic keywords are defined in the procedure. Procedures are collections of predefined JCLs.</p>
+<p>NOTE: In practice, it is far more common to use the second form ("EXEC procname") and to omit the "PROC=" keyword.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: DD">edit</a>]</div>
+<p><a name="DD" id="DD"></a></p>
+<h2>DD</h2>
+<pre>
+//ddname DD DSN=datasetname,DISP=disposition,UNIT=unit,VOL=SER=volser,SPACE=space,DSORG=dsorg,DCB=dcb
+</pre>
+<p>or</p>
+<pre>
+//ddname DD *
+</pre>
+<p>or</p>
+<pre>
+//ddname DD DATA,DLM=@@
+</pre>
+<p>or</p>
+<pre>
+//ddname DD SYSOUT=msgclass
+</pre>
+<p>In the DSN parameter, datasetname is the name of the dataset to be accessed or allocated. If it is not catalogued, then UNIT (and VOL) parameters must be supplied. A member of a partitioned dataset is referred to by enclosing the member-name in parentheses; e.g. MY.LIBRARY(MYPROGRM). If a datasetname is not supplied, the system will provide one; this can only be used for files that will not be kept beyond this step. To allocate a temporary dataset to be passed to further jobsteps but not then kept, use DSN=&amp;&amp;TEMPNAME, for example.</p>
+<p>The DISP parameter specifies whether the dataset is to be created or whether it already exists, and whether it is to be kept or deleted after the job-step finishes (either successfully or unsuccessfully). The disposition consists of up to three sub-parameters in brackets. Some examples:</p>
+<pre>
+DISP=(OLD,DELETE,KEEP)  already exists, is to be deleted unless the step fails
+DISP=SHR                already exists and other tasks may read it at the same time
+DISP=(NEW,CATLG,DELETE) will be created and catalogued unless the step fails
+</pre>
+<p>The default, if not specified, is (NEW,DELETE).</p>
+<p>The UNIT and VOL parameters can be quite complex, but here are two simple examples:</p>
+<pre>
+UNIT=SYSDA                 any system direct access device (normally for temporary files)
+UNIT=3390,VOL=SER=ABC123   allocate on a specific DASD pack
+</pre>
+<p>The SPACE parameter specifies the primary and secondary space allocation (in blocks, tracks or cylinders) and the number of directory blocks for a partitioned dataset. Some examples:</p>
+<pre>
+SPACE=(TRK,1)                   just 1 track and no secondaries
+SPACE=(CYL,(50,25))            50 cylinders of space plus up to 15 times 25 cylinders of secondary
+SPACE=(4096,(10000),ROUND,RLSE) space equivalent to 10,000 blocks, each of 4,096 bytes,
+                                rounded to the nearest cylinder size, and unused space
+                                released at the end of the job-step.
+</pre>
+<p>The DSORG parameter specifies the dataset organization of the dataset. Some possibilities are PS (physical sequential), DA (direct access), IS (<a href="/wiki/ISAM.html" title="ISAM">ISAM</a> - no longer supported) and PO (partitioned).</p>
+<p>The DCB parameter specifies any sub-parameter that a program could specify in its Data Control Block for this DD statement. A common possibility is RECFM (Record format - FB (fixed, blocked), U (undefined), etc.).</p>
+<p>DD * is followed by data in the form of 80-byte card images, and the data stream is terminated with a card image having /* in the first two columns (or the next JCL statement).</p>
+<p>DD DATA is the same, but may contain JCL statements. It is terminated by a card having @@ in the first two columns (or by the end of the JCL).</p>
+<p>DD SYSOUT=msgclass is used for printed output. Specifying SYSOUT=* will result in using the MSGCLASS of the JOB card.</p>
+<p>DD statements used for input may be concatenated as follows.</p>
+<pre>
+//STEPLIB DD DSN=MY.TEST.LIBRARY,DISP=SHR
+//        DD DSN=MY.TEAM.LIBRARY,DISP=SHR
+//        DD DSN=MY.LIVE.LIBRARY,DISP=SHR
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Procedures">edit</a>]</div>
+<p><a name="Procedures" id="Procedures"></a></p>
+<h2>Procedures</h2>
+<p>Procedures are JCL skeletons that normally have such things as dataset names replaced by symbols. These symbolic names are then resolved to real names when the procedure is used. Procedures provide a macro ability to JCL.</p>
+<p>In older versions of <a href="/wiki/MVS.html" title="MVS">MVS</a>, procedures could only be cataloged to SYS1.PROCLIB and this is still used as a default. Later versions added support for user-defined procedure libraries.</p>
+<p>While procedures are normally executed from a procedure library (known as a proclib), they can also be defined within the job that executes them. These are known as inline procedures and this is the usual method for testing them before adding them to a proclib.</p>
+<p>The first line is always a PROC statement. It names the procedure and defines any default values for symbolic entries, e.g.</p>
+<pre>
+//MYPROC  PROC &amp;LIB="MY.TEST.LIBRARY"
+</pre>
+<p>A job could then call up this procedure as follows:</p>
+<pre>
+//FIRST   EXEC MYPROC
+//SECOND  EXEC MYPROC,LIB="FREDS.TEST.LIBRARY"
+</pre>
+<p>For inline testing the procedure is included first, and is terminated by . .</p>
+<pre>
+//        PEND
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Conditional processing">edit</a>]</div>
+<p><a name="Conditional_processing" id="Conditional_processing"></a></p>
+<h2>Conditional processing</h2>
+<p>JCL supports rudimentary conditional processing with if-then-else-endif statements:</p>
+<pre>
+//TESTCOND IF (RC = 8 | RC = 10) THEN
+…
+//ELSECOND ELSE
+…
+//ENDCOND  ENDIF
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Example">edit</a>]</div>
+<p><a name="Example" id="Example"></a></p>
+<h2>Example</h2>
+<p>Because of its heritage, operations in JCL are often more complex than in other operating systems. The following example shows the JCL statements necessary to copy an existing dataset (IS198.TEST.INPUT) to a new dataset (IS198.TEST.OUTPUT).</p>
+<pre>
+//IS198CPY JOB (IS198T30500),'COPY JOB',CLASS=L,MSGCLASS=X
+//COPY01   EXEC PGM=IEBGENER
+//SYSPRINT DD  SYSOUT=*
+//SYSUT1   DD  DSN=IS198.TEST.INPUT,DISP=SHR
+//SYSUT2   DD  DSN=IS198.TEST.OUTPUT,
+//           DISP=(NEW,CATLG,DELETE),
+//           SPACE=(CYL,(40,5),RLSE),
+//           DCB=(LRECL=115,BLKSIZE=0),
+//           DATACLAS=SEQFB
+//SYSIN    DD  DUMMY
+</pre>
+<p>IEBGENER is the program being called, a utility to copy datasets. The SYSPRINT DD defines where to send the results of the operation, SYSUT1 the input dataset, and SYSUT2 the output dataset.</p>
+<p>Note how the size (SPACE=) and attributes (DCB=, DATACLAS=) of the output dataset have to be specified by the operator (alternatively, JCL can be told to model this from an existing dataset).</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/IBM_mainframe_utility_programs.html" title="IBM mainframe utility programs">IBM mainframe utility programs</a></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:391487-0!1!0!default!!en!2 and timestamp 20060908031841 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Domain-specific programming languages">Domain-specific programming languages</a></span> | <span dir='ltr'><a  title="Category:IBM software">IBM software</a></span> | <span dir='ltr'><a  title="Category:Scripting languages">Scripting languages</a></span> | <span dir='ltr'><a  title="Category:Job scheduling">Job scheduling</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Job_Control_Language.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-da"><a >Dansk</a></li>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-sv"><a >Svenska</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 21:33, 26 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv83 in 0.127 secs. --></body></html>

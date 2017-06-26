@@ -1,0 +1,265 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Transaction log,ACID,Algorithm,Algorithms for Recovery and Isolation Exploiting Semantics,Atomicity,Commit (data management),Comparison of SQL syntax,Comparison of object-relational database management systems,Comparison of relational database management systems,Computer file,Computer science" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Transaction log - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Transaction_log";
+			var wgTitle = "Transaction log";
+			var wgArticleId = 245974;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Transaction log</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>In in the field of <a href="/wiki/Database.html" title="Database">databases</a> in <a href="/wiki/Computer_science.html" title="Computer science">computer science</a>, a <b>transaction log</b> (also <b>database log</b> or <b>binary log</b>) is a history of actions executed by a <a href="/wiki/Database_management_system.html" title="Database management system">database management system</a> to guarantee <a href="/wiki/ACID.html" title="ACID">ACID</a> properties over <a href="/wiki/Crash_%28computing%29.html" title="Crash (computing)">crashes</a> or hardware failures. Physically, a log is a <a href="/wiki/Computer_file.html" title="Computer file">file</a> of updates done to the database, stored in stable storage.</p>
+<p>If, after a start, the database is found in an <a href="/wiki/Database_consistency.html" title="Database consistency">inconsistent</a> state or not been shut down properly, the database management system reviews the database logs for <a href="/wiki/Commit_%28data_management%29.html" title="Commit (data management)">uncommitted</a> transactions and <a href="/wiki/Rollback_%28data_management%29.html" title="Rollback (data management)">rolls back</a> the changes made by these <a href="/wiki/Database_transaction.html" title="Database transaction">transactions</a>. Additionally, all transactions that are already committed but whose changes were not yet materialized in the database are re-applied. Both is done to ensure <a href="/wiki/Atomicity.html" title="Atomicity">atomicity</a> and <a href="/wiki/Durability_%28computer_science%29.html" title="Durability (computer science)">durability</a> of transactions.</p>
+<p>This term is not to be confused with normal <a href="/wiki/Data_logging#Computer_data_logging.html" title="Data logging">logs</a> which are generally intended to be verbose and human-readable.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Anatomy of a general database log">edit</a>]</div>
+<p><a name="Anatomy_of_a_general_database_log" id="Anatomy_of_a_general_database_log"></a></p>
+<h2>Anatomy of a general database log</h2>
+<p>A database log record is made up of</p>
+<ul>
+<li><i>Log Sequence Number</i>: A unique id for a log record. With LSNs, logs can be recovered in constant time. Most logs' LSNs are assigned in monotonically increasing order, which is useful in recovery <a href="/wiki/Algorithm.html" title="Algorithm">algorithms</a>, like <a href="/wiki/Algorithms_for_Recovery_and_Isolation_Exploiting_Semantics.html" title="Algorithms for Recovery and Isolation Exploiting Semantics">ARIES</a>.</li>
+<li><i>Prev LSN</i>: A link to the last log record. This implies database logs are constructed in <a href="/wiki/Linked_list.html" title="Linked list">linked list</a> form.</li>
+<li><i>Transaction ID number</i>: A reference to the database transaction generating the log record.</li>
+<li><i>Type</i>: Describes the type of database log record.</li>
+<li>information about the actual changes that triggered the log record to be written</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Types of database log records">edit</a>]</div>
+<p><a name="Types_of_database_log_records" id="Types_of_database_log_records"></a></p>
+<h2>Types of database log records</h2>
+<p>All log records include the general log attributes above, and also other attributes depending on their type (which is recorded in the <i>Type</i> attribute, as above).</p>
+<ul>
+<li><b>Update Log Record</b> notes an update (change) to the database. It includes this extra information:
+<ul>
+<li><i>PageID</i>: A reference to the Page ID of the modified page.</li>
+<li><i>Length and Offset</i>: Length in bytes and offset of the page are usually included.</li>
+<li><i>Before and After Images</i>: Includes the value of the bytes of page before and after the page change. Some databases may have logs which include one or both images.</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><b>Compensation Log Record</b> notes the rollback of a particular change to the database. Each correspond with exactly one other Update Log Record (although the corresponding update log record is not typically stored in the Compensation Log Record). It includes this extra information:
+<ul>
+<li><i>undoNextLSN</i>: This field contains the LSN of the next log record that is to be undone for transaction that wrote the last Update Log.</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><b>Commit Record</b> notes a decision to commit a transaction.</li>
+</ul>
+<ul>
+<li><b>Abort Record</b> notes a decision to abort and hence rollback a transaction.</li>
+</ul>
+<ul>
+<li><b>Checkpoint Record</b> notes that a checkpoint has been made. These are used to speed up recovery. They record information that eliminates the need to read a long way into the log's past. This varies according to checkpoint algorithm. If all dirty pages are flushed while creating the checkpoint (as in <a href="/wiki/PostgreSQL.html" title="PostgreSQL">PostgreSQL</a>), it might contain:
+<ul>
+<li><i>redoLSN</i>: This is a reference to the first log record that corresponds to a dirty page. i.e. the first update that wasn't flushed at checkpoint time. This is where redo must begin on recovery.</li>
+<li><i>undoLSN</i>: This is a reference to the oldest log record of the oldest in-progress transaction. This is the oldest log record needed to undo all in-progress transactions.</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><b>Completion Record</b> notes that all work has been done for this particular transaction. (It has been fully committed or aborted)</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Tables">edit</a>]</div>
+<p><a name="Tables" id="Tables"></a></p>
+<h2>Tables</h2>
+<p>These tables are maintained in memory, and can be efficiently reconstructed (if not exactly, to an equivalent state) from the log and the database:</p>
+<ul>
+<li><b>Transaction Table</b>: The table contains one entry for each active transaction. This includes Transaction ID and lastLSN, where lastLSN describes the LSN of the most recent log record for the transaction.</li>
+</ul>
+<ul>
+<li><b>Dirty Page Table</b>: The table contains one entry for each dirty page that haven't been written to disk. The entry contains recLSN, where recLSN is the LSN of the first log record that caused the page to be dirty.</li>
+</ul>
+<p><br /></p>
+<table align="center" class="toccolours" cellspacing="0" width="95%">
+<tr bgcolor="#CCCCFF">
+<td align="center"><b>Topics in <a href="/wiki/Database_management_system.html" title="Database management system">database management systems</a> (DBMS)</b> (&#160;<span class="noprint plainlinksneverexpand" id="Tnavbar-nodiv" style="white-space: nowrap; font-size:xx-small;"><a  class="external text" title="http://en.wikipedia.org/wiki/Template:Databases"><span style="color:#002bb8;" title="View this template.">view</span></a> • <a  class="external text" title="http://en.wikipedia.org/wiki/Template_talk:Databases"><span style="color:#002bb8;" title="Discussion about this template.">talk</span></a> • <a  class="external text" title="http://en.wikipedia.org/w/index.php?title=Template:Databases&amp;action=edit"><span style="color:#002bb8;" title="You can edit this template. Please use the preview button before saving.">edit</span></a></span>&#160;)</td>
+</tr>
+<tr>
+<td align="center" style="font-size: small">
+<p><i>Concepts</i><br />
+<a href="/wiki/Database.html" title="Database">Database</a> | <a href="/wiki/Database_model.html" title="Database model">Database model</a> | <a href="/wiki/Relational_database.html" title="Relational database">Relational database</a> | <a href="/wiki/Relational_model.html" title="Relational model">Relational model</a> | <a href="/wiki/Relational_algebra.html" title="Relational algebra">Relational algebra</a> | <a href="/wiki/Primary_key.html" title="Primary key">Primary key</a> - <a href="/wiki/Foreign_key.html" title="Foreign key">Foreign key</a> - <a href="/wiki/Surrogate_key.html" title="Surrogate key">Surrogate key</a> - <a href="/wiki/Superkey.html" title="Superkey">Superkey</a><br />
+<a href="/wiki/Database_normalization.html" title="Database normalization">Database normalization</a> | <a href="/wiki/Referential_integrity.html" title="Referential integrity">Referential integrity</a> | <a href="/wiki/Relational_database_management_system.html" title="Relational database management system">Relational DBMS</a> | <a href="/wiki/Distributed_database_management_system.html" title="Distributed database management system">Distributed DBMS</a> | <a href="/wiki/ACID.html" title="ACID">ACID</a></p>
+<table width="100%" cellspacing="0" cellpadding="2" border="0">
+<tr class="toccolours" style="font-size: small">
+<td width="50%" align="center" style="vertical-align:top; border-top: 1px solid #ccccff; border-right: 1px solid #ccccff">
+<p><i>Objects</i><br />
+<a href="/wiki/Database_trigger.html" title="Database trigger">Trigger</a> | <a href="/wiki/View_%28database%29.html" title="View (database)">View</a> | <a href="/wiki/Table_%28database%29.html" title="Table (database)">Table</a> | <a href="/wiki/Cursor_%28databases%29.html" title="Cursor (databases)">Cursor</a> | <strong class="selflink">Log</strong> | <a href="/wiki/Database_transaction.html" title="Database transaction">Transaction</a> | <a href="/wiki/Index_%28database%29.html" title="Index (database)">Index</a> | <a href="/wiki/Stored_procedure.html" title="Stored procedure">Stored procedure</a> | <a href="/wiki/Partition_%28database%29.html" title="Partition (database)">Partition</a></p>
+</td>
+<td width="50%" align="center" style="vertical-align:top; border-top: 1px solid #ccccff">
+<p><i>Topics in <a href="/wiki/SQL.html" title="SQL">SQL</a></i><br />
+<a href="/wiki/Select_%28SQL%29.html" title="Select (SQL)">Select</a> | <a href="/wiki/Insert_%28SQL%29.html" title="Insert (SQL)">Insert</a> | <a href="/wiki/Update_%28SQL%29.html" title="Update (SQL)">Update</a> | <a href="/wiki/Merge_%28SQL%29.html" title="Merge (SQL)">Merge</a> | <a href="/wiki/Delete_%28SQL%29.html" title="Delete (SQL)">Delete</a> | <a href="/wiki/Join_%28SQL%29.html" title="Join (SQL)">Join</a> | <a href="/wiki/Union_%28SQL%29.html" title="Union (SQL)">Union</a> | <a href="/wiki/Create_%28SQL%29.html" title="Create (SQL)">Create</a> | <a href="/wiki/Drop_%28SQL%29.html" title="Drop (SQL)">Drop</a><br />
+<a href="/wiki/Comparison_of_SQL_syntax.html" title="Comparison of SQL syntax">Comparison of syntax</a></p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr bgcolor="#CCCCFF">
+<td align="center"><b>Implementations of database management systems</b></td>
+</tr>
+<tr>
+<td align="center" style="font-size: small">
+<table width="100%" cellspacing="0" cellpadding="2" border="0">
+<tr class="toccolours" style="font-size: small">
+<td width="50%" align="center" style="vertical-align:top; border-top: 1px solid #ccccff; border-right: 1px solid #ccccff">
+<p><i>Types of implementations</i><br />
+<a href="/wiki/Flat_file_database.html" title="Flat file database">Flat file</a> | <a href="/wiki/Deductive_database.html" title="Deductive database">Deductive</a> | <a href="/wiki/Dimensional_database.html" title="Dimensional database">Dimensional</a> | <a href="/wiki/Hierarchical_model.html" title="Hierarchical model">Hierarchical</a> | <a href="/wiki/Object_database.html" title="Object database">Object oriented</a> | <a href="/wiki/Temporal_database.html" title="Temporal database">Temporal</a><br />
+<br />
+<i>Products</i><br />
+<a href="/wiki/DBASE.html" title="DBASE">dBASE</a> | <a href="/wiki/Oracle_database.html" title="Oracle database">Oracle</a> | <a href="/wiki/Sybase_SQL_Server.html" title="Sybase SQL Server">Sybase</a> | <a href="/wiki/MySQL.html" title="MySQL">MySQL</a> | <a href="/wiki/SQLite.html" title="SQLite">SQLite</a> | <a href="/wiki/Microsoft_SQL_Server.html" title="Microsoft SQL Server">Microsoft SQL Server</a> | <a href="/wiki/Essbase.html" title="Essbase">Essbase</a> | <a href="/wiki/PostgreSQL.html" title="PostgreSQL">PostgreSQL</a> | <a href="/wiki/IBM_DB2.html" title="IBM DB2">DB2</a> | <a href="/wiki/Informix.html" title="Informix">Informix</a> | <a href="/wiki/Helix_database.html" title="Helix database">Helix database</a> | <a href="/wiki/Comparison_of_relational_database_management_systems.html" title="Comparison of relational database management systems">Comparison - relational</a> | <a href="/wiki/Comparison_of_object-relational_database_management_systems.html" title="Comparison of object-relational database management systems">Comparison - object-relational</a></p>
+</td>
+<td width="50%" align="center" style="vertical-align:top; border-top: 1px solid #ccccff">
+<p><i>Components</i><br />
+<a href="/wiki/Query_language.html" title="Query language">Query language</a> | <a href="/wiki/Query_optimizer.html" title="Query optimizer">Query optimizer</a> | <a href="/wiki/Query_plan.html" title="Query plan">Query plan</a> | <a href="/wiki/Open_Database_Connectivity.html" title="Open Database Connectivity">ODBC</a> | <a href="/wiki/Java_Database_Connectivity.html" title="Java Database Connectivity">JDBC</a><br />
+<i>Lists</i><br />
+<a href="/wiki/List_of_object-oriented_database_management_systems.html" title="List of object-oriented database management systems">List of object-oriented database management systems</a><br />
+<a href="/wiki/List_of_relational_database_management_systems.html" title="List of relational database management systems">List of relational database management systems</a><br />
+<a href="/wiki/List_of_truly_relational_database_management_systems.html" title="List of truly relational database management systems">List of truly relational database management systems</a></p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+<!-- 
+Pre-expand include size: 5436 bytes
+Post-expand include size: 5123 bytes
+Template argument size: 57 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:245974-0!1!0!default!!en!2 and timestamp 20060906012016 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:Database management systems">Database management systems</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Transaction_log.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 07:23, 23 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv86 in 0.118 secs. --></body></html>

@@ -1,0 +1,534 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Digital signature,1999,2000,ABA digital signature guidelines,Algorithm,Alice and Bob,Asymmetric key cryptography,Bit,CEN Workshop Agreement,CRYPTREC,Cable" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Digital signature - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Digital_signature";
+			var wgTitle = "Digital signature";
+			var wgArticleId = 59644;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Digital signature</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub">(Redirected from <a  title="Digital signatures">Digital signatures</a>)</div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p><b>Digital signature</b> is a term with confusing referents. It is generally taken to be a '<a href="/wiki/Subset.html" title="Subset">subset</a>' of <a href="/wiki/Electronic_signature.html" title="Electronic signature">electronic signatures</a>.<sup id="_ref-0" class="reference"><a  title="">[1]</a></sup><sup id="_ref-1" class="reference"><a  title="">[2]</a></sup><sup id="_ref-2" class="reference"><a  title="">[3]</a></sup><sup id="_ref-3" class="reference"><a  title="">[4]</a></sup> But some people use the term to describe something equivalent to electronic signature. As does this legislation.</p>
+<dl>
+<dd><i>electronic signature</i> means an electronic sound, symbol, or process, attached to or logically associated with a contract or other record and executed or adopted by a person with the intent to sign the record.<sup id="_ref-4" class="reference"><a  title="">[5]</a></sup> This is the definition given by the <a href="/wiki/U.S..html" title="U.S.">U.S.</a> <a href="/wiki/Electronic_Signatures_in_Global_and_National_Commerce_Act.html" title="Electronic Signatures in Global and National Commerce Act">Electronic Signatures in Global and National Commerce Act</a> of 2000.</dd>
+</dl>
+<p>Or it can be used as a broader term encompassing <a href="/wiki/Message_authentication_code.html" title="Message authentication code">message authentication codes</a>, <a href="/wiki/Hash_function.html" title="Hash function">file integrity hashes</a> and <a href="/wiki/Graphics_tablet.html" title="Graphics tablet">digital pen pad devices</a>.</p>
+<p>In this article <i>digital signature</i> is used to mean a cryptographically based signature assurance scheme. Many have been proposed, some have been found to be flawed and are not used. Some are covered by patents, some were covered by patents which have expired, and some are free of patent license requirements, though there is more than a little disagreement on this point amongst those with commercial interests.</p>
+<p>Digital signatures are often used in the context of <a href="/wiki/Public_key_infrastructure.html" title="Public key infrastructure">Public Key Infrastructure (PKI)</a> schemes in which the public key used in the signature scheme is tied to a user by a <a href="/wiki/Digital_identity_certificate.html" title="Digital identity certificate">digital identity certificate</a> issued by a <a href="/wiki/Certificate_authority.html" title="Certificate authority">certificate authority</a>, usually run by a third party commercial firm. PKI systems use <a href="/wiki/Asymmetric_key_cryptography.html" title="Asymmetric key cryptography">asymmetric key cryptography</a> to unbreakably bind user information (name, address, phone number, ...) to a public key; the underlying idea is closely akin to that of a <a href="/wiki/Notary.html" title="Notary">notary</a> endorsement. There are several digital signature schemes; most establish two complementary algorithms, one for signing and the other for checking the signature at some later time. The output of the signature process (in principle, these are bit strings, though they can be represented in many ways) is also called a <i>digital signature</i>.</p>
+<p>The term <i><a href="/wiki/Electronic_signature.html" title="Electronic signature">electronic signature</a></i>, although sometimes used for the digital signatures discussed here, has had a distinct meaning in <a href="/wiki/Common_law.html" title="Common law">common law</a>: it refers to any of several, not necessarily cryptographic, mechanisms for identifying the originator of an electronic message. Electronic signatures found valid by courts in various jurisdictions have included <a href="/wiki/Cable.html" title="Cable">cable</a> and <a href="/wiki/Teleprinter.html" title="Teleprinter">Telex</a> addresses, as well as <a href="/wiki/FAX.html" title="FAX">FAX</a> transmission of handwritten signatures on a paper document. It is said that this is the reason both the <a href="/wiki/Ueta.html" title="Ueta">UETA</a> (US State law), and the US Federal <a href="/wiki/Electronic_Signatures_in_Global_and_National_Commerce_Act.html" title="Electronic Signatures in Global and National Commerce Act">Electronic Signatures in Global and National Commerce Act</a> refer only to electronic signatures. As the security (and workability) of the digital signatures discussed in this article are quite different than all other kinds of electronic signatures, these legal usages present problems in practice.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Benefits of Digital Signatures</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">1.1</span> <span class="toctext">Authentication</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.2</span> <span class="toctext">Integrity</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.3</span> <span class="toctext">Non-repudiation</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Implementation of Public-key digital signatures</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">2.1</span> <span class="toctext">Association of digital signatures and encryption</span></a>
+<ul>
+<li class="toclevel-3"><a ><span class="tocnumber">2.1.1</span> <span class="toctext">Using separate key pairs for signing and encryption</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.2</span> <span class="toctext">Association of digital signatures and trusted time stamping</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.3</span> <span class="toctext">Additional security precautions</span></a>
+<ul>
+<li class="toclevel-3"><a ><span class="tocnumber">2.3.1</span> <span class="toctext">Putting the private key on a smart card</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">2.3.2</span> <span class="toctext">Using smart card readers with a separate keyboard</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">2.3.3</span> <span class="toctext">Other smart card designs</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">2.3.4</span> <span class="toctext">Using digital signatures only with trusted applications</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Some digital signature algorithms</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">The current state of use — legal and practical</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Legal aspects</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">5.1</span> <span class="toctext">China</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">5.2</span> <span class="toctext">Brazil</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">5.3</span> <span class="toctext">European Union and the European Economic Area</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">5.4</span> <span class="toctext">India</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">5.5</span> <span class="toctext">New Zealand</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">5.6</span> <span class="toctext">United Nations Commission on International Trade Law</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">5.7</span> <span class="toctext">United States</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">5.8</span> <span class="toctext">Russian Federation</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">5.9</span> <span class="toctext">Switzerland</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">5.10</span> <span class="toctext">Uruguay</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">Legal cases</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">8</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Benefits of Digital Signatures">edit</a>]</div>
+<p><a name="Benefits_of_Digital_Signatures" id="Benefits_of_Digital_Signatures"></a></p>
+<h2>Benefits of Digital Signatures</h2>
+<p>There are three common reasons for applying a digital signature to communications:</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Authentication">edit</a>]</div>
+<p><a name="Authentication" id="Authentication"></a></p>
+<h3>Authentication</h3>
+<p>Public-key cryptosystems allow encryption of a message with a user's private key. The message itself need not be sent in <a href="/wiki/Ciphertext.html" title="Ciphertext">ciphertext</a>. If a <a href="/wiki/Cryptographic_hash_function.html" title="Cryptographic hash function">hash</a> of the document is generated and then protected via encryption, the document cannot be altered in any way without changing the hash to match, which, if quality algorithms are properly used, will be quite difficult. By decrypting the hash using the sender's public key, and checking the result against a newly generated hash of the alleged plaintext, the recipient can confirm (with high confidence) that the encryption was done with the sender's private key (and so presumably by the user who should have been the only person able to use that key), and that the message hasn't been altered since it was signed. No recipient can ever be absolutely certain the purported sender is indeed the signer -- ie, the person who used the private key -- since the cryptosystem might have been broken, the key copied, or the whole scheme evaded using <a href="/wiki/Social_engineering.html" title="Social engineering">social engineering</a>.</p>
+<p>The importance of high confidence in both the message integrity and sender authenticity is especially obvious in a financial context. For example, suppose a bank's branch office sends instructions to the central office in the form <i>(a,b)</i> where <i>a</i> is the account number and <i>b</i> is the amount to be credited to the account. A devious customer may deposit £100, observe the resulting transmission and repeatedly retransmit <i>(a,b)</i>, getting a deposit each time and getting rich in the process. This is an example of a <i><a href="/wiki/Replay_attack.html" title="Replay attack">replay attack</a></i>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Integrity">edit</a>]</div>
+<p><a name="Integrity" id="Integrity"></a></p>
+<h3>Integrity</h3>
+<p>Both parties will always wish to be confident that a message has not been altered during transmission. Encryption of the message makes it difficult for a third party to <i>read</i> it, but that third party may still be able to <i>alter</i> it, perhaps maliciously, without actually reading it. An example is the <i>homomorphism attack</i>: consider a bank which sends instructions from branch offices to the central office in the form <i>(a,b)</i> where <i>a</i> is the account number and <i>b</i> is the amount to be credited to the account. A devious customer may deposit £100, intercept the resulting transmission and then transmit <i>(a,b<sup>3</sup>)</i> to become an instant millionaire.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Non-repudiation">edit</a>]</div>
+<p><a name="Non-repudiation" id="Non-repudiation"></a></p>
+<h3>Non-repudiation</h3>
+<p>In a cryptographic context, the word <i>repudiation</i> refers to the act of disclaiming responsibility for a message (ie, claiming it was sent by some third party, certainly not me; "I repudiate this message and its contents!"). A message's recipient may insist the sender attach a signature in order to make later repudiation more difficult, since the recipient can show the signed message to a third party (eg, a court) to reinforce a claim as to its origin. However, loss of control over a user's private key will mean that all digital signatures using that key, and so 'from' that user, are suspect. Noticing that such a loss of control has occurred is not a cryptographic problem, but a human space one, and is unsolved. Short of special purpose protocols to address this issue, digital signatures alone cannot provide inherent non-repudiation.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Implementation of Public-key digital signatures">edit</a>]</div>
+<p><a name="Implementation_of_Public-key_digital_signatures" id="Implementation_of_Public-key_digital_signatures"></a></p>
+<h2>Implementation of Public-key digital signatures</h2>
+<p>Public-key digital signature schemes rely on <a href="/wiki/Public-key_cryptography.html" title="Public-key cryptography">public-key cryptography</a>. In public-key cryptography, each user has a pair of keys: one public and one private. The public key is distributed freely, but the private key is kept secret by the user; another requirement is that it should be computationally infeasible to derive the private key from the public key.</p>
+<p>Generally, digital signature schemes include three algorithms:</p>
+<ul>
+<li>A key generation algorithm</li>
+<li>A signing algorithm</li>
+<li>A verification algorithm</li>
+</ul>
+<p>For example, consider a situation in which <a href="/wiki/Alice_and_Bob.html" title="Alice and Bob">Bob</a> sends a message to Alice and she wants to be certain it came from him. Bob sends his message to Alice, attaching a digital signature. The digital signature was generated using Bob's private key, and takes the form of a string of <a href="/wiki/Bit.html" title="Bit">bits</a> (normally represented as a string of characters (ie, digits and letters)). On receipt, Alice can then check whether the message really came from Bob by running the verification algorithm on the message together with the signature, using Bob's public key. If they match, then Alice can be confident the message really was from Bob, because quality digital signature algorithms are so designed that it is very difficult to forge a signature to match a given message (unless one has knowledge of the private key, which Bob must keep secret).</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Association of digital signatures and encryption">edit</a>]</div>
+<p><a name="Association_of_digital_signatures_and_encryption" id="Association_of_digital_signatures_and_encryption"></a></p>
+<h3>Association of digital signatures and encryption</h3>
+<div class="thumb tright">
+<div style="width:502px;"><a  class="internal" title=""><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Digital_signature_schema.gif/500px-Digital_signature_schema.gif" alt="" width="500" height="372" longdesc="/wiki/Image:Digital_signature_schema.gif" /></a>
+<div class="thumbcaption">
+<div class="magnify" style="float:right"><a  class="internal" title="Enlarge"><img src="/skins-1.5/common/images/magnify-clip.png" width="15" height="11" alt="Enlarge" /></a></div>
+</div>
+</div>
+</div>
+<p>Digital signatures use encryption techniques but the algorithms are not typically suited for direct encryption of bulk <a href="/wiki/Plaintext.html" title="Plaintext">plaintexts</a>; more efficient methods are available. Of course a signed document may be sent encrypted over a public communication channel (eg, the Intenet) just as might be any other message.</p>
+<p>More usually, Bob first applies a quality <a href="/wiki/Cryptographic_hash_function.html" title="Cryptographic hash function">cryptographic hash function</a> to the message, and then digitally signs the resulting hash (see diagram). An insecure <a href="/wiki/Cryptographic_hash_function.html" title="Cryptographic hash function">hash</a> can compromise the digital signature. For example, if it is possible to generate <a href="/wiki/Hash_collision.html" title="Hash collision">hash collisions</a>, it might be feasible to forge digital signatures.</p>
+<p>There are several reasons to sign such a hash (or message digest) instead of the whole document.</p>
+<ul>
+<li><b>For efficiency:</b> The signature will be much shorter and thus save time since hashing is generally much faster than signing in practice.</li>
+<li><b>The document is intended to be read by others:</b> E.g., diplomas, birth certificates, identity certificates, driver's licenses, a contract establishing ownership of something, etc... These documents will be in <a  class="new" title="Clear text">clear text</a>, but an accompanying digital signature can be used to verify that they are neither forged nor altered.</li>
+<li><b>For integrity:</b> Without the hash function the text "to be signed" must be split (separated) in blocks with a size shorter than the length of the private key. Then each block has to be signed and sent to the receiver. However the receiver of the signed blocks is not able to recognize if one or more blocks have been erased during the transmission.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Using separate key pairs for signing and encryption">edit</a>]</div>
+<p><a name="Using_separate_key_pairs_for_signing_and_encryption" id="Using_separate_key_pairs_for_signing_and_encryption"></a></p>
+<h5>Using separate key pairs for signing and encryption</h5>
+<p>In several countries, a digital signature has a status somewhat like that of a traditional pen and paper signature. Generally, these provisions mean that what is digitally signed legally binds the signer of the document to the terms therein. For that reason, it is often thought best to use separate key pairs for encrypting and signing. Using the encryption key pair a person can engage in an encrypted conversation (eg, about buying a house), but does not legally sign every message he sends. Only when both parties come to an agreement do they sign a contract with their signing keys, and only then are they legally bound by the terms of a specific document. After signing, the document can be sent over the encrypted link.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Association of digital signatures and trusted time stamping">edit</a>]</div>
+<p><a name="Association_of_digital_signatures_and_trusted_time_stamping" id="Association_of_digital_signatures_and_trusted_time_stamping"></a></p>
+<h3>Association of digital signatures and trusted time stamping</h3>
+<p>Digital signature algorithms and protocols do not inherently provide certainty about the date and time at which the underlying document was signed. The signer might, or might not, have included a time stamp with the signature, or the document itself might have a date mentioned on it, but a later reader cannot be certain the signer did not, for instance, backdate the date or time of the signature. Such misuse can be made impracticable by using <a href="/wiki/Time_stamp.html" title="Time stamp">trusted time stamping</a> in addition to digital signatures.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Additional security precautions">edit</a>]</div>
+<p><a name="Additional_security_precautions" id="Additional_security_precautions"></a></p>
+<h3>Additional security precautions</h3>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Putting the private key on a smart card">edit</a>]</div>
+<p><a name="Putting_the_private_key_on_a_smart_card" id="Putting_the_private_key_on_a_smart_card"></a></p>
+<h5>Putting the private key on a smart card</h5>
+<p>All public key / private key cryptosystems depend entirely on keeping the private key secret. A private key can be stored on a user's computer, and protected by, for instance, a local password, but this has two disadvantages:</p>
+<ul>
+<li>the user can only sign documents on that particular computer and</li>
+<li>the security of the private key completely depends on the <a href="/wiki/Computer_insecurity.html" title="Computer insecurity">security</a> of the computer, which is notoriously unreliable for many PCs and <a href="/wiki/Operating_system.html" title="Operating system">operating systems</a>.</li>
+</ul>
+<p>A more secure alternative is to store the private key on a <a href="/wiki/Smart_card.html" title="Smart card">smart card</a>. Many smart cards are deliberately designed to be tamper resistant. In a typical implementation, the hash calculated from the document is sent to the smart card, whose CPU encrypts the hash using the stored private key of the user and returns it. Typically, a user must activate his smart card by entering a <a href="/wiki/Personal_identification_number.html" title="Personal identification number">personal identification number</a> or PIN code (thus providing a <a href="/wiki/Two-factor_authentication.html" title="Two-factor authentication">two-factor authentication</a>). Note that it can be sensibly arranged (but is not always done) that the private key never leaves the smart card. If the smart card is stolen, the thief still needs the PIN code to be able to generate a digital signature. This reduces the security of the scheme to that of the PIN system, but is nevertheless more secure than are many PCs.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Using smart card readers with a separate keyboard">edit</a>]</div>
+<p><a name="Using_smart_card_readers_with_a_separate_keyboard" id="Using_smart_card_readers_with_a_separate_keyboard"></a></p>
+<h5>Using smart card readers with a separate keyboard</h5>
+<p>Entering a PIN code to activate the smart card, commonly requires a numeric keypad. Some card readers have their own numeric keypad. This is safer than using a card reader integrated into a PC, and then entering the PIN using that computer's keyboard. The computer might be running a <a href="/wiki/Keystroke_logging.html" title="Keystroke logging">keystroke logger</a> (by its owner/operators intention or otherwise -- due to a virus, for instance) so that the PIN code becomes compromised. Specialized card readers are less vulnerable, though not invulnerable, against tampering with their software or hardware. And, of course, eavesdropping attacks against all such equipment are possible.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Other smart card designs">edit</a>]</div>
+<p><a name="Other_smart_card_designs" id="Other_smart_card_designs"></a></p>
+<h5>Other smart card designs</h5>
+<p>Smart card design is an active field, and there are smart card schemes which are intended to avoid these particular problems, though so far with little security proofs.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Using digital signatures only with trusted applications">edit</a>]</div>
+<p><a name="Using_digital_signatures_only_with_trusted_applications" id="Using_digital_signatures_only_with_trusted_applications"></a></p>
+<h5>Using digital signatures only with trusted applications</h5>
+<p>One of the main differences between a digital signature and a written signature is that the user does not "see" what he signs. It's the application that presents a hash code to be encrypted with the private key, but in the case of a malicious application a hash code of another document might be presented so that the users thinks he is signing the document he sees on the screen but is actually unwillingly signing another (probably less favorable).</p>
+<p><br /></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Some digital signature algorithms">edit</a>]</div>
+<p><a name="Some_digital_signature_algorithms" id="Some_digital_signature_algorithms"></a></p>
+<h2>Some digital signature algorithms</h2>
+<ul>
+<li><a href="/wiki/Full_Domain_Hash.html" title="Full Domain Hash">Full Domain Hash</a>, <a href="/wiki/RSA-PSS.html" title="RSA-PSS">RSA-PSS</a> etc., based on <a href="/wiki/RSA.html" title="RSA">RSA</a></li>
+<li><a href="/wiki/Digital_Signature_Algorithm.html" title="Digital Signature Algorithm">DSA</a></li>
+<li><a href="/wiki/Elliptic_Curve_DSA.html" title="Elliptic Curve DSA">ECDSA</a></li>
+<li><a href="/wiki/ElGamal_signature_scheme.html" title="ElGamal signature scheme">ElGamal signature scheme</a></li>
+<li><a href="/wiki/Undeniable_signature.html" title="Undeniable signature">Undeniable signature</a></li>
+<li><a href="/wiki/SHA.html" title="SHA">SHA</a> (typically SHA-1) with <a href="/wiki/RSA.html" title="RSA">RSA</a></li>
+<li><a href="/wiki/Rabin_signature_algorithm.html" title="Rabin signature algorithm">Rabin signature algorithm</a></li>
+<li><a href="/wiki/Pointcheval-Stern_signature_algorithm.html" title="Pointcheval-Stern signature algorithm">Pointcheval-Stern signature algorithm</a></li>
+<li><a href="/wiki/Schnorr_signature.html" title="Schnorr signature">Schnorr signature</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: The current state of use &amp;mdash; legal and practical">edit</a>]</div>
+<p><a name="The_current_state_of_use_.E2.80.94_legal_and_practical" id="The_current_state_of_use_.E2.80.94_legal_and_practical"></a></p>
+<h2>The current state of use — legal and practical</h2>
+<p>Digital signature schemes all have several prior requirements without which no such signature can mean anything, whatever the cryptographic theory or legal provision.</p>
+<ul>
+<li>First, quality algorithms. Some public-key algorithms are known to be insecure, practicable attacks against them having been discovered.</li>
+<li>Second, quality implementations. An implementation of a good algorithm (or <a href="/wiki/Cryptographic_protocol.html" title="Cryptographic protocol">protocol</a>) with mistake(s) will not work.</li>
+<li>Third, the private key must remain actually secret; if it becomes known to any other party, that party can produce <i>perfect</i> digital signatures of anything whatsoever.</li>
+<li>Fourth, distribution of public keys must be done in such a way that the public key claimed to belong to, say, Bob actually belongs to Bob, and vice versa. This is commonly done using a <a href="/wiki/Public_key_infrastructure.html" title="Public key infrastructure">public key infrastructure</a> and the public key<img class='tex' src="http://upload.wikimedia.org/math/1/b/1/1b18a4c4fc578ef4cfd1cc0eb0daa473.png" alt="\leftrightarrow" />user association is attested by the operator of the PKI (called a <a href="/wiki/Certificate_authority.html" title="Certificate authority">certificate authority</a>). For 'open' PKIs in which anyone can request such an attestation (universally embodied in a cryptographically protected <a href="/wiki/Identity_certificate.html" title="Identity certificate">identity certificate</a>), the possibility of mistaken attestation is non trivial. Commercial PKI operators have suffered several publicly known problems. Such mistakes could lead to falsely signed, and thus wrongly attributed, documents. 'closed' PKI systems are more expensive, but less easily subverted in this way.</li>
+<li>Fifth, users (and their software) must carry out the signature protocol properly.</li>
+</ul>
+<p>Only if all of these conditions are met will a digital signature actually be any evidence of who sent the message, and therefore of their assent to its contents. Legal enactment cannot change this reality of the existing engineering possibilities, though some such have not reflected this actuality.</p>
+<p>Legislatures, being importuned by businesses expecting to profit from operating a PKI, or by the technological avant-garde advocating new solutions to old problems, have enacted statutes and/or regulations in many jurisdictions authorizing, endorsing, encouraging, or permitting digital signatures and providing for (or limiting) their legal effect. The first appears to have been in <a href="/wiki/Utah.html" title="Utah">Utah</a> in the United States, followed closely by the states <a href="/wiki/Massachusetts.html" title="Massachusetts">Massachusetts</a> and <a href="/wiki/California.html" title="California">California</a>. Other countries have also passed statutes or issued regulations in this area as well and the UN has had an active model law project for some time. These enactments (or proposed enactments) vary from place to place, have typically embodied expectations at variance (optimistically or pessimistically) with the state of the underlying <a href="/wiki/Cryptographic_engineering.html" title="Cryptographic engineering">cryptographic engineering</a>, and have had the net effect of confusing potential users and specifiers, nearly all of whom are not cryptographically knowledgeable. Adoption of technical standards for digital signatures have lagged behind much of the legislation, delaying a more or less unified engineering position on <a href="/wiki/Interoperability.html" title="Interoperability">interoperability</a>, <a href="/wiki/Algorithm.html" title="Algorithm">algorithm</a> choice, <a href="/wiki/Key_length.html" title="Key length">key lengths</a>, and so on what the engineering is attempting to provide.</p>
+<dl>
+<dd><i>See also</i>: <a href="/wiki/ABA_digital_signature_guidelines.html" title="ABA digital signature guidelines">ABA digital signature guidelines</a></dd>
+</dl>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Legal aspects">edit</a>]</div>
+<p><a name="Legal_aspects" id="Legal_aspects"></a></p>
+<h2>Legal aspects</h2>
+<p>Legislation concerning the effect and validity of digital signatures includes:</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: China">edit</a>]</div>
+<p><a name="China" id="China"></a></p>
+<h3>China</h3>
+<ul>
+<li><a  class="external text" title="http://www.cin.gov.cn/law/other/2005040803.htm">Electronic Signature Law of the People's Republic of China (Chinese)</a> - The stated purposes include standardizing the conduct of electronic signatures, confirming the legal validity of electronic signatures and safeguarding the legal interests of parties involved in such matters.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Brazil">edit</a>]</div>
+<p><a name="Brazil" id="Brazil"></a></p>
+<h3>Brazil</h3>
+<ul>
+<li><a  class="external text" title="https://www.planalto.gov.br/ccivil_03/MPV/Antigas_2001/2200-2.htm">Medida provisória 2.200-2 (Portuguese)</a> - Brazilian law states that any digital document is valid for the law if it is certified by <b>ICP-Brasil</b> (the official Brazilian PKI) or if it is certified by other PKI and the concerns parties agree with the validity of the document.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: European Union and the European Economic Area">edit</a>]</div>
+<p><a name="European_Union_and_the_European_Economic_Area" id="European_Union_and_the_European_Economic_Area"></a></p>
+<h3>European Union and the European Economic Area</h3>
+<ul>
+<li>European Union Directive establishing the framework for electronic signatures:
+<ul>
+<li><a  class="external text" title="http://europa.eu.int/eur-lex/pri/en/oj/dat/2000/l_013/l_01320000119en00120020.pdf">Directive 1999/93/EC of the European Parliament and of the Council</a> of <a href="/wiki/December_13.html" title="December 13">13 December</a> <a href="/wiki/1999.html" title="1999">1999</a> on a Community framework for electronic signatures.</li>
+<li><a  class="external text" title="http://europa.eu.int/eur-lex/pri/en/oj/dat/2003/l_175/l_17520030715en00450046.pdf">Commission Decision 2003/511/EC</a> adopting three <a href="/wiki/CEN_Workshop_Agreement.html" title="CEN Workshop Agreement">CEN Workshop Agreements</a> as technical standards presumed to be in accordance with the Directive</li>
+</ul>
+</li>
+<li>Implementing laws: Several countries have already implemented the Directive 1999/93/EC.
+<ul>
+<li>Austria
+<ul>
+<li><a  class="external text" title="http://www.a-sit.at/signatur/rechtsrahmen/SigG_incl_Novelle2000.pdf">Signature Law, 2000</a></li>
+</ul>
+</li>
+<li>Belgium
+<ul>
+<li><a  class="external text" title="http://mineco.fgov.be/information_society/e-signatures/law_e_signature_002.pdf">Signature Law, 2001</a></li>
+</ul>
+</li>
+<li>Czech Republic
+<ul>
+<li><a  class="external text" title="http://www.micr.cz/scripts/detail.php?id=1542">Act on Electronic Signatures, 227/2000</a></li>
+</ul>
+</li>
+<li>England, Scotland and Wales
+<ul>
+<li><a  class="external text" title="http://www.legislation.hmso.gov.uk/acts/acts2000/20000007.htm#7">Electronic Communications Act, 2000</a></li>
+</ul>
+</li>
+<li>Germany
+<ul>
+<li><a  class="external text" title="http://www.bsi.de/esig/basics/legalbas/sigg2001.pdf">Signature Law, 2001</a></li>
+</ul>
+</li>
+<li>Lithuania
+<ul>
+<li><a  class="external text" title="http://www3.lrs.lt/pls/inter2/dokpaieska.showdoc_l?p_id=204802">Law on electronic signature, 2002</a></li>
+</ul>
+</li>
+<li>Norway
+<ul>
+<li><a  class="external text" title="http://www.lovdata.no/all/hl-20010615-081.html">Electronic Signature Act, 2001</a> (in Norwegian).</li>
+</ul>
+</li>
+<li>Slovenia
+<ul>
+<li><a  class="external text" title="http://www2.gov.si/zak/Zak_vel.nsf/4c1d8c547755fffac1256616002dd5e1/c12563a400338836c12568fd00505349?OpenDocument">Electronic Business and Electronic Signature Act (in Slovene)</a> .</li>
+</ul>
+</li>
+<li>Spain
+<ul>
+<li><a  class="external text" title="http://www.google.com/url?sa=t&amp;ct=res&amp;cd=1&amp;url=http%3A//www.aeat.es/descarga/ley59_2003.pdf">Ley 59/2003 , de 19 de diciembre, de firma electrónica (in Spanish)</a>.</li>
+</ul>
+</li>
+<li>Sweden
+<ul>
+<li><a  class="external text" title="http://rixlex.riksdagen.se/htbin/thw?%24%7BOOHTML%7D=SFST_DOK&amp;%24%7BSNHTML%7D=SFSR_ERR&amp;%24%7BBASE%7D=SFST&amp;BET=2000%3A832&amp;%24%7BTRIPSHOW%7D=format%3DTHW">Qualified Electronic Signatures Act (SFS 2000:832) (in Swedish)</a>.</li>
+<li><a  class="external text" title="http://www.pts.se/Archive/Documents/SE/engelsk%20oversattning%20av%20lag%20elektroniska%20signaturer.pdf">SFS 2000:832 in English translation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: India">edit</a>]</div>
+<p><a name="India" id="India"></a></p>
+<h3>India</h3>
+<ul>
+<li><a  class="external text" title="http://www.mit.gov.in/it-bill.asp">Information Technology Act, 2000</a></li>
+</ul>
+<ul>
+<li><a  class="external text" title="http://unpan1.un.org/intradoc/groups/public/documents/apcity/unpan002090.pdf">(PDF) India's Information Technology Act, 2000</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: New Zealand">edit</a>]</div>
+<p><a name="New_Zealand" id="New_Zealand"></a></p>
+<h3>New Zealand</h3>
+<ul>
+<li><a  class="external text" title="http://www.legislation.govt.nz/">Electronic Transactions Act, 2003 sections 22-24</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: United Nations Commission on International Trade Law">edit</a>]</div>
+<p><a name="United_Nations_Commission_on_International_Trade_Law" id="United_Nations_Commission_on_International_Trade_Law"></a></p>
+<h3>United Nations Commission on International Trade Law</h3>
+<ul>
+<li><a  class="external text" title="http://www.uncitral.org/uncitral/en/uncitral_texts/electronic_commerce/2001Model_signatures.html">UNCITRAL Model Law on Electronic Signatures (2001), a strong influence in the field.</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: United States">edit</a>]</div>
+<p><a name="United_States" id="United_States"></a></p>
+<h3>United States</h3>
+<ul>
+<li><a href="/wiki/Uniform_Electronic_Transactions_Act.html" title="Uniform Electronic Transactions Act">Uniform Electronic Transactions Act</a> (UETA)</li>
+<li><a href="/wiki/Electronic_Signatures_in_Global_and_National_Commerce_Act.html" title="Electronic Signatures in Global and National Commerce Act">Electronic Signatures in Global and National Commerce Act</a> (E-SIGN), at <a  class="external text" title="http://www4.law.cornell.edu/uscode/15/7001.html">15 U.S.C. 7001</a> et seq.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Russian Federation">edit</a>]</div>
+<p><a name="Russian_Federation" id="Russian_Federation"></a></p>
+<h3>Russian Federation</h3>
+<p><a  class="external text" title="http://www.rg.ru/oficial/doc/federal_zak/1-fz.shtm">Federal Law of Russian Federation about Electronic Digital Signature (10.01.2002)</a></p>
+<p>The Law regulates the activity of Certificate Authorities and conditions for practical application of Digital Signature. However, the Law does not correspond to the recommendations of WTO, UNCITRAL and other influential organizations. Digital Signature Systems described in this Law are not compatible with international standards. This is the main reason, why the Law will be overwritten. Amendments should simplify the procedure of Digital Signature use.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Switzerland">edit</a>]</div>
+<p><a name="Switzerland" id="Switzerland"></a></p>
+<h3>Switzerland</h3>
+<ul>
+<li><a  class="external text" title="http://www.admin.ch/ch/f/rs/c943_03.html">Federal Law on Certification Services Concerning the Electronic Signature, 2003</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Uruguay">edit</a>]</div>
+<p><a name="Uruguay" id="Uruguay"></a></p>
+<h3>Uruguay</h3>
+<p>Uruguay laws include both, electronic and digital signatures:</p>
+<ul>
+<li><a  class="external text" title="http://www.parlamento.gub.uy/Leyes/Ley16736.htm#art695">Concerning passwords or adequate information technology gestures</a></li>
+<li><a  class="external text" title="http://www.parlamento.gub.uy/Leyes/Ley17243.htm#art25">Concerning electronic and digital signature and PKI</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Legal cases">edit</a>]</div>
+<p><a name="Legal_cases" id="Legal_cases"></a></p>
+<h2>Legal cases</h2>
+<p>Court decisions discussing the effect and validity of digital signatures or digital signature-related legislation:</p>
+<ul>
+<li><i><a  class="new" title="In re Piranha, Inc.">In re Piranha, Inc.</a>,</i> 2003 WL 21468504 (N.D. Tex) (<a href="/wiki/Uniform_Electronic_Transactions_Act.html" title="Uniform Electronic Transactions Act">UETA</a> does not preclude a person from contesting that he executed, adopted, or authorized an electronic signature that is purportedly his).</li>
+<li><i><a  class="new" title="Cloud Corp. v. Hasbro">Cloud Corp. v. Hasbro</a>,</i> 314 F.3d 289 (7th Cir., 2002)<a  class="external autonumber" title="http://www.emlf.org/Resources/cloud.pdf">[1]</a> (<a href="/wiki/Electronic_Signatures_in_Global_and_National_Commerce_Act.html" title="Electronic Signatures in Global and National Commerce Act">E-SIGN</a> does not apply retroactively to contracts formed before it took effect in <a href="/wiki/2000.html" title="2000">2000</a>. Nevertheless, the <a href="/wiki/Statute_of_frauds.html" title="Statute of frauds">statute of frauds</a> was satisfied by the text of E-mail plus an (apparently) written notation.)</li>
+<li><i><a  class="new" title="Sea-Land Service, Inc. v. Lozen International">Sea-Land Service, Inc. v. Lozen International</a>,</i> 285 F.3d 808 (9th Cir., 2002) <a  class="external autonumber" title="http://www.admiraltylawguide.com/circt/9thsealandlozen.pdf">[2]</a> (Internal corporate E-mail with signature block, forwarded to a third party by another employee, was admissible over hearsay objection as a party-admission, where the statement was apparently within the scope of the author's and forwarder's employment.)</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<ol class="references">
+<li id="_note-0"><b><a  title="">^</a></b> <a  class="external text" title="http://www.itc.virginia.edu/virginia.edu/fall00/digsigs/home.html">The University of Virginia</a></li>
+<li id="_note-1"><b><a  title="">^</a></b> <a  class="external text" title="http://enterprise.state.wi.us/home/strategic/esig.htm">State of WI</a></li>
+<li id="_note-2"><b><a  title="">^</a></b> <a  class="external text" title="http://www.naa.gov.au/recordkeeping/er/Security/6-glossary.html">National Archives of Australia</a></li>
+<li id="_note-3"><b><a  title="">^</a></b> <a  class="external text" title="http://www.cio.com/archive/101500/et.html">CIO</a></li>
+<li id="_note-4"><b><a  title="">^</a></b> <a  class="external text" title="http://frwebgate.access.gpo.gov/cgi-bin/getdoc.cgi?dbname=106_cong_public_laws&amp;docid=f:publ229.106.pdf">US ESIGN Act of 2000</a></li>
+</ol>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://www.youdzone.com/signature.html">An introduction to Digital Signatures</a></li>
+<li><a  class="external text" title="http://www.pgpi.org/doc/guide/7.0/en/intro/">Introduction to cryptography</a> from the PGP international website</li>
+</ul>
+<p><br clear="all" /></p>
+<center>
+<table class="toccolours">
+<tr>
+<td style="background:#ccccff" align="center">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="100%" align="center"><b><a href="/wiki/Public-key_cryptography.html" title="Public-key cryptography">Public-key cryptography</a></b></td>
+<td><small class="editlink noprint plainlinksneverexpand"><a  class="external text" title="http://en.wikipedia.org/w/index.php?title=Template:Public-key_cryptography&amp;action=edit">edit</a></small></td>
+<td>&#160;&#160;</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align="center"><small><b>Algorithms:</b> <a href="/wiki/Cramer-Shoup_system.html" title="Cramer-Shoup system">Cramer-Shoup</a> | <a href="/wiki/Diffie-Hellman_key_exchange.html" title="Diffie-Hellman key exchange">DH</a> | <a href="/wiki/Digital_Signature_Algorithm.html" title="Digital Signature Algorithm">DSA</a> | <a href="/wiki/Elliptic_Curve_Diffie-Hellman.html" title="Elliptic Curve Diffie-Hellman">ECDH</a> | <a href="/wiki/Elliptic_Curve_DSA.html" title="Elliptic Curve DSA">ECDSA</a> | <a href="/wiki/Encrypted_key_exchange.html" title="Encrypted key exchange">EKE</a> | <a href="/wiki/ElGamal_encryption.html" title="ElGamal encryption">ElGamal</a> | <a href="/wiki/GMR_%28cryptography%29.html" title="GMR (cryptography)">GMR</a> | <a href="/wiki/MQV.html" title="MQV">MQV</a> | <a href="/wiki/NTRUEncrypt.html" title="NTRUEncrypt">NTRUEncrypt</a> | <a href="/wiki/NTRUSign.html" title="NTRUSign">NTRUSign</a> | <a href="/wiki/Paillier_cryptosystem.html" title="Paillier cryptosystem">Paillier</a> | <a href="/wiki/Rabin_cryptosystem.html" title="Rabin cryptosystem">Rabin</a> | <a href="/wiki/Rabin-Williams_encryption.html" title="Rabin-Williams encryption">Rabin-Williams</a> | <a href="/wiki/RSA.html" title="RSA">RSA</a> | <a href="/wiki/Schnorr_signature.html" title="Schnorr signature">Schnorr</a> | <a href="/wiki/SPEKE_%28cryptography%29.html" title="SPEKE (cryptography)">SPEKE</a> | <a href="/wiki/Secure_remote_password_protocol.html" title="Secure remote password protocol">SRP</a> | <a href="/wiki/XTR.html" title="XTR">XTR</a></small></td>
+</tr>
+<tr>
+<td align="center"><small><b>Theory:</b> <a href="/wiki/Discrete_logarithm.html" title="Discrete logarithm">Discrete logarithm</a> | <a href="/wiki/Elliptic_curve_cryptography.html" title="Elliptic curve cryptography">Elliptic curve cryptography</a> | <a href="/wiki/RSA_problem.html" title="RSA problem">RSA problem</a></small></td>
+</tr>
+<tr>
+<td align="center"><small><b>Standardization:</b> <a  class="new" title="ANS X9F1">ANS X9F1</a> | <a href="/wiki/CRYPTREC.html" title="CRYPTREC">CRYPTREC</a> | <a href="/wiki/IEEE_P1363.html" title="IEEE P1363">IEEE P1363</a> | <a href="/wiki/NESSIE.html" title="NESSIE">NESSIE</a> | <a href="/wiki/NSA_Suite_B.html" title="NSA Suite B">NSA Suite B</a> &#160; <b>Misc:</b> <strong class="selflink">Digital signature</strong> | <a href="/wiki/Public_key_infrastructure.html" title="Public key infrastructure">PKI</a> | <a href="/wiki/Web_of_trust.html" title="Web of trust">Web of trust</a> | <a href="/wiki/Key_size.html" title="Key size">Key size</a></small></td>
+</tr>
+</table>
+</center>
+
+<!-- 
+Pre-expand include size: 1462 bytes
+Post-expand include size: 1379 bytes
+Template argument size: 0 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:59644-0!1!0!default!!en!2 and timestamp 20060908192212 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Cryptography">Cryptography</a></span> | <span dir='ltr'><a  title="Category:Asymmetric-key cryptosystems">Asymmetric-key cryptosystems</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Digital_signature.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-cs"><a >Česky</a></li>
+				<li class="interwiki-da"><a >Dansk</a></li>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-et"><a >Eesti</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-he"><a >עברית</a></li>
+				<li class="interwiki-nl"><a >Nederlands</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-pt"><a >Português</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+				<li class="interwiki-sl"><a >Slovenščina</a></li>
+				<li class="interwiki-fi"><a >Suomi</a></li>
+				<li class="interwiki-vi"><a >Tiếng Việt</a></li>
+				<li class="interwiki-tr"><a >Türkçe</a></li>
+				<li class="interwiki-uk"><a >Українська</a></li>
+				<li class="interwiki-zh"><a >中文</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 17:18, 31 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv85 in 0.105 secs. --></body></html>

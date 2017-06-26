@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Concurrent computing,Actor model,Ada programming language,Afnix programming language,Alef programming language,Alice programming language,Ambient calculus,C. A. R. Hoare,C programming language,C sharp,Calculus of Communicating Systems" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Concurrent computing - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Concurrent_computing";
+			var wgTitle = "Concurrent computing";
+			var wgArticleId = 2581605;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Concurrent computing</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub">(Redirected from <a  title="Concurrent programming language">Concurrent programming language</a>)</div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p><b>Concurrent computing</b> is the <a href="/wiki/Concurrency_%28computer_science%29.html" title="Concurrency (computer science)">concurrent</a> (simultaneous) execution of multiple interacting computational tasks. These tasks may be implemented as separate <a href="/wiki/Computer_program.html" title="Computer program">programs</a>, or as a set of <a href="/wiki/Process_%28computer_science%29.html" title="Process (computer science)">processes</a> or <a href="/wiki/Thread_%28computer_science%29.html" title="Thread (computer science)">threads</a> created by a single program. The tasks may also be executing on a single <a href="/wiki/Central_processing_unit.html" title="Central processing unit">processor</a>, <a href="/wiki/Multiprocessing.html" title="Multiprocessing">several processors</a> in close proximity, or <a href="/wiki/Distributed_computing.html" title="Distributed computing">distributed</a> across a network. Concurrent computing is related to <a href="/wiki/Parallel_computing.html" title="Parallel computing">parallel computing</a>, but focuses more on the interactions between tasks. Correct sequencing of the interactions or communications between different tasks, and the coordination of access to resources that are shared between tasks, are key concerns during the design of concurrent computing systems. Pioneers in the field of concurrent computing include <a href="/wiki/Edsger_Dijkstra.html" title="Edsger Dijkstra">Edsger Dijkstra</a>, <a href="/wiki/Per_Brinch_Hansen.html" title="Per Brinch Hansen">Per Brinch Hansen</a>, and <a href="/wiki/C._A._R._Hoare.html" title="C. A. R. Hoare">C. A. R. Hoare</a>.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Concurrent interaction and communication</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Coordinating access to resources</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Concurrent programming languages</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Models of concurrency</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Concurrent interaction and communication">edit</a>]</div>
+<p><a name="Concurrent_interaction_and_communication" id="Concurrent_interaction_and_communication"></a></p>
+<h2>Concurrent interaction and communication</h2>
+<p>In some concurrent computing systems communication between the concurrent components is hidden from the programmer (e.g., by using <a href="/wiki/Future_%28programming%29.html" title="Future (programming)">futures</a>), while in others it must be handled explicitly. Explicit communication can be divided into two classes:</p>
+<dl>
+<dt><a href="/wiki/Shared_memory.html" title="Shared memory">Shared memory</a> communication&#160;</dt>
+<dd>Concurrent components communicate by altering the contents of shared memory locations (exemplified by <a href="/wiki/Java_programming_language.html" title="Java programming language">Java</a> and <a href="/wiki/C_sharp.html" title="C sharp">C#</a>). This style of concurrent programming usually requires the application of some form of locking (e.g., <a href="/wiki/Mutual_exclusion.html" title="Mutual exclusion">mutexes</a>, <a href="/wiki/Semaphore_%28programming%29.html" title="Semaphore (programming)">semaphores</a>, or <a href="/wiki/Monitor_%28synchronization%29.html" title="Monitor (synchronization)">monitors</a>) to coordinate between threads.</dd>
+</dl>
+<dl>
+<dt><a href="/wiki/Message_passing.html" title="Message passing">Message passing</a> communication&#160;</dt>
+<dd>Concurrent components communicate by exchanging messages (exemplified by <a href="/wiki/Erlang_programming_language.html" title="Erlang programming language">Erlang</a> and <a href="/wiki/Occam_programming_language.html" title="Occam programming language">occam</a>). The exchange of messages may be carried out asynchronously (sometimes referred to as "send and pray", although it is standard practice to resend messages that are not acknowledged as received), or may use a rendezvous style in which the sender blocks until the message is received. Message-passing concurrency tends to be far easier to reason about than shared-memory concurrency, and is typically considered a more robust form of concurrent programming. A wide variety of mathematical theories for understanding and analyzing message-passing systems are available, including the <a href="/wiki/Actor_model.html" title="Actor model">Actor model</a>, and various <a href="/wiki/Process_calculi.html" title="Process calculi">process calculi</a>.</dd>
+</dl>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Coordinating access to resources">edit</a>]</div>
+<p><a name="Coordinating_access_to_resources" id="Coordinating_access_to_resources"></a></p>
+<h2>Coordinating access to resources</h2>
+<p>One of the major issues in concurrent computing is preventing concurrent processes from interfering with each other. For example, consider the following algorithm for making withdrawals from a checking account represented by the shared resource <code>balance</code>:</p>
+<pre>
+1  bool withdraw(int withdrawal) {
+2     if( balance &gt; withdrawal ) {
+3         balance = balance - withdrawal;
+4         return true;
+5     } else return false;
+6  }
+</pre>
+<p>Suppose <code>balance=500</code>, and two concurrent processes make the calls <code>withdraw(300)</code> and <code>withdraw(350)</code>. If line 2 in both operations executes before line 3 both operations will find that <code>balance &gt; withdrawal</code> evaluates to <code>true</code>, and execution will proceed to subtracting the withdrawal amount. However, since both processes perform their withdrawals, the total amount withdrawn will end up being more than the original balance. These sorts of problems with shared resources require the use of <a href="/wiki/Concurrency_control.html" title="Concurrency control">concurrency control</a>, or <a href="/wiki/Non-blocking_algorithm.html" title="Non-blocking algorithm">non-blocking algorithms</a>.</p>
+<p>Because concurrent systems rely on the use of shared resources (including communications mediums), concurrent computing in general requires the use of some form of <a href="/wiki/Metastability_in_electronics.html" title="Metastability in electronics">arbiter</a> somewhere in the implementation to mediate access to these resources. This introduces the possibility that problems with <a href="/wiki/Unbounded_nondeterminism.html" title="Unbounded nondeterminism">unbounded nondeterministic</a> decisions can arise, although careful design of the arbiters can reduce the probability of these situations arising in practice to near zero.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Concurrent programming languages">edit</a>]</div>
+<p><a name="Concurrent_programming_languages" id="Concurrent_programming_languages"></a></p>
+<h2>Concurrent programming languages</h2>
+<p>Concurrent programming languages are <a href="/wiki/Programming_languages.html" title="Programming languages">programming languages</a> that use language constructs for <a href="/wiki/Concurrency_%28computer_science%29.html" title="Concurrency (computer science)">concurrency</a>. These constructs may involve <a href="/wiki/Multi-threading.html" title="Multi-threading">multi-threading</a>, support for <a href="/wiki/Distributed_computing.html" title="Distributed computing">distributed computing</a>, <a href="/wiki/Message_passing_programming.html" title="Message passing programming">message passing</a>, <a href="/wiki/Sharing.html" title="Sharing">shared resources</a> (including <a href="/wiki/Parallel_Random_Access_Machine.html" title="Parallel Random Access Machine">shared memory</a>) or <a href="/wiki/Future_%28programming%29.html" title="Future (programming)">futures</a> (known also as <i>promises</i>).</p>
+<p>Today, the most commonly used programming languages that have specific constructs for concurrency are <a href="/wiki/Java_programming_language.html" title="Java programming language">Java</a> and <a href="/wiki/C_sharp.html" title="C sharp">C#</a>. Both of these languages fundamentally use a shared-memory concurrency model, with locking provided by <a href="/wiki/Monitor_%28synchronization%29.html" title="Monitor (synchronization)">monitors</a> (although message-passing models can and have been implemented on top of the underlying shared-memory model). Of the languages that use a message-passing concurrency model, <a href="/wiki/Erlang_programming_language.html" title="Erlang programming language">Erlang</a> is probably the most widely used in industry at present.</p>
+<p>Many concurrent programming languages have been developed more as research languages (e.g. <a href="/wiki/Pict_programming_language.html" title="Pict programming language">Pict</a>) rather than as languages for production use. However, languages such as Erlang, Limbo, and occam have seen industrial use at various times in the last 20 years. Languages in which concurrency plays an important role include:</p>
+<ul>
+<li><a href="/wiki/Ada_programming_language.html" title="Ada programming language">Ada</a></li>
+<li><a href="/wiki/Afnix_programming_language.html" title="Afnix programming language">Afnix</a> – concurrent access to data is protected automatically (previously called <i>Aleph</i>, but unrelated to <i>Alef</i>)</li>
+<li><a href="/wiki/Alef_programming_language.html" title="Alef programming language">Alef</a> – concurrent language with threads and message passing, used for systems programming in early versions of <a href="/wiki/Plan_9_from_Bell_Labs.html" title="Plan 9 from Bell Labs">Plan 9 from Bell Labs</a></li>
+<li><a href="/wiki/Alice_programming_language.html" title="Alice programming language">Alice</a> – extension to <a href="/wiki/Standard_ML.html" title="Standard ML">Standard ML</a>, adding support for concurrency through futures.</li>
+<li><a  class="external text" title="http://www.connectivelogic.co.uk/whatisclip.html">CDL (Concurrent Description Language)</a>, a machine-translatable, composable, object-oriented, visual programming language.</li>
+<li><a href="/wiki/ChucK.html" title="ChucK">ChucK</a> – domain specific programming language for audio.</li>
+<li><a href="/wiki/Cilk.html" title="Cilk">Cilk</a> – a concurrent <a href="/wiki/C_programming_language.html" title="C programming language">C</a></li>
+<li><a href="/wiki/C%CF%89.html" title="Cω">Cω</a> – C Omega, a research language extending C#, uses asynchronous communication</li>
+<li><a  class="new" title="Concurrent C">Concurrent C</a>.</li>
+<li><a href="/wiki/Concurrent_Clean.html" title="Concurrent Clean">Concurrent Clean</a> - a functional programming language, similar to <a href="/wiki/Haskell_programming_language.html" title="Haskell programming language">Haskell</a></li>
+<li><a  class="new" title="Concurrent Pascal programming language">Concurrent Pascal</a> – by <a href="/wiki/Per_Brinch_Hansen.html" title="Per Brinch Hansen">Brinch-Hansen</a></li>
+<li><a  class="new" title="Corn programming language">Corn</a></li>
+<li><a href="/wiki/Curry_programming_language.html" title="Curry programming language">Curry</a></li>
+<li><a href="/wiki/E_programming_language.html" title="E programming language">E</a> – uses promises, ensures deadlocks cannot occur</li>
+<li><a href="/wiki/Erlang_programming_language.html" title="Erlang programming language">Erlang</a> – uses asynchronous message passing with nothing shared</li>
+<li><a href="/wiki/Janus_computer_programming_language.html" title="Janus computer programming language">Janus</a> features distinct "askers" and "tellers" to logical variables, bag channels; is purely declarative</li>
+<li><a href="/wiki/Join_Java.html" title="Join Java">Join Java</a> – concurrent language based on the <a href="/wiki/Java_programming_language.html" title="Java programming language">Java programming language</a></li>
+<li><a href="/wiki/Joule_programming_language.html" title="Joule programming language">Joule</a> – dataflow language, communicates by message passing</li>
+<li><a href="/wiki/Limbo_programming_language.html" title="Limbo programming language">Limbo</a> – relative of <a href="/wiki/Alef_programming_language.html" title="Alef programming language">Alef</a>, used for systems programming in <a href="/wiki/Inferno_%28operating_system%29.html" title="Inferno (operating system)">Inferno (operating system)</a></li>
+<li><a href="/wiki/Oz_programming_language.html" title="Oz programming language">Oz</a> – multiparadigm language, supports shared-state and message-passing concurrency, and futures
+<ul>
+<li><a href="/wiki/Mozart_Programming_System.html" title="Mozart Programming System">Mozart Programming System</a> – <a href="/wiki/Multiplatform.html" title="Multiplatform">multiplatform</a> Oz</li>
+</ul>
+</li>
+<li><a href="/wiki/MultiLisp.html" title="MultiLisp">MultiLisp</a> – <a href="/wiki/Scheme_programming_language.html" title="Scheme programming language">Scheme</a> variant extended to support parallelism</li>
+<li><a href="/wiki/Occam_programming_language.html" title="Occam programming language">occam</a> – influenced heavily by <a href="/wiki/Communicating_Sequential_Processes.html" title="Communicating Sequential Processes">Communicating Sequential Processes</a> (CSP).
+<ul>
+<li><a href="/wiki/Occam-Pi.html" title="Occam-Pi">occam-π</a> – a modern variant of <a href="/wiki/Occam_programming_language.html" title="Occam programming language">occam</a>, which incorporates ideas from Milner's <a href="/wiki/Pi-Calculus.html" title="Pi-Calculus">π-calculus</a></li>
+</ul>
+</li>
+<li><a href="/wiki/Pict_programming_language.html" title="Pict programming language">Pict</a> – essentially an executable implementation of Milner's <a href="/wiki/Pi-Calculus.html" title="Pi-Calculus">π-calculus</a></li>
+<li><a href="/wiki/SALSA_programming_language.html" title="SALSA programming language">SALSA</a> – actor language with token-passing, join, and first-class continuations for distributed computing over the Internet</li>
+<li><a href="/wiki/SR_language.html" title="SR language">SR</a> – research language</li>
+</ul>
+<p>Many other languages provide support for concurrency in the form of libraries (on level roughly comparable with the above list).</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Models of concurrency">edit</a>]</div>
+<p><a name="Models_of_concurrency" id="Models_of_concurrency"></a></p>
+<h2>Models of concurrency</h2>
+<p>There are several models of concurrent computing, which can be used to understand and analyze concurrent systems. These models include:</p>
+<ul>
+<li>The <a href="/wiki/Actor_model.html" title="Actor model">Actor model</a></li>
+<li><a href="/wiki/Petri_net.html" title="Petri net">Petri nets</a></li>
+<li><a href="/wiki/Process_calculus.html" title="Process calculus">Process calculi</a> such as
+<ul>
+<li><a href="/wiki/Ambient_calculus.html" title="Ambient calculus">Ambient calculus</a></li>
+<li><a href="/wiki/Calculus_of_Communicating_Systems.html" title="Calculus of Communicating Systems">Calculus of Communicating Systems</a></li>
+<li><a href="/wiki/Communicating_Sequential_Processes.html" title="Communicating Sequential Processes">Communicating Sequential Processes</a></li>
+<li><a href="/wiki/Pi-calculus.html" title="Pi-calculus">π-calculus</a></li>
+</ul>
+</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Message_passing_programming.html" title="Message passing programming">Message passing programming</a></li>
+<li><a href="/wiki/Ptolemy_Project.html" title="Ptolemy Project">Ptolemy Project</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://vl.fmnet.info/concurrent/">Concurrent Systems Virtual Library</a></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:2581605-0!1!0!default!!en!2 and timestamp 20060910145336 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Operating system technology">Operating system technology</a></span> | <span dir='ltr'><a  title="Category:Concurrent computing">Concurrent computing</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Concurrent_computing.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-nl"><a >Nederlands</a></li>
+				<li class="interwiki-pt"><a >Português</a></li>
+				<li class="interwiki-fi"><a >Suomi</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 15:15, 1 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv67 in 0.693 secs. --></body></html>

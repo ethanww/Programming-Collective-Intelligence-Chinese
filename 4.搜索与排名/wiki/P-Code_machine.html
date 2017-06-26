@@ -1,0 +1,358 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="P-Code machine,1976,Program counter,Stack frame,Stack (data structure),Niklaus Wirth,PL/0,1980s,BASIC,BCPL,Business Operating System" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>P-Code machine - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "P-Code_machine";
+			var wgTitle = "P-Code machine";
+			var wgArticleId = 24722;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">P-Code machine</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>In <a href="/wiki/Computer_programming.html" title="Computer programming">computer programming</a>, a <b>P-code machine</b> or <b>pseudo-code machine</b> is a specification of a <a href="/wiki/Cpu.html" title="Cpu">cpu</a> whose <a href="/wiki/Machine_language.html" title="Machine language">instructions</a> are expected to be executed in software rather than in hardware (ie, <a href="/wiki/Interpreter_%28computing%29.html" title="Interpreter (computing)">interpreted</a>). This term is applied both generically to all such specifications, although many specifications create their own name (eg, <a href="/wiki/Java_programming_language.html" title="Java programming language">Java</a> uses <a href="/wiki/Byte-code.html" title="Byte-code">byte-code</a> and <a href="/wiki/BCPL.html" title="BCPL">BCPL</a> uses <a href="/wiki/O-code.html" title="O-code">O-code</a>, circa 1966) and to particular specifications (the most famous being <a href="/wiki/UCSD_Pascal.html" title="UCSD Pascal">UCSD Pascal</a> P-code).</p>
+<p>The term p-code first appeared on the scene in the early 1970s. Two early implementations of <a href="/wiki/Compiler.html" title="Compiler">compilers</a> generating p-code were the Pascal-P compiler in 1973, by Nori, Ammann, Jensen, Hageli, and Jacobi, and the Pascal-S compiler in 1975, by <a href="/wiki/Niklaus_Wirth.html" title="Niklaus Wirth">Niklaus Wirth</a>.</p>
+<p>Programs that have been translated to P-code are <i>executed</i> (the term <a href="/wiki/Interpreter_%28computing%29.html" title="Interpreter (computing)">interpreted</a> is used to describe this process) by a software program that emulates the behavior of the cpu specification. If there is sufficient commercial interest a hardware implementation of the specification may be built (eg, the <a href="/wiki/Pascal_MicroEngine.html" title="Pascal MicroEngine">Pascal MicroEngine</a>).</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Why P-code?</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Architecture</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Environment</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Calling conventions</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Example machine</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">Further reading</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Why P-code?">edit</a>]</div>
+<p><a name="Why_P-code.3F" id="Why_P-code.3F"></a></p>
+<h2>Why P-code?</h2>
+<ul>
+<li>For porting purposes. It is much easier to write a small (compared to the size of the compiler) p-code interpreter for a new machine, as opposed to changing a compiler to generate native code for the same machine.</li>
+</ul>
+<ul>
+<li>For quickly getting a compiler up and running. Generating machine code is one of the more complicated parts of writing a compiler. By comparison, generating p-code is much easier.</li>
+</ul>
+<ul>
+<li>Size constraints. Since p-code is based on an ideal virtual machine, many times the resulting p-code is much smaller than the same program translated to machine code.</li>
+</ul>
+<ul>
+<li>For debugging purposes. Since p-code is interpreted, the interpreter can apply many additional runtime checks that are harder to implement with native code.</li>
+</ul>
+<p>Some implementations of the <a href="/wiki/BASIC.html" title="BASIC">BASIC</a> and of the <a href="/wiki/Pascal_%28programming_language%29.html" title="Pascal (programming language)">Pascal</a> use p-codes that are translated by a <a href="/wiki/Just-in-time.html" title="Just-in-time">just-in-time</a> compiler to actual machine instructions. Some <a  class="external text" title="http://www.swissdelphicenter.ch/en/niklauswirth.php">articles</a> by Niklaus Wirth mention a m-code variant for Pascal successor <a href="/wiki/Modula-2.html" title="Modula-2">Modula-2</a>.</p>
+<p>The <a href="/wiki/Business_Operating_System.html" title="Business Operating System">Business Operating System</a> (BOS) of the <a href="/wiki/1980s.html" title="1980s">1980s</a> was a cross-platform <a href="/wiki/Operating_system.html" title="Operating system">operating system</a> designed to exclusively run p-code based programs.</p>
+<p>The <a href="/wiki/UCSD_p-System.html" title="UCSD p-System">UCSD p-System</a> was a portable machine independent operating system based on p-code.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Architecture">edit</a>]</div>
+<p><a name="Architecture" id="Architecture"></a></p>
+<h2>Architecture</h2>
+<p>The p-Code machine is <a href="/wiki/Stack_%28data_structure%29.html" title="Stack (data structure)">stack</a>-oriented, which means that most instructions take their operands from the stack, and place results back on the stack. So the "add" instruction replaces the two topmost elements of the stack with their sum. A few instructions take an immediate argument. Like Pascal, p-Code is strongly typed, supporting boolean (b), character (c), integer (i), real (r), set (s), and pointer (a) types natively.</p>
+<p>Some simple instructions:</p>
+<pre>
+Insn.   Stack   Stack   Description
+        before  after
+ 
+adi      i1 i2   i1+i2   add two integers
+adr      r1 r2   r1+r2   add two reals
+dvi      i1 i2   i1/i2   integer division
+inn      i1 s1   b1      set membership; b1 = whether i1 is a member of s1
+ldci i1          i1      load integer constant
+mov      a1 a2           move
+not      b1      ~b1     boolean negation
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Environment">edit</a>]</div>
+<p><a name="Environment" id="Environment"></a></p>
+<h2>Environment</h2>
+<p>Differing from other stack-based environments (<a href="/wiki/Forth_programming_language.html" title="Forth programming language">Forth</a>, the <a href="/wiki/Java_virtual_machine.html" title="Java virtual machine">Java virtual machine</a>) the p-System has only one stack shared by procedure stack frames (providing return address, etc.) and the arguments to local instructions. Three of the machine's <a href="/wiki/Processor_register.html" title="Processor register">registers</a> point into the stack (which grows upwards):</p>
+<ul>
+<li>SP points to the top of the stack.</li>
+<li>MP marks the beginning of the active stack frame.</li>
+<li>EP points to the highest stack location used in the current procedure.</li>
+</ul>
+<p>Also present is a constant area, and, below that, the <a href="/wiki/Dynamic_memory_allocation.html" title="Dynamic memory allocation">heap</a> growing down towards the stack. The NP register points to the top (lowest used address) of the heap. When EP gets greater than NP, the machine's memory is exhausted.</p>
+<p>The fifth register, PC, points at the current instruction in the code area.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Calling conventions">edit</a>]</div>
+<p><a name="Calling_conventions" id="Calling_conventions"></a></p>
+<h2>Calling conventions</h2>
+<p>Stack frames look like this:</p>
+<pre>
+EP -&gt;
+      local stack
+SP -&gt; ...
+      locals
+      ...
+      parameters
+      ...
+      return address (previous PC)
+      previous EP
+      dynamic link (previous MP)
+      static link (MP of surrounding procedure)
+MP -&gt; function return value
+</pre>
+<p>The procedure calling sequence works as follows: The call is introduced with</p>
+<pre>
+ mst n
+</pre>
+<p>where <i>n</i> specifies the difference in nesting levels (remember that Pascal supports nested procedures). This instruction will <i>mark</i> the stack, i.e. reserve the first five cells of the above stack frame, and initialise previous EP, dynamic, and static link. The caller then computes and pushes any parameters for the procedure, and then issues</p>
+<pre>
+ cup n, p
+</pre>
+<p>to call a user procedure (<i>n</i> being the number of parameters, <i>p</i> the procedure's address). This will save the PC in the return address cell, and set the procedure's address as the new PC.</p>
+<p>User procedures begin with the two instructions</p>
+<pre>
+ ent 1, i
+ ent 2, j
+</pre>
+<p>The first sets SP to MP + <i>i</i>, the second sets EP to SP + <i>j</i>. So <i>i</i> essentially specifies the space reserved for locals (plus the number of parameters plus 5), and <i>j</i> gives the number of entries needed locally for the stack. Memory exhaustion is checked at this point.</p>
+<p>Returning to the caller is accomplished via</p>
+<pre>
+ retC
+</pre>
+<p>with <i>C</i> giving the return type (i, r, c, b, a as above, and p for no return value). The return value has to be stored in the appropriate cell previously. On all types except p, returning will leave this value on the stack.</p>
+<p>Instead of calling a user procedure (cup), standard procedure <i>q</i> can be called with</p>
+<pre>
+ csp q
+</pre>
+<p>These standard procedures are Pascal procedures like <i>readln()</i> ("csp rln"), <i>sin()</i> ("csp sin"), etc. Peculiarly <i>eof()</i> is a p-Code instruction instead.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Example machine">edit</a>]</div>
+<p><a name="Example_machine" id="Example_machine"></a></p>
+<h2>Example machine</h2>
+<p><a href="/wiki/Niklaus_Wirth.html" title="Niklaus Wirth">Niklaus Wirth</a> specified a simple p-Code machine in the <a href="/wiki/1976.html" title="1976">1976</a> book <i>Algorithms + Data Structures = Programs</i>. The machine had 3 registers - a <a href="/wiki/Program_counter.html" title="Program counter">program counter</a>, p, a <a href="/wiki/Stack_frame.html" title="Stack frame">base register</a> b, and a <a href="/wiki/Stack_%28data_structure%29.html" title="Stack (data structure)">top-of-stack register</a> t. There were 8 instructions, with one (opr) having multiple forms.</p>
+<p>This is the code for the machine:</p>
+<pre>
+<tt>procedure interpret;
+   const stacksize = 500;
+   var p,b,t: integer; {program-, base-, topstack-registers}
+      i: instruction; {instruction register}
+      s: array [1..stacksize] of integer; {datastore}
+   function base(l: integer): integer;
+      var b1: integer;
+   begin b1 := b; {find base l levels down}
+      while l &gt; 0 do
+         begin b1 := s[b1]; l := l - 1
+         end;
+      base := b1
+   end {base};
+
+begin writeln(' start pl/0');
+   t := 0; b := 1; p := 0;
+   s[1] := 0; s[2] := 0; s[3] := 0;
+   repeat i := code[p]; p := p + 1;
+      with i do
+      case f of
+      lit: begin t := t + 1; s[t] := a end;
+      opr: case a of {operator}
+           0: begin {return}
+                 t := b - 1; p := s[t + 3]; b := s[t + 2];
+              end;
+           1: s[t] := -s[t];
+           2: begin t := t - 1; s[t] := s[t] + s[t + 1] end;
+           3: begin t := t - 1; s[t] := s[t] - s[t + 1] end;
+           4: begin t := t - 1; s[t] := s[t] * s[t + 1] end;
+           5: begin t := t - 1; s[t] := s[t] div s[t + 1] end;
+           6: s[t] := ord(odd(s[t]));
+           8: begin t := t - 1; s[t] := ord(s[t] = s[t + 1]) end;
+           9: begin t := t - 1; s[t] := ord(s[t] &lt;&gt; s[t + 1]) end;
+          10: begin t := t - 1; s[t] := ord(s[t] &lt; s[t + 1]) end;
+          11: begin t := t - 1; s[t] := ord(s[t] &gt;= s[t + 1]) end;
+          12: begin t := t - 1; s[t] := ord(s[t] &gt; s[t + 1]) end;
+          13: begin t := t - 1; s[t] := ord(s[t] &lt;= s[t + 1]) end;
+          end;
+      lod: begin t := t + 1; s[t] := s[base(l) + a] end;
+      sto: begin s[base(l)+a] := s[t]; writeln(s[t]); t := t - 1 end;
+      cal: begin {generate new block mark}
+              s[t + 1] := base(l); s[t + 2] := b; s[t + 3] := p;
+              b := t + 1; p := a
+           end;
+      int: t := t + a;
+      jmp: p := a;
+      jpc: begin if s[t] = 0 then p := a; t := t - 1 end
+      end {with, case}
+   until p = 0;
+   write(' end pl/0');
+end {interpret};
+</tt>
+</pre>
+<p>This machine was used to run Wirth's <a href="/wiki/PL/0.html" title="PL/0">PL/0</a>, which was a Pascal subset compiler used to teach compiler development.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Further reading">edit</a>]</div>
+<p><a name="Further_reading" id="Further_reading"></a></p>
+<h2>Further reading</h2>
+<ul>
+<li>Steven Pemberton and Martin Daniels: <a  class="external text" title="http://www.cwi.nl/~steven/pascal/book/">Pascal Implementation: The P4 Compiler and Interpreter</a>. <a  class="internal">ISBN 0-85312-358-6</a>; <a  class="internal">ISBN 0-13-653-0311</a></li>
+<li><a  class="external text" title="http://homepages.cwi.nl/~steven/pascal/">Steven Pemberton's page on Pascal</a> has Pascal sources of the P4 compiler and interpreter, usage instructions, and <a  class="external text" title="http://www.cwi.nl/ftp/pascal/pcom.code4.Z">the P-code of the compiler</a> (generated by itself).</li>
+<li><a  class="external text" title="http://www.threedee.com/jcm/psystem/">The Jefferson Computer Museum's page on the UCSD P-System</a></li>
+<li><a  class="external text" title="http://www.klebsch.de">Open Source implementation</a></li>
+<li><i>Compiling with C# and Java</i>, Pat Terry, 2005, ISBN/ISSN: 0-321-26360-X 624</li>
+<li><i>Algorithms + Data Structures = Programs</i>, Niklaus Wirth, 1975, <a  class="internal">ISBN 0-13-022418-9</a></li>
+<li><i>Compiler Construction</i>, Niklaus Wirth, 1996, <a  class="internal">ISBN 0-201-40353-6</a></li>
+<li><i>The Byte Book of Pascal</i>, Blaise W. Liffick, Editor, 1979, <a  class="internal">ISBN 0-07-037823-1</a></li>
+<li><i>PASCAL - The Language and its Implementation</i>, Edited by D.W. Barron, 1981, <a  class="internal">ISBN 0-471-27835-1</a>. Especially see the articles <i>Pascal-P Implementaion Notes</i> and <i>Pascal-S: A Subset and its Implementation</i>.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Bytecode.html" title="Bytecode">Bytecode</a></li>
+<li><a href="/wiki/Pascal_%28programming_language%29.html" title="Pascal (programming language)">Pascal (programming language)</a></li>
+<li><a href="/wiki/Runtime.html" title="Runtime">Runtime</a></li>
+<li><a href="/wiki/Compiler.html" title="Compiler">compiler</a></li>
+<li><a href="/wiki/Interpreter_%28computer_software%29.html" title="Interpreter (computer software)">interpreter</a></li>
+<li><a href="/wiki/Interpreted_language.html" title="Interpreted language">interpreted language</a></li>
+<li><a href="/wiki/PL/0.html" title="PL/0">PL/0</a></li>
+<li><a href="/wiki/UCSD_p-System.html" title="UCSD p-System">UCSD p-System</a></li>
+<li><a href="/wiki/UCSD_Pascal.html" title="UCSD Pascal">UCSD Pascal</a></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:24722-0!1!0!default!!en!2 and timestamp 20060908035228 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Virtualization software">Virtualization software</a></span> | <span dir='ltr'><a  title="Category:Pascal">Pascal</a></span> | <span dir='ltr'><a  title="Category:Compilers">Compilers</a></span> | <span dir='ltr'><a  title="Category:Programming language implementation">Programming language implementation</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/P-Code_machine.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-nl"><a >Nederlands</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 03:50, 8 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv43 in 0.257 secs. --></body></html>

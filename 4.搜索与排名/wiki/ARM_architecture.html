@@ -1,0 +1,686 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="ARM architecture,Addressing mode,Interrupt,Euclid,Barrel shifter,Condition Code Register,Intel 80286,Motorola 68020,Branch predictor,Greatest common divisor,C programming language" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>ARM architecture - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "ARM_architecture";
+			var wgTitle = "ARM architecture";
+			var wgArticleId = 60558;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">ARM architecture</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>The <b>ARM</b> architecture (originally the <b>Acorn RISC Machine</b>) is a <a href="/wiki/32-bit.html" title="32-bit">32-bit</a> <a href="/wiki/RISC.html" title="RISC">RISC</a> <a href="/wiki/Central_processing_unit.html" title="Central processing unit">processor</a> architecture that is widely used in a number of <a href="/wiki/Embedded_system.html" title="Embedded system">embedded</a> designs. Due to their power saving features, ARM <a href="/wiki/Central_processing_unit.html" title="Central processing unit">CPUs</a> are dominant in the mobile electronics market, where low <a href="/wiki/Power_consumption.html" title="Power consumption">power consumption</a> is a critical design goal.</p>
+<p>Today, the ARM family accounts for over 75% of all 32-bit embedded CPUs, making it one of the most prolific 32-bit architectures in the world. ARM CPUs are found in all corners of consumer electronics, from portable devices (<a href="/wiki/Personal_digital_assistant.html" title="Personal digital assistant">PDAs</a>, <a href="/wiki/Mobile_phone.html" title="Mobile phone">mobile phones</a>, media players, handheld gaming units, and <a href="/wiki/Calculator.html" title="Calculator">calculators</a>) to computer peripherals (<a href="/wiki/Hard_drive.html" title="Hard drive">hard drives</a>, desktop <a href="/wiki/Router.html" title="Router">routers</a>.) The most noticeable branch in this family nowadays is <a href="/wiki/Intel.html" title="Intel">Intel</a>'s <a href="/wiki/Intel_XScale.html" title="Intel XScale">XScale</a>.</p>
+<div class="thumb tright">
+<div style="width:252px;"><a  class="internal" title="ARM's headquarters in Cambridge, UK"><img src="http://upload.wikimedia.org/wikipedia/en/thumb/8/89/ARM-Cambridge.jpg/250px-ARM-Cambridge.jpg" alt="ARM's headquarters in Cambridge, UK" width="250" height="188" longdesc="/wiki/Image:ARM-Cambridge.jpg" /></a>
+<div class="thumbcaption">
+<div class="magnify" style="float:right"><a  class="internal" title="Enlarge"><img src="/skins-1.5/common/images/magnify-clip.png" width="15" height="11" alt="Enlarge" /></a></div>
+<a href="/wiki/ARM_Ltd.html" title="ARM Ltd">ARM</a>'s headquarters in <a href="/wiki/Cambridge.html" title="Cambridge">Cambridge, UK</a></div>
+</div>
+</div>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">History</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">The cores</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Design notes</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">3.1</span> <span class="toctext">Thumb</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.2</span> <span class="toctext">Jazelle</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.3</span> <span class="toctext">Thumb-2</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.4</span> <span class="toctext">Thumb-2EE</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.5</span> <span class="toctext">NEON</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.6</span> <span class="toctext">VFP</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">ARM licensees</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: History">edit</a>]</div>
+<p><a name="History" id="History"></a></p>
+<h2>History</h2>
+<div class="thumb tright">
+<div style="width:182px;"><a  class="internal" title="A Conexant ARM processor used mainly in routers"><img src="http://upload.wikimedia.org/wikipedia/en/thumb/f/f3/Conexant_arm.jpg/180px-Conexant_arm.jpg" alt="A Conexant ARM processor used mainly in routers" width="180" height="119" longdesc="/wiki/Image:Conexant_arm.jpg" /></a>
+<div class="thumbcaption">
+<div class="magnify" style="float:right"><a  class="internal" title="Enlarge"><img src="/skins-1.5/common/images/magnify-clip.png" width="15" height="11" alt="Enlarge" /></a></div>
+A <a href="/wiki/Conexant.html" title="Conexant">Conexant</a> ARM processor used mainly in <a href="/wiki/Router.html" title="Router">routers</a></div>
+</div>
+</div>
+<p>The ARM design was started in <a href="/wiki/1983.html" title="1983">1983</a> as a <a href="/wiki/Acorn_Computers_Ltd#New_RISC_architecture.html" title="Acorn Computers Ltd">development project</a> at <a href="/wiki/Acorn_Computers_Ltd.html" title="Acorn Computers Ltd">Acorn Computers Ltd</a>.</p>
+<p>The team, led by <a href="/wiki/Sophie_Wilson.html" title="Sophie Wilson">Roger Wilson</a> and <a href="/wiki/Steve_Furber.html" title="Steve Furber">Steve Furber</a>, started development of what in some ways resembles an advanced <a href="/wiki/MOS_Technology_6502.html" title="MOS Technology 6502">MOS Technology 6502</a>. Acorn had a long line of computers based on the <a href="/wiki/MOS_Technology_6502.html" title="MOS Technology 6502">6502</a>, so a chip that was similar to program could represent a significant advantage for the company.</p>
+<p>The team completed development samples called <b>ARM1</b> by <a href="/wiki/1985.html" title="1985">1985</a>, and the first "real" production systems as <b>ARM2</b> the following year. The ARM2 featured a 32-bit <a href="/wiki/Data_bus.html" title="Data bus">data bus</a>, a 26-bit <a href="/wiki/Address_space.html" title="Address space">address space</a> giving a 64 Mbyte address range and 16 32-bit <a href="/wiki/Processor_register.html" title="Processor register">registers</a>. One of these registers served as the (word aligned) <a href="/wiki/Program_counter.html" title="Program counter">program counter</a> with its top 6 bits and lowest 2 bits holding the <a href="/wiki/Flag_%28computing%29.html" title="Flag (computing)">processor status flags</a>. The ARM2 was possibly the simplest useful 32-bit microprocessor in the world, with only 30,000 <a href="/wiki/Transistor.html" title="Transistor">transistors</a> (compare with Motorola's four-year older <a href="/wiki/Motorola_68000.html" title="Motorola 68000">68000</a> with around 68,000). Much of this simplicity comes from not having <a href="/wiki/Microcode.html" title="Microcode">microcode</a> (which represents about one-fourth to one-third of the 68000) and, like most CPUs of the day, not including any <a href="/wiki/Cache.html" title="Cache">cache</a>. This simplicity led to its low power usage, while performing better than the <a href="/wiki/Intel_80286.html" title="Intel 80286">286</a>. A successor, <b>ARM3</b>, was produced with a 4KB cache which further improved performance.</p>
+<p>In the late 1980s <a href="/wiki/Apple_Computer.html" title="Apple Computer">Apple Computer</a> started working with Acorn on newer versions of the ARM core. The work was so important that Acorn spun off the design team in 1990 into a new company called <a href="/wiki/Advanced_RISC_Machines.html" title="Advanced RISC Machines">Advanced RISC Machines</a>. For this reason, ARM is sometimes expanded as <b>Advanced RISC Machine</b> instead of Acorn RISC Machine. <a href="/wiki/Advanced_RISC_Machines.html" title="Advanced RISC Machines">Advanced RISC Machines</a> became ARM Limited when the company floated on the <a href="/wiki/London_Stock_Exchange.html" title="London Stock Exchange">London Stock Exchange</a> and <a href="/wiki/NASDAQ.html" title="NASDAQ">NASDAQ</a> in 1998.</p>
+<p>This work would eventually turn into the <b>ARM6</b>. The first models were released in 1991, and Apple used the ARM6-based ARM 610 as the basis for their <a href="/wiki/Apple_Newton.html" title="Apple Newton">Apple Newton</a> <a href="/wiki/Personal_Digital_Assistant.html" title="Personal Digital Assistant">PDA</a>. In 1994, Acorn used the ARM 610 as the main <a href="/wiki/Central_processing_unit.html" title="Central processing unit">CPU</a> in their <a href="/wiki/RiscPC.html" title="RiscPC">RiscPC</a> computers.</p>
+<p>The core has remained largely the same size throughout these changes. ARM2 had 30,000 transistors, while the ARM6 grew to only 35,000. The idea is that the <a href="/wiki/Original_Design_Manufacturer.html" title="Original Design Manufacturer">Original Design Manufacturer</a> combines the ARM core with a number of optional parts to produce a complete CPU, one that can be built on old <a href="/wiki/Fab_%28semiconductors%29.html" title="Fab (semiconductors)">semiconductor fabs</a> and still deliver lots of performance at a low cost.</p>
+<p>The most successful implementation has been the <a href="/wiki/ARM7TDMI.html" title="ARM7TDMI">ARM7TDMI</a> with hundreds of millions sold in mobile phones, handheld video game systems, and <a href="/wiki/Sega_Dreamcast.html" title="Sega Dreamcast">Sega Dreamcasts</a>. While ARM's business has always been to sell <a href="/wiki/IP_core.html" title="IP core">IP cores</a>, some of the licensees generated <a href="/wiki/Microcontrollers.html" title="Microcontrollers">microcontrollers</a> based on this core.</p>
+<p>The Dreamcast features a SH4 processor which only borrows concepts from ARM (low power consumption, optional compact instruction set etc.), but is otherwise different from an ARM. The Dreamcast also features a sound chip designed by Yamaha with an ARM7 core. Nintendo's Gameboy Advance, however, uses the ARM7TDMI at 16.78MHz.</p>
+<p><a href="/wiki/Digital_Equipment_Corporation.html" title="Digital Equipment Corporation">DEC</a> licensed the architecture (which caused some confusion because they also produced the <a href="/wiki/DEC_Alpha.html" title="DEC Alpha">DEC Alpha</a>) and produced the <b><a href="/wiki/StrongARM.html" title="StrongARM">StrongARM</a></b>. At 233 MHz this CPU drew only 1 <a href="/wiki/Watt.html" title="Watt">watt</a> of power (more recent versions draw far less). This work was later passed to <a href="/wiki/Intel.html" title="Intel">Intel</a> as a part of a lawsuit settlement, and Intel took the opportunity to supplement their aging <a href="/wiki/Intel_i960.html" title="Intel i960">i960</a> line with the StrongARM. Intel later developed its own high performance implementation known as <b><a href="/wiki/Intel_XScale.html" title="Intel XScale">XScale</a></b> which it has since sold.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: The cores">edit</a>]</div>
+<p><a name="The_cores" id="The_cores"></a></p>
+<h2>The cores</h2>
+<table class="wikitable" width="100%">
+<tr>
+<th>Family</th>
+<th>Core</th>
+<th>Feature</th>
+<th>Cache (I/D)/<a href="/wiki/Memory_management_unit.html" title="Memory management unit">MMU</a></th>
+<th>typical <a href="/wiki/Million_instructions_per_second.html" title="Million instructions per second">MIPS</a> @ MHz</th>
+<th>in Application</th>
+</tr>
+<tr>
+<th><a href="/wiki/ARM7TDMI.html" title="ARM7TDMI">ARM7TDMI</a></th>
+<td>ARM7TDMI(-S)</td>
+<td>3-stage pipeline</td>
+<td>none</td>
+<td>15 MIPS @ 16.8 MHz</td>
+<td><a href="/wiki/Game_Boy_Advance.html" title="Game Boy Advance">Game Boy Advance</a>, <a href="/wiki/Nintendo_DS.html" title="Nintendo DS">Nintendo DS</a>, <a href="/wiki/IPod.html" title="IPod">iPod</a></td>
+</tr>
+<tr>
+<td></td>
+<td>ARM710T</td>
+<td></td>
+<td>MMU</td>
+<td>36 MIPS @ 40 MHz</td>
+<td><a href="/wiki/Psion_5.html" title="Psion 5">Psion 5 series</a>, <a href="/wiki/EMate_300.html" title="EMate 300">eMate 300</a></td>
+</tr>
+<tr>
+<td></td>
+<td>ARM720T</td>
+<td></td>
+<td>8KB unified, MMU</td>
+<td>60 MIPS @ 59.8 MHz</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>ARM740T</td>
+<td></td>
+<td>MPU</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>ARM7EJ-S</td>
+<td>Jazelle DBX</td>
+<td>none</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>ARM9TDMI</th>
+<td>ARM9TDMI</td>
+<td>5-stage pipeline</td>
+<td>none</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>ARM920T</td>
+<td></td>
+<td>16KB/16KB, MMU</td>
+<td>200 MIPS @ 180 MHz</td>
+<td><a href="/wiki/Armadillo_CPU_Boards.html" title="Armadillo CPU Boards">Armadillo</a>, <a href="/wiki/GP32.html" title="GP32">GP32</a>,<a href="/wiki/GP2X.html" title="GP2X">GP2X</a> (first core), <a href="/wiki/Tapwave_Zodiac.html" title="Tapwave Zodiac">Tapwave Zodiac</a> (<a href="/wiki/Motorola.html" title="Motorola">Motorola</a> i. MX1)</td>
+</tr>
+<tr>
+<td></td>
+<td>ARM922T</td>
+<td></td>
+<td>8KB/8KB, MMU</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>ARM940T</td>
+<td></td>
+<td>4KB/4KB, MPU</td>
+<td></td>
+<td><a href="/wiki/GP2X.html" title="GP2X">GP2X</a> (second core)</td>
+</tr>
+<tr>
+<th><a href="/wiki/ARM9E.html" title="ARM9E">ARM9E</a></th>
+<td>ARM946E-S</td>
+<td></td>
+<td>variable, tightly coupled memories, MPU</td>
+<td></td>
+<td><a href="/wiki/Nintendo_DS.html" title="Nintendo DS">Nintendo DS</a>, <a href="/wiki/Nokia.html" title="Nokia">Nokia</a> <a href="/wiki/N-Gage.html" title="N-Gage">N-Gage</a>, Conexant 802.11 chips</td>
+</tr>
+<tr>
+<td></td>
+<td>ARM966E-S</td>
+<td></td>
+<td>no cache, TCMs</td>
+<td></td>
+<td>
+<p>ST Micro STR91xF, includes Ethernet <a  class="external autonumber" title="http://mcu.st.com/mcu/modules.php?name=mcu&amp;file=devicedocs&amp;DEV=STR912FW44&amp;FAM=101">[1]</a></p>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>ARM968E-S</td>
+<td></td>
+<td>no cache, TCMs</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>ARM926EJ-S</td>
+<td>Jazelle DBX</td>
+<td>variable, TCMs, MMU</td>
+<td>220 MIPS @ 200 MHz</td>
+<td>Mobile phones: <a href="/wiki/Sony_Ericsson.html" title="Sony Ericsson">Sony Ericsson</a> (K, W series),<a href="/wiki/Siemens.html" title="Siemens">Siemens</a> and <a href="/wiki/Benq.html" title="Benq">Benq</a> (x65 series and newer)</td>
+</tr>
+<tr>
+<td></td>
+<td>ARM996HS</td>
+<td>Clockless processor</td>
+<td>no caches, TCMs, MPU</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>ARM10E</th>
+<td>ARM1020E</td>
+<td>(VFP)</td>
+<td>32KB/32KB, MMU</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>ARM1022E</td>
+<td>(VFP)</td>
+<td>16KB/16KB, MMU</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>ARM1026EJ-S</td>
+<td>Jazelle DBX</td>
+<td>variable, MMU or MPU</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>ARM11</th>
+<td>ARM1136J(F)-S</td>
+<td>SIMD, Jazelle DBX, (VFP)</td>
+<td>variable, MMU</td>
+<td></td>
+<td>Omap2 Nokia N93(?)</td>
+</tr>
+<tr>
+<td></td>
+<td>ARM1156T2(F)-S</td>
+<td>SIMD, Thumb-2, (VFP)</td>
+<td>variable, MPU</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>ARM1176JZ(F)-S</td>
+<td>SIMD, Jazelle DBX, (VFP)</td>
+<td>variable, MMU+TrustZone</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>ARM11 MPCore</td>
+<td>1-4 core SMP, SIMD, Jazelle DBX, (VFP)</td>
+<td>variable, MMU</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>Cortex</th>
+<td>Cortex-A8</td>
+<td>Application profile, NEON, Jazelle RCT, Thumb-2</td>
+<td>variable (L1+L2), MMU+TrustZone</td>
+<td>up to 2000 (2.0 DMIPS/MHz in speed from 600 MHz to greater than 1 GHz)</td>
+<td>Texas Instruments <a href="/wiki/OMAP.html" title="OMAP">OMAP3</a></td>
+</tr>
+<tr>
+<td></td>
+<td>Cortex-R4</td>
+<td>Embedded profile</td>
+<td>variable cache, MMU optional</td>
+<td>600 DMIPS</td>
+<td><a href="/wiki/Broadcom.html" title="Broadcom">Broadcom</a> is a user</td>
+</tr>
+<tr>
+<td></td>
+<td>Cortex-M3</td>
+<td>Microcontroller profile</td>
+<td>no cache, (MPU)</td>
+<td>120 DMIPS @ 100MHz</td>
+<td>Luminary Micro<a  class="external autonumber" title="http://www.luminarymicro.com">[2]</a> microcontroller family</td>
+</tr>
+<tr>
+<th><a href="/wiki/XScale.html" title="XScale">XScale</a></th>
+<td>80200/IOP310/IOP315</td>
+<td>I/O Processor</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>80219</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>IOP321</td>
+<td></td>
+<td></td>
+<td></td>
+<td><a href="/wiki/Iyonix.html" title="Iyonix">Iyonix</a></td>
+</tr>
+<tr>
+<td></td>
+<td>IOP33x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>PXA210/PXA250</td>
+<td>Applications processor</td>
+<td></td>
+<td></td>
+<td><a href="/wiki/Zaurus.html" title="Zaurus">Zaurus</a> SL-5600</td>
+</tr>
+<tr>
+<td></td>
+<td>PXA255</td>
+<td></td>
+<td>32KB/32KB, MMU</td>
+<td>400 <a href="/wiki/BogoMips.html" title="BogoMips">BogoMips</a> @400 MHz</td>
+<td><a href="/wiki/Gumstix.html" title="Gumstix">Gumstix</a></td>
+</tr>
+<tr>
+<td></td>
+<td>PXA26x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>PXA27x</td>
+<td></td>
+<td></td>
+<td>800 MIPS @ 624 MHz</td>
+<td><a href="/wiki/High_Tech_Computer_Corporation.html" title="High Tech Computer Corporation">HTC</a> Universal, <a href="/wiki/Zaurus.html" title="Zaurus">Zaurus</a> SL-C1000</td>
+</tr>
+<tr>
+<td></td>
+<td>PXA800(E)F</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Monahans</td>
+<td></td>
+<td></td>
+<td>1000 MIPS @ 1.25 GHz</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>PXA900</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Blackberry 8700</td>
+</tr>
+<tr>
+<td></td>
+<td>IXC1100</td>
+<td>Control Plane Processor</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>IXP2400/IXP2800</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>IXP2850</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>IXP2325/IXP2350</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>IXP42x</td>
+<td></td>
+<td></td>
+<td></td>
+<td><a href="/wiki/NSLU2.html" title="NSLU2">NSLU2</a></td>
+</tr>
+<tr>
+<td></td>
+<td>IXP460/IXP465</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Design notes">edit</a>]</div>
+<p><a name="Design_notes" id="Design_notes"></a></p>
+<h2>Design notes</h2>
+<p>To keep the design clean, simple and fast, it was hardwired without <a href="/wiki/Microcode.html" title="Microcode">microcode</a>, like the much simpler 8-bit <a href="/wiki/MOS_Technology_6502.html" title="MOS Technology 6502">6502</a> processor used in prior <a href="/wiki/Acorn_Computers_Ltd.html" title="Acorn Computers Ltd">Acorn</a> microcomputers.</p>
+<p>The ARM architecture includes the following <a href="/wiki/RISC.html" title="RISC">RISC</a> features:</p>
+<ul>
+<li>Load/store architecture</li>
+<li>No support for misaligned memory accesses (now supported in v6 Arm cores)</li>
+<li>Orthogonal instruction set</li>
+<li>Large 16 × 32-bit register file</li>
+<li>Fixed opcode width of 32 bits to ease decoding and pipelining, at the cost of decreased code density</li>
+<li>Mostly single-cycle execution</li>
+</ul>
+<p>To compensate for the simpler design, compared to contemporary processors like the <a href="/wiki/Intel_80286.html" title="Intel 80286">Intel 80286</a> and <a href="/wiki/Motorola_68020.html" title="Motorola 68020">Motorola 68020</a>, some unique design features were used:</p>
+<ul>
+<li>Conditional execution of most instructions, reducing branch overhead and compensating for the lack of a <a href="/wiki/Branch_predictor.html" title="Branch predictor">branch predictor</a></li>
+<li>Arithmetic instructions only alter <a href="/wiki/Condition_Code_Register.html" title="Condition Code Register">condition codes</a> when desired</li>
+<li>32-bit <a href="/wiki/Barrel_shifter.html" title="Barrel shifter">barrel shifter</a> which can be used without performance penalty with most arithmetic instructions and address calculations</li>
+<li>Powerful indexed <a href="/wiki/Addressing_mode.html" title="Addressing mode">addressing modes</a></li>
+<li>Simple, but fast, 2-priority-level <a href="/wiki/Interrupt.html" title="Interrupt">interrupt</a> subsystem with switched register banks</li>
+</ul>
+<p>An interesting addition to the ARM design is the use of a 4-bit <i>condition code</i> on the front of every instruction, meaning that execution of every instruction is optionally conditional.</p>
+<p>This cuts down significantly on the encoding bits available for displacements in memory access instructions, but on the other hand it avoids branch instructions when generating code for small <code>if</code> statements. The standard example of this is <a href="/wiki/Euclid.html" title="Euclid">Euclid</a>'s <a href="/wiki/Greatest_common_divisor.html" title="Greatest common divisor">GCD</a> algorithm:</p>
+<p>In the <a href="/wiki/C_programming_language.html" title="C programming language">C programming language</a>, the loop is:</p>
+<pre>
+int gcd (int i, int j) 
+{
+   while (i != j) 
+      if (i &gt; j) 
+          i -= j;
+      else 
+          j -= i;
+   return i;
+} 
+</pre>
+<p>In ARM <a href="/wiki/Assembly_language.html" title="Assembly language">assembly</a>, the loop is:</p>
+<pre>
+loop   CMP    Ri, Rj       ; set condition "NE" if (i != j)
+                           ;               "GT" if (i &gt; j), 
+                           ;           or  "LT" if (i &lt; j)           
+       SUBGT  Ri, Ri, Rj   ; if "GT", i = i-j;  
+       SUBLT  Rj, Rj, Ri   ; if "LT", j = j-i; 
+       BNE    loop         ; if "NE", then loop
+</pre>
+<p>which avoids the branches around the <code>then</code> and <code>else</code> clauses.</p>
+<p>Another unique feature of the instruction set is the ability to fold shifts and rotates into the "data processing" (arithmetic, logical, and register-register move) instructions, so that, for example, the C statement</p>
+<dl>
+<dd><code>a += (j &lt;&lt; 2);</code></dd>
+</dl>
+<p>could be rendered as a single word, single cycle instruction on the ARM.</p>
+<dl>
+<dd><code>ADD Ra, Ra, Rj, LSL #2</code></dd>
+</dl>
+<p>This results in the typical ARM program being denser than expected with less memory access so the pipeline is used more efficiently. Even though the ARM runs at what many would consider to be low speeds, it nevertheless competes quite well with much more complex CPU designs.</p>
+<p>The ARM processor also has some features rarely seen on other architectures that are considered RISC, such as PC-relative addressing (indeed, on the ARM the PC is one of its 16 registers) and pre- and post-increment addressing modes.</p>
+<p>Another item of note is that the ARM has been around for a while, with the instruction set increasing somewhat over time. Some early ARM processors (prior to ARM7TDMI), for example, have no instruction to load a two-byte quantity, so that, strictly speaking, for them it's not possible to generate code that would behave the way one would expect for C objects of type "volatile short".</p>
+<p>The ARM7 and most earlier designs have a three stage pipeline; the stages being fetch, decode, and execute. Higher performance designs, such as the ARM9, have a five stage pipeline. Additional changes for higher performance include a faster adder, and more extensive branch prediction logic.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Thumb">edit</a>]</div>
+<p><a name="Thumb" id="Thumb"></a></p>
+<h3>Thumb</h3>
+<p>Newer ARM processors have a 16-bit instruction mode, called <b>Thumb</b>, perhaps related to the conditional execution facility using four bits of every instruction. In Thumb, the smaller opcodes have less functionality. For example, only branches can be conditional, and many opcodes cannot access all of the CPU's registers. However, the shorter opcodes give improved code density overall, even though some operations require more instructions. Particularly in situations where the memory port or bus width is constrained to less than 32 bits, the shorter Thumb opcodes allows greater performance than with 32-bit code because of the more efficient use of the limited memory bandwidth. Typically embedded hardware has a small range of addresses of 32-bit datapath and the rest are 16 bits or narrower (e.g. the <a href="/wiki/Game_Boy_Advance.html" title="Game Boy Advance">Game Boy Advance</a>). In this situation, it usually makes sense to compile Thumb code and hand-optimise a few of the most CPU-intensive sections using the (non-Thumb) 32-bit instruction set, placing them in the limited 32-bit bus width memory.</p>
+<p>The first processor with Thumb technology was the ARM7TDMI. All ARM9 and later families, including <a href="/wiki/Intel_XScale.html" title="Intel XScale">XScale</a> have included Thumb technology.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Jazelle">edit</a>]</div>
+<p><a name="Jazelle" id="Jazelle"></a></p>
+<h3>Jazelle</h3>
+<p>ARM has implemented a <a  class="external text" title="http://www.arm.com/products/solutions/Jazelle.html">technology</a> that allows certain of their architectures to execute <a href="/wiki/Java_bytecode.html" title="Java bytecode">Java bytecode</a> natively in hardware, as another execution mode. It interoperates alongside the existing ARM and Thumb modes.</p>
+<p>The first processor with Jazelle technology was the <b>ARM926EJ-S</b>: Jazelle being denoted by the 'J' in the CPU name. It is used by mobile phone manufacturers to speed up execution of <a href="/wiki/Java_ME.html" title="Java ME">Java ME</a> games and applications, which is probably what drove development of the technology.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Thumb-2">edit</a>]</div>
+<p><a name="Thumb-2" id="Thumb-2"></a></p>
+<h3>Thumb-2</h3>
+<p><b>Thumb-2</b> technology made its debut in the <b>ARM1156 core</b>, announced in 2003. Thumb-2 extends the limited 16-bit instruction set of Thumb with additional 32-bit instructions to give the instruction set more breadth. As a result the stated aim for Thumb-2 is to achieve code density that is similar to Thumb with performance similar to the ARM instruction set on 32-bit memory.</p>
+<p>Thumb-2 also extends both the ARM and Thumb instruction set with yet more instructions, including bit-field manipulation, table branches, and conditional execution.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Thumb-2EE">edit</a>]</div>
+<p><a name="Thumb-2EE" id="Thumb-2EE"></a></p>
+<h3>Thumb-2EE</h3>
+<p><b>Thumb-2EE</b>, marketed as <a  class="external text" title="http://www.arm.com/products/solutions/JazelleRCT.html">Jazelle RCT</a>, was announced in 2005, first appearing in the <b>Cortex-A8</b> processor. Thumb-2EE provides a small extension to Thumb-2, making the instruction set particularly suited to code generated at runtime (e.g. by <a href="/wiki/Just-in-time_compilation.html" title="Just-in-time compilation">JIT compilation</a>) in managed <b>Execution Environments</b>. Thumb-2EE is a target for languages such as <a href="/wiki/Limbo_programming_language.html" title="Limbo programming language">Limbo</a>, <a href="/wiki/Java_programming_language.html" title="Java programming language">Java</a>, <a href="/wiki/C.html" title="C">C#</a>, <a href="/wiki/Perl.html" title="Perl">Perl</a> and <a href="/wiki/Python_programming_language.html" title="Python programming language">Python</a>, and allows <a href="/wiki/JIT_compiler.html" title="JIT compiler">JIT compilers</a> to output smaller compiled code without impacting performance.</p>
+<p>New features provided by Thumb-2EE include automatic null pointer checks on every load and store instruction, an instruction to perform an array bounds check, and the ability to branch to handlers, which are small sections of frequently called code, commonly used to implement a feature of a high level language, such as allocating memory for a new object.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: NEON">edit</a>]</div>
+<p><a name="NEON" id="NEON"></a></p>
+<h3>NEON</h3>
+<p><b>NEON</b> technology is a combined 64 and 128 bit <a href="/wiki/SIMD.html" title="SIMD">SIMD</a> (Single Instruction Multiple Data) instruction set that provides standardized acceleration for media and signal processing applications. NEON can execute MP3 audio decoding on CPUs running at 10 MHz and can run the <a href="/wiki/GSM.html" title="GSM">GSM</a> AMR (Adaptive Multi-Rate) speech <a href="/wiki/Codec.html" title="Codec">codec</a> at no more than 13 MHz. It features a comprehensive instruction set, separate register files and independent execution hardware. NEON supports 8-, 16-, 32- and 64-bit integer and single precision floating-point data and operates in <a href="/wiki/SIMD.html" title="SIMD">SIMD</a> operations for handling audio/video processing as well as graphics and gaming processing. SIMD is a crucial element in <a href="/wiki/Vector_processor.html" title="Vector processor">vector supercomputers</a> which feature simultaneous multiple operations. In NEON, the SIMD supports up to 16 operations at the same time.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: VFP">edit</a>]</div>
+<p><a name="VFP" id="VFP"></a></p>
+<h3>VFP</h3>
+<p><b>VFP</b> technology is a coprocessor extension to the ARM architecture. It provides low-cost single-precision and double-precision floating-point computation fully compliant with the <i><a href="/wiki/IEEE_754.html" title="IEEE 754">ANSI/IEEE Std 754-1985 Standard for Binary Floating-Point Arithmetic</a></i>. VFP provides floating-point computation suitable for a wide spectrum of applications such as PDAs, smartphones, voice compression and decompression, three-dimensional graphics and digital audio, printers, set-top boxes, and automotive applications. The VFP architecture also supports execution of short vector instructions allowing SIMD (Single Instruction Multiple Data) parallelism. This is useful in graphics and signal-processing applications by reducing code size and increasing throughput.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: ARM licensees">edit</a>]</div>
+<p><a name="ARM_licensees" id="ARM_licensees"></a></p>
+<h2>ARM licensees</h2>
+<p>ARM Ltd does not manufacture and sell CPU devices based on their own designs, but rather, licenses the processor architecture to interested parties. ARM offers a variety of licensing terms, varying in cost and deliverables. To all licensees, ARM provides an integratable hardware description of the ARM core, as well as complete software development toolset (compiler, debugger, SDK), and the right to sell manufactured silicon containing the ARM CPU. Fabless licensees, who wish to integrate an ARM core into their own chip design, are usually only interested in acquiring a ready-to-manufacture verified <a href="/wiki/IP_core.html" title="IP core">IP core</a>. For these customers, ARM delivers a gate netlist description of the chosen ARM core, along with an abstracted simulation model and test programs to aid design integration and verification. More ambitious customers, including integrated device manufacturers (IDM) and foundry operators, choose to acquire the processor IP in synthesizable RTL (<a href="/wiki/Verilog.html" title="Verilog">Verilog</a>) form. With the synthesizable RTL, the customer has the ability to perform architectural level optimizations and extensions. This allows the designer to achieve exotic design goals not otherwise possible with an unmodified netlist (high clock speed, very low power consumption, instruction set extensions, etc.) While ARM does not grant the licensee the right to resell the ARM architecture itself, licensees may freely sell manufactured product (chip devices, evaluation boards, complete systems, etc.) Merchant foundries can be a special case; not only are they allowed to sell finished silicon containing ARM cores, they generally hold the right to remanufacture ARM cores for other customers.</p>
+<p>Like most IP vendors, ARM prices its IP based on perceived value. In architectural terms, the lower performance ARM cores command a lower license cost than the higher performance cores. In terms of silicon implementation, a synthesizable core is more expensive than a hard macro (blackbox) core. Complicating price matters, merchant foundries who hold an ARM license (such as Samsung and Fujitsu) can offer reduced licensing costs to its fab customers. In exchange for acquiring the ARM core through the foundry's in-house design services, the customer can reduce or eliminate payment of ARM's upfront license fee. Compared to dedicated semicounductor foundries (such as TSMC and UMC) without in-house design services, Fujitsu/Samsung charge 2 to 3 times more per manufactured wafer. For low to mid volume applications, a design service foundry offers lower overall pricing (through subsidization of the license fee.) For high volume mass produced parts, the long term cost reduction achievable through lower wafer pricing reduces the impact of ARM's NRE cost, making the dedicated foundry a better choice.</p>
+<p>Many hightech semiconductor firms hold ARM licenses: <a href="/wiki/Atmel.html" title="Atmel">Atmel</a>, <a href="/wiki/Broadcom.html" title="Broadcom">Broadcom</a>, <a href="/wiki/Cirrus_Logic.html" title="Cirrus Logic">Cirrus Logic</a>, <a href="/wiki/Freescale.html" title="Freescale">Freescale</a> (spun off from <a href="/wiki/Motorola.html" title="Motorola">Motorola</a> in 2004), <a href="/wiki/Fujitsu.html" title="Fujitsu">Fujitsu</a>, <a href="/wiki/Intel.html" title="Intel">Intel</a> (through its settlement with <a href="/wiki/DEC.html" title="DEC">DEC</a>), <a href="/wiki/International_Business_Machines.html" title="International Business Machines">IBM</a>, <a href="/wiki/Infineon_Technologies.html" title="Infineon Technologies">Infineon Technologies</a>, <a href="/wiki/Nintendo.html" title="Nintendo">Nintendo</a>, <a href="/wiki/Oki_Electric_Industry.html" title="Oki Electric Industry">OKI</a>, <a href="/wiki/Philips.html" title="Philips">Philips</a>, <a href="/wiki/Samsung_Electronics.html" title="Samsung Electronics">Samsung</a>, <a href="/wiki/Sharp_Corporation.html" title="Sharp Corporation">Sharp</a>, <a href="/wiki/STMicroelectronics.html" title="STMicroelectronics">STMicroelectronics</a>, <a href="/wiki/Texas_Instruments.html" title="Texas Instruments">Texas Instruments</a> and <a href="/wiki/VLSI_Technology.html" title="VLSI Technology">VLSI</a> are some of the many companies who have licensed the ARM in one form or another. Although ARM's license terms are covered by <a href="/wiki/Non-disclosure_agreement.html" title="Non-disclosure agreement">NDA</a>, within the IP industry, ARM is widely known to be among the most expensive CPU cores. A single customer product containing a basic ARM core can incur a one time license fee in excess of (USD) $200,000. Where significant quantity and architectural modification are involved, the license fee can exceed $10M.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Inferno_%28operating_system%29.html" title="Inferno (operating system)">Inferno</a></li>
+<li><a href="/wiki/DirectBand.html" title="DirectBand">DirectBand</a></li>
+<li><a href="/wiki/AMULET_microprocessor.html" title="AMULET microprocessor">AMULET</a></li>
+<li><a href="/wiki/LPC2000.html" title="LPC2000">Philips LPC2000 ARM7TDMI-S Microcontrollers</a></li>
+<li><a href="/wiki/Texas_Instruments_OMAP.html" title="Texas Instruments OMAP">Texas Instruments OMAP</a> - an ARM core plus a DSP</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://www.arm.com/">ARM Ltd.</a></li>
+<li><a  class="external text" title="http://www.vitanuova.com/solutions/embedded/index.html">Inferno: An Open Source operating system for embedded devices</a></li>
+<li><a  class="external text" title="http://www.FreeRTOS.org/">An open source RTOS for low end ARM7 devices</a></li>
+<li><a  class="external text" title="http://www.heyrick.co.uk/assembler/index.html">ARM Assembler Programming; tutorial, resources, and examples</a></li>
+<li><a  class="external text" title="http://www.philipsmcu.com/">Philips ARM microcontrollers</a></li>
+<li><a  class="external text" title="http://www.open-research.org.uk/ARMuC/">The ARM microcontroller Wiki</a></li>
+<li><a  class="external text" title="http://www.atmel.com/products/at91/">Atmel ARM microcontrollers</a></li>
+<li><a  class="external text" title="http://www.arm.com/news/6540.html">NEON</a></li>
+<li><a  class="external text" title="http://www.sevensandnines.com/">SevensAndNines.com - resources and forum for ARM developers</a></li>
+<li><a  class="external text" title="http://www.inf.u-szeged.hu/gcc-arm/">GCC ARM improvement project</a></li>
+<li><a  class="external text" title="http://www.debian.org/ports/arm/">Debian GNU/Linux on ARM</a></li>
+<li><a  class="external text" title="http://www.dreamislife.com/arm/">ARM7 lpc210x Programming; Tutorial;</a></li>
+<li><a  class="external text" title="http://www.armcorepro.com/">Forum dedicated to ARM Cores</a></li>
+<li><a  class="external text" title="http://www.scienceprog.com/category/arm-microcontrollers/">ARM microcontroller projects and information</a></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:60558-0!1!0!default!!en!2 and timestamp 20060907185149 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:ARM architecture">ARM architecture</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/ARM_architecture.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-da"><a >Dansk</a></li>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-nl"><a >Nederlands</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-pt"><a >Português</a></li>
+				<li class="interwiki-fi"><a >Suomi</a></li>
+				<li class="interwiki-sv"><a >Svenska</a></li>
+				<li class="interwiki-vi"><a >Tiếng Việt</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 08:27, 7 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv101 in 0.082 secs. --></body></html>

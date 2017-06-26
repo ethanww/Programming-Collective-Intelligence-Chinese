@@ -1,0 +1,338 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Race condition,2003 North America blackout,Atomic operations,Authentication,Computer,Computer bug,Computer security,Concurrency control,Critical race,Daemon (computer software),David A. Wheeler" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Race condition - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Race_condition";
+			var wgTitle = "Race condition";
+			var wgArticleId = 98661;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Race condition</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<div class="messagebox cleanup metadata"><b>To meet Wikipedia's <a  title="Category:Wikipedia style guidelines">quality standards</a>, this article or section may require <a  title="Wikipedia:Cleanup">cleanup</a>.</b><br />
+<span style="font-size: 90%">Please discuss this issue on the <a  title="Talk:Race condition">talk page</a>, or replace this tag with a <a  title="Wikipedia:Template messages/Cleanup">more specific message</a>. <a  title="Help:Editing">Editing help</a> is available.<br />
+This article has been tagged since <b>April 2006</b>.</span></div>
+<p>A <b>race condition</b> or <b>race hazard</b> is a <a href="/wiki/Flaw.html" title="Flaw">flaw</a> in a <a href="/wiki/System.html" title="System">system</a> or process whereby the output of the process is unexpectedly and critically dependent on the sequence or <a href="/wiki/Timing.html" title="Timing">timing</a> of other <a href="/wiki/Event.html" title="Event">events</a>. The term originates with the idea of two <a href="/wiki/Signal_%28information_theory%29.html" title="Signal (information theory)">signals</a> racing each other to influence the <a href="/wiki/Output.html" title="Output">output</a> first.</p>
+<p>Race hazards can occur in poorly-designed <a href="/wiki/Electronics.html" title="Electronics">electronics</a> systems, especially <a href="/wiki/Logic.html" title="Logic">logic</a> <a href="/wiki/Electrical_network.html" title="Electrical network">circuits</a>, but they can and often do also arise in <a href="/wiki/Computer.html" title="Computer">computer</a> <a href="/wiki/Software.html" title="Software">software</a>.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Electronics</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Computing</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">2.1</span> <span class="toctext">Real life examples</span></a>
+<ul>
+<li class="toclevel-3"><a ><span class="tocnumber">2.1.1</span> <span class="toctext">Filesystems</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">2.1.2</span> <span class="toctext">Networking</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">2.1.3</span> <span class="toctext">Life-critical systems</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.2</span> <span class="toctext">Computer security</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.3</span> <span class="toctext">Asynchronous Finite State Machines</span></a>
+<ul>
+<li class="toclevel-3"><a ><span class="tocnumber">2.3.1</span> <span class="toctext">Types</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Electronics">edit</a>]</div>
+<p><a name="Electronics" id="Electronics"></a></p>
+<h2>Electronics</h2>
+<p>A typical example of a race hazard may occur in a system of <a href="/wiki/Logic_gate.html" title="Logic gate">logic gates</a>, where inputs vary. If a particular output depends on the state of the inputs, it may only be defined for steady-state signals. As the inputs change state, a finite delay will occur before the output changes, due to the physical nature of the electronic system. For a brief period, the output may change to an unwanted state before settling back to the designed state. Certain systems can tolerate such <i><a href="/wiki/Glitch.html" title="Glitch">glitches</a></i>, but if for example this output signal functions as a clock for further systems that contain memory, the system can rapidly depart from its designed behaviour (in effect, the temporary glitch becomes permanent).</p>
+<p>For example, consider a two input AND gate fed with a logic signal X on input A and its negation, NOT X, on input B. In theory, the output (X AND NOT X) should never be high. However, if changes in the value of X take longer to propagate to input B than to input A then when X changes from false to true, a brief period will ensue during which both inputs are true, and so the gate's output will also be true.</p>
+<p>Proper design techniques (e.g. <a href="/wiki/Karnaugh_map.html" title="Karnaugh map">Karnaugh maps</a>—note, the Karnaugh map article includes a concrete example of a race hazard and how to eliminate it) encourage designers to recognise and eliminate race hazards before they cause problems.</p>
+<p>As well as these problems, logic gates can enter <a href="/wiki/Metastability_in_electronics.html" title="Metastability in electronics">metastable states</a>, which create further problems for circuit designers.</p>
+<p>See <a href="/wiki/Critical_race.html" title="Critical race">critical race</a> and <a href="/wiki/Non-critical_race.html" title="Non-critical race">non-critical race</a> for more information on specific types of race hazards.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Computing">edit</a>]</div>
+<p><a name="Computing" id="Computing"></a></p>
+<h2>Computing</h2>
+<p>Race hazards may arise in software, especially when communicating between separate processes or threads of execution.</p>
+<p>Here is a simple example:</p>
+<p>Let us assume that two threads T1 and T2 each want to increment the value of a global integer by one. Ideally, the following sequence of operations would take place:</p>
+<ol>
+<li>Integer i = 0;</li>
+<li>T1 reads the value of i from memory into a register&#160;: 0</li>
+<li>T1 increments the value of i in the register: (register contents) + 1 = 1</li>
+<li>T1 stores the value of the register in memory&#160;: 1</li>
+<li>T2 reads the value of i from memory into a register&#160;: 1</li>
+<li>T2 increments the value of i in the register: (register contents) + 1 = 2</li>
+<li>T2 stores the value of the register in memory&#160;: 2</li>
+<li>Integer i = 2</li>
+</ol>
+<p>In the case shown above, the final value of i is 2, as expected. However, if the two threads run simultaneously without locking or synchronization, the outcome of the operation could be wrong. The alternative sequence of operations below demonstrates this scenario:</p>
+<ol>
+<li>Integer i = 0;</li>
+<li>T1 reads the value of i from memory into a register&#160;: 0</li>
+<li>T2 reads the value of i from memory into a register&#160;: 0</li>
+<li>T1 increments the value of i in the register: (register contents) + 1 = 1</li>
+<li>T2 increments the value of i in the register: (register contents) + 1 = 1</li>
+<li>T1 stores the value of the register in memory&#160;: 1</li>
+<li>T2 stores the value of the register in memory&#160;: 1</li>
+<li>Integer i = 1</li>
+</ol>
+<p>The final value of i is 1 instead of the expected result of 2. This occurs because the increment operations of the second case are non-atomic. <a href="/wiki/Atomic_operations.html" title="Atomic operations">Atomic operations</a> are those that cannot be interrupted while accessing some resource, such as a memory location. If the first case, T1 was not interrupted while accessing the variable i, so it's operation was atomic.</p>
+<p><br />
+For another example, consider the following two tasks, in <a href="/wiki/Pseudocode.html" title="Pseudocode">pseudocode</a>:</p>
+<pre>
+global integer A = 0;
+
+// increments the value of A and print "RX"
+// activated whenever an interrupt is received from te serial controller
+task Received()
+{
+    A = A + 1;
+    print "RX";
+}
+
+// prints out only the even numbers
+// is activated every second
+task Timeout()
+{
+    if (A is divisible by 2)
+    {
+        print A;
+    }
+}
+</pre>
+<p>Output would look something like:</p>
+<pre>
+0
+0
+0
+RX
+RX
+2
+RX
+RX
+4
+4
+</pre>
+<p>Now consider this chain of events, which might occur next:</p>
+<ol>
+<li>timeout occurs, activating task <tt>Timeout</tt></li>
+<li>task <tt>Timeout</tt> evaluates <code>A</code> and finds it is divisible by 2, so elects to execute the "print A" next.</li>
+<li>data is received on the serial port, causing an interrupt and a switch to task <tt>Received</tt></li>
+<li>task <tt>Received</tt> runs to completion, incrementing A and printing "RX"</li>
+<li>control returns to task <tt>Timeout</tt></li>
+<li>task timeout executes print A, using the current value of A, which is 5.</li>
+</ol>
+<p><a href="/wiki/Mutual_exclusion.html" title="Mutual exclusion">Mutexes</a> are used to address this problem in concurrent programming.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Real life examples">edit</a>]</div>
+<p><a name="Real_life_examples" id="Real_life_examples"></a></p>
+<h3>Real life examples</h3>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Filesystems">edit</a>]</div>
+<p><a name="Filesystems" id="Filesystems"></a></p>
+<h4>Filesystems</h4>
+<p>In filesystems, <a href="/wiki/File_lock.html" title="File lock">File locking</a> provides a commonly-used solution. A more cumbersome remedy involves reorganizing the system in such a way that one unique process (running a <a href="/wiki/Daemon_%28computer_software%29.html" title="Daemon (computer software)">daemon</a> or the like) has exclusive access to the file, and all other processes that need to access the data in that file do so only via interprocess communication with that one process (which of course requires synchronization at the process level).</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Networking">edit</a>]</div>
+<p><a name="Networking" id="Networking"></a></p>
+<h4>Networking</h4>
+<p>In networking, consider a distributed chat network like <a href="/wiki/Internet_relay_chat.html" title="Internet relay chat">IRC</a>, where a user acquires channel-operator privileges in any channel he starts. If two users on different servers, on different ends of the same network, try to start the same-named channel at the same time, each user's respective server will grant channel-operator privileges to each user, since neither server will yet have received the other server's signal that it has allocated that channel. (Note that this problem has been largely <a  title="Internet relay chat">solved</a> by various IRC server implementations.)</p>
+<p>In this case of a race hazard, the concept of the "shared <a href="/wiki/Resource_%28computer_science%29.html" title="Resource (computer science)">resource</a>" covers the state of the network (what channels exist, as well as what users started them and therefore have what privileges), which each server can freely change as long as it signals the other servers on the network about the changes so that they can update their conception of the state of the network. However, the <a href="/wiki/Latency_%28engineering%29.html" title="Latency (engineering)">latency</a> across the network makes possible the kind of race condition described. In this case, heading off race conditions by imposing a form of control over access to the shared resource—say, appointing one server to control who holds what privileges—would mean turning the distributed network into a centralized one (at least for that one part of the network operation). Where users find such a solution unacceptable, a pragmatic solution can have the system 1) recognize when a race hazard has occurred; and 2) repair the ill effects.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Life-critical systems">edit</a>]</div>
+<p><a name="Life-critical_systems" id="Life-critical_systems"></a></p>
+<h4>Life-critical systems</h4>
+<p>Software flaws in <a href="/wiki/Life-critical_system.html" title="Life-critical system">Life-critical systems</a> can be disastrous. Race conditions were among the flaws in the <a href="/wiki/Therac-25.html" title="Therac-25">Therac-25</a> <a href="/wiki/Radiation_therapy.html" title="Radiation therapy">radiation therapy</a> machine, which led to the death of five patients and injuries to several more. Another example is the Energy Management System used by Ohio-based FirstEnergy Corp., that had a race condition in the alarm subsystem; when three sagging power lines were tripped simultaneously, the condition prevented alerts being raised to the monitoring technicians. This software flaw eventually led to the <a href="/wiki/2003_North_America_blackout.html" title="2003 North America blackout">North American Blackout of 2003</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Computer security">edit</a>]</div>
+<p><a name="Computer_security" id="Computer_security"></a></p>
+<h3>Computer security</h3>
+<p>A specific kind of race condition involves checking for a predicate (e.g. for <a href="/wiki/Authentication.html" title="Authentication">authentication</a>), then acting on the predicate, while the state can change between the <i>time of check</i> and the <i>time of use</i>. When this kind of <a href="/wiki/Computer_bug.html" title="Computer bug">bug</a> exists in <a href="/wiki/Computer_security.html" title="Computer security">security</a>-conscious code, a <a href="/wiki/Security_vulnerability.html" title="Security vulnerability">security vulnerability</a> called a <a href="/wiki/Time-of-check-to-time-of-use.html" title="Time-of-check-to-time-of-use">time-of-check-to-time-of-use</a> (<i>TOCTTOU</i>) bug is created.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Asynchronous Finite State Machines">edit</a>]</div>
+<p><a name="Asynchronous_Finite_State_Machines" id="Asynchronous_Finite_State_Machines"></a></p>
+<h3>Asynchronous Finite State Machines</h3>
+<p>Even after ensuring that single bit transitions occur between states, the asynchronous <a href="/wiki/Finite_state_machine.html" title="Finite state machine">machine</a> will fail if multiple inputs change at the same time. The solution to this is to design a machine so that each state is sensitive to only one input change.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Types">edit</a>]</div>
+<p><a name="Types" id="Types"></a></p>
+<h4>Types</h4>
+<dl>
+<dt>Static Race Hazards </dt>
+<dd>These are caused when a signal and its complement are combined together.</dd>
+<dt>Dynamic race Hazards </dt>
+<dd>These result in multiple transitions when only one is intended. They are due to interaction between gates (Dynamic race hazards can be eliminated by using not more than two levels of gating).</dd>
+<dt>Essential Race Hazards </dt>
+<dd>These are caused when an input has two transitions in less than the total feedback propagation time. Sometimes they are cured using inductive delay-line elements to effectively increase the time duration of an input signal.</dd>
+</dl>
+<p><br /></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Synchronization.html" title="Synchronization">Synchronization</a></li>
+<li><a href="/wiki/Concurrency_control.html" title="Concurrency control">Concurrency control</a></li>
+<li><a  class="new" title="Word tearing">Word tearing</a></li>
+<li><a href="/wiki/Therac-25.html" title="Therac-25">Therac-25</a></li>
+<li><a href="/wiki/Deadlock.html" title="Deadlock">Deadlock</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li>Article "<a  class="external text" title="http://www-128.ibm.com/developerworks/linux/library/l-sprace.html">Secure programmer: Prevent race conditions—Resource contention can be used against you</a>" by <a href="/wiki/David_A._Wheeler.html" title="David A. Wheeler">David A. Wheeler</a></li>
+<li>Chapter "<a  class="external text" title="http://www.asta.va.fh-ulm.de/LDP/HOWTO/Secure-Programs-HOWTO/avoid-race.html">Avoid Race Conditions</a>" (Secure Programming for Linux and Unix HOWTO)</li>
+<li><a  class="external text" title="http://citeseer.ist.psu.edu/cis?q=race+condition+hazard">Citations from CiteSeer</a></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:98661-0!1!0!default!!en!2 and timestamp 20060910160502 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Cleanup from April 2006">Cleanup from April 2006</a></span> | <span dir='ltr'><a  title="Category:Security exploits">Security exploits</a></span> | <span dir='ltr'><a  title="Category:Anti-patterns">Anti-patterns</a></span> | <span dir='ltr'><a  title="Category:Concurrency">Concurrency</a></span> | <span dir='ltr'><a  title="Category:Programming bugs">Programming bugs</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Race_condition.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-lt"><a >Lietuvių</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+				<li class="interwiki-zh"><a >中文</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 20:48, 8 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv107 in 0.107 secs. --></body></html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="32-bit x86 assembly programming,16-bit x86 assembly programming,Assembly language,CPU design,FWORD,Far pointers,Flags (computing),Instruction pointer,Opcode,Position-independent code,Protected mode" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>32-bit x86 assembly programming - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "32-bit_x86_assembly_programming";
+			var wgTitle = "32-bit x86 assembly programming";
+			var wgArticleId = 442199;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">32-bit x86 assembly programming</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub">(Redirected from <a  title="X86 assembly programming in protected mode">X86 assembly programming in protected mode</a>)</div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<div class="infobox sisterproject">
+<div style="float: left;">
+<div class="floatnone"><span><a  class="image" title="Wikibooks"><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Wikibooks-logo-en.svg/50px-Wikibooks-logo-en.svg.png" alt="Wikibooks" width="50" height="57" longdesc="/wiki/Image:Wikibooks-logo-en.svg" /></a></span></div>
+</div>
+<div style="margin-left: 60px;"><a  class="extiw" title="wikibooks:">Wikibooks</a> has more about this subject:
+<div style="margin-left: 10px;"><i><b><a  class="extiw" title="wikibooks:x86_assembly">x86 assembly</a></b></i></div>
+</div>
+</div>
+<p>This article applies when the default operand size is 32-bit, which is only possible on 386s+ in <a href="/wiki/Protected_mode.html" title="Protected mode">protected mode</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Application registers">edit</a>]</div>
+<p><a name="Application_registers" id="Application_registers"></a></p>
+<h2>Application registers</h2>
+<p>In protected mode, there are 8 32-bit general-purpose registers for use:</p>
+<ul>
+<li>data registers
+<ul>
+<li>EAX, the accumulator</li>
+<li>EBX, the base register</li>
+<li>ECX, the counter register</li>
+<li>EDX, the data register</li>
+</ul>
+</li>
+<li>address registers
+<ul>
+<li>ESI, the source register</li>
+<li>EDI, the destination register</li>
+<li>ESP, the stack pointer register</li>
+<li>EBP, the stack base pointer register</li>
+</ul>
+</li>
+</ul>
+<p>In addition there are non-application registers available, which change the state of the processor:</p>
+<ul>
+<li>control registers
+<ul>
+<li>CR0</li>
+<li>CR1</li>
+<li>CR2</li>
+<li>CR3</li>
+<li>CR4</li>
+</ul>
+</li>
+<li>debug registers
+<ul>
+<li>DR0</li>
+<li>DR1</li>
+<li>DR2</li>
+<li>DR3</li>
+<li>DR6</li>
+<li>DR7</li>
+</ul>
+</li>
+<li>test registers
+<ul>
+<li>TR4</li>
+<li>TR5</li>
+<li>TR6</li>
+<li>TR7</li>
+</ul>
+</li>
+<li>descriptor registers
+<ul>
+<li>GDTR, the global descriptor table register</li>
+<li>LDTR, the local descriptor table register</li>
+<li>IDTR, the interrupt descriptor table register</li>
+</ul>
+</li>
+<li>task register
+<ul>
+<li>TR</li>
+</ul>
+</li>
+</ul>
+<p>All of them can be used both for segmented addressing of memory and for holding data. Some of these registers are however better to use for certain operations than others. This is because mnemonics using certain registers could be translated into shorter <a href="/wiki/Opcode.html" title="Opcode">opcodes</a> than if they used other registers.</p>
+<p>The lower 16 bits of each 32 bit register can be addressed separately and like a register in its own right, and the low 16 bits of the first four registers (EAX, EBX, ECX, EDX) can be further broken up into two eight-bit registers. The 16 bits of data in these first four 16 bit registers can be addressed 8 bits at a time: the upper eight and the lower eight bits, and can be treated as registers in their own right.</p>
+<p>If we take the EAX register, this register contains 32 bits and the lower 16 bits can be addressed by the AX register. The upper 8 bits of the AX register can be addressed by the AH register and the lower 8 bits of the AX register can be addressed by the AL register.</p>
+<p>For example, if ECX initially contains the number 0x3A3F901D and CH changes to 0x44, then ECX will also change to contain 0x3A3F441D.</p>
+<p>There is also a 32-bit wide <a href="/wiki/Flags_%28computing%29.html" title="Flags (computing)">flags register</a>, named EFLAGS, which contain the processor state. Each flag is one bit - and thus set 0 or 1, also called set, high, and unset or low. Important flags in the EFLAGS register are: carry (bit 0), zero (bit 6), sign flag (bit 7) and overflow (bit 11).</p>
+<p>Flags are notably used in the x86 architecture for comparisons. A comparison is made between two registers, for example, and in comparison of their difference a flag is raised. A jump instruction then checks the respective flag and jumps if the flag has been raised: for example</p>
+<pre>
+    cmp eax, ebx
+    jne do_something
+</pre>
+<p>first compares the EAX and EBX registers, and if they are unequal, the code branches off to the do_something label.</p>
+<p>There is also a 32-bit <a href="/wiki/Instruction_pointer.html" title="Instruction pointer">instruction pointer</a>, named EIP. The EIP register points to where in the program the processor is currently executing its code. The EIP register cannot be accessed by the programmer directly. Instead, a sequence like the following can be done to retrieve the address of <i>next_line</i> into EAX:</p>
+<pre>
+    call next_line
+next_line:
+    pop eax
+</pre>
+<p>This works even in <a href="/wiki/Position-independent_code.html" title="Position-independent code">position-independent code</a> because <b>call</b> takes an EIP-relative immediate operand. To write to EIP is simple:</p>
+<pre>
+    jmp eax
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Segmentation">edit</a>]</div>
+<p><a name="Segmentation" id="Segmentation"></a></p>
+<h2>Segmentation</h2>
+<p>For 32-bit segmented code, the info in the <a href="/wiki/16-bit_x86_assembly_programming.html" title="16-bit x86 assembly programming">16-bit x86 assembly programming</a> that applies to <a href="/wiki/Protected_mode.html" title="Protected mode">protected mode</a> applies, except that offsets are 32-bit and <a href="/wiki/Far_pointers.html" title="Far pointers">far pointers</a> are 48-bit, called a <a href="/wiki/FWORD.html" title="FWORD">FWORD</a> in assembly language.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/16-bit_x86_assembly_programming.html" title="16-bit x86 assembly programming">16-bit x86 assembly programming</a></li>
+<li><a href="/wiki/X86_assembly_language.html" title="X86 assembly language">x86 assembly language</a></li>
+<li><a href="/wiki/Self-modifying_code.html" title="Self-modifying code">self-modifying code</a></li>
+<li><a href="/wiki/Assembly_language.html" title="Assembly language">assembly language</a></li>
+<li><a href="/wiki/CPU_design.html" title="CPU design">CPU design</a></li>
+<li><a href="/wiki/Protected_mode.html" title="Protected mode">protected mode</a></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:442199-0!1!0!default!!en!2 and timestamp 20060910142836 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:X86 architecture">X86 architecture</a></span> | <span dir='ltr'><a  title="Category:Assembly languages">Assembly languages</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/32-bit_x86_assembly_programming.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 00:23, 15 July 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv20 in 0.137 secs. --></body></html>

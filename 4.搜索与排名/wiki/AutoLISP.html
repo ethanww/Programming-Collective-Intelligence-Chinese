@@ -1,0 +1,219 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="AutoLISP,1986,1992,1999,ActiveX,Application programming interface,Association list,AutoCAD,AutoCAD DXF,Autodesk,Compiler" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>AutoLISP - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "AutoLISP";
+			var wgTitle = "AutoLISP";
+			var wgArticleId = 51458;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">AutoLISP</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p><b>AutoLISP</b> is a dialect of <a href="/wiki/Lisp_programming_language.html" title="Lisp programming language">Lisp programming language</a> built specifically for use with the full version of <a href="/wiki/AutoCAD.html" title="AutoCAD">AutoCAD</a> and its derivatives like <i><a href="/wiki/Autodesk.html" title="Autodesk">Autodesk</a> Map 3D</i> and <i><a href="/wiki/Autodesk.html" title="Autodesk">Autodesk</a> Architectural Desktop</i>. Neither the <a href="/wiki/Application_programming_interface.html" title="Application programming interface">application programming interface</a> nor the <a href="/wiki/Interpreter_%28computing%29.html" title="Interpreter (computing)">interpreter</a> to execute AutoLISP code are included in the AutoCAD LT product line, unless you buy add ons like "LT-Extender".</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Features">edit</a>]</div>
+<p><a name="Features" id="Features"></a></p>
+<h2>Features</h2>
+<p>AutoLisp is a small, <a href="/wiki/Scope_%28programming%29.html" title="Scope (programming)">dynamically scoped</a> Lisp. It lacks modern Lisp features such as a <a href="/wiki/Macro.html" title="Macro">macro</a> system or let bindings. Aside from the core language, most of the primitive functions are for geometry or the manipulation of graphical entities in AutoCAD. The properties of these graphical entities are revealed to AutoLISP as <a href="/wiki/Association_list.html" title="Association list">association lists</a> in which AutoCAD "group codes" are paired with values that indicate properties such as points, radii, colors, layers, linetypes, etc.</p>
+<p>AutoLisp code can interact with the user through primitive functions that allow the user to input points, selection sets, numbers and other data. AutoLisp also has a built in GUI mini-language, the <a href="/wiki/Dialog_Control_Language.html" title="Dialog Control Language">Dialog Control Language</a>, for creating small interactive forms within AutoCAD.</p>
+<pre>
+; example of macro without command-line interface exposed
+
+(defun hello_world ()
+  (alert "Hello World!")
+)
+
+; example of macro with command-line interface exposed
+
+(defun c:hello_world ()
+  (alert "Hello World!")
+  (princ)
+)
+
+; example of LISP's flexible condition handling
+
+(cond
+  ( (= a b) (princ "\n(a) and (b) are equal") )
+  ( (and (= (type a) 'INT) (= (type b) 'INT)) 
+    (princ (strcat "\n(a)+(b)=" (itoa (+ a b))))
+  )
+  ( (and (= (type a) 'STR) (= (type b) 'STR))
+    (princ (strcat "\n(a)+(b)=" a b))
+  )
+  ( (and (listp a) (= (type b) 'SUBR))
+    (mapcar '(lambda (x) (princ (b x)) ) a)
+  )
+)
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: History">edit</a>]</div>
+<p><a name="History" id="History"></a></p>
+<h2>History</h2>
+<p>AutoLisp was derived from a very early version of <a href="/wiki/XLISP.html" title="XLISP">XLISP</a>, which was created by <a  class="new" title="David Betz">David Betz</a>. The language was added to AutoCAD in Version 2.18 in January <a href="/wiki/1986.html" title="1986">1986</a>, and continued to be enhanced in successive releases up to Release 12 in June <a href="/wiki/1992.html" title="1992">1992</a>. After that, its development was neglected by <a href="/wiki/Autodesk.html" title="Autodesk">Autodesk</a> in favor of more fashionable development environments. However, it has stubbornly remained AutoCAD's primary user customization language.</p>
+<p><b>Vital-LISP</b>, a considerably enhanced version of AutoLISP including an <a href="/wiki/IDE.html" title="IDE">IDE</a>, <a href="/wiki/Debugger.html" title="Debugger">debugger</a>, and <a href="/wiki/Compiler.html" title="Compiler">compiler</a>, was developed and sold by third party developer <a  class="new" title="Basis Software">Basis Software</a>. Vital LISP was a superset of the existing AutoLISP language that added <a href="/wiki/VBA.html" title="VBA">VBA</a>-like access to the AutoCAD object model, reactors (event handling for AutoCAD objects), general <a href="/wiki/ActiveX.html" title="ActiveX">ActiveX</a> support, and some other general Lisp functions. Autodesk purchased this, renamed it <b>Visual LISP</b>, and briefly sold it as an add-on. It was incorporated into AutoCAD as a replacement for AutoLISP in AutoCAD 2000, released in March <a href="/wiki/1999.html" title="1999">1999</a>. Since then <a href="/wiki/Autodesk.html" title="Autodesk">Autodesk</a> has chosen to halt major enhancements to Visual LISP in favor of focusing more effort on <a href="/wiki/VBA.html" title="VBA">VBA</a> and <a href="/wiki/ObjectARX.html" title="ObjectARX">ObjectARX</a>.</p>
+<p>AutoLisp had such a strong following that other CAD application vendors added it to their own products. <a  class="new" title="FelixCAD">FelixCAD</a>, <a  class="new" title="BricsCad">BricsCad</a>, <a href="/wiki/IntelliCAD.html" title="IntelliCAD">IntelliCAD</a> and others have AutoLISP functionality, so that AutoLisp users can consider using them as an alternative to AutoCAD.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://www.autolisp.com.br">LISP and Visual LISP</a></li>
+<li><a  class="external text" title="http://www.cadxp.info/forumXForum-15.htm">LISP and Visual LISP forums on CADxp</a></li>
+<li><a  class="external text" title="http://usa.autodesk.com/adsk/servlet/index?siteID=123112&amp;id=770237">Visual Lisp</a></li>
+<li><a  class="external text" title="http://www.steinvb.com/pub/vldb.asp">The Visual LISP Developers Bible</a></li>
+<li><a  class="external text" title="http://myfeedback.autodesk.com/history/autocad_release_history.htm">AutoCAD History</a></li>
+</ul>
+<p><br clear="all" /></p>
+<center>
+<table class="toccolours">
+<tr>
+<td style="background:#ccccff" align="center"><b>AutoCAD related articles</b></td>
+</tr>
+<tr>
+<td align="center"><a href="/wiki/AutoCAD.html" title="AutoCAD">AutoCAD</a> | <a href="/wiki/AutoCAD_DXF.html" title="AutoCAD DXF">AutoCAD DXF</a> | <strong class="selflink">AutoLISP</strong> | <a href="/wiki/DWG.html" title="DWG">DWG</a></td>
+</tr>
+</table>
+</center>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:51458-0!1!0!default!!en!2 and timestamp 20060906013250 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Lisp programming language family">Lisp programming language family</a></span> | <span dir='ltr'><a  title="Category:Computer-aided design">Computer-aided design</a></span> | <span dir='ltr'><a  title="Category:Domain-specific programming languages">Domain-specific programming languages</a></span> | <span dir='ltr'><a  title="Category:Scripting languages">Scripting languages</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/AutoLISP.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-nl"><a >Nederlands</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-pt"><a >Português</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 22:31, 18 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv62 in 0.181 secs. --></body></html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="XML Signature,Asymmetric key algorithm,Base64,Canonicalization,Cryptographic hash function,Digital signatures,MIME,PKCS,RSA,SAML,SHA1" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>XML Signature - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "XML_Signature";
+			var wgTitle = "XML Signature";
+			var wgArticleId = 726921;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">XML Signature</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p><b>XML Signature</b> (also called "XMLDsig") is a <a href="/wiki/W3C.html" title="W3C">W3C</a> recommendation that defines an <a href="/wiki/XML.html" title="XML">XML</a> syntax for <a href="/wiki/Digital_signatures.html" title="Digital signatures">digital signatures</a>. Functionally, it has much in common with <a href="/wiki/PKCS.html" title="PKCS">PKCS</a>#7 but is more extensible and geared towards signing XML documents. It is used by various <a href="/wiki/World_Wide_Web.html" title="World Wide Web">Web</a> technologies such as <a href="/wiki/SOAP.html" title="SOAP">SOAP</a>, <a href="/wiki/SAML.html" title="SAML">SAML</a>, and others.</p>
+<p>XML signatures can be used to sign data–a <b>resource</b>–of any <a href="/wiki/MIME#Content-type.html" title="MIME">type</a>, typically XML documents, but anything that is accessible via a <a href="/wiki/URL.html" title="URL">URL</a> can be signed. An XML signature used to sign a resource outside its containing XML document is called a <b>detached</b> signature; if it is used to sign some part of its containing document, it is called an <b>enveloped</b> signature; if it contains the signed data within itself it is called an <b>enveloping</b> signature.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Structure</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Validation and Security Considerations</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">XML Canonicalization</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Structure">edit</a>]</div>
+<p><a name="Structure" id="Structure"></a></p>
+<h2>Structure</h2>
+<p>An XML Signature consists of a <tt>Signature</tt> element in the <tt>http://www.w3.org/2000/09/xmldsig#</tt> namespace. The basic structure is as follows:</p>
+<pre>
+Signature
+  SignedInfo
+    SignatureMethod
+    CanonicalizationMethod
+    Reference
+       Transforms
+       DigestMethod
+       DigestValue
+    Reference ...
+
+  SignatureValue
+
+  KeyInfo
+
+  Object
+</pre>
+<ul>
+<li>The <tt>SignedInfo</tt> element specifies what was signed and with what algorithms.<br />
+The <tt>SignatureMethod</tt> and <tt>CanonicalizationMethod</tt> elements are used by the <tt>SignatureValue</tt> element and are included in <tt>SignedInfo</tt> to protect them from tampering.<br />
+A list of <tt>Reference</tt> elements specify which resources have been signed, using <a href="/wiki/URI.html" title="URI">URI</a> references; this element also specifies any transforms to apply to the resource before applying the hash, the digest (hash) algorithm (in <tt>DigestMethod</tt>), and the result of applying it to the resource (<a href="/wiki/Base64.html" title="Base64">Base64</a>-encoded in <tt>DigestValue</tt>).</li>
+</ul>
+<ul>
+<li>The <tt>SignatureValue</tt> is the Base64-encoded value of the signature. This value is the signature (produced according to the specification of the <tt>SignatureMethod</tt> element) of the <tt>SignedInfo</tt> element after serializing it with the algorithm specified by the <tt>CanonicalizationMethod</tt> element (see <a  title="">below</a> for more on canonicalization).</li>
+</ul>
+<ul>
+<li>The <tt>KeyInfo</tt> is an optional element that enables the recipients to obtain the key needed to validate the signature. Typically it can contain a set of <a href="/wiki/X.509.html" title="X.509">X.509</a> certificates. If a <tt>KeyInfo</tt> element is not present, the recipient is expected to identify the key from context.</li>
+</ul>
+<ul>
+<li>The <tt>Object</tt> is an optional element used to hold the signed data in the case of an <i>enveloping signature</i>.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Validation and Security Considerations">edit</a>]</div>
+<p><a name="Validation_and_Security_Considerations" id="Validation_and_Security_Considerations"></a></p>
+<h2>Validation and Security Considerations</h2>
+<p>When validating a XML Signature, a procedure called <b>Core Validation</b> is followed.</p>
+<ol>
+<li><b>Reference Validation:</b> Each <tt>Reference</tt>'s digest is verified by retrieving the corresponding resource and applying any transforms and then the specified digest method to it. The result is compared to the recorded <tt>DigestValue</tt>; if they do not match, validation fails.</li>
+<li><b>Signature Validation:</b> The <tt>SignedInfo</tt> element is serialized using the canonicalization method specified in <tt>CanonicalizationMethod</tt>, the key data is retrieved using <tt>KeyInfo</tt> or by other means, and the signature is verified using the method specified in <tt>SignatureMethod</tt>.</li>
+</ol>
+<p>This procedure establishes whether the resources were really signed by the alleged party. However, because of the extensibiliy of the canonicalization and transform methods, the verifying party must also make sure that what was actually signed or digested is really what was present in the original data, in other words, that the algorithms used there can be trusted not to change the meaning of the signed data.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: XML Canonicalization">edit</a>]</div>
+<p><a name="XML_Canonicalization" id="XML_Canonicalization"></a></p>
+<h2>XML Canonicalization</h2>
+<p>The creation of XML Signatures is a bit more complex than the creation of an ordinary digital signature because a given XML Document (an "Infoset," in common usage among XML developers) may have more than one legal serialized representation. For example, whitespace inside an XML Element is not syntactically significant, so that &lt;Elem &gt; is syntactically identical to &lt;Elem&gt;.</p>
+<p>Since the digital signature is created by using an <a href="/wiki/Asymmetric_key_algorithm.html" title="Asymmetric key algorithm">asymmetric key algorithm</a> (typically <a href="/wiki/RSA.html" title="RSA">RSA</a>) to encrypt the results of running the serialized XML document through a <a href="/wiki/Cryptographic_hash_function.html" title="Cryptographic hash function">Cryptographic hash function</a> (typically <a href="/wiki/SHA1.html" title="SHA1">SHA1</a>), a single-byte difference would cause the digital signature to vary.</p>
+<p>To avoid this problem and guarantee that logically-identical XML documents give identical digital signatures, an XML <a href="/wiki/Canonicalization.html" title="Canonicalization">canonicalization</a> transform (frequently abbreviated <b>C14n</b>) is nearly always employed when signing XML documents (for signing the <tt>SignedInfo</tt>, a canonicalization is mandatory). These algorithms guarantee that logically-identical documents produce exactly identical serialized representations.</p>
+<p>Another complication arises because of the way that the default canonicalization algorithm handles namespace declarations; frequently a signed XML document needs to be embedded in another document; in this case the original canonicalization algorithm will not yield the same result as if the document is treated alone. For this reason, the so-called <i>Exclusive Canonicalization</i>, which serializes <a href="/wiki/XML_namespace.html" title="XML namespace">XML namespace</a> declarations independently of the surrounding XML, was created.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://www.w3.org/TR/xmldsig-core/">XML-Signature Syntax and Processing (W3C)</a></li>
+<li><a  class="external text" title="http://www.w3.org/TR/2001/REC-xml-c14n-20010315">Canonical XML</a></li>
+<li><a  class="external text" title="http://www.w3.org/TR/xml-exc-c14n/">Exclusive XML Canonicalization</a></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:726921-0!1!0!default!!en!2 and timestamp 20060909130526 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Cryptography standards">Cryptography standards</a></span> | <span dir='ltr'><a  title="Category:XML-based standards">XML-based standards</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/XML_Signature.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 10:12, 4 March 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv57 in 0.110 secs. --></body></html>

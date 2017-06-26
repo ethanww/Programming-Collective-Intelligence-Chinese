@@ -1,0 +1,350 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Befunge,1993,ASCII,Brainfuck,Compiler,Esoteric programming language,Funge,Intercal,LIFO,Line feed,Machine language" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Befunge - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Befunge";
+			var wgTitle = "Befunge";
+			var wgArticleId = 53391;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Befunge</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p><b>Befunge</b> is a <a href="/wiki/Stack-oriented_programming_language.html" title="Stack-oriented programming language">stack-based</a>, <a href="/wiki/Reflection_%28computer_science%29.html" title="Reflection (computer science)">reflective</a>, <a href="/wiki/Esoteric_programming_language.html" title="Esoteric programming language">esoteric</a> <a href="/wiki/Funge.html" title="Funge">fungeoid</a> <a href="/wiki/Programming_language.html" title="Programming language">programming language</a>. It differs from conventional languages in that programs are arranged on a two-dimensional grid. "Arrow" instructions direct the control flow to the left, right, up or down, and loops are constructed by sending the control flow in a circle.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">History</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Sample Befunge-93 code</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Befunge-93 instruction list</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: History">edit</a>]</div>
+<p><a name="History" id="History"></a></p>
+<h2>History</h2>
+<p>The language was originally created by Chris Pressey in <a href="/wiki/1993.html" title="1993">1993</a> as an attempt to devise a language which is as hard to compile as humanly possible — note that the <code>p</code> command allows for <a href="/wiki/Self-modifying_code.html" title="Self-modifying code">self-modifying code</a>. Nevertheless, a number of <a href="/wiki/Compiler.html" title="Compiler">compilers</a> have subsequently been written. A number of extensions to the original "Befunge-93" specification also exist, including Funge-98, which extends the concept to an arbitrary number of dimensions and can be multithreaded, with multiple instruction pointers operating simultaneously on the same space. Befunge-extensions and variants are called <i>Fungeoids</i> or just <i><a href="/wiki/Funge.html" title="Funge">Funges</a></i>.</p>
+<p>The Befunge-93 specification restricts each valid program to a grid of 80 instructions horizontally by 25 instructions vertically. Program execution which exceeds these limits "wraps around" to a corresponding point on the other side of the grid; a Befunge program is in this manner <a href="/wiki/Topology.html" title="Topology">topologically</a> equivalent to a <a href="/wiki/Torus.html" title="Torus">torus</a>. Since a Befunge-93 program can only have a single stack and its storage array is bounded, the Befunge-93 language is, unlike most <a href="/wiki/Machine_language.html" title="Machine language">machine languages</a>, not <a href="/wiki/Turing-complete.html" title="Turing-complete">Turing-complete</a>. The later Funge-98 specification provides Turing-completeness by removing the size restrictions on the program; rather than wrapping around at a fixed limit, the movement of a Funge-98 instruction pointer follows a model dubbed "Lahey-space" after its originator, Chris Lahey. In this model, the grid behaves like a torus of finite size with respect to wrapping, while still allowing itself to be extended indefinitely.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Sample Befunge-93 code">edit</a>]</div>
+<p><a name="Sample_Befunge-93_code" id="Sample_Befunge-93_code"></a></p>
+<h2>Sample Befunge-93 code</h2>
+<p>The technique of using arrows to change control flow is demonstrated in the random number generator program below. Following the arrows round, the <code>?</code> instructions send the instruction pointer in random cardinal directions until the pointer hits a digit, pushing it to the stack. Then the arrows navigate to the <code>.</code> to output the digit from the stack and return the pointer to the first directional randomiser. Note that there is no <code>@</code> to terminate this program so it produces an endless stream of random numbers from 1 to 9.</p>
+<pre>
+vv  &lt;      &lt;
+    2
+    ^  v&lt;
+ v1&lt;?&gt;3v4
+    ^   ^
+&gt;  &gt;?&gt;  ?&gt;5^
+    v   v
+ v9&lt;?&gt;7v6
+    v  v&lt;
+    8
+ .  &gt;  &gt;   ^
+^&lt;
+</pre>
+<p><br />
+This is an example of the classic "Hello World!" program. First the letters "olleH" are pushed onto the stack as <a href="/wiki/ASCII.html" title="ASCII">ASCII</a> numbers. These are then popped from the stack in <a href="/wiki/LIFO.html" title="LIFO">LIFO</a> order and output as text characters to give "Hello". A space is character number 32 in ASCII, which here is constructed by multiplying 4 and 8, before being output as text. The remaining code then outputs "World!" in a similar way, followed by ASCII character 10 (a <a href="/wiki/Line_feed.html" title="Line feed">line feed</a> character, moving the output cursor to a new line).</p>
+<pre>
+&gt;              v
+v  ,,,,,"Hello"&lt;
+&gt;48*,          v
+v,,,,,,"World!"&lt;
+&gt;25*,@
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Befunge-93 instruction list">edit</a>]</div>
+<p><a name="Befunge-93_instruction_list" id="Befunge-93_instruction_list"></a></p>
+<h2>Befunge-93 instruction list</h2>
+<table>
+<tr>
+<td width="5%"><code>0-9</code></td>
+<td width="95%">Push this number on the stack</td>
+</tr>
+<tr>
+<td><code>+</code></td>
+<td>Addition: Pop <i>a</i> and <i>b</i>, then push <i>a</i>+<i>b</i></td>
+</tr>
+<tr>
+<td><code>-</code></td>
+<td>Subtraction: Pop <i>a</i> and <i>b</i>, then push <i>b</i>-<i>a</i></td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td>Multiplication: Pop <i>a</i> and <i>b</i>, then push <i>a</i>*<i>b</i></td>
+</tr>
+<tr>
+<td><code>/</code></td>
+<td>Integer division: Pop <i>a</i> and <i>b</i>, then push <i>b</i>/<i>a</i>, rounded down. If <i>a</i> is zero, ask the user what result they want.</td>
+</tr>
+<tr>
+<td><code>%</code></td>
+<td>Modulo: Pop <i>a</i> and <i>b</i>, then push the remainder of the integer division of <i>b</i>/<i>a</i>. If <i>a</i> is zero, ask the user what result they want.</td>
+</tr>
+<tr>
+<td><code>!</code></td>
+<td>Logical NOT: Pop a value. If the value is zero, push 1; otherwise, push zero.</td>
+</tr>
+<tr>
+<td><code>`</code></td>
+<td>Greater than: Pop <i>a</i> and <i>b</i>, then push 1 if <i>b</i>&gt;<i>a</i>, otherwise zero.</td>
+</tr>
+<tr>
+<td><code>&gt;</code></td>
+<td>Start moving right</td>
+</tr>
+<tr>
+<td><code>&lt;</code></td>
+<td>Start moving left</td>
+</tr>
+<tr>
+<td><code>^</code></td>
+<td>Start moving up</td>
+</tr>
+<tr>
+<td><code>v</code></td>
+<td>Start moving down</td>
+</tr>
+<tr>
+<td><code>?</code></td>
+<td>Start moving in a random cardinal direction</td>
+</tr>
+<tr>
+<td><code>_</code></td>
+<td>Pop a value; move right if value=0, left otherwise</td>
+</tr>
+<tr>
+<td><code>|</code></td>
+<td>Pop a value; move down if value=0, up otherwise</td>
+</tr>
+<tr>
+<td><code>"</code></td>
+<td>Start string mode: push each character's ASCII value all the way up to the next <code>"</code></td>
+</tr>
+<tr>
+<td><code>:</code></td>
+<td>Duplicate value on top of the stack</td>
+</tr>
+<tr>
+<td><code>\</code></td>
+<td>Swap two values on top of the stack</td>
+</tr>
+<tr>
+<td><code>$</code></td>
+<td>Pop value from the stack</td>
+</tr>
+<tr>
+<td><code>.</code></td>
+<td>Pop value and output as an integer</td>
+</tr>
+<tr>
+<td><code>,</code></td>
+<td>Pop value and output as ASCII character</td>
+</tr>
+<tr>
+<td><code>#</code></td>
+<td>Trampoline: Skip next cell</td>
+</tr>
+<tr>
+<td><code>p</code></td>
+<td>A "put" call (a way to store a value for later use). Pop <i>y</i>, <i>x</i> and <i>v</i>, then change the character at the position (<i>x</i>,<i>y</i>) in the program to the character with ASCII value <i>v</i></td>
+</tr>
+<tr>
+<td><code>g</code></td>
+<td>A "get" call (a way to retrieve data in storage). Pop <i>y</i> and <i>x</i>, then push ASCII value of the character at that position in the program</td>
+</tr>
+<tr>
+<td><code>&amp;</code></td>
+<td>Ask user for a number and push it</td>
+</tr>
+<tr>
+<td><code>~</code></td>
+<td>Ask user for a character and push its ASCII value</td>
+</tr>
+<tr>
+<td><code>@</code></td>
+<td>End program</td>
+</tr>
+</table>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a  class="new" title="Argh!">Argh!</a></li>
+<li><a  class="new" title="Befreak programming language">Befreak</a></li>
+<li><a href="/wiki/Brainfuck.html" title="Brainfuck">brainfuck</a></li>
+<li><a href="/wiki/Intercal.html" title="Intercal">Intercal</a></li>
+<li><a  class="new" title="PATH programming language">PATH</a></li>
+<li><a href="/wiki/Whitespace_programming_language.html" title="Whitespace programming language">Whitespace</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://quadium.net/funge/spec98.html">Official Funge-98 Specification</a></li>
+<li><a  class="external text" title="http://catseye.webhop.net/">Cat's Eye Technologies</a></li>
+<li><a  class="external text" title="http://kotisivu.mtv3.fi/quux/befunge.html">Javascript Befunge Interpreter</a></li>
+<li><a  class="external text" title="http://yabi93.sourceforge.net/">Yet Another Befunge93 Interpreter</a> - An open source Befunge93 interpretter, written in java.</li>
+<li><a  class="external text" title="http://www.elf-emulation.com/funge/">Official home of the Rc/Funge-98 Interpreter</a></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:53391-0!1!0!default!!en!2 and timestamp 20060906012644 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Esoteric programming languages">Esoteric programming languages</a></span> | <span dir='ltr'><a  title="Category:Stack-oriented programming languages">Stack-oriented programming languages</a></span> | <span dir='ltr'><a  title="Category:Non-English-based programming languages">Non-English-based programming languages</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Befunge.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-ko"><a >한국어</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-pt"><a >Português</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+				<li class="interwiki-sv"><a >Svenska</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 19:29, 5 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv86 in 0.076 secs. --></body></html>

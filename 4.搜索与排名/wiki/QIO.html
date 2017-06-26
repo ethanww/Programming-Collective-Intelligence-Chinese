@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="QIO,Asynchronous System Trap,Asynchronous system trap,Computer terminal,Digital Equipment Corporation,Disk drive,Event flag,Kernel (computer science),Massachusetts,Maynard, Massachusetts,Operating system" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>QIO - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "QIO";
+			var wgTitle = "QIO";
+			var wgArticleId = 1303203;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">QIO</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p><b>QIO</b> (<b>Queue I/O</b>) is a term used in several computer <a href="/wiki/Operating_system.html" title="Operating system">operating systems</a> designed by the former <a href="/wiki/Digital_Equipment_Corporation.html" title="Digital Equipment Corporation">Digital Equipment Corporation</a> (<a href="/wiki/Digital_Equipment_Corporation.html" title="Digital Equipment Corporation">DEC</a>) of <a href="/wiki/Maynard%2C_Massachusetts.html" title="Maynard, Massachusetts">Maynard</a>, <a href="/wiki/Massachusetts.html" title="Massachusetts">Massachusetts</a>.</p>
+<p>I/O operations on these systems are initiated by issuing a QIO call to the <a href="/wiki/Kernel_%28computer_science%29.html" title="Kernel (computer science)">kernel</a>. The call returns immediately and if the I/O operation is successfully enqueued, it will be done asynchronously with its completion signaled by the raising of an <a href="/wiki/Event_flag.html" title="Event flag">event flag</a> and possibly the issuance of an <a href="/wiki/Asynchronous_System_Trap.html" title="Asynchronous System Trap">Asynchronous System Trap</a> (<a href="/wiki/Asynchronous_System_Trap.html" title="Asynchronous System Trap">AST</a>) to the calling process/task.</p>
+<p>Optionally, the call may be issued as QIOW (Queue I/O and Wait for completion), allowing synchronous I/O. In this case, the wait-for-event-flag operation will be done automatically and the call will not return until the I/O operation has been completed or has failed.</p>
+<p>The following operating systems implemented QIO(W):</p>
+<ul>
+<li><a href="/wiki/RSX-11.html" title="RSX-11">RSX-11</a> (including all of the variants)</li>
+<li><a href="/wiki/RSTS/E.html" title="RSTS/E">RSTS/E</a> (synchronous only, emulated by the RSX <a href="/wiki/Run-time_system.html" title="Run-time system">run-time system</a>)</li>
+<li><a href="/wiki/Virtual_Memory_System.html" title="Virtual Memory System">VMS</a></li>
+</ul>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">QIO arguments in VMS</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">QIO completion</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Unusual QIOs that require complex processing</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">3.1</span> <span class="toctext">IO$_READPROMPT</span></a></li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: QIO arguments in VMS">edit</a>]</div>
+<p><a name="QIO_arguments_in_VMS" id="QIO_arguments_in_VMS"></a></p>
+<h2>QIO arguments in VMS</h2>
+<p>Under VMS, the arguments to the QIO call are as follows:</p>
+<ul>
+<li>The <b>number of the <a href="/wiki/Event_flag.html" title="Event flag">event flag</a></b> to set when the operation completes. It isn't possible to <i>not</i> specify an event flag; flag 0 was a valid flag. It is perfectly permissible to have multiple operations going at once which would all set the same event flag on completion; it is then up to the application to sort out any confusion this might cause, or just ignore that event flag.</li>
+</ul>
+<ul>
+<li>The <b>channel</b>, a small integer previously assigned to the device on which the operation is to be performed. At this level, all operations on disk files and directories (filename parsing, directory lookup, file opening/closing) are done by appropriate QIO requests; the application always starts by assigning a channel to a device, in this case the appropriate disk device.</li>
+</ul>
+<ul>
+<li>The <b>function code</b> to be performed. 6 bits are assigned to the basic code (e.g. read, write), with a further 10 bits for "modifiers" whose meaning depend on the basic code.</li>
+</ul>
+<ul>
+<li>The optional <b>address of the 8-byte I/O status block (IOSB)</b> which is cleared by the QIO call, and filled in on completion of the I/O operation. The first two bytes always hold the completion status (e.g. success, end of file reached, timeout, I/O error etc), while the next two bytes normally return the number of bytes read or written in the operation. The meaning, if any, of the last four bytes is operation-dependent.</li>
+</ul>
+<ul>
+<li>The optional <b>address of the <a href="/wiki/Asynchronous_system_trap.html" title="Asynchronous system trap">AST</a> routine</b> to invoke when the operation completes.</li>
+</ul>
+<ul>
+<li>An additional parameter (whose meaning is up to the caller) to be passed to the AST routine.</li>
+</ul>
+<ul>
+<li>A partially-standardized list of up to six parameters known as <b>P1</b> through <b>P6</b>. The first two parameters typically specify the I/O buffer starting address (P1), and the I/O bytecount (P2). The remaining parameters vary with the operation, and the particular device for which I/O is being enqueued. For example, for a <a href="/wiki/Computer_terminal.html" title="Computer terminal">computer terminal</a>, P3 might be the time to allow for the read to complete whereas, for a <a href="/wiki/Disk_drive.html" title="Disk drive">disk drive</a>, it might be the starting block number of the transfer.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: QIO completion">edit</a>]</div>
+<p><a name="QIO_completion" id="QIO_completion"></a></p>
+<h2>QIO completion</h2>
+<p>There are three different ways to tell when the queued I/O operation has completed:</p>
+<ol>
+<li>When the event flag is set.</li>
+<li>When the first two bytes of the IOSB become nonzero (VMS uses odd integers for successful status codes, and even ones for failure codes, while zero is never a valid status code and could be used to indicate that the QIO was still in process).</li>
+<li>When the AST routine is executed.</li>
+</ol>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Unusual QIOs that require complex processing">edit</a>]</div>
+<p><a name="Unusual_QIOs_that_require_complex_processing" id="Unusual_QIOs_that_require_complex_processing"></a></p>
+<h2>Unusual QIOs that require complex processing</h2>
+<p>Simple QIOs, such as read or write requests, are either serviced by the kernel itself or by device drivers. Certain more complicated requests, specifically those to do with tape drives and file-level operations, are executed by an Ancillary Control Processor (ACP) (a special purpose task with its own address mapping). At one time the Files-11 file system was provided by a process called F11ACP and the Files-11 Structure Level 2 file system was provided by F11BACP. The functionality of the latter process was later moved into the kernel in order to save the overhead of process context switches and is now called an XQP (eXtended Qio Processor).</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: IO$_READPROMPT">edit</a>]</div>
+<p><a name="IO.24_READPROMPT" id="IO.24_READPROMPT"></a></p>
+<h3>IO$_READPROMPT</h3>
+<p>Probably the most complex single QIO request possible is the VMS terminal driver's IO$_READPROMPT call with the IO$M_TIMED modifier; this version of this QIO required the use of all six parameters, using them as follows:</p>
+<ul>
+<li><b>P1</b> is the address of the buffer into which the input characters were read</li>
+</ul>
+<ul>
+<li><b>P2</b> is the length of the buffer, limiting the maximum number of characters to read. If the buffer is filled, the read will complete successfully, even if the user does not type a line-terminator character. Zero is allowed, in which case the read will terminate successfully with zero characters read.</li>
+</ul>
+<ul>
+<li><b>P3</b> is the maximum number of seconds to wait for more input. This is only used if the IO$M_TIMED modifier is present, and a value of zero means zero seconds: the read will terminate immediately, so the only possible input will be whatever had been "typed ahead" by the user.</li>
+</ul>
+<ul>
+<li><b>P4</b> is the address of the optional "terminator mask", specifying which input ASCII characters will be construed as terminating the read. If omitted, this defaults to the usual VMS line delimiters including carriage-return (but not line-feed). It is possible to specify a mask with <i>no</i> line terminators, in which case the read will only complete when the buffer is full, or the timeout has elapsed.</li>
+</ul>
+<ul>
+<li><b>P5</b> is the address of a prompt string to be displayed to the user before accepting input. The value of providing this prompt as part of the read operation, instead of as a separate prior write operation, is that it will be automatically redisplayed in any situation requiring a refresh of the input line while the read is still in progress (such as after an operator message has been broadcast to the terminal, or the user hits CTRL/R to redisplay the line).</li>
+</ul>
+<ul>
+<li><b>P6</b> is the length of the prompt string.</li>
+</ul>
+<p>By appropriate choices of the above parameters, it is possible to do both terminal input and output with the one call, there is no need to use the regular IO$_WRITEVBLK call for terminal output at all.</p>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:1303203-0!1!0!default!!en!2 and timestamp 20060910150813 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:OpenVMS">OpenVMS</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/QIO.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 13:40, 17 February 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv96 in 0.209 secs. --></body></html>

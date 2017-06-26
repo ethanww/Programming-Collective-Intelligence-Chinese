@@ -1,0 +1,538 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Name mangling,Application binary interface,Boost library,Byte,C++,C programming language,Call stack,Calling convention,Class (computer science),Compiler,DLL" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Name mangling - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Name_mangling";
+			var wgTitle = "Name mangling";
+			var wgArticleId = 725961;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Name mangling</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>In <a href="/wiki/Software.html" title="Software">software</a> <a href="/wiki/Compiler.html" title="Compiler">compiler</a> <a href="/wiki/Software_engineering.html" title="Software engineering">engineering</a>, <b>name mangling</b> (more properly called <b>name decoration</b>, although this term is less commonly used) is a technique used to solve various problems caused by the need to resolve unique names for programming entities in many modern <a href="/wiki/Programming_language.html" title="Programming language">programming languages</a>.</p>
+<p>It provides a way of encoding additional information about the name of a <a href="/wiki/Function_%28programming%29.html" title="Function (programming)">function</a>, <a href="/wiki/Structure.html" title="Structure">structure</a>, <a href="/wiki/Class_%28computer_science%29.html" title="Class (computer science)">class</a> or another <a href="/wiki/Datatype.html" title="Datatype">datatype</a> in order to pass more semantic information from the <a href="/wiki/Compiler.html" title="Compiler">compilers</a> to <a href="/wiki/Linker.html" title="Linker">linkers</a>.</p>
+<p>The need arises where the language allows different entities to be named with the same <a href="/wiki/Identifier.html" title="Identifier">identifier</a> as long as they occupy a different <a href="/wiki/Namespace.html" title="Namespace">namespace</a> (where a namespace is typically defined by a module, class, or explicit <i>namespace</i> directive).</p>
+<p>Any <a href="/wiki/Object_code.html" title="Object code">object code</a> produced by compilers is usually linked with other pieces of object code (produced by the same or another compiler) by a type of program called a <a href="/wiki/Linker.html" title="Linker">linker</a>. The linker needs a great deal of information on each program entity. For example, to correctly link a function it needs its name, the number of arguments, their type, and so on.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">C Name mangling in Microsoft Windows</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Name mangling in C++</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">2.1</span> <span class="toctext">Simple example</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.2</span> <span class="toctext">Complex example</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.3</span> <span class="toctext">How different compilers mangle the same functions</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.4</span> <span class="toctext">Handling of C symbols when linking from C++</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.5</span> <span class="toctext">Standardised name mangling in C++</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.6</span> <span class="toctext">Real-world effects of C++ name mangling</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Name mangling in Java</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">3.1</span> <span class="toctext">Creating unique names for inner and anonymous classes</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.2</span> <span class="toctext">Handling issues with the java to native interface</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Name mangling in Python</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Name mangling in Borland's Turbo Pascal / Delphi range</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">Name mangling in Objective-C</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: C Name mangling in Microsoft Windows">edit</a>]</div>
+<p><a name="C_Name_mangling_in_Microsoft_Windows" id="C_Name_mangling_in_Microsoft_Windows"></a></p>
+<h2>C Name mangling in Microsoft Windows</h2>
+<p>While in general C, Pascal and other languages not supporting <a href="/wiki/Function_overloading.html" title="Function overloading">function overloading</a> do not require or use name mangling, it is used in some cases to provide additional information about function. For example, compilers targeted at Microsoft Windows platforms support a variety of <a href="/wiki/Calling_convention.html" title="Calling convention">calling conventions</a>, which determine the manner in which parameters are sent to subroutines and results returned. As these are mutually incompatible, compilers mangle symbols with codes detailing the calling convention.</p>
+<p>The mangling scheme was established by Microsoft, and has been informally followed by other compilers including Digital Mars, Borland, and GNU gcc. The scheme even applies to other languages, such as <a href="/wiki/Pascal_programming_language.html" title="Pascal programming language">Pascal</a>, <a href="/wiki/D_programming_language.html" title="D programming language">D</a>, Delphi, <a href="/wiki/Fortran.html" title="Fortran">Fortran</a>, and C#. This allows subroutines written in those languages to call, or be called by, existing Windows libraries using a calling convention different from their default.</p>
+<p>When compiling the following C examples:</p>
+<pre>
+int _cdecl    f(int x) { return 0; }
+int _stdcall  g(int y) { return 0; }
+int _fastcall h(int z) { return 0; }
+</pre>
+<p><code>_cdecl</code> is the default for C functions, if no calling convention is stated explicitly.</p>
+<p>32 bit compilers emit, respectively:</p>
+<pre>
+_f
+_g@4
+@h@4
+</pre>
+<p>In the <tt>stdcall</tt> and <tt>fastcall</tt> mangling schemes, the function is encoded as <tt>_<b>name</b>@<b>X</b></tt> and <tt>@<b>name</b>@<b>X</b></tt>, for <tt>stdcall</tt> and <tt>fastcall</tt> respectively, where <b>X</b> is the size of the argument(s) passed on the <a href="/wiki/Call_stack.html" title="Call stack">stack</a>, in <a href="/wiki/Byte.html" title="Byte">bytes</a>.</p>
+<p>Other common name decoration actions may involve adding prefixes, usually with an abundance of underlines (like <tt>__func__</tt>), or some standard capitalization.</p>
+<p><br /></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Name mangling in C++">edit</a>]</div>
+<p><a name="Name_mangling_in_C.2B.2B" id="Name_mangling_in_C.2B.2B"></a></p>
+<h2>Name mangling in C++</h2>
+<p><a href="/wiki/C%2B%2B.html" title="C++">C++</a> compilers are the most widespread, and yet least standard, users of name mangling. The first C++ compilers were implemented as translators to <a href="/wiki/C_programming_language.html" title="C programming language">C</a> source code, which would then be compiled by a C compiler to object code; because of this, symbol names had to conform to C identifier rules. Even later, with the emergence of compilers which produced machine code or assembler directly, the system's <a href="/wiki/Linker.html" title="Linker">linker</a> generally did not support C++ symbols, and mangling was still required.</p>
+<p>The <a href="/wiki/C%2B%2B.html" title="C++">C++</a> language does not define a standard decoration scheme, so each compiler uses its own. Combined with the fact that C++ decoration can become fairly complex (storing information about classes, <a href="/wiki/Default_argument.html" title="Default argument">default arguments</a>, variable ownership, <a href="/wiki/Operator_overloading.html" title="Operator overloading">operator overloading</a>, etc), this means that object code produced by different compilers is not usually linkable.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Simple example">edit</a>]</div>
+<p><a name="Simple_example" id="Simple_example"></a></p>
+<h3>Simple example</h3>
+<p>Consider the following two definitions of <tt>f()</tt> in a C++ program:</p>
+<pre>
+int f (void) { return 1; }
+int f (int)  { return 0; }
+void g (void) { int i = f(), j = f(0); }
+</pre>
+<p>These are distinct functions, with no relation to each other apart from the name. If they were naïvely translated into C with no changes, the result would be an error — C does not permit two functions with the same name. The compiler therefore will encode the type information in the symbol name, the result being something resembling:</p>
+<pre>
+int __f_v (void) { return 1; }
+int __f_i (int)  { return 0; }
+void __g_v (void) { int i = __f_v(), j = __f_i(0); }
+</pre>
+<p>Notice that <tt>g()</tt> is mangled even though there is no conflict; name mangling applies to <b>all</b> symbols.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Complex example">edit</a>]</div>
+<p><a name="Complex_example" id="Complex_example"></a></p>
+<h3>Complex example</h3>
+<p>For a more complex example, we'll consider an example of a real-world name mangling implementation: that used by GNU GCC 3.<i>x</i>, and how it mangles the following example class. The mangled symbol is shown below the respective identifier name.</p>
+<pre>
+namespace wikipedia 
+{
+   class article 
+   {
+   public:
+      std::string format (void); 
+                <i>/* = _ZN9wikipedia7article6formatEv */</i>
+ 
+      bool print_to (std::ostream&amp;); 
+                <i>/* = _ZN9wikipedia7article8print_toERSo */</i>
+ 
+      class wikilink 
+      {
+         public:
+            wikilink (std::string const&amp; name);
+                    <i>/* = _ZN9wikipedia7article8wikilinkC1ERKSs */</i>
+      };
+   };
+}
+</pre>
+<p>The name mangling scheme used here is relatively simple. All mangled symbols begin with <b>_Z</b> (note that an underscore followed by a capital is a <a href="/wiki/Reserved_identifier.html" title="Reserved identifier">reserved identifier</a> in C and C++, so conflict with user identifiers is avoided); for nested names (including both namespaces and classes), this is followed by <tt><b>N</b></tt>, then a series of &lt;length,id&gt; pairs (the length being the length of the next identifier), and finally <tt><b>E</b></tt>. For example, <tt>wikipedia::article::format</tt> becomes</p>
+<pre>
+_ZN·<i>9</i><b>wikipedia</b>·<i>7</i><b>article</b>·<i>6</i><b>format</b>·E  
+</pre>
+<p>For functions, this is then followed by the type information; as <tt>format()</tt> is a <tt>void</tt> function, this is simply <tt><b>v</b></tt>; hence:</p>
+<pre>
+_ZN·<i>9</i><b>wikipedia</b>·<i>7</i><b>article</b>·<i>6</i><b>format</b>·E·<b>v</b>
+</pre>
+<p>For <tt>print_to</tt>, a standard type <tt>std::ostream</tt> (or more properly <tt>std::basic_ostream&lt;char, char_traits&lt;char&gt; &gt;</tt>) is used, which has the special alias <tt><b>So</b></tt>; a reference to this type is therefore <tt><b>RSo</b></tt>, with the complete name for the function being:</p>
+<pre>
+_ZN·<i>9</i><b>wikipedia</b>·<i>7</i><b>article</b>·<i>8</i><b>print_to</b>·E·<b>RSo</b>
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: How different compilers mangle the same functions">edit</a>]</div>
+<p><a name="How_different_compilers_mangle_the_same_functions" id="How_different_compilers_mangle_the_same_functions"></a></p>
+<h3>How different compilers mangle the same functions</h3>
+<p>There isn't a standard scheme by which even trivial C++ identifiers are mangled, and consequently different compiler vendors (or even different versions of the same compiler, or the same compiler on different platforms) mangle public symbols in radically different (and thus totally incompatible) ways. Consider how different C++ compilers mangle the same functions:</p>
+<table class="wikitable">
+<tr>
+<th>Compiler</th>
+<th><tt>void h(int)</tt></th>
+<th><tt>void h(int, char)</tt></th>
+<th><tt>void h(void)</tt></th>
+</tr>
+<tr>
+<td>GNU GCC 3.<i>x</i></td>
+<td><tt>_Z1hi</tt></td>
+<td><tt>_Z1hic</tt></td>
+<td><tt>_Z1hv</tt></td>
+</tr>
+<tr>
+<td>GNU GCC 2.9<i>x</i></td>
+<td><tt>h__Fi</tt></td>
+<td><tt>h__Fic</tt></td>
+<td><tt>h__Fv</tt></td>
+</tr>
+<tr>
+<td>Intel C++ 8.0 for Linux</td>
+<td><tt>_Z1hi</tt></td>
+<td><tt>_Z1hic</tt></td>
+<td><tt>_Z1hv</tt></td>
+</tr>
+<tr>
+<td><a href="/wiki/Microsoft_Visual_C%2B%2B_Name_Mangling.html" title="Microsoft Visual C++ Name Mangling">Microsoft VC++ v6/v7</a></td>
+<td><tt>?h@@YAXH@Z</tt></td>
+<td><tt>?h@@YAXHD@Z</tt></td>
+<td><tt>?h@@YAXXZ</tt></td>
+</tr>
+<tr>
+<td>Borland C++ v3.1</td>
+<td><tt>@h$qi</tt></td>
+<td><tt>@h$qizc</tt></td>
+<td><tt>@h$qv</tt></td>
+</tr>
+<tr>
+<td>OpenVMS C++ V6.5 (ARM mode)</td>
+<td><tt>H__XI</tt></td>
+<td><tt>H__XIC</tt></td>
+<td><tt>H__XV</tt></td>
+</tr>
+<tr>
+<td>OpenVMS C++ V6.5 (ANSI mode)</td>
+<td><tt>CXX$__7H__FI0ARG51T</tt></td>
+<td><tt>CXX$__7H__FIC26CDH77</tt></td>
+<td><tt>CXX$__7H__FV2CB06E8</tt></td>
+</tr>
+<tr>
+<td>OpenVMS C++ X7.1 IA-64</td>
+<td><tt>CXX$_Z1HI2DSQ26A</tt></td>
+<td><tt>CXX$_Z1HIC2NP3LI4</tt></td>
+<td><tt>CXX$_Z1HV0BCA19V</tt></td>
+</tr>
+<tr>
+<td><a href="/wiki/Digital_Mars.html" title="Digital Mars">Digital Mars</a> C++</td>
+<td><tt>?h@@YAXH@Z</tt></td>
+<td><tt>?h@@YAXHD@Z</tt></td>
+<td><tt>?h@@YAXXZ</tt></td>
+</tr>
+<tr>
+<td>SunPro CC</td>
+<td><tt>__1cBh6Fi_v_</tt></td>
+<td><tt>__1cBh6Fic_v_</tt></td>
+<td><tt>__1cBh6F_v_</tt></td>
+</tr>
+<tr>
+<td>HP aC++ A.05.55 IA-64</td>
+<td><tt>_Z1hi</tt></td>
+<td><tt>_Z1hic</tt></td>
+<td><tt>_Z1hv</tt></td>
+</tr>
+<tr>
+<td>HP aC++ A.03.45 PA-RISC</td>
+<td><tt>h__Fi</tt></td>
+<td><tt>h__Fic</tt></td>
+<td><tt>h__Fv</tt></td>
+</tr>
+<tr>
+<td>Tru64 C++ V6.5 (ARM mode)</td>
+<td><tt>h__Xi</tt></td>
+<td><tt>h__Xic</tt></td>
+<td><tt>h__Xv</tt></td>
+</tr>
+<tr>
+<td>Tru64 C++ V6.5 (ANSI mode)</td>
+<td><tt>__7h__Fi</tt></td>
+<td><tt>__7h__Fic</tt></td>
+<td><tt>__7h__Fv</tt></td>
+</tr>
+</table>
+<p>Notes:</p>
+<ul>
+<li>The Compaq C++ compiler on OpenVMS VAX and Alpha (but not IA-64) and Tru64 has two name mangling schemes. The original, pre-standard scheme is known as ARM model, and is based on the name mangling described in the C++ Annotated Reference Manual (ARM). With the advent of new features in standard C++, particularly <a href="/wiki/Template_%28programming%29.html" title="Template (programming)">templates</a>, the ARM scheme became more and more unsuitable — it could not encode certain function types, or produced identical mangled names for different functions. It was therefore replaced by the newer "ANSI" model, which supported all ANSI template features, but was not backwards compatible. <i>todo: the different isn't obvious from the examples. maybe a template or something should be added...</i></li>
+<li>On IA-64, a standard <a href="/wiki/Application_binary_interface.html" title="Application binary interface">ABI</a> exists (see <a  title="">external links</a>), which defines (among other things) a standard name-mangling scheme, and which is used by all the IA-64 compilers. GNU GCC 3.<i>x</i>, in addition, has adopted the name mangling scheme defined in this standard for use on other, non-Intel platforms.</li>
+</ul>
+<p><br /></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Handling of C symbols when linking from C++">edit</a>]</div>
+<p><a name="Handling_of_C_symbols_when_linking_from_C.2B.2B" id="Handling_of_C_symbols_when_linking_from_C.2B.2B"></a></p>
+<h3>Handling of C symbols when linking from C++</h3>
+<p>The job of the common C++ idiom:</p>
+<pre>
+#ifdef __cplusplus 
+extern "C" {
+#endif
+    /* ... */
+#ifdef __cplusplus
+}
+#endif
+</pre>
+<p>is to ensure that the symbols following are "unmangled" - that the compiler emits a binary file with their names undecorated, as a C compiler would do. As C language definitions are unmangled, the C++ compiler needs to avoid mangling references to these identifiers.</p>
+<p>For example, the standard strings library, <tt>&lt;string.h&gt;</tt> usually contains something resembling:</p>
+<pre>
+#ifdef __cplusplus
+extern "C" {
+#endif
+ 
+void *memset (void *, int, size_t);
+char *strcat (char *, const char *);
+int   strcmp (const char *, const char *);
+char *strcpy (char *, const char *);
+ 
+#ifdef __cplusplus
+}
+#endif
+</pre>
+<p>Thus, code such as:</p>
+<pre>
+if (strcmp(argv[1], "-x") == 0) 
+    strcpy(a, argv[2]);
+else 
+    memset(a, 0, sizeof(a));
+</pre>
+<p>uses the correct, unmangled <tt>strcmp</tt> and <tt>memset</tt>. If the <tt>extern</tt> had not been used, the C++ compiler would produce code equivalent to:</p>
+<pre>
+if (__1cGstrcmp6Fpkc1_i_(argv[1], "-x") == 0) 
+    __1cGstrcpy6Fpcpkc_0_(a, argv[2]);
+else 
+    __1cGmemset6FpviI_0_(a, 0, sizeof(a));
+</pre>
+<p>Since those symbols do not exist in the C runtime library (<i>e.g.</i> <tt>libc</tt>), link errors would result.</p>
+<p><br /></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Standardised name mangling in C++">edit</a>]</div>
+<p><a name="Standardised_name_mangling_in_C.2B.2B" id="Standardised_name_mangling_in_C.2B.2B"></a></p>
+<h3>Standardised name mangling in C++</h3>
+<p>While it is a relatively common belief that standardised name mangling in the C++ language would lead to greater interoperability between implementations, this is not really the case. Name mangling is only one of several ABI issues in a C++ implementation, and other language details like <a href="/wiki/Exception_handling.html" title="Exception handling">exception handling</a>, <a href="/wiki/Virtual_table.html" title="Virtual table">virtual table</a> layout, structure <a href="/wiki/Padding.html" title="Padding">padding</a>, <i>etc.</i> would render differing implementations yet incompatible. Further, requiring a particular form of mangling would cause issues for systems where implementation limits (<i>e.g.</i> length of symbols) dictate a particular mangling scheme. A standardised <i>requirement</i> for name mangling would also prevent an implementation where mangling was not required at all — for example, a linker which understood the C++ language.</p>
+<p>The <a href="/wiki/ISO/IEC_14882.html" title="ISO/IEC 14882">C++ standard</a> therefore does not attempt to standardise name mangling. On the contrary, the <i>Annotated C++ Reference Manual</i> (also known as <i>ARM</i>, <a  class="internal">ISBN 0-201-51459-1</a>, section 7.2.1c) actively encourages to use different mangling schemes to prevent linking when other aspects of the ABI, such as <a href="/wiki/Exception_handling.html" title="Exception handling">exception handling</a> and <a href="/wiki/Virtual_table.html" title="Virtual table">virtual table</a> layout, are incompatible.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Real-world effects of C++ name mangling">edit</a>]</div>
+<p><a name="Real-world_effects_of_C.2B.2B_name_mangling" id="Real-world_effects_of_C.2B.2B_name_mangling"></a></p>
+<h3>Real-world effects of C++ name mangling</h3>
+<p>Because C++ symbols are routinely exported from <a href="/wiki/DLL.html" title="DLL">DLL</a> and <a href="/wiki/Shared_object.html" title="Shared object">shared object</a> files, the name mangling scheme is not merely a compiler-internal matter. Different compilers (or different versions of the same compiler, in many cases) produce such binaries under different name decoration schemes, meaning that symbols are frequently unresolved if the compilers used to create the library and the program using it employed different schemes. For example, if a system with multiple C++ compilers installed (<i>e.g.</i> GNU GCC and the OS vendor's compiler) wished to install the <a href="/wiki/Boost_library.html" title="Boost library">Boost library</a>, it would have to be compiled twice — once for the vendor compiler and once for GCC.</p>
+<p>For this reason name decoration is an important aspect of any C++-related <a href="/wiki/Application_binary_interface.html" title="Application binary interface">ABI</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Name mangling in Java">edit</a>]</div>
+<p><a name="Name_mangling_in_Java" id="Name_mangling_in_Java"></a></p>
+<h2>Name mangling in Java</h2>
+<p>The language, compiler, and .class file format were all designed together (and had object-orientation in mind from the start), so the primary problem solved by name mangling doesn't exist in implementations of the <a href="/wiki/Java_programming_language.html" title="Java programming language">Java runtime</a>. There are, however, cases where an analogous transformation and qualification of names is necessary.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Creating unique names for inner and anonymous classes">edit</a>]</div>
+<p><a name="Creating_unique_names_for_inner_and_anonymous_classes" id="Creating_unique_names_for_inner_and_anonymous_classes"></a></p>
+<h3>Creating unique names for inner and anonymous classes</h3>
+<p>The scope of anonymous classes is confined to their parent class, so the compiler must produce a "qualified" public name for the inner class, to avoid conflict where other classes (inner or not) exist in the same namespace. Similarly, anonymous classes must have "fake" public names generated for them (as the concept of anonymous classes exists only in the compiler, not the runtime). So, compiling the following java program</p>
+<pre>
+public class foo {
+    class bar {
+        public int x;
+    }
+
+    public void zark () {
+        Object f = new Object () {
+            public String toString() {
+                return "hello";
+            }
+        };
+    }
+}
+</pre>
+<p>will produce three <b>.class</b> files:</p>
+<ul>
+<li><b>foo.class</b>, containing the main (outer) class <i>foo</i></li>
+<li><b>foo$bar.class</b>, containing the named inner class <i>foo.bar</i></li>
+<li><b>foo$1.class</b>, containing the anonymous inner class (local to method <i>foo.zark</i>)</li>
+</ul>
+<p>All of these class names are valid (as $ symbols are permitted in the JVM specification) and these names are "safe" for the compiler to generate, as the Java language definition prohibits $ symbols in normal java class definitions.</p>
+<p>Name resolution in Java is further complicated at runtime, as <a href="/wiki/Fully_qualified_name.html" title="Fully qualified name">fully qualified class names</a> are unique only inside a specific classloader instance. Classloaders are ordered hierarchically and each Thread in the JVM has a so called context class loader, so in cases where two different classloader instances contain classes with the same name, the system first tries to load the class using the root (or system) classloader and then goes down the hierarchy to the context class loader.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Handling issues with the java to native interface">edit</a>]</div>
+<p><a name="Handling_issues_with_the_java_to_native_interface" id="Handling_issues_with_the_java_to_native_interface"></a></p>
+<h3>Handling issues with the java to native interface</h3>
+<p>Java's native method support allows java language programs to call out to programs written in another language (generally either C or C++). There are two name-resolution concerns here, neither of which is implemented in a particularly standard manner.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Name mangling in Python">edit</a>]</div>
+<p><a name="Name_mangling_in_Python" id="Name_mangling_in_Python"></a></p>
+<h2>Name mangling in Python</h2>
+<p>A <a href="/wiki/Python_programming_language.html" title="Python programming language">Python</a> programmer can explicitly designate that an identifier is a "private name" (its scope is confined to the class) by setting the first two characters of the identifier to be underscores. On encountering these, the python compiler turns these private names into global symbols by prepending a string consisting of a single underscore and the name of the enclosing class.</p>
+<p>So, for example,</p>
+<pre>
+class Test:
+    def __privateSymbol():
+        pass
+    def normalSymbol():
+        pass
+ 
+print dir(Test)
+</pre>
+<p>will output:</p>
+<pre>
+ ['_Test__privateSymbol', 
+ '__doc__', 
+ '__module__', 
+ 'normalSymbol']
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Name mangling in Borland's Turbo Pascal / Delphi range">edit</a>]</div>
+<p><a name="Name_mangling_in_Borland.27s_Turbo_Pascal_.2F_Delphi_range" id="Name_mangling_in_Borland.27s_Turbo_Pascal_.2F_Delphi_range"></a></p>
+<h2>Name mangling in Borland's Turbo Pascal / Delphi range</h2>
+<p>To avoid name mangling in Pascal, use:</p>
+<pre>
+exports
+  myFunc name 'myFunc', myProc name 'myProc';
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Name mangling in Objective-C">edit</a>]</div>
+<p><a name="Name_mangling_in_Objective-C" id="Name_mangling_in_Objective-C"></a></p>
+<h2>Name mangling in Objective-C</h2>
+<p>Essentially two forms of method exist in Objective-C, the class ("static") method, and the instance method. A method declaration in Objective-C is of the following form</p>
+<pre>
++ <i>method name</i>: <i>argument</i> <i>name</i><sub>1</sub>:<i>parameter</i><sub>1</sub> ...
+- <i>method name</i>: <i>argument</i> <i>name</i><sub>1</sub>:<i>parameter</i><sub>1</sub> ...
+</pre>
+<p>Class methods are signified by +, instance methods use -. A typical class method declaration may then look like:</p>
+<pre>
++ (id) initWithX: (int) number andY: (int) number;
++ (id) new;
+</pre>
+<p>with instance methods looking like</p>
+<pre>
+- (id) value;
+- (id) setValue: (id) new_value;
+</pre>
+<p>Each of these method declarations have a specific internal representation. When compiled, each method is named according to the following scheme for class methods:</p>
+<pre>
+_c_<i>Class</i>_<i>methodname</i>_<i>name</i><sub>1</sub>_<i>name</i><sub>2</sub>_ ...
+</pre>
+<p>and this for instance methods:</p>
+<pre>
+_i_<i>Class</i>_<i>methodname</i>_<i>name</i><sub>1</sub>_<i>name</i><sub>2</sub>_ ...
+</pre>
+<p>The colons in the Objective-C syntax are translated to underscores. So, the Objective-C class method <tt>+ (id) initWithX: (int) number andY: (int) number;</tt>, if belonging to the <tt>Point</tt> class would translate as <tt>_c_Point_initWithX_andY_</tt>, and the instance method (belonging to the same class) <tt>- (id) value;</tt> would translate to <tt>_i_Point_value</tt>.</p>
+<p>Each of the methods of a class are labeled in this way. However, in order to look up a method that a class may respond to would be tedious if all methods are represented in this fashion. Each of the methods is assigned a unique symbol (such as an integer). Such a symbol is known as a <i>selector</i>. In Objective-C, one can manage selectors directly — they have a specific type in Objective-C — <tt>SEL</tt>.</p>
+<p>During compilation, a table is built that maps the textual representation (such as <tt>_i_Point_value</tt>) to selectors (which are given a type SEL). Managing selectors is more efficient than manipulating the textual representation of a method. Note that a selector only matches a method's name, not the class it belongs to — different classes can have different implementations of a method with the same name. Because of this, implementations of a method are given a specific identifier too — these are known as implementation pointers, and are given a type also, <tt>IMP</tt>.</p>
+<p>Message sends are encoded by the compiler as calls to the <tt>id objc_msgSend(id receiver, SEL selector, ...)</tt> function, or one of its cousins, where <tt>receiver</tt> is the receiver of the message, and SEL determines the method to call. Each class has its own table that maps selectors to their implementations — the implementation pointer specifies where in memory the actual implemenation of the method resides. There are separate tables for class and instance methods. Apart from being stored in the <tt>SEL</tt> to <tt>IMP</tt> lookup tables, the functions are essentially anonymous.</p>
+<p>The <tt>SEL</tt> value for a selector does not vary between classes. This enables polymorphism.</p>
+<p>The Objective-C runtime maintains information about the argument and return types of methods. However, this information is not part of the name of the method, and can vary from class to class.</p>
+<p>Since Objective-C does not support <a href="/wiki/Namespace_%28programming%29.html" title="Namespace (programming)">namespaces</a>, there is no need for mangling of class names (that do appear as symbols in generated binaries).</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://www.codesourcery.com/cxx-abi/abi.html#mangling">Linux Itanium ABI for C++</a>, including name mangling scheme.</li>
+<li><a  class="external text" title="http://sources.redhat.com/binutils/docs-2.15/binutils/c--filt.html">c++filt</a> — filter to demangle encoded C++ symbols</li>
+<li><a  class="external text" title="http://developer.apple.com/documentation/Cocoa/Conceptual/ObjectiveC/4objc_runtime_overview/chapter_4_section_1.html#//apple_ref/doc/uid/20001425=">The Objective-C Runtime System</a> — From Apple's <i><a  class="external text" title="http://developer.apple.com/documentation/Cocoa/Conceptual/ObjectiveC/">The Objective-C Programming Language</a></i></li>
+<li><a  class="external text" title="http://sparcs.kaist.ac.kr/~tokigun/article/vcmangle.html#Microsoft">C++ Name Mangling Scheme</a> pretty good description of mangling scheme</li>
+<li><a  class="external text" title="http://developer.apple.com/tools/mpw-tools/compilers/docs/abi_spec.pdf">Macintosh C/C++ ABI Standard Specification</a></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:725961-0!1!0!default!!en!2 and timestamp 20060910162038 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:C++">C++</a></span> | <span dir='ltr'><a  title="Category:Compilers">Compilers</a></span> | <span dir='ltr'><a  title="Category:Computer library">Computer library</a></span> | <span dir='ltr'><a  title="Category:Computer programming">Computer programming</a></span> | <span dir='ltr'><a  title="Category:Java programming language">Java programming language</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Name_mangling.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-ja"><a >日本語</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 15:11, 29 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv91 in 0.382 secs. --></body></html>

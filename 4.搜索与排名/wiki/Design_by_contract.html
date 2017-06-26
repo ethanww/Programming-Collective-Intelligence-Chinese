@@ -1,0 +1,401 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Design by contract,Java Modeling Language,Inheritance,Eiffel programming language,Java programming language,Nemerle programming language,Perfect Developer,CPAN,Damian Conway,Object oriented,D programming language" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Design by contract - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Design_by_contract";
+			var wgTitle = "Design by contract";
+			var wgArticleId = 39289;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Design by contract</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<dl>
+<dd>DBC also stands for <i>Direct Bonded Copper</i>, a <a href="/wiki/Power_electronic_substrate.html" title="Power electronic substrate">Power electronic substrate</a></dd>
+</dl>
+<dl>
+<dd><i>"Design by Contract" is a trademark of Eiffel Software (part of Interactive Software Engineering Inc. or ISE), the designers of Eiffel.</i></dd>
+</dl>
+<p><b>Design by contract</b>, <b>DbC</b> or <b>Programming by contract</b> is a methodology for designing <a href="/wiki/Computer_software.html" title="Computer software">computer software</a>. It prescribes that software designers should define precise checkable interface specifications for software components based upon the theory of <a href="/wiki/Abstract_data_type.html" title="Abstract data type">abstract data types</a> and the <a href="/wiki/Conceptual_metaphor.html" title="Conceptual metaphor">conceptual metaphor</a> of a business <a href="/wiki/Contract.html" title="Contract">contract</a>.</p>
+<p>The term was coined by <a href="/wiki/Bertrand_Meyer.html" title="Bertrand Meyer">Bertrand Meyer</a> in connection with his design of the <a href="/wiki/Eiffel_programming_language.html" title="Eiffel programming language">Eiffel programming language</a> and first described in various articles starting in 1986 <sup id="_ref-0" class="reference"><a  title="">[1]</a></sup> <sup id="_ref-1" class="reference"><a  title="">[2]</a></sup> <sup id="_ref-2" class="reference"><a  title="">[3]</a></sup> and the two successive editions (1998, 1997) of his book <a href="/wiki/Object-Oriented_Software_Construction.html" title="Object-Oriented Software Construction">Object-Oriented Software Construction</a>.</p>
+<p>Design by Contract has its root in work on <a href="/wiki/Formal_verification.html" title="Formal verification">formal verification</a>, <a href="/wiki/Formal_specification.html" title="Formal specification">formal specification</a> and <a href="/wiki/Hoare_logic.html" title="Hoare logic">Hoare logic</a>. The original contributions include:</p>
+<ul>
+<li>A clear metaphor to guide the design process.</li>
+<li>The application to <a href="/wiki/Inheritance_%28computer_science%29.html" title="Inheritance (computer science)">inheritance</a>, in particular a methodology for redefinition and <a href="/wiki/Dynamic_binding.html" title="Dynamic binding">dynamic binding</a>.</li>
+<li>The application to <a href="/wiki/Exception_%28computer_science%29.html" title="Exception (computer science)">exception handling</a>.</li>
+<li>The connection with automatic <a href="/wiki/Software_documentation.html" title="Software documentation">software documentation</a>.</li>
+</ul>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Description</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Non-technical analogy</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Languages implementing DBC</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">3.1</span> <span class="toctext">C</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.2</span> <span class="toctext">C++</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.3</span> <span class="toctext">C#</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.4</span> <span class="toctext">Chrome</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.5</span> <span class="toctext">D</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.6</span> <span class="toctext">Eiffel</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.7</span> <span class="toctext">Java</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.8</span> <span class="toctext">JML</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.9</span> <span class="toctext">Lisaac</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.10</span> <span class="toctext">Nemerle</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.11</span> <span class="toctext">Perl</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.12</span> <span class="toctext">Perfect</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.13</span> <span class="toctext">PHP</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.14</span> <span class="toctext">PLT Scheme</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.15</span> <span class="toctext">Python</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.16</span> <span class="toctext">Ruby</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.17</span> <span class="toctext">Sather</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.18</span> <span class="toctext">SPARK</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Bibliography</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Description">edit</a>]</div>
+<p><a name="Description" id="Description"></a></p>
+<h2>Description</h2>
+<p>The central idea of DbC is a metaphor on how elements of a software system collaborate with each other, on the basis of mutual <i>obligations</i> and <i>benefits</i>. The metaphor comes from business life, where a "client" and a "supplier" agree on a "contract" which defines for example that:</p>
+<ul>
+<li>The supplier has to provide a certain product (obligation) and is entitled to expect that the client has paid its fee (benefit).</li>
+<li>The client must pay the fee (obligation) and is entitled to get the product (benefit).</li>
+<li>Both parties must satisfy certain obligations, such as laws and regulations, applying to all contracts.</li>
+</ul>
+<p>Similarly, if a routine from a <a href="/wiki/Class_%28object-oriented_programming%29.html" title="Class (object-oriented programming)">class</a> in <a href="/wiki/Object-oriented_programming.html" title="Object-oriented programming">object-oriented programming</a> provides a certain functionality, it may:</p>
+<ul>
+<li>Impose a certain obligation to be guaranteed on entry by any client module that calls it: the routine's <b>precondition</b> — an obligation for the client, and a benefit for the supplier (the routine itself), as it frees it from having to handle cases outside of the precondition.</li>
+<li>Guarantee a certain property on exit: the routine's <b>postcondition</b> — an obligation for the supplier, and obviously a benefit (the main benefit of calling the routine) for the client.</li>
+<li>Maintain a certain property, assumed on entry and guaranteed on exit: the <b>class invariant</b>.</li>
+</ul>
+<p>The contract is the formalization of these obligations and benefits. One could summarize Design by Contract by the "three questions" that the designer must repeatedly ask:</p>
+<ul>
+<li>What does it expect?</li>
+<li>What does it guarantee?</li>
+<li>What does it maintain?</li>
+</ul>
+<p>Many <a href="/wiki/Languages.html" title="Languages">languages</a> have facilities to make <a href="/wiki/Assertion_%28computing%29.html" title="Assertion (computing)">assertions</a> like these. However, DBC is novel in recognizing that these contracts are so crucial to software correctness that they should be part of the design process. In effect, DBC advocates writing the assertions first.</p>
+<p>The notion of a contract extends down to the method/procedure level; the contract for each method will normally contain the following pieces of information:</p>
+<ul>
+<li>Acceptable and unacceptable input values or types (c.f. type bounds for Java 5 generics), and their meanings</li>
+<li>Return values or types (c.f. type bounds for Java 5 generics), and their meanings</li>
+<li><a href="/wiki/Error.html" title="Error">Error</a> and <a href="/wiki/Exception_handling.html" title="Exception handling">exception</a> conditions values or types (c.f. type bounds for Java 5 generics), that can occur, and their meanings</li>
+<li><a href="/wiki/Side-effect_%28computer_science%29.html" title="Side-effect (computer science)">Side-effects</a></li>
+<li><a href="/wiki/Precondition.html" title="Precondition">Preconditions</a></li>
+<li><a href="/wiki/Postcondition.html" title="Postcondition">Postconditions</a></li>
+<li><a href="/wiki/Invariant_%28computer_science%29.html" title="Invariant (computer science)">Invariants</a></li>
+<li>(Rarer) Performance guarantees, e.g., for time or space used</li>
+</ul>
+<p>Using the DBC methodology, the program code itself must never try to verify the contract conditions; the whole idea is that code should "fail hard", with the contract verification being the safety net. (This stands in stark contrast to the <a href="/wiki/Defensive_programming.html" title="Defensive programming">defensive programming</a> methodology.) DBC's "fail hard" property makes debugging for-contract behavior much easier because the intended behaviour of each routine is clearly specified.</p>
+<p>The contract conditions should never be violated in program execution: thus, they can be either left in as debugging code, or removed from the code altogether for performance reasons.</p>
+<p>All class relationships are between Client classes and Supplier classes. A Client class is obligated to make calls to Supplier features where the resulting state of the Supplier is not violated by the Client call. Subsequently, the Supplier is obligated to provide a return state and data that does not violate the state requirements of the Client. For instance, a Supplier data buffer may require that data is present in the buffer when a delete feature is called. Subsequently, the Supplier guarantees to the client that when a delete feature finishes its work, the data item will, indeed, be deleted from the buffer. Other Design Contracts are concepts of "Class Invariant". The Class Invariant guarantees (for the local class) that the state of the class will be maintained within specified tolerances at the end of each feature execution.</p>
+<p><a href="/wiki/Unit_testing.html" title="Unit testing">Unit testing</a> tests a module in isolation, to check that it meets its contract assuming its subcontractors meet theirs. <a href="/wiki/Integration_testing.html" title="Integration testing">Integration testing</a> checks whether the various modules are working properly together. Design by contract also fosters code reuse, since the contract for each piece of code is fully documented. The contracts for a module can also be regarded as a form of <a href="/wiki/Software_documentation.html" title="Software documentation">software documentation</a> for the behavior of that module.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Non-technical analogy">edit</a>]</div>
+<p><a name="Non-technical_analogy" id="Non-technical_analogy"></a></p>
+<h2>Non-technical analogy</h2>
+<p>A process in which a number of objects (people or software components, for example) interact to satisfy a goal is called a <a href="/wiki/Collaboration.html" title="Collaboration">collaboration</a>. When two objects collaborate together, one - the client - requests the services of the other - the supplier. The supplier in turn may request the sevices of other objects, and in those collaborations it is the client and they are the suppliers. The process only works correctly if all these individual collaborations work correctly. In a very real sense, the chain is only as strong as its weakest link.</p>
+<p>Take the process of going on holiday, for example. Bertrand wants to spend two weeks in Florida. He books the holiday through DBC Holidays Inc., who specialise in US package holidays. When he makes the booking (collaboration #1), Bertrand is the client and DBC Holidays are the supplier. DBC Holidays then arrange flights through Assertair Corp. (collaboration #2), and book a room at the Precondition Plaza Hotel in Miami (collaboration #3). In collaboration #2, DBC Holidays are the client and Assertair is the supplier, and in collaboration #3, the hotel is the supplier. And the chain of collaborations goes deeper and deeper (e.g., who does Assertair pay to service their jets?)</p>
+<p>If any link in this chain of collaborations breaks, then the upshot could be that Bertrand's holiday is ruined. It's vital, therefore, that every player in the collaboration does what they're supposed to do. In any collaboration, client and supplier have certain obligations. These obligations (or "responsibilities", if you like) fall into three distinct types:</p>
+<p>1. Things that the supplier promises to do as part of the service it offers to the client (e.g., Assertair promises DBC Holidays that Bertrand will be in Miami at a certain date and time)</p>
+<p>2. Things that the client promises to do before using the service (e.g., DBC Holidays must ensure that Bertrand has his passport and tickets when he checks in for his flight)</p>
+<p>3. Things that the supplier promises will always be true no matter what happens (e.g., The airline will always have adequate insurance to cover any accident)</p>
+<p>Things that the supplier promises to do as part of the service are described as a special kind of rule called a <a href="/wiki/Postcondition.html" title="Postcondition">postcondition</a>. The <a href="/wiki/Postcondition.html" title="Postcondition">postcondition</a> tells the client what will be true if the service is executed correctly (e.g., "your customer will be in Miami by 15:30 on June 8th").</p>
+<p>If Bertrand turns up at the check-in desk without his passport, of course, then the airline can't live up to their side of the contract - he will not be allowed to board the plane without it. A rule that the client must satisfy before using a service is called a <a href="/wiki/Precondition.html" title="Precondition">precondition</a>.</p>
+<p>A rule that states what must always be true is called an <a href="/wiki/Invariant.html" title="Invariant">invariant</a>. If the airline don't have adequate insurance then nobody is going anywhere!</p>
+<p>Design By Contract is a discipline for building software such that the collaborations between objects are correct. A formula for correctness when a client uses the services of a supplier is given as:</p>
+<p>If the invariant AND precondition are true before using the service, then the invariant AND the postcondition will be true after the service has been completed.</p>
+<p>In DBC, the responsibilities are clear: the client must satisfy the precondition. This distinguishes it markedly from a related practice known as <a href="/wiki/Defensive_programming.html" title="Defensive programming">defensive programming</a>, where the supplier is responsible for figuring out what to do when a precondition is broken. More often than not, the supplier throws an exception to inform the client that the precondition has been broken, and in both cases - DBC and defensive programming - the client must figure out how to respond to that. DBC makes the supplier's job easier.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Languages implementing DBC">edit</a>]</div>
+<p><a name="Languages_implementing_DBC" id="Languages_implementing_DBC"></a></p>
+<h2>Languages implementing DBC</h2>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: C">edit</a>]</div>
+<p><a name="C" id="C"></a></p>
+<h3>C</h3>
+<p>Recent efforts add support for Design by Contract to the <a href="/wiki/C_programming_language.html" title="C programming language">C programming language</a> using <a  class="external text" title="http://dbc.rubyforge.org/">DBC for C</a>, a <a href="/wiki/Preprocessor.html" title="Preprocessor">preprocessor</a> written in <a href="/wiki/Ruby_programming_language.html" title="Ruby programming language">Ruby</a>.</p>
+<p>Other tools supporting DBC for C include:</p>
+<ul>
+<li><a  class="external text" title="http://savannah.gnu.org/projects/nana">GNU Nana</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: C++">edit</a>]</div>
+<p><a name="C.2B.2B" id="C.2B.2B"></a></p>
+<h3>C++</h3>
+<p>Tools supporting DBC for C++ include:</p>
+<ul>
+<li><a  class="external text" title="http://www.aechmea.de/html/german/home_00_index_e.htm">C<sup>2</sup></a>.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: C#">edit</a>]</div>
+<p><a name="C.23" id="C.23"></a></p>
+<h3>C#</h3>
+<p>Tools supporting DBC for C# include:</p>
+<ul>
+<li><a  class="external text" title="http://www.resolvecorp.com">eXtensible C#</a>, a commercial post-compiler that transforms "declarative assertions", in the form of .NET attributes attached to C# methods and properties, into actual pre- and post-conditions embedded in the compiled .NET IL code.</li>
+<li><a  class="external text" title="http://research.microsoft.com/specsharp/">Spec#</a>, a Microsoft research extension of the C# language.</li>
+<li><a  class="external text" title="http://msdn.microsoft.com/vstudio/teamsystem/tester/">Microsoft Visual Studio Team System for Software Testers</a>, a Microsoft Development Environment for C# (and other .NET languages) that provides unit testing capabilities.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Chrome">edit</a>]</div>
+<p><a name="Chrome" id="Chrome"></a></p>
+<h3>Chrome</h3>
+<p>The <a href="/wiki/Chrome_programming_language.html" title="Chrome programming language">Chrome programming language</a> is an Object Pascal implementation that has "class contracts", which are similar to DBC.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: D">edit</a>]</div>
+<p><a name="D" id="D"></a></p>
+<h3>D</h3>
+<p><a href="/wiki/D_programming_language.html" title="D programming language">D</a> implements Design by Contract as a major feature.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Eiffel">edit</a>]</div>
+<p><a name="Eiffel" id="Eiffel"></a></p>
+<h3>Eiffel</h3>
+<p>The <a href="/wiki/Object_oriented.html" title="Object oriented">object oriented</a> <a href="/wiki/Eiffel_programming_language.html" title="Eiffel programming language">Eiffel programming language</a> was created to implement Design by Contract. The language is organized around the concepts of Design by Contract, closely integrated with its object-oriented structure and in particular with its <a href="/wiki/Inheritance.html" title="Inheritance">inheritance</a> mechanism, with direct language support for weakening preconditions and strengthening postconditions.</p>
+<p>Eiffel compilers support run-time assertion monitoring through a compilation option. A run-time assertion violation triggers an exception. The exception mechanism is, more generally, directly based on the concepts of Design by Contract.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Java">edit</a>]</div>
+<p><a name="Java" id="Java"></a></p>
+<h3>Java</h3>
+<p>Tools supporting DBC for Java include:</p>
+<ul>
+<li><a  class="external text" title="http://www.icontract2.org">iContract2</a>, a free Java source pre-processor/code-generator that uses Javadoc tags to specify preconditions, postconditions, and invariants</li>
+<li><a  class="external text" title="http://www.contract4j.org/contract4j">Contract4J</a>, a DBC tool where tests are defined using Java 5 annotations and aspects written in AspectJ evaluate the test expressions at runtime and handle failures.</li>
+<li><a  class="external text" title="http://jcontractor.sourceforge.net">jContractor</a>, which provides runtime contract checking by instrumenting the bytecode of classes that define contracts</li>
+<li><a  class="external text" title="http://www.parasoft.com/jsp/products/home.jsp?product=Jcontract&amp;itemId=30">Jcontract</a>, a proprietary DBC tool by Parasoft</li>
+<li><a  class="external text" title="http://c4j.sourceforge.net">C4J</a>, an open source tool with full support for contract inheritance and also the possibility to define contracts for interfaces</li>
+<li><a  class="external text" title="http://www.instantiations.com/codepro/analytix/default.htm">CodePro Analytix</a>, which generates unit test case logic in Eclipse based on assertions within the class and method Javadocs.</li>
+<li><a  class="external text" title="http://www.stclass.org/">STclass</a> is an open source Contract Based Built-in Test (CBBT) Framework; it allows the definition of contracts and test-units in classes and interfaces and handles contracts and test-units inheritance.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: JML">edit</a>]</div>
+<p><a name="JML" id="JML"></a></p>
+<h3>JML</h3>
+<p>The <a href="/wiki/Java_Modeling_Language.html" title="Java Modeling Language">Java Modeling Language</a> (JML) provides specifications, including contracts, to describe <a href="/wiki/Java_programming_language.html" title="Java programming language">Java</a> programs.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Lisaac">edit</a>]</div>
+<p><a name="Lisaac" id="Lisaac"></a></p>
+<h3>Lisaac</h3>
+<p>Lisaac implements Design by Contract as a major feature.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Nemerle">edit</a>]</div>
+<p><a name="Nemerle" id="Nemerle"></a></p>
+<h3>Nemerle</h3>
+<p><a href="/wiki/Nemerle_programming_language.html" title="Nemerle programming language">Nemerle</a> implements Design by Contract as a major feature.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Perl">edit</a>]</div>
+<p><a name="Perl" id="Perl"></a></p>
+<h3>Perl</h3>
+<p><a href="/wiki/Damian_Conway.html" title="Damian Conway">Damian Conway</a>'s <a  class="external text" title="http://search.cpan.org/perldoc?Class::Contract">Class::Contract</a> module, now maintained by C. Garrett Goebel, is available from <a href="/wiki/CPAN.html" title="CPAN">CPAN</a>, and implements design-by-contract in Perl. Although the module is not widely used, it enjoys some popularity among Perl users involved in larger projects. <a  class="external text" title="http://search.cpan.org/perldoc?Class::Agreement">Class::Agreement</a> is a newer, less mature alternative.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Perfect">edit</a>]</div>
+<p><a name="Perfect" id="Perfect"></a></p>
+<h3>Perfect</h3>
+<p><a  class="external text" title="http://www.eschertech.com/">Escher Technologies'</a> specification language Perfect, as used in the software development tool <a href="/wiki/Perfect_Developer.html" title="Perfect Developer">Perfect Developer</a> implements an extension of DBC, which is called Verified Design by Contract, or VDBC. This tool enjoys popularity with students on some computer science courses as it can generate working programs in Java.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: PHP">edit</a>]</div>
+<p><a name="PHP" id="PHP"></a></p>
+<h3>PHP</h3>
+<p><a href="/wiki/PHP.html" title="PHP">PHP</a> can implement design by contract via its <a  class="external text" title="http://php.net/assert">assert()</a> function and a callback function defined using <a  class="external text" title="http://php.net/assert_options">assert_options()</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: PLT Scheme">edit</a>]</div>
+<p><a name="PLT_Scheme" id="PLT_Scheme"></a></p>
+<h3>PLT Scheme</h3>
+<p><a  class="external text" title="http://www.plt-scheme.org/">PLT Scheme</a>, an extension of the <a href="/wiki/Scheme_programming_language.html" title="Scheme programming language">Scheme programming language</a>, implements a sound variant of Eiffel's DbC for modules, higher-order functions, and objects. The design of this system emphasizes that each contract violation must blame the guilty party and must do so with an accurate explanations. <a  class="external text" title="http://www.ccs.neu.edu/scheme/pubs/">Findler and Felleisen's papers</a> carefully explain argue that this is not the case for Eiffel's system.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Python">edit</a>]</div>
+<p><a name="Python" id="Python"></a></p>
+<h3>Python</h3>
+<p><a href="/wiki/Python_programming_language.html" title="Python programming language">Python</a> supports DBC through tools like <a  class="external text" title="http://www.nongnu.org/pydbc/">PyDBC</a>, <a  class="external text" title="http://www.wayforward.net/pycontract/">Contracts for Python</a>, and <a  class="external text" title="http://www.targeted.org/python/recipes/ipdbc.py">Dmitry Dvoinikov's recipe</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Ruby">edit</a>]</div>
+<p><a name="Ruby" id="Ruby"></a></p>
+<h3>Ruby</h3>
+<p>There are several external Design by Contract modules available for Ruby, including <a  class="external text" title="http://split-s.blogspot.com/2006/02/design-by-contract-for-ruby.html">DesignByContract</a>, <a  class="external text" title="http://www.rubycentral.com/downloads/dbc.html">Ruby DbC</a>, and <a  class="external text" title="http://ruby-contract.rubyforge.org/">ruby-contract</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Sather">edit</a>]</div>
+<p><a name="Sather" id="Sather"></a></p>
+<h3>Sather</h3>
+<p>The <a href="/wiki/Sather.html" title="Sather">Sather</a> programming language implements Design by Contract.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: SPARK">edit</a>]</div>
+<p><a name="SPARK" id="SPARK"></a></p>
+<h3>SPARK</h3>
+<p>The <a href="/wiki/SPARK_programming_language.html" title="SPARK programming language">SPARK programming language</a> implements Design by Contract by <a href="/wiki/Static_analysis.html" title="Static analysis">static analysis</a> of <a href="/wiki/Ada_programming_language.html" title="Ada programming language">Ada</a> programs. By using static analysis <a href="/wiki/SPARK_programming_language.html" title="SPARK programming language">SPARK</a> ensures that no contract is ever broken at run-time. This means that <a href="/wiki/Eiffel_programming_language.html" title="Eiffel programming language">Eiffel's</a> problematic 'fail hard' situation will never occur on <a href="/wiki/SPARK_programming_language.html" title="SPARK programming language">SPARK</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Defensive_programming.html" title="Defensive programming">Defensive programming</a></li>
+<li><a href="/wiki/D_programming_language.html" title="D programming language">D programming language</a></li>
+<li><a href="/wiki/Eiffel_programming_language.html" title="Eiffel programming language">Eiffel programming language</a></li>
+<li><a href="/wiki/Hoare_logic.html" title="Hoare logic">Hoare logic</a></li>
+<li><a href="/wiki/Object-Oriented_Software_Construction.html" title="Object-Oriented Software Construction">Object-Oriented Software Construction</a></li>
+<li><a href="/wiki/Perfect_Developer.html" title="Perfect Developer">Perfect</a> specification language</li>
+<li><a href="/wiki/SPARK_programming_language.html" title="SPARK programming language">SPARK programming language</a></li>
+<li><a href="/wiki/Test-driven_development.html" title="Test-driven development">Test-driven development</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Bibliography">edit</a>]</div>
+<p><a name="Bibliography" id="Bibliography"></a></p>
+<h2>Bibliography</h2>
+<ol class="references">
+<li id="_note-0"><b><a  title="">^</a></b> Meyer, Bertrand: <i>Design by Contract</i>, Technical Report TR-EI-12/CO, Interactive Software Engineering Inc., 1986</li>
+<li id="_note-1"><b><a  title="">^</a></b> Meyer, Bertrand: <i>Design by Contract</i>, in <i>Advances in Object-Oriented Software Engineering</i>, eds. D. Mandrioli and B. Meyer, Prentice Hall, 1991, pp. 1-50</li>
+<li id="_note-2"><b><a  title="">^</a></b> Meyer, Bertrand: <i>Applying "Design by Contract"</i>, in Computer (IEEE), 25, 10, October 1992, pages 40-51, also available <a  class="external text" title="http://se.ethz.ch/~meyer/publications/computer/contract.pdf">online</a></li>
+</ol>
+<ul>
+<li>Mitchell, Richard, and McKim, Jim: <i>Design by Contract: by example</i>, Addison-Wesley, 2002</li>
+</ul>
+<ul>
+<li>A <a  class="external text" title="http://en.wikibooks.org/wiki/Computer_programming/Design_by_Contract">wikibook</a> describing DbC closely to the original model.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://archive.eiffel.com/doc/manuals/technology/contract/">An introduction to Design by Contract(TM)</a></li>
+<li><a  class="external text" title="http://se.ethz.ch/~meyer/publications/computer/contract.pdf">Original IEEE Computer article</a></li>
+<li><a  class="external text" title="http://www.isaacos.com">Isaac / Lisaac Project home</a></li>
+<li><a  class="external text" title="http://c2.com/cgi/wiki?DesignByContract">C2 Wiki: Design by contract</a></li>
+<li><a  class="external text" title="http://search.cpan.org/~dconway/Class-Contract-1.00/">Damian Conway's Class::Contract</a> Perl module from CPAN</li>
+<li><a  class="external text" title="http://dclib.sourceforge.net">dlib C++ Library</a> A C++ library that uses the DBC methodology</li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:39289-0!1!0!default!!en!2 and timestamp 20060906202416 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Software design patterns">Software design patterns</a></span> | <span dir='ltr'><a  title="Category:Programming language topics">Programming language topics</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Design_by_contract.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 15:34, 22 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv40 in 0.158 secs. --></body></html>

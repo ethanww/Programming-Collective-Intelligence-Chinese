@@ -1,0 +1,542 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="G-code,2.5D,CAD,CNC,Casting,Computer-aided design,Computer-aided engineering,Computer-aided manufacturing,Computer Aided Manufacturing,Cutting speed,Direct Numerical Control" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>G-code - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "G-code";
+			var wgTitle = "G-code";
+			var wgArticleId = 1027403;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">G-code</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<dl>
+<dd><span class="dablink"><i>This article is about the machine tool programming language. For the video recorder programming system, see <a href="/wiki/Video_recorder_scheduling_code.html" title="Video recorder scheduling code">Video recorder scheduling code</a>.</i></span></dd>
+</dl>
+<p><b>G-code</b> is a common name for the <a href="/wiki/Programming_language.html" title="Programming language">programming language</a> that drives <a href="/wiki/Numerical_control.html" title="Numerical control">NC</a> and <a href="/wiki/CNC.html" title="CNC">CNC</a> <a href="/wiki/Machine_tool.html" title="Machine tool">machine tools</a>. It was developed by <a href="/wiki/Electronic_Industries_Alliance.html" title="Electronic Industries Alliance">EIA</a> in the early 1960s, a final revision was approved in February 1980 as <b>RS274D</b>.</p>
+<p>Due to the lack of further development, the sheer variety of machine tool configurations, and little demand for interoperability, few machine tool controllers (CNCs) adhere to this standard. Extensions and variations have been added to it independently by manufacturers, meaning that operators have to know the dialects and quirks of the particular machines they use, and <a href="/wiki/Computer_Aided_Manufacturing.html" title="Computer Aided Manufacturing">CAM systems</a> have had to limit themselves to the lowest common denominator of all the tools that they support.</p>
+<p>Many manufacturers tried to overcome this difficulty of remaining compatible by following the lead of a machine tool controller built by Fanuc. Unfortunately, Fanuc does not remain consistent with RS-274 or its own previous standard, and has been slow at adding new features and exploiting the increase in computing power. For example, they changed g70/g71 to g20/21; they used parentheses for comments which caused difficulty when they introduced mathematical calculations; they started to use nanometers just recently (requires 64 bit); they introduced the nurbs to overcome slow fetching of blocks from memory (instead of caching).</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Examples</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Example</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Basic ISO CNC Code</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Examples">edit</a>]</div>
+<p><a name="Examples" id="Examples"></a></p>
+<h2>Examples</h2>
+<p>G-code is also the name of any word in a CNC program that begins with the letter <i>G</i>, and generally is a code telling the machine tool what type of action to perform, such as:</p>
+<ul>
+<li>rapid move</li>
+<li>controlled feed move in straight line or arc</li>
+<li>series of controlled feed moves that would result in a hole being bored, a workpiece cut (routed) to a specific dimension, or a decorative profile shape added to the edge of a workpiece.</li>
+<li>change a <a href="/wiki/Pallet.html" title="Pallet">pallet</a></li>
+<li>Set tool information such as offset.</li>
+</ul>
+<p>There are other codes; the type codes can be thought of like <a href="/wiki/Processor_register.html" title="Processor register">registers</a> in a computer</p>
+<dl>
+<dd>X position</dd>
+<dd>Y position</dd>
+<dd>Z position</dd>
+<dd>A position</dd>
+<dd>B position</dd>
+<dd>C position</dd>
+<dd>M code (another "action" register or Machine code(*))(otherwise referred to as a "Miscellaneous" function"</dd>
+<dd>F feed rate</dd>
+<dd>S <a href="/wiki/Cutting_speed.html" title="Cutting speed">spindle speed</a></dd>
+<dd>N line number</dd>
+<dd>R Radius</dd>
+<dd>T Tool selection</dd>
+<dd>I Arc data X axis</dd>
+<dd>J Arc data Y axis.</dd>
+<dd>K Arc data Z axis.</dd>
+</dl>
+<p>(*) M Codes control the overall machine, causing it to stop, start, turn on coolant, etc. Whereas other codes pertain to the path traversed by cutting tools.</p>
+<p>Different machine tools, however, may use the same code to perform different functions: even machines that use the same CNC control. Some have stated that "<a  class="new" title="Fanuc">Fanuc</a>" G-code is standard, but that is simply untrue.</p>
+<p><br /></p>
+<table border="1" cellpadding="2">
+<caption>Common Fanuc G Codes</caption>
+<tr>
+<td>G00</td>
+<td>Fast positioning</td>
+</tr>
+<tr>
+<td>G01</td>
+<td>Linear interpolation</td>
+</tr>
+<tr>
+<td>G02</td>
+<td>CW circular interpolation</td>
+</tr>
+<tr>
+<td>G03</td>
+<td>CCW circular interpolation</td>
+</tr>
+<tr>
+<td>G10/G11</td>
+<td>Data writing/Data write cancel</td>
+</tr>
+<tr>
+<td>G17</td>
+<td>X-Y plane selection</td>
+</tr>
+<tr>
+<td>G18</td>
+<td>X-Z plane selection</td>
+</tr>
+<tr>
+<td>G19</td>
+<td>Y-Z plane selection</td>
+</tr>
+<tr>
+<td>G20</td>
+<td>Programming in inches</td>
+</tr>
+<tr>
+<td>G21</td>
+<td>Programming in mm</td>
+</tr>
+<tr>
+<td>G31</td>
+<td>Skip function (used for probes and tool length measurement systems)</td>
+</tr>
+<tr>
+<td>G33</td>
+<td>Constant pitch threading</td>
+</tr>
+<tr>
+<td>G34</td>
+<td>Variable pitch threading</td>
+</tr>
+<tr>
+<td>G40</td>
+<td>Tool radius compensation off</td>
+</tr>
+<tr>
+<td>G41</td>
+<td>Tool radius compensation left</td>
+</tr>
+<tr>
+<td>G42</td>
+<td>Tool radius compensation right</td>
+</tr>
+<tr>
+<td>G90</td>
+<td>Absolute programming</td>
+</tr>
+<tr>
+<td>G91</td>
+<td>Incremental programming</td>
+</tr>
+<tr>
+<td>G94/G95</td>
+<td>Inch per minute/Inch per revolution feed</td>
+</tr>
+<tr>
+<td>G96/G97</td>
+<td>Constant cutting speed (Constant surface speed)/Constant rotation speed (constant RPM)</td>
+</tr>
+</table>
+<p>A standardized version of G-code known as <i>BCL</i> is used, but only on very few machines.</p>
+<p>G-code is understood by <a  class="external text" title="http://www.gerberscientific.com/">Gerber</a> photoplotters, machine tool controls, and some <a href="/wiki/Machinist.html" title="Machinist">machinists</a>.</p>
+<p>G-code files are output by <a href="/wiki/Computer-aided_manufacturing.html" title="Computer-aided manufacturing">CAM</a> software such as <a  class="new" title="Smartcam">Smartcam</a>, <a  class="new" title="Gibbscam">Gibbscam</a>, <a  class="new" title="Featurecam">Featurecam</a>, <a href="/wiki/Edgecam.html" title="Edgecam">Edgecam</a>, <a  class="new" title="Surfcam,">Surfcam,</a> <a  class="new" title="Mastercam,">Mastercam,</a> <a href="/wiki/OneCNC.html" title="OneCNC">OneCNC</a>, <a  class="new" title="Router-CIM">Router-CIM</a>, <a  class="new" title="Alphacam">Alphacam</a> etc. Those applications typically use translators called post-processors to output code optimized for a particular machine type or family. Post-processors are often user-editable to enable further customization, if necessary. G-code is also output by specialized <a href="/wiki/CAD.html" title="CAD">CAD</a> systems used to design <a href="/wiki/Printed_circuit_board.html" title="Printed circuit board">printed circuit boards</a>. Such software must be customized for each type of machine tool that it will be used to program.</p>
+<p>Some CNC machines use "Conversational" programming, which is a <a href="/wiki/Wizard_%28software%29.html" title="Wizard (software)">wizard</a>-like programming mode that either hides G-code or completely bypasses the use of G-code. Some popular examples are Mazak's Mazatrol, Hurco's Ultimax and Mori Seiki's CAPS conversational software.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Example">edit</a>]</div>
+<p><a name="Example" id="Example"></a></p>
+<h2>Example</h2>
+<p>This is a generic program that demonstrates the use of G-Code to turn a 1" diameter X 1" long part. Assume that a bar of material is in the machine and that the bar is slightly oversized in length and diameter and that the bar protrudes by more than 1" from the face of the chuck. (Caution: This is generic, it might not work on any real machine! Pay particular attention to point 5 below.)</p>
+<div class="thumb tright">
+<div style="width:202px;"><a  class="internal" title="Tool Path for program"><img src="http://upload.wikimedia.org/wikipedia/en/thumb/9/93/ToolPath.gif/200px-ToolPath.gif" alt="Tool Path for program" width="200" height="209" longdesc="/wiki/Image:ToolPath.gif" /></a>
+<div class="thumbcaption">
+<div class="magnify" style="float:right"><a  class="internal" title="Enlarge"><img src="/skins-1.5/common/images/magnify-clip.png" width="15" height="11" alt="Enlarge" /></a></div>
+Tool Path for program</div>
+</div>
+</div>
+<table border="1" cellpadding="2">
+<caption>Sample</caption>
+<tr>
+<td>N01 M216</td>
+<td>(Turn on load monitor)</td>
+</tr>
+<tr>
+<td>N02 G00 X20 Z20</td>
+<td>(Rapid move away from the part, to ensure the starting position of the tool)</td>
+</tr>
+<tr>
+<td>N03 G50 S2000</td>
+<td>(Set Maximum spindle speed)</td>
+</tr>
+<tr>
+<td>N04 T03</td>
+<td>(Choose tool #3 from the carousel)</td>
+</tr>
+<tr>
+<td>N05 G96 S854 M42 M03 M08</td>
+<td>(Variable speed cutting, 854 ft/min, High spindle gear, Start spindle CW rotation, Turn the coolant on)</td>
+</tr>
+<tr>
+<td>N06 G00 X1.1 Z1.1 T0303</td>
+<td>(Rapid feed to a point 0.1" from the end of the bar and 0.05" from the side, Use offset values for tool #3)</td>
+</tr>
+<tr>
+<td>N07 M01</td>
+<td>(Optional Stop)</td>
+</tr>
+<tr>
+<td>N08 G01 Z1.0 F.05</td>
+<td>(Feed in horizontally until the tool is standing 1" from the datum)</td>
+</tr>
+<tr>
+<td>N09 X0.0</td>
+<td>(Feed down until the tool is on center - Face the end of the bar)</td>
+</tr>
+<tr>
+<td>N10 G00 Z1.1</td>
+<td>(Rapid feed 0.1" away from the end of the bar)</td>
+</tr>
+<tr>
+<td>N11 X1.0</td>
+<td>(Rapid feed up until the tool is standing at the finished OD)</td>
+</tr>
+<tr>
+<td>N12 G01 Z0.0</td>
+<td>(Feed in horizontally cutting the bar to 1" diameter all the way to the datum)</td>
+</tr>
+<tr>
+<td>N13 G00 X1.1</td>
+<td>(Rapid feed 0.05" away from the surface of the part)</td>
+</tr>
+<tr>
+<td>N14 G00 X20 Z20</td>
+<td>(Rapid feed back out away from the work)</td>
+</tr>
+<tr>
+<td>N15 M05 M09</td>
+<td>(Stop the spindle, Turn off the coolant)</td>
+</tr>
+<tr>
+<td>N16 M215</td>
+<td>(Turn the load monitor off)</td>
+</tr>
+<tr>
+<td>N17 M02</td>
+<td>(End of program)</td>
+</tr>
+</table>
+<p><br />
+Several points to note:</p>
+<ol>
+<li>There is room for some programming style, even in this short program. The grouping of codes in line N05 could have been put on multiple lines. Doing so may have made it easier to follow program execution.</li>
+<li>Many codes are "Modal" meaning that they stay in effect until they are cancelled or replaced by a contradictory code. For example, once variable speed cutting had been selected (G97), it stayed in effect until the end of the program. In operation, the spindle speed would increase as the tool neared the center of the work in order to maintain a constant cutting speed. Similarly, once rapid feed was selected (G00) all tool movements would be rapid until a feed rate code (G01, G02, G03) was selected.</li>
+<li>It is common practice to use a load monitor with CNC machinery. The load monitor will stop the machine if the spindle or feed loads exceed a preset value that is set during the set-up operation. The job of the load monitor is to prevent machine damage in the event of tool breakage or a programing mistake. Furthermore, to some extent it can warn of a tool that that is becoming dull and needs to be replaced or sharpened.</li>
+<li>It is common practice to bring the tool in rapidly to a "safe" point that is close to the part - in this case 0.1" away - and then start feeding the tool. How close that "safe" distance is, depends on the skill and comfort level of the programmer.</li>
+<li>If the program is wrong, there is a high probability that the machine will crash! That can be very costly. It is possible to intersperse the program with optional stops (M01 code) which allow the program to be run piecemeal. The optional stops remain in the program but they are skipped during the normal running of the machine. Thankfully, most CAD/CAM software ships with CNC simulators that will display the movement of the tool as the program executes. Many modern CNC machines also allow programmers to execute the program in a simulation mode and observe the operating parameters of the machine at a particular execution point. This enables programmers to discover semantic errors (as opposed to syntax errors) before losing material or tools to an incorrect program.</li>
+</ol>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Basic ISO CNC Code">edit</a>]</div>
+<p><a name="Basic_ISO_CNC_Code" id="Basic_ISO_CNC_Code"></a></p>
+<h2>Basic ISO CNC Code</h2>
+<dl>
+<dd>|</dd>
+<dd>M03, M04, M05 Spindle CW, Spindle CCW, Spindle Stop</dd>
+<dd>|</dd>
+<dd>M08, M09 Coolant/lubricant On, Coolant/lubricant Off</dd>
+<dd>M02 Program Stop</dd>
+<dd>M30 Program end, rewind</dd>
+<dd>M99 Subprogram end</dd>
+<dd>M00, M01 Program stop, optional stop</dd>
+<dd>|</dd>
+<dd>G96, G97 Constant surface speed, Constant Spindle speed</dd>
+<dd>G50 Maximum spindle speed</dd>
+<dd>G18, G19 Feed mm pr revolvation, feed mm/min</dd>
+<dd>G00, G01 rapid movement, Linear Interpolation (cutting in a straight line)</dd>
+<dd>|</dd>
+<dd>F Feed</dd>
+<dd>S Spindle Speed</dd>
+<dd>|</dd>
+<dd>direction Coordinats X Y Z A B C</dd>
+</dl>
+<p><br /></p>
+<hr />
+<p><b>Example of a simple CNC lathe program</b></p>
+<div class="thumb tright">
+<div style="width:182px;"><a  class="internal" title="the stock and the part the program produces"><img src="http://upload.wikimedia.org/wikipedia/en/thumb/a/a1/Cnc_prog.jpg/180px-Cnc_prog.jpg" alt="the stock and the part the program produces" width="180" height="360" longdesc="/wiki/Image:Cnc_prog.jpg" /></a>
+<div class="thumbcaption">
+<div class="magnify" style="float:right"><a  class="internal" title="Enlarge"><img src="/skins-1.5/common/images/magnify-clip.png" width="15" height="11" alt="Enlarge" /></a></div>
+the stock and the part the program produces</div>
+</div>
+</div>
+<dl>
+<dd>O1234</dd>
+<dd>G50 S2000</dd>
+<dd>G96 S300 M03</dd>
+<dd>G00 T0606 (ROUGHT TURN TOOL)</dd>
+<dd>G18 X37. Z0.</dd>
+<dd>G01 X-1. F0.2</dd>
+<dd>Z1.</dd>
+<dd>G00 X30.</dd>
+<dd>G01 Z-20.</dd>
+<dd>X33.</dd>
+<dd>X35. Z-21.</dd>
+<dd>Z-25.</dd>
+<dd>X37.</dd>
+<dd>G00 X150. Z300.</dd>
+<dd>M01</dd>
+<dd>T0101 (18MM DRILL)</dd>
+<dd>G97 S1000</dd>
+<dd>G19 M03</dd>
+<dd>X0. Z5.</dd>
+<dd>G01 Z-25. F100</dd>
+<dd>G00 Z5.</dd>
+<dd>X150. Z300.</dd>
+<dd>M05</dd>
+<dd>M30</dd>
+</dl>
+<p><br /></p>
+<hr />
+<p><b>Example of a simple CNC milling program</b></p>
+<p>A simple example might be a 4" x 2" rectangle. The basic code might read something like:</p>
+<div class="thumb tright">
+<div style="width:182px;"><a  class="internal" title="the stock and the part the program produces"><img src="http://upload.wikimedia.org/wikipedia/en/thumb/6/6a/Cnc_prog_mill.jpg/180px-Cnc_prog_mill.jpg" alt="the stock and the part the program produces" width="180" height="474" longdesc="/wiki/Image:Cnc_prog_mill.jpg" /></a>
+<div class="thumbcaption">
+<div class="magnify" style="float:right"><a  class="internal" title="Enlarge"><img src="/skins-1.5/common/images/magnify-clip.png" width="15" height="11" alt="Enlarge" /></a></div>
+the stock and the part the program produces</div>
+</div>
+</div>
+<pre>
+N1X0Y0T01
+N2X0Y2000
+N3X4000Y2000
+N4X4000Y0
+N5X0Y0
+N6M00
+</pre>
+<dl>
+<dd>Line 1 (N1) tells the machine to traverse to grid point X0Y0 and to pick tool #1</dd>
+<dd>Line 2 tells the machine to traverse to grid point X0Y2.000</dd>
+<dd>Line 3 tells the machine to travel to grid point X4.000Y2.000</dd>
+<dd>Line 4 tells the machine to travel to grid point X4.000Y0</dd>
+<dd>Line 5 returns the machine to origin</dd>
+<dd>Line 6 stops the machine</dd>
+</dl>
+<dl>
+<dd>Note that the program does nothing to define the tool cutting path. If the machine is a router and uses a 1/8" radius cutter, the actual part will end up 1/4" smaller than designed (1/8" per side). To compensate, a G-code command (in this case) may be used to adjust the tool path.</dd>
+</dl>
+<pre>
+N1G44M0125
+N2X0Y0T01
+N3X0Y2000
+N4X4000Y2000
+N5X4000Y0
+N6X0Y0
+N7M00
+</pre>
+<dl>
+<dd>In this case, the controller sees the first line and adjusts the location of the cutter to .125 (or 1/8") to the outside of the cutting profile. Now the machine will make a part that matches the one designed. Depending on the cutting tool, the compensation can be set as needed. For example, a laser with a very fine beam might have a compensation of .005", while a waterjet with a .060 inside tip diameter may need a compensation of .030.</dd>
+</dl>
+<p><br /></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Direct_Numerical_Control.html" title="Direct Numerical Control">Direct Numerical Control</a></li>
+<li><a href="/wiki/Gerber_file.html" title="Gerber file">Gerber file</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://www.isd.mel.nist.gov/personnel/kramer/pubs/RS274NGC_3.web/RS274NGC_3TOC.html">The NIST RS274NGC Interpreter</a></li>
+</ul>
+<p><br />
+<br clear="all" /></p>
+<table class="toccolours" style="margin: 0 auto; text-align: left; border: 1px #aaa solid; border-collapse: collapse;">
+<tr>
+<th colspan="2" style="text-align: center"><a  class="image" title=""><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Blacksmith-hammer-anvil-50x50.png/25px-Blacksmith-hammer-anvil-50x50.png" alt="" width="25" height="25" longdesc="/wiki/Image:Blacksmith-hammer-anvil-50x50.png" /></a> <big><a href="/wiki/Metalworking.html" title="Metalworking">Metalworking</a>:</big>
+<hr /></th>
+</tr>
+<tr>
+<td width="20%">
+<p><a  title="Category:CNC, CAD, and CAM">CNC, CAD, and CAM</a>:</p>
+</td>
+<td>
+<p><a href="/wiki/2.5D.html" title="2.5D">2.5D</a> | <a href="/wiki/Computer-aided_design.html" title="Computer-aided design">CAD</a> | <a href="/wiki/Computer-aided_engineering.html" title="Computer-aided engineering">CAE</a> | <a href="/wiki/Computer-aided_manufacturing.html" title="Computer-aided manufacturing">CAM</a> | <a href="/wiki/CNC.html" title="CNC">CNC</a> | <strong class="selflink">G-code</strong> | <a href="/wiki/Numerical_control.html" title="Numerical control">Numerical control</a> | <a href="/wiki/Stewart_platform.html" title="Stewart platform">Stewart platform</a></p>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<hr />
+<table>
+<tr>
+<td><b><a href="/wiki/Metalworking.html" title="Metalworking">Metalworking topics:</a></b>  </td>
+<td align="center" style="font-size:90%">
+<p><a href="/wiki/Casting.html" title="Casting">Casting</a> | <a href="/wiki/CNC.html" title="CNC">CNC</a> | <a href="/wiki/Metalwork_cutting_tool.html" title="Metalwork cutting tool">Cutting tools</a> | <a href="/wiki/Drilling_and_threading.html" title="Drilling and threading">Drilling and threading</a> | <a href="/wiki/Fabrication_%28metal%29.html" title="Fabrication (metal)">Fabrication</a> | <a href="/wiki/Metalworking_finishing.html" title="Metalworking finishing">Finishing</a> | <a href="/wiki/Grinding_machine.html" title="Grinding machine">Grinding</a> | <a href="/wiki/Jewellery.html" title="Jewellery">Jewellery</a> | <a href="/wiki/Lathe_%28tool%29.html" title="Lathe (tool)">Lathe (tool)</a> | <a href="/wiki/Machining.html" title="Machining">Machining</a> | <a href="/wiki/Machine_tooling.html" title="Machine tooling">Machine tooling</a> | <a href="/wiki/Metalworking_measurement.html" title="Metalworking measurement">Measuring</a> | <a href="/wiki/Metalworking.html" title="Metalworking">Metalworking</a> | <a href="/wiki/Metalworking_hand_tool.html" title="Metalworking hand tool">Hand tools</a> | <a href="/wiki/Metallurgy.html" title="Metallurgy">Metallurgy</a> | <a href="/wiki/Milling_machine.html" title="Milling machine">Milling</a> | <a href="/wiki/Metalworking_occupation.html" title="Metalworking occupation">Occupations</a> | <a href="/wiki/Machine_press.html" title="Machine press">Press tools</a> | <a href="/wiki/Smith_%28metalwork%29.html" title="Smith (metalwork)">Smithing</a> | <a href="/wiki/Metalworking_terminology.html" title="Metalworking terminology">Terminology</a> | <a href="/wiki/Welding.html" title="Welding">Welding</a></p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+<!-- 
+Pre-expand include size: 1907 bytes
+Post-expand include size: 2434 bytes
+Template argument size: 208 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:1027403-0!1!0!default!!en!2 and timestamp 20060910144346 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:CNC, CAD, and CAM">CNC, CAD, and CAM</a></span> | <span dir='ltr'><a  title="Category:CAD file formats">CAD file formats</a></span> | <span dir='ltr'><a  title="Category:Domain-specific programming languages">Domain-specific programming languages</a></span> | <span dir='ltr'><a  title="Category:Encodings">Encodings</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/G-code.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-cs"><a >Česky</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 22:36, 9 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv93 in 0.077 secs. --></body></html>

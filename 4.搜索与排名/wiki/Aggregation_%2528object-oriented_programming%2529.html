@@ -1,0 +1,277 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Object composition,ALGOL,Associative array,Binary tree,C++,C++ structure,COBOL,C programming language,Chemistry,Composite type,Computer science" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Object composition - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Object_composition";
+			var wgTitle = "Object composition";
+			var wgArticleId = 1911078;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Object composition</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub">(Redirected from <a  title="Aggregation (object-oriented programming)">Aggregation (object-oriented programming)</a>)</div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>In <a href="/wiki/Computer_science.html" title="Computer science">computer science</a>, <b>composition</b> is a way and practice to combine simple <a href="/wiki/Object_%28computer_science%29.html" title="Object (computer science)">objects</a> or <a href="/wiki/Data_type.html" title="Data type">data types</a> into more complex ones. Compositions are a critical building block of many basic data structures, including the <a href="/wiki/Tagged_union.html" title="Tagged union">tagged union</a>, the <a href="/wiki/Linked_list.html" title="Linked list">linked list</a>, and the <a href="/wiki/Binary_tree.html" title="Binary tree">binary tree</a>, as well as the <a href="/wiki/Object_%28computer_science%29.html" title="Object (computer science)">object</a> used in object-oriented programming.</p>
+<p>Composition is contrasted with <a href="/wiki/Subtyping.html" title="Subtyping">subtyping</a>, which is the process of adding detail to a general data type to create a more specific data type. In composition, the composite type "<a href="/wiki/Has-a.html" title="Has-a">has an</a>" object of a simpler type, while in subtyping, the subtype "<a href="/wiki/Is-a.html" title="Is-a">is an</a>" instance of its parent type. Composition does not form a subtype but a new type.</p>
+<p>Composited objects are called <b>fields</b>, <b>items</b>, <b>members</b> or <b>attributes</b>, and the resulting composition a <b>structure</b>, <b>record</b>, <b>tuple</b>, or <b><a href="/wiki/Composite_type.html" title="Composite type">composite type</a></b>. The terms usually vary across languages. Fields are given a unique name so that each one can be distinguished from the others. Sometimes an issue of ownership arises: when a composition is destroyed, should objects belonging to it be destroyed as well? If not, the case is sometimes called <b>aggregation</b>. For more, see the aggregation section below.</p>
+<p>In <a href="/wiki/Unified_Modeling_Language.html" title="Unified Modeling Language">UML</a>, composition is depicted as a filled diamond. It always implies a multiplicity of 1 or 0..1, as no more than one object at a time can have lifetime responsibility for another object. The more general form of composition, that of aggregation, is depicted as an unfilled diamond.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Example</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Recursive composition</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Composition in various languages</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Aggregation</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Containment</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">UML</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Example">edit</a>]</div>
+<p><a name="Example" id="Example"></a></p>
+<h2>Example</h2>
+<p>This is an example of composition in <a href="/wiki/C_programming_language.html" title="C programming language">C</a>.</p>
+<pre>
+typedef struct {
+  int age;
+  char *name;
+  enum { male, female } sex;
+} Person;
+</pre>
+<p>In this example, the primitive types <code>int</code>, <code>char *</code>, and <code>enum {male, female}</code> are combined to form the composite type of <code>Person</code>. Each object of type <code>Person</code> then "has an" age, name, and sex.</p>
+<p>If a <code>Person</code> type were instead created by subtyping, it might be a subtype of <code>Organism</code>, and it could inherit some attributes from <code>Organism</code> (every organism has an age), while extending the definition of <code>Organism</code> with new attributes (not every organism has a sex, but every person does).</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Recursive composition">edit</a>]</div>
+<p><a name="Recursive_composition" id="Recursive_composition"></a></p>
+<h2>Recursive composition</h2>
+<p>Objects can be composited recursively with the use of <a href="/wiki/Recursive_type.html" title="Recursive type">recursive types</a> or <a href="/wiki/Reference_%28computer_science%29.html" title="Reference (computer science)">references</a>. Consider a tree. Each node in a tree may be a branch or leaf; in other words, each node is a tree at the same time when it belongs to another tree.</p>
+<p>One implementation for the recursive composition is to let each object to have references to others of the same type. In C, for example, a binary tree can be defined like:</p>
+<pre>
+typedef struct bintree {
+  struct bintree *left, *right;
+} tBinaryTree;
+</pre>
+<p>If pointers <code>left</code> and <code>right</code> are valid, the node is thought to be a branch referring to each tree to which <code>left</code> and <code>right</code> point. If not, the node is a leaf. In this way, the recursion can be terminated.</p>
+<p>Another is to use a tagged union. See <a href="/wiki/Tagged_union.html" title="Tagged union">tagged union</a> for an example.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Composition in various languages">edit</a>]</div>
+<p><a name="Composition_in_various_languages" id="Composition_in_various_languages"></a></p>
+<h2>Composition in various languages</h2>
+<p><a href="/wiki/C_programming_language.html" title="C programming language">C</a> calls a record a <a href="/wiki/Struct.html" title="Struct">struct</a> or structure; <a href="/wiki/Object-oriented.html" title="Object-oriented">object-oriented</a> languages such as <a href="/wiki/Java_programming_language.html" title="Java programming language">Java</a>, <a href="/wiki/Smalltalk.html" title="Smalltalk">Smalltalk</a>, and <a href="/wiki/C%2B%2B.html" title="C++">C++</a> often keep their records hidden inside objects (class instances); languages in the <a href="/wiki/ML_programming_language.html" title="ML programming language">ML</a> family simply call them records. <a href="/wiki/COBOL.html" title="COBOL">COBOL</a> was the first <a href="/wiki/Programming_language.html" title="Programming language">programming language</a> to support records directly; <a href="/wiki/ALGOL.html" title="ALGOL">Algol</a> got it from COBOL, and <a href="/wiki/Pascal_programming_language.html" title="Pascal programming language">Pascal</a> got it, more or less indirectly, from Algol.</p>
+<p>For more details about composition in C/C++, see <a href="/wiki/Composite_type.html" title="Composite type">Composite type</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Aggregation">edit</a>]</div>
+<p><a name="Aggregation" id="Aggregation"></a></p>
+<h2>Aggregation</h2>
+<p>Aggregation differs from ordinary composition in that it does not imply ownership. In composition, when the owning object is destroyed, so are the contained objects. In aggregation, this is not necessarily true. For example, a <a href="/wiki/University.html" title="University">university</a> owns various departments (e.g., <a href="/wiki/Chemistry.html" title="Chemistry">chemistry</a>), and each department has a number of professors. If the university closes, the departments will no longer exist, but the professors in those departments will. Therefore, a University can be seen as a composition of departments, whereas departments have an aggregation of professors. In addition, a Professor could work in more than one department, but a department could not be part of more than one university.</p>
+<p>Composition is usually implemented such that an object contains another object. For example, in <a href="/wiki/C%2B%2B.html" title="C++">C++</a>:</p>
+<pre>
+class Department;
+
+class University
+{
+  ...
+  private:
+  Department faculty[20];
+  ...
+};
+</pre>
+<p>In aggregation, the object may only contain a reference or pointer to the object:</p>
+<pre>
+class Professor;
+
+class Department
+{
+  ...
+  private:
+  Professor* members[5];
+  ...
+};
+</pre>
+<p>Sometimes aggregation is referred to as composition when the distinction between ordinary composition and aggregation is unimportant.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Containment">edit</a>]</div>
+<p><a name="Containment" id="Containment"></a></p>
+<h2>Containment</h2>
+<p>Composition that is used to store several instances of the composited data type is referred to as containment. Examples of such containers are arrays, <a href="/wiki/Linked_list.html" title="Linked list">linked lists</a>, <a href="/wiki/Binary_tree.html" title="Binary tree">binary trees</a> and <a href="/wiki/Associative_array.html" title="Associative array">associative arrays</a>.</p>
+<p>In <a href="/wiki/Unified_Modeling_Language.html" title="Unified Modeling Language">UML</a>, containment is depicted with a multiplicity of 1 or 0..n (depending on the issue of ownership), indicating that the data type is composed of an unknown amount of instances of the composited data type.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: UML">edit</a>]</div>
+<p><a name="UML" id="UML"></a></p>
+<h2>UML</h2>
+<p>In <a href="/wiki/Unified_Modeling_Language.html" title="Unified Modeling Language">UML</a>, composition is depicted as a filled diamond and a solid line. Aggregation is depicted as an open diamond and a solid line. The below image shows compostion, and then aggregation. The code below shows what the source code is likely to look like.</p>
+<p><a  class="image" title="Image:AggregationAndComposition.png"><img src="http://upload.wikimedia.org/wikipedia/en/9/95/AggregationAndComposition.png" alt="Image:AggregationAndComposition.png" width="196" height="102" longdesc="/wiki/Image:AggregationAndComposition.png" /></a></p>
+<pre>
+class Car
+{
+  public:
+    virtual ~Car() {delete itsCarb;}
+  private:
+    Carburetor* itsCarb
+};
+</pre>
+<pre>
+class Pond
+{
+  private:
+    vector&lt;Duck*&gt; itsDucks;
+};
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Law_of_Demeter.html" title="Law of Demeter">Law of Demeter</a></li>
+<li><a href="/wiki/C%2B%2B_structure.html" title="C++ structure">C++ structure</a></li>
+<li><a href="/wiki/Implementation_inheritance.html" title="Implementation inheritance">Implementation inheritance</a></li>
+<li><a href="/wiki/Inheritance_semantics.html" title="Inheritance semantics">Inheritance semantics</a></li>
+<li><a href="/wiki/Virtual_inheritance.html" title="Virtual inheritance">Virtual inheritance</a></li>
+<li><a href="/wiki/Object_association.html" title="Object association">Object association</a></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:1911078-0!1!0!default!!en!2 and timestamp 20060906010939 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:Data types">Data types</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Object_composition.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 12:38, 5 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv60 in 0.099 secs. --></body></html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Pseudorandom number generator,Blum Blum Shub,Output feedback,Counter mode,Microsoft,Cryptographic Application Programming Interface,Mac OS X,Yarrow algorithm,CryptGenRandom,Block cipher,Stream cipher" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Pseudorandom number generator - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Pseudorandom_number_generator";
+			var wgTitle = "Pseudorandom number generator";
+			var wgArticleId = 45524;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Pseudorandom number generator</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub">(Redirected from <a  title="Pseudo-random number generator">Pseudo-random number generator</a>)</div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>A <b>pseudorandom number generator</b> (<b>PRNG</b>) is an <a href="/wiki/Algorithm.html" title="Algorithm">algorithm</a> that generates a sequence of numbers which are not truly <a href="/wiki/Random.html" title="Random">random</a>. The outputs of pseudorandom number generators only approximate some of the properties of random numbers. Although <i>truly</i> random numbers are believed to be generatable using <a href="/wiki/Hardware_random_number_generator.html" title="Hardware random number generator">hardware random number generators</a>, <i>pseudo-random</i> numbers are important in practice for simulations (eg, of physical systems with the <a href="/wiki/Monte_Carlo_method.html" title="Monte Carlo method">Monte Carlo method</a>), and are central in the practice and so in the theory of <a href="/wiki/Cryptography.html" title="Cryptography">cryptography</a>. Careful mathematical analysis is required to have any confidence a PRNG generates numbers that are sufficiently "random" to suit the intended use. Robert R. Coveyou of <a href="/wiki/Oak_Ridge_National_Laboratory.html" title="Oak Ridge National Laboratory">Oak Ridge National Laboratory</a> once titled an article, "The generation of random numbers is too important to be left to chance."<sup><a  title=""><b>1</b></a></sup> and <a href="/wiki/John_von_Neumann.html" title="John von Neumann">John von Neumann</a> put essentially the same idea in a slightly more colorful way, "Anyone who considers arithmetical methods of producing random digits is, of course, in a state of sin."<sup><a  title=""><b>2</b></a></sup></p>
+<p>Most pseudo-random generator algorithms produce sequences which are <a href="/wiki/Uniform_distribution.html" title="Uniform distribution">uniformly distributed</a> by any of several tests. Common classes of these algorithms are <a href="/wiki/Linear_congruential_generator.html" title="Linear congruential generator">linear congruential generators</a>, <a href="/wiki/Lagged_Fibonacci_generator.html" title="Lagged Fibonacci generator">lagged Fibonacci generators</a>, <a href="/wiki/Linear_feedback_shift_register.html" title="Linear feedback shift register">linear feedback shift registers</a> and generalised feedback shift registers. Recent instances of pseudo-random algorithms include <a href="/wiki/Blum_Blum_Shub.html" title="Blum Blum Shub">Blum Blum Shub</a>, <a href="/wiki/Fortuna_%28PRNG%29.html" title="Fortuna (PRNG)">Fortuna</a>, and the <a href="/wiki/Mersenne_twister.html" title="Mersenne twister">Mersenne twister</a>.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Inherent nonrandomness</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Problems with deterministic generators</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Early approaches</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Mersenne twister</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">A pen-and-paper method</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">Cryptographically secure pseudorandom number generators</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">Evaluation criteria example</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">8</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">9</span> <span class="toctext">Notes</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">10</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">11</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Inherent nonrandomness">edit</a>]</div>
+<p><a name="Inherent_nonrandomness" id="Inherent_nonrandomness"></a></p>
+<h2>Inherent nonrandomness</h2>
+<p>Because any PRNG run on a <a href="/wiki/Deterministic.html" title="Deterministic">deterministic</a> computer (contrast <a href="/wiki/Quantum_computer.html" title="Quantum computer">quantum computer</a>) is necessarily a deterministic algorithm, its output will inevitably have one property that a true <a href="/wiki/Random_sequence.html" title="Random sequence">random sequence</a> can never have: <a href="/wiki/Periodic_function.html" title="Periodic function">periodicity</a>. It is certain that, if such a generator has only a finite memory, it will, given sufficient time, revisit a previous internal state, after which it will repeat the prior sequence forever. Non-periodic generators for deterministic computers can be designed, but memory requirements would grow without limit during runs; this is not, of course, possible in real equipment. A PRNG can be started from an arbitrary starting point, using a 'random' <a href="/wiki/Random_seed.html" title="Random seed">seed state</a>; it will always produce the same sequence thereafter when initialized with that state.</p>
+<p>The undesirable consequences of this periodicity can sometimes be avoided in practice. The length of the maximum period typically doubles with each bit of 'state' added, and it is thus relatively easy to build PRNGs with periods so long no computer could complete a single period in the expected lifetime of the universe, and this is sufficient in some applications. It is an open question, and one central to the theory and practice of <a href="/wiki/Cryptography.html" title="Cryptography">cryptography</a>, whether there is any way to distinguish the output of a high-quality PRNG from a truly random sequence (ie, <a href="/wiki/White_noise.html" title="White noise">white noise</a> or its equivalent) without knowing, for instance, the algorithm(s) used and the state with which it was initialized. The security of most cryptographic algorithms and protocols using PRNGs is based on the assumption that it is infeasible to distinguish use of a suitable PRNG from a random sequence. The simplest examples of this dependency are <a href="/wiki/Stream_cipher.html" title="Stream cipher">stream ciphers</a>, which (most often) works by <a href="/wiki/Exclusive_or.html" title="Exclusive or">exclusive oring</a> the <a href="/wiki/Plaintext.html" title="Plaintext">plaintext</a> of a message with the output of a PRNG, producing <a href="/wiki/Ciphertext.html" title="Ciphertext">ciphertext</a>. The design of adequate PRNGs is extremely difficult, and most programs use simpler PRNGs, even some <a href="/wiki/Cryptosystem.html" title="Cryptosystem">cryptosystems</a> which should certainly not do so.</p>
+<p>R P Brent's algorithm can be used to determine the period length of deterministic PRNGs; the result may be surprising, but they can be used to assist in evaluating the acceptability of a PRNG algorithm to a particular use.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Problems with deterministic generators">edit</a>]</div>
+<p><a name="Problems_with_deterministic_generators" id="Problems_with_deterministic_generators"></a></p>
+<h2>Problems with deterministic generators</h2>
+<p>In practice, the output from many common PRNGs exhibit <a href="/wiki/Artifact_%28observational%29.html" title="Artifact (observational)">artifacts</a> which cause them to fail statistical pattern detection tests. These include, but are certainly not limited to</p>
+<ul>
+<li>Shorter than expected periods for some seed states (ie, not a full period); such seed states may be called 'weak' in this context</li>
+<li>Poor dimensional distribution of the output sequence</li>
+<li>Correlation of successive values</li>
+<li>Some bit sequences being 'more random' than others</li>
+<li>Lack of uniformity of distribution</li>
+</ul>
+<p>Defects exhibited by flawed PRNGs range from unnoticeable to absurdly obvious. The <a href="/wiki/RANDU.html" title="RANDU">RANDU</a> random number algorithm used for decades on <a href="/wiki/Mainframe_computer.html" title="Mainframe computer">mainframe computers</a> was seriously flawed, and much research work of that period is less reliable than it might have been, and should have been, as a result. The RAND function included in current Microsoft operating systems has only 15 bits of state and thus repeats after generating 32768 bytes. Sometimes, but not always, problems with models are noticed and traced to inadequate generators, which in turn sometimes leads to improvements in PRNGs. This is certainly not as often noticed as it should be, and so it is better to use good PRNGs from the beginning.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Early approaches">edit</a>]</div>
+<p><a name="Early_approaches" id="Early_approaches"></a></p>
+<h2>Early approaches</h2>
+<p>An early computer-based PRNG, suggested by <a href="/wiki/John_von_Neumann.html" title="John von Neumann">John von Neumann</a> in <a href="/wiki/1946.html" title="1946">1946</a>, is known as the <a href="/wiki/Middle-square_method.html" title="Middle-square method">middle-square method</a>. It is very simple: take any number, square it, remove the middle digits of the resulting number as your "random number", then use that number as the seed for the next iteration. For example, squaring the number "1111" yields "1234321", which can be written as "01234321", an 8-digit number being the square of a 4-digit number. This gives "2343" as the "random" number. Repeating this procedure gives "4896" as the next result, and so on. <a href="/wiki/Von_Neumann.html" title="Von Neumann">Von Neumann</a> used 10 digit numbers, but the process was the same.</p>
+<p>A problem with the "middle square" method is that all sequences eventually repeat themselves, some very quickly, such as "0000". Von Neumann was aware of this, but he found the approach sufficient for his purposes, and was worried that mathematical "fixes" would simply hide errors rather than remove them. The middle square method's errors are easy to detect.</p>
+<p>Von Neumann judged hardware random number generators unsuitable, for, if they did not record the output generated, they could not later be tested for errors. If they did record their output, they would exhaust the limited computer memories available then, and so the computer's ability to read and write numbers. If the numbers were written to cards, they would take very much longer to write and read. On the <a href="/wiki/ENIAC.html" title="ENIAC">ENIAC</a> computer he was using, the "middle square" method generated numbers at a rate some two hundred times faster than reading numbers in from <a href="/wiki/Punch_card.html" title="Punch card">punch cards</a>.</p>
+<p>The middle-square method has been supplanted for most purposes by more elaborate generators.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Mersenne twister">edit</a>]</div>
+<p><a name="Mersenne_twister" id="Mersenne_twister"></a></p>
+<h2>Mersenne twister</h2>
+<p>The <a href="/wiki/1997.html" title="1997">1997</a> invention of the <a href="/wiki/Mersenne_twister.html" title="Mersenne twister">Mersenne twister</a> algorithm, by Makoto Matsumoto and Takuji Nishimura, avoids many of the problems with earlier generators. It has the colossal period of 2<sup>19937</sup>-1 iterations (likely more than the number of computations which could be performed within the entire future existence of the universe), is proven to be <a href="/wiki/Equidistributed.html" title="Equidistributed">equidistributed</a> in (up to) 623 dimensions (for 32-bit values), and runs faster than all but the least statistically reasonable generators. It is now increasingly becoming the "random number generator of choice" for statistical simulations and generative modeling.</p>
+<p>Although suitable for other purposes, the <a href="/wiki/Mersenne_twister.html" title="Mersenne twister">Mersenne twister</a> is not suitable for use in <a href="/wiki/Cryptography.html" title="Cryptography">cryptography</a>. It is equivalent to a <a  class="new" title="Generalized feedback shift register">generalized feedback shift register</a>, and its output, therefore, is predictable.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: A pen-and-paper method">edit</a>]</div>
+<p><a name="A_pen-and-paper_method" id="A_pen-and-paper_method"></a></p>
+<h2>A pen-and-paper method</h2>
+<p>The decimal expansion of a reciprocal of the form 1/q, for "suitable" values of q, provides an easily-implemented source of (pseudo-)random numbers <a  class="external autonumber" title="http://dsns.csie.nctu.edu.tw/research/crypto/HTML/PDF/C82/61.PDF">[1]</a>. Matthews showed that a sufficient condition for the method to produce a stream of high quality random numbers of length q - 1 is that q = 2S + 1 where S is a <a href="/wiki/Sophie_Germain_prime.html" title="Sophie Germain prime">Sophie Germain prime</a>, such that both S and 2S + 1 are prime, with S being of the form 3, 9 or 11 mod 20. Thus “suitable” prime numbers q are 7, 23, 47, 59, 167, 179, etc (corresponding to S = 3, 11, 23, 29, 83, 89, etc.). The result is a stream of length q - 1 digits (including leading zeros). So, for example, using q = 23 generates the random digits 0,4,3,4,7,8,2,6.....3,9,1,3.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Cryptographically secure pseudorandom number generators">edit</a>]</div>
+<p><a name="Cryptographically_secure_pseudorandom_number_generators" id="Cryptographically_secure_pseudorandom_number_generators"></a></p>
+<h2>Cryptographically secure pseudorandom number generators</h2>
+<dl>
+<dd><i>Main article: <a href="/wiki/Cryptographically_secure_pseudo-random_number_generator.html" title="Cryptographically secure pseudo-random number generator">Cryptographically secure pseudo-random number generator</a></i></dd>
+</dl>
+<p>A PRNG suitable for <a href="/wiki/Cryptography.html" title="Cryptography">cryptographic</a> applications is called a <i>cryptographically secure PRNG</i> (CSPRNG). The chief difference between a PRNG and a CSPRNG is simple: a CSPRNG should appear indistinguishable from random on <i>any</i> examination, whereas a PRNG is normally only required to appear to be random to standard statistical tests. However, there are generator designs which meet this criterion, but which are nevertheless not cryptographically strong.</p>
+<p>Some classes of CSPRNGs include the following:</p>
+<ul>
+<li><a href="/wiki/Stream_cipher.html" title="Stream cipher">Stream ciphers</a> or <a href="/wiki/Block_cipher.html" title="Block cipher">block ciphers</a> running in <a href="/wiki/Counter_mode.html" title="Counter mode">counter</a> or <a href="/wiki/Output_feedback.html" title="Output feedback">output feedback</a> mode.</li>
+<li>Special designs with a security proof. For example <a href="/wiki/Blum_Blum_Shub.html" title="Blum Blum Shub">Blum Blum Shub</a> has a strong security proof, although the proof is conditional and requires that some internal values remain secret from any attacker. Moreover, Blum Blum Shub is too slow for many applications.</li>
+<li>PRNGs that have been designed specifically to be cryptographically secure, such as <a href="/wiki/Microsoft.html" title="Microsoft">Microsoft</a>'s <a href="/wiki/Cryptographic_Application_Programming_Interface.html" title="Cryptographic Application Programming Interface">Cryptographic Application Programming Interface</a> function <a href="/wiki/CryptGenRandom.html" title="CryptGenRandom">CryptGenRandom</a>, and the <a href="/wiki/Yarrow_algorithm.html" title="Yarrow algorithm">Yarrow algorithm</a> incorporated in <a href="/wiki/Mac_OS_X.html" title="Mac OS X">Mac OS X</a> and <a href="/wiki/FreeBSD.html" title="FreeBSD">FreeBSD</a>.</li>
+<li>Combination PRNGs which attempt to combine several PRNG primitive algorithms with the goal of removing any non-randomness (an example is <a href="/wiki/Fortuna_%28PRNG%29.html" title="Fortuna (PRNG)">Fortuna</a>).</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Evaluation criteria example">edit</a>]</div>
+<p><a name="Evaluation_criteria_example" id="Evaluation_criteria_example"></a></p>
+<h2>Evaluation criteria example</h2>
+<p>The German Institute for Security in Information Technology has established a four part criteria for quality of deterministic random number generators. They are summarized here:</p>
+<ul>
+<li>K1 -- A sequence of random numbers with a high probablility of containing no identical consecutive elements.</li>
+<li>K2 -- A sequence of numbers which is indistinguishable from 'true random' numbers according to specified statistical tests. The tests are the <i>monobit</i> test (equal numbers of ones and zeros in the sequence), <i>poker</i> test (a special instance of the chi-squared test), <i>runs</i> test (counts the frequency of runs of various lengths), <i>longruns</i> test (checks whether there exists any run of length 34 or greater in 20 000 bits of the sequence) -- both from BSI2 (AIS 20, v. 1, 1999) and FIPS (140-1, 1994), and the <i>autocorrelation</i> test. In essence, these requirements are a test of how well a bit sequence: has zeros and ones equally often; after a sequence of <i>n</i> zeros (or ones), the next bit a one (or zero) with probablility one-half; and any selected subsequence contains no information about the next element(s) in the sequence.</li>
+<li>K3 -- It should be impossible for any attacker (for all practical purposes) to calculate, or otherwise guess, from any given sub-sequence, any previous or future values in the sequence, nor any inner state of the generator.</li>
+<li>K4 -- It should be impossible, for all practical purposes, for an attacker to calculate, or guess from an inner state of the generator, any previous numbers in the sequence or any previous inner generator states.</li>
+</ul>
+<p>For cryptographic applications, only generators meeting the K4 standard are really acceptable.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Pseudo-random_binary_sequence.html" title="Pseudo-random binary sequence">Pseudo-random binary sequence</a></li>
+<li><a href="/wiki/Randomized_algorithm.html" title="Randomized algorithm">Randomized algorithm</a></li>
+<li><a href="/wiki/Random_number_generator.html" title="Random number generator">Random number generator</a></li>
+<li><a href="/wiki/Random_number_generator_attack.html" title="Random number generator attack">Random number generator attack</a></li>
+<li><a href="/wiki/List_of_pseudorandom_number_generators.html" title="List of pseudorandom number generators">List of pseudorandom number generators</a></li>
+<li><a href="/wiki/Hardware_random_number_generator.html" title="Hardware random number generator">Hardware random number generator</a></li>
+<li><a href="/wiki/Randomness.html" title="Randomness">Randomness</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Notes">edit</a>]</div>
+<p><a name="Notes" id="Notes"></a></p>
+<h2>Notes</h2>
+<p><sup>1</sup> Peterson. Ivars. <i>The Jungles of Randomness: A Mathematical Safari.</i> Wiley, NY, 1998. (pp. 178) <a  class="internal">ISBN 0-471-16449-6</a></p>
+<p><sup>2</sup> "Various techniques used in connection with random digits", Applied Mathematics Series, no. 12, 36-38 (1951).</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<ul>
+<li>Michael Luby, <i>Pseudorandomness and Cryptographic Applications</i>, Princeton Univ Press, 1996. A definitive source of techniques for provably random sequences.</li>
+<li><a href="/wiki/Donald_Knuth.html" title="Donald Knuth">Donald Knuth</a>. <i>The Art of Computer Programming</i>, Volume 2: <i>Seminumerical Algorithms</i>, Third Edition. Addison-Wesley, 1997. <a  class="internal">ISBN 0-201-89684-2</a>. Chapter 3, pp.1–193. Extensive coverage of statistical tests for non-randomness.</li>
+<li>R. Matthews <i>Maximally Periodic Reciprocals</i> Bulletin of the Institute of Mathematics and its Applications 28 147-148 1992</li>
+<li><a  class="external text" title="http://www.acsac.org/2003/papers/79.pdf">J. Viega, <i>Practical Random Number Generation in Software</i></a>, in Proc. 19th Annual Computer Security Applications Conference, Dec. 2003.</li>
+<li>John von Neumann, "Various techniques used in connection with random digits," in A.S. Householder, G.E. Forsythe, and H.H. Germond, eds., <i>Monte Carlo Method</i>, National Bureau of Standards Applied Mathematics Series, 12 (Washington, D.C.: U.S. Government Printing Office, 1951): 36-38.</li>
+<li><a href="/wiki/NIST.html" title="NIST">NIST</a> <a  class="external text" title="http://csrc.nist.gov/publications/nistpubs/800-90/SP800-90_DRBG-June2006-final.pdf"><i>Recommendation for Random Number Generation Using Deterministic Random Bit Generators</i></a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="https://www.grc.com/passwords">GRC's Ultra High Security Password Generator</a>.</li>
+<li><a  class="external text" title="http://www.gnu.org/software/gsl/">The GNU Scientific Library</a>. A free (<a href="/wiki/GNU_General_Public_License.html" title="GNU General Public License">GPL</a>) <a href="/wiki/C_programming_language.html" title="C programming language">C</a> library that includes a number of PRNG algorithms.</li>
+<li><a  class="external text" title="http://www.phy.duke.edu/~rgb/General/rand_rate.php">DieHarder</a>: A free (<a href="/wiki/GNU_General_Public_License.html" title="GNU General Public License">GPL</a>) <a href="/wiki/C_programming_language.html" title="C programming language">C</a> Random Number Test Suite.</li>
+<li><a  class="external text" title="http://www.sbc.su.se/~pjk/crng/">crng</a>: Random-number generators (RNGs) implemented as Python extension types coded in C.</li>
+<li><a  class="external free" title="http://eeyore.wu-wien.ac.at/src/">http://eeyore.wu-wien.ac.at/src/</a> prng: A collection of algorithms for generating pseudorandom numbers as a library of C functions, released under the GPL.</li>
+<li><a  class="external text" title="http://www.bindview.com/Services/Razor/Papers/2001/tcpseq.cfm">Strange Attractors and TCP/IP Sequence Number Analysis</a> - an analysis of the strength of PRNGs used to create <a href="/wiki/TCP/IP.html" title="TCP/IP">TCP/IP</a> <a  class="new" title="Sequence number">sequence numbers</a> by various <a href="/wiki/Operating_system.html" title="Operating system">operating systems</a> using <a href="/wiki/Strange_attractor.html" title="Strange attractor">strange attractors</a>. This is a good practical example of issues in PRNGs and the variation possible in their implementation.
+<ul>
+<li><a  class="external text" title="http://lcamtuf.coredump.cx/newtcp/">Strange Attractors and TCP/IP Sequence Number Analysis - One Year Later</a> - a follow-up article demonstrating some of the evolution of various PRNG algorithms over time.</li>
+</ul>
+</li>
+<li><i><a  class="external text" title="http://eprint.iacr.org/2006/086">Analysis of the Linux Random Number Generator</a></i> by Zvi Gutterman, Benny Pinkas, and Tzachy Reinman</li>
+<li><a  class="external text" title="http://jason.mchu.com/RNG">Random Number Generator built from combinational and sequential logic blocks</a></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:45524-0!1!0!default!!en!2 and timestamp 20060907145904 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:Pseudorandom number generators">Pseudorandom number generators</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Pseudorandom_number_generator.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-eo"><a >Esperanto</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-pt"><a >Português</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+				<li class="interwiki-fi"><a >Suomi</a></li>
+				<li class="interwiki-sv"><a >Svenska</a></li>
+				<li class="interwiki-tr"><a >Türkçe</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 01:26, 6 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv77 in 0.373 secs. --></body></html>

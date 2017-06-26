@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Channel controller,1960s,Bus mastering,CDC 1604,CDC 6600,Central processing unit,Co-processor,Context switching,Direct memory access,Input/output,Interrupt" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Channel controller - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Channel_controller";
+			var wgTitle = "Channel controller";
+			var wgArticleId = 60674;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Channel controller</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>A <b>channel controller</b> is a simple <a href="/wiki/Central_processing_unit.html" title="Central processing unit">CPU</a> used to handle the task of moving data to and from the memory of a computer. Depending on the sophistication of the design, they can also be referred to as <b>peripheral processors</b>, <b>I/O processors</b>, <b>I/O controllers</b> or <b>DMA controllers</b>.</p>
+<p>Most <a href="/wiki/Input/output.html" title="Input/output">input/output</a> tasks can be fairly complex and require logic to be applied to the data to convert formats and other similar duties. In these situations the computer's CPU would normally be asked to handle the logic, but due to the fact that the I/O devices are very slow, the CPU would end up spending a huge amount of time (in computer terms) sitting idle waiting for the data from the device.</p>
+<p>A channel controller avoids this problem by using a low-cost CPU with enough logic and memory onboard to handle these sorts of tasks. They are typically not powerful or flexible enough to be used on their own, and are actually a form of <a href="/wiki/Co-processor.html" title="Co-processor">co-processor</a>. The CPU sends small programs to the controller to handle an I/O job, which the channel controller can then complete without any help from the CPU. When it is complete, or there is an error, the channel controller communicates with the CPU using a selection of <a href="/wiki/Interrupt.html" title="Interrupt">interrupts</a>.</p>
+<p>Since the channel controller has direct access to the main memory of the computer, they are also often referred to as <b>DMA Controllers</b> (where DMA means <a href="/wiki/Direct_memory_access.html" title="Direct memory access">direct memory access</a>), but that term is somewhat more loose in definition and is often applied to non-programmable devices as well.</p>
+<p>The first use of channel controllers was in the famed <a href="/wiki/CDC_6600.html" title="CDC 6600">CDC 6600</a> <a href="/wiki/Supercomputer.html" title="Supercomputer">supercomputer</a>, which used 12 dedicated computers they referred to as peripheral processors, or PP's for this role. The PP's were quite powerful, basically a cut down version of CDC's first computer, the <a href="/wiki/CDC_1604.html" title="CDC 1604">CDC 1604</a>. Since the <a href="/wiki/1960s.html" title="1960s">1960s</a> channel controllers have been a standard part of almost all mainframe designs, and the primary reason why anyone buys one. CDC's PP's are at one end of the spectrum of power, most mainframe systems tasked the CPU with more and the channel controllers with less of the overall I/O task.</p>
+<p>Channel controllers have also been made as small as single-chip designs with multiple channels on them, used in the <a href="/wiki/NeXT.html" title="NeXT">NeXT</a> computers for instance. However with the rapid speed increases in computers today, combined with <a href="/wiki/Operating_system.html" title="Operating system">operating systems</a> that don't "block" when waiting for data, the channel controller has become somewhat redundant and are not commonly found on smaller machines.</p>
+<p>Channel controllers can be said to be making a comeback in the form of "<a href="/wiki/Bus_mastering.html" title="Bus mastering">bus mastering</a>" peripheral devices, such as <a href="/wiki/SCSI.html" title="SCSI">SCSI</a> adaptors and network cards. The rationale for these devices is the same as for the original channel controllers, namely off-loading interrupts and <a href="/wiki/Context_switching.html" title="Context switching">context switching</a> from the main CPU.</p>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:60674-0!1!0!default!!en!2 and timestamp 20060910040147 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Computer memory">Computer memory</a></span> | <span dir='ltr'><a  title="Category:Central processing unit">Central processing unit</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Channel_controller.html">Article</a></li>
+				 <li id="ca-talk" class="new"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-ja"><a >日本語</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 19:00, 18 July 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv76 in 0.148 secs. --></body></html>

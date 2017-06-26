@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Simultaneous multithreading,2002,2004,2005,2007,CPU design,Central processing unit,Chip-level multiprocessing,Chip-level multithreading,Codename,Compaq" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Simultaneous multithreading - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Simultaneous_multithreading";
+			var wgTitle = "Simultaneous multithreading";
+			var wgArticleId = 315021;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Simultaneous multithreading</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p><b>Simultaneous multithreading</b>, often abbreviated as <b>SMT</b>, is a technique for improving the overall efficiency of <a href="/wiki/Superscalar.html" title="Superscalar">superscalar</a> <a href="/wiki/Central_processing_unit.html" title="Central processing unit">CPUs</a>. SMT permits multiple independent <a href="/wiki/Thread_%28computer_science%29.html" title="Thread (computer science)">threads</a> of execution to better utilize the resources provided by modern <a href="/wiki/CPU_design.html" title="CPU design">processor architectures</a>.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Details</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Taxonomy</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Historical implementations</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Modern commercial implementations</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Details">edit</a>]</div>
+<p><a name="Details" id="Details"></a></p>
+<h2>Details</h2>
+<p>Normal multithreading <a href="/wiki/Operating_system.html" title="Operating system">operating systems</a> allow multiple <a href="/wiki/Computer_process.html" title="Computer process">processes</a> and threads to utilize the processor one at a time, giving exclusive ownership to a particular thread for a <a  class="new" title="Time slice">time slice</a> in the order of <a href="/wiki/Millisecond.html" title="Millisecond">milliseconds</a> - this is called <a href="/wiki/Temporal_multithreading.html" title="Temporal multithreading">Temporal multithreading</a>. Quite often, a process will stall for hundreds of cycles while waiting for some external resource (for example, a <a href="/wiki/Random_Access_Memory.html" title="Random Access Memory">RAM</a> load), thus lowering processor efficiency.</p>
+<p>A successive improvement is <a href="/wiki/Super-threading.html" title="Super-threading">super-threading</a>, where the processor can execute instructions from a different thread each cycle. Thus cycles left unused by a thread can be used by another that is ready to run.</p>
+<p>Still, a given thread is almost surely not utilizing all the multiple <a href="/wiki/Execution_unit.html" title="Execution unit">execution units</a> of a modern processor at the same time. <i>Simultaneous multithreading</i> allows multiple threads to execute different instructions in the same clock cycle, using the execution units that the first thread left spare. This is done without great changes to the basic processor architecture: the main additions needed are the ability to fetch instructions from multiple threads in a cycle, and a larger register file to hold data from multiple threads. The number of concurrent threads can be decided by the chip designers, but practical restrictions on chip complexity usually limit the number to 2, 4 or sometimes 8 concurrent threads.</p>
+<p>Since the technique is really an efficiency solution, and there is inevitable increased conflict on shared resources, measuring or agreeing on the "goodness" of the solution can be difficult. Some researchers have shown that the extra threads can be used to proactively seed a shared resource like a cache, to improve the performance of another single thread, and claim this shows that SMT is not just an efficiency solution. Others use SMT to provide redundant computation, for some level of error detection and recovery.</p>
+<p>But, in most current cases, SMT is about efficiency and increased throughput of computations per amount of hardware used.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Taxonomy">edit</a>]</div>
+<p><a name="Taxonomy" id="Taxonomy"></a></p>
+<h2>Taxonomy</h2>
+<p>In processor design, there are two ways to increase on-chip parallelism with less resource requirement: one is <a href="/wiki/Superscalar.html" title="Superscalar">superscalar</a> technique which tries to increase Instruction Level Parallelism (ILP), the other is <a href="/wiki/Multithreading.html" title="Multithreading">multithreading</a> approach exploiting Thread Level Parallelism (TLP).</p>
+<p>Superscalar means executing multiple instructions at the same time while <a href="/wiki/Chip-level_multithreading.html" title="Chip-level multithreading">chip-level multithreading</a> (CMT) executes instructions from multiple threads within one processor chip at the same time. There are many ways to support more than one thread within a chip, namely:</p>
+<ul>
+<li>Multithreaded: Interleaved issue of multiple instructions from different threads</li>
+<li>Simultaneous multithreading (SMT): Issue multiple instructions from multiple threads in one cycle.</li>
+<li><a href="/wiki/Chip-level_multiprocessing.html" title="Chip-level multiprocessing">Chip-level multiprocessing</a> (CMP or <a href="/wiki/Multicore.html" title="Multicore">Multicore</a>): integrate two or more superscalar processors into one chip, each execute one thread independently</li>
+<li>Any combination of multithreaded/SMT/CMP</li>
+</ul>
+<p>The key factor to distinguish them is to look at how many instructions the processor can issue in one cycle and how many threads from which the instructions come. For example, Sun Microsystems' UltraSPARC T1 (known as "Niagara" until its November 14, 2005 release) is a multicore processor combined with multithreaded technique instead of simultaneous multithreading because each core can only issue one instruction at a time.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Historical implementations">edit</a>]</div>
+<p><a name="Historical_implementations" id="Historical_implementations"></a></p>
+<h2>Historical implementations</h2>
+<p>While multithreading CPUs have been around since the 1950s, Simultaneous Multithreading was first researched by IBM in 1968. The first major commercial CPU developed with SMT was the <a  class="new" title="DEC 21464">DEC 21464</a> (EV8). This chip was developed by <a href="/wiki/DEC.html" title="DEC">DEC</a> in coordination with Dean Tullsen of the University of California, San Diego. The processor was never released, since the Alpha line of processors was discontinued when <a href="/wiki/Compaq.html" title="Compaq">Compaq</a> acquired DEC. Dean Tullsen's work was also used to create the Intel Pentium 4 Processor. The technology developed for this processor may eventually find its way into <a href="/wiki/Tukwila_%28processor%29.html" title="Tukwila (processor)">Tukwila</a>, a CPU being developed at Intel by many of the engineers who designed the EV8.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Modern commercial implementations">edit</a>]</div>
+<p><a name="Modern_commercial_implementations" id="Modern_commercial_implementations"></a></p>
+<h2>Modern commercial implementations</h2>
+<p>The <a href="/wiki/Intel.html" title="Intel">Intel</a> <a href="/wiki/Pentium_4.html" title="Pentium 4">Pentium 4</a> was the first modern desktop processor to implement simultaneous multithreading, starting from the 3.06GHz model released in <a href="/wiki/2002.html" title="2002">2002</a>, and since introduced into a number of their processors. Intel calls the functionality <a href="/wiki/Hyper-Threading.html" title="Hyper-Threading">Hyper-Threading Technology</a> (HTT), and provides a basic two-thread SMT engine. Intel claims up to a 30% speed improvement compared against an otherwise identical, non-SMT Pentium 4. The performance improvement seen is very application dependent, however, and some programs actually slow down slightly when HTT is turned on. This is due to the <a href="/wiki/Replay_system.html" title="Replay system">replay system</a> of the Pentium 4 tying up valuable execution resources, thereby starving the other thread. However, any performance degradation is unique to the Pentium 4 (due to various architectural nuances), and is not characteristic of SMT in general.</p>
+<p>The latest <a href="/wiki/MIPS_architecture.html" title="MIPS architecture">MIPS architecture</a> designs include a two-thread SMT system known as <i>"MIPS MT"</i>. RMI, a Cupertino-based startup, is the first MIPS vendor to provide a processor SOC based on 8 cores, each of which runs 4 threads. The threads can be run in fine-grain mode where a different thread can be executed each cycle. The threads can also be assigned priorities.</p>
+<p>The <a href="/wiki/IBM.html" title="IBM">IBM</a> <a href="/wiki/POWER5.html" title="POWER5">POWER5</a>, announced in May <a href="/wiki/2004.html" title="2004">2004</a>, is a dual-core processor, with each core including a two-thread SMT engine. IBM's implementation is more sophisticated than the previous ones, because it can assign a different priority to the various threads, is more fine-grained, and the SMT engine can be turned on and off dynamically, to better execute those workloads where an SMT processor would not increase performance. This is IBM's second implementation of generally available hardware multithreading.</p>
+<p>Although many people reported that <a href="/wiki/Sun_Microsystems.html" title="Sun Microsystems">Sun Microsystems</a>' <a href="/wiki/UltraSPARC_T1.html" title="UltraSPARC T1">UltraSPARC T1</a> (known as <i>"Niagara"</i> until its <a href="/wiki/November_14.html" title="November 14">14 November</a> <a href="/wiki/2005.html" title="2005">2005</a> release) and the upcoming processor <a href="/wiki/Codename.html" title="Codename">codenamed</a> <i>"<a href="/wiki/Rock_processor.html" title="Rock processor">Rock</a>"</i> (to be launched ~<a href="/wiki/2007.html" title="2007">2007</a>) are implementations of <a href="/wiki/SPARC.html" title="SPARC">SPARC</a> focused almost entirely on exploiting SMT and <a href="/wiki/Chip-level_multiprocessing.html" title="Chip-level multiprocessing">CMP</a> techniques, Niagara is not actually using SMT. Sun refers to these combined approaches as "CMT", and the overall concept as "Throughput Computing". The Niagara chip uses fine-grained multithreading. Unlike SMT, where instructions from multiple threads can be issued simultaneously, the processor uses a round robin policy to issue instructions from a single thread each cycle. The designers of the <a href="/wiki/Montecito_%28processor%29.html" title="Montecito (processor)">Montecito (processor)</a> have also chosen not to use SMT.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Chip-level_multiprocessing.html" title="Chip-level multiprocessing">Chip-level multiprocessing</a>, a complementary technique</li>
+<li><a href="/wiki/Thread_%28computer_science%29.html" title="Thread (computer science)">Thread (computer science)</a>, what is executed</li>
+<li><a href="/wiki/Symmetric_multiprocessing.html" title="Symmetric multiprocessing">Symmetric multiprocessing</a> uses multiple processors</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<ul>
+<li>LE Shar and ES Davidson, "A Multiminiprocessor System Implemented through Pipelining", Computer Feb 1974</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://www.princeton.edu/~jdonald/research/hyperthreading/">SMT news articles and academic papers</a></li>
+<li><a  class="external text" title="http://www.cs.washington.edu/research/smt/">SMT research at the University of Washington</a></li>
+<li><a  class="external text" title="http://www.realworldtech.com/page.cfm?ArticleID=RWT122600000000">Real World Technologies</a> - an overview of SMT by Paul DeMone, with a view towards the implementation in the EV8</li>
+<li><a  class="external text" title="http://www.cs.clemson.edu/~mark/multithreading.html">Timeline of multithreading technologies</a></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:315021-0!1!0!default!!en!2 and timestamp 20060905184824 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:Flynn's Taxonomy">Flynn's Taxonomy</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Simultaneous_multithreading.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 18:33, 8 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv110 in 0.078 secs. --></body></html>

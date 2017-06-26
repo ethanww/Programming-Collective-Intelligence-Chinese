@@ -1,0 +1,219 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Cross compiler,Bash,Binaries,Binutils,Bootstrapping,C library,C programming language,C standard library,Compiler,Crt0,Embedded system" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Cross compiler - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Cross_compiler";
+			var wgTitle = "Cross compiler";
+			var wgArticleId = 291615;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Cross compiler</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>A <b>cross compiler</b> is a <a href="/wiki/Compiler.html" title="Compiler">compiler</a> capable of creating <a href="/wiki/Executable.html" title="Executable">executable</a> code for a <a href="/wiki/Platform_%28computing%29.html" title="Platform (computing)">platform</a> other than the one on which the cross compiler is run. Such a <a href="/wiki/Programming_tool.html" title="Programming tool">tool</a> is handy when you want to compile code for a platform that you don't have access to, or because it is inconvenient or impossible to compile on that platform (as is the case with <a href="/wiki/Embedded_system.html" title="Embedded system">embedded systems</a>, on which various kinds of <a href="/wiki/Microcontroller.html" title="Microcontroller">microcontrollers</a> run with a minimal amount of memory for their own purpose).</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Uses of Cross Compilers</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">The GCC cross compiler</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Canadian Cross</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Uses of Cross Compilers">edit</a>]</div>
+<p><a name="Uses_of_Cross_Compilers" id="Uses_of_Cross_Compilers"></a></p>
+<h2>Uses of Cross Compilers</h2>
+<p>The fundamental use of a cross compiler is to separate the build environment from the target environment. This is useful in a number of situations:</p>
+<ul>
+<li><a href="/wiki/Embedded_system.html" title="Embedded system">Embedded computers</a> where a device has extremely limited resources. For example, a microwave oven will have an extremely small computer to read its touchpad and door sensor, provide output to a digital display and speaker, and to control the machinery for cooking food. This computer will not be powerful enough to run a compiler, a file system, or a development environment.</li>
+<li>Compiling for multiple machines. For example, a company may wish to support several different versions of an operating system or to support several different operating systems. By using a cross compiler, a single build environment can be maintained that would build for each of these targets.</li>
+<li>Compiling on a <a href="/wiki/Server_farm.html" title="Server farm">server farm</a>. Similar to compiling for multiple machines, a complicated build that involves many compile operations can be executed across any machine that is free regardless of its brand or current version of an operating system.</li>
+<li><a href="/wiki/Bootstrapping#Electronics.html" title="Bootstrapping">Bootstrapping</a> to a new platform. When developing software for a new platform, or the emulator of a future platform, one uses a cross compiler to compile necessary tools such as the operating system and a native compiler.</li>
+</ul>
+<p>Use of <a href="/wiki/Virtual_machine.html" title="Virtual machine">virtual machines</a> (such as <a href="/wiki/Java_platform.html" title="Java platform">Java's</a> <a href="/wiki/Java_virtual_machine.html" title="Java virtual machine">JVM</a>) ameliorate some of the problems for which cross compilers were developed. The virtual machine method allows the same compiler output to be used by both the host and the target system.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: The GCC cross compiler">edit</a>]</div>
+<p><a name="The_GCC_cross_compiler" id="The_GCC_cross_compiler"></a></p>
+<h2>The GCC cross compiler</h2>
+<p><a href="/wiki/GNU_Compiler_Collection.html" title="GNU Compiler Collection">gcc</a> is a free cross compiler that supports dozens of platforms and a handful of languages. However, due to limited volunteer time and the huge amount of work it takes to maintain working cross compilers, in many releases some of the cross compilers are broken.</p>
+<p>gcc relies upon the <a href="/wiki/Binaries.html" title="Binaries">binaries</a> of <a href="/wiki/Binutils.html" title="Binutils">binutils</a> for the targeted platform to be available. Especially important is the <a href="/wiki/GNU_Assembler.html" title="GNU Assembler">GNU Assembler</a>. Therefore, binutils first has to be compiled correctly with the switch <code>--target=some-target</code> sent to the <a  class="new" title="Configure script">configure script</a>. gcc also has to be configured with the same <code>--target</code> option. Then gcc can be compiled as normal provided that the tools binutils creates are available in the <a href="/wiki/Path.html" title="Path">path</a>. On <a href="/wiki/Unix-like.html" title="Unix-like">unix-like</a> <a href="/wiki/Operating_system.html" title="Operating system">operating systems</a> with <a href="/wiki/Bash.html" title="Bash">bash</a>, that can be accomplished with the following:</p>
+<pre>
+PATH=/path/to/binutils/bin:$PATH; make
+</pre>
+<p>Cross compiling gcc requires that a portion of the <a href="/wiki/C_standard_library.html" title="C standard library">C standard library</a> is available for the targeted platform on the host platform. At least the <a href="/wiki/Crt0.html" title="Crt0">crt0</a>, ... components of the library has to be available in some way. You can choose to compile the full C library, but that can be too large for many platforms. The alternative is to use <a href="/wiki/Newlib.html" title="Newlib">newlib</a>, which is a small <a href="/wiki/C_library.html" title="C library">C library</a> containing only the most essential components required to get <a href="/wiki/C_programming_language.html" title="C programming language">C</a> source code compiled. To configure gcc with newlib, use the switch <code>--with-newlib</code> to the configure script.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Canadian Cross">edit</a>]</div>
+<p><a name="Canadian_Cross" id="Canadian_Cross"></a></p>
+<h2>Canadian Cross</h2>
+<p>This is a technique for building cross compilers for other machines. That is, use machine A to build a cross compiler that runs on machine B to create executables for machine C. When using the Canadian Cross with gcc, there may be four compilers involved.</p>
+<p>On Machine A:</p>
+<ul>
+<li>Use the <i>proprietary native Compiler for machine A (1)</i> to build <i>gcc native compiler for machine A (2)</i>.</li>
+<li>Use the <i>gcc native compiler for machine A (2)</i> to build <i>gcc cross compiler from machine A to machine B (3)</i></li>
+<li>Use the <i>gcc cross compiler from machine A to machine B (3)</i> to build <i>gcc cross compiler from machine B to machine C (4)</i></li>
+</ul>
+<p>Note that you will not be able to execute the resulting compiler on your build machine A. You would use <i>gcc cross compiler from machine B to machine C (4)</i> on machine B to compile an application into executable code that would then be copied to machine C and executed on machine C.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external free" title="http://www.kegel.com/crosstool/">http://www.kegel.com/crosstool/</a></li>
+<li><a  class="external free" title="http://www.airs.com/ian/configure/configure_5.html">http://www.airs.com/ian/configure/configure_5.html</a></li>
+<li><a  class="external free" title="http://gcc.gnu.org/wiki/Building%20Cross%20Toolchains%20with%20gcc">http://gcc.gnu.org/wiki/Building%20Cross%20Toolchains%20with%20gcc</a></li>
+<li><a  class="external free" title="http://trac.cross-lfs.org/">http://trac.cross-lfs.org/</a></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:291615-0!1!0!default!!en!2 and timestamp 20060906022538 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:Cross-compilers">Cross-compilers</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Cross_compiler.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+				<li class="interwiki-tr"><a >Türkçe</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 23:02, 25 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv64 in 0.092 secs. --></body></html>

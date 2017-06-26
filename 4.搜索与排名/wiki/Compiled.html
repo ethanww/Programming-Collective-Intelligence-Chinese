@@ -1,0 +1,578 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Compiler,1950s,1957,1960,1960s,1962,1970s,A-0 programming language,Abstract interpretation,Alfred V. Aho,Algol60" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Compiler - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Compiler";
+			var wgTitle = "Compiler";
+			var wgArticleId = 5739;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Compiler</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub">(Redirected from <a  title="Compiled">Compiled</a>)</div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<dl>
+<dd><span class="dablink"><i>This article is about the computing term. For the anime, see <a href="/wiki/Compiler_%28anime%29.html" title="Compiler (anime)">Compiler (anime)</a>.</i></span></dd>
+</dl>
+<div class="thumb tright">
+<div style="width:302px;"><a  class="internal" title="A diagram of the operation of a typical multi-language, multi-target compiler."><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Ideal_compiler.png/300px-Ideal_compiler.png" alt="A diagram of the operation of a typical multi-language, multi-target compiler." width="300" height="434" longdesc="/wiki/Image:Ideal_compiler.png" /></a>
+<div class="thumbcaption">
+<div class="magnify" style="float:right"><a  class="internal" title="Enlarge"><img src="/skins-1.5/common/images/magnify-clip.png" width="15" height="11" alt="Enlarge" /></a></div>
+A diagram of the operation of a typical multi-language, multi-target compiler.</div>
+</div>
+</div>
+<p>A <b>compiler</b> is a <a href="/wiki/Computer_program.html" title="Computer program">computer program</a> (or set of programs) that translates text written in a <a href="/wiki/Computer_language.html" title="Computer language">computer language</a> (the <i>source language</i>) into another computer language (the <i>target language</i>). The original sequence is usually called the <i><a href="/wiki/Source_code.html" title="Source code">source code</a></i> and the output called <i><a href="/wiki/Object_code.html" title="Object code">object code</a></i>. Commonly the output has a form suitable for processing by other programs (e.g., a <a href="/wiki/Linker.html" title="Linker">linker</a>), but it may be a human readable <a href="/wiki/Text_file.html" title="Text file">text file</a>.</p>
+<p>The most common reason for wanting to translate source code is to create an <a href="/wiki/Executable.html" title="Executable">executable</a> program. The name "compiler" is primarily used for programs that translate source code from a <a href="/wiki/High-level_programming_language.html" title="High-level programming language">high level language</a> to a lower level language (e.g., <a href="/wiki/Assembly_language.html" title="Assembly language">assembly language</a> or <a href="/wiki/Machine_language.html" title="Machine language">machine language</a>). A program that translates from a low level language to a higher level one is a <i><a href="/wiki/Decompiler.html" title="Decompiler">decompiler</a></i>. A program that translates between high-level languages is usually called a <i>language translator</i>, <i>source to source translator</i>, or <i>language converter</i>. A <i>language <a href="/wiki/Rewriting.html" title="Rewriting">rewriter</a></i> is usually a program that translates the form of expressions without a change of language.</p>
+<p>A compiler is likely to perform many or all of the following operations: <a href="/wiki/Lexer.html" title="Lexer">lexing</a>, <a href="/wiki/Preprocessor.html" title="Preprocessor">preprocessing</a>, <a href="/wiki/Parsing.html" title="Parsing">parsing</a>, <a href="/wiki/Semantic_analysis_%28computer_science%29.html" title="Semantic analysis (computer science)">semantic analysis</a>, <a href="/wiki/Compiler_optimization.html" title="Compiler optimization">code optimizations</a>, and <a href="/wiki/Code_generation.html" title="Code generation">code generation</a>.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">History</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Types of compilers</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">2.1</span> <span class="toctext">Native versus cross compiler</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.2</span> <span class="toctext">One-pass versus multi-pass compilers</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.3</span> <span class="toctext">Compiled versus interpreted languages</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.4</span> <span class="toctext">Hardware compilation</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Compiler design</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Front end</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Back end</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">A compiler example</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">Notes</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">8</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">9</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">10</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: History">edit</a>]</div>
+<p><a name="History" id="History"></a></p>
+<h2>History</h2>
+<p>Early computers did not use compilers. Compilers had not been invented because at first computers had very little <a href="/wiki/Computer_storage.html" title="Computer storage">memory</a> and programs were necessarily quite short. Users entered the decimal or binary machine code for a program directly by turning or toggling switches on the computer console or entering digits via <a href="/wiki/Paper_tape.html" title="Paper tape">paper tape</a>.</p>
+<p>Programmers soon began to create programs to help with the tedious task of entering machine code. Such a program which would translate an alphabetic letter (which were chosen to be <a href="/wiki/Mnemonic.html" title="Mnemonic">mnemonic</a>) into a corresponding numeric <a href="/wiki/Instruction.html" title="Instruction">instruction</a> which the machine could execute. In this manner <a href="/wiki/Assembly_language.html" title="Assembly language">assembly languages</a> and the primitive compiler, the <a href="/wiki/Assembler.html" title="Assembler">assembler</a>, emerged.</p>
+<p>Towards the end of the <a href="/wiki/1950s.html" title="1950s">1950s</a>, machine-independent programming languages evolved. Subsequently, several experimental compilers were developed then (see, for example, the seminal work by <a href="/wiki/Grace_Hopper.html" title="Grace Hopper">Grace Hopper</a> on the <a href="/wiki/A-0_programming_language.html" title="A-0 programming language">A-0 programming language</a>), but the <a href="/wiki/Fortran.html" title="Fortran">FORTRAN</a> team led by <a href="/wiki/John_Backus.html" title="John Backus">John Backus</a> at <a href="/wiki/IBM.html" title="IBM">IBM</a> is generally credited as having introduced the first complete compiler, in <a href="/wiki/1957.html" title="1957">1957</a>. <a href="/wiki/COBOL.html" title="COBOL">COBOL</a> was an early language to be compiled on multiple architectures, in <a href="/wiki/1960.html" title="1960">1960</a>. <a  class="external autonumber" title="http://www.interesting-people.org/archives/interesting-people/199706/msg00011.html">[1]</a></p>
+<p>The idea of compilation quickly caught on, and most of the principles of compiler design were developed during the <a href="/wiki/1960s.html" title="1960s">1960s</a>.</p>
+<p>With the evolution of <a href="/wiki/Programming_language.html" title="Programming language">programming languages</a> and the increasing power of computers, compilers are becoming more and more complex to bridge the gap between problem-solving modern programming languages and the various computer systems, aiming at getting the highest performance out of the target machines.</p>
+<p>A compiler is itself a computer program written in some <i>implementation language</i>. Early compilers were written in <a href="/wiki/Assembler.html" title="Assembler">assembly language</a>. The first <i>self-hosting</i> compiler — capable of compiling its own source code in a high-level language — was created for <a href="/wiki/Lisp_programming_language.html" title="Lisp programming language">Lisp</a> by Hart and Levin at <a href="/wiki/Massachusetts_Institute_of_Technology.html" title="Massachusetts Institute of Technology">MIT</a> in <a href="/wiki/1962.html" title="1962">1962</a> <a  class="external autonumber" title="http://www.ai.mit.edu/research/publications/browse/0000browse.shtml">[2]</a>. The use of high-level languages for writing compilers gained added impetus in the early <a href="/wiki/1970s.html" title="1970s">1970s</a> when Pascal and C compilers were written in their own languages. Building a self-hosting compiler is a <a href="/wiki/Bootstrapping_%28compilers%29.html" title="Bootstrapping (compilers)">bootstrapping</a> problem -- the first such compiler for a language must be compiled either by a compiler written in a different language, or (as in Hart and Levin's Lisp compiler) compiled by running the compiler in an interpreter.</p>
+<p>Compiler construction and <a href="/wiki/Compiler_optimization.html" title="Compiler optimization">compiler optimization</a> are taught at universities as part of the <a href="/wiki/Computer_science.html" title="Computer science">computer science</a> curriculum. Such courses are usually supplemented with the implementation of a compiler for an <a href="/wiki/Educational_programming_language.html" title="Educational programming language">educational programming language</a>. A well documented example is the <a href="/wiki/PL/0.html" title="PL/0">PL/0</a> <a  class="external text" title="http://www.246.dk/pl0.html">compiler</a>, which was originally used by <a href="/wiki/Niklaus_Wirth.html" title="Niklaus Wirth">Niklaus Wirth</a> for teaching compiler construction in the <a href="/wiki/1970s.html" title="1970s">1970s</a>. In spite of its simplicity, the <a href="/wiki/PL/0.html" title="PL/0">PL/0</a> <a  class="external text" title="http://www.246.dk/pl0.html">compiler</a> introduced several concepts to the field which have since become established educational standards:</p>
+<ol>
+<li>The use of <a  class="external text" title="http://www.acm.org/classics/dec95/">Program Development by Stepwise Refinement</a></li>
+<li>The use of a <a href="/wiki/Recursive_descent_parser.html" title="Recursive descent parser">Recursive descent parser</a></li>
+<li>The use of <a href="/wiki/EBNF.html" title="EBNF">EBNF</a> to specify the syntax of a language</li>
+<li>The use of <a href="/wiki/P-Code.html" title="P-Code">P-Code</a> during generation of portable output code</li>
+<li>The use of T-diagrams for the formal description of the <a href="/wiki/Bootstrapping_%28compilers%29.html" title="Bootstrapping (compilers)">bootstrapping</a> problem</li>
+</ol>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Types of compilers">edit</a>]</div>
+<p><a name="Types_of_compilers" id="Types_of_compilers"></a></p>
+<h2>Types of compilers</h2>
+<p>There are many ways to classify compilers according to the input and output, internal structure, and runtime behavior. For example,</p>
+<ul>
+<li>A program that translates from a low level language to a higher level one is a <i><a href="/wiki/Decompiler.html" title="Decompiler">decompiler</a></i>.</li>
+<li>A program that translates between high-level languages is usually called a <i>language translator</i>, <i>source to source translator</i>, <i>language converter</i>, or <i>language <a href="/wiki/Rewriting.html" title="Rewriting">rewriter</a></i> (this last term is usually applied to translations that do not involve a change of language)</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Native versus cross compiler">edit</a>]</div>
+<p><a name="Native_versus_cross_compiler" id="Native_versus_cross_compiler"></a></p>
+<h3>Native versus cross compiler</h3>
+<p>Most compilers are classified as either native compilers or cross compilers.</p>
+<p>A compiler may produce binary output intended to run on the same type of computer and operating system ("<a href="/wiki/Platform_%28computing%29.html" title="Platform (computing)">platform</a>") as the compiler itself runs on. This is sometimes called a native-code compiler. Alternatively, it might produce binary output designed to run on a different platform. This is known as a <a href="/wiki/Cross_compiler.html" title="Cross compiler">cross compiler</a>. Cross compilers are very useful when bringing up a new hardware platform for the first time (see <a href="/wiki/Bootstrapping.html" title="Bootstrapping">bootstrapping</a>). Cross compilers are also necessary when developing software for <a href="/wiki/Microcontroller.html" title="Microcontroller">microcontroller</a> systems that have barely enough storage for the final machine code, much less a compiler. Compilers which are capable of producing both native and foreign binary output may be called either a cross compiler or a native compiler depending on a specific use, although it would be more correct to classify them as cross compilers.</p>
+<p>Interpreters are never classified as native or cross compilers, because they do not output a binary representation of their input code.</p>
+<p><a href="/wiki/Virtual_machine.html" title="Virtual machine">Virtual machine</a> (VM) compilers are typically not classified as either native or cross compilers. However, if need be, they can be classified as one or the other, especially in the less usual cases where a compiler is running inside the same VM (making it a native compiler), or where a compiler is capable of producing an output for several different platforms, including a VM (making it a cross compiler).</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: One-pass versus multi-pass compilers">edit</a>]</div>
+<p><a name="One-pass_versus_multi-pass_compilers" id="One-pass_versus_multi-pass_compilers"></a></p>
+<h3>One-pass versus multi-pass compilers</h3>
+<p>Classifying compilers by number of passes<sup id="_ref-0" class="reference"><a  title="">[1]</a></sup> has its background in the hardware resource limitations of computers. Compiling involves performing lots of work and early computers did not have enough memory to contain one program that did all of this work. So compilers were split up into smaller programs which each made a pass over the source (or some representation of it) performing some of the required analysis and translations.</p>
+<p>The ability to compile in a <a href="/wiki/One-pass_compiler.html" title="One-pass compiler">single pass</a> is often seen as a benefit because it simplifies the job of writing a compiler and one pass compilers are generally faster than <a href="/wiki/Multi-pass_compiler.html" title="Multi-pass compiler">multi-pass compilers</a>. Many languages were designed so that they could be compiled in a single pass (e.g., <a href="/wiki/Pascal_%28programming_language%29.html" title="Pascal (programming language)">Pascal</a>).</p>
+<p>In some cases the design of a language feature may require a compiler to perform more than one pass over the source. For instance, when a declaration appearing on line 20 of the source affects the translation of the statement appearing on line 10; the first pass needs to gather information about declarations appearing after statements that they affect, with the actual translation happening during a second pass.</p>
+<p>The disadvantage of compiling in a single pass is that it is not possible to perform many of the sophisticated <a href="/wiki/Compiler_optimization.html" title="Compiler optimization">optimizations</a> needed to generate high quality code. It can be difficult to count exactly how many passes an optimizing compiler makes. For instance, different phases of optimization may analyse one expression many times but only analyse another expression once.</p>
+<p>Splitting a compiler up into small programs is a technique used by researchers interested in producing provably correct compilers. Proving the correctness of a set of small programs often requiring less effort than proving the correctness of a larger, single, equivalent program.</p>
+<p>While the typical multi-pass compiler outputs machine code from its final pass, there are several other types:</p>
+<ul>
+<li>A "<a href="/wiki/Source-to-source_compiler.html" title="Source-to-source compiler">source-to-source compiler</a>" is a type of compiler that takes a high level language as its input and outputs a high level language. For example, an automatic parallelizing compiler will frequently take in a high level language program as an input and then transform the code and annotate it with parallel code annotations (e.g. <a href="/wiki/OpenMP.html" title="OpenMP">OpenMP</a>) or language constructs (e.g. Fortran's <code>DOALL</code> statements).</li>
+<li><a href="/wiki/Stage_compiler.html" title="Stage compiler">Stage compiler</a> that compiles to assembly language of a theoretical machine, like some <a href="/wiki/Prolog.html" title="Prolog">Prolog</a> implementations
+<ul>
+<li>This Prolog machine is also known as the <a href="/wiki/Warren_Abstract_Machine.html" title="Warren Abstract Machine">Warren Abstract Machine</a> (or WAM). Byte-code compilers for Java, <a href="/wiki/Python_language.html" title="Python language">Python</a> (and many more) are also a subtype of this.</li>
+</ul>
+</li>
+<li><a href="/wiki/Just-in-time_compilation.html" title="Just-in-time compilation">Just-in-time compiler</a>, used by Smalltalk and Java systems, and also by Microsoft .Net's <a href="/wiki/Common_Intermediate_Language.html" title="Common Intermediate Language">Common Intermediate Language</a> (CIL)
+<ul>
+<li>Applications are delivered in <a href="/wiki/Bytecode.html" title="Bytecode">bytecode</a>, which is compiled to native machine code just prior to execution.</li>
+</ul>
+</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Compiled versus interpreted languages">edit</a>]</div>
+<p><a name="Compiled_versus_interpreted_languages" id="Compiled_versus_interpreted_languages"></a></p>
+<h3>Compiled versus interpreted languages</h3>
+<p>Many people divide higher-level programming languages into <a href="/wiki/Compiled_language.html" title="Compiled language">compiled languages</a> and <a href="/wiki/Interpreted_language.html" title="Interpreted language">interpreted languages</a>. However, there is rarely anything about a language that requires it to be compiled or interpreted. Compilers and interpreters are <i>implementations</i> of languages, not languages themselves. The categorization usually reflects the most popular or widespread implementations of a language -- for instance, BASIC is thought of as an interpreted language, and C a compiled one, despite the existence of BASIC compilers and C interpreters.</p>
+<p>There are exceptions; some language specifications assume the use of a compiler (as with C), or spell out that implementations must include a compilation facility (as with <a href="/wiki/Common_Lisp.html" title="Common Lisp">Common Lisp</a>). Some languages have features that are very easy to implement in an interpreter, but make writing a compiler much harder; for example, <a href="/wiki/SNOBOL4.html" title="SNOBOL4">SNOBOL4</a>, and many scripting languages are capable of constructing arbitrary source code at runtime with regular string operations, and then executing that code by passing it to a special evaluation function. To implement these features in a compiled language, programs must usually be shipped with a runtime environment that includes the compiler itself.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Hardware compilation">edit</a>]</div>
+<p><a name="Hardware_compilation" id="Hardware_compilation"></a></p>
+<h3>Hardware compilation</h3>
+<p>Just as <a href="/wiki/Software.html" title="Software">software</a> can be <a href="/wiki/Compile.html" title="Compile">compiled</a> for execution on a processor, <a href="/wiki/Hardware.html" title="Hardware">hardware</a> can now be compiled directly from a high-level <a href="/wiki/Computer_program.html" title="Computer program">program</a> into a <a href="/wiki/Netlist.html" title="Netlist">netlist</a> of components suitable for loading into programmable hardware such as a <a href="/wiki/Field_Programmable_Gate_Array.html" title="Field Programmable Gate Array">Field Programmable Gate Array</a> (FPGA), produced by manufacturers like <a href="/wiki/Xilinx.html" title="Xilinx">Xilinx</a>. This new paradigm has been dubbed <i>computing without computers</i>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Compiler design">edit</a>]</div>
+<p><a name="Compiler_design" id="Compiler_design"></a></p>
+<h2>Compiler design</h2>
+<p>The approach taken to compiler design is affected by the complexity of the processing that needs to be done, the experience of the person(s) designing it, and the resources (eg, people and tools) available.</p>
+<p>A compiler for a relatively simple language written by one person might be a single, monolithic, piece of software. When the source language is large and complex, and high quality output is required the design may be split into a number of relatively independent phases, or passes. Having separate phases means development can be parcelled up into small parts and given to different people. It also becomes much easier to replace a single phase by an improved one, or to insert new phases later (eg, additional optimizations).</p>
+<p>The division of the compilation processes in phases (or passes) was championed by the <a href="/wiki/Production_Quality_Compiler-Compiler_Project.html" title="Production Quality Compiler-Compiler Project">Production Quality Compiler-Compiler Project</a> (PQCC) at <a href="/wiki/Carnegie_Mellon.html" title="Carnegie Mellon">Carnegie Mellon</a> University. This project introduced the terms <i>front end</i>, <i>middle end</i> (rarely heard today), and <i>back end</i>.</p>
+<p>All but the smallest of compilers have more than two phases. However, these phases are usually regarded as being part of the front end or the back end. The point at where these two <i>ends</i> meet is always open to debate. The front end is generally considered to be where syntactic and semantic processing takes place, along with translation to a lower level of representation (than source code).</p>
+<p>The middle (or 'analysis stage') performs optimizations on a more convenient form than either the source code (the input) or machine language (the output). Many optimizations can be performed without knowing or caring the exact architecture of the computer. In a compiler system, middle optimizations minimize the new programming needed to get a pretty good compiler for either a new computer or computer language.</p>
+<p>The back end takes the output from the middle. It may perform more analysis, transformations and optimizations that are for a particular computer. Then, it generates code for a particular computer.</p>
+<p>This front-end/analysis/back-end approach makes it possible to combine front ends for different <a href="/wiki/Programming_language.html" title="Programming language">languages</a> with back ends for different <a href="/wiki/CPU.html" title="CPU">CPUs</a>.</p>
+<p>This was actually done both in <a  class="external text" title="http://gcc.gnu.org/">GCC</a> and the <a  class="external text" title="http://tack.sourceforge.net/">Amsterdam compiler kit</a>, which have multiple front-ends, shared analysis and multiple back-ends.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Front end">edit</a>]</div>
+<p><a name="Front_end" id="Front_end"></a></p>
+<h2>Front end</h2>
+<p>The front end analyses the source code to build an internal representation of the program, called the <a href="/wiki/Intermediate_representation.html" title="Intermediate representation">intermediate representation</a> or <i>IR</i>. It also manages the <a href="/wiki/Symbol_table.html" title="Symbol table">symbol table</a>, a data structure mapping each symbol in the source code to associated information such as location, type and scope. This is done over several phases:</p>
+<ol>
+<li><b>Line reconstruction</b>. Languages which <a href="/wiki/Stropping.html" title="Stropping">strop</a> their keywords (and allow arbitrary spaces within identifiers) require a phase before parsing, which is to take the input source and convert it to a canonical form ready for the parser. The top-down recursive-descent table-driven parsers used in the 1960's typically would read the source a character at a time and would not require a separate tokenizing phase. <a href="/wiki/Algol60.html" title="Algol60">Algol</a>, <a href="/wiki/CORAL66.html" title="CORAL66">Coral66</a>, <a href="/wiki/Atlas_Autocode.html" title="Atlas Autocode">Atlas Autocode</a>, and <a href="/wiki/Edinburgh_IMP.html" title="Edinburgh IMP">Imp</a> are examples of stropped languages whose compilers would have a <i>Line Reconstruction</i> phase.</li>
+<li><a href="/wiki/Preprocessor.html" title="Preprocessor">Preprocessing</a>. Some languages, e.g., <a href="/wiki/C_language.html" title="C language">C</a>, require a preprocessing phase to do things such as conditional compilation and <a href="/wiki/Macro.html" title="Macro">macro</a> substitution. In the case of C the preprocessing phase includes lexical analysis.</li>
+<li><a href="/wiki/Lexical_analysis.html" title="Lexical analysis">Lexical analysis</a> breaks the source code text into small pieces called <i>tokens</i>. Each token is a single atomic unit of the language, for instance a <a href="/wiki/Keyword_%28computer%29.html" title="Keyword (computer)">keyword</a>, <a href="/wiki/Identifier.html" title="Identifier">identifier</a> or <a href="/wiki/Symbol.html" title="Symbol">symbol name</a>. The token syntax is typically a <a href="/wiki/Regular_language.html" title="Regular language">regular language</a>, so a <a href="/wiki/Finite_state_automaton.html" title="Finite state automaton">finite state automaton</a> constructed from a <a href="/wiki/Regular_expression.html" title="Regular expression">regular expression</a> can be used to recognize it. This phase is also called lexing or scanning, and the software doing lexical analysis is called a <a href="/wiki/Lexical_analyzer.html" title="Lexical analyzer">lexical analyzer</a> or scanner.</li>
+<li><a href="/wiki/Syntax_analysis.html" title="Syntax analysis">Syntax analysis</a> involves <a href="/wiki/Parsing.html" title="Parsing">parsing</a> the token sequence to identify the syntactic structure of the program.</li>
+<li><a href="/wiki/Semantic_analysis_%28computer_science%29.html" title="Semantic analysis (computer science)">Semantic analysis</a> is the phase that checks the <i>meaning</i> of the program to ensure it obeys the rules of the language. One example is type checking. The compiler emits most diagnostics during semantic analysis, and frequently combines it with syntax analysis.</li>
+</ol>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Back end">edit</a>]</div>
+<p><a name="Back_end" id="Back_end"></a></p>
+<h2>Back end</h2>
+<p>The term of <i>Back end</i> is sometime confused with <i>code generator</i> for the overlapped functionality of generating assembly code. Some literature use <i>Middle end</i> to distinguish the generic analysis and optimization phases in the back end from the machine dependent code generators.</p>
+<p>The work in back end is done in multiple steps:</p>
+<ol>
+<li><a href="/wiki/Compiler_analysis.html" title="Compiler analysis">Compiler analysis</a> - This is the process to gather program information from the intermediate representation of the input source files. Typical analysis are variable define-use and <a href="/wiki/Use-define_chain.html" title="Use-define chain">use-define chain</a>, <a href="/wiki/Dependence_analysis.html" title="Dependence analysis">dependence analysis</a>, <a href="/wiki/Alias_analysis.html" title="Alias analysis">alias analysis</a>, <a  class="new" title="Pointer analysis">pointer analysis</a> etc. Accurate analysis is the base for any compiler optimizations. The <a href="/wiki/Call_graph.html" title="Call graph">call graph</a> and <a href="/wiki/Control_flow_graph.html" title="Control flow graph">control flow graph</a> are usually also built during the analysis phase.</li>
+<li><a href="/wiki/Compiler_optimization.html" title="Compiler optimization">Optimization</a> - the intermediate language representation is transformed into functionally equivalent but faster (or smaller) forms. Popular optimizations are <a href="/wiki/Inline_expansion.html" title="Inline expansion">inline expansion</a>, <a href="/wiki/Dead_code_elimination.html" title="Dead code elimination">dead code elimination</a>, <a href="/wiki/Constant_propagation.html" title="Constant propagation">constant propagation</a>, <a href="/wiki/Loop_transformation.html" title="Loop transformation">loop transformation</a>, <a href="/wiki/Register_allocation.html" title="Register allocation">register allocation</a> or even <a href="/wiki/Automatic_parallelization.html" title="Automatic parallelization">automatic parallelization</a>.</li>
+<li><a href="/wiki/Code_generation.html" title="Code generation">Code generation</a> - the transformed intermediate language is translated into the output language, usually the native <a href="/wiki/Machine_language.html" title="Machine language">machine language</a> of the system. This involves resource and storage decisions, such as deciding which variables to fit into registers and memory and the selection and scheduling of appropriate machine instructions along with their associated addressing modes (see also Sethi-Ullman algorithm).</li>
+</ol>
+<p>Compiler analysis is the prerequisite for any compiler optimization and they tightly work together. For example, <a href="/wiki/Dependence_analysis.html" title="Dependence analysis">dependence analysis</a> is crucial for <a href="/wiki/Loop_transformation.html" title="Loop transformation">loop transformation</a>.</p>
+<p>In addition, the scope of compiler analysis and optimization vary greatly, from as small as a <a href="/wiki/Basic_block.html" title="Basic block">basic block</a> to the procedure/function level, or even over the whole program (<a href="/wiki/Interprocedural_optimization.html" title="Interprocedural optimization">interprocedural optimization</a>). Obviously, a compiler can potentially do a better job using a broader view. But that broad view is not free: large scope analysis and optimizations are very costly in terms of compilation time and memory space; this is especially true for interprocedural analysis and optimizations.</p>
+<p>The existence of interprocedural analysis and optimization is common in modern commercial compilers from <a href="/wiki/IBM.html" title="IBM">IBM</a>, <a href="/wiki/Silicon_Graphics.html" title="Silicon Graphics">SGI</a>, <a href="/wiki/Intel.html" title="Intel">Intel</a>, <a href="/wiki/Microsoft.html" title="Microsoft">Microsoft</a>, and <a href="/wiki/Sun_Microsystems.html" title="Sun Microsystems">Sun Microsystems</a>. The open source <a href="/wiki/GNU_Compiler_Collection.html" title="GNU Compiler Collection">GCC</a> was criticized for a long time for lacking powerful interprocedural optimizations, but it is changing in this respect. Another good open source compiler with full analysis and optimization infrastructure is <a href="/wiki/Open64.html" title="Open64">Open64</a>, which is used by many organizations for research and commercial purposes.</p>
+<p>Due to the extra time and space needed for compiler analysis and optimization, some compilers skip them by default. Users have to use compilation options to explicitly tell the compiler which optimizations should be enabled.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: A compiler example">edit</a>]</div>
+<p><a name="A_compiler_example" id="A_compiler_example"></a></p>
+<h2>A compiler example</h2>
+<p>The following program represents a very simple one-pass compiler, written in <a href="/wiki/C_%28programming_language%29.html" title="C (programming language)">C</a>. This compiler compiles expression defined in <a href="/wiki/Infix_notation.html" title="Infix notation">infix notation</a> to <a href="/wiki/Reverse_Polish_notation.html" title="Reverse Polish notation">postfix notation</a> and also into an <a href="/wiki/Assembly_language.html" title="Assembly language">assembly-like machine language</a>. This compiler uses the recursive descent strategy. This strategy is recognisable by the fact that each function corresponds to a non-terminal symbol in a language grammar.</p>
+<pre>
+#include &lt;stdlib.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+#define MODE_POSTFIX    0
+#define MODE_ASSEMBLY   1
+
+char    lookahead;
+int     pos;
+int     compile_mode;
+char    expression[20+1];
+
+void error()
+{
+        printf("Syntax error!\n");
+}
+
+void match( char t )
+{
+        if( lookahead == t )
+        {
+                pos++;
+                lookahead = expression[pos];            
+        }
+        else
+                error();
+}
+
+void digit()
+{
+        switch( lookahead )
+        {
+                case '0':
+                case '1':
+                case '2':
+                case '3':
+                case '4':
+                case '5':
+                case '6':
+                case '7':
+                case '8':
+                case '9':
+                        if( compile_mode == MODE_POSTFIX )
+                                printf("%c", lookahead);
+                        else
+                                printf("\tPUSH %c\n", lookahead);                     
+                        
+                        match( lookahead );
+                        break;
+                default:
+                        error();
+                        break;
+        }
+}
+
+void term()
+{
+        digit();
+        while(1)
+        {
+                switch( lookahead )
+                {
+                        case '*':
+                                match('*');
+                                digit();
+                                                                
+                                printf( "%s", compile_mode == MODE_POSTFIX ? "*" 
+                                        : "\tPOP B\n\tPOP A\n\tMUL A, B\n\tPUSH A\n");
+                                        
+                                break;
+                        case '/':
+                                match('/');
+                                digit();
+
+                                printf( "%s", compile_mode == MODE_POSTFIX ? "/" 
+                                        : "\tPOP B\n\tPOP A\n\tDIV A, B\n\tPUSH A\n");
+                                break;
+                        default:
+                                return;
+                }
+        }
+}
+
+void expr()
+{
+        term();
+        while(1)
+        {
+                switch( lookahead )
+                {
+                        case '+':
+                                match('+');
+                                term();
+                                
+                                printf( "%s", compile_mode == MODE_POSTFIX ? "+" 
+                                        : "\tPOP B\n\tPOP A\n\tADD A, B\n\tPUSH A\n");
+                                break;
+                        case '-':
+                                match('-');
+                                term();
+
+                                printf( "%s", compile_mode == MODE_POSTFIX ? "-" 
+                                        : "\tPOP B\n\tPOP A\n\tSUB A, B\n\tPUSH A\n");
+                                break;
+                        default:
+                                return;
+                }
+        }
+}
+
+int main ( int argc, char** argv )
+{
+        printf("Please enter an infix-notated expression with single digits:\n\n\t");
+        scanf("%20s", expression);
+        
+        printf("\nCompiling to postfix-notated expression:\n\n\t");   
+        compile_mode = MODE_POSTFIX;
+        pos = 0;
+        lookahead = *expression;
+        expr();
+                
+        printf("\n\nCompiling to assembly-notated machine code:\n\n");        
+        compile_mode = MODE_ASSEMBLY;
+        pos = 0;
+        lookahead = *expression;
+        expr();
+
+        return 0;
+}
+</pre>
+<p>A possible execution of this simple compiler results in the following output:</p>
+<pre>
+Please enter an infix-notated expression with single digits:
+
+        3-4*2+2
+
+Compiling to postfix-notated expression:
+
+        342*-2+
+
+Compiling to assembly-notated machine code:
+
+        PUSH 3
+        PUSH 4
+        PUSH 2
+        POP B
+        POP A
+        MUL A, B
+        PUSH A
+        POP B
+        POP A
+        SUB A, B
+        PUSH A
+        PUSH 2
+        POP B
+        POP A
+        ADD A, B
+        PUSH A
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Notes">edit</a>]</div>
+<p><a name="Notes" id="Notes"></a></p>
+<h2>Notes</h2>
+<ol class="references">
+<li id="_note-0"><b><a  title="">^</a></b> A <i>pass</i> has also been known as a <i>parse</i> in some textbooks. The idea is that the source code is <i>parsed</i> by gradual, iterative refinement to produce the completely translated object code at the end of the process. There is, however, some dispute over the general use of <i>parse</i> for all those phases (passes), since some of them, e.g. object code generation, are arguably not regarded to be parsing as such.</li>
+</ol>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<ul>
+<li><i><a  title="Compilers: Principles, Techniques, and Tools">Compilers: Principles, Techniques and Tools</a></i> by <a href="/wiki/Alfred_V._Aho.html" title="Alfred V. Aho">Alfred V. Aho</a>, <a href="/wiki/Ravi_Sethi.html" title="Ravi Sethi">Ravi Sethi</a>, and <a href="/wiki/Jeffrey_D._Ullman.html" title="Jeffrey D. Ullman">Jeffrey D. Ullman</a> (<a  class="internal">ISBN 0-201-10088-6</a>) is considered to be the standard authority on compiler basics(undergraduate level), and makes a good primer for the techniques mentioned above. (It is often called the <i><b>Dragon Book</b></i> because of the picture on its cover showing a Knight of Programming fighting the Dragon of Compiler Design.) <a  class="external text" title="http://www.aw.com/catalog/academic/product/0,4096,0201100886,00.html">link to publisher</a></li>
+<li><i>Advanced Compiler Design and Implementation</i> by <a href="/wiki/Steven_Muchnick.html" title="Steven Muchnick">Steven Muchnick</a> (<a  class="internal">ISBN 1-55860-320-4</a>). One of the widely-used text books for advanced compiler courses(graduate level).</li>
+<li><i>Understanding and Writing Compilers: A Do It Yourself Guide</i> (<a  class="internal">ISBN 0-333-21732-2</a>) by <a href="/wiki/Richard_Bornat.html" title="Richard Bornat">Richard Bornat</a> is an unusually helpful book, being one of the few that adequately explains the recursive generation of machine instructions from a <a href="/wiki/Parse_tree.html" title="Parse tree">parse tree</a>. Having learnt his subject in the early days of mainframes and minicomputers, the author has many useful insights that more recent books often fail to convey.</li>
+<li><i>An Overview of the Production Quality Compiler-Compiler Project</i> by Leverett, Cattel, Hobbs, Newcomer, Reiner, Schatz and Wulf. Computer 13(8):38-49 (August 1980)</li>
+<li><i>Compiler Construction</i> by <a href="/wiki/Niklaus_Wirth.html" title="Niklaus Wirth">Niklaus Wirth</a> (<a  class="internal">ISBN 0-201-40353-6</a>) Addison-Wesley 1996, 176 pages, also available at <a  class="external autonumber" title="http://www.oberon2005.ru/book/ccnw2005e.pdf">[3]</a>. Step-by-step guide to using recursive descent parser. Describes a compiler for Oberon-0, a subset of the author's programming language, <a href="/wiki/Oberon_%28programming_language%29.html" title="Oberon (programming language)">Oberon</a>.</li>
+<li>"Programming Language Pragmatics" by Michael Scott (<a  class="internal">ISBN 0-12-633951-1</a>) Morgan Kaufmann 2005, 2nd edition, 912 pages. This book offers a broad and in-depth introduction to compilation techniques and programming languages, illustrated with many examples. More information on the book can be found at <a  class="external text" title="http://www.cs.rochester.edu/~scott/pragmatics/">the author's site</a>.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li>The <a href="/wiki/Kernel_%28computer_science%29.html" title="Kernel (computer science)">Kernel</a>, the operating system core, is closely coupled with the compiler; many of the kernel design choices must be implemented by the compiler.</li>
+<li><a href="/wiki/Compiler_optimization.html" title="Compiler optimization">Compiler optimization</a>
+<ul>
+<li><a href="/wiki/Loop_nest_optimization.html" title="Loop nest optimization">Loop nest optimization</a></li>
+</ul>
+</li>
+<li><a href="/wiki/Compiler_analysis.html" title="Compiler analysis">Compiler analysis</a></li>
+<li><a href="/wiki/Assembly_language.html" title="Assembly language">Assembler</a></li>
+<li>Interpreters:
+<ul>
+<li><a href="/wiki/Interpreter_%28computer_software%29.html" title="Interpreter (computer software)">Interpreter software</a></li>
+<li><a href="/wiki/Abstract_interpretation.html" title="Abstract interpretation">Abstract interpretation</a></li>
+</ul>
+</li>
+<li><a href="/wiki/Linker.html" title="Linker">Linker</a></li>
+<li><a href="/wiki/Parsing.html" title="Parsing">Parsing</a>:
+<ul>
+<li><a href="/wiki/Top-down_parsing.html" title="Top-down parsing">Top-down parsing</a>
+<ul>
+<li><a href="/wiki/Recursive_descent_parser.html" title="Recursive descent parser">Recursive descent parser</a></li>
+</ul>
+</li>
+<li><a href="/wiki/Bottom-up_parsing.html" title="Bottom-up parsing">Bottom-up parsing</a></li>
+<li><a href="/wiki/Attribute_grammar.html" title="Attribute grammar">Attribute grammar</a></li>
+</ul>
+</li>
+<li><a href="/wiki/Semantic_analysis_%28computer_science%29.html" title="Semantic analysis (computer science)">Semantic analysis</a>
+<ul>
+<li><a href="/wiki/Semantics_encoding.html" title="Semantics encoding">Semantics encoding</a></li>
+</ul>
+</li>
+<li><a href="/wiki/Error_avalanche.html" title="Error avalanche">Error avalanche</a></li>
+<li><a href="/wiki/Decompiler.html" title="Decompiler">Decompiler</a></li>
+<li><a href="/wiki/Just-in-time_compiler.html" title="Just-in-time compiler">Just-in-time compiler</a></li>
+<li><a href="/wiki/Meta-Compilation.html" title="Meta-Compilation">Meta-Compilation</a></li>
+<li><a href="/wiki/Preprocessor.html" title="Preprocessor">Preprocessor</a></li>
+<li><a href="/wiki/List_of_important_publications_in_computer_science#Compilers.html" title="List of important publications in computer science">Important publications in compilers</a> for <a href="/wiki/Programming_language.html" title="Programming language">programming languages</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<div class="infobox sisterproject">
+<div style="float: left;">
+<div class="floatnone"><span><a  class="image" title="Wikibooks"><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Wikibooks-logo-en.svg/50px-Wikibooks-logo-en.svg.png" alt="Wikibooks" width="50" height="57" longdesc="/wiki/Image:Wikibooks-logo-en.svg" /></a></span></div>
+</div>
+<div style="margin-left: 60px;"><a  class="extiw" title="wikibooks:">Wikibooks</a> has more about this subject:
+<div style="margin-left: 10px;"><i><b><a  class="extiw" title="wikibooks:Compiler_construction">Compiler construction</a></b></i></div>
+</div>
+</div>
+<ul>
+<li><a  class="external text" title="http://www.codepedia.com/compile">What is "compile"?</a> from the developer's encyclopedia</li>
+<li><a  class="external text" title="http://gcc.gnu.org/">GCC, a widely-used open-source compiler</a></li>
+<li><a  class="external text" title="http://www.caller.me.uk/Compilr/">Compilr, an online compiler</a></li>
+<li><a  class="external text" title="http://www.kegel.com/crosstool/">Building and Testing gcc/glibc cross toolchains</a></li>
+<li><a  class="external text" title="http://tack.sourceforge.net/">The Amsterdam Compiler Kit</a> open-source</li>
+<li><a  class="external text" title="http://citeseer.ist.psu.edu/cs?q=compiler">Citations from CiteSeer</a></li>
+<li><a  class="external text" title="http://compilers.iecc.com/">The comp.compilers newsgroup and RSS feed</a></li>
+<li><a  class="external text" title="http://compilers.iecc.com/crenshaw/"><i>Let's Build a Compiler</i> by Jack Crenshaw (1988 to 1995)</a> "a non-technical introduction to compiler construction"</li>
+<li><a  class="external text" title="http://www.gtoal.com/software/CompilersOneOhOne">Simple compiler source</a> from the "<a  class="external text" title="http://groups.yahoo.com/group/compilers101/">Compilers 101</a>" group. One page, easy to follow.</li>
+<li><a  class="external text" title="http://www.cafm.lsbu.ac.uk/hwcomp/">Hardware compilation information</a></li>
+<li><a  class="external text" title="http://www.jiscmail.ac.uk/lists/hwcomp.html">Hardware compilation mailing list</a></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:5739-0!1!0!default!!en!2 and timestamp 20060910162121 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Compilers">Compilers</a></span> | <span dir='ltr'><a  title="Category:Programming language implementation">Programming language implementation</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Compiler.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-af"><a >Afrikaans</a></li>
+				<li class="interwiki-ast"><a >Asturianu</a></li>
+				<li class="interwiki-bg"><a >Български</a></li>
+				<li class="interwiki-ca"><a >Català</a></li>
+				<li class="interwiki-cs"><a >Česky</a></li>
+				<li class="interwiki-da"><a >Dansk</a></li>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-et"><a >Eesti</a></li>
+				<li class="interwiki-el"><a >Ελληνικά</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-gl"><a >Galego</a></li>
+				<li class="interwiki-ko"><a >한국어</a></li>
+				<li class="interwiki-hr"><a >Hrvatski</a></li>
+				<li class="interwiki-id"><a >Bahasa Indonesia</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-he"><a >עברית</a></li>
+				<li class="interwiki-lt"><a >Lietuvių</a></li>
+				<li class="interwiki-hu"><a >Magyar</a></li>
+				<li class="interwiki-nl"><a >Nederlands</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-no"><a >Norsk (bokmål)</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-pt"><a >Português</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+				<li class="interwiki-simple"><a >Simple English</a></li>
+				<li class="interwiki-fi"><a >Suomi</a></li>
+				<li class="interwiki-sv"><a >Svenska</a></li>
+				<li class="interwiki-ta"><a >தமிழ்</a></li>
+				<li class="interwiki-th"><a >ไทย</a></li>
+				<li class="interwiki-vi"><a >Tiếng Việt</a></li>
+				<li class="interwiki-tr"><a >Türkçe</a></li>
+				<li class="interwiki-zh"><a >中文</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 02:44, 10 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv96 in 0.123 secs. --></body></html>

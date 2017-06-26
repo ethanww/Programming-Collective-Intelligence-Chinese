@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Syntactic sugar,Alan Perlis,Array,C programming language,Computer language,Free On-line Dictionary of Computing,Functional programming,GNU Free Documentation License,Infix notation,Lambda calculus,ML programming language" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Syntactic sugar - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Syntactic_sugar";
+			var wgTitle = "Syntactic sugar";
+			var wgArticleId = 29054;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Syntactic sugar</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p><b>Syntactic <a href="/wiki/Sugar.html" title="Sugar">sugar</a></b> is a term coined by <a href="/wiki/Peter_J._Landin.html" title="Peter J. Landin">Peter J. Landin</a> for additions to the <a href="/wiki/Syntax.html" title="Syntax">syntax</a> of a <a href="/wiki/Computer_language.html" title="Computer language">computer language</a> that do not affect its <a  class="new" title="Expressiveness">expressiveness</a> but make it "sweeter" for humans to use. Syntactic sugar gives the <a href="/wiki/Programmer.html" title="Programmer">programmer</a> (designer, in the case of specification computer languages) an alternative way of coding (specifying) that is more practical, either by being more succinct or more like some familiar notation. It does not affect the expressiveness of the formalism.</p>
+<p>Syntactic sugar can be easily translated ("desugared") to produce a program (specification) in some simpler "core" syntax. In Landin's case, the core was a <a href="/wiki/Lambda_calculus.html" title="Lambda calculus">lambda calculus</a> enriched with a few operations, such as assignment. Following Landin's insights, some later programming languages, such as <a href="/wiki/ML_programming_language.html" title="ML programming language">ML</a> and <a href="/wiki/Scheme_programming_language.html" title="Scheme programming language">Scheme</a>, were explicitly designed as a language core of essential constructs, into which other convenient features can be <i>desugared</i>. This is, in fact, the usual <a href="/wiki/Mathematical.html" title="Mathematical">mathematical</a> practice of starting from a minimal set of primitives, but doing most work in a convenient, special-purpose notation defined in terms of those primitives.</p>
+<p>For instance, while it is common for most programming languages to include standard mathematical operations using <a href="/wiki/Infix_notation.html" title="Infix notation">infix notation</a> (you will often find operations such as <code>i + 1</code> throughout a typical program's <a href="/wiki/Source_code.html" title="Source code">source code</a>) many of these languages (mainly those that are <a href="/wiki/Functional_programming.html" title="Functional programming">functional languages</a>), handle the actual math by calling functions. In these cases the infix notation is actually syntactic sugar for something such as <code>add(i, 1)</code>.</p>
+<p>Another example is in the <a href="/wiki/C_programming_language.html" title="C programming language">C programming language</a>'s handling of <a href="/wiki/Array.html" title="Array">arrays</a>. In C, arrays are constructed as blocks of memory, accessed via an offset from the array's starting point in memory. However, pointer mathematics can often be "tricky" and error prone, so C provides the <code>a[i]</code> syntax for what would otherwise be written as <code>*(a + i)</code>.</p>
+<p>A <a href="/wiki/Mediawiki.html" title="Mediawiki">Mediawiki</a> example would be the ability of signing one's comments in talk pages with --~~~~. The users could insert the resulting Wiki code themselves, but syntactic sugar makes it easier.</p>
+<p><a href="/wiki/Alan_Perlis.html" title="Alan Perlis">Alan Perlis</a> once quipped that <i>"Syntactic sugar causes cancer of the <a href="/wiki/Semicolon.html" title="Semicolon">semicolon</a>."</i></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Syntactic salt">edit</a>]</div>
+<p><a name="Syntactic_salt" id="Syntactic_salt"></a></p>
+<h2>Syntactic salt</h2>
+<p>The metaphor has been extended by coining the term <b>syntactic <a href="/wiki/Salt.html" title="Salt">salt</a></b>, a feature designed to make it harder to write bad code. Specifically, syntactic salt is a hoop the programmer must jump through just to prove that he knows what's going on, rather than to express a program action. Some programmers consider required type declarations to be syntactic salt. A requirement to write "end if", "end while", "end do", etc. to terminate the last block controlled by a control construct (as opposed to just "end") is widely considered syntactic salt. Critics deride languages rich in salt as <a  class="new" title="Bondage and discipline language">bondage and discipline languages</a>.</p>
+<p>The correct amount of both syntactic sugar and syntactic salt in a language is a matter of personal opinion, and thus is the subject of never-ending debate.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Syntactic saccharin">edit</a>]</div>
+<p><a name="Syntactic_saccharin" id="Syntactic_saccharin"></a></p>
+<h2>Syntactic saccharin</h2>
+<p>Another extension is <b>syntactic <a href="/wiki/Saccharin.html" title="Saccharin">saccharin</a></b>. Just as saccharin sweetens without providing real calories, syntactic saccharine is purported to ease programming without actually doing so.</p>
+<p><span class="boilerplate" id="foldoc"><i>This article was originally based on material from the <a href="/wiki/Free_On-line_Dictionary_of_Computing.html" title="Free On-line Dictionary of Computing">Free On-line Dictionary of Computing</a>, which is <a  title="Wikipedia:Foldoc license">licensed</a> under the <a href="/wiki/GNU_Free_Documentation_License.html" title="GNU Free Documentation License">GFDL</a>.</i></span></p>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:29054-0!1!0!default!!en!2 and timestamp 20060910150322 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:FOLDOC sourced articles">FOLDOC sourced articles</a></span> | <span dir='ltr'><a  title="Category:Computer jargon">Computer jargon</a></span> | <span dir='ltr'><a  title="Category:Source code">Source code</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Syntactic_sugar.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-io"><a >Ido</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 05:22, 6 May 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv108 in 0.127 secs. --></body></html>

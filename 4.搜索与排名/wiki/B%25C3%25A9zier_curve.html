@@ -1,0 +1,472 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Bézier curve,1959,1962,Adobe Illustrator,Affine transformation,Asymptote (vector graphics language),Automobile,Bernstein polynomial,Bézier spline,Bézier surface,Bézier triangle" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Bézier curve - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Bézier_curve";
+			var wgTitle = "Bézier curve";
+			var wgArticleId = 4664;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Bézier curve</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>In the <a href="/wiki/Mathematics.html" title="Mathematics">mathematical</a> subfield of <a href="/wiki/Numerical_analysis.html" title="Numerical analysis">numerical analysis</a> a <b>Bézier curve</b> is a <a href="/wiki/Parametric_curve.html" title="Parametric curve">parametric curve</a> important in <a href="/wiki/Computer_graphics.html" title="Computer graphics">computer graphics</a>. A <a href="/wiki/Numerical_stability.html" title="Numerical stability">numerically stable</a> method to evaluate Bézier curves is <a href="/wiki/De_Casteljau%27s_algorithm.html" title="De Casteljau's algorithm">de Casteljau's algorithm</a>. Generalizations of Bézier curves to higher <a href="/wiki/Dimension.html" title="Dimension">dimensions</a> are called <a href="/wiki/B%C3%A9zier_surface.html" title="Bézier surface">Bézier surfaces</a>, of which the <a href="/wiki/B%C3%A9zier_triangle.html" title="Bézier triangle">Bézier triangle</a> is a special case.</p>
+<p>Bézier curves were widely publicised in <a href="/wiki/1962.html" title="1962">1962</a> by the <a href="/wiki/France.html" title="France">French</a> engineer <a href="/wiki/Pierre_B%C3%A9zier.html" title="Pierre Bézier">Pierre Bézier</a> who used them to design <a href="/wiki/Automobile.html" title="Automobile">automobile</a> bodies. The curves were developed in <a href="/wiki/1959.html" title="1959">1959</a> by <a href="/wiki/Paul_de_Casteljau.html" title="Paul de Casteljau">Paul de Casteljau</a> using <a href="/wiki/De_Casteljau%27s_algorithm.html" title="De Casteljau's algorithm">de Casteljau's algorithm</a>.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Examination of cases</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">1.1</span> <span class="toctext">Linear Bézier curves</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.2</span> <span class="toctext">Quadratic Bézier curves</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.3</span> <span class="toctext">Cubic Bézier curves</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Generalization</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">2.1</span> <span class="toctext">Terminology</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.2</span> <span class="toctext">Notes</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Constructing Bézier curves</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">3.1</span> <span class="toctext">Linear curves</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.2</span> <span class="toctext">Quadratic curves</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.3</span> <span class="toctext">Higher order curves</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Application in computer graphics</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Code example</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">Rational Bézier curves</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">8</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">9</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Examination of cases">edit</a>]</div>
+<p><a name="Examination_of_cases" id="Examination_of_cases"></a></p>
+<h2>Examination of cases</h2>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Linear Bézier curves">edit</a>]</div>
+<p><a name="Linear_B.C3.A9zier_curves" id="Linear_B.C3.A9zier_curves"></a></p>
+<h3>Linear Bézier curves</h3>
+<p>Given points <b>P</b><sub>0</sub> and <b>P</b><sub>1</sub>, a linear Bézier curve is just a <a href="/wiki/Straight_line.html" title="Straight line">straight line</a> between those two points. The curve is given by</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/3/e/9/3e9b0196234c9ee410c67dfea9235c4b.png" alt="\mathbf{B}(t)=(1-t)\mathbf{P}_0 + t\mathbf{P}_1 \mbox{ , } t \in [0,1]." /></dd>
+</dl>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Quadratic Bézier curves">edit</a>]</div>
+<p><a name="Quadratic_B.C3.A9zier_curves" id="Quadratic_B.C3.A9zier_curves"></a></p>
+<h3>Quadratic Bézier curves</h3>
+<p>A quadratic Bézier curve is the path traced by the function <b>B</b>(<i>t</i>), given points <b>P</b><sub>0</sub>, <b>P</b><sub>1</sub>, and <b>P</b><sub>2</sub>,</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/b/0/a/b0a53071f8baba155c699a30f26f60b0.png" alt="\mathbf{B}(t) = (1 - t)^{2}\mathbf{P}_0 + 2t(1 - t)\mathbf{P}_1 + t^{2}\mathbf{P}_2 \mbox{ , } t \in [0,1]." /></dd>
+</dl>
+<p><a href="/wiki/TrueType.html" title="TrueType">TrueType</a> fonts use <a href="/wiki/B%C3%A9zier_spline.html" title="Bézier spline">Bézier splines</a> composed of the quadratic Bézier curves.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Cubic Bézier curves">edit</a>]</div>
+<p><a name="Cubic_B.C3.A9zier_curves" id="Cubic_B.C3.A9zier_curves"></a></p>
+<h3>Cubic Bézier curves</h3>
+<div class="thumb tright">
+<div style="width:302px;"><a  class="internal" title="Cubic Bézier curve"><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Bezier_curve.svg/300px-Bezier_curve.svg.png" alt="Cubic Bézier curve" width="300" height="188" longdesc="/wiki/Image:Bezier_curve.svg" /></a>
+<div class="thumbcaption">
+<div class="magnify" style="float:right"><a  class="internal" title="Enlarge"><img src="/skins-1.5/common/images/magnify-clip.png" width="15" height="11" alt="Enlarge" /></a></div>
+Cubic Bézier curve</div>
+</div>
+</div>
+<p>Four points <b>P</b><sub>0</sub>, <b>P</b><sub>1</sub>, <b>P</b><sub>2</sub> and <b>P</b><sub>3</sub> in the plane or in three-dimensional space define a cubic Bézier curve. The curve starts at <b>P</b><sub>0</sub> going toward <b>P</b><sub>1</sub> and arrives at <b>P</b><sub>3</sub> coming from the direction of <b>P</b><sub>2</sub>. In general, it will not pass through <b>P</b><sub>1</sub> or <b>P</b><sub>2</sub>; these points are only there to provide directional information. The distance between <b>P</b><sub>0</sub> and <b>P</b><sub>1</sub> determines "how long" the curve moves into direction <b>P</b><sub>2</sub> before turning towards <b>P</b><sub>3</sub>.</p>
+<p>The <a href="/wiki/Parametric.html" title="Parametric">parametric</a> form of the curve is:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/2/7/c/27c853f3ade2d6b6c3a2145a2f9d5fc1.png" alt="\mathbf{B}(t)=\mathbf{P}_0(1-t)^3+3\mathbf{P}_1t(1-t)^2+3\mathbf{P}_2t^2(1-t)+\mathbf{P}_3t^3 \mbox{ , } t \in [0,1]." /></dd>
+</dl>
+<p>Modern imaging systems like <a href="/wiki/PostScript.html" title="PostScript">PostScript</a>, <a href="/wiki/Asymptote_%28vector_graphics_language%29.html" title="Asymptote (vector graphics language)">Asymptote</a> and <a href="/wiki/Metafont.html" title="Metafont">Metafont</a> use Bézier splines composed of cubic Bézier curves for drawing curved shapes.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Generalization">edit</a>]</div>
+<p><a name="Generalization" id="Generalization"></a></p>
+<h2>Generalization</h2>
+<p>The Bézier curve of degree <span class="texhtml"><i>n</i></span> can be generalized as follows. Given points <b>P</b><sub>0</sub>, <b>P</b><sub>1</sub>,..., <b>P</b><sub>n</sub>, the Bézier curve is</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/8/c/e/8ce08ca45bf146d5ec689f731367b326.png" alt="\mathbf{B}(t)=\sum_{i=0}^n {n\choose i}\mathbf{P}_i(1-t)^{n-i}t^i =\mathbf{P}_0(1-t)^n+{n\choose 1}\mathbf{P}_1(1-t)^{n-1}t+\cdots+\mathbf{P}_nt^n \mbox{ , } t \in [0,1]." /></dd>
+</dl>
+<p>For example, for <span class="texhtml"><i>n</i> = 5</span>:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/4/f/0/4f06468b00fcd742c2e9ed1350190c19.png" alt="\mathbf{B}(t)=\mathbf{P}_0(1-t)^5+5\mathbf{P}_1t(1-t)^4+10\mathbf{P}_2t^2(1-t)^3+10\mathbf{P}_3t^3(1-t)^2+5\mathbf{P}_4t^4(1-t)+\mathbf{P}_5t^5 \mbox{ , } t \in [0,1]." /></dd>
+</dl>
+<p>This formula can be expressed recursively as follows: Let <img class='tex' src="http://upload.wikimedia.org/math/1/2/4/12482104eb5115c14219436749bcbbc0.png" alt="\mathbf{B}_{\mathbf{P}_0\mathbf{P}_1\ldots\mathbf{P}_n}" /> denote the Bézier curve determined by the points <b>P</b><sub>0</sub>, <b>P</b><sub>1</sub>,..., <b>P</b><sub>n</sub>. Then</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/6/d/2/6d2e684b5be1a8f0b169b17be7b5cbc2.png" alt="\mathbf{B}(t) = \mathbf{B}_{\mathbf{P}_0\mathbf{P}_1\ldots\mathbf{P}_n}(t) = (1-t)\mathbf{B}_{\mathbf{P}_0\mathbf{P}_1\ldots\mathbf{P}_{n-1}}(t) + t\mathbf{B}_{\mathbf{P}_0\mathbf{P}_1\ldots\mathbf{P}_n}(t)" /></dd>
+</dl>
+<p>In words, the degree <span class="texhtml"><i>n</i></span> Bézier curve is an interpolation between two degree <span class="texhtml"><i>n</i> − 1</span> Bézier curves.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Terminology">edit</a>]</div>
+<p><a name="Terminology" id="Terminology"></a></p>
+<h3>Terminology</h3>
+<p>Some terminology is associated with these parametric curves. We have</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/3/d/8/3d8f42d9608ecbd44e2f57758d159eb2.png" alt="\mathbf{B}(t) = \sum_{i=0}^n \mathbf{P}_i\mathbf{b}_{i,n}(t),\quad t\in[0,1]" /></dd>
+</dl>
+<p>where the polynomials</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/9/d/d/9dd8bd0a2b2706e270e89cbf22626e0e.png" alt="\mathbf{b}_{i,n}(t) = {n\choose i} t^i (1-t)^{n-i},\quad i=0,\ldots n" /></dd>
+</dl>
+<p>are known as <a href="/wiki/Bernstein_polynomial.html" title="Bernstein polynomial">Bernstein basis polynomials</a> of degree <i>n</i>, defining 0<sup>0</sup> = 1.</p>
+<p>The points <b>P</b><sub><i>i</i></sub> are called <i>control points</i> for the Bézier curve. The <a href="/wiki/Polygon.html" title="Polygon">polygon</a> formed by connecting the Bézier points with <a href="/wiki/Line_%28mathematics%29.html" title="Line (mathematics)">lines</a>, starting with <b>P</b><sub>0</sub> and finishing with <b>P</b><sub><i>n</i></sub>, is called the <i>Bézier polygon</i> (or <i>control polygon</i>). The <a href="/wiki/Convex_hull.html" title="Convex hull">convex hull</a> of the Bézier polygon contains the Bézier curve.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Notes">edit</a>]</div>
+<p><a name="Notes" id="Notes"></a></p>
+<h3>Notes</h3>
+<ul>
+<li>The curve begins at <b>P</b><sub>0</sub> and ends at <b>P</b><sub>n</sub>; this is the so-called <i>endpoint interpolation</i> property.</li>
+<li>The curve is a straight line if and only if all the control points lie on the curve. Similarly, the Bézier curve is a straight line if and only if the control points are <a href="/wiki/Collinear.html" title="Collinear">collinear</a></li>
+<li>The start (end) of the curve is <a href="/wiki/Tangent.html" title="Tangent">tangent</a> to the first (last) section of the Bézier polygon.</li>
+<li>A curve can be split at any point into 2 subcurves, or into arbitrarily many subcurves, each of which is also a Bézier curve.</li>
+<li>A <a href="/wiki/Circle.html" title="Circle">circle</a> cannot be exactly formed by a Bézier curve, not even a <a href="/wiki/Circular_arc.html" title="Circular arc">circular arc</a>. However, in many applications (such as <a href="/wiki/Computer-aided_design.html" title="Computer-aided design">computer-aided design</a> or computer graphics) a Bézier curve is an adequate approximation to a small enough circular arc.</li>
+<li>The curve at a fixed offset from a given Bézier curve, often called an <i>offset curve</i> (lying "parallel" to the original curve, like the offset between rails in a <a href="/wiki/Railroad_track.html" title="Railroad track">railroad track</a>), cannot be exactly formed by a Bézier curve (except in some trivial cases). However, there are <a href="/wiki/Heuristic.html" title="Heuristic">heuristic</a> methods that usually give an adequate approximation for practical purposes.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Constructing Bézier curves">edit</a>]</div>
+<p><a name="Constructing_B.C3.A9zier_curves" id="Constructing_B.C3.A9zier_curves"></a></p>
+<h2>Constructing Bézier curves</h2>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Linear curves">edit</a>]</div>
+<p><a name="Linear_curves" id="Linear_curves"></a></p>
+<h3>Linear curves</h3>
+<div class="floatleft"><span><a  class="image" title=""><img src="http://upload.wikimedia.org/wikipedia/commons/8/8c/Bezier_linear_anim.gif" alt="" width="70" height="120" longdesc="/wiki/Image:Bezier_linear_anim.gif" /></a></span></div>
+<p>The <i>t</i> in the function for a linear Bézier curve can be thought of as describing how far <b>B</b>(<i>t</i>) is from <b>P</b><sub>0</sub> to <b>P</b><sub>1</sub>. For example when <i>t=0.25</i>, <b>B</b>(<i>t</i>) is one quarter of the way from point <b>P</b><sub>0</sub> to <b>P</b><sub>1</sub>. As <i>t</i> varies from 0 to 1, <b>B</b>(<i>t</i>) describes a straight line from <b>P</b><sub>0</sub> to <b>P</b><sub>1</sub>.<br style="clear:both" /></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Quadratic curves">edit</a>]</div>
+<p><a name="Quadratic_curves" id="Quadratic_curves"></a></p>
+<h3>Quadratic curves</h3>
+<p>For quadratic Bézier curves one can construct intermediate points <b>Q</b><sub>0</sub> and <b>Q</b><sub>1</sub> such that as <i>t</i> varies from 0 to 1:</p>
+<ul>
+<li>Point <b>Q</b><sub>0</sub> varies from <b>P</b><sub>0</sub> to <b>P</b><sub>1</sub> and describes a linear Bézier curve.</li>
+<li>Point <b>Q</b><sub>1</sub> varies from <b>P</b><sub>1</sub> to <b>P</b><sub>2</sub> and describes a linear Bézier curve.</li>
+<li>Point <b>B</b>(<i>t</i>) varies from <b>Q</b><sub>0</sub> to <b>Q</b><sub>1</sub> and describes a quadratic Bézier curve.</li>
+</ul>
+<div class="thumb tleft">
+<div style="width:192px;"><a  class="internal" title="Construction of a quadratic Bézier curve"><img src="http://upload.wikimedia.org/wikipedia/commons/1/19/Bezier_quadratic.png" alt="Construction of a quadratic Bézier curve" width="190" height="120" longdesc="/wiki/Image:Bezier_quadratic.png" /></a>
+<div class="thumbcaption">Construction of a quadratic Bézier curve</div>
+</div>
+</div>
+<div class="thumb tleft">
+<div style="width:192px;"><a  class="internal" title="Animation t in [0,1]"><img src="http://upload.wikimedia.org/wikipedia/commons/3/35/Bezier_quadratic_anim.gif" alt="Animation t in [0,1]" width="190" height="120" longdesc="/wiki/Image:Bezier_quadratic_anim.gif" /></a>
+<div class="thumbcaption">Animation <i>t</i> in [0,1]</div>
+</div>
+</div>
+<p><br style="clear:both" /></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Higher order curves">edit</a>]</div>
+<p><a name="Higher_order_curves" id="Higher_order_curves"></a></p>
+<h3>Higher order curves</h3>
+<p>For higher order curves one needs correspondingly more intermediate points. For cubic curves one can construct intermediate points <b>Q</b><sub>0</sub>, <b>Q</b><sub>1</sub> &amp; <b>Q</b><sub>2</sub> that describe linear Bézier curves, and points <b>R</b><sub>0</sub> &amp; <b>R</b><sub>1</sub> that describe quadratic Bézier curves:</p>
+<div class="thumb tleft">
+<div style="width:292px;"><a  class="internal" title="Construction of a cubic Bézier curve"><img src="http://upload.wikimedia.org/wikipedia/commons/6/68/Bezier_cubic.png" alt="Construction of a cubic Bézier curve" width="290" height="120" longdesc="/wiki/Image:Bezier_cubic.png" /></a>
+<div class="thumbcaption">Construction of a cubic Bézier curve</div>
+</div>
+</div>
+<div class="thumb tleft">
+<div style="width:292px;"><a  class="internal" title="Animation t in [0,1]"><img src="http://upload.wikimedia.org/wikipedia/commons/a/a3/Bezier_cubic_anim.gif" alt="Animation t in [0,1]" width="290" height="120" longdesc="/wiki/Image:Bezier_cubic_anim.gif" /></a>
+<div class="thumbcaption">Animation <i>t</i> in [0,1]</div>
+</div>
+</div>
+<p><br style="clear:both" /></p>
+<p>And for fourth order curves one can construct intermediate points <b>Q</b><sub>0</sub>, <b>Q</b><sub>1</sub>, <b>Q</b><sub>2</sub> &amp; <b>Q</b><sub>3</sub> that describe linear Bézier curves, points <b>R</b><sub>0</sub>, <b>R</b><sub>1</sub> &amp; <b>R</b><sub>2</sub> that describe quadratic Bézier curves, and points <b>S</b><sub>0</sub> &amp; <b>S</b><sub>1</sub> that describe cubic Bézier curves:</p>
+<div class="thumb tleft">
+<div style="width:292px;"><a  class="internal" title="Construction of a 4th order Bézier curve"><img src="http://upload.wikimedia.org/wikipedia/commons/4/42/Bezier_forth.png" alt="Construction of a 4th order Bézier curve" width="290" height="120" longdesc="/wiki/Image:Bezier_forth.png" /></a>
+<div class="thumbcaption">Construction of a 4th order Bézier curve</div>
+</div>
+</div>
+<div class="thumb tleft">
+<div style="width:292px;"><a  class="internal" title="Animation t in [0,1]"><img src="http://upload.wikimedia.org/wikipedia/commons/c/c6/Bezier_forth_anim.gif" alt="Animation t in [0,1]" width="290" height="120" longdesc="/wiki/Image:Bezier_forth_anim.gif" /></a>
+<div class="thumbcaption">Animation <i>t</i> in [0,1]</div>
+</div>
+</div>
+<p><br style="clear:both" /></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Application in computer graphics">edit</a>]</div>
+<p><a name="Application_in_computer_graphics" id="Application_in_computer_graphics"></a></p>
+<h2>Application in computer graphics</h2>
+<div class="thumb tright">
+<div style="width:121px;"><a  class="internal" title="Bézier path in Adobe Illustrator CS2"><img src="http://upload.wikimedia.org/wikipedia/en/d/d9/Bezier_Illustrator.gif" alt="Bézier path in Adobe Illustrator CS2" width="119" height="96" longdesc="/wiki/Image:Bezier_Illustrator.gif" /></a>
+<div class="thumbcaption">
+<div class="magnify" style="float:right"><a  class="internal" title="Enlarge"><img src="/skins-1.5/common/images/magnify-clip.png" width="15" height="11" alt="Enlarge" /></a></div>
+Bézier path in <a href="/wiki/Adobe_Illustrator.html" title="Adobe Illustrator">Adobe Illustrator CS2</a></div>
+</div>
+</div>
+<p>Bézier curves are widely used in computer graphics to model smooth curves. As the curve is completely contained in the <a href="/wiki/Convex_hull.html" title="Convex hull">convex hull</a> of its control points, the points can be graphically displayed and used to manipulate the curve intuitively. <a href="/wiki/Affine_transformation.html" title="Affine transformation">Affine transformations</a> such as <a href="/wiki/Translation_%28geometry%29.html" title="Translation (geometry)">translation</a>, <a href="/wiki/Scaling_%28geometry%29.html" title="Scaling (geometry)">scaling</a> and <a href="/wiki/Rotation.html" title="Rotation">rotation</a> can be applied on the curve by applying the respective transform on the control points of the curve.</p>
+<p>Quadratic and cubic Bézier curves are most common; higher degree curves are more expensive to evaluate. When more complex shapes are needed low order Bézier curves are patched together. To guarantee smoothness, the control point at which two curves meet and one control point on either side must be collinear.</p>
+<p>The simplest method for scan converting a Bézier curves is to evaluate it at many closely spaced points and scan convert the approximating sequence of line segments. However, it does not guarantee that the rasterized output looks sufficiently smooth because the points may be spaced too far apart. Conversely it may generate too many points in areas where the curve is close to linear. A common adaptive method is recursive subdivision, in which a curve's control points are checked to see if the curve approximates a line segment to within a small tolerance. If not, the curve is subdivided parametrically into two segments, <img class='tex' src="http://upload.wikimedia.org/math/a/9/a/a9afb8c9056bfbfe7344ad06184a316e.png" alt="0 \le t \le 0.5" /> and <img class='tex' src="http://upload.wikimedia.org/math/7/8/7/7879a04cdec426f497b6bbcfe0ec1c73.png" alt="0.5 \le t \le 1" /> and the same procedure applied to recursively to each half. There are also forward differencing methods, but great care must be taken to analyse error propagation. Analytical methods where a spline is intersected with each scan line involve finding roots of cubic polynomials (for cubic splines) and dealing with multiple roots, so they are not often used in practice.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Code example">edit</a>]</div>
+<p><a name="Code_example" id="Code_example"></a></p>
+<h2>Code example</h2>
+<p>The following code is a simple practical example showing how to plot a cubic Bezier curve in the <a href="/wiki/C_programming_language.html" title="C programming language">C programming language</a>. Note, this simply computes the coefficients of the polynomial and runs through a series of t values from 0 to 1 — in practice this is how it is usually done, even though algorithms such as <a href="/wiki/De_Casteljau%27s_algorithm.html" title="De Casteljau's algorithm">de Casteljau's</a> are often cited in graphics discussions, etc. This is because in practice a linear algorithm like this is faster and less resource-intensive than a recursive one like de Casteljau's. The following code has been factored to make its operation clear — an optimization in practice would be to compute the coefficients once and then re-use the result for the actual loop that computes the curve points — here they are recomputed every time, which is less efficient but helps to clarify the code.</p>
+<p>The resulting curve can be plotted by drawing lines between successive points in the curve array — the more points, the smoother the curve.</p>
+<p>On some architectures, the code below can also be optimized by <a href="/wiki/Dynamic_programming.html" title="Dynamic programming">dynamic programming</a>. E.g. since <i>dt</i> is constant, <i>cx</i> * <i>t</i> changes a constant amount with every iteration. By repeatedly applying this optimization, the loop can be rewritten without any multiplications (though such a procedure is not <a href="/wiki/Numerical_stability.html" title="Numerical stability">numerically stable</a>).</p>
+<pre>
+/*
+Code to generate a cubic Bezier curve
+*/
+
+typedef struct
+{
+    float x;
+    float y;
+}
+Point2D;
+
+/*
+cp is a 4 element array where:
+cp[0] is the starting point, or P0 in the above diagram
+cp[1] is the first control point, or P1 in the above diagram
+cp[2] is the second control point, or P2 in the above diagram
+cp[3] is the end point, or P3 in the above diagram
+t is the parameter value, 0 &lt;= t &lt;= 1
+*/
+
+Point2D PointOnCubicBezier( Point2D* cp, float t )
+{
+    float   ax, bx, cx;
+    float   ay, by, cy;
+    float   tSquared, tCubed;
+    Point2D result;
+
+    /* calculate the polynomial coefficients */
+
+    cx = 3.0 * (cp[1].x - cp[0].x);
+    bx = 3.0 * (cp[2].x - cp[1].x) - cx;
+    ax = cp[3].x - cp[0].x - cx - bx;
+        
+    cy = 3.0 * (cp[1].y - cp[0].y);
+    by = 3.0 * (cp[2].y - cp[1].y) - cy;
+    ay = cp[3].y - cp[0].y - cy - by;
+        
+    /* calculate the curve point at parameter value t */
+        
+    tSquared = t * t;
+    tCubed = tSquared * t;
+        
+    result.x = (ax * tCubed) + (bx * tSquared) + (cx * t) + cp[0].x;
+    result.y = (ay * tCubed) + (by * tSquared) + (cy * t) + cp[0].y;
+        
+    return result;
+}
+
+/*
+ ComputeBezier fills an array of Point2D structs with the curve   
+ points generated from the control points cp. Caller must 
+ allocate sufficient memory for the result, which is 
+ &lt;sizeof(Point2D) numberOfPoints&gt;
+*/
+
+void ComputeBezier( Point2D* cp, int numberOfPoints, Point2D* curve ) {
+    float   dt;
+    int   i;
+
+    dt = 1.0 / ( numberOfPoints - 1 );
+
+    for( i = 0; i &lt; numberOfPoints; i++)
+        curve[i] = PointOnCubicBezier( cp, i*dt );
+}
+</pre>
+<p>Another application for Bézier curves is to describe paths for the motion of objects in animations, etc. Here, the x, y positions of the curve are not used to plot the curve but to position a graphic. When used in this fashion, the distance between successive points can become important, and in general these are not spaced equally — points will cluster more tightly where the control points are close to each other, and spread more widely for more distantly positioned control points. If linear motion speed is required, further processing is needed to spread the resulting points evenly along the desired path.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Rational Bézier curves">edit</a>]</div>
+<p><a name="Rational_B.C3.A9zier_curves" id="Rational_B.C3.A9zier_curves"></a></p>
+<h2>Rational Bézier curves</h2>
+<p>Some curves that seem simple, like the <a href="/wiki/Circle.html" title="Circle">circle</a>, cannot be described by a Bézier curve or a piecewise Bézier curve (though in practice the difference is small and may be tolerable). To describe some of these other curves, we need additional degrees of freedom.</p>
+<p>The rational Bézier curve adds weights that can be adjusted. The numerator is a weighted Bernstein form Bézier curve and the denominator is a weighted sum of <a href="/wiki/Bernstein_polynomial.html" title="Bernstein polynomial">Bernstein polynomials</a>.</p>
+<p>Given <i>n</i> + 1 control points <b>P</b><sub><i>i</i></sub>, the rational Bézier curve can be described by:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/0/d/8/0d8fa1beb8c7c4e30be9fd199e993ffc.png" alt="\mathbf{B}(t) = \frac{ \sum_{i=0}^n b_{i,n}(t) \mathbf{P}_{i}w_i  } { \sum_{i=0}^n b_{i,n}(t) w_i  }" /></dd>
+</dl>
+<p>or simply</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/3/0/2/3025ba39155c31511fcc675edf2f4621.png" alt="\mathbf{B}(t) = \frac{ \sum_{i=0}^n {n \choose i} t^i (1-t)^{n-i}\mathbf{P}_{i}w_i  } { \sum_{i=0}^n {n \choose i} t^i (1-t)^{n-i}w_i  }." /></dd>
+</dl>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/De_Casteljau%27s_algorithm.html" title="De Casteljau's algorithm">de Casteljau's algorithm</a></li>
+<li><a href="/wiki/Spline_%28mathematics%29.html" title="Spline (mathematics)">Spline (mathematics)</a></li>
+<li><a href="/wiki/B%C3%A9zier_spline.html" title="Bézier spline">Bézier spline</a></li>
+<li><a href="/wiki/B%C3%A9zier_surface.html" title="Bézier surface">Bézier surface</a></li>
+<li><a href="/wiki/B%C3%A9zier_triangle.html" title="Bézier triangle">Bézier triangle</a></li>
+<li><a href="/wiki/NURBS.html" title="NURBS">NURBS</a></li>
+<li><a href="/wiki/String_art.html" title="String art">string art</a> - Bézier curves are also formed by many common forms of string art, where strings are looped across a frame of nails.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<ul>
+<li>Paul Bourke: <i>Bézier curves</i>, <a  class="external free" title="http://astronomy.swin.edu.au/~pbourke/curves/bezier/">http://astronomy.swin.edu.au/~pbourke/curves/bezier/</a></li>
+<li><a href="/wiki/Donald_Knuth.html" title="Donald Knuth">Donald Knuth</a>: <i>Metafont: the Program</i>, Addison-Wesley 1986, pp. 123-131. Excellent discussion of implementation details; available for free as part of the TeX distribution.</li>
+<li>Dr Thomas Sederberg, BYU <i>Bézier curves</i>, <a  class="external free" title="http://www.tsplines.com/resources/class_notes/Bezier_curves.pdf">http://www.tsplines.com/resources/class_notes/Bezier_curves.pdf</a></li>
+<li>J.D. Foley <i>et al.</i>: <i>Computer Graphics: Principles and Practice in C</i> (2nd ed., Addison Wesley, 1992)</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://www.cs.unc.edu/~mantler/research/bezier/">Bezier Curves interactive applet</a></li>
+<li><a  class="external text" title="http://www.theparticle.com/applets/nyu/BezierApplet/">3rd order Bezier Curves applet</a></li>
+<li><a  class="external text" title="http://www.sunsite.ubc.ca/LivingMathematics/V001N01/UBCExamples/Bezier/bezier.html">Living Math Bézier applet</a></li>
+<li><a  class="external text" title="http://www.ibiblio.org/e-notes/Splines/Bezier.htm">Living Math Bézier applets of different spline types, JAVA programming of splines</a> in <a  class="external text" title="http://ibiblio.org/e-notes/Splines/Intro.htm">An Interactive Introduction to Splines</a></li>
+<li><a  class="external text" title="http://www.tinaja.com/cubic01.asp">Don Lancaster's Cubic Spline Library</a> describes how to approximate a circle (or a circular arc, or a hyperbola) by a Bézier curve; using cubic splines for image interpolation, and an explanation of the math behind these curves.</li>
+<li><a  class="external text" title="http://mathworld.wolfram.com/BezierCurve.html">Weisstein, Eric W. "Bézier Curve."</a> From <a  class="external text" title="http://mathworld.wolfram.com/">MathWorld</a>--A Wolfram Web Resource.</li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:4664-0!1!0!default!!en!2 and timestamp 20060906010044 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:Splines">Splines</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/B%C3%A9zier_curve.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-cs"><a >Česky</a></li>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-ko"><a >한국어</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-lt"><a >Lietuvių</a></li>
+				<li class="interwiki-nl"><a >Nederlands</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-no"><a >Norsk (bokmål)</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-pt"><a >Português</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+				<li class="interwiki-sl"><a >Slovenščina</a></li>
+				<li class="interwiki-th"><a >ไทย</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 16:31, 5 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv81 in 0.478 secs. --></body></html>

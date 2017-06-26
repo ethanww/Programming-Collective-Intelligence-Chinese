@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="CICS,Memory protection,Region,Partition,Storage violation,OLIVER (CICS interactive test/debug),Simulation,HLL,Conditional assembly language,Assembly,Static variables" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>CICS - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "CICS";
+			var wgTitle = "CICS";
+			var wgArticleId = 391505;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">CICS</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p><b>CICS</b>® (<b>Customer Information Control System</b>) is a <a href="/wiki/Transaction_processing.html" title="Transaction processing">transaction server</a> that runs primarily on <a href="/wiki/IBM_mainframe.html" title="IBM mainframe">IBM mainframe</a> systems under <a href="/wiki/Z/OS.html" title="Z/OS">z/OS</a> or <a href="/wiki/Z/VSE.html" title="Z/VSE">z/VSE</a>. CICS is available for other operating systems, notably <a href="/wiki/I5/OS.html" title="I5/OS">i5/OS</a>, <a href="/wiki/OS/2.html" title="OS/2">OS/2</a>, and as the closely related IBM TXSeries software on <a href="/wiki/AIX_operating_system.html" title="AIX operating system">AIX</a>, <a href="/wiki/Microsoft_Windows.html" title="Microsoft Windows">Windows</a>, and <a href="/wiki/Linux.html" title="Linux">Linux</a>, among others. The z/OS implementation is by far the most popular and significant.</p>
+<p>CICS is a transaction processing system (like TCAM) designed for both online and batch activity. On large IBM <a href="/wiki/ZSeries.html" title="ZSeries">zSeries</a> and <a href="/wiki/System_z9.html" title="System z9">System z9</a> servers, CICS easily supports thousands of transactions per second, making it a mainstay of enterprise computing. CICS applications can be written in numerous <a href="/wiki/Programming_language.html" title="Programming language">programming languages</a>, including <a href="/wiki/COBOL.html" title="COBOL">COBOL</a>, <a href="/wiki/PL/I.html" title="PL/I">PL/I</a>, <a href="/wiki/C_programming_language.html" title="C programming language">C</a>, <a href="/wiki/C%2B%2B.html" title="C++">C++</a>, <a href="/wiki/Assembler.html" title="Assembler">Assembler</a>, <a href="/wiki/REXX.html" title="REXX">REXX</a>, and <a href="/wiki/Java_platform.html" title="Java platform">Java</a>.</p>
+<p>Each CICS program is initiated using a transaction id. CICS screens are sent as maps using a programming language such as COBOL. The end user inputs data which is made accessible to the program by receiving a map. CICS screens may contain text that is highlighted, having different colors or blinking. An example of how a map can be sent through COBOL is given below.</p>
+<pre>
+EXEC CICS
+    SEND MAPSET(MPS1) MAP(MP1)
+END-EXEC.
+</pre>
+<p>CICS is one of the world's most durable software products thanks to its ever-expanding capabilities, continuous and aggressive vendor support, large installed base, exceptional reliability, high performance, and huge variety of applications and tools. It is also a very secure system and functions at a high speed. (Many of these attributes depend on the zSeries platform.) CICS is used in bank teller applications, airline reservation systems, ATM systems etc. CICS first went on sale on <a href="/wiki/July_8.html" title="July 8">July 8</a>, <a href="/wiki/1969.html" title="1969">1969</a>, not long after <a href="/wiki/Information_Management_System.html" title="Information Management System">IMS</a>. It was originally developed in the <a href="/wiki/United_States.html" title="United States">United States</a> at IBM's <a href="/wiki/Palo_Alto%2C_California.html" title="Palo Alto, California">Palo Alto</a> lab. In 1974, CICS development shifted to IBM's programming labs in <a href="/wiki/Hursley.html" title="Hursley">Hursley</a>, <a href="/wiki/United_Kingdom.html" title="United Kingdom">United Kingdom</a>, where work continues today.</p>
+<p>While CICS has its highest profile among financial institutions such as banks and insurance companies, over 90 percent of <a href="/wiki/Fortune_500.html" title="Fortune 500">Fortune 500</a> companies are reported to rely on CICS (running on z/OS) for their core business functions. Most state and national governments do as well.</p>
+<p>Recent CICS enhancements include support for <a href="/wiki/Web_service.html" title="Web service">Web services</a> and <a href="/wiki/Enterprise_Java_Beans.html" title="Enterprise Java Beans">Enterprise Java Beans</a> (EJBs). IBM began shipping the latest release, CICS Transaction Server Version 3.1 for z/OS, in early <a href="/wiki/2005.html" title="2005">2005</a>.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">History</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Pronounciation</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: History">edit</a>]</div>
+<p><a name="History" id="History"></a></p>
+<h2>History</h2>
+<p>When CICS was first released, it supported programs written in <a href="/wiki/IBM.html" title="IBM">IBM</a> <a href="/wiki/Assembler.html" title="Assembler">Assembler</a>,<a href="/wiki/PL/1.html" title="PL/1">PL/1</a> and <a href="/wiki/COBOL.html" title="COBOL">COBOL</a>. Programs needed to be <a href="/wiki/Quasi.html" title="Quasi">quasi</a>-<a href="/wiki/Reentrant.html" title="Reentrant">reentrant</a> to support multiple concurrent <a href="/wiki/Transaction.html" title="Transaction">transaction</a> <a href="/wiki/Thread.html" title="Thread">threads</a>.Its modular design meant that with judicial "<a href="/wiki/Pruning.html" title="Pruning">pruning</a>" it could be executed on a computer with just 32K of <a href="/wiki/Real.html" title="Real">real</a> memory (and that included the <a href="/wiki/Operating_System.html" title="Operating System">Operating System</a> of 8K!) such as an <a href="/wiki/IBM_360.html" title="IBM 360">IBM 360</a> model 30.</p>
+<p>Each unique CICS "<a href="/wiki/Task.html" title="Task">Task</a>" or <a href="/wiki/Transaction.html" title="Transaction">transaction</a> was allocated it's own dynamic <a href="/wiki/Memory.html" title="Memory">memory</a> at start-up and subsequent requests for additional memory were handled by a call to the "Storage Control program" (part of the CICS <b>nucleus</b> - or "<a href="/wiki/Kernal.html" title="Kernal">kernal</a>"). This is analogous to an <a href="/wiki/Operating_System.html" title="Operating System">Operating System</a> and effectively CICS could be considered "an Operating System within an Operating System" with its own rules and calls for services such as <a href="/wiki/I/O.html" title="I/O">I/O</a> or program calls (Link to or transfer control to).CICS was in fact started as a <a href="/wiki/Batch.html" title="Batch">batch</a> program with standard <a href="/wiki/JCL.html" title="JCL">JCL</a> statements.</p>
+<p>Because <a href="/wiki/Application.html" title="Application">application</a> programs could be shared by many <a href="/wiki/Concurrent.html" title="Concurrent">concurrent</a> threads, the use of <a href="/wiki/Static_variables.html" title="Static variables">static variables</a> embedded within a program (or use of Operating System memory) was restricted (by convention only).</p>
+<p>Unfortunately many of the "rules" were frequently broken, especially by COBOL programmers who were frequently unaccustomed to the internals of their programs or else did not use the necessary restrictive compile time options. This resulted in "non re-entrant" code that was often unreliable leading to many spurious <a href="/wiki/Storage_violation.html" title="Storage violation">storage violations</a> and entire CICS system crashes.</p>
+<p>The entire <a href="/wiki/Partition.html" title="Partition">partition</a> or <a href="/wiki/Region.html" title="Region">region</a> operated with the same <a href="/wiki/Memory_protection.html" title="Memory protection">memory protection</a> key including the CICS kernal code and so program corruption and CICS control block corruption was a frequent cause of system downtime.</p>
+<p>These shortcomings nevetheless persisted for multiple new releases of CICS over a period of more than 20 years and, as stated above, were often critical applications used by large Banks and other financial institutions.</p>
+<p>It was possible to provide a good measure of advance protection by performing all testing under control of a monitoring program that also served to provide Test/Debug features. One such software offering was known as <a href="/wiki/OLIVER_%28CICS_interactive_test/debug%29.html" title="OLIVER (CICS interactive test/debug)">OLIVER (CICS interactive test/debug)</a> which prevented application programs corrupting memory using instruction <a href="/wiki/Simulation.html" title="Simulation">simulation</a>.</p>
+<p>System Calls to CICS (for example to read a record from a file) were ellicited by a "Macro" call and this gave rise to the later terminology "<b>Macro level</b> CICS". An Example of a call to the "File Control Program" of CICS might look like this:-</p>
+<pre>
+DFH<b>FC</b> TYPE=READ,DATASET=myfile,TYPOPER=UPDATE,....etc
+</pre>
+<p>This was converted by a pre-compile <a href="/wiki/Assembly.html" title="Assembly">Assembly</a> which expanded the <a href="/wiki/Conditional_assembly_language.html" title="Conditional assembly language">conditional assembly language</a> macros to their COBOL or PL/1 CALL statement equivalents. Thus preparing a <a href="/wiki/HLL.html" title="HLL">HLL</a> application was effectively a "two stage" <a href="/wiki/Compile.html" title="Compile">compile</a>; Output from the Assembler fed straight into the <a href="/wiki/HLL.html" title="HLL">HLL</a> compiler as Input.</p>
+<p><b>Command Level</b> CICS: During the <a href="/wiki/1980.html" title="1980">1980s</a>, IBM at <a href="/wiki/Hursley.html" title="Hursley">Hursley</a> produced a "half-way house" version of CICS which supported what became known as "Command Level CICS". This release still supported the older programs but introduced a new layer of execution to the new Command level application programs. A typical Command level call was given in the first MAPSET example above . This was pre-processed by a pre-compile batch translation stage which converted the embedded Command calls (EXEC's) into Call statements to a stub sub-routine. So, preparing applicattion programs for later execution, still required two stages. It was possible to write "<b>Mixed mode</b>" applications using both Macro level and Command level statements.</p>
+<p>At execution time, the carefully built Command level calls were converted back using a run-time translator ("The EXEC Interface Program"; part of the CICS supplied nucleus) to the old Macro level call which was then executed by the mostly unchanged CICS nucleus programs.</p>
+<p><b>CEDF:</b> This IBM produced "<b>E</b>XEC <b>C</b>all <b>D</b>iagnostic <b>F</b>acility" helped debug 'EXEC CICS' calls by showing before and after results. The "OLIVER" software pre-dated this free add on by more than 10 years and yet CEDF came without any form of memory protection. It was however complementary to OLIVER, and both could be used simulatneously.</p>
+<p><b>Command level only</b> CICS was introduced in the early <a href="/wiki/1990.html" title="1990">1990s</a> which offered some advantages over earlier versions of CICS. However <a href="/wiki/IBM.html" title="IBM">IBM</a> also dropped support for Macro level application programs written for earlier versions. This "forced" many application programs to be converted or completely re-written to use Command level EXEC calls only, usually by programmers who had no exposure to earlier versions or to the original code.</p>
+<p>By this time there were perhaps millions of programs worldwide that had been executing fairly reliably; for decades in many cases. Re-writing them inevitably intoduced new bugs without necessarily adding new features.</p>
+<p><b>Run time conversion:</b> It was however possible to execute old macro level programs using conversion software such as "<a  class="new" title="Command CICS">Command CICS</a>" produced by <a  class="new" title="APT International">APT International</a> a former CICS Software Specialist company who had earlier produced OLIVER, described above. It was possible to take advantage of the new features of later versions of CICS whilst at the same time retaining the original unaltered codebase.It is believed that there are still programs running today using this same technology. The overhead was minimal since additional overhead was limited to the CICS calls only.</p>
+<p><b>Z notation</b>. Part of CICS was formalized using the <a href="/wiki/Z_notation.html" title="Z notation">Z notation</a> in the <a href="/wiki/1980s.html" title="1980s">1980s</a> and <a href="/wiki/1990s.html" title="1990s">90s</a> in collaboration with the <a href="/wiki/Oxford_University_Computing_Laboratory.html" title="Oxford University Computing Laboratory">Oxford University Computing Laboratory</a>, under the leadership of Sir <a href="/wiki/Tony_Hoare.html" title="Tony Hoare">Tony Hoare</a>. This work won a <a href="/wiki/Queen%27s_Award.html" title="Queen's Award">Queen's Award</a> for Technological Achievement.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Pronounciation">edit</a>]</div>
+<p><a name="Pronounciation" id="Pronounciation"></a></p>
+<h2>Pronounciation</h2>
+<ul>
+<li>In Britain, Canada, Australia, France, Belgium and some other countries, CICS is pronounced the same as the word <i>kicks</i>. In the US, it is more usually pronounced by reciting each letter (<i>C-I-C-S</i>). Both pronunciations are popular.</li>
+<li>In Germany, it is pronounced <i>zicks</i> and, less often, <i>kicks</i></li>
+<li>In Italy, it is pronounced <i>chicks</i>.</li>
+<li>In Spain it is pronounced <i>thicks</i>.</li>
+<li>In Brazil and Mexico, it is pronounced <i>sicks</i>.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/3270.html" title="3270">3270</a></li>
+<li><a href="/wiki/Z/TPF.html" title="Z/TPF">z/TPF</a></li>
+<li><a href="/wiki/WebSphere.html" title="WebSphere">WebSphere</a></li>
+<li><a href="/wiki/VSAM.html" title="VSAM">VSAM</a></li>
+<li><a href="/wiki/OLIVER_%28CICS_interactive_test/debug%29.html" title="OLIVER (CICS interactive test/debug)">OLIVER (CICS interactive test/debug)</a> a Storage protect, test &amp; debugging system.</li>
+<li><a  class="new" title="Command CICS">Command CICS</a> a run-time macro to Command level translator</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://www.ibm.com/cics/">IBM CICS official website</a></li>
+<li><a  class="external text" title="http://www.ibm.com/cics/35">CICS official 35th Anniversary website</a></li>
+<li><a  class="external text" title="http://www.ibmmainframes.com/">IBM mainframe website for students</a></li>
+<li><a  class="external text" title="http://www.aspg.com/commandcics.htm"></a><a  class="new" title="Command CICS">Command CICS</a> - macro level to Command level convertor</li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:391505-0!1!0!default!!en!2 and timestamp 20060910091324 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:IBM software">IBM software</a></span> | <span dir='ltr'><a  title="Category:System software">System software</a></span> | <span dir='ltr'><a  title="Category:Memory management">Memory management</a></span> | <span dir='ltr'><a  title="Category:Z notation">Z notation</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/CICS.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-pt"><a >Português</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 13:46, 9 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv111 in 0.111 secs. --></body></html>

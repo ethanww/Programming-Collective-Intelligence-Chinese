@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Explicitly Parallel Instruction Computing,Software pipelining,Digital signal processing,Itanium,IA64,University of Illinois at Urbana-Champaign,Reduced Instruction Set Computer,Very long instruction word,Complex Instruction Set Computer,Digital signal processor,Wen-mei Hwu" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Explicitly Parallel Instruction Computing - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Explicitly_Parallel_Instruction_Computing";
+			var wgTitle = "Explicitly Parallel Instruction Computing";
+			var wgArticleId = 685151;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Explicitly Parallel Instruction Computing</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p><b>Explicitly Parallel Instruction Computing</b> (<b>EPIC</b>) is a computing paradigm that began to be researched in the <a href="/wiki/1990s.html" title="1990s">1990s</a>. This paradigm is also called <i>Independence</i> architectures. It was used by <a href="/wiki/Intel.html" title="Intel">Intel</a> and <a href="/wiki/HP.html" title="HP">HP</a> in the development of Intel’s <a href="/wiki/IA-64.html" title="IA-64">IA-64</a> architecture, and has been implemented in Intel’s <a href="/wiki/Itanium.html" title="Itanium">Itanium</a> and <a href="/wiki/Itanium_2.html" title="Itanium 2">Itanium 2</a> line of server processors. The goal of EPIC was to increase the ability of microprocessors to execute software instructions in parallel, by using the compiler, rather than complex on-die circuitry, to identify and leverage opportunities for parallel execution. This would allow performance to be scaled more rapidly in future processor designs, without resorting to ever-higher clock frequencies, which have since become problematic due to associated power and cooling issues.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Roots in VLIW</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Moving Beyond VLIW</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Ongoing Research and development</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">EPIC in the Marketplace</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Roots in VLIW">edit</a>]</div>
+<p><a name="Roots_in_VLIW" id="Roots_in_VLIW"></a></p>
+<h2>Roots in VLIW</h2>
+<p><a href="/wiki/Out-of-order_execution.html" title="Out-of-order execution">Out-of-order execution</a> and <a href="/wiki/Speculative_execution.html" title="Speculative execution">speculative execution</a> have been used succesfully for many years to increase the parallel execution of software code in mainstream microprocessors. However, due to the growing complexity of scaling these approaches, the processor industry in the mid-<a href="/wiki/1990s.html" title="1990s">1990s</a> started to re-examine instruction sets which explicitly encode multiple operations per instruction. The basis for such research is <a href="/wiki/Very_long_instruction_word.html" title="Very long instruction word">VLIW</a>, in which multiple operations are encoded in every instruction, and then processed by multiple execution units.</p>
+<p>One goal of this strategy is to move the complexity of instruction scheduling from the CPU hardware to the software compiler, which can do the instruction scheduling statically (with help of trace feedback information). This eliminates the need for complex scheduling circuitry in the CPU, which frees up space and power for other functions, including additional execution resources. An equally important goal is to further exploit <a href="/wiki/Instruction_level_parallelism.html" title="Instruction level parallelism">instruction level parallelism</a> (<i>ILP</i>), by using the compiler to find and exploit additional opportunities for parallel execution..</p>
+<p><i>VLIW</i> (at least the original forms) has several short-comings that precluded it from becoming mainstream:</p>
+<ul>
+<li>VLIW instruction sets are not backward compatible between implementations. As wider implementations (more <a href="/wiki/Execution_unit.html" title="Execution unit">execution units</a>) are built, the instruction set for the wider machines is not backward compatible with older, narrower implementations.</li>
+<li>Load responses from a memory hierarchy which includes <a href="/wiki/CPU_caches.html" title="CPU caches">CPU caches</a> and <a href="/wiki/DRAM.html" title="DRAM">DRAM</a> do not give a deterministic delay of when the load response returns to the processor. This makes static scheduling of load instructions by the compiler very difficult.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Moving Beyond VLIW">edit</a>]</div>
+<p><a name="Moving_Beyond_VLIW" id="Moving_Beyond_VLIW"></a></p>
+<h2>Moving Beyond VLIW</h2>
+<p><i>EPIC</i> architectures add several features to get around the deficiencies of VLIW:</p>
+<ul>
+<li>Each group of multiple software instructions is called a <i>bundle</i>. Each of the bundles has information indicating if this set of operations is depended upon by the subsequent bundle. With this capability, future implementations can be built to issue multiple bundles in parallel. The dependency information is calculated by the compiler, so the hardware does not have to perform operand dependency checking.</li>
+<li>A <i>speculative</i> load instruction is used as a type of data prefetch. This prefetch increases the chances for a primary cache hit for normal loads.</li>
+<li>A check load instruction also aids speculative loads by checking that a load was not dependent on a previous store.</li>
+</ul>
+<p>The <i>EPIC</i> architecture also includes a <i>grab-bag</i> of architectural concepts to increase <i>ILP</i>:</p>
+<ul>
+<li><a  class="new" title="Predicated execution">Predicated execution</a> is used to decrease the occurrence of branches and to increase the <a href="/wiki/Speculative_execution.html" title="Speculative execution">speculative execution</a> of instructions. In this feature, branch conditions are converted to predicate registers which are used to kill results of executed instructions from the side of the branch which is not taken.</li>
+<li>Delayed exceptions (using a Not-A-Thing bit within the general purpose registers) also allow more speculative execution past possible exceptions.</li>
+<li>Very large architectural register files avoid the need for <a href="/wiki/Register_renaming.html" title="Register renaming">register renaming</a>.</li>
+<li>Multi-way branch instructions</li>
+</ul>
+<p>The <a href="/wiki/Itanium.html" title="Itanium">Itanium</a> or <a href="/wiki/IA64.html" title="IA64">IA64</a> architecture also added <a  class="new" title="Register rotation">register rotation</a> - a <a href="/wiki/Digital_signal_processing.html" title="Digital signal processing">digital signal processing</a> concept useful for <a  class="new" title="Loop un-rolling">loop un-rolling</a> and <a href="/wiki/Software_pipelining.html" title="Software pipelining">software pipelining</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Ongoing Research and development">edit</a>]</div>
+<p><a name="Ongoing_Research_and_development" id="Ongoing_Research_and_development"></a></p>
+<h2>Ongoing Research and development</h2>
+<ul>
+<li>The <a  class="new" title="Impact (research group)">IMPACT</a> project at <a href="/wiki/University_of_Illinois_at_Urbana-Champaign.html" title="University of Illinois at Urbana-Champaign">University of Illinois at Urbana-Champaign</a>, led by <a href="/wiki/Wen-mei_Hwu.html" title="Wen-mei Hwu">Wen-mei Hwu</a>, has been the source of much influential research on this topic.</li>
+<li>The <a  class="new" title="PlayDoh">PlayDoh</a> architecture from HP-labs is another major research project.</li>
+<li>Gelato.org is an open source development community in which academic and commercial researchers are working to develop more effective compilers for Linux applications running on Itanium servers.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: EPIC in the Marketplace">edit</a>]</div>
+<p><a name="EPIC_in_the_Marketplace" id="EPIC_in_the_Marketplace"></a></p>
+<h2>EPIC in the Marketplace</h2>
+<p>EPIC architectures have been successful in specific problem domains, specifically <a href="/wiki/Digital_signal_processor.html" title="Digital signal processor">digital signal processors</a>, and in the more general computing market through servers based on Intel’s Itanium architecture. Server market analysts IDC report that Itanium-based solutions accounted for $2.2 billion in server factory revenue in 2005, and projects that figure will rise to about $7 billion in 2010. <a  class="external autonumber" title="http://www.manufacturing-insights.com/MI/getdoc.jsp?containerId=202865">[1]</a> Clearly, market support for the EPIC computing model is growing. Whether it will surpass the architectures it was designed to supplant remains to be seen.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Complex_Instruction_Set_Computer.html" title="Complex Instruction Set Computer">Complex Instruction Set Computer</a></li>
+<li><a href="/wiki/Reduced_Instruction_Set_Computer.html" title="Reduced Instruction Set Computer">Reduced Instruction Set Computer</a></li>
+<li><a href="/wiki/Very_long_instruction_word.html" title="Very long instruction word">Very long instruction word</a></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:685151-0!1!0!default!!en!2 and timestamp 20060910150901 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:Instruction processing">Instruction processing</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Explicitly_Parallel_Instruction_Computing.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-zh"><a >中文</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 23:58, 30 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv33 in 0.107 secs. --></body></html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Reduction (complexity),Boolean satisfiability problem,Complexity class,Computability theory,Computable function,Computational complexity theory,Decision problem,Function (mathematics),Function composition,Halting problem,Irrational number" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Reduction (complexity) - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Reduction_(complexity)";
+			var wgTitle = "Reduction (complexity)";
+			var wgArticleId = 848067;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Reduction (complexity)</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>In <a href="/wiki/Computability_theory.html" title="Computability theory">computability theory</a> and <a href="/wiki/Computational_complexity_theory.html" title="Computational complexity theory">computational complexity theory</a>, a <b>reduction</b> is a transformation of one problem into another problem. Depending on the transformation used this can be used to define <a href="/wiki/Complexity_class.html" title="Complexity class">complexity classes</a> on a set of problems.</p>
+<p>Intuitively, if problem A is reducible to problem B, a solution to B gives a solution to A. Thus solving A cannot be harder than solving B. We write A ≤ B, usually with a subscript on the ≤ to indicate the type of reduction being used.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Gentle Introduction</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Definition</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Examples</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">3.1</span> <span class="toctext">Detailed Example</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Notes</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Types and applications of reductions</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Gentle Introduction">edit</a>]</div>
+<p><a name="Gentle_Introduction" id="Gentle_Introduction"></a></p>
+<h2>Gentle Introduction</h2>
+<p>Often we find ourselves trying to solve a problem that is similar to a problem we've already solved. In these cases, often a quick way of solving the new problem is to transform each instance of the new problem into instances of the old problem, solve these using our existing solution, and then use these to obtain our final solution. This is perhaps the most obvious use of reductions.</p>
+<p>Another, more subtle use is this: suppose we have a problem that we've proven is hard to solve, and we have a similar new problem. We might suspect that it, too, is hard to solve. We argue by contradiction: suppose the new problem is easy to solve. Then, if we can show that every instance of the old problem can be solved easily by transforming it into instances of the new problem and solving those, we have a contradiction. This establishes that the new problem is also hard.</p>
+<p>A very simple example of a reduction is from <i>multiplication</i> to <i>squaring</i>. Suppose all we know how to do is to add, subtract, take squares, and divide by two. We can use this knowledge, combined with the following formula, to obtain the product of any two numbers:</p>
+<dl>
+<dd><i>a</i> × <i>b</i> = ((a + b)<sup>2</sup> - a<sup>2</sup> - b<sup>2</sup>)/2.</dd>
+</dl>
+<p>We also have a reduction in the other direction; obviously, if we can multiply two numbers, we can square a number. This seems to imply that these two problems are equally hard. This kind of reduction corresponds to <a href="/wiki/Turing_reduction.html" title="Turing reduction">Turing reduction</a>.</p>
+<p>However, the reduction becomes much harder if we add the restriction that we can only use the squaring function one time, and only at the end. In this case, even if we're allowed to use all the basic arithmetic operations, including multiplication, no reduction exists in general, because we may have to compute an <a href="/wiki/Irrational_number.html" title="Irrational number">irrational number</a> like <img class='tex' src="http://upload.wikimedia.org/math/e/f/5/ef5590434a387b3c4427e09d5b08baaf.png" alt="\sqrt{2}" /> from rational numbers. Going in the other direction, however, we can certainly square a number with just one multiplication, only at the end. Using this limited form of reduction, we have shown the unsurprising result that multiplication is harder in general than squaring. This corresponds to <a href="/wiki/Many-one_reduction.html" title="Many-one reduction">many-one reduction</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Definition">edit</a>]</div>
+<p><a name="Definition" id="Definition"></a></p>
+<h2>Definition</h2>
+<p>Given two <a href="/wiki/Subset.html" title="Subset">subsets</a> <i>A</i> and <i>B</i> of <a href="/wiki/Natural_number.html" title="Natural number"><b>N</b></a> and a set of <a href="/wiki/Function_%28mathematics%29.html" title="Function (mathematics)">functions</a> <i>F</i> from <b>N</b> to <b>N</b> which is closed under <a href="/wiki/Function_composition.html" title="Function composition">composition</a>, <i>A</i> is called <b>reducible</b> to <i>B</i> under <i>F</i> if</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/3/1/e/31ea8a397ae1ff6ae9a04e24e1eabc35.png" alt="\exists f \in F \mbox{ . } \forall x \in \mathbb{N} \mbox{ . } x \in A \Leftrightarrow f(x) \in B" /></dd>
+</dl>
+<p>We write</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/e/5/f/e5f3207f1b883c68945f5fe671a84ab0.png" alt="A \leq_{F} B" /></dd>
+</dl>
+<p>Let <i>S</i> be a <a href="/wiki/Subset.html" title="Subset">subset</a> of <b>P</b>(<b>N</b>) and ≤ a reduction, then <i>S</i> is called <b>closed</b> under ≤ if</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/c/4/3/c439111271ebf102693d3118c411f9b3.png" alt="\forall s \in S \mbox{ . } \forall A \in P(\mathbb{N}) \mbox{ . } A \leq s \Leftrightarrow A \in S" /></dd>
+</dl>
+<p>A subset <i>A</i> of <b>N</b> is called <b>hard</b> for <i>S</i> if</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/e/3/3/e331c180f8942c874a750e8eba88228a.png" alt="\forall s \in S \mbox{ . } s \leq A" /></dd>
+</dl>
+<p>A subset <i>A</i> of <b>N</b> is called <b>complete</b> for <i>S</i> if <i>A</i> is hard for <i>S</i> and <i>A</i> is in <i>S</i>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Examples">edit</a>]</div>
+<p><a name="Examples" id="Examples"></a></p>
+<h2>Examples</h2>
+<ul>
+<li>To show that a <a href="/wiki/Decision_problem.html" title="Decision problem">decision problem</a> is <a href="/wiki/Undecidable.html" title="Undecidable">undecidable</a> a <a href="/wiki/Computable_function.html" title="Computable function">computable function</a> can be used to transform it into another decision problem which is already known to be undecidable. In particular, we often show that a problem P is undecidable by showing that the <a href="/wiki/Halting_problem.html" title="Halting problem">halting problem</a> reduces to P.</li>
+<li>The complexity classes <a href="/wiki/P_%28complexity%29.html" title="P (complexity)">P</a>, <a href="/wiki/NP_%28complexity%29.html" title="NP (complexity)">NP</a> and <a href="/wiki/PSPACE.html" title="PSPACE">PSPACE</a> are closed under <a href="/wiki/Polynomial-time_reduction.html" title="Polynomial-time reduction">polynomial-time reductions</a>.</li>
+<li>The complexity classes <a href="/wiki/L_%28complexity%29.html" title="L (complexity)">L</a>, <a href="/wiki/NL_%28complexity%29.html" title="NL (complexity)">NL</a>, <a href="/wiki/P_%28complexity%29.html" title="P (complexity)">P</a>, <a href="/wiki/NP_%28complexity%29.html" title="NP (complexity)">NP</a> and <a href="/wiki/PSPACE.html" title="PSPACE">PSPACE</a> are closed under <a href="/wiki/Log-space_reduction.html" title="Log-space reduction">log-space reduction</a>.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Detailed Example">edit</a>]</div>
+<p><a name="Detailed_Example" id="Detailed_Example"></a></p>
+<h3>Detailed Example</h3>
+<p>The following example shows how to use reduction from the halting problem to prove that a language is undecidable. Suppose <i>H</i>(<i>M</i>, <i>w</i>) is the problem of determining whether a given Turing machine <i>M</i> halts (by accepting or rejecting) on input string <i>w</i>. This language is known to be undecidable. Suppose <i>E</i>(<i>M</i>) is the problem of determining whether the language a given Turing machine <i>M</i> accepts is empty (in other words, whether <i>M</i> accepts any strings at all). We show that <i>E</i> is undecidable by a reduction from <i>H</i>.</p>
+<p>To obtain a contradiction, suppose <i>R</i> is a decider for <i>E</i>. We will use this to produce a decider <i>S</i> for <i>H</i> (which we know does not exist). Given input <i>M</i> and <i>w</i> (a Turing machine and some input string), define <i>S</i>(<i>M</i>, <i>w</i>) with the following behavior: <i>S</i> creates a Turing machine <i>N</i> that accepts only if the input string to <i>N</i> is <i>w</i> and <i>M</i> halts on input <i>w</i>, and does not halt otherwise. The decider <i>S</i> can now evaluate <i>R</i>(<i>N</i>) to check whether the language accepted by <i>N</i> is empty. If <i>R</i> accepts <i>N</i>, then the language accepted by <i>N</i> is empty, so in particular <i>M</i> does not halt on input <i>w</i>, so <i>S</i> can reject. If <i>R</i> rejects <i>N</i>, then the language accepted by <i>N</i> is nonempty, so <i>M</i> does halt on input <i>w</i>, so <i>S</i> can accept. Thus, if we had a decider <i>R</i> for <i>E</i>, we would be able to produce a decider <i>S</i> for the halting problem <i>H</i>(<i>M</i>, <i>w</i>) for any machine <i>M</i> and input <i>w</i>. Since we know that such an <i>S</i> cannot exist, it follows that the language <i>E</i> is also undecidable.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Notes">edit</a>]</div>
+<p><a name="Notes" id="Notes"></a></p>
+<h2>Notes</h2>
+<p>A reduction is a <a href="/wiki/Preorder.html" title="Preorder">preordering</a>, that is a <a href="/wiki/Reflexive_relation.html" title="Reflexive relation">reflexive</a> and <a href="/wiki/Transitive_relation.html" title="Transitive relation">transitive relation</a>, on <b>P</b>(<b>N</b>)×<b>P</b>(<b>N</b>), where <b>P</b>(<b>N</b>) is the <a href="/wiki/Power_set.html" title="Power set">power set</a> of the <a href="/wiki/Natural_number.html" title="Natural number">natural numbers</a>.</p>
+<p>A problem is complete for a complexity class if every problem in the class reduces to that problem, and it is also in the class itself. In this sense the problem represents the class, since any solution to it can, in combination with the reductions, be used to solve every problem in the class.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Types and applications of reductions">edit</a>]</div>
+<p><a name="Types_and_applications_of_reductions" id="Types_and_applications_of_reductions"></a></p>
+<h2>Types and applications of reductions</h2>
+<p>As described in the example above, there are two main types of reductions used in computational complexity, the <a href="/wiki/Many-one_reduction.html" title="Many-one reduction">many-one reduction</a> and the <a href="/wiki/Turing_reduction.html" title="Turing reduction">Turing reduction</a>. Many-one reductions map <i>instances</i> of one problem to <i>instances</i> of another; Turing reductions <i>compute</i> the solution to one problem, assuming the other problem is easy to solve. Many-one reduction is weaker than Turing reduction. Weaker reductions are more effective at separating problems, but they have less power, making reductions harder to design.</p>
+<p>However, in order to be useful, reductions must be <i>easy</i>. For example, it's quite possible to reduce a difficult-to-solve <a href="/wiki/NP-complete.html" title="NP-complete">NP-complete</a> problem like the <a href="/wiki/Boolean_satisfiability_problem.html" title="Boolean satisfiability problem">boolean satisfiability problem</a> to a trivial problem, like determining if a number equals zero, by having the reduction machine solve the problem in exponential time and output zero only if there is a solution. But this doesn't achieve much, because even though we can solve the new problem, performing the reduction is just as hard as solving the old problem.</p>
+<p>Therefore, the appropriate notion of reduction depends on the complexity class being studied. When studying the complexity class <a href="/wiki/NP_%28complexity%29.html" title="NP (complexity)">NP</a> and harder classes, <a href="/wiki/Polynomial-time_many-one_reduction.html" title="Polynomial-time many-one reduction">polynomial-time many-one reduction</a> is used. When defining classes in the <a href="/wiki/Polynomial_hierarchy.html" title="Polynomial hierarchy">polynomial hierarchy</a>, <a href="/wiki/Polynomial-time_Turing_reduction.html" title="Polynomial-time Turing reduction">polynomial-time Turing reduction</a> is used. When studying classes within P such as <a href="/wiki/NC_%28complexity%29.html" title="NC (complexity)">NC</a> and <a href="/wiki/NL_%28complexity%29.html" title="NL (complexity)">NL</a>, <a href="/wiki/Log-space_reduction.html" title="Log-space reduction">log-space reduction</a> is used. Reduction is also used in <a href="/wiki/Computability_theory.html" title="Computability theory">computability theory</a> to show whether problems are or are not solvable by machines at all; in this case, reductions are restricted only to <a href="/wiki/Computable_function.html" title="Computable function">computable functions</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Many-one_reduction.html" title="Many-one reduction">Many-one reduction</a></li>
+<li><a href="/wiki/Truth_table_reduction.html" title="Truth table reduction">Truth table reduction</a></li>
+<li><a href="/wiki/Turing_reduction.html" title="Turing reduction">Turing reduction</a></li>
+<li><a  class="new" title="Comparison of numberings">Comparison of numberings</a></li>
+<li><a href="/wiki/Optimization_%28computer_science%29.html" title="Optimization (computer science)">Optimization (computer science)</a></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:848067-0!1!0!default!!en!2 and timestamp 20060910163052 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:Computational complexity theory">Computational complexity theory</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Reduction_%28complexity%29.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-th"><a >ไทย</a></li>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 00:06, 8 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv107 in 0.606 secs. --></body></html>

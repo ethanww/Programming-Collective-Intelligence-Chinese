@@ -1,0 +1,479 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="CPU design,Context switching,Operating system,Radio,Electronics,FPGA,Emulation,X86,Transmeta,Intel,Itanium" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>CPU design - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "CPU_design";
+			var wgTitle = "CPU design";
+			var wgArticleId = 7597;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">CPU design</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub">(Redirected from <a  title="Processor architecture">Processor architecture</a>)</div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p><b>CPU design</b> is the <a href="/wiki/Hardware_design.html" title="Hardware design">hardware design</a> of a <a href="/wiki/Central_processing_unit.html" title="Central processing unit">central processing unit</a>. Design focuses on these areas:</p>
+<ol>
+<li>Datapaths (such as <a href="/wiki/Arithmetic_logic_unit.html" title="Arithmetic logic unit">ALUs</a> and <a href="/wiki/Pipeline_%28computer%29.html" title="Pipeline (computer)">pipelines</a>)</li>
+<li>Logic which controls the datapaths</li>
+<li>Memory components such as register files, caches</li>
+<li>Clock circuitry such as clock drivers, <a href="/wiki/PLL.html" title="PLL">PLLs</a>, clock distribution networks</li>
+<li>Pad transceiver circuitry</li>
+<li>Logic gate cell <a href="/wiki/Library_%28electronics%29.html" title="Library (electronics)">library</a> which is used to implement the logic</li>
+</ol>
+<p>CPUs designed for high performance markets might require custom designs for each of these items to achieve frequency, power-dissipation and chip-area goals.</p>
+<p>CPUs designed for lower performance markets might lessen the implementation burden by:</p>
+<ul>
+<li>acquiring some of these items by purchasing them as <a href="/wiki/Intellectual_property.html" title="Intellectual property">intellectual property</a></li>
+<li>use control logic implementation techniques (<a href="/wiki/Logic_synthesis.html" title="Logic synthesis">logic synthesis</a> using CAD tools) to implement the other components - datapaths, register files, clocks</li>
+</ul>
+<p>Common logic implementation techniques used in CPU design include:</p>
+<ul>
+<li>unstructured random logic</li>
+<li><a href="/wiki/Finite_state_machines.html" title="Finite state machines">finite state machines</a></li>
+<li><a href="/wiki/Microprogramming.html" title="Microprogramming">microprogramming</a> (common from 1965 to 1985, no longer common except for CISC CPUs)</li>
+<li><a href="/wiki/Programmable_logic_array.html" title="Programmable logic array">programmable logic array</a> (common in the 1980s, no longer common)</li>
+</ul>
+<p>A CPU design project generally has these major tasks:</p>
+<ul>
+<li>architectural study and performance modeling</li>
+<li><a href="/wiki/Register_transfer_level.html" title="Register transfer level">RTL</a> (eg. logic) design and verification</li>
+<li><a href="/wiki/Circuit_design.html" title="Circuit design">circuit design</a> of speed critical components (caches, registers, ALUs)</li>
+<li><a href="/wiki/Logic_synthesis.html" title="Logic synthesis">logic synthesis</a> or logic-gate-level design</li>
+<li><a href="/wiki/Static_timing_analysis.html" title="Static timing analysis">timing analysis</a> to confirm that all logic and circuits will run at the specified operating frequency</li>
+<li>physical design including <a href="/wiki/Floorplanning.html" title="Floorplanning">floorplanning</a>, <a href="/wiki/Place_and_route.html" title="Place and route">place and route</a> of logic gates</li>
+<li>checking that RTL, gate-level, transistor-level and physical-level representatations are equivalent</li>
+<li>checks for <a href="/wiki/Signal_integrity.html" title="Signal integrity">signal integrity</a>, <a href="/wiki/Design_rule_checking.html" title="Design rule checking">chip manufacturability</a></li>
+</ul>
+<p>As with most complex electronic designs, the logic verification effort (proving that the design does not have bugs) now dominates the project schedule of a CPU.</p>
+<p>Key CPU architectural innovations include <a href="/wiki/CPU_cache.html" title="CPU cache">cache</a>, <a href="/wiki/Virtual_memory.html" title="Virtual memory">virtual memory</a>, <a href="/wiki/Instruction_pipelining.html" title="Instruction pipelining">instruction pipelining</a>, <a href="/wiki/Superscalar.html" title="Superscalar">superscalar</a>, <a href="/wiki/CISC.html" title="CISC">CISC</a>, <a href="/wiki/RISC.html" title="RISC">RISC</a>, <a href="/wiki/Virtual_machine.html" title="Virtual machine">virtual machine</a>, <a href="/wiki/Emulators.html" title="Emulators">emulators</a>, <a href="/wiki/Microprogram.html" title="Microprogram">microprogram</a>, and <a href="/wiki/Stack_%28data_structure%29.html" title="Stack (data structure)">stack</a>.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Goals</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">History of general purpose CPUs</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">2.1</span> <span class="toctext">1950s: early designs</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.2</span> <span class="toctext">1960s: the computer revolution and CISC</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.3</span> <span class="toctext">1970s: large scale integration</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.4</span> <span class="toctext">Early 1980s: the lessons of RISC</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.5</span> <span class="toctext">Mid-1980s to today: exploiting instruction level parallelism</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.6</span> <span class="toctext">1990 to today: looking forward</span></a>
+<ul>
+<li class="toclevel-3"><a ><span class="tocnumber">2.6.1</span> <span class="toctext">VLIW and EPIC</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">2.6.2</span> <span class="toctext">Multi-threading</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">2.6.3</span> <span class="toctext">Multi-core</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">2.6.4</span> <span class="toctext">Reconfigurable logic</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">2.6.5</span> <span class="toctext">Public domain processors</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">2.6.6</span> <span class="toctext">High-end processor economics</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Embedded design</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">3.1</span> <span class="toctext">Other design issues</span></a>
+<ul>
+<li class="toclevel-3"><a ><span class="tocnumber">3.1.1</span> <span class="toctext">Optical communication</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">3.1.2</span> <span class="toctext">Optical processors</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">3.1.3</span> <span class="toctext">Clockless CPUs</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">3.1.4</span> <span class="toctext">Soft microprocessors</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Concepts</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">4.1</span> <span class="toctext">RISC</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.2</span> <span class="toctext">Instruction pipelining</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.3</span> <span class="toctext">Cache</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.4</span> <span class="toctext">Superscalar</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.5</span> <span class="toctext">Out-of-order execution</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.6</span> <span class="toctext">Speculative execution</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.7</span> <span class="toctext">Multiprocessing and multithreading</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Goals">edit</a>]</div>
+<p><a name="Goals" id="Goals"></a></p>
+<h2>Goals</h2>
+<p>The first CPUs were designed to do mathematical calculations faster and more reliably than human "computers".</p>
+<p>Each successive generation of CPU might be designed to achieve some of these goals:</p>
+<ul>
+<li>higher performance levels of a single program or thread</li>
+<li>higher throughput levels of multiple programs/threads</li>
+<li>less power consumption for the same performance level</li>
+<li>lower cost for the same performance level</li>
+<li>smaller die-area to allow higher levels of integration within one VLSI chip (multiple CPUs or other components)</li>
+<li>greater connectivity to build larger, more parallel systems</li>
+<li>more specialization to aid in specific targeted markets</li>
+</ul>
+<p>Because there are too many programs to test a CPU's speed on all of them, <a href="/wiki/Benchmark_%28computing%29.html" title="Benchmark (computing)">benchmarks</a> were developed. The most famous benchmarks are the SPECint and SPECfp benchmarks developed by <a href="/wiki/Standard_Performance_Evaluation_Corporation.html" title="Standard Performance Evaluation Corporation">Standard Performance Evaluation Corporation</a> and the <a  class="new" title="ConsumerMark">ConsumerMark</a> benchmark developed by the Embedded Microprocessor Benchmark Consortium <a  class="external autonumber" title="http://eembc.org/">[1]</a>.</p>
+<p>Some important measurements include:</p>
+<ul>
+<li>Most consumers pick a computer architecture (normally <a href="/wiki/Intel.html" title="Intel">Intel</a> <a href="/wiki/IA32.html" title="IA32">IA32</a> architecture) to be able run a large base of pre-existing pre-compiled software. Being relatively uninformed on computer benchmarks, most of them pick a particular CPU based on operating frequency.</li>
+<li>System designers building <a href="/wiki/Parallel_computing.html" title="Parallel computing">parallel computers</a>, such as <a href="/wiki/Google_search_technology#Current_Hardware.html" title="Google search technology">Google</a>, pick CPUs based on their speed per watt of power, because the cost of powering the CPU outweighs the cost of the CPU itself. <a  class="external autonumber" title="http://www.eembc.org/benchmark/consumer.asp?HTYPE=SIM">[2]</a><a  class="external autonumber" title="http://news.com.com/Power+could+cost+more+than+servers,+Google+warns/2100-1010_3-5988090.html">[3]</a></li>
+<li>Some system designers building parallel computers pick CPUs based on the speed per dollar.</li>
+<li>System designers building <a href="/wiki/Real-time_computing.html" title="Real-time computing">real-time computing</a> systems want to guarantee worst-case response. That is easier to do when the CPU has low <a href="/wiki/Interrupt_latency.html" title="Interrupt latency">interrupt latency</a> and when it has deterministic response. (<a href="/wiki/DSP.html" title="DSP">DSP</a>)</li>
+<li>Computer programmers who program directly in assembly language want a CPU to support a full featured <a href="/wiki/Instruction_set.html" title="Instruction set">instruction set</a>.</li>
+</ul>
+<p><br />
+Some of these measures conflict. In particular, many design techniques that make CPU run faster make the "performance per watt", "performance per dollar", and "deterministic response" much worse, and vice versa.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: History of general purpose CPUs">edit</a>]</div>
+<p><a name="History_of_general_purpose_CPUs" id="History_of_general_purpose_CPUs"></a></p>
+<h2>History of general purpose CPUs</h2>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: 1950s: early designs">edit</a>]</div>
+<p><a name="1950s:_early_designs"></a></p>
+<h3>1950s: early designs</h3>
+<p>Each of the computer designs of the early 1950s was a unique design; there were no upward-compatible machines or computer architectures with multiple, differing implementations. Programs written for one machine would not run on another kind, even other kinds from the same company. This was not a major drawback at the time because there was not a large body of software developed to run on computers, so starting programming from scratch was not seen as a large barrier.</p>
+<p>The design freedom of the time was very important, for designers were very constrained by the cost of electronics, yet just beginning to explore how a computer could best be organized. Some of the basic features introduced during this period included <a href="/wiki/Index_registers.html" title="Index registers">index registers</a> (on the <a href="/wiki/Ferranti_Mark_I.html" title="Ferranti Mark I">Ferranti Mark I</a>), a return-address saving instruction (<a href="/wiki/UNIVAC_I.html" title="UNIVAC I">UNIVAC I</a>), immediate operands (<a href="/wiki/IBM_704.html" title="IBM 704">IBM 704</a>), and the detection of invalid operations (<a href="/wiki/IBM_650.html" title="IBM 650">IBM 650</a>).</p>
+<p>By the end of the <a href="/wiki/1950.html" title="1950">1950s</a> commercial builders had developed factory-constructed, truck-deliverable computers. The most widely installed computer was the <a href="/wiki/IBM_650.html" title="IBM 650">IBM 650</a>, which used <a href="/wiki/Drum_memory.html" title="Drum memory">drum memory</a> onto which programs were loaded using either <a href="/wiki/Punched_tape.html" title="Punched tape">paper tape</a> or <a href="/wiki/Punch_card.html" title="Punch card">punch cards</a>. Some very high-end machines also included <a href="/wiki/Core_memory.html" title="Core memory">core memory</a> which provided higher speeds. <a href="/wiki/Hard_disk.html" title="Hard disk">Hard disks</a> were also starting to become popular.</p>
+<p>Computers are automatic <a href="/wiki/Abacus.html" title="Abacus">abaci</a>. The type of number system affects the way they work. In the early <a href="/wiki/1950s.html" title="1950s">1950s</a> most computers were built for specific numerical processing tasks, and many machines used decimal numbers as their basic number system – that is, the mathematical functions of the machines worked in base-10 instead of base-2 as is common today. These were not merely <a href="/wiki/Binary_coded_decimal.html" title="Binary coded decimal">binary coded decimal</a>. The machines actually had ten vacuum tubes per digit in each <a href="/wiki/Processor_register.html" title="Processor register">register</a>. Some early <a href="/wiki/Soviet_Union.html" title="Soviet Union">Soviet</a> computer designers implemented systems based on ternary logic; that is, a bit could have three states: +1, 0, or -1, corresponding to positive, no, or negative voltage.</p>
+<p>An early project for the <a href="/wiki/U.S._Air_Force.html" title="U.S. Air Force">U.S. Air Force</a>, <a href="/wiki/BINAC.html" title="BINAC">BINAC</a> attempted to make a lightweight, simple computer by using binary arithmetic. It deeply impressed the industry.</p>
+<p>As late as 1970, major computer languages were unable to standardize their numeric behavior because decimal computers had groups of users too large to alienate.</p>
+<p>Even when designers used a binary system, they still had many odd ideas. Some used sign-magnitude arthmetic (-1 = 10001), rather than modern <a href="/wiki/Two%27s_complement.html" title="Two's complement">two's complement</a> arithmetic (-1 = 11111). Most computers used six-bit character sets, because they adequately encoded <a href="/wiki/Hollerith.html" title="Hollerith">Hollerith</a> cards. It was a major revelation to designers of this period to realize that the data word should be a multiple of the character size. They began to design computers with 12, 24 and 36 bit data words (e.g. see the <a href="/wiki/TX-2.html" title="TX-2">TX-2</a>).</p>
+<p>In this era, <a href="/wiki/Grosch%27s_law.html" title="Grosch's law">Grosch's law</a> dominated computer design: Computer cost increased as the square of its speed.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: 1960s: the computer revolution and CISC">edit</a>]</div>
+<p><a name="1960s:_the_computer_revolution_and_CISC"></a></p>
+<h3>1960s: the computer revolution and CISC</h3>
+<p>One major problem with early computers was that a program for one would not work on others. Computer companies found that their customers had little reason to remain loyal to a particular brand, as the next computer they purchased would be incompatible anyway. At that point, price and performance were usually the only concerns.</p>
+<p>In 1962, IBM tried a new approach to designing computers. The plan was to make an entire family of computers that could all run the same software, but with different performances, and at different prices. As users' requirements grew they could move up to larger computers, and still keep all of their investment in programs, data and storage media.</p>
+<p>In order to do this they designed a single <i>reference computer</i> called the <b><a href="/wiki/System/360.html" title="System/360">System/360</a></b> (or <b>S/360</b>). The System/360 was a virtual computer, a reference instruction set and capabilities that all machines in the family would support. In order to provide different classes of machines, each computer in the family would use more or less hardware emulation, and more or less <a href="/wiki/Microprogram.html" title="Microprogram">microprogram</a> emulation, to create a machine capable of running the entire System/360 <a href="/wiki/Instruction_set.html" title="Instruction set">instruction set</a>.</p>
+<p>For instance a low-end machine could include a very simple processor for low cost. However this would require the use of a larger microcode emulator to provide the rest of the instruction set, which would slow it down. A high-end machine would use a much more complex processor that could directly process more of the System/360 design, thus running a much simpler and faster emulator.</p>
+<p>IBM chose to make the reference <a href="/wiki/Instruction_set.html" title="Instruction set">instruction set</a> quite complex, and very capable. This was a conscious choice. Even though the computer was complex, its "<a href="/wiki/Control_store.html" title="Control store">control store</a>" containing the <a href="/wiki/Microprogram.html" title="Microprogram">microprogram</a> would stay relatively small, and could be made with very fast memory. Another important effect was that a single instruction could describe quite a complex sequence of operations. Thus the computers would generally have to fetch fewer instructions from the main memory, which could be made slower, smaller and less expensive for a given combination of speed and price.</p>
+<p>As the S/360 was to be a successor to both scientific machines like the <a href="/wiki/IBM_7090.html" title="IBM 7090">7090</a> and data processing machines like the <a href="/wiki/IBM_1401.html" title="IBM 1401">1401</a>, it needed a design that could reasonably support all forms of processing. Hence the instruction set was designed to manipulate not just simple binary numbers, but text, scientific floating-point (similar to the numbers used in a calculator), and the <a href="/wiki/Binary_coded_decimal.html" title="Binary coded decimal">binary coded decimal</a> arithmetic needed by accounting systems.</p>
+<p>Almost all following computers included these innovations in some form. This basic set of features is now called a "<a href="/wiki/Complex_instruction_set_computer.html" title="Complex instruction set computer">complex instruction set computer</a>," or CISC (pronounced "sisk"), a term not invented until many years later.</p>
+<p>In many CISCs, an instruction could access either registers or memory, usually in several different ways. This made the CISCs easier to program, because a programmer could remember just thirty to a hundred instructions, and a set of three to ten <a href="/wiki/Addressing_mode.html" title="Addressing mode">addressing modes</a> rather than thousands of distinct instructions. This was called an "<a href="/wiki/Orthogonal_instruction_set.html" title="Orthogonal instruction set">orthogonal instruction set</a>." The <a href="/wiki/PDP-11.html" title="PDP-11">PDP-11</a> and <a href="/wiki/Motorola_68000.html" title="Motorola 68000">Motorola 68000</a> architecture are examples of nearly orthogonal instruction sets.</p>
+<p>There was also the <i>BUNCH</i> (Burroughs, Univac, NCR, CDC, and Honeywell) that competed against IBM at this time though IBM dominated the era with S/360.</p>
+<p>The Burroughs Corporation (which later became Unisys when they merged with Sperry/Univac) offered an alternative to S/360 with their <a href="/wiki/Burroughs_B5000.html" title="Burroughs B5000">B5000</a> series machines. The B5000 series <a href="/wiki/1961.html" title="1961">1961</a> had virtual memory, a multi-programming operating system (Master Control Program or MCP), written in <a href="/wiki/ALGOL_60.html" title="ALGOL 60">ALGOL 60</a>, and the industry's first recursive-descent compilers as early as 1963.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: 1970s: large scale integration">edit</a>]</div>
+<p><a name="1970s:_large_scale_integration"></a></p>
+<h3>1970s: large scale integration</h3>
+<p>In the 1960s, the <a href="/wiki/Apollo_guidance_computer.html" title="Apollo guidance computer">Apollo guidance computer</a> and <a href="/wiki/Minuteman_missile.html" title="Minuteman missile">Minuteman missile</a> made the <a href="/wiki/Integrated_circuit.html" title="Integrated circuit">integrated circuit</a> economical and practical.</p>
+<p>Around 1971, the first calculator and clock chips began to show that very small computers might be possible. The first <a href="/wiki/Microprocessor.html" title="Microprocessor">microprocessor</a> was the <a href="/wiki/4004.html" title="4004">4004</a>, designed in 1971 for a calculator company (<a href="/wiki/Busicom.html" title="Busicom">Busicom</a>), and produced by <a href="/wiki/Intel.html" title="Intel">Intel</a>. The 4004 is the direct ancestor of the <a href="/wiki/Intel_80386.html" title="Intel 80386">Intel 80386</a>, even now maintaining some code compatibility. Just a few years later, the word size of the 4004 was doubled to form the <a href="/wiki/8008.html" title="8008">8008</a>.</p>
+<p>By the mid-1970s, the use of integrated circuits in computers was commonplace. The whole decade consists of upheavals caused by the shrinking price of transistors.</p>
+<p>It became possible to put an entire CPU on a single printed circuit board. The result was that minicomputers, usually with 16-bit words, and 4k to 64K of memory, came to be commonplace.</p>
+<p>CISCs were believed to be the most powerful types of computers, because their microcode was small and could be stored in very high-speed memory. The CISC architecture also addressed the "semantic gap" as it was perceived at the time. This was a defined distance between the machine language, and the higher level language people used to program a machine. It was felt that compilers could do a better job with a richer instruction set.</p>
+<p>Custom CISCs were commonly constructed using "bit slice" computer logic such as the AMD 2900 chips, with custom microcode. A bit slice component is a piece of an <a href="/wiki/ALU.html" title="ALU">ALU</a>, register file or microsequencer. Most bit-slice integrated circuits were 4-bits wide.</p>
+<p>By the early 1970s, the <a href="/wiki/PDP-11.html" title="PDP-11">PDP-11</a> was developed, arguably the most advanced small computer of its day. Almost immediately, wider-word CISCs were introduced, the 32-bit <a href="/wiki/VAX.html" title="VAX">VAX</a> and 36-bit <a href="/wiki/PDP-10.html" title="PDP-10">PDP-10</a>.</p>
+<p>Also, to control a cruise missile, Intel developed a more-capable version of its 8008 microprocessor, the <a href="/wiki/8080.html" title="8080">8080</a>.</p>
+<p>IBM continued to make large, fast computers. However the definition of large and fast now meant more than a megabyte of RAM, clock speeds near one megahertz <a  class="external autonumber" title="http://www.hometoys.com/mentors/caswell/sep00/trends01.htm">[4]</a><a  class="external autonumber" title="http://research.microsoft.com/users/GBell/Computer_Structures_Principles_and_Examples/csp0727.htm">[5]</a>, and tens of megabytes of disk drives.</p>
+<p>IBM's System 370 was a version of the 360 tweaked to run virtual computing environments. The <a href="/wiki/VM_%28Operating_system%29.html" title="VM (Operating system)">virtual computer</a> was developed in order to reduce the possibility of an unrecoverable software failure.</p>
+<p>The Burroughs B5000/B6000/B7000 series reached its largest market share. It was a stack computer programmed in a dialect of Algol. It used 64-bit fixed-point arithmetic, rather than floating-point.</p>
+<p>All these different developments competed madly for marketshare.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Early 1980s: the lessons of RISC">edit</a>]</div>
+<p><a name="Early_1980s:_the_lessons_of_RISC" id="Early_1980s:_the_lessons_of_RISC"></a></p>
+<h3>Early 1980s: the lessons of RISC</h3>
+<p>In the early <a href="/wiki/1980s.html" title="1980s">1980s</a>, researchers at <a href="/wiki/UC_Berkeley.html" title="UC Berkeley">UC Berkeley</a> and <a href="/wiki/IBM.html" title="IBM">IBM</a> both discovered that most computer language compilers and interpreters used only a small subset of the instructions of a <a href="/wiki/CISC.html" title="CISC">CISC</a>. Much of the power of the CPU was simply being ignored in real-world use. They realized that by making the computer simpler and less orthogonal, they could make it faster and less expensive at the same time.</p>
+<p>At the same time, CPU calculation became faster in relation to the time for a necessary memory access es. Designers also experimented with using large sets of internal registers. The idea was to <a href="/wiki/Cache.html" title="Cache">cache</a> intermediate results in the registers under the control of the compiler. This also reduced the number of <a href="/wiki/Addressing_mode.html" title="Addressing mode">addressing modes</a> and orthogonality.</p>
+<p>The computer designs based on this theory were called <a href="/wiki/Reduced_Instruction_Set_Computer.html" title="Reduced Instruction Set Computer">Reduced Instruction Set Computers</a>, or RISC. RISCs generally had larger numbers of registers, accessed by simpler instructions, with a few instructions specifically to load and store data to memory. The result was a very simple core CPU running at very high speed, supporting the exact sorts of operations the compilers were using anyway.</p>
+<p>A common variation on the RISC design employs the <a href="/wiki/Harvard_architecture.html" title="Harvard architecture">Harvard architecture</a>, as opposed to the <a href="/wiki/Von_Neumann_architecture.html" title="Von Neumann architecture">Von Neumann</a> or Stored Program architecture common to most other designs. In a Harvard Architecture machine, the program and data occupy separate memory devices and can be accessed simultaneously. In Von Neumann machines the data and programs are mixed in a single memory device, requiring sequential accessing which produces the so-called "Von Neumann bottleneck."</p>
+<p>One downside to the RISC design has been that the programs that run on them tend to be larger. This is because <a href="/wiki/Compiler.html" title="Compiler">compilers</a> have to generate longer sequences of the simpler instructions to accomplish the same results. Since these instructions need to be loaded from memory anyway, the larger code size offsets some of the RISC design's fast memory handling.</p>
+<p>Recently, engineers have found ways to compress the reduced instruction sets so they fit in even smaller memory systems than CISCs. Examples of such compression schemes include <a href="/wiki/ARM_architecture.html" title="ARM architecture">the ARM</a>'s "Thumb" instruction set. In applications that do not need to run older binary software, compressed RISCs are coming to dominate sales.</p>
+<p>Another approach to RISCs was the <a  class="new" title="MISC">MISC</a>, "<a  class="new" title="Niladic">niladic</a>" or "zero-operand" instruction set. This approach realized that the majority of space in an instruction was to identify the operands of the instruction. These machines placed the operands on a push-down (last-in, first out) <a href="/wiki/Stack_%28data_structure%29.html" title="Stack (data structure)">stack</a>. The instruction set was supplemented with a few instructions to fetch and store memory. Most used simple caching to provide extremely fast RISC machines, with very compact code. Another benefit was that the interrupt latencies were extremely small, smaller than most CISC machines (a rare trait in RISC machines). The first zero-operand computer was developed by <a href="/wiki/Charles_H._Moore.html" title="Charles H. Moore">Charles H. Moore</a>. It placed six 5-bit instructions in a 32-bit word, and was a precursor to <a href="/wiki/VLIW.html" title="VLIW">VLIW</a> design (see below: 1990 to Today).</p>
+<p>Commercial variants were mostly characterized as "<a href="/wiki/Forth.html" title="Forth">Forth</a>" machines, and probably failed in the market place because the power and advantages of that language were not commonly understood. Also, the machines were developed by defense contractors at exactly the time that the cold war ended. Loss of funding may have broken up the development teams before the companies could perform adequate commercial marketing.</p>
+<p>RISC chips now dominate the market for 32-bit embedded systems. Smaller RISC chips are even becoming common in the cost-sensitive 8-bit embedded-system market. The main market for RISC CPUs has been systems that require low power or small size.</p>
+<p>Even some CISC processors (based on architectures that were created before RISC became dominant) translate instructions internally into a RISC-like instruction set. These CISC chips include newer <a href="/wiki/X86.html" title="X86">x86</a> and <a href="/wiki/VAX.html" title="VAX">VAX</a> models.</p>
+<p>These numbers may surprise many, because the "market" is perceived to be desktop computers. With Intel x86 designs dominating the vast majority of all desktop sales, RISC is found in the <a href="/wiki/Apple_Computer.html" title="Apple Computer">Apple</a>, <a href="/wiki/Sun_Microsystems.html" title="Sun Microsystems">Sun</a> and <a href="/wiki/SGI.html" title="SGI">SGI</a> desktop computer lines. However, desktop computers are only a tiny fraction of the computers now sold. Most people own more computers in embedded systems in their car and house than on their desks.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Mid-1980s to today: exploiting instruction level parallelism">edit</a>]</div>
+<p><a name="Mid-1980s_to_today:_exploiting_instruction_level_parallelism" id="Mid-1980s_to_today:_exploiting_instruction_level_parallelism"></a></p>
+<h3>Mid-1980s to today: exploiting instruction level parallelism</h3>
+<p>In the mid-to-late 1980s, designers began using a technique known as "<a href="/wiki/Instruction_pipelining.html" title="Instruction pipelining">instruction pipelining</a>", in which the processor works on multiple instructions in different stages of completion. For example, the processor may be retrieving the operands for the next instruction while calculating the result of the current one. Modern CPUs may use over a dozen such stages. <a href="/wiki/Misc.html" title="Misc">MISC</a> processors achieve single-cycle execution of instructions without the need for pipelining.</p>
+<p>A similar idea, introduced only a few years later, was to execute multiple instructions in parallel on separate arithmetic-logic units (<a href="/wiki/ALU.html" title="ALU">ALUs</a>). Instead of operating on only one instruction at a time, the CPU will look for several similar instructions that are not dependent on each other, and execute them in parallel. This approach is known as <a href="/wiki/Superscalar.html" title="Superscalar">superscalar</a> processor design.</p>
+<p>Such techniques are limited by the degree of <a href="/wiki/Instruction_level_parallelism.html" title="Instruction level parallelism">instruction level parallelism</a> (ILP), the number of non-dependent instructions in the program code. Some programs are able to run very well on superscalar processors due to their inherent high ILP, notably graphics. However more general problems do not have such high ILP, thus making the achievable speedups due to these techniques to be lower.</p>
+<p>Branching is one major culprit. For example, the program might add two numbers and branch to a different code segment if the number is bigger than a third number. In this case even if the branch operation is sent to the second ALU for processing, it still must wait for the results from the addition. It thus runs no faster than if there were only one ALU. The most common solution for this type of problem is to use a type of <a href="/wiki/Branch_prediction.html" title="Branch prediction">branch prediction</a>.</p>
+<p>To further the efficiency of multiple functional units which are available in superscalar designs, operand register dependencies was found to be another limiting factor. To minimize these dependencies, <a href="/wiki/Out-of-order_execution.html" title="Out-of-order execution">out-of-order execution</a> of instructions was introduced. In such a scheme, the instruction results which complete out-of-order must be re-ordered in program order by the processor for the program to be restartable after an exception. <i>Out-of-Order</i> execution was the main advancement of the computer industry during the <a href="/wiki/1990s.html" title="1990s">1990s</a>. A similar concept is <a href="/wiki/Speculative_execution.html" title="Speculative execution">speculative execution</a>, where instructions from both sides of a branch are executed at the same time, and the results of one side or the other are thrown out once the branch answer is known.</p>
+<p>These advances, which were originally developed from research for RISC-style designs, allow modern CISC processors to execute twelve or more instructions per clock cycle, when traditional CISC designs could take twelve or more cycles to execute just one instruction.</p>
+<p>The resulting instruction scheduling logic of these processors is large, complex and difficult to verify. Furthermore, the higher complexity requires more transistors, increasing power consumption and heat. In this respect RISC is superior because the instructions are simpler, have less interdependence and make superscalar implementations easier. However, as Intel has demonstrated, the concepts can be applied to a CISC design, given enough time and money.</p>
+<dl>
+<dd>Historical note: Some of these techniques (e.g. pipelining) were originally developed in the late <a href="/wiki/1950s.html" title="1950s">1950s</a> by <a href="/wiki/International_Business_Machines.html" title="International Business Machines">IBM</a> on their <a href="/wiki/IBM_7030.html" title="IBM 7030">Stretch</a> mainframe computer.</dd>
+</dl>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: 1990 to today: looking forward">edit</a>]</div>
+<p><a name="1990_to_today:_looking_forward"></a></p>
+<h3>1990 to today: looking forward</h3>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: VLIW and EPIC">edit</a>]</div>
+<p><a name="VLIW_and_EPIC" id="VLIW_and_EPIC"></a></p>
+<h4>VLIW and EPIC</h4>
+<p>The instruction scheduling logic that makes a superscalar processor is just boolean logic. In the early 1990s, a significant innovation was to realize that the coordination of a multiple-ALU computer could be moved into the <a href="/wiki/Compiler.html" title="Compiler">compiler</a>, the software that translates a programmer's instructions into machine-level instructions.</p>
+<p>This type of computer is called a <b><a href="/wiki/Very_long_instruction_word.html" title="Very long instruction word">very long instruction word</a></b> (VLIW) computer.</p>
+<p>Statically scheduling the instructions in the compiler (as opposed to letting the processor do the scheduling dynamically) can reduce CPU complexity. This can improve performance, reduce heat, and reduce cost.</p>
+<p>Unfortunately, the compiler lacks accurate knowledge of runtime scheduling issues. Merely changing the CPU core frequency multiplier will have an effect on scheduling. Actual operation of the program, as determined by input data, will have major effects on scheduling. To overcome these severe problems a VLIW system may be enhanced by adding the normal dynamic scheduling, losing some of the VLIW advantages.</p>
+<p>Static scheduling in the compiler also assumes that dynamically generated code will be uncommon. Prior to the creation of <a href="/wiki/Java_Virtual_Machine.html" title="Java Virtual Machine">Java</a>, this was in fact true. It was reasonable to assume that slow compiles would only affect software developers. Now, with <a href="/wiki/Just-in-time_compilation.html" title="Just-in-time compilation">JIT</a> virtual machines for Java and <a href="/wiki/.net.html" title=".net">.net</a>, slow code generation affects users as well.</p>
+<p>There were several unsuccessful attempts to commercialize VLIW. The basic problem is that a VLIW computer does not scale to different price and performance points, as a dynamically scheduled computer can. Another issue is that compiler design for VLIW computers is extremely difficult, and the current crop of compilers (as of 2005) don't always produce optimal code for these platforms.</p>
+<p>Also, VLIW computers optimise for throughput, not low latency, so they were not attractive to the engineers designing controllers and other computers embedded in machinery. The <a href="/wiki/Embedded_system.html" title="Embedded system">embedded systems</a> markets had often pioneered other computer improvements by providing a large market that did not care about compatibility with older software.</p>
+<p>In January <a href="/wiki/2000.html" title="2000">2000</a>, a company called <a href="/wiki/Transmeta.html" title="Transmeta">Transmeta</a> took the interesting step of placing a compiler in the central processing unit, and making the compiler translate from a reference byte code (in their case, <a href="/wiki/X86.html" title="X86">x86</a> instructions) to an internal VLIW instruction set. This approach combines the hardware simplicity, low power and speed of VLIW RISC with the compact main memory system and software reverse-compatibility provided by popular CISC.</p>
+<p><a href="/wiki/Intel.html" title="Intel">Intel</a> released a chip, called the <a href="/wiki/Itanium.html" title="Itanium">Itanium</a>, based on what they call an <a href="/wiki/Explicitly_Parallel_Instruction_Computing.html" title="Explicitly Parallel Instruction Computing">Explicitly Parallel Instruction Computing</a> (EPIC) design. This design supposedly provides the VLIW advantage of increased instruction throughput. However, it avoids some of the issues of scaling and complexity, by explicitly providing in each "bundle" of instructions information concerning their dependencies. This information is calculated by the compiler, as it would be in a VLIW design. The early versions are also backward-compatible with current <a href="/wiki/X86.html" title="X86">x86</a> software by means of an on-chip <a href="/wiki/Emulation.html" title="Emulation">emulation</a> mode. Integer performance was disappointing and despite improvements, sales in volume markets continue to be low.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Multi-threading">edit</a>]</div>
+<p><a name="Multi-threading" id="Multi-threading"></a></p>
+<h4>Multi-threading</h4>
+<p>Current designs work best when the computer is running only a single program, however nearly all modern <a href="/wiki/Operating_system.html" title="Operating system">operating systems</a> allow the user to run multiple programs at the same time. For the CPU to change over and do work on another program requires expensive <a href="/wiki/Context_switching.html" title="Context switching">context switching</a>. In contrast, multi-threaded CPUs can handle instructions from multiple programs at once.</p>
+<p>To do this, such CPUs include several sets of registers. When a context switch occurs, the contents of the "working registers" are simply copied into one of a set of registers for this purpose.</p>
+<p>Such designs often include thousands of registers instead of hundreds as in a typical design. On the downside, registers tend to be somewhat expensive in chip space needed to implement them. This chip space might otherwise be used for some other purpose.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Multi-core">edit</a>]</div>
+<p><a name="Multi-core" id="Multi-core"></a></p>
+<h4>Multi-core</h4>
+<p>Multi-core CPUs are typically multiple cpus on the same die possibly sharing the same cache to main memory and sharing the same bus to talk to other devices and to talk to eachother.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Reconfigurable logic">edit</a>]</div>
+<p><a name="Reconfigurable_logic" id="Reconfigurable_logic"></a></p>
+<h4>Reconfigurable logic</h4>
+<p>Another track of development is to combine reconfigurable logic with a general-purpose CPU. In this scheme, a special computer language compiles fast-running subroutines into a bit-mask to configure the logic. Slower, or less-critical parts of the program can be run by sharing their time on the CPU. This process has the capability to create devices such as software <a href="/wiki/Radio.html" title="Radio">radios</a>, by using digital signal processing to perform functions usually performed by analog <a href="/wiki/Electronics.html" title="Electronics">electronics</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Public domain processors">edit</a>]</div>
+<p><a name="Public_domain_processors" id="Public_domain_processors"></a></p>
+<h4>Public domain processors</h4>
+<p>As the lines between hardware and software increasingly blur due to progress in design methodology and availability of chips such as <a href="/wiki/FPGA.html" title="FPGA">FPGAs</a> and cheaper production processes, even <a href="/wiki/Open_source_hardware.html" title="Open source hardware">open source hardware</a> has begun to appear. Loosely-knit communities like <a href="/wiki/OpenCores.html" title="OpenCores">OpenCores</a> have recently announced completely open CPU architectures such as the <a href="/wiki/OpenRISC.html" title="OpenRISC">OpenRISC</a> which can be readily implemented on FPGAs or in custom produced chips, by anyone, without paying license fees.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: High-end processor economics">edit</a>]</div>
+<p><a name="High-end_processor_economics" id="High-end_processor_economics"></a></p>
+<h4>High-end processor economics</h4>
+<p>Developing new, high-end CPUs is a <b>very</b> expensive proposition. Both the logical complexity (needing very large logic design and logic verification teams and simulation farms with perhaps thousands of computers) and the high operating frequencies (needing large circuit design teams and access to the state-of-the-art fabrication process) account for the high cost of design for this type of chip. The design cost of a high-end CPU will be on the order of US $100 million. Since the design of such high-end chips nominally take about five years to complete, to stay competitive a company has to fund at least two of these large design teams to release products at the rate of 2.5 years per product generation. Only the personal computer mass market (with production rates in the hundreds of millions, producing billions of dollars in revenue) can support such economics. As of 2004, only four companies are actively designing and fabricating state of the art general purpose computing CPU chips: <a href="/wiki/Intel.html" title="Intel">Intel</a>, <a href="/wiki/AMD.html" title="AMD">AMD</a>, <a href="/wiki/IBM.html" title="IBM">IBM</a> and <a href="/wiki/Fujitsu.html" title="Fujitsu">Fujitsu</a>. <a href="/wiki/Motorola.html" title="Motorola">Motorola</a> has spun off its semiconductor division as <a href="/wiki/Freescale.html" title="Freescale">Freescale</a> as that division was dragging down profit margins for the rest of the company. <a href="/wiki/Texas_Instruments.html" title="Texas Instruments">Texas Instruments</a>, <a href="/wiki/TSMC.html" title="TSMC">TSMC</a> and <a href="/wiki/Toshiba.html" title="Toshiba">Toshiba</a> are a few examples of a companies doing manufacturing for another company's CPU chip design.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Embedded design">edit</a>]</div>
+<p><a name="Embedded_design" id="Embedded_design"></a></p>
+<h2>Embedded design</h2>
+<p>The majority of computer systems in use today are embedded in other machinery, such as telephones, clocks, appliances, vehicles, and infrastructure. An <a href="/wiki/Embedded_system.html" title="Embedded system">embedded system</a> usually has minimal requirements for memory and program length and may require simple but unusual input/output systems. For example, most embedded systems lack keyboards, screens, disks, printers, or other recognizable I/O devices of a personal computer. They may control electric motors, relays or voltages, and reed switches, variable resistors or other electronic devices. Often, the only I/O device readable by a human is a single light-emitting diode, and severe cost or power constraints can even eliminate that.</p>
+<p>In contrast to general-purpose computers, embedded systems often seek to minimize <a href="/wiki/Interrupt_latency.html" title="Interrupt latency">interrupt latency</a> over instruction throughput.</p>
+<p>When an electronic device causes an interrupt, the intermediate results, the registers, have to be saved before the software responsible for handling the interrupt can run, and then must be put back after it is finished. If there are more registers, this saving and restoring process takes more time, increasing the latency.</p>
+<p>Low-latency CPUs generally have relatively few registers in their central processing units, or they have "shadow registers" that are only used by the interrupt software.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Other design issues">edit</a>]</div>
+<p><a name="Other_design_issues" id="Other_design_issues"></a></p>
+<h3>Other design issues</h3>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Optical communication">edit</a>]</div>
+<p><a name="Optical_communication" id="Optical_communication"></a></p>
+<h4>Optical communication</h4>
+<p>One interesting near-term possibility would be to eliminate the <a href="/wiki/Front_side_bus.html" title="Front side bus">front side bus</a>. Modern vertical <a href="/wiki/Laser_diode.html" title="Laser diode">laser diodes</a> enable this change. In theory, an optical computer's components could directly connect through a holographic or phased open-air switching system. This would provide a large increase in effective speed and design flexibility, and a large reduction in cost. Since a computer's connectors are also its most likely failure point, a busless system might be more reliable, as well.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Optical processors">edit</a>]</div>
+<p><a name="Optical_processors" id="Optical_processors"></a></p>
+<h4>Optical processors</h4>
+<p>Another farther-term possibility is to use light instead of electricity for the digital logic itself. In theory, this could run about 30% faster and use less power, as well as permit a direct interface with quantum computational devices. The chief problem with this approach is that for the foreseeable future, electronic devices are faster, smaller (i.e. cheaper) and more reliable. An important theoretical problem is that electronic computational elements are already smaller than some wavelengths of light, and therefore even wave-guide based optical logic may be uneconomic compared to electronic logic. The majority of development effort, <a href="/wiki/As_of_2006.html" title="As of 2006">as of 2006</a> is focused on electronic circuitry. See also <a href="/wiki/Optical_computing.html" title="Optical computing">optical computing</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Clockless CPUs">edit</a>]</div>
+<p><a name="Clockless_CPUs" id="Clockless_CPUs"></a></p>
+<h4>Clockless CPUs</h4>
+<p>Yet another possibility is the "clockless CPU" (asynchronous CPU). Unlike conventional processors, clockless processors have no central clock to coordinate the progress of data through the pipeline. Instead, stages of the CPU are coordinated using logic devices called "pipe line controls" or "FIFO sequencers." Basically, the pipeline controller clocks the next stage of logic when the existing stage is complete. In this way, a central clock is unnecessary. There are two advantages to clockless CPUs over clocked CPUs:</p>
+<ul>
+<li>components can run at different speeds in the clockless CPU. In a clocked CPU, no component can run faster than the clock rate.</li>
+<li>In a clocked CPU, the clock can go no faster than the worst-case performance of the slowest stage. In a clockless CPU, when a stage finishes faster than normal, the next stage can immediately take the results rather than waiting for the next clock tick. A stage might finish faster than normal because of the particular data inputs (multiplication can be very fast if it is multiplying by 0 or 1), or because it is running at a higher voltage or lower temperature than normal.</li>
+</ul>
+<p>Two examples of asynchronous CPUs are the <a href="/wiki/ARM_architecture.html" title="ARM architecture">ARM</a>-implementing <a href="/wiki/AMULET_microprocessor.html" title="AMULET microprocessor">AMULET</a> and the asynchronous implementation of <a href="/wiki/MIPS_architecture.html" title="MIPS architecture">MIPS</a> R3000, dubbed <a  class="external text" title="http://www.async.caltech.edu/mips.html">MiniMIPS</a>.</p>
+<p>The biggest disadvantage of the clockless CPU is that most CPU design tools assume a clocked CPU (a <a href="/wiki/Synchronous_circuit.html" title="Synchronous circuit">synchronous circuit</a>), so making a clockless CPU (designing an <a href="/wiki/Asynchronous_circuit.html" title="Asynchronous circuit">asynchronous circuit</a>) involves modifying the design tools to handle clockless logic and doing extra testing to ensure the design avoids <a href="/wiki/Metastability_in_electronics.html" title="Metastability in electronics">metastable</a> problems. For example, the group that designs the aforementioned AMULET developed a tool called <a  class="external text" title="http://www.cs.man.ac.uk/apt/projects/tools/lard/">LARD</a> to cope with the complex design of AMULET3.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Soft microprocessors">edit</a>]</div>
+<p><a name="Soft_microprocessors" id="Soft_microprocessors"></a></p>
+<h4>Soft microprocessors</h4>
+<p><i>See article <a href="/wiki/Soft_microprocessor.html" title="Soft microprocessor">Soft microprocessor</a></i></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Concepts">edit</a>]</div>
+<p><a name="Concepts" id="Concepts"></a></p>
+<h2>Concepts</h2>
+<p>In general, all processors, micro or otherwise, run the same sort of task over and over:</p>
+<ol>
+<li>read an instruction and decode it</li>
+<li>find any associated data that is needed to process the instruction</li>
+<li>process the instruction</li>
+<li>write the results out</li>
+</ol>
+<p>Complicating this simple-looking series of events is the fact that <a href="/wiki/Main_memory.html" title="Main memory">main memory</a> has always been slower than the processor itself. Step (2) often introduces a lengthy (in CPU terms) delay while the data arrives over the <a href="/wiki/Computer_bus.html" title="Computer bus">computer bus</a>. A considerable amount of research has been put into designs that avoid these delays as much as possible. This often requires complex circuitry and was at one time found only on hand-wired <a href="/wiki/Supercomputer.html" title="Supercomputer">supercomputer</a> designs. However, as the manufacturing processes have improved, they have become a common feature of almost all designs.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: RISC">edit</a>]</div>
+<p><a name="RISC" id="RISC"></a></p>
+<h3>RISC</h3>
+<p>The basic concept of <a href="/wiki/RISC.html" title="RISC">RISC</a> is to clearly identify what step 2 does. In older processor designs, now retroactively known as <a href="/wiki/Complex_instruction_set_computer.html" title="Complex instruction set computer">CISC</a>, the instructions were offered in a number of different modes that meant that step 2 took an unknown length of time to complete. In RISC, almost all instructions come in exactly one mode that reads data from one place — the registers. These <i>addressing modes</i> are then handled by the <a href="/wiki/Compiler.html" title="Compiler">compiler</a>, which writes code to load the data into the registers and store it back out. For this reason the term <b>load-store</b> is often used to describe this philosophy in design; there are many processors with limited instruction sets that are not really RISC.</p>
+<p>The side effect of this change is twofold. One is that the resulting logic core is much smaller, largely by making step 1 and 2 much simpler. Second it means that step 2 always takes one cycle, also reducing the complexity of the overall chip design which would otherwise require complex "locks" that ensure the processor completes one instruction before starting the other. For any given level of performance, a RISC design will have a much smaller "gate count" (number of transistors), the main driver in overall cost — in other words a fast RISC chip is much cheaper than a fast CISC chip.</p>
+<p>The downside is that the program gets much longer as a side effect of the compiler having to write out explicit instructions for memory handling, the "code density" is lower. This increases the number of instructions that have to be read over the computer bus. When RISC was first being introduced there were arguments that the increased bus access would overwhelm the speed, and that such designs would actually be slower. In theory this might be true, but the real reason for RISC was to allow <a href="/wiki/Instruction_pipeline.html" title="Instruction pipeline">instruction pipelines</a> to be built much more easily.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Instruction pipelining">edit</a>]</div>
+<p><a name="Instruction_pipelining" id="Instruction_pipelining"></a></p>
+<h3>Instruction pipelining</h3>
+<p>One of the first, and most powerful, techniques to improve performance is the <a href="/wiki/Instruction_pipeline.html" title="Instruction pipeline">instruction pipeline</a>. Early microcoded designs would carry out all of the steps above for one instruction before moving onto the next. Large portions of the circuitry were left idle at any one step, for instance, the instruction decoding circuitry would be idle during execution and so on.</p>
+<p>Pipelines improve performance by allowing a number of instructions to work their way through the processor at the same time. In the same basic example, the processor would start to decode (step 1) a new instruction while the last one was waiting for results. This would allow up to four instructions to be "in flight" at one time, making the processor look four times as fast. Although any one instruction takes just as long to complete, there's still four steps, the CPU as a whole "retires" instructions much faster and can be run at a much higher clock speed.</p>
+<p>RISC make pipelines smaller, and much easier to construct by cleanly separating each stage of the instruction process and making them take the same amount of time — one cycle. The processor as a whole operates in an <a href="/wiki/Assembly_line.html" title="Assembly line">assembly line</a> fashion, with instructions coming in one side and results out the other. Due to the reduced complexity of the <a href="/wiki/Classic_RISC_pipeline.html" title="Classic RISC pipeline">Classic RISC pipeline</a>, the pipelined core and an instruction cache could be placed on the same size die that would otherwise fit the core alone on a CISC design. This was the real reason that RISC was faster, early designs like the <a href="/wiki/SPARC.html" title="SPARC">SPARC</a> and <a href="/wiki/MIPS_architecture.html" title="MIPS architecture">MIPS</a> often running over 10 times as fast as <a href="/wiki/Intel.html" title="Intel">Intel</a> and <a href="/wiki/Motorola.html" title="Motorola">Motorola</a> CISC solutions at the same clock speed and price.</p>
+<p>Pipelines are by no means limited to RISC designs. By 1986 the top-of-the-line VAX (the 8800) was a heavily pipelined design, slightly predating the first commercial MIPS and SPARC designs. Most modern CPUs (even embedded CPUs) are now pipelined, and microcoded CPUs with no pipelining are seen only in the most area-constrained embedded processors. Large CISC machines, from the VAX 8800 to the modern Pentium 4 and Athlon, are implemented with both microcode and pipelines. Improvements in pipelining and caching are the two major microarchitectural advances that have enabled processor performance to keep pace with the circuit technology on which they are based.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Cache">edit</a>]</div>
+<p><a name="Cache" id="Cache"></a></p>
+<h3>Cache</h3>
+<p>It was not long before improvements in chip manufacturing allowed for even more circuitry to be placed on the die, and designers started looking for ways to use it. One of the most common was to add an ever-increasing amount of <a href="/wiki/CPU_cache.html" title="CPU cache">cache memory</a> on-die. Cache is simply very fast memory, memory that can be accessed in a few cycles as opposed to "many" needed to talk to main memory. The CPU includes a cache controller which automates reading and writing from the cache, if the data is already in the cache it simply "appears", whereas if it is not the processor is "stalled" while the cache controller reads it in.</p>
+<p>RISC designs started adding cache in the mid-to-late 1980s, often only 4&#160;KB in total. This number grew over time, and typical CPUs now have about 512&#160;KB, while more powerful CPUs come with 1 or 2&#160;MB, organized in multiple levels of a <a href="/wiki/Memory_hierarchy.html" title="Memory hierarchy">memory hierarchy</a>. Generally speaking, more cache means more speed.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Superscalar">edit</a>]</div>
+<p><a name="Superscalar" id="Superscalar"></a></p>
+<h3>Superscalar</h3>
+<p>Even with all of the added complexity and gates needed to support the concepts outlined above, chip manufacturing had soon made even them have room left over. This led to the rise of <a href="/wiki/Superscalar.html" title="Superscalar">superscalar</a> processors in the early 1990s, processors that could run more than one instruction at once.</p>
+<p>In the outline above the processor runs parts of a single instruction at a time. If one were simply to place two entire cores on a die, then the processor would be able to run two instructions at once. However this is not actually required, as in the average program certain instructions are much more common than others. For instance, the load-store instructions on a RISC design are more common than <a href="/wiki/Floating_point.html" title="Floating point">floating point</a>, so building two complete cores is not as efficient a use of space as building two load-store units and only one floating point.</p>
+<p>In modern designs it is common to find two load units, one store (many instructions have no results to store), two or more integer math units, two or more floating point units, and often a <a href="/wiki/SIMD.html" title="SIMD">SIMD</a> unit of some sort. The decoder grows in complexity by reading in a huge list of instructions from memory and handing them off to the different units that are idle at that point. The results are then collected and re-ordered at the end, as in out-of-order.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Out-of-order execution">edit</a>]</div>
+<p><a name="Out-of-order_execution" id="Out-of-order_execution"></a></p>
+<h3>Out-of-order execution</h3>
+<p>The addition of caches reduces the frequency or duration of stalls due to waiting for data to be fetched from the memory hierarchy, but does not get rid of these stalls entirely. In early designs a <i>cache miss</i> would force the cache controller to stall the processor and wait. Of course there may be some other instruction in the program whose data <i>is</i> available in the cache at that point. <a href="/wiki/Out-of-order_execution.html" title="Out-of-order execution">Out-of-order execution</a> allows that ready instruction to be processed while the processor waits on the cache, then re-orders the results to make it appear that everything happened in the normal order.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Speculative execution">edit</a>]</div>
+<p><a name="Speculative_execution" id="Speculative_execution"></a></p>
+<h3>Speculative execution</h3>
+<p>One problem with an instruction pipeline is that there are a class of instructions that must make their way entirely through the pipeline before execution can continue. In particular, conditional branches need to know the result of some prior instruction before "which side" of the branch to run is known. For instance, an instruction that says "if x is larger than 5 then do this, otherwise do that" will have to wait for the results of x to be known before it knows if the instructions for this or that can be fetched.</p>
+<p>For a small four-deep pipeline this means a delay of up to three cycles — the decode can still happen. But as clock speeds increase the depth of the pipeline increases with it, and modern processors may have 20 stages or more. In this case the CPU is being stalled for the vast majority of its cycles every time one of these instructions is encountered.</p>
+<p>The solution, or one of them, is <i><a href="/wiki/Speculative_execution.html" title="Speculative execution">speculative execution</a></i>, also known as <i><a href="/wiki/Branch_predictor.html" title="Branch predictor">branch prediction</a></i>. In reality one side or the other of the branch will be called much more often than the other, so it is often correct to simply go ahead and say "x will likely be smaller than five, start processing that". If the prediction turns out to be correct, a huge amount of time will be saved. Modern designs have rather complex prediction systems, which watch the results of past branches to predict the future with greater accuracy.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Multiprocessing and multithreading">edit</a>]</div>
+<p><a name="Multiprocessing_and_multithreading" id="Multiprocessing_and_multithreading"></a></p>
+<h3>Multiprocessing and multithreading</h3>
+<p>Computer architects have become stymied by the growing mismatch in CPU operating frequencies and <a href="/wiki/Dynamic_random_access_memory.html" title="Dynamic random access memory">DRAM</a> access times. None of the techniques that exploited instruction-level parallism within one program could make up for the long stalls that occurred when data had to be fetched from main memory. For this reason, newer generations of computers have started to exploit higher levels of parallelism that exist outside of a single program or <a href="/wiki/Thread_%28computer_science%29.html" title="Thread (computer science)">program thread</a>.</p>
+<p>This trend is sometimes known as <i>throughput computing</i>. This idea originated in the mainframe market where <a href="/wiki/OLTP.html" title="OLTP">online transaction processing</a> emphasized not just the execution speed of one transaction, but the capacity to deal with massive numbers of transactions. With transaction-based applications such as network routing and web-site serving greatly increasing in the last decade, the computer industry has re-emphasized capacity and throughput issues.</p>
+<p>One technique of how this parallelism is achieved is through <a href="/wiki/Multiprocessing.html" title="Multiprocessing">multiprocessing</a> systems, computer systems with multiple CPUs. Once reserved for high-end <a href="/wiki/Mainframe.html" title="Mainframe">mainframes</a> and <a href="/wiki/Supercomputer.html" title="Supercomputer">supercomputers</a>, small scale (2-8) multiprocessors servers have become commonplace for the small business market. For large corporations, large scale (16-256) multiprocessors are common. Even <a href="/wiki/Personal_computer.html" title="Personal computer">personal computers</a> with multiple CPUs have appeared since the 1990s.</p>
+<p>With further transistor size reductions made available with semiconductor technology advances, <a href="/wiki/Chip-level_multiprocessing.html" title="Chip-level multiprocessing">Chip-level multiprocessing</a> have appeared where multiple CPUs are implemented on the same silicon chip. Initially used in chips targeting embedded markets, where simpler and smaller CPUs would allow multiple instantiations to fit on one piece of silicon. By 2005, semiconductor technology allowed dual high-end desktop CPUs <i>CMP</i> chips to be manufactured in volume. Some designs, such as <a href="/wiki/Sun_Microsystems.html" title="Sun Microsystems">Sun Microsystems</a>' <a href="/wiki/UltraSPARC_T1.html" title="UltraSPARC T1">UltraSPARC T1</a> have reverted back to simpler (scalar, in-order) designs in order to fit more processors on one piece of silicon.</p>
+<p>Another technique that has become more popular recently is <a href="/wiki/Multithreading.html" title="Multithreading">multithreading</a>. In multithreading, when the processor has to fetch data from slow system memory, instead of stalling for the data to arrive, the processor switches to another program or program thread which is ready to execute. Though this does not speed up a particular program/thread, it increases the overall system throughput by reducing the time the CPU is idle.</p>
+<p>Conceptually, multithreading is equivalent to a <a href="/wiki/Context_switch.html" title="Context switch">context switch</a> at the operating system level. The difference is that a multithreaded CPU can do a thread switch in one CPU cycle instead of the hundreds or thousands of CPU cycles a context switch normally requires. This is achieved by replicating the state hardware (such as the <a href="/wiki/Register_file.html" title="Register file">register file</a> and <a href="/wiki/Program_counter.html" title="Program counter">program counter</a>) for each active thread.</p>
+<p>A further enhancement is <a href="/wiki/Simultaneous_multithreading.html" title="Simultaneous multithreading">simultaneous multithreading</a>. This technique allows superscalar CPUs to execute instructions from different programs/threads simultaneously in the same cycle.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Microprocessor.html" title="Microprocessor">Microprocessor</a></li>
+<li><a href="/wiki/Moore%27s_Law.html" title="Moore's Law">Moore's Law</a></li>
+<li><a href="/wiki/Amdahl%27s_law.html" title="Amdahl's law">Amdahl's law</a></li>
+<li><a href="/wiki/RISC.html" title="RISC">RISC</a></li>
+<li><a href="/wiki/Complex_instruction_set_computer.html" title="Complex instruction set computer">CISC</a></li>
+<li><a href="/wiki/Misc.html" title="Misc">MISC</a></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:7597-0!1!0!default!!en!2 and timestamp 20060909180543 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:Central processing unit">Central processing unit</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/CPU_design.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-nl"><a >Nederlands</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 23:14, 4 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv12 in 0.152 secs. --></body></html>

@@ -1,0 +1,796 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="X86 instruction listings,3DNow!,6x86MX,80286,80386,80486,AMD K7,Athlon,Athlon 64,Binary coded decimal,Branding" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>X86 instruction listings - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "X86_instruction_listings";
+			var wgTitle = "X86 instruction listings";
+			var wgArticleId = 628229;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">X86 instruction listings</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub">(Redirected from <a  title="X86 instruction set">X86 instruction set</a>)</div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<dl>
+<dd><span class="plainlinks"><i>The correct title of this article is <b>x86 instruction listings</b>. The initial letter is capitalized due to <a  title="Wikipedia:Naming conventions (technical restrictions)">technical restrictions</a>.</i></span></dd>
+</dl>
+<table cellspacing="0" cellpadding="0" style="clear:right; margin-bottom: .5em; float: right; padding: .5em 0 .8em 1.4em; background: none; width: auto;">
+<tr>
+<td>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">x86 Integer Instructions</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">2.1</span> <span class="toctext">Original 8086/8088 instructions</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.2</span> <span class="toctext">Added in specific processors</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">x87 Floating Point Instructions</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">3.1</span> <span class="toctext">Original 8087 instructions</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.2</span> <span class="toctext">Added in specific processors</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">SIMD Instructions</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">4.1</span> <span class="toctext">MMX instructions</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.2</span> <span class="toctext">MMX+ instructions</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.3</span> <span class="toctext">3DNow! instructions</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.4</span> <span class="toctext">3DNow!+ instructions</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.5</span> <span class="toctext">SSE instructions</span></a>
+<ul>
+<li class="toclevel-3"><a ><span class="tocnumber">4.5.1</span> <span class="toctext">SSE SIMD Floating-Point Instructions</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">4.5.2</span> <span class="toctext">SSE SIMD Integer Instructions</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.6</span> <span class="toctext">SSE2 instructions</span></a>
+<ul>
+<li class="toclevel-3"><a ><span class="tocnumber">4.6.1</span> <span class="toctext">SSE2 SIMD Floating-Point Instructions</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">4.6.2</span> <span class="toctext">SSE2 SIMD Integer Instructions</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.7</span> <span class="toctext">SSE3 instructions</span></a>
+<ul>
+<li class="toclevel-3"><a ><span class="tocnumber">4.7.1</span> <span class="toctext">SSE3 SIMD Floating-Point Instructions</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">4.7.2</span> <span class="toctext">SSE3 SIMD Integer Instructions</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.8</span> <span class="toctext">SSSE3 instructions</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></td>
+</tr>
+</table>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Introduction">edit</a>]</div>
+<p><a name="Introduction" id="Introduction"></a></p>
+<h2>Introduction</h2>
+<p>The <a href="/wiki/X86.html" title="X86">x86</a> <a href="/wiki/Instruction_set.html" title="Instruction set">instruction set</a> has undergone numerous changes over time. Most of them were to add new functionality to the instruction set.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: x86 Integer Instructions">edit</a>]</div>
+<p><a name="x86_Integer_Instructions" id="x86_Integer_Instructions"></a></p>
+<h2><a href="/wiki/X86.html" title="X86">x86</a> <a href="/wiki/Integer.html" title="Integer">Integer</a> Instructions</h2>
+<p>This is the full 8086-8088 instruction set, but most, if not all of these instructions are available in 32-bit mode, they just operate on 32 bit registers (eax, ebx, etc) and values instead of their 16-bit (ax, bx, etc) counterparts. See also <a href="/wiki/X86_assembly_language.html" title="X86 assembly language">x86 assembly language</a> for a quick tutorial for this chip.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Original 8086/8088 instructions">edit</a>]</div>
+<p><a name="Original_8086.2F8088_instructions" id="Original_8086.2F8088_instructions"></a></p>
+<h3>Original 8086/8088 instructions</h3>
+<table class="wikitable">
+<tr>
+<th>Instruction</th>
+<th>Meaning</th>
+<th>Notes</th>
+</tr>
+<tr>
+<td>AAA</td>
+<td><b>A</b>SCII <b>a</b>djust AL after <b>a</b>ddition</td>
+<td>used with unpacked <a href="/wiki/Binary_coded_decimal.html" title="Binary coded decimal">binary coded decimal</a></td>
+</tr>
+<tr>
+<td>AAD</td>
+<td><b>A</b>SCII <b>a</b>djust AX before <b>d</b>ivision</td>
+<td>buggy in the original instruction set, but "fixed" in the NEC V20, causing a number of incompatibilites</td>
+</tr>
+<tr>
+<td>AAM</td>
+<td><b>A</b>SCII <b>a</b>djust AX after <b>m</b>ultiplication</td>
+<td></td>
+</tr>
+<tr>
+<td>AAS</td>
+<td><b>A</b>SCII <b>a</b>djust AL after <b>s</b>ubtraction</td>
+<td></td>
+</tr>
+<tr>
+<td>ADC</td>
+<td><b>Ad</b>d with <b>c</b>arry</td>
+<td></td>
+</tr>
+<tr>
+<td>ADD</td>
+<td>Add</td>
+<td></td>
+</tr>
+<tr>
+<td>AND</td>
+<td>Logical AND</td>
+<td></td>
+</tr>
+<tr>
+<td>CALL</td>
+<td>Call procedure</td>
+<td></td>
+</tr>
+<tr>
+<td>CBW</td>
+<td><b>C</b>onvert <b>b</b>yte to <b>w</b>ord</td>
+<td></td>
+</tr>
+<tr>
+<td>CLC</td>
+<td><b>Cl</b>ear <b>c</b>arry flag</td>
+<td></td>
+</tr>
+<tr>
+<td>CLD</td>
+<td><b>Cl</b>ear <b>d</b>irection flag</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="/wiki/CLI_%28x86_instruction%29.html" title="CLI (x86 instruction)">CLI</a></td>
+<td><b>Cl</b>ear <b>i</b>nterrupt flag</td>
+<td></td>
+</tr>
+<tr>
+<td>CMC</td>
+<td><b>C</b>o<b>m</b>plement <b>c</b>arry flag</td>
+<td></td>
+</tr>
+<tr>
+<td>CMP</td>
+<td><b>C</b>o<b>mp</b>are operands</td>
+<td></td>
+</tr>
+<tr>
+<td>CMPSB</td>
+<td><b>C</b>o<b>mp</b>are bytes in memory</td>
+<td></td>
+</tr>
+<tr>
+<td>CMPSW</td>
+<td><b>C</b>o<b>mp</b>are words</td>
+<td></td>
+</tr>
+<tr>
+<td>CWD</td>
+<td><b>C</b>onvert <b>w</b>ord to <b>d</b>oubleword</td>
+<td></td>
+</tr>
+<tr>
+<td>DAA</td>
+<td><b>D</b>ecimal <b>a</b>djust AL after <b>a</b>ddition</td>
+<td>(used with packed <a href="/wiki/Binary_coded_decimal.html" title="Binary coded decimal">binary coded decimal</a>)</td>
+</tr>
+<tr>
+<td>DAS</td>
+<td><b>D</b>ecimal <b>a</b>djust AL after <b>s</b>ubtraction</td>
+<td></td>
+</tr>
+<tr>
+<td>DEC</td>
+<td><b>Dec</b>rement by 1</td>
+<td></td>
+</tr>
+<tr>
+<td>DIV</td>
+<td>Unsigned <b>div</b>ide</td>
+<td></td>
+</tr>
+<tr>
+<td>ESC</td>
+<td>Used with <a href="/wiki/Floating-point_unit.html" title="Floating-point unit">floating-point unit</a></td>
+<td></td>
+</tr>
+<tr>
+<td>HLT</td>
+<td>Enter <b>h</b>a<b>lt</b> state</td>
+<td></td>
+</tr>
+<tr>
+<td>IDIV</td>
+<td>S<b>i</b>gned <b>div</b>ide</td>
+<td></td>
+</tr>
+<tr>
+<td>IMUL</td>
+<td>S<b>i</b>gned <b>mul</b>tiply</td>
+<td></td>
+</tr>
+<tr>
+<td>IN</td>
+<td><b>In</b>put from port</td>
+<td></td>
+</tr>
+<tr>
+<td>INC</td>
+<td><b>Inc</b>rement by 1</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="/wiki/INT_%28x86_instruction%29.html" title="INT (x86 instruction)">INT</a></td>
+<td>Call to <b>int</b>errupt</td>
+<td></td>
+</tr>
+<tr>
+<td>INTO</td>
+<td>Call to <b>int</b>errupt if <b>o</b>verflow</td>
+<td></td>
+</tr>
+<tr>
+<td>IRET</td>
+<td><b>Ret</b>urn from <b>i</b>nterrupt</td>
+<td></td>
+</tr>
+<tr>
+<td>Jxx</td>
+<td><b>J</b>ump if condition</td>
+<td>(<i>JA, JAE, JB, JBE, JC, JCXZ, JE, JG, JGE, JL, JLE, JNA, JNAE, JNB, JNBE, JNC, JNE, JNG, JNGE, JNL, JNLE, JNO, JNP, JNS, JNZ, JO, JP, JPE, JPO, JS, JZ</i>)</td>
+</tr>
+<tr>
+<td><a href="/wiki/JMP_%28x86_instruction%29.html" title="JMP (x86 instruction)">JMP</a></td>
+<td><b>J</b>u<b>mp</b></td>
+<td></td>
+</tr>
+<tr>
+<td>LAHF</td>
+<td><b>L</b>oad <b>f</b>lags into <b>AH</b> register</td>
+<td></td>
+</tr>
+<tr>
+<td>LDS</td>
+<td><b>L</b>oad pointer using <b>DS</b></td>
+<td></td>
+</tr>
+<tr>
+<td>LEA</td>
+<td><b>L</b>oad <b>E</b>ffective <b>A</b>ddress</td>
+<td></td>
+</tr>
+<tr>
+<td>LES</td>
+<td><b>L</b>oad <b>ES</b> with pointer</td>
+<td></td>
+</tr>
+<tr>
+<td>LOCK</td>
+<td>Assert BUS <b>LOCK</b># signal</td>
+<td>(for multiprocessing)</td>
+</tr>
+<tr>
+<td>LODSB</td>
+<td><b>Lo</b>a<b>d</b> <b>b</b>yte</td>
+<td></td>
+</tr>
+<tr>
+<td>LODSW</td>
+<td><b>Lo</b>a<b>d</b> <b>w</b>ord</td>
+<td></td>
+</tr>
+<tr>
+<td>LOOP/LOOPx</td>
+<td><b>Loop</b> control</td>
+<td>(<i>LOOPE, LOOPNE, LOOPNZ, LOOPZ</i>)</td>
+</tr>
+<tr>
+<td><a href="/wiki/MOV_%28x86_instruction%29.html" title="MOV (x86 instruction)">MOV</a></td>
+<td><b>Mov</b>e</td>
+</tr>
+<tr>
+<td>MOVSB</td>
+<td><b>Mov</b>e <b>b</b>yte from <b>s</b>tring to string</td>
+<td></td>
+</tr>
+<tr>
+<td>MOVSW</td>
+<td><b>Mov</b>e word from <b>s</b>tring to <b>s</b>tring</td>
+<td></td>
+</tr>
+<tr>
+<td>MUL</td>
+<td>Unsigned <b>mul</b>tiply</td>
+<td></td>
+</tr>
+<tr>
+<td>NEG</td>
+<td>Two's complement <b>neg</b>ation</td>
+<td></td>
+</tr>
+<tr>
+<td>NOP</td>
+<td><b>N</b>o <b>op</b>eration</td>
+<td></td>
+</tr>
+<tr>
+<td>NOT</td>
+<td>Negate the operand, logical <b>NOT</b></td>
+<td></td>
+</tr>
+<tr>
+<td>OR</td>
+<td>Logical <b>OR</b></td>
+<td></td>
+</tr>
+<tr>
+<td>OUT</td>
+<td><b>Out</b>put to port</td>
+<td></td>
+</tr>
+<tr>
+<td>POP</td>
+<td><b>Pop</b> data from stack</td>
+<td></td>
+</tr>
+<tr>
+<td>POPF</td>
+<td><b>Pop</b> data into <b>f</b>lags register</td>
+<td></td>
+</tr>
+<tr>
+<td>PUSH</td>
+<td><b>Push</b> data onto stack</td>
+<td></td>
+</tr>
+<tr>
+<td>PUSHF</td>
+<td><b>Push f</b>lags onto stack</td>
+<td></td>
+</tr>
+<tr>
+<td>RCL</td>
+<td><b>R</b>otate <b>l</b>eft (with <b>c</b>arry)</td>
+<td></td>
+</tr>
+<tr>
+<td>RCR</td>
+<td><b>R</b>otate <b>r</b>ight (with <b>c</b>arry)</td>
+<td></td>
+</tr>
+<tr>
+<td>REPxx</td>
+<td><b>Rep</b>eat CMPS/MOVS/SCAS/STOS</td>
+<td>(<i>REP, REPE, REPNE, REPNZ, REPZ</i>)</td>
+</tr>
+<tr>
+<td>RET</td>
+<td><b>Ret</b>urn from procedure</td>
+<td></td>
+</tr>
+<tr>
+<td>RETN</td>
+<td><b>Ret</b>urn from <b>n</b>ear procedure</td>
+<td></td>
+</tr>
+<tr>
+<td>RETF</td>
+<td><b>Ret</b>urn from <b>f</b>ar procedure</td>
+<td></td>
+</tr>
+<tr>
+<td>ROL</td>
+<td><b>Ro</b>tate <b>l</b>eft</td>
+<td></td>
+</tr>
+<tr>
+<td>ROR</td>
+<td><b>Rot</b>ate <b>r</b>ight</td>
+<td></td>
+</tr>
+<tr>
+<td>SAHF</td>
+<td><b>S</b>tore <b>AH</b> into <b>f</b>lags</td>
+<td></td>
+</tr>
+<tr>
+<td>SAL</td>
+<td><b>S</b>hift <b>l</b>eft (multiply)</td>
+<td></td>
+</tr>
+<tr>
+<td>SAR</td>
+<td><b>S</b>hift <b>r</b>ight (signed divide)</td>
+<td></td>
+</tr>
+<tr>
+<td>SBB</td>
+<td><b>S</b>u<b>b</b>traction with <b>b</b>orrow</td>
+<td></td>
+</tr>
+<tr>
+<td>SCASB</td>
+<td><b>C</b>omp<b>a</b>re <b>b</b>yte <b>s</b>tring</td>
+<td></td>
+</tr>
+<tr>
+<td>SCASW</td>
+<td><b>C</b>omp<b>a</b>re <b>w</b>ord <b>s</b>tring</td>
+<td></td>
+</tr>
+<tr>
+<td>SHL</td>
+<td><b>Sh</b>ift <b>l</b>eft (multiply)</td>
+<td></td>
+</tr>
+<tr>
+<td>SHR</td>
+<td><b>Sh</b>ift <b>r</b>ight (unsigned divide)</td>
+<td></td>
+</tr>
+<tr>
+<td>STC</td>
+<td><b>S</b>e<b>t</b> <b>c</b>arry flag</td>
+<td></td>
+</tr>
+<tr>
+<td>STD</td>
+<td><b>S</b>e<b>t</b> <b>d</b>irection flag</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="/wiki/STI_%28x86_instruction%29.html" title="STI (x86 instruction)">STI</a></td>
+<td><b>S</b>e<b>t</b> <b>i</b>nterrupt flag</td>
+<td></td>
+</tr>
+<tr>
+<td>STOSB</td>
+<td><b>Sto</b>re <b>b</b>yte in <b>s</b>tring</td>
+<td></td>
+</tr>
+<tr>
+<td>STOSW</td>
+<td><b>Sto</b>re <b>w</b>ord in <b>s</b>tring</td>
+<td></td>
+</tr>
+<tr>
+<td>SUB</td>
+<td><b>Sub</b>traction</td>
+<td></td>
+</tr>
+<tr>
+<td>TEST</td>
+<td>Logical compare (AND)</td>
+<td></td>
+</tr>
+<tr>
+<td>WAIT</td>
+<td><b>Wait</b> until not busy</td>
+<td>Waits until BUSY# pin is inactive (used with <a href="/wiki/Floating-point_unit.html" title="Floating-point unit">floating-point unit</a>)</td>
+</tr>
+<tr>
+<td>XCHG</td>
+<td>E<b>xch</b>an<b>g</b>e data</td>
+<td></td>
+</tr>
+<tr>
+<td>XLAT</td>
+<td>Table look-up translation</td>
+<td></td>
+</tr>
+<tr>
+<td>XOR</td>
+<td>E<b>x</b>clusive <b>OR</b></td>
+<td></td>
+</tr>
+</table>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Added in specific processors">edit</a>]</div>
+<p><a name="Added_in_specific_processors" id="Added_in_specific_processors"></a></p>
+<h3>Added in specific processors</h3>
+<p><b>Added with 80186/80188</b></p>
+<p>BOUND, ENTER, INSB, INSW, LEAVE, OUTSB, OUTSW, POPA, PUSHA, PUSHW</p>
+<p><b>Added with <a href="/wiki/80286.html" title="80286">80286</a></b></p>
+<p>ARPL, CLTS, LAR, LGDT, LIDT, LLDT, LMSW, <a href="/wiki/LOADALL.html" title="LOADALL">LOADALL</a>, LSL, <a href="/wiki/Load_Task_Register.html" title="Load Task Register">LTR</a>, SGDT, SIDT, SLDT, SMSW, STR, VERR, VERW</p>
+<p><b>Added with <a href="/wiki/80386.html" title="80386">80386</a></b></p>
+<p>BSF, BSR, BT, BTC, BTR, BTS, CDQ, CMPSD, CWDE, INSD, IRETD, IRETDF, IRETF, JECXZ, LFS, LGS, LSS, LODSD, LOOPD, LOOPED, LOOPNED, LOOPNZD, LOOPZD, MOVSD, MOVSX, MOVZX, OUTSD, POPAD, POPFD, PUSHAD, PUSHD, PUSHFD, SCASD, SETA, SETAE, SETB, SETBE, SETC, SETE, SETG, SETGE, SETL, SETLE, SETNA, SETNAE, SETNB, SETNBE, SETNC, SETNE, SETNG, SETNGE, SETNL, SETNLE, SETNO, SETNP, SETNS, SETNZ, SETO, SETP, SETPE, SETPO, SETS, SETZ, SHLD, SHRD, STOSD</p>
+<p><b>Added with <a href="/wiki/80486.html" title="80486">80486</a></b></p>
+<p>BSWAP, CMPXCHG, CPUID, INVD, INVLPG, RSM, WBINVD, XADD</p>
+<p><b>Added with Pentium</b></p>
+<p>CMPXCHG8B, RDMSR, RDPMC*, <a href="/wiki/RDTSC.html" title="RDTSC">RDTSC</a>, WRMSR</p>
+<ul>
+<li>RDPMC <i>was introduced in the <a href="/wiki/Pentium_Pro.html" title="Pentium Pro">Pentium Pro</a> processor and the <a href="/wiki/Pentium.html" title="Pentium">Pentium</a> processor with <a href="/wiki/MMX.html" title="MMX">MMX</a> technology.</i></li>
+</ul>
+<p><b>Added with <a href="/wiki/Pentium_Pro.html" title="Pentium Pro">Pentium Pro</a></b></p>
+<p>CMOVA, CMOVAE, CMOVB, CMOVB, CMOVE, CMOVG, CMOVGE, CMOVL, CMOVLE, CMOVNA, CMOVNAE, CMOVNB, CMOVNBE, CMOVNC, CMOVNE, CMOVNG, CMOVNGE, CMOVNL, CMOVNLE, CMOVNO, CMOVNP, CMOVNS, CMOVNZ, CMOVO, CMOVP, CMOVPE, CMOVPO, CMOVS, CMOVZ, SYSENTER, SYSEXIT</p>
+<p><b>Added with <a href="/wiki/AMD_K7.html" title="AMD K7">AMD K7</a></b></p>
+<ul>
+<li>SYSCALL - AMD only functionally equivalent to SYSENTER</li>
+<li>SYSRET - AMD only functionally equivalent to SYSEXIT</li>
+</ul>
+<div class="notice plainlinks"><i>This list is <a  title="Wikipedia:Incomplete lists">incomplete</a>; you can help by <a  class="external text" title="http://en.wikipedia.org/w/index.php?title=X86_instruction_listings&amp;action=edit">expanding it</a></i>.</div>
+<p><b>Added with <a href="/wiki/Pentium_III.html" title="Pentium III">Pentium III</a></b></p>
+<p><i>as part of the SSE <a href="/wiki/Branding.html" title="Branding">branding</a></i><br />
+MASKMOVQ, MOVNTPS, MOVNTQ, PREFETCH0, PREFETCH1, PREFETCH2, PREFETCHNTA, SFENCE (for Cacheability and Memory Ordering)</p>
+<p><b>Added with <a href="/wiki/Pentium_4.html" title="Pentium 4">Pentium 4</a></b></p>
+<p><i>as part of the SSE2 branding</i></p>
+<p>CLFLUSH, LFENCE, MASKMOVDQU, MFENCE, MOVNTDQ, MOVNTI, MOVNTPD, PAUSE (for Cacheability)</p>
+<p><b>Added with Pentium 4 supporting <a href="/wiki/SSE3.html" title="SSE3">SSE3</a></b></p>
+<p><i>only on processors supporting <a href="/wiki/Hyper-threading.html" title="Hyper-threading">Hyper-threading</a></i><br />
+<i>as part of the SSE3 branding</i><br />
+MONITOR, MWAIT (for <a href="/wiki/Thread_%28computer_science%29.html" title="Thread (computer science)">thread</a> synchronization)</p>
+<p><b>Added with Pentium 4 6x2</b></p>
+<p>VMPTRLD, VMPTRST, VMCLEAR, VMREAD, VMWRITE, VMCALL, VMLAUNCH, VMRESUME, VMXOFF, VMXON (<a href="/wiki/VMX.html" title="VMX">VMX</a> instructions of <a href="/wiki/Virtualization_Technology.html" title="Virtualization Technology">VT</a>)</p>
+<p><b>Added with <a href="/wiki/X86-64.html" title="X86-64">x86-64</a></b></p>
+<p>CMPXCHG16B</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: x87 Floating Point Instructions">edit</a>]</div>
+<p><a name="x87_Floating_Point_Instructions" id="x87_Floating_Point_Instructions"></a></p>
+<h2><a href="/wiki/X87.html" title="X87">x87</a> <a href="/wiki/Floating_Point.html" title="Floating Point">Floating Point</a> Instructions</h2>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Original 8087 instructions">edit</a>]</div>
+<p><a name="Original_8087_instructions" id="Original_8087_instructions"></a></p>
+<h3>Original 8087 instructions</h3>
+<p>F2XM1, FABS, FADD, FADDP, FBLD, FBSTP, FCHS, FCLEX, FCOM, FCOMP, FCOMPP, FDECSTP, FDISI, <a href="/wiki/Pentium_FDIV_bug.html" title="Pentium FDIV bug">FDIV</a>, FDIVP, FDIVR, FDIVRP, FENI, FFREE, FIADD, FICOM, FICOMP, FIDIV, FIDIVR, FILD, FIMUL, FINCSTP, FINIT, FIST, FISTP, FISUB, FISUBR, FLD, FLD1, FLDCW, FLDENV, FLDENVW, FLDL2E, FLDL2T, FLDLG2, FLDLN2, FLDPI, FLDZ, FMUL, FMULP, FNCLEX, FNDISI, FNENI, FNINIT, FNOP, FNSAVE, FNSAVEW, FNSTCW, FNSTENV, FNSTENVW, FNSTSW, FPATAN, FPREM, FPTAN, FRNDINT, FRSTOR, FRSTORW, FSAVE, FSAVEW, FSCALE, FSQRT, FST, FSTCW, FSTENV, FSTENVW, FSTP, FSTSW, FSUB, FSUBP, FSUBR, FSUBRP, FTST, FWAIT, FXAM, FXCH, FXTRACT, FYL2X, FYL2XP1</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Added in specific processors">edit</a>]</div>
+<p><a name="Added_in_specific_processors_2" id="Added_in_specific_processors_2"></a></p>
+<h3>Added in specific processors</h3>
+<p><b>Added with 80287</b></p>
+<p>FSETPM</p>
+<p><b>Added with 80387</b></p>
+<p>FCOS, FLDENVD, FNSAVED, FNSTENVD, FPREM1, FRSTORD, FSAVED, FSIN, FSINCOS, FSTENVD, FUCOM, FUCOMP, FUCOMPP</p>
+<p><b>Added with Pentium Pro</b></p>
+<p>FCMOVB, FCMOVBE, FCMOVE, FCMOVNB, FCMOVNBE, FCMOVNE, FCMOVNU, FCMOVU, FCOMI, FCOMIP, FUCOMI, FUCOMIP, FXRSTOR, FXSAVE</p>
+<p><b>Added with Pentium 4 supporting SSE3</b></p>
+<p><i>as part of the SSE3 branding</i></p>
+<p>FISTTP (x87 to integer conversion)</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: SIMD Instructions">edit</a>]</div>
+<p><a name="SIMD_Instructions" id="SIMD_Instructions"></a></p>
+<h2><a href="/wiki/SIMD.html" title="SIMD">SIMD</a> Instructions</h2>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: MMX instructions">edit</a>]</div>
+<p><a name="MMX_instructions" id="MMX_instructions"></a></p>
+<h3><a href="/wiki/MMX.html" title="MMX">MMX</a> instructions</h3>
+<p><i>added with <a href="/wiki/Pentium_MMX.html" title="Pentium MMX">Pentium MMX</a></i><br />
+EMMS, MOVD, MODQ, PACKSSDW, PACKSSWB, PACKUSWB, PADDB, PADDD, PADDSB, PADDSW, PADDUSB, PADDUSW, PADDW, PAND, PANDN, PCMPEQB, PCMPEQD, PCMPEQW, PCMPGTB, PCMPGTD, PCMPGTW, PMADDWD, PMULHW, PMULLW, POR, PSLLD, PSLLQ, PSLLW, PSRAD, PSRAW, PSRLD, PSRLQ, PSRLW, PSUBB, PSUBD, PSUBSB, PSUBSW, PSUBUSB, PSUBUSW, PSUBW, PUNPCKHBW, PUNPCKHDQ, PUNPCKHWD, PUNPCKLBW, PUNPCKLDQ, PUNPCKLWD, PXOR</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: MMX+ instructions">edit</a>]</div>
+<p><a name="MMX.2B_instructions" id="MMX.2B_instructions"></a></p>
+<h3><a  class="new" title="Extendend MMX">MMX+</a> instructions</h3>
+<p><i>added with <a href="/wiki/6x86MX.html" title="6x86MX">6x86MX</a> from <a href="/wiki/Cyrix.html" title="Cyrix">Cyrix</a>; supported on other CPUs too, i.e. <a  class="new" title="Extended MMX">Extended MMX</a> on <a href="/wiki/Athlon_64.html" title="Athlon 64">Athlon 64</a></i><br /></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: 3DNow! instructions">edit</a>]</div>
+<p><a name="3DNow.21_instructions"></a></p>
+<h3><a href="/wiki/3DNow%21.html" title="3DNow!">3DNow!</a> instructions</h3>
+<p><i>added with <a href="/wiki/K6-2.html" title="K6-2">K6-2</a></i><br />
+FEMMS, PAVGUSB, PF2ID, PFACC, PFADD, PFCMPEQ, PFCMPGE, PFCMPGT, PFMAX, PFMIN, PFMUL, PFRCP, PFRCPIT1, PFRCPIT2, PFRSQIT1, PFRSQRT, PFSUB, PFSUBR, PI2FD, PMULHRW, PREFETCH, PREFETCHW</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: 3DNow!+ instructions">edit</a>]</div>
+<p><a name="3DNow.21.2B_instructions"></a></p>
+<h3>3DNow!+ instructions</h3>
+<p><i>added with <a href="/wiki/Athlon.html" title="Athlon">Athlon</a></i><br />
+PF2IW, PFNACC, PFPNACC, PI2FW, PSWAPD</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: SSE instructions">edit</a>]</div>
+<p><a name="SSE_instructions" id="SSE_instructions"></a></p>
+<h3><a href="/wiki/Streaming_SIMD_Extensions.html" title="Streaming SIMD Extensions">SSE</a> instructions</h3>
+<p><i>added with <a href="/wiki/Pentium_III.html" title="Pentium III">Pentium III</a></i><br />
+<i>also see integer instruction added with Pentium III</i><br /></p>
+<blockquote>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: SSE SIMD Floating-Point Instructions">edit</a>]</div>
+<a name="SSE_SIMD_Floating-Point_Instructions" id="SSE_SIMD_Floating-Point_Instructions"></a>
+<h4>SSE SIMD Floating-Point Instructions</h4>
+<p>ADDPS, ADDSS, ANDNPS, ANDPS, CMPPS, CMPSS, COMISS, CVTPI2PS, CVTPS2PI, CVTSI2SS, CVTSS2SI, CVTTPS2PI, CVTTSS2SI, DIVPS, DIVSS, LDMXCSR, MAXPS, MAXSS, MINPS, MINSS, MOVAPS, MOVHLPS, MOVHPS, MOVLHPS, MOVLPS, MOVMSKPS, MOVNTPS, MOVSS, MOVUPS, MULPS, MULSS, ORPS, RCPPS, RCPSS, RSQRTPS, RSQRTSS, SHUFPS, SQRTPS, SQRTSS, STMXCSR, SUBPS, SUBSS, UCOMISS, UNPCKHPS, UNPCKLPS, XORPS</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: SSE SIMD Integer Instructions">edit</a>]</div>
+<a name="SSE_SIMD_Integer_Instructions" id="SSE_SIMD_Integer_Instructions"></a>
+<h4>SSE SIMD Integer Instructions</h4>
+<p>PAVGB, PAVGW, PEXTRW, PINSRW, PMAXSW, PMAXUB, PMINSW, PMINUB, PMOVMSKB, PSADBW, PSHUFW</p>
+</blockquote>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: SSE2 instructions">edit</a>]</div>
+<p><a name="SSE2_instructions" id="SSE2_instructions"></a></p>
+<h3><a href="/wiki/SSE2.html" title="SSE2">SSE2</a> instructions</h3>
+<p><i>added with <a href="/wiki/Pentium_4.html" title="Pentium 4">Pentium 4</a></i><br />
+<i>also see integer instructions added with Pentium 4</i><br /></p>
+<blockquote>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: SSE2 SIMD Floating-Point Instructions">edit</a>]</div>
+<a name="SSE2_SIMD_Floating-Point_Instructions" id="SSE2_SIMD_Floating-Point_Instructions"></a>
+<h4>SSE2 SIMD Floating-Point Instructions</h4>
+<p>ADDPD, ADDSD, ANDNPD, ANDPD, CMPPD, CMPSD*, COMISD, CVTDQ2PD, CVTDQ2PS, CVTPD2DQ, CVTPD2PI, CVTPD2PS, CVTPI2PD, CVTPS2DQ, CVTPS2PD, CVTSD2SI, CVTSD2SS, CVTSI2SD, CVTSS2SD, CVTTPD2DQ, CVTTPD2PI, CVTPS2DQ, CVTTSD2SI, DIVPD, DIVSD, MAXPD, MAXSD, MINPD, MINSD, MOVAPD, MOVHPD, MOVLPD, MOVMSKPD, MOVSD*, MOVUPD, MULPD, MULSD, ORPD, SHUFPD, SQRTPD, SQRTSD, SUBPD, SUBSD, UCOMISD, UNPCKHPD, UNPCKLPD, XORPD</p>
+<ul>
+<li>CMPSD <i>and</i> MOVSD <i>have the same name as the <a href="/wiki/String_%28computer_science%29.html" title="String (computer science)">string</a> instruction mnemonics</i> CMPSD (CMPS) <i>and</i> MOVSD (MOVS)<i>, however, the former refer to scalar <a href="/wiki/Double_precision.html" title="Double precision">double-precision</a> <a href="/wiki/Floating_point.html" title="Floating point">floating-points</a> whereas the latters refer to <a href="/wiki/Integer_%28computer_science%29.html" title="Integer (computer science)">doubleword</a> strings.</i></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: SSE2 SIMD Integer Instructions">edit</a>]</div>
+<a name="SSE2_SIMD_Integer_Instructions" id="SSE2_SIMD_Integer_Instructions"></a>
+<h4>SSE2 SIMD Integer Instructions</h4>
+<p>MOVDQ2Q, MOVDQA, MOVDQU, MOVQ2DQ, PADDQ, PMULUDQ, PSHUFHW, PSHUFLW, PSHUFD, PSLLDQ, PSRLDQ, PUNPCKHQDQ, PUNPCKLQDQ</p>
+</blockquote>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: SSE3 instructions">edit</a>]</div>
+<p><a name="SSE3_instructions" id="SSE3_instructions"></a></p>
+<h3><a href="/wiki/SSE3.html" title="SSE3">SSE3</a> instructions</h3>
+<p><i>added with Pentium 4 SSE3</i><br />
+<i>also see integer and floating-point instructions added with Pentium 4 SSE3</i><br /></p>
+<blockquote>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: SSE3 SIMD Floating-Point Instructions">edit</a>]</div>
+<a name="SSE3_SIMD_Floating-Point_Instructions" id="SSE3_SIMD_Floating-Point_Instructions"></a>
+<h4>SSE3 SIMD Floating-Point Instructions</h4>
+<ul>
+<li>ADDSUBPD, ADDSUBPS (for Complex Arithmetic)</li>
+<li>HADDPD, HADDPS, HSUBPD, HSUBPS (for Graphics)</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: SSE3 SIMD Integer Instructions">edit</a>]</div>
+<a name="SSE3_SIMD_Integer_Instructions" id="SSE3_SIMD_Integer_Instructions"></a>
+<h4>SSE3 SIMD Integer Instructions</h4>
+<ul>
+<li>MOVDDUP, MOVSHDUP, MOVSLDUP (for Complex Arithmetic)</li>
+<li>LDDQU (for Video Encoding)</li>
+</ul>
+</blockquote>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: SSSE3 instructions">edit</a>]</div>
+<p><a name="SSSE3_instructions" id="SSSE3_instructions"></a></p>
+<h3><a href="/wiki/SSSE3.html" title="SSSE3">SSSE3</a> instructions</h3>
+<p><i>added with <a href="/wiki/Xeon.html" title="Xeon">Xeon</a> 5100 series and <a href="/wiki/Core_2.html" title="Core 2">Core 2</a></i><br /></p>
+<ul>
+<li>PSIGNW, PSIGND, PSIGNB</li>
+<li>PSHUFB</li>
+<li>PMULHRSW, PMADDUBSW</li>
+<li>PHSUBW, PHSUBSW, PHSUBD</li>
+<li>PHADDW, PHADDSW, PHADDD</li>
+<li>PALIGNR</li>
+<li>PABSW, PABSD, PABSB</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://home.comcast.net/~fbui/intel.html">8086/80186/80286/80386/80486 Instruction Set</a></li>
+<li><a  class="external text" title="http://www.intel.com/design/pentium4/manuals/index_new.htm">Free IA-32 documentation</a>, provided by Intel</li>
+<li><a  class="external text" title="http://nasm.sourceforge.net/doc/html/nasmdocb.html">Netwide Assembler x86 Instruction Reference</a></li>
+</ul>
+
+<!-- 
+Pre-expand include size: 1646 bytes
+Post-expand include size: 1083 bytes
+Template argument size: 281 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:628229-0!1!0!default!!en!2 and timestamp 20060910161307 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Incomplete lists">Incomplete lists</a></span> | <span dir='ltr'><a  title="Category:X86 instructions">X86 instructions</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/X86_instruction_listings.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-fr"><a >Français</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 08:04, 3 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv107 in 0.100 secs. --></body></html>

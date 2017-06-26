@@ -1,0 +1,315 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Malloc,Address space,Address space layout randomization,Array,Automatic memory allocation,Buffer overflow,C++,C Programming Language,C programming language,Call stack,Compile-time" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Malloc - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Malloc";
+			var wgTitle = "Malloc";
+			var wgArticleId = 384289;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Malloc</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<dl>
+<dd><span class="plainlinks"><i>The correct title of this article is <b>malloc</b>. The initial letter is capitalized due to <a  title="Wikipedia:Naming conventions (technical restrictions)">technical restrictions</a>.</i></span></dd>
+</dl>
+<p>In <a href="/wiki/Computing.html" title="Computing">computing</a>, <code><b>malloc</b></code> is a <a href="/wiki/Subroutine.html" title="Subroutine">subroutine</a> provided in the <a href="/wiki/C_programming_language.html" title="C programming language">C programming language</a>'s <a href="/wiki/Standard_library.html" title="Standard library">standard library</a> for performing <a href="/wiki/Dynamic_memory_allocation.html" title="Dynamic memory allocation">dynamic memory allocation</a>.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Rationale</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Dynamic memory allocation in C</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Usage example</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Related functions</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Common errors</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">5.1</span> <span class="toctext">Allocation failure</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">5.2</span> <span class="toctext">Memory leaks</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">5.3</span> <span class="toctext">Use after free</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">Implementations</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">6.1</span> <span class="toctext">Heap-based</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">6.2</span> <span class="toctext">The glibc allocator</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">6.3</span> <span class="toctext">OpenBSD's malloc</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">Maximum allocation size</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">8</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">9</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Rationale">edit</a>]</div>
+<p><a name="Rationale" id="Rationale"></a></p>
+<h2>Rationale</h2>
+<p>The <a href="/wiki/C_Programming_Language.html" title="C Programming Language">C</a> <a href="/wiki/Programming_language.html" title="Programming language">programming language</a> normally manages <a href="/wiki/Memory_%28computers%29.html" title="Memory (computers)">memory</a> either <i><a href="/wiki/Static_memory_allocation.html" title="Static memory allocation">statically</a></i> or <i><a href="/wiki/Automatic_memory_allocation.html" title="Automatic memory allocation">automatically</a></i>. Static-duration variables are allocated in main (fixed) memory and persist for the lifetime of the program; automatic-duration variables are allocated on the <a href="/wiki/Call_stack.html" title="Call stack">stack</a> and come and go as functions are called and return. However, both these forms of allocation are somewhat limited, as the size of the allocation must be a <a href="/wiki/Compile-time.html" title="Compile-time">compile-time</a> constant. If the required size will not be known until <a href="/wiki/Run-time.html" title="Run-time">run-time</a> — for example, if data of arbitrary size is being read from the user or from a disk file — using fixed-size data objects is inadequate.</p>
+<p>The lifetime of allocated memory is also a concern. Neither static- nor automatic-duration memory is adequate for all situations. Stack-allocated data can obviously not be persisted across multiple function calls, while static data persists for the life of the program whether you need it to or not. In many situations the programmer requires greater flexibility in managing the lifetime of allocated memory.</p>
+<p>These limitations are avoided by using <a href="/wiki/Dynamic_memory_allocation.html" title="Dynamic memory allocation">dynamic memory allocation</a> in which memory is more explicitly but more flexibly managed, typically by allocating it from a <i><a href="/wiki/Dynamic_memory_allocation.html" title="Dynamic memory allocation">heap</a></i>, an area of memory structured for this purpose. In C, one uses the library function <code>malloc</code> to allocate a block of memory on the heap. The program accesses this block of memory via a <a href="/wiki/Pointer.html" title="Pointer">pointer</a> which <code>malloc</code> returns. When the memory is no longer needed, the pointer is passed to <code>free</code> which deallocates the memory so that it can be reused by other parts of the program.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Dynamic memory allocation in C">edit</a>]</div>
+<p><a name="Dynamic_memory_allocation_in_C" id="Dynamic_memory_allocation_in_C"></a></p>
+<h2>Dynamic memory allocation in C</h2>
+<p>The <code>malloc</code> function is the basic function used to allocate memory on the heap in C. Its prototype is</p>
+<pre>
+void *malloc(size_t <var>size</var>)
+</pre>
+<p>which allocates <code><var>size</var></code> bytes of memory. If the allocation succeeds, a pointer to the block of memory is returned.</p>
+<p><code>malloc</code> returns a <a href="/wiki/Void_pointer.html" title="Void pointer">void pointer</a> (<code>void *</code>), which indicates that it is a pointer to a region of unknown data type. This pointer is typically <a href="/wiki/Type_conversion.html" title="Type conversion">cast</a> to a more specific pointer type by the programmer before being used. However, these days casting <code>malloc</code> return value is discouraged; originally, <code>malloc</code> returned a <code>char *</code>, which usually required casting, but <code>void *</code> needs not be cast, and may lead to ambiguities. <a  class="external autonumber" title="http://www.c-faq.com/malloc/mallocnocast.html">[1]</a> <a  class="external autonumber" title="http://faq.cprogramming.com/cgi-bin/smartfaq.cgi?id=1043284351&amp;answer=1047673478">[2]</a></p>
+<p>Memory allocated via <code>malloc</code> is persistent: it will continue to exist until the program terminates or the memory is explicitly deallocated by the programmer (that is, the block is said to be "freed"). This is achieved by use of the <code>free</code> function. Its prototype is</p>
+<pre>
+void free(void *<var>pointer</var>)
+</pre>
+<p>which releases the block of memory pointed to by <code><var>pointer</var></code>. <code><var>pointer</var></code> must have been previously returned by <code>malloc</code> or <code>calloc</code> (or a function which uses one of these, eg <code>strdup</code>), and must only be passed to <code>free</code> once.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Usage example">edit</a>]</div>
+<p><a name="Usage_example" id="Usage_example"></a></p>
+<h2>Usage example</h2>
+<p>The standard method of creating an <a href="/wiki/Array.html" title="Array">array</a> of ten integers on the stack is:</p>
+<pre>
+int array[10];
+</pre>
+<p>To allocate a similar array dynamically, the following code could be used:</p>
+<pre>
+#include &lt;stdlib.h&gt;
+
+/* Allocate space for an array with ten elements of type int. */
+int *ptr = (int *)malloc(sizeof (int) * 10);
+if (ptr == NULL)
+   exit(EXIT_FAILURE); /* Memory could not be allocated, so exit. */
+
+/* Allocation succeeded. */
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Related functions">edit</a>]</div>
+<p><a name="Related_functions" id="Related_functions"></a></p>
+<h2>Related functions</h2>
+<p><code>malloc</code> returns a block of memory that is allocated for the programmer to use, but is uninitialized. The memory is usually initialized by hand if necessary -- either via the <code>memset</code> function, or by one or more assignment statements that dereference the pointer. An alternative is to use the <code>calloc</code> function, which allocates memory and then initializes it. Its prototype is</p>
+<pre>
+void *calloc(size_t <var>nelements</var>, size_t <var>bytes</var>)
+</pre>
+<p>which allocates a region of memory large enough to hold <code><var>nelements</var></code> of size <code><var>bytes</var></code> each. The allocated region is initialized to zero.</p>
+<p>It is often useful to be able to grow or shrink a block of memory. This can be done using <code>malloc</code> and <code>free</code>: a new block of the appropriate size can be allocated, the content can be copied over, and then the old block can be freed. However, this is somewhat awkward; instead, the <code>realloc</code> function can be used. Its prototype is</p>
+<pre>
+void *realloc(void *<var>pointer</var>, size_t <var>bytes</var>)
+</pre>
+<p><code>realloc</code> returns a pointer to a memory region of the specified size. If the new size is greater than the old size, the block is grown, otherwise it is shrunk.</p>
+<p><code>valloc</code> is identical to <code>malloc</code>, except that the allocated memory is aligned to a page boundary. Pointers allocated with <code>valloc</code> cannot be passed to realloc.<a  class="external autonumber" title="http://www.mkssoftware.com/docs/man3/valloc.3.asp">[3]</a></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Common errors">edit</a>]</div>
+<p><a name="Common_errors" id="Common_errors"></a></p>
+<h2>Common errors</h2>
+<p>Some programmers find that the improper use of <code>malloc</code> and related functions in C can be a frequent source of bugs.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Allocation failure">edit</a>]</div>
+<p><a name="Allocation_failure" id="Allocation_failure"></a></p>
+<h3>Allocation failure</h3>
+<p><code>malloc</code> is not guaranteed to succeed — if there is no memory available, or if the program has exceeded the amount of memory it is allowed to reference, <code>malloc</code> will return a <code>NULL</code> pointer. Depending on the nature of the underlying environment, this may or may not be a likely occurrence. Many programs do not check for <code>malloc</code> failure. Such a program would attempt to use the <code>NULL</code> pointer returned by <code>malloc</code> as if it pointed to allocated memory, and the program would crash. This has traditionally been considered an incorrect design, although it remains common, as memory allocation failures only occur rarely in most situations, and the program frequently can do nothing better than to exit anyway. Checking for allocation failure is more important when implementing libraries — since the library might be used in low-memory environments, it is usually considered good practice to return memory allocation failures to the program using the library and allow it to choose whether to attempt to handle the error.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Memory leaks">edit</a>]</div>
+<p><a name="Memory_leaks" id="Memory_leaks"></a></p>
+<h3>Memory leaks</h3>
+<p>The return value of <code>malloc</code>, <code>calloc</code>, and <code>realloc</code> should be passed to the <code>free</code> function before all well-defined accessible references to it are lost so that it can be released. If this is not done, the allocated memory is not released before the process exits — in other words, a <a href="/wiki/Memory_leak.html" title="Memory leak">memory leak</a> will occur.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Use after free">edit</a>]</div>
+<p><a name="Use_after_free" id="Use_after_free"></a></p>
+<h3>Use after free</h3>
+<p>After a pointer has been passed to <code>free</code>, it references a region of memory with undefined content, which may not be available for use. However, the pointer may still be used, for example:</p>
+<pre>
+ int *ptr = malloc(sizeof *ptr);
+ free(ptr);
+ *ptr = 0; /* Undefined behavior! */
+</pre>
+<p>Code like this may have unpredictable behavior — after the memory has been freed, the system may reuse that memory region for storage of unrelated data. Therefore, writing through a pointer to a deallocated region of memory may result in overwriting another piece of data somewhere else in the program. Depending on what data is overwritten, this may cause data corruption or cause the program to crash at a later time. A particularly bad example of this problem is if the same pointer is passed to <code>free</code> twice, known as a <i>double free</i>. To avoid this, some programmers set pointers to <code>NULL</code> after freeing them, as <code>free(NULL)</code> is safe—it does nothing.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Implementations">edit</a>]</div>
+<p><a name="Implementations" id="Implementations"></a></p>
+<h2>Implementations</h2>
+<p>The implementation of memory management depends greatly upon operating system and architecture. Some operating systems supply an allocator for malloc, while others supply functions to control certain regions of data.</p>
+<p>The same dynamic memory allocator is often used to implement both malloc and <code>operator new</code> in <a href="/wiki/C%2B%2B.html" title="C++">C++</a>. Hence, we will call this the <b>allocator</b> rather than malloc. (However, note that it is never proper C++ to treat <code>malloc</code> and <code>new</code> interchangeably. For example, you cannot use <code>free</code> to release memory that was allocated with <code>new</code>.<a  class="external autonumber" title="http://www.parashift.com/c++-faq-lite/freestore-mgmt.html#faq-16.3">[4]</a>)</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Heap-based">edit</a>]</div>
+<p><a name="Heap-based" id="Heap-based"></a></p>
+<h3>Heap-based</h3>
+<p>Implementation of the allocator on <a href="/wiki/IA-32.html" title="IA-32">IA-32</a> architectures is commonly done using the heap, or data segment. The allocator will usually expand and contract the heap to fulfill allocation requests.</p>
+<p>The heap method suffers from a few inherent flaws, stemming entirely from <a href="/wiki/Fragmentation.html" title="Fragmentation">fragmentation</a>. Like any method of memory allocation, the heap will become fragmented; that is, there will be sections of used and unused memory in the allocated space on the heap. A good allocator will attempt to find an unused area of already allocated memory to use before resorting to expanding the heap. However, due to performance it can be impossible to use an allocator in a real time system and a <a href="/wiki/Memory_pool.html" title="Memory pool">memory pool</a> must be deployed instead.</p>
+<p>The major problem with this method is that the heap has only two significant attributes: base, or the beginning of the heap in virtual memory space; and length, or its size. The heap requires enough system memory to fill its entire length, and its base can never change. Thus, any large areas of unused memory are wasted. The heap can get "stuck" in this position if a small used segment exists at the end of the heap, which could waste any magnitude of address space, from a few megabytes to a few hundred.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: The glibc allocator">edit</a>]</div>
+<p><a name="The_glibc_allocator" id="The_glibc_allocator"></a></p>
+<h3>The glibc allocator</h3>
+<p>The GNU C library, <a href="/wiki/Glibc.html" title="Glibc">glibc</a>, uses both <code>brk</code> and <code><a href="/wiki/Mmap.html" title="Mmap">mmap</a></code> on the <a href="/wiki/Linux.html" title="Linux">Linux</a> operating system. The <code>brk</code> system call will change the size of the heap to be larger or smaller as needed, while the <code>mmap</code> system call will be used when extremely large segments are allocated. The heap method suffers the same flaws as any other, while the mmap method may avert problems with huge buffers trapping a small allocation at the end after their expiration.</p>
+<p>The <code>mmap</code> method has its own flaws. It always allocates a segment by mapping pages. Only one set of mapped pages exists for each allocated segment. Mapping a single byte will use an entire page, usually 4096 bytes, on IA-32; however, large pages are 4MiB, 1024 times larger, and so this method could be particularly devastating if userspace uses only large pages. The advantage to the <code>mmap</code> method is that when the segment is freed, the memory is returned to the system immediately.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: OpenBSD's malloc">edit</a>]</div>
+<p><a name="OpenBSD.27s_malloc" id="OpenBSD.27s_malloc"></a></p>
+<h3>OpenBSD's <code>malloc</code></h3>
+<p><a href="/wiki/OpenBSD.html" title="OpenBSD">OpenBSD</a>'s implementation of the <code>malloc</code> function makes use of <code>mmap</code>. For requests greater in size than one <a href="/wiki/Paging.html" title="Paging">page</a>, the entire allocation is retrieved using <code>mmap</code>; smaller sizes are assigned from memory pools maintained by <code>malloc</code> within a number of "bucket pages," also allocated with <code>mmap</code>. On a call to <code>free</code>, memory is released and unmapped from the process <a href="/wiki/Address_space.html" title="Address space">address space</a> using <code>munmap</code>. This system is designed to improve security by taking advantage of the <a href="/wiki/Address_space_layout_randomization.html" title="Address space layout randomization">address space layout randomization</a> and gap page features implemented as part of OpenBSD's <code>mmap</code> <a href="/wiki/System_call.html" title="System call">system call</a>, and to detect <a  title="">use-after-free bugs</a>—as a large memory allocation is completely unmapped after it is freed, further use causes a <a href="/wiki/Segmentation_fault.html" title="Segmentation fault">segmentation fault</a> and termination of the program.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Maximum allocation size">edit</a>]</div>
+<p><a name="Maximum_allocation_size" id="Maximum_allocation_size"></a></p>
+<h2>Maximum allocation size</h2>
+<p>The largest possible memory block <code>malloc</code> can allocate depends on the host system, particularly the size of physical memory and the operating system implementation. Theoretically, the largest number should be the maximum value that can be held in a <i><a href="/wiki/Size_t.html" title="Size t">size_t</a></i> type, which is an implementation-dependent unsigned integer representing the size of an area of memory. The maximum value is <code>(size_t) −1</code>, or the constant <i>SIZE_MAX</i> in the C99 standard. The C standards guarantee that a certain minimum (0x7FFF in C90, 0xFFFF in C99) for at least one object can be allocated.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Buffer_overflow.html" title="Buffer overflow">Buffer overflow</a></li>
+<li><a href="/wiki/Memory_debugger.html" title="Memory debugger">Memory debugger</a></li>
+<li><a href="/wiki/Mprotect.html" title="Mprotect">mprotect</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://www.opengroup.org/onlinepubs/009695399/functions/malloc.html">Definition of malloc in IEEE Std 1003.1 standard</a></li>
+<li><a  class="external text" title="http://gee.cs.oswego.edu/dl/html/malloc.html">The design of the basis of the glibc allocator</a> by <a href="/wiki/Doug_Lea.html" title="Doug Lea">Doug Lea</a></li>
+<li>The <a href="/wiki/Hoard_memory_allocator.html" title="Hoard memory allocator">Hoard memory allocator</a> by <a  class="new" title="Emery Berger">Emery Berger</a></li>
+<li><a  class="external text" title="http://www.osdcom.info/content/view/31/39/">Simple Memory Allocation Algorithms</a> on OSDEV Community</li>
+<li>"<a  class="external text" title="http://www.research.ibm.com/people/m/michael/pldi-2004.pdf">Scalable Lock-Free Dynamic Memory Allocation</a>" by <a  class="new" title="Maged M. Michael">Maged M. Michael</a></li>
+<li>"<a  class="external text" title="http://www-106.ibm.com/developerworks/linux/library/l-memory/">Inside memory management - The choices, tradeoffs, and implementations of dynamic allocation</a>" by <a  class="new" title="Jonathan Bartlett">Jonathan Bartlett</a></li>
+<li><a  class="external text" title="http://live.gnome.org/MemoryReduction">Memory Reduction (GNOME) wiki</a> with lots of info about fixing malloc</li>
+<li>Article "<a  class="external text" title="http://citeseer.comp.nus.edu.sg/749403.html">A Scalable Concurrent malloc Implementation for FreeBSD</a>" by <a  class="new" title="Jason Evans">Jason Evans</a></li>
+<li>Article "<a  class="external text" title="http://citeseer.ifi.unizh.ch/johnson91concurrent.html">A Concurrent Fast-Fits Memory Manager</a>" by <a  class="new" title="Theodore Johnson">Theodore Johnson</a></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:384289-0!1!0!default!!en!2 and timestamp 20060910141735 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Stdlib.h">Stdlib.h</a></span> | <span dir='ltr'><a  title="Category:Memory management">Memory management</a></span> | <span dir='ltr'><a  title="Category:C programming language">C programming language</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Malloc.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-ja"><a >日本語</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 11:58, 8 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv2 in 0.081 secs. --></body></html>

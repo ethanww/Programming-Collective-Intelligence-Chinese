@@ -1,0 +1,376 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Order theory,Adjoint functor,Alexandrov topology,Antichain,Antisymmetric relation,Arithmetics,Bijective,Binary relation,Boolean algebra,Boolean ring,Bounded poset" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Order theory - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Order_theory";
+			var wgTitle = "Order theory";
+			var wgArticleId = 361924;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Order theory</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p><b>Order theory</b> is a branch of <a href="/wiki/Mathematic.html" title="Mathematic">mathematics</a> that studies various kinds of <a href="/wiki/Binary_relation.html" title="Binary relation">binary relations</a> that capture the intuitive notion of a mathematical ordering. This article gives a detailed introduction to the field and includes some of the most basic definitions. For a quick lookup of order-theoretic terms, there is also an <a href="/wiki/Order_theory_glossary.html" title="Order theory glossary">order theory glossary</a>. A <a href="/wiki/List_of_order_topics.html" title="List of order topics">list of order topics</a> collects the various articles in the vicinity of order theory.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Background and motivation</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Introduction to the basic definitions</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">2.1</span> <span class="toctext">Partially ordered sets</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.2</span> <span class="toctext">Visualizing orders</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.3</span> <span class="toctext">Special elements within an order</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.4</span> <span class="toctext">Duality</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.5</span> <span class="toctext">Constructing new orders</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Functions between orders</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Special types of orders</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Subsets of ordered sets</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">Related mathematical areas</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">6.1</span> <span class="toctext">Universal algebra</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">6.2</span> <span class="toctext">Topology</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">6.3</span> <span class="toctext">Category theory</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">History</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">8</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">9</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">10</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Background and motivation">edit</a>]</div>
+<p><a name="Background_and_motivation" id="Background_and_motivation"></a></p>
+<h2>Background and motivation</h2>
+<p>Orders appear everywhere - at least as far as mathematics and related areas, such as <a href="/wiki/Computer_science.html" title="Computer science">computer science</a>, are concerned. The first order that one typically meets in <a href="/wiki/Primary_school.html" title="Primary school">primary school</a> mathematical education is the order ≤ of <a href="/wiki/Natural_numbers.html" title="Natural numbers">natural numbers</a>. This intuitive concept is easily extended to orderings of other sets of <a href="/wiki/Number.html" title="Number">numbers</a>, such as the <a href="/wiki/Integer.html" title="Integer">integers</a> and the <a href="/wiki/Real_number.html" title="Real number">reals</a>. Indeed the idea of being greater or smaller than another number is one of the basic intuitions of number systems in general (although one usually is also interested in the actual <a href="/wiki/Difference.html" title="Difference">difference</a> of two numbers, which is not given by the order). Another familiar example of an ordering is the <a href="/wiki/Lexicographic_order.html" title="Lexicographic order">lexicographic order</a> of words in a dictionary.</p>
+<p>The above types of orders have a special property: each element can be <i>compared</i> to any other element, i.e. it is either greater, smaller, or equal. However, this is not always a desired requirement. A well-known example is the <a href="/wiki/Subset.html" title="Subset">subset</a> ordering of <a href="/wiki/Set.html" title="Set">sets</a>. If a set <i>A</i> contains all the elements of a set <i>B</i>, then <i>B</i> is said to be smaller than or equal to <i>A</i>. Yet there are sets that cannot be compared in this fashion since each of them contains some elements that are not present in the other. Hence, subset-inclusion is a <i><a href="/wiki/Partial_order.html" title="Partial order">partial</a></i> order, as opposed to the <i><a href="/wiki/Total_order.html" title="Total order">total</a></i> orders given before.</p>
+<p>Order theory captures the intuition of orders that arises from such examples in a general setting. This is achieved by specifying properties that a <a href="/wiki/Relation.html" title="Relation">relation</a> ≤ must have to be a mathematical order. This more abstract approach makes much sense, because one can derive numerous theorems in the general setting, without focusing on the details of any particular order. These insights can then be readily transferred to many concrete applications.</p>
+<p>Driven by the wide practical usage of orders, numerous special kinds of ordered sets have been defined, some of which have grown to mathematical fields of their own. In addition, order theory does not restrict to the various classes of ordering relations, but also considers appropriate <a href="/wiki/Function_%28mathematics%29.html" title="Function (mathematics)">functions</a> between them. A simple example of an order theoretic property for functions comes from <a href="/wiki/Functional_analysis.html" title="Functional analysis">analysis</a> where <a href="/wiki/Monotonic_function.html" title="Monotonic function">monotone</a> functions are found frequently.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Introduction to the basic definitions">edit</a>]</div>
+<p><a name="Introduction_to_the_basic_definitions" id="Introduction_to_the_basic_definitions"></a></p>
+<h2>Introduction to the basic definitions</h2>
+<p>This section aims at giving a first guide to the realm of ordered sets. It addresses readers who have basic knowledge of <a href="/wiki/Set_theory.html" title="Set theory">set theory</a> and <a href="/wiki/Arithmetics.html" title="Arithmetics">arithmetics</a> and who know what a <a href="/wiki/Binary_relation.html" title="Binary relation">binary relation</a> is, but who are not familiar with order theoretic considerations so far.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Partially ordered sets">edit</a>]</div>
+<p><a name="Partially_ordered_sets" id="Partially_ordered_sets"></a></p>
+<h3>Partially ordered sets</h3>
+<p>As already hinted at above, orders are special binary relations. Hence consider some <a href="/wiki/Set.html" title="Set">set</a> <i>P</i> and a relation ≤ on <i>P</i>. Then ≤ is a <b><a href="/wiki/Partially_ordered_set.html" title="Partially ordered set">partial order</a></b> if it is reflexive, <a href="/wiki/Antisymmetric_relation.html" title="Antisymmetric relation">antisymmetric</a>, and <a href="/wiki/Transitive_relation.html" title="Transitive relation">transitive</a>, i.e., for all <i>a</i>, <i>b</i> and <i>c</i> in <i>P</i>, we have that:</p>
+<dl>
+<dd><i>a</i> ≤ <i>a</i> (reflexivity)</dd>
+<dd>if <i>a</i> ≤ <i>b</i> and <i>b</i> ≤ <i>a</i> then <i>a</i> = <i>b</i> (antisymmetry)</dd>
+<dd>if <i>a</i> ≤ <i>b</i> and <i>b</i> ≤ <i>c</i> then <i>a</i> ≤ <i>c</i> (transitivity)</dd>
+</dl>
+<p>A set with a partial order on it is called a <b>partially ordered set</b>, <b>poset</b>, or just an <b>ordered set</b> if the intended meaning is clear. By checking these properties, one immediately sees that the well-known orders on <a href="/wiki/Natural_number.html" title="Natural number">natural numbers</a>, <a href="/wiki/Integer.html" title="Integer">integers</a>, <a href="/wiki/Rational_number.html" title="Rational number">rational numbers</a> and <a href="/wiki/Real_number.html" title="Real number">reals</a> are all orders in the above sense. However, they have the additional property of being <b><a href="/wiki/Total_order.html" title="Total order">total</a></b>, i.e., for all distinct <i>a</i> and <i>b</i> in <i>P</i>, we have that:</p>
+<dl>
+<dd><i>a</i> ≤ <i>b</i> or <i>b</i> ≤ <i>a</i> (totality)</dd>
+</dl>
+<p>These orders can also be called <b>linear orders</b> or <b>chains</b>. While many classical orders are linear, the <a href="/wiki/Subset.html" title="Subset">subset</a> order on <a href="/wiki/Set.html" title="Set">sets</a> provides an example where this is not the case. In fact, many advanced properties of posets are mainly interesting for non-linear orders.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Visualizing orders">edit</a>]</div>
+<p><a name="Visualizing_orders" id="Visualizing_orders"></a></p>
+<h3>Visualizing orders</h3>
+<p>Before proceeding to further examples and definitions, it will be helpful to display orders in a convenient graphical way, in order to provide "pictures" that one can have in mind (or on paper) when trying to understand the more abstract concepts. For this purpose, so-called <a href="/wiki/Hasse_diagram.html" title="Hasse diagram">Hasse diagrams</a> have been introduced. These are <a href="/wiki/Graph_theory.html" title="Graph theory">graphs</a> where the <a href="/wiki/Vertex.html" title="Vertex">vertices</a> are the elements of the poset and the ordering relation is indicated by both the <a href="/wiki/Edge.html" title="Edge">edges</a> and the relative positioning of the vertices. Orders are drawn bottom-up: if an element <i>x</i> is smaller than <i>y</i> then there exists a path from <i>x</i> to <i>y</i> that is directed upwards. It is often needed that connections between points intersect each other, but points must never be located at the direct connection between two other points.</p>
+<p>Even infinite sets can sometimes be illustrated by similar diagrams, using an <a href="/wiki/Ellipsis.html" title="Ellipsis">ellipsis</a> (...) after drawing a sufficiently instructive finite sub-order. This works well for the natural numbers, but it fails for the reals, where there is no immediate successor above 0. However, quite often one can obtain an intuition related to diagrams of a similar kind.</p>
+<p>The above orders are all very common in mathematics. However, there are also examples that one does often not consider as orders. For instance, the identity relation = on any set is a partial order. Within this order, every two elements are incomparable. It is also the only relation that is both a partial order and an <a href="/wiki/Equivalence_relation.html" title="Equivalence relation">equivalence relation</a>. The Hasse diagram of such a <b>discrete order</b> is just a collection of labeled points, without any edges between them.</p>
+<p>Another example is given by the divisibility relation "|". For two natural numbers <i>n</i> and <i>m</i>, we write <i>n</i>|<i>m</i> if <i>n</i> <a href="/wiki/Division_%28mathematics%29.html" title="Division (mathematics)">divides</a> <i>m</i> without remainder. One easily sees that this really yields a partial order. An instructive exercise is to draw the Hasse diagram for the set of natural numbers that are smaller than or equal to 13, ordered by |.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Special elements within an order">edit</a>]</div>
+<p><a name="Special_elements_within_an_order" id="Special_elements_within_an_order"></a></p>
+<h3>Special elements within an order</h3>
+<p>In a partially ordered set there are some elements that play a special role. The most basic example is given by the <b><a href="/wiki/Least_element.html" title="Least element">least element</a></b> of a poset. For example, 1 is the least element of the positive integers and the <a href="/wiki/Empty_set.html" title="Empty set">empty set</a> is the least set under the subset order. Formally, an element <i>m</i> is a least element if:</p>
+<dl>
+<dd><i>m</i> ≤ <i>a</i>, for all elements <i>a</i> of the order.</dd>
+</dl>
+<p>The notation 0 is frequently found for the least element, even when no numbers are concerned. However, in orders on sets of numbers, this notation might be inappropriate or ambiguous, since the number 0 is not always least. An example is given by the above divisibility order |, where 1 is the least element since it divides all other numbers. On the other hand, 0 is the number that is divided by all other numbers. Hence it is the <b><a href="/wiki/Greatest_element.html" title="Greatest element">greatest element</a></b> of the order! Other frequent terms for the least and greatest elements is <b>bottom</b> and <b>top</b> or <b>zero</b> and <b>unit</b>. Least and greatest elements may fail to exist, as the example of the real numbers shows.</p>
+<p>On the other hand, if they exist, least and greatest elements are always unique. In contrast, consider the divisibility relation | on the set {2,3,4,5,6}. Although this set has neither top nor bottom, the elements 2, 3, and 5 do not have any elements below them, while 4, 5, and 6 have no other number above. Such elements are called <b><a href="/wiki/Minimal_element.html" title="Minimal element">minimal</a></b> and <b><a href="/wiki/Maximal_element.html" title="Maximal element">maximal</a></b>, respectively. Formally, an element <i>m</i> is minimal if:</p>
+<dl>
+<dd><i>a</i> ≤ <i>m</i> implies <i>a</i> = <i>m</i>, for all elements <i>a</i> of the order.</dd>
+</dl>
+<p>Exchanging ≤ with ≥ yields the definition of maximality. As the example shows, there can be many maximal elements and some elements may be both maximal and minimal (e.g. 5 above). However, if there is a least element, then it is the only minimal element of the order. Again, in infinite posets maximal elements do not always exist - the set of all <i>finite</i> subsets of a given infinite set, ordered by subset inclusion, provides one out of many counterexamples. An important tool to ensure the existence of maximal elements under certain conditions is <b><a href="/wiki/Zorn%27s_Lemma.html" title="Zorn's Lemma">Zorn's Lemma</a></b>.</p>
+<p>Subsets of partially ordered sets inherit the order. We already applied this by considering the subset {2,3,4,5,6} of the natural numbers with the induced divisibility ordering. Now there are also elements of a poset that are special with respect to some subset of the order. This leads to the definition of <b><a href="/wiki/Upper_bound.html" title="Upper bound">upper bounds</a></b>. Given a subset <i>S</i> of some poset <i>P</i>, an upper bound of <i>S</i> is an element <i>b</i> of <i>P</i> that is above all elements of <i>S</i>. Formally, this means that</p>
+<dl>
+<dd><i>s</i> ≤ <i>b</i>, for all <i>s</i> in <i>S</i>.</dd>
+</dl>
+<p>Lower bounds again are defined by inverting the order. For example, -5 is a lower bound of the natural numbers as a subset of the integers. Given a set of sets, an upper bound for these sets under the subset ordering is given by their <a href="/wiki/Union_%28set_theory%29.html" title="Union (set theory)">union</a>. In fact, this upper bound is quite special: it is the smallest set that contains all of the sets. Hence, we have found the <b><a href="/wiki/Least_upper_bound.html" title="Least upper bound">least upper bound</a></b> of a set of sets. This concept is also called <b>supremum</b> or <b>join</b>, and for a set <i>S</i> one writes sup(<i>S</i>) or v<i>S</i> for its least upper bound. Conversely, the <b><a href="/wiki/Greatest_lower_bound.html" title="Greatest lower bound">greatest lower bound</a></b> is known as <b>infimum</b> or <b>meet</b> and denoted inf(<i>S</i>) or ^<i>S</i>. These concepts play an important role in many applications of order theory. For two elements <i>x</i> and <i>y</i>, one also writes <i>x</i>&#160;v&#160;<i>y</i> and <i>x</i>&#160;^&#160;<i>y</i> for sup({<i>x</i>,<i>y</i>}) and inf({<i>x</i>,<i>y</i>}), respectively. (Using Wikipedia's <a  class="extiw" title="meta:MediaWiki_User's_Guide:_Editing_mathematical_formulae">TeX markup</a>, one can also write <img class='tex' src="http://upload.wikimedia.org/math/7/2/7/727ea4c8c49862411edae46adf506e3e.png" alt="\vee" /> and <img class='tex' src="http://upload.wikimedia.org/math/1/b/a/1ba4f06f68614e5da79a8ebd378d532a.png" alt="\wedge" />, as well as the larger symbols <img class='tex' src="http://upload.wikimedia.org/math/a/f/2/af2beebc69c64f6a9a59db61113e14a0.png" alt="\bigvee" /> and <img class='tex' src="http://upload.wikimedia.org/math/6/c/1/6c1357f344d79b14bbd6a43c112f36db.png" alt="\bigwedge" />. Note however, that all of these symbols may fail to match the font size of the standard text and should therefore preferably be used in extra lines. The rendering of ∨ for v and ∧ for ^ is not supported by many of today's <a href="/wiki/Web_browser.html" title="Web browser">web browsers</a> across all platforms and therefore avoided here.)</p>
+<p>For another example, consider again the relation | on natural numbers. The least upper bound of two numbers is the smallest number that is divided by both of them, i.e. the <a href="/wiki/Least_common_multiple.html" title="Least common multiple">least common multiple</a> of the numbers. Greatest lower bounds in turn are given by the <a href="/wiki/Greatest_common_divisor.html" title="Greatest common divisor">greatest common divisor</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Duality">edit</a>]</div>
+<p><a name="Duality" id="Duality"></a></p>
+<h3>Duality</h3>
+<p>In the previous definitions, we often noted that a concept can be defined by just inverting the ordering in a former definition. This is the case for "least" and "greatest", for "minimal" and "maximal", for "upper bound" and "lower bound", and so on. This is a general situation in order theory: A given order can be inverted by just exchanging its direction, pictorially flipping the Hasse diagram top-down. This yields the so-called <b>dual</b>, <b>inverse</b>, or <b>opposite order</b>.</p>
+<p>Every order theoretic definition has its dual: it is the notion one obtains by applying the definition to the inverse order. Since the symmetry of all concepts, this operation preserves the theorems of partial orders. For a given mathematical result, one can just invert the order and replace all definitions by their duals and one obtains another valid theorem. This is important and useful, since one obtains two theorems for the price of one. Some more details and examples can be found in the article on <a href="/wiki/Duality_%28order_theory%29.html" title="Duality (order theory)">duality in order theory</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Constructing new orders">edit</a>]</div>
+<p><a name="Constructing_new_orders" id="Constructing_new_orders"></a></p>
+<h3>Constructing new orders</h3>
+<p>There are multiple ways to construct orders, or to combine given orders to a new one. The dual order is a first example. Another major construction is the <a href="/wiki/Cartesian_product.html" title="Cartesian product">cartesian product</a> of two partially ordered sets, together with the <a href="/wiki/Product_order.html" title="Product order">product order</a> on pairs of elements. This is defined from the original orders by setting (<i>a</i>, <i>x</i>) ≤ (<i>b</i>, <i>y</i>) if <i>a</i> ≤ <i>b</i> and <i>x</i> ≤ <i>y</i>. The <a href="/wiki/Disjoint_union.html" title="Disjoint union">disjoint union</a> of two posets is a further typical construction, where the order is just the union of the original orders.</p>
+<p>As in the case of the common order of numbers, every partial order ≤ gives rise to a <a href="/wiki/Strict_order.html" title="Strict order">strict order</a> &lt;, by defining <i>a</i> &lt; <i>b</i> if <i>a</i> ≤ <i>b</i> and not <i>b</i> ≤ <i>a</i>. This transformation can be inverted by setting <i>a</i> ≤ <i>b</i> if <i>a</i> &lt; <i>b</i> or <i>a</i> = <i>b</i>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Functions between orders">edit</a>]</div>
+<p><a name="Functions_between_orders" id="Functions_between_orders"></a></p>
+<h2>Functions between orders</h2>
+<p>It is reasonable to consider functions between partially ordered sets having certain additional properties, that are related to the ordering relations of the two sets. The most fundamental condition that occurs in this context is <a href="/wiki/Monotonic_function.html" title="Monotonic function">monotonicity</a>. A function <i>f</i> from a poset <i>P</i> to a poset <i>Q</i> is <b>monotone</b>, or <b>order-preserving</b>, if <i>a</i> ≤ <i>b</i> in <i>P</i> implies <i>f</i>(<i>a</i>) ≤ <i>f</i>(<i>b</i>) in <i>Q</i> (Noting that, strictly, the two relations here are different since they apply to different sets.). The converse of this implication leads to functions that are <b>order-reflecting</b>, i.e. functions <i>f</i> as above for which <i>f</i>(<i>a</i>) ≤ <i>f</i>(<i>b</i>) implies <i>a</i> ≤ <i>b</i>. On the other hand, a function may also be <b>order-reversing</b> or <b>antitone</b>, if <i>a</i> ≤ <i>b</i> implies <i>f</i>(<i>a</i>) ≥ <i>f</i>(<i>b</i>).</p>
+<p>An <b><a href="/wiki/Order-embedding.html" title="Order-embedding">order-embedding</a></b> is a function <i>f</i> between orders that is both order-preserving and order-reflecting. Examples for these definitions are found easily. For instance, the function that maps a natural number to its successor is clearly monotone with respect to the natural order. Any function from a discrete order, i.e. from a set ordered by the identity order "=", is also monotone. Mapping each natural number to the corresponding real number gives an example for an order embedding. The <a href="/wiki/Complement_%28set_theory%29.html" title="Complement (set theory)">set complement</a> on a <a href="/wiki/Powerset.html" title="Powerset">powerset</a> is an example of an antitone function.</p>
+<p>An important question is when two orders are "essentially equal", i.e. when they are the same up to renaming of elements. <b><a href="/wiki/Order_isomorphism.html" title="Order isomorphism">Order isomorphisms</a></b> are functions that define such a renaming. An order-isomorphism is a monotone <a href="/wiki/Bijective.html" title="Bijective">bijective</a> function that has a monotone inverse. This is equivalent to being a <a href="/wiki/Surjective.html" title="Surjective">surjective</a> order-embedding. Hence, the image <i>f</i>(<i>P</i>) of an order-embedding is always isomorphic to <i>P</i>, which justifies the term "embedding".</p>
+<p>A more elaborate type of functions is given by so-called <b><a href="/wiki/Galois_connection.html" title="Galois connection">Galois connections</a></b>. Monotone Galois connections can be viewed as a generalization of order-isomorphisms, since they constitute of a pair of two functions in converse directions, which are "not quite" inverse to each other, but that still have close relationships.</p>
+<p>Another special type of self-maps on a poset are <b><a href="/wiki/Closure_operator.html" title="Closure operator">closure operators</a></b>, which are not only monotonic, but also <a href="/wiki/Idempotent.html" title="Idempotent">idempotent</a>, i.e. <i>f</i>(<i>x</i>) = <i>f</i>(<i>f</i>(<i>x</i>)), and <b><a  class="new" title="Extensive">extensive</a></b> (or <i>inflationary</i>), i.e. <i>x</i> ≤ <i>f</i>(<i>x</i>). These have many applications in all kinds of "closures" that appear in mathematics.</p>
+<p>Besides being compatible with the mere order relations, functions between posets may also behave well with respect to special elements and constructions. For example, when talking about posets with least element, it may seem reasonable to consider only monotonic functions that preserve this element, i.e. which map least elements to least elements. If binary infima ^ exist, then a reasonable property might be to require that <i>f</i>(<i>x</i>^<i>y</i>) = <i>f</i>(<i>x</i>)^<i>f</i>(<i>y</i>), for all <i>x</i> and <i>y</i>. All of these properties, and indeed many more, may be compiled under the label of <a href="/wiki/Limit-preserving_function_%28order_theory%29.html" title="Limit-preserving function (order theory)">limit-preserving functions</a>.</p>
+<p>Finally, one can invert the view, switching from <i>functions of orders</i> to <i>orders of functions</i>. Indeed, the functions between two posets <i>P</i> and <i>Q</i> can be ordered via the <a  class="new" title="Pointwise order">pointwise order</a>. For two functions <i>f</i> and <i>g</i>, we have <i>f</i> ≤ <i>g</i> if <i>f</i>(<i>x</i>) ≤ <i>g</i>(<i>x</i>) for all elements <i>x</i> of <i>P</i>. This occurs for example in <a href="/wiki/Domain_theory.html" title="Domain theory">domain theory</a>, where <a href="/wiki/Function_space.html" title="Function space">function spaces</a> play an important role.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Special types of orders">edit</a>]</div>
+<p><a name="Special_types_of_orders" id="Special_types_of_orders"></a></p>
+<h2>Special types of orders</h2>
+<p>Many of the structures that are studied in order theory employ order relations with further properties. In fact, even some relations that are not partial orders are of special interest. Mainly the concept of a <a href="/wiki/Preorder.html" title="Preorder">preorder</a> has to be mentioned. A preorder is a relation that is reflexive and transitive, but not necessarily antisymmetric. Each preorder induces an <a href="/wiki/Equivalence_relation.html" title="Equivalence relation">equivalence relation</a> between elements, where <i>a</i> is equivalent to <i>b</i>, if <i>a</i> ≤ <i>b</i> and <i>a</i> ≥ <i>b</i>. Preorders can be turned into orders by identifying all elements that are equivalent with respect to this relation.</p>
+<p>Basic types of special orders have already been given in form of total orders. An additional simple but useful property leads to so-called <b><a href="/wiki/Well-order.html" title="Well-order">well-orders</a></b>, within which all non-empty subsets have a least element, or equivalently in which there is no infinite descending sequence of distinct elements. For partial orders, a similar definition leads to <b><a href="/wiki/Well_partial_order.html" title="Well partial order">well partial orders</a></b>, where in addition to having no infinite descending chains there are no infinite <a href="/wiki/Antichain.html" title="Antichain">antichains</a>.</p>
+<p>Many other types of orders arise when the existence of infima and suprema of certain sets is guaranteed. Focusing on this aspect, usually referred to as <a href="/wiki/Completeness_%28order_theory%29.html" title="Completeness (order theory)">completeness</a> of orders, one obtains:</p>
+<ul>
+<li><a href="/wiki/Bounded_poset.html" title="Bounded poset">Bounded posets</a>, i.e. posets with a <a href="/wiki/Least_element.html" title="Least element">least</a> and <a href="/wiki/Greatest_element.html" title="Greatest element">greatest element</a> (which are just the supremum and infimum of the <a href="/wiki/Empty_subset.html" title="Empty subset">empty subset</a>),</li>
+<li><a href="/wiki/Lattice_%28order%29.html" title="Lattice (order)">Lattices</a>, in which every non-empty finite set has a supremum and infimum,</li>
+<li><a href="/wiki/Complete_lattice.html" title="Complete lattice">Complete lattices</a>, where every set has a supremum and infimum, and</li>
+<li><a href="/wiki/Directed_complete_partial_order.html" title="Directed complete partial order">Directed complete partial orders</a> (dcpos), that guarantee the existence of suprema of all <a href="/wiki/Directed_set.html" title="Directed set">directed subsets</a> and that are studied in <a href="/wiki/Domain_theory.html" title="Domain theory">domain theory</a>.</li>
+</ul>
+<p>However, one can go even further: if all finite non-empty infima exist, then ^ can be viewed as a total binary operation in the sense of <a href="/wiki/Universal_algebra.html" title="Universal algebra">universal algebra</a>. Hence, in a lattice, two operations ^ and v are available, and one can define new properties by giving identities, such as</p>
+<dl>
+<dd><i>x</i>&#160;^&#160;(<i>y</i>&#160;v&#160;<i>z</i>) &#160;=&#160; (<i>x</i>&#160;^&#160;<i>y</i>)&#160;v&#160;(<i>x</i>&#160;^&#160;<i>z</i>), for all <i>x</i>, <i>y</i>, and <i>z</i>.</dd>
+</dl>
+<p>This condition is called <b>distributivity</b> and gives rise to <a href="/wiki/Distributive_lattice.html" title="Distributive lattice">distributive lattices</a>. There are some other important distributivity laws which are discussed in the article on <a href="/wiki/Distributivity_%28order_theory%29.html" title="Distributivity (order theory)">distributivity in order theory</a>. Some additional order structures that are often specified via algebraic operations and defining identities are</p>
+<ul>
+<li><a href="/wiki/Heyting_algebra.html" title="Heyting algebra">Heyting algebras</a> and</li>
+<li><a href="/wiki/Boolean_algebra.html" title="Boolean algebra">Boolean algebras</a>,</li>
+</ul>
+<p>which both introduce a new operation ~ called <b>negation</b>. Both structures play a role in <a href="/wiki/Mathematical_logic.html" title="Mathematical logic">mathematical logic</a> and especially Boolean algebras have major applications in <a href="/wiki/Computer_science.html" title="Computer science">computer science</a>. Finally, various structures in mathematics combine orders with even more algebraic operations, as in the case of <a href="/wiki/Quantale.html" title="Quantale">quantales</a>, that allow for the definition of an addition operation.</p>
+<p>Many other important properties of posets exist. For example, a poset is <b>locally finite</b> if every closed <a href="/wiki/Interval_%28mathematics%29.html" title="Interval (mathematics)">interval</a> [<i>a</i>, <i>b</i>] in it is <a href="/wiki/Finite_set.html" title="Finite set">finite</a>. Locally finite posets give rise to <a href="/wiki/Incidence_algebra.html" title="Incidence algebra">incidence algebras</a> which in turn can be used to define the Euler characteristic of finite bounded posets.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Subsets of ordered sets">edit</a>]</div>
+<p><a name="Subsets_of_ordered_sets" id="Subsets_of_ordered_sets"></a></p>
+<h2>Subsets of ordered sets</h2>
+<p>In an ordered set, one can define many types of special subsets based on the given order. A simple example are <b>upper sets</b>; i.e. sets that contain all elements that are above them in the order. Formally, the <b>upper closure</b> of a set <i>S</i> in a poset <i>P</i> is given by the set {<i>x</i> in <i>P</i> | there is some <i>y</i> in <i>S</i> with <i>y</i> ≤ <i>x</i>}. A set that is equal to its upper closure is called an upper set. <b>Lower sets</b> are defined dually.</p>
+<p>More complicated lower subsets are <a href="/wiki/Ideal_%28order_theory%29.html" title="Ideal (order theory)">ideals</a>, which have the additional property that each two of their elements have an upper bound within the ideal. Their duals are given by <a href="/wiki/Filter_%28mathematics%29.html" title="Filter (mathematics)">filters</a>. A related concept is that of a <a href="/wiki/Directed_set.html" title="Directed set">directed subset</a>, which like an ideal contains upper bounds of finite subsets, but does not have to be a lower set. Furthermore it is often generalized to preordered sets.</p>
+<p>A subset which is - as a sub-poset - linearly ordered, is called a <b>chain</b>. The opposite notion, the <b>antichain</b>, is a subset that contains no two comparable elements; i.e. that is a discrete order.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Related mathematical areas">edit</a>]</div>
+<p><a name="Related_mathematical_areas" id="Related_mathematical_areas"></a></p>
+<h2>Related mathematical areas</h2>
+<p>Although most mathematical areas <i>use</i> orders in one or the other way, there are also a few theories that have relationships which go far beyond mere application. Together with their major touching points with order theory, some of these are to be presented below.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Universal algebra">edit</a>]</div>
+<p><a name="Universal_algebra" id="Universal_algebra"></a></p>
+<h3>Universal algebra</h3>
+<p>As already mentioned, the methods and formalisms of <a href="/wiki/Universal_algebra.html" title="Universal algebra">universal algebra</a> are an important tool for many order theoretic considerations. Beside formalizing orders in terms of algebraic structures that satisfy certain identities, one can also establish other connections to algebra. An example is given by the correspondence between <a href="/wiki/Boolean_algebra.html" title="Boolean algebra">Boolean algebras</a> and <a href="/wiki/Boolean_ring.html" title="Boolean ring">Boolean rings</a>. Other issues are concerned with the existence of free constructions, such as <i>free lattices</i> based on a given set of generators. Furthermore, closure operators are important in the study of universal algebra.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Topology">edit</a>]</div>
+<p><a name="Topology" id="Topology"></a></p>
+<h3>Topology</h3>
+<p>In <a href="/wiki/Topology.html" title="Topology">topology</a> orders play a very prominent role. In fact, the set of <a href="/wiki/Open_set.html" title="Open set">open sets</a> provides a classical example of a complete lattice, more precisely a complete Heyting algebra (or "<b>frame</b>" or "<b>locale</b>"). <a href="/wiki/Filter_%28mathematics%29.html" title="Filter (mathematics)">Filters</a> and <a href="/wiki/Net_%28mathematics%29.html" title="Net (mathematics)">nets</a> are notions closely related to order theory and the <a href="/wiki/Closed_set.html" title="Closed set">closure operator of sets</a> can be used to define topology. Beyond these relations, topology can be looked at solely in terms of the open set lattices, which leads to the study of <a href="/wiki/Pointless_topology.html" title="Pointless topology">pointless topology</a>. Furthermore, a natural preorder of elements of the underlying set of a topology is given by the so-called <a href="/wiki/Specialization_order.html" title="Specialization order">specialization order</a>, that is actually a partial order if the topology is <a href="/wiki/T0_space.html" title="T0 space">T<sub>0</sub></a>.</p>
+<p>Conversely, in order theory, one often makes use of topological results. There are various ways to define subsets of an order which can be considered as open sets of a topology. Especially, it is interesting to consider topologies on a poset (<i>X</i>, ≤) that in turn induce ≤ as their specialization order. The <i>finest</i> such topology is the <a href="/wiki/Alexandrov_topology.html" title="Alexandrov topology">Alexandrov topology</a>, given by taking all upper sets as opens. Conversely, the <i>coarsest</i> topology that induces the specialization order is the <a href="/wiki/Upper_topology.html" title="Upper topology">upper topology</a>, having the complements of <a href="/wiki/Ideal_%28order_theory%29.html" title="Ideal (order theory)">principal ideals</a> (i.e. sets of the form {<i>y</i> in <i>X</i> | <i>y</i> ≤ <i>x</i>} for some <i>x</i>) as a <a href="/wiki/Subbase.html" title="Subbase">subbase</a>. Additionally, a topology with specialization order ≤ may be <a  class="new" title="Order consistent">order consistent</a>, meaning that their open sets are "inaccessible by directed suprema" (with respect to ≤). The finest order consistent topology is the <a href="/wiki/Scott_topology.html" title="Scott topology">Scott topology</a>, which is coarser than the Alexandrov topology. A third important topology in this spirit is the <a  class="new" title="Lawson topology">Lawson topology</a>. There are close connections between these topologies and the concepts of order theory. For example, a function preserves directed suprema <a href="/wiki/Iff.html" title="Iff">iff</a> it is <a href="/wiki/Continuous_function_%28topology%29.html" title="Continuous function (topology)">continuous</a> with respect to the Scott topology (for this reason this order theoretic property is also called <a href="/wiki/Scott-continuous.html" title="Scott-continuous">Scott-continuity</a>).</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Category theory">edit</a>]</div>
+<p><a name="Category_theory" id="Category_theory"></a></p>
+<h3>Category theory</h3>
+<p>The visualization of orders with Hasse diagrams has a straightforward generalization: instead of displaying lesser elements <i>below</i> greater ones, the direction of the order can also be depicted by giving directions to the edges of a graph. In this way, each order is seen to be equivalent to a <a href="/wiki/Directed_acyclic_graph.html" title="Directed acyclic graph">directed acyclic graph</a>, where the nodes are the elements of the poset and there is a directed path from <i>a</i> to <i>b</i> if and only if <i>a</i> ≤ <i>b</i>. Dropping the requirement of being acyclic, one can also obtain all preorders.</p>
+<p>When equipped with all transitive edges, these graphs in turn are just special <a href="/wiki/Category_theory.html" title="Category theory">categories</a>, where elements are objects and each set of morphisms between two elements is at most singleton. Functions between orders become functors between categories. Interestingly, many ideas of order theory are just concepts of category theory in small. For example, an infimum is just a <a href="/wiki/Product_%28category_theory%29.html" title="Product (category theory)">categorical product</a>. More generally, one can capture suprema and infima under the abstract notion of a <a href="/wiki/Limit_%28category_theory%29.html" title="Limit (category theory)">categorical limit</a> (or <i>colimit</i>, respectively). Another place where categorical ideas occur is the concept of a (monotone) Galois connection, which is just the same as a pair of <a href="/wiki/Adjoint_functor.html" title="Adjoint functor">adjoint functors</a>.</p>
+<p>But category theory also has its impact on order theory on a larger scale. Classes of posets with appropriate functions as discussed above form interesting categories. Often one can also state constructions of orders, like the <a href="/wiki/Product_order.html" title="Product order">product order</a>, in terms of categories. Further insights result when categories of orders are found <a href="/wiki/Equivalence_of_categories.html" title="Equivalence of categories">categorically equivalent</a> to other categories, for example of topological spaces. This line of research leads to various <i>representation theorems</i>, often collected under the label of <a href="/wiki/Stone_duality.html" title="Stone duality">Stone duality</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: History">edit</a>]</div>
+<p><a name="History" id="History"></a></p>
+<h2>History</h2>
+<p>As explained before, orders are ubiquitous in mathematics. However, earliest explicit mentionings of partial orders are probably to be found not before the 19th century. In this context the works of <a href="/wiki/George_Boole.html" title="George Boole">George Boole</a> are of great importance. Moreover, works of <a href="/wiki/Charles_S._Peirce.html" title="Charles S. Peirce">Charles S. Peirce</a>, <a href="/wiki/Richard_Dedekind.html" title="Richard Dedekind">Richard Dedekind</a>, and <a href="/wiki/Ernst_Schr%C3%B6der.html" title="Ernst Schröder">Ernst Schröder</a> also consider concepts of order theory. Certainly, there are others to be named in this context and surely there exists more detailed material on the history of order theory. <i>Please contribute if any further knowledge is available to you.</i></p>
+<p>The term <i>poset</i> as an abbreviation for partially ordered set was coined by <a href="/wiki/Garrett_Birkhoff.html" title="Garrett Birkhoff">Garrett Birkhoff</a>, a fact that, according to <i>Earliest Known Uses of Some of the Words of Mathematics</i>,<sup id="_ref-0" class="reference"><a  title="">[1]</a></sup> is stated on page 1 of the second edition of his influential book <i>Lattice Theory</i>.<sup id="_ref-1" class="reference"><a  title="">[2]</a></sup></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Cyclic_order.html" title="Cyclic order">Cyclic order</a></li>
+<li><a href="/wiki/Incidence_algebra.html" title="Incidence algebra">Incidence algebra</a></li>
+<li><a href="/wiki/List_of_order_topics.html" title="List of order topics">List of order topics</a></li>
+<li><a href="/wiki/M%C3%B6bius_function.html" title="Möbius function">Möbius function</a></li>
+<li><a href="/wiki/Partial_order.html" title="Partial order">Partial order</a></li>
+<li><a href="/wiki/Total_order.html" title="Total order">Total order</a></li>
+<li><a href="/wiki/Total_preorder.html" title="Total preorder">Total preorder</a></li>
+<li><a href="/wiki/List_of_publications_in_mathematics#Order_theory.html" title="List of publications in mathematics">Important publications in order theory</a>.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<ol class="references">
+<li id="_note-0"><b><a  title="">^</a></b> <a  class="external free" title="http://members.aol.com/jeff570/mathword.html">http://members.aol.com/jeff570/mathword.html</a></li>
+<li id="_note-1"><b><a  title="">^</a></b> <cite class="book" style="font-style:normal">(1948) <i>Lattice Theory, volume 25</i>. New York: Amer. Math. Soc. Coll. Publ..</cite></li>
+</ol>
+<ul>
+<li>B. A. Davey and H. A. Priestley, 2002. <i>Introduction to Lattices and Order</i>, 2nd ed. Cambridge University Press. <a  class="internal">ISBN 0-521-78451-4</a></li>
+</ul>
+<dl>
+<dd>A good contemporary introduction to the subject. Suitable for undergraduates.</dd>
+</dl>
+<ul>
+<li>G. Gierz, K. H. Hofmann, K. Keimel, J. D. Lawson, M. Mislove, and D. S. Scott, 2003, "Continuous Lattices and Domains," in <i>Encyclopedia of Mathematics and its Applications</i>, Vol. 93, Cambridge University Press. <a  class="internal">ISBN 0-521-80338-1</a></li>
+</ul>
+<dl>
+<dd>The comprehensive new version of the famous "Compendium" of continuous lattices. Assumes some advanced mathematical background.</dd>
+</dl>
+<ul>
+<li>S. N. Burris and H. P. Sankappanavar, 1981. <i><a  class="external text" title="http://www.thoralf.uwaterloo.ca/htdocs/ualg.html">A Course in Universal Algebra.</a></i> Springer Verlag.</li>
+</ul>
+<dl>
+<dd>A free online introduction to universal algebra, with much material on lattices.</dd>
+</dl>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://www.apronus.com/provenmath/orders.htm">Orders at ProvenMath</a> partial order, linear order, well order, initial segment; formal definitions and proofs within the axioms of set theory.</li>
+</ul>
+
+<!-- 
+Pre-expand include size: 2604 bytes
+Post-expand include size: 450 bytes
+Template argument size: 670 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:361924-0!1!0!default!!en!2 and timestamp 20060909195022 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:Order theory">Order theory</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Order_theory.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-ar"><a >العربية</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-io"><a >Ido</a></li>
+				<li class="interwiki-he"><a >עברית</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-tr"><a >Türkçe</a></li>
+				<li class="interwiki-zh"><a >中文</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 11:31, 8 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv92 in 0.080 secs. --></body></html>

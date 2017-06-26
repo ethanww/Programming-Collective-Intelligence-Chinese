@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Horn clause,Alfred Horn,Automated theorem proving,Boolean satisfiability problem,Clause (logic),Computational complexity,Conjunctive normal form,Constructive logic,First-order resolution,Free On-line Dictionary of Computing,GNU Free Documentation License" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Horn clause - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Horn_clause";
+			var wgTitle = "Horn clause";
+			var wgArticleId = 333824;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Horn clause</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub">(Redirected from <a  title="Horn logic">Horn logic</a>)</div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>In <a href="/wiki/Logic.html" title="Logic">logic</a>, a <b>Horn clause</b> is a <a href="/wiki/Clause_%28logic%29.html" title="Clause (logic)">clause</a> (a disjunction of <a href="/wiki/Literal.html" title="Literal">literals</a>) with at most one positive literal. A Horn clause with exactly one positive literal is a <b>definite clause</b>; a Horn clause with no positive literals is sometimes called a <b>goal clause</b>, especially in <a href="/wiki/Logic_programming.html" title="Logic programming">logic programming</a>. A <b>Horn formula</b> is a <a href="/wiki/Conjunctive_normal_form.html" title="Conjunctive normal form">conjunctive normal form</a> formula whose clauses are all Horn; in other words, it is a conjunction of Horn clauses. A <b>dual-Horn clause</b> is a clause with at most one <i>negative</i> literal. Horn clauses play a basic role in <a href="/wiki/Logic_programming.html" title="Logic programming">logic programming</a> and are important for <a href="/wiki/Constructive_logic.html" title="Constructive logic">constructive logic</a>.</p>
+<p>The following is an example of a (definite) Horn clause:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/9/9/a/99acb9d7802f4b949d306791089e1386.png" alt="\neg p \or \neg q \vee \cdots \vee \neg t \vee u" /></dd>
+</dl>
+<p>Such a formula can be rewritten in the following form, which is more common in logic programming and similar fields:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/f/8/2/f82272f9c4e2b70c76eedf3e1700ec44.png" alt="(p \wedge q \wedge \cdots \wedge t) \rightarrow u" /></dd>
+</dl>
+<p>The relevance of Horn clauses to theorem proving by <a href="/wiki/First-order_resolution.html" title="First-order resolution">first-order resolution</a> is that the resolution of two Horn clauses is a Horn clause. Moreover, the resolution of a goal clause and a definite clause is again a goal clause. In <a href="/wiki/Automated_theorem_proving.html" title="Automated theorem proving">automated theorem proving</a>, this can lead to greater efficiencies in proving a theorem (represented as a goal clause). In fact, <a href="/wiki/Prolog.html" title="Prolog">Prolog</a> is a programming language based on Horn clauses (Prolog also includes constructs such as the <i>cut</i> that cannot be easily expressed in logic).</p>
+<p>Horn clauses are also of interest in <a href="/wiki/Computational_complexity.html" title="Computational complexity">computational complexity</a>, where the problem of finding a set of variable assignments to make a conjunction of Horn clauses true is a <a href="/wiki/P-complete.html" title="P-complete">P-complete</a> problem, sometimes called <a href="/wiki/Horn-satisfiability.html" title="Horn-satisfiability">HORNSAT</a>. This is P's version of the <a href="/wiki/Boolean_satisfiability_problem.html" title="Boolean satisfiability problem">boolean satisfiability problem</a>, a central <a href="/wiki/NP-complete.html" title="NP-complete">NP-complete</a> problem.</p>
+<p>Recent research ("An Evaluation of the Effect of the Brain-Oriented Organized Knowledge Map (Bookmap)for Improving School Results", Twan Brouwers &amp; Hans Morélis, 2003) has shown that diagrams based on Horn clauses improve the human understanding of complex matter.</p>
+<p>The name "Horn clause" comes from the logician <a href="/wiki/Alfred_Horn.html" title="Alfred Horn">Alfred Horn</a>, who first pointed out the significance of such clauses in 1951, in the article "On sentences which are true of direct unions of algebras", Journal of Symbolic Logic, 16, 14-21.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li>Alex Sakharov, <i><a  class="external text" title="http://mathworld.wolfram.com/HornClause.html">Horn Clause</a></i> at <a href="/wiki/MathWorld.html" title="MathWorld">MathWorld</a>.</li>
+</ul>
+<p><span class="boilerplate" id="foldoc"><i>This article was originally based on material from the <a href="/wiki/Free_On-line_Dictionary_of_Computing.html" title="Free On-line Dictionary of Computing">Free On-line Dictionary of Computing</a>, which is <a  title="Wikipedia:Foldoc license">licensed</a> under the <a href="/wiki/GNU_Free_Documentation_License.html" title="GNU Free Documentation License">GFDL</a>.</i></span></p>
+
+<!-- 
+Pre-expand include size: 1017 bytes
+Post-expand include size: 397 bytes
+Template argument size: 34 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:333824-0!1!0!default!!en!2 and timestamp 20060910145733 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:FOLDOC sourced articles">FOLDOC sourced articles</a></span> | <span dir='ltr'><a  title="Category:Logic in computer science">Logic in computer science</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Horn_clause.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-cs"><a >Česky</a></li>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-hu"><a >Magyar</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-zh"><a >中文</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 07:45, 30 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv47 in 0.284 secs. --></body></html>

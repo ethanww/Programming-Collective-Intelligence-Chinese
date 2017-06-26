@@ -1,0 +1,282 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Type safety,1994,Abstract data type,Ada programming language,Benjamin C. Pierce,C programming language,Computer science,Dangling pointer,Datatype,Degeneracy (mathematics),Denotational semantics" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Type safety - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Type_safety";
+			var wgTitle = "Type safety";
+			var wgArticleId = 602650;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Type safety</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub">(Redirected from <a  title="Typesafe">Typesafe</a>)</div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>In <a href="/wiki/Computer_science.html" title="Computer science">computer science</a>, <b>type safety</b> is a property attributed to some, but not all, <a href="/wiki/Programming_language.html" title="Programming language">programming languages</a>. The term is defined differently by different communities who use it — in particular, the formal <a href="/wiki/Type_theory.html" title="Type theory">type-theoretic</a> definition is considerably stronger than what is understood by most programmers — but most uses have in common the notion of employing a <a href="/wiki/Type_system.html" title="Type system">type system</a> to prevent certain forms of erroneous or undesirable program behavior (called <i>type errors</i>). This enforcement can be static, catching potential errors at compile time, or dynamic, associating type information with values at run time and consulting them as needed to detect imminent errors, or a combination of both. Type safety is a property of the programming language, not of the programs themselves. For example, it is possible to write a safe program in a type-unsafe language.</p>
+<p>The behaviors classified as type errors by any given programming language are generally those that result from attempts to perform on some <a href="/wiki/Value_%28computer_science%29.html" title="Value (computer science)">value</a> (or values) an operation that is not appropriate to its type (or their types). Which of these notions is more fundamental is to a certain extent a matter of opinion: some language designers and programmers take the view that any operation not leading to program crashes, security flaws or other obvious failures is legitimate and need not be considered an error, while others prefer to classify any contravention of the programmer's intent (as communicated via typing annotations) to be erroneous and deserving of the label "unsafe". In the context of static type systems, type safety usually involves (among other things) a guarantee that the eventual value of any <a href="/wiki/Expression_%28programming%29.html" title="Expression (programming)">expression</a> will be a legitimate member of that expression's static type (the precise requirement is more subtle than this — see, for example, <a href="/wiki/Subtype.html" title="Subtype">subtype</a> and <a href="/wiki/Polymorphism_%28computer_science%29.html" title="Polymorphism (computer science)">polymorphism</a> for complications).</p>
+<p>Type safety is closely linked to so-called <i>memory safety</i>. To see why, assume for purposes of discussion that a certain implementation of a certain language has some type, say <span class="texhtml"><i>t</i></span>, such that there exists some sequence of bits (of the appropriate length) that is <i>not</i> a legitimate member of <span class="texhtml"><i>t</i></span>. (All but the most <a href="/wiki/Degeneracy_%28mathematics%29.html" title="Degeneracy (mathematics)">degenerate</a> type systems satisfy this criterion.) If that language is memory-unsafe to the extent of allowing data to be copied from unallocated or uninitialized memory into a <a href="/wiki/Variable.html" title="Variable">variable</a> of type <span class="texhtml"><i>t</i></span>, then it is not type safe, because such an operation might assign a non-<span class="texhtml"><i>t</i></span> value to that variable. Conversely, if the language is type unsafe to the extent of allowing an arbitrary integer to be used as a pointer, then it is clearly not memory safe.</p>
+<p>Most statically-typed languages provide a degree of type safety that is strictly stronger than memory safety, because their type systems enforce the proper use of <a href="/wiki/Abstract_data_type.html" title="Abstract data type">abstract data types</a> defined by programmers even when this is not strictly necessary for memory safety or for the prevention of any kind of catastrophic failure.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Definitions</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Type-safe and type-unsafe languages</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">2.1</span> <span class="toctext">Memory management in type-safe languages</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.2</span> <span class="toctext">Type safety and strong typing</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Type safety issues in specific languages</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">3.1</span> <span class="toctext">Ada</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.2</span> <span class="toctext">C</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.3</span> <span class="toctext">Standard ML</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">References</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Definitions">edit</a>]</div>
+<p><a name="Definitions" id="Definitions"></a></p>
+<h2>Definitions</h2>
+<p><a href="/wiki/Robin_Milner.html" title="Robin Milner">Robin Milner</a> provided the following slogan to describe type safety:</p>
+<dl>
+<dd>"<i>Well-typed programs never go wrong</i>."</dd>
+</dl>
+<p>The appropriate formalization of this slogan depends on the style of formal semantics used for a particular language. In the context of <a href="/wiki/Denotational_semantics.html" title="Denotational semantics">denotational semantics</a>, type safety means that the value of an expression that is well-typed, say with type τ, is a <i>bona fide</i> member of the set corresponding to τ.</p>
+<p>In <a href="/wiki/1994.html" title="1994">1994</a>, Andrew Wright and <a href="/wiki/Matthias_Felleisen.html" title="Matthias Felleisen">Matthias Felleisen</a> formulated what is now the standard definition and proof technique for type safety in languages defined by <a href="/wiki/Operational_semantics.html" title="Operational semantics">operational semantics</a>. Under this approach, type safety is determined by two properties of the semantics of the programming language:</p>
+<dl>
+<dt>(Type-) preservation</dt>
+<dd>"Well typedness" of programs remains invariant under the transition rules (i.e. evaluation rules or reduction rules) of the language.</dd>
+<dt>Progress</dt>
+<dd>A well typed program never gets "stuck", i.e., never gets into an undefined state where no further transitions are possible.</dd>
+</dl>
+<p>These properties do not exist in a vacuum; they are linked to the semantics of the programming language they describe, and there is a large space of varied languages that can fit these criteria, since the notion of "well typed" program is part of the static semantics of the programming language and the notion of "getting stuck" (or "going wrong") is a property of its dynamic semantics.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Type-safe and type-unsafe languages">edit</a>]</div>
+<p><a name="Type-safe_and_type-unsafe_languages" id="Type-safe_and_type-unsafe_languages"></a></p>
+<h2>Type-safe and type-unsafe languages</h2>
+<p>Type safety is usually a requirement for any <a href="/wiki/Toy_language.html" title="Toy language">toy language</a> proposed in programming language research. Many languages, on the other hand, are too big for human-generated type-safety proofs, as they often require checking thousands of cases. Nevertheless, languages such as <a href="/wiki/Standard_ML.html" title="Standard ML">Standard ML</a> have a rigorously defined semantics and have been shown to be type safe. Some other languages such as <a href="/wiki/Haskell_programming_language.html" title="Haskell programming language">Haskell</a> and <a href="/wiki/Java_programming_language.html" title="Java programming language">Java</a> are believed to be type safe. Regardless of the properties of the language definition, certain errors may occur at <a href="/wiki/Runtime.html" title="Runtime">runtime</a> due to bugs in the implementation, or in linked <a href="/wiki/Library_%28computer_science%29.html" title="Library (computer science)">libraries</a> written in other languages, rendering a given implementation type unsafe in certain circumstances.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Memory management in type-safe languages">edit</a>]</div>
+<p><a name="Memory_management_in_type-safe_languages" id="Memory_management_in_type-safe_languages"></a></p>
+<h3>Memory management in type-safe languages</h3>
+<p>In order for a language to be completely type safe it either needs to have <a href="/wiki/Garbage_collection_%28computer_science%29.html" title="Garbage collection (computer science)">garbage collection</a> <i>or</i> place other restrictions on the allocation and deallocation of memory (this section deals mainly with the former). Specifically, the language must not allow dangling pointers across structurally different types to exist. The reason is technical: suppose that a typed language (like <a href="/wiki/Pascal_programming_language.html" title="Pascal programming language">Pascal</a>) required that allocated memory had to be explicitly released. If a <a href="/wiki/Dangling_pointer.html" title="Dangling pointer">dangling pointer</a> existed that still pointed to the old memory location, it is possible that a new data structure can get allocated in the same space with the slot the dangling pointer refers to now pointing to a different type. For example, if the pointer initially pointed to a structure with an integer field, but in the new object a pointer field was allocated in the place of the integer, then the pointer field could be changed to anything simply by changing the value of the integer field (via dereferencing the dangling pointer). Because it is not specified what would happen when such a pointer is changed, the language is not type safe. Most type-safe languages satisfy these restrictions by using garbage collection to implement memory management.</p>
+<p>Garbage collectors themselves are best implemented in languages that allow <a href="/wiki/Pointer_arithmetic.html" title="Pointer arithmetic">pointer arithmetic</a>, so the library that implements the collector itself is best done in a type-unsafe language or a language where type safety can be deactivated. C and C++ are often used.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Type safety and strong typing">edit</a>]</div>
+<p><a name="Type_safety_and_strong_typing" id="Type_safety_and_strong_typing"></a></p>
+<h3>Type safety and strong typing</h3>
+<p>Type safety is synonymous with one of the many definitions of <a href="/wiki/Strong_typing.html" title="Strong typing">strong typing</a>; however, type safety and <a href="/wiki/Dynamic_typing.html" title="Dynamic typing">dynamic typing</a> are not mutually exclusive. A dynamically typed language can be seen as a statically-typed language with a very permissive type system under which any syntactically correct program is well-typed; as long as its dynamic semantics ensures that no such program ever "goes wrong" in an appropriate sense, it satisfies the definition above and can be called type-safe.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Type safety issues in specific languages">edit</a>]</div>
+<p><a name="Type_safety_issues_in_specific_languages" id="Type_safety_issues_in_specific_languages"></a></p>
+<h2>Type safety issues in specific languages</h2>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Ada">edit</a>]</div>
+<p><a name="Ada" id="Ada"></a></p>
+<h3>Ada</h3>
+<div class="infobox sisterproject">
+<div style="float: left;">
+<div class="floatnone"><span><a  class="image" title="Wikibooks"><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Wikibooks-logo-en.svg/50px-Wikibooks-logo-en.svg.png" alt="Wikibooks" width="50" height="57" longdesc="/wiki/Image:Wikibooks-logo-en.svg" /></a></span></div>
+</div>
+<div style="margin-left: 60px;"><a  class="extiw" title="wikibooks:Ada_Programming">Wikibooks Ada Programming</a> has more about this subject:
+<div style="margin-left:10px;"><i><b><a  class="extiw" title="wikibooks:Ada_Programming/Subtypes">Types and Subtypes</a></b></i></div>
+</div>
+</div>
+<p><a href="/wiki/Ada_programming_language.html" title="Ada programming language">Ada</a> was designed to be suitable for <a href="/wiki/Embedded_system.html" title="Embedded system">embedded systems</a>, <a href="/wiki/Device_driver.html" title="Device driver">device drivers</a> and other forms of <a href="/wiki/System_programming.html" title="System programming">system programming</a>, but also to encourage type safe programming. To resolve these conflicting goals, Ada confines type-unsafety to a certain set of special constructs whose names usually begin with the string "Unchecked_". Unchecked_Deallocation can be effectively banned from a unit of Ada text by applying <b>pragma</b> Pure to this unit. It is expected that programmers will use "Unchecked_" constructs very carefully and only when necessary; programs that do not use them are type safe.</p>
+<p>The <a href="/wiki/SPARK_programming_language.html" title="SPARK programming language">SPARK programming language</a> is a subset of Ada eliminating all its potential ambiguities and insecurities while at the same time adding <a href="/wiki/Design_by_contract.html" title="Design by contract">design by contract</a> to the language features available.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: C">edit</a>]</div>
+<p><a name="C" id="C"></a></p>
+<h3>C</h3>
+<div class="infobox sisterproject">
+<div style="float: left;">
+<div class="floatnone"><span><a  class="image" title="Wikibooks"><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Wikibooks-logo-en.svg/50px-Wikibooks-logo-en.svg.png" alt="Wikibooks" width="50" height="57" longdesc="/wiki/Image:Wikibooks-logo-en.svg" /></a></span></div>
+</div>
+<div style="margin-left: 60px;"><a  class="extiw" title="wikibooks:Programming">Wikibooks Programming</a> has more about this subject:
+<div style="margin-left: 10px;"><i><b><a  class="extiw" title="wikibooks:Programming:C">C</a></b></i></div>
+</div>
+</div>
+<p>The poster child of <i>type-unsafe</i> languages. While the language definition explicitly calls out the fact that behavior of 'type-unsafe' conversions is not defined, most implementations perform conversions that <a href="/wiki/Programmers.html" title="Programmers">programmers</a> find useful. The widespread use of <a href="/wiki/C_programming_language.html" title="C programming language">C language</a> idioms that make use of conversions has helped give it a reputation for being a type-unsafe language (the same kind of conversions can be performed in Ada using unchecked conversions, however this usage is much less common than in C).</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Standard ML">edit</a>]</div>
+<p><a name="Standard_ML" id="Standard_ML"></a></p>
+<h3>Standard ML</h3>
+<div class="infobox sisterproject">
+<div style="float: left;">
+<div class="floatnone"><span><a  class="image" title="Wikibooks"><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Wikibooks-logo-en.svg/50px-Wikibooks-logo-en.svg.png" alt="Wikibooks" width="50" height="57" longdesc="/wiki/Image:Wikibooks-logo-en.svg" /></a></span></div>
+</div>
+<div style="margin-left: 60px;"><a  class="extiw" title="wikibooks:Programming">Wikibooks Programming</a> has more about this subject:
+<div style="margin-left: 10px;"><i><b><a  class="extiw" title="wikibooks:Programming:ML">ML</a></b></i></div>
+</div>
+</div>
+<p><a href="/wiki/Standard_ML.html" title="Standard ML">SML</a> has a rigorously defined semantics and is known to be type safe. However, some implementations of SML, including <a href="/wiki/Standard_ML_of_New_Jersey.html" title="Standard ML of New Jersey">Standard ML of New Jersey</a> (SML/NJ) and <a href="/wiki/Mlton.html" title="Mlton">Mlton</a>, provide libraries that offer certain unsafe operations. These facilities are often used in conjunction with those implementations' <a href="/wiki/Foreign_function_interface.html" title="Foreign function interface">foreign function interfaces</a> to interact with non-ML code (such as C libraries) that may require data laid out in specific ways. Another example is the SML/NJ interactive system itself, which must use unsafe operations to execute ML code entered by the user.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Datatype.html" title="Datatype">datatype</a></li>
+<li><a href="/wiki/Type_theory.html" title="Type theory">type theory</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<ul>
+<li><a href="/wiki/Benjamin_C._Pierce.html" title="Benjamin C. Pierce">Benjamin C. Pierce</a>, <i>Types and Programming Languages,</i> MIT Press, 2002. (<a  class="internal">ISBN 0-262-16209-1</a>) <a  class="external autonumber" title="http://www.cis.upenn.edu/~bcpierce/tapl/">[1]</a></li>
+<li><i>Type Safe</i> defined in the Portland Pattern Repository's Wiki <a  class="external autonumber" title="http://c2.com/cgi/wiki?TypeSafe">[2]</a></li>
+<li>Andrew K. Wright and <a href="/wiki/Matthias_Felleisen.html" title="Matthias Felleisen">Matthias Felleisen</a>, "A Syntactic Approach to Type Soundness," <i>Information and Computation</i> 115(1), pp. 38-94, 1994. <a  class="external autonumber" title="http://citeseer.ist.psu.edu/wright92syntactic.html">[3]</a></li>
+<li>Stavros Macrakis, "Safety and power", <i>ACM SIGSOFT Software Engineering Notes</i> <b>7</b>:2:25 (April 1982)<a  class="external text" title="http://portal.acm.org/citation.cfm?id=1005937.1005941">requires subscription</a></li>
+</ul>
+
+<!-- 
+Pre-expand include size: 1193 bytes
+Post-expand include size: 997 bytes
+Template argument size: 143 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:602650-0!1!0!default!!en!2 and timestamp 20060906023046 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Type theory">Type theory</a></span> | <span dir='ltr'><a  title="Category:Computer languages">Computer languages</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Type_safety.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 08:06, 9 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv54 in 0.112 secs. --></body></html>

@@ -1,0 +1,434 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="CPU cache,Harvard architecture,Citeseer,Pentium 4,Itanium 2,As of 2004,Athlon 64,Register file,Intel,Misprediction,Instruction (computer science)" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>CPU cache - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "CPU_cache";
+			var wgTitle = "CPU cache";
+			var wgArticleId = 849181;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">CPU cache</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<div style="right:10px; display:none;" class="metadata topicon" id="featured-star">
+<div style="position: relative; width: 14px; height: 14px; overflow: hidden">
+<div style="position: absolute; top: 0px; left: 0px; font-size: 100px; overflow: hidden; line-height: 100px; z-index: 3"><a  title="Wikipedia:Featured articles"><span title="This is a featured article. Click here for more information.">&#160;&#160;&#160;</span></a></div>
+<div style="position: absolute; top: 0px; left: 0px; z-index: 2"><a  class="image" title="This is a featured article. Click here for more information."><img src="http://upload.wikimedia.org/wikipedia/en/6/60/LinkFA-star.png" alt="This is a featured article. Click here for more information." width="14" height="14" longdesc="/wiki/Image:LinkFA-star.png" /></a></div>
+</div>
+</div>
+<div class="thumb tright">
+<div style="width:337px;"><a  class="internal" title="Diagram of a CPU memory cache"><img src="http://upload.wikimedia.org/wikipedia/en/d/d5/Cache%2Cbasic.png" alt="Diagram of a CPU memory cache" width="335" height="144" longdesc="/wiki/Image:Cache%2Cbasic.png" /></a>
+<div class="thumbcaption">Diagram of a CPU memory cache</div>
+</div>
+</div>
+<p>A <b>CPU cache</b> is a <a href="/wiki/Cache.html" title="Cache">cache</a> used by the <a href="/wiki/Central_processing_unit.html" title="Central processing unit">central processing unit</a> of a <a href="/wiki/Computer.html" title="Computer">computer</a> to reduce the average time to access <a href="/wiki/Computer_storage.html" title="Computer storage">memory</a>. The cache is a smaller, faster memory which stores copies of the data from the most frequently used <a href="/wiki/Main_memory.html" title="Main memory">main memory</a> locations. As long as most memory accesses are to cached memory locations, the average <a href="/wiki/Latency.html" title="Latency">latency</a> of memory accesses will be closer to the cache latency than to the latency of main memory.</p>
+<p>The diagram to the right shows two memories. Each location in each memory has a datum (a <i>cache line</i>), which in different designs ranges in size from 8 to 512 <a href="/wiki/Byte.html" title="Byte">bytes</a>. The size of the cache line is usually larger than the size of the usual access requested by a CPU instruction, which ranges from 1 to 16 bytes. Each location in each memory also has an index, which is a unique number used to refer to that location. The index for a location in main memory is called an <a href="/wiki/Memory_address.html" title="Memory address">address</a>. Each location in the cache has a tag, which contains the index of the datum in main memory which has been cached. In a CPU's data cache, these entries are called <i>cache lines</i> or <i>cache blocks</i>.</p>
+<p>When the processor wishes to read or write a location in main memory, it first checks whether that memory location is in the cache. This is accomplished by comparing the address of the memory location to all tags in the cache that might contain that address. If the processor finds that the memory location is in the cache, we say that a <i>cache hit</i> has occurred, otherwise we speak of a <i>cache miss</i>. In the case of a cache hit, the processor immediately reads or writes the data in the cache line. The proportion of accesses that result in a cache hit is known as the <i>hit rate</i>, and is a measure of the effectiveness of the cache.</p>
+<p>In the case of a cache miss, most caches allocate a new entry, which comprises the tag just missed and a copy of the data from memory. The reference can then be applied to the new entry just as in the case of a hit. Misses are slow because they require the data to be transferred from main memory. This transfer incurs a delay since main memory is much slower than cache memory.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Some details of operation</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Associativity</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Cache misses</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Address translation</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">4.1</span> <span class="toctext">Virtual indexing and virtual aliases</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.2</span> <span class="toctext">Virtual tags and vhints</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.3</span> <span class="toctext">Page coloring</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Cache hierarchy in a modern processor</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">5.1</span> <span class="toctext">Specialized caches</span></a>
+<ul>
+<li class="toclevel-3"><a ><span class="tocnumber">5.1.1</span> <span class="toctext">Victim cache</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">5.1.2</span> <span class="toctext">Trace cache</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">5.1.3</span> <span class="toctext">Harvard architecture</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a ><span class="tocnumber">5.2</span> <span class="toctext">Multi-level caches</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">5.3</span> <span class="toctext">Example: the K8</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">5.4</span> <span class="toctext">More hierarchies</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">Implementation</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">8</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Some details of operation">edit</a>]</div>
+<p><a name="Some_details_of_operation" id="Some_details_of_operation"></a></p>
+<h2>Some details of operation</h2>
+<p>In order to make room for the new entry on a cache miss, the cache generally has to <i>evict</i> one of the existing entries. The <a href="/wiki/Heuristic_%28computer_science%29.html" title="Heuristic (computer science)">heuristic</a> that it uses to choose the entry to evict is called the <i>replacement policy</i>. The fundamental problem with any replacement policy is that it must predict which existing cache entry is least likely to be used in the future. Predicting the future is difficult, especially for hardware caches which use simple rules amenable to implementation in circuitry, so there are a variety of replacement policies to choose from and no perfect way to decide among them. One popular replacement policy, <a href="/wiki/Cache_algorithms.html" title="Cache algorithms">LRU</a>, replaces the least recently used entry.</p>
+<p>When data is written to the cache, it must at some point be written to main memory as well. The timing of this write is controlled by what is known as the <i>write policy</i>. In a <i>write-through</i> cache, every writing to the cache causes a write to main memory. Alternatively, in a <i>write-back</i> cache, writings are not immediately mirrored to memory. Instead, the cache tracks which locations have been written over (these locations are marked <i>dirty</i>). The data in these locations is written back to main memory when that data is evicted from the cache. For this reason, a miss in a write-back cache will often require <i>two</i> memory accesses to service: one to read the new location from memory and the other to write the dirty location to memory.</p>
+<p>There are intermediate policies as well. The cache may be write-through, but the writes may be held in a store data queue temporarily, usually so that multiple stores can be processed together (which can reduce <a href="/wiki/Computer_bus.html" title="Computer bus">bus</a> turnarounds and so improve bus utilization).</p>
+<p>The data in main memory being cached may be changed by other entities, in which case the copy in the cache may become out-of-date or <i>stale</i>. Alternatively, when the CPU updates the data in the cache, copies of data in other caches will become stale. Communication protocols between the cache managers which keep the data consistent are known as <i>coherency protocols</i>.</p>
+<p>The time taken to fetch a datum from memory (read latency) matters because a CPU will often run out of things to do while waiting for the datum. When a CPU reaches this state, it is called a <i>stall</i>. As CPUs become faster, stalls due to cache misses displace more potential computation; modern CPUs can execute hundreds of instructions in the time taken to fetch a single datum from memory. Various techniques have been employed to keep the CPU busy during this time. <i><a href="/wiki/Out-of-order_execution.html" title="Out-of-order execution">Out-of-order</a></i> CPUs (<a href="/wiki/Pentium_Pro.html" title="Pentium Pro">Pentium Pro</a> and later Intel designs, for example) attempt to execute independent instructions after the instruction which is waiting for the cache miss data. The <a href="/wiki/Pentium_4.html" title="Pentium 4">Pentium 4</a> uses <a href="/wiki/Simultaneous_multithreading.html" title="Simultaneous multithreading">Simultaneous multithreading</a> (<a href="/wiki/Hyper-threading.html" title="Hyper-threading">Hyper-threading</a> in <a href="/wiki/Intel.html" title="Intel">Intel</a>'s terminology) to allow a second program to use the CPU while a first program waits for data to come from main memory.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Associativity">edit</a>]</div>
+<p><a name="Associativity" id="Associativity"></a></p>
+<h2>Associativity</h2>
+<div class="thumb tright">
+<div style="width:452px;"><a  class="internal" title="Which memory locations can be cached by which cache locations"><img src="http://upload.wikimedia.org/wikipedia/en/thumb/9/93/Cache%2Cassociative-fill-both.png/450px-Cache%2Cassociative-fill-both.png" alt="Which memory locations can be cached by which cache locations" width="450" height="223" longdesc="/wiki/Image:Cache%2Cassociative-fill-both.png" /></a>
+<div class="thumbcaption">
+<div class="magnify" style="float:right"><a  class="internal" title="Enlarge"><img src="/skins-1.5/common/images/magnify-clip.png" width="15" height="11" alt="Enlarge" /></a></div>
+Which memory locations can be cached by which cache locations</div>
+</div>
+</div>
+<p>Recall that the replacement policy decides where in the cache a copy of a particular entry of main memory will go. If the replacement policy is free to choose any entry in the cache to hold the copy, the cache is called <i>fully associative</i>. At the other extreme, if each entry in main memory can go in just one place in the cache, the cache is <i>direct mapped</i>. Many caches implement a compromise, and are described as <i>set associative</i>. For example, the level-1 data cache in an <a href="/wiki/AMD.html" title="AMD">AMD</a> <a href="/wiki/Athlon.html" title="Athlon">Athlon</a> is 2-way set associative, which means that any particular location in main memory can be cached in either of 2 locations in the level-1 data cache.</p>
+<p>If each location in main memory can be cached in either of two locations in the cache, one logical question is: <i>which two?</i> The simplest and most commonly used scheme, shown in the right-hand diagram above, is to use the least significant bits of the memory location's index as the index for the cache memory, and to have two entries for each index. One good property of this scheme is that the tags stored in the cache do not have to include that part of the main memory address which is specified by the cache memory's index. Since the cache tags are fewer bits, they take less area and can be read and compared faster.</p>
+<p>Other schemes have been suggested, such as the <i>skewed cache</i>, where the index for way 0 is direct, as above, but the index for way 1 is formed with a <a href="/wiki/Hash_function.html" title="Hash function">hash function</a>. A good hash function has the property that addresses which conflict with the direct mapping tend not to conflict when mapped with the hash function, and so it is less likely that a program will suffer from an unexpectedly large number of conflict misses due to a pathological access pattern. The downside is extra latency from computing the hash function. Additionally, when it comes time to load a new line and evict an old line, it may be difficult to determine which existing line was least recently used, because the new line conflicts with data at different indexes in each way; LRU tracking for non-skewed caches is usually done on a per-set basis.</p>
+<p>Associativity is a tradeoff. If there are ten places the replacement policy can put a new cache entry, then when the cache is checked for a hit, all ten places must be searched. Checking more places takes more power, area, and potentially time. On the other hand, caches with more associativity suffer fewer misses (see conflict misses, below). The rule of thumb is that doubling the associativity, from direct mapped to 2-way, or from 2-way to 4-way, has about the same effect on hit rate as doubling the cache size. Associativity increases beyond 4-way have much less effect on the hit rate, and are generally done for other reasons (see virtual aliasing, below).</p>
+<p>One of the advantages of a direct mapped cache is that it allows simple and fast <a href="/wiki/Speculative_execution.html" title="Speculative execution">speculation</a>. Once the address has been computed, the one cache index which might have a copy of that datum is known. That cache entry can be read, and the processor can continue to work with that data before it finishes checking that the tag actually matches the requested address.</p>
+<p>The idea of having the processor use the cached data before the tag match completes can be applied to associative caches as well. A subset of the tag, called a <i>hint</i>, can be used to pick just one of the possible cache entries mapping to the requested address. This datum can then be used in parallel with checking the full tag. The hint technique works best when used in the context of address translation, as explained below.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Cache misses">edit</a>]</div>
+<p><a name="Cache_misses" id="Cache_misses"></a></p>
+<h2>Cache misses</h2>
+<p>A cache miss refers to a failed attempt to read or write a piece of data in the cache, which results in a main memory access with much longer latency. For a cache read miss happening to instruction cache, the processor, or at least <a href="/wiki/Simultaneous_multithreading.html" title="Simultaneous multithreading">the thread of execution</a>, has to wait (stall) until the instruction is fetched from main memory. A cache read miss caused by a data load instruction may be less painful because other unrelated instructions can continue execution until the operation which really needs the loaded data is to be executed. However, data is often used immediately after the load instruction. The final case is a cache write miss, it is the least serious miss because the write is usually buffered. The processor can continue until the buffer is full. (There is no cache write miss for instruction cache because the instructions are read only.)</p>
+<p>In order to lower cache miss rate, a great deal of analysis has been done on cache behavior in an attempt to find the best combination of size, associativity, block size, and so on. Sequences of memory references performed by benchmark programs are saved as <i>address traces</i>. Subsequent analyses simulate many different possible cache designs on these long address traces. Making sense of how the many variables affect the cache hit rate can be quite confusing. One significant contribution to this analysis was made by Mark Hill, who separated misses into three categories (known as the Three Cs):</p>
+<ul>
+<li><i>Compulsory misses</i> are those misses caused by the first reference to a datum. Cache size and associativity make no difference to the number of compulsory misses. Prefetching can help here, as can larger cache block sizes (which are a form of prefetching).</li>
+</ul>
+<ul>
+<li><i>Capacity misses</i> are those misses that a cache of a given size will have, regardless of its associativity or block size. The curve of capacity miss rate versus cache size gives some measure of the temporal locality of a particular reference stream.</li>
+</ul>
+<ul>
+<li><i>Conflict misses</i> are those misses that could have been avoided, had the cache not evicted an entry earlier. Conflict misses can be further broken down into <i>mapping misses</i>, that are unavoidable given a particular amount of associativity, and <i>replacement misses</i>, which are due to the particular victim choice of the replacement policy.</li>
+</ul>
+<div class="thumb tright">
+<div style="width:455px;"><a  class="internal" title="Miss rate versus cache size on the Integer portion of SPEC CPU2000"><img src="http://upload.wikimedia.org/wikipedia/en/0/07/Cache%2Cmissrate.png" alt="Miss rate versus cache size on the Integer portion of SPEC CPU2000" width="453" height="288" longdesc="/wiki/Image:Cache%2Cmissrate.png" /></a>
+<div class="thumbcaption">Miss rate versus cache size on the Integer portion of SPEC CPU2000</div>
+</div>
+</div>
+<p>The graph to the right summarizes the cache performance seen on the Integer portion of the SPEC CPU2000 benchmarks, as collected by Hill and Cantin <a  class="external autonumber" title="http://www.cs.wisc.edu/multifacet/misc/spec2000cache-data/">[1]</a>. These benchmarks are intended to represent the kind of workload that an engineering workstation computer might see on any given day. We can see the different effects of the three Cs in this graph.</p>
+<p>At the far right, with cache size labelled "Inf", we have the compulsory misses. If we wish to improve a machine's performance on SpecInt2000, increasing the cache size beyond 1MB is essentially futile. That's the insight given by the compulsory misses.</p>
+<p>The fully-associative cache miss rate here is almost representative of the capacity miss rate. The difference is that the data presented is from simulations assuming an LRU replacement policy. Showing the capacity miss rate would require a perfect replacement policy, i.e. an oracle that looks into the future to find a cache entry which is actually not going to be hit.</p>
+<p>Note that our approximation of the capacity miss rate falls steeply between 32KB and 64KB. This indicates that the benchmark has a <i>working set</i> of roughly 64KB. A CPU cache designer examining this benchmark will have a strong incentive to set the cache size just over 64KB rather than just under that size. Note that, on this benchmark, no amount of associativity can make a 32KB cache perform as well as a 64KB 4-way, or even a direct-mapped 128KB cache.</p>
+<p>Finally, note that between 64KB and 1MB there is a large difference between direct-mapped and fully-associative caches. This difference is the conflict miss rate. As of 2004, on-chip secondary caches tend to be in this range, because smaller caches are fast enough to be primary caches, and larger caches become too large to produce economically on-chip (<a href="/wiki/Itanium_2.html" title="Itanium 2">Itanium 2</a> has a 9MB level-3 on-chip cache, the largest shipping on-chip cache in 2004). The insight from looking at conflict miss rates is that secondary caches benefit a great deal from high associativity.</p>
+<p>This benefit was well known in the late 80s and early 90s, when CPU designers could not fit large caches on-chip, and could not get sufficient bandwidth to cache either the data or tags to implement high associativity in off-chip caches. Desperate hacks were attempted: the <a href="/wiki/MIPS_architecture.html" title="MIPS architecture">MIPS</a> R8000 used expensive off-chip dedicated tag <a href="/wiki/Static_random_access_memory.html" title="Static random access memory">SRAMs</a>, which had embedded tag comparators and large drivers on the match lines, in order to implement a 4MB 4-way associative cache. The MIPS R10000 used ordinary SRAM chips for the tags. Tag access for both ways took two cycles. To reduce latency, the R10000 would guess which way of the cache would hit on each access.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Address translation">edit</a>]</div>
+<p><a name="Address_translation" id="Address_translation"></a></p>
+<h2>Address translation</h2>
+<p>Most general purpose CPUs implement some form of <a href="/wiki/Virtual_memory.html" title="Virtual memory">virtual memory</a>. To summarize, each program running on the machine sees its own simplified address space, which contains code and data for that program only. Each program places things in its address space without regard for what other programs are doing in their address spaces.</p>
+<p>Virtual memory requires the processor to translate virtual addresses generated by the program into physical addresses in main memory. The portion of the processor that does this translation is known as the memory management unit (MMU). The fast path through the MMU can perform those translations stored in the awkwardly named <a href="/wiki/Translation_Lookaside_Buffer.html" title="Translation Lookaside Buffer">Translation Lookaside Buffer</a> (TLB), which is a cache of mappings from the operating system's <a href="/wiki/Page_table.html" title="Page table">page table</a>.</p>
+<p>For the purposes of the present discussion, there are three important features of address translation:</p>
+<ul>
+<li><b>Latency:</b> The physical address is available from the MMU some time, perhaps a few cycles, after the virtual address is available from the address generator.</li>
+</ul>
+<ul>
+<li><b>Aliasing:</b> Multiple virtual addresses can map to a single physical address. Most processors guarantee that all updates to that single physical address will happen in program order. To deliver on that guarantee, the processor must ensure that only one copy of a physical address resides in the cache at any given time.</li>
+</ul>
+<ul>
+<li><b>Granularity:</b> The virtual address space is broken up into pages. For instance, a 4GB virtual address space might be cut up into 1048576 4KB pages, each of which can be independently mapped. There may be multiple page sizes supported, see <a href="/wiki/Virtual_memory.html" title="Virtual memory">virtual memory</a> for elaboration.</li>
+</ul>
+<p>A historical note: the first virtual memory systems were very slow, because they required an access to the page table (held in main memory) before every programmed access to main memory. With no caches, this effectively cut the speed of the machine in half. The first hardware cache used in a computer system was not actually a data or instruction cache, but rather a TLB.</p>
+<p>The existence of different physical and virtual addresses raises the question of whether virtual or physical addresses are used for the cache index and tag. The motivation to use virtual addresses is speed: a virtually-indexed, virtually-tagged data cache cuts the MMU entirely out of the load-use recurrence. The latency of that recurrence (<b>load latency</b>) is crucial to the performance of a CPU. Most modern level-1 caches are virtually indexed, which at least allows the MMU's TLB lookup to proceed in parallel with fetching the data from the cache RAM.</p>
+<p>But virtual indexing is not always the best choice. It introduces the problem of virtual aliases -- the cache may have multiple locations which can store the value of a single physical address. The cost of dealing with virtual aliases grows with cache size, and as a result most level-2 and larger caches are physically indexed.</p>
+<p>Virtual tagging is uncommon. If the TLB lookup can finish before the cache RAM lookup, then the physical address is available in time for tag compare, and there is no need for virtual tagging. Large caches, then, tend to be physically tagged, and only small, very low latency caches are virtually tagged. In recent general-purpose CPUs, virtual tagging has been superseded by vhints, as described below.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Virtual indexing and virtual aliases">edit</a>]</div>
+<p><a name="Virtual_indexing_and_virtual_aliases" id="Virtual_indexing_and_virtual_aliases"></a></p>
+<h3>Virtual indexing and virtual aliases</h3>
+<p>The usual way the processor guarantees that virtually aliased addresses act as a single storage location is to arrange that only one virtual alias can be in the cache at any given time.</p>
+<p>Whenever a new entry is added to a virtually-indexed cache, the processor searches for any virtual aliases already resident and evicts them first. This special handling happens only during a cache miss. No special work is necessary during a cache hit, which helps keep the fast path fast.</p>
+<p>The most straightforward way to find aliases is to arrange for them all to map to the same location in the cache. This happens, for instance, if the TLB has e.g. 4KB pages, and the cache is direct mapped and 4KB or less.</p>
+<p>Modern level-1 caches are much larger than 4KB, but virtual memory pages have stayed that size. If the cache is e.g. 16KB and virtually indexed, for any virtual address there are four cache locations that could hold the same physical location, but aliased to different virtual addresses. If the cache misses, all four locations must be probed to see if their corresponding physical addresses match the physical address of the access that generated the miss.</p>
+<p>These probes are the same checks that a set associative cache uses to select a particular match. So if a 16KB virtually indexed cache is 4-way set associative and used with 4KB virtual memory pages, no special work is necessary to evict virtual aliases during cache misses because the checks have already happened while checking for a cache hit.</p>
+<p>Using the AMD Athlon as an example again, it has a 64KB level-1 data cache, 4KB pages, and 2-way set associativity. When the level-1 data cache suffers a miss, 2 of the 16 (==64KB/4KB) possible virtual aliases have already been checked, and seven more cycles through the tag check hardware are necessary to complete the check for virtual aliases.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Virtual tags and vhints">edit</a>]</div>
+<p><a name="Virtual_tags_and_vhints" id="Virtual_tags_and_vhints"></a></p>
+<h3>Virtual tags and vhints</h3>
+<p>Virtual tagging is possible too. The great advantage of virtual tags is that, for associative caches, they allow the tag match to proceed before the virtual to physical translation is done. However,</p>
+<ul>
+<li>Coherence probes and evictions present a physical address for action. The hardware must have some means of converting the physical addresses into a cache index, generally by storing physical tags as well as virtual tags. For comparison, a physically tagged cache does not need to keep virtual tags, which is simpler.</li>
+</ul>
+<ul>
+<li>When a virtual to physical mapping is deleted from the TLB, cache entries with those virtual addresses will have to be flushed somehow. Alternatively, if cache entries are allowed on pages not mapped by the TLB, then those entries will have to be flushed when the access rights on those pages are changed in the page table.</li>
+</ul>
+<p>It is also possible for the operating system to ensure that no virtual aliases are simultaneously resident in the cache. The operating system makes this guarantee by enforcing page coloring, which is described below. Some early RISC processors (SPARC, RS/6000) took this approach. It has not been used recently, as the hardware cost of detecting and evicting virtual aliases has fallen and the software complexity and performance penalty of perfect page coloring has risen.</p>
+<p>It can be useful to distinguish the two functions of tags in an associative cache: they are used to determine which way of the entry set to select, and they are used to determine if the cache hit or missed. The second function must always be correct, but it is permissible for the first function to guess, and get the wrong answer occasionally.</p>
+<p>Some processors (e.g. early SPARCs) have caches with both virtual and physical tags. The virtual tags are used for way selection, and the physical tags are used for determining hit or miss. This kind of cache enjoys the latency advantage of a virtually tagged cache, and the simple software interface of a physically tagged cache. It bears the added cost of duplicated tags, however. Also, during miss processing, the alternate ways of the cache line indexed have to be probed for virtual aliases and any matches evicted.</p>
+<p>The extra area (and some latency) can be mitigated by keeping <i>virtual hints</i> with each cache entry instead of virtual tags. These hints are a subset or hash of the virtual tag, and are used for selecting the way of the cache from which to get data and a physical tag. Like a virtually tagged cache, there may be a virtual hint match but physical tag mismatch, in which case the cache entry with the matching hint must be evicted so that cache accesses after the cache fill at this address will have just one hint match. Since virtual hints have fewer bits than virtual tags distinguishing them from one another, a virtually hinted cache suffers more conflict misses than a virtually tagged cache.</p>
+<p>Perhaps the ultimate reduction of virtual hints can be found in the Pentium 4 (Willamette and Northwood cores). In these processors the virtual hint is effectively 2 bits, and the cache is 4-way set associative. Effectively, the hardware maintains a simple permutation from virtual address to cache index, so that no CAM is necessary to select the right one of the four ways fetched.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Page coloring">edit</a>]</div>
+<p><a name="Page_coloring" id="Page_coloring"></a></p>
+<h3>Page coloring</h3>
+<p>Large physically indexed caches (usually secondary caches) run into a problem: the operating system rather than the application controls which pages collide with one another in the cache. Differences in page allocation from one program run to the next lead to differences in the cache collision patterns, which can lead to very large differences in program performance. These differences can make it very difficult to get a consistent and repeatable timing for a benchmark run, which then leads to frustrated sales engineers demanding that the operating system authors fix the problem.</p>
+<p>To understand the problem, consider a CPU with a 1MB physically indexed direct-mapped level-2 cache and 4KB virtual memory pages. Sequential physical pages map to sequential locations in the cache until after 256 pages the pattern wraps around. We can label each physical page with a color of 0-255 to denote where in the cache it can go. Locations within physical pages with different colors cannot conflict in the cache.</p>
+<p>A programmer attempting to make maximum use of the cache may arrange his program's access patterns so that only 1MB of data need be cached at any given time, thus avoiding capacity misses. But he should also ensure that the access patterns do not have conflict misses. One way to think about this problem is to divide up the virtual pages the program uses and assign them virtual colors in the same way as physical colors were assigned to physical pages before. The programmer can then arrange the access patterns of his code so that no two pages with the same virtual color are in use at the same time. There is a wide literature on such optimizations (e.g. <a href="/wiki/Loop_nest_optimization.html" title="Loop nest optimization">loop nest optimization</a>), largely coming from the <a href="/wiki/High_Performance_Computing.html" title="High Performance Computing">High Performance Computing</a> (<a href="/wiki/HPC.html" title="HPC">HPC</a>) community.</p>
+<p>The snag is that while all the pages in use at any given moment may have different virtual colors, some may have the same physical colors. In fact, if the operating system assigns physical pages to virtual pages randomly and uniformly, it is extremely likely that some pages will have the same physical color, and then locations from those pages will collide in the cache (this is the <a href="/wiki/Birthday_paradox.html" title="Birthday paradox">birthday paradox</a>).</p>
+<p>The solution is to have the operating system attempt to assign different physical color pages to different virtual colors, a technique called <i>page coloring</i>. Although the actual mapping from virtual to physical color is irrelevant to system performance, odd mappings are difficult to keep track of and have little benefit, so most approaches to page coloring simply try to keep physical and virtual page colors the same.</p>
+<p>If the operating system can guarantee that each physical page maps to only one virtual color, then there are no virtual aliases, and the processor can use virtually indexed caches with no need for extra virtual alias probes during miss handling. Alternatively, the O/S can flush a page from the cache whenever it changes from one virtual color to another. As mentioned above, this approach was used for some early SPARC and RS/6000 designs.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Cache hierarchy in a modern processor">edit</a>]</div>
+<p><a name="Cache_hierarchy_in_a_modern_processor" id="Cache_hierarchy_in_a_modern_processor"></a></p>
+<h2>Cache hierarchy in a modern processor</h2>
+<p>Modern processors have multiple interacting caches on chip. Two issues have driven the development of the modern cache hierarchy.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Specialized caches">edit</a>]</div>
+<p><a name="Specialized_caches" id="Specialized_caches"></a></p>
+<h3>Specialized caches</h3>
+<p>The first issue is that pipelined CPUs access memory from multiple points in the pipeline: instruction fetch, virtual-to-physical address translation, and data fetch. For a simple example, see <a href="/wiki/Classic_RISC_Pipeline.html" title="Classic RISC Pipeline">Classic RISC Pipeline</a>. The natural design is to use different physical caches for each of these points, so that no one physical resource has to be scheduled to service two points in the pipeline. Thus the pipeline naturally ends up with at least three separate caches (instruction, TLB, and data), each specialized to its particular role.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Victim cache">edit</a>]</div>
+<p><a name="Victim_cache" id="Victim_cache"></a></p>
+<h4>Victim cache</h4>
+<p>A <b>victim cache</b> is a cache used to hold blocks evicted from a CPU cache due to a conflict or capacity miss. The victim cache lies between the main cache and its refill path, and only holds blocks that were evicted from that cache on a miss. This technique is used to reduce the penalty incurred by a cache on a miss.</p>
+<p>The original victim cache on the HP PA7200 was a small, fully-associative cache. Later processors, such as the AMD K7 and K8, used the very large secondary cache as a victim cache, to avoid duplicate storage of the contents of the large primary cache.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Trace cache">edit</a>]</div>
+<p><a name="Trace_cache" id="Trace_cache"></a></p>
+<h4>Trace cache</h4>
+<p>One of the more extreme examples of cache specialization is the <b>trace cache</b> found in the Intel Pentium 4 microprocessors. A <b>trace cache</b> is a mechanism for increasing the instruction <a  class="new" title="Fetch bandwidth">fetch bandwidth</a> by storing traces of <a href="/wiki/Instruction_%28computer_science%29.html" title="Instruction (computer science)">instructions</a> that have already been fetched. The mechanism was first proposed by <a  class="new" title="Eric Rotenberg">Eric Rotenberg</a>, <a href="/wiki/Steve_Bennett.html" title="Steve Bennett">Steve Bennett</a>, and <a  class="new" title="Jim Smith (scientist)">Jim Smith</a> in their 1996 paper <i>"Trace Cache: a Low Latency Approach to High Bandwidth Instruction Fetching."</i></p>
+<p>A trace cache stores instructions either after they have been decoded, or as they are retired. Generally, instructions are added to trace caches in groups representing either individual basic blocks or dynamic instruction traces. A basic block consists of a group of non-branch instructions ending with a branch. A dynamic trace ("trace path") contains only instructions whose results are actually used, and eliminates instructions following taken branches (since they are not executed); a dynamic trace can be a concatenation of multiple of basic blocks. This allows the instruction fetch unit of a processor to fetch several basic blocks, without having to worry about branches in the execution flow.</p>
+<p>Trace lines are stored in the trace cache based on the <a href="/wiki/Program_counter.html" title="Program counter">program counter</a> of the first instruction in the trace and a set of branch predictions. This allows for storing different trace paths that start on the same address, each representing different branch outcomes. In the instruction fetch stage of a <a href="/wiki/Instruction_pipeline.html" title="Instruction pipeline">pipeline</a>, the current program counter along with a set of branch predictions is checked in the trace cache for a hit. If there is a hit, a trace line is supplied to fetch which does not have to go to a regular cache or to memory for these instructions. The trace cache continues to feed the fetch unit until the trace line ends or until there is a <a href="/wiki/Misprediction.html" title="Misprediction">misprediction</a> in the pipeline. If there is a miss, a new trace starts to be built.</p>
+<p>Trace caches are also used in processors like the <a href="/wiki/Intel.html" title="Intel">Intel</a> <a href="/wiki/Pentium_4.html" title="Pentium 4">Pentium 4</a> to store already decoded micro-operations, or translations of complex x86 instructions, so that the next time an instruction is needed, it does not have to be decoded again.</p>
+<p>See the full text of <a  class="external text" title="http://citeseer.ist.psu.edu/rotenberg96trace.html">Smith, Rotenberg and Bennett's paper</a> at <i><a href="/wiki/Citeseer.html" title="Citeseer">Citeseer</a></i>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Harvard architecture">edit</a>]</div>
+<p><a name="Harvard_architecture" id="Harvard_architecture"></a></p>
+<h4>Harvard architecture</h4>
+<p>Pipelines with separate instruction and data caches are said to have a <a href="/wiki/Harvard_architecture.html" title="Harvard architecture">Harvard architecture</a>. Originally, this phrase referred to machines with separate instruction and data memories, so that there was no way for a program to alter its instructions.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Multi-level caches">edit</a>]</div>
+<p><a name="Multi-level_caches" id="Multi-level_caches"></a></p>
+<h3>Multi-level caches</h3>
+<p>The second issue is the fundamental tradeoff between cache latency and hit rate. Larger caches are both slower and have better hit rates. To ameliorate this tradeoff, many computers use multiple levels of cache, with small fast caches backed up by larger slower caches. As the latency difference between main memory and the fastest cache has become larger, some processors have begun to utilize as many as three levels of on-chip cache. For example, in 2003, <a href="/wiki/Itanium_2.html" title="Itanium 2">Itanium II</a> began shipping with a 6MB unified level 3 cache on-chip. The IBM Power 4 series has a 256MB level 3 cache off chip, shared among several processors.</p>
+<p>Multi-level caches generally operate by checking the smallest <b>Level 1</b> cache first; if it hits, the processor proceeds at high speed. If the smaller cache misses, the next larger cache is checked, and so on, before main memory is checked.</p>
+<p>Multi-level caches introduce new design decisions. For instance, in some processors (like the Intel Pentium 2, 3, and 4, as well as most RISCs), the data in the L1 cache may also be in the L2 cache. These caches are called <b>inclusive</b>. Other processors (like the AMD Athlon) have <b>exclusive</b> caches — data is guaranteed to be in at most one of the L1 and L2 caches.</p>
+<p>The advantage of exclusive caches is that they store more data. This advantage is larger with larger caches. When the L1 misses and the L2 hits on an access, the hitting cache line in the L2 is exchanged with a line in the L1. This exchange is quite a bit more work than just copying a line from L2 to L1, which is what an inclusive cache does.</p>
+<p>Some implementations of inclusive caches guarantee that all data in the L1 cache is also in the L2 cache. One advantage of strictly inclusive caches is that when external devices or other processors in a multiprocessor system wish to remove a cache line from the processor, they need only have the processor check the L2 cache. In cache hierarchies which do not enforce inclusion, the L1 cache must be checked as well. As a drawback, there is a correlation between the associativities of L1 and L2 caches: if the L2 cache does not have at least as much ways as all L1 caches together, the effective associativity of the L1 caches is restricted.</p>
+<p>Another advantage of inclusive caches is that the larger cache can use larger cache lines, which reduces the size of the secondary cache tags. If the secondary cache is an order of magnitude larger than the primary, and the cache data is an order of magnitude larger than the cache tags, this tag area saved can be comparable to the incremental area needed to store the L1 cache data in the L2.</p>
+<p>As mentioned above, larger computers sometimes have another cache between the L2 cache and main memory called an L3 cache. This cache is generally implemented on a separate chip from the CPU, and, <a href="/wiki/As_of_2004.html" title="As of 2004">as of 2004</a>, may range in size from 2 to 256 megabytes. This cache will generally cost well in excess of $1000 to implement, and its benefits depend on the application's access patterns. High-end x86 workstations and servers are now available with an L3 cache option.</p>
+<p>Finally, at the other end of the memory hierarchy, the CPU <a href="/wiki/Register_file.html" title="Register file">register file</a> itself can be considered the smallest, fastest cache in the system, with the special characteristic that it is scheduled in software -- typically by a compiler, as it allocates registers to hold values retrieved from main memory.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Example: the K8">edit</a>]</div>
+<p><a name="Example:_the_K8" id="Example:_the_K8"></a></p>
+<h3>Example: the K8</h3>
+<p>To illustrate both specialization and multi-level caching, here is the cache hierarchy of the AMD <a href="/wiki/Athlon_64.html" title="Athlon 64">Athlon 64</a>, whose core design is known as the K8<a  class="external autonumber" title="http://www.sandpile.org/impl/k8.htm">[2]</a>.</p>
+<div class="thumb tnone">
+<div style="width:599px;"><a  class="internal" title="Example of hierarchy, the K8"><img src="http://upload.wikimedia.org/wikipedia/en/5/55/Cache%2Chierarchy-example.png" alt="Example of hierarchy, the K8" width="597" height="397" longdesc="/wiki/Image:Cache%2Chierarchy-example.png" /></a>
+<div class="thumbcaption">Example of hierarchy, the K8</div>
+</div>
+</div>
+<p>The K8 has 4 specialized caches: an instruction cache, an instruction <a href="/wiki/Translation_lookaside_buffer.html" title="Translation lookaside buffer">TLB</a>, a data TLB, and a data cache. Each of these caches is specialized:</p>
+<ul>
+<li>The instruction cache keeps copies of 64 byte lines of memory, and fetches 16 bytes each cycle. Each byte in this cache is stored in ten bits rather than 8, with the extra bits marking the boundaries of instructions (this is an example of predecoding). The cache has only <a href="/wiki/Parity.html" title="Parity">parity</a> protection rather than <a href="/wiki/Error-correcting_code.html" title="Error-correcting code">ECC</a>, because parity is smaller and any damaged data can be replaced by fresh data fetched from memory (which always has an up-to-date copy of instructions).</li>
+</ul>
+<ul>
+<li>The instruction TLB keeps copies of page table entries (PTEs). Each cycle's instruction fetch has its virtual address translated through this TLB into a physical address. Each entry is either 4 or 8 bytes in memory. Each of the TLBs is split into two sections, one to keep PTEs that map 4KB, and one to keep PTEs that map 4MB or 2MB. The split allows the fully associative match circuitry in each section to be simpler. The operating system maps different sections of the virtual address space with different size PTEs.</li>
+</ul>
+<ul>
+<li>The data TLB has two copies which keep identical entries. The two copies allow two data accesses per cycle to translate virtual addresses to physical addresses. Like the instruction TLB, this TLB is split into two kinds of entries.</li>
+</ul>
+<ul>
+<li>The data cache keeps copies of 64 byte lines of memory. It is split into 8 banks (each storing 8KB of data), and can fetch two 8-byte data each cycle so long as those data are in different banks. There are two copies of the tags, because each 64 byte line is spread among all 8 banks. Each tag copy handles one of the two accesses per cycle.</li>
+</ul>
+<p>The K8 also has multiple-level caches. There are second-level instruction and data TLBs, which store only PTEs mapping 4KB. Both instruction and data caches, and the various TLBs, can fill from the large <b>unified</b> L2 cache. This cache is exclusive to both the L1 instruction and data caches, which means that any 8-byte line can only be in one of the L1 instruction cache, the L1 data cache, or the L2 cache. It is, however, possible for a line in the data cache to have a PTE which is also in one of the TLBs—the operating system is responsible for keeping the TLBs coherent by flushing portions of them when the page tables in memory are updated.</p>
+<p>The K8 also caches information that is never stored in memory—prediction information. These caches are not shown in the above diagram. As is usual for this class of CPU, the K8 has fairly complex <a href="/wiki/Branch_prediction.html" title="Branch prediction">branch prediction</a>, with tables that help predict whether branches are taken and other tables which predict the targets of branches and jumps. Some of this information is associated with instructions, in both the level 1 instruction cache and the unified secondary cache.</p>
+<p>The K8 uses an interesting trick to store prediction information with instructions in the secondary cache. Lines in the secondary cache are protected from accidental data corruption (e.g. by an <a href="/wiki/Alpha_particle.html" title="Alpha particle">alpha particle</a> strike) by either <a href="/wiki/Error-correcting_code.html" title="Error-correcting code">ECC</a> or <a href="/wiki/Parity_%28telecommunication%29.html" title="Parity (telecommunication)">parity</a>, depending on whether those lines were evicted from the data or instruction primary caches. Since the parity code takes fewer bits than the ECC code, lines from the instruction cache have a few spare bits. These bits are used to cache branch prediction information associated with those instructions. The net result is that the branch predictor has a larger effective history table, and so has better accuracy.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: More hierarchies">edit</a>]</div>
+<p><a name="More_hierarchies" id="More_hierarchies"></a></p>
+<h3>More hierarchies</h3>
+<p>Other processors have other kinds of predictors (e.g. the store-to-load bypass predictor in the DEC Alpha 21264), and various specialized predictors are likely to flourish in future processors.</p>
+<p>These predictors are caches in the sense that they store information that is costly to compute. Some of the terminology used when discussing predictors is the same as that for caches (one speaks of a <b>hit</b> in a branch predictor), but predictors are not generally thought of as part of the cache hierarchy.</p>
+<p>The K8 keeps the instruction and data caches <a href="/wiki/Cache_coherency.html" title="Cache coherency"><b>coherent</b></a> in hardware, which means that a store into an instruction closely following the store instruction will change that following instruction. Other processors, like those in the Alpha and MIPS family, have relied on software to keep the instruction cache coherent. Stores are not guaranteed to show up in the instruction stream until a program calls an operating system facility to ensure coherency. The idea is to save hardware complexity on the assumption that self-modifying code is rare.</p>
+<p>The cache hierarchy gets still larger if we consider software as well as hardware. The register file in the core of the processor can be considered a very small, very fast cache whose hits, misses, and fills are scheduled by the compiler ahead of time. (See especially <a href="/wiki/Loop_nest_optimization.html" title="Loop nest optimization">loop nest optimization</a>.) Register files sometimes also have hierarchy: The <a href="/wiki/Cray-1.html" title="Cray-1">Cray-1</a> (circa 1976) had 8 scalar and 8 address registers that were generally usable, and 64 scalar and 64 address "B" registers. The "B" registers could be loaded faster than main memory, because the Cray-1 did not have a data cache.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Implementation">edit</a>]</div>
+<p><a name="Implementation" id="Implementation"></a></p>
+<h2>Implementation</h2>
+<p>Cache <b>reads</b> are the most common CPU operation that takes more than a single cycle. Program execution time tends to be very sensitive to the latency of a level-1 data cache hit. A great deal of design effort, and often power and silicon area are expended making the caches as fast as possible.</p>
+<p>The simplest cache is a virtually indexed direct-mapped cache. The virtual address is calculated with an adder, the relevant portion of the address extracted and used to index an SRAM, which returns the loaded data. The data is byte aligned in a byte shifter, and from there is bypassed to the next operation. There is no need for any tag checking in the inner loop — in fact, the tags need not even be read. Later in the pipeline, but before the load instruction is retired, the tag for the loaded data must be read, and checked against the virtual address to make sure there was a cache hit. On a miss, the cache is updated with the requested cache line and the pipeline is restarted.</p>
+<p>An associative cache is more complicated, because some form of tag must be read to determine which entry of the cache to select. An N-way set-associative level-1 cache usually reads all N possible tags and N data in parallel, and then chooses the data associated with the matching tag. Level-2 caches sometimes save power by reading the tags first, so that only one data element is read from the data SRAM.</p>
+<div class="thumb tright">
+<div style="width:419px;"><a  class="internal" title="Read path for a 2-way associative cache"><img src="http://upload.wikimedia.org/wikipedia/en/1/15/Cache%2Cassociative-read.png" alt="Read path for a 2-way associative cache" width="417" height="275" longdesc="/wiki/Image:Cache%2Cassociative-read.png" /></a>
+<div class="thumbcaption">Read path for a 2-way associative cache</div>
+</div>
+</div>
+<p>The diagram to the right is intended to clarify the manner in which the various fields of the address are used. The address bits are labelled in <a href="/wiki/Endianness.html" title="Endianness">little endian</a> notation: bit 31 is most significant; bit 0 is least significant. The diagram shows the SRAMs, indexing, and multiplexing for a 4KB, 2-way set-associative, virtually indexed and virtually tagged cache with 64 B lines, a 32b read width and 32b virtual address.</p>
+<p>Because the cache is 4KB and has 64 B lines, there are just 64 lines in the cache, and we read two at a time from a Tag SRAM which has 32 rows, each with a pair of 21 bit tags. Although any function of virtual address bits 31 through 6 could be used to index the tag and data SRAMs, it is simplest to use the least significant bits.</p>
+<p>Similarly, because the cache is 4KB and has a 4 B read path, and reads two ways for each access, the Data SRAM is 512 rows by 8 bytes wide.</p>
+<p>A more modern cache might be 16KB, 4-way set-associative, virtually indexed, virtually hinted, and physically tagged, with 32 B lines, 32b read width and 36b physical addresses. The read path recurrence for such a cache looks very similar to the path above. Instead of tags, vhints are read, and matched against a subset of the virtual address. Later on in the pipeline, the virtual address is translated into a physical address by the TLB, and the physical tag is read (just one, as the vhint supplies which way of the cache to read). Finally the physical address is compared to the physical tag to determine if a hit has occurred.</p>
+<p>Some SPARC designs have improved the speed of their L1 caches by a few gate delays by collapsing the virtual address adder into the SRAM decoders. See <a href="/wiki/Sum_addressed_decoder.html" title="Sum addressed decoder">Sum addressed decoder</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Cache.html" title="Cache">Cache</a></li>
+<li><a href="/wiki/Cache_coherency.html" title="Cache coherency">Cache coherency</a></li>
+<li><a href="/wiki/No-write_allocation.html" title="No-write allocation">No-write allocation</a></li>
+<li><a href="/wiki/Memoization.html" title="Memoization">Memoization</a>, briefly defined in <a href="/wiki/List_of_computer_term_etymologies.html" title="List of computer term etymologies">List of computer term etymologies</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="ftp://ftp.cs.wisc.edu/markhill/Papers/toc89_cpu_cache_associativity.pdf">Evaluating Associativity in CPU Caches</a> — Hill and Smith — 1989 — Introduces capacity, conflict, and compulsory classification.</li>
+<li><a  class="external text" title="http://www.cs.wisc.edu/multifacet/misc/spec2000cache-data/">Cache Performance for SPEC CPU2000 Benchmarks</a> — Hill and Cantin — 2003 — This reference paper has been updated several times. It has thorough and lucidly presented simulation results for a reasonably wide set of benchmarks and cache organizations.</li>
+<li><a  class="external text" title="http://www.sun.com/blueprints/1102/817-0742.pdf">Memory Hierarchy in Cache-Based Systems</a>, by Ruud van der Pas, 2002, Sun Microsystems, is a nice introductory article to CPU memory caching.</li>
+<li><a  class="external text" title="http://www.freescale.com/files/32bit/doc/app_note/AN2663.pdf">A Cache Primer</a> by Paul Genua, P.E., 2004, Freescale Semiconductor, another introductory article.</li>
+</ul>
+
+<!-- 
+Pre-expand include size: 1218 bytes
+Post-expand include size: 597 bytes
+Template argument size: 0 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:849181-0!1!0!default!!en!2 and timestamp 20060907101445 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Central processing unit">Central processing unit</a></span> | <span dir='ltr'><a  title="Category:Computer memory">Computer memory</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/CPU_cache.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-et"><a >Eesti</a></li>
+				<li class="interwiki-fi"><a >Suomi</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-hr"><a >Hrvatski</a></li>
+				<li class="interwiki-hu"><a >Magyar</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-ko"><a >한국어</a></li>
+				<li class="interwiki-lv"><a >Latviešu</a></li>
+				<li class="interwiki-nl"><a >Nederlands</a></li>
+				<li class="interwiki-no"><a >Norsk (bokmål)</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 17:13, 24 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv34 in 0.070 secs. --></body></html>

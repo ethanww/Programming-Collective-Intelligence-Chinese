@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="PAL-III,Assembly language,Computer,Digital Equipment Corporation,Machine code,Massachusett,Maynard, Massachusetts,PDP-8" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>PAL-III - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "PAL-III";
+			var wgTitle = "PAL-III";
+			var wgArticleId = 1944846;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">PAL-III</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p><b>PAL-III</b> was the <a href="/wiki/Assembly_language.html" title="Assembly language">assembly language</a> processor for the <a href="/wiki/PDP-8.html" title="PDP-8">PDP-8</a> <a href="/wiki/Computer.html" title="Computer">computer</a> family sold by <a href="/wiki/Digital_Equipment_Corporation.html" title="Digital Equipment Corporation">Digital Equipment Corporation</a> of <a href="/wiki/Maynard%2C_Massachusetts.html" title="Maynard, Massachusetts">Maynard</a>, <a href="/wiki/Massachusett.html" title="Massachusett">Massachusetts</a>. It followed an earlier product known as <b>PAL-8</b>.</p>
+<p>PAL-III allowed the efficient production of PDP-8 <a href="/wiki/Machine_code.html" title="Machine code">machine code</a> from a human-readable source language. It also supported PDP-8-specific architectural features such as 128-word code pages, the special use of Page 0, IOTs, and automated addressing of "far" data objects.</p>
+<p>Here is a typical program written in PAL-III:</p>
+<pre>
+                        / Define two symbols for I/O Transfer (IOT) instructions
+                        /
+TSF = 6041              / Teleprinter Skip-on-Flag
+TLS = 6046              / Teleprinter Load Sequence (Clear flag and print from AC)
+                        /
+                        / (Many PDP-8 assemblers contained these very basic IOTs predefined)
+
+
+*200                    / Assemble the following code starting at location 0200
+                        /   (the beginning of Page 1 in Field 0)
+
+START, CLA CLL          / Clear the AC and the Link bit
+       TAD (DATA-1)     / Point AC just *BEFORE* the data (accounting for later pre-increment behavior)
+       DCA 10           / Put that into one of ten auto-pre-increment memory locations
+LOOP,  TSF              / Test the printer "ready" flag, skip if ready
+       JMP .-1          / Jump back if not yet ready
+       TAD I 10         / Pre-increment mem location 10, fetch indirect to get the next character of our message
+       SNA              / Skip on non-zero AC
+       HLT              / Else halt at end of message
+       TLS              / Clear the printer "ready" flag and output character contained in the AC
+       CLA CLL          / Clear AC for the next loop
+       JMP LOOP         / Jump back for the next character
+
+DATA,  "H               / A well-known message
+       "e               /
+       "l               / NOTE:
+       "l               /
+       "o               /   Strings in PAL-8 and PAL-III were "sixbit"
+       ",               /   To use ASCII, we'll have to spell that out, character by character
+       "                /
+       "w               /
+       "o               /
+       "r               /
+       "l               /
+       "d               /
+       "!               /
+       015              /
+       012              /
+       0                / Mark the end of our .ASCIZ string ('cause .ASCIZ hadn't been invented yet!)
+</pre>
+<p><br />
+This illustrates most of the salient features of the language:</p>
+<ul>
+<li>Symbols could be defined by the programmer.</li>
+<li>The usual simple arithmetic can be performed at assembly-time using symbols.</li>
+<li>Labels are delimited by a comma (rather than the more-usual colon).</li>
+<li>"/" begins a comment that runs to the end of the current line.</li>
+<li>Opcode mnemonics could be "or"ed together where appropriate (as in "CLA CLL").</li>
+<li>"I" used with a memory-access opcode indicates one level of "indirection" (which is all the PDP-8 could do!)</li>
+<li>Data literals could be created on the current page using "(litval)" or on Page 0 using "[litval]".</li>
+<li>"." meant "the current location counter".</li>
+</ul>
+<p>Note, though, that PAL-III was not a macroassembler and no full macro language was provided. (A later product called <i>MACREL-8</i> did provide macro-assembly features.)</p>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:1944846-0!1!0!default!!en!2 and timestamp 20060910073614 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:Assembly languages">Assembly languages</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/PAL-III.html">Article</a></li>
+				 <li id="ca-talk" class="new"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 22:32, 30 December 2005.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv90 in 0.082 secs. --></body></html>

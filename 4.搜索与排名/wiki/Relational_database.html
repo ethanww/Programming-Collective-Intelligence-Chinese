@@ -1,0 +1,496 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Relational database,Database,PostgreSQL,Microsoft SQL Server,Oracle database,MySQL,RDBMS,Relations,ACID,Abstraction layer,Alternate key" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Relational database - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Relational_database";
+			var wgTitle = "Relational database";
+			var wgArticleId = 25873;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Relational database</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>A <b>relational database</b> is a <a href="/wiki/Database.html" title="Database">database</a> that conforms to the <a href="/wiki/Relational_model.html" title="Relational model">relational model</a>. The term refers to the <a href="/wiki/Data.html" title="Data">data</a>, and the structure of that data. The software used to create a relational database is called the <a href="/wiki/Relational_Database_Management_System.html" title="Relational Database Management System">Relational Database Management System</a> (RDBMS), but sometimes that software is mistakenly called the relational database.</p>
+<p>The term was originally defined and coined by <a href="/wiki/E.F._Codd.html" title="E.F. Codd">E.F. Codd</a>.<sup id="_ref-0" class="reference"><a  title="">[1]</a></sup> Codd's definition is now not the only usage of the term, as many modern DBMS manufacturers have adopted a more relaxed usage of the term.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Definitions</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Contents</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">2.1</span> <span class="toctext">Relations or Tables</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.2</span> <span class="toctext">Constraints</span></a>
+<ul>
+<li class="toclevel-3"><a ><span class="tocnumber">2.2.1</span> <span class="toctext">Keys</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">2.2.2</span> <span class="toctext">Foreign Keys</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">2.2.3</span> <span class="toctext">Transition Constraints</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">2.2.4</span> <span class="toctext">Other constraints</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.3</span> <span class="toctext">Relvars</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.4</span> <span class="toctext">Stored Procedures</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.5</span> <span class="toctext">Indices</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Relational operations</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Normalization</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Competition</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">5.1</span> <span class="toctext">Older models</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">5.2</span> <span class="toctext">Objects</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">5.3</span> <span class="toctext">Relational</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">See also</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">7.1</span> <span class="toctext">Application</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">7.2</span> <span class="toctext">Implementation</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">7.3</span> <span class="toctext">Theory</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">7.4</span> <span class="toctext">History</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">8</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Definitions">edit</a>]</div>
+<p><a name="Definitions" id="Definitions"></a></p>
+<h2>Definitions</h2>
+<p>As mentioned above, a relational database is a database that conforms to the relational model. A relational database could also be defined as a <i>set of <a href="/wiki/Relations.html" title="Relations">relations</a></i> or <i>a <a href="/wiki/Database.html" title="Database">database</a> built in an RDBMS.</i></p>
+<p>An RDBMS is sometimes incorrectly called a relational database. But, strictly speaking, <a href="/wiki/Oracle_database.html" title="Oracle database">Oracle</a>, <a href="/wiki/Microsoft_SQL_Server.html" title="Microsoft SQL Server">Microsoft SQL Server</a>,<a href="/wiki/PostgreSQL.html" title="PostgreSQL">PostgreSQL</a>, and <a href="/wiki/MySQL.html" title="MySQL">MySQL</a> are <i>not</i> relational databases. Under popular usage of the term, these software packages are called "Relational Database Management Systems" (RDBMS), and as such they can be used to create relational databases. There is some disagreement as to whether or not they can be considered "relational", because they do not fully conform to the relational model. For a more full explanation on the requirements for a DBMS to be considered "relational", see <a href="/wiki/RDBMS#Current_Usage.html" title="RDBMS">RDBMS#Current Usage</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Contents">edit</a>]</div>
+<p><a name="Contents" id="Contents"></a></p>
+<h2>Contents</h2>
+<p>Strictly speaking, a relational database is merely a collection of <a href="/wiki/Relation_%28mathematics%29.html" title="Relation (mathematics)">relations</a> (frequently called <a href="/wiki/Table_%28database%29.html" title="Table (database)">tables</a>). Other items are frequently considered part of the database, as they help to organize and structure the data, in addition to forcing the database to conform to a set of requirements.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Relations or Tables">edit</a>]</div>
+<p><a name="Relations_or_Tables" id="Relations_or_Tables"></a></p>
+<h3>Relations or Tables</h3>
+<dl>
+<dd>
+<div class="noprint"><i>Main articles: <a href="/wiki/Relation_%28mathematics%29.html" title="Relation (mathematics)">Relation (mathematics)</a> and <a href="/wiki/Table_%28database%29.html" title="Table (database)">Table (database)</a></i></div>
+</dd>
+</dl>
+<p>A <i>relation</i> is defined as a set of <a href="/wiki/Tuples.html" title="Tuples">tuples</a> that all have the same <a href="/wiki/Attributes.html" title="Attributes">attributes</a>. This is usually represented by a <i>table</i>, which is data organized in <a href="/wiki/Row_%28database%29.html" title="Row (database)">rows</a> and <a href="/wiki/Column_%28database%29.html" title="Column (database)">columns</a>. In a relational database, all of the data stored in a column should be in the same <a href="/wiki/Domain_%28mathematics%29.html" title="Domain (mathematics)">domain</a> (i.e. <a href="/wiki/Data_type.html" title="Data type">data type</a>). In the relational model, the tuples should not have any ordering. This means both that there should be no order to the tuples, and that the tuples should not impose an order of the attributes. In other words, neither the rows nor the columns should have an order.</p>
+<p>While this is the desired result, it is not universally achieved. The SQL standard requires columns to have a defined order. All data stored in a computer has to have an order, as the memory of a computer is linear. Also, when the data is returned, there must be an order in which the data is returned (because all transfer protocols are linear, and coincidentally enough, humans read in a linear fashion). The point here is that this order must never make a logical difference in the system. Frequently orders are imposed which impact performance, but they should never change the result of a query on the database. In practice, several of the DBMSs that are considered "relational" impose an order that makes a logical difference.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Constraints">edit</a>]</div>
+<p><a name="Constraints" id="Constraints"></a></p>
+<h3>Constraints</h3>
+<dl>
+<dd>
+<div class="noprint"><i>Main article: <a href="/wiki/Constraint.html" title="Constraint">Constraint</a></i></div>
+</dd>
+</dl>
+<p>Constraints are a way of providing restrictions on the kinds of data that can be stored in the relations. These are usually defined (formally) in the form of expressions that result in a <a href="/wiki/Boolean.html" title="Boolean">boolean</a> value, indicating whether or not the constraint holds. Constraints are a way of implementing <a href="/wiki/Business_rules.html" title="Business rules">business rules</a> into the database.</p>
+<p>Under the strictest sense, constraints are not considered part of the relational database, but because of the integral role which they play in organizing data, they are usually considered part of the database.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Keys">edit</a>]</div>
+<p><a name="Keys" id="Keys"></a></p>
+<h4>Keys</h4>
+<dl>
+<dd>
+<div class="noprint"><i>Main article: <a href="/wiki/Superkey.html" title="Superkey">Superkey</a></i></div>
+</dd>
+</dl>
+<p>A tuple usually represents some object and its associated data, whether that object is a physical object or a concept. A <a href="/wiki/Superkey.html" title="Superkey">key</a> is a kind of constraint which requires that the object, or critical information about the object, isn't duplicated. For example, a family might like to have a constraint such that no two people in the immediate family have the same name. If information about family members were stored in a database, a key could be placed over the family member's name. In a University, they have no such luxury. Each student is typically assigned a Student ID, which are used as keys for individual students stored in the school database. Keys can have more than one column, for example, a nation may impose a restriction that a province can't have two cities by the same name. So, when cities are stored in a relation, there would be a key defined over province and city name. This would allow two different provinces to have a town called <a href="/wiki/Springfield.html" title="Springfield">Springfield</a> (because their province would be different), but not two cities with the same name in the same province. A key over more than one attribute is called a <a href="/wiki/Compound_key.html" title="Compound key">compound key</a>. Theoretically, a key can even be over zero attributes. This would enforce that there cannot be more than one tuple in the relation.</p>
+<p>Most relations have at least one key defined on it. Because a relation is defined in the relational model as being a set, it can't have duplicate rows. Some DBMSs don't enforce this. If a DBMS does enforce this, it means that there is always at least one key on each relation, namely the key involving all of the attributes of the relation.</p>
+<p>A key could be defined formally by requiring that the <a href="/wiki/Cardinality.html" title="Cardinality">cardinality</a> of the relation should be equal to the cardinality of the relation <i>projected</i> over the columns of the key.</p>
+<p>A key, in this context, refers to any set of attributes which uniquely span the relation. In particular, this is called a <a href="/wiki/Superkey.html" title="Superkey">superkey</a>. A <a href="/wiki/Candidate_key.html" title="Candidate key">candidate key</a> is a minimal superkey, meaning that, none of the attributes in the key could be removed from the key, and still have that attribute set be a key. Many DBMSs have a concept of a <a href="/wiki/Primary_key.html" title="Primary key">primary key</a>. The primary key (usually a candidate key) is the key most often used to identify a tuple. In some RDBMSs, the primary key of a base relvar is the <a  class="new" title="Storage key">storage key</a> (sometimes <a  class="new" title="Clustered key">clustered key</a>), meaning that that is how the data is stored physically. If the value of the primary key is actual interesting data with logical ties to the data (like a name) for the tuple, it is called a <a href="/wiki/Natural_key.html" title="Natural key">natural key</a>. If the key is generated and doesn't have any logical connection to the rest of the data in the tuple, it is called a <a href="/wiki/Surrogate_key.html" title="Surrogate key">surrogate key</a>. Other candidate keys that were not chosen as the primary key are called <a href="/wiki/Alternate_key.html" title="Alternate key">alternate keys</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Foreign Keys">edit</a>]</div>
+<p><a name="Foreign_Keys" id="Foreign_Keys"></a></p>
+<h4>Foreign Keys</h4>
+<dl>
+<dd>
+<div class="noprint"><i>Main article: <a href="/wiki/Foreign_key.html" title="Foreign key">Foreign key</a></i></div>
+</dd>
+</dl>
+<p>A <a href="/wiki/Foreign_key.html" title="Foreign key">foreign key</a> is not a key by the previous definition. Rather, a foreign key is a <a href="/wiki/Reference.html" title="Reference">reference</a> to a key in another table. Meaning that the referencing tuple has, as part of its attributes, the values of a key in the referenced tuple that corresponds to the relationship.</p>
+<p>For example, a company has several departments, and each employee is a member of one department. This is enforced in the database by a foreign key. Imagine there is a relation for departments. Each department has a department name, and a <a href="/wiki/Surrogate_key.html" title="Surrogate key">surrogate key</a> for the department called "DepartmentID". The employee relation would have "DepartmentID" as an attribute, with a foreign key reference to the aforementioned surrogate key of the department relation. The DBMS would then enforce that each employee could not be created without specifiying a valid department tuple, and department tuples could not be deleted if there are employees referencing that department.</p>
+<p>A foreign key could be described formally as "For all tuples in the referencing relation projected over the referencing attributes, there must exist a tuple in the referenced relation projected over those same attributes such that the values in each of the referencing attributes match the corresponding values in the referenced attributes".</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Transition Constraints">edit</a>]</div>
+<p><a name="Transition_Constraints" id="Transition_Constraints"></a></p>
+<h4>Transition Constraints</h4>
+<dl>
+<dd>
+<div class="noprint"><i>Main article: <a href="/wiki/Transition_constraint.html" title="Transition constraint">Transition constraint</a></i></div>
+</dd>
+</dl>
+<p>A transition constraint is a way of enforcing that the data doesn't enter an impossible state because of a previous state. For example, it shouldn't be possible for a person to change from being "married" to being "single, never married". The only valid states after "married" might be "divorced", "widowed", or "deceased".</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Other constraints">edit</a>]</div>
+<p><a name="Other_constraints" id="Other_constraints"></a></p>
+<h4>Other constraints</h4>
+<p>Other constraints of various different kinds can be created to enforce various kinds of business rules. They can be as simple as "the number of cars an individual owns must be non-negative" or complex patterns like "If the work that an employee performs is 'Hazardous Materials Transport' then that employee's age must be 18 years of age, and the employee's certifications must include 'Hazmat endorsement', and company insurance for that employee must include life insurance."</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Relvars">edit</a>]</div>
+<p><a name="Relvars" id="Relvars"></a></p>
+<h3>Relvars</h3>
+<dl>
+<dd>
+<div class="noprint"><i>Main articles: <a href="/wiki/Relvar.html" title="Relvar">Relvar</a> and <a href="/wiki/View_%28database%29.html" title="View (database)">View (database)</a></i></div>
+</dd>
+</dl>
+<p>A relvar is a "relation variable". In a relational database, all data is stored and accessed via relations. The data that is actually stored in the database are stored as relations. These relations are sometimes called "base relvars". This is equivalent to a "table". Other relvars do not have their data stored in them, but are a result of applying <a  class="new" title="Relational operations">relational operations</a>, to other relvars. These relvars are sometimes called "derived relvars", meaning that their information is derived from other sources. These are equivalent to "<a href="/wiki/View_%28database%29.html" title="View (database)">views</a>" or "queries". Derived relvars are convenient in that though they may grab information from several relvars, it is presented externally as a single relvar for a simpler perspective. Also, it can be used as an <a href="/wiki/Abstraction_layer.html" title="Abstraction layer">abstraction layer</a>.</p>
+<p>Derived relvars are not always considered part of a relational database, partially because they are not essential to the functioning of the database.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Stored Procedures">edit</a>]</div>
+<p><a name="Stored_Procedures" id="Stored_Procedures"></a></p>
+<h3>Stored Procedures</h3>
+<dl>
+<dd>
+<div class="noprint"><i>Main article: <a href="/wiki/Stored_procedure.html" title="Stored procedure">Stored procedure</a></i></div>
+</dd>
+</dl>
+<p>A stored procedure is executable <a href="/wiki/Code_%28computer_programming%29.html" title="Code (computer programming)">code</a> that is associated with the database. Stored procedures usually store how to perform common operations, like inserting a tuple into a relation, or gathering statistical information about usage patterns. Frequently they are used as an <a href="/wiki/Application_programming_interface.html" title="Application programming interface">application programming interface</a> for security or simplicity. These are usually written as <a href="/wiki/Imperative.html" title="Imperative">Imperative programming</a> code extending the <a href="/wiki/Data_Definition_Language.html" title="Data Definition Language">Data Definition Language</a> and/or the <a href="/wiki/Data_Manipulation_Language.html" title="Data Manipulation Language">Data Manipulation Language</a> for the DBMS.</p>
+<p>Stored procedures are not always considered part of a relational database, partially becacuse they are not essential to the functioning of the database.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Indices">edit</a>]</div>
+<p><a name="Indices" id="Indices"></a></p>
+<h3>Indices</h3>
+<dl>
+<dd>
+<div class="noprint"><i>Main article: <a href="/wiki/Index_%28database%29.html" title="Index (database)">Index (database)</a></i></div>
+</dd>
+</dl>
+<p>An index is a way of providing quicker access to the data in a relational database. Indices can be created on any combination of attributes on a relation. Then when tuples in a relation need to be looked up, similar to how a book's index works, the index can be accessed. Rather than having to check all of the tuples, the index tells the DBMS where the tuple is. Indices are usually implemented via <a href="/wiki/B%2B_tree.html" title="B+ tree">B+ trees</a>.</p>
+<p>Indices are usually not considered part of the database, as they are considered an implementation detail, though indices are usually maintained by the same group that maintains the other parts of the database.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Relational operations">edit</a>]</div>
+<p><a name="Relational_operations" id="Relational_operations"></a></p>
+<h2>Relational operations</h2>
+<dl>
+<dd>
+<div class="noprint"><i>Main article: <a href="/wiki/Relational_algebra.html" title="Relational algebra">Relational algebra</a></i></div>
+</dd>
+</dl>
+<p>Queries made against the relational database, and the derived relvars in the database are expressed in a <a href="/wiki/Relational_calculus.html" title="Relational calculus">relational calculus</a> or a <a href="/wiki/Relational_algebra.html" title="Relational algebra">relational algebra</a>. Some relvars merely <i>restrict</i> the tuples that are returned, <i>rename</i> the attributes, or <i>remove</i> some of the attributes (often: <i>project</i>) from the result set. These three operations are called <a href="/wiki/Unary_operation.html" title="Unary operation">unary operations</a>. Other operations that can be performed involve combining more than one relvar together. Examples of these are <a href="/wiki/Set_union.html" title="Set union">set union</a>, <a href="/wiki/Set_intersection.html" title="Set intersection">set intersection</a>, <a href="/wiki/Cartesian_product.html" title="Cartesian product">cartesian product</a> (often called a "cross product"), and various different kinds of <i>joins</i>. These are all <a href="/wiki/Binary_operations.html" title="Binary operations">binary operations</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Normalization">edit</a>]</div>
+<p><a name="Normalization" id="Normalization"></a></p>
+<h2>Normalization</h2>
+<dl>
+<dd>
+<div class="noprint"><i>Main article: <a href="/wiki/Database_normalization.html" title="Database normalization">Database normalization</a></i></div>
+</dd>
+</dl>
+<p>Normalization is a process of altering the structure of the database to make the database conform to one or more <a href="/wiki/Best_practice.html" title="Best practice">best practices</a>, to assist in performance and ease of data manipulation. By far, the most common forms of normalization applied to databases are called the <a  class="new" title="Normal form (database)">normal forms</a>. The most common normal forms that databases are normalized to are:</p>
+<ul>
+<li>First normal form</li>
+</ul>
+<dl>
+<dd>Ensures that the RDBMS can access all of the data using relational means.</dd>
+</dl>
+<ul>
+<li>Second normal form</li>
+<li>Third normal form</li>
+<li>Boyce-Codd normal form</li>
+<li>Fourth normal form</li>
+<li>Fifth normal form</li>
+</ul>
+<dl>
+<dd>All reduce <a href="/wiki/Functional_dependencies.html" title="Functional dependencies">functional dependencies</a>, and therefore, various kinds of data duplication, and therefore, various difficulties of correctly modifying the data.</dd>
+</dl>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Competition">edit</a>]</div>
+<p><a name="Competition" id="Competition"></a></p>
+<h2>Competition</h2>
+<p><a href="/wiki/International_Data_Corporation.html" title="International Data Corporation">International Data Corporation</a> reports that <a href="/wiki/As_of_2005.html" title="As of 2005">as of 2005</a> the worldwide market for RDBMSs is 9.4% over the prior year at $14.6 billion.<sup id="_ref-1" class="reference"><a  title="">[2]</a></sup> Even though relational systems are popular, there are other options.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Older models">edit</a>]</div>
+<p><a name="Older_models" id="Older_models"></a></p>
+<h3>Older models</h3>
+<p><a href="/wiki/Flat_file_database.html" title="Flat file database">Flat file databases</a> are simple. This prevents them from storing complicated information easily, but in flat file systems can provide better performance. Databases based on the <a href="/wiki/Hierarchical_model.html" title="Hierarchical model">hierarchical model</a> and the <a href="/wiki/Network_model.html" title="Network model">network model</a> are older, and not as robust as the relational model.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Objects">edit</a>]</div>
+<p><a name="Objects" id="Objects"></a></p>
+<h3>Objects</h3>
+<p><a href="/wiki/Object_database.html" title="Object database">Object databases</a> allow for even more complicated data structures, and are easier to integrate with <a href="/wiki/Object-oriented.html" title="Object-oriented">Object-oriented</a> programming tools. These features increase the cost of development.</p>
+<p>The relational model has a strong basis in <a href="/wiki/Predicate_logic.html" title="Predicate logic">predicate logic</a> and <a href="/wiki/Set_theory.html" title="Set theory">set theory</a>, so RDBMSs can find optimization patterns that most humans typically can't. In object databases, programmers can implement complicated access patterns themselves, and might be able to get better performance than an RDBMS, but with substantially increased query writing time.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Relational">edit</a>]</div>
+<p><a name="Relational" id="Relational"></a></p>
+<h3>Relational</h3>
+<p>Most commercial RDBMSs do not strictly conform to the relational model. In recent years, there has been siginificant growth on DBMSs that more faithfully adhere to the relational model. <a href="/wiki/Dataphor.html" title="Dataphor">Dataphor</a>, <a href="/wiki/Duro.html" title="Duro">Duro</a>, and <a href="/wiki/Rel_%28DBMS%29.html" title="Rel (DBMS)">Rel</a> are three such implementations. They believe that being stricter adherents to <a href="/wiki/Codd%27s_12_rules.html" title="Codd's 12 rules">Codd's 12 rules</a> will make their systems easier to use. <a href="/wiki/Hugh_Darwen.html" title="Hugh Darwen">Hugh Darwen</a> in presentations mentions that DBMSs that fail to adhere to the relational model are making logical differences, and each of these logical differences are big differences.<sup id="_ref-2" class="reference"><a  title="">[3]</a></sup></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<ol class="references">
+<li id="_note-0"><b><a  title="">^</a></b> <cite style="font-style:normal">Codd, E.F. (1970). "<a  class="external text" title="http://www.acm.org/classics/nov95/toc.html">A Relational Model of Data for Large Shared Data Banks</a>". <i><a href="/wiki/Communications_of_the_ACM.html" title="Communications of the ACM">Communications of the ACM</a></i> <b>13</b> (6): 377-387.</cite></li>
+<li id="_note-1"><b><a  title="">^</a></b> <a  class="external text" title="http://www.idc.com/getdoc.jsp?containerId=prUS20180306">2005 RDBMS Market</a></li>
+<li id="_note-2"><b><a  title="">^</a></b> <a  class="external text" title="http://www.dcs.warwick.ac.uk/~pwg/cs319/HD-TTM-TheAskewWall.pdf">Slideshow for his presentation <i>The Askew Wall</i></a></li>
+</ol>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Application">edit</a>]</div>
+<p><a name="Application" id="Application"></a></p>
+<h3>Application</h3>
+<ul>
+<li><a href="/wiki/Database.html" title="Database">Database</a></li>
+<li><a href="/wiki/Database_normalization.html" title="Database normalization">Database normalization</a></li>
+<li><a href="/wiki/Table_%28database%29.html" title="Table (database)">Database table</a></li>
+<li><a href="/wiki/Tuple.html" title="Tuple">Database tuple</a></li>
+<li><a href="/wiki/Dimensional_database.html" title="Dimensional database">Dimensional database</a></li>
+<li><a href="/wiki/Flat_file_database.html" title="Flat file database">Flat file database</a></li>
+<li><a href="/wiki/Temporal_database.html" title="Temporal database">Temporal database</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Implementation">edit</a>]</div>
+<p><a name="Implementation" id="Implementation"></a></p>
+<h3>Implementation</h3>
+<ul>
+<li><a href="/wiki/Relational_database_management_system.html" title="Relational database management system">Relational database management system</a> (RDBMS)</li>
+<li><a href="/wiki/SQL.html" title="SQL">Structured Query Language</a> (SQL)</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Theory">edit</a>]</div>
+<p><a name="Theory" id="Theory"></a></p>
+<h3>Theory</h3>
+<ul>
+<li><a href="/wiki/Relation_%28mathematics%29.html" title="Relation (mathematics)">Relation</a></li>
+<li><a href="/wiki/Relation_construction.html" title="Relation construction">Relation construction</a>
+<ul>
+<li><a href="/wiki/Relation_composition.html" title="Relation composition">Relation composition</a></li>
+<li><a href="/wiki/Relation_reduction.html" title="Relation reduction">Relation reduction</a></li>
+</ul>
+</li>
+<li><a href="/wiki/Cartesian_product.html" title="Cartesian product">Cartesian product</a></li>
+<li><a href="/wiki/Projection_%28set_theory%29.html" title="Projection (set theory)">Projection</a></li>
+<li><a href="/wiki/Relational_algebra.html" title="Relational algebra">Relational algebra</a></li>
+<li><a href="/wiki/Relational_model.html" title="Relational model">Relational model</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: History">edit</a>]</div>
+<p><a name="History" id="History"></a></p>
+<h3>History</h3>
+<ul>
+<li><a href="/wiki/Augustus_De_Morgan.html" title="Augustus De Morgan">De Morgan, Augustus</a> (1806–1871)</li>
+<li><a href="/wiki/George_Boole.html" title="George Boole">Boole, George</a> (1815–1864)</li>
+<li><a href="/wiki/Charles_Peirce.html" title="Charles Peirce">Peirce, Charles Sanders</a> (1839–1914)</li>
+<li><a href="/wiki/Edgar_F._Codd.html" title="Edgar F. Codd">Codd, Edgar Frank</a> (1923–2003)</li>
+<li><a href="/wiki/Jeffrey_Ullman.html" title="Jeffrey Ullman">Ullman, Jeffrey D.</a> (1942– )</li>
+<li><a href="/wiki/Christopher_J._Date.html" title="Christopher J. Date">Date, Christopher J.</a></li>
+<li><a href="/wiki/Hugh_Darwen.html" title="Hugh Darwen">Darwen, Hugh</a></li>
+<li><a href="/wiki/Georg_Cantor.html" title="Georg Cantor">Cantor, Georg</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://www.acm.org/classics/nov95/toc.html">A Relational Model of Data for Large Shared Data Banks</a>: By <a href="/wiki/Edgar_F._Codd.html" title="Edgar F. Codd">Edgar F. Codd</a></li>
+<li><i>Relational Database Principles</i> by <a  class="new" title="Colin Ritchie">Colin Ritchie</a>. <a  class="internal">ISBN 0-8264-5713-4</a></li>
+<li><i>Database in Depth</i> by <a href="/wiki/Chris_Date.html" title="Chris Date">Chris Date</a>. <a  class="internal">ISBN 0-596-10012-4</a>. A new book (2005) by perhaps the best-known author in this field.</li>
+<li><a  class="external text" title="http://www.dbms2.com/2005/10/10/limitations-of-the-relational-model/">Limitations of the relational model</a></li>
+<li><a  class="external text" title="http://www.edm2.com/0612/msql7.html">Introduction to Relational Database Design</a></li>
+<li><a  class="external text" title="http://www.15seconds.com/issue/020522.htm">15 Seconds: Introduction to Relational Databases</a></li>
+<li><a  class="external text" title="http://www.databasejournal.com/sqletc/article.php/1469521">Introduction to Relational Databases</a></li>
+<li><a  class="external text" title="http://www.databasejournal.com/sqletc/article.php/26861_1474411_1">Database Normalization</a></li>
+</ul>
+<p><br /></p>
+<table align="center" class="toccolours" cellspacing="0" width="95%">
+<tr bgcolor="#CCCCFF">
+<td align="center"><b>Topics in <a href="/wiki/Database_management_system.html" title="Database management system">database management systems</a> (DBMS)</b> (&#160;<span class="noprint plainlinksneverexpand" id="Tnavbar-nodiv" style="white-space: nowrap; font-size:xx-small;"><a  class="external text" title="http://en.wikipedia.org/wiki/Template:Databases"><span style="color:#002bb8;" title="View this template.">view</span></a> • <a  class="external text" title="http://en.wikipedia.org/wiki/Template_talk:Databases"><span style="color:#002bb8;" title="Discussion about this template.">talk</span></a> • <a  class="external text" title="http://en.wikipedia.org/w/index.php?title=Template:Databases&amp;action=edit"><span style="color:#002bb8;" title="You can edit this template. Please use the preview button before saving.">edit</span></a></span>&#160;)</td>
+</tr>
+<tr>
+<td align="center" style="font-size: small">
+<p><i>Concepts</i><br />
+<a href="/wiki/Database.html" title="Database">Database</a> | <a href="/wiki/Database_model.html" title="Database model">Database model</a> | <strong class="selflink">Relational database</strong> | <a href="/wiki/Relational_model.html" title="Relational model">Relational model</a> | <a href="/wiki/Relational_algebra.html" title="Relational algebra">Relational algebra</a> | <a href="/wiki/Primary_key.html" title="Primary key">Primary key</a> - <a href="/wiki/Foreign_key.html" title="Foreign key">Foreign key</a> - <a href="/wiki/Surrogate_key.html" title="Surrogate key">Surrogate key</a> - <a href="/wiki/Superkey.html" title="Superkey">Superkey</a><br />
+<a href="/wiki/Database_normalization.html" title="Database normalization">Database normalization</a> | <a href="/wiki/Referential_integrity.html" title="Referential integrity">Referential integrity</a> | <a href="/wiki/Relational_database_management_system.html" title="Relational database management system">Relational DBMS</a> | <a href="/wiki/Distributed_database_management_system.html" title="Distributed database management system">Distributed DBMS</a> | <a href="/wiki/ACID.html" title="ACID">ACID</a></p>
+<table width="100%" cellspacing="0" cellpadding="2" border="0">
+<tr class="toccolours" style="font-size: small">
+<td width="50%" align="center" style="vertical-align:top; border-top: 1px solid #ccccff; border-right: 1px solid #ccccff">
+<p><i>Objects</i><br />
+<a href="/wiki/Database_trigger.html" title="Database trigger">Trigger</a> | <a href="/wiki/View_%28database%29.html" title="View (database)">View</a> | <a href="/wiki/Table_%28database%29.html" title="Table (database)">Table</a> | <a href="/wiki/Cursor_%28databases%29.html" title="Cursor (databases)">Cursor</a> | <a href="/wiki/Transaction_log.html" title="Transaction log">Log</a> | <a href="/wiki/Database_transaction.html" title="Database transaction">Transaction</a> | <a href="/wiki/Index_%28database%29.html" title="Index (database)">Index</a> | <a href="/wiki/Stored_procedure.html" title="Stored procedure">Stored procedure</a> | <a href="/wiki/Partition_%28database%29.html" title="Partition (database)">Partition</a></p>
+</td>
+<td width="50%" align="center" style="vertical-align:top; border-top: 1px solid #ccccff">
+<p><i>Topics in <a href="/wiki/SQL.html" title="SQL">SQL</a></i><br />
+<a href="/wiki/Select_%28SQL%29.html" title="Select (SQL)">Select</a> | <a href="/wiki/Insert_%28SQL%29.html" title="Insert (SQL)">Insert</a> | <a href="/wiki/Update_%28SQL%29.html" title="Update (SQL)">Update</a> | <a href="/wiki/Merge_%28SQL%29.html" title="Merge (SQL)">Merge</a> | <a href="/wiki/Delete_%28SQL%29.html" title="Delete (SQL)">Delete</a> | <a href="/wiki/Join_%28SQL%29.html" title="Join (SQL)">Join</a> | <a href="/wiki/Union_%28SQL%29.html" title="Union (SQL)">Union</a> | <a href="/wiki/Create_%28SQL%29.html" title="Create (SQL)">Create</a> | <a href="/wiki/Drop_%28SQL%29.html" title="Drop (SQL)">Drop</a><br />
+<a href="/wiki/Comparison_of_SQL_syntax.html" title="Comparison of SQL syntax">Comparison of syntax</a></p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr bgcolor="#CCCCFF">
+<td align="center"><b>Implementations of database management systems</b></td>
+</tr>
+<tr>
+<td align="center" style="font-size: small">
+<table width="100%" cellspacing="0" cellpadding="2" border="0">
+<tr class="toccolours" style="font-size: small">
+<td width="50%" align="center" style="vertical-align:top; border-top: 1px solid #ccccff; border-right: 1px solid #ccccff">
+<p><i>Types of implementations</i><br />
+<a href="/wiki/Flat_file_database.html" title="Flat file database">Flat file</a> | <a href="/wiki/Deductive_database.html" title="Deductive database">Deductive</a> | <a href="/wiki/Dimensional_database.html" title="Dimensional database">Dimensional</a> | <a href="/wiki/Hierarchical_model.html" title="Hierarchical model">Hierarchical</a> | <a href="/wiki/Object_database.html" title="Object database">Object oriented</a> | <a href="/wiki/Temporal_database.html" title="Temporal database">Temporal</a><br />
+<br />
+<i>Products</i><br />
+<a href="/wiki/DBASE.html" title="DBASE">dBASE</a> | <a href="/wiki/Oracle_database.html" title="Oracle database">Oracle</a> | <a href="/wiki/Sybase_SQL_Server.html" title="Sybase SQL Server">Sybase</a> | <a href="/wiki/MySQL.html" title="MySQL">MySQL</a> | <a href="/wiki/SQLite.html" title="SQLite">SQLite</a> | <a href="/wiki/Microsoft_SQL_Server.html" title="Microsoft SQL Server">Microsoft SQL Server</a> | <a href="/wiki/Essbase.html" title="Essbase">Essbase</a> | <a href="/wiki/PostgreSQL.html" title="PostgreSQL">PostgreSQL</a> | <a href="/wiki/IBM_DB2.html" title="IBM DB2">DB2</a> | <a href="/wiki/Informix.html" title="Informix">Informix</a> | <a href="/wiki/Helix_database.html" title="Helix database">Helix database</a> | <a href="/wiki/Comparison_of_relational_database_management_systems.html" title="Comparison of relational database management systems">Comparison - relational</a> | <a href="/wiki/Comparison_of_object-relational_database_management_systems.html" title="Comparison of object-relational database management systems">Comparison - object-relational</a></p>
+</td>
+<td width="50%" align="center" style="vertical-align:top; border-top: 1px solid #ccccff">
+<p><i>Components</i><br />
+<a href="/wiki/Query_language.html" title="Query language">Query language</a> | <a href="/wiki/Query_optimizer.html" title="Query optimizer">Query optimizer</a> | <a href="/wiki/Query_plan.html" title="Query plan">Query plan</a> | <a href="/wiki/Open_Database_Connectivity.html" title="Open Database Connectivity">ODBC</a> | <a href="/wiki/Java_Database_Connectivity.html" title="Java Database Connectivity">JDBC</a><br />
+<i>Lists</i><br />
+<a href="/wiki/List_of_object-oriented_database_management_systems.html" title="List of object-oriented database management systems">List of object-oriented database management systems</a><br />
+<a href="/wiki/List_of_relational_database_management_systems.html" title="List of relational database management systems">List of relational database management systems</a><br />
+<a href="/wiki/List_of_truly_relational_database_management_systems.html" title="List of truly relational database management systems">List of truly relational database management systems</a></p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+<!-- 
+Pre-expand include size: 25322 bytes
+Post-expand include size: 7157 bytes
+Template argument size: 1938 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:25873-0!1!0!default!!en!2 and timestamp 20060909225650 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Data management">Data management</a></span> | <span dir='ltr'><a  title="Category:Relational model">Relational model</a></span> | <span dir='ltr'><a  title="Category:Data modeling">Data modeling</a></span> | <span dir='ltr'><a  title="Category:Databases">Databases</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Relational_database.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-cs"><a >Česky</a></li>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-he"><a >עברית</a></li>
+				<li class="interwiki-hu"><a >Magyar</a></li>
+				<li class="interwiki-nl"><a >Nederlands</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-pt"><a >Português</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+				<li class="interwiki-sv"><a >Svenska</a></li>
+				<li class="interwiki-zh"><a >中文</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 15:08, 7 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv113 in 0.092 secs. --></body></html>

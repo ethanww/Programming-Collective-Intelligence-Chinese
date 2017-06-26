@@ -1,0 +1,255 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Type inference,Benjamin C. Pierce,Boo programming language,C Sharp,Cayenne programming language,Chrome programming language,Clean programming language,D programming language,Epigram programming language,Fortress programming language,Functional programming language" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Type inference - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Type_inference";
+			var wgTitle = "Type inference";
+			var wgArticleId = 279690;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Type inference</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub">(Redirected from <a  title="Hindley-Milner">Hindley-Milner</a>)</div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p><b>Type inference</b> is a feature present in some <a href="/wiki/Strongly-typed_programming_language.html" title="Strongly-typed programming language">strongly</a> <a href="/wiki/Static_typing#Static_and_dynamic_typing.html" title="Static typing">statically typed</a> programming languages. It is often characteristic of — but not limited to — <a href="/wiki/Functional_programming_language.html" title="Functional programming language">functional programming languages</a> in general. Some languages that include type inference are: <a href="/wiki/Haskell_programming_language.html" title="Haskell programming language">Haskell</a>, <a href="/wiki/Cayenne_programming_language.html" title="Cayenne programming language">Cayenne</a>, <a href="/wiki/Clean_programming_language.html" title="Clean programming language">Clean</a>, <a href="/wiki/ML_programming_language.html" title="ML programming language">ML</a>, <a href="/wiki/OCaml.html" title="OCaml">OCaml</a>, <a href="/wiki/Epigram_programming_language.html" title="Epigram programming language">Epigram</a>, <a href="/wiki/Scala_%28programming_language%29.html" title="Scala (programming language)">Scala</a>, <a href="/wiki/Nemerle.html" title="Nemerle">Nemerle</a>, <a href="/wiki/D_programming_language.html" title="D programming language">D</a>, <a href="/wiki/Chrome_programming_language.html" title="Chrome programming language">Chrome</a> and <a href="/wiki/Boo_programming_language.html" title="Boo programming language">Boo</a>. This feature is planned for <a href="/wiki/Fortress_programming_language.html" title="Fortress programming language">Fortress</a>, <a href="/wiki/C_Sharp.html" title="C Sharp">C# 3.0</a>,<a  class="external text" title="http://www.artima.com/cppsource/cpp0x.html">C++0x</a> and <a href="/wiki/Perl_6.html" title="Perl 6">Perl 6</a>.</p>
+<p>Type inference refers to the ability to automatically either partially or fully deduce the type of the value derived from the eventual evaluation of an expression. As this process is systematically performed at compile time, the compiler is often able to infer the type of a variable or the <a href="/wiki/Type_signature.html" title="Type signature">type signature</a> of a function, without explicit type annotations having been given. In many cases, it is possible to omit type annotations from a program completely if the type inference system is robust enough, or the program or language simple enough.</p>
+<p>To obtain the information required to correctly infer the type of an expression lacking an explicit type annotation, the compiler either gathers this information as an aggregate and subsequent reduction of the type annotations given for its subexpressions (which may themselves be variables or functions), or through an implicit understanding of the type of various atomic values (e.g., ()&#160;: <a href="/wiki/Unit_type.html" title="Unit type">Unit</a>; true&#160;: Bool; 42&#160;: Integer; 3.14159&#160;: Real; etc.). It is through recognition of the eventual reduction of expressions to implicitly typed atomic values that the compiler for a type inferring language is able to compile a program completely without type annotations. In the case of highly complex forms of <a href="/wiki/Higher_order_programming.html" title="Higher order programming">higher order programming</a> and <a href="/wiki/Polymorphism_%28computer_science%29.html" title="Polymorphism (computer science)">polymorphism</a>, it is not always possible for the compiler to infer as much, however, and type annotations are occasionally necessary for disambiguation.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Example</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Hindley-Milner type inference algorithm</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">2.1</span> <span class="toctext">The Algorithm</span></a>
+<ul>
+<li class="toclevel-3"><a ><span class="tocnumber">2.1.1</span> <span class="toctext">Generating the equations</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">2.1.2</span> <span class="toctext">Solving the equations</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">External link</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Example">edit</a>]</div>
+<p><a name="Example" id="Example"></a></p>
+<h2>Example</h2>
+<p>For example, let us consider the Haskell function <code>length</code>, which may be defined as:</p>
+<pre>
+length [] = 0
+length (first:rest) = 1 + length rest
+</pre>
+<p>From this, it is evident that the function handles lists as inputs, and the base case of this recursive function returns an integer (Haskell "Int"). So we can reliably construct a type signature</p>
+<pre>
+length :: [a] -&gt; Int
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Hindley-Milner type inference algorithm">edit</a>]</div>
+<p><a name="Hindley-Milner_type_inference_algorithm" id="Hindley-Milner_type_inference_algorithm"></a></p>
+<h2>Hindley-Milner type inference algorithm</h2>
+<p>The common algorithm used to perform the type inference is the one now commonly referred to as Hindley-Milner or Damas-Milner algorithm.</p>
+<p>The origin of this algorithm is the type inference algorithm for the <a href="/wiki/Simply_typed_lambda_calculus.html" title="Simply typed lambda calculus">simply typed lambda calculus</a>, which was devised by <a href="/wiki/Haskell_B._Curry.html" title="Haskell B. Curry">Haskell B. Curry</a> and <a href="/wiki/Robert_Feys.html" title="Robert Feys">Robert Feys</a> in 1958.</p>
+<p>In 1969 <a  class="new" title="Roger Hindley">Roger Hindley</a> extended this work and proved that their algorithm always inferred the most general type.</p>
+<p>In 1978 <a href="/wiki/Robin_Milner.html" title="Robin Milner">Robin Milner</a>, independently of Hindley's work, provided an equivalent algorithm,</p>
+<p>In 1985 <a  class="new" title="Luis Damas">Luis Damas</a> finally proved that Milner's algorithm is complete and extended it to support systems with polymorphic references.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: The Algorithm">edit</a>]</div>
+<p><a name="The_Algorithm" id="The_Algorithm"></a></p>
+<h3>The Algorithm</h3>
+<p>The algorithm proceeds in two steps. First, we need to generate a number of equations to solve, then we need to solve them.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Generating the equations">edit</a>]</div>
+<p><a name="Generating_the_equations" id="Generating_the_equations"></a></p>
+<h4>Generating the equations</h4>
+<p>The algorithm used for generating the equations is similar to a regular type checker, so let's consider first a regular type checker for the typed lambda calculus given by</p>
+<p><img class='tex' src="http://upload.wikimedia.org/math/0/6/5/06588b1616740dcf44b36417bdeb940b.png" alt="e \,&#160;::= E \mid v \mid (\lambda v:\tau. e) \mid (e\, e)" /></p>
+<p>and</p>
+<p><img class='tex' src="http://upload.wikimedia.org/math/c/b/c/cbc62a053c3d73eb4c14c6431f2c2fbb.png" alt="\tau \,&#160;::= T \mid \tau \to \tau" /></p>
+<p>where <span class="texhtml"><i>E</i></span> is a primitive expression (such as "3") and <span class="texhtml"><i>T</i></span> is a primitive type (such as "Integer").</p>
+<p>We want to construct a function <span class="texhtml"><i>f</i></span> of type <img class='tex' src="http://upload.wikimedia.org/math/a/1/3/a135b589dae295c1d48daf34c33ecc1c.png" alt="\epsilon \to t \to \tau" />, where <span class="texhtml">ε</span> is a type environment and <span class="texhtml"><i>t</i></span> is a term. We assume that this function is already defined on primitives. The other cases are:</p>
+<p><img class='tex' src="http://upload.wikimedia.org/math/0/b/b/0bbc3823a5ff3b2323e22b90a43b73b7.png" alt="f\, \Gamma\, v = \tau" /> whenever the binding <img class='tex' src="http://upload.wikimedia.org/math/2/1/c/21cb1166f55319b8138cc8d1c9d1c508.png" alt="v\,&#160;:\,\tau" /> is in <span class="texhtml">Γ</span></p>
+<p><img class='tex' src="http://upload.wikimedia.org/math/b/4/8/b480c7c10cee016b5ca5bccc34ec716e.png" alt="f\, \Gamma\, (g\, e) = \tau" /> whenever <img class='tex' src="http://upload.wikimedia.org/math/5/d/4/5d488edbfb87787192f2822b4ef947e6.png" alt="\tau_1 = \tau_2 \to \tau" /> where <img class='tex' src="http://upload.wikimedia.org/math/e/c/7/ec70209622ad5f3d01efeff2edc81fa0.png" alt="\tau_1 = f\, \Gamma\, g" /> and <img class='tex' src="http://upload.wikimedia.org/math/2/7/b/27bd3b5b56c9e81ed7da3e0ba99fdb6a.png" alt="\tau_2 = f\, \Gamma\, e" />.</p>
+<p><img class='tex' src="http://upload.wikimedia.org/math/3/7/f/37f703292bac2b8a43c4a7891e022962.png" alt="f\, \Gamma\, (\lambda v:\tau. e) = \tau \to \tau_e" /> where <img class='tex' src="http://upload.wikimedia.org/math/6/4/7/647addd929ed4e590e303c5ff06aac30.png" alt="\tau_e = f\, \Gamma'\, e" /> and <span class="texhtml">Γ'</span> is <span class="texhtml">Γ</span> extended by the binding <img class='tex' src="http://upload.wikimedia.org/math/2/1/c/21cb1166f55319b8138cc8d1c9d1c508.png" alt="v \,:\,\tau" />.</p>
+<p>Note that so far we do not specify what to do when we fail to meet the various conditions. This is because, in the simple type *checking* algorithm, the check simply fails whenever anything goes wrong.</p>
+<p>Now, we develop a more sophisticated algorithm that can deal with type variables and constraints on them. Therefore, we extend the set T of primitive types to include an infinite supply of variables, denoted by lowercase Greek letters <span class="texhtml">α,β,...</span></p>
+<p>This is a limited overview. For now, refer to <i>Types and Programming Languages</i> by Benjamin Pierce, Sections 22.1-4 .</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Solving the equations">edit</a>]</div>
+<p><a name="Solving_the_equations" id="Solving_the_equations"></a></p>
+<h4>Solving the equations</h4>
+<p>Solving the equations proceeds by unification. This is - maybe surprisingly - a rather simple algorithm. The function <span class="texhtml"><i>u</i></span> operates on type equations and returns a structure called a "substitution". A substitution is simply a mapping from type variables to types. Substitutions can be composed and extended in the obvious ways.</p>
+<p>Unifying the empty set of equations is easy enough: <img class='tex' src="http://upload.wikimedia.org/math/5/9/d/59dc5e9be153a21f77fee417c6feba28.png" alt="u\, \emptyset = \mathbf{i}" />, where <img class='tex' src="http://upload.wikimedia.org/math/7/4/a/74ad63f438d840586656bc62be43b6be.png" alt="\mathbf{i}" /> is the identity substitution.</p>
+<p>Unifying a variable with a type goes this way: <img class='tex' src="http://upload.wikimedia.org/math/e/3/4/e34da347a1ae0841e2602189dc0ba96b.png" alt="u\, ([\alpha = T] \cup C) = u\, (C') \cdot (\alpha \mapsto T)" />, where <img class='tex' src="http://upload.wikimedia.org/math/3/6/f/36f8ae4c86b69d52d037a6802d91cc4a.png" alt="\cdot" /> is the substitution composition operator, and <span class="texhtml"><i>C</i>'</span> is the set of remaining constraints <span class="texhtml"><i>C</i></span> with the new substitution <img class='tex' src="http://upload.wikimedia.org/math/6/8/9/6896a3aa195ebcc2f53844a99b64d325.png" alt="\alpha \mapsto T" /> applied to it.</p>
+<p>Of course, <img class='tex' src="http://upload.wikimedia.org/math/d/7/4/d74501f0284fa4327f2aeb4259544f14.png" alt="u\, ([T = \alpha] \cup C) = u ([\alpha = T] \cup C)" />.</p>
+<p>The interesting case remains as <img class='tex' src="http://upload.wikimedia.org/math/1/7/f/17f83c89a3aa39b10d0b5e816244a490.png" alt="u\, ([S \to S' = T \to T']\cup C) = u \, (\{[S = T], [S' = T']\}\cup C)" />.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<ul>
+<li><cite class="book" style="font-style:normal"><a href="/wiki/Benjamin_C._Pierce.html" title="Benjamin C. Pierce">Pierce, Benjamin C.</a> (2002). <i>Types and Programming Languages</i>. MIT Press. <a  class="internal">ISBN 0-262-16209-1</a>.</cite></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External link">edit</a>]</div>
+<p><a name="External_link" id="External_link"></a></p>
+<h2>External link</h2>
+<ul>
+<li><a  class="external text" title="http://www.cis.upenn.edu/~bcpierce/types/archives/1988/msg00042.html">Archived e-mail message</a> by Roger Hindley explaining the history of type inference</li>
+</ul>
+
+<!-- 
+Pre-expand include size: 2716 bytes
+Post-expand include size: 598 bytes
+Template argument size: 820 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:279690-0!1!0!default!!en!2 and timestamp 20060910151542 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:Type theory">Type theory</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Type_inference.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 21:32, 30 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv117 in 0.093 secs. --></body></html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Register allocation,Central processing unit,Compiler analysis,Compiler optimization,Computer program,Data flow analysis,Graph coloring,Just-in-time compilation,Live variable analysis,Multiplexing,NP-complete" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Register allocation - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Register_allocation";
+			var wgTitle = "Register allocation";
+			var wgArticleId = 485122;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Register allocation</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>In <a href="/wiki/Compiler_optimization.html" title="Compiler optimization">compiler optimization</a>, <b>register allocation</b> is the process of <a href="/wiki/Multiplexing.html" title="Multiplexing">multiplexing</a> a large number of target program <a href="/wiki/Variable.html" title="Variable">variables</a> onto a small number of <a href="/wiki/Central_processing_unit.html" title="Central processing unit">CPU</a> <a href="/wiki/Processor_register.html" title="Processor register">registers</a>. The goal is to keep as many operands as possible in registers to maximise the execution speed of software programs. Register allocation can happen over a basic block (<i>local register allocation</i>) or a whole function/procedure (<i>global register allocation</i>).</p>
+<p>Most <a href="/wiki/Computer_program.html" title="Computer program">computer programs</a> need to process large numbers of different data items. However, most CPUs can only perform operations on a small fixed number of "slots" called registers. Even on machines that support memory operands, register access is considerably faster than memory access. Therefore the data items to be processed have to be loaded into and out of the registers from <a href="/wiki/Random_access_memory.html" title="Random access memory">RAM</a> at the moments they are needed.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Challenges">edit</a>]</div>
+<p><a name="Challenges" id="Challenges"></a></p>
+<h2>Challenges</h2>
+<p>Register allocation is an <a href="/wiki/NP-complete.html" title="NP-complete">NP-complete</a> problem. The number of variables in a typical program is much larger than the number of available registers in a processor, so the contents of some variables have to be <a href="/wiki/Register_spilling.html" title="Register spilling">spilled</a> (saved) into memory locations. The cost of such spilling is minimised by spilling the least frequently used variables first, however it is not easy to know which variables will be used the least. In addition, the hardware and <a href="/wiki/Operating_system.html" title="Operating system">operating system</a> may impose restrictions on the usage of some registers.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Global register allocation">edit</a>]</div>
+<p><a name="Global_register_allocation" id="Global_register_allocation"></a></p>
+<h2>Global register allocation</h2>
+<p>Like most other <a href="/wiki/Compiler_optimization.html" title="Compiler optimization">compiler optimizations</a>, register allocation is based on the result of some <a href="/wiki/Compiler_analysis.html" title="Compiler analysis">compiler analysis</a>, mostly the result of <a href="/wiki/Live_variable_analysis.html" title="Live variable analysis">live variable analysis</a> from <a href="/wiki/Data_flow_analysis.html" title="Data flow analysis">data flow analysis</a>.</p>
+<p>Traditional allocators perform <i>global register allocation</i> using a <a href="/wiki/Graph_coloring.html" title="Graph coloring">graph coloring</a> algorithm devised by Chaitin et al. It can be divided into two phases:</p>
+<ol>
+<li>Machine instructions are generated as if there are an infinite number of symbolic registers. So all variables suitable to being in registers will be assigned to numbered logical registers. The phase is sometimes called <i>register variable recognition</i>.</li>
+<li>symbolic registers are replaced by physical registers in a target machine, with the minimum cost of <a href="/wiki/Register_spilling.html" title="Register spilling">spills</a>.</li>
+</ol>
+<p>In phase two, a graph is constructed where nodes are symbolic registers and an edge connects two nodes if one is live when the other is defined, which means two variables will be live together some time during the execution. The problem then equals to color the graph using k colors, where k is the number of actual available physical registers. To do so, the graph is reduced in size in repeating steps until no further simplication is possible</p>
+<ul>
+<li>Removing action: Repeatedly remove a node in graph if it has fewer than k neighbors connected by edges. Also remove related edges. This step eliminates all variables with less than k other concurrently living variables.</li>
+<li>Stop: If the result simplified graph has no nodes left, all removed nodes will be colored in the reverse order in which they were removed, ensuring a different color is used compared to its neighbors.</li>
+<li>Spilling action: If the result graph have nodes left and each of them has more than k neighbors, choose one node to be spilled. Remove the spilled node and its edges and repeat the removing and spilling actions until the graph is empty.</li>
+</ul>
+<p>Major attention has been paid to choose the right nodes to be spilled. The less frequently used variables are often the victims.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Recent development">edit</a>]</div>
+<p><a name="Recent_development" id="Recent_development"></a></p>
+<h2>Recent development</h2>
+<p>Graph coloring allocators produce efficient code, but their allocation time is high. In cases of static compilation, allocation time is not a significant concern. In cases of dynamic compilation, such as <a href="/wiki/Just-in-time_compilation.html" title="Just-in-time compilation">just-in-time</a> (JIT) compilers, fast register allocation is important. An efficient technique proposed by Poletto and Sarkar is <a  class="external text" title="http://www.research.ibm.com/jalapeno/papers/toplas99.pdf">linear scan allocation</a>. This technique requires only a single pass over the list of variable live ranges. Ranges with short lifetimes are assigned to registers, whereas those with long lifetimes tend to be <a href="/wiki/Register_spilling.html" title="Register spilling">spilled</a>, or reside in memory. The results are comparable with graph coloring allocators.</p>
+<p>More recently, optimal algorithms have been developed by Goodwin and Wilken using Integer Programming for regular architectures. These algorithms have been extended by Kong and Wilken for irregular architectures.</p>
+<p>While the worst case execution time is exponential, the experimental results show that the actual time is typically of order <span class="texhtml"><i>O</i>(<i>n</i><sup>2.5</sup>)</span> of the number of constraints (<i>Kong, Wilken, Precise Register Allocation for Irregular Architectures</i>, <a  class="external autonumber" title="http://www.ece.ucdavis.edu/cerl/cerl_arch/irreg.pdf">[1]</a>).</p>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:485122-0!1!0!default!!en!2 and timestamp 20060906013023 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:Compiler optimizations">Compiler optimizations</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Register_allocation.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-ru"><a >Русский</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 22:15, 3 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv15 in 0.110 secs. --></body></html>

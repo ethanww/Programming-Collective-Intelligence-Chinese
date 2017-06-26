@@ -1,0 +1,358 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Encryption,3-Way,A5/1,A5/2,ADFGVX cipher,Advanced Encryption Standard,Advanced Encryption Standard process,Affine cipher,Akelarre (cipher),Algorithm,Anubis (cipher)" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Encryption - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Encryption";
+			var wgTitle = "Encryption";
+			var wgArticleId = 10294;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Encryption</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub">(Redirected from <a  title="Cipher">Cipher</a>)</div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<dl>
+<dd><span class="dablink"><i>This article is about algorithms for encryption and decryption. For an overview of cryptographic technology in general, see <a href="/wiki/Cryptography.html" title="Cryptography">Cryptography</a>.</i></span></dd>
+<dd><span class="dablink"><i>"Encrypt" redirects here. For the movie, see <a href="/wiki/Encrypt_%28film%29.html" title="Encrypt (film)">Encrypt (film)</a>.</i></span></dd>
+<dd><span class="dablink"><i>"Cipher" redirects here. For the Pokémon evil syndicate, see <a href="/wiki/Cipher_%28Pok%C3%A9mon%29.html" title="Cipher (Pokémon)">Cipher (Pokémon)</a>.</i></span></dd>
+</dl>
+<p>In <a href="/wiki/Cryptography.html" title="Cryptography">cryptography</a>, <b>encryption</b> is the process of obscuring <a href="/wiki/Information.html" title="Information">information</a> to make it unreadable without special knowledge. While encryption has been used to protect communications for centuries, only organizations and individuals with an extraordinary need for secrecy had made use of it. In the mid-1970s, strong encryption emerged from the sole preserve of secretive government agencies into the public domain, and is now employed in protecting widely-used systems, such as Internet <a href="/wiki/E-commerce.html" title="E-commerce">e-commerce</a>, <a href="/wiki/Mobile_telephone.html" title="Mobile telephone">mobile telephone</a> networks and bank <a href="/wiki/Automatic_teller_machine.html" title="Automatic teller machine">automatic teller machines</a>.</p>
+<p>Encryption can be used to ensure secrecy, but other techniques are still needed to make communications secure, particularly to verify the integrity and authenticity of a message; for example, a <a href="/wiki/Message_authentication_code.html" title="Message authentication code">message authentication code</a> (MAC) or <a href="/wiki/Digital_signature.html" title="Digital signature">digital signatures</a>. Another consideration is protection against <a href="/wiki/Traffic_analysis.html" title="Traffic analysis">traffic analysis</a>.</p>
+<p>Encryption or software <a href="/wiki/Code_obfuscation.html" title="Code obfuscation">code obfuscation</a> is also used in software <a href="/wiki/Copy_protection.html" title="Copy protection">copy protection</a> against <a href="/wiki/Reverse_engineering.html" title="Reverse engineering">reverse engineering</a>, unauthorized application analysis, cracks and software piracy used in different encryption or <a href="/wiki/Obfuscating_software.html" title="Obfuscating software">obfuscating software</a></p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Ciphers</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Ciphers versus codes</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Types of cipher</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Key size and vulnerability</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Ciphers">edit</a>]</div>
+<p><a name="Ciphers" id="Ciphers"></a></p>
+<h2>Ciphers</h2>
+<p>A <b>cipher</b> is an <a href="/wiki/Algorithm.html" title="Algorithm">algorithm</a> for performing <strong class="selflink">encryption</strong> (and the reverse, <b>decryption</b>) — a series of well-defined steps that can be followed as a procedure. An alternative term is <b>encipherment</b>.</p>
+<p>The original information is known as <i><a href="/wiki/Plaintext.html" title="Plaintext">plaintext</a></i>, and the encrypted form as <b>ciphertext</b>. The ciphertext message contains all the information of the plaintext message, but is not in a format readable by a human or computer without the proper mechanism to decrypt it; it should resemble random gibberish to those not intended to read it.</p>
+<p>The operation of a cipher usually depends on a piece of auxiliary information, called a <a href="/wiki/Key_%28cryptography%29.html" title="Key (cryptography)">key</a> or, in traditional <a href="/wiki/NSA.html" title="NSA">NSA</a> parlance, a <b>cryptovariable.</b> The encrypting procedure is varied depending on the key, which changes the detailed operation of the algorithm. A key must be selected before using a cipher to encrypt a message. Without knowledge of the key, it should be difficult, if not impossible, to decrypt the resulting ciphertext into readable plaintext.</p>
+<p>"Cipher" is alternatively spelled "cypher"; similarly "ciphertext" and "cyphertext", and so forth. The word descends from the <a href="/wiki/Arabic_language.html" title="Arabic language">Arabic</a> word for zero: <i>cifr</i> or صِفْر, like (the Italian) <i>zero</i> (which remained in use for 0, the crucial innovation in positional Arabic versus Roman numerals) but soon was used for any decimal digit, even any number. There are also etymological roots to the Middle French word <i>cifre</i>, and the Medieval Latin <i>cifra</i>, both of which are probably originated from the Arabic root. While it may have come to mean encoding because that often involved numbers, a theory says conservative Catholic opponents of the Arabic ("heathen") numerals equated it with any "dark secret."</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Ciphers versus codes">edit</a>]</div>
+<p><a name="Ciphers_versus_codes" id="Ciphers_versus_codes"></a></p>
+<h2>Ciphers versus codes</h2>
+<dl>
+<dd><i>Main article: <a href="/wiki/Code_%28cryptography%29.html" title="Code (cryptography)">Code (cryptography)</a></i></dd>
+</dl>
+<p>In non-technical usage, a "(secret) <a href="/wiki/Code_%28cryptography%29.html" title="Code (cryptography)">code</a>" is the same thing as a cipher. Within technical discussions, however, they are distinguished into two concepts. Codes work at the level of meaning — that is, words or phrases are converted into something else. Ciphers, on the other hand, work at a lower level: the level of individual letters, small groups of letters, or, in modern schemes, individual bits. Some systems used both codes and ciphers in one system, using <a href="/wiki/Superencipherment.html" title="Superencipherment">superencipherment</a> to increase the security. <a href="/wiki/Robert_Anton_Wilson.html" title="Robert Anton Wilson">Robert Anton Wilson</a> mentions this distinction in his work <i><a href="/wiki/The_Illuminatus%21_Trilogy.html" title="The Illuminatus! Trilogy">The Illuminatus! Trilogy</a></i>.</p>
+<p>Historically, cryptography was split into a dichotomy of codes and ciphers, and coding had its own terminology, analogous to that for ciphers: "<i>encoding</i>, <i>codetext</i>, <i>decoding</i>" and so on. However, codes have a variety of drawbacks, including susceptibility to <a href="/wiki/Cryptanalysis.html" title="Cryptanalysis">cryptanalysis</a> and the difficulty of managing a cumbersome <a href="/wiki/Codebook.html" title="Codebook">codebook</a>. Because of this, codes have fallen into disuse in modern cryptography, and ciphers are the dominant technique.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Types of cipher">edit</a>]</div>
+<p><a name="Types_of_cipher" id="Types_of_cipher"></a></p>
+<h2>Types of cipher</h2>
+<p>There are a variety of different types of encryption. Algorithms used earlier in the <a href="/wiki/History_of_cryptography.html" title="History of cryptography">history of cryptography</a> are substantially different from modern methods, and modern ciphers can be classified according to how they operate and whether they use one or two keys.</p>
+<p>Historical pen and paper ciphers used in the past are sometimes known as <a href="/wiki/Classical_cipher.html" title="Classical cipher">classical ciphers</a>. They include <a href="/wiki/Substitution_cipher.html" title="Substitution cipher">substitution ciphers</a> and <a href="/wiki/Transposition_cipher.html" title="Transposition cipher">transposition ciphers</a>. During the early twentieth century, more sophisticated machines for encryption were used, <a href="/wiki/Rotor_machine.html" title="Rotor machine">rotor machines</a>, which were more complex than previous schemes.</p>
+<p>Encryption methods can be divided into <a href="/wiki/Symmetric_key_algorithm.html" title="Symmetric key algorithm">symmetric key algorithms</a> (<a href="/wiki/Private-key_cryptography.html" title="Private-key cryptography">Private-key cryptography</a>) and <a href="/wiki/Asymmetric_key_algorithm.html" title="Asymmetric key algorithm">asymmetric key algorithms</a> (<a href="/wiki/Public-key_cryptography.html" title="Public-key cryptography">Public-key cryptography</a>). In a <a href="/wiki/Symmetric_key_algorithm.html" title="Symmetric key algorithm">symmetric key algorithm</a> (e.g., <a href="/wiki/Data_Encryption_Standard.html" title="Data Encryption Standard">DES</a> and <a href="/wiki/Advanced_Encryption_Standard.html" title="Advanced Encryption Standard">AES</a>), the sender and receiver must have a shared key set up in advance and kept secret from all other parties; the sender uses this key for encryption, and the receiver uses the same key for decryption. In an <a href="/wiki/Asymmetric_key_algorithm.html" title="Asymmetric key algorithm">asymmetric key algorithm</a> (e.g., <a href="/wiki/RSA.html" title="RSA">RSA</a>), there are two separate keys: a <i>public key</i> is published and enables any sender to perform encryption, while a <i>private key</i> is kept secret by the receiver and enables only him to perform decryption.</p>
+<p>Symmetric key ciphers can be distinguished into two types, depending on whether they work on blocks of symbols of fixed size (<i><a href="/wiki/Block_cipher.html" title="Block cipher">block ciphers</a></i>), or on a continuous stream of symbols (<i><a href="/wiki/Stream_cipher.html" title="Stream cipher">stream ciphers</a></i>).</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Key size and vulnerability">edit</a>]</div>
+<p><a name="Key_size_and_vulnerability" id="Key_size_and_vulnerability"></a></p>
+<h2>Key size and vulnerability</h2>
+<p>In a pure mathematical attack (i.e., lacking any other information to help break a cypher), three factors above all, count:</p>
+<ul>
+<li>Mathematical advances, that allow new attacks or weaknesses to be discovered and exploited.</li>
+<li>Computational power available, i.e. the computer power which can be brought to bear on the problem.</li>
+<li><a href="/wiki/Key_size.html" title="Key size">Key size</a>, i.e., the size of key used to encrypt a message. As the key size increases, so does the complexity of <a href="/wiki/Brute_search.html" title="Brute search">brute search</a> to the point where it becomes infeasible to crack encryption directly.</li>
+</ul>
+<p>Since the desired effect is computational difficulty, in theory one would choose an algorithm and desired difficulty level, thus decide the key length accordingly.</p>
+<p>An example of this process can be found at <a  class="external text" title="http://www.keylength.com">keylength.com</a> which uses multiple reports to suggest that a symmetric cypher with 128 bits, an asymmetric cypher with 3072 bit keys, and an elliptic curve cypher with 512 bits, all have similar difficulty at present.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Encryption_software.html" title="Encryption software">Encryption software</a></li>
+<li><a href="/wiki/Famous_ciphertexts.html" title="Famous ciphertexts">Famous ciphertexts</a></li>
+<li><a href="/wiki/Opportunistic_encryption.html" title="Opportunistic encryption">Opportunistic encryption</a></li>
+<li><a href="/wiki/Private-key_cryptography.html" title="Private-key cryptography">Private-key cryptography</a> (<a href="/wiki/Symmetric_key_algorithm.html" title="Symmetric key algorithm">symmetric key algorithm</a>)</li>
+<li><a href="/wiki/Public-key_cryptography.html" title="Public-key cryptography">Public-key cryptography</a> (<a href="/wiki/Asymmetric_key_algorithm.html" title="Asymmetric key algorithm">asymmetric key algorithm</a>)</li>
+<li><a href="/wiki/Steganography.html" title="Steganography">Steganography</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://www.hermetic.ch/crypto/intro.htm">An Introduction to the Use of Encryption</a></li>
+<li><a  class="external text" title="http://computer.howstuffworks.com/encryption1.htm">How encryption works</a></li>
+<li><a  class="external text" title="http://mathworld.wolfram.com/RSAEncryption.html">RSA Encryption</a></li>
+<li><a  class="external text" title="http://www.securitydocs.com/Encryption">SecurityDocs</a> Resource for Encryption Whitepapers</li>
+<li><a  class="external text" title="http://www.securitybulletins.com/mediawiki/index.php/Testing_Encryption">SecurityBulletins.com</a> Basic Encryption testing methods</li>
+</ul>
+<p><br clear="all" /></p>
+<center>
+<table class="toccolours">
+<tr>
+<td style="background:#ccccff" align="center">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="100%" align="center"><b>Classical cryptography</b></td>
+<td><small class="editlink noprint plainlinksneverexpand"><a  class="external text" title="http://en.wikipedia.org/w/index.php?title=Template:Classical_cryptography&amp;action=edit">edit</a></small></td>
+<td>&#160;&#160;</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align="center"><small><b>Ciphers:</b> <a href="/wiki/ADFGVX_cipher.html" title="ADFGVX cipher">ADFGVX</a> | <a href="/wiki/Affine_cipher.html" title="Affine cipher">Affine</a> | <a href="/wiki/Atbash.html" title="Atbash">Atbash</a> | <a href="/wiki/Autokey_cipher.html" title="Autokey cipher">Autokey</a> | <a href="/wiki/Bifid_cipher.html" title="Bifid cipher">Bifid</a> | <a href="/wiki/Book_cipher.html" title="Book cipher">Book</a> | <a href="/wiki/Caesar_cipher.html" title="Caesar cipher">Caesar</a> | <a href="/wiki/Four-square_cipher.html" title="Four-square cipher">Four-square</a> | <a href="/wiki/Hill_cipher.html" title="Hill cipher">Hill</a> | <a href="/wiki/Nihilist_cipher.html" title="Nihilist cipher">Nihilist</a> | <a href="/wiki/Permutation_cipher.html" title="Permutation cipher">Permutation</a> | <a href="/wiki/Pigpen_cipher.html" title="Pigpen cipher">Pigpen</a> | <a href="/wiki/Playfair_cipher.html" title="Playfair cipher">Playfair</a> | <a href="/wiki/Polyalphabetic_cipher.html" title="Polyalphabetic cipher">Polyalphabetic</a> | <a href="/wiki/Rail_Fence_Cipher.html" title="Rail Fence Cipher">Rail Fence</a> | <a href="/wiki/Reihenschieber.html" title="Reihenschieber">Reihenschieber</a> | <a href="/wiki/Reservehandverfahren.html" title="Reservehandverfahren">Reservehandverfahren</a> | <a href="/wiki/Running_key_cipher.html" title="Running key cipher">Running key</a> | <a href="/wiki/Scytale.html" title="Scytale">Scytale</a> | <a href="/wiki/Solitaire_%28cipher%29.html" title="Solitaire (cipher)">Solitaire</a> | <a href="/wiki/Substitution_cipher.html" title="Substitution cipher">Substitution</a> | <a href="/wiki/Tap_Code.html" title="Tap Code">Tap Code</a> | <a href="/wiki/Transposition_cipher.html" title="Transposition cipher">Transposition</a> | <a href="/wiki/Trifid_cipher.html" title="Trifid cipher">Trifid</a> | <a href="/wiki/Two-square_cipher.html" title="Two-square cipher">Two-square</a> | <a href="/wiki/Vigen%C3%A8re_cipher.html" title="Vigenère cipher">Vigenère</a></small></td>
+</tr>
+<tr>
+<td align="center"><small><b>Cryptanalysis:</b> <a href="/wiki/Frequency_analysis.html" title="Frequency analysis">Frequency&#160;analysis</a> | <a href="/wiki/Index_of_coincidence.html" title="Index of coincidence">Index&#160;of&#160;coincidence</a></small></td>
+</tr>
+<tr>
+<td align="center"><small><b>Misc:</b> <a href="/wiki/Cryptogram.html" title="Cryptogram">Cryptogram</a> | <a href="/wiki/Polybius_square.html" title="Polybius square">Polybius&#160;square</a> | <a href="/wiki/Scytale.html" title="Scytale">Scytale</a> | <a href="/wiki/Straddling_checkerboard.html" title="Straddling checkerboard">Straddling&#160;checkerboard</a> | <a href="/wiki/Tabula_recta.html" title="Tabula recta">Tabula&#160;recta</a></small></td>
+</tr>
+</table>
+</center>
+<p><br clear="all" /></p>
+<center>
+<table class="toccolours">
+<tr>
+<td style="background:#ccccff" align="center">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="100%" align="center"><b><a href="/wiki/Stream_cipher.html" title="Stream cipher">Stream ciphers</a></b></td>
+<td><small class="editlink noprint plainlinksneverexpand"><a  class="external text" title="http://en.wikipedia.org/w/index.php?title=Template:Stream_ciphers&amp;action=edit">edit</a></small></td>
+<td>&#160;&#160;</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align="center"><small><b>Algorithms:</b> <a href="/wiki/A5/1.html" title="A5/1">A5/1</a> | <a href="/wiki/A5/2.html" title="A5/2">A5/2</a> | <a href="/wiki/FISH_%28cipher%29.html" title="FISH (cipher)">FISH</a> | <a href="/wiki/Grain_%28cipher%29.html" title="Grain (cipher)">Grain</a> | <a href="/wiki/HC-256.html" title="HC-256">HC-256</a> | <a href="/wiki/ISAAC_%28cipher%29.html" title="ISAAC (cipher)">ISAAC</a> | <a href="/wiki/MUGI.html" title="MUGI">MUGI</a> | <a href="/wiki/Panama_%28cipher%29.html" title="Panama (cipher)">Panama</a> | <a href="/wiki/Phelix.html" title="Phelix">Phelix</a> | <a href="/wiki/Pike_%28cipher%29.html" title="Pike (cipher)">Pike</a> | <a href="/wiki/Py_%28cipher%29.html" title="Py (cipher)">Py</a> | <a href="/wiki/Rabbit_%28cipher%29.html" title="Rabbit (cipher)">Rabbit</a> | <a href="/wiki/RC4.html" title="RC4">RC4</a> | <a href="/wiki/Salsa20.html" title="Salsa20">Salsa20</a> | <a href="/wiki/Scream_%28cipher%29.html" title="Scream (cipher)">Scream</a> | <a href="/wiki/SEAL_%28cipher%29.html" title="SEAL (cipher)">SEAL</a> | <a  class="new" title="SOBER (cipher)">SOBER</a> | <a href="/wiki/SOBER-128.html" title="SOBER-128">SOBER-128</a> | <a href="/wiki/SOSEMANUK.html" title="SOSEMANUK">SOSEMANUK</a> | <a href="/wiki/Trivium_%28cipher%29.html" title="Trivium (cipher)">Trivium</a> | <a href="/wiki/VEST.html" title="VEST">VEST</a> | <a href="/wiki/WAKE.html" title="WAKE">WAKE</a></small></td>
+</tr>
+<tr>
+<td align="center"><small><b>Theory:</b> <a href="/wiki/Shift_register.html" title="Shift register">Shift register</a> | <a href="/wiki/LFSR.html" title="LFSR">LFSR</a> | <a href="/wiki/NLFSR.html" title="NLFSR">NLFSR</a> | <a href="/wiki/Shrinking_generator.html" title="Shrinking generator">Shrinking generator</a> &#160; <b>Misc:</b> <a href="/wiki/ESTREAM.html" title="ESTREAM">eSTREAM</a></small></td>
+</tr>
+</table>
+</center>
+<p><br clear="all" /></p>
+<center>
+<table class="toccolours">
+<tr>
+<td style="background:#ccccff" align="center">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="100%" align="center"><b><a href="/wiki/Block_cipher.html" title="Block cipher">Block ciphers</a></b>&#160;</td>
+<td><small class="editlink noprint plainlinksneverexpand"><a  class="external text" title="http://en.wikipedia.org/w/index.php?title=Template:Block_ciphers&amp;action=edit">edit</a></small></td>
+<td>&#160;&#160;</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align="center"><small><b>Algorithms:</b> <a href="/wiki/3-Way.html" title="3-Way">3-Way</a> | <a href="/wiki/Advanced_Encryption_Standard.html" title="Advanced Encryption Standard">AES</a> | <a href="/wiki/Akelarre_%28cipher%29.html" title="Akelarre (cipher)">Akelarre</a> | <a href="/wiki/Anubis_%28cipher%29.html" title="Anubis (cipher)">Anubis</a> | <a href="/wiki/Blowfish_%28cipher%29.html" title="Blowfish (cipher)">Blowfish</a> | <a href="/wiki/Cryptomeria_cipher.html" title="Cryptomeria cipher">C2</a> | <a href="/wiki/Camellia_%28cipher%29.html" title="Camellia (cipher)">Camellia</a> | <a href="/wiki/CAST-128.html" title="CAST-128">CAST-128</a> | <a href="/wiki/CAST-256.html" title="CAST-256">CAST-256</a> | <a href="/wiki/CMEA_%28cipher%29.html" title="CMEA (cipher)">CMEA</a> | <a href="/wiki/CS-Cipher.html" title="CS-Cipher">CS-Cipher</a> | <a href="/wiki/DEAL.html" title="DEAL">DEAL</a> | <a href="/wiki/Data_Encryption_Standard.html" title="Data Encryption Standard">DES</a> | <a href="/wiki/DES-X.html" title="DES-X">DES-X</a> | <a href="/wiki/FEAL.html" title="FEAL">FEAL</a> | <a href="/wiki/FROG.html" title="FROG">FROG</a> | <a href="/wiki/G-DES.html" title="G-DES">G-DES</a> | <a href="/wiki/GOST_28147-89.html" title="GOST 28147-89">GOST</a> | <a href="/wiki/Hasty_Pudding_Cipher.html" title="Hasty Pudding Cipher">Hasty Pudding Cipher</a> | <a href="/wiki/ICE_%28cipher%29.html" title="ICE (cipher)">ICE</a> | <a href="/wiki/International_Data_Encryption_Algorithm.html" title="International Data Encryption Algorithm">IDEA</a> | <a href="/wiki/IDEA_NXT.html" title="IDEA NXT">IDEA NXT</a> | <a href="/wiki/Iraqi_block_cipher.html" title="Iraqi block cipher">Iraqi</a> | <a href="/wiki/KASUMI.html" title="KASUMI">KASUMI</a> | <a href="/wiki/KHAZAD.html" title="KHAZAD">KHAZAD</a> | <a href="/wiki/Khufu_and_Khafre.html" title="Khufu and Khafre">Khufu&#160;and&#160;Khafre</a> | <a href="/wiki/Libelle_%28cipher%29.html" title="Libelle (cipher)">Libelle</a> | <a href="/wiki/LOKI.html" title="LOKI">LOKI89/91</a> | <a href="/wiki/LOKI97.html" title="LOKI97">LOKI97</a> | <a href="/wiki/Lucifer_%28cipher%29.html" title="Lucifer (cipher)">Lucifer</a> | <a href="/wiki/MacGuffin_%28cipher%29.html" title="MacGuffin (cipher)">MacGuffin</a> | <a href="/wiki/Madryga.html" title="Madryga">Madryga</a> | <a href="/wiki/MAGENTA_%28cipher%29.html" title="MAGENTA (cipher)">MAGENTA</a> | <a href="/wiki/MARS.html" title="MARS">MARS</a> | <a href="/wiki/MISTY1.html" title="MISTY1">MISTY1</a> | <a href="/wiki/MMB.html" title="MMB">MMB</a> | <a href="/wiki/NewDES.html" title="NewDES">NewDES</a> | <a href="/wiki/Noekeon.html" title="Noekeon">Noekeon</a> | <a href="/wiki/RC2.html" title="RC2">RC2</a> | <a href="/wiki/RC5.html" title="RC5">RC5</a> | <a href="/wiki/RC6.html" title="RC6">RC6</a> | <a href="/wiki/REDOC.html" title="REDOC">REDOC</a> | <a href="/wiki/Red_Pike.html" title="Red Pike">Red&#160;Pike</a> | <a href="/wiki/S-1.html" title="S-1">S-1</a> | <a href="/wiki/SAFER.html" title="SAFER">SAFER</a> | <a href="/wiki/SEED.html" title="SEED">SEED</a> | <a href="/wiki/Serpent_%28cipher%29.html" title="Serpent (cipher)">Serpent</a> | <a href="/wiki/SHACAL.html" title="SHACAL">SHACAL</a> | <a href="/wiki/SHARK.html" title="SHARK">SHARK</a> | <a href="/wiki/Skipjack_%28cipher%29.html" title="Skipjack (cipher)">Skipjack</a> | <a href="/wiki/SMS4.html" title="SMS4">SMS4</a> | <a href="/wiki/Square_%28cipher%29.html" title="Square (cipher)">Square</a> | <a href="/wiki/Tiny_Encryption_Algorithm.html" title="Tiny Encryption Algorithm">TEA</a> | <a href="/wiki/Triple_DES.html" title="Triple DES">Triple&#160;DES</a> | <a href="/wiki/Twofish.html" title="Twofish">Twofish</a> | <a href="/wiki/XTEA.html" title="XTEA">XTEA</a></small></td>
+</tr>
+<tr>
+<td align="center"><small><b>Design:</b> <a href="/wiki/Feistel_network.html" title="Feistel network">Feistel&#160;network</a> | <a href="/wiki/Key_schedule.html" title="Key schedule">Key&#160;schedule</a> | <a href="/wiki/Product_cipher.html" title="Product cipher">Product&#160;cipher</a> | <a href="/wiki/Substitution_box.html" title="Substitution box">S-box</a> | <a href="/wiki/Substitution-permutation_network.html" title="Substitution-permutation network">SPN</a> &#160; <b>Attacks:</b> <a href="/wiki/Brute_force_attack.html" title="Brute force attack">Brute&#160;force</a> | <a href="/wiki/Linear_cryptanalysis.html" title="Linear cryptanalysis">Linear</a> / <a href="/wiki/Differential_cryptanalysis.html" title="Differential cryptanalysis">Differential</a>&#160;<a href="/wiki/Cryptanalysis.html" title="Cryptanalysis">cryptanalysis</a> | <a href="/wiki/Mod_n_cryptanalysis.html" title="Mod n cryptanalysis">Mod&#160;<i>n</i></a> | <a href="/wiki/Related-key_attack.html" title="Related-key attack">Related key</a> | <a href="/wiki/XSL_attack.html" title="XSL attack">XSL</a></small></td>
+</tr>
+<tr>
+<td align="center"><small><b>Standardization:</b> <a href="/wiki/Advanced_Encryption_Standard_process.html" title="Advanced Encryption Standard process">AES&#160;process</a> | <a href="/wiki/CRYPTREC.html" title="CRYPTREC">CRYPTREC</a> | <a href="/wiki/NESSIE.html" title="NESSIE">NESSIE</a> &#160; <b>Misc:</b> <a href="/wiki/Avalanche_effect.html" title="Avalanche effect">Avalanche effect</a> | <a href="/wiki/Block_size_%28cryptography%29.html" title="Block size (cryptography)">Block&#160;size</a> | <a href="/wiki/Initialization_vector.html" title="Initialization vector">IV</a> | <a href="/wiki/Key_size.html" title="Key size">Key&#160;size</a> | <a href="/wiki/Block_cipher_modes_of_operation.html" title="Block cipher modes of operation">Modes&#160;of&#160;operation</a> | <a href="/wiki/Piling-up_lemma.html" title="Piling-up lemma">Piling-up&#160;lemma</a> | <a href="/wiki/Weak_key.html" title="Weak key">Weak&#160;key</a></small></td>
+</tr>
+</table>
+</center>
+<p><br clear="all" /></p>
+<center>
+<table class="toccolours">
+<tr>
+<td style="background:#ccccff" align="center">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="100%" align="center"><b><a href="/wiki/Public-key_cryptography.html" title="Public-key cryptography">Public-key cryptography</a></b></td>
+<td><small class="editlink noprint plainlinksneverexpand"><a  class="external text" title="http://en.wikipedia.org/w/index.php?title=Template:Public-key_cryptography&amp;action=edit">edit</a></small></td>
+<td>&#160;&#160;</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align="center"><small><b>Algorithms:</b> <a href="/wiki/Cramer-Shoup_system.html" title="Cramer-Shoup system">Cramer-Shoup</a> | <a href="/wiki/Diffie-Hellman_key_exchange.html" title="Diffie-Hellman key exchange">DH</a> | <a href="/wiki/Digital_Signature_Algorithm.html" title="Digital Signature Algorithm">DSA</a> | <a href="/wiki/Elliptic_Curve_Diffie-Hellman.html" title="Elliptic Curve Diffie-Hellman">ECDH</a> | <a href="/wiki/Elliptic_Curve_DSA.html" title="Elliptic Curve DSA">ECDSA</a> | <a href="/wiki/Encrypted_key_exchange.html" title="Encrypted key exchange">EKE</a> | <a href="/wiki/ElGamal_encryption.html" title="ElGamal encryption">ElGamal</a> | <a href="/wiki/GMR_%28cryptography%29.html" title="GMR (cryptography)">GMR</a> | <a href="/wiki/MQV.html" title="MQV">MQV</a> | <a href="/wiki/NTRUEncrypt.html" title="NTRUEncrypt">NTRUEncrypt</a> | <a href="/wiki/NTRUSign.html" title="NTRUSign">NTRUSign</a> | <a href="/wiki/Paillier_cryptosystem.html" title="Paillier cryptosystem">Paillier</a> | <a href="/wiki/Rabin_cryptosystem.html" title="Rabin cryptosystem">Rabin</a> | <a href="/wiki/Rabin-Williams_encryption.html" title="Rabin-Williams encryption">Rabin-Williams</a> | <a href="/wiki/RSA.html" title="RSA">RSA</a> | <a href="/wiki/Schnorr_signature.html" title="Schnorr signature">Schnorr</a> | <a href="/wiki/SPEKE_%28cryptography%29.html" title="SPEKE (cryptography)">SPEKE</a> | <a href="/wiki/Secure_remote_password_protocol.html" title="Secure remote password protocol">SRP</a> | <a href="/wiki/XTR.html" title="XTR">XTR</a></small></td>
+</tr>
+<tr>
+<td align="center"><small><b>Theory:</b> <a href="/wiki/Discrete_logarithm.html" title="Discrete logarithm">Discrete logarithm</a> | <a href="/wiki/Elliptic_curve_cryptography.html" title="Elliptic curve cryptography">Elliptic curve cryptography</a> | <a href="/wiki/RSA_problem.html" title="RSA problem">RSA problem</a></small></td>
+</tr>
+<tr>
+<td align="center"><small><b>Standardization:</b> <a  class="new" title="ANS X9F1">ANS X9F1</a> | <a href="/wiki/CRYPTREC.html" title="CRYPTREC">CRYPTREC</a> | <a href="/wiki/IEEE_P1363.html" title="IEEE P1363">IEEE P1363</a> | <a href="/wiki/NESSIE.html" title="NESSIE">NESSIE</a> | <a href="/wiki/NSA_Suite_B.html" title="NSA Suite B">NSA Suite B</a> &#160; <b>Misc:</b> <a href="/wiki/Digital_signature.html" title="Digital signature">Digital signature</a> | <a href="/wiki/Public_key_infrastructure.html" title="Public key infrastructure">PKI</a> | <a href="/wiki/Web_of_trust.html" title="Web of trust">Web of trust</a> | <a href="/wiki/Key_size.html" title="Key size">Key size</a></small></td>
+</tr>
+</table>
+</center>
+
+<!-- 
+Pre-expand include size: 7994 bytes
+Post-expand include size: 7041 bytes
+Template argument size: 284 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:10294-0!1!0!default!!en!2 and timestamp 20060910161458 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:Cryptography">Cryptography</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Encryption.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-da"><a >Dansk</a></li>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-et"><a >Eesti</a></li>
+				<li class="interwiki-eo"><a >Esperanto</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-id"><a >Bahasa Indonesia</a></li>
+				<li class="interwiki-is"><a >Íslenska</a></li>
+				<li class="interwiki-ms"><a >Bahasa Melayu</a></li>
+				<li class="interwiki-nl"><a >Nederlands</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+				<li class="interwiki-simple"><a >Simple English</a></li>
+				<li class="interwiki-sv"><a >Svenska</a></li>
+				<li class="interwiki-th"><a >ไทย</a></li>
+				<li class="interwiki-vi"><a >Tiếng Việt</a></li>
+				<li class="interwiki-uk"><a >Українська</a></li>
+				<li class="interwiki-zh"><a >中文</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 21:14, 9 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv85 in 0.235 secs. --></body></html>

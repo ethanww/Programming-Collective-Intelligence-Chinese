@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Out-of-order execution,1970s,1980s,1985,1990s,AMD,AMD K5,CDC 6600,Cache memory,Computer architecture,Computer engineering" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Out-of-order execution - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Out-of-order_execution";
+			var wgTitle = "Out-of-order execution";
+			var wgArticleId = 1002307;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Out-of-order execution</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>In <a href="/wiki/Computer_engineering.html" title="Computer engineering">computer engineering</a>, <b>out-of-order execution</b>, <b>OoOE</b>, is a paradigm used in most high-speed <a href="/wiki/Microprocessor.html" title="Microprocessor">microprocessors</a> in order to make use of cycles that would otherwise be wasted by a certain type of costly delay. Most modern CPU designs include support for out of order execution.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">History</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Basic concept</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">2.1</span> <span class="toctext">In-order processors</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.2</span> <span class="toctext">Out-of-order processors</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Dispatch and issue decoupling allows out-of-order issue</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Execute and writeback decoupling allows program restart</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Micro-architectural choices</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: History">edit</a>]</div>
+<p><a name="History" id="History"></a></p>
+<h2>History</h2>
+<p>Out-of-order execution is a restricted form of <a href="/wiki/Data_flow.html" title="Data flow">data flow</a> computation, which was a major research area in <a href="/wiki/Computer_architecture.html" title="Computer architecture">computer architecture</a> in the <a href="/wiki/1970s.html" title="1970s">1970s</a> and early <a href="/wiki/1980s.html" title="1980s">1980s</a>. Important academic research in this subject was led by <a href="/wiki/Yale_Patt.html" title="Yale Patt">Yale Patt</a> and his <a  class="new" title="HPSm">HPSm</a> simulator. A paper by <a  class="new" title="James E. Smith">James E. Smith</a> and A.R. Pleszkun, published in <a href="/wiki/1985.html" title="1985">1985</a> completed the scheme by describing how the precise behavior of exceptions could be maintained in out-of-order machines.</p>
+<p>The first machine to use out-of-order execution was probably the <a href="/wiki/CDC_6600.html" title="CDC 6600">CDC 6600</a> (1964) which used a scoreboard to resolve conflicts. About three years later the IBM 360/91 (1966) introduced <a href="/wiki/Tomasulo_algorithm.html" title="Tomasulo algorithm">Tomasulos algorithm</a>. IBM also introduced the first out-of-order <a href="/wiki/Microprocessor.html" title="Microprocessor">microprocessor</a>, the <a href="/wiki/IBM_POWER.html" title="IBM POWER">POWER1</a> (1990) for its <a href="/wiki/RS/6000.html" title="RS/6000">RS/6000</a>. It was the release of the <a href="/wiki/Intel.html" title="Intel">Intel</a> <a href="/wiki/Pentium_Pro.html" title="Pentium Pro">Pentium Pro</a> (1995) which brought the technology to the mainstream. Most other vendors also started to produce OoO designs: <a href="/wiki/IBM.html" title="IBM">IBM</a>/<a href="/wiki/Motorola.html" title="Motorola">Motorola</a> <a href="/wiki/PowerPC.html" title="PowerPC">PowerPC</a> 601 (1992/1993), the <a href="/wiki/Fujitsu.html" title="Fujitsu">Fujitsu</a>/HAL Sparc64 I (1995), the <a href="/wiki/Hewlett_Packard.html" title="Hewlett Packard">HP</a> <a href="/wiki/HP-PA.html" title="HP-PA">PA-8000</a> (1996), the <a href="/wiki/MIPS_architecture.html" title="MIPS architecture">MIPS R-10000</a> (1996), the <a href="/wiki/AMD.html" title="AMD">AMD</a> <a href="/wiki/AMD_K5.html" title="AMD K5">K5</a> (1996), and the <a href="/wiki/DEC_Alpha.html" title="DEC Alpha">DEC Alpha</a> 21264 (1998). Notable exceptions to this trend are <a href="/wiki/Sun_Microsystems.html" title="Sun Microsystems">Sun's</a> <a href="/wiki/SPARC.html" title="SPARC">UltraSparc</a>, <a href="/wiki/Hewlett_Packard.html" title="Hewlett Packard">HP</a>/<a href="/wiki/Intel.html" title="Intel">Intel's</a> <a href="/wiki/Itanium.html" title="Itanium">Itanium</a>, and <a href="/wiki/Transmeta.html" title="Transmeta">Transmeta's</a> <a href="/wiki/Crusoe.html" title="Crusoe">Crusoe</a>.</p>
+<p>The logical complexity of the out-of-order schemes was the reason that this technique did not reach mainstream machines until the mid-<a href="/wiki/1990s.html" title="1990s">1990s</a>. Many low-end processors meant for cost-sensitive markets still do not use this paradigm due to large silicon area that is required to build this class of machine.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Basic concept">edit</a>]</div>
+<p><a name="Basic_concept" id="Basic_concept"></a></p>
+<h2>Basic concept</h2>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: In-order processors">edit</a>]</div>
+<p><a name="In-order_processors" id="In-order_processors"></a></p>
+<h3>In-order processors</h3>
+<p>In earlier processors, the processing of instructions is normally done in these steps:</p>
+<ol>
+<li><a href="/wiki/Instruction_%28computer_science%29.html" title="Instruction (computer science)">Instruction</a> <a href="/wiki/Fetch.html" title="Fetch">fetch</a>.</li>
+<li>If input <a href="/wiki/Operand.html" title="Operand">operands</a> are available (in registers for instance), the instruction is dispatched to the appropriate <a href="/wiki/Functional_unit.html" title="Functional unit">functional unit</a>. If one or more operands is unavailable during the current clock cycle (generally because they are being fetched from <a  class="new" title="Memory (computer science)">memory</a>), however, the processor stalls until they are available.</li>
+<li>The instruction is executed by the appropriate functional unit.</li>
+<li>The functional unit writes the results back to the <a href="/wiki/Register_file.html" title="Register file">register file</a>.</li>
+</ol>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Out-of-order processors">edit</a>]</div>
+<p><a name="Out-of-order_processors" id="Out-of-order_processors"></a></p>
+<h3>Out-of-order processors</h3>
+<p>This new paradigm breaks up the processing of instructions into these steps:</p>
+<ol>
+<li>Instruction fetch.</li>
+<li>Instruction dispatch to an instruction queue (also called instruction buffer or <a href="/wiki/Reservation_stations.html" title="Reservation stations">reservation stations</a>).</li>
+<li>The instruction waits in the queue until its input operands are available. The instruction is then allowed to leave the queue before earlier, older instructions.</li>
+<li>The instruction is issued to the appropriate functional unit and executed by that unit.</li>
+<li>The results are queued.</li>
+<li>When all older results have been written back to the register file, then this result is written back to the register file. This is called the graduation or retire stage.</li>
+</ol>
+<p>The key concept of OoO processing is to allow the processor to avoid a class of stalls that occur when the data needed to perform an operation is not available. In the outline above, the OoO processor avoids the stall that occurs in step (2) of the in-order processor when the instruction is not completely ready to be processed due to missing data.</p>
+<p>OoO processors fill these "slots" in time with other instructions that <i>are</i> ready, then re-order the results at the end to make it appear that the instructions were processed as normal. The way the instructions are ordered in the original computer code is known as <i>program order</i>, in the processor they are handled in <i>data order</i>, the order in which the data, operands, become available in the processor's registers. Fairly complex circuitry is needed to convert from one ordering to the other and maintain a logical ordering of the output; the processor itself runs the instructions in seemingly random order.</p>
+<p>The benefit of OoO processing grows as the <a href="/wiki/Instruction_pipeline.html" title="Instruction pipeline">instruction pipeline</a> deepens and the speed difference between <a href="/wiki/Main_memory.html" title="Main memory">main memory</a> (or <a href="/wiki/Cache_memory.html" title="Cache memory">cache memory</a>) and the processor widens. For instance, on modern machines the processor runs many times faster than memory, so waiting for data to arrive over the bus is extremely costly.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Dispatch and issue decoupling allows out-of-order issue">edit</a>]</div>
+<p><a name="Dispatch_and_issue_decoupling_allows_out-of-order_issue" id="Dispatch_and_issue_decoupling_allows_out-of-order_issue"></a></p>
+<h2>Dispatch and issue decoupling allows out-of-order issue</h2>
+<p>One of the differences created by the new paradigm is the creation of queues which allows the dispatch step to be decoupled from the issue step and the graduation stage to be decoupled from the execute stage. An early name for the paradigm was <i><a href="/wiki/Decoupled_architecture.html" title="Decoupled architecture">decoupled architecture</a></i>. In the earlier <i>in-order</i> processors, these stages operated in a fairly lock-step, pipelined fashion.</p>
+<p>To avoid false operand dependencies, which would decrease the frequency when instructions could be issued out of order, a technique called <a href="/wiki/Register_renaming.html" title="Register renaming">register renaming</a> is used. In this scheme, there are more physical registers than defined by the architecture. The physical registers are tagged so that multiple versions of the same architectural register can exist at the same time.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Execute and writeback decoupling allows program restart">edit</a>]</div>
+<p><a name="Execute_and_writeback_decoupling_allows_program_restart" id="Execute_and_writeback_decoupling_allows_program_restart"></a></p>
+<h2>Execute and writeback decoupling allows program restart</h2>
+<p>The queue for results is necessary to resolve issues as branch mispredictions and exceptions/traps. The results queue allows programs to be restarted after an exception, which requires the instructions to be completed in program order. The queue allows results to be discarded due to mispredictions on older branch instructions and exceptions taken on older instructions.</p>
+<p>The ability to issue instructions past branches which have yet to resolve is known as <a href="/wiki/Speculative_execution.html" title="Speculative execution">speculative execution</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Micro-architectural choices">edit</a>]</div>
+<p><a name="Micro-architectural_choices" id="Micro-architectural_choices"></a></p>
+<h2>Micro-architectural choices</h2>
+<ul>
+<li>Are the instructions dispatched to a centralized queue or to multiple distributed queues?</li>
+</ul>
+<dl>
+<dd><a href="/wiki/IBM.html" title="IBM">IBM</a> <a href="/wiki/PowerPC.html" title="PowerPC">PowerPC</a> processors use queues which are distributed among the different functional units while most other Out-of-Order processors use a centralized queue. IBM uses the term <i>reservation stations</i> for their distributed queues.</dd>
+</dl>
+<ul>
+<li>Is there an actual results queue or are the results written directly into a register file? For the latter, the queueing function is handled by register maps which hold the register renaming information for each instruction in flight.</li>
+</ul>
+<dl>
+<dd>Early Intel out-of-order processors use a results queue called a <i>Re-order Buffer</i>, while most later Out-of-Order processors use register maps.</dd>
+</dl>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:1002307-0!1!0!default!!en!2 and timestamp 20060906022843 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:Instruction processing">Instruction processing</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Out-of-order_execution.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 19:51, 27 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv68 in 0.087 secs. --></body></html>

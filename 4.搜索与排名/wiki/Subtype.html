@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Subtype,Bertrand Meyer,C++,Computer program,Computer science,Covariance and contravariance (computer science),Datatype,Derived type,Eiffel programming language,Inference rule,Inheritance (computer science)" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Subtype - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Subtype";
+			var wgTitle = "Subtype";
+			var wgArticleId = 213508;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Subtype</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>In <a href="/wiki/Computer_science.html" title="Computer science">computer science</a>, a <b>subtype</b> is a <a href="/wiki/Datatype.html" title="Datatype">datatype</a> that is generally related to another datatype (the <b>supertype</b>) by some notion of <i><a href="/wiki/Substitutability.html" title="Substitutability">substitutability</a></i>, meaning that <a href="/wiki/Computer_program.html" title="Computer program">computer programs</a> written to operate on elements of the supertype can also operate on elements of the subtype. More specifically, the supertype-subtype relation is often taken to be the one defined by the <a href="/wiki/Liskov_substitution_principle.html" title="Liskov substitution principle">Liskov substitution principle</a>; however, any given <a href="/wiki/Programming_language.html" title="Programming language">programming language</a> may define its own notion of subtyping, or none at all.</p>
+<p>For example, in most class-based <a href="/wiki/Object-oriented_programming_language.html" title="Object-oriented programming language">object-oriented</a> languages, <a href="/wiki/Subclass_%28computer_science%29.html" title="Subclass (computer science)">subclasses</a> give rise to subtypes: if <i>A</i> is a subclass of <i>B</i>, then an instance of class <i>A</i> may be used in any context where an instance of type <i>B</i> is expected; thus we say <i>A</i> is a subtype of <i>B</i>. A consequence of this is that any variable or parameter declared as having type <i>B</i> might, at run time, hold a value of class <i>A</i>; in this situation many object-oriented programmers would say that <i>B</i> is the variable's <i>static type</i> and <i>A</i> is its <i>dynamic type</i>. Exceptions to this rule include <a  class="new" title="Private inheritance">private inheritance</a> in <a href="/wiki/C%2B%2B.html" title="C++">C++</a> (which does not create subtypes), and certain operations on derived types in <a href="/wiki/Eiffel_programming_language.html" title="Eiffel programming language">Eiffel</a>, wherein features inherited from a base class can be removed or modified in a way which violates the subtyping rule.</p>
+<p>As another example, a language might allow integer values to be used wherever floating-point values are expected, or it might define a type <tt>number</tt> containing both the integers and the reals. In the first instance, the integer type would be a subtype of the floating-point type; in the second, those two types might be unrelated to each other by subtyping but both would be subtypes of <tt>number</tt>.</p>
+<p>Programmers may take advantage of subtyping to write code in a more abstract manner than would be possible without it. Consider the following example:</p>
+<pre>
+function max (x as number, y as number) is
+  if x &lt; y then
+    return y
+  else
+    return x
+end
+</pre>
+<p>If integer and real are both subtypes of <code>number</code>, then values of either type can be passed to this function. Because of this, subtyping is often considered a form of <a href="/wiki/Polymorphism_%28computer_science%29.html" title="Polymorphism (computer science)">polymorphism</a>.</p>
+<p>In <a href="/wiki/Type_theory.html" title="Type theory">type theory</a>, the subtype relation is often written <tt>&lt;:</tt>, so that <i>A</i><tt>&lt;:</tt><i>B</i> means that <i>A</i> is a subtype of <i>B</i>. Subtyping in type theory is characterized by the fact that any expression of type <i>A</i> may also be given type <i>B</i> if <i>A</i><tt>&lt;:</tt><i>B</i>; the formal <a href="/wiki/Inference_rule.html" title="Inference rule">typing rule</a> that codifies this is known as the <i>subsumption</i> rule.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Subtyping schemes">edit</a>]</div>
+<p><a name="Subtyping_schemes" id="Subtyping_schemes"></a></p>
+<h2>Subtyping schemes</h2>
+<p>Type theorists make an important distinction between <b><a href="/wiki/Nominative_type_system.html" title="Nominative type system">nominal subtyping</a></b>, in which only types declared in a certain way may be subtypes of each other, and <b><a href="/wiki/Structural_type_system.html" title="Structural type system">structural subtyping</a></b>, in which the structure of two types determines whether or not one is a subtype of the other. The class-based object-oriented subtyping described above is nominal; a structural subtyping rule for an object-oriented language might say that if objects of type <i>A</i> can handle all of the messages that objects of type <i>B</i> can handle (that is, if they define all the same <a href="/wiki/Method_%28computer_science%29.html" title="Method (computer science)">methods</a>), then <i>A</i> is a subtype of <i>B</i> regardless of whether either <a href="/wiki/Inheritance_%28computer_science%29.html" title="Inheritance (computer science)">inherits</a> from the other. Sound structural subtyping rules for types other than object types are also well known.</p>
+<p>Implementations of programming languages with subtyping fall into two general classes: <i>inclusive</i> implementations, in which the representation of any value of type <i>A</i> also represents the same value at type <i>B</i> if <i>A</i><tt>&lt;:</tt><i>B</i>, and <i>coercive</i> implementations, in which a value of type <i>A</i> can be <i>automatically converted</i> into one of type <i>B</i>. The subtyping induced by subclassing in an object-oriented language is usually inclusive; subtyping relations that relate integers and floating-point numbers, which are represented differently, are usually coercive.</p>
+<p>In almost all type systems that define a subtyping relation, it is reflexive (meaning <i>A</i><tt>&lt;:</tt><i>A</i> for any type <i>A</i>) and transitive (meaning that if <i>A</i><tt>&lt;:</tt><i>B</i> and <i>B</i><tt>&lt;:</tt><i>C</i> then <i>A</i><tt>&lt;:</tt><i>C</i>). This makes it a <a href="/wiki/Preorder.html" title="Preorder">preorder</a> on types.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<div class="infobox sisterproject">
+<div style="float: left;">
+<div class="floatnone"><span><a  class="image" title="Wikibooks"><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Wikibooks-logo-en.svg/50px-Wikibooks-logo-en.svg.png" alt="Wikibooks" width="50" height="57" longdesc="/wiki/Image:Wikibooks-logo-en.svg" /></a></span></div>
+</div>
+<div style="margin-left: 60px;"><a  class="extiw" title="wikibooks:Ada_Programming">Wikibooks Ada Programming</a> has more about this subject:
+<div style="margin-left:10px;"><i><b><a  class="extiw" title="wikibooks:Ada_Programming/Subtypes">Subtypes</a></b></i></div>
+</div>
+</div>
+<ul>
+<li>A <a href="/wiki/Derived_type.html" title="Derived type">derived type</a> is a <a href="/wiki/Type.html" title="Type">type</a> given a new type but structurally the same as the original type. It may or may not be a subtype depending on the type system.</li>
+<li>Contravariance in <a href="/wiki/Covariance_and_contravariance_%28computer_science%29.html" title="Covariance and contravariance (computer science)">Covariance and contravariance (computer science)</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><i>Object-Oriented Software Construction</i> by <a href="/wiki/Bertrand_Meyer.html" title="Bertrand Meyer">Bertrand Meyer</a></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:213508-0!1!0!default!!en!2 and timestamp 20060906010127 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Data types">Data types</a></span> | <span dir='ltr'><a  title="Category:Type theory">Type theory</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Subtype.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-it"><a >Italiano</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 07:48, 5 April 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv107 in 0.076 secs. --></body></html>

@@ -1,0 +1,427 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Exclusive disjunction,Addition,Affirming a disjunct,Algorithmic efficiency,Ampheck,Associative,Boolean-valued function,Boolean algebra,Boolean algebra topics,Boolean domain,Boolean function" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Exclusive disjunction - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Exclusive_disjunction";
+			var wgTitle = "Exclusive disjunction";
+			var wgArticleId = 105979;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Exclusive disjunction</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<dl>
+<dd>
+<div class="dablink"><i>"XOR" redirects here. For other uses, see <a href="/wiki/XOR_%28disambiguation%29.html" title="XOR (disambiguation)">XOR (disambiguation)</a>.</i></div>
+</dd>
+<dd><span class="dablink"><i>For the corresponding concept in <a href="/wiki/Combinational_logic.html" title="Combinational logic">combinational logic</a>, see <a href="/wiki/XOR_gate.html" title="XOR gate">XOR gate</a>.</i></span></dd>
+</dl>
+<p><b>Exclusive disjunction</b>, also known as <b>exclusive or</b> and symbolized by <b>XOR</b> or <b>EOR</b>, is a <a href="/wiki/Logical_operation.html" title="Logical operation">logical operation</a> on two operands that results in a <a href="/wiki/Logical_value.html" title="Logical value">logical value</a> of <i>true</i> if and only if one of the operands, but not both, has a value of <i>true</i>.</p>
+<div class="thumb tright">
+<div style="width:116px;"><a  class="internal" title="XOR Logic Gate"><img src="http://upload.wikimedia.org/wikipedia/en/e/e0/XOR.jpg" alt="XOR Logic Gate" width="114" height="41" longdesc="/wiki/Image:XOR.jpg" /></a>
+<div class="thumbcaption">
+<div class="magnify" style="float:right"><a  class="internal" title="Enlarge"><img src="/skins-1.5/common/images/magnify-clip.png" width="15" height="11" alt="Enlarge" /></a></div>
+XOR <a href="/wiki/Logic_Gate.html" title="Logic Gate">Logic Gate</a></div>
+</div>
+</div>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Definition</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Alternative symbols</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Equivalent expressions</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Associativity and commutativity</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Properties</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">Bitwise operation</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">Computer science</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">8</span> <span class="toctext">See also</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">8.1</span> <span class="toctext">Logical operators</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">8.2</span> <span class="toctext">Related topics</span></a></li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Definition">edit</a>]</div>
+<p><a name="Definition" id="Definition"></a></p>
+<h2>Definition</h2>
+<p>In many natural languages, <a href="/wiki/English_language.html" title="English language">English</a> included, the interpretation of the word "or" requires a certain amount of care. The <b>exclusive disjunction</b> of a pair of propositions, (<i>p</i>, <i>q</i>), means that <i>p</i> is true or <i>q</i> is true, but not both. For example, the normal intention of a statement like "You can follow the rules or be disqualified" is to stipulate that exactly one of the conditions can be true. In logic, however, the default meaning of the word "or" is the <i><a href="/wiki/Logical_disjunction.html" title="Logical disjunction">inclusive disjunction</a></i>, which signifies that at least one of the alternatives is true. Other languages, such as <a href="/wiki/Latin.html" title="Latin">Latin</a>, may have different words for these different types of "or".</p>
+<p><b>Exclusive disjunction</b> is an <a href="/wiki/Logical_operation.html" title="Logical operation">operation</a> on two <a href="/wiki/Logical_value.html" title="Logical value">logical values</a>, typically the values of two <a href="/wiki/Proposition.html" title="Proposition">propositions</a>, that produces a value of <i>true</i> just in case exactly one of its operands is true.</p>
+<p>The <a href="/wiki/Truth_table.html" title="Truth table">truth table</a> of <b>p XOR q</b> (also written as <b>p + q</b>, <b>p ⊕ q</b>, or <b>p ≠ q</b>) is as follows:</p>
+<table align="center" border="1" cellpadding="8" cellspacing="0" style="background:lightcyan; font-weight:bold; text-align:center; width:45%">
+<caption><b>Exclusive Disjunction</b></caption>
+<tr style="background:paleturquoise">
+<th style="width:15%">p</th>
+<th style="width:15%">q</th>
+<th style="width:15%">p XOR q</th>
+</tr>
+<tr>
+<td>F</td>
+<td>F</td>
+<td>F</td>
+</tr>
+<tr>
+<td>F</td>
+<td>T</td>
+<td>T</td>
+</tr>
+<tr>
+<td>T</td>
+<td>F</td>
+<td>T</td>
+</tr>
+<tr>
+<td>T</td>
+<td>T</td>
+<td>F</td>
+</tr>
+</table>
+<p><br /></p>
+<p>The following equivalents can then be deduced:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/a/7/f/a7f5e5231d98ec2c6ca2471b7787c92d.png" alt="\begin{matrix} p + q &amp; = &amp; (p \land \lnot q) &amp; \lor &amp; (\lnot p \land q) \\ \\       &amp; = &amp; (p \lor q) &amp; \land &amp; (\lnot p \lor \lnot q) \\ \\       &amp; = &amp; (p \lor q) &amp; \land &amp; \lnot (p \land q) \end{matrix}" /></dd>
+</dl>
+<p><b>Generalized</b> or <b>n-ary</b> XOR is true when the number of 1-bits is odd.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Alternative symbols">edit</a>]</div>
+<p><a name="Alternative_symbols" id="Alternative_symbols"></a></p>
+<h2>Alternative symbols</h2>
+<p>The symbol used for exclusive disjunction varies from one field of application to the next, and even depends on the properties being emphaisized in a given context of discussion. In addition to the abbreviation "XOR", any of the following symbols may also be seen:</p>
+<ul>
+<li>A plus sign (+). This makes sense mathematically because exclusive disjunction corresponds to <a href="/wiki/Addition.html" title="Addition">addition</a> <a href="/wiki/Modular_arithmetic.html" title="Modular arithmetic">modulo</a> 2, which has the following addition table, clearly <a href="/wiki/Isomorphism.html" title="Isomorphism">isomorphic</a> to the one above:</li>
+</ul>
+<table align="center" border="1" cellpadding="8" cellspacing="0" style="background:lightcyan; font-weight:bold; text-align:center; width:45%">
+<caption><b>Addition Modulo 2</b></caption>
+<tr style="background:paleturquoise">
+<th style="width:15%">p</th>
+<th style="width:15%">q</th>
+<th style="width:15%">p + q</th>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</table>
+<p><br /></p>
+<ul>
+<li>The use of the plus sign has the added advantage that all of the ordinary algebraic properties of mathematical <a href="/wiki/Ring_%28mathematics%29.html" title="Ring (mathematics)">rings</a> and <a href="/wiki/Field_%28mathematics%29.html" title="Field (mathematics)">fields</a> can be used without further ado.</li>
+<li>A plus sign that is modified in some way, such as being encircled (⊕). This usage faces the objection that this same symbol is already used in mathematics for the <i><a href="/wiki/Direct_sum.html" title="Direct sum">direct sum</a></i> of algebraic structures.</li>
+<li>An inclusive disjunction symbol (∨) that is modified in some way, such as being underlined (<u>∨</u>).</li>
+<li>In the <a href="/wiki/C_programming_language.html" title="C programming language">C programming language</a> and the <a href="/wiki/Java_programming_language.html" title="Java programming language">Java programming language</a>, a caret (^) is used to denote both the ordinary XOR and the bitwise XOR operator. This is not used outside of programming contexts because it is too easily confused with other uses of the caret.</li>
+<li>The symbol <a  class="image" title="Image:xor.png"><img src="http://upload.wikimedia.org/wikipedia/commons/7/76/Xor.png" alt="Image:xor.png" width="24" height="11" longdesc="/wiki/Image:Xor.png" /></a>.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Equivalent expressions">edit</a>]</div>
+<p><a name="Equivalent_expressions" id="Equivalent_expressions"></a></p>
+<h2>Equivalent expressions</h2>
+<p>The exclusive disjunction <img class='tex' src="http://upload.wikimedia.org/math/a/0/9/a0952409365512459bd4f2aeab580d05.png" alt="p + q\!" /> can be expressed in terms of the conjunction (∧), the disjunction (∨), and the negation (¬) as follows:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/a/8/f/a8f0afec24e93b4889a00ecc99d34018.png" alt="\begin{matrix} p + q &amp; = &amp; (p \land \lnot q) \lor (\lnot p \land q) \end{matrix}" /></dd>
+</dl>
+<p>The exclusive disjunction <img class='tex' src="http://upload.wikimedia.org/math/a/0/9/a0952409365512459bd4f2aeab580d05.png" alt="p + q\!" /> can also be expressed in the following way:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/f/7/1/f71d605d86f4876ed25fa23f56b432cc.png" alt="\begin{matrix} p + q &amp; = &amp; \lnot (p \land q) \land (p \lor q) \end{matrix}" /></dd>
+</dl>
+<p>This representation of XOR may be found useful when constructing a circuit or network, because it has only one ¬ operation and small number of ∧ and ∨ operations. The proof of this identity is given below:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/5/4/4/544dac218a85b0566281c3b3b5c7b252.png" alt="\begin{matrix} p + q &amp; = &amp; (p \land \lnot q) &amp; \lor &amp; (\lnot p \land q) \\ &amp; = &amp; ((p \land \lnot q) \lor \lnot p) &amp; \and &amp; ((p \land \lnot q) \lor q) \\ &amp; = &amp; ((p \lor \lnot q) \land (\lnot q \lor \lnot p)) &amp; \land &amp; ((p \lor q) \land (\lnot q \lor q)) \\ &amp; = &amp; (\lnot p \lor \lnot q) &amp; \land &amp; (p \lor q) \\ &amp; = &amp; \lnot (p \land q) &amp; \land &amp; (p \lor q) \end{matrix}" /></dd>
+</dl>
+<p>It is sometimes useful to write <i>p</i> XOR <i>q</i> in the following way:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/c/3/9/c39db7452d712f5b5d0e2cd123f5472a.png" alt="\begin{matrix} p + q &amp; = &amp; \lnot ((p \land q) \lor (\lnot p \land \lnot q)) \end{matrix}" /></dd>
+</dl>
+<p>This equivalence can be established by applying <a href="/wiki/De_Morgan%27s_laws.html" title="De Morgan's laws">De Morgan's laws</a> twice to the fourth line of the above proof.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Associativity and commutativity">edit</a>]</div>
+<p><a name="Associativity_and_commutativity" id="Associativity_and_commutativity"></a></p>
+<h2>Associativity and commutativity</h2>
+<p>In view of the <a href="/wiki/Isomorphism.html" title="Isomorphism">isomorphism</a> between addition modulo 2 and exclusive disjunction, it is clear that XOR is both an <a href="/wiki/Associative.html" title="Associative">associative</a> and a <a href="/wiki/Commutative.html" title="Commutative">commutative</a> operation. Thus parentheses may be omitted in successive operations and the order of terms makes no difference to the result. For example, we have the following equations:</p>
+<p><br /></p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/a/4/b/a4ba9d0a1f383f010fe702eca0c0208d.png" alt="\begin{matrix} p + q &amp; = &amp; q + p \\ \\ (p + q) + r &amp; = &amp; p + (q + r) &amp; = &amp; p + q + r \end{matrix}" /></dd>
+</dl>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Properties">edit</a>]</div>
+<p><a name="Properties" id="Properties"></a></p>
+<h2>Properties</h2>
+<p>This section uses the following symbols:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/d/6/e/d6e10cad9b5bbdaac63351dc26f6557c.png" alt="\begin{matrix} 0         &amp; = &amp; \mbox{false}     \\ 1         &amp; = &amp; \mbox{true}      \\ \lnot p   &amp; = &amp; \mbox{not}\ p    \\ p + q     &amp; = &amp; p\ \mbox{xor}\ q \\ p \land q &amp; = &amp; p\ \mbox{and}\ q \\ p \lor  q &amp; = &amp; p\ \mbox{or} \ q \end{matrix}" /></dd>
+</dl>
+<p>The following equations follow from logical axioms:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/7/9/5/7956081d7f8eab37c3598ee8d2e93cae.png" alt="\begin{matrix} p + 0       &amp; = &amp; p       \\ p + 1       &amp; = &amp; \lnot p \\ p + p       &amp; = &amp; 0       \\ p + \lnot p &amp; = &amp; 1       \\ \\ p + q         &amp; = &amp; q + p              \\ p + q + p     &amp; = &amp; q                  \\ p + (q + r)   &amp; = &amp; (p + q) + r        \\ p + q         &amp; = &amp; \lnot p + \lnot q  \\ \lnot (p + q) &amp; = &amp; \lnot p + q        &amp; = &amp; p + \lnot q \\ \\ p + (\lnot p \land q)      &amp; = &amp; p \lor  q       \\ p + (p \land \lnot q)      &amp; = &amp; p \land q       \\ p + (p \lor q)             &amp; = &amp; \lnot p \land q \\ \lnot p + (p \lor \lnot q) &amp; = &amp; p \lor q        \\ p \land (p + \lnot q)      &amp; = &amp; p \land q       \\ p \lor (p + q)             &amp; = &amp; p \lor q \end{matrix}" /></dd>
+</dl>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Bitwise operation">edit</a>]</div>
+<p><a name="Bitwise_operation" id="Bitwise_operation"></a></p>
+<h2>Bitwise operation</h2>
+<p>Exclusive disjunction is often used for bitwise operations. Examples:</p>
+<ul>
+<li>1 xor 1 = 0</li>
+<li>1 xor 0 = 1</li>
+<li>1110 xor 1001 = 0111 (this is equivalent to addition without <a href="/wiki/Carry.html" title="Carry">carry</a>)</li>
+</ul>
+<p>As noted above, since exclusive disjunction is identical to addition modulo 2, the bitwise exclusive disjunction of two <i>n</i>-bit strings is identical to the standard vector of addition in the <a href="/wiki/Vector_space.html" title="Vector space">vector space</a> <img class='tex' src="http://upload.wikimedia.org/math/3/4/6/3460f9c0077c178d13bbabc4cb8da325.png" alt="(\Z/2\Z)^n" />.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Computer science">edit</a>]</div>
+<p><a name="Computer_science" id="Computer_science"></a></p>
+<h2>Computer science</h2>
+<p>In computer science, exclusive disjunction has several uses:</p>
+<ul>
+<li>It tells whether two bits are unequal.</li>
+<li>It is an optional <a href="/wiki/Negation.html" title="Negation">bit-flipper</a> (the deciding input chooses whether to invert the data input).</li>
+<li>It tells whether there are an <a href="/wiki/Even_and_odd_numbers.html" title="Even and odd numbers">odd</a> number of 1&#160;bits (A ⊕ B ⊕ C ⊕ D ⊕ E is true <a href="/wiki/Iff.html" title="Iff">iff</a> an odd number of the variables are true).</li>
+</ul>
+<p>On some computer architectures, it is more <a href="/wiki/Algorithmic_efficiency.html" title="Algorithmic efficiency">efficient</a> to store a zero in a register by xor-ing the register with itself (bits xor-ed with themselves are always zero) instead of loading and storing the value zero. In simple threshold activated <a href="/wiki/Neural_network.html" title="Neural network">neural networks</a>, modelling the 'xor' function requires a second layer because 'xor' is not a linearly-separable function.</p>
+<p>Exclusive-or is sometimes used as a simple mixing function in <a href="/wiki/Cryptography.html" title="Cryptography">cryptography</a>, for example, with <a href="/wiki/One-time_pad.html" title="One-time pad">one-time pad</a> or <a href="/wiki/Feistel_network.html" title="Feistel network">Feistel network</a> systems.</p>
+<p>XOR is used in <a href="/wiki/Redundant_array_of_independent_disks.html" title="Redundant array of independent disks">RAID</a> 3–6 for creating parity information. For example, RAID can "back up" bytes <code>10011100</code> and <code>01101100</code> from two (or more) hard drives by XORing (<code>11110000</code>) and writing to an another drive. Under this method, if any one of the four hard drives are lost, the lost byte can be re-created by XORing bytes from the remaining drives. If the drive containing <code>01101100</code> is lost, <code>10011100</code> and <code>11110000</code> can be XORed to recover the lost byte.</p>
+<p>XOR is also used to detect an overflow in the result of a signed binary arithmetic operation. If the leftmost retained bit of the result is not the same as the infinite number of digits to the left, then that means overflow occurred. XORing those two bits will give a "one" if there is an overflow.</p>
+<p>XOR can be used to <a href="/wiki/XOR_swap.html" title="XOR swap">swap</a> two numeric variables in computers; however this is regarded as more of a curiosity and not encouraged in practice.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Logical operators">edit</a>]</div>
+<p><a name="Logical_operators" id="Logical_operators"></a></p>
+<h3>Logical operators</h3>
+<table cellspacing="0" cellpadding="0" class="" style="background-color: transparent; width: 100%">
+<tr>
+<td width="" align="left" valign="top" style="padding-left:;">
+<ul>
+<li><strong class="selflink">Exclusive disjunction</strong></li>
+<li><a href="/wiki/Logical_conjunction.html" title="Logical conjunction">Logical conjunction</a></li>
+<li><a href="/wiki/Logical_disjunction.html" title="Logical disjunction">Logical disjunction</a></li>
+<li><a href="/wiki/Logical_equality.html" title="Logical equality">Logical equality</a></li>
+</ul>
+</td>
+<td width="" align="left" valign="top" style="padding-left:;">
+<ul>
+<li><a href="/wiki/Material_conditional.html" title="Material conditional">Logical implication</a></li>
+<li><a href="/wiki/Logical_NAND.html" title="Logical NAND">Logical NAND</a></li>
+<li><a href="/wiki/Logical_NOR.html" title="Logical NOR">Logical NOR</a></li>
+<li><a href="/wiki/Negation.html" title="Negation">Negation</a></li>
+</ul>
+</td>
+</tr>
+</table>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Related topics">edit</a>]</div>
+<p><a name="Related_topics" id="Related_topics"></a></p>
+<h3>Related topics</h3>
+<table cellspacing="0" cellpadding="0" class="" style="background-color: transparent; width: 100%">
+<tr>
+<td width="" align="left" valign="top" style="padding-left:;">
+<ul>
+<li><a href="/wiki/Affirming_a_disjunct.html" title="Affirming a disjunct">Affirming a disjunct</a></li>
+<li><a href="/wiki/Ampheck.html" title="Ampheck">Ampheck</a></li>
+<li><a href="/wiki/Boolean_algebra.html" title="Boolean algebra">Boolean algebra</a></li>
+<li><a href="/wiki/Boolean_algebra_topics.html" title="Boolean algebra topics">Boolean algebra topics</a></li>
+<li><a href="/wiki/Boolean_domain.html" title="Boolean domain">Boolean domain</a></li>
+<li><a href="/wiki/Boolean_function.html" title="Boolean function">Boolean function</a></li>
+<li><a href="/wiki/Boolean_logic.html" title="Boolean logic">Boolean logic</a></li>
+<li><a href="/wiki/Boolean-valued_function.html" title="Boolean-valued function">Boolean-valued function</a></li>
+</ul>
+</td>
+<td width="" align="left" valign="top" style="padding-left:;">
+<ul>
+<li><a href="/wiki/Controlled_NOT_gate.html" title="Controlled NOT gate">Controlled NOT</a></li>
+<li><a href="/wiki/Disjunctive_syllogism.html" title="Disjunctive syllogism">Disjunctive syllogism</a></li>
+<li><a href="/wiki/First-order_logic.html" title="First-order logic">First-order logic</a></li>
+<li><a href="/wiki/Logical_graph.html" title="Logical graph">Logical graph</a></li>
+<li><a href="/wiki/Logical_value.html" title="Logical value">Logical value</a></li>
+<li><a href="/wiki/Minimal_negation_operator.html" title="Minimal negation operator">Minimal negation operator</a></li>
+<li><a href="/wiki/Multigrade_operator.html" title="Multigrade operator">Multigrade operator</a></li>
+<li><a href="/wiki/Operation_%28mathematics%29.html" title="Operation (mathematics)">Operation</a></li>
+</ul>
+</td>
+<td width="" align="left" valign="top" style="padding-left:;">
+<ul>
+<li><a href="/wiki/Operator.html" title="Operator">Operator</a></li>
+<li><a href="/wiki/Parametric_operator.html" title="Parametric operator">Parametric operator</a></li>
+<li><a href="/wiki/Parity_bit.html" title="Parity bit">Parity bit</a></li>
+<li><a href="/wiki/Propositional_logic.html" title="Propositional logic">Propositional logic</a></li>
+<li><a href="/wiki/Symmetric_difference.html" title="Symmetric difference">Symmetric difference</a></li>
+<li><a href="/wiki/XOR_linked_list.html" title="XOR linked list">XOR linked list</a></li>
+<li><a href="/wiki/XOR_swap_algorithm.html" title="XOR swap algorithm">XOR swap algorithm</a></li>
+<li><a href="/wiki/Zeroth_order_logic.html" title="Zeroth order logic">Zeroth order logic</a></li>
+</ul>
+</td>
+</tr>
+</table>
+
+<!-- 
+Pre-expand include size: 4863 bytes
+Post-expand include size: 778 bytes
+Template argument size: 172 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:105979-0!1!0!default!!en!2 and timestamp 20060910160149 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Logic">Logic</a></span> | <span dir='ltr'><a  title="Category:Binary operations">Binary operations</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Exclusive_disjunction.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-mk"><a >Македонски</a></li>
+				<li class="interwiki-nl"><a >Nederlands</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-no"><a >Norsk (bokmål)</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-fi"><a >Suomi</a></li>
+				<li class="interwiki-tr"><a >Türkçe</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 20:56, 4 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv57 in 0.111 secs. --></body></html>

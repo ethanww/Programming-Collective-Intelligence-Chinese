@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Virtual 8086 mode,80386,Computer,DOS,DPMI,Dosemu,IA-32,Linux,Long mode,Memory addressing,Memory protection" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Virtual 8086 mode - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Virtual_8086_mode";
+			var wgTitle = "Virtual 8086 mode";
+			var wgArticleId = 641324;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Virtual 8086 mode</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>In the <a href="/wiki/80386.html" title="80386">80386</a> and later, <b>Virtual 8086 mode</b>, also called virtual real mode (or VM86), allows the execution of <a href="/wiki/Real_mode.html" title="Real mode">real mode</a> applications that violate <a href="/wiki/Protected_mode#Compatibility_with_real_mode_applications.html" title="Protected mode">the rules</a> under the control of a <a href="/wiki/Protected_mode.html" title="Protected mode">protected mode</a> <a href="/wiki/Operating_system.html" title="Operating system">operating system</a>.</p>
+<p>It used the real mode way for segmentation, but used the 20-bit (actually 21-bit) address resulting from it as a linear address, so it is subject to <a href="/wiki/Paging.html" title="Paging">paging</a>.</p>
+<p>It is used to execute <a href="/wiki/DOS.html" title="DOS">DOS</a> programs in <a href="/wiki/Microsoft_Windows/386.html" title="Microsoft Windows/386">Microsoft Windows/386</a> and <a href="/wiki/Windows_3.x.html" title="Windows 3.x">Windows 3.x</a> and <a href="/wiki/Windows_9x.html" title="Windows 9x">Windows 9x</a> and <a href="/wiki/Windows_Me.html" title="Windows Me">Windows Me</a> and <a href="/wiki/OS/2.html" title="OS/2">OS/2</a> 2.x and later through <a href="/wiki/Virtual_DOS_machine.html" title="Virtual DOS machine">Virtual DOS machines</a>, in <a href="/wiki/SCO_UNIX.html" title="SCO UNIX">SCO UNIX</a> through <a href="/wiki/Merge_%28software%29.html" title="Merge (software)">Merge</a> and in <a href="/wiki/Linux.html" title="Linux">Linux</a> through <a href="/wiki/Dosemu.html" title="Dosemu">dosemu</a>.</p>
+<p>Protected mode DOS programs, either 16 or 32-bit, do not execute in virtual 8086 mode, but rather in user mode (as long as they are <a href="/wiki/DPMI.html" title="DPMI">DPMI</a> compatible), so the above emulators do actually more than just supporting the virtual 8086 mode.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Memory adressing">edit</a>]</div>
+<p><a name="Memory_adressing" id="Memory_adressing"></a></p>
+<h2>Memory adressing</h2>
+<p>The most common problem by running 8086 code from protected mode is <a href="/wiki/Memory_addressing.html" title="Memory addressing">memory addressing</a> which is totally different between <a href="/wiki/Protected_mode.html" title="Protected mode">protected mode</a> and <a href="/wiki/Real_mode.html" title="Real mode">real mode</a>. As mentioned, by working under VM86 mode the <a href="/wiki/Segmentation.html" title="Segmentation">segmentation</a> mechanism returns to work just like under real mode, but the <a href="/wiki/Paging.html" title="Paging">paging</a> mechanism is still active, and it is transparent to the real mode code, thus <a href="/wiki/Memory_protection.html" title="Memory protection">memory protection</a> is still applicable, and so is the isolation of the address space.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Interrupts">edit</a>]</div>
+<p><a name="Interrupts" id="Interrupts"></a></p>
+<h2>Interrupts</h2>
+<p>When interrupts (both hardware, software and iret instruction) occur the processor switches off the VM86 mode and returns to work in full protected mode to handle the interrupt. And before servicing the interrupt, the DS, ES, FS, and GS registers are pushed on the new stack and zeroed.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Real_mode.html" title="Real mode">Real mode</a> — <a href="/wiki/Unreal_mode.html" title="Unreal mode">Unreal mode</a> — <strong class="selflink">Virtual 8086 mode</strong> — <a href="/wiki/Protected_mode.html" title="Protected mode">Protected mode</a> — <a href="/wiki/Long_mode.html" title="Long mode">Long mode</a></li>
+<li><a href="/wiki/IA-32.html" title="IA-32">IA-32</a></li>
+<li><a href="/wiki/X86.html" title="X86">x86</a></li>
+<li><a href="/wiki/X86_assembly_language.html" title="X86 assembly language">x86 assembly language</a></li>
+</ul>
+<div class="boilerplate metadata" id="stub">
+<table cellpadding="0" cellspacing="0" style="background-color: transparent;">
+<tr>
+<td><a  class="image" title=" "><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Nuvola_apps_mycomputer.png/24px-Nuvola_apps_mycomputer.png" alt=" " width="24" height="24" longdesc="/wiki/Image:Nuvola_apps_mycomputer.png" /></a></td>
+<td><i>&#160;This <a href="/wiki/Computer.html" title="Computer">computer</a>-related article is a <a  title="Wikipedia:Stub">stub</a>. You can <a  title="Wikipedia:Stub">help</a> Wikipedia by <a  class="external text" title="http://en.wikipedia.org/w/index.php?title=Virtual_8086_mode&amp;action=edit">expanding it</a></i>.</td>
+</tr>
+</table>
+</div>
+<p><br /></p>
+<table class="messagebox standard-talk">
+<tr>
+<th rowspan="2" valign="top"></th>
+<th align="left">
+<p><a  class="image" title=""><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Note.svg/25px-Note.svg.png" alt="" width="25" height="25" longdesc="/wiki/Image:Note.svg" /></a> <big><a  title="Wikipedia:To-do list">To-do list</a> for <strong class="selflink">Virtual 8086 mode</strong>:</big></p>
+</th>
+<td align="right"><small><span class="plainlinks"><a  class="external text" title="http://en.wikipedia.org/w/index.php?title=Virtual_8086_mode/to_do&amp;action=edit">edit</a>&#160;- <a  class="external text" title="http://en.wikipedia.org/w/index.php?title=Virtual_8086_mode/to_do&amp;action=history">history</a>&#160;- <a  class="external text" title="http://en.wikipedia.org/w/index.php?title=Virtual_8086_mode/to_do&amp;action=watch">watch</a>&#160;- <a  class="external text" title="http://en.wikipedia.org/w/index.php?title=Virtual_8086_mode&amp;action=purge">refresh</a></span></small></td>
+</tr>
+<tr>
+<td colspan="2" valign="top" style="background:#FFEFDF; padding:5px; margin: 5px; border: 1px dotted black;">
+<p><a  class="new" title="Virtual 8086 mode/to do">Virtual 8086 mode/to do</a></p>
+</td>
+</tr>
+</table>
+
+<!-- 
+Pre-expand include size: 2893 bytes
+Post-expand include size: 1872 bytes
+Template argument size: 0 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:641324-0!1!0!default!!en!2 and timestamp 20060910164502 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Computer stubs">Computer stubs</a></span> | <span dir='ltr'><a  title="Category:X86 architecture">X86 architecture</a></span> | <span dir='ltr'><a  title="Category:Virtualization software">Virtualization software</a></span> | <span dir='ltr'><a  title="Category:To do">To do</a></span> | <span dir='ltr'><a  title="Category:To do, priority undefined">To do, priority undefined</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Virtual_8086_mode.html">Article</a></li>
+				 <li id="ca-talk" class="new"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-zh"><a >中文</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 01:55, 27 July 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv70 in 0.350 secs. --></body></html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Datalog,1978,Answer set programming,ConceptBase,DB2,Database,Deductive database,Function symbol,IBM DB2,Logic,Logic programming" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Datalog - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Datalog";
+			var wgTitle = "Datalog";
+			var wgArticleId = 968357;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Datalog</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p><b>Datalog</b> is a query and rule language for <a href="/wiki/Deductive_database.html" title="Deductive database">deductive databases</a> that syntactically is a subset of <a href="/wiki/Prolog.html" title="Prolog">Prolog</a>. Its origins date back to around <a href="/wiki/1978.html" title="1978">1978</a> when Hervé Gallaire and Jack Minker organized a workshop on <a href="/wiki/Logic.html" title="Logic">logic</a> and <a href="/wiki/Database.html" title="Database">databases</a>. The term Datalog was coined in the mid 1980's by a group of researchers interested in database theory.</p>
+<p>Query evaluation with Datalog is sound and complete and can be done efficiently even for large databases. Query evaluation is usually done using bottom up strategies. For restricted forms of datalog that don't allow any <a href="/wiki/Function_symbol.html" title="Function symbol">function symbols</a>, safety of query evaluation is guaranteed.</p>
+<p>In contrast to <a href="/wiki/Prolog.html" title="Prolog">Prolog</a>, it</p>
+<dl>
+<dd>
+<ol>
+<li>disallows complex terms as arguments of predicates, e.g. P(1, 2) is admissible but not P(f1(1), 2),</li>
+<li>imposes certain <a href="/wiki/Stratification_%28mathematics%29.html" title="Stratification (mathematics)">stratification</a> restrictions on the use of negation and recursion, and</li>
+<li>only allows range restricted variables, i.e. each variable in the conclusion of a rule must also appear in a not negated clause in the premise of this rule.</li>
+</ol>
+</dd>
+</dl>
+<p>Datalog was popular in academic database research but never succeeded in becoming part of a commercial database system. Advantages of Datalog over <a href="/wiki/SQL.html" title="SQL">SQL</a> such as the clean semantics or recursive queries were not sufficient. Modern database systems, however, include ideas and algorithms developed for Datalog: the SQL99 standard includes recursive queries and the Magic Sets algorithm initially developed for the faster evaluation of Datalog queries is implemented in IBMs <a href="/wiki/DB2.html" title="DB2">DB2</a>.</p>
+<p>Example Datalog program:</p>
+<pre>
+parent(bill,mary).
+parent(mary,john).
+ancestor(X,Y) :- ancestor(X,Z),ancestor(Z,Y).
+ancestor(X,Y) :- parent(X,Y).
+</pre>
+<p>The ordering of the clauses is irrelevant in Datalog in contrast to Prolog which depends on the ordering of clauses for computing the result of the query call.</p>
+<p>Extensions to Datalog were made to make it object-oriented, or to allow disjunctions as heads of clauses. Both extensions have major impacts on the definition of the semantics and the implementation of a corresponding Datalog interpreter.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Systems implementing Datalog">edit</a>]</div>
+<p><a name="Systems_implementing_Datalog" id="Systems_implementing_Datalog"></a></p>
+<h2>Systems implementing Datalog</h2>
+<p>Most implementations of Datalog stem from university projects. Here is a short list of a few systems that are either based on Datalog or are providing a Datalog interpreter:</p>
+<ul>
+<li><a  class="external text" title="http://bddbddb.sourceforge.net/">bddbddb</a>, an implementation of Datalog done at the Stanford University. It is mainly used to query Java bytecode including points-to analysis on large Java programs.</li>
+</ul>
+<ul>
+<li><a href="/wiki/ConceptBase.html" title="ConceptBase">ConceptBase</a>, a deductive and object-oriented database system based on a Datalog query evaluator. It is mainly used for conceptual modeling and meta-modeling.</li>
+</ul>
+<ul>
+<li><a  class="external text" title="http://www.fdi.ucm.es/profesor/fernan/DES/">DES</a>, an open-source implementation of Datalog to be used for teaching Datalog in courses.</li>
+</ul>
+<ul>
+<li><a  class="external text" title="http://www.dlvsystem.com">DLV</a>, is a a Logic Programming and Deductive Database system which implements <a  class="new" title="Disjunctive Datalog">Disjunctive Datalog</a>, using a disjunctive version of <a href="/wiki/Answer_set_programming.html" title="Answer set programming">Answer set programming</a> and adds many useful features also available in commercial database systems and query languages, such as aggregates, <a href="/wiki/ODBC.html" title="ODBC">ODBC</a> binding, etc.</li>
+</ul>
+<ul>
+<li><a  class="external text" title="http://xsb.sourceforge.net/">XSB</a>, is a Logic Programming and Deductive Database system for Unix and Windows.</li>
+</ul>
+<p>More implementations are listed at <a  class="external text" title="http://www.sigmod.org/sigmod/databaseSoftware/nonprofit/">ACM SIGMOD Database Software</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Logic_programming.html" title="Logic programming">Logic programming</a></li>
+<li><a href="/wiki/Answer_set_programming.html" title="Answer set programming">Answer set programming</a></li>
+<li><a href="/wiki/SWRL.html" title="SWRL">SWRL</a></li>
+</ul>
+<p><br /></p>
+<table style="background-color:#F6ED9D; border:2px solid grey; padding: .5em;">
+<tr>
+<td align="left" rowspan="3"><a  class="image" title=""><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Steps.svg/32px-Steps.svg.png" alt="" width="32" height="32" longdesc="/wiki/Image:Steps.svg" /></a></td>
+</tr>
+<tr>
+<td><b>Preceding:</b></td>
+<td><a href="/wiki/Prolog.html" title="Prolog">Prolog</a></td>
+</tr>
+<tr>
+<td><b>Subsequent:</b></td>
+<td><a href="/wiki/IBM_DB2.html" title="IBM DB2">IBM DB2</a></td>
+</tr>
+</table>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:968357-0!1!0!default!!en!2 and timestamp 20060910153030 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:Query languages">Query languages</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Datalog.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 11:22, 29 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv68 in 0.111 secs. --></body></html>

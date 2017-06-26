@@ -1,0 +1,385 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Inheritance semantics,Abstract type,Abstraction (computer science),Aggregation (object-oriented programming),Aspect-oriented programming,Aspect (computer science),Class (object-oriented programming),Code reuse,Composition (computer science),Computer science,Cross-cutting concern" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Inheritance semantics - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Inheritance_semantics";
+			var wgTitle = "Inheritance semantics";
+			var wgArticleId = 6065522;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Inheritance semantics</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<div class="messagebox" style="max-width: 43em;">
+<div style="float: left;"><a  class="image" title=" "><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Circle-question.svg/38px-Circle-question.svg.png" alt=" " width="38" height="38" longdesc="/wiki/Image:Circle-question.svg" /></a></div>
+<div style="margin-left: 60px;"><b>This article or section may contain <a  title="Wikipedia:No original research">original research</a> or <a  title="Wikipedia:Verifiability">unverified</a> claims.</b> Please help Wikipedia by adding references. See the <a  title="Talk:Inheritance semantics">talk page</a> for details.</div>
+</div>
+<p>In <a href="/wiki/Computer_science.html" title="Computer science">computer science</a>, <b>inheritance semantics</b> is the study and development of terminology describing the phenomena of <a href="/wiki/Inheritance_%28computer_science%29.html" title="Inheritance (computer science)">inheritance</a> in the context of <a href="/wiki/Object-oriented.html" title="Object-oriented">object-oriented</a> computing languages<sup title="The text in the vicinity of this tag needs citation." class="noprint">[<a  title="Wikipedia:Citing sources"><i>citation&#160;needed</i></a>]</sup>. The study and development of this branch of semantics is relevant to software patents and technical documentation<sup title="The text in the vicinity of this tag needs citation." class="noprint">[<a  title="Wikipedia:Citing sources"><i>citation&#160;needed</i></a>]</sup>. It is also relevant to articulating and enumerating the fundamental phenomena of object-oriented inheritance.</p>
+<p><br /></p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">General</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">1.1</span> <span class="toctext">Semantic scope</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.2</span> <span class="toctext">Functions Vs. Functionality</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">See also</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">2.1</span> <span class="toctext">Semantics</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.2</span> <span class="toctext">Fundamental Inheritance Concepts</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.3</span> <span class="toctext">Detailed Inheritance Concepts</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.4</span> <span class="toctext">Other Design Approaches</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.5</span> <span class="toctext">Inheritance Issues and Problems</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.6</span> <span class="toctext">Design Intentions in Inheritance</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.7</span> <span class="toctext">Functional Normalization</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.8</span> <span class="toctext">Logical Context of Inheritance Semantics</span></a></li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: General">edit</a>]</div>
+<p><a name="General" id="General"></a></p>
+<h2>General</h2>
+<p>It is necessary for the terminology of object-oriented (OO) computing to articulate the phenomena of <a href="/wiki/Inheritance_%28object-oriented_programming%29.html" title="Inheritance (object-oriented programming)">Inheritance</a> precisely<sup title="The text in the vicinity of this tag needs citation." class="noprint">[<a  title="Wikipedia:Citing sources"><i>citation&#160;needed</i></a>]</sup>. The terminology should reflect the <b>conceptual semantics</b> of the core computing phenomena rather than the <b>syntactic mechanisms</b> of any one object-oriented language.</p>
+<p>Ideally the conceptual semantics and syntax mechanisms of OO code elements are identical but this is not always the case<sup title="The text in the vicinity of this tag needs citation." class="noprint">[<a  title="Wikipedia:Citing sources"><i>citation&#160;needed</i></a>]</sup>. The rapid evolution of computer science has accelerated the <b>semantic evolution</b> of its <b>core terminology</b>.</p>
+<p>It has become a <b>common industry practice</b><sup title="The text in the vicinity of this tag needs citation." class="noprint">[<a  title="Wikipedia:Citing sources"><i>citation&#160;needed</i></a>]</sup>, therefore, to provide qualifiers and acronyms (if needed) for terms that vary in their conceptual meaning due to use in a specific context (generally a particular computer language syntax).</p>
+<p>In <a href="/wiki/Implementation_inheritance_%28object-oriented_programming%29.html" title="Implementation inheritance (object-oriented programming)">Implementation inheritance (II)</a>, for example, there is<sup title="The text in the vicinity of this tag needs citation." class="noprint">[<a  title="Wikipedia:Citing sources"><i>citation&#160;needed</i></a>]</sup></p>
+<ul>
+<li><a href="/wiki/Implementation_inheritance_%28object-oriented_programming%29#Single_.28SII.29_Vs._Multiple_Implementation_Inheritance_.28MII.29.html" title="Implementation inheritance (object-oriented programming)">MII</a> (Multiple Implementation Inheritance)</li>
+<li><a href="/wiki/Implementation_inheritance_%28object-oriented_programming%29#Single_.28SII.29_Vs._Multiple_Implementation_Inheritance_.28MII.29.html" title="Implementation inheritance (object-oriented programming)">SII</a> (Single Implementation Inheritance)</li>
+<li><a href="/wiki/Implementation_inheritance_%28object-oriented_programming%29#Single_.28SII.29_Vs._Multiple_Implementation_Inheritance_.28MII.29.html" title="Implementation inheritance (object-oriented programming)">MI</a> - SII plus Interfaces</li>
+</ul>
+<p>Note that MI (Multiple Inheritance) can technically include <a href="/wiki/Interface_%28computer_science%29.html" title="Interface (computer science)">Interfaces</a> as in C#. Thus the impetus to clarify the conceptual semantics of core terminology in the face of <b>industrial obsolescence</b>.</p>
+<p>A case in point (of precise articulation) in Virtual Inheritance is <a href="/wiki/Virtual_inheritance#General_Virtual_Inheritance_.28GVI.29.html" title="Virtual inheritance">General Virtual Inheritance (GVI)</a> as distinguished from <a href="/wiki/Virtual_inheritance#Simple_Virtual_Inheritance_.28SVI.29.html" title="Virtual inheritance">Simple Virtual Inheritance (SVI)</a>. The difference due to '<a href="/wiki/Virtual_inheritance#Use_Context.html" title="Virtual inheritance">use context</a>' in GVI and SVI is an important and fundamental distinction between <a href="/wiki/Abstract_type.html" title="Abstract type">abstract base classes</a> and <a href="/wiki/Interface_%28computer_science%29.html" title="Interface (computer science)">interfaces</a>. To equate interfaces with abstract base classes (GVI) is incorrect because interfaces (SVI) do not provide a <a href="/wiki/Virtual_inheritance#General_Virtual_Inheritance_.28GVI.29.html" title="Virtual inheritance">parental use context</a>.</p>
+<p>The articulation of 'use context' as fundamental to virtual inheritance is a good example of 'inheritance semantics'. The common industry practice of using 'acronym qualifiers' (as above) helps to ensure the meaning (the semantics) describing phenomena is clear.</p>
+<p>To better articulate the different phenomena of Inheritance the <b>conceptual semantic scope</b> of object-oriented language and <b>syntactic mechanisms</b> is briefly addressed below.</p>
+<p><br /></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Semantic scope">edit</a>]</div>
+<p><a name="Semantic_scope" id="Semantic_scope"></a></p>
+<h3>Semantic scope</h3>
+<p>When discussing any form of object-oriented (OO) inheritance it is important to distinguish the <b>syntactic mechanisms of a particular language syntax</b> from the language independent <b>conceptual semantics of</b> computing logic <b>phenomena</b> (i.e. the actual functionality).</p>
+<p>This allows discussion of future and hypothetical object-oriented computer languages as well as past and current languages in terms of inheritance phenomena such as <a href="/wiki/Virtual_inheritance.html" title="Virtual inheritance">Virtual Inheritance (VI)</a> and <a href="/wiki/Implementation_inheritance_%28object-oriented_programming%29.html" title="Implementation inheritance (object-oriented programming)">Implementation Inheritance (II)</a>.</p>
+<p>A <b>language independent</b> semantic scope allows the discussion of concepts of <b>common phenomena</b> across different computer languages and computing machines. Historically this process has NOT always been easy for the following reasons<sup title="The text in the vicinity of this tag needs citation." class="noprint">[<a  title="Wikipedia:Citing sources"><i>citation&#160;needed</i></a>]</sup>.</p>
+<dl>
+<dd><b>Syntax as concept</b>&#160;: A common confusion is to present the syntax mechanisms</dd>
+<dd>of a particular language as a general phenomena for all languages. Although</dd>
+<dd>this can often be done (x = 1 + 2) their are many exceptions. In such cases it</dd>
+<dd>is important to qualify the conceptual semantics of general computing phenomena</dd>
+<dd>(boolean logic) from the syntactic mechanisms of a particular language.</dd>
+</dl>
+<dl>
+<dd><b>Reversed Causality</b>&#160;: Another common confusion is the reversed casuality of</dd>
+<dd>design intention (human thought) and design implementation (binary code). This</dd>
+<dd>occurs when someone trys to present the syntactic mechanisms of an</dd>
+<dd>implementation (binary code) as the conceptual semantics of the original design</dd>
+<dd>intention (thus reversing causality).</dd>
+</dl>
+<p>Because of this confusion it is important to distinguish the language independent nature of inheritance phenomena from the syntactic mechanisms of any particular language.</p>
+<p>For example, in object-oriented Virtual Inheritance (VI), C# interfaces can not 'replace' the functionality of C++ abstract methods. C# <a href="/wiki/Interface_%28computer_science%29.html" title="Interface (computer science)">Interfaces</a> are not the same as C ++ abstract <a href="/wiki/Method_%28programming%29.html" title="Method (programming)">methods</a> because the <a href="/wiki/Virtual_inheritance#Use_Context.html" title="Virtual inheritance">use context</a> of the <a href="/wiki/Virtual_inheritance#Virtual_Code_Elements.html" title="Virtual inheritance">virtual code elements</a> are different. The <b>language independent concepts</b> of <b>virtual code elements</b> and <b>use context</b> allow the semantic comparison of C# interfaces and C++ abstract languages to be stated concisely and correctly. Without a language independent semantic scope such comparisons can not be discussed.</p>
+<p>The following semantic stratification (layered structure) helps to highlight the fundamental difference between syntax mechanisms (in computer languages) and conceptual semantics (in Human thought)<sup title="The text in the vicinity of this tag needs citation." class="noprint">[<a  title="Wikipedia:Citing sources"><i>citation&#160;needed</i></a>]</sup>.<br /></p>
+<table border="1" cellspacing="0" cellpadding="5">
+<caption>Semantic Stratification of the Software Design Process</caption>
+<tr>
+<td><span style="color: green">Process Layer</span></td>
+<td><span style="color: green">Linguistic Context</span></td>
+<td><span style="color: green">Process Context</span></td>
+<td><span style="color: green">Process Step</span></td>
+<td><span style="color: green">Process Result</span></td>
+</tr>
+<tr>
+<td>Level 3</td>
+<td>Phenomena</td>
+<td>Logic</td>
+<td>of Implementation</td>
+<td>Binary code</td>
+</tr>
+<tr>
+<td>Level 2</td>
+<td>Language</td>
+<td>Syntax</td>
+<td>of Specification</td>
+<td>Source code</td>
+</tr>
+<tr>
+<td>Level 1</td>
+<td>Concept</td>
+<td>Semantic Aspect</td>
+<td>of Intention</td>
+<td>Human Thought</td>
+</tr>
+</table>
+<p><br /></p>
+<p>The table above shows how the original meaning (intention) in the mind of the software programmer becomes an implementation in binary code. The meaning must flow through each layer of the process.</p>
+<p>In the program compilation process, for example, a compiler 'bug' can exist when the syntax is compiled and produces incorrect logic in the binary code. In this case the meaning of the syntax was NOT expressed in the binary code. This is an error of translation from source code (layer 2) to binary code (layer 3).</p>
+<p>In the software design process the programmer's intention becomes a specification, which becomes an implementation. This self-evident cause-effect relationship is presented in the table above.</p>
+<p>The key point of leveling the semantics (as above) is to show that BOTH a spatial aspect (stratification) and temporal aspect (sequential) exist in computer language semantics<sup title="The text in the vicinity of this tag needs citation." class="noprint">[<a  title="Wikipedia:Citing sources"><i>citation&#160;needed</i></a>]</sup>.</p>
+<p>The spatial aspect layers the 'foundation' of software design <b>intention as a basis</b> for design specification and design implementation. This is relevant to the common confusion of <b>syntax as concept</b>.</p>
+<p>The temporal aspect sequences the cause-effect relationship (in time) so that Intention (Human thought) precedes specification (source code) and implementation (binary code). This self-evident fact is relevant to the common confusion of <b>reversed causality</b>.</p>
+<p>The table above helps to articulate the nature of common confusions in the semantic scope of language independent inheritance phenomena.</p>
+<p>For instance, in the comparative example above (C# Interfaces Vs. C++ abstract methods) a <b>language independent semantic scope</b> exists conceptually (at level 1) to compare language features (interfaces/abstract methods - in level 2) in a correct and concise manner.</p>
+<p>It is self-evident that the scope of inheritance semantics are always language independent<sup title="The text in the vicinity of this tag needs citation." class="noprint">[<a  title="Wikipedia:Citing sources"><i>citation&#160;needed</i></a>]</sup>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Functions Vs. Functionality">edit</a>]</div>
+<p><a name="Functions_Vs._Functionality" id="Functions_Vs._Functionality"></a></p>
+<h3>Functions Vs. Functionality</h3>
+<p>When discussing object-oriented inheritance the term 'functional' and 'functionality' should not be confused with the term 'function' (as in a <a href="/wiki/Object-oriented_programming.html" title="Object-oriented programming">object-oriented</a> <a href="/wiki/Class_%28object-oriented_programming%29.html" title="Class (object-oriented programming)">class</a> <a href="/wiki/Method_%28object-oriented_programming%29.html" title="Method (object-oriented programming)">method</a>).</p>
+<p>During the object-oriented design process a software designer can 'move' functionality along the lines of inheritance. An example is moving a commonly used state variable (int, bool, etc) to a <a href="/wiki/Superclass_%28computer_science%29.html" title="Superclass (computer science)">(base class)</a> where it can be shared among the <a href="/wiki/Subclass_%28computer_science%29.html" title="Subclass (computer science)">(derived classes)</a>.</p>
+<p>Movement of code elements and software expressions along lines of inheritance is a phenomena of object-oriented 'functional design'. It is important to note, therefore, that inheritance encompasses ALL kinds of code elements, not just methods (functions). Inheritance based functional migration, <a href="/wiki/Functional_normalization_%28object-oriented_programming%29.html" title="Functional normalization (object-oriented programming)">normalization</a>, aggregation and dispersion are phenomena inclusive of ALL CODE ELEMENTS in a language (not just methods).</p>
+<p>For example, in <a href="/wiki/Virtual_inheritance#General_Virtual_Inheritance_.28GVI.29.html" title="Virtual inheritance">General Virtual Inheritance (GVI)</a> the intentional partitioning (via design) of functionality is inclusive of structures, fields, and primitive data types (i.e. all kinds of code elements). This 'inclusive' aspect of virtual inheritance is in keeping with the 'general' nature of GVI to encompass the broadest range of possibilities (for the code elements controlled via GFI in any particular object-oriented language). This, in turn, re-emphasizes the <b>scope</b> of GVI as a superset of VTables and virtual functions.</p>
+<p>Although methods (functions) are an important code element in object-oriented Inheritance they are not the only part. Thus the liberal use of 'functional' and 'functionality' in the definition of <a href="/wiki/Virtual_inheritance.html" title="Virtual inheritance">Virtual Inheritance (VI)</a>. The term 'functionality' is used to indicate the inclusive nature of VI relative to ALL FORMS of code elements (methods, variables, structures, events, etc.) which can be virtually inherited.</p>
+<p>Thus, in object oriented inheritance, <b>functionality</b> can be inherited from base classes by derived classes using either <a href="/wiki/Virtual_inheritance.html" title="Virtual inheritance">virtual</a> or <a href="/wiki/Implementation_inheritance_%28object-oriented_programming%29.html" title="Implementation inheritance (object-oriented programming)">implementation inheritance</a>. The inherited functionality is a <b>set of code elements</b> such as methods and state variables the make up the inherited functionality.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<p>This 'See Also' topic map provides links to articles related to object-oriented inheritance.</p>
+<p>Fundamental inheritance phenomena is documented in the articles below. Also, class Inheritance (CI) is best understood in the context of other design approaches (for combining computing functionality), issues and problems in software architecture.</p>
+<p>The sections listed below help to distinguish the concepts of 'functional dispersion/aggregation along lines of inheritance' (as in Virtual/Implementation Inheritance) from 'object aggregation/composition' as embedded/referential members in a class (embedded/referential containment).</p>
+<p>Note the interesting semantic <a href="/wiki/Object_association.html" title="Object association">distinction</a> between the AGGREGATION of 'self reliant' objects from the COMPOSITION of 'object parts' (from the English language - 'composition' semantics infers 'composed of parts').</p>
+<p>Similar subtle but important distinctions (semantic aspects) exist between virtual, implementation, multiple (MII) and interface inheritance.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Semantics">edit</a>]</div>
+<p><a name="Semantics" id="Semantics"></a></p>
+<h3>Semantics</h3>
+<ul>
+<li><a href="/wiki/Semantics.html" title="Semantics">Semantics</a></li>
+<li><a href="/wiki/Formal_semantics_of_programming_languages.html" title="Formal semantics of programming languages">Formal semantics of programming languages</a></li>
+<li><a href="/wiki/Semantic_spectrum.html" title="Semantic spectrum">Semantic spectrum</a></li>
+<li><a href="/wiki/Programming_language.html" title="Programming language">Programming language</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Fundamental Inheritance Concepts">edit</a>]</div>
+<p><a name="Fundamental_Inheritance_Concepts" id="Fundamental_Inheritance_Concepts"></a></p>
+<h3>Fundamental Inheritance Concepts</h3>
+<p>This section contains links to articles relevant to the general concept of inheritance.</p>
+<ul>
+<li><a href="/wiki/Class_%28object-oriented_programming%29.html" title="Class (object-oriented programming)">Class (object-oriented programming)</a></li>
+<li><a href="/wiki/Hierarchy_%28object-oriented_programming%29.html" title="Hierarchy (object-oriented programming)">Hierarchy (object-oriented programming)</a></li>
+<li><a href="/wiki/Inheritance_%28object-oriented_programming%29.html" title="Inheritance (object-oriented programming)">Inheritance (object-oriented programming)</a></li>
+<li><a href="/wiki/Polymorphism_%28computer_science%29.html" title="Polymorphism (computer science)">Type Polymorphism (computer science)</a></li>
+<li><a href="/wiki/Subclass_%28computer_science%29.html" title="Subclass (computer science)">Subclass (computer science)</a></li>
+<li><a href="/wiki/Superclass_%28computer_science%29.html" title="Superclass (computer science)">Superclass (computer science)</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Detailed Inheritance Concepts">edit</a>]</div>
+<p><a name="Detailed_Inheritance_Concepts" id="Detailed_Inheritance_Concepts"></a></p>
+<h3>Detailed Inheritance Concepts</h3>
+<p>This section contains links to articles explaining the conceptual details of inheritance.</p>
+<ul>
+<li><a href="/wiki/Functional_normalization_%28object-oriented_programming%29.html" title="Functional normalization (object-oriented programming)">Functional normalization (object-oriented programming)</a></li>
+<li><a href="/wiki/Implementation_inheritance_%28object-oriented_programming%29.html" title="Implementation inheritance (object-oriented programming)">Implementation inheritance (object-oriented programming)</a></li>
+<li><a href="/wiki/Interface_%28computer_science%29.html" title="Interface (computer science)">Interface (computer science)</a></li>
+<li><a href="/wiki/Method_%28programming%29.html" title="Method (programming)">Method (programming)</a></li>
+<li><a href="/wiki/Method_overriding_%28programming%29.html" title="Method overriding (programming)">Method overriding (programming)</a></li>
+<li><a href="/wiki/Multiple_inheritance.html" title="Multiple inheritance">Multiple inheritance</a></li>
+<li><a href="/wiki/Virtual_function.html" title="Virtual function">Virtual function</a></li>
+<li><a href="/wiki/Virtual_method_table.html" title="Virtual method table">Virtual method table</a></li>
+<li><a href="/wiki/Virtual_inheritance.html" title="Virtual inheritance">Virtual Inheritance (object-oriented programming)</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Other Design Approaches">edit</a>]</div>
+<p><a name="Other_Design_Approaches" id="Other_Design_Approaches"></a></p>
+<h3>Other Design Approaches</h3>
+<p>This section contains links to other ways of combining computing functionality (object aggregation/composition). Links to these concepts are listed to contrast inheritance from other approaches to functional design in object-oriented languages.</p>
+<ul>
+<li><a href="/wiki/Aggregation_%28object-oriented_programming%29.html" title="Aggregation (object-oriented programming)">Object Aggregation (via referential containment)</a></li>
+<li><a href="/wiki/Aspect-oriented_programming.html" title="Aspect-oriented programming">Aspect-Oriented Programming (quantification/join mechanism for separation of code)</a></li>
+<li><a href="/wiki/Object_composition.html" title="Object composition">Object Composition(via embedded containment)</a></li>
+<li><a href="/wiki/Function_composition_%28computer_science%29.html" title="Function composition (computer science)">Function Composition (via sequential effects)</a></li>
+<li><a href="/wiki/Composition_%28computer_science%29.html" title="Composition (computer science)">Composition (disambiguation page)</a></li>
+<li><a href="/wiki/Object_association.html" title="Object association">Object Association (aggregation Vs. composition semantics page)</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Inheritance Issues and Problems">edit</a>]</div>
+<p><a name="Inheritance_Issues_and_Problems" id="Inheritance_Issues_and_Problems"></a></p>
+<h3>Inheritance Issues and Problems</h3>
+<p>Many design problems in inheritance occur not because a mechanism (VI, II, MI, Interface) is 'bad' but because the right tool (mechanism) wasn't used for the right job (like using a hammer for a screwdriver). The problems below are not inherent to semantic mechanisms (which define the MEANING of a language specification). These problems ARE, however, inherent to poor software design (actual language mechanism misuse in Java, C#, C++ etc.) or poor language implementations (bad compiler architecture/language specification/language design).</p>
+<ul>
+<li><a href="/wiki/Diamond_problem.html" title="Diamond problem">Diamond Problem (state space collision)</a></li>
+<li><a href="/wiki/Fragile_base_class.html" title="Fragile base class">Fragile Base Class Problem (unintended child side effects when changing base class)</a></li>
+<li><a href="/wiki/Yo-yo_problem.html" title="Yo-yo problem">Yo-yo Problem (complex inheritance structure)</a></li>
+</ul>
+<p>Note that the semantics of a poorly designed 'expression mechanism IMPLEMENTATION' (in a language specification or design) do not 'redefine' the SEMANTICS of an expression mechanism (the inherent semantic meaning across all past, present, future and hypothetical language specifications). The 'CONCEPTUAL expression semantics' exist prior to and beyond any one language SYNTAX specification (C++, C#, Java, etc.). Most language mechanism specifications (SYNTAX EXPRESSIONS) are formalizations of previous programming practices in an earlier language (thus an evolution in expression formalization and understanding).</p>
+<p>Note also that <b>syntax mechanisms</b> should not be confused with <b>conceptual semantics</b>. You can not take a specific language specification and reverse engineer its syntactic mechanisms (what the compiler SHOULD generate) into the conceptual semantics expressed in the English (Human) language.</p>
+<p>The supposition that inherently difficult and complex processing should suddenly become simple and trivial is also incorrect (i.e. an automobile is NOT as complex as a nut and bolt).</p>
+<p>In the same way, each inheritance mechanism (VI, II, MII, etc) has logical semantic aspects that pre-exist ANY particular language implementation generated by a compiler (cause/semantics precedes effect/implementation). This perspective is important in distinguishing a poor software design (expression mechanism misuse) from a poor mechanism specification/implementation (language specification problem, compiler design problem).</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Design Intentions in Inheritance">edit</a>]</div>
+<p><a name="Design_Intentions_in_Inheritance" id="Design_Intentions_in_Inheritance"></a></p>
+<h3>Design Intentions in Inheritance</h3>
+<p>Virtual Inheritance (VI) is one of many object-oriented mechanisms used to achieve a design intention. Object-oriented software design intentions are generally guided by the principles listed below.</p>
+<ul>
+<li><a href="/wiki/Abstraction_%28computer_science%29.html" title="Abstraction (computer science)">Abstraction (Overview of conceptual partitioning mechanisms - class, module, etc.)</a></li>
+<li><a href="/wiki/Code_reuse.html" title="Code reuse">Code Reuse (functional migration of replicated child code to parent class)</a></li>
+<li><a href="/wiki/Delegation_%28programming%29.html" title="Delegation (programming)">Delegation (historical semantic issues)</a></li>
+<li><a href="/wiki/Encapsulation.html" title="Encapsulation">Encapsulation (disambiguation page)</a></li>
+<li><a href="/wiki/Information_hiding.html" title="Information hiding">Information Hiding (principal underlying encapsulation technique in object-oriented programming)</a></li>
+<li><a href="/wiki/Separation_of_concerns.html" title="Separation of concerns">Separation of Concerns (no functional overlap)</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Functional Normalization">edit</a>]</div>
+<p><a name="Functional_Normalization" id="Functional_Normalization"></a></p>
+<h3>Functional Normalization</h3>
+<p>Functional normalization is the removal of needlessly replicated code. This section contains links to articles related to concepts relevant to this process.</p>
+<ul>
+<li><a href="/wiki/Functional_normalization_%28object-oriented_programming%29.html" title="Functional normalization (object-oriented programming)">Functional normalization (object-oriented programming)</a></li>
+<li><a href="/wiki/Orthogonalization.html" title="Orthogonalization">Orthogonalization (mathematical normalization)</a></li>
+<li><a href="/wiki/Aspect_%28computer_science%29.html" title="Aspect (computer science)">Aspect (functional perspectives orthogonal to core concern)</a></li>
+<li><a  class="new" title="Core Concern">Core Concern (the intrinsic and inherent core functionality of a class)</a></li>
+<li><a href="/wiki/Cross-cutting_concern.html" title="Cross-cutting concern">Cross-cutting Concern (common functionality orthogonal to core concern)</a></li>
+<li><a href="/wiki/Refactoring.html" title="Refactoring">Refactoring (restructuring software)</a></li>
+<li><a href="/wiki/Database_normalization.html" title="Database normalization">Database Normalization (minimize needlessly replicated data)</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Logical Context of Inheritance Semantics">edit</a>]</div>
+<p><a name="Logical_Context_of_Inheritance_Semantics" id="Logical_Context_of_Inheritance_Semantics"></a></p>
+<h3>Logical Context of Inheritance Semantics</h3>
+<p>Inheritance semantics may be categorized and classified under the following headings.</p>
+<ul>
+<li><a href="/wiki/Inheritance_%28object-oriented_programming%29.html" title="Inheritance (object-oriented programming)">Inheritance</a></li>
+<li><a href="/wiki/Object-oriented_programming.html" title="Object-oriented programming">Object-oriented Programming</a></li>
+<li><a href="/wiki/Computer_science.html" title="Computer science">Computer Science</a></li>
+</ul>
+
+<!-- 
+Pre-expand include size: 3801 bytes
+Post-expand include size: 2988 bytes
+Template argument size: 18 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:6065522-0!1!0!default!!en!2 and timestamp 20060910164237 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Articles which may contain original research">Articles which may contain original research</a></span> | <span dir='ltr'><a  title="Category:Articles with unsourced statements">Articles with unsourced statements</a></span> | <span dir='ltr'><a  title="Category:Class-based programming languages">Class-based programming languages</a></span> | <span dir='ltr'><a  title="Category:Object-oriented programming">Object-oriented programming</a></span> | <span dir='ltr'><a  title="Category:Programming language topics">Programming language topics</a></span> | <span dir='ltr'><a  title="Category:Formal methods">Formal methods</a></span> | <span dir='ltr'><a  title="Category:Logic in computer science">Logic in computer science</a></span> | <span dir='ltr'><a  title="Category:Theoretical computer science">Theoretical computer science</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Inheritance_semantics.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 16:27, 6 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv81 in 0.220 secs. --></body></html>

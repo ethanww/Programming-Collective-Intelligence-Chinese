@@ -1,0 +1,407 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Pattern matching,AIML,Abstract data type,Abstract syntax tree,Algebraic data type,Bell Labs,Fibonacci number,Function (programming),Functional programming language,Guard (computing),Haskell programming language" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Pattern matching - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Pattern_matching";
+			var wgTitle = "Pattern matching";
+			var wgArticleId = 279688;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Pattern matching</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p><b>Pattern matching</b> is the act of checking for the presence of the constituents of a given <a href="/wiki/Pattern.html" title="Pattern">pattern</a>. In contrast to <a href="/wiki/Pattern_recognition.html" title="Pattern recognition">pattern recognition</a>, the pattern is rigidly specified. Such a pattern concerns conventionally either <a href="/wiki/String_%28computer_science%29.html" title="String (computer science)">sequences</a> or <a href="/wiki/Tree_structure.html" title="Tree structure">tree structures</a>. Pattern matching is used to check that things have the desired structure, to find relevant structure, to retrieve the aligning parts, and to substitute the matching part with something else.</p>
+<p>Sequence (or specifically text string) patterns are often described using <a href="/wiki/Regular_expression.html" title="Regular expression">regular expressions</a> and matched using respective algorithms. Sequences can also be seen as trees branching for each element into the respective element and the rest of the sequence, or as trees that immediately branch into all elements.</p>
+<p>Tree patterns can be used in <a href="/wiki/Programming_language.html" title="Programming language">programming languages</a> as a general tool to process data based on its structure. Some <a href="/wiki/Functional_programming_language.html" title="Functional programming language">functional programming languages</a> such as <a href="/wiki/Haskell_programming_language.html" title="Haskell programming language">Haskell</a>, <a href="/wiki/ML_programming_language.html" title="ML programming language">ML</a> and the symbolic mathematics language <a href="/wiki/Mathematica.html" title="Mathematica">Mathematica</a> have a special syntax for expressing tree patterns and a language construct for conditional execution and value retrieval based on it. Because of simplicity and efficiency reasons these tree patterns lack some features that are available in regular expressions. Depending on the languages, pattern matching can be used for function arguments, in case expressions, whenever new variables are bound, or in very limited situations such as only for sequences in assignment in <a href="/wiki/Python_programming_language.html" title="Python programming language">Python</a>. Often it is possible to give alternative patterns that are tried one by one. Pattern matching can benefit from <a href="/wiki/Guard_%28computing%29.html" title="Guard (computing)">guards</a>.</p>
+<p><a href="/wiki/Term_rewriting.html" title="Term rewriting">Term rewriting</a> languages rely on pattern matching for the fundamental way a program evaluates into a result. Pattern matching benefits most when the underlying datastructures are as simple and flexible as possible. This is especially the case in languages with a strong symbolic flavor. In symbolic programming languages, patterns are the same kind of datatype as everything else, and can therefore be fed in as arguments to functions.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Primitive patterns</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Tree patterns</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Filtering data with patterns</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Pattern matching in Mathematica</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">4.1</span> <span class="toctext">Declarative programming</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Pattern matching and strings</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">5.1</span> <span class="toctext">Tree patterns for strings</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">5.2</span> <span class="toctext">Example string patterns</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">History</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">6.1</span> <span class="toctext">SNOBOL</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">8</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">9</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Primitive patterns">edit</a>]</div>
+<p><a name="Primitive_patterns" id="Primitive_patterns"></a></p>
+<h2>Primitive patterns</h2>
+<p>The simplest pattern in pattern matching is an explicit value or a variable. For an example, consider a simple function definition in Haskell syntax (function parameters are not in parentheses but are separated by spaces, = is not assignment but definition):</p>
+<pre>
+f 0 = 1
+</pre>
+<p>Here, 0 is a single value pattern. Now, whenever f is given 0 as argument the pattern matches and the function returns 1. With any other argument, the matching and thus the function fail. As the syntax supports alternative patterns in function definitions, we can continue the definition extending it to take more generic arguments:</p>
+<pre>
+f n = n * f (n-1)
+</pre>
+<p>Here, the first <code>n</code> is a single variable pattern, which will match absolutely any argument and bind it to name n to be used in the rest of the definition. In Haskell (unlike at least <a href="/wiki/Hope_programming_language.html" title="Hope programming language">Hope</a>), patterns are tried in order so the first definition still applies in the very specific case of the input being 0, while for any other argument the function returns <code>n * f (n-1)</code> with n being the argument.</p>
+<p>Wildcard pattern (often written as <code>_</code>) is also simple: like a variable name, it matches any value, but does not bind the value to any name.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Tree patterns">edit</a>]</div>
+<p><a name="Tree_patterns" id="Tree_patterns"></a></p>
+<h2>Tree patterns</h2>
+<p>More complex patterns can be built from the primitive ones of the previous section, usually in the same way as values are built by combining other values. The difference then is that with variable and wildcard parts, a pattern doesn't build into single value, but matches a group of values that are the combination of the concrete elements and the elements that are allowed to vary within the structure of the pattern.</p>
+<p>A tree pattern describes a part of a tree by starting with a node and specifying some branches and nodes and leaving some unspecified with a variable or wildcard pattern. It may help to think of the <a href="/wiki/Abstract_syntax_tree.html" title="Abstract syntax tree">abstract syntax tree</a> of a programming language and <a href="/wiki/Algebraic_data_type.html" title="Algebraic data type">algebraic data types</a>.</p>
+<p>In Haskell, the following line defines an algebraic data type <code>Color</code> that has a single data constructor <code>ColorConstructor</code> that wraps an integer and a string.</p>
+<pre>
+ data Color = ColorConstructor Integer String
+</pre>
+<p>The constructor is a node in a tree and the integer and string are leaves in branches.</p>
+<p>When we want to write <a href="/wiki/Function_%28programming%29.html" title="Function (programming)">functions</a> to make <code>Color</code> an <a href="/wiki/Abstract_data_type.html" title="Abstract data type">abstract data type</a>, we wish to write functions to <a href="/wiki/Interface_%28computer_science%29.html" title="Interface (computer science)">interface</a> with the data type, and thus we want to extract some data from the data type, for example, just the string or just the integer part of <code>Color</code>.</p>
+<p>If we pass a variable that is of type Color, how can we get the data out of this variable? For example, for a function to get the integer part of <code>Color</code>, we can use a simple tree pattern and write:</p>
+<pre>
+  integerPart (ColorConstructor theInteger _) = theInteger
+</pre>
+<p>Or conversely:</p>
+<pre>
+  stringPart (ColorConstructor _ theString) = theString
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Filtering data with patterns">edit</a>]</div>
+<p><a name="Filtering_data_with_patterns" id="Filtering_data_with_patterns"></a></p>
+<h2>Filtering data with patterns</h2>
+<p>Pattern matching can be used to filter data of a certain structure. For instance, in Haskell a list comprehension could be used for this kind of filtering:</p>
+<pre>
+[A x | A x &lt;- [A 1, B 1, A 2, B 2]]
+</pre>
+<p>evaluates to</p>
+<pre>
+[A 1, A 2]
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Pattern matching in Mathematica">edit</a>]</div>
+<p><a name="Pattern_matching_in_Mathematica" id="Pattern_matching_in_Mathematica"></a></p>
+<h2>Pattern matching in Mathematica</h2>
+<p>In <a href="/wiki/Mathematica.html" title="Mathematica">Mathematica</a>, the only structure that exists is the <a href="/wiki/Tree_%28data_structure%29.html" title="Tree (data structure)">tree</a>, which is populated by symbols. In the <a href="/wiki/Haskell_programming_language.html" title="Haskell programming language">Haskell</a> syntax used thus far, this could be defined as</p>
+<pre>
+data SymbolTree = Symbol String [Symbol] 
+</pre>
+<p>An example tree could then look like</p>
+<pre>
+Symbol "a" [Symbol "b" [], Symbol "c" []]
+</pre>
+<p>In the traditional, more suitable syntax, the symbols are written as they are and the levels of the tree are represented using [], so that for instance <code>a[b,c]</code> is a tree with a as the parent, and b and c as the children.</p>
+<p>A pattern in Mathematica involves putting "_" at positions in that tree. For instance, the pattern</p>
+<pre>
+A[_] 
+</pre>
+<p>Will match elements such as A[1], A[2], or more generally A[<i>x</i>] where <i>x</i> is any entity. In this case, A is the concrete element, while _ denotes the piece of tree that can be varied. A symbol prepended to _ binds the match to that variable name while a symbol appended to _ restricts the matches to nodes of that symbol.</p>
+<p>The Mathematica function <code>Cases</code> filters elements of the first argument that match the pattern in the second argument:</p>
+<pre>
+Cases[{a[1], b[1], a[2], b[2]}, a[_] ]
+</pre>
+<p>evaluates to</p>
+<pre>
+{a[1], a[2]}
+</pre>
+<p><br />
+Pattern matching applies to the <i>structure</i> of expressions. In the example below,</p>
+<pre>
+Cases[{a[b], a[b,c], a[b[c], d], a[b[c], d[e]], a[b[c], d, e]}, a[b[_],_]]
+</pre>
+<p>returns</p>
+<pre>
+{a[b[c],d], a[b[c],d[e]]}
+</pre>
+<p>because only these elements will match the pattern <code>a[b[_],_]</code> above.</p>
+<p>In Mathematica, it is also possible to extract structures as they are created in the course of computation, regardless of how or where they appear. The function <code>Trace</code> can be used to monitor a computation, and return the elements that arise which match a pattern. For example, we can define the <a href="/wiki/Fibonacci_number.html" title="Fibonacci number">Fibonacci sequence</a> as</p>
+<pre>
+fib[0|1]:=1
+fib[n_]:= fib[n-1] + fib[n-2]
+</pre>
+<p>Then, we can ask the question: Given fib[3], what is the sequence of recursive Fibonacci calls?</p>
+<pre>
+Trace[fib[3], fib[_]]
+</pre>
+<p>returns a structure that represents the occurrences of the pattern fib[_] in the computational structure:</p>
+<pre>
+ {fib[3],{fib[2],{fib[1]},{fib[0]}},{fib[1]}}
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Declarative programming">edit</a>]</div>
+<p><a name="Declarative_programming" id="Declarative_programming"></a></p>
+<h3>Declarative programming</h3>
+<p>In symbolic programming languages, it is easy to have patterns as arguments to functions or as elements of data structures. A consequence of this is the ability to use patterns to declaratively make statements about pieces of data and to flexibly instruct functions how to operate.</p>
+<p>For instance, the <a href="/wiki/Mathematica.html" title="Mathematica">Mathematica</a> function <code>Compile</code> can be used to make more efficient versions of the code. In the following example the details do not particularly matter; what matters is that the subexpression {{com[_], _Integer}} instructs <code>Compile</code> that expressions of the form com[_] can be assumed to be <a href="/wiki/Integer.html" title="Integer">integers</a> for the purposes of compilation:</p>
+<pre>
+com[i_] := Binomial[2i, i]
+Compile[{x, {i, _Integer}}, x^com[i], {{com[_], _Integer}}]
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Pattern matching and strings">edit</a>]</div>
+<p><a name="Pattern_matching_and_strings" id="Pattern_matching_and_strings"></a></p>
+<h2>Pattern matching and strings</h2>
+<p>By far the most common form of pattern matching involves strings of characters. In many programming languages, a particular syntax of strings is used to represent regular expressions, which are patterns describing string characters.</p>
+<p>However, it is possible to perform some string pattern matching within the same framework that has been discussed throughout this article.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Tree patterns for strings">edit</a>]</div>
+<p><a name="Tree_patterns_for_strings" id="Tree_patterns_for_strings"></a></p>
+<h3>Tree patterns for strings</h3>
+<p>In Mathematica, strings are represented as trees of root StringExpression and all the characters in order as children of the root. Thus, to match "any amount of trailing characters", a new wildcard ___ is needed in contrast to _ that would match only a single character.</p>
+<p>In Haskell and functional programming languages in general, strings are represented as functional <a href="/wiki/List_%28computing%29.html" title="List (computing)">lists</a> of characters. A functional list is defined as an empty list, or an element constructed on an existing list. In Haskell syntax:</p>
+<pre>
+[]      -- an empty list
+x:xs    -- an element x constructed on a list xs
+</pre>
+<p>The structure for a list with some elements is thus <code>element:list</code>. When pattern matching, we assert that a certain piece of data is equal to a certain pattern. For example, in the function:</p>
+<pre>
+head (element:list) = element
+</pre>
+<p>we assert that the first element of <code>head</code>'s argument is called element, and the function returns this. We know that this is the first element because of the way lists are defined, a single element constructed onto a list. This single element must be the first. The empty list would not match the pattern at all, as an empty list does not have a head (the first element that is constructed).</p>
+<p>In the example, we have no use for <code>list</code>, so we can disregard it, and thus write the function:</p>
+<pre>
+head (element:_) = element
+</pre>
+<p>The equivalent Mathematica transformation is expressed as</p>
+<pre>
+head[element_, ___]:=element
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Example string patterns">edit</a>]</div>
+<p><a name="Example_string_patterns" id="Example_string_patterns"></a></p>
+<h3>Example string patterns</h3>
+<p>In Mathematica, for instance,</p>
+<pre>
+StringExpression["a", _]
+</pre>
+<p>will match a string that has two characters and begins with "a".</p>
+<p>The same pattern in Haskell:</p>
+<pre>
+['a', _]
+</pre>
+<p>Symbolic entities can be introduced to represent many different classes of relevant features of a string. For instance,</p>
+<pre>
+StringExpression[LetterCharacter, DigitCharacter]
+</pre>
+<p>will match a string that consists of a letter first, and then a number.</p>
+<p>In Haskell, <a href="/wiki/Guard_%28computing%29.html" title="Guard (computing)">guards</a> could be used to achieve the same matches:</p>
+<pre>
+[letter, digit] | isAlpha letter &amp;&amp; isDigit digit
+</pre>
+<p>The main advantage of symbolic string manipulation is that it can be completely integrated with the rest of the programming language, rather than being a separate, special purpose subunit. The entire power of the language can be leveraged to built up the patterns themselves or analyze and transform the programs that contain them.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: History">edit</a>]</div>
+<p><a name="History" id="History"></a></p>
+<h2>History</h2>
+<div class="boilerplate metadata" id="stub"><a  class="image" title=""><img src="http://upload.wikimedia.org/wikipedia/en/thumb/6/6a/Wiki_letter_w.png/35px-Wiki_letter_w.png" alt="" width="35" height="35" longdesc="/wiki/Image:Wiki_letter_w.png" /></a><i>This section is a <a  title="Wikipedia:Perfect stub article">stub</a>. You can <a  title="Wikipedia:Stub">help</a> by <span class="plainlinks"><a  class="external text" title="http://en.wikipedia.org/w/index.php?title=Pattern_matching&amp;action=edit">adding to it</a></span>.</i></div>
+<p>The first computer programs to use pattern matching were text editors. At <a href="/wiki/Bell_Labs.html" title="Bell Labs">Bell Labs</a>, <a href="/wiki/Ken_Thompson_%28computer_programmer%29.html" title="Ken Thompson (computer programmer)">Ken Thompson</a> extended the seeking and replacing features of the <a href="/wiki/QED_%28text_editor%29.html" title="QED (text editor)">QED editor</a> to accept <a href="/wiki/Regular_expression.html" title="Regular expression">regular expressions</a>. Early programming languages with pattern matching constructs include <a href="/wiki/SNOBOL.html" title="SNOBOL">SNOBOL</a> from 1962, <a href="/wiki/NPL_programming_language.html" title="NPL programming language">NPL</a> from 1977, and <a href="/wiki/Kent_Recursive_Calculator.html" title="Kent Recursive Calculator">KRC</a> from 1981.</p>
+<dl>
+<dd>
+<div class="boilerplate seealso"><i>See also: <a href="/wiki/Regular_expression#History.html" title="Regular expression">Regular expression#History</a></i></div>
+</dd>
+</dl>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: SNOBOL">edit</a>]</div>
+<p><a name="SNOBOL" id="SNOBOL"></a></p>
+<h3>SNOBOL</h3>
+<dl>
+<dd>
+<div class="noprint"><i>Main article: <a href="/wiki/SNOBOL.html" title="SNOBOL">SNOBOL</a></i></div>
+</dd>
+</dl>
+<div class="boilerplate metadata" id="stub"><a  class="image" title=""><img src="http://upload.wikimedia.org/wikipedia/en/thumb/6/6a/Wiki_letter_w.png/35px-Wiki_letter_w.png" alt="" width="35" height="35" longdesc="/wiki/Image:Wiki_letter_w.png" /></a><i>This section is a <a  title="Wikipedia:Perfect stub article">stub</a>. You can <a  title="Wikipedia:Stub">help</a> by <span class="plainlinks"><a  class="external text" title="http://en.wikipedia.org/w/index.php?title=Pattern_matching&amp;action=edit">adding to it</a></span>.</i></div>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Pattern_recognition.html" title="Pattern recognition">Pattern recognition</a> for fuzzy patterns</li>
+<li><a  title="Category:Pattern matching">Category:Pattern matching</a> for articles about string pattern matching</li>
+<li><a href="/wiki/AIML.html" title="AIML">AIML</a> for an AI language based on matching patterns in speech</li>
+<li><a href="/wiki/SNOBOL.html" title="SNOBOL">SNOBOL</a> for a programming language based on one kind of pattern matching</li>
+<li><a href="/wiki/PCRE.html" title="PCRE">PCRE</a> Perl Compiled Regular Expressions, a common modern implementation of string pattern matching ported to many languages</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<ul>
+<li>The Mathematica Book, chapter <a  class="external text" title="http://documents.wolfram.com/mathematica/book/section-2.3">Section 2.3: Patterns</a></li>
+</ul>
+<ul>
+<li>The Haskell 98 Report, chapter <a  class="external text" title="http://haskell.org/onlinereport/exps.html#pattern-matching">3.17 Pattern Matching</a>.</li>
+</ul>
+<ul>
+<li><a  class="external text" title="http://ftp.sunet.se/foldoc/foldoc.cgi?pattern+matching">Pattern matching</a> in The Free On-line Dictionary of Computing, Editor Denis Howe.</li>
+</ul>
+<ul>
+<li>Python Reference Manual, chapter <a  class="external text" title="http://python.org/doc/2.4.1/ref/assignment.html">6.3 Assignment statements</a>.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://www.haskell.org/tutorial/patterns.html">A Gentle Introduction to Haskell: Patterns</a></li>
+<li><a  class="external text" title="http://www.haskell.org/development/views.html">Views: An Extension to Haskell Pattern Matching</a></li>
+<li>Nikolaas N. Oosterhof, Philip K. F. Hölzenspies, and Jan Kuper. <a  class="external text" title="http://wwwhome.cs.utwente.nl/~tina/apm/applPatts.pdf">Application patterns</a>. A presentation at Trends in Functional Programming, 2005</li>
+<li><a  class="external text" title="http://cm.bell-labs.com/cm/cs/who/dmr/qed.html">An incomplete history of the QED Text Editor</a> by Dennis Ritchie - provides the history of regular expressions in computer programs</li>
+<li><a  class="external text" title="http://www.geneffects.com/simphile/">Simphile</a> - Open source pattern matching software.</li>
+</ul>
+
+<!-- 
+Pre-expand include size: 4322 bytes
+Post-expand include size: 1281 bytes
+Template argument size: 520 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:279688-0!1!0!default!!en!2 and timestamp 20060910162727 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Articles with sections needing expansion">Articles with sections needing expansion</a></span> | <span dir='ltr'><a  title="Category:Pattern matching">Pattern matching</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Pattern_matching.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-pt"><a >Português</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 19:50, 4 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv34 in 0.829 secs. --></body></html>

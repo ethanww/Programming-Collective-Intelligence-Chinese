@@ -1,0 +1,246 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Bayesian spam filtering,Anti-Spam SMTP Proxy,Bayes' theorem,Bayesian inference,Bayesian probability,E-mail spam,Electronic mail,Email filter,Likelihood function,Mail server,Mozilla Thunderbird" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Bayesian spam filtering - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Bayesian_spam_filtering";
+			var wgTitle = "Bayesian spam filtering";
+			var wgArticleId = 515929;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Bayesian spam filtering</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<div class="messagebox cleanup metadata"><b>This article or section is in need of attention from an expert on the subject</b>.<br />
+Please help recruit one, or <span class="plainlinks"><a  class="external text" title="http://en.wikipedia.org/w/index.php?title=Bayesian_spam_filtering&amp;action=edit">improve this page yourself</a></span> if you can. See <a  title="Talk:Bayesian spam filtering">discussion page</a> for details.</div>
+<p><b>Bayesian spam filtering</b> is the process of using <a href="/wiki/Bayesian_probability.html" title="Bayesian probability">Bayesian statistical methods</a> to classify documents into categories.</p>
+<p>Bayesian filtering was proposed by Sahami et al. (1998)<sup id="_ref-0" class="reference"><a  title="">[1]</a></sup> and gained attention in 2002 when it was described in a paper by <a href="/wiki/Paul_Graham.html" title="Paul Graham">Paul Graham</a>.<sup id="_ref-1" class="reference"><a  title="">[2]</a></sup> Since then it has become a popular mechanism to distinguish illegitimate <a href="/wiki/E-mail_spam.html" title="E-mail spam">spam email</a> from legitimate <a href="/wiki/Electronic_mail.html" title="Electronic mail">email</a>. Many modern mail programs such as <a href="/wiki/Mozilla_Thunderbird.html" title="Mozilla Thunderbird">Mozilla Thunderbird</a> implement Bayesian spam filtering. <a href="/wiki/Server-side.html" title="Server-side">Server-side</a> email filters, such as <a href="/wiki/SpamAssassin.html" title="SpamAssassin">SpamAssassin</a> and <a href="/wiki/Anti-Spam_SMTP_Proxy.html" title="Anti-Spam SMTP Proxy">ASSP</a>, make use of Bayesian spam filtering techniques, and the functionality is sometimes embedded within <a href="/wiki/Mail_server.html" title="Mail server">mail server</a> software itself.</p>
+<p>The regular incidence of Spam with selections of lengthy normal text passages from books, etc, is an attempt to corrupt this process by modifying the occurrences of 'non-Spam' words in Spam messages.</p>
+<p><br /></p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Mathematical foundation</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Process</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Advantages</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">General applications of Bayesian filtering</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">External links</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">References</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Mathematical foundation">edit</a>]</div>
+<p><a name="Mathematical_foundation" id="Mathematical_foundation"></a></p>
+<h2>Mathematical foundation</h2>
+<p>Bayesian <a href="/wiki/Email_filter.html" title="Email filter">email filters</a> take advantage of <a href="/wiki/Bayes%27_theorem.html" title="Bayes' theorem">Bayes' theorem</a>. Bayes' theorem, in the context of spam, says that the probability that an email is spam, given that it has certain words in it, is equal to the probability of finding those certain words in spam email, times the probability that any email is spam, divided by the probability of finding those words in any email:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/0/4/a/04a83a2a2ce4c9cc3d9743bf6d6f8d40.png" alt="\Pr(\mathrm{spam}|\mathrm{words}) = \frac{\Pr(\mathrm{words}|\mathrm{spam})\Pr(\mathrm{spam})}{\Pr(\mathrm{words})}." /></dd>
+</dl>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Process">edit</a>]</div>
+<p><a name="Process" id="Process"></a></p>
+<h2>Process</h2>
+<p>Particular words have particular <a href="/wiki/Probability.html" title="Probability">probabilities</a> of occurring in spam email and in legitimate email. For instance, most email users will frequently encounter the word <a href="/wiki/Viagra.html" title="Viagra">Viagra</a> in spam email, but will seldom see it in other email. The filter doesn't know these probabilities in advance, and must first be trained so it can build them up. To train the filter, the user must manually indicate whether a new email is spam or not. For all words in each training email, the filter will adjust the probabilities that each word will appear in spam or legitimate email in its database. For instance, Bayesian spam filters will typically have learned a very high spam probability for the words "Viagra" and "refinance", but a very low spam probability for words seen only in legitimate email, such as the names of friends and family members.</p>
+<p>After training, the word probabilities (also known as <a href="/wiki/Likelihood_function.html" title="Likelihood function">likelihood functions</a>) are used to compute the probability that an email with a particular set of words in it belongs to either category. Each word in the email contributes to the email's spam probability. This contribution is called the <a href="/wiki/Posterior_probability.html" title="Posterior probability">posterior probability</a> and is computed using Bayes' theorem. Then, the email's spam probability is computed over all words in the email, and if the total exceeds a certain threshold (say 95%), the filter will mark the email as spam. Email marked as spam can then be automatically moved to a "Junk" email folder, or even deleted outright.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Advantages">edit</a>]</div>
+<p><a name="Advantages" id="Advantages"></a></p>
+<h2>Advantages</h2>
+<p>The advantage of Bayesian spam filtering is that it can be trained on a per-user basis.</p>
+<p>The spam that a user receives is often related to the online user's activities. For example, a user may have been subscribed to an online newsletter that the user considers to be spam. This online newsletter is likely to contain words that are common to all newsletters, such as the name of the newsletter and its originating email address. A Bayesian spam filter will eventually assign a higher probability based on the user's specific patterns.</p>
+<p>The legitimate e-mails a user receives will tend to be different. For example, in a corporate environment, the company name and the names of clients or customers will be mentioned often. The filter will assign a lower spam probability to emails containing those names.</p>
+<p>The word probabilities are unique to each user and can evolve over time with corrective training whenever the filter incorrectly classifies an email. As a result, Bayesian spam filtering accuracy after training is often superior to pre-defined rules.</p>
+<p>It can perform particularly well in avoiding false positives, where legitimate email is incorrectly classified as spam. For example, if the email contains the word "Nigeria", which frequently appeared in a long spam campaign, a pre-defined rules filter might reject it outright. A Bayesian filter would mark the word "Nigeria" as a probable spam word, but would take into account other important words that usually indicate legitimate e-mail. For example, the name of a spouse may strongly indicate the e-mail is not spam, which could overcome the use of the "Nigeria."</p>
+<p>Some spam filters combine the results of both Bayesian spam filtering and pre-defined rules resulting in even higher filtering accuracy. Recent <a href="/wiki/E-mail_spam.html" title="E-mail spam">spammer</a> tactics include insertion of random innocuous words that are not normally associated with spam, thereby decreasing the email's spam score, making it more likely to slip past a Bayesian spam filter.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: General applications of Bayesian filtering">edit</a>]</div>
+<p><a name="General_applications_of_Bayesian_filtering" id="General_applications_of_Bayesian_filtering"></a></p>
+<h2>General applications of Bayesian filtering</h2>
+<div class="messagebox merge">
+<div class="floatleft"><span><a  class="image" title=""><img src="http://upload.wikimedia.org/wikipedia/commons/a/a9/Splitsection.gif" alt="" width="40" height="20" longdesc="/wiki/Image:Splitsection.gif" /></a></span></div>
+It has been suggested that this section be <b><a  title="Wikipedia:How to break up a page">split</a></b> into a new article. (<a  title="Talk:Bayesian spam filtering">Discuss</a>)</div>
+<p>While Bayesian filtering is used widely to identify spam email, the technique can classify (or "cluster") almost any sort of data. It has uses in science, medicine, and engineering. One example is a general purpose classification program called <a  class="external text" title="http://ic.arc.nasa.gov/ic/projects/bayes-group/autoclass/">AutoClass</a> which was originally used to classify stars according to spectral characteristics that were otherwise too subtle to notice. There is recent speculation that even the brain uses Bayesian methods to classify sensory stimuli and decide on behavioural responses <a  class="external text" title="http://www.bcs.rochester.edu/people/alex/pub/articles/KnillPougetTINS04.pdf">(Trends in Neuroscience, 27(12):712-9, 2004)</a> (pdf).</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Bayesian_inference.html" title="Bayesian inference">Bayesian inference</a></li>
+<li><a href="/wiki/Bayes%27_theorem.html" title="Bayes' theorem">Bayes' theorem</a></li>
+<li><a href="/wiki/Naive_Bayes_classifier.html" title="Naive Bayes classifier">Naive Bayes classifier</a></li>
+<li><a href="/wiki/Recursive_Bayesian_estimation.html" title="Recursive Bayesian estimation">Recursive Bayesian estimation</a></li>
+<li><a href="/wiki/Stopping_e-mail_abuse.html" title="Stopping e-mail abuse">Stopping e-mail abuse</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li>Guide to Bayesian spam filters: <a  class="external text" title="http://lwn.net/Articles/172491/">part 1</a>, <a  class="external text" title="http://lwn.net/Articles/173910/">part 2</a>.</li>
+<li><a  class="external text" title="http://spambayes.sourceforge.net/">SpamBayes</a> - Open source Bayesian spam filter.</li>
+<li><a  class="external text" title="http://mail.python.org/pipermail/python-dev/2002-August/028216.html">Detailed explanation of Paul Graham's formulas, which lack mathematical rigorousness</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<ol class="references">
+<li id="_note-0"><b><a  title="">^</a></b> M. Sahami, S. Dumais, D. Heckerman, E. Horvitz (1998). "<i>A Bayesian approach to filtering junk e-mail</i>". AAAI'98 Workshop on Learning for Text Categorization.</li>
+<li id="_note-1"><b><a  title="">^</a></b> <a href="/wiki/Paul_Graham.html" title="Paul Graham">Graham, Paul</a> (2002). <a  class="external text" title="http://www.paulgraham.com/spam.html">A Plan for Spam</a>.</li>
+</ol>
+
+<!-- 
+Pre-expand include size: 6592 bytes
+Post-expand include size: 2131 bytes
+Template argument size: 1186 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:515929-0!1!0!default!!en!2 and timestamp 20060910164314 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Pages needing expert attention">Pages needing expert attention</a></span> | <span dir='ltr'><a  title="Category:Articles to be split">Articles to be split</a></span> | <span dir='ltr'><a  title="Category:Bayesian statistics">Bayesian statistics</a></span> | <span dir='ltr'><a  title="Category:Estimation theory">Estimation theory</a></span> | <span dir='ltr'><a  title="Category:Spam filtering">Spam filtering</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Bayesian_spam_filtering.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-pt"><a >Português</a></li>
+				<li class="interwiki-fi"><a >Suomi</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 19:28, 4 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv109 in 0.442 secs. --></body></html>

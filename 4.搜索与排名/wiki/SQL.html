@@ -1,0 +1,551 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="PL/SQL,2005,Ada programming language,Array,Block (programming),Borland Delphi,C++,Concurrency control,Conditional statement,Data Definition Language,Data Manipulation Language" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>PL/SQL - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "PL/SQL";
+			var wgTitle = "PL/SQL";
+			var wgArticleId = 24106;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">PL/SQL</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p><b>PL/SQL (Procedural Language/Structured Query Language)</b> is <a href="/wiki/Oracle_Corporation.html" title="Oracle Corporation">Oracle Corporation</a>'s proprietary server-based procedural extension to the <a href="/wiki/SQL.html" title="SQL">SQL</a> database <a href="/wiki/Programming_language.html" title="Programming language">language</a>. (Some other SQL <a href="/wiki/Database_management_system.html" title="Database management system">database management systems</a> offer languages similar to PL/SQL.) Its <a href="/wiki/Syntax.html" title="Syntax">syntax</a> strongly resembles that of the <a href="/wiki/Ada_programming_language.html" title="Ada programming language">Ada programming language</a>.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Functionality</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Basic code structure</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Variables</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">3.1</span> <span class="toctext">Numeric variables</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.2</span> <span class="toctext">Character variables</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.3</span> <span class="toctext">Boolean variables</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.4</span> <span class="toctext">Date variables</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.5</span> <span class="toctext">Datatypes for specific columns</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.6</span> <span class="toctext">User-defined datatypes</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Array-handling</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Looping</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">5.1</span> <span class="toctext">LOOP statements</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">5.2</span> <span class="toctext">WHILE loops</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">5.3</span> <span class="toctext">FOR loops</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">5.4</span> <span class="toctext">Cursor FOR loops</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">Similar languages</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">References</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Functionality">edit</a>]</div>
+<p><a name="Functionality" id="Functionality"></a></p>
+<h2>Functionality</h2>
+<p>PL/SQL supports <a href="/wiki/Variable.html" title="Variable">variables</a>, <a href="/wiki/Conditional_statement.html" title="Conditional statement">conditions</a>, <a href="/wiki/Array.html" title="Array">arrays</a>, and <a href="/wiki/Exception_handling.html" title="Exception handling">exceptions</a>. Implementations from version 8 of the <a href="/wiki/Oracle_RDBMS.html" title="Oracle RDBMS">Oracle RDBMS</a> onwards have included features associated with <a href="/wiki/Object_orientation.html" title="Object orientation">object-orientation</a>.</p>
+<p>The underlying SQL functions as a <a href="/wiki/Declarative_programming.html" title="Declarative programming">declarative language</a>. Standard SQL—unlike some <a href="/wiki/Functional_programming_language.html" title="Functional programming language">functional programming languages</a>—does not require implementations to convert <a href="/wiki/Tail_recursion.html" title="Tail recursion">tail calls</a> to jumps. SQL does not readily provide "first row" and "rest of table" accessors, and it cannot easily perform some constructs such as <a href="/wiki/Program_loop.html" title="Program loop">loops</a>. PL/SQL, however, as a <a href="/wiki/Turing-complete.html" title="Turing-complete">Turing-complete</a> procedural language which fills in these gaps, allows <a href="/wiki/Oracle_database.html" title="Oracle database">Oracle database</a> developers to interface with the underlying <a href="/wiki/Relational_database.html" title="Relational database">relational database</a> in an imperative manner. SQL statements can make explicit in-line calls to PL/SQL functions, or can cause PL/SQL <a href="/wiki/Database_trigger.html" title="Database trigger">triggers</a> to fire upon pre-defined <a href="/wiki/Data_Manipulation_Language.html" title="Data Manipulation Language">Data Manipulation Language</a> (DML) events.</p>
+<p>PL/SQL <a href="/wiki/Stored_procedure.html" title="Stored procedure">stored procedures</a> (<a href="/wiki/Function_%28programming%29.html" title="Function (programming)">functions</a>, procedures, packages, and triggers) which perform DML get compiled into an Oracle database: to this extent their SQL code can undergo syntax-checking. Programmers working in an <a href="/wiki/Oracle_database.html" title="Oracle database">Oracle database</a> environment can construct PL/SQL <a href="/wiki/Statement_block.html" title="Statement block">blocks</a> of such functionality to serve as <a href="/wiki/Subroutine.html" title="Subroutine">procedures</a>, functions; or they can write in-line segments of PL/SQL within <a href="/wiki/SQL%2APlus.html" title="SQL*Plus">SQL*Plus</a> scripts.</p>
+<p>While programmers can readily incorporate SQL DML statements into PL/SQL (as cursor definitions, for example, or using the SELECT ... INTO syntax), <a href="/wiki/Data_Definition_Language.html" title="Data Definition Language">Data Definition Language</a> (DDL) statements such as CREATE TABLE/DROP INDEX etc require the use of "Dynamic SQL". Earlier versions of Oracle required the use of a complex built-in <code>DBMS_SQL</code> package for Dynamic SQL where the system needed to explicitly parse and execute an SQL statement. Later versions have included an <code>EXECUTE IMMEDIATE</code> syntax called "Native Dynamic SQL" which considerably simplifies matters. Any use of DDL in Oracle will result in an implicit commit. Programmers can also use Dynamic SQL to execute DML where they do not know the exact content of the statement in advance.</p>
+<p>PL/SQL offers several pre-defined packages for specific purposes. Such PL/SQL packages include:</p>
+<ul>
+<li>DBMS_OUTPUT - for output operations to non-database destinations</li>
+<li>DBMS_JOB - for running specific procedures/functions at a particular time (i.e. scheduling)</li>
+<li>DBMS_XPLAN - for formatting "Explain Plan" output</li>
+<li>DBMS_SESSION</li>
+<li>DBMS_METADATA - for extracting meta data from the data dictionary (such as DDL statements)</li>
+<li>UTL_FILE - for reading and writing files on disk</li>
+<li>UTL_HTTP - for making requests to web servers from the database</li>
+<li>UTL_SMTP - for sending mail from the database (via an SMTP server)</li>
+</ul>
+<p>Oracle Corporation customarily adds more packages and/or extends package functionality with each successive release of the Oracle DBMS.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Basic code structure">edit</a>]</div>
+<p><a name="Basic_code_structure" id="Basic_code_structure"></a></p>
+<h2>Basic code structure</h2>
+<p><b>PL/SQL</b> programs consist of <a href="/wiki/Block_%28programming%29.html" title="Block (programming)">blocks</a>. Blocks take the general form:</p>
+<dl>
+<dd>
+<table>
+<tr>
+<td><font style="color:#0000FF">DECLARE</font></td>
+</tr>
+<tr>
+<td>&#160;&#160;&#160;&#160;<font style="color:#006400">-- Declaration block (optional)</font></td>
+</tr>
+<tr>
+<td><font style="color:#0000FF">BEGIN</font></td>
+</tr>
+<tr>
+<td>&#160;&#160;&#160;<font style="color:#006400">-- Program proper</font></td>
+</tr>
+<tr>
+<td><font style="color:#0000FF">EXCEPTION</font></td>
+</tr>
+<tr>
+<td>&#160;&#160;&#160;<font style="color:#006400">-- Exception-handling (optional)</font></td>
+</tr>
+<tr>
+<td><font style="color:#0000FF">END</font></td>
+</tr>
+</table>
+</dd>
+</dl>
+<dl>
+<dd><font style="color:#006400">/* Sample comment spanning</font></dd>
+</dl>
+<dl>
+<dd><font style="color:#006400">multiple lines... */</font></dd>
+</dl>
+<dl>
+<dd><font style="color:#006400">--Single-line comment</font></dd>
+</dl>
+<p>The DECLARE section specifies the <a href="/wiki/Datatype.html" title="Datatype">datatypes</a> of variables, constants, collections, and user-defined types .</p>
+<p>The block between BEGIN and END specifies executable procedural code.</p>
+<p>Exceptions, errors which arise during the execution of the code, have one of two types:</p>
+<ol>
+<li>pre-defined exceptions</li>
+<li>user-defined exceptions.</li>
+</ol>
+<p>Programmers have to raise user-defined exceptions explicitly. They can do this by using the RAISE command, with the syntax: RAISE &lt;exception name&gt;</p>
+<p>Oracle Corporation has pre-defined several exceptions like NO_DATA_FOUND, TOO_MANY_ROWS, etc. Each exception has an SQL Error Number and SQL Error Message associated with it. Programmers can access these by using the SQLCODE and SQLERRM functions.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Variables">edit</a>]</div>
+<p><a name="Variables" id="Variables"></a></p>
+<h2>Variables</h2>
+<p>The DECLARE section defines and (optionally) initialises variables. If not initialised specifically they default to 0 or to null.</p>
+<p>For example:</p>
+<dl>
+<dd>
+<table>
+<tr>
+<td><font style="color:#0000FF">declare</font></td>
+</tr>
+<tr>
+<td>&#160;&#160;&#160;&#160;number1 <font style="color:#FF0000">number</font><font style="color:#0000FF">(</font><font style="color:#8B4513">2</font><font style="color:#0000FF">);</font></td>
+</tr>
+<tr>
+<td>&#160;&#160;&#160;&#160;number2 <font style="color:#FF0000">number</font><font style="color:#0000FF">(</font><font style="color:#8B4513">2</font><font style="color:#0000FF">)&#160;:=</font> <font style="color:#FF0000">17</font><font style="color:#0000FF">;</font></td>
+</tr>
+<tr>
+<td>&#160;&#160;&#160;&#160;text <font style="color:#FF0000">varchar2</font><font style="color:#0000FF">(</font><font style="color:#8B4513">12</font><font style="color:#0000FF">)&#160;:=</font> <font style="color:#FF0000">'Hello world'</font><font style="color:#0000FF">;</font></td>
+</tr>
+<tr>
+<td><font style="color:#0000FF">begin</font></td>
+</tr>
+<tr>
+<td>&#160;&#160;&#160;&#160;<font style="color:#0000FF">select street_number into</font> number1 <font style="color:#0000FF">from</font> <font style="color:#B8860B">address</font> <font style="color:#0000FF">where name=</font><font style="color:#FF0000">'Smith'</font><font style="color:#0000FF">;</font></td>
+</tr>
+<tr>
+<td><font style="color:#0000FF">end;</font></td>
+</tr>
+</table>
+</dd>
+</dl>
+<p>The symbol := functions as an assignment operator to store a value in a variable.</p>
+<p>The major <a href="/wiki/Datatype.html" title="Datatype">datatypes</a> in PL/SQL include NUMBER, INTEGER, CHAR, VARCHAR2, DATE, TIMESTAMP, TEXT etc.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Numeric variables">edit</a>]</div>
+<p><a name="Numeric_variables" id="Numeric_variables"></a></p>
+<h3>Numeric variables</h3>
+<p>variable_name <font style="color:#FF0000">number</font><font style="color:#0000FF">(</font><font style="color:#8B4513">P[,S]</font><font style="color:#0000FF">)&#160;:=</font> <font style="color:#FF0000">value</font><font style="color:#0000FF">;</font></p>
+<p>To define a numeric variable, the programmer appends the variable type <b>NUMBER</b> to the name definition. To specify the (optional) precision (P) and the (optional) scale (S), one can further append these in round brackets, separated by a comma. ("Precision" in this context refers to the number of digits which the variable can hold, "scale" refers to the number of digits which can follow the decimal point.)</p>
+<p>A selection of other datatypes for numeric variables would include:</p>
+<dl>
+<dd><font style="color:#FF0000">binary_float, binary_double, dec, decimal, double precision, float ,integer, int, numeric, real, smallint, binary_integer, pls_integer</font></dd>
+</dl>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Character variables">edit</a>]</div>
+<p><a name="Character_variables" id="Character_variables"></a></p>
+<h3>Character variables</h3>
+<p>variable_name <font style="color:#FF0000">varchar2</font><font style="color:#0000FF">(</font><font style="color:#8B4513">L</font><font style="color:#0000FF">)&#160;:=</font> <font style="color:#FF0000">'Text'</font><font style="color:#0000FF">;</font></p>
+<p>To define a character variable, the programmer normally appends the variable type VARCHAR2 to the name definition. There follows in brackets the maximum number of characters which the variable can store.</p>
+<p>Other datatypes for character variables include:</p>
+<dl>
+<dd><font style="color:#FF0000">varchar, char, long, raw, long raw, nchar, nchar2</font></dd>
+</dl>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Boolean variables">edit</a>]</div>
+<p><a name="Boolean_variables" id="Boolean_variables"></a></p>
+<h3>Boolean variables</h3>
+<p>variable_name <font style="color:#FF0000">boolean</font><font style="color:#0000FF">:=</font> <font style="color:#FF0000">true</font><font style="color:#0000FF">;</font></p>
+<p>Boolean variables can convey TRUE, FALSE or NULL.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Date variables">edit</a>]</div>
+<p><a name="Date_variables" id="Date_variables"></a></p>
+<h3>Date variables</h3>
+<p>variable_name <font style="color:#FF0000">date</font> <font style="color:#0000FF">:=</font> <font style="color:#FF0000">'01-Jan-2005'</font><font style="color:#0000FF">;</font></p>
+<p>Programmers define date variables by appending the datatype code "DATE" to a variable name. The Oracle DBMS provides the function "to_date" to convert strings to date values. The function converts the first quoted string into a date, using as a definition the second quoted string.</p>
+<p>For example: "<i>to_date('31-12-2004','dd-mm-yyyy')</i>" or "<i>to_date('31-Dec-2004','dd-mon-yyyy', 'NLS_DATE_LANGUAGE = American')</i>"</p>
+<p>To convert dates into text one uses the function "to_char ( date_string, format_string )".</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Datatypes for specific columns">edit</a>]</div>
+<p><a name="Datatypes_for_specific_columns" id="Datatypes_for_specific_columns"></a></p>
+<h3>Datatypes for specific columns</h3>
+<p>Variable_name <font style="color:#B8860B">Table_name</font><font style="color:#0000FF">.</font>Column_name<font style="color:#0000FF">%type;</font></p>
+<p>This syntax defines a variable of the type of the referenced column on the referenced table.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: User-defined datatypes">edit</a>]</div>
+<p><a name="User-defined_datatypes" id="User-defined_datatypes"></a></p>
+<h3>User-defined datatypes</h3>
+<p>Programmers specify user-defined datatypes with the syntax:</p>
+<p><i>"type data_type is record(field_1 type_1&#160;:=xyz, field_2 type_2&#160;:=xyz, ..., field_n type_n&#160;:=xyz);"</i></p>
+<p>For example:</p>
+<dl>
+<dd>
+<table>
+<tr>
+<td><font style="color:#0000FF">declare</font></td>
+</tr>
+<tr>
+<td>&#160;&#160;&#160;&#160;<font style="color:#0000FF">type</font> t_address <font style="color:#0000FF">is record(</font></td>
+</tr>
+<tr>
+<td>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;name <font style="color:#B8860B">address</font><font style="color:#0000FF">.</font>name<font style="color:#0000FF">%type,</font></td>
+</tr>
+<tr>
+<td>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;street <font style="color:#B8860B">address</font><font style="color:#0000FF">.</font>street<font style="color:#0000FF">%type,</font></td>
+</tr>
+<tr>
+<td>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;street_number <font style="color:#B8860B">address</font><font style="color:#0000FF">.</font>street_number<font style="color:#0000FF">%type,</font></td>
+</tr>
+<tr>
+<td>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;postcode <font style="color:#B8860B">address</font><font style="color:#0000FF">.</font>postcode<font style="color:#0000FF">%type);</font></td>
+</tr>
+<tr>
+<td>&#160;&#160;&#160;&#160;v_address t_address;</td>
+</tr>
+<tr>
+<td><font style="color:#0000FF">begin</font></td>
+</tr>
+<tr>
+<td>&#160;&#160;&#160;&#160;<font style="color:#0000FF">select</font> name,street, street_number, postcode <font style="color:#0000FF">into</font> v_address <font style="color:#0000FF">from</font> <font style="color:#B8860B">address</font> <font style="color:#0000FF">where rownum =</font> <font style="color:#8B4513">1</font>;</td>
+</tr>
+<tr>
+<td><font style="color:#0000FF">end;</font></td>
+</tr>
+</table>
+</dd>
+</dl>
+<p>This sample program defines its own datatype, called <i>t_address</i>, which contains the fields <i>name, street, street_number</i> and <i>postcode</i>.</p>
+<p>Using this datatype the programmer has defined a variable called <i>v_address</i> and loaded it with data from the ADDRESS table.</p>
+<p>Programmers can address individual attributes in such a structure by means of the dot-notation, thus: <i>"v_address.street&#160;:= 'High Street';"</i></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Array-handling">edit</a>]</div>
+<p><a name="Array-handling" id="Array-handling"></a></p>
+<h2>Array-handling</h2>
+<p>PL/SQL refers to <a href="/wiki/Array.html" title="Array">arrays</a> as "collections". The language offers three types of collections:</p>
+<ol>
+<li>Index-by tables (associative arrays)</li>
+<li>Nested tables</li>
+<li>Varrays (variable-size arrays)</li>
+</ol>
+<p>Programmers must specify an upper limit for varrays, but need not for index-by tables or for nested tables. The language includes several collection <a href="/wiki/Method_%28computer_science%29.html" title="Method (computer science)">methods</a> used to manipulate collection elements: for example FIRST, LAST, NEXT, PRIOR, EXTEND, TRIM, DELETE, etc.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Looping">edit</a>]</div>
+<p><a name="Looping" id="Looping"></a></p>
+<h2>Looping</h2>
+<p>As a procedural language by definition, PL/SQL provides <a href="/wiki/Iteration.html" title="Iteration">iteration</a>. Programmers can utilise:</p>
+<ol>
+<li>LOOP statements</li>
+<li><a href="/wiki/While_loop.html" title="While loop">WHILE loops</a></li>
+<li><a href="/wiki/For_loop.html" title="For loop">FOR loops</a></li>
+<li>Cursor FOR loops</li>
+</ol>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: LOOP statements">edit</a>]</div>
+<p><a name="LOOP_statements" id="LOOP_statements"></a></p>
+<h3>LOOP statements</h3>
+<p><b>Loop</b></p>
+<pre>
+syntax-
+  loop 
+       ....stmt...
+  end  loop;
+</pre>
+<p>Note: the above code is an unterminated loop.</p>
+<pre>
+  loop
+      if  condition then
+       ....stmt...
+      exit;
+      end if;
+end loop;
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: WHILE loops">edit</a>]</div>
+<p><a name="WHILE_loops" id="WHILE_loops"></a></p>
+<h3>WHILE loops</h3>
+<p>syntax-</p>
+<pre>
+  while  condition   loop
+            ...stmt...
+       end loop;
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: FOR loops">edit</a>]</div>
+<p><a name="FOR_loops" id="FOR_loops"></a></p>
+<h3>FOR loops</h3>
+<p>FOR loops, also called "numerical loops", operate a certain (counted) number of times.</p>
+<blockquote>
+<p>FOR &lt;variable(numeric)&gt; IN [REVERSE] &lt;lowerbound&gt;..&lt;upperbound&gt; LOOP .... ..... END LOOP;</p>
+</blockquote>
+<p>The REVERSE keyword implements looping in reverse order.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Cursor FOR loops">edit</a>]</div>
+<p><a name="Cursor_FOR_loops" id="Cursor_FOR_loops"></a></p>
+<h3>Cursor FOR loops</h3>
+<dl>
+<dd>
+<table>
+<tr>
+<td><font style="color:#0000FF">for</font> Record-Index <font style="color:#0000FF">in</font> <font style="color:#8B4513">(Select person_code from people_table)</font>
+<p><font style="color:#0000FF">loop</font></p>
+</td>
+</tr>
+<tr>
+<td>    <font style="color:#0000FF">...</font></td>
+</tr>
+<tr>
+<td><font style="color:#0000FF">end loop;</font></td>
+</tr>
+</table>
+</dd>
+</dl>
+<p>Cursor-for loops automatically open a cursor, read in their data and close the cursor again</p>
+<p>As an alternative, the PL/SQL programmer can pre-define the cursor's SELECT-statement in advance in order (for example) to allow re-use or to make the code more understandable (especially useful in the case of long or complex queries).</p>
+<dl>
+<dd>
+<table>
+<tr>
+<td><font style="color:#0000FF">cursor</font> cursor_person <font style="color:#0000FF">is</font>
+<p><font style="color:#0000FF">Select</font> person_code <font style="color:#0000FF">from</font> people_table;</p>
+</td>
+</tr>
+<tr>
+<td><font style="color:#0000FF">for</font> Record-Index <font style="color:#0000FF">in</font> cursor_person
+<p><font style="color:#0000FF">loop</font></p>
+</td>
+</tr>
+<tr>
+<td>    <font style="color:#0000FF">...</font></td>
+</tr>
+<tr>
+<td><font style="color:#0000FF">end loop;</font></td>
+</tr>
+</table>
+</dd>
+</dl>
+<p>The concept of the person_code within the FOR-loop gets expressed with dot-notation ("."):</p>
+<dl>
+<dd><font style="color:#8B4513">Record-Index.person_code</font>
+<table>
+<tr>
+<td></td>
+</tr>
+</table>
+</dd>
+</dl>
+<p>.. <i>example</i>:<br />
+declare</p>
+<dl>
+<dd>var number;</dd>
+</dl>
+<p>begin</p>
+<dl>
+<dd>for var in 0 ..10 loop
+<dl>
+<dd>dbms_output.put_line(var);</dd>
+</dl>
+</dd>
+<dd>end loop;</dd>
+</dl>
+<p>end; / <i>OUTPUT</i>-</p>
+<pre>
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Similar languages">edit</a>]</div>
+<p><a name="Similar_languages" id="Similar_languages"></a></p>
+<h2>Similar languages</h2>
+<p>PL/SQL functions analogously to the embedded procedural languages associated with other <a href="/wiki/Relational_database.html" title="Relational database">relational databases</a>. <a href="/wiki/Sybase.html" title="Sybase">Sybase</a> and its derivative <a href="/wiki/Microsoft_SQL_Server.html" title="Microsoft SQL Server">Microsoft SQL Server</a> have <a href="/wiki/Transact-SQL.html" title="Transact-SQL">Transact-SQL</a>, <a href="/wiki/PostgreSQL.html" title="PostgreSQL">PostgreSQL</a> has <a href="/wiki/PL/pgSQL.html" title="PL/pgSQL">PL/pgSQL</a> (which tries to emulate PL/SQL to an extent), and <a href="/wiki/IBM_DB2.html" title="IBM DB2">IBM DB2</a> includes SQL Procedural Language (<a  class="external text" title="http://publib.boulder.ibm.com/infocenter/db2help/index.jsp?topic=/com.ibm.db2.udb.doc/ad/c0011916.htm">SQL PL</a>).</p>
+<p>The designers of PL/SQL modelled its syntax on that of <a href="/wiki/Ada_programming_language.html" title="Ada programming language">Ada</a>. Both Ada and PL/SQL have <a href="/wiki/Pascal_programming_language.html" title="Pascal programming language">Pascal</a> as a common ancestor, and so PL/SQL also resembles Pascal in numerous aspects. The structure of a PL/SQL package closely resembles the basic <a href="/wiki/Pascal_programming_language.html" title="Pascal programming language">Pascal</a>'s program structure, or a <a href="/wiki/Borland_Delphi.html" title="Borland Delphi">Borland Delphi</a> unit. Programmers can define global data-types, constants and static variables, public and private, in a PL/SQL package.</p>
+<p>PL/SQL also allows for the definition of classes and instantiating these as objects in PL/SQL code. This resembles usages in <a href="/wiki/Object-oriented_programming.html" title="Object-oriented programming">object-oriented programming</a> languages like <a href="/wiki/Borland_Delphi.html" title="Borland Delphi">Borland Delphi</a>, <a href="/wiki/C%2B%2B.html" title="C++">C++</a> and <a href="/wiki/Java_programming_language.html" title="Java programming language">Java</a>. PL/SQL refers to a class as an "Advanced Data Type" (ADT), and defines it as an Oracle SQL data-type as opposed to a PL/SQL user-defined type, allowing its use in both the Oracle SQL Engine and the Oracle PL/SQL engine. The constructor and methods of an Advance Data Type are written in PL/SQL. The resulting Advance Data Type can operate as an object class in PL/SQL. Such objects can also persist as column values in Oracle database tables.</p>
+<p>PL/SQL does not resemble Transact-SQL, despite superficial similarities due to the use of both as embedded database languages. Porting code from one to the other usually involves non-trivial work, not only due to the differences in the feature sets of the two languages, but also due to the very significant differences in the way Oracle and SQL-Server deal with <a href="/wiki/Concurrency_control.html" title="Concurrency control">concurrency</a> and <a href="/wiki/Lock_%28computer_science%29.html" title="Lock (computer science)">locking</a>.</p>
+<p>The <a href="/wiki/Fyracle.html" title="Fyracle">Fyracle</a> project aims to enable the execution of PL/SQL code in the <a href="/wiki/Open_source.html" title="Open source">open-source</a> <a href="/wiki/Firebird_%28database_server%29.html" title="Firebird (database server)">Firebird database</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<div class="infobox sisterproject">
+<div style="float: left;">
+<div class="floatnone"><span><a  class="image" title="Wikibooks"><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Wikibooks-logo-en.svg/50px-Wikibooks-logo-en.svg.png" alt="Wikibooks" width="50" height="57" longdesc="/wiki/Image:Wikibooks-logo-en.svg" /></a></span></div>
+</div>
+<div style="margin-left: 60px;"><a href="/wiki/Wikibooks.html" title="Wikibooks">Wikibooks</a> has more about this subject:</div>
+<div style="margin-left: 70px;"><i><b><a  class="extiw" title="wikibooks:Programming:Oracle_PL/SQL_Cheatsheet">Programming:Oracle PL/SQL Cheatsheet</a></b></i><br /></div>
+<div style="margin-left: 10px;"></div>
+</div>
+<ul>
+<li><cite class="book" style="font-style:normal" id="Reference-Feuerstein-2005"><a href="/wiki/Steven_Feuerstein.html" title="Steven Feuerstein">Feuerstein, Steven</a>; with Bill Pribyl (2005). <i>Oracle PL/SQL Programming</i>, 4th ed., <a href="/wiki/O%27Reilly_%26_Associates.html" title="O'Reilly &amp; Associates">O'Reilly &amp; Associates</a>. <a  class="internal">ISBN 0-596-00977-1</a>.</cite> (Many consider this book the "bible" of PL/SQL development)</li>
+<li>Naudé, Frank (<a href="/wiki/June_9.html" title="June 9">June 9</a>, <a href="/wiki/2005.html" title="2005">2005</a>). <a  class="external text" title="http://www.orafaq.com/faqplsql.htm">Oracle PL/SQL FAQ rev 2.08</a>.</li>
+</ul>
+
+<!-- 
+Pre-expand include size: 6017 bytes
+Post-expand include size: 1917 bytes
+Template argument size: 1603 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:24106-0!1!0!default!!en!2 and timestamp 20060909194937 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Data management">Data management</a></span> | <span dir='ltr'><a  title="Category:Ada programming language family">Ada programming language family</a></span> | <span dir='ltr'><a  title="Category:Oracle Corporation">Oracle Corporation</a></span> | <span dir='ltr'><a  title="Category:SQL">SQL</a></span> | <span dir='ltr'><a  title="Category:Data-centric programming languages">Data-centric programming languages</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/PL/SQL.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-nl"><a >Nederlands</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-pt"><a >Português</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 10:29, 28 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by harris in 0.111 secs. --></body></html>

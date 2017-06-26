@@ -1,0 +1,351 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Constraint logic programming,Arc consistency,Backtracking,Bottom-up,Bound consistency,CHIP programming language,Civil engineering,Concurrent constraint logic programming,Concurrent process,Constraint handling rules,Constraint programming" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Constraint logic programming - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Constraint_logic_programming";
+			var wgTitle = "Constraint logic programming";
+			var wgArticleId = 4249442;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Constraint logic programming</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p><b>Constraint logic programming</b> is a form of <a href="/wiki/Constraint_programming.html" title="Constraint programming">constraint programming</a>, in which <a href="/wiki/Logic_programming.html" title="Logic programming">logic programming</a> is extended to include concepts from <a href="/wiki/Constraint_satisfaction.html" title="Constraint satisfaction">constraint satisfaction</a>. A constraint logic program is a logic program that contains constraints in the body of clauses. An example of a clause including a constraint is <code>A(X,Y)&#160;:- X+Y&gt;0, B(X), C(Y)</code>. In this clause, <code>X+Y&gt;0</code> is a constraint; <code>A(X,Y)</code>, <code>B(X)</code>, and <code>C(Y)</code> are literals like in regular logic programming. Intuitively, this clause tells one condition under which the statement <code>A(X,Y)</code> holds: this is the case if <code>X+Y</code> is greater than zero and both <code>B(X)</code> and <code>C(Y)</code> are true.</p>
+<p>Like in regular logic programming, programs are queried about the provability of a goal, which may contain constraints in addition to literals. A proof for a goal is composed of clauses whose bodies are satisfiable constraints and literals that can in turn be proved using other clauses. Execution is done by an interpreter, which starts from the goal and <a href="/wiki/Recursion.html" title="Recursion">recursively</a> scans the clauses trying to prove the goal. Constraints encountered during this scan are placed in a set called <b>constraint store</b>. If this set is found out to be unsatisfiable, the interpreter <a href="/wiki/Backtracking.html" title="Backtracking">backtracks</a>, trying to use other clauses for proving the goal. In practice, satisfiability of the constraint store may be checked using an incomplete algorithm, which does not always detect inconsistency.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Semantics</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Terms and constraints</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">3.1</span> <span class="toctext">Tree terms</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.2</span> <span class="toctext">Reals</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.3</span> <span class="toctext">Finite domains</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">The constraint store</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Labeling</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">Program reformulations</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">Constraint handling rules</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">8</span> <span class="toctext">Bottom-up evaluation</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">9</span> <span class="toctext">Concurrent constraint logic programming</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">10</span> <span class="toctext">Applications</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">11</span> <span class="toctext">History</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">12</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">13</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Overview">edit</a>]</div>
+<p><a name="Overview" id="Overview"></a></p>
+<h2>Overview</h2>
+<p>Formally, constraint logic programs are like regular logic programs, but the body of clauses can contain constraints, in addition to the regular logic programming literals. As an example, <code>X&gt;0</code> is a constraint, and is included in the last clause of the following constraint logic program.</p>
+<pre>
+ B(X,1):-X&lt;0.
+ B(X,Y):-X=1, Y&gt;0.
+ A(X,Y):-X&gt;0, B(X,Y).
+</pre>
+<p>Like in regular logic programming, evaluating a goal such as <code>A(X,1)</code> requires evaluating the body of the last clause with <code>Y=1</code>. Like in regular logic programming, this in turn requires proving the goal <code>B(X,1)</code>. Contrarily to regular logic programming, this also requires a constraint to be satisfied: <code>X&gt;0</code>, the constraint in the body of the last clause.</p>
+<p>Whether a constraint is satisfied cannot always be determined when the constraint is encountered. In this case, for example, the value of <code>X</code> is not determined when the last clause is evaluated. As a result, the constraint <code>X&gt;0</code> is not satisfied nor violated at this point. Rather than proceeding in the evaluation of <code>B(X,1)</code> and then checking whether the resulting value of <code>X</code> is positive afterwards, the interpreter stores the constraint <code>X&gt;0</code> and then proceed in the evaluation of <code>B(X,1)</code>; this way, the interpreter can detect violation of the constraint <code>X&gt;0</code> during the evaluation of <code>B(X,1)</code>, and backtrack immediately if this is the case, rather than waiting for the evaluation of <code>B(X,1)</code> to conclude.</p>
+<p>In general, the evaluation of a constraint logic program proceeds like for a regular logic program, but constraint encountered during evaluation are placed in a set called constraint store. As an example, the evaluation of the goal <code>A(X,1)</code> proceeds by evaluating the body of the first clause with <code>Y=1</code>; this evaluation adds <code>X&gt;0</code> to the constraint store and requires the goal <code>B(X,1)</code> to be proved. While trying to prove this goal, the second clause is applicable, but its evaluation adds <code>X&lt;0</code> to the constraint store. This addition makes the constraint store unsatisfiable, and the interpreter backtracks, removing the last addition from the constraint store. The evaluation of the third clause adds <code>X=1</code> and <code>Y&gt;0</code> to the constraint store. Since the constraint store is satisfiable and no other literal is left to prove, the interpreter stops with the solution <code>X=1, Y=1</code>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Semantics">edit</a>]</div>
+<p><a name="Semantics" id="Semantics"></a></p>
+<h2>Semantics</h2>
+<p>The semantics of constraint logic programs can be defined in terms of a virtual interpreter that maintains a pair <img class='tex' src="http://upload.wikimedia.org/math/7/6/5/765146b2af99634c0e7b344e3d378589.png" alt="\langle G,S \rangle" /> during execution. The first element of this pair is called current goal; the second element is called constraint store. The <i>current goal</i> contains the literals the interpreter is trying to prove and may also contain some constraints it is trying to satisfy; the <i>constraint store</i> contains all constraints the interpreter has assumed satisfiable so far.</p>
+<p>Initially, the current goal is the goal and the constraint store is empty. The interpreter proceeds by removing the first element from the current goal and analyzing it. The details of this analysis are explain below, but in the end this analysis may produce a successful termination or a failure. This analysis may involve <a href="/wiki/Recursion.html" title="Recursion">recursive calls</a> and addition of new literals to the current goal and new constraint to the constraint store. The interpreter backtracks if a failure is generated. A successful termination is generated when the current goal is empty and the constraint store is satisfiable.</p>
+<p>The details of the analysis of a literal removed from the goal is as follows. After having removed this literal from the front of the goal, it is checked whether it is a constraint or a literal. If it is a constraint, it is added to the constraint store. If it is a literal, a clause whose head has the same predicate of the literal is chosen; the clause is rewritten by replacing its variables with new variables (variables not occurring in the goal): the result is called a <i>fresh variant</i> of the clause; the body of the fresh variant of the clause is then placed in front of the goal; the equality of each argument of the literal with the corresponding one of the fresh variant head is placed in front of the goal as well.</p>
+<p>Some checks are done during these operations. In particular, the constraint store is checked for consistency every time a new constraint is added to it. In principle, whenever the constraint store is unsatisfiable the algorithm could backtrack. However, checking unsatisfiability at each step would be inefficient. For this reason, an incomplete satisfiability checker may be used instead. In practice, satisfiability is checked using methods that simplify the constraint store, that is, rewrite it into an equivalent but simpler-to-solve form. These methods can sometimes but not always prove unsatisfiability of an unsatisfiable constraint store.</p>
+<p>The interpreter has proved the goal when the current goal is empty and the constraint store is not detected unsatisfiable. The result of execution is the current set of (simplified) constraints. This set may include constraints such as <span class="texhtml"><i>X</i> = 2</span> that force variables to a specific value, but may also include constraints like <span class="texhtml"><i>X</i> &gt; 2</span> that only bound variables without giving them a specific value.</p>
+<p>Formally, the semantics of constraint logic programming is defined in terms of <i>derivations</i>. A transition is a pair of pairs goal/store, noted <img class='tex' src="http://upload.wikimedia.org/math/0/c/f/0cfbbde80ca7854600dc174780adbf40.png" alt="\langle G,S \rangle \rightarrow \langle G',S' \rangle" />. Such a pair states the possibility of going from state <img class='tex' src="http://upload.wikimedia.org/math/7/6/5/765146b2af99634c0e7b344e3d378589.png" alt="\langle G,S \rangle" /> to state <img class='tex' src="http://upload.wikimedia.org/math/5/e/1/5e1535f4d91a04a6f958c6d7fb3ff31b.png" alt="\langle G',S' \rangle" />. Such a transition is possible in three possible cases:</p>
+<ul>
+<li>an element of <span class="texhtml"><i>G</i></span> is a constraint <span class="texhtml"><i>C</i></span>, <img class='tex' src="http://upload.wikimedia.org/math/f/8/4/f84d009121acfbe9bb884c228a7f1ef9.png" alt="G'=G \backslash \{C\}" /> and <img class='tex' src="http://upload.wikimedia.org/math/5/e/3/5e3e99ee0a9d8a72da462152b9e7e653.png" alt="S'=S \cup \{C\}" />; in other words, a constraint can be moved from the goal to the constraint store</li>
+<li>an element of <span class="texhtml"><i>G</i></span> is a literal <img class='tex' src="http://upload.wikimedia.org/math/e/4/f/e4f70f388b4093d2ad289a25d32f3b6c.png" alt="L(t_1,\ldots,t_n)" />, there exists a clause that, rewritten using new variables, is <img class='tex' src="http://upload.wikimedia.org/math/c/9/1/c916008687639a352a39fc7f940f822e.png" alt="L(t_1',\ldots,t_n')&#160;:- B" />, <span class="texhtml"><i>G</i>'</span> is <span class="texhtml"><i>G</i></span> with <img class='tex' src="http://upload.wikimedia.org/math/e/4/f/e4f70f388b4093d2ad289a25d32f3b6c.png" alt="L(t_1,\ldots,t_n)" /> replaced by <img class='tex' src="http://upload.wikimedia.org/math/b/8/3/b8333710b8bff081936a1006dd17de8a.png" alt="t_1=t_1',\ldots,t_n=t_n',B" />, and <span class="texhtml"><i>S</i>' = <i>S</i></span>; in other words, a literal can be replaced by the body of a fresh variant of a clause having the same predicate in the head, adding the body of the fresh variant and the above equalities of terms to the goal</li>
+<li><span class="texhtml"><i>S</i></span> and <span class="texhtml"><i>S</i>'</span> are equivalent according to the specific constraint semantics</li>
+</ul>
+<p>A sequence of transitions is a derivation. A goal <span class="texhtml"><i>G</i></span> can be proved if there exists a derivation from <img class='tex' src="http://upload.wikimedia.org/math/5/a/6/5a6f09948c9e345f153cc624752db239.png" alt="\langle G, \emptyset \rangle" /> to <img class='tex' src="http://upload.wikimedia.org/math/9/b/8/9b883263bee7d8a9e6328859bad41770.png" alt="\langle \emptyset, S \rangle" /> for some satisfiable constraint store <span class="texhtml"><i>S</i></span>. This semantics formalizes the possible evolutions of an interpreter that arbitrarily chooses the literal of the goal to process and the clause to replace literals. In other words, a goal is proved under this semantics if there exists a sequence of choices of literals and clauses, among the possibly many ones, that lead to an empty goal and satisfiable store.</p>
+<p>Actual intepreters process the goal elements in a <a href="/wiki/LIFO.html" title="LIFO">LIFO</a> order: elements are added in the front and processed from the front. They also choose the clause of the second rule according to the order in which they are written, and rewrite the constraint store when it is modified.</p>
+<p>The third possible kind of transition is a replacemenet of the constraint store with an equivalent one. This replacement is limited to those done by specific methods, such as <a href="/wiki/Constraint_propagation.html" title="Constraint propagation">constraint propagation</a>. The semantics of constraint logic programming is parametric not only to the kind of constraints used but also to the method for rewriting the constraint store. The specific methods used in practice replace the constraint store with one that is simpler to solve. If the constraint store is unsatisfiable, this simplification may detect this unsatisfiability sometimes, but not always.</p>
+<p>The result of evaluating a goal against a constraint logic program is defined if the goal is proved. In this case, there exists a derivation from the initial pair to a pair where the goal is empty. The constraint store of this second pair is considered the result of the evaluation. This is because the constraint store contains all constraints assumed satisfiable to prove the goal. In other words, the goal is proved for all variable evaluations that satisfy these constraints.</p>
+<p>The pairwise equality of terms of two literals is often compactly denoted by <img class='tex' src="http://upload.wikimedia.org/math/4/a/6/4a64987616faad46cef65b5296d4903c.png" alt="L(t_1,\ldots,t_n)=L(t_1',\ldots,t_n')" />: this is a shorthand for the constraints <img class='tex' src="http://upload.wikimedia.org/math/a/7/3/a734f9581e95dbd09eaf073e689e568e.png" alt="t_1=t_1',\ldots,t_n=t_n'" />. A common variant of the semantics for constraint logic programming adds <img class='tex' src="http://upload.wikimedia.org/math/4/a/6/4a64987616faad46cef65b5296d4903c.png" alt="L(t_1,\ldots,t_n)=L(t_1',\ldots,t_n')" /> directly to the constraint store rather than to the goal.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Terms and constraints">edit</a>]</div>
+<p><a name="Terms_and_constraints" id="Terms_and_constraints"></a></p>
+<h2>Terms and constraints</h2>
+<p>Different definitions of terms are used, generating different kinds of constraint logic programming: over trees, reals, or finite domains. A kind of constraint that is always present is the equality of terms. Such constraints are necessary because the interpreter adds <code>t1=t2</code> to the goal whenever a literal <code>P(...t1...)</code> is replaced with the body of a clause fresh variant whose head is <code>P(...t2...)</code>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Tree terms">edit</a>]</div>
+<p><a name="Tree_terms" id="Tree_terms"></a></p>
+<h3>Tree terms</h3>
+<p>Constraint logic programming with tree terms emulates regular logic programming by storing substitutions as constraints in the constraint store. Terms are variables, constants, and functors applied to other terms. The only considered constraints are equalities and disequalities between terms. Equality is particularly important, as constraints link <code>t1=t2</code> are often generated by the intepreter.</p>
+<p>A constraint <code>t1=t2</code> can be simplified if both terms are functors applied to other terms. If the two functors are the same and the number of subterms is also the same, this constraint can be replaced with the pairwise equality of subterms. If the terms are composed of different functors or the same functor but on different number of terms, the constraint is unsatisfiable.</p>
+<p>If one of the two terms is a variable, the only allowed value the variable can take is the other term. As a result, the other term can replace the variable in the current goal and constraint store, thus practically removing the variable from consideration. In the particular case of equality of a variable with itself, the constraint can be removed as always satisfied.</p>
+<p>In this form of constraint satisfaction, variable values are terms.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Reals">edit</a>]</div>
+<p><a name="Reals" id="Reals"></a></p>
+<h3>Reals</h3>
+<p>Constraint logic programming with <a href="/wiki/Real_number.html" title="Real number">real numbers</a> uses real expressions as terms. When no functors are used, terms are expressions over reals, possibly including variables. In this case, each variable can only take a real number as a value.</p>
+<p>Precisely, terms are expressions over variables and real constants. Equality between terms is a kind of constraint that is always present, as the interpreter generates equality of terms during execution. As an example, if the first literal of the current goal is <code>A(X+1)</code> and the interpreter has chosen a clause that is <code>A(Y-1):-Y=1</code> after rewriting is variables, the constraints added to the current goal are <code>X+1=Y-1</code> and <span class="texhtml"><i>Y</i> = 1</span>. The rules of simplification used for functors are obviously not used: <code>X+1=Y-1</code> is not unsatisfiable just because the first expression is built using <code>+</code> and the second using <code>-</code>.</p>
+<p>Reals and functors can be combined, leading to terms that are expressions over reals and functors applied to other terms. Formally, variables and real constants are expressions, as any arithmetic operator over other expressions. Variables, constants (zero-arity-functors), and expressions are terms, as any functor applied to terms. In other words, terms are built over expressions, while expressions are built over numbers and variables. In this case, variables ranges over real numbers <i>and terms</i>. In other words, a variable can take a real number as a value, while another takes a term.</p>
+<p>Equality of two terms can be simplified using the rules for tree terms if none of the two terms is a real expression. For example, if the two terms have the same functor and number of subterms, their equality constraint can be replaced with the equality of subterms.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Finite domains">edit</a>]</div>
+<p><a name="Finite_domains" id="Finite_domains"></a></p>
+<h3>Finite domains</h3>
+<p>The third class of constraints used in constraint logic programming is that of finite domains. Values of variables are in this case taken from a finite domain, often that of <a href="/wiki/Integer_number.html" title="Integer number">integer numbers</a>. For each variable, a different domain can be specified: <code>X::[1..5]</code> for example means that the value of <code>X</code> is between <code>1</code> and <code>5</code>. The domain of a variable can also be given by enumerating all values a variable can take; therefore, the above domain declaration can be also written <code>X::[1,2,3,4,5]</code>. This second way of specifying a domain allows for domains that are not composed of integers, such as <code>X::[george,mary,john]</code>. If the domain of a variable is not specified, it is assumed to be the set of integers representable in the language. A group of variables can be given the same domain using a declaration like <code>[X,Y,Z]::[1..5]</code>.</p>
+<p>The domain of a variable may be reduced during execution. Indeed, as the interpreter adds constraints to the constraint store, it performs <a href="/wiki/Constraint_propagation.html" title="Constraint propagation">constraint propagation</a> to enforce a form of <a href="/wiki/Local_consistency.html" title="Local consistency">local consistency</a>, and these operations may reduce the domain of variables. If the domain of a variable becomes empty, the constraint store is inconsistent, and the algorrithm backtracks. If the domain of a variable becomes a <a href="/wiki/Singleton_%28mathematics%29.html" title="Singleton (mathematics)">singleton</a>, the variable can be assigned the unique value in its domain. The forms of consistency typically enforced are <a href="/wiki/Arc_consistency.html" title="Arc consistency">arc consistency</a>, <a href="/wiki/Hyper-arc_consistency.html" title="Hyper-arc consistency">hyper-arc consistency</a>, and <a href="/wiki/Bound_consistency.html" title="Bound consistency">bound consistency</a>. The current domain of a variable can be inspected using specific literals; for example, <code>dom(X,D)</code> finds out the current domain <code>D</code> of a variable <code>X</code>.</p>
+<p>As for domains of reals, functors can be used with domains of integers. In this case, a term can be an expression over integers, a constant, or the application of a functor over other terms. A variable can take an arbitrary term as a value, if its domain has not been specified to be a set of integers or constants.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: The constraint store">edit</a>]</div>
+<p><a name="The_constraint_store" id="The_constraint_store"></a></p>
+<h2>The constraint store</h2>
+<p>The constraint store contains the constraints that are currently assumed satisfiable. It can be considered what the current substitution is for regular logic programming. When only tree terms are allowed, the constraint store contains constraints in the form <code>t1=t2</code>; these constraints are simplified by unification, resulting in constraints of the form <code>variable=term</code>; such constraints are equivalent to a substitution.</p>
+<p>However, the constraint store may also contain constraints in the form <code>t1!=t2</code>, if the difference <code>!=</code> between terms is allowed. When constraints over reals or finite domains are allowed, the constraint store may also contain domain-specific constraints like <code>X+2=Y/2</code>, etc.</p>
+<p>The constraint store extends the concept of current substitution in two ways: first, it does not only contains the constraints derived from equating a literal with the head of a fresh variant of a clause, but also the constraints of the body of clauses; second, it does not only contains constraints of the form <code>variable=value</code> but also constraints on the considered constraint language. While the result of a successful evaluation of a regular logic program is the final substitution, the result for a constraint logic program is the final constraint store, which may contain constraint of the form variable=value but in general may contain arbitrary constraints.</p>
+<p>Domain-specific constraints may come to the constraint store both from the body of a clauses and from equating a literal with a clause head: for example, if the interpreter rewrites the literal <code>A(X+2)</code> with a clause whose fresh variant head is <code>A(Y/2)</code>, the constraint <code>X+2=Y/2</code> is added to the constraint store. If a variable appears in a real or finite domain expression, it can only take a value in the reals or the finite domain. Such a variable cannot take a term made of a functor applied to other terms as a value. The constraint store is unsatisfiable if a variable is bound to take both a value of the specific domain and a functor applied to terms.</p>
+<p>After a constraint is added to the constraint store, some operations are performed on the constraint store. Which operations are performed depends on the considered domain and constraints. For example <a href="/wiki/Unification.html" title="Unification">unification</a> is used for finite tree equalities, <a  class="new" title="Variable elimination">variable elimination</a> for polynomial equations over reals, <a href="/wiki/Constraint_propagation.html" title="Constraint propagation">constraint propagation</a> to enforce a form of <a href="/wiki/Local_consistency.html" title="Local consistency">local consistency</a> for finite domains. These operations are aimed at making the constraint store simpler to be checked for satisfiability and solved.</p>
+<p>As a result of these operations, the addition of new constraints may change the old ones. It is essential that the interpreter is able to undo these changes when it backtracks. The simplest case method is for the interpreter to save the complete state of the store every time it makes a choice (it chooses a clause to rewrite a goal). More efficient methods for allowing the constraint store to return to a previous state exist. In particular, one may just save the changes to the constraint store made between two points of choice, including the changes made to the old constraints. This can be done by simply saving the old value of the constraints that have been modified; this method is called <i>trailing</i>. A more advanced method is to save the changes that have been done on the modified constraints. For example, a linear constraint is changed by modifying its coefficient: saving the difference between the old and new coefficient allows reverting a change. This second method is called <i>semantic backtracking</i>, because the semantics of the change is saved rather than the old version of the constraints only.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Labeling">edit</a>]</div>
+<p><a name="Labeling" id="Labeling"></a></p>
+<h2>Labeling</h2>
+<p>The labeling literals are used on variables over finite domains to check satisfiability or partial satisfiability of the constraint store and to find a satisfying assignment. A labeling literal is of the form <code>labeling([variables])</code>, where the argument is a list of variables over finite domains. Whenever the interpreter evaluates such a literal, it performs a search over the domains of the variables of the list to find an assignment that satisfies all relevant constraints. Typically, this is done by a form of <a href="/wiki/Backtracking.html" title="Backtracking">backtracking</a>: variables are evaluated in order, trying all possible values for each of them, and backtracking when inconsistency is detected.</p>
+<p>The first use of the labeling literal is to actual check satisfiability or partial satisfiability of the constraint store. When the interpreter adds a constraint to the constraint store, it only enforces a form of local consistency on it. This operation may not detect inconsistency even if the constraint store is unsatisfiable. A labeling literal over a set of variables enforces a satisfiability check of the constraints over these variables. As a result, using all variables mentioned in the constraint store results in checking satisfiability of the store.</p>
+<p>The second use of the labeling literal is to actually determine an evaluation of the variables that satisfies the constraint store. Without the labeling literal, variables are assigned values only when the constraint store contains a constraint of the form <code>X=value</code> and when local consistency reduces the domain of a variable to a single value. A labeling literal over some variables forces these variables to be evaluated. In other words, after the labeling literal has been considered, all variables are assigned a value.</p>
+<p>Typically, constraint logic programs are written in such a way labeling literals are evaluated only after as much constraints as possible have been accumulated in the constraint store. This is because labeling literals enforce search, and search is more efficient if there are more constraints to be satisfied. A <a href="/wiki/Constraint_satisfaction_problem.html" title="Constraint satisfaction problem">constraint satisfaction problem</a> is typicall solved by a constraint logic program having the following structure:</p>
+<pre>
+solve(X):-constraints(X), labeling(X)
+constraints(X):- (all constraints of the CSP)
+</pre>
+<p>When the interpreter evaluates the goal <code>solve(args)</code>, it places the body of a fresh variant of the first clause in the current goal. Since the first goal is <code>constraints(X')</code>, the second clause is evaluated, and this operation moves all constraints in the current goal and eventually in the constraint store. The literal <code>labeling(X')</code> is then evaluated, forcing a search for a solution of the constraint store. Since the constraint store contains exactly the constraints of the original constraint satisfaction problem, this operation searches for a solution of the original problem.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Program reformulations">edit</a>]</div>
+<p><a name="Program_reformulations" id="Program_reformulations"></a></p>
+<h2>Program reformulations</h2>
+<p>A given constraint logic program may be reformulated to improve its efficiency. A first rule is that labeling literals should be placed after as much constraints on the labeled literals are accumulated in the constraint store. While in theory <code>A(X):-labeling(X),X&gt;0</code> is equivalent to <code>A(X):-X&gt;0,labeling(X)</code>, the search that is performed when the interpreter encounters the labeling literal is on a constraint store that does not contain the constraint <code>X&gt;0</code>. As a result, it may generate solutions, such as <code>X=-1</code>, that are later found out not to satisfy this constraint. On the other hand, in the second formulation the search is performed only when the constraint is already in the constraint store. As a result, search only returns solutions that are consistent with it, taking advantage of the fact that additional constraints reduce the search space.</p>
+<p>A second reformulation that can increase efficiency is to place constraints before literals in the body of clauses. Again, <code>A(X):-B(X),X&gt;0</code> and <code>A(X):-X&gt;0,B(X)</code> are in principle equivalent. However, the first may require more computation. For example, if the constraint store contains the constraint <code>X&lt;-2</code>, the interpreter recursively evaluates <code>B(X)</code> in the first case; if it succeeds, it then finds out that the constraint store is inconsistent when adding <code>X&gt;0</code>. In the second case, when evaluating that clause, the interpreter first adds <code>X&gt;0</code> to the constraint store and then possibly evaluates <code>B(X)</code>. Since the constraint store after the addition of <code>X&gt;0</code> turns out to be inconsistent, the recursive evaluation of <code>B(X)</code> is not performed at all.</p>
+<p>A third reformulation that can increase efficiency is the addition of redundant constrains. If the programmer knows (by whatever means) that the solution of a problem satisfies a specific constraint, they can include that constraint to cause inconsistency of the constraint store as soon as possible. For example, if it is known beforehands that the evaluation of <code>B(X)</code> will result in a positive value for <code>X</code>, the programmer may add <code>X&gt;0</code> before any occurrence of <code>B(X)</code>. As an example, <code>A(X,Y):-B(X),C(X)</code> will fail on the goal <code>A(-2,Z)</code>, but this is only found out during the evaluation of the subgoal <code>B(X)</code>. On the other hand, if the above clause is replaced by <code>A(X,Y):-X&gt;0,A(X),B(X)</code>, the interpreter backtracks as soon as the constraint <code>X&gt;0</code> is added to the constraint store, which happens before the evalation of <code>B(X)</code> even starts.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Constraint handling rules">edit</a>]</div>
+<p><a name="Constraint_handling_rules" id="Constraint_handling_rules"></a></p>
+<h2>Constraint handling rules</h2>
+<p><a href="/wiki/Constraint_handling_rules.html" title="Constraint handling rules">Constraint handling rules</a> were initially defined as a stand-alone formalism for specifying constraint solvers, and were later embedded in constraint logic programming. There are two kinds of constraint handling rules. The rules of the first kind specify that, under a given condition, a set of constraints is equivalent to another one. The rules of the second kind specify that, under a given condition, a set of constraints implies another one. In a constraint logic programming language supporting constraint handling rules, a programmer can use these rules to specify possible rewritings of the constraint store and possible additions of constraints to it. The following are example rules:</p>
+<pre>
+A(X) &lt;=&gt; B(X) | C(X)
+A(X) ==&gt; B(X) | C(X)
+</pre>
+<p>The first rule tells that, if <code>B(X)</code> is entailed by the store, the constraint <code>A(X)</code> can be rewritten as <code>C(X)</code>. As an example, <code>N*X&gt;0</code> can be rewritten as <code>X&gt;0</code> if the store implies that <code>N&gt;0</code>. The symbol <code>&lt;=&gt;</code> resembles equivalence in logic, and tells that the first constraint is equivalent to the latter. In practice, this implies that the first constraint can be <i>replaced</i> with the latter.</p>
+<p>The second rule instead specifies that the latter constraint is a consequence of the first, if the constraint in the middle is entailed by the constraint store. As a result, if <code>A(X)</code> is in the constraint store and <code>B(X)</code> is entailed by the constraint store, then <code>C(X)</code> can be added to the store. Differently from the case of equivalence, this is an addition and not a replacement: the new constraint is added but the old one remains.</p>
+<p>Equivalence allows for simplifying the constraint store by replacing some constraints with simpler ones; in particular, if the third constraint in an equivalence rule is <code>true</code>, and the second constraint is entailed, the first constraint is removed from the constraint store. Inference allows for the addition of new constraints, which may lead to proving inconsistency of the constraint store, and may generally reduce the amount of search needed to establish its satisfiability.</p>
+<p>Logic programming clauses in conjunction with constraint handling rules can be used to specify a method for establishing the satisfiability of the constraint store. Different clauses are used to implement the different choices of the method; the constraint handling rules are used for rewriting the constraint store during execution. As an example, one can implement backtracking with <a href="/wiki/Unit_propagation.html" title="Unit propagation">unit propagation</a> this way. Let <code>holds(L)</code> represents a propositional clause, in which the literals in the list <code>L</code> are in the same order as they are evaluated. The algorithm can be implemented using clauses for the choice of assigning a literal to true or false, and constraint handling rules to specify propagation. These rules specify that <code>holds([l|L])</code> can be removed if <code>l=true</code> follows from the store, and it can be rewritten as <code>holds(L)</code> if <code>l=false</code> follows from the store. Similarly, <code>holds([l])</code> can be replaced by <code>l=true</code>. In this example, the choice of value for a variable is implemented using clauses of logic programming; however, it can be encoded in constraint handling rules using an extension called disjunctive constraint handling rules or CHR<sup>∨</sup>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Bottom-up evaluation">edit</a>]</div>
+<p><a name="Bottom-up_evaluation" id="Bottom-up_evaluation"></a></p>
+<h2>Bottom-up evaluation</h2>
+<p>The standard strategy of evaluation of logic programs is <a href="/wiki/Top-down.html" title="Top-down">top-down</a> and <a href="/wiki/Depth-first.html" title="Depth-first">depth-first</a>: from the goal, a number of clauses are identified as being possibly able to prove the goal, and recursion over the literals of their bodies is performed. An alternative strategy is to start from the facts and use clauses to derive new facts; this strategy is called <a href="/wiki/Bottom-up.html" title="Bottom-up">bottom-up</a>. It is considered better than the top-down one when the aim is that of producing all consequences of a given program, rather than proving a single goal. In particular, finding all consequences of a program in the standard top-down and depth-first manner may not terminate while the bottom-up evaluation strategy terminates.</p>
+<p>The bottom-up evaluation strategy maintains the set of facts proved so far during evaluation. This set is initially empty. With each step, new facts are derived by applying a program clause to the existing facts, and are added to the set. For example, the bottom up evaluation of the following program requires two steps:</p>
+<pre>
+A(q).
+B(X):-A(X).
+</pre>
+<p>The set of consequences is initially empty. At the first step, <code>A(q)</code> is the only clause whose body can be proved (because it is empty), and <code>A(q)</code> is therefore added to the current set of consequences. At the second step, since <code>A(q)</code> is proved, the second clause can be used and <code>B(q)</code> is added to the consequences. Since no other consequence can be proved from <code>{A(q),B(q)}</code>, execution terminates.</p>
+<p>The advantage of the bottom-up evaluation over the top-down one is that cycles of derivations do not produce an <a href="/wiki/Infinite_loop.html" title="Infinite loop">infinite loop</a>. This is because adding a consequence to the current set of consequences that already contains it has no effect. As an example, adding a third clause to the above program generates a cycle of derivations in the top-down evaluation:</p>
+<pre>
+A(q).
+B(X):-A(X).
+A(X):-B(X).
+</pre>
+<p>For example, while evaluating all answers to the goal <code>A(X)</code>, the top-down strategy would produce the following derivations:</p>
+<pre>
+A(q)
+A(q):-B(q), B(q):-A(q), A(q)
+A(q):-B(q), B(q):-A(q), A(q):-B(q), B(q):-A(q), A(q)
+</pre>
+<p>In other words, the only consequence <code>A(q)</code> is produced first, but then the algorithm cycles over derivations that do not produce any other answer. More generally, the top-down evaluation strategy may cycle over possible derivations, possibly when other ones exist.</p>
+<p>The bottom-up strategy does not have the same drawback, as consequences that were already derived has no effect. On the above program, the bottom-up strategy starts adding <code>A(q)</code> to the set of consequences; in the second step, <code>B(X):-A(X)</code> is used to derive <code>B(q)</code>; in the third step, the only facts that can be derived from the current consequences are <code>A(q)</code> and <code>B(q)</code>, which are however already in the set of consequences. As a result, the algorithm stops.</p>
+<p>In the above example, the only used facts were ground literals. In general, every clause that only contains constraints in the body is considered a fact. For example, a clause <code>A(X):-X&gt;0,X&lt;10</code> is considered a fact as well. For this extended definition of facts, some facts may be equivalent while not syntactically equal. For example, <code>A(q)</code> is equivalent to <code>A(X):-X=q</code> and both are equivalent to <code>A(X):-X=Y, Y=a</code>. To solve this problem, facts are translated into a normal form in which the head contains a tuple of all-different variables; two facts are then equivalent if their bodies are equivalent on the variables of the head, that is, their sets of solutions are the same when restricted to these variables.</p>
+<p>As described, the bottom-up approach has the advantage of not considering consequences that have already been derived. However, it still may derive consequences that are entailed by those already derived while not being equal to any of them. As an example, the bottom up evaluation of the following program is infinite:</p>
+<pre>
+A(0).
+A(X):-X&gt;0.
+A(X):-X=Y+1, A(X).
+</pre>
+<p>The bottom-up evaluation algorithm first derives that <code>A(X)</code> is true for <code>X=0</code> and <code>X&gt;0</code>. In the second step, the first fact with the third clause allows for the derivation of <code>A(1)</code>. In the third step, <code>A(2)</code> is derived, etc. However, these facts are already entailed by the fact that <code>A(X)</code> is true for any nonnegative <code>X</code>. This drawback can be overcome by checking for entailment facts that are to be added to the current set of consequences. If the new consequence is already entailed by the set, it is not added to it. Since facts are stored as clauses, possibly with "local variables", entailment is restricted over the variables of their heads.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Concurrent constraint logic programming">edit</a>]</div>
+<p><a name="Concurrent_constraint_logic_programming" id="Concurrent_constraint_logic_programming"></a></p>
+<h2>Concurrent constraint logic programming</h2>
+<dl>
+<dd>
+<div class="noprint"><i>Main article: <a href="/wiki/Concurrent_constraint_logic_programming.html" title="Concurrent constraint logic programming">Concurrent constraint logic programming</a></i></div>
+</dd>
+</dl>
+<p>The concurrent versions of constraint logic programming are aimed at programming <a href="/wiki/Concurrent_process.html" title="Concurrent process">concurrent processes</a> rather than solving <a href="/wiki/Constraint_satisfaction_problem.html" title="Constraint satisfaction problem">constraint satisfaction problems</a>. Goals in constraint logic programming are evaluated concurrently; a concurrent process is therefore programmed as the evaluation of a goal by the <a href="/wiki/Interpreter_%28computing%29.html" title="Interpreter (computing)">interpreter</a>.</p>
+<p>Syntactically, concurrent constraints logic programs are similar to non-concurrent programs, the only exception being that clauses includes <i>guards</i>, which are constraints that may block the applicability of the clause under some conditions. Semantically, concurrent constraint logic programming differs from its non-concurrent versions because a goal evaluation is intended to realize a concurrent process rather than finding a solution to a problem. Most notably, this difference affects how the interpreter behaves when more than one clause is applicable: non-concurrent constraint logic programming <a href="/wiki/Recursion.html" title="Recursion">recursively</a> tries all clauses; concurrent constraint logic programming chooses only one. This is the most evident effect of an intended <i>directionality</i> of the interpreter, which never revise a choice it has previously taken. Other effects of this are the semantical possibility of having a goal that cannot be proved while the whole evaluation does not fail, and a particular way for equating a goal and a clause head.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Applications">edit</a>]</div>
+<p><a name="Applications" id="Applications"></a></p>
+<h2>Applications</h2>
+<p>Constraint logic programming has been applied to a number of fields, such as <a href="/wiki/Civil_engineering.html" title="Civil engineering">civil engineering</a>, <a href="/wiki/Mechanical_engineering.html" title="Mechanical engineering">mechanical engineering</a>, <a href="/wiki/Digital_circuit.html" title="Digital circuit">digital circuit</a> verification, <a  class="new" title="Automated timetabling">automated timetabling</a>, aircraft traffic control, finance, and others.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: History">edit</a>]</div>
+<p><a name="History" id="History"></a></p>
+<h2>History</h2>
+<p>Constraint logic programming was introduced by Jaffar and Lassez in 1987. They generalized the observation that the term equations and disequations of <a  class="new" title="Prolog II">Prolog II</a> were a specific form of constraints, and generalized this idea to arbitrary constraint languages. The first implementations of this concept were <a  class="new" title="Prolog III">Prolog III</a>, <a  class="new" title="CLP(R)">CLP(R)</a>, and <a href="/wiki/CHIP_programming_language.html" title="CHIP programming language">CHIP</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<ul>
+<li><cite class="book" style="font-style:normal" id="Reference-Dechter-2003">Dechter, Rina (2003). <i><a  class="external text" title="http://www.ics.uci.edu/~dechter/books/index.html">Constraint processing</a></i>. Morgan Kaufmann.</cite> <a  class="internal">ISBN 1-55860-890-7</a></li>
+<li><cite class="book" style="font-style:normal" id="Reference-Apt-2003">Apt, Krzysztof (2003). <i>Principles of constraint programming</i>. Cambridge University Press.</cite> <a  class="internal">ISBN 0-521-82583-0</a></li>
+<li><cite class="book" style="font-style:normal" id="Reference-Marriot-1998">Marriot, Kim; Peter J. Stuckey (1998). <i>Programming with constraints: An introduction</i>. MIT Press.</cite> <a  class="internal">ISBN 0-262-13341-5</a></li>
+<li><cite class="book" style="font-style:normal" id="Reference-Fr.C3.BChwirth-2003">Frühwirth, Thom; Slim Abdennadher (2003). <i>Essentials of constraint programming</i>. Springer.</cite> <a  class="internal">ISBN 3-540-67623-6</a></li>
+<li><cite style="font-style:normal">Jaffar, Joxan, Michael J. Maher (1994). "Constraint logic programming: a survey". <i>Journal of logic programming</i> <b>19/20</b>: 503-581. <a href="/wiki/Digital_object_identifier.html" title="Digital object identifier">DOI</a>:<a  class="external text" title="http://dx.doi.org/10.1016/0743-1066(94)90033-7">10.1016/0743-1066(94)90033-7</a>.</cite></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/ECLiPSe.html" title="ECLiPSe">ECLiPSe</a></li>
+<li><a href="/wiki/GNU_Prolog.html" title="GNU Prolog">GNU Prolog</a></li>
+<li><a href="/wiki/SWI-Prolog.html" title="SWI-Prolog">SWI-Prolog</a></li>
+</ul>
+
+<!-- 
+Pre-expand include size: 14854 bytes
+Post-expand include size: 3522 bytes
+Template argument size: 3491 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:4249442-0!1!0!default!!en!2 and timestamp 20060910162656 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Logic programming">Logic programming</a></span> | <span dir='ltr'><a  title="Category:Constraint satisfaction">Constraint satisfaction</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Constraint_logic_programming.html">Article</a></li>
+				 <li id="ca-talk" class="new"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 22:27, 21 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by biruni in 2.491 secs. --></body></html>

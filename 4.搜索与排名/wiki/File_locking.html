@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="File locking,Atomic (computer science),Backup software,Computer file,Computer process,Concurrency (computer science),Database record,Deadlock,Linux kernel,MS-DOS,Microsoft Windows XP" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>File locking - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "File_locking";
+			var wgTitle = "File locking";
+			var wgArticleId = 1415812;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">File locking</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p><b>File locking</b> is a mechanism that enforces access to a <a href="/wiki/Computer_file.html" title="Computer file">computer file</a> by only one <a href="/wiki/User_%28computing%29.html" title="User (computing)">user</a> or <a href="/wiki/Computer_process.html" title="Computer process">process</a> at any specific time. The purpose of locking is to prevent the classic <i>interceding update</i> scenario.</p>
+<p>The interceding update problem may be illustrated as in the following example: <a href="/wiki/Computer_process.html" title="Computer process">Process</a> 'A' reads a customer <a href="/wiki/Database_record.html" title="Database record">record</a> from a file containing account information, including the customer's account balance. Process 'B' now reads the same record from the same file. Process 'A' changes the account balance and writes the new value back to the file. However, process 'B' - which still has the original values of that customer record, makes a different change to its copy of the data (for example, changes the customer's phone number) and re-writes this data to the file. Process B's copy of the data, still containing the original account balance, overwrites the changes made by process A, reverting the account balance to its previous value and causing the update of the customer balance by process 'A' to be lost.</p>
+<p>File locking prevents this problem by enforcing the <a href="/wiki/Serialization.html" title="Serialization">serialization</a> of update processes to any given file. Most <a href="/wiki/Operating_system.html" title="Operating system">operating systems</a> support the concept of record locking which means that individual records within any given file may be locked, so increasing the number of <a href="/wiki/Concurrency_%28computer_science%29.html" title="Concurrency (computer science)">concurrent</a> update processes.</p>
+<p>One use of file locking is in database maintenance where it can <a href="/wiki/Serialize.html" title="Serialize">serialize</a> access to the entire physical file underlying a database. While this prevents any other process from access the file it can actually be more efficient than locking a large number of regions in file by removing the overhead of achieving and releasing each lock.</p>
+<p>Poor use of file locks, like any computer lock, can result in poor performance or <a href="/wiki/Deadlock.html" title="Deadlock">deadlock</a>.</p>
+<p><br /></p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">File locking in Windows</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">File locking in UNIX</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">2.1</span> <span class="toctext">Problems</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.2</span> <span class="toctext">Linux</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Lock files</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: File locking in Windows">edit</a>]</div>
+<p><a name="File_locking_in_Windows" id="File_locking_in_Windows"></a></p>
+<h2>File locking in Windows</h2>
+<p>Shared file access in Windows is managed by three distinct mechanisms:</p>
+<ol>
+<li>Using share access controls that allow applications to specify whole-file access sharing for read, write or delete;</li>
+<li>Using byte range locks to arbitrate read and write access to regions within a single file; and</li>
+<li>By Windows file systems disallowing executing files from being opened for write or delete access.</li>
+</ol>
+<p>The semantics of share access controls in Windows are inherited from the original <a href="/wiki/MS-DOS.html" title="MS-DOS">MS-DOS</a> system (where sharing was introduced in MS-DOS 3.3) Thus, an application must explicitly allow sharing - otherwise an application has exclusive read, write and delete access to the file (other types of access, such as those to retrieve the attributes of a file are allowed.)</p>
+<p>For a file with shared access, applications may then use byte range locking to control access to specific regions of the file. Such byte range locks specify a region of the file (offset and length) and the type of lock (shared or exclusive). Note that the region of the file being locked is not required to have data within the file and applications sometimes exploit this ability to implement their functionality.</p>
+<p>For applications that use the file read/write APIs in Windows, byte range locks are enforced (also referred to as <i>mandatory locks</i>) by the file systems that execute within Windows. For applications that use the file mapping APIs in Windows, byte range locks are not enforced (also referred to as <i>advisory locks.</i>) Byte range locking may also have other side-effects on the Windows system. For example, the Windows file sharing mechanism will typically disable client side caching of a file for <i>all</i> clients when byte range locks are used on any client to control access of the file. The client will observe slower access to the file because all read and write operations must be sent to the file server where the file is stored.</p>
+<p>Improper error handling in an application program can lead to a situation where a file is locked (either using share access or with byte range file locking) and cannot be accessed by other applications. In this case the user may be able to restore access to the file by terminating the malfunctioning program manually. This is typically done through the <i>Task Manager</i> utility.</p>
+<p>File sharing is determined by the <i>sharing mode</i> parameter in the <a  class="external text" title="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/fileio/fs/createfile.asp">CreateFile</a> function used to open files. Files can be opened to allow sharing the file for read, write or delete access. Subsequent attempts to open the file must be compatible with all previously granted sharing access to the file. When the file is closed, the sharing access restrictions are adjusted to remove the restrictions imposed by that specific file open.</p>
+<p>Byte range locking type is determined by the <i>dwFlags</i> parameter in the <a  class="external text" title="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/fileio/fs/lockfileex.asp">LockFileEx</a> function used to lock a region of a file. The <a href="/wiki/Windows_API.html" title="Windows API">Windows API</a> function <a  class="external text" title="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/fileio/fs/lockfile.asp">LockFile</a> can also be used and acquires an exclusive lock on the region of the file.</p>
+<p>Any file that is executing on the computer system as a program (e.g., an EXE, COM, DLL, CPL or other binary program file format) is normally prevented by the file system from being opened for write or delete access, reporting a sharing violation, despite the fact that the program is not opened by any application. However, some access is still allowed. For example, a running application file can be renamed or copied (read) even when executing.</p>
+<p>Files are accessed by applications in Windows by using <i>file handles</i>. These file handles can be explored with the <a  class="external text" title="http://www.sysinternals.com/Utilities/ProcessExplorer.html">Process Explorer</a> utility. This utility can also be used to force-close handles without needing to terminate the application holding them.</p>
+<p><a href="/wiki/Microsoft_Windows_XP.html" title="Microsoft Windows XP">Microsoft Windows XP</a> and <a href="/wiki/Windows_Server_2003.html" title="Windows Server 2003">Server 2003</a> editions have introduced <a href="/wiki/Volume_Shadow_Copy_Service.html" title="Volume Shadow Copy Service">volume snapshot</a> capability to <a href="/wiki/NTFS.html" title="NTFS">NTFS</a>, allowing open files to be accessed by <a href="/wiki/Backup_software.html" title="Backup software">backup software</a> despite any exclusive locks. However, unless software is rewritten to specifically support this feature, the snapshot will be <i>crash consistent</i> only, while properly supported applications can assist the operating system in creating <i>transactionally consistent</i> snapshots. Other windows commercial software for accessing locked files include File Access Manager, and Open File Manager.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: File locking in UNIX">edit</a>]</div>
+<p><a name="File_locking_in_UNIX" id="File_locking_in_UNIX"></a></p>
+<h2>File locking in UNIX</h2>
+<p>Open files and programs are not automatically locked in UNIX. There are different kinds of file locking mechanisms available in different flavours of UNIX and many operating systems support more than one kind for compatibility. The two most common mechanisms are <a  class="external text" title="http://unixhelp.ed.ac.uk/CGI/man-cgi?fcntl+2">fcntl</a> and <a  class="external text" title="http://unixhelp.ed.ac.uk/CGI/man-cgi?flock+2">flock</a>. Although some types of locks can be configured to be mandatory, file locks under UNIX are by default <i>advisory</i>. This means that cooperating processes may use locks to coordinate access to a file between themselves, but programs are also free to ignore locks and access the file in any way they choose to.</p>
+<p>Two kinds of locks are offered: shared locks and exclusive locks. In the case of <tt>fcntl</tt>, different kinds of locks may be applied to different sections (byte ranges) of a file, or else to the whole file. Shared locks can be acquired by an unlimited number of processes at the same time, but an exclusive lock can only be acquired by one process, and cannot coexist with a shared lock. To acquire a shared lock, a process must wait until there are no processes holding any exclusive locks. To acquire an exclusive lock, a process must wait until there are no processes holding either kind of lock.</p>
+<p>Shared locks are sometimes called "read locks" and exclusive locks are sometimes called "write locks". However, because locks on UNIX are advisory, this isn't enforced. Thus it is possible for a database to have a concept of "shared writes" vs. "exclusive writes"; for example, changing a field in place may be permitted under shared access, whereas garbage-collecting and rewriting the database may require exclusive access.</p>
+<p>This combination of inode usage and non-mandatory locking leads to great flexibility in accessing files from multiple or many processes. On the other hand, the cooperative locking approach can lead to problems when a process writes to a file without obeying file locks set by other processes. For this reason, some UNIX and UNIX-like operating systems support <i>mandatory locking</i> as well.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Problems">edit</a>]</div>
+<p><a name="Problems" id="Problems"></a></p>
+<h3>Problems</h3>
+<p>Both <tt>flock</tt> and <tt>fcntl</tt> have quirks which occasionally puzzle programmers from other operating systems.</p>
+<p><tt>flock</tt> locks do not work on network filesystems such as NFS; such calls are successful noops on BSD systems and errors on Linux systems. Also, lock upgrades and downgrades <i>release</i> the old lock before applying the new lock. If an application downgrades an exclusive lock to a shared lock while another application is blocked waiting for an exclusive lock, the latter application will get the exclusive lock and the first application will be locked out.</p>
+<p><i>All</i> <tt>fcntl</tt> locks associated with a file for a given process are removed when <i>any</i> file descriptor for that file is closed by that process, even if a lock was never requested for that file descriptor. Also, <tt>fcntl</tt> locks are not inherited by a child process. The <tt>fcntl</tt> close semantics are particularly troublesome for applications which call subroutine libraries that may access files.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Linux">edit</a>]</div>
+<p><a name="Linux" id="Linux"></a></p>
+<h3>Linux</h3>
+<p><a href="/wiki/Linux_kernel.html" title="Linux kernel">Linux</a> 2.4 and later added notification of external changes to files with <i>dnotify</i> mechanism (through the <i>F_NOTIFY</i> parameter in fcntl). This mechanism is however being replaced by <i>iNotify</i><a  class="external autonumber" title="http://www-128.ibm.com/developerworks/linux/library/l-inotify.html?ca=dgr-lnxw52Inotify">[1]</a>, which were introduced in Linux 2.6.13. Linux also supports <i>mandatory locking</i> through the special "<a  class="external text" title="http://www.tin.org/bin/man.cgi?section=8&amp;topic=mount">mount</a> <i>-o mand</i>" parameter for filesystem mounting, but this is rarely used.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Lock files">edit</a>]</div>
+<p><a name="Lock_files" id="Lock_files"></a></p>
+<h2>Lock files</h2>
+<p>A system similar to the use of file locking is often used by shell scripts and other programs: creation of <i>lock files</i>, which are files whose contents are irrelevant (although often one will find the <a href="/wiki/Process_identifier.html" title="Process identifier">Process identifier</a> of the holder of the lock in the file) and whose only purpose is to signal by their presence that some resource is locked. A lock file is often the best approach if the resource to be controlled is not a regular file at all, so using methods for locking files does not apply.</p>
+<p>When using file locks, care must be taken to ensure that operations are <a href="/wiki/Atomic_%28computer_science%29.html" title="Atomic (computer science)">atomic</a>. When creating the lock, the process must verify that it does not exist and then create it, but without allowing another process the opportunity to create it in the meantime. Various schemes are used to implement this, such as taking advantage of system calls designed for this purpose (but such system calls are not usually available to shell scripts) or by creating the lock file under a temporary name and then attempting to move it into place.</p>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:1415812-0!1!0!default!!en!2 and timestamp 20060909153204 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:Computer file systems">Computer file systems</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/File_locking.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-ja"><a >日本語</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 12:00, 8 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv118 in 0.141 secs. --></body></html>

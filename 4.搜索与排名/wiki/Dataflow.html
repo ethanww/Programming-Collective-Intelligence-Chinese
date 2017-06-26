@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Dataflow,Actor model,BMDFM,CLOS,CPU,Common Lisp,Compiler,Computer architecture,Computing,Content-addressable memory,Continuous function" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Dataflow - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Dataflow";
+			var wgTitle = "Dataflow";
+			var wgArticleId = 864364;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Dataflow</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p><b>Dataflow</b> is a term used in <a href="/wiki/Computing.html" title="Computing">computing</a>, and may have various shades of meaning. It is closely related to <a href="/wiki/Message_passing.html" title="Message passing">message passing</a>.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Software architecture</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Diagrams</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Concurrency</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Hardware architecture</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Software architecture">edit</a>]</div>
+<p><a name="Software_architecture" id="Software_architecture"></a></p>
+<h2>Software architecture</h2>
+<p><b>Dataflow</b> is a <a href="/wiki/Software_architecture.html" title="Software architecture">software architecture</a> based on the idea that changing the value of a variable should automatically force recalculation of the values of other variables.</p>
+<p><a href="/wiki/Dataflow_language.html" title="Dataflow language">Dataflow programming languages</a> embody these principles, with <a href="/wiki/Spreadsheet.html" title="Spreadsheet">Spreadsheets</a> perhaps the most widespread embodiment of dataflow. For example, in a spreadsheet you can specify a cell formula which depends on other cells; then when any of those cells is updated the first cell's value is automatically recalculated. It's possible for one change to initiate a whole sequence of changes, if one cell depends on another cell which depends on yet another cell, and so on.</p>
+<p>The dataflow technique is not restricted to recalculating numeric values, as done in spreadsheets. For example, dataflow can be used to redraw a picture in response to mouse movements, or to make robot turn in response to a change in light level.</p>
+<p>One benefit of dataflow is that it can reduce the amount of <a href="/wiki/Dependency_%28computer_science%29.html" title="Dependency (computer science)">coupling</a>-related code in a program. For example, without dataflow, if a variable X depends on a variable Y, then whenever Y is changed X must be explicitly recalculated. This means that Y is coupled to X. Since X is also coupled to Y (because X's value depends on the Y's value), the program ends up with a <a  class="new" title="Cyclic dependency">cyclic dependency</a> between the two variables. Most good programmers will get rid of this cycle by using an <a href="/wiki/Observer_pattern.html" title="Observer pattern">observer pattern</a>, but only at the cost of introducing a non-trivial amount of code. Dataflow improves this situation by making the recalculation of X automatic, thereby eliminating the coupling between from Y to X. Dataflow makes implicit a significant amount of code that otherwise would have had to be tediously explicit.</p>
+<p>Dataflow is also sometimes referred to as reactive programming.</p>
+<p>There have been a few programming languages created specifically to support dataflow. In particular, many (if not most) <a href="/wiki/Visual_programming_language.html" title="Visual programming language">visual programming languages</a> have been based on the idea of dataflow.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Diagrams">edit</a>]</div>
+<p><a name="Diagrams" id="Diagrams"></a></p>
+<h2>Diagrams</h2>
+<p>The term <b>dataflow</b> may also be used to refer to the flow of data within a system, and is the name normally given to the arrows in a <a href="/wiki/Data_flow_diagram.html" title="Data flow diagram">data flow diagram</a> that represent the flow of data between external entities, processes, and data stores.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Concurrency">edit</a>]</div>
+<p><a name="Concurrency" id="Concurrency"></a></p>
+<h2>Concurrency</h2>
+<p>A <b>dataflow network</b> is a network of concurrently executing processes or automata that can communicate by sending data over <i>channels</i> (see <a href="/wiki/Message_passing.html" title="Message passing">message passing</a>.)</p>
+<p><a href="/wiki/Kahn_process_networks.html" title="Kahn process networks">Kahn process networks</a>, named after one of the pioneers of dataflow networks, are a particularly important class of such networks. In a <a href="/wiki/Kahn_process_networks.html" title="Kahn process networks">Kahn process network</a> the processes are <i>determinate</i>. This implies that they satisfy the so-called <a  class="new" title="Kahn's principle">Kahn's principle</a>, which roughly speaking states that, each determinate process computes a <a href="/wiki/Continuous_function.html" title="Continuous function">continuous function</a> from input streams to output streams, and that a network of determinate processes is itself determinate, thus computing a continuous function. This implies that the behaviour of such networks can be described by a set of recursive equations, which can be solved using <a  class="new" title="Fixpoint theory">fixpoint theory</a>.</p>
+<p>The concept of dataflow networks is closely related to another model of concurrency known as the <a href="/wiki/Actor_model.html" title="Actor model">Actor model</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Hardware architecture">edit</a>]</div>
+<p><a name="Hardware_architecture" id="Hardware_architecture"></a></p>
+<h2>Hardware architecture</h2>
+<p>Hardware architectures for dataflow was a major topic in <a href="/wiki/Computer_architecture.html" title="Computer architecture">Computer architecture</a> research in the 1970s and early 1980s. <a href="/wiki/Jack_Dennis.html" title="Jack Dennis">Jack Dennis</a> of <a href="/wiki/MIT.html" title="MIT">MIT</a> pioneered the field of static dataflow architectures while the <a  class="new" title="Manchester Dataflow Machine">Manchester Dataflow Machine</a> and <a  class="new" title="MIT Tagged Token">MIT Tagged Token</a> architecture were major projects in dynamic dataflow.</p>
+<p>A <a href="/wiki/Compiler.html" title="Compiler">compiler</a> analyzes a computer program for the data dependencies between operations. It does this in order to better optimize the instruction sequences. Normally, the compiled output has the results of these optimizations, but the dependency information itself is not recorded within the compiled binary code.</p>
+<p>A compiled program for a dataflow machine would keep this dependency information. A dataflow compiler would record these dependencies by creating unique tags for each dependency instead of using variable names. By giving each dependency a unique tag, it exposes any possibility of parallel execution of non-dependant instructions. Each instruction, along with its tagged operands would be stored in the compiled binary code.</p>
+<p>The compiled program would be loaded into a <a href="/wiki/Content-addressable_memory.html" title="Content-addressable memory">Content-addressable memory</a> of the dataflow computer. When all of the tagged operands of an instruction became available, that is previously calculated, the instruction was marked as available for execution by a <a href="/wiki/Execution_unit.html" title="Execution unit">execution unit</a>. This was known as <i>activating</i> or <i>firing</i> the instruction.</p>
+<p>Once the instruction was completed by the execution unit, its output data would be broadcast (with its tag) to the CAM memory. Any other instructions which was dependent on this particular piece of data (identified by the tag value) would be updated. In this way, subsequent instructions would be activated.</p>
+<p>Instructions would be activated in data order, that is when all of the required data operands were available. This order can be different from the sequential order envisioned by the human programmer, the programmed order.</p>
+<p>The instructions along with its required data would be transported as packets to the execution units. These packets are often known as instruction <i>tokens</i>. Similarly, data results are transported back to the CAM as data tokens. The packetization of instructions and results allowed for parallel execution of activated instructions on a large scale. Connection networks would deliver the activated instruction tokens to the execution units and return data tokens to the instruction CAM memory. In contrast to the more conventional <a href="/wiki/Von_Neumann_architecture.html" title="Von Neumann architecture">Von Neumann architecture</a>, data tokens are not permanently stored in memory, rather they are transient messages that only exist when in transit to the instruction storage.</p>
+<p>Earlier designs which only used instruction addresses as data dependency tags were called static dataflow machines. These machines could not allow instructions from multiple loop iterations (or multiple calls to the same routine) to be issued simultaneously as the simple tags could not differentiate between the different loop iterations (or each invocation of the routine). Later designs called dynamic dataflow machines used more complex tags to allow greater parallelism from these cases.</p>
+<p>The research never overcame the problems related to:</p>
+<ul>
+<li>efficiently broadcasting the data tokens in a massively parallel system</li>
+<li>efficiently dispatching instruction tokens in a massively parallel system</li>
+<li>building CAM memories large enough that could hold all of the dependencies of a real programs</li>
+</ul>
+<p>Instructions and their data dependencies proved to be too fine-grained to be effectively distributed in a large network. That is, the time for the instructions and tagged results to travel through a large connection network was longer then the time to actually do the computations.</p>
+<p><a href="/wiki/Out-of-order_execution.html" title="Out-of-order execution">Out-of-order execution</a> is the conceptual descendant of dataflow computation and has become the dominant computing paradigm since the 1990s. It is a form of restricted dataflow. This paradigm introduced the idea of an <i>execution window</i>. The <i>execution window</i> follows the programmed sequential order of the program, however within the window, instructions are allowed to be completed in data dependency order. This is accomplished by the computer hardware dynamically tagging the data dependencies within the window. The logical complexity of dynamically keeping track of the data dependencies, restricts <a href="/wiki/Out-of-order_execution.html" title="Out-of-order execution"><i>OoO</i></a> <a href="/wiki/CPU.html" title="CPU">CPUs</a> to a small number of execution units (2-6) and the execution window sizes to the range of 32 to 200 instructions, much smaller than envisioned for full dataflow machines.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Lazy_evaluation.html" title="Lazy evaluation">Lazy evaluation</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://common-lisp.net/project/cells/">Cells</a>: A dataflow extension to <a href="/wiki/CLOS.html" title="CLOS">CLOS</a> (<a href="/wiki/Common_Lisp.html" title="Common Lisp">Common Lisp</a>)</li>
+<li><a  class="external text" title="http://pycells.pyworks.org/">PyCells</a>: A Python port of Cells (above).</li>
+<li><a  class="external text" title="http://bmdfm.com">BMDFM</a>: Binary Modular Dataflow Machine (<a href="/wiki/BMDFM.html" title="BMDFM">BMDFM</a>)</li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:864364-0!1!0!default!!en!2 and timestamp 20060906014749 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Computer data">Computer data</a></span> | <span dir='ltr'><a  title="Category:Computer architecture">Computer architecture</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Dataflow.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 17:29, 12 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv83 in 0.102 secs. --></body></html>

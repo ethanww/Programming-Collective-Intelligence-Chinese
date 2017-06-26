@@ -1,0 +1,303 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Fast Fourier transform,1805,1965,Algorithm,Approximation error,Asymptotically optimal,Big O notation,Bluestein's FFT algorithm,Bruun's FFT algorithm,Butterfly diagram,Cache" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Fast Fourier transform - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Fast_Fourier_transform";
+			var wgTitle = "Fast Fourier transform";
+			var wgArticleId = 11512;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Fast Fourier transform</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<dl>
+<dd>
+<div class="dablink"><i>"FFT" redirects here. For other uses, see <a href="/wiki/FFT_%28disambiguation%29.html" title="FFT (disambiguation)">FFT (disambiguation)</a>.</i></div>
+</dd>
+</dl>
+<p>A <b>fast Fourier transform</b> (<b>FFT</b>) is an efficient <a href="/wiki/Algorithm.html" title="Algorithm">algorithm</a> to compute the <a href="/wiki/Discrete_Fourier_transform.html" title="Discrete Fourier transform">discrete Fourier transform</a> (DFT) and its inverse. FFTs are of great importance to a wide variety of applications, from <a href="/wiki/Digital_signal_processing.html" title="Digital signal processing">digital signal processing</a> to solving <a href="/wiki/Partial_differential_equation.html" title="Partial differential equation">partial differential equations</a> to algorithms for quickly <a href="/wiki/Multiplication_algorithm.html" title="Multiplication algorithm">multiplying large integers</a>. This article describes the algorithms, of which there are many; see <a href="/wiki/Discrete_Fourier_transform.html" title="Discrete Fourier transform">discrete Fourier transform</a> for properties and applications of the transform.</p>
+<p>Let <i>x</i><sub>0</sub>, ...., <i>x</i><sub><i>N</i>-1</sub> be <a href="/wiki/Complex_number.html" title="Complex number">complex numbers</a>. The DFT is defined by the formula</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/d/a/d/dad8cb2acf7ae03b47dd1dcfd7be6826.png" alt="X_k =  \sum_{n=0}^{N-1} x_n e^{-{2\pi i \over N} nk } \qquad k = 0,\dots,N-1." /></dd>
+</dl>
+<p>Evaluating these sums directly would take O(<i>N</i><sup>2</sup>) arithmetical operations (see <a href="/wiki/Big_O_notation.html" title="Big O notation">Big O notation</a>). An FFT is an algorithm to compute the same result in only O(<i>N</i> log <i>N</i>) operations. In general, such algorithms depend upon the <a href="/wiki/Factorization.html" title="Factorization">factorization</a> of <i>N</i>, but (contrary to popular misconception) there are O(<i>N</i> log <i>N</i>) FFTs for all <i>N</i>, even <a href="/wiki/Prime_number.html" title="Prime number">prime</a> <i>N</i>.</p>
+<p>Since the inverse DFT is the same as the DFT, but with the opposite sign in the exponent and a 1/<i>N</i> factor, any FFT algorithm can easily be adapted for it as well.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">The Cooley-Tukey algorithm</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Other FFT algorithms</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">FFT algorithms specialized for real and/or symmetric data</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Bounds on complexity and operation counts</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Accuracy and approximations</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">Multidimensional FFT algorithms</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">8</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">9</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: The Cooley-Tukey algorithm">edit</a>]</div>
+<p><a name="The_Cooley-Tukey_algorithm" id="The_Cooley-Tukey_algorithm"></a></p>
+<h2>The Cooley-Tukey algorithm</h2>
+<p><i>Main article: <a href="/wiki/Cooley-Tukey_FFT_algorithm.html" title="Cooley-Tukey FFT algorithm">Cooley-Tukey FFT algorithm</a>.</i></p>
+<p>By far the most common FFT is the <a href="/wiki/Cooley-Tukey_FFT_algorithm.html" title="Cooley-Tukey FFT algorithm">Cooley-Tukey</a> algorithm. This is a <a href="/wiki/Divide_and_conquer_algorithm.html" title="Divide and conquer algorithm">divide and conquer algorithm</a> that <a href="/wiki/Recursion.html" title="Recursion">recursively</a> breaks down a DFT of any <a href="/wiki/Composite_number.html" title="Composite number">composite</a> size <i>N</i> = <i>N</i><sub>1</sub><i>N</i><sub>2</sub> into many smaller DFTs of sizes <i>N</i><sub>1</sub> and <i>N</i><sub>2</sub>, along with O(<i>N</i>) multiplications by complex <a href="/wiki/Roots_of_unity.html" title="Roots of unity">roots of unity</a> traditionally called <a href="/wiki/Twiddle_factor.html" title="Twiddle factor">twiddle factors</a> (after Gentleman and Sande, 1966).</p>
+<p>This method (and the general idea of an FFT) was popularized by a publication of J. W. Cooley and J. W. Tukey in <a href="/wiki/1965.html" title="1965">1965</a>, but it was later discovered that those two authors had independently re-invented an algorithm known to <a href="/wiki/Carl_Friedrich_Gauss.html" title="Carl Friedrich Gauss">Carl Friedrich Gauss</a> around <a href="/wiki/1805.html" title="1805">1805</a> (and subsequently rediscovered several times in limited forms).</p>
+<p>The most well-known use of the Cooley-Tukey algorithm is to divide the transform into two pieces of size <span class="texhtml"><i>N</i> / 2</span> at each step, and is therefore limited to power-of-two sizes, but any factorization can be used in general (as was known to both Gauss and Cooley/Tukey). These are called the <b>radix-2</b> and <b>mixed-radix</b> cases, respectively (and other variants such as the <a href="/wiki/Split-radix_FFT.html" title="Split-radix FFT">split-radix FFT</a> have their own names as well). Although the basic idea is recursive, most traditional implementations rearrange the algorithm to avoid explicit recursion. Also, because the Cooley-Tukey algorithm breaks the DFT into smaller DFTs, it can be combined arbitrarily with any other algorithm for the DFT, such as those described below.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Other FFT algorithms">edit</a>]</div>
+<p><a name="Other_FFT_algorithms" id="Other_FFT_algorithms"></a></p>
+<h2>Other FFT algorithms</h2>
+<p><i>Main articles: <a href="/wiki/Prime-factor_FFT_algorithm.html" title="Prime-factor FFT algorithm">Prime-factor FFT algorithm</a>, <a href="/wiki/Bruun%27s_FFT_algorithm.html" title="Bruun's FFT algorithm">Bruun's FFT algorithm</a>, <a href="/wiki/Rader%27s_FFT_algorithm.html" title="Rader's FFT algorithm">Rader's FFT algorithm</a>, <a href="/wiki/Bluestein%27s_FFT_algorithm.html" title="Bluestein's FFT algorithm">Bluestein's FFT algorithm</a>.</i></p>
+<p>There are other FFT algorithms distinct from Cooley-Tukey. For <span class="texhtml"><i>N</i> = <i>N</i><sub>1</sub><i>N</i><sub>2</sub></span> with <a href="/wiki/Coprime.html" title="Coprime">coprime</a> <span class="texhtml"><i>N</i><sub>1</sub></span> and <span class="texhtml"><i>N</i><sub>2</sub></span>, one can use the <a href="/wiki/Prime-factor_FFT_algorithm.html" title="Prime-factor FFT algorithm">Prime-Factor</a> (Good-Thomas) algorithm (PFA), based on the <a href="/wiki/Chinese_Remainder_Theorem.html" title="Chinese Remainder Theorem">Chinese Remainder Theorem</a>, to factorize the DFT similarly to Cooley-Tukey but without the twiddle factors. The <a  class="new" title="Rader-Brenner FFT algorithm">Rader-Brenner algorithm</a> (1976) is a Cooley-Tukey-like factorization but with purely imaginary twiddle factors, reducing multiplications at the cost of increased additions and reduced numerical stability. Algorithms that recursively factorize the DFT into smaller operations other than DFTs include the Bruun and <a  class="new" title="QFT algorithm">QFT</a> algorithms. (The Rader-Brenner and QFT algorithms were proposed for power-of-two sizes, but it is possible that they could be adapted to general composite <span class="texhtml"><i>n</i></span>. Bruun's algorithm applies to arbitrary even composite sizes.) <a href="/wiki/Bruun%27s_FFT_algorithm.html" title="Bruun's FFT algorithm">Bruun's algorithm</a>, in particular, is based on interpreting the FFT as a recursive factorization of the <a href="/wiki/Polynomial.html" title="Polynomial">polynomial</a> <span class="texhtml"><i>z</i><sup><i>N</i></sup> − 1</span>, here into real-coefficient polynomials of the form <span class="texhtml"><i>z</i><sup><i>M</i></sup> − 1</span> and <span class="texhtml"><i>z</i><sup>2<i>M</i></sup> + <i>a</i><i>z</i><sup><i>M</i></sup> + 1</span>.</p>
+<p>Another polynomial viewpoint is exploited by the <a  class="new" title="Winograd FFT algorithm">Winograd</a> algorithm, which factorizes <span class="texhtml"><i>z</i><sup><i>N</i></sup> − 1</span> into <a href="/wiki/Cyclotomic_polynomial.html" title="Cyclotomic polynomial">cyclotomic polynomials</a>—these often have coefficients of 1, 0, or −1, and therefore require few (if any) multiplications, so Winograd can be used to obtain minimal-multiplication FFTs and is often used to find efficient algorithms for small factors. Indeed, Winograd showed that the DFT can be computed with only <span class="texhtml"><i>O</i>(<i>N</i>)</span> irrational multiplications, leading to a proven achievable lower bound on the number of multiplications for power-of-two sizes; unfortunately, this comes at the cost of many more additions, a tradeoff no longer favorable on modern <a href="/wiki/Central_processing_unit.html" title="Central processing unit">processors</a> with <a href="/wiki/Floating-point_unit.html" title="Floating-point unit">hardware multipliers</a>. In particular, Winograd also makes use of the PFA as well as an algorithm by Rader for FFTs of <i>prime</i> sizes.</p>
+<p><a href="/wiki/Rader%27s_FFT_algorithm.html" title="Rader's FFT algorithm">Rader's algorithm</a>, exploiting the existence of a <a href="/wiki/Generating_set_of_a_group.html" title="Generating set of a group">generator</a> for the multiplicative <a href="/wiki/Group_%28mathematics%29.html" title="Group (mathematics)">group</a> modulo prime <span class="texhtml"><i>N</i></span>, expresses a DFT of prime size <span class="texhtml"><i>n</i></span> as a cyclic <a href="/wiki/Convolution.html" title="Convolution">convolution</a> of (composite) size <span class="texhtml"><i>N</i> − 1</span>, which can then be computed by a pair of ordinary FFTs via the <a href="/wiki/Convolution_theorem.html" title="Convolution theorem">convolution theorem</a> (although Winograd uses other convolution methods). Another prime-size FFT is due to L. I. Bluestein, and is sometimes called the <a href="/wiki/Chirp-z_algorithm.html" title="Chirp-z algorithm">chirp-z algorithm</a>; it also re-expresses a DFT as a convolution, but this time of the <i>same</i> size (which can be zero-padded to a <a href="/wiki/Power_of_two.html" title="Power of two">power of two</a> and evaluated by radix-2 Cooley-Tukey FFTs, for example), via the identity <span class="texhtml"><i>n</i><i>k</i> = − (<i>k</i> − <i>n</i>)<sup>2</sup> / 2 + <i>n</i><sup>2</sup> / 2 + <i>k</i><sup>2</sup> / 2</span>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: FFT algorithms specialized for real and/or symmetric data">edit</a>]</div>
+<p><a name="FFT_algorithms_specialized_for_real_and.2For_symmetric_data" id="FFT_algorithms_specialized_for_real_and.2For_symmetric_data"></a></p>
+<h2>FFT algorithms specialized for real and/or symmetric data</h2>
+<p>In many applications, the input data for the DFT are purely real, in which case the outputs satisfy the symmetry</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/4/7/3/4737c28ce3160816c9152fbc12d59543.png" alt="X_{n-k} = X_k^*," /></dd>
+</dl>
+<p>and efficient FFT algorithms have been designed for this situation (see e.g. Sorensen, 1987). One approach consists of taking an ordinary algorithm (e.g. Cooley-Tukey) and removing the redundant parts of the computation, saving roughly a factor of two in time and memory. Alternatively, it is possible to express an <i>even</i>-length real-input DFT as a complex DFT of half the length (whose real and imaginary parts are the even/odd elements of the original real data), followed by O(<i>N</i>) post-processing operations.</p>
+<p>It was once believed that real-input DFTs could be more efficiently computed by means of the <a href="/wiki/Discrete_Hartley_transform.html" title="Discrete Hartley transform">Discrete Hartley transform</a> (DHT), but it was subsequently argued that a specialized real-input DFT algorithm (FFT) can typically be found that requires fewer operations than the corresponding DHT algorithm (FHT) for the same number of inputs. Bruun's algorithm (above) is another method that was initially proposed to take advantage of real inputs, but it has not proved popular.</p>
+<p>There are further FFT specializations for the cases of real data that have <a href="/wiki/Even_and_odd_functions.html" title="Even and odd functions">even/odd</a> symmetry, in which case one can gain another factor of (roughly) two in time and memory and the DFT becomes the discrete cosine/sine transform(s) (<a href="/wiki/Discrete_cosine_transform.html" title="Discrete cosine transform">DCT</a>/<a href="/wiki/Discrete_sine_transform.html" title="Discrete sine transform">DST</a>). Instead of directly modifying an FFT algorithm for these cases, DCTs/DSTs can also be computed via FFTs of real data combined with O(<i>N</i>) pre/post processing.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Bounds on complexity and operation counts">edit</a>]</div>
+<p><a name="Bounds_on_complexity_and_operation_counts" id="Bounds_on_complexity_and_operation_counts"></a></p>
+<h2>Bounds on complexity and operation counts</h2>
+<p>A fundamental question of longstanding theoretical interest is to prove lower bounds on the <a href="/wiki/Computational_complexity_theory.html" title="Computational complexity theory">complexity</a> and exact operation counts of fast Fourier transforms, and many open problems remain. It is not even rigorously proved whether DFTs truly require <span class="texhtml">Ω(<i>N</i><i>l</i><i>o</i><i>g</i><i>N</i>)</span> (i.e., order <span class="texhtml"><i>N</i><i>l</i><i>o</i><i>g</i><i>N</i></span> or greater) operations, even for the simple case of <a href="/wiki/Power_of_two.html" title="Power of two">power of two</a> sizes, although no algorithms with lower complexity are known. In particular, the count of arithmetic operations is usually the focus of such questions, although actual performance on modern-day computers is determined by many other factors such as <a href="/wiki/Cache.html" title="Cache">cache</a> or <a href="/wiki/Pipeline_%28computer%29.html" title="Pipeline (computer)">CPU pipeline</a> optimization.</p>
+<p>Following pioneering work by <a  class="new" title="Winograd FFT algorithm">Winograd</a> (1978), a tight <span class="texhtml">Θ(<i>N</i>)</span> lower bound <i>is</i> known for the number of real multiplications required by an FFT. It can be shown that only <img class='tex' src="http://upload.wikimedia.org/math/9/3/4/934c1ac62d382b1d7b221746bef038fd.png" alt="4N-2\log_2^{2}N-2\log_2 N-4" /> irrational real multiplications are required to compute a DFT of power-of-two length <span class="texhtml"><i>N</i> = 2<sup><i>m</i></sup></span>. Morever, explicit algorithms that achieve this count are known (Heideman &amp; Burrus, 1986; Duhamel, 1990). Unfortunately, these algorithms require too many additions to be practical, at least on modern computers with hardware multipliers.</p>
+<p>A strict lower bound is <i>not</i> known on the number of required additions, although lower bounds have been proved under some restrictive assumptions on the algorithms. In 1973, Morgenstern proved an <span class="texhtml">Ω(<i>N</i><i>l</i><i>o</i><i>g</i><i>N</i>)</span> lower bound on the addition count for algorithms where the multiplicative constants have bounded magnitudes (which is true for most but not all FFT algorithms). Pan (1986) proved a <span class="texhtml">Ω(<i>N</i><i>l</i><i>o</i><i>g</i><i>N</i>)</span> lower bound assuming a bound on a measure of the FFT algorithm's "asynchronicity", but the generality of this assumption is unclear. For the case of power-of-two <span class="texhtml"><i>N</i></span>, Papadimitriou (1979) argued that the number <span class="texhtml"><i>N</i>log<sub>2</sub><i>N</i></span> of complex-number additions achieved by Cooley-Tukey algorithms is <i>optimal</i> under certain assumptions on the <a href="/wiki/Graph_%28mathematics%29.html" title="Graph (mathematics)">graph</a> of the algorithm (his assumptions imply, among other things, that no additive identities in the roots of unity are exploited). (This argument would imply that at least <span class="texhtml">2<i>N</i>log<sub>2</sub><i>N</i></span> real additions are required, although this is not a tight bound because extra additions are required as part of complex-number multiplications.) Thus far, no published FFT algorithm has achieved fewer than <span class="texhtml"><i>N</i>log<sub>2</sub><i>N</i></span> complex-number additions (or their equivalent) for power-of-two <span class="texhtml"><i>N</i></span>.</p>
+<p>A third problem is to minimize the <i>total</i> number of real multiplications and additions, sometimes called the "arithmetic complexity" (although in this context it is the exact count and not the asymptotic complexity that is being considered). Again, no tight lower bound has been proven. Since 1968, however, the lowest published count for power-of-two <span class="texhtml"><i>N</i></span> has been achieved by the <a href="/wiki/Split-radix_FFT_algorithm.html" title="Split-radix FFT algorithm">split-radix FFT algorithm</a>, which requires <span class="texhtml">4<i>N</i>log<sub>2</sub><i>N</i> − 6<i>N</i> + 8</span> real multiplications and additions for <span class="texhtml"><i>N</i> &gt; 1</span>.</p>
+<p>Most of the attempts to lower or prove the complexity of FFT algorithms have focused on the ordinary complex-data case, because it is the simplest. However, complex-data FFTs are so closely related to algorithms for related problems such as real-data FFTs, <a href="/wiki/Discrete_cosine_transform.html" title="Discrete cosine transform">discrete cosine transforms</a>, <a href="/wiki/Discrete_Hartley_transform.html" title="Discrete Hartley transform">discrete Hartley transforms</a>, and so on, that any improvement in one of these would immediately lead to improvements in the others (Duhamel &amp; Vetterli, 1990).</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Accuracy and approximations">edit</a>]</div>
+<p><a name="Accuracy_and_approximations" id="Accuracy_and_approximations"></a></p>
+<h2>Accuracy and approximations</h2>
+<p>All of the FFT algorithms discussed so far compute the DFT exactly (in exact arithmetic, i.e. neglecting <a href="/wiki/Floating-point.html" title="Floating-point">floating-point</a> errors). A few "FFT" algorithms have been proposed, however, that compute the DFT <i>approximately</i>, with an error that can be made arbitrarily small at the expense of increased computations. Such algorithms trade the approximation error for increased speed or other properties. For example, an approximate FFT algorithm by Edelman et al. (1999) achieves lower communication requirements for <a href="/wiki/Parallel_computing.html" title="Parallel computing">parallel computing</a> with the help of a fast-multipole method. A <a href="/wiki/Wavelet.html" title="Wavelet">wavelet</a>-based approximate FFT by Guo and Burrus (1996) takes sparse inputs/outputs (time/frequency localization) into account more efficiently than is possible with an exact FFT. Another algorithm for approximate computation of a subset of the DFT outputs is due to Shentov et al. (1995). Only the Edelman algorithm works equally well for sparse and non-sparse data, however, since it is based on the compressibility (rank deficiency) of the Fourier matrix itself rather than the compressibility (sparsity) of the data.</p>
+<p>Even the "exact" FFT algorithms have errors when finite-precision floating-point arithmetic is used, but these errors are typically quite small; most FFT algorithms, e.g. Cooley-Tukey, have excellent numerical properties. The upper bound on the <a href="/wiki/Approximation_error.html" title="Approximation error">relative error</a> for the Cooley-Tukey algorithm is O(ε log <i>N</i>), compared to O(ε <i>N</i><sup>3/2</sup>) for the naïve DFT formula (Gentleman and Sande, 1966), where ε is the machine floating-point relative precision. In fact, the <a href="/wiki/Root_mean_square.html" title="Root mean square">root mean square</a> (rms) errors are much better than these upper bounds, being only O(ε √log <i>N</i>) for Cooley-Tukey and O(ε √<i>N</i>) for the naïve DFT (Schatzman, 1996). These results, however, are very sensitive to the accuracy of the twiddle factors used in the FFT (i.e. the <a href="/wiki/Trigonometric_function.html" title="Trigonometric function">trigonometric function</a> values), and it is not unusual for incautious FFT implementations to have much worse accuracy, e.g. if they use inaccurate <a href="/wiki/Generating_trigonometric_tables.html" title="Generating trigonometric tables">trigonometric recurrence</a> formulas. Some FFTs other than Cooley-Tukey, such as the Rader-Brenner algorithm, are intrinsically less stable.</p>
+<p>In <a href="/wiki/Fixed-point_arithmetic.html" title="Fixed-point arithmetic">fixed-point arithmetic</a>, the finite-precision errors accumulated by FFT algorithms are worse, with rms errors growing as O(√<i>N</i>) for the Cooley-Tukey algorithm (Welch, 1969). Moreover, even achieving this accuracy requires careful attention to scaling in order to minimize the loss of precision, and <a  class="new" title="Fixed-point FFT algorithms">fixed-point FFT algorithms</a> involve rescaling at each intermediate stage of decompositions like Cooley-Tukey.</p>
+<p>To verify the correctness of an FFT implementation, rigorous guarantees can be obtained in O(<i>N</i> log <i>N</i>) time by a simple procedure checking the linearity, impulse-response, and time-shift properties of the transform on random inputs (Ergün, 1995).</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Multidimensional FFT algorithms">edit</a>]</div>
+<p><a name="Multidimensional_FFT_algorithms" id="Multidimensional_FFT_algorithms"></a></p>
+<h2>Multidimensional FFT algorithms</h2>
+<p>As defined in the <a href="/wiki/Discrete_Fourier_transform#Multidimensional_DFT.html" title="Discrete Fourier transform">multidimensional DFT</a> article, the multidimensional DFT</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/b/7/7/b77833e86607cafe263d974f798ac457.png" alt="X_\mathbf{k} = \sum_{\mathbf{n}=0}^{\mathbf{N}-1} e^{-2\pi i \mathbf{k} \cdot (\mathbf{n} / \mathbf{N})} x_\mathbf{n}" /></dd>
+</dl>
+<p>transforms an array <img class='tex' src="http://upload.wikimedia.org/math/d/1/c/d1c11b7a6ce592e494e2979bcd23e33a.png" alt="x_\mathbf{n}" /> with a <span class="texhtml"><i>d</i></span>-dimensional <a href="/wiki/Coordinate_vector.html" title="Coordinate vector">vector</a> of indices <img class='tex' src="http://upload.wikimedia.org/math/f/3/7/f37b3f005675cdca9d345335e1fde9d7.png" alt="\mathbf{n}=(n_1 = 0 \ldots N_1-1, \cdots, n_d = 0 \ldots N_d-1)" /> by a set of <span class="texhtml"><i>d</i></span> nested summations. Equivalently, it is simply the composition of a sequence of <span class="texhtml"><i>d</i></span> one-dimensional DFTs, performed along one dimension at a time (in any order).</p>
+<p>This compositional viewpoint immediately provides the simplest and most common multidimensional DFT algorithm, known as the <b>row-column</b> algorithm (after the two-dimensional case, below). That is, one simply performs a sequence of <span class="texhtml"><i>d</i></span> one-dimensional FFTs (by any of the above algorithms): first you transform along the <span class="texhtml"><i>n</i><sub>1</sub></span> dimension, then along the <span class="texhtml"><i>n</i><sub>2</sub></span> dimension, and so on (or actually, any ordering will work). This method is easily shown to have the usual <span class="texhtml"><i>O</i>(<i>N</i>log<i>N</i>)</span> complexity, where <img class='tex' src="http://upload.wikimedia.org/math/6/e/3/6e34557e9ba950f78926f47e9697f30c.png" alt="N = N_1 N_2 \cdots N_d" /> is the total number of data points transformed. In particular, there are <span class="texhtml"><i>N</i> / <i>N</i><sub>1</sub></span> transforms of size <span class="texhtml"><i>N</i><sub>1</sub></span>, etcetera, so the complexity of the sequence of FFTs is:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/2/1/0/2102a0d3f59bff7b4aa58eb81365281c.png" alt="N/N_1 O(N_1 \log N_1) + \cdots + N/N_d O(N_d \log N_d) = O(N [\log N_1 + \cdots + \log N_d]) = O(N \log N)." /></dd>
+</dl>
+<p>In two dimensions, the <img class='tex' src="http://upload.wikimedia.org/math/3/9/0/3904416b206deefeb527f24874f9214a.png" alt="x_\mathbf{k}" /> can be viewed as an <img class='tex' src="http://upload.wikimedia.org/math/8/f/6/8f6d73e1359e6332e0d7c545144443da.png" alt="n_1 \times n_2" /> <a href="/wiki/Matrix_%28mathematics%29.html" title="Matrix (mathematics)">matrix</a>, and this algorithm corresponds to first performing the FFT of all the rows and then of all the columns (or vice versa), hence the name.</p>
+<p>In more than two dimensions, it is often advantageous for <a href="/wiki/Cache.html" title="Cache">cache</a> locality to group the dimensions recursively. For example, a three-dimensional FFT might first perform two-dimensional FFTs of each planar "slice" for each fixed <span class="texhtml"><i>n</i><sub>1</sub></span>, and then perform the one-dimensional FFTs along the <span class="texhtml"><i>n</i><sub>1</sub></span> direction. More generally, an <a href="/wiki/Asymptotically_optimal.html" title="Asymptotically optimal">asymptotically optimal</a> <a href="/wiki/Cache-oblivious.html" title="Cache-oblivious">cache-oblivious</a> algorithm consists of recursively dividing the dimensions into two groups <img class='tex' src="http://upload.wikimedia.org/math/b/3/b/b3b722edd860e3c7793b0b1475a1a5ae.png" alt="(n_1, \cdots, n_{d/2})" /> and <img class='tex' src="http://upload.wikimedia.org/math/b/9/2/b92ea30f692c0f1fd5d2c47199a9a588.png" alt="(n_{d/2+1}, \cdots, n_d)" /> that are transformed recursively (rounding if <span class="texhtml"><i>d</i></span> is not even) (see Frigo and Johnson, 2005). Still, this remains a straightforward variation of the row-column algorithm that ultimately requires only a one-dimensional FFT algorithm as the base case, and still has <span class="texhtml"><i>O</i>(<i>N</i>log<i>N</i>)</span> complexity. Yet another variation is to perform matrix <a href="/wiki/Transpose.html" title="Transpose">transpositions</a> in between transforming subsequent dimensions, so that the transforms operate on contiguous data; this is especially important for <a href="/wiki/Out-of-core.html" title="Out-of-core">out-of-core</a> and <a href="/wiki/Distributed_memory.html" title="Distributed memory">distributed memory</a> situations where accessing non-contiguous data is extremely time-consuming.</p>
+<p>There are other multidimensional FFT algorithms that are distinct from the row-column algorithm, although all of them have <span class="texhtml"><i>O</i>(<i>N</i>log<i>N</i>)</span> complexity. Perhaps the simplest non-row-column FFT is the <a  class="new" title="Vector-radix FFT algorithm">vector-radix FFT algorithm</a>, which is a generalization of the ordinary Cooley-Tukey algorithm where one divides the transform dimensions by a vector <img class='tex' src="http://upload.wikimedia.org/math/9/0/5/905ed04a6ce3b999f554ab723b7ff183.png" alt="\mathbf{r}=(r_1, r_2, \cdots, r_d)" /> of radices at each step. (This may also have cache benefits.) The simplest case of vector-radix is where all of the radices are equal (e.g. vector-radix-2 divides <i>all</i> of the dimensions by two), but this is not necessary. Vector radix with only a single non-unit radix at a time, i.e. <img class='tex' src="http://upload.wikimedia.org/math/e/f/9/ef968c2f7c8eae070561c126cf33b741.png" alt="\mathbf{r}=(1, \cdots, 1, r, 1, \cdots, 1)" />, is essentially a row-column algorithm. Other, more complicated, methods include polynomial transform algorithms due to Nussbaumer (1977), which view the transform in terms of convolutions and polynomial products. See Duhamel and Vetterli (1990) for more information and references.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Butterfly_diagram.html" title="Butterfly diagram">Butterfly diagram</a> - a diagram used to describe fast fourier transforms.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<ul>
+<li>James W. Cooley and John W. Tukey, "An algorithm for the machine calculation of complex Fourier series," <i>Math. Comput.</i> <b>19</b>, 297–301 (1965).</li>
+<li>Carl Friedrich Gauss, "Nachlass: Theoria interpolationis methodo nova tractata," <i>Werke</i> band <b>3</b>, 265–327 (Königliche Gesellschaft der Wissenschaften, Göttingen, 1866). See also M. T. Heideman, D. H. Johnson, and C. S. Burrus, "Gauss and the history of the fast Fourier transform," <i>IEEE ASSP Magazine</i> <b>1</b> (4), 14–21 (1984).</li>
+<li>P. Duhamel and M. Vetterli, "Fast Fourier transforms: a tutorial review and a state of the art," <i>Signal Processing</i> <b>19</b>, 259–299 (1990).</li>
+<li>W. M. Gentleman and G. Sande, "Fast Fourier transforms—for fun and profit," <i>Proc. AFIPS</i> <b>29</b>, 563–578 (1966).</li>
+<li>H. Guo, G. A. Sitton, and C. S. Burrus, "The Quick Discrete Fourier Transform," <i>Proc. IEEE Conf. Acoust. Speech and Sig. Processing (ICASSP)</i> <b>3</b>, 445–448 (1994).</li>
+<li>H. V. Sorensen, D. L. Jones, M. T. Heideman, and C. S. Burrus, "Real-valued fast Fourier transform algorithms," <i>IEEE Trans. Acoust. Speech Sig. Processing</i> <b>ASSP-35</b>, 849–863 (1987).</li>
+<li>A. Edelman, P. McCorquodale, and S. Toledo, "The future fast Fourier transform?" <i>SIAM J. Sci. Computing</i> <b>20</b>, 1094–1114 (1999).</li>
+<li>H. Guo and C. S. Burrus, "Fast approximate Fourier transform via wavelets transform," <i>Proc. SPIE Intl. Soc. Opt. Eng.</i> <b>2825</b>, 250–259 (1996).</li>
+<li>O. V. Shentov, S. K. Mitra, U. Heute, and A. N. Hossen, "Subband DFT. I. Definition, interpretations and extensions," <i>Signal Processing</i> <b>41</b> (3), 261–277 (1995).</li>
+<li>James C. Schatzman, "Accuracy of the discrete Fourier transform and the fast Fourier transform," <i>SIAM J. Sci. Comput.</i> <b>17</b> (5), 1150–1166 (1996).</li>
+<li>Peter D. Welch, "A fixed-point fast Fourier transform error analysis," <i>IEEE Trans. Audio Electroacoustics</i> <b>17</b> (2), 151–157 (1969).</li>
+<li>Funda Ergün, "Testing multivariate linear functions: Overcoming the generator bottleneck," <i>Proc. 27th ACM Symposium on the Theory of Computing</i>, 407–416 (1995).</li>
+<li>H. J. Nussbaumer, "Digital filtering using polynomial transforms," <i>Electronics Lett.</i> <b>13</b> (13), 386-387 (1977).</li>
+<li>Matteo Frigo and Steven G. Johnson: <i>FFTW</i>, <a  class="external free" title="http://www.fftw.org/">http://www.fftw.org/</a>. A free (<a href="/wiki/GNU_General_Public_License.html" title="GNU General Public License">GPL</a>) C library for computing discrete Fourier transforms in one or more dimensions, of arbitrary size. Also M. Frigo and S. G. Johnson, "<a  class="external text" title="http://fftw.org/fftw-paper-ieee.pdf">The Design and Implementation of FFTW3</a>," <i>Proceedings of the IEEE</i> <b>93</b> (2), 216–231 (2005).</li>
+<li>N. Brenner and C. Rader, "A New Principle for Fast Fourier Transformation", <i>IEEE Acoustics, Speech &amp; Signal Processing</i> <b>24</b> (3), 264-266 (1976).</li>
+<li><a href="/wiki/Thomas_H._Cormen.html" title="Thomas H. Cormen">Thomas H. Cormen</a>, <a href="/wiki/Charles_E._Leiserson.html" title="Charles E. Leiserson">Charles E. Leiserson</a>, <a href="/wiki/Ronald_L._Rivest.html" title="Ronald L. Rivest">Ronald L. Rivest</a>, and <a href="/wiki/Clifford_Stein.html" title="Clifford Stein">Clifford Stein</a>. <i><a href="/wiki/Introduction_to_Algorithms.html" title="Introduction to Algorithms">Introduction to Algorithms</a></i>, Second Edition. MIT Press and McGraw-Hill, 2001. <a  class="internal">ISBN 0-262-03293-7</a>. Chapter 30: Polynomials and the FFT, pp.822–848.</li>
+<li>S. Winograd, "On computing the discrete Fourier transform," <i>Math. Computation</i> <b>32</b>, 175-199 (1978).</li>
+<li>Michael T. Heideman and C. Sidney Burrus, "On the number of multiplications necessary to compute a length-<span class="texhtml">2<sup><i>n</i></sup></span> DFT," <i>IEEE Trans. Acoust. Speech. Sig. Proc.</i> <b>34</b> (1), 91-95 (1986).</li>
+<li>Pierre Duhamel, "Algorithms meeting the lower bounds on the multiplicative complexity of length-<span class="texhtml">2<sup><i>n</i></sup></span> DFTs and their connection with practical algorithms," <i>IEEE Trans. Acoust. Speech. Sig. Proc.</i> <b>38</b> (9), 1504-1511 (1990).</li>
+<li>Jacques Morgenstern, "Note on a lower bound of the linear complexity of the fast Fourier transform," <i>J. ACM</i> <b>20</b> (2), 305-306 (1973).</li>
+<li>V. Pan, "The trade-off between the additive complexity and the asyncronicity of linear and bilinear algorithms," <i>Information Proc. Lett.</i> <b>22</b>, 11-14 (1986).</li>
+<li>Christos H. Papadimitriou, "Optimality of the fast Fourier transform," <i>J. ACM</i> <b>26</b> (1), 95-102 (1979).</li>
+</ul>
+<p><br /></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://www.fftw.org/links.html">Links to FFT code and information online</a></li>
+<li><a  class="external text" title="http://www.jjj.de/fxt/">Online documentation, links, book, and code</a></li>
+<li><a  class="external text" title="http://www.dl.ac.uk/TCSC/Subjects/Parallel_Algorithms/FFTreport/">Parallel Application Software on High Performance Computers. Serial and Parallel FFT Routines.</a></li>
+<li><a  class="external text" title="http://www.relisoft.com/science/Physics/sound.html">Tutorial and C++ implementation of FFT</a>. Includes free source of a <a href="/wiki/Microsoft_Windows.html" title="Microsoft Windows">Windows</a> program that displays the FFT in real-time.</li>
+<li><a  class="external text" title="http://www-star.stanford.edu/~bbaas/fftinfo.html">FFT Processor Chip Info Page</a></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:11512-0!1!0!default!!en!2 and timestamp 20060910094820 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:FFT algorithms">FFT algorithms</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Fast_Fourier_transform.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-ar"><a >العربية</a></li>
+				<li class="interwiki-ca"><a >Català</a></li>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-ko"><a >한국어</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-nl"><a >Nederlands</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-pt"><a >Português</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+				<li class="interwiki-sr"><a >Српски / Srpski</a></li>
+				<li class="interwiki-sv"><a >Svenska</a></li>
+				<li class="interwiki-zh"><a >中文</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 14:56, 30 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv80 in 0.174 secs. --></body></html>

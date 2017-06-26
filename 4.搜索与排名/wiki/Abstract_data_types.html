@@ -1,0 +1,271 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Abstract data type,Algorithm,Associative array,Binary search tree,Complex number,Computational complexity,Computer programming,Computing,Data structure,Data type,Implementation" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Abstract data type - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Abstract_data_type";
+			var wgTitle = "Abstract data type";
+			var wgArticleId = 2349;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Abstract data type</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub">(Redirected from <a  title="Abstract data types">Abstract data types</a>)</div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>In <a href="/wiki/Computing.html" title="Computing">computing</a>, an <b>abstract data type</b> (<b>ADT</b>) is a specification of a set of data and the set of operations that can be performed on the data. Such a <a href="/wiki/Data_type.html" title="Data type">data type</a> is abstract in the sense that it is independent of various concrete <a href="/wiki/Implementation.html" title="Implementation">implementations</a>. The definition can be <a href="/wiki/Mathematical.html" title="Mathematical">mathematical</a>, or it can be <a href="/wiki/Computer_programming.html" title="Computer programming">programmed</a> as an <a href="/wiki/Interface_%28computer_science%29.html" title="Interface (computer science)">interface</a>. The interface provides a <i>constructor</i>, which returns an abstract handle to new data, and several <i>operations</i>, which are <a href="/wiki/Subroutine.html" title="Subroutine">functions</a> accepting the abstract handle as an argument.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Examples</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Separation of interface and implementation</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Abstract data structure</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Built-in abstract data types</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Concrete examples</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">5.1</span> <span class="toctext">Rational numbers as an abstract data type</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">5.2</span> <span class="toctext">Stack</span></a>
+<ul>
+<li class="toclevel-3"><a ><span class="tocnumber">5.2.1</span> <span class="toctext">Interface</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">5.2.2</span> <span class="toctext">Usage</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">5.2.3</span> <span class="toctext">Implementation variants</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Examples">edit</a>]</div>
+<p><a name="Examples" id="Examples"></a></p>
+<h2>Examples</h2>
+<p>ADTs typically seen in textbooks and implemented in programming languages (or their libraries) include:</p>
+<ul>
+<li><a href="/wiki/String_%28computer_science%29.html" title="String (computer science)">String</a></li>
+<li><a href="/wiki/List_%28computing%29.html" title="List (computing)">List</a></li>
+<li><a href="/wiki/Linked_List.html" title="Linked List">Linked List</a></li>
+<li><a href="/wiki/Stack_%28data_structure%29.html" title="Stack (data structure)">Stack</a></li>
+<li><a href="/wiki/Queue.html" title="Queue">Queue</a></li>
+<li><a href="/wiki/Binary_search_tree.html" title="Binary search tree">Binary search tree</a></li>
+<li><a href="/wiki/Priority_queue.html" title="Priority queue">Priority queue</a></li>
+<li><a href="/wiki/Complex_number.html" title="Complex number">Complex number</a></li>
+<li><a href="/wiki/Associative_array.html" title="Associative array">Associative array</a></li>
+<li><a href="/wiki/Multimap.html" title="Multimap">Multimap</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Separation of interface and implementation">edit</a>]</div>
+<p><a name="Separation_of_interface_and_implementation" id="Separation_of_interface_and_implementation"></a></p>
+<h2>Separation of interface and implementation</h2>
+<p>When realized in a computer program, the ADT is represented by an interface, which shields a corresponding implementation. Users of an ADT are concerned with the interface, but not the implementation, as the implementation can change in the future. (This supports the principle of <a href="/wiki/Information_hiding.html" title="Information hiding">information hiding</a>, or protecting the program from design decisions that are subject to change.)</p>
+<p>The strength of an ADT is that the implementation is hidden from the user. Only the interface is published. This means that the ADT can be implemented in various ways, but as long as it adheres to the interface, user programs are unaffected.</p>
+<p>There is a distinction, although sometimes subtle, between the abstract data type and the data structure used in its implementation. For example, a List ADT can be represented using an array-based implementation or a linked-list implementation. A List is an abstract data type with well-defined operations (add element, remove element, etc.) while a linked-list is a pointer-based data structure that can be used to create a representation of a List. The linked-list implementation is so commonly used to represent a List ADT that the terms are interchanged in common use.</p>
+<p>Similarly, a Binary Search Tree ADT can be represented in several ways: binary tree, AVL tree, red-black tree, array, etc. Regardless of the implementation, the Binary Search Tree always has the same operations (insert, remove, find, etc.)</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Abstract data structure">edit</a>]</div>
+<p><a name="Abstract_data_structure" id="Abstract_data_structure"></a></p>
+<h2>Abstract data structure</h2>
+<p>An <b>abstract data structure</b> is an abstract storage for data defined in terms of the set of operations to be performed on data and <a href="/wiki/Computational_complexity.html" title="Computational complexity">computational complexity</a> for performing these operations, regardless of the implementation in a concrete <a href="/wiki/Data_structure.html" title="Data structure">data structure</a>.</p>
+<p>Selection of an abstract data structure is crucial in the design of efficient <a href="/wiki/Algorithm.html" title="Algorithm">algorithms</a> and in estimating their computational complexity, while selection of concrete data structures is important for efficient <a href="/wiki/Implementation.html" title="Implementation">implementation</a> of algorithms.</p>
+<p>This notion is very close to that of an abstract data type, used in the theory of <a href="/wiki/Programming_language.html" title="Programming language">programming languages</a>. The names of many abstract data structures (and abstract data types) match the names of concrete data structures.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Built-in abstract data types">edit</a>]</div>
+<p><a name="Built-in_abstract_data_types" id="Built-in_abstract_data_types"></a></p>
+<h2>Built-in abstract data types</h2>
+<p>Because some ADTs are so common and useful in computer programs, some programming languages build implementations of ADTs into the language as native types or add them into their standard libraries. For instance, Perl arrays can be thought of as an implementation of the List or Deque ADTs and Perl hashes can be thought of in terms of Map or Table ADTs. The C++ Standard Library and Java libraries provide classes that implement the List, Stack, Queue, Map, Priority Queue, and String ADTs.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Concrete examples">edit</a>]</div>
+<p><a name="Concrete_examples" id="Concrete_examples"></a></p>
+<h2>Concrete examples</h2>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Rational numbers as an abstract data type">edit</a>]</div>
+<p><a name="Rational_numbers_as_an_abstract_data_type" id="Rational_numbers_as_an_abstract_data_type"></a></p>
+<h3>Rational numbers as an abstract data type</h3>
+<p><a href="/wiki/Rational_number.html" title="Rational number">Rational numbers</a> (numbers that can be written in the form a/b where a and b are integers) cannot be represented natively in a computer. A Rational ADT could be defined as shown below.</p>
+<p>Construction: Create an instance of a rational number ADT using two integers, a and b, where a represents the numerator and b represents the denominator.</p>
+<p>Operations: addition, subtraction, multiplication, division, exponentiation, comparison, simplify, conversion to a real (floating point) number.</p>
+<p>To be a complete specification, each operation should be defined in terms of the data. For example, when multiplying two rational numbers a/b and c/d, the result is defined as ac/bd. Typically, inputs, outputs, preconditions, postconditions, and assumptions for the ADT are specified as well.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Stack">edit</a>]</div>
+<p><a name="Stack" id="Stack"></a></p>
+<h3>Stack</h3>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Interface">edit</a>]</div>
+<p><a name="Interface" id="Interface"></a></p>
+<h4>Interface</h4>
+<p>The interface for a <a href="/wiki/Stack_%28data_structure%29.html" title="Stack (data structure)">Stack</a> ADT, written in C-style notation, might be:</p>
+<pre>
+long stack_create(); /* create new instance of a stack */
+void stack_push(long stack, void *item); /* push an item on the stack */
+void *stack_pop(long stack); /* get item from top of stack */
+void stack_delete(long stack); /* delete the stack */
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Usage">edit</a>]</div>
+<p><a name="Usage" id="Usage"></a></p>
+<h4>Usage</h4>
+<p>This ADT could be used in the following manner:</p>
+<pre>
+long stack;
+struct foo *f;
+
+stack = stack_create(); /* create a stack */
+
+stack_push(stack, f); /* add foo structure to stack */
+
+f = stack_pop(stack); /* get top structure from stack */
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Implementation variants">edit</a>]</div>
+<p><a name="Implementation_variants" id="Implementation_variants"></a></p>
+<h4>Implementation variants</h4>
+<p>The above stack ADT could be initially implemented using an array, and then later changed to a linked list, without affecting any user code.</p>
+<p>The number of ways a given ADT can be implemented depends on the programming language. For example, the above example could be written in C using a struct and an accompanying set of data structures using arrays or linked lists to store the entries; however, since the constructor function returns an abstract handle, the actual implementation is hidden from the user. In object-oriented languages such as C++ and Java, ADTs are typically represented using the class construct where the data is represented by data members (attributes) and the operations are represented by member functions (methods). In addition, some languages such as C++ and Java provide a mechanism of enforcement (the private or protected keywords) to only allow the defined functions to operate on the data. When using object-oriented ADTs, the user can often expand the ADT by creating a subclass of the ADT.</p>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:2349-0!1!0!default!!en!2 and timestamp 20060906015722 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Type theory">Type theory</a></span> | <span dir='ltr'><a  title="Category:Data structures">Data structures</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Abstract_data_type.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-cs"><a >Česky</a></li>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-ko"><a >한국어</a></li>
+				<li class="interwiki-lt"><a >Lietuvių</a></li>
+				<li class="interwiki-nl"><a >Nederlands</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 05:03, 20 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv14 in 0.121 secs. --></body></html>

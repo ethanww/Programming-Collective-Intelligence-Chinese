@@ -1,0 +1,344 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Stack-oriented programming language,Assembly language,Call stack,Fibonacci number program,Forth programming language,If-then-else,Java virtual machine,Lapis language,Lexical analysis,Method overriding (programming),Polish notation" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Stack-oriented programming language - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Stack-oriented_programming_language";
+			var wgTitle = "Stack-oriented programming language";
+			var wgArticleId = 910837;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Stack-oriented programming language</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub">(Redirected from <a  title="Stack language">Stack language</a>)</div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>A <b>stack-oriented programming language</b> is one that relies on a <a href="/wiki/Stack_machine.html" title="Stack machine">stack machine</a> model for passing parameters. Several programming languages fit this description, notably <a href="/wiki/Forth_programming_language.html" title="Forth programming language">Forth</a> and <a href="/wiki/PostScript.html" title="PostScript">PostScript</a>, and also many <a href="/wiki/Assembly_language.html" title="Assembly language">Assembly languages</a> (but on a much lower level).</p>
+<p>A stack oriented programming language behaves by operations upon one or many <a href="/wiki/Stack_%28data_structure%29.html" title="Stack (data structure)">stacks</a>, which may serve different purposes. Because of this, programming constructs in other programming languages may need to be modified for use in a stack-oriented programming language. Adding to this, some stack-oriented programming languages operate in <a href="/wiki/Reverse_Polish_Notation.html" title="Reverse Polish Notation">Reverse Polish</a> or <i>postfix</i> notation - that is, the arguments or parameters for some command are stated <i>before</i> the actual command itself. For example, in <a href="/wiki/Reverse_Polish_Notation.html" title="Reverse Polish Notation">RPN</a>, one would say "2, 3, multiply" instead of "multiply, 2, 3" (<i>prefix</i> or <a href="/wiki/Polish_notation.html" title="Polish notation">Polish notation</a>) or "2 multiply 3" (<i>infix</i> notation).</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Operations of the stack</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Stack manipulation</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Variables and dictionaries</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Procedures</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">4.1</span> <span class="toctext">Anatomy of some typical procedures</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Control and flow</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">Analysis of the language model</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Operations of the stack">edit</a>]</div>
+<p><a name="Operations_of_the_stack" id="Operations_of_the_stack"></a></p>
+<h2>Operations of the stack</h2>
+<div class="floatright"><span><a  class="image" title=""><img src="http://upload.wikimedia.org/wikipedia/en/thumb/0/06/Human_stack.png/220px-Human_stack.png" alt="" width="220" height="52" longdesc="/wiki/Image:Human_stack.png" /></a></span></div>
+<p>Assume we have a postfix stack based programming language. PostScript is one such real language. To understand how a stack-oriented programming language "works", in calculating such an expression as "2 3 multiply", we can use a simple thought experiment.</p>
+<p>Say you are standing at the start of a line and along the line someone has placed "2", "3", and "multiply" along it. The problem is, you can only see the first thing in front of you in the line, the 2, and nothing else. You are only allowed to perform any calculation, take what you can see off the line (the first thing), and put something back on the line in front of you. Can you perform the calculation?</p>
+<p>Yes you can, you take the 2 off the line, then the 3, then the command to multiply, in which you multiply what you have, 2 and 3, and then put the result, 6, back on the line.<br clear="all" /></p>
+<p>This is of course a very simple calculation. What if we wanted to calculate something like (2 + 3) × 11 + 1&#160;? If we first write it into postfix form, that is,</p>
+<dl>
+<dd>2 3 add 11 multiply 1 add</dd>
+</dl>
+<p>we can perform the calculation in exactly the same manner and achieve exactly the same result. After each operation, one puts the result of that operation back on the line (the stack), and continues as before. The stack would then be transformed as follows</p>
+<dl>
+<dd>5 11 multiply 1 add</dd>
+<dd>55 1 add</dd>
+<dd>56</dd>
+</dl>
+<p>which is the result.</p>
+<p>We can conclude from this the following - a stack based programming language has only one way of handling data, by taking one piece of data from the top of the stack, known as <i>pop</i>ping, and putting data back on the top of the stack, known as <i>push</i>ing. Any expression that can be written "conventionally" or in another programming language can be written in postfix (or prefix) form and thus be amenable to be interpreted by a stack-oriented programming language.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Stack manipulation">edit</a>]</div>
+<p><a name="Stack_manipulation" id="Stack_manipulation"></a></p>
+<h2>Stack manipulation</h2>
+<p>Since the stack is the key means of data manipulation in a stack-oriented programming language, often these languages provide some sort of stack manipulation operators. Commonly provided are <tt>dup</tt>, to duplicate the element at the top of the stack, <tt>exch</tt> (or <tt>swap</tt>), to exchange elements at the top of the stack (the first becomes the second and the second becomes the first), <tt>roll</tt>, to cyclically permute elements in the stack or on part of the stack, <tt>pop</tt>, to discard the element at the top of the stack (push is implicit), and others. These become key in studying procedures.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Variables and dictionaries">edit</a>]</div>
+<p><a name="Variables_and_dictionaries" id="Variables_and_dictionaries"></a></p>
+<h2>Variables and dictionaries</h2>
+<p>We have examined how we can evaluate differing expressions. The implementation of variables is important for any programming language, but for stack-oriented languages it is of special concern, as we only have one way of interacting with data.</p>
+<p>The way variables are implemented in stack-oriented programming languages such as PostScript usually involves a separate, specialized stack which holds <i>dictionaries</i>, which hold key-value pairs. To create a variable, we create a key (the variable name), to which we associate a value. In PostScript, a name data object is prefixed with a "/", so "/x" is a name data object which we can associate, for example, with the number "42". The "define" command is <tt>def</tt>, so</p>
+<pre>
+/x 42 def
+</pre>
+<p>associates with the name "x" with the number 42 in the dictionary on the top of the stack. Note that there is a difference between "/x" and "x" - the former is a data object representing a name, "x" itself stands for what is defined under "/x".</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Procedures">edit</a>]</div>
+<p><a name="Procedures" id="Procedures"></a></p>
+<h2>Procedures</h2>
+<p>A procedure in a stack-based programming language is treated as a data object in its own right. In PostScript, procedures are denoted between <tt>{</tt> and <tt>}</tt>.</p>
+<p>For example, in PostScript syntax,</p>
+<pre>
+{ dup mul }
+</pre>
+<p>represents an anonymous procedure to duplicate what is on the top of the stack and then multiply the result - a squaring procedure.</p>
+<p>Since procedures are treated as simple data objects, we can define names with procedures, and when they are retrieved, they are executed directly.</p>
+<p>Dictionaries provide a means of controlling scoping, as well as storing of definitions.</p>
+<p>Since data objects are stored in the top-most dictionary, an unexpected capability arises quite naturally: when looking up a definition from a dictionary, the topmost dictionary is checked, then the next, and so on. If we define a procedure that has the same name as another already defined in a different dictionary, the local one will be called.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Anatomy of some typical procedures">edit</a>]</div>
+<p><a name="Anatomy_of_some_typical_procedures" id="Anatomy_of_some_typical_procedures"></a></p>
+<h3>Anatomy of some typical procedures</h3>
+<p>Procedures often take arguments. They are handled by the procedure in a very specific way, different to that of other programming languages.</p>
+<p>Let us examine the <a href="/wiki/Fibonacci_number_program.html" title="Fibonacci number program">Fibonacci number program</a> in PostScript:</p>
+<pre>
+ /fib
+ {
+    dup dup 1 eq exch 0 eq or not
+    {
+       dup 1 sub fib
+       exch 2 sub fib
+       add
+    } if
+ } def
+</pre>
+<p>We use a recursive definition, and do so on the stack. The Fibonacci number function takes one argument. We first test whether it is 1 or 0.</p>
+<p>Let us decompose each of the program's key steps, reflecting the stack. Assume we calculate F(4).</p>
+<pre>
+                stack: 4
+   dup 
+                stack: 4 4
+   dup 
+                stack: 4 4 4
+   1 eq 
+                stack: false 4 4
+   exch 
+                stack: 4 false 4
+   0 eq
+                stack: false false 4 
+   or
+                stack: false 4
+   not
+                stack: true 4
+</pre>
+<p>Since the expression evaluates to true, the inner procedure is evaluated.</p>
+<pre>
+                stack: 4
+   dup 
+                stack: 4 4
+   1 sub
+                stack: 3 4
+   fib
+</pre>
+<dl>
+<dd><i>(we recurse here)</i></dd>
+</dl>
+<pre>
+                stack: F(3) 4
+   exch 
+                stack: 4 F(3)
+   2 sub 
+                stack: 2 F(3)
+   fib
+</pre>
+<dl>
+<dd><i>(we recurse here)</i></dd>
+</dl>
+<pre>
+                stack: F(2) F(3)
+   add
+                stack: F(2)+F(3)
+</pre>
+<p>which is the result we wanted.</p>
+<p>This procedure does not use named variables, purely the stack. We can create named variables by using the</p>
+<pre>
+/a exch def 
+</pre>
+<p>construct. For example,</p>
+<pre>
+{/n exch def n n mul}
+</pre>
+<p>is a square procedure with a named variable n. Assume that</p>
+<pre>
+/sq {/n exch def n n mul} def
+</pre>
+<p>and</p>
+<pre>
+3 sq
+</pre>
+<p>is called. Let us analyse this procedure.</p>
+<pre>
+               stack: 3 /n 
+   exch 
+               stack: /n 3
+   def 
+               stack: <i>empty</i> (it has been defined)
+   n 
+               stack: 3
+   n 
+               stack: 3 3 
+   mul
+               stack: 9
+</pre>
+<p>which is the result we wanted.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Control and flow">edit</a>]</div>
+<p><a name="Control_and_flow" id="Control_and_flow"></a></p>
+<h2>Control and flow</h2>
+<p>Since we have anonymous procedures, flow control can arise naturally. We need three pieces of data for an <a href="/wiki/If-then-else.html" title="If-then-else">if-then-else</a> statement, a condition, a procedure to be done if true, and one to be done if false. In PostScript for example,</p>
+<pre>
+2 3 gt { (2 is greater than three) = } { (2 is not greater than three) = } ifelse
+</pre>
+<p>performs the near equivalent in C:</p>
+<pre>
+if(2 &gt;= 3) { printf("2 is greater than three\n"); } else { printf("2 is not greater than three"); }
+</pre>
+<p>Looping and other constructs are similar.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Analysis of the language model">edit</a>]</div>
+<p><a name="Analysis_of_the_language_model" id="Analysis_of_the_language_model"></a></p>
+<h2>Analysis of the language model</h2>
+<p>The simple model provided in a stack-oriented programming language allows expressions and programs to be interpreted simply and theoretically evaluated much more quickly, since no <a href="/wiki/Syntax_analysis.html" title="Syntax analysis">syntax analysis</a> needs to be done, only <a href="/wiki/Lexical_analysis.html" title="Lexical analysis">lexical analysis</a>. The way programs are written lends itself well to be interpreted by machines, which is why PostScript suits printers well for its use. However, the slightly artificial way of writing PostScript programs can result in an initial barrier to understanding the PostScript language and other stack-oriented programming languages.</p>
+<p>Whilst the capability of shadowing by <a href="/wiki/Method_overriding_%28programming%29.html" title="Method overriding (programming)">overriding</a> inbuilt and other definitions can make things difficult to debug - and irresponsible usage of this feature can result in unpredictable behaviour - it can make certain functionality much simpler. For example, in PostScript usage, the <tt>showpage</tt> operator can be overridden with a custom one that applies a certain style to the page, instead of having to define a custom operator or to repeat code to generate the style.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/PostScript.html" title="PostScript">PostScript</a></li>
+<li><a href="/wiki/Forth_programming_language.html" title="Forth programming language">Forth programming language</a></li>
+<li><a href="/wiki/Lapis_language.html" title="Lapis language">Lapis language</a> (an object-oriented stack-based language)</li>
+<li><a href="/wiki/Java_virtual_machine.html" title="Java virtual machine">Java virtual machine</a></li>
+<li><a href="/wiki/Stack_%28data_structure%29.html" title="Stack (data structure)">Stack (data structure)</a></li>
+<li><a href="/wiki/Call_stack.html" title="Call stack">Call stack</a></li>
+<li><a href="/wiki/Reverse_Polish_notation.html" title="Reverse Polish notation">Reverse Polish notation</a></li>
+<li><a href="/wiki/RPL_programming_language.html" title="RPL programming language">RPL programming language</a></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:910837-0!1!0!default!!en!2 and timestamp 20060910161550 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:Stack-oriented programming languages">Stack-oriented programming languages</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Stack-oriented_programming_language.html">Article</a></li>
+				 <li id="ca-talk" class="new"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 01:01, 11 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv12 in 0.145 secs. --></body></html>

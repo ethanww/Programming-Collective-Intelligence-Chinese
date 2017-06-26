@@ -1,0 +1,796 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Objective-C,1980s,1986,1988,1992,1993,1996,2004,2006,Adapter pattern,Apple Computer" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Objective-C - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Objective-C";
+			var wgTitle = "Objective-C";
+			var wgArticleId = 22802;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Objective-C</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub">(Redirected from <a  title="Objective-C programming language">Objective-C programming language</a>)</div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p><b>Objective-C</b>, often referred to as <b>ObjC</b> or more seldom as <b>Objective C</b> or <b>Obj-C</b>, is a <a href="/wiki/Reflection_%28computer_science%29.html" title="Reflection (computer science)">reflective</a>, <a href="/wiki/Object-oriented_programming.html" title="Object-oriented programming">object oriented</a> <a href="/wiki/Programming_language.html" title="Programming language">programming language</a> which adds <a href="/wiki/Smalltalk.html" title="Smalltalk">Smalltalk</a>-style <a href="/wiki/Message_passing.html" title="Message passing">messaging</a> to <a href="/wiki/C_programming_language.html" title="C programming language">C</a>.</p>
+<p>Today it is used primarily on <a href="/wiki/Mac_OS_X.html" title="Mac OS X">Mac OS X</a> and <a href="/wiki/GNUstep.html" title="GNUstep">GNUstep</a>, two environments based on the <a href="/wiki/OpenStep.html" title="OpenStep">OpenStep</a> standard, and is the primary language used for the <a href="/wiki/NEXTSTEP.html" title="NEXTSTEP">NeXTSTEP</a>, <a href="/wiki/OpenStep#OPENSTEP.html" title="OpenStep">OPENSTEP</a>, and <a href="/wiki/Cocoa_%28API%29.html" title="Cocoa (API)">Cocoa</a> application frameworks. Generic object-oriented Objective-C programs that do not make use of these libraries can also be compiled for any system supported by <a href="/wiki/GNU_Compiler_Collection.html" title="GNU Compiler Collection">gcc</a>, which includes an Objective-C compiler.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">History</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">1.1</span> <span class="toctext">Popularization through NeXT</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Syntax</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">2.1</span> <span class="toctext">Messages</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.2</span> <span class="toctext">Interfaces and implementations</span></a>
+<ul>
+<li class="toclevel-3"><a ><span class="tocnumber">2.2.1</span> <span class="toctext">Interface</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">2.2.2</span> <span class="toctext">Implementation</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.3</span> <span class="toctext">Protocols</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.4</span> <span class="toctext">Dynamic typing</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.5</span> <span class="toctext">Forwarding</span></a>
+<ul>
+<li class="toclevel-3"><a ><span class="tocnumber">2.5.1</span> <span class="toctext">Example</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">2.5.2</span> <span class="toctext">Notes</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.6</span> <span class="toctext">Categories</span></a>
+<ul>
+<li class="toclevel-3"><a ><span class="tocnumber">2.6.1</span> <span class="toctext">Example usage of categories</span></a>
+<ul>
+<li class="toclevel-4"><a ><span class="tocnumber">2.6.1.1</span> <span class="toctext">Notes</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.7</span> <span class="toctext">Posing</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.8</span> <span class="toctext">#import</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Other features</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Objective-C++</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Today</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">Analysis of the language</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">6.1</span> <span class="toctext">Philosophical differences between Objective-C and C++</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">References</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">7.1</span> <span class="toctext">Notes</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">7.2</span> <span class="toctext">Other references</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">8</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">9</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: History">edit</a>]</div>
+<p><a name="History" id="History"></a></p>
+<h2>History</h2>
+<p>In the early <a href="/wiki/1980s.html" title="1980s">1980s</a>, common <a href="/wiki/Software_engineering.html" title="Software engineering">software engineering</a> practice was based on <a href="/wiki/Structured_programming.html" title="Structured programming">structured programming</a>. Structured programming was implemented in order to help "break down" programs into smaller parts, primarily to make them easier to work on as they grew increasingly large. However, as the problems being solved grew in size, structured programming became less useful as more and more procedures had to be written, leading to <a href="/wiki/Spaghetti_code.html" title="Spaghetti code">spaghetti code</a> and poor code reuse.</p>
+<p>Many saw <a href="/wiki/Object-oriented_programming.html" title="Object-oriented programming">object-oriented programming</a> as a potential solution to the problem. In fact, <a href="/wiki/Smalltalk.html" title="Smalltalk">Smalltalk</a> had already addressed many of these engineering issues: some of the most complex systems in the world were Smalltalk environments.<sup title="The text in the vicinity of this tag needs citation." class="noprint">[<a  title="Wikipedia:Citing sources"><i>citation&#160;needed</i></a>]</sup> On the downside, Smalltalk used a <a href="/wiki/Virtual_machine.html" title="Virtual machine">virtual machine</a>. This virtual machine was very large and tended to require huge amounts of <a href="/wiki/Memory_%28computers%29.html" title="Memory (computers)">memory</a> for the time and ran very slowly.</p>
+<p>ObjC was created primarily by <a href="/wiki/Brad_Cox.html" title="Brad Cox">Brad Cox</a> in the early <a href="/wiki/1980s.html" title="1980s">1980s</a> at his company <a href="/wiki/Stepstone.html" title="Stepstone">Stepstone</a>. He had become interested in the problems of true reusability in <a href="/wiki/Software_engineering.html" title="Software engineering">software design</a> and programming. In order to demonstrate that real progress could be made, Cox set about to show that making interchangeable <a href="/wiki/Software_componentry.html" title="Software componentry">software components</a> really needed only a few practical changes to existing tools. Specifically, they needed to support objects in a flexible manner, come supplied with a set of libraries that were usable, and allow for the code (and any resources needed by the code) to be bundled into a single cross-platform format.</p>
+<p>The main description of Objective-C in its original form was published in his book, <i>Object-Oriented Programming, An Evolutionary Approach</i> in <a href="/wiki/1986.html" title="1986">1986</a>. Cox was careful to point out that there is more to the problem of reusability than just the language. Instead, the system often found itself compared on a feature-for-feature basis with other languages.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Popularization through NeXT">edit</a>]</div>
+<p><a name="Popularization_through_NeXT" id="Popularization_through_NeXT"></a></p>
+<h3>Popularization through NeXT</h3>
+<p>In <a href="/wiki/1988.html" title="1988">1988</a>, <a href="/wiki/Steve_Jobs.html" title="Steve Jobs">Steve Jobs</a>' <a href="/wiki/NeXT.html" title="NeXT">NeXT</a> licensed Objective-C from StepStone and released their own Objective-C compiler and libraries on which the <a href="/wiki/NEXTSTEP.html" title="NEXTSTEP">NeXTstep</a> user interface and interface builder were based. The success of the tools and quality of the resultant operating system helped NeXT become a fairly popular niche workstation provider.</p>
+<p>The GNU project started work on their free clone of NeXTStep based on the <a href="/wiki/OpenStep.html" title="OpenStep">OpenStep</a> standard, <a href="/wiki/GNUstep.html" title="GNUstep">GNUstep</a>. Dennis Glatting wrote the first gnu-objc <a href="/wiki/Runtime.html" title="Runtime">runtime</a> in <a href="/wiki/1992.html" title="1992">1992</a>, and Richard Stallman followed with a second one shortly after. The GNU Objective-C runtime that has been in use since <a href="/wiki/1993.html" title="1993">1993</a> is the one developed by Kresten Krab Thorup when he was a university student in Denmark. Kresten also worked at NeXT for a while.</p>
+<p>After acquiring NeXT in <a href="/wiki/1996.html" title="1996">1996</a>, <a href="/wiki/Apple_Computer.html" title="Apple Computer">Apple</a> used OPENSTEP as the basis for its main operating system, <a href="/wiki/Mac_OS_X.html" title="Mac OS X">Mac OS X</a>. This includes Objective-C and NeXT's Objective-C based developer tool, <a href="/wiki/Xcode.html" title="Xcode">Project Builder</a> (later replaced by <a href="/wiki/Xcode.html" title="Xcode">Xcode</a>), as well as its interface design tool, <a href="/wiki/Interface_Builder.html" title="Interface Builder">Interface Builder</a>. Most of Apple's present-day <a href="/wiki/Cocoa_%28API%29.html" title="Cocoa (API)">Cocoa API</a> is based on OpenStep interface objects, and this is the most significant Objective-C environment being used for active development.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Syntax">edit</a>]</div>
+<p><a name="Syntax" id="Syntax"></a></p>
+<h2>Syntax</h2>
+<p>Objective-C is a very "thin" layer on top of C. Objective-C is a <i>strict</i> <a href="/wiki/Subset.html" title="Subset">superset</a> of C. That is, it is possible to compile any C program with an Objective-C compiler (this cannot be said of <a href="/wiki/C%2B%2B.html" title="C++">C++</a>). Objective-C derives its syntax from both C and Smalltalk. Most of the syntax (including preprocessing, expressions, function declarations and function calls) is inherited from C, while the syntax for object-oriented features was created to enable Smalltalk-style message passing.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Messages">edit</a>]</div>
+<p><a name="Messages" id="Messages"></a></p>
+<h3>Messages</h3>
+<p>The added syntax is for built-in support of <a href="/wiki/Object-oriented_programming.html" title="Object-oriented programming">object-oriented programming</a>. The Objective-C model of <a href="/wiki/Object-oriented_programming.html" title="Object-oriented programming">Object-oriented programming</a> is based on sending <a href="/wiki/Message_%28computer_science%29.html" title="Message (computer science)">messages</a> to objects, similar to the model of <a href="/wiki/Smalltalk.html" title="Smalltalk">Smalltalk</a>. This is unlike the <a href="/wiki/Simula.html" title="Simula">Simula</a> programming model, which is used by <a href="/wiki/C%2B%2B.html" title="C++">C++</a> among other programming languages. This distinction is semantically important. The basic difference is that in Objective-C, one does not <i>call a method</i>; one <i>sends a message</i>.</p>
+<p>An object called <tt>obj</tt> whose class has a method <tt>doSomething</tt> implemented is said to <i>respond</i> to the message <tt>doSomething</tt>. If we wish to send a <tt>doSomething</tt> message to <tt>obj</tt>, we write</p>
+<pre>
+[obj doSomething];
+</pre>
+<p>This mechanism allows messages to be sent to an object even if the object is <i>not</i> able to respond to them. This differs from <a href="/wiki/Dynamic_typing#Static_and_dynamic_typing.html" title="Dynamic typing">statically typed</a> languages such as C++ and <a href="/wiki/Java_programming_language.html" title="Java programming language">Java</a> in which all method calls to objects must be predefined. See the <a  title="">dynamic typing</a> section below.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Interfaces and implementations">edit</a>]</div>
+<p><a name="Interfaces_and_implementations" id="Interfaces_and_implementations"></a></p>
+<h3>Interfaces and implementations</h3>
+<p>Objective-C requires the interface and implementation of a class to be in separate specially declared code blocks. By convention, the interface is put in a header file and the implementation in a code file; these header files, suffixed .h, are similar to C header files.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Interface">edit</a>]</div>
+<p><a name="Interface" id="Interface"></a></p>
+<h4>Interface</h4>
+<p>The interface of the class is usually defined in a header file. Convention is usually to create the name of the header file based on the name of the class. So if we have the class <tt>Thing</tt>, Thing's interface goes in the file <tt>Thing.h</tt>.</p>
+<p>The interface declaration is in this form (NOTE: the class methods need not precede the instance methods):</p>
+<pre>
+@interface <i>classname</i> : <i>superclass name</i>
+{
+   <i>instance variables</i>
+}
++ <i>class method</i>
++ <i>class method</i>
+ ...
+- <i>instance method</i>
+- <i>instance method</i>
+ ...
+@end
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Implementation">edit</a>]</div>
+<p><a name="Implementation" id="Implementation"></a></p>
+<h4>Implementation</h4>
+<p>The interface only declares the prototypes for the methods, and not the methods themselves, which go in the implementation. The implementation is usually stored in a main file, for example, <tt>Thing.m</tt>. The implementation is written</p>
+<pre>
+@implementation <i>classname</i>
++ <i>class method</i>
+{
+   <i>implementation</i>
+}
+
+- <i>instance method</i>
+{
+   <i>implementation</i>
+}
+ ...
+@end
+</pre>
+<p>Methods are written in a different way from C-style functions. For example, a function in both C and Objective-C follows this general form:</p>
+<pre>
+int do_something(int i)
+{
+   return square_root(i);
+}
+</pre>
+<p>with <tt>int do_something(int)</tt> as the prototype.</p>
+<p>When this is implemented as a method, this becomes:</p>
+<pre>
+- (int) do_something: (int) i
+{
+   return [self square_root: i];
+}
+</pre>
+<p>However, a more <a href="/wiki/Canonical#Computer_science.html" title="Canonical">canonical</a> way of writing this method would be like this, by naming the first argument in the selector name:</p>
+<pre>
+- (int) doSomethingWithInt: (int) i
+{
+   return [self squareRootOfInt:i];
+}
+</pre>
+<p>The hyphen lets us know that this is an <a href="/wiki/Method_%28computer_science%29.html" title="Method (computer science)">instance method</a>, and not a <a href="/wiki/Method_%28computer_science%29.html" title="Method (computer science)">class method</a> (which uses a +). This syntax may appear to be more troublesome but it allows the <a href="/wiki/Named_parameter.html" title="Named parameter">naming of parameters</a>, for example</p>
+<pre>
+- (int) changeColorWithRed: (int) r  green: (int) g  blue: (int) b
+<i>...</i>
+</pre>
+<p>which can be invoked thus:</p>
+<pre>
+[myColor changeColorWithRed:5 green:2 blue:6];
+</pre>
+<p>Internal representations of this method vary between different implementations of Objective-C. If myColor is of the class <tt>Color</tt>, internally, instance method <tt>-changeColorWithRed:green:blue:</tt> might be labeled <tt>_i_Color_changeColorWithRed_green_blue</tt>. The <tt>i</tt> is to refer to an instance method, with the class and then method names appended, colons translated to underscores.</p>
+<p>However, internal names of the function are rarely used directly, and generally even message-sends are converted to a call to a function defined in a run-time library rather than directly accessing the internal name. This is partially because it is rarely known at compile-time which method will actually be called, because the class of the receiver (i.e. the object being sent the message) is rarely known until runtime.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Protocols">edit</a>]</div>
+<p><a name="Protocols" id="Protocols"></a></p>
+<h3>Protocols</h3>
+<p>Objective-C was extended at <a href="/wiki/NeXT.html" title="NeXT">NeXT</a> to introduce the concept of multiple inheritance of specification, but not implementation, through the introduction of protocols. This is a pattern achievable as an abstract multiply inherited base class in C++ or, more popularly adopted in Java as an "interface". Objective-C makes use of both ad-hoc protocols, called <i>informal protocols</i>, and compiler enforced protocols called <i>formal protocols</i>.</p>
+<p>An informal protocol is a list of methods that a class can implement. It is specified in the documentation, since it has no presence in the language. Informal protocols often include optional methods, where implementing the method can change the behavior of a class. For example, a text field class might have a delegate that should implement an informal protocol with an optional autocomplete method. The text field discovers whether the delegate implements that method (via <a href="/wiki/Reflection_%28computer_science%29.html" title="Reflection (computer science)">reflection</a>), and if so, calls it to support autocomplete.</p>
+<p>A formal protocol is similar to an interface in Java. It is a list of methods that any class can declare itself to implement. The compiler will emit an error if the class does not implement every method of its declared protocols. The Objective-C concept of protocols is different from the Java concept of interfaces in that a class may implement a protocol without being declared to implement that protocol. The difference is not detectable from outside code. Formal protocols cannot provide any implementations, they simply assure callers that classes that conform to the protocol will provide implementations. In the NeXT/Apple library, protocols are frequently used by the Distributed Objects system to represent the capabilities of an object executing on a remote system.</p>
+<p>The syntax</p>
+<pre>
+@protocol Locking
+- (void)lock;
+- (void)unlock;
+@end
+</pre>
+<p>denotes that there is the abstract idea of locking that is useful and when stated in a class definition</p>
+<pre>
+@interface SomeClass : SomeSuperClass &lt;Locking&gt;
+...
+@end
+</pre>
+<p>that instances of SomeClass will provide an implementation for the two instance methods using whatever means they want. This abstract specification is particularly useful to describe the desired behaviors of plug-ins for example, without constraining at all what the implementation hierarchy should be.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Dynamic typing">edit</a>]</div>
+<p><a name="Dynamic_typing" id="Dynamic_typing"></a></p>
+<h3>Dynamic typing</h3>
+<p>Objective-C, like Smalltalk, can use <a href="/wiki/Dynamic_typing.html" title="Dynamic typing">Dynamic typing</a>; we can send an object a message not specified in its interface. Although controversial, this can allow for increased flexibility — in Objective-C an object can "capture" this message, and depending on the object, can send the message off again to a different object (who can respond to the message correctly and appropriately, or likewise send the message on again). This behaviour is known as <i>message forwarding</i> or <i>delegation</i> (see below). Alternatively, an error handler can be used instead, in case the message cannot be forwarded. However if the object does not forward the message, handle the error, or respond to it, a <a href="/wiki/Runtime.html" title="Runtime">runtime</a> error occurs.</p>
+<p>Static typing information may also optionally be added to variables. This information is then checked at compile time. In the following statements, increasingly specific type information is provided. The statements are equivalent at runtime, but the additional information allows the compiler to warn the programmer if the passed argument does not match the type specified. In the first statement, the object must conform to the <i>aProtocol</i> protocol, and in the second, it must be a member of the NSNumber class.</p>
+<pre>
+- setMyValue: (id &lt;aProtocol&gt;) foo;
+- setMyValue: (NSNumber*)foo;
+</pre>
+<p>Dynamic typing can be a powerful feature. When implementing container classes using statically-typed languages without generics like pre-1.5 Java, the programmer is forced to write a <a href="/wiki/Container_class.html" title="Container class">container class</a> for a generic type of object, and then cast back and forth between the abstract generic type and the real type. <a href="/wiki/Type_conversion.html" title="Type conversion">Casting</a> however breaks the discipline of <a href="/wiki/Type_system#Static_and_dynamic_typing.html" title="Type system">static typing</a>—if you put in an <a href="/wiki/Integer.html" title="Integer">Integer</a> and read out a <a href="/wiki/String_%28computer_science%29.html" title="String (computer science)">String</a>, you get an error. One way of alleviating the problem is to resort to <a href="/wiki/Generic_programming.html" title="Generic programming">generic programming</a>, but then container classes must be homogeneous in type. This needs not be the case with dynamic typing.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Forwarding">edit</a>]</div>
+<p><a name="Forwarding" id="Forwarding"></a></p>
+<h3>Forwarding</h3>
+<p>Since Objective-C permits the sending of a message to an object that might not respond to it, the object has a number of things it can do with the message. One of these things could be to forward the message on to an object that can respond to it. Forwarding can be used to implement certain <a href="/wiki/Design_pattern_%28computer_science%29.html" title="Design pattern (computer science)">design patterns</a>, such as the <a href="/wiki/Observer_pattern.html" title="Observer pattern">Observer pattern</a> or the <a href="/wiki/Proxy_pattern.html" title="Proxy pattern">Proxy pattern</a> very simply. See <a href="/wiki/Examples_of_message_forwarding_in_Objective-C.html" title="Examples of message forwarding in Objective-C">Examples of message forwarding in Objective-C</a> for such an implementation.</p>
+<p>The Objective-C runtime specifies a pair of methods in <tt>Object</tt></p>
+<ul>
+<li>forwarding methods:</li>
+</ul>
+<pre>
+- (retval_t) forward: (SEL) sel : (arglist_t) args; // with GCC
+- (id) forward: (SEL) sel : (marg_list) args; // with NeXT/Apple systems
+</pre>
+<ul>
+<li>action methods:</li>
+</ul>
+<pre>
+- (retval_t) performv: (SEL) sel : (arglist_t) args;  // with GCC
+- (id) performv: (SEL) sel : (marg_list) args; // with NeXT/Apple systems
+</pre>
+<p>and as such an object wishing to implement forwarding needs only to override the forwarding method to define the forwarding behaviour. The action methods <tt>performv::</tt> need not be overridden as this method merely performs the method based on the selector and arguments.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Example">edit</a>]</div>
+<p><a name="Example" id="Example"></a></p>
+<h4>Example</h4>
+<p>Here is an example of a program that demonstrates the basics of forwarding.</p>
+<dl>
+<dt><i>Forwarder.h</i></dt>
+</dl>
+<pre>
+#import &lt;objc/Object.h&gt;
+
+@interface Forwarder : Object
+{
+   id recipient; //The object we want to forward the message to. 
+}
+
+//Accessor methods
+- (id) recipient: (id) _recipient; 
+- (id) recipient;
+
+@end
+</pre>
+<dl>
+<dt><i>Forwarder.m</i></dt>
+</dl>
+<pre>
+#import "Forwarder.h"
+
+@implementation Forwarder
+
+- (retval_t) forward: (SEL) sel : (arglist_t) args
+{
+   /*
+    * Check whether the recipient actually responds to the message. 
+    * This may or may not be desirable, for example, if a recipient
+    * in turn does not respond to the message, it might do forwarding
+    * itself.
+    */
+   if([recipient respondsTo:sel]) 
+      return [recipient performv: sel : args];
+   else
+      return [self error:"Recipient does not respond"];
+}
+
+- (id) recipient: (id) _recipient
+{
+   recipient = _recipient;
+   return self;
+}
+
+- (id) recipient
+{
+   return recipient;
+}
+@end
+</pre>
+<dl>
+<dt><i>Recipient.h</i></dt>
+</dl>
+<pre>
+#import &lt;objc/Object.h&gt;
+
+// A simple Recipient object.
+@interface Recipient : Object
+- (id) hello;
+@end
+</pre>
+<dl>
+<dt><i>Recipient.m</i></dt>
+</dl>
+<pre>
+#import "Recipient.h"
+
+@implementation Recipient
+
+- (id) hello
+{
+   printf("Recipient says hello!\n");
+
+   return self;
+}
+
+@end
+</pre>
+<dl>
+<dt>main.c</dt>
+</dl>
+<pre>
+#import "Forwarder.h"
+#import "Recipient.h"
+
+int
+main(void)
+{
+   Forwarder *forwarder = [Forwarder new];
+   Recipient *recipient = [Recipient new];
+
+   [forwarder recipient:recipient]; //Set the recipient. 
+   /* 
+    * Observe forwarder does not respond to a hello message! It will
+    * be forwarded. All unrecognized methods will be forwarded to
+    * the recipient 
+    * (if the recipient responds to them, as written in the Forwarder)
+    */
+   [forwarder hello]; 
+
+   return 0;
+}
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Notes">edit</a>]</div>
+<p><a name="Notes" id="Notes"></a></p>
+<h4>Notes</h4>
+<p>If we were to compile the program, the compiler would report that</p>
+<pre>
+$ gcc -x objective-c -Wno-import Forwarder.m Recipient.m main.c -lobjc
+main.c: In function `main':
+main.c:12: warning: `Forwarder' does not respond to `hello'
+$
+</pre>
+<p>The compiler is reporting the point that was made earlier, <tt>Forwarder</tt> does not respond to hello messages. In certain circumstances, such a warning can help us find errors, but in this circumstance however, we can safely ignore this warning, since we have implemented forwarding. If we were to run the program</p>
+<pre>
+$ ./a.out
+Recipient says hello!
+</pre>
+<p>For more examples, see <a href="/wiki/Examples_of_message_forwarding_in_Objective-C.html" title="Examples of message forwarding in Objective-C">examples of message forwarding in Objective-C</a></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Categories">edit</a>]</div>
+<p><a name="Categories" id="Categories"></a></p>
+<h3>Categories</h3>
+<p>Cox's main concern was the maintainability of large code bases. Experience from the structured programming world had shown that one of the main ways to improve code was to break it down into smaller pieces. Objective-C added the concept of <i>Categories</i> to help with this process.</p>
+<p>A category collects method implementations into separate files. The programmer can place groups of related methods into a category to make them more readable. For instance, one could create a "SpellChecking" category "on" the String object, collecting all of the methods related to spell checking into a single place.</p>
+<p>Furthermore, the methods within a category are added to a class at <a href="/wiki/Runtime.html" title="Runtime">runtime</a>. Thus, categories permit the programmer to add methods to an existing class without the need to recompile that class or even have access to its source code. For example, if the system you are supplied with does not contain a <a href="/wiki/Spell_checker.html" title="Spell checker">spell checker</a> in its String implementation, you can add it without modifying the String source code.</p>
+<p>Methods within categories become indistinguishable from the methods in a class when the program is run. A category has full access to all of the instance variables within the class, including private variables.</p>
+<p>Categories provide an elegant solution to the <a href="/wiki/Fragile_base_class.html" title="Fragile base class">fragile base class</a> problem for methods.</p>
+<p>If you declare a method in a category with the same <a href="/wiki/Method_signature.html" title="Method signature">method signature</a> as an existing method in a class, the category's method is adopted. Thus categories can not only add methods to a class, but also replace existing methods. This feature can be used to fix bugs in other classes by rewriting their methods, or to cause a global change to a class's behavior within a program. If two categories have methods with the same method signature, it is undefined which category's method is adopted.</p>
+<p>Other languages have attempted to add this feature in a variety of ways. <a href="/wiki/TOM_computer_language.html" title="TOM computer language">TOM</a> took the Objective-C system a step further and allowed for the addition of variables as well. Other languages have instead used <a href="/wiki/Prototype-based_programming.html" title="Prototype-based programming">prototype oriented</a> solutions, the most notable being <a href="/wiki/Self_programming_language.html" title="Self programming language">Self</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Example usage of categories">edit</a>]</div>
+<p><a name="Example_usage_of_categories" id="Example_usage_of_categories"></a></p>
+<h4>Example usage of categories</h4>
+<p>This example builds up an <tt>Integer</tt> class, by defining first a basic class with only <a href="/wiki/Method_%28computer_science%29.html" title="Method (computer science)">accessor methods</a> implemented, and adding two categories, <tt>Arithmetic</tt> and <tt>Display</tt> that extend the basic class. Whilst categories can access the base class's private data members, it is often good practice to access these private data members through the accessor methods, which helps keep categories more independent from the base class. This is one typical usage of categories—the other is to use categories to add or replace certain methods in the base class (however it is not regarded as good practice to use categories for subclass overriding).</p>
+<dl>
+<dt><i>Integer.h</i></dt>
+</dl>
+<pre>
+#include &lt;objc/Object.h&gt;
+
+@interface Integer : Object
+{
+   int integer;
+}
+
+- (int) integer;
+- (id) integer: (int) _integer;
+@end
+</pre>
+<dl>
+<dt><i>Integer.m</i></dt>
+</dl>
+<pre>
+#import "Integer.h"
+
+@implementation Integer
+- (int) integer
+{
+   return integer;
+}
+
+- (id) integer: (int) _integer
+{
+   integer = _integer;
+}
+@end
+</pre>
+<dl>
+<dt><i>Arithmetic.h</i></dt>
+</dl>
+<pre>
+#import "Integer.h"
+
+@interface Integer (Arithmetic)
+- (id) add: (Integer *) addend;
+- (id) sub: (Integer *) subtrahend;
+@end
+</pre>
+<dl>
+<dt><i>Arithmetic.m</i></dt>
+</dl>
+<pre>
+#import "Arithmetic.h"
+
+@implementation Integer (Arithmetic) 
+- (id) add: (Integer *) addend
+{
+   return [self integer: [self integer] + [addend integer]];
+}
+
+- (id) sub: (Integer *) subtrahend
+{
+   return [self integer: [self integer] - [subtrahend integer]];
+}
+@end
+</pre>
+<dl>
+<dt><i>Display.h</i></dt>
+</dl>
+<pre>
+#import "Integer.h"
+
+@interface Integer (Display)
+- (id) showstars;
+- (id) showint;
+@end
+</pre>
+<dl>
+<dt><i>Display.m</i></dt>
+</dl>
+<pre>
+#import "Display.h"
+
+@implementation Integer (Display) 
+- (id) showstars
+{
+   int i, x = [self integer];
+   for(i=0; i &lt; x; i++)
+      printf("*");
+   printf("\n");
+
+   return self;
+}
+
+- (id) showint
+{
+   printf("%d\n", [self integer]);
+
+   return self;
+}
+@end
+</pre>
+<p><br /></p>
+<dl>
+<dt><i>main.m</i></dt>
+</dl>
+<pre>
+#import "Integer.h"
+#import "Arithmetic.h" 
+#import "Display.h"
+
+int
+main(void)
+{
+   Integer *num1 = [Integer new], *num2 = [Integer new];
+   int x;
+   printf("Enter an integer: ");
+   scanf("%d", &amp;x);
+   [num1 integer:x];
+   [num1 showstars];
+   printf("Enter an integer: ");
+   scanf("%d", &amp;x);
+   [num2 integer:x];
+   [num2 showstars];
+
+   [num1 add:num2];
+   [num1 showint];
+}
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Notes">edit</a>]</div>
+<p><a name="Notes_2" id="Notes_2"></a></p>
+<h5>Notes</h5>
+<p>Compilation is performed, for example, by</p>
+<pre>
+gcc -x objective-c main.c Integer.m Arithmetic.m Display.m -lobjc
+</pre>
+<p>You can experiment by omitting the <tt>#import "Arithmetic.h"</tt> and <tt>[num1 add:num2]</tt> lines and omit <tt>Arithmetic.m</tt> in compilation. The program will still run. This means that it is possible to "mix-and-match" added categories if necessary - if one does not need to have some capability provided in a category, one can simply not compile it in.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Posing">edit</a>]</div>
+<p><a name="Posing" id="Posing"></a></p>
+<h3>Posing</h3>
+<p>Objective-C permits a class to wholly replace another class within a program. The replacing class is said to "pose as" the target class. All messages sent to the target class are then instead received by the posing class. There are several restrictions on which classes can pose:</p>
+<ul>
+<li>A class may only pose as one of its direct or indirect superclasses</li>
+<li>The posing class must not define any new instance variables that are absent from the target class (though it may define or override methods).</li>
+<li>No messages must have been sent to the target class prior to the posing.</li>
+</ul>
+<p>Posing, similarly to categories, allows globally augmenting existing classes. Posing permits two features absent from categories:</p>
+<ul>
+<li>A posing class can call overridden methods through super, thus incorporating the implementation of the target class.</li>
+<li>A posing class can override methods defined in categories.</li>
+</ul>
+<p>For example,</p>
+<pre>
+@interface CustomNSApplication : NSApplication
+@end
+
+@implementation CustomNSApplication
+- (void) setMainMenu: (NSMenu*) menu
+{
+    // do something with menu
+}
+@end
+
+class_poseAs ([CustomNSApplication class], [NSApplication class]);
+</pre>
+<p>This intercepts every invocation of setMainMenu to NSApplication.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: #import">edit</a>]</div>
+<p><a name=".23import"></a></p>
+<h3>#import</h3>
+<p>In the C language, the "#include" pre-compile directive allows for the insertion of entire files before any compilation actually begins. ObjC adds the "#import" directive, which does the same thing, except that it knows not to insert a file that has already been inserted.</p>
+<p>For example, if file A includes files X and Y, but X and Y each include the file Q, then Q will be inserted twice into the resultant file, causing "duplicate definition" compile errors. But if file Q is included using the "#import" directive, only the first inclusion of Q will occur—all others will be ignored.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Other features">edit</a>]</div>
+<p><a name="Other_features" id="Other_features"></a></p>
+<h2>Other features</h2>
+<p>Objective-C in fact included a laundry-list of features that are still being added to other languages, and some that are unique to it. These led from Cox's (and later, <a href="/wiki/NeXT.html" title="NeXT">NeXT</a>'s) realization that there is considerably more to programming than the language. The system has to be usable and flexible as a whole in order to work in a real-world setting.</p>
+<ul>
+<li>Delegating methods to other objects at run-time is trivial. Simply add a category that changes the "second chance" method to forward the invocation to the delegate.</li>
+<li><a href="/wiki/Remote_procedure_call.html" title="Remote procedure call">Remote invocation</a> is trivial. Simply add a category that changes the "second chance" method to serialize the invocation and forward it off.</li>
+<li>isa swizzling allows for classes to change at runtime. Typically used for <a href="/wiki/Debugging.html" title="Debugging">debugging</a> where freed objects are swizzled into zombie objects, whose only purpose is to report an error when someone calls them. Swizzling was also used in <a href="/wiki/Enterprise_Objects_Framework.html" title="Enterprise Objects Framework">EOF</a> to create database faults. Swizzling is used today by Apple's Foundation Framework to implement <a  class="new" title="Key-Value Observing">Key-Value Observing</a>.</li>
+<li>Archiving. An object can be archived into a stream, such as a file, and can be read and restored on demand.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Objective-C++">edit</a>]</div>
+<p><a name="Objective-C.2B.2B" id="Objective-C.2B.2B"></a></p>
+<h2>Objective-C++</h2>
+<p>Objective-C++ is a front-end to the Mac OS X version of the <a href="/wiki/GNU_Compiler_Collection.html" title="GNU Compiler Collection">GNU Compiler Collection</a> that can compile source files that use a combination of C++ and Objective-C syntax. Objective-C++ adds to C++ the extensions Objective-C adds to C. As nothing is done to unify the semantics behind the various language features, certain restrictions apply:</p>
+<ul>
+<li>A C++ class cannot derive from an Objective-C class and vice versa.</li>
+<li>C++ namespaces cannot be declared inside an Objective-C declaration.</li>
+<li>Objective-C classes cannot have instance variables of a C++ class type that has virtual functions, but pointers to C++ objects can be declared.</li>
+<li>C++ "by value" semantics cannot be applied to Objective-C objects, which are only accessible through references.</li>
+<li>An Objective-C declaration cannot be within a C++ template declaration and vice versa. Objective-C types, (e.g., Classname *) can be used as C++ template parameters, however.</li>
+<li>Care must be taken since the destructor calling conventions of Objective-C and C++'s exception run-time models do not match.</li>
+</ul>
+<p><br /></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Today">edit</a>]</div>
+<p><a name="Today" id="Today"></a></p>
+<h2>Today</h2>
+<p>Objective-C today is often used in tandem with a fixed library of standard objects (often known as a "kit" or "framework"), such as <a href="/wiki/OpenStep.html" title="OpenStep">OpenStep</a>/<a href="/wiki/Cocoa_%28API%29.html" title="Cocoa (API)">Cocoa</a>/<a href="/wiki/GNUstep.html" title="GNUstep">GNUstep</a>. These libraries often come with the operating system: the <a href="/wiki/OPENSTEP.html" title="OPENSTEP">OPENSTEP</a> libraries come with the <a href="/wiki/OpenStep#OPENSTEP.html" title="OpenStep">OPENSTEP</a> operating system and <a href="/wiki/Cocoa_%28software%29.html" title="Cocoa (software)">Cocoa</a> comes with <a href="/wiki/Mac_OS_X.html" title="Mac OS X">Mac OS X</a>. One can however bypass the framework and inherit directly from the root object, <tt>Object</tt>, and create one's own functionality. The aforementioned libraries however implement NSObject, which adds some additional features to Object, such as <a href="/wiki/Reference_counting.html" title="Reference counting">reference counting</a>.</p>
+<p>History note: Earlier versions of <a href="/wiki/NeXT.html" title="NeXT">NeXT</a>'s <a href="/wiki/NEXTSTEP.html" title="NEXTSTEP">NeXTSTEP</a> operating system had objects inheriting from <tt>Object</tt>, but migrated to the newer <tt>NSObject</tt> root class, which was named to distinguish it from the original <tt>Object</tt> root (see note on namespaces below). All newer versions of the NeXTSTEP libraries which had objects inheriting from <tt>NSObject</tt> were prefixed with "NS", while those which did not inherit from <tt>NSObject</tt> did not. Later, the entire library codebase as OpenStep moved to use the <tt>NSObject</tt> class outright, and to maintain compatibility with the NeXTSTEP libraries, the prefix was maintained, and is still maintained in <a href="/wiki/Cocoa_%28API%29.html" title="Cocoa (API)">Cocoa</a> today. On the other hand, Cocoa has a class which does not inherit from <tt>NSObject</tt>: <tt>NSProxy</tt>.</p>
+<p>At the 2006 <a href="/wiki/Worldwide_Developers_Conference.html" title="Worldwide Developers Conference">Worldwide Developers Conference</a>, Apple Computer announced the forthcoming release of "Objective-C 2.0". Apple has announced that "modern garbage collection, syntax enhancements, runtime performance improvements, and 64-bit support" will be available, but no technical details have been released. Examination on the Apple Objective-C mailing lists of the source code contributed to the <a href="/wiki/GCC.html" title="GCC">GCC</a> project has revealed that the syntax improvements include properties (automatic getters and setters<a  class="external autonumber" title="http://lists.apple.com/archives/Objc-language/2006/Aug/msg00039.html">[1]</a>), and has verified internal data structure improvements for efficiency<a  class="external autonumber" title="http://lists.apple.com/archives/Objc-language/2006/Aug/msg00018.html">[2]</a>. It is as yet unknown whether or when these language improvements will be available in the GNU runtime.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Analysis of the language">edit</a>]</div>
+<p><a name="Analysis_of_the_language" id="Analysis_of_the_language"></a></p>
+<h2>Analysis of the language</h2>
+<p>Objective-C is a very pragmatic language. Objective-C implementations use a thin <a href="/wiki/Runtime.html" title="Runtime">runtime</a> written in C that adds little to the size of the application. In contrast, most OO systems at the time that it was created used large <a href="/wiki/Virtual_machine.html" title="Virtual machine">VM</a> runtimes that took over the entire system. Programs written in Objective-C tend to be not much larger than the size of their code and that of the libraries (which generally don't need to be included in the <a href="/wiki/Software_distribution.html" title="Software distribution">software distribution</a>), in contrast to Smalltalk systems where a large amount of memory was used just to open a window.</p>
+<p>Likewise, the language can be implemented on top of existing C compilers (in the <a href="/wiki/GNU_Compiler_Collection.html" title="GNU Compiler Collection">GCC</a>, first as a preprocessor, then as a module) rather than as a new compiler. This allowed Objective-C to leverage the huge existing collection of C code, libraries, tools, and mindshare. Existing C libraries — even in object code libraries — can be wrapped in Objective-C <a href="/wiki/Adapter_pattern.html" title="Adapter pattern">wrappers</a> to provide an OO-style interface.</p>
+<p>All of these practical changes lowered the <a href="/wiki/Barriers_to_entry.html" title="Barriers to entry">barrier to entry</a>, likely the biggest problem for the widespread acceptance of Smalltalk in the 1980s. Objective-C can thus be described as offering much of the flexibility of the later Smalltalk systems in a language that is deployed as easily as C.</p>
+<p>The first versions of Objective-C did not support <a href="/wiki/Garbage_collection_%28computer_science%29.html" title="Garbage collection (computer science)">garbage collection</a>. At the time this decision was a matter of some debate, and many people considered long "dead times" (when Smalltalk did collection) to render the entire system unusable. Although some 3rd party implementations have added this feature (most notably GNUstep), Apple has not implemented it as of <a href="/wiki/Mac_OS_X_v10.4.html" title="Mac OS X v10.4">Mac OS X v10.4</a>, but has confirmed that it will be included in <a href="/wiki/Mac_OS_X_v10.5.html" title="Mac OS X v10.5">Mac OS X v10.5</a><sup id="_ref-0" class="reference"><a  title="">[1]</a></sup>.</p>
+<p>Another common criticism is that Objective-C does not have language support for <a href="/wiki/Namespace_%28computer_science%29.html" title="Namespace (computer science)">namespaces</a>. Instead programmers are forced to add prefixes to their class names, which can cause collisions. As of <a href="/wiki/2004.html" title="2004">2004</a>, all Mac OS X classes and functions in the <a href="/wiki/Cocoa_%28software%29.html" title="Cocoa (software)">Cocoa</a> programming environment are prefixed with "NS" (as in NSObject or NSButton) to clearly identify them as belonging to the Mac OS X core; the "NS" derives from the names of the classes as defined during the development of <a href="/wiki/NEXTSTEP.html" title="NEXTSTEP">NEXTSTEP</a>.</p>
+<p>Since Objective-C is a strict superset of C, it does not treat C primitive types as <a href="/wiki/First-class_object.html" title="First-class object">first-class objects</a> either.</p>
+<p>Unlike <a href="/wiki/C%2B%2B.html" title="C++">C++</a>, Objective-C does not support <a href="/wiki/Operator_overloading.html" title="Operator overloading">operator overloading</a>. Also unlike C++, Objective-C allows an object only to directly inherit from one class (forbidding <a href="/wiki/Multiple_inheritance.html" title="Multiple inheritance">multiple inheritance</a>). As Java was influenced by the design of Objective-C, the decision to use single inheritance was carried into Java. Categories and protocols may be used as alternative functionality to multiple inheritance; Java however lacks categories.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Philosophical differences between Objective-C and C++">edit</a>]</div>
+<p><a name="Philosophical_differences_between_Objective-C_and_C.2B.2B" id="Philosophical_differences_between_Objective-C_and_C.2B.2B"></a></p>
+<h3>Philosophical differences between Objective-C and C++</h3>
+<p>The design and implementation of C++ and Objective-C represent different approaches to extending C.</p>
+<p>C++ provides templates to support generic programming and metaprogramming, and a standard library with container classes. C++ requires this because C++ is a statically-typed language. Objective-C adds only object oriented features — Objective-C does not <i>need</i> to have template programming because it supports dynamic typing. Objective-C in its purest fashion does not contain the same number of standard library features, however in most places where Objective-C is used, it is used with an <a href="/wiki/OpenStep.html" title="OpenStep">OpenStep</a>-like library such as <a href="/wiki/OPENSTEP.html" title="OPENSTEP">OPENSTEP</a>, <a href="/wiki/Cocoa_%28API%29.html" title="Cocoa (API)">Cocoa</a>, or <a href="/wiki/GNUstep.html" title="GNUstep">GNUstep</a>, providing the same functionality as C++'s standard library.</p>
+<p>At run time, most information about types in C++ is gone, and there is no standard way to, for instance, call a certain method given only its name. In contrast, as Objective-C is dynamically typed, type information remains directly available at run time. For instance, one can call an Objective-C method given only a string representing its name.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Notes">edit</a>]</div>
+<p><a name="Notes_3" id="Notes_3"></a></p>
+<h3>Notes</h3>
+<div class="references-small">
+<ol class="references">
+<li id="_note-0"><b><a  title="">^</a></b> Apple, Inc. (<a href="/wiki/August_22.html" title="August 22">August 22</a>, <a href="/wiki/2006.html" title="2006">2006</a>). <a  class="external text" title="http://www.apple.com/macosx/leopard/xcode.html">Mac OS X Leopard Preview - Xcode 3.0</a>. Retrieved on <a href="/wiki/2006.html" title="2006">2006</a>-<a href="/wiki/August_22.html" title="August 22">08-22</a>.</li>
+</ol>
+</div>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Other references">edit</a>]</div>
+<p><a name="Other_references" id="Other_references"></a></p>
+<h3>Other references</h3>
+<ul>
+<li><cite class="book" style="font-style:normal" id="Reference-Cox-1986">Cox, Brad J (1986). <i>Object Oriented Programming: An Evolutionary Approach</i>. Addison Wesley. <a  class="internal">ISBN 0201103931</a>.</cite></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Comparison_of_programming_languages.html" title="Comparison of programming languages">Comparison of programming languages</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<div class="infobox sisterproject">
+<div style="float: left;">
+<div class="floatnone"><span><a  class="image" title="Wikibooks"><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Wikibooks-logo-en.svg/50px-Wikibooks-logo-en.svg.png" alt="Wikibooks" width="50" height="57" longdesc="/wiki/Image:Wikibooks-logo-en.svg" /></a></span></div>
+</div>
+<div style="margin-left: 60px;"><a  class="extiw" title="wikibooks:">Wikibooks</a> has more about this subject:
+<div style="margin-left: 10px;"><i><b><a  class="extiw" title="wikibooks:Programming:Objective-C">Programming:Objective-C</a></b></i></div>
+</div>
+</div>
+<ul>
+<li><a  class="external text" title="http://developer.apple.com/documentation/Cocoa/Conceptual/ObjectiveC/">Introduction to The Objective-C Programming Language (Apple Developer Connection)</a> <a  class="external text" title="http://developer.apple.com/documentation/Cocoa/Conceptual/ObjectiveC/ObjC.pdf">(download PDF)</a></li>
+<li><a  class="external text" title="http://www.toodarkpark.org/computers/objc/">Object-Oriented Programming and The Objective-C Language</a></li>
+<li><a  class="external text" title="http://developer.apple.com/documentation/ReleaseNotes/Cocoa/Objective-C++.html">The Objective-C++ Front End</a></li>
+<li><a  class="external text" title="http://www.otierney.net/objective-c.html">Beginner's Guide to Objective-C</a></li>
+<li><a  class="external text" title="http://objectivelib.sourceforge.net/">ObjectiveLib: variant of a Standard Template Library</a></li>
+<li><a  class="external text" title="http://virtualschool.edu/objectivec/">Objective-C by Brad Cox</a></li>
+<li><a  class="external text" title="http://www.cs.indiana.edu/classes/c304/oop-intro.html">Object Oriented Programming in Objective-C</a></li>
+<li><a  class="external text" title="http://www.faqs.org/faqs/computer-lang/Objective-C/faq/">Objective-C FAQ</a></li>
+<li><a  class="external text" title="http://www.foldr.org/~michaelw/objective-c/">Objective-C: Links, Resources, Stuff</a></li>
+<li><a  class="external text" title="http://softtecharticles.com/mambo/index.php?option=com_content&amp;task=view&amp;id=32&amp;Itemid=40">Objective-C A beginners tutorial</a></li>
+<li><a  class="external text" title="news://comp.lang.objective-c">Objective-C mailing list</a></li>
+<li><a  class="external text" title="http://www.excelsoftware.com/uml_for_objectivec.pdf">UML for Objective-C</a> (PDF)</li>
+</ul>
+
+<!-- 
+Pre-expand include size: 6309 bytes
+Post-expand include size: 2037 bytes
+Template argument size: 1618 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:22802-0!1!0!default!!en!2 and timestamp 20060910152018 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Articles with unsourced statements">Articles with unsourced statements</a></span> | <span dir='ltr'><a  title="Category:Programming languages">Programming languages</a></span> | <span dir='ltr'><a  title="Category:C programming language family">C programming language family</a></span> | <span dir='ltr'><a  title="Category:Dynamic programming languages">Dynamic programming languages</a></span> | <span dir='ltr'><a  title="Category:Dynamically-typed programming languages">Dynamically-typed programming languages</a></span> | <span dir='ltr'><a  title="Category:Class-based programming languages">Class-based programming languages</a></span> | <span dir='ltr'><a  title="Category:Object-oriented programming languages">Object-oriented programming languages</a></span> | <span dir='ltr'><a  title="Category:Curly bracket programming languages">Curly bracket programming languages</a></span> | <span dir='ltr'><a  title="Category:NeXT">NeXT</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Objective-C.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-bg"><a >Български</a></li>
+				<li class="interwiki-cs"><a >Česky</a></li>
+				<li class="interwiki-da"><a >Dansk</a></li>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-eo"><a >Esperanto</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-ko"><a >한국어</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-hu"><a >Magyar</a></li>
+				<li class="interwiki-nl"><a >Nederlands</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-no"><a >Norsk (bokmål)</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+				<li class="interwiki-sk"><a >Slovenčina</a></li>
+				<li class="interwiki-fi"><a >Suomi</a></li>
+				<li class="interwiki-sv"><a >Svenska</a></li>
+				<li class="interwiki-th"><a >ไทย</a></li>
+				<li class="interwiki-tr"><a >Türkçe</a></li>
+				<li class="interwiki-zh"><a >中文</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 15:14, 10 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv63 in 0.399 secs. --></body></html>

@@ -1,0 +1,1015 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="C syntax,C syntax,ANSI C,ANSI C standard library,C++,C99,C programming language,C standard library,C variable types and declarations,Command line,Comment" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>C syntax - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "C_syntax";
+			var wgTitle = "C syntax";
+			var wgArticleId = 456820;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">C syntax</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>The <b>syntax of the <a href="/wiki/C_programming_language.html" title="C programming language">C programming language</a></b> is a set of rules that defines how a <a href="/wiki/C_programming_language.html" title="C programming language">C</a> <a href="/wiki/Computer_program.html" title="Computer program">program</a> will be written and interpreted.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Data structures</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">1.1</span> <span class="toctext">Primitive data types</span></a>
+<ul>
+<li class="toclevel-3"><a ><span class="tocnumber">1.1.1</span> <span class="toctext">Constants that define boundaries of primitive data types</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">1.1.2</span> <span class="toctext">Typical boundaries of primitive integral types</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.2</span> <span class="toctext">Pointers</span></a>
+<ul>
+<li class="toclevel-3"><a ><span class="tocnumber">1.2.1</span> <span class="toctext">Referencing</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">1.2.2</span> <span class="toctext">Dereferencing</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">1.2.3</span> <span class="toctext">Equivalent reference and primitive statements</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.3</span> <span class="toctext">Arrays</span></a>
+<ul>
+<li class="toclevel-3"><a ><span class="tocnumber">1.3.1</span> <span class="toctext">Static array declaration</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">1.3.2</span> <span class="toctext">Accessing elements</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">1.3.3</span> <span class="toctext">Dynamic arrays</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">1.3.4</span> <span class="toctext">Multidimensional arrays</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.4</span> <span class="toctext">Strings</span></a>
+<ul>
+<li class="toclevel-3"><a ><span class="tocnumber">1.4.1</span> <span class="toctext">Wide character strings</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">1.4.2</span> <span class="toctext">Library functions</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Operators</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Control structures</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">3.1</span> <span class="toctext">Compound statements</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.2</span> <span class="toctext">Expression statements</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.3</span> <span class="toctext">Selection statements</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.4</span> <span class="toctext">Iteration statements</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.5</span> <span class="toctext">Jump statements</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Functions</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">4.1</span> <span class="toctext">Syntax</span></a>
+<ul>
+<li class="toclevel-3"><a ><span class="tocnumber">4.1.1</span> <span class="toctext">Example</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.2</span> <span class="toctext">Description</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.3</span> <span class="toctext">Passing variables</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Input/Output</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">5.1</span> <span class="toctext">Standard I/O</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">5.2</span> <span class="toctext">File I/O</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">Miscellaneous</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">6.1</span> <span class="toctext">Case sensitivity</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">6.2</span> <span class="toctext">Comments</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">6.3</span> <span class="toctext">Command-line arguments</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">6.4</span> <span class="toctext">Evaluation order</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">6.5</span> <span class="toctext">Undefined behavior</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">8</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">9</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Data structures">edit</a>]</div>
+<p><a name="Data_structures" id="Data_structures"></a></p>
+<h2>Data structures</h2>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Primitive data types">edit</a>]</div>
+<p><a name="Primitive_data_types" id="Primitive_data_types"></a></p>
+<h3>Primitive data types</h3>
+<p>Many programming languages, including C, represent numbers in two forms: integral and real (or non-integral). This distinction is made due to the technical aspect of the methods used to store values in memory.</p>
+<p>The integral specifier is <code>int</code>; it is used to denote the representation of integers. The integral type comes in different sizes, denoting the memory usage and highest magnitude<sup>[1]</sup>. Modifiers are used to modify the default size: <code>short</code>, <code>long</code> and <code>long long</code><sup>[2]</sup>. The character type, whose specifier is <code>char</code>, represents the smallest addressable unit, which is normally an 8-bit byte.</p>
+<p>The real (non-integral) form is used to denote the representation of numbers with a decimal or rational component. They do not however represent rational numbers exactly; they are approximated instead. There are three types of real values, denoted by their specifier: single-precision (specifier <code>float</code>), double-precision (<code>double</code>) and double-extended-precision (<code>long double</code>). Each of these represent non-integral values in a different form.</p>
+<p>Integral types can be either <code>signed</code> (which is implied when not specified) or <code>unsigned</code>. However <code>char</code>, <code>signed char</code> and <code>unsigned char</code> are all different types, and plain <code>char</code> may be signed or unsigned.</p>
+<p>When signed, one bit of the representation of the integer in memory may instead be used to represent sign (positive or negative). For example, a signed 16-bit integer may use one bit for its sign and the remaining 15 bits for the representation of its value. It follows that when unsigned, that bit is not limited in this fashion.</p>
+<hr />
+<p><small><sup>[1]</sup> = In terms of integral values, magnitude represents the maximum value (independent of sign) that can be represented. Signing skews this range, as is illustrated in the <a  title="">table below</a>.</small></p>
+<p><small><sup>[2]</sup> = The <code>long long</code> modifier was introduced in the C99 standard.</small></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Constants that define boundaries of primitive data types">edit</a>]</div>
+<p><a name="Constants_that_define_boundaries_of_primitive_data_types" id="Constants_that_define_boundaries_of_primitive_data_types"></a></p>
+<h4>Constants that define boundaries of primitive data types</h4>
+<p>The standard header file <code>limits.h</code> defines the minimum and maximum values of the integral primitive data types, amongst other limits. The standard header file <code>float.h</code> defines the minimum and maximum values of the <code>float</code>, <code>double</code>, and <code>long double</code>. It also defines other limits that are relevant to the processing of floating-point, single-precision, and double-precision values as they are defined in the <a href="/wiki/IEEE_754.html" title="IEEE 754">IEEE 754</a> standard.</p>
+<table border="1" cellspacing="0" cellpadding="4">
+<caption>Constants that define boundaries of common integral types</caption>
+<tr>
+<td><b>Implicit Specifier</b></td>
+<td><b>Explicit Specifier</b></td>
+<td><b>Minimum Value</b></td>
+<td><b>Maximum Value</b></td>
+</tr>
+<tr>
+<td><code>char</code></td>
+<td><i>same</i></td>
+<td><code>CHAR_MIN</code></td>
+<td><code>CHAR_MAX</code></td>
+</tr>
+<tr>
+<td><code>signed char</code></td>
+<td><i>same</i></td>
+<td><code>SCHAR_MIN</code></td>
+<td><code>SCHAR_MAX</code></td>
+</tr>
+<tr>
+<td><code>unsigned char</code></td>
+<td><i>same</i></td>
+<td>0</td>
+<td><code>UCHAR_MAX</code></td>
+</tr>
+<tr>
+<td><code>short</code></td>
+<td><code>signed short int</code></td>
+<td><code>SHRT_MIN</code></td>
+<td><code>SHRT_MAX</code></td>
+</tr>
+<tr>
+<td><code>unsigned short</code></td>
+<td><code>unsigned short int</code></td>
+<td>0</td>
+<td><code>USHRT_MAX</code></td>
+</tr>
+<tr>
+<td><i>none</i>, <code>signed</code>, or <code>int</code></td>
+<td><code>signed int</code></td>
+<td><code>INT_MIN</code></td>
+<td><code>INT_MAX</code></td>
+</tr>
+<tr>
+<td><code>unsigned</code></td>
+<td><code>unsigned int</code></td>
+<td>0</td>
+<td><code>UINT_MAX</code></td>
+</tr>
+<tr>
+<td><code>long</code></td>
+<td><code>signed long int</code></td>
+<td><code>LONG_MIN</code></td>
+<td><code>LONG_MAX</code></td>
+</tr>
+<tr>
+<td><code>unsigned long</code></td>
+<td><code>unsigned long int</code></td>
+<td>0</td>
+<td><code>ULONG_MAX</code></td>
+</tr>
+<tr>
+<td><code>long long</code><sup>[1]</sup></td>
+<td><code>signed long long int</code><sup>[1]</sup></td>
+<td><code>LLONG_MIN</code><sup>[2]</sup></td>
+<td><code>LLONG_MAX</code><sup>[2]</sup></td>
+</tr>
+<tr>
+<td><code>unsigned long long</code><sup>[1]</sup></td>
+<td><code>unsigned long long int</code><sup>[1]</sup></td>
+<td>0</td>
+<td><code>ULLONG_MAX</code><sup>[2]</sup></td>
+</tr>
+</table>
+<p><small><sup>[1]</sup>—The <code>long long</code> modifier is only supported by C99-compliant compilers.</small></p>
+<p><small><sup>[2]</sup>—The <code>LLONG_MIN</code>, <code>LLONG_MAX</code>, and <code>ULLONG_MAX</code> constants are only defined in <code>limits.h</code> if it was intended to be used with a C99-compliant compiler.</small></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Typical boundaries of primitive integral types">edit</a>]</div>
+<p><a name="Typical_boundaries_of_primitive_integral_types" id="Typical_boundaries_of_primitive_integral_types"></a></p>
+<h4>Typical boundaries of primitive integral types</h4>
+<p>The following is a list of the common integral types and their <b>typical</b> sizes and boundaries. These may vary from one implementation to another. <a href="/wiki/ISO_C.html" title="ISO C">ISO C</a> provides the <a href="/wiki/Inttypes.h.html" title="Inttypes.h">inttypes.h</a> header, which defines signed and unsigned integral types of guaranteed sizes between 8 and 64 bits.</p>
+<table border="1" cellspacing="0" cellpadding="4">
+<caption>Typical sizes and boundaries of common integral types</caption>
+<tr>
+<th>Implicit Specifier</th>
+<th>Explicit Specifier</th>
+<th>Bits</th>
+<th>Bytes</th>
+<th>Minimum Value</th>
+<th>Maximum Value</th>
+</tr>
+<tr>
+<td><code>char</code></td>
+<td><i>same</i></td>
+<td>8</td>
+<td>1</td>
+<td>-128 or 0</td>
+<td>127 or 255</td>
+</tr>
+<tr>
+<td><code>signed char</code></td>
+<td><i>same</i></td>
+<td>8</td>
+<td>1</td>
+<td>-128</td>
+<td>127</td>
+</tr>
+<tr>
+<td><code>unsigned char</code></td>
+<td><i>same</i></td>
+<td>8</td>
+<td>1</td>
+<td>0</td>
+<td>255</td>
+</tr>
+<tr>
+<td><code>short</code></td>
+<td><code>signed short int</code></td>
+<td>16</td>
+<td>2</td>
+<td>-32 768</td>
+<td>32 767</td>
+</tr>
+<tr>
+<td><code>unsigned short</code></td>
+<td><code>unsigned short int</code></td>
+<td>16</td>
+<td>2</td>
+<td>0</td>
+<td>65 535</td>
+</tr>
+<tr>
+<td><code>long</code></td>
+<td><code>signed long int</code></td>
+<td>32</td>
+<td>4</td>
+<td>-2 147 483 648</td>
+<td>2 147 483 647</td>
+</tr>
+<tr>
+<td><code>unsigned long</code></td>
+<td><code>unsigned long int</code></td>
+<td>32</td>
+<td>4</td>
+<td>0</td>
+<td>4 294 967 295</td>
+</tr>
+<tr>
+<td><code>long long</code><sup>[1]</sup></td>
+<td><code>signed long long int</code><sup>[1]</sup></td>
+<td>64</td>
+<td>8</td>
+<td>-9 223 372 036 854 775 808</td>
+<td>9 223 372 036 854 775 807</td>
+</tr>
+<tr>
+<td><code>unsigned long long</code><sup>[1]</sup></td>
+<td><code>unsigned long long int</code><sup>[1]</sup></td>
+<td>64</td>
+<td>8</td>
+<td>0</td>
+<td>18 446 744 073 709 551 615</td>
+</tr>
+</table>
+<p><small><sup>[1]</sup>—The <code>long long</code> modifier is only supported by C99-compliant compilers.</small></p>
+<p>The size and limits of the nil <code>int</code> primitive type (without the <code>short</code>, <code>long</code>, or <code>long long</code> modifiers) vary much more than the other integral types between implementations. The <a href="/wiki/Single_UNIX_Specification.html" title="Single UNIX Specification">Single UNIX Specification</a> indicates that the <code>int</code> type must be at least 32 bits, however the <a href="/wiki/ISO_C.html" title="ISO C">ISO C</a> standards only require 16 bits.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Pointers">edit</a>]</div>
+<p><a name="Pointers" id="Pointers"></a></p>
+<h3>Pointers</h3>
+<p>The asterisk modifier (<code>*</code>) specifies a reference type, which is more commonly known as a pointer. Where the specifier <code>int</code> would refer to the primitive integral type, the specifier <code>int *</code> refers to the reference integral type, a pointer type. Reference values associate two pieces of information: a memory address and a data type. The following line of code declares a reference integral variable (a pointer) called <code>ptr</code>:</p>
+<pre>
+int *ptr;
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Referencing">edit</a>]</div>
+<p><a name="Referencing" id="Referencing"></a></p>
+<h4>Referencing</h4>
+<p>When a local pointer is declared, it has an arbitrary value associated with it. The address associated with a pointer must be changed using assignment prior to using it. In the following example, <code>ptr</code> will be set so that it points to the same data as the primitive integral variable <code>a</code>:</p>
+<pre>
+int *ptr;
+int a;
+
+ptr = &amp;a;
+</pre>
+<p>In order to accomplish this, the reference operator (unary <code>&amp;</code>) was used. It returns the memory location of the data object that follows. The operator as a result is often called the "address-of" operator.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Dereferencing">edit</a>]</div>
+<p><a name="Dereferencing" id="Dereferencing"></a></p>
+<h4>Dereferencing</h4>
+<p>By the same token, the value can be retrieved from a reference value. In the following example, the primitive integral variable <code>b</code> will be set to the data that is referenced by <code>ptr</code>:</p>
+<pre>
+int *ptr;
+int a, b;
+
+a = 10;
+ptr = &amp;a;
+b = *ptr;
+</pre>
+<p>In order to accomplish that task, the dereference operator (unary <code>*</code>) was used. It returns the data to which its operand—which must be of pointer type—points. Thus, the expression <code>*ptr</code> has the same value as <code>a</code>.</p>
+<p>The overloading of the asterisk character with two related behaviors can be confusing at first. It is important to understand the differences between its use as a modifier in a declaration and as a unary operator in an expression.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Equivalent reference and primitive statements">edit</a>]</div>
+<p><a name="Equivalent_reference_and_primitive_statements" id="Equivalent_reference_and_primitive_statements"></a></p>
+<h4>Equivalent reference and primitive statements</h4>
+<p>The following is a table that lists the equivalent statements with both primitive and reference types, using both the reference and dereference operators. In it, the primitive variable <code>d</code> and the reference variable <code>ptr</code> are implied:</p>
+<table border="1" cellspacing="0" cellpadding="4">
+<caption>Equivalent reference and primitive statements</caption>
+<tr>
+<td></td>
+<th>To a primitive value</th>
+<th>To a reference value</th>
+</tr>
+<tr>
+<th>From a primitive value</th>
+<td align="center"><code>d</code></td>
+<td align="center"><code>&amp;d</code></td>
+</tr>
+<tr>
+<th>From a reference value</th>
+<td align="center"><code>*ptr</code></td>
+<td align="center"><code>ptr</code></td>
+</tr>
+</table>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Arrays">edit</a>]</div>
+<p><a name="Arrays" id="Arrays"></a></p>
+<h3>Arrays</h3>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Static array declaration">edit</a>]</div>
+<p><a name="Static_array_declaration" id="Static_array_declaration"></a></p>
+<h4>Static array declaration</h4>
+<p>Arrays are used in C to represent structures of consecutive values of the same type. The declaration of a static (fixed-size) array is contrary to other forms; consider the following syntax:</p>
+<pre>
+int array[n];
+</pre>
+<p>Which will define an array named <code>array</code> to hold <code>n</code> values of the primitive type <code>int</code>. In practice, memory for <code>n</code> integral values has been reserved and assigned for this array. The variable <code>array</code> decays to the reference integral type in most expressions; the value obtained from that decay points to the memory address of the first value.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Accessing elements">edit</a>]</div>
+<p><a name="Accessing_elements" id="Accessing_elements"></a></p>
+<h4>Accessing elements</h4>
+<p>The primary facility for accessing the component values of an array—which are often called elements—is the array subscript operators. To access the <code>n</code>th element of <code>array</code>, the calling syntax would be <code>array[n]</code>, which would return the primitive value there associated. This appears very similar to—but is in function entirely different from—the declaration syntax.</p>
+<p>Array subscripts begin numbering at 0. The largest logical array subscript is therefore equal to the number of elements in the array minus 1. To illustrate this, consider an array of 10 elements; the first element would be <code>[0]</code> and the last element would be <code>[9]</code>.</p>
+<p>Due to the array–pointer interchangeability, the addresses of each of the array elements can be expressed in equivalent <a href="/wiki/Pointer_arithmetic.html" title="Pointer arithmetic">pointer arithmetic</a>. The following table illustrates both methods for the existing array:</p>
+<table border="1" cellspacing="0" cellpadding="4">
+<caption>Array subscripts v. Pointer arithmetic</caption>
+<tr>
+<th>Element</th>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">2</td>
+<td align="center">n</td>
+</tr>
+<tr>
+<th>Primitive</th>
+<td align="center"><code>array[0]</code></td>
+<td align="center"><code>array[1]</code></td>
+<td align="center"><code>array[2]</code></td>
+<td align="center"><code>array[n]</code></td>
+</tr>
+<tr>
+<th>Pointer</th>
+<td align="center"><code>*array</code></td>
+<td align="center"><code>*(array + 1)</code></td>
+<td align="center"><code>*(array + 2)</code></td>
+<td align="center"><code>*(array + n)</code></td>
+</tr>
+</table>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Dynamic arrays">edit</a>]</div>
+<p><a name="Dynamic_arrays" id="Dynamic_arrays"></a></p>
+<h4>Dynamic arrays</h4>
+<p>C provides no facility for <i>bounds checking</i> with arrays. Though logically the last subscript in an array of 10 elements would be 9, subscripts 10, 11, and so forth could be specified. Because arrays are homogeneous—that is they consist of only one type of data—only two pieces of information need be known: the address of the first element and the type of data.</p>
+<p>Recall the declaration of a static array, which allocates the appropriate amount of memory to hold an array and associates a name with it:</p>
+<pre>
+int array[n];
+</pre>
+<p>This behavior can be imitated with the help of the <a href="/wiki/C_standard_library.html" title="C standard library">C standard library</a>. The <code><a href="/wiki/Malloc.html" title="Malloc">malloc</a></code> function provides a simple method for allocating memory. It takes one parameter: the amount of memory to allocate in bytes. Upon successful allocation, <code>malloc</code> returns a (void *) pointer value, pointing to the beginning of the allocated space. The pointer value returned then gets converted to an appropriate type implicitly by assignment. If the allocation could not be completed, <code>malloc</code> returns a <a href="/wiki/Null_pointer.html" title="Null pointer">null pointer</a>. The following segment is therefore similar in function to the static declaration:</p>
+<pre>
+int *ptr;
+ptr = malloc(n * sizeof(int));
+</pre>
+<p>The result is a 'pointer to int' variable (<code>ptr</code>) that points to the first of <code>n</code> 'ints'. The advantage in using this <i>dynamic allocation</i> is that the amount of memory that is allocated to it can be changed after it has been declared.</p>
+<p>When the dynamically-allocated memory is no longer needed, it should be released back to the operating system. This is done with a call to the <code>free</code> function. It takes a single parameter: a pointer to previously allocated memory. Typically, this is the value that was returned by the call to <code>malloc</code>. It is considered good practice to then set the pointer to <code>NULL</code> so that further attempts to access the memory to which it points will fail.</p>
+<pre>
+free(ptr);
+ptr = NULL;
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Multidimensional arrays">edit</a>]</div>
+<p><a name="Multidimensional_arrays" id="Multidimensional_arrays"></a></p>
+<h4>Multidimensional arrays</h4>
+<p>In addition, C supports arrays of multiple dimensions, which are stored in <a href="/wiki/Row-major_order.html" title="Row-major order">row-major order</a>. Technically, C multidimensional arrays are just one-dimensional arrays whose elements are arrays. The syntax for declaring multidimensional arrays is as follows:</p>
+<pre>
+int array2d[rows][columns];
+</pre>
+<p>(where <code>rows</code> and <code>columns</code> are constants) defines an array of two dimensions. Reading the subscripts from left to right, <code>array2d</code> is an array of size <code>rows</code>, the elements of which are arrays of <code>columns</code> int's.</p>
+<p>To access an integer element in this multidimensional array, one would use</p>
+<pre>
+array2d[4][3]
+</pre>
+<p>Again, reading from left to right, this accesses the 5th row, 4th element in that row. (Note that <code>array2d[4]</code> is itself an array, which we are then subscripting with the <code>[3]</code> to access the integer.)</p>
+<p>Multidimensional arrays should not be confused with arrays of references to arrays (also known as <a href="/wiki/Iliffe_vector.html" title="Iliffe vector">Iliffe vectors</a> or sometimes <i>arrays of arrays</i>). The former is always rectangular (all subarrays must be the same size), and occupies a contiguous region of memory. The latter is a one-dimensional array of pointers, each of which may point to the first element of a subarray in a different place in memory (or it can point to a random location); and the subarrays do not have to be the same size. In addition, when the former is converted into a pointer, it is a pointer to an array; whereas when the latter is converted into a pointer, it is a pointer to a pointer, which is a completely different type. The syntax for accessing elements is identical in both these data structures, which causes confusion.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Strings">edit</a>]</div>
+<p><a name="Strings" id="Strings"></a></p>
+<h3>Strings</h3>
+<p>In C, strings are surrounded by double quotes (<code>"</code>), e.g. <code>"Hello world!"</code>. If you wish to include a double quote inside the string, that can be done by escaping it with a backslash (<code>\</code>), for example, <code>"This string contains \"double quotes\"."</code>. To insert a literal backslash, one must double it, e.g. <code>"A backslash looks like this: \\"</code>.</p>
+<p>Backslashes may be used to enter control characters, etc., into a string:</p>
+<table>
+<tr>
+<th>Escape</th>
+<th>Meaning</th>
+</tr>
+<tr>
+<td><code>\\</code></td>
+<td>Literal backslash</td>
+</tr>
+<tr>
+<td><code>\"</code></td>
+<td>Double quote</td>
+</tr>
+<tr>
+<td><code>\'</code></td>
+<td>Single quote</td>
+</tr>
+<tr>
+<td><code>\n</code></td>
+<td>Newline (line feed)</td>
+</tr>
+<tr>
+<td><code>\r</code></td>
+<td>Carriage return</td>
+</tr>
+<tr>
+<td><code>\t</code></td>
+<td>Tab (horizontal)</td>
+</tr>
+<tr>
+<td><code>\f</code></td>
+<td>Form feed</td>
+</tr>
+<tr>
+<td><code>\a</code></td>
+<td>Alert (bell)</td>
+</tr>
+<tr>
+<td><code>\v</code></td>
+<td>Vertical tab</td>
+</tr>
+<tr>
+<td><code>\?</code></td>
+<td>Question mark (used to escape trigraphs)</td>
+</tr>
+<tr>
+<td><code>\</code><i>nnn</i></td>
+<td>Character with octal value <i>nnn</i></td>
+</tr>
+<tr>
+<td><code>\x</code><i>HH</i></td>
+<td>Character with hexadecimal value <i>HH</i></td>
+</tr>
+<tr>
+<td><code>\e</code></td>
+<td>Escape (not ANSI C - a GNU extension)</td>
+</tr>
+</table>
+<p>The use of a backslash followed by a character which is not defined in ANSI C (or by a vendor extension) will result in an error.</p>
+<p>Individual characters are represented by single-quotes, e.g. <code>'A'</code>. The difference is that <code>"A"</code> represents a pointer to the null-terminated string <code>"A"</code>, whereas <code>'A'</code> represents the ASCII value 65. The same escapes are supported as for strings, except that (of course) <code>"</code> can validly be used as a character without being escaped, whereas <code>'</code> must now be escaped. A character constant cannot be empty (i.e. <code>''</code> is invalid syntax), although a string may be. Multi-character constants (e.g. <code>'xy'</code>) are valid, although rarely useful -- they let one store several characters in an integer (e.g. 4 ASCII characters can fit in a 32-bit integer, 8 in a 64-bit one).</p>
+<p>C's string syntax has been very influential, and has made its way into many other languages, such as C++, Perl, Python, PHP, Java, Javascript, C#, Ruby. Nowadays, almost all new languages adopt or build upon C-style string syntax; languages which lack this syntax tend to preceed C.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Wide character strings">edit</a>]</div>
+<p><a name="Wide_character_strings" id="Wide_character_strings"></a></p>
+<h4>Wide character strings</h4>
+<p>Newer C dialects (C99) have introduced wide character strings, for representing strings containing wide characters. They are written as <code>L"Hello world!"</code></p>
+<p>Wide characters are most commonly either 2 bytes (UTF-16) or 4 bytes (UTF-32), but standard C does not specify an official width, leaving the choice to the vendor. Microsoft generally uses UTF-16, thus the above string would be 26 bytes long for a Microsoft compiler; the Unix world prefers UTF-32, thus compilers such as GCC would generate a 52 byte string.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Library functions">edit</a>]</div>
+<p><a name="Library_functions" id="Library_functions"></a></p>
+<h4>Library functions</h4>
+<p><a href="/wiki/String_%28computer_science%29.html" title="String (computer science)">strings</a> may be manipulated without using the <a href="/wiki/Standard_library.html" title="Standard library">standard library</a>. However, the library contains many useful functions for working with both zero-terminated strings and unterminated arrays of <code>char</code>.</p>
+<p>The most commonly used string functions are:</p>
+<ul>
+<li><code>strcat(dest, source)</code> - appends the string <code>source</code> to the end of string <code>dest</code></li>
+<li><code>strchr(s, c)</code> - finds the first instance of character <code>c</code> in string <code>s</code> and returns a pointer to it or a null pointer if <code>c</code> is not found</li>
+<li><code>strcmp(a, b)</code> - compares strings <code>a</code> and <code>b</code> (<a href="/wiki/Lexicographical_order.html" title="Lexicographical order">lexicographical ordering</a>); returns negative if <code>a</code> is less than <code>b</code>, 0 if equal, positive if greater.</li>
+<li><code>strcpy(dest, source)</code> - copies the string <code>source</code> to the string <code>dest</code></li>
+<li><code>strlen(st)</code> - return the length of string <code>st</code></li>
+<li><code>strncat(dest, source, n)</code> - appends a maximum of <code>n</code> characters from the string <code>source</code> to the end of string <code>dest</code>; characters after the null terminator are not copied.</li>
+<li><code>strncmp(a, b, n)</code> - compares a maximum of <code>n</code> characters from strings <code>a</code> and <code>b</code> (lexical ordering); returns negative if <code>a</code> is less than <code>b</code>, 0 if equal, positive if greater.</li>
+<li><code>strncpy(dest, source, n)</code> - copies a maximum of <code>n</code> characters from the string <code>source</code> to the string <code>dest</code></li>
+<li><code>strrchr(s, c)</code> - finds the last instance of character <code>c</code> in string <code>s</code> and returns a pointer to it or a null pointer if <code>c</code> is not found</li>
+</ul>
+<p>The less common <a  class="new" title="String function">string functions</a> are:</p>
+<ul>
+<li><code>strcoll(s1, s2)</code> - compare two strings according to a locale-specific collating sequence</li>
+<li><code>strcspn(s1, s2)</code> - returns the index of the first character in <code>s1</code> that matches any character in <code>s2</code></li>
+<li><code>strerror(err)</code> - returns a string with an error message corresponding to the code in <code>err</code></li>
+<li><code>strpbrk(s1, s2)</code> - returns a pointer to the first character in <code>s1</code> that matches any character in <code>s2</code> or a null pointer if not found</li>
+<li><code>strspn(s1, s2)</code> - returns the index of the first character in <code>s1</code> that matches no character in <code>s2</code></li>
+<li><code>strstr(st, subst)</code> - returns a pointer to the first occurrence of the string <code>subst</code> in <code>st</code> or a null pointer if no such substring exists.</li>
+<li><code>strtok(s1, s2)</code> - returns a pointer to a token within <code>s1</code> delimited by the characters in <code>s2</code>.</li>
+<li><code>strxfrm(s1, s2, n)</code> - transforms <code>s2</code> into <code>s1</code> using locale-specific rules</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Operators">edit</a>]</div>
+<p><a name="Operators" id="Operators"></a></p>
+<h2>Operators</h2>
+<dl>
+<dd><i>Main article: <a href="/wiki/Operators_in_C_and_C%2B%2B.html" title="Operators in C and C++">Operators in C and C++</a></i></dd>
+</dl>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Control structures">edit</a>]</div>
+<p><a name="Control_structures" id="Control_structures"></a></p>
+<h2>Control structures</h2>
+<p>Basically, C is a <a href="/wiki/Free-form_language.html" title="Free-form language">free-form</a> language.</p>
+<p>Note: <a  class="new" title="Bracing style">bracing style</a> varies from <a href="/wiki/Computer_programming.html" title="Computer programming">programmer</a> to programmer and can be the subject of great debate ("<a href="/wiki/Flaming.html" title="Flaming">flame wars</a>"). See <a href="/wiki/Indent_style.html" title="Indent style">Indent style</a> for more details.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Compound statements">edit</a>]</div>
+<p><a name="Compound_statements" id="Compound_statements"></a></p>
+<h3>Compound statements</h3>
+<p>Compound statements in C have the form</p>
+<pre>
+  { &lt;optional-declaration-list&gt; &lt;optional-statement-list&gt; }
+</pre>
+<p>and are used as the body of a function or anywhere that a single statement is expected.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Expression statements">edit</a>]</div>
+<p><a name="Expression_statements" id="Expression_statements"></a></p>
+<h3>Expression statements</h3>
+<p>A statement of the form</p>
+<pre>
+  &lt;optional-expression&gt; ;
+</pre>
+<p>is an <a  class="new" title="Expression statement">expression statement</a>. If the expression is missing, the statement is called a <b>null statement</b>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Selection statements">edit</a>]</div>
+<p><a name="Selection_statements" id="Selection_statements"></a></p>
+<h3>Selection statements</h3>
+<p>C has three types of <a  class="new" title="Selection statement">selection statements</a>: two kinds of <code>if</code> and the <code>switch</code> statement.</p>
+<p>The two kinds of <code>if</code> statement are</p>
+<pre>
+  if (&lt;expression&gt;)
+     &lt;statement&gt;
+</pre>
+<p>and</p>
+<pre>
+  if (&lt;expression&gt;)
+     &lt;statement&gt;
+  else
+     &lt;statement&gt;
+</pre>
+<p>In the <code>if</code> statement, if the expression in parentheses is nonzero or true, control passes to the statement following the <code>if</code>. If the <code>else</code> clause is present, control will pass to the statement following the <code>else</code> clause if the expression in parentheses is zero or false. The two are disambiguated by matching an <code>else</code> to the next previous unmatched <code>if</code> at the same nesting level. Braces may be used to override this or for clarity.</p>
+<p>The <code>switch</code> statement causes control to be transferred to one of several statements depending on the value of an <a href="/wiki/Expression_%28mathematics%29.html" title="Expression (mathematics)">expression</a>, which must have <a href="/wiki/Integral_type.html" title="Integral type">integral type</a>. The substatement controlled by a switch is typically compound. Any statement within the substatement may be labeled with one or more <code>case</code> labels, which consist of the keyword <code>case</code> followed by a constant expression and then a colon (:). No two of the case constants associated with the same switch may have the same value. There may be at most one <code>default</code> label associated with a switch; control passes to the <code>default</code> label if none of the case labels are equal to the expression in the parentheses following <code>switch</code>. Switches may be nested; a <code>case</code> or <code>default</code> label is associated with the smallest switch that contains it. Switch statements can "fall through", that is, when one case section has completed its execution, statements will continue to be executed downward until a break statement is encountered. This is useful in many circumstances, but newer programming languages forbid case statements to "fall through". In the below example, if &lt;label2&gt; is reached, the statements &lt;statements 2&gt; are executed and nothing more inside the braces. However if &lt;label1&gt; is reached, both &lt;statements 1&gt; and &lt;statements 2&gt; are executed since there is no <code>break</code> to separate the two case statements.</p>
+<pre>
+  switch (&lt;expression&gt;) {
+     case &lt;label1&gt; :
+        &lt;statements 1&gt;
+     case &lt;label2&gt; :
+        &lt;statements 2&gt;
+        break;
+     default :
+        &lt;statements&gt;
+  }
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Iteration statements">edit</a>]</div>
+<p><a name="Iteration_statements" id="Iteration_statements"></a></p>
+<h3>Iteration statements</h3>
+<p>C has three forms of <a  class="new" title="Iteration statement">iteration statement</a>:</p>
+<pre>
+  do
+     &lt;statement&gt;
+  while ( &lt;expression&gt; ) ;
+</pre>
+<pre>
+  while ( &lt;expression&gt; )
+     &lt;statement&gt;
+</pre>
+<p>C89's <code>for</code> loop</p>
+<pre>
+  for ( &lt;expression&gt; ; &lt;expression&gt; ; &lt;expression&gt; )
+     &lt;statement&gt; 
+</pre>
+<p>was generalized in C99 to</p>
+<pre>
+  for ( &lt;clause&gt; ; &lt;expression&gt; ; &lt;expression&gt; )
+     &lt;statement&gt; 
+</pre>
+<p>with &lt;clause&gt; being the initialization part of the loop (an expression or a declaration).</p>
+<p>In the <code><a href="/wiki/While_loop.html" title="While loop">while</a></code> and <code>do</code> statements, the substatement is executed repeatedly so long as the value of the expression remains nonzero or true. With <code>while</code>, the test, including all side effects from the expression, occurs before each <a href="/wiki/Execution_%28computers%29.html" title="Execution (computers)">execution</a> of the statement; with <code>do</code>, the test follows each <a href="/wiki/Iteration.html" title="Iteration">iteration</a>.</p>
+<p>If all three expressions are present in a <code>for</code>, the statement</p>
+<pre>
+  for (e1; e2; e3)
+     s;
+</pre>
+<p>is equivalent to</p>
+<pre>
+  e1;
+  while (e2) {
+     s;
+     e3;
+  }
+</pre>
+<p>Any of the three expressions in the <code>for</code> loop may be omitted. A missing second expression makes the <code>while</code> test nonzero, creating an infinite loop.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Jump statements">edit</a>]</div>
+<p><a name="Jump_statements" id="Jump_statements"></a></p>
+<h3>Jump statements</h3>
+<p>Jump statements transfer control unconditionally. There are four types of <a  class="new" title="Jump statement">jump statements</a> in C: <code>goto</code>, <code>continue</code>, <code>break</code>, and <code>return</code>.</p>
+<p>The <code>goto</code> statement looks like this:</p>
+<pre>
+  goto &lt;identifier&gt;;
+</pre>
+<p>The <a href="/wiki/Identifier.html" title="Identifier">identifier</a> must be a <a href="/wiki/Label.html" title="Label">label</a> located in the current function. Control transfers to the labeled statement.</p>
+<p>A <code>continue</code> statement may appear only within an <a  class="new" title="Iteration statement">iteration statement</a> and causes control to pass to the loop-continuation portion of the smallest enclosing such statement. That is, within each of the statements</p>
+<pre>
+  while (expression) {
+     /* ... */
+     cont: ;
+  }
+</pre>
+<pre>
+  do {
+     /* ... */
+     cont: ;
+  } while (expression);
+</pre>
+<pre>
+  for (optional-expr; optexp2; optexp3) {
+     /* ... */
+     cont: ;
+  }   
+</pre>
+<p>a <code>continue</code> not contained within a nested iteration statement is the same as <code>goto cont</code>.</p>
+<p>The <code>break</code> statement is used to get out of a <code>for</code> loop, <code>while</code> loop, <code>do</code> loop, or <code>switch</code> statement. Control passes to the statement following the terminated statement.</p>
+<p>A function returns to its caller by the <code>return</code> statement. When <code>return</code> is followed by an expression, the value is returned to the caller of the function. Flowing off the end of the function is equivalent to a <code>return</code> with no expression. In either case, the returned value is undefined.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Functions">edit</a>]</div>
+<p><a name="Functions" id="Functions"></a></p>
+<h2>Functions</h2>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Syntax">edit</a>]</div>
+<p><a name="Syntax" id="Syntax"></a></p>
+<h3>Syntax</h3>
+<p>A C function definition consists of a <a href="/wiki/Return_type.html" title="Return type">return type</a> (<code>void</code> if no value is returned), a unique name, a list of parameters in parentheses, (<code>void</code> if there are none), some statements and/or a <code>return</code> statement (again, if <a href="/wiki/Return_type.html" title="Return type">return type</a> is <code>void</code> the <code>return</code> is not needed):</p>
+<pre>
+ &lt;return-type&gt; functionName( &lt;parameter-list&gt; )
+ {
+    &lt;statements&gt;
+    
+    return &lt;variable of return-type&gt;;
+ }
+</pre>
+<p>where <code>&lt;parameter-list&gt;</code> of <code>n</code> variables is declared as data type and variable name separated by a comma:</p>
+<pre>
+ &lt;data-type&gt; var1, &lt;data-type&gt; var2, ... &lt;data-type&gt; varN
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Example">edit</a>]</div>
+<p><a name="Example" id="Example"></a></p>
+<h4>Example</h4>
+<p>Example of a program that adds two <a href="/wiki/Integers.html" title="Integers">integers</a> and prints: <code>1 + 1 = 2</code></p>
+<pre>
+ #include &lt;stdio.h&gt;
+ 
+ int add(int x, int y)
+ {
+    return x + y;
+ }
+ 
+ int main(void)
+ {
+    int foo = 1, bar = 1;
+    printf("%d + %d = %d\n", foo, bar, add(foo, bar));
+    return 0;
+ }
+</pre>
+<p>The function <code>main</code> must be declared as having an <code>int</code> <a href="/wiki/Return_type.html" title="Return type">return type</a> according to the <a href="/wiki/ANSI_C.html" title="ANSI C">C standard</a>. It returns to its caller, typically the underlying <a href="/wiki/Operating_system.html" title="Operating system">operating system</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Description">edit</a>]</div>
+<p><a name="Description" id="Description"></a></p>
+<h3>Description</h3>
+<p>After preprocessing, at the highest level a <a href="/wiki/C_programming_language.html" title="C programming language">C</a> <a href="/wiki/Computer_program.html" title="Computer program">program</a> consists of a sequence of declarations at file scope.</p>
+<p>The declarations introduce <a href="/wiki/Function_%28programming%29.html" title="Function (programming)">functions</a>, <a href="/wiki/Variable.html" title="Variable">variables</a> and <a href="/wiki/Type.html" title="Type">types</a>. C functions are akin to the subroutines of <a href="/wiki/Fortran_programming_language.html" title="Fortran programming language">Fortran</a> or the procedures of <a href="/wiki/Pascal_programming_language.html" title="Pascal programming language">Pascal</a>.</p>
+<p>A definition is a special type of declaration. A variable definition sets aside storage and possibly initializes it, a function definition provides its body.</p>
+<p>An implementation of C providing all of the standard library functions is called a <i>hosted implementation</i>. Programs written for hosted implementations are required to define a special function called <code><a href="/wiki/Main_function_%28programming%29.html" title="Main function (programming)">main</a></code>, which is the first function called when execution of the program begins. Here is a minimal C program:</p>
+<pre>
+ int main(void)
+ {
+    return 0;
+ }
+</pre>
+<p>The <code>main</code> function will usually call other functions to help it perform its job.</p>
+<p>Some implementations are not hosted, usually because they are not intended to be used with an <a href="/wiki/Operating_system.html" title="Operating system">operating system</a>. Such implementations are called <i>free-standing</i> in the C standard. A free-standing implementation is free to specify how it handles program startup; in particular it need not require a program to define a <code>main</code> function.</p>
+<p>Functions may be written by the programmer or provided by existing libraries. The latter are declared by including header files—with the <code>#include</code> <a href="/wiki/Preprocessing_directive.html" title="Preprocessing directive">preprocessing directive</a>—and then <i>linked</i> into the final executable image. Certain library functions, such as <code><a href="/wiki/Printf.html" title="Printf">printf</a></code>, are defined by the C standard; these are referred to as the <a href="/wiki/ANSI_C_standard_library.html" title="ANSI C standard library">standard library</a> functions.</p>
+<p>A function may return a value to the environment that called it. This is usually another C function, however the calling environment of the <code>main</code> function is the higher-level process in <a href="/wiki/Unix-like.html" title="Unix-like">Unix-like</a> systems or the <a href="/wiki/Operating_system.html" title="Operating system">operating system</a> itself in other cases. By definition, the return value zero or the value of the <code>EXIT_SUCCESS</code> macro of <code>main</code> signifies successful completion when the program terminates. There is also an <code>EXIT_FAILURE</code> macro defined to signify a failure of some kind. The <code>printf</code> function mentioned above returns how many characters were printed, but this value is usually ignored.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Passing variables">edit</a>]</div>
+<p><a name="Passing_variables" id="Passing_variables"></a></p>
+<h3>Passing variables</h3>
+<p>Variables in C are passed <b>by value</b> while other languages may pass <b>by reference</b>. This means that the receiving function gets copies of the values and have no way of altering the original variables. To have a function alter variables passed from another function, such as <code>main</code>, you pass the address (called a 'pointer') to it and dereference it in the receiving function (see <a href="/wiki/C_syntax#Reference_types.html" title="C syntax">Reference types</a> for more info):</p>
+<pre>
+ void incInt(int *y)
+ {
+    (*y)++;  // Increase the value of 'x', in main, by one
+ }
+
+ int main(void)
+ {
+    int x = 0;
+    incInt(&amp;x);  // pass a reference to the var 'x'
+    return 0;
+ }
+</pre>
+<p>In order to pass an editable pointer to a function you have to pass a reference to the pointer; its address:</p>
+<pre>
+ void setInt(int **p, int n)
+ {
+    *p = (int *) malloc(sizeof(int));    // allocate a memory area, using the pointer given as
+                                         // as a parameter
+    
+    // dereference the given pointer that has been assigned an address
+    // of malloc'd memory and set the int to the value of n (42)    
+    **p = n;                             
+ }
+
+ int main(void)
+ {
+    int *p;           // create a pointer to an integer
+    setInt(&amp;p, 42);   // pass the address of 'p'
+    return 0;
+ }
+</pre>
+<p><code>int **p</code> defines a pointer to a pointer, which is the address to the pointer <code>p</code> in this case.</p>
+<p>The function <a href="/wiki/Scanf.html" title="Scanf">scanf</a> works the same way:</p>
+<pre>
+ int x;
+ scanf("%d", &amp;x);
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Input/Output">edit</a>]</div>
+<p><a name="Input.2FOutput" id="Input.2FOutput"></a></p>
+<h2>Input/Output</h2>
+<p>In C, input and output are performed via a group of functions in the standard library. In ANSI/ISO C, those functions are defined in the <code>&lt;stdio.h&gt;</code> header.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Standard I/O">edit</a>]</div>
+<p><a name="Standard_I.2FO" id="Standard_I.2FO"></a></p>
+<h3>Standard I/O</h3>
+<p>Three standard <a  class="new" title="I/O stream">I/O streams</a> are predefined:</p>
+<ul>
+<li><code>stdin</code> <i><a href="/wiki/Standard_input.html" title="Standard input">standard input</a></i></li>
+<li><code>stdout</code> <i><a href="/wiki/Standard_output.html" title="Standard output">standard output</a></i></li>
+<li><code>stderr</code> <i><a href="/wiki/Standard_streams.html" title="Standard streams">standard error</a></i></li>
+</ul>
+<p>These <a href="/wiki/Stream.html" title="Stream">streams</a> are automatically opened and closed by the <a href="/wiki/Runtime_environment.html" title="Runtime environment">runtime environment</a>, they need not and should not be opened explicitly.</p>
+<p>The following example demonstrates how a <a href="/wiki/Filter_program.html" title="Filter program">filter program</a> is typically structured:</p>
+<pre>
+
+#include &lt;stdio.h&gt;
+
+int main(void)
+{
+   int c;
+
+   while ((c = getchar()) != EOF ) 
+   {
+         /* do various things
+            to the characters */
+
+          if (anErrorOccurs) {
+              fputs("An error occurred\n", stderr);
+              break;
+          }
+
+         /* ... */
+         putchar(c);
+         /* ... */
+
+    }
+    return 0;
+}
+
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: File I/O">edit</a>]</div>
+<p><a name="File_I.2FO" id="File_I.2FO"></a></p>
+<h3>File I/O</h3>
+<ul>
+<li><tt><a href="/wiki/Fopen.html" title="Fopen">fopen</a></tt></li>
+<li><tt><a href="/wiki/Fclose.html" title="Fclose">fclose</a></tt></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Miscellaneous">edit</a>]</div>
+<p><a name="Miscellaneous" id="Miscellaneous"></a></p>
+<h2>Miscellaneous</h2>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Case sensitivity">edit</a>]</div>
+<p><a name="Case_sensitivity" id="Case_sensitivity"></a></p>
+<h3>Case sensitivity</h3>
+<p>C is case sensitive.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Comments">edit</a>]</div>
+<p><a name="Comments" id="Comments"></a></p>
+<h3>Comments</h3>
+<p>Text starting with <code>/*</code> is treated as a <a href="/wiki/Comment.html" title="Comment">comment</a> and ignored. The comment ends at the next <code>*/</code> and can span multiple lines. Accidental omission of the comment terminator is problematic in that the next comment's properly constructed comment terminator will be used to terminate the initial comment, and all code in between the comments will be considered as a comment.</p>
+<p>The <a href="/wiki/C99.html" title="C99">C99</a> standard introduced <a href="/wiki/C%2B%2B.html" title="C++">C++</a> style line comments. These start with <code>//</code> and extend to the end of the line.</p>
+<pre>
+ // this line will be ignored by the compiler
+
+ /* these lines
+    will be ignored
+    by the compiler */
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Command-line arguments">edit</a>]</div>
+<p><a name="Command-line_arguments" id="Command-line_arguments"></a></p>
+<h3>Command-line arguments</h3>
+<p>The <a href="/wiki/Parameter.html" title="Parameter">parameters</a> given on a <a href="/wiki/Command_line.html" title="Command line">command line</a> are passed to a C program with two predefined variables - the count of the command-line arguments in <code>argc</code> and the individual <a href="/wiki/Parameter.html" title="Parameter">arguments</a> as <a  class="new" title="Character array">character arrays</a> in the <a  class="new" title="Pointer array">pointer array</a> <code>argv</code>. So the command</p>
+<pre>
+ myFilt p1 p2 p3
+</pre>
+<p>results in something like</p>
+<p><a  class="image" title="Image:CCommandLineArgv.png"><img src="http://upload.wikimedia.org/wikipedia/en/b/bf/CCommandLineArgv.png" alt="Image:CCommandLineArgv.png" width="568" height="82" longdesc="/wiki/Image:CCommandLineArgv.png" /></a></p>
+<p>(Note: While individual strings are contiguous, there is no <a href="/wiki/Guarantee.html" title="Guarantee">guarantee</a> that the <a href="/wiki/String_%28computer_science%29.html" title="String (computer science)">strings</a> are stored as a contiguous group.)</p>
+<p>The individual values of the parameters may be accessed with <code>argv[1]</code>, <code>argv[2]</code>, and <code>argv[3]</code>, as shown in the following program:</p>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main(int argc, char *argv[])
+{
+  int i;
+  printf ("argc\t= %i\n", argc);
+  for (i = 0; i &lt; argc; i++)
+    printf ("argv[%i]\t= %s\n", i, argv[i]);
+  return 0;
+}
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Evaluation order">edit</a>]</div>
+<p><a name="Evaluation_order" id="Evaluation_order"></a></p>
+<h3>Evaluation order</h3>
+<p>A conforming C compiler can evaluate expressions in any order between <i>sequence points</i>. Sequence points are defined by:</p>
+<ul>
+<li><i>Statement ends</i> at semicolons.</li>
+<li>The <i>sequencing operator</i>: a comma.</li>
+<li>The <i>short-circuit operators</i>: logical <i>and</i> (<code>&amp;&amp;</code>) and logical <i>or</i> (<code>||</code>).</li>
+<li>The <i>conditional operator</i> (<code>?:</code>): This operator evaluates its first sub-expression first, and then its second or third (never both of them) based on the value of the first.</li>
+</ul>
+<p>Expressions before a sequence point are always evaluated before those after a sequence point. In the case of short-circuit evaluation, the second expression may not be evaluated depending on the result of the first expression. For example, in the expression <code>(a() || b())</code>, if the first argument evaluates to <code>true</code>, the result of the entire expression will also be <code>true</code>, so <code>b()</code> is not evaluated.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Undefined behavior">edit</a>]</div>
+<p><a name="Undefined_behavior" id="Undefined_behavior"></a></p>
+<h3>Undefined behavior</h3>
+<p>An interesting (though certainly not unique) aspect of the C standards is that the behavior of certain code is said to be "undefined". In practice, this means that the program produced from this code can do anything, from working as intended, to crashing every time it is run.</p>
+<p>For example, the following code produces undefined behavior, because the variable <code>b</code> is operated on more than once in the expression <code>a = b++ + b++;</code>:</p>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main(void)
+{
+  int a, b = 1;
+  a = b++ + b++;
+  printf("%d\n", a);
+  return 0;
+}
+</pre>
+<p>Because there is no sequence point between the access of <code>b</code> in <code>b++ + b++</code>, it is possible to resolve the statement in more than one order, resulting in an ambiguous statement. However, to allow the compiler to make certain optimizations the standard is even more pessimistic than this. In general, any separate modification and access of a value between sequence points invokes undefined behavior.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/C_programming_language.html" title="C programming language">C programming language</a></li>
+<li><a href="/wiki/C_variable_types_and_declarations.html" title="C variable types and declarations">C variable types and declarations</a></li>
+<li><a href="/wiki/Operators_in_C_and_C_Plus_Plus.html" title="Operators in C and C Plus Plus">Operators in C and C++</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<ul>
+<li>Kernighan, Brian W. and Dennis M. Ritchie. <i><a href="/wiki/The_C_Programming_Language_%28book%29.html" title="The C Programming Language (book)">The C Programming Language</a></i>.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://www.math.grin.edu/~stone/courses/languages/C-syntax.xhtml"><i>The syntax of C in Backus-Naur form</i></a></li>
+<li><a  class="external text" title="http://www.cs.cf.ac.uk/Dave/C/CE.html">Programming in C</a></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:456820-0!1!0!default!!en!2 and timestamp 20060907103922 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:C programming language">C programming language</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/C_syntax.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-vi"><a >Tiếng Việt</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 10:38, 7 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv89 in 0.090 secs. --></body></html>

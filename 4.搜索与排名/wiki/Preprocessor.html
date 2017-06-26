@@ -1,0 +1,313 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Preprocessor,Autoconf,C++,CDuce,C preprocessor,C programming language,Camlp4,Code generation,Common Lisp,Compiler,Computer programming" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Preprocessor - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Preprocessor";
+			var wgTitle = "Preprocessor";
+			var wgArticleId = 81971;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Preprocessor</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>In <a href="/wiki/Computer_science.html" title="Computer science">computer science</a>, a <b>preprocessor</b> is a program that processes its input data to produce output that is used as input to another program. The output is said to be a <b>preprocessed</b> form of the input data, which is often used by some subsequent programs like <a href="/wiki/Compiler.html" title="Compiler">compilers</a>. The amount and kind of processing done depends on the nature of the preprocessor; some preprocessors are only capable of performing relatively simple textual substitutions and <a href="/wiki/Macro.html" title="Macro">macro</a> expansions, while others have the power of fully-fledged <a href="/wiki/Programming_language.html" title="Programming language">programming languages</a>.</p>
+<p>A common example from <a href="/wiki/Computer_programming.html" title="Computer programming">computer programming</a> is the processing performed on <a href="/wiki/Source_code.html" title="Source code">source code</a> before the next step of compilation. In some languages (eg, <a href="/wiki/C_programming_language.html" title="C programming language">C</a>) the language actually includes a phase of translation that is known as a <i>preprocessor</i>.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Lexical pre-processors</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">1.1</span> <span class="toctext">Pre-processing in C/C++</span></a>
+<ul>
+<li class="toclevel-3"><a ><span class="tocnumber">1.1.1</span> <span class="toctext">Inclusion</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">1.1.2</span> <span class="toctext">Macros</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">1.1.3</span> <span class="toctext">Conditional compilation</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.2</span> <span class="toctext">Other lexical pre-processors</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Syntactic pre-processors</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">2.1</span> <span class="toctext">Customizing syntax</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.2</span> <span class="toctext">Extending a language</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.3</span> <span class="toctext">Specializing a language</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Lexical pre-processors">edit</a>]</div>
+<p><a name="Lexical_pre-processors" id="Lexical_pre-processors"></a></p>
+<h2>Lexical pre-processors</h2>
+<p>Lexical preprocessors are the lowest-level of preprocessors, insofar as they only require <a href="/wiki/Lexical_analysis.html" title="Lexical analysis">lexical analysis</a>, that is, they operate on the source text, prior to any <a href="/wiki/Parser.html" title="Parser">parsing</a>, by performing simple substitution of <a href="/wiki/Lexer.html" title="Lexer">tokenized</a> character sequences for other tokenized character sequences, according to user-defined rules. They typically perform <a href="/wiki/Macro_substitution.html" title="Macro substitution">macro substitution</a>, textual inclusion of other files, and conditional compilation or inclusion.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Pre-processing in C/C++">edit</a>]</div>
+<p><a name="Pre-processing_in_C.2FC.2B.2B" id="Pre-processing_in_C.2FC.2B.2B"></a></p>
+<h3>Pre-processing in C/C++</h3>
+<p>The most widely used lexical preprocessor is <a href="/wiki/C_preprocessor.html" title="C preprocessor">CPP</a>, the C preprocessor, used pervasively in <a href="/wiki/C_programming_language.html" title="C programming language">C</a> and its descendant, <a href="/wiki/C%2B%2B.html" title="C++">C++</a>. This preprocessor is used to provide the usual set of preprocessing services</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Inclusion">edit</a>]</div>
+<p><a name="Inclusion" id="Inclusion"></a></p>
+<h4>Inclusion</h4>
+<p>The most common use of the C preprocessor is the</p>
+<pre>
+#include "..."
+</pre>
+<p>or</p>
+<pre>
+#include &lt;...&gt;
+</pre>
+<p>directive, which copies the full content of a file into the current file, at the point at which the directive occurs. These files usually (almost always) contain interface definitions for various library functions and data types, which must be included before they can be used; thus, the #include directive usually appears at the head of the file. The files so included are called "header files" for this reason. Some examples include &lt;math.h&gt; and &lt;stdio.h&gt; from the standard C library, providing mathematical and input/output functions, respectively.</p>
+<p>While this use of a preprocessor for code reuse is simple, it is also slow, rather inefficient and requires the additional use of conditional compilation to avoid multiple inclusions of a given header file.</p>
+<p>Since the 1970s, faster, safer and more efficient alternatives to reuse by file inclusion have been known and used by the programming language community, and implemented in most programming languages: <a href="/wiki/Java_programming_language.html" title="Java programming language">Java</a> and <a href="/wiki/Common_Lisp.html" title="Common Lisp">Common Lisp</a> have packages, <a href="/wiki/Pascal.html" title="Pascal">Pascal</a> has units, <a href="/wiki/Modula.html" title="Modula">Modula</a>, <a href="/wiki/OCaml.html" title="OCaml">OCaml</a>, <a href="/wiki/Haskell_programming_language.html" title="Haskell programming language">Haskell</a> or <a href="/wiki/Python_programming_language.html" title="Python programming language">Python</a> have modules, and <a href="/wiki/D_programming_language.html" title="D programming language">D</a>, designed as a replacement of C and C++, has imports.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Macros">edit</a>]</div>
+<p><a name="Macros" id="Macros"></a></p>
+<h4>Macros</h4>
+<p>Macros are commonly used in C to define small snippets of code. During the preprocessing phase, each macro call is replaced, in-line, by the corresponding macro definition. If the macro has parameters, they are substituted into the macro body during expansion; thus, a C macro can mimic a C function. The usual reason for doing this is to avoid the overhead of a function call in simple cases, where the code is lightweight enough that function call overhead has a significant impact on performance.</p>
+<p>For instance,</p>
+<pre>
+#define max(a,b) a&gt;b?a:b
+</pre>
+<p>defines the macro <tt>max</tt>, taking two arguments <tt>a</tt> and <tt>b</tt>. This macro may be called like any C function, using identical syntax. Therefore, after preprocessing,</p>
+<pre>
+z = max(x,y);
+</pre>
+<p>becomes</p>
+<pre>
+z = x&gt;y?x:y;
+</pre>
+<p>While this use of macros is very important for C, for instance to define type-safe generic data-types or debugging tools, it is also slow, rather inefficient, and may lead to a number of pitfalls.</p>
+<p>For instance, if <tt>f</tt> and <tt>g</tt> are two functions, calling</p>
+<pre>
+z = max(f(), g());
+</pre>
+<p>will not evaluate <tt>f()</tt>once and <tt>g()</tt> once, and place the highest value in <tt>z</tt> as one may believe. Rather, one of the functions will be evaluated twice. If that function has side effects, this is usually not the expected behavior.</p>
+<p>C macros are capable of mimicking functions, creating new syntax within some limitations, as well as expanding into arbitrary text (although the C compiler will require that text to be valid C source code, or else comments), but they have some limitations as a programming construct. Macros which mimic functions, for instance, can be called like real functions, but a macro cannot be passed to another function using a function pointer, since the macro itself has no address.</p>
+<p>More modern languages typically do not use this form of <a href="/wiki/Metaprogramming.html" title="Metaprogramming">metaprogramming</a> through macro expansion of character strings, rather relying on either automatic or manual inlining of functions and methods, and other abstraction techniques such as <a href="/wiki/Template_%28programming%29.html" title="Template (programming)">templates</a>, <a href="/wiki/Generic_functions.html" title="Generic functions">generic functions</a>, or <a href="/wiki/Parametric_polymorphism.html" title="Parametric polymorphism">parametric polymorphism</a>. In particular, inline functions overcome one of the major disadvantages of macros in modern C and C++ implementations, since an inline function provides the macro's advantage of avoiding the overhead of a function call, while its address can still be stored in a function pointer for indirect calls or use in parameters. Also, the problem of multiple evaluation, seen above in the <tt>max</tt> macro, would not occur in an inlined function.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Conditional compilation">edit</a>]</div>
+<p><a name="Conditional_compilation" id="Conditional_compilation"></a></p>
+<h4>Conditional compilation</h4>
+<p>The C preprocessor also offers conditional compilation. This permits having different versions of a same code in the same source file. Typically, this is used to customize the program with respect to the compilation platform, the status (debugging code can be "defined out" in production code), as well as to ensure that header files are only included once.</p>
+<p>In this common case, the programmer will use a construct like this:</p>
+<pre>
+#ifndef FOO_H
+#define FOO_H
+...(header file code)...
+#endif
+</pre>
+<p>This "macro guard" protects the header file from duplicate inclusion by testing for the existence of a macro which, by convention, has the same name as the header file itself. The definition of the FOO_H macro takes place when the header file is first processed by CPP. Thereafter, if that header file is included again, FOO_H will already be defined, causing the preprocessor to skip the entirety of the header file's text.</p>
+<p>Preprocessor conditionals can be used in more complex ways, as below:</p>
+<pre>
+#ifdef x
+ ...
+#else
+ ...
+#endif
+</pre>
+<p>or</p>
+<pre>
+#if x
+ ...
+#else
+ ...
+#endif
+</pre>
+<p>This technique is often used in system header files to test for various features whose definition can change depending on the platform; for example, the <a href="/wiki/GNU_C_Library.html" title="GNU C Library">GNU C Library</a> uses "feature-test" macros to ensure that operating system and hardware differences are properly handled, while maintaining the same portable interface.</p>
+<p>Once again, most modern programming languages discard this feature, rather relying on traditional <tt>if...then...else...</tt> flow control operators, leaving to the compiler the task of removing useless code from the executable.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Other lexical pre-processors">edit</a>]</div>
+<p><a name="Other_lexical_pre-processors" id="Other_lexical_pre-processors"></a></p>
+<h3>Other lexical pre-processors</h3>
+<p>Other lexical preprocessors include the general-purpose <a href="/wiki/M4_%28language%29.html" title="M4 (language)">m4</a>, most commonly used in cross-platform build systems such as <a href="/wiki/Autoconf.html" title="Autoconf">autoconf</a>, and <a  class="new" title="General purpose macro processor">GEMA</a>, an open source macro processor which operates on patterns of context.</p>
+<p><br /></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Syntactic pre-processors">edit</a>]</div>
+<p><a name="Syntactic_pre-processors" id="Syntactic_pre-processors"></a></p>
+<h2>Syntactic pre-processors</h2>
+<p>Syntactic preprocessors were introduced with the <a href="/wiki/Lisp_programming_language.html" title="Lisp programming language">Lisp</a> family of languages. Their role is to transform syntax trees according to a number of user-defined rules. For some programming languages, the rules are written in the same language as the program (compile-time reflection). This is the case with <a href="/wiki/Lisp_programming_language.html" title="Lisp programming language">Lisp</a> and <a href="/wiki/OCaml.html" title="OCaml">OCaml</a>. Some other languages rely on a fully external language to define the transformations, such as the <a href="/wiki/XSLT.html" title="XSLT">XSLT</a> preprocessor for <a href="/wiki/XML.html" title="XML">XML</a>, or its statically typed counterpart <a href="/wiki/CDuce.html" title="CDuce">CDuce</a>.</p>
+<p>Syntactic preprocessors are typically used to customize the syntax of a language, extend a language by adding new primitives, or embed a <a href="/wiki/Domain-specific_programming_language.html" title="Domain-specific programming language">Domain-Specific Programming Language</a> inside a general purpose language.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Customizing syntax">edit</a>]</div>
+<p><a name="Customizing_syntax" id="Customizing_syntax"></a></p>
+<h3>Customizing syntax</h3>
+<p>A good example of syntax customization is the existence of <a  class="external text" title="http://caml.inria.fr/pub/docs/manual-camlp4/manual007.html">two different syntaxes</a> in the <a href="/wiki/OCaml.html" title="OCaml">Objective Caml</a> programming language. Programs may be written indifferently using the "normal syntax" or the "revised syntax", and may be pretty-printed with either syntax on demand.</p>
+<p>Similarly, a number of programs written in <a href="/wiki/OCaml.html" title="OCaml">OCaml</a> customize the syntax of the language by the addition of new operators.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Extending a language">edit</a>]</div>
+<p><a name="Extending_a_language" id="Extending_a_language"></a></p>
+<h3>Extending a language</h3>
+<p>The best examples of language extension through macros are found in the <a href="/wiki/Lisp_programming_language.html" title="Lisp programming language">Lisp</a> family of languages. While the languages, by themselves, are simple dynamically-typed functional cores, the standard distributions of <a href="/wiki/Scheme.html" title="Scheme">Scheme</a> or <a href="/wiki/Common_Lisp.html" title="Common Lisp">Common Lisp</a> permit imperative or object-oriented programming, as well as static typing. Almost all of these features are implemented by syntactic preprocessing, although it bears noting that the "macro expansion" phase of compilation is handled by the compiler in Lisp. This can still be considered a form of preprocessing, since it takes place before other phases of compilation.</p>
+<p>Similarly, statically-checked, type-safe <a href="/wiki/Regular_expressions.html" title="Regular expressions">regular expressions</a> or <a href="/wiki/Code_generation.html" title="Code generation">code generation</a> may be added to the syntax and semantics of <a href="/wiki/OCaml.html" title="OCaml">OCaml</a> through macros, as well as micro-threads (also known as <a href="/wiki/Coroutines.html" title="Coroutines">coroutines</a> or <a href="/wiki/Fiber_%28computer_science%29.html" title="Fiber (computer science)">fibers</a>), <a href="/wiki/Monads.html" title="Monads">monads</a> or transparent XML manipulation.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Specializing a language">edit</a>]</div>
+<p><a name="Specializing_a_language" id="Specializing_a_language"></a></p>
+<h3>Specializing a language</h3>
+<p>One of the unusual features of the <a href="/wiki/Lisp_programming_language.html" title="Lisp programming language">Lisp</a> family of languages is the possibility of using macros to create an internal <a href="/wiki/Domain-specific_programming_language.html" title="Domain-specific programming language">Domain-Specific Programming Language</a>. Typically, in a large <a href="/wiki/Lisp_programming_language.html" title="Lisp programming language">Lisp</a>-based project, a module may be written in a variety of such minilanguages, one perhaps using a <a href="/wiki/SQL.html" title="SQL">SQL</a>-based dialect of <a href="/wiki/Lisp_programming_language.html" title="Lisp programming language">Lisp</a>, another written in a dialect specialized for GUIs or pretty-printing, etc. <a href="/wiki/Common_Lisp.html" title="Common Lisp">Common Lisp</a>'s standard library contains an example of this level of syntactic abstraction in the form of the LOOP macro, which implements an Algol-like minilanguage to describe complex iteration, while still enabling the use of standard Lisp operators.</p>
+<p>The <a  class="new" title="MetaOCaml">MetaOCaml</a> preprocessor/language provides similar features for external <a href="/wiki/Domain-specific_programming_language.html" title="Domain-specific programming language">Domain-Specific Programming Languages</a>. This preprocessor takes the description of the semantics of a language (i.e. an interpreter) and, by combining compile-time interpretation and code generation, turns that definition into a compiler to the <a href="/wiki/OCaml.html" title="OCaml">OCaml</a> programming language -- and from that language, either to bytecode or to native code</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li>The <a href="/wiki/C_preprocessor.html" title="C preprocessor">C preprocessor</a></li>
+<li>The <a href="/wiki/Camlp4.html" title="Camlp4">OCaml pre-processor-pretty-printer</a></li>
+<li>The <a  class="new" title="MetaOCaml">MetaOCaml</a> metaprogramming language</li>
+<li>The <a  class="new" title="Epigram (metaprogramming language)">Epigram</a> metaprogramming language</li>
+<li>The <a  class="external text" title="http://www.nothingisreal.com/gpp/gpp.html">Generic PreProcessor</a></li>
+<li><a  class="new" title="Oracle Pro*C">Oracle Pro*C</a></li>
+<li><a  class="external text" title="http://www.paulgraham.com/progbot.html">Programming from the bottom up</a></li>
+<li><a  class="external text" title="http://lispm.dyndns.org/news?ID=NEWS-2005-07-08-1">DSL Design in Lisp</a></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:81971-0!1!0!default!!en!2 and timestamp 20060908193121 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Code generation">Code generation</a></span> | <span dir='ltr'><a  title="Category:Programming language implementation">Programming language implementation</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Preprocessor.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-lt"><a >Lietuvių</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-pt"><a >Português</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 11:33, 24 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv51 in 0.078 secs. --></body></html>

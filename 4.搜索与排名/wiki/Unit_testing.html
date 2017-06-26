@@ -1,0 +1,264 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Unit test,Acceptance test,Application programming interface,Automated testing,Cohesion (computer science),Computer programming,Coupling (computer science),D programming language,Database,Design pattern (computer science),End-user" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Unit test - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Unit_test";
+			var wgTitle = "Unit test";
+			var wgArticleId = 222828;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Unit test</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub">(Redirected from <a  title="Unit testing">Unit testing</a>)</div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>In <a href="/wiki/Computer_programming.html" title="Computer programming">computer programming</a>, a <b>unit test</b> is a procedure used to validate that a particular <a href="/wiki/Module_%28programming%29.html" title="Module (programming)">module</a> of <a href="/wiki/Source_code.html" title="Source code">source code</a> is working properly. The procedure is to write test cases for all <a href="/wiki/Subroutine.html" title="Subroutine">functions</a> and <a href="/wiki/Method_%28computer_science%29.html" title="Method (computer science)">methods</a> so that whenever a change causes a <a href="/wiki/Regression_testing.html" title="Regression testing">regression</a>, it can be quickly identified and fixed. Ideally, each <a href="/wiki/Test_case.html" title="Test case">test case</a> is separate from the others; constructs such as <a href="/wiki/Mock_object.html" title="Mock object">mock objects</a> can assist in separating unit tests. This type of testing is mostly done by the <a href="/wiki/Software_developer.html" title="Software developer">developers</a> and not by <a href="/wiki/End-user.html" title="End-user">end-users</a>.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Benefit</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">1.1</span> <span class="toctext">Facilitates change</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.2</span> <span class="toctext">Simplifies integration</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.3</span> <span class="toctext">Documentation</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.4</span> <span class="toctext">Separation of interface from implementation</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Limitations of unit testing</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Applications</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">3.1</span> <span class="toctext">Extreme Programming</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.2</span> <span class="toctext">Techniques</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.3</span> <span class="toctext">Language support</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Benefit">edit</a>]</div>
+<p><a name="Benefit" id="Benefit"></a></p>
+<h2>Benefit</h2>
+<p>The goal of unit testing is to isolate each part of the program and show that the individual parts are correct. Unit testing provides a strict, written contract that the piece of code must satisfy. As a result, it affords several benefits.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Facilitates change">edit</a>]</div>
+<p><a name="Facilitates_change" id="Facilitates_change"></a></p>
+<h3>Facilitates change</h3>
+<p>Unit testing allows the programmer to <a href="/wiki/Refactoring.html" title="Refactoring">refactor</a> code at a later date, and make sure the module still works correctly (i.e. <a href="/wiki/Regression_testing.html" title="Regression testing">regression testing</a>). This provides the benefit of encouraging programmers to make changes to the code since it is easy for the programmer to check if the piece is still working properly. A good set of unit test cases makes sure that every line of code in the module executes.</p>
+<p>In continuous unit testing environments, through the inherent practice of sustained maintenance, unit tests will continue to accurately reflect the intended use of the executable and code in the face of any change. Depending upon established development practices and unit test coverage, up to the second accuracy can be maintained.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Simplifies integration">edit</a>]</div>
+<p><a name="Simplifies_integration" id="Simplifies_integration"></a></p>
+<h3>Simplifies integration</h3>
+<p>Unit testing helps eliminate uncertainty in the units themselves and can be used in a <a href="/wiki/Top-down_and_bottom-up_design.html" title="Top-down and bottom-up design">bottom-up</a> testing style approach. By testing the parts of a program first and then testing the sum of its parts, <a href="/wiki/Integration_testing.html" title="Integration testing">integration testing</a> becomes much easier.</p>
+<p>A heavily debated matter exists in assessing the need to perform manual integration testing. While an elaborate hierarchy of unit tests may seem to have achieved integration testing, this presents a false sense of confidence since integration testing evaluates many other objectives that can only be proven through the human factor. Some argue that given a sufficient variety of test automation systems, integration testing by a human test group is unnecessary. Realistically, the actual need will ultimately depend upon the characteristics of the product being developed and its intended uses.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Documentation">edit</a>]</div>
+<p><a name="Documentation" id="Documentation"></a></p>
+<h3>Documentation</h3>
+<p>Unit testing provides a sort of "living document". Clients and other developers looking to learn how to use the module can look at the unit tests to determine how to use the module to fit their needs and gain a basic understanding of the <a href="/wiki/Application_programming_interface.html" title="Application programming interface">API</a>.</p>
+<p>Unit test cases embody characteristics that are critical to the success of the unit. These characteristics can indicate appropriate/inappropriate use of a unit as well as negative behaviors that are to be trapped by the unit. A unit test case, in and of itself, documents these critical characteristics, although many software development environments do not rely solely upon code to document the product in development.</p>
+<p>Ordinary documentation, on the other hand, is more susceptible to drifting from the implementation of the program and will thus become outdated (e.g. design changes, feature creep, relaxed practices to keep documents up to date).</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Separation of interface from implementation">edit</a>]</div>
+<p><a name="Separation_of_interface_from_implementation" id="Separation_of_interface_from_implementation"></a></p>
+<h3>Separation of interface from implementation</h3>
+<p>Because some classes may have <a href="/wiki/Reference_%28computer_science%29.html" title="Reference (computer science)">references</a> to other classes, testing a class can frequently spill over into testing another class. A common example of this is classes that depend on a <a href="/wiki/Database.html" title="Database">database</a>: in order to test the class, the tester often writes code that interacts with the database. This is a mistake, because a unit test should never go outside of its own class boundary. As a result, the software developer abstracts an interface around the database connection, and then implements that interface with their own <a href="/wiki/Mock_object.html" title="Mock object">mock object</a>. This results in <a href="/wiki/Loose_coupling.html" title="Loose coupling">loosely coupled</a> code, minimizing dependencies in the system.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Limitations of unit testing">edit</a>]</div>
+<p><a name="Limitations_of_unit_testing" id="Limitations_of_unit_testing"></a></p>
+<h2>Limitations of unit testing</h2>
+<p>Unit-testing will not catch every error in the program. By definition, it only tests the functionality of the units themselves. Therefore, it will not catch integration errors, <a href="/wiki/Performance_testing.html" title="Performance testing">performance</a> problems or any other system-wide issues. In addition, it may not be easy to anticipate all special cases of input the program unit under study may receive in reality. Unit testing is only effective if it is used in conjunction with other <a href="/wiki/Software_testing#Software_testing_activities.html" title="Software testing">software testing activities</a>.</p>
+<p>It is unrealistic to test all possible input combinations for any non-trivial piece of software. A unit test can only show the presence of errors; it cannot show the absence of errors.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Applications">edit</a>]</div>
+<p><a name="Applications" id="Applications"></a></p>
+<h2>Applications</h2>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Extreme Programming">edit</a>]</div>
+<p><a name="Extreme_Programming" id="Extreme_Programming"></a></p>
+<h3>Extreme Programming</h3>
+<p>While Unit Testing is often associated with <a href="/wiki/Extreme_Programming.html" title="Extreme Programming">Extreme Programming</a>, it predates Extreme Programming. The unit testing concept is part of the Extreme Programming method of <a href="/wiki/Software_engineering.html" title="Software engineering">software engineering</a>. Various unit testing frameworks, based on a design by <a href="/wiki/Kent_Beck.html" title="Kent Beck">Kent Beck</a>, have come to be known collectively as <a href="/wiki/XUnit.html" title="XUnit">xUnit</a>, and are available for many programming languages and development platforms. Unit testing is the building block to <a href="/wiki/Test_driven_development.html" title="Test driven development">test driven development</a> (TDD). Extreme Programming and most other methods use unit tests to perform <a href="/wiki/White_box_testing.html" title="White box testing">white box testing</a>.</p>
+<p>Note that many in the Extreme Programming community favor the terms "developer testing" or "programmer testing" over the term "unit testing," since many other test activities (like <a href="/wiki/Acceptance_test.html" title="Acceptance test">acceptance test</a>) can now be done at "developer-time."</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Techniques">edit</a>]</div>
+<p><a name="Techniques" id="Techniques"></a></p>
+<h3>Techniques</h3>
+<p>Both conventionally and as a well accepted industry practice, unit testing is conducted in an <a href="/wiki/Test_automation.html" title="Test automation">automated</a> environment through the use of a <a href="/wiki/Third_party.html" title="Third party">third party</a> supplied component or <a href="/wiki/List_of_unit_testing_frameworks.html" title="List of unit testing frameworks">framework</a>. However, one reputable organization, the <a href="/wiki/Institute_of_Electrical_and_Electronics_Engineers.html" title="Institute of Electrical and Electronics Engineers">IEEE</a>, prescribes neither an automated nor a manual approach. A manual approach to unit testing may employ a step-by-step instructional document. Nevertheless, the objective in unit testing is to isolate a unit and validate its correctness. Automation is much more efficient for achieving this, and enables the many benefits listed in this article. In fact, manual unit testing is arguably a form of integration testing and thus precludes the achievement of most (if not all) of the goals established for unit testing.</p>
+<p>To fully realize the effect of isolation, the unit or code body subjected to the unit test is executed within a framework outside of its natural environment, that is, outside of the product or calling context for which it was originally created. Testing in an isolated manner has the benefit of revealing unnecessary dependencies between the code being tested and other units or data spaces in the product. These dependencies can then be eliminated through <a href="/wiki/Refactoring.html" title="Refactoring">refactoring</a>, or if necessary, re-design.</p>
+<p>Using a unit testing framework, the developer codifies criteria into the unit test to verify the correctness of the unit under test. During execution of the unit test(s), the framework logs test cases that fail any criterion. Many frameworks will also automatically flag and report in a summary these failed test cases. Depending upon the severity of a failure, the framework may halt subsequent testing.</p>
+<p>As a consequence, unit testing is traditionally a motivator for programmers to create <a href="/wiki/Coupling_%28computer_science%29.html" title="Coupling (computer science)">decoupled</a> and <a href="/wiki/Cohesion_%28computer_science%29.html" title="Cohesion (computer science)">cohesive</a> code bodies. This practice promotes healthy habits in software development. <a href="/wiki/Design_pattern_%28computer_science%29.html" title="Design pattern (computer science)">Design patterns</a>, unit testing, and refactoring often work together so that the most ideal solution may emerge.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Language support">edit</a>]</div>
+<p><a name="Language_support" id="Language_support"></a></p>
+<h3>Language support</h3>
+<p>The <a href="/wiki/D_programming_language.html" title="D programming language">D programming language</a> offers direct support for unit testing.</p>
+<p>Unit testing frameworks, which help simplify the process of unit testing, have been developed for a <a href="/wiki/List_of_unit_testing_frameworks.html" title="List of unit testing frameworks">wide variety of languages</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Software_testing.html" title="Software testing">Software testing</a></li>
+<li><a href="/wiki/Integration_testing.html" title="Integration testing">Integration testing</a></li>
+<li><a href="/wiki/System_testing.html" title="System testing">System testing</a></li>
+<li><a href="/wiki/Test-driven_development.html" title="Test-driven development">Test-driven development</a></li>
+<li><a href="/wiki/Extreme_Programming.html" title="Extreme Programming">Extreme Programming</a></li>
+<li><a href="/wiki/Regression_testing.html" title="Regression testing">Regression testing</a></li>
+<li><a href="/wiki/Test_case.html" title="Test case">Test case</a></li>
+<li><a href="/wiki/List_of_unit_testing_frameworks.html" title="List of unit testing frameworks">List of unit testing frameworks</a></li>
+<li><a href="/wiki/Automated_testing.html" title="Automated testing">Automated testing</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://www.xprogramming.com/testfram.htm">Kent Beck's original testing framework paper</a></li>
+<li><a  class="external text" title="http://www.softdevarticles.com/modules/weblinks/viewcat.php?cid=34">List of articles on unit testing</a></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:222828-0!1!0!default!!en!2 and timestamp 20060906011442 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Software testing">Software testing</a></span> | <span dir='ltr'><a  title="Category:Extreme Programming">Extreme Programming</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Unit_test.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-he"><a >עברית</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 21:40, 2 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv13 in 0.307 secs. --></body></html>

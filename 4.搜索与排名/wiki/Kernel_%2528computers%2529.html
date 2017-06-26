@@ -1,0 +1,512 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Kernel (computer science),2004,Abraham Silberschatz,Abstraction (computer science),Abstraction layer,Access control,Address space,AmigaOS,Andrew S. Tanenbaum,Andrew Tanenbaum,Apple Computer" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Kernel (computer science) - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Kernel_(computer_science)";
+			var wgTitle = "Kernel (computer science)";
+			var wgArticleId = 50394;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Kernel (computer science)</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub">(Redirected from <a  title="Kernel (computers)">Kernel (computers)</a>)</div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<dl>
+<dd><span class="dablink"><i>This article is about the operating system concept. For other uses, see <a href="/wiki/Kernel.html" title="Kernel">Kernel</a>.</i></span></dd>
+</dl>
+<div class="thumb tright">
+<div style="width:152px;"><a  class="internal" title="A kernel connects the software and hardware of a computer."><img src="http://upload.wikimedia.org/wikipedia/en/thumb/6/6b/Kernel_basic.jpg/150px-Kernel_basic.jpg" alt="A kernel connects the software and hardware of a computer." width="150" height="178" longdesc="/wiki/Image:Kernel_basic.jpg" /></a>
+<div class="thumbcaption">
+<div class="magnify" style="float:right"><a  class="internal" title="Enlarge"><img src="/skins-1.5/common/images/magnify-clip.png" width="15" height="11" alt="Enlarge" /></a></div>
+A kernel connects the software and hardware of a computer.</div>
+</div>
+</div>
+<p>The <b>kernel</b> is the central part in most <a href="/wiki/Computer.html" title="Computer">computer</a> <a href="/wiki/Operating_system.html" title="Operating system">operating systems</a> which manages the system's resources and the communication between <a href="/wiki/Hardware.html" title="Hardware">hardware</a> and <a href="/wiki/Software.html" title="Software">software</a> components. As a basic component of an operating system, a kernel provides <a href="/wiki/Abstraction_layer.html" title="Abstraction layer">abstraction layers</a> for hardware, especially for <a href="/wiki/Random_access_memory.html" title="Random access memory">memory</a>, <a href="/wiki/Central_processing_unit.html" title="Central processing unit">processors</a> and <a href="/wiki/Input/output.html" title="Input/output">I/O</a> that allows hardware and software to communicate. It also makes these facilities available to <a href="/wiki/Userland.html" title="Userland">userland</a> <a href="/wiki/Application_software.html" title="Application software">applications</a> through <a href="/wiki/Inter-process_communication.html" title="Inter-process communication">inter-process communication</a> mechanisms and <a href="/wiki/System_call.html" title="System call">system calls</a>.</p>
+<p>These tasks are done differently by different kernels, depending on their design and implementation. While <a href="/wiki/Monolithic_kernel.html" title="Monolithic kernel">monolithic kernels</a> will try to achieve these goals by executing all the code in the same <a href="/wiki/Address_space.html" title="Address space">address space</a> to increase the performance of the system, <a href="/wiki/Microkernel.html" title="Microkernel">microkernels</a> run most of their services in <a href="/wiki/User_space.html" title="User space">user space</a>, aiming to improve maintainability and modularity of the codebase.<sup id="_ref-mono-micro_0" class="reference"><a  title="">[1]</a></sup></p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Tasks of a kernel</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">2.1</span> <span class="toctext">Process management</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.2</span> <span class="toctext">Memory management</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.3</span> <span class="toctext">Device management</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.4</span> <span class="toctext">System calls</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Different kernel design approaches</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">3.1</span> <span class="toctext">Monolithic kernels</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.2</span> <span class="toctext">Microkernels</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.3</span> <span class="toctext">Monolithic kernels vs microkernels</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.4</span> <span class="toctext">Hybrid kernels</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.5</span> <span class="toctext">Nanokernels</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.6</span> <span class="toctext">Exokernels</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.7</span> <span class="toctext">Other designs</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">History of kernel development</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">4.1</span> <span class="toctext">Early operating system kernels</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.2</span> <span class="toctext">Time-sharing operating systems</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.3</span> <span class="toctext">Unix</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.4</span> <span class="toctext">Mac OS</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.5</span> <span class="toctext">Windows</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.6</span> <span class="toctext">Development of microkernels</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">Footnotes and references</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">Further reading</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">8</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Overview">edit</a>]</div>
+<p><a name="Overview" id="Overview"></a></p>
+<h2>Overview</h2>
+<p>Most, but not all, operating systems rely on the kernel concept. The existence of a kernel as a single piece of software responsible for the communication between the hardware and the software results from complex compromises relating to questions of performance, memory efficiency, security and <a href="/wiki/CPU_design.html" title="CPU design">processor architectures</a>.</p>
+<p>In most cases, the <a href="/wiki/Boot_loader.html" title="Boot loader">boot loader</a> starts the kernel as a <a href="/wiki/Process_%28computing%29.html" title="Process (computing)">process</a> in <a href="/wiki/Supervisor_mode.html" title="Supervisor mode">supervisor mode</a>,<sup id="_ref-supervisor_0" class="reference"><a  title="">[2]</a></sup> but after initialization, it does not remain as a process as we know it, but instead as a whole set of functions that can be invoked by <a href="/wiki/Userland.html" title="Userland">userland</a> <a href="/wiki/Application_software.html" title="Application software">applications</a> to perform operations that require a higher <a href="/wiki/Privilege_level.html" title="Privilege level">privilege level</a>, such as disk access. Kernel execution streams are a continuation of execution streams of userland processes that are paused when performing <a href="/wiki/System_call.html" title="System call">system calls</a> and resumed when those return. The initial main kernel stream remains as the "idle process" and "collects" unused processor time.</p>
+<p>Kernel development is considered one of the most complex and difficult tasks in programming.<sup id="_ref-bkerndev_0" class="reference"><a  title="">[3]</a></sup> Its central position in an operating system implies the necessity for good performance, which defines the kernel as a critical piece of software and makes its correct design and implementation difficult. A kernel might even not be allowed to use the <a href="/wiki/Abstraction_%28computer_science%29.html" title="Abstraction (computer science)">abstraction</a> mechanisms it provides to other software. Many reasons prevent a kernel from using facilities it provides, such as: <a href="/wiki/Interrupt.html" title="Interrupt">interrupt</a> management, <a href="/wiki/Memory_management.html" title="Memory management">memory management</a> and lack of <a href="/wiki/Reentrant.html" title="Reentrant">reentrancy</a>, thus making its development even more difficult for software engineers.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Tasks of a kernel">edit</a>]</div>
+<p><a name="Tasks_of_a_kernel" id="Tasks_of_a_kernel"></a></p>
+<h2>Tasks of a kernel</h2>
+<p>The kernel's task is to manage the computer's resources and allow other programs to run and use these resources. In a computer, the most central part is the <a href="/wiki/Central_processing_unit.html" title="Central processing unit">CPU</a> or processor, which actually <i>runs</i> different programs the way and for the amount of time dictated by the kernel. Another crucial resource is the computer's <a href="/wiki/Random-access_memory.html" title="Random-access memory">memory</a>, as programs are loaded for execution and store their data for fast access there.<sup id="_ref-bkerndev_1" class="reference"><a  title="">[3]</a></sup><sup id="_ref-0" class="reference"><a  title="">[4]</a></sup> Furthermore, the kernel must manage the <a href="/wiki/Input/output.html" title="Input/output">Input/Output (I/O)</a> of the <a href="/wiki/Motherboard.html" title="Motherboard">motherboard</a>, thus allowing the user to access more devices. Finally, a kernel must provide <a href="/wiki/Userland.html" title="Userland">userland</a> programs a way to access these services.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Process management">edit</a>]</div>
+<p><a name="Process_management" id="Process_management"></a></p>
+<h3>Process management</h3>
+<p>The main task of an operating system kernel is to allow the execution of applications and support them with features such as hardware abstractions. To run an application, a kernel must load the file containing the code for the application to memory (and eventually set up its own address space), set up a <a href="/wiki/Call_stack.html" title="Call stack">stack</a> for the program and branch to a given location inside the program, thus starting its execution.<sup title="The text in the vicinity of this tag needs citation." class="noprint">[<a  title="Wikipedia:Citing sources"><i>citation&#160;needed</i></a>]</sup></p>
+<p>Multi-tasking kernels are able to give the user the illusion that the number of processes being run simultaneously on the computer is higher than the maximum number of processes the computer is physically able to run simultaneously. Typically, the number of processes a system may run simultaneously is equal to the number of CPUs installed (however this may not be the case if the processors support <a href="/wiki/Simultaneous_multithreading.html" title="Simultaneous multithreading">simultaneous multithreading</a>).<sup title="The text in the vicinity of this tag needs citation." class="noprint">[<a  title="Wikipedia:Citing sources"><i>citation&#160;needed</i></a>]</sup></p>
+<p>In a <a href="/wiki/Pre-emptive_multitasking.html" title="Pre-emptive multitasking">pre-emptive multitasking</a> system, the kernel will give every program a slice of time and switch from process to process so quickly that it will appear to the user as if these processes were being executed simultaneously. The kernel uses <a href="/wiki/Scheduling_algorithm.html" title="Scheduling algorithm">scheduling algorithms</a> to determine which process is running next and how much time it will be given, as there might be processes with a higher priority than others. The kernel must also provide these processes a way to communicate; this is known as <a href="/wiki/Inter-process_communication.html" title="Inter-process communication">inter-process communication</a> (IPC) and is realized through <a href="/wiki/Message_passing.html" title="Message passing">message passing</a>, <a href="/wiki/Pipeline_%28software%29.html" title="Pipeline (software)">pipes</a>, <a href="/wiki/Synchronization.html" title="Synchronization">synchronization</a>, <a href="/wiki/Shared_memory.html" title="Shared memory">shared memory</a>, <a href="/wiki/Remote_procedure_call.html" title="Remote procedure call">remote procedure calls</a> (RPC) and/or <a href="/wiki/Interrupt.html" title="Interrupt">software interrupts</a>.<sup title="The text in the vicinity of this tag needs citation." class="noprint">[<a  title="Wikipedia:Citing sources"><i>citation&#160;needed</i></a>]</sup></p>
+<p>The operating system might also support <a href="/wiki/Multiprocessing.html" title="Multiprocessing">multiprocessing</a> (<a href="/wiki/Symmetric_multiprocessing.html" title="Symmetric multiprocessing">SMP</a> or <a href="/wiki/Non-Uniform_Memory_Access.html" title="Non-Uniform Memory Access">Non-Uniform Memory Access</a>); in that case, different programs and threads may run on different processors. To allow a kernel to run on such a system, it has to be extensively modified to make it "re-entrant" or "interruptible", meaning that it can be called in the midst of doing something else. Once this conversion is complete, programs running at the same time on different processors can safely call the kernel. The kernel must also provide a way to synchronize memory access on different processors, which makes memory management and process management two highly inter-related topics.<sup title="The text in the vicinity of this tag needs citation." class="noprint">[<a  title="Wikipedia:Citing sources"><i>citation&#160;needed</i></a>]</sup></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Memory management">edit</a>]</div>
+<p><a name="Memory_management" id="Memory_management"></a></p>
+<h3>Memory management</h3>
+<p>The kernel has full access to the system's memory and must allow userland programs to access this memory safely as they require it. Often the first step in doing this is <a href="/wiki/Virtual_addressing.html" title="Virtual addressing">virtual addressing</a>, usually achieved by <a href="/wiki/Paging.html" title="Paging">paging</a> and/or <a href="/wiki/Segmentation_%28memory%29.html" title="Segmentation (memory)">segmentation</a>. Virtual addressing allows the kernel to make a given physical address appear to be another address, the virtual address. This allows every program to believe that it is the only one (apart from the kernel) running and thus prevents applications from crashing each other.<sup title="The text in the vicinity of this tag needs citation." class="noprint">[<a  title="Wikipedia:Citing sources"><i>citation&#160;needed</i></a>]</sup></p>
+<p>In fact, a program's virtual address may even refer to data which is not currently in memory. The layer of indirection provided by virtual addressing allows the operating system to use other data stores, like a <a href="/wiki/Hard_drive.html" title="Hard drive">hard drive</a>, to store what would otherwise have to remain in main memory (RAM). As a result, operating systems can allow programs to use more memory than the system has physically available. When a program needs data which is not currently in RAM, the OS writes the contents of a currently unused memory block to disk and replaces it with the data requested by the program.<sup title="The text in the vicinity of this tag needs citation." class="noprint">[<a  title="Wikipedia:Citing sources"><i>citation&#160;needed</i></a>]</sup></p>
+<p>Virtual addressing also allows creation of virtual partitions of memory in two disjointed areas, one being reserved for the kernel (<a href="/wiki/Kernel_space.html" title="Kernel space">kernel space</a>) and the other for the applications (<a href="/wiki/User_space.html" title="User space">user space</a>). This fundamental partition of memory space has contributed much to current designs of actual generalistic kernels.<sup title="The text in the vicinity of this tag needs citation." class="noprint">[<a  title="Wikipedia:Citing sources"><i>citation&#160;needed</i></a>]</sup></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Device management">edit</a>]</div>
+<p><a name="Device_management" id="Device_management"></a></p>
+<h3>Device management</h3>
+<p>To perform, an <a href="/wiki/Operating_system.html" title="Operating system">operating system</a> (OS) needs access to the <a href="/wiki/Peripheral.html" title="Peripheral">peripherals</a> connected to the computer, which are controlled through <a href="/wiki/Device_driver.html" title="Device driver">device drivers</a>, which must be written by the developers and/or be provided by the manufacturers of the hardware. For example, to show the user something on the screen, the kernel relies on its monitor driver (such as <a href="/wiki/VGA.html" title="VGA">VGA</a> or <a href="/wiki/VESA.html" title="VESA">VESA</a>) which is then responsible for actually plotting the character/pixel.<sup title="The text in the vicinity of this tag needs citation." class="noprint">[<a  title="Wikipedia:Citing sources"><i>citation&#160;needed</i></a>]</sup></p>
+<p>A device manager first performs a scan on different <a href="/wiki/Hardware_bus.html" title="Hardware bus">hardware buses</a>, such as <a href="/wiki/Peripheral_Component_Interconnect.html" title="Peripheral Component Interconnect">Peripheral Component Interconnect</a> (PCI) or <a href="/wiki/Universal_Serial_Bus.html" title="Universal Serial Bus">Universal Serial Bus</a> (USB), to detect installed devices, then searches for the appropriate drivers. As device management is a very OS-specific topic, these drivers are handled differently by each kind of kernel design, but in every case, the kernel has to provide the <a href="/wiki/Input/Output.html" title="Input/Output">I/O</a> to allow drivers to physically access their devices through some port or memory location. Very important decisions have to be made when designing the device management system, as every access involves <a href="/wiki/Context_switch.html" title="Context switch">context switches</a>, making the operation very CPU-intensive and easily causing a significant performance overhead.<sup title="The text in the vicinity of this tag needs citation." class="noprint">[<a  title="Wikipedia:Citing sources"><i>citation&#160;needed</i></a>]</sup></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: System calls">edit</a>]</div>
+<p><a name="System_calls" id="System_calls"></a></p>
+<h3>System calls</h3>
+<p>To actually perform useful work, a <a href="/wiki/Userland.html" title="Userland">userland</a> program must be able to access the services provided by the kernel. This is implemented differently by each kernel, but most provide a <a href="/wiki/C_library.html" title="C library">C library</a> or an <a href="/wiki/Application_Programming_Interface.html" title="Application Programming Interface">API</a>, which in turn invoke the related kernel functions either through the <a href="/wiki/Inter-process_communication.html" title="Inter-process communication">inter-process communication</a> system, <a href="/wiki/Interrupt.html" title="Interrupt">software interrupts</a> or <a href="/wiki/Shared_memory.html" title="Shared memory">shared memory</a>.<sup title="The text in the vicinity of this tag needs citation." class="noprint">[<a  title="Wikipedia:Citing sources"><i>citation&#160;needed</i></a>]</sup></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Different kernel design approaches">edit</a>]</div>
+<p><a name="Different_kernel_design_approaches" id="Different_kernel_design_approaches"></a></p>
+<h2>Different kernel design approaches</h2>
+<p>Naturally, the above listed tasks and features can be provided in many ways that differ from each other in design and implementation. While <a href="/wiki/Monolithic_kernel.html" title="Monolithic kernel">monolithic kernels</a> execute all of their code in the same address space (<a href="/wiki/Kernel_space.html" title="Kernel space">kernel space</a>) to increase the performance of the system, <a href="/wiki/Microkernel.html" title="Microkernel">microkernels</a> try to run most of their services in user space, aiming to improve maintainability and modularity of the codebase.<sup id="_ref-mono-micro_1" class="reference"><a  title="">[1]</a></sup> Most kernels do not fit exactly into one of these categories, but are rather found in between these two designs. These are called <a href="/wiki/Hybrid_kernel.html" title="Hybrid kernel">hybrid kernels</a>. More exotic designs, such as <a href="/wiki/Nanokernel.html" title="Nanokernel">nanokernels</a> and <a href="/wiki/Exokernel.html" title="Exokernel">exokernels</a>, are mostly investigated by researchers and are not in widespread use.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Monolithic kernels">edit</a>]</div>
+<p><a name="Monolithic_kernels" id="Monolithic_kernels"></a></p>
+<h3>Monolithic kernels</h3>
+<dl>
+<dd>
+<div class="noprint"><i>Main article: <a href="/wiki/Monolithic_kernel.html" title="Monolithic kernel">Monolithic kernel</a></i></div>
+</dd>
+</dl>
+<p>In a monolithic kernel, all OS services run along with the main kernel thread, thus also residing in the same memory area. This approach provides rich and powerful hardware access. Monolithic systems are easier to design and implement than other solutions, and are extremely efficient if well-written. The main disadvantages of monolithic kernels are the dependencies between system components - a bug in a device driver might crash the entire system - and the fact that large kernels become very difficult to maintain.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Microkernels">edit</a>]</div>
+<p><a name="Microkernels" id="Microkernels"></a></p>
+<h3>Microkernels</h3>
+<dl>
+<dd>
+<div class="noprint"><i>Main article: <a href="/wiki/Microkernel.html" title="Microkernel">Microkernel</a></i></div>
+</dd>
+</dl>
+<div class="thumb tright">
+<div style="width:262px;"><a  class="internal" title="In the microkernel approach, the kernel itself only provides basic functionality that allows the execution of servers, separate programs that assume former kernel functions, such as device drivers, GUI servers, etc."><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Kernel-microkernel.png/260px-Kernel-microkernel.png" alt="In the microkernel approach, the kernel itself only provides basic functionality that allows the execution of servers, separate programs that assume former kernel functions, such as device drivers, GUI servers, etc." width="260" height="180" longdesc="/wiki/Image:Kernel-microkernel.png" /></a>
+<div class="thumbcaption">
+<div class="magnify" style="float:right"><a  class="internal" title="Enlarge"><img src="/skins-1.5/common/images/magnify-clip.png" width="15" height="11" alt="Enlarge" /></a></div>
+In the <a href="/wiki/Microkernel.html" title="Microkernel">microkernel</a> approach, the kernel itself only provides basic functionality that allows the execution of <a href="/wiki/Client-server.html" title="Client-server">servers</a>, separate programs that assume former kernel functions, such as device drivers, GUI servers, etc.</div>
+</div>
+</div>
+<p>The microkernel approach consists of defining a simple abstraction over the hardware, with a set of primitives or <a href="/wiki/System_call.html" title="System call">system calls</a> to implement minimal OS services such as <a href="/wiki/Memory_management.html" title="Memory management">memory management</a>, <a href="/wiki/Computer_multitasking.html" title="Computer multitasking">multitasking</a>, and <a href="/wiki/Inter-process_communication.html" title="Inter-process communication">inter-process communication</a>. Other services, including those normally provided by the kernel such as <a href="/wiki/Computer_networking.html" title="Computer networking">networking</a>, are implemented in user-space programs, referred to as <i>servers</i>. Microkernels are easier to maintain than monolithic kernels, but the large number of system calls and <a href="/wiki/Context_switch.html" title="Context switch">context switches</a> might slow down the system because they typically generate more overhead than plain function calls.</p>
+<p>Microkernels generally underperform traditional designs, sometimes dramatically. This is due in large part to the overhead of moving in and out of the kernel, a <a href="/wiki/Context_switch.html" title="Context switch">context switch</a>, to move data between the various applications and servers. It was originally believed that careful tuning could reduce this overhead dramatically, but by the mid-1990s most researchers had abandoned this approach. Recently, newer microkernels, optimized for performance, have addressed these problems.<sup id="_ref-l4_0" class="reference"><a  title="">[5]</a></sup></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Monolithic kernels vs microkernels">edit</a>]</div>
+<p><a name="Monolithic_kernels_vs_microkernels" id="Monolithic_kernels_vs_microkernels"></a></p>
+<h3>Monolithic kernels vs microkernels</h3>
+<p>As the computer kernel grows, a number of problems become evident. One of the most obvious is that the <a  class="new" title="Memory footprint">memory footprint</a> increases. This is mitigated to some degree by perfecting the <a href="/wiki/Virtual_memory.html" title="Virtual memory">virtual memory</a> system, but not all <a href="/wiki/Computer_architecture.html" title="Computer architecture">computer architectures</a> have virtual memory support.<sup id="_ref-1" class="reference"><a  title="">[6]</a></sup> To reduce the kernel's footprint, extensive editing has to be performed to carefully remove unneeded code, which can be very difficult with non-obvious interdependencies between parts of a kernel with millions of lines of code.</p>
+<p>Due to the problems that monolithic kernels pose, they were considered obsolete by the early 1990s. As a result, the design of <a href="/wiki/Linux.html" title="Linux">Linux</a> using a monolithic kernel rather than a microkernel was the topic of a famous <a href="/wiki/Flame_war.html" title="Flame war">flame war</a> between <a href="/wiki/Linus_Torvalds.html" title="Linus Torvalds">Linus Torvalds</a> and <a href="/wiki/Andrew_S._Tanenbaum.html" title="Andrew S. Tanenbaum">Andrew Tanenbaum</a>.<sup id="_ref-2" class="reference"><a  title="">[7]</a></sup> There is merit on both sides of the argument presented in the Tanenbaum/Torvalds debate.</p>
+<p>Monolithic kernels tend to be easier to design correctly, and therefore may grow more quickly than a microkernel-based system. However, a bug in a monolithic system usually crashes the entire system, while this doesn't happen in a microkernel with servers running apart from the main thread. Monolithic kernel proponents reason that incorrect code doesn't belong in a kernel, and that microkernels offer little advantage over correct code. There are success stories in both camps. Microkernels are often used in embedded robotic or medical computers where crash tolerance is important and most of the OS components reside in their own private, protected memory space. This is impossible with monolithic kernels, even with modern module-loading ones. However, the monolithic model tends to be more efficient through the use of shared kernel memory, rather than the slower <a href="/wiki/Message_passing.html" title="Message passing">message passing</a> system of microkernel designs.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Hybrid kernels">edit</a>]</div>
+<p><a name="Hybrid_kernels" id="Hybrid_kernels"></a></p>
+<h3>Hybrid kernels</h3>
+<dl>
+<dd>
+<div class="noprint"><i>Main article: <a href="/wiki/Hybrid_kernel.html" title="Hybrid kernel">Hybrid kernel</a></i></div>
+</dd>
+</dl>
+<div class="thumb tright">
+<div style="width:262px;"><a  class="internal" title="The hybrid kernel approach tries to combine the speed and simpler design of a monolithic kernel with the modularity and execution safety of a microkernel."><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Kernel-hybrid.png/260px-Kernel-hybrid.png" alt="The hybrid kernel approach tries to combine the speed and simpler design of a monolithic kernel with the modularity and execution safety of a microkernel." width="260" height="180" longdesc="/wiki/Image:Kernel-hybrid.png" /></a>
+<div class="thumbcaption">
+<div class="magnify" style="float:right"><a  class="internal" title="Enlarge"><img src="/skins-1.5/common/images/magnify-clip.png" width="15" height="11" alt="Enlarge" /></a></div>
+The <a href="/wiki/Hybrid_kernel.html" title="Hybrid kernel">hybrid kernel</a> approach tries to combine the speed and simpler design of a monolithic kernel with the modularity and execution safety of a microkernel.</div>
+</div>
+</div>
+<p>Hybrid kernels are essentially a compromise between the monolithic kernel approach and the microkernel system. This implies running some services (such as the <a href="/wiki/Network_stack.html" title="Network stack">network stack</a> or the <a href="/wiki/Filesystem.html" title="Filesystem">filesystem</a>) in kernel space to reduce the performance overhead of a traditional microkernel, but still running kernel code (such as device drivers) as servers in user space.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Nanokernels">edit</a>]</div>
+<p><a name="Nanokernels" id="Nanokernels"></a></p>
+<h3>Nanokernels</h3>
+<dl>
+<dd>
+<div class="noprint"><i>Main article: <a href="/wiki/Nanokernel.html" title="Nanokernel">Nanokernel</a></i></div>
+</dd>
+</dl>
+<p>A nanokernel delegates virtually all services - including even the most basic ones like <a href="/wiki/Programmable_Interrupt_Controller.html" title="Programmable Interrupt Controller">interrupt controllers</a> or the <a href="/wiki/Timer.html" title="Timer">timer</a> - to <a href="/wiki/Device_driver.html" title="Device driver">device drivers</a> to make the kernel memory requirement even smaller than a traditional microkernel.<sup id="_ref-3" class="reference"><a  title="">[8]</a></sup></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Exokernels">edit</a>]</div>
+<p><a name="Exokernels" id="Exokernels"></a></p>
+<h3>Exokernels</h3>
+<dl>
+<dd>
+<div class="noprint"><i>Main article: <a href="/wiki/Exokernel.html" title="Exokernel">Exokernel</a></i></div>
+</dd>
+</dl>
+<p>An exokernel is a type of kernel that does not abstract hardware into theoretical models. Instead it allocates physical hardware resources, such as processor time, memory pages, and disk blocks, to different programs. A program running on an exokernel can link to a <i>library operating system</i> that uses the exokernel to simulate the abstractions of a well-known OS, or it can develop application-specific abstractions for better performance.<sup id="_ref-4" class="reference"><a  title="">[9]</a></sup></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Other designs">edit</a>]</div>
+<p><a name="Other_designs" id="Other_designs"></a></p>
+<h3>Other designs</h3>
+<p>There are also alternative ways to design (and implement) a kernel which do not fit into the above named categories. Examples for this are <a  class="new" title="Exec (kernel)">Exec</a>, the kernel of <a href="/wiki/AmigaOS.html" title="AmigaOS">AmigaOS</a>, which is considered to be "microkernel-like"<sup title="The text in the vicinity of this tag needs citation." class="noprint">[<a  title="Wikipedia:Citing sources"><i>citation&#160;needed</i></a>]</sup>, and <a href="/wiki/Unununium_%28operating_system%29.html" title="Unununium (operating system)">Unununium</a>, which entirely lacks a kernel.<sup id="_ref-5" class="reference"><a  title="">[10]</a></sup></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: History of kernel development">edit</a>]</div>
+<p><a name="History_of_kernel_development" id="History_of_kernel_development"></a></p>
+<h2>History of kernel development</h2>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Early operating system kernels">edit</a>]</div>
+<p><a name="Early_operating_system_kernels" id="Early_operating_system_kernels"></a></p>
+<h3>Early operating system kernels</h3>
+<dl>
+<dd>
+<div class="noprint"><i>Main article: <a href="/wiki/History_of_operating_systems.html" title="History of operating systems">History of operating systems</a></i></div>
+</dd>
+</dl>
+<p>Strictly speaking, an operating system (and thus, a kernel) is not <i>required</i> to run a computer. Programs can be directly loaded and executed on the "bare metal" machine, provided that the authors of those programs are willing to work without any hardware abstraction or operating system support. Most early computers operated this way during the 1950s and early 1960s, which were reset and reloaded between the execution of different programs. Eventually, small ancillary programs such as <a href="/wiki/Program_loader.html" title="Program loader">program loaders</a> and <a href="/wiki/Debugger.html" title="Debugger">debuggers</a> were left in memory between runs, or loaded from <a href="/wiki/Read-only_memory.html" title="Read-only memory">ROM</a>. As these were developed, they formed the basis of what became early operating system kernels. The <a href="/wiki/Bare_metal.html" title="Bare metal">"bare metal"</a> approach is still used today on some <a href="/wiki/Video_game_console.html" title="Video game console">video game consoles</a> and <a href="/wiki/Embedded_system.html" title="Embedded system">embedded systems</a>, but in general, newer computers use modern operating systems and kernels.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Time-sharing operating systems">edit</a>]</div>
+<p><a name="Time-sharing_operating_systems" id="Time-sharing_operating_systems"></a></p>
+<h3>Time-sharing operating systems</h3>
+<dl>
+<dd>
+<div class="noprint"><i>Main article: <a href="/wiki/Time-sharing.html" title="Time-sharing">Time-sharing</a></i></div>
+</dd>
+</dl>
+<p>In the decade preceding <a href="/wiki/Unix.html" title="Unix">Unix</a>, computers had grown enormously in power - to the point where computer operators were looking for new ways to get people to use the spare time on their machines. One of the major developments during this era was <a href="/wiki/Time-sharing.html" title="Time-sharing">time-sharing</a>, whereby a number of users would get small slices of computer time, at a rate at which it appeared they were each connected to their own, slower, machine.<sup id="_ref-6" class="reference"><a  title="">[11]</a></sup></p>
+<p>The development of time-sharing systems led to a number of problems. One was that users, particularly at universities where the systems were being developed, seemed to want to <a href="/wiki/Hacker.html" title="Hacker">hack</a> the system to get more <a href="/wiki/Central_processing_unit.html" title="Central processing unit">CPU</a> time. For this reason, <a href="/wiki/Computer_security.html" title="Computer security">security</a> and <a href="/wiki/Access_control.html" title="Access control">access control</a> became a major focus of the <a href="/wiki/Multics.html" title="Multics">Multics</a> project in 1965.<sup id="_ref-7" class="reference"><a  title="">[12]</a></sup> Another ongoing issue was properly handling computing resources: users spent most of their time staring at the screen instead of actually using the resources of the computer, and a time-sharing system should give the CPU time to an active user during these periods. Finally, the systems typically offered a <a href="/wiki/Memory_hierarchy.html" title="Memory hierarchy">memory hierarchy</a> several layers deep, and partitioning this expensive resource led to major developments in <a href="/wiki/Virtual_memory.html" title="Virtual memory">virtual memory</a> systems.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Unix">edit</a>]</div>
+<p><a name="Unix" id="Unix"></a></p>
+<h3>Unix</h3>
+<dl>
+<dd>
+<div class="noprint"><i>Main article: <a href="/wiki/Unix.html" title="Unix">Unix</a></i></div>
+</dd>
+</dl>
+<div class="thumb tright">
+<div style="width:302px;"><a  class="internal" title="A diagram tree showing some Unix-like systems."><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Unix_history-simple.png/300px-Unix_history-simple.png" alt="A diagram tree showing some Unix-like systems." width="300" height="538" longdesc="/wiki/Image:Unix_history-simple.png" /></a>
+<div class="thumbcaption">
+<div class="magnify" style="float:right"><a  class="internal" title="Enlarge"><img src="/skins-1.5/common/images/magnify-clip.png" width="15" height="11" alt="Enlarge" /></a></div>
+A diagram tree showing some <a href="/wiki/Unix-like.html" title="Unix-like">Unix-like</a> systems.</div>
+</div>
+</div>
+<p><a href="/wiki/Unix.html" title="Unix">Unix</a> represented the culmination of decades of development towards a modern operating system. During the design phase, programmers decided to model every high-level device as a file, because they believed the purpose of computation was data transformation.<sup id="_ref-unix_0" class="reference"><a  title="">[13]</a></sup> For instance, printers were represented as a "file" at a known location - when data was copied to the file, it printed out. Other systems, to provide a similar functionality, tended to virtualize devices at a lower level - that is, both devices <i>and</i> files would be instances of some lower level concept. Virtualizing the system at the file level allowed users to manipulate the entire system using their existing file management utilities and concepts, dramatically simplifying operation. As an extension of the same paradigm, Unix allows programmers to manipulate files using a series of small programs, using the concept of <a href="/wiki/Pipeline_%28Unix%29.html" title="Pipeline (Unix)">pipes</a>, which allowed users to complete operations in stages, feeding a file through a chain of single-purpose tools. Although the end result was the same, using smaller programs in this way dramatically increased flexibility as well as ease of development and use, allowing the user to modify their workflow by adding or removing a program from the chain.</p>
+<p>In the Unix model, the <i>Operating System</i> consists of two parts; one the huge collection of utility programs that drive most operations, the other the kernel that runs the programs.<sup id="_ref-unix_1" class="reference"><a  title="">[13]</a></sup> Under Unix, from a programming standpoint the distinction between the two is fairly thin; the kernel is a program running in supervisor mode<sup id="_ref-supervisor_1" class="reference"><a  title="">[2]</a></sup> that acts as a program loader and supervisor for the small utility programs making up the rest of the system, and to provide <a href="/wiki/Lock_%28software_engineering%29.html" title="Lock (software engineering)">locking</a> and <a href="/wiki/Input/output.html" title="Input/output">I/O</a> services for these programs; beyond that, the kernel didn't intervene at all in <a href="/wiki/User_space.html" title="User space">user space</a>.</p>
+<p>Over the years the computing model changed, and Unix's treatment of everything as a file no longer seemed to be as universally applicable as it was before. Although a <a href="/wiki/Computer_terminal.html" title="Computer terminal">terminal</a> could be treated as a file or a stream, which is printed to or read from, the same did not seem to be true for a <a href="/wiki/Graphical_user_interface.html" title="Graphical user interface">graphical user interface</a>. <a href="/wiki/Computer_networking.html" title="Computer networking">Networking</a> posed another problem. Even if network communication can be compared to file access, the low-level packet-oriented architecture dealt with discrete chunks of data and not with whole files. As the capability of computers grew, Unix became increasingly cluttered with code. While kernels might have had 100,000 <a href="/wiki/Source_lines_of_code.html" title="Source lines of code">lines of code</a> in the seventies and eighties, kernels of modern Unix successors like <a href="/wiki/Linux_kernel.html" title="Linux kernel">Linux</a> have more than 4.5 million lines.<sup id="_ref-8" class="reference"><a  title="">[14]</a></sup> Thus, the biggest problem with monolithic kernels, or <i>monokernels</i>, was sheer size. The code was so extensive that working on such a large codebase was extremely tedious and time-consuming.</p>
+<p>Modern Unix-derivates are generally based on module-loading monolithic kernels. Examples for this are <a href="/wiki/Linux_distribution.html" title="Linux distribution">linux distributions</a> like <a href="/wiki/Debian_GNU/Linux.html" title="Debian GNU/Linux">Debian GNU/Linux</a>, <a href="/wiki/Red_Hat_Linux.html" title="Red Hat Linux">Red Hat Linux</a> and <a href="/wiki/Ubuntu_Linux.html" title="Ubuntu Linux">Ubuntu Linux</a>, as well as <a href="/wiki/Berkeley_software_distribution.html" title="Berkeley software distribution">berkeley software distributions</a> such as <a href="/wiki/FreeBSD.html" title="FreeBSD">FreeBSD</a> and <a href="/wiki/NetBSD.html" title="NetBSD">NetBSD</a>. Apart from these alternatives, amateur developers maintain an active <a href="/wiki/Operating_system_development.html" title="Operating system development">operating system development community</a>, populated by self-written hobby kernels which mostly end up sharing many features with Linux and/or being compatible with it.<sup id="_ref-9" class="reference"><a  title="">[15]</a></sup></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Mac OS">edit</a>]</div>
+<p><a name="Mac_OS" id="Mac_OS"></a></p>
+<h3>Mac OS</h3>
+<dl>
+<dd>
+<div class="noprint"><i>Main article: <a href="/wiki/Mac_OS_history.html" title="Mac OS history">Mac OS history</a></i></div>
+</dd>
+</dl>
+<p><a href="/wiki/Apple_Computer.html" title="Apple Computer">Apple Computer</a> first launched <a href="/wiki/Mac_OS.html" title="Mac OS">Mac OS</a> in 1984, bundled with its <a href="/wiki/Apple_Macintosh.html" title="Apple Macintosh">Apple Macintosh</a> <a href="/wiki/Personal_computer.html" title="Personal computer">personal computer</a>. For the first few releases, Mac OS (or Software System, as it was called) lacked many essential features, such as multitasking and a hierarchical filesystem. With time, the OS evolved and eventually became Mac OS 9 and had many new features added, but the kernel basically stayed the same. Against this, <a href="/wiki/Mac_OS_X.html" title="Mac OS X">Mac OS X</a> is based on <a href="/wiki/Darwin_%28operating_system%29.html" title="Darwin (operating system)">Darwin</a>, which uses a hybrid kernel called <a href="/wiki/XNU.html" title="XNU">XNU</a>, which was created combining the <a href="/wiki/BSD#4.3BSD.html" title="BSD">4.3BSD</a> kernel and the <a href="/wiki/Mach_%28kernel%29.html" title="Mach (kernel)">Mach kernel</a>.<sup id="_ref-10" class="reference"><a  title="">[16]</a></sup></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Windows">edit</a>]</div>
+<p><a name="Windows" id="Windows"></a></p>
+<h3>Windows</h3>
+<dl>
+<dd>
+<div class="noprint"><i>Main article: <a href="/wiki/History_of_Microsoft_Windows.html" title="History of Microsoft Windows">History of Microsoft Windows</a></i></div>
+</dd>
+</dl>
+<p><a href="/wiki/Microsoft_Windows.html" title="Microsoft Windows">Microsoft Windows</a> was first released in 1985 as an add-on to <a href="/wiki/DOS.html" title="DOS">DOS</a>. Similarly to Mac OS, it also lacked important features at first, but eventually acquired them in later releases. This product line would continue until the release of the <a href="/wiki/Windows_9x.html" title="Windows 9x">Windows 9x</a> series and end with <a href="/wiki/Windows_Me.html" title="Windows Me">Windows Me</a>. At the same time, Microsoft has been developing <a href="/wiki/Windows_NT.html" title="Windows NT">Windows NT</a> since 1993, an operating system intended for the high-end and business user. This line started with the release of <a href="/wiki/Windows_NT_3.1.html" title="Windows NT 3.1">Windows NT 3.1</a> and replaced the main product line with the release of the <a href="/wiki/NT-based.html" title="NT-based">NT-based</a> <a href="/wiki/Windows_2000.html" title="Windows 2000">Windows 2000</a>.</p>
+<p>The highly successful <a href="/wiki/Windows_XP.html" title="Windows XP">Windows XP</a> brought these two product lines together, combining the stability of the NT line and the visual appeal of the 9x series.<sup id="_ref-11" class="reference"><a  title="">[17]</a></sup> It uses the <a href="/wiki/Architecture_of_the_Windows_NT_operating_system_line.html" title="Architecture of the Windows NT operating system line">NT kernel</a>, which is generally considered a hybrid kernel because the kernel itself contains tasks such as the Window Manager and the IPC Manager, but several subsystems run in user mode.<sup id="_ref-12" class="reference"><a  title="">[18]</a></sup></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Development of microkernels">edit</a>]</div>
+<p><a name="Development_of_microkernels" id="Development_of_microkernels"></a></p>
+<h3>Development of microkernels</h3>
+<p>Although <a href="/wiki/Mach_%28kernel%29.html" title="Mach (kernel)">Mach</a>, developed at <a href="/wiki/Carnegie_Mellon_University.html" title="Carnegie Mellon University">Carnegie Mellon University</a> from 1985 to 1994 is the best-known general-purpose microkernel, other microkernels have been developed with more specific aims. The <a href="/wiki/L4_microkernel_family.html" title="L4 microkernel family">L4 microkernel family</a> (mainly the L3 and the L4 kernel) was created to demonstrate that microkernels are not necessarily slow.<sup id="_ref-l4_1" class="reference"><a  title="">[5]</a></sup> Newer implementations like <a  class="new" title="Fiasco (L4 clone)">Fiasco</a> and <a  class="new" title="Pistachio (L4 clone)">Pistachio</a> are able to run <a href="/wiki/Linux.html" title="Linux">Linux</a> next to other L4 processes in separate address spaces.<sup id="_ref-13" class="reference"><a  title="">[19]</a></sup><sup id="_ref-14" class="reference"><a  title="">[20]</a></sup></p>
+<p><a href="/wiki/QNX.html" title="QNX">QNX</a> is a <a href="/wiki/Real-time_operating_system.html" title="Real-time operating system">real-time operating system</a> with a minimalistic microkernel design that has been developed since 1982, having been far more successful than Mach in achieving the goals of the microkernel paradigm.<sup id="_ref-15" class="reference"><a  title="">[21]</a></sup> It is principally used in <a href="/wiki/Embedded_system.html" title="Embedded system">embedded systems</a> and in situations where software is not allowed to fail, such as the robotic arms on the <a href="/wiki/Space_shuttle.html" title="Space shuttle">space shuttle</a> and machines that control grinding of glass to extremely fine tolerances, where a tiny mistake may cost hundreds of thousands of dollars, as in the case of the mirror of the <a href="/wiki/Hubble_Space_Telescope.html" title="Hubble Space Telescope">Hubble Space Telescope</a>.<sup id="_ref-16" class="reference"><a  title="">[22]</a></sup></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Operating_system.html" title="Operating system">Operating system</a></li>
+<li><a href="/wiki/Computer_storage.html" title="Computer storage">Memory</a>
+<ul>
+<li><a href="/wiki/Random_access_memory.html" title="Random access memory">Random access memory</a></li>
+<li><a href="/wiki/Virtual_memory.html" title="Virtual memory">Virtual memory</a></li>
+<li><a href="/wiki/Paging.html" title="Paging">Paging</a>, <a href="/wiki/Segmentation_%28memory%29.html" title="Segmentation (memory)">Segmentation</a></li>
+<li><a href="/wiki/Swap_space.html" title="Swap space">Swap space</a></li>
+<li><a href="/wiki/Kernel_space.html" title="Kernel space">Kernel space</a>, <a href="/wiki/User_space.html" title="User space">User space</a></li>
+<li><a href="/wiki/Memory_management_unit.html" title="Memory management unit">Memory management unit</a></li>
+</ul>
+</li>
+<li><a href="/wiki/Computer_multitasking.html" title="Computer multitasking">Multitasking</a>
+<ul>
+<li><a href="/wiki/Process_%28computing%29.html" title="Process (computing)">Process</a></li>
+<li><a href="/wiki/Thread_%28computer_science%29.html" title="Thread (computer science)">Thread</a></li>
+<li><a href="/wiki/Scheduling_%28computing%29.html" title="Scheduling (computing)">Scheduling</a></li>
+<li><a href="/wiki/Time_sharing.html" title="Time sharing">Time sharing</a></li>
+<li><a href="/wiki/Context_switch.html" title="Context switch">Context switch</a></li>
+<li><a href="/wiki/Inter-process_communication.html" title="Inter-process communication">Inter-process communication</a></li>
+</ul>
+</li>
+<li><a href="/wiki/Interrupt_request.html" title="Interrupt request">Interrupt request (IRQ)</a></li>
+<li><a href="/wiki/Input/output.html" title="Input/output">Input/output (I/O)</a></li>
+<li><a href="/wiki/Device_Driver.html" title="Device Driver">Device Driver</a></li>
+<li><a href="/wiki/Compiler.html" title="Compiler">Compiler</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Footnotes and references">edit</a>]</div>
+<p><a name="Footnotes_and_references" id="Footnotes_and_references"></a></p>
+<h2>Footnotes and references</h2>
+<div class="references-small">
+<ol class="references">
+<li id="_note-mono-micro">^ <a  title=""><sup><i><b>a</b></i></sup></a>&#160;<a  title=""><sup><i><b>b</b></i></sup></a> <a  class="external text" title="http://osdever.net/tutorials/pdf/comparison.pdf">An overview of Monolithic and Micro Kernels</a>, by K.J.</li>
+<li id="_note-supervisor">^ <a  title=""><sup><i><b>a</b></i></sup></a>&#160;<a  title=""><sup><i><b>b</b></i></sup></a> The highest privilege level has various names throughout different architectures, such as supervisor mode, kernel mode, CPL0, DPL0, Ring 0, etc.</li>
+<li id="_note-bkerndev">^ <a  title=""><sup><i><b>a</b></i></sup></a>&#160;<a  title=""><sup><i><b>b</b></i></sup></a> <a  class="external text" title="http://osdever.net/bkerndev/index.php?the_id=90">Bona Fide OS Development - Bran's Kernel Development Tutorial</a>, by Brandon Friesen</li>
+<li id="_note-0"><b><a  title="">^</a></b> It has to be considered that whilst CPU time is an unlimited resource, neither the memory's capacity nor its access speed are unlimited.</li>
+<li id="_note-l4">^ <a  title=""><sup><i><b>a</b></i></sup></a>&#160;<a  title=""><sup><i><b>b</b></i></sup></a> <a  class="external text" title="http://os.inf.tu-dresden.de/L4/overview.html">The L4 microkernel family - Overview</a></li>
+<li id="_note-1"><b><a  title="">^</a></b> Virtual addressing is most commonly achieved through a built-in <a href="/wiki/Memory_management_unit.html" title="Memory management unit">memory management unit</a>.</li>
+<li id="_note-2"><b><a  title="">^</a></b> Recordings of the debate can be found at <a  class="external text" title="http://www.dina.dk/~abraham/Linus_vs_Tanenbaum.html">dina.dk</a>, <a  class="external text" title="http://groups.google.com/group/comp.os.minix/browse_thread/thread/c25870d7a41696d2/f447530d082cd95d?tvc=2#f447530d082cd95d">groups.google.com</a>, <a  class="external text" title="http://www.oreilly.com/catalog/opensources/book/appa.html">oreilly.com</a> and <a  class="external autonumber" title="http://www.cs.vu.nl/~ast/reliable-os/">[1]</a></li>
+<li id="_note-3"><b><a  title="">^</a></b> <a  class="external text" title="http://www.cis.upenn.edu/~KeyKOS/NanoKernel/NanoKernel.html">KeyKOS Nanokernel Architecture</a></li>
+<li id="_note-4"><b><a  title="">^</a></b> <a  class="external text" title="http://pdos.csail.mit.edu/exo.html">MIT Exokernel Operating System</a></li>
+<li id="_note-5"><b><a  title="">^</a></b> <a  class="external text" title="http://unununium.org/introduction#kernelkind">Unununium OS&#160;:: Introduction</a></li>
+<li id="_note-6"><b><a  title="">^</a></b> <a  class="external text" title="http://cm.bell-labs.com/cm/cs/who/dmr/cacm.html">BSTJ version of C.ACM Unix paper</a></li>
+<li id="_note-7"><b><a  title="">^</a></b> <a  class="external text" title="http://www.multicians.org/fjcc1.html">Introduction and Overview of the Multics System</a>, by F. J. Corbató and V. A. Vissotsky.</li>
+<li id="_note-unix">^ <a  title=""><sup><i><b>a</b></i></sup></a>&#160;<a  title=""><sup><i><b>b</b></i></sup></a> <a  class="external text" title="http://www.unix.org/what_is_unix/single_unix_specification.html">The UNIX System - The Single Unix Specification</a></li>
+<li id="_note-8"><b><a  title="">^</a></b> <a  class="external text" title="http://www.dwheeler.com/essays/linux-kernel-cost.html">Linux Kernel 2.6: It's Worth More!</a>, by David A. Wheeler, <a href="/wiki/October_12.html" title="October 12">October 12</a>, <a href="/wiki/2004.html" title="2004">2004</a></li>
+<li id="_note-9"><b><a  title="">^</a></b> This community mostly gathers at <a  class="external text" title="http://www.osdever.net">Bona Fide OS Development</a> and <a  class="external text" title="http://www.mega-tokyo.com/forum">The Mega-Tokyo Message Board</a>.</li>
+<li id="_note-10"><b><a  title="">^</a></b> <a  class="external text" title="http://www.kernelthread.com/mac/osx/arch_xnu.html">XNU: The Kernel</a></li>
+<li id="_note-11"><b><a  title="">^</a></b> <a  class="external text" title="http://www.linuxworld.com.au/index.php/id;940707233;fp;2;fpid;1">LinuxWorld | IDC: Consolidation of Windows won't happen</a></li>
+<li id="_note-12"><b><a  title="">^</a></b> <a  class="external text" title="http://www.microsoft.com/windows/WinHistoryDesktop.mspx">Windows History: Windows Desktop Products History</a></li>
+<li id="_note-13"><b><a  title="">^</a></b> <a  class="external text" title="http://os.inf.tu-dresden.de/fiasco/overview.html">The Fiasco microkernel - Overview</a></li>
+<li id="_note-14"><b><a  title="">^</a></b> <a  class="external text" title="http://www.l4ka.org">L4Ka - The L4 microkernel family and friends</a></li>
+<li id="_note-15"><b><a  title="">^</a></b> <a  class="external text" title="http://www.qnx.com/products/rtos/microkernel.html">QNX Realtime Operating System Overview</a></li>
+<li id="_note-16"><b><a  title="">^</a></b> <a  class="external text" title="http://hubble.nasa.gov/a_pdf/news/facts/overview.pdf">Hubble Facts</a>, by <a href="/wiki/NASA.html" title="NASA">NASA</a>, January 1997</li>
+</ol>
+</div>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Further reading">edit</a>]</div>
+<p><a name="Further_reading" id="Further_reading"></a></p>
+<h2>Further reading</h2>
+<div class="references-small">
+<ul>
+<li><a href="/wiki/Andrew_Tanenbaum.html" title="Andrew Tanenbaum">Andrew Tanenbaum</a>, <i>Operating Systems - Design and Implementation (Third edition)</i>;</li>
+<li>Andrew Tanenbaum, <i>Modern Operating Systems (Second edition)</i>;</li>
+<li><a  class="new" title="Daniel P. Bovet">Daniel P. Bovet</a>, <a  class="new" title="Marco Cesati">Marco Cesati</a>, <i>The Linux Kernel</i>;</li>
+<li><a  class="new" title="David A. Peterson">David A. Peterson</a>, <a  class="new" title="Nitin Indurkhya">Nitin Indurkhya</a>, Patterson, <i>ComputerOrganization and Design</i>, <a  class="new" title="Morgan Koffman">Morgan Koffman</a> <small>(<a  class="internal">ISBN 1-55860-428-6</a>)</small>;</li>
+<li><a  class="new" title="James L. Peterson">James L. Peterson</a>, <a href="/wiki/Abraham_Silberschatz.html" title="Abraham Silberschatz">Abraham Silberschatz</a>, <a  class="new" title="Peter B. Galvin">Peter B. Galvin</a> (dir.),<i>Operating system concepts</i>, Addison-Wesley, 1990 <small>(<a  class="internal">ISBN 0-201-51379-X</a>)</small>;</li>
+<li><a  class="new" title="B.S. Chalk">B.S. Chalk</a>, <i>Computer Organisation and Architecture</i>, Macmillan P.<small>(<a  class="internal">ISBN 0-333-64551-0</a>)</small>.</li>
+</ul>
+</div>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://sourceforge.net/softwaremap/trove_list.php?form_cat=144">Operating System Kernels at Sourceforge</a></li>
+<li><a  class="external text" title="http://freshmeat.net/browse/144/">Operating System Kernels at Freshmeat</a></li>
+<li><a  class="external text" title="http://www.pdos.lcs.mit.edu/exo.html">MIT Exokernel Operating System</a></li>
+<li><a  class="external text" title="http://www.knoppix.net/wiki/Kernel_image">Kernel image - Knoppix Documentation Wiki</a></li>
+<li><a  class="external text" title="http://www.cis.upenn.edu/~KeyKOS/NanoKernel/NanoKernel.html">The KeyKOS Nanokernel Architecture</a>, a 1992 paper by <a  class="new" title="Norman Hardy">Norman Hardy</a> et al.</li>
+<li><a  class="external text" title="http://www.usenix.org/publications/library/proceedings/sf94/full_papers/minshall.a">An Overview of the NetWare Operating System</a>, a 1994 paper by Drew Major, Greg Minshall, and Kyle Powell (primary architects behind the Netware OS).</li>
+<li><a  class="external text" title="http://kernelnewbies.org/">Kernelnewbies</a>, a community for learning Linux kernel hacking.</li>
+</ul>
+<p><span class="FA" id="fr" style="display:none;"></span></p>
+
+<!-- 
+Pre-expand include size: 22575 bytes
+Post-expand include size: 4214 bytes
+Template argument size: 1388 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:50394-0!1!0!default!!en!2 and timestamp 20060910145231 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Articles with unsourced statements">Articles with unsourced statements</a></span> | <span dir='ltr'><a  title="Category:Operating system kernel">Operating system kernel</a></span> | <span dir='ltr'><a  title="Category:Operating system technology">Operating system technology</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Kernel_%28computer_science%29.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-ar"><a >العربية</a></li>
+				<li class="interwiki-ast"><a >Asturianu</a></li>
+				<li class="interwiki-ca"><a >Català</a></li>
+				<li class="interwiki-cs"><a >Česky</a></li>
+				<li class="interwiki-da"><a >Dansk</a></li>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-eo"><a >Esperanto</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-fa"><a >فارسی</a></li>
+				<li class="interwiki-fi"><a >Suomi</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-gl"><a >Galego</a></li>
+				<li class="interwiki-he"><a >עברית</a></li>
+				<li class="interwiki-hr"><a >Hrvatski</a></li>
+				<li class="interwiki-hu"><a >Magyar</a></li>
+				<li class="interwiki-ia"><a >Interlingua</a></li>
+				<li class="interwiki-id"><a >Bahasa Indonesia</a></li>
+				<li class="interwiki-is"><a >Íslenska</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-ko"><a >한국어</a></li>
+				<li class="interwiki-lt"><a >Lietuvių</a></li>
+				<li class="interwiki-nl"><a >Nederlands</a></li>
+				<li class="interwiki-no"><a >Norsk (bokmål)</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-pt"><a >Português</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+				<li class="interwiki-simple"><a >Simple English</a></li>
+				<li class="interwiki-sk"><a >Slovenčina</a></li>
+				<li class="interwiki-sl"><a >Slovenščina</a></li>
+				<li class="interwiki-sr"><a >Српски / Srpski</a></li>
+				<li class="interwiki-sv"><a >Svenska</a></li>
+				<li class="interwiki-th"><a >ไทย</a></li>
+				<li class="interwiki-tr"><a >Türkçe</a></li>
+				<li class="interwiki-zh"><a >中文</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 12:22, 7 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv83 in 0.274 secs. --></body></html>

@@ -1,0 +1,479 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Recursion,Recursion,5th century BC,Ackermann function,Ancient India,Andrew Plotkin,Axiomatic system,Base case,Catalan number,Church-Turing thesis,Circular definition" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Recursion - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Recursion";
+			var wgTitle = "Recursion";
+			var wgArticleId = 25407;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Recursion</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<div class="thumb tright">
+<div style="width:252px;"><a  class="internal" title="A Sierpinski triangle —a confined recursion of triangles to form a geometric lattice."><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/SierpinskiTriangle.PNG/250px-SierpinskiTriangle.PNG" alt="A Sierpinski triangle —a confined recursion of triangles to form a geometric lattice." width="250" height="211" longdesc="/wiki/Image:SierpinskiTriangle.PNG" /></a>
+<div class="thumbcaption">
+<div class="magnify" style="float:right"><a  class="internal" title="Enlarge"><img src="/skins-1.5/common/images/magnify-clip.png" width="15" height="11" alt="Enlarge" /></a></div>
+A <a href="/wiki/Sierpinski_triangle.html" title="Sierpinski triangle">Sierpinski triangle</a> —a confined recursion of triangles to form a geometric lattice.</div>
+</div>
+</div>
+<p>In <a href="/wiki/Mathematics.html" title="Mathematics">mathematics</a> and <a href="/wiki/Computer_science.html" title="Computer science">computer science</a>, <i>recursion</i> specifies (or constructs) a class of objects or methods (or an object from a certain class) by defining a few very simple base cases or methods (often just one), and then defining rules to break down complex cases into simpler cases.</p>
+<p>For example, the following is a recursive definition of person's ancestors:</p>
+<ul>
+<li>One's parents are one's ancestors (<b>base case</b>);</li>
+<li>The parents of any ancestor are also ancestors of the person under consideration (<b>recursion step</b>).</li>
+</ul>
+<p>It is convenient to think that a recursive definition defines objects in terms of "previously defined" objects of the class to define.</p>
+<p>Definitions such as these are often found in mathematics. For example, the formal definition of <a href="/wiki/Natural_number.html" title="Natural number">natural numbers</a> in set theory is: 0 is a natural number, and each natural number has a successor, which is also a natural number.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Recursion in mathematics</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">1.1</span> <span class="toctext">Recursively defined sets</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.2</span> <span class="toctext">Functional Recursion</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.3</span> <span class="toctext">Recursive Proofs</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Recursion in language</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">2.1</span> <span class="toctext">Recursion in plain English</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.2</span> <span class="toctext">Recursive humour</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Recursion in computer science</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">The recursion theorem</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">4.1</span> <span class="toctext">Proof of uniqueness</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.2</span> <span class="toctext">Proof of existence</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Recursion in mathematics">edit</a>]</div>
+<p><a name="Recursion_in_mathematics" id="Recursion_in_mathematics"></a></p>
+<h2>Recursion in mathematics</h2>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Recursively defined sets">edit</a>]</div>
+<p><a name="Recursively_defined_sets" id="Recursively_defined_sets"></a></p>
+<h3>Recursively defined sets</h3>
+<ul>
+<li>Example: the natural numbers</li>
+</ul>
+<p>The canonical example of a recursively defined set is given by the <a href="/wiki/Natural_numbers.html" title="Natural numbers">natural numbers</a>:</p>
+<dl>
+<dd>0 is in <b>N</b></dd>
+<dd>if <i>n</i> is in <b>N</b>, then <i>n</i> + 1 is in <b>N</b></dd>
+<dd>The set of natural numbers is the smallest set satisfying the previous two properties.</dd>
+</dl>
+<ul>
+<li>Example: The set of true reachable propositions</li>
+</ul>
+<p>Another interesting example is the set of all true "reachable" propositions in an <a href="/wiki/Axiomatic_system.html" title="Axiomatic system">axiomatic system</a>.</p>
+<ul>
+<li>if a proposition is an axiom, it is a true reachable proposition.</li>
+<li>if a proposition can be obtained from true reachable propositions by means of inference rules, it is a true reachable proposition.</li>
+<li>The set of true reachable propositions is the smallest set of reachable propositions satisfying these conditions.</li>
+</ul>
+<p>This set is called 'true reachable propositions' because: in non-constructive approaches to the foundations of mathematics, the set of true propositions is larger than the set recursively constructed from the axioms and rules of inference. See also <a href="/wiki/G%C3%B6del%27s_incompleteness_theorems.html" title="Gödel's incompleteness theorems">Gödel's incompleteness theorems</a>.</p>
+<p>(Note that determining whether a certain object is in a recursively defined set is not an algorithmic task.)</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Functional Recursion">edit</a>]</div>
+<p><a name="Functional_Recursion" id="Functional_Recursion"></a></p>
+<h3>Functional Recursion</h3>
+<p>A <a href="/wiki/Function_%28mathematics%29.html" title="Function (mathematics)">function</a> may be partly defined in terms of itself. A familiar example is the <a href="/wiki/Fibonacci_number.html" title="Fibonacci number">Fibonacci number</a> sequence: <i>F</i>(<i>n</i>) = <i>F</i>(<i>n</i> − 1) + <i>F</i>(<i>n</i> − 2). For such a definition to be useful, it must lead to values which are non-recursively defined, in this case <i>F</i>(0) = 0 and <i>F</i>(1) = 1.</p>
+<p>A famous recursive function is the <a href="/wiki/Ackermann_function.html" title="Ackermann function">Ackermann function</a> which, unlike the Fibonacci sequence, is rather difficult to express without recursion.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Recursive Proofs">edit</a>]</div>
+<p><a name="Recursive_Proofs" id="Recursive_Proofs"></a></p>
+<h3>Recursive Proofs</h3>
+<p>The standard way to define new systems of mathematics or logic is to define objects (such as "true" and "false", or "all natural numbers"), then define operations on these. These are the base cases. After this, all valid computations in the system are defined with rules for assembling these. In this way, if the base cases and rules are all proven to be calculable, then any formula in the mathematical system will also be calculable.</p>
+<p>This sounds unexciting, but this type of proof is the normal way to prove that a calculation is impossible. This can often save a lot of time. For example, this type of proof was used to prove that the area of a circle is not a simple ratio of its diameter, and that <a href="/wiki/Compass_and_straightedge#Angle_trisection.html" title="Compass and straightedge">no angle can be trisected</a> with compass and straightedge -- both puzzles that fascinated the ancients.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Recursion in language">edit</a>]</div>
+<p><a name="Recursion_in_language" id="Recursion_in_language"></a></p>
+<h2>Recursion in language</h2>
+<p>The use of recursion in <a href="/wiki/Linguistics.html" title="Linguistics">linguistics</a>, and the use of recursion in general, dates back to the <a href="/wiki/Ancient_India.html" title="Ancient India">ancient Indian</a> <a href="/wiki/Linguist.html" title="Linguist">linguist</a> <span class="Unicode"><a href="/wiki/P%C4%81%E1%B9%87ini.html" title="Pāṇini">Pāṇini</a></span> in the <a href="/wiki/5th_century_BC.html" title="5th century BC">5th century BC</a>, who made use of recursion in his <a href="/wiki/Grammar.html" title="Grammar">grammar</a> rules of <a href="/wiki/Sanskrit.html" title="Sanskrit">Sanskrit</a>.</p>
+<p>Linguist <a href="/wiki/Noam_Chomsky.html" title="Noam Chomsky">Noam Chomsky</a> theorizes that unlimited extension of a language such as <a href="/wiki/English_language.html" title="English language">English</a> is possible only by the recursive device of embedding sentences in sentences. Thus, a chatty little girl may say, <i>"Dorothy, who met the wicked Witch of the West in Munchkin Land where her wicked Witch sister was killed, liquidated her with a pail of water."</i> Clearly, two simple sentences — <i>"Dorothy met the Wicked Witch of the West in Munchkin Land"</i> and <i>"Her sister was killed in Munchkin Land"</i> — can be embedded in a third sentence, <i>"Dorothy liquidated her with a pail of water,"</i> to obtain a very verbose sentence.</p>
+<p>Here is another, perhaps simpler way to understand recursive processes:</p>
+<ol>
+<li>Are we done yet? If so, return the results. Without such a <i><a href="/wiki/Termination.html" title="Termination">termination</a> condition</i> a recursion would go on forever.</li>
+<li>If not, <i>simplify</i> the problem, solve those simpler problem(s), and assemble the results into a solution for the original problem. Then return that solution.</li>
+</ol>
+<p>A more humorous illustration goes: <i>"In order to understand recursion, one must first understand recursion."</i> Or perhaps more accurate is the following due to <a href="/wiki/Andrew_Plotkin.html" title="Andrew Plotkin">Andrew Plotkin</a>: <i>"If you already know what recursion is, just remember the answer. Otherwise, find someone who is standing closer to <a href="/wiki/Douglas_Hofstadter.html" title="Douglas Hofstadter">Douglas Hofstadter</a> than you are; then ask him or her what recursion is."</i></p>
+<p>Examples of mathematical objects often defined recursively are <a href="/wiki/Function_%28mathematics%29.html" title="Function (mathematics)">functions</a>, <a href="/wiki/Set.html" title="Set">sets</a>, and especially <a href="/wiki/Fractal.html" title="Fractal">fractals</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Recursion in plain English">edit</a>]</div>
+<p><a name="Recursion_in_plain_English" id="Recursion_in_plain_English"></a></p>
+<h3>Recursion in plain English</h3>
+<p><b>Recursion</b> is the process a procedure goes through when one of the steps of the procedure involves rerunning the entire same procedure. A procedure that goes through recursion is said to be <b>recursive</b>. Something is also said to be <b>recursive</b> when it is the result of a recursive procedure.</p>
+<p>To understand recursion, one must recognize the distinction between a procedure and the running of a procedure. A procedure is a set of steps that are to be taken based on a set of rules. The running of a procedure involves actually following the rules and performing the steps. An analogy might be that a procedure is like a menu in that it is the possible steps, while running a procedure is actually choosing the courses for the meal from the menu.</p>
+<p>A procedure is recursive if one of the steps that makes up the procedure calls for a new running of the procedure. Therefore a recursive four course meal would be a meal in which one of the choices of appetizer, salad, entrée, or dessert was an entire meal unto itself. So a recursive meal might be potato skins, baby greens salad, chicken parmesan, and for dessert, a four course meal, consisting of crab cakes, Caesar salad, for an entrée, a four course meal, and chocolate cake for dessert, so on until each of the meals within the meals is completed.</p>
+<p>A recursive procedure must complete every one of its steps. Even if a new running is called in one of its steps, each running must run through the remaining steps. What this means is that even if the salad is an entire four course meal unto itself, you still have to eat your entrée and dessert.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Recursive humour">edit</a>]</div>
+<p><a name="Recursive_humour" id="Recursive_humour"></a></p>
+<h3>Recursive humour</h3>
+<p>A common <a href="/wiki/Geek.html" title="Geek">geeky</a> joke (for example <a  class="external autonumber" title="http://catb.org/~esr/jargon/html/R/recursion.html">[1]</a>) is the following "definition" of recursion.</p>
+<dl>
+<dd><b>Recursion</b>
+<dl>
+<dd>See "<a href="/wiki/Recursion#Recursive_humour.html" title="Recursion">Recursion</a>".</dd>
+</dl>
+</dd>
+</dl>
+<p>This is a parody on references in dictionaries, which in some careless cases may lead to <a href="/wiki/Circular_definition.html" title="Circular definition">circular definitions</a>. Every joke has an element of wisdom, and also an element of misunderstanding. This one is also the second-shortest possible example of an erroneous recursive definition of an object, the error being the absence of the <a href="/wiki/Termination.html" title="Termination">termination</a> condition (or lack of the initial state, if to look at it from an opposite point of view). Newcomers to recursion are often bewildered by its apparent circularity, until they learn to appreciate that a termination condition is key. A more correct version is:</p>
+<dl>
+<dd><b>Recursion</b>
+<dl>
+<dd>If you still don't get it; See: "<a href="/wiki/Recursion#Recursive_humour.html" title="Recursion">Recursion</a>".</dd>
+</dl>
+</dd>
+</dl>
+<p><br />
+Other examples are <a href="/wiki/Recursive_acronym.html" title="Recursive acronym">recursive acronyms</a>, such as <a href="/wiki/GNU.html" title="GNU">GNU</a>, <a href="/wiki/PHP.html" title="PHP">PHP</a> or TTP (<a href="/wiki/Dilbert.html" title="Dilbert">Dilbert</a>; "The TTP Project").</p>
+<p>Another form of recusion humor is frequently found in films or animation, such as this <a  class="external autonumber" title="http://www.post-literate.com/gerpunx/archives/2005/01/prepare_to_lose_your_mind.php">[2]</a>, example.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Recursion in computer science">edit</a>]</div>
+<p><a name="Recursion_in_computer_science" id="Recursion_in_computer_science"></a></p>
+<h2>Recursion in computer science</h2>
+<dl>
+<dd>
+<div class="noprint"><i>Main article: <a href="/wiki/Recursion_%28computer_science%29.html" title="Recursion (computer science)">Recursion (computer science)</a></i></div>
+</dd>
+</dl>
+<p>A common method of simplification is to divide a problem into subproblems of the same type. As a <a href="/wiki/Computer_programming.html" title="Computer programming">computer programming</a> technique, this is called <a href="/wiki/Divide_and_conquer_algorithm.html" title="Divide and conquer algorithm">divide and conquer</a> and is key to the design of many important algorithms, as well as being a fundamental part of <a href="/wiki/Dynamic_programming.html" title="Dynamic programming">dynamic programming</a>.</p>
+<p>Recursion in computer programming is exemplified when a function is defined in terms of itself. One example application of recursion is in <a href="/wiki/Parser.html" title="Parser">parsers</a> for programming languages. The great advantage of recursion is that an infinite set of possible sentences, designs or other data can be defined, parsed or produced by a finite computer program.</p>
+<p><a href="/wiki/Recurrence_relation.html" title="Recurrence relation">Recurrence relations</a> are equations to define one or more sequences recursively. Some specific kinds of recurrence relation can be "solved" to obtain a non-recursive definition.</p>
+<p>A classic example of recursion is the definition of the <a href="/wiki/Factorial.html" title="Factorial">factorial</a> function, given here in <a href="/wiki/Pseudocode.html" title="Pseudocode">pseudocode</a>:</p>
+<pre>
+function factorial(n) 
+{
+  if (n &lt;= 1)
+    return 1;
+  else
+    return n * factorial(n-1);
+}
+</pre>
+<p>The function calls itself recursively on a smaller version of the input (n - 1) and multiplies the result of the recursive call by n, until reaching the <a href="/wiki/Base_case.html" title="Base case">base case</a>, analogously to the mathematical definition of factorial.</p>
+<p>An example of recursive algorithm is procedure that processes (does something with) all the nodes of a <a href="/wiki/Tree_data_structure.html" title="Tree data structure">tree data structure</a>:</p>
+<pre>
+procedure ProcessTree(node)
+{
+  ProcessNode(node);    // perform specific operation with the given node first
+  foreach child_node of node do ProcessTree(child_node);
+}
+</pre>
+<p>To process the whole tree, procedure is called with root node representing the tree as an initial parameter. The procedure calls itself recursively on all child nodes of the given node (i.e. sub-trees of the given tree), until reaching the <a href="/wiki/Base_case.html" title="Base case">base case</a> that is node with no child nodes (i.e. tree having no branches usually called "leaf").</p>
+<p><a href="/wiki/Tree_data_structure.html" title="Tree data structure">Tree data structure</a> itself can be defined recursively (and so destinated for recursive processing) like this:</p>
+<pre>
+struct node
+{
+  child_nodes : list&lt;node&gt;;
+  ...
+}
+</pre>
+<pre>
+struct tree
+{
+  root : node;
+  ...
+}
+</pre>
+<p>Tree is represented by its root node holding a list of child nodes. Each child node again have its list of child nodes (and as such is root node of a sub-tree). "Leaf" with empty list of child nodes is the <a href="/wiki/Base_case.html" title="Base case">base case</a> of node.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: The recursion theorem">edit</a>]</div>
+<p><a name="The_recursion_theorem" id="The_recursion_theorem"></a></p>
+<h2>The recursion theorem</h2>
+<p>In <a href="/wiki/Set_theory.html" title="Set theory">set theory</a>, this is a theorem guaranteeing that recursively defined functions exist. Given a set <span class="texhtml"><i>X</i></span>, an element <span class="texhtml"><i>a</i></span> of <span class="texhtml"><i>X</i></span> and a function <img class='tex' src="http://upload.wikimedia.org/math/4/6/c/46cb3977f9de851d80594f21c7014b33.png" alt="f: X \rightarrow X" />, the theorem states that there is a unique function <img class='tex' src="http://upload.wikimedia.org/math/0/e/2/0e2620a7dd805aa87ebb9aeb2d63d5e2.png" alt="F: N \rightarrow X" /> (where <span class="texhtml"><i>N</i></span> denotes the set of natural numbers) such that</p>
+<dl>
+<dd><span class="texhtml"><i>F</i>(0) = <i>a</i></span></dd>
+<dd><span class="texhtml"><i>F</i>(<i>n</i> + 1) = <i>f</i>(<i>F</i>(<i>n</i>))</span></dd>
+</dl>
+<p>for any natural number <span class="texhtml"><i>n</i></span>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Proof of uniqueness">edit</a>]</div>
+<p><a name="Proof_of_uniqueness" id="Proof_of_uniqueness"></a></p>
+<h3>Proof of uniqueness</h3>
+<p>Take two functions <span class="texhtml"><i>f</i></span> and <span class="texhtml"><i>g</i></span> of domain <span class="texhtml"><i>N</i></span> and codomain <span class="texhtml"><i>A</i></span> such that:</p>
+<dl>
+<dd><span class="texhtml"><i>f</i>(0) = <i>a</i></span></dd>
+<dd><span class="texhtml"><i>g</i>(0) = <i>a</i></span></dd>
+<dd><span class="texhtml"><i>f</i>(<i>n</i> + 1) = <i>F</i>(<i>f</i>(<i>n</i>))</span></dd>
+<dd><span class="texhtml"><i>g</i>(<i>n</i> + 1) = <i>F</i>(<i>g</i>(<i>n</i>))</span></dd>
+</dl>
+<p>where <span class="texhtml"><i>a</i></span> is an element of <span class="texhtml"><i>A</i></span>. We want to prove that <span class="texhtml"><i>f</i> = <i>g</i></span>. Two functions are equal if they:</p>
+<dl>
+<dd><i>i</i>. have equal domains/codomains;</dd>
+<dd><i>ii</i>. have the same graphic.</dd>
+</dl>
+<dl>
+<dd><i>i</i>. Done!</dd>
+<dd><i>ii</i>. <a href="/wiki/Mathematical_induction.html" title="Mathematical induction">Mathematical induction</a>: for all <span class="texhtml"><i>n</i></span> in <span class="texhtml"><i>N</i></span>, <span class="texhtml"><i>f</i>(<i>n</i>) = <i>g</i>(<i>n</i>)</span>? (We shall call this condition, say, <span class="texhtml"><i>E</i><i>q</i>(<i>n</i>))</span>:
+<dl>
+<dd>1.<span class="texhtml"><i>E</i><i>q</i>(0)</span> <a href="/wiki/If_and_only_if.html" title="If and only if">if and only if</a> <span class="texhtml"><i>f</i>(0) = <i>g</i>(0)</span> if and only if <span class="texhtml"><i>a</i> = <i>a</i></span>. Done!</dd>
+<dd>2.Let <span class="texhtml"><i>n</i></span> be an element of <span class="texhtml"><i>N</i></span>. Assuming that <span class="texhtml"><i>E</i><i>q</i>(<i>n</i>)</span> holds, we want to show that <span class="texhtml"><i>E</i><i>q</i>(<i>n</i> + 1)</span> holds as well, which is easy because: <span class="texhtml"><i>f</i>(<i>n</i> + 1) = <i>F</i>(<i>f</i>(<i>n</i>)) = <i>F</i>(<i>g</i>(<i>n</i>)) = <i>g</i>(<i>n</i> + 1)</span>. Done!</dd>
+</dl>
+</dd>
+</dl>
+<p><b>you should consider N union {0} as a domain of F.</b></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Proof of existence">edit</a>]</div>
+<p><a name="Proof_of_existence" id="Proof_of_existence"></a></p>
+<h3>Proof of existence</h3>
+<ul>
+<li>See Hungerford, "Algebra", first chapter on set theory.</li>
+<li>Check out <a  class="external text" title="http://www.apronus.com/provenmath/induction.htm">Recursion Principle at ProvenMath</a>.</li>
+</ul>
+<hr />
+<p>Some common recurrence relations are:</p>
+<table cellspacing="0" cellpadding="0" class="" style="background-color: transparent; width: 100%">
+<tr>
+<td width="" align="left" valign="top" style="padding-left:;">
+<ul>
+<li><a href="/wiki/Factorial.html" title="Factorial">Factorial</a> -- <img class='tex' src="http://upload.wikimedia.org/math/0/a/e/0ae14fdc0d536cde752d07f6ed7db0b6.png" alt="n! = n (n - 1)! = n (n - 1)\cdots 1" /></li>
+<li><a href="/wiki/Fibonacci_numbers.html" title="Fibonacci numbers">Fibonacci numbers</a> -- <span class="texhtml"><i>f</i>(<i>n</i>) = <i>f</i>(<i>n</i> − 1) + <i>f</i>(<i>n</i> − 2)</span></li>
+<li><a href="/wiki/Catalan_number.html" title="Catalan number">Catalan numbers</a> -- <span class="texhtml"><i>C</i><sub>0</sub> = 1</span>, <span class="texhtml"><i>C</i><sub><i>n</i> + 1</sub> = (4<i>n</i> + 2)<i>C</i><sub><i>n</i></sub> / (<i>n</i> + 2)</span></li>
+</ul>
+</td>
+<td width="" align="left" valign="top" style="padding-left:;">
+<ul>
+<li>Computing compound <a href="/wiki/Interest.html" title="Interest">interest</a></li>
+<li>The <a href="/wiki/Tower_of_Hanoi.html" title="Tower of Hanoi">tower of Hanoi</a></li>
+<li><a href="/wiki/Ackermann_function.html" title="Ackermann function">Ackermann function</a></li>
+<li><a href="/wiki/Population_growth_rate.html" title="Population growth rate">Population growth rate</a></li>
+</ul>
+</td>
+</tr>
+</table>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<table cellspacing="0" cellpadding="0" class="" style="background-color: transparent; width: 100%">
+<tr>
+<td width="" align="left" valign="top" style="padding-left:;">
+<ul>
+<li><a href="/wiki/Church-Turing_thesis.html" title="Church-Turing thesis">Church-Turing thesis</a></li>
+<li><a href="/wiki/Continuous_predicate.html" title="Continuous predicate">Continuous predicate</a></li>
+<li><a href="/wiki/Decidable_language.html" title="Decidable language">Decidable language</a></li>
+<li><a href="/wiki/Decidable_set.html" title="Decidable set">Decidable set</a></li>
+<li><a href="/wiki/Fixed_point_combinator.html" title="Fixed point combinator">Fixed point combinator</a></li>
+<li><a href="/wiki/Infinite_loop.html" title="Infinite loop">Infinite loop</a></li>
+<li><a href="/wiki/Infinitism.html" title="Infinitism">Infinitism</a></li>
+</ul>
+</td>
+<td width="" align="left" valign="top" style="padding-left:;">
+<ul>
+<li><a href="/wiki/Iterated_function.html" title="Iterated function">Iterated function</a></li>
+<li><a href="/wiki/Mise_en_abyme.html" title="Mise en abyme">Mise en abyme</a></li>
+<li><a href="/wiki/Primitive_recursive_function.html" title="Primitive recursive function">Primitive recursive function</a></li>
+<li><a href="/wiki/Recursion_%28novel%29.html" title="Recursion (novel)"><i>Recursion</i></a></li>
+<li><a href="/wiki/Recursionism.html" title="Recursionism">Recursionism</a></li>
+<li><a href="/wiki/Recursive_acronym.html" title="Recursive acronym">Recursive acronym</a></li>
+</ul>
+</td>
+<td width="" align="left" valign="top" style="padding-left:;">
+<ul>
+<li><a href="/wiki/Recursive_function.html" title="Recursive function">Recursive function</a></li>
+<li><a href="/wiki/Self-reference.html" title="Self-reference">Self-reference</a></li>
+<li><a href="/wiki/Strange_loop.html" title="Strange loop">Strange loop</a></li>
+<li><a href="/wiki/Tail_recursion.html" title="Tail recursion">Tail recursion</a></li>
+<li><a href="/wiki/Turing_completeness.html" title="Turing completeness">Turing completeness</a></li>
+<li><a href="/wiki/Turtles_all_the_way_down.html" title="Turtles all the way down">Turtles all the way down</a></li>
+<li><a href="/wiki/Viable_System_Model.html" title="Viable System Model">Viable System Model</a></li>
+</ul>
+</td>
+</tr>
+</table>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<ul>
+<li><cite class="book" style="font-style:normal">Johnsonbaugh, Richard (2004). <i>Discrete Mathematics</i>. Prentice Hall. <a  class="internal">ISBN 0-13-117686-2</a>.</cite></li>
+<li><cite class="book" style="font-style:normal">Hofstadter, Douglas (1999). <i>Gödel, Escher, Bach: an Eternal Golden Braid</i>. Basic Books. <a  class="internal">ISBN 0-465-02656-7</a>.</cite></li>
+<li><cite class="book" style="font-style:normal">Shoenfield, Joseph R. (2000). <i>Recursion Theory</i>. A K Peters Ltd. <a  class="internal">ISBN 1-56881-149-7</a>.</cite></li>
+<li><cite class="book" style="font-style:normal">Causey, Robert L. (2001). <i>Logic, Sets, and Recursion</i>. Jones &amp; Bartlett. <a  class="internal">ISBN 0-7637-1695-2</a>.</cite></li>
+<li><cite class="book" style="font-style:normal">Cori, Rene; Lascar, Daniel; Pelletier, Donald H. (2001). <i>Recursion Theory, Godel's Theorems, Set Theory, Model Theory</i>. Oxford University Press. <a  class="internal">ISBN 0-19-850050-5</a>.</cite></li>
+<li><cite class="book" style="font-style:normal">Barwise, Jon; Moss, Lawrence S. (1996). <i>Vicious Circles</i>. Stanford Univ Center for the Study of Language and Information. <a  class="internal">ISBN 0-19-850050-5</a>.</cite> - offers a treatment of <a href="/wiki/Corecursion.html" title="Corecursion">corecursion</a>.</li>
+<li><cite class="book" style="font-style:normal">Rosen, Kenneth H. (2002). <i>Discrete Mathematics and Its Applications</i>. McGraw-Hill College. <a  class="internal">ISBN 0-07-293033-0</a>.</cite></li>
+<li><cite class="book" style="font-style:normal">Cormen, Thomas H., Charles E. Leiserson, Ronald L. Rivest, Clifford Stein (2001). <i>Introduction to Algorithms</i>. Mit Pr. <a  class="internal">ISBN 0-262-03293-7</a>.</cite></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li>"<a  class="external text" title="http://www.freenetpages.co.uk/hp/alan.gauld/tutrecur.htm">Recursion</a>"- tutorial by Alan Gauld</li>
+<li><a  class="external text" title="http://escherdroste.math.leidenuniv.nl/index.php?menu=symmetry&amp;sub=droste">Droste effect</a>, recursive image</li>
+</ul>
+
+<!-- 
+Pre-expand include size: 27810 bytes
+Post-expand include size: 5268 bytes
+Template argument size: 6549 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:25407-0!1!0!default!!en!2 and timestamp 20060909194243 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Algorithms">Algorithms</a></span> | <span dir='ltr'><a  title="Category:Mathematical logic">Mathematical logic</a></span> | <span dir='ltr'><a  title="Category:Theory of computation">Theory of computation</a></span> | <span dir='ltr'><a  title="Category:Data structures">Data structures</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Recursion.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-bg"><a >Български</a></li>
+				<li class="interwiki-ca"><a >Català</a></li>
+				<li class="interwiki-cs"><a >Česky</a></li>
+				<li class="interwiki-da"><a >Dansk</a></li>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-io"><a >Ido</a></li>
+				<li class="interwiki-id"><a >Bahasa Indonesia</a></li>
+				<li class="interwiki-is"><a >Íslenska</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-he"><a >עברית</a></li>
+				<li class="interwiki-lt"><a >Lietuvių</a></li>
+				<li class="interwiki-nl"><a >Nederlands</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+				<li class="interwiki-sl"><a >Slovenščina</a></li>
+				<li class="interwiki-sv"><a >Svenska</a></li>
+				<li class="interwiki-vi"><a >Tiếng Việt</a></li>
+				<li class="interwiki-zh"><a >中文</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 17:38, 7 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv60 in 0.124 secs. --></body></html>

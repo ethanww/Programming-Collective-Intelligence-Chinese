@@ -1,0 +1,438 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Dynamic programming,1940s,1953,Algorithm,Associative array,Big-O notation,Bioinformatics,Bottom-up,CYK algorithm,Call-by-name,Call-by-need" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Dynamic programming - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Dynamic_programming";
+			var wgTitle = "Dynamic programming";
+			var wgArticleId = 125297;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Dynamic programming</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>In <a href="/wiki/Computer_science.html" title="Computer science">computer science</a>, <b>dynamic programming</b> is a method for reducing the runtime of <a href="/wiki/Algorithm.html" title="Algorithm">algorithms</a> exhibiting the properties of <a href="/wiki/Overlapping_subproblem.html" title="Overlapping subproblem">overlapping subproblems</a> and <a href="/wiki/Optimal_substructure.html" title="Optimal substructure">optimal substructure</a>, described below.</p>
+<p>Mathematician <a href="/wiki/Richard_Bellman.html" title="Richard Bellman">Richard Bellman</a> invented <b>dynamic programming</b> in <a href="/wiki/1953.html" title="1953">1953</a>. The field was founded as a systems analysis and engineering topic which is recognized by the <a href="/wiki/IEEE.html" title="IEEE">IEEE</a>.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Examples</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">2.1</span> <span class="toctext">Fibonacci sequence</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.2</span> <span class="toctext">Checkerboard</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Algorithms that use dynamic programming</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">External links</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">References</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Overview">edit</a>]</div>
+<p><a name="Overview" id="Overview"></a></p>
+<h2>Overview</h2>
+<div class="thumb tright">
+<div style="width:202px;"><a  class="internal" title="Figure 1. Finding the shortest path in a graph using optimal substructure; a wavy line indicates a shortest path between the two vertices it connects"><img src="http://upload.wikimedia.org/wikipedia/en/4/42/Shortest_path_optimal_substructure.png" alt="Figure 1. Finding the shortest path in a graph using optimal substructure; a wavy line indicates a shortest path between the two vertices it connects" width="200" height="107" longdesc="/wiki/Image:Shortest_path_optimal_substructure.png" /></a>
+<div class="thumbcaption">
+<div class="magnify" style="float:right"><a  class="internal" title="Enlarge"><img src="/skins-1.5/common/images/magnify-clip.png" width="15" height="11" alt="Enlarge" /></a></div>
+<b>Figure 1.</b> Finding the shortest path in a graph using optimal substructure; a wavy line indicates a shortest path between the two vertices it connects</div>
+</div>
+</div>
+<p><i>Optimal substructure</i> means that optimal solutions of subproblems can be used to find the optimal solutions of the overall problem. For example, the <a href="/wiki/Shortest_path_problem.html" title="Shortest path problem">shortest path</a> to a goal from a vertex in an acyclic <a href="/wiki/Graph_%28mathematics%29.html" title="Graph (mathematics)">graph</a> can be found by first computing the shortest path to the goal from all adjacent vertices, and then using this to pick the best overall path, as shown in Figure 1. In general, we can solve a problem with optimal substructure using a three-step process:</p>
+<ol>
+<li>Break the problem into smaller subproblems.</li>
+<li>Solve these problems optimally using this three-step process recursively.</li>
+<li>Use these optimal solutions to construct an optimal solution for the original problem.</li>
+</ol>
+<p>The subproblems are, themselves, solved by dividing them into sub-subproblems, and so on, until we reach some simple case that is easy to solve.</p>
+<div class="thumb tright">
+<div style="width:110px;"><a  class="internal" title="Figure 2. The subproblem graph for the Fibonacci sequence. That it is not a tree but a DAG indicates overlapping subproblems."><img src="http://upload.wikimedia.org/wikipedia/en/a/af/Fibonacci_dynamic_programming.png" alt="Figure 2. The subproblem graph for the Fibonacci sequence. That it is not a tree but a DAG indicates overlapping subproblems." width="108" height="149" longdesc="/wiki/Image:Fibonacci_dynamic_programming.png" /></a>
+<div class="thumbcaption">
+<div class="magnify" style="float:right"><a  class="internal" title="Enlarge"><img src="/skins-1.5/common/images/magnify-clip.png" width="15" height="11" alt="Enlarge" /></a></div>
+<b>Figure 2.</b> The subproblem graph for the Fibonacci sequence. That it is not a <a href="/wiki/Tree_structure.html" title="Tree structure">tree</a> but a <a href="/wiki/Directed_acyclic_graph.html" title="Directed acyclic graph">DAG</a> indicates overlapping subproblems.</div>
+</div>
+</div>
+<p>To say that a problem has <i>overlapping subproblems</i> is to say that the same subproblems are used to solve many different larger problems. For example, in the <a href="/wiki/Fibonacci_sequence.html" title="Fibonacci sequence">Fibonacci sequence</a>, F<sub>3</sub> = F<sub>1</sub> + F<sub>2</sub> and F<sub>4</sub> = F<sub>2</sub> + F<sub>3</sub> — computing each number involves computing F<sub>2</sub>. Because both F<sub>3</sub> and F<sub>4</sub> are needed to compute F<sub>5</sub>, a naïve approach to computing F<sub>5</sub> may end up computing F<sub>2</sub> twice or more. This applies whenever overlapping subproblems are present: a naïve approach may waste time recomputing optimal solutions to subproblems it has already solved.</p>
+<p>In order to avoid this, we instead save the solutions to problems we have already solved. Then, if we need to solve the same problem later, we can retrieve and reuse our already-computed solution. This approach is called <i><a href="/wiki/Memoization.html" title="Memoization">memoization</a></i> (not <i>memorization</i>, although this term also fits). If we are sure we won't need a particular solution anymore, we can throw it away to save space. In some cases, we can even compute the solutions to subproblems we know that we'll need in advance.</p>
+<p>In summary, dynamic programming makes use of:</p>
+<ul>
+<li><a href="/wiki/Overlapping_subproblem.html" title="Overlapping subproblem">Overlapping subproblems</a></li>
+<li><a href="/wiki/Optimal_substructure.html" title="Optimal substructure">Optimal substructure</a></li>
+<li><a href="/wiki/Memoization.html" title="Memoization">Memoization</a></li>
+</ul>
+<p>Dynamic programming usually takes one of two approaches:</p>
+<ul>
+<li><b><a href="/wiki/Top-down.html" title="Top-down">Top-down approach</a></b>: The problem is broken into subproblems, and these subproblems are solved and the solutions remembered, in case they need to be solved again. This is recursion and memoization combined together.</li>
+<li><b><a href="/wiki/Bottom-up.html" title="Bottom-up">Bottom-up approach</a></b>: All subproblems that might be needed are solved in advance and then used to build up solutions to larger problems. This approach is slightly better in stack space and number of function calls, but it is sometimes not intuitive to figure out all the subproblems needed for solving given problem.</li>
+</ul>
+<p>Originally, the term <i>dynamic programming</i> only applied to solving certain kinds of operational problems outside the area of <a href="/wiki/Computer_science.html" title="Computer science">computer science</a>, just as <i><a href="/wiki/Linear_programming.html" title="Linear programming">linear programming</a></i> did. In this context, it has no particular connection to <a href="/wiki/Programming.html" title="Programming">programming</a> at all; the name is a coincidence. The term was also used in the <a href="/wiki/1940s.html" title="1940s">1940s</a> by <a href="/wiki/Richard_Bellman.html" title="Richard Bellman">Richard Bellman</a>, an American mathematician, to describe the process of solving problems where one needs to find the best decisions one after another.</p>
+<p>Some <a href="/wiki/Programming_language.html" title="Programming language">programming languages</a> can automatically memoize with special extensions. <a  class="external autonumber" title="http://www.apl.jhu.edu/~paulmac/c++-memoization.html">[1]</a> the result of a function call with a particular set of arguments, in order to speed up <a href="/wiki/Call-by-name.html" title="Call-by-name">call-by-name</a> evaluation (this mechanism is referred to as <i><a href="/wiki/Call-by-need.html" title="Call-by-need">call-by-need</a></i>). This is only possible for a function which has no <a href="/wiki/Side-effect_%28computer_science%29.html" title="Side-effect (computer science)">side-effects</a>, which is always true in Haskell but seldom true in imperative languages.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Examples">edit</a>]</div>
+<p><a name="Examples" id="Examples"></a></p>
+<h2>Examples</h2>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Fibonacci sequence">edit</a>]</div>
+<p><a name="Fibonacci_sequence" id="Fibonacci_sequence"></a></p>
+<h3>Fibonacci sequence</h3>
+<p>A naive implementation of a function finding the <i>n</i>th member of the <a href="/wiki/Fibonacci_sequence.html" title="Fibonacci sequence">Fibonacci sequence</a>, based directly on the mathematical definition:</p>
+<pre>
+   <b>function</b> fib(n)
+       <b>if</b> n = 0 <b>or</b> n = 1
+           <b>return</b> n
+       <b>else</b>
+           <b>return</b> fib(n − 1) + fib(n − 2)
+</pre>
+<p>Notice that if we call, say, <code>fib(5)</code>, we produce a call tree that calls the function on the same value many different times:</p>
+<ol>
+<li><code>fib(5)</code></li>
+<li><code>fib(4) + fib(3)</code></li>
+<li><code>(fib(3) + fib(2)) + (fib(2) + fib(1))</code></li>
+<li><code>((fib(2) + fib(1)) + (fib(1) + fib(0))) + ((fib(1) + fib(0)) + fib(1))</code></li>
+<li><code>(((fib(1) + fib(0)) + fib(1)) + (fib(1) + fib(0))) + ((fib(1) + fib(0)) + fib(1))</code></li>
+</ol>
+<p>In particular, <code>fib(2)</code> was calculated twice from scratch. In larger examples, many more values of <code>fib</code>, or <i>subproblems</i>, are recalculated, leading to an exponential time algorithm.</p>
+<p>Now, suppose we have a simple <a href="/wiki/Associative_array.html" title="Associative array">map</a> object, <i>m</i>, which maps each value of <code>fib</code> that has already been calculated to its result, and we modify our function to use it and update it. The resulting function requires only <a href="/wiki/Big-O_notation.html" title="Big-O notation">O</a>(<i>n</i>) time instead of exponential time:</p>
+<pre>
+   <b>var</b> m := <b>map</b>(0 → 1, 1 → 1)
+   <b>function</b> fib(n)
+       <b>if</b> <b>map</b> m <b>does not contain key</b> n
+           m[n] := fib(n − 1) + fib(n − 2)
+       <b>return</b> m[n]
+</pre>
+<p>This technique of saving values that have already been calculated is called <i><a href="/wiki/Memoization.html" title="Memoization">memoization</a></i>; this is the top-down approach, since we first break the problem into subproblems and then calculate and store values.</p>
+<p>In the <b>bottom-up</b> approach we calculate the smaller values of <code>fib</code> first, then build larger values from them. This method also uses linear (O(<i>n</i>)) time since it contains a loop that repeats n − 1 times:</p>
+<pre>
+   <b>function</b> fib(n)
+       <b>var</b> previousFib := 0, currentFib := 1
+       <b>repeat</b> n − 1 <b>times</b>
+           <b>var</b> newFib := previousFib + currentFib
+           previousFib := currentFib
+           currentFib  := newFib
+       <b>return</b> currentFib
+</pre>
+<p>In both these examples, we only calculate <code>fib(2)</code> one time, and then use it to calculate both <code>fib(4)</code> and <code>fib(3)</code>, instead of computing it every time either of them is evaluated.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Checkerboard">edit</a>]</div>
+<p><a name="Checkerboard" id="Checkerboard"></a></p>
+<h3>Checkerboard</h3>
+<p>Consider a checkerboard with <i>n</i> × <i>n</i> squares and a cost-function <i>c</i>(<i>i</i>, <i>j</i>) which returns a cost associated with square <i>i</i>,<i>j</i> (<i>i</i> being the row, <i>j</i> being the column). For instance (on a 5 × 5 checkerboard),</p>
+<pre>
+  +---+---+---+---+---+
+5 | 6 | 7 | 4 | 7 | 8 |
+  +---|---|---|---|---+
+4 | 7 | 6 | 1 | 1 | 4 |
+  +---|---|---|---|---+
+3 | 3 | 5 | 7 | 8 | 2 |
+  +---|---|---|---|---+
+2 | 2 | 6 | 7 | 0 | 2 |
+  +---|---|---|---|---+
+1 | 7 | 3 | 5 | 6 | 1 |
+  +---+---+---+---+---+
+    1   2   3   4   5
+</pre>
+<p>Thus <i>c</i>(1, 3) = 5</p>
+<p>Let us say you had a checker that could start at any square on the first rank and you wanted to know the shortest path (sum of the costs of the visited squares are at a minimum) to get to the last rank, assuming the checker could move only forward or diagonally left or right forward. That is, a checker on (1,3) can move to (2,2), (2,3) or (2,4).</p>
+<pre>
+  +---+---+---+---+---+
+5 |   |   |   |   |   |
+  +---|---|---|---|---+
+4 |   |   |   |   |   |
+  +---|---|---|---|---+
+3 |   |   |   |   |   |
+  +---|---|---|---|---+
+2 |   | x | x | x |   |
+  +---|---|---|---|---+
+1 |   |   | O |   |   |
+  +---+---+---+---+---+
+    1   2   3   4   5
+</pre>
+<p>This problem exhibits <b>optimal substructure</b>. That is, the solution to the entire problem relies on solutions to subproblems. Let us define a function <i>q</i>(<i>i</i>, <i>j</i>) as</p>
+<dl>
+<dd><i>q</i>(<i>i</i>, <i>j</i>) = the minimum cost to reach square (<i>i</i>, <i>j</i>)</dd>
+</dl>
+<p>If we can find the values of this function for all the squares at rank <i>n</i>, we pick the minimum and follow that path backwards to get the shortest path.</p>
+<p>It is easy to see that <i>q</i>(<i>i</i>, <i>j</i>) is equal to the minimum cost to get to any of the three squares below it (since those are the only squares that can reach it) plus <i>c</i>(<i>i</i>, <i>j</i>). For instance:</p>
+<pre>
+  +---+---+---+---+---+
+5 |   |   |   |   |   |
+  +---|---|---|---|---+
+4 |   |   | A |   |   |
+  +---|---|---|---|---+
+3 |   | B | C | D |   |
+  +---|---|---|---|---+
+2 |   |   |   |   |   |
+  +---|---|---|---|---+
+1 |   |   |   |   |   |
+  +---+---+---+---+---+
+    1   2   3   4   5
+</pre>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/8/9/4/89461fd39903e1c475b6a48710e03708.png" alt="q(A) = \min(q(B),\;q(C),\;q(D))\;+\;c(A)" /></dd>
+</dl>
+<p>Now, let us define <i>q</i>(<i>i</i>, <i>j</i>) in little more general terms:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/5/c/e/5cecce3fa3000425be493a434df8021d.png" alt="q(i,j)=\left\{\begin{matrix} \infty &amp; j &lt; 1 \mbox{ or }j &gt; n \\ c(i, j) &amp; i = 1 \\ \min(q(i-1, j-1), q(i-1, j), q(i-1, j+1)) + c(i,j) &amp; \mbox{otherwise}\end{matrix}\right." /></dd>
+</dl>
+<p>This equation is pretty straightforward. The first line is simply there to make the recursive property simpler (when dealing with the edges, so we need only one recursion). The second line says what happens in the first rank, so we have something to start with. The third line, the recursion, is the important part. It is basically the same as the A,B,C,D example. From this definition we can make a straightforward recursive code for <i>q</i>(<i>i</i>, <i>j</i>). In the following pseudocode, <i>n</i> is the size of the board, <code>c(i, j)</code> is the cost-function, and <code>min()</code> returns the minimum of a number of values:</p>
+<pre>
+<b>function</b> minCost(i, j)
+    <b>if</b> j &lt; 1 <b>or</b> j &gt; n
+        <b>return</b> infinity
+    <b>else if</b> i = 1
+        <b>return</b> c(i, j)
+    <b>else</b>    
+        <b>return</b> <b>min</b>( minCost(i-1, j-1), minCost(i-1, j), minCost(i-1, j+1) ) + c(i, j)
+</pre>
+<p>It should be noted that this function just computes the path-cost, not the actual path. We will get to the path soon. This, like the Fibonacci-numbers example, is horribly slow since it spends mountains of time recomputing the same shortest paths over and over. However, we can compute it much faster in a bottom up-fashion if we use a two-dimensional array <code>q[i, j]</code> instead of a function. Why do we do that? Simply because when using a function we recompute the same path over and over, and we can choose what values to compute first.</p>
+<p>We also need to know what the actual path is. The path problem we can solve using another array <code>p[i, j]</code>, a <i>predecessor array</i>. This array basically says where paths come from. Consider the following code:</p>
+<pre>
+ <b>function</b> computeShortestPathArrays()
+     <b>for</b> x <b>from</b> 1 <b>to</b> n
+         q[1, x] := c(1, x)
+     <b>for</b> y <b>from</b> 1 <b>to</b> n
+         q[y, 0]     := infinity
+         q[y, n + 1] := infinity
+     <b>for</b> y <b>from</b> 2 <b>to</b> n
+         <b>for</b> x <b>from</b> 1 <b>to</b> n
+             m := min(q[y-1, x-1], q[y-1, x], q[y-1, x+1])
+             q[y, x] := m + c(y, x) 
+             <b>if</b> m = q[y-1, x-1]
+                 p[y, x] := -1
+             <b>else if</b> m = q[y-1, x]
+                 p[y, x] :=  0
+             <b>else</b>
+                 p[y, x] :=  1
+</pre>
+<p>Now the rest is a simple matter of finding the minimum and printing it.</p>
+<pre>
+ <b>function</b> computeShortestPath()
+     computeShortestPathArrays()
+     minIndex := 1
+     min := q[n, 1] 
+     <b>for</b> i <b>from</b> 2 <b>to</b> n 
+         <b>if</b> q[n, i] &lt; min
+             minIndex := i
+             min := q[n, i]
+     printPath(n, minIndex)
+</pre>
+<pre>
+ <b>function</b> printPath(y, x)
+     <b>print</b>(x)
+     <b>print</b>("&lt;-")
+     <b>if</b> y = 2
+         <b>print</b>(x + p[y, x])
+     <b>else</b>
+         printPath(y-1, x + p[y, x])
+</pre>
+<p><br /></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Algorithms that use dynamic programming">edit</a>]</div>
+<p><a name="Algorithms_that_use_dynamic_programming" id="Algorithms_that_use_dynamic_programming"></a></p>
+<h2>Algorithms that use dynamic programming</h2>
+<ul>
+<li>Many <a href="/wiki/String_%28computer_science%29.html" title="String (computer science)">string</a> algorithms including <a href="/wiki/Longest_common_subsequence_problem.html" title="Longest common subsequence problem">longest common subsequence</a></li>
+<li>The <a href="/wiki/CYK_algorithm.html" title="CYK algorithm">Cocke-Younger-Kasami (CYK) algorithm</a> which determines whether and how a given string can be generated by a given <a href="/wiki/Context-free_grammar.html" title="Context-free grammar">context-free grammar</a></li>
+<li>The use of <a href="/wiki/Transposition_table.html" title="Transposition table">transposition tables</a> and <a  class="new" title="Refutation table">refutation tables</a> in <a href="/wiki/Computer_chess.html" title="Computer chess">computer chess</a></li>
+<li>The <a href="/wiki/Viterbi_algorithm.html" title="Viterbi algorithm">Viterbi algorithm</a></li>
+<li>The <a href="/wiki/Earley_algorithm.html" title="Earley algorithm">Earley algorithm</a></li>
+<li>The <a href="/wiki/Needleman-Wunsch_algorithm.html" title="Needleman-Wunsch algorithm">Needleman-Wunsch</a> and other <a href="/wiki/Sequence_alignment.html" title="Sequence alignment">sequence alignment</a> algorithms used in <a href="/wiki/Bioinformatics.html" title="Bioinformatics">bioinformatics</a></li>
+<li><a href="/wiki/Levenshtein_distance.html" title="Levenshtein distance">Levenshtein distance</a> (edit distance)</li>
+<li><a href="/wiki/Floyd-Warshall_algorithm.html" title="Floyd-Warshall algorithm">Floyd's All-Pairs shortest path algorithm</a></li>
+<li>Optimizing the order for <a href="/wiki/Chain_matrix_multiplication.html" title="Chain matrix multiplication">chain matrix multiplication</a></li>
+<li><a href="/wiki/Subset_sum.html" title="Subset sum">subset sum</a> algorithm</li>
+<li><a href="/wiki/Knapsack_problem.html" title="Knapsack problem">knapsack problem</a></li>
+<li>The <a href="/wiki/Dynamic_time_warping.html" title="Dynamic time warping">dynamic time warping</a> algorithm for computing the global distance between two time series</li>
+<li><a href="/wiki/De_Boor_algorithm.html" title="De Boor algorithm">De Boor algorithm</a> for evaluating B-spline curves.</li>
+<li><a href="/wiki/Duckworth-Lewis_method.html" title="Duckworth-Lewis method">Duckworth-Lewis method</a> for resolving the problem when games of cricket are interrupted.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Markov_Decision_Process.html" title="Markov Decision Process">Markov Decision Process</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li>David B. Wagner. <a  class="external text" title="http://citeseer.ist.psu.edu/268391.html">Dynamic Programming</a>. A 1995 introductory article on dynamic programming.</li>
+<li><a  class="external text" title="http://www.cse.ohio-state.edu/~gurari/course/cis680/cis680Ch21.html">Ohio State University: CIS 680: class notes on dynamic programming</a>, by Eitan M. Gurari</li>
+<li><a  class="external text" title="http://mat.gsia.cmu.edu/classes/dynamic/dynamic.html">A Tutorial on Dynamic programming</a></li>
+<li><a  class="external text" title="http://www.csse.monash.edu.au/~lloyd/tildeAlgDS/Dynamic">More DP Notes</a></li>
+<li><a  class="external text" title="http://www.algorithmist.com/index.php/Dynamic_Programming">Algorithmist's Dynamic Programming</a> Contains more examples of Dynamic Programming.</li>
+<li>King, Ian, 2002 (1987), "<a  class="external text" title="http://www.business.auckland.ac.nz/Departments/econ/workingpapers/full/Text230.pdf">A Simple Introduction to Dynamic Programming in Macroeconomic Models.</a>" An introduction to dynamic programming as an important tool in economic theory.</li>
+<li><a  class="external text" title="http://www.topcoder.com/tc?module=Static&amp;d1=tutorials&amp;d2=dynProg">Dynamic Programming: from novice to advanced</a> A TopCoder.com article by Dumitru on Dynamic Programming</li>
+<li>Adda and Cooper, <a  class="external text" title="http://www.eco.utexas.edu/~cooper/dynprog/dynprog1.html">Dynamic Economics</a>. An accessible introduction to dynamic programing in economics. Their website contains sample programs.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<ul>
+<li><a href="/wiki/Thomas_H._Cormen.html" title="Thomas H. Cormen">Thomas H. Cormen</a>, <a href="/wiki/Charles_E._Leiserson.html" title="Charles E. Leiserson">Charles E. Leiserson</a>, <a href="/wiki/Ronald_L._Rivest.html" title="Ronald L. Rivest">Ronald L. Rivest</a>, and <a href="/wiki/Clifford_Stein.html" title="Clifford Stein">Clifford Stein</a>, 2001. <i><a href="/wiki/Introduction_to_Algorithms.html" title="Introduction to Algorithms">Introduction to Algorithms</a></i>, 2nd ed. MIT Press &amp; McGraw-Hill. <a  class="internal">ISBN 0-262-03293-7</a>. Especially chpt. 15: 323–69.</li>
+<li><a href="/wiki/Nancy_Stokey.html" title="Nancy Stokey">Nancy Stokey</a>, and <a href="/wiki/Robert_E._Lucas.html" title="Robert E. Lucas">Robert E. Lucas</a>, with <a href="/wiki/Edward_Prescott.html" title="Edward Prescott">Edward Prescott</a>, 1989. <i>Recursive Methods in Economic Dynamics</i>. Harvard Univ. Press.</li>
+<li><a  class="new" title="Dimitri P. Bertsekas">Dimitri P. Bertsekas</a>, 2000. <i>Dynamic Programming and optimal Control</i>, 2nd ed. Athena Scientific. <a  class="internal">ISBN 1-886529-09-4</a>. Vols. 1 and 2.</li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:125297-0!1!0!default!!en!2 and timestamp 20060906011051 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:Optimization algorithms">Optimization algorithms</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Dynamic_programming.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-cs"><a >Česky</a></li>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-ko"><a >한국어</a></li>
+				<li class="interwiki-he"><a >עברית</a></li>
+				<li class="interwiki-lt"><a >Lietuvių</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+				<li class="interwiki-sl"><a >Slovenščina</a></li>
+				<li class="interwiki-sr"><a >Српски / Srpski</a></li>
+				<li class="interwiki-sv"><a >Svenska</a></li>
+				<li class="interwiki-vi"><a >Tiếng Việt</a></li>
+				<li class="interwiki-uk"><a >Українська</a></li>
+				<li class="interwiki-zh"><a >中文</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 00:05, 30 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv54 in 0.071 secs. --></body></html>

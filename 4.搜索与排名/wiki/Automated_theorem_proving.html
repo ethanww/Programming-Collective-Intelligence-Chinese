@@ -1,0 +1,301 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Automated theorem proving,1999,2001,2004,ACL2 theorem prover,AMD,Academic Press,Argonne National Laboratory,Artificial intelligence,Automated reasoning,Binary decision diagram" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Automated theorem proving - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Automated_theorem_proving";
+			var wgTitle = "Automated theorem proving";
+			var wgArticleId = 2546;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Automated theorem proving</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p><b>Automated theorem proving</b> (ATP), currently the most well-developed subfield of <i><a href="/wiki/Automated_reasoning.html" title="Automated reasoning">automated reasoning</a></i> (AR), is the <a href="/wiki/Mathematical_proof.html" title="Mathematical proof">proving</a> of mathematical <a href="/wiki/Theorem.html" title="Theorem">theorems</a> by a computer program. Depending on the underlying logic, the problem of deciding the validity of a theorem varies from trivial to impossible. For the frequent case of <a href="/wiki/Propositional_logic.html" title="Propositional logic">propositional logic</a>, the problem is decidable but <a href="/wiki/NP-complete.html" title="NP-complete">NP-complete</a>, and hence only exponential-time algorithms are believed to exist for general proof tasks. For <a href="/wiki/First-order_logic.html" title="First-order logic">first-order logic</a>, identifying theorems is <a href="/wiki/Recursively_enumerable.html" title="Recursively enumerable">recursively enumerable</a>, i.e., given unbounded resources, any valid theorem can eventually be proven. Invalid statements, i.e. formulas that are <i>not</i> entailed by a given theory, cannot always be recognized. In these cases, a first-order theorem prover may fail to terminate while searching for a proof. Despite these theoretical limits, practical theorem provers can solve many hard problems in these logics.</p>
+<p>A simpler, but related problem is <a  class="new" title="Proof verification">proof verification</a>, where an existing proof for a theorem is certified valid. For this, it is generally required that each individual proof step can be verified by a <a href="/wiki/Primitive_recursive_function.html" title="Primitive recursive function">primitive recursive function</a> or program, and hence the problem is always decidable.</p>
+<p><i>Interactive theorem provers</i> require a human user to give hints to the system. Depending on the degree of automation, the prover can essentially be reduced to a proof checker, with the user providing the proof in a formal way, or significant proof tasks can be performed automatically. Interactive provers are used for a variety of tasks, but even fully automatic systems have by now proven a number of interesting and hard theorems, including some that have eluded human mathematicians for a long time. However, these successes are sporadic, and work on hard problems usually requires a proficient user.</p>
+<p>Another distinction is sometimes drawn between theorem proving and other techniques, where a process is considered to be theorem proving if it consists of a traditional proof, starting with axioms and producing new inference steps using rules of inference. Other techniques would include <a href="/wiki/Model_checking.html" title="Model checking">model checking</a>, which is equivalent to brute-force enumeration of many possible states (although the actual implementation of model checkers requires much cleverness, and does not simply reduce to brute force). There are hybrid theorem proving systems which use model checking as an inference rule. There are also programs which were written to prove a particular theorem, with a (usually informal) proof that if the program finishes with a certain result, then the theorem is true. A good example of this was the machine-aided proof of the <a href="/wiki/Four_color_theorem.html" title="Four color theorem">four color theorem</a>, which was very controversial as the first claimed mathematical proof which was essentially impossible to verify by humans due to the enormous size of the program's calculation (such proofs are called non-surveyable proofs). Another example would be the proof that the game <a href="/wiki/Connect_Four.html" title="Connect Four">Connect Four</a> is a win for the first player.</p>
+<p>Commercial use of automated theorem proving is mostly concentrated in integrated circuit design and verification. Since the <a href="/wiki/Pentium_FDIV_bug.html" title="Pentium FDIV bug">Pentium FDIV bug</a>, the complicated <a href="/wiki/Floating_point_unit.html" title="Floating point unit">floating point units</a> of modern microprocessors have been designed with extra scrutiny. In the latest processors from <a href="/wiki/AMD.html" title="AMD">AMD</a>, <a href="/wiki/Intel.html" title="Intel">Intel</a>, and others, automated theorem proving has been used to verify that division and other operations are correct.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">First-order theorem proving</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Popular techniques</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Available implementations</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Important people</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">References (books)</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: First-order theorem proving">edit</a>]</div>
+<p><a name="First-order_theorem_proving" id="First-order_theorem_proving"></a></p>
+<h2>First-order theorem proving</h2>
+<p><a href="/wiki/First-order_logic.html" title="First-order logic">First-order</a> theorem proving is one of the most mature subfields of automated theorem proving. The logic is expressive enough to allow the specification of arbitrary problems, often in a reasonably natural and intuitive way. On the other hand, it is still semi-decidable, and a number of sound and complete calculi have been developed, enabling <i>fully</i> automated systems. The quality of implemented system has benefited by the existence of a large library of standard benchmark examples (the <a  class="new" title="TPTP">TPTP</a>), as well as by the <a href="/wiki/Conference_on_Automated_Deduction.html" title="Conference on Automated Deduction">CADE</a> ATP System Competition (<a  class="external text" title="http://www.cs.miami.edu/~tptp/CASC">CASC</a>), a yearly competition of first-order systems for many important classes of first-order problems.</p>
+<p>Some important systems (all have won at least one CASC competition division) are listed below.</p>
+<ul>
+<li><a href="/wiki/E_equational_theorem_prover.html" title="E equational theorem prover">E</a> is a high-performance prover built on a <a  class="new" title="Purely equational calculus">purely equational calculus</a>, developed primarily in the automated reasoning group of <a href="/wiki/Technical_University_of_Munich.html" title="Technical University of Munich">Technical University of Munich</a>.</li>
+<li><a href="/wiki/Otter_theorem_prover.html" title="Otter theorem prover">Otter</a>, developed at the <a href="/wiki/Argonne_National_Laboratory.html" title="Argonne National Laboratory">Argonne National Laboratory</a>, is the first widely used high-performance theorem prover. It is based on <a href="/wiki/First-order_resolution.html" title="First-order resolution">first-order resolution</a> and <a  class="new" title="Paramodulation">paramodulation</a>.</li>
+<li><a  class="new" title="SETHEO">SETHEO</a> is a high-performance system based on the goal-directed <a href="/wiki/Model_elimination.html" title="Model elimination">model elimination</a> calculus. It is developed in the automated reasoning group of <a href="/wiki/Technical_University_of_Munich.html" title="Technical University of Munich">Technical University of Munich</a>. E and SETHEO have been combined (with other systems) in the composite theorem prover E-SETHEO.</li>
+<li><a href="/wiki/Vampire_theorem_prover.html" title="Vampire theorem prover">Vampire</a> is developed and implemented at <a  class="external text" title="http://www.manchester.ac.uk/">Manchester University</a> by <a  class="external text" title="http://www.cs.man.ac.uk/~voronkov/">Andrei Voronkov</a>, formerly together with <a  class="external text" title="http://www.freewebs.com/riazanov/">Alexandre Riazanov</a>. It has won the "world cup for theorem provers" (the CADE ATP System Competition) in the most prestigious CNF (MIX) division for seven years (1999, 2001 - 2006).</li>
+<li><a  class="new" title="Waldmeister">Waldmeister</a> is a specialized system for unit-equational first-order logic. It has won the CASC UEQ division for the last ten years (1997-2006).</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Popular techniques">edit</a>]</div>
+<p><a name="Popular_techniques" id="Popular_techniques"></a></p>
+<h2>Popular techniques</h2>
+<ul>
+<li><a href="/wiki/First-order_resolution.html" title="First-order resolution">First-order resolution</a> with <a href="/wiki/Unification.html" title="Unification">unification</a></li>
+<li><a href="/wiki/Lean_theorem_prover.html" title="Lean theorem prover">Lean theorem proving</a></li>
+<li><a href="/wiki/Model_elimination.html" title="Model elimination">Model elimination</a></li>
+<li><a href="/wiki/Method_of_analytic_tableaux.html" title="Method of analytic tableaux">Method of analytic tableaux</a></li>
+<li><a href="/wiki/Superposition_calculus.html" title="Superposition calculus">Superposition</a> and <a href="/wiki/Term_rewriting.html" title="Term rewriting">term rewriting</a></li>
+<li><a href="/wiki/Model_checking.html" title="Model checking">Model checking</a></li>
+<li><a href="/wiki/Mathematical_induction.html" title="Mathematical induction">Mathematical induction</a></li>
+<li><a href="/wiki/Binary_decision_diagram.html" title="Binary decision diagram">Binary decision diagrams</a></li>
+<li><a href="/wiki/DPLL_algorithm.html" title="DPLL algorithm">DPLL</a></li>
+<li><a  class="new" title="Higher-order unification">Higher-order unification</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Available implementations">edit</a>]</div>
+<p><a name="Available_implementations" id="Available_implementations"></a></p>
+<h2>Available implementations</h2>
+<ul>
+<li><a href="/wiki/ACL2_theorem_prover.html" title="ACL2 theorem prover">ACL2</a></li>
+<li><a href="/wiki/Carine_theorem_prover.html" title="Carine theorem prover">Carine</a></li>
+<li><a href="/wiki/Coq.html" title="Coq">Coq</a></li>
+<li><a href="/wiki/CVC_Lite_theorem_prover.html" title="CVC Lite theorem prover">CVC Lite</a></li>
+<li><a href="/wiki/E_equational_theorem_prover.html" title="E equational theorem prover">E</a></li>
+<li><a href="/wiki/Isabelle_theorem_prover.html" title="Isabelle theorem prover">Isabelle</a></li>
+<li><a href="/wiki/Gandalf_theorem_prover.html" title="Gandalf theorem prover">Gandalf</a></li>
+<li><a href="/wiki/HOL_theorem_prover.html" title="HOL theorem prover">HOL</a></li>
+<li><a href="/wiki/HOL_Light_theorem_prover.html" title="HOL Light theorem prover">HOL Light</a></li>
+<li><a  class="external text" title="http://www.informatik.uni-augsburg.de/lehrstuehle/swt/se/kiv/">KIV</a></li>
+<li><a href="/wiki/LCF_theorem_prover.html" title="LCF theorem prover">LCF</a></li>
+<li><a  class="external text" title="http://www.irit.fr/ACTIVITES/LILaC/Lotrec/">LoTREC</a></li>
+<li><a  class="external text" title="http://metaprl.org/">MetaPRL</a></li>
+<li><a href="/wiki/Mizar_system.html" title="Mizar system">Mizar</a></li>
+<li><a href="/wiki/NuPRL.html" title="NuPRL">NuPRL</a></li>
+<li><a href="/wiki/Otter_theorem_prover.html" title="Otter theorem prover">Otter</a></li>
+<li><a href="/wiki/Paradox_theorem_prover.html" title="Paradox theorem prover">Paradox</a></li>
+<li><a href="/wiki/PhoX.html" title="PhoX">PhoX</a></li>
+<li><a  class="external text" title="http://www.prover.com/products/ppi/">Prover Plug-In</a></li>
+<li><a href="/wiki/Prototype_Verification_System.html" title="Prototype Verification System">PVS</a></li>
+<li><a  class="new" title="Simplify theorem prover">Simplify</a></li>
+<li><a href="/wiki/SPARK_programming_language.html" title="SPARK programming language">SPARK programming language</a></li>
+<li><a  class="new" title="SPASS theorem prover">SPASS</a></li>
+<li><a href="/wiki/Tau_theorem_prover.html" title="Tau theorem prover">Tau</a></li>
+<li><a href="/wiki/TPS_%28Theorem_Proving_System%29.html" title="TPS (Theorem Proving System)">TPS</a></li>
+<li><a href="/wiki/Twelf.html" title="Twelf">Twelf</a></li>
+<li><a href="/wiki/Vampire_theorem_prover.html" title="Vampire theorem prover">Vampire</a></li>
+<li><a  class="new" title="Waldmeister theorem prover">Waldmeister</a></li>
+</ul>
+<p>You can find information on some of these theorem provers and others at <a  class="external free" title="http://www.tptp.org/CASC/J2/SystemDescriptions.html">http://www.tptp.org/CASC/J2/SystemDescriptions.html</a>, or the <a  class="external text" title="http://www.qpq.org">QPQ website</a>. The TPTP library of test problems, suitable for testing first-order theorem provers, is available at <a  class="external free" title="http://www.tptp.org">http://www.tptp.org</a>, and solutions from many of these provers for TPTP problems are in the TSTP solution library, available at <a  class="external free" title="http://www.tptp.org/TSTP">http://www.tptp.org/TSTP</a> .</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Important people">edit</a>]</div>
+<p><a name="Important_people" id="Important_people"></a></p>
+<h2>Important people</h2>
+<ul>
+<li><a  class="new" title="Leo Bachmair">Leo Bachmair</a>, co-developer of the <a href="/wiki/Superposition_calculus.html" title="Superposition calculus">superposition calculus</a>.</li>
+<li><a href="/wiki/Woody_Bledsoe.html" title="Woody Bledsoe">Woody Bledsoe</a>, <a href="/wiki/Artificial_intelligence.html" title="Artificial intelligence">artificial intelligence</a> pioneer.</li>
+<li><a href="/wiki/Robert_S._Boyer.html" title="Robert S. Boyer">Robert S. Boyer</a>, co-author of the Boyer-Moore theorem prover, co-recipient of the <a href="/wiki/Herbrand_Award.html" title="Herbrand Award">Herbrand Award</a> <a href="/wiki/1999.html" title="1999">1999</a>.</li>
+<li><a  class="external text" title="http://www-unix.mcs.anl.gov/~mccune/">William McCune</a> Argonne National Laboratory, author of Otter, the first high-performance theorem prover. Many important papers, recipient of the Herbrand Award 2000.</li>
+<li><a  class="new" title="Robert Constable">Robert Constable</a>, Cornell University. Important contributions to type theory, NuPRL.</li>
+<li><a  class="external text" title="http://www.cs.nyu.edu/cs/faculty/davism/">Martin Davis</a>, author of the "Handbook of Artificial Reasoning", co-inventor of the <a href="/wiki/DPLL_algorithm.html" title="DPLL algorithm">DPLL algorithm</a>, recipient of the Herbrand Award 2005.</li>
+<li><a  class="external text" title="http://www.fitelson.org/">Branden Fitelson</a> University of California at Berkeley. Work in shortest axiomatic bases for logic systems.</li>
+<li><a  class="new" title="Harald Ganzinger">Harald Ganzinger</a>, co-developer of the superposition calculus, head of the MPI Saarbrücken, recipient of the <a href="/wiki/Herbrand_Award.html" title="Herbrand Award">Herbrand Award</a> <a href="/wiki/2004.html" title="2004">2004</a> (posthumous).</li>
+<li><a  class="new" title="Michael Genesereth">Michael Genesereth</a></li>
+<li><a href="/wiki/Michael_J._C._Gordon.html" title="Michael J. C. Gordon">Michael J. C. Gordon</a> led the development of the HOL theorem prover.</li>
+<li><a  class="external text" title="http://www.cs.duke.edu/~dwl/">Donald W. Loveland</a> Duke University. Author, co-developer of the DPLL-procedure, developer of <a href="/wiki/Model_elimination.html" title="Model elimination">model elimination</a>, recipient of the <a href="/wiki/Herbrand_Award.html" title="Herbrand Award">Herbrand Award</a> <a href="/wiki/2001.html" title="2001">2001</a>.</li>
+<li><a  class="new" title="Sergei Maslov">Sergei Maslov</a></li>
+<li>Norman Megill, maintainer of <a  class="external text" title="http://www.metamath.org">metamath.org</a>, an online database of automatically verified proofs.</li>
+<li><a href="/wiki/J_Strother_Moore.html" title="J Strother Moore">J Strother Moore</a>, co-author of the Boyer-Moore theorem prover, co-recipient of the Herbrand Award 1999.</li>
+<li><a  class="new" title="Robert Nieuwenhuis">Robert Nieuwenhuis</a> University of Barcelona. Co-developer of the superposition calculus.</li>
+<li><a  class="new" title="Tobias Nipkow">Tobias Nipkow</a> <a href="/wiki/Technical_University_of_Munich.html" title="Technical University of Munich">Technical University of Munich</a>, contributions to (higher-order) rewriting, co-developer of the <a href="/wiki/Isabelle_theorem_prover.html" title="Isabelle theorem prover">Isabelle</a>, proof assistant</li>
+<li><a href="/wiki/Ross_Overbeek.html" title="Ross Overbeek">Ross Overbeek</a> Argonne National Laboratory. Founder of <a  class="external text" title="http://theseed.uchicago.edu/FIG/Html/FIG.html">The Fellowship for Interpretation of Genomes</a></li>
+<li><a href="/wiki/Lawrence_C._Paulson.html" title="Lawrence C. Paulson">Lawrence C. Paulson</a> <a href="/wiki/University_of_Cambridge.html" title="University of Cambridge">University of Cambridge</a>, work on higher-order logic system, co-developer of the Isabelle proof assistant</li>
+<li><a  class="new" title="David A. Plaisted">David A. Plaisted</a> <a href="/wiki/University_of_North_Carolina_at_Chapel_Hill.html" title="University of North Carolina at Chapel Hill">University of North Carolina at Chapel Hill</a>. Complexity results, contributions to <a href="/wiki/Rewriting.html" title="Rewriting">rewriting</a> and <a href="/wiki/Knuth-Bendix_completion_algorithm.html" title="Knuth-Bendix completion algorithm">completion</a>, instance-based theorem proving.</li>
+<li><a  class="external text" title="http://www.csl.sri.com/users/rushby/">John Rushby</a> Program Director - <a href="/wiki/SRI_International.html" title="SRI International">SRI International</a></li>
+<li><a  class="new" title="John Alan Robinson (Computer Scientist)">J. Alan Robinson</a> Syracuse University. Developed original resolution and unification based first order theorem proving, co-editor of the "Handbook of Automated Reasoning", recipient of the Herbrand Award 1996</li>
+<li><a  class="new" title="Natarajan Shankar">Natarajan Shankar</a> <a href="/wiki/SRI_International.html" title="SRI International">SRI International</a>, work on decision procedures, <i>little engines of proof</i>, co-developer of <a href="/wiki/Prototype_Verification_System.html" title="Prototype Verification System">PVS</a>.</li>
+<li><a  class="new" title="Mark Stickel">Mark Stickel</a> <a href="/wiki/SRI.html" title="SRI">SRI</a>. Recipient of the Herbrand Award 2002.</li>
+<li><a  class="external text" title="http://www.cs.miami.edu/~geoff/">Geoff Sutcliffe</a> University of Miami. Maintainer of the TPTP collection, an organizer of the CADE annual contest.</li>
+<li><a  class="external text" title="http://www.cs.unm.edu/~veroff/">Robert Veroff</a> University of New Mexico. Many important papers.</li>
+<li><a  class="external text" title="http://www.cs.man.ac.uk/~voronkov/">Andrei Voronkov</a> Co-Editor of the "Handbook of Automated Reasoning"</li>
+<li><a  class="external text" title="http://www-unix.mcs.anl.gov/~wos/">Larry Wos</a> Argonne National Laboratory. (Otter) Many important papers.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References (books)">edit</a>]</div>
+<p><a name="References_.28books.29" id="References_.28books.29"></a></p>
+<h2>References (books)</h2>
+<ul>
+<li><cite class="book" style="font-style:normal">Chin-Liang Chang; Richard Char-Tung Lee (1973). <i>Symbolic Logic and Mechanical Theorem Proving</i>. <a href="/wiki/Academic_Press.html" title="Academic Press">Academic Press</a>.</cite></li>
+<li><cite class="book" style="font-style:normal" id="Reference-Loveland-1978">Loveland, Donald W. (1978). <i>Automated Theorem Proving: A Logical Basis. Fundamental Studies in Computer Science Volume 6</i>. <a  class="new" title="North-Holland Publishing">North-Holland Publishing</a>.</cite></li>
+<li><cite class="book" style="font-style:normal" id="Reference-Gallier-1986">Gallier, Jean H. (1986). <i><a  class="external text" title="http://www.cis.upenn.edu/~jean/gbooks/logic.html">Logic for Computer Science: Foundations of Automatic Theorem Proving</a></i>. <a  class="new" title="Harper &amp; Row Publishers">Harper &amp; Row Publishers</a>.</cite></li>
+<li><cite class="book" style="font-style:normal" id="Reference-Duffy-1991">Duffy, David A. (1991). <i>Principles of Automated Theorem Proving</i>. <a href="/wiki/John_Wiley_%26_Sons.html" title="John Wiley &amp; Sons">John Wiley &amp; Sons</a>.</cite></li>
+<li><cite class="book" style="font-style:normal" id="Reference-Wos-1992">Wos, Larry; Overbeek, Ross; Lusk, Ewing; Boyle, Jim (1992). <i>Automated Reasoning: Introduction and Applications</i>, 2nd edition, <a href="/wiki/McGraw-Hill.html" title="McGraw-Hill">McGraw-Hill</a>.</cite></li>
+<li><cite class="book" style="font-style:normal">(2001) Alan Robinson and Andrei Voronkov (eds.) <i>Handbook of Automated Reasoning Volume I &amp; II</i>. <a href="/wiki/Elsevier.html" title="Elsevier">Elsevier</a> and <a href="/wiki/MIT_Press.html" title="MIT Press">MIT Press</a>.</cite></li>
+<li><cite class="book" style="font-style:normal" id="Reference-Fitting-1996">Fitting, Melvin (1996). <i><a  class="external text" title="http://comet.lehman.cuny.edu/fitting/">First Order and Automated Theorem Proving</a></i>, 2nd edition, <a href="/wiki/Springer.html" title="Springer">Springer</a>.</cite></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Computer-aided_proof.html" title="Computer-aided proof">Computer-aided proof</a></li>
+<li><a href="/wiki/Formal_verification.html" title="Formal verification">Formal verification</a></li>
+<li><a href="/wiki/Proof_complexity.html" title="Proof complexity">Proof complexity</a></li>
+</ul>
+
+<!-- 
+Pre-expand include size: 19146 bytes
+Post-expand include size: 4678 bytes
+Template argument size: 5376 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:2546-0!1!0!default!!en!2 and timestamp 20060909195438 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Formal methods">Formal methods</a></span> | <span dir='ltr'><a  title="Category:Proofs">Proofs</a></span> | <span dir='ltr'><a  title="Category:Theorem provers">Theorem provers</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Automated_theorem_proving.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 18:14, 21 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv58 in 0.138 secs. --></body></html>

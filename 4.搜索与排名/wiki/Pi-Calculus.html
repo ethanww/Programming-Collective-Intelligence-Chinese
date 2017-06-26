@@ -1,0 +1,513 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Pi-calculus,Backus-Naur form,Bisimulation,Calculus of Communicating Systems,Ehud Shapiro,Lambda-calculus,Milner,Occam-Pi,Process calculi,Process calculus,Robin Milner" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Pi-calculus - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Pi-calculus";
+			var wgTitle = "Pi-calculus";
+			var wgArticleId = 420373;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Pi-calculus</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub">(Redirected from <a  title="Pi-Calculus">Pi-Calculus</a>)</div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>In <a href="/wiki/Theoretical_computer_science.html" title="Theoretical computer science">theoretical computer science</a>, the <b><span class="texhtml">π</span>-calculus</b> is a <a href="/wiki/Process_calculus.html" title="Process calculus">process calculus</a> originally developed by <a href="/wiki/Robin_Milner.html" title="Robin Milner">Robin Milner</a>, <a  class="new" title="Joachim Parrow">Joachim Parrow</a> and <a  class="new" title="David Walker (computer scientist)">David Walker</a> as a continuation of the body of work on the process calculus CCS (<a href="/wiki/Calculus_of_Communicating_Systems.html" title="Calculus of Communicating Systems">Calculus of Communicating Systems</a>). The aim of the <span class="texhtml">π</span>-calculus is to be able to describe concurrent computations whose configuration may change during the computation.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Informal definition</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">1.1</span> <span class="toctext">Process constructs</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.2</span> <span class="toctext">A small example</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Formal definition</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">2.1</span> <span class="toctext">Syntax</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.2</span> <span class="toctext">Structural congruence</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.3</span> <span class="toctext">Reduction semantics</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.4</span> <span class="toctext">The example revisited</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.5</span> <span class="toctext">Labelled semantics</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Extensions and variants</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Properties</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">4.1</span> <span class="toctext">Turing completeness</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Bisimulations in the π-calculus</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">5.1</span> <span class="toctext">Early and late bisimilarity</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">5.2</span> <span class="toctext">Open bisimilarity</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">5.3</span> <span class="toctext">Barbed equivalence</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">Applications</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">Implementations</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">8</span> <span class="toctext">Notes</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">9</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">10</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Informal definition">edit</a>]</div>
+<p><a name="Informal_definition" id="Informal_definition"></a></p>
+<h2>Informal definition</h2>
+<p>The <span class="texhtml">π</span>-calculus is in the family of <a href="/wiki/Process_calculi.html" title="Process calculi">process calculi</a>, mathematical formalisms for describing and analyzing properties of concurrent computation. In fact, the <span class="texhtml">π</span>-calculus, like the λ-calculus, is so minimal that it does not contain primitives such as numbers, booleans, data structures, variables, functions, or even the usual flow control statements (such as <code>if... then...else</code>, <code>while...</code>).</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Process constructs">edit</a>]</div>
+<p><a name="Process_constructs" id="Process_constructs"></a></p>
+<h3>Process constructs</h3>
+<p>Central to the <span class="texhtml">π</span>-calculus is the notion of <i>name</i>. The simplicity of the calculus is due to the fact that names play a dual role as <i>communication channels</i> and <i>variables</i>.</p>
+<p>The process constructs available in the calculus are the following (a precise definition is given in the following section):</p>
+<ul>
+<li><i>concurrency</i>, written <img class='tex' src="http://upload.wikimedia.org/math/c/f/6/cf603c577dbafa871890980d0af7f0a8.png" alt="P \mid Q" />, where <span class="texhtml"><i>P</i></span> and <span class="texhtml"><i>Q</i></span> are two processes or threads executed concurrently</li>
+<li><i>communication</i>, where
+<ul>
+<li><i>input prefixing</i> <img class='tex' src="http://upload.wikimedia.org/math/3/7/3/373b6c498e1e974457bf192590c99deb.png" alt="c\left(x\right).P" /> is a process waiting for a message to be sent on a communication channel named <span class="texhtml"><i>c</i></span> before proceeding as <span class="texhtml"><i>P</i></span>, binding the name received to the name <span class="texhtml"><i>x</i></span>. Typically, this models either a process expecting a communication from the network or a label <code>c</code> usable only once by a <code>goto c</code> operation.</li>
+<li><i>output prefixing</i> <img class='tex' src="http://upload.wikimedia.org/math/8/f/5/8f54101ec76b66b502c860c990f567fd.png" alt="c \langle y \rangle.P" /> describes that the name <span class="texhtml"><i>y</i></span> is emitted on channel <span class="texhtml"><i>c</i></span> before proceeding as <span class="texhtml"><i>P</i></span>. Typically, this models either sending a message on the network or a <code>goto c</code> operation.</li>
+</ul>
+</li>
+<li><i>replication</i>, written <img class='tex' src="http://upload.wikimedia.org/math/c/1/3/c1313e41fd17e18d5b9cfeaedc8e3717.png" alt="!\,P" />, which may be seen as a process which can always create a new copy of <span class="texhtml"><i>P</i></span>. Typically, this models either a network service or a label <code>c</code> waiting for any number of <code>goto c</code> operations.</li>
+<li><i>creation of a new name</i>, written <img class='tex' src="http://upload.wikimedia.org/math/a/0/b/a0b3304ce6dceb29622414056c2d87f7.png" alt="\left(\nu x\right)P" />, which may be seen as a process allocating a new constant <span class="texhtml"><i>x</i></span> within <span class="texhtml"><i>P</i></span>. As opposed to functional programming's <code>let x=... in...</code> operation, the constants of <span class="texhtml">π</span>-calculus are defined by their name only and are always communication channels.</li>
+<li>the nil process, written <i>0</i>, is a process whose execution is complete and has stopped.</li>
+</ul>
+<p>Although the minimality of the <span class="texhtml">π</span>-calculus prevents us from writing programs in the normal sense, it is easy to extend the calculus. In particular, it is easy to define both control structures such as recursion, loops and sequential composition and datatypes such as first-order functions, truth values, list and integers. Moreover, extensions of the <span class="texhtml">π</span>-calculus have been proposed which take into account distribution or public-key cryptography. The <i>applied <span class="texhtml">π</span>-calculus</i> due to Abadi and Fournet puts these various extensions on a formal footing by extending the <span class="texhtml">π</span>-calculus with arbitrary datatypes.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: A small example">edit</a>]</div>
+<p><a name="A_small_example" id="A_small_example"></a></p>
+<h3>A small example</h3>
+<p>Below is a tiny example of a process which consists of three parallel components. The channel name <span class="texhtml"><i>x</i></span> is only known by the first two components.</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/e/0/f/e0f7b5c5d419d0adf585b3c3c4d0abbc.png" alt="(\nu x)(\overline{x} \langle z \rangle.0  |  x(y).   \overline{y}\langle x \rangle . x(y).0 ) | z(v) . \overline{v}\langle v \rangle. 0" /></dd>
+</dl>
+<p>The first two components are able to communicate on the channel <span class="texhtml"><i>x</i></span>, and the name <span class="texhtml"><i>z</i></span> becomes bound to <span class="texhtml"><i>y</i></span> The continuation of the process is therefore</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/7/b/8/7b87cddbbdac87e853514f2ea5587d74.png" alt="(\nu x)(0|  \overline{z}\langle x \rangle . x(y). 0 ) | z(v). \overline{v}\langle v \rangle .0" /></dd>
+</dl>
+<p>The second and third parallel components can now communicate on the channel name <span class="texhtml"><i>z</i></span>, and <span class="texhtml"><i>x</i></span> is bound to <span class="texhtml"><i>v</i></span>. The continuation of the process is now</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/b/7/c/b7c8c958ef3afd4f2df4db6b341a4d83.png" alt="(\nu x)(0|  x(y). 0  | \overline{x}\langle x \rangle .0)" /></dd>
+</dl>
+<p>Note that since the local name <span class="texhtml"><i>x</i></span> has been output, the scope of <span class="texhtml"><i>x</i></span> is extended to cover the third component as well. Finally, the channel <span class="texhtml"><i>x</i></span> can be used for sending the name <span class="texhtml"><i>x</i></span>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Formal definition">edit</a>]</div>
+<p><a name="Formal_definition" id="Formal_definition"></a></p>
+<h2>Formal definition</h2>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Syntax">edit</a>]</div>
+<p><a name="Syntax" id="Syntax"></a></p>
+<h3>Syntax</h3>
+<p>Let Χ be a set of objects called <i>names</i>. The <i>processes</i> of <span class="texhtml">π</span>-calculus are built from names by the <a href="/wiki/Backus-Naur_form.html" title="Backus-Naur form">syntax</a> (where <i>x</i> and <i>y</i> are any names from Χ)</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/2/7/d/27dbff6554f1b0137571fd14f94e3721.png" alt="\begin{matrix} P&#160;::= &amp; x(y).P\\     | &amp; \overline{x} \langle y \rangle.P \\     | &amp; P\;|\;P \\     | &amp; (\nu x)P \\     | &amp;&#160;!P \\     | &amp; 0 \end{matrix}" /></dd>
+</dl>
+<p>Names can be bound by the restriction and input prefix constructs. The sets of free and bound names of a process in <span class="texhtml">π</span>–calculus are defined inductively as follows.</p>
+<ul>
+<li>The <span class="texhtml">0</span> process has no free names and no bound names.</li>
+</ul>
+<ul>
+<li>The free names of <img class='tex' src="http://upload.wikimedia.org/math/0/b/d/0bd57f9fd3965785b2bf2435472ba641.png" alt="a\langle x \rangle.P" /> are <span class="texhtml"><i>a</i></span>, <span class="texhtml"><i>x</i></span>, and the free names of <span class="texhtml"><i>P</i></span>. The bound names of <img class='tex' src="http://upload.wikimedia.org/math/0/b/d/0bd57f9fd3965785b2bf2435472ba641.png" alt="a\langle x \rangle.P" /> are the bound names of <span class="texhtml"><i>P</i></span>.</li>
+</ul>
+<ul>
+<li>The free names of <span class="texhtml"><i>a</i>(<i>x</i>).<i>P</i></span> are <span class="texhtml"><i>a</i></span> and the free names of <span class="texhtml"><i>P</i></span>. The bound names of <span class="texhtml"><i>a</i>(<i>x</i>).<i>P</i></span> are <span class="texhtml"><i>x</i></span> and the bound names of <span class="texhtml"><i>P</i></span>.</li>
+</ul>
+<ul>
+<li>The free names of <span class="texhtml"><i>P</i> | <i>Q</i></span> are those of <span class="texhtml"><i>P</i></span> together with those of <span class="texhtml"><i>Q</i></span>. The bound names of <span class="texhtml"><i>P</i> | <i>Q</i></span> are those of <span class="texhtml"><i>P</i></span> together with those of <span class="texhtml"><i>Q</i></span>.</li>
+</ul>
+<ul>
+<li>The free names of <span class="texhtml">(ν<i>x</i>).<i>P</i></span> are those of <span class="texhtml"><i>P</i></span>, except for <span class="texhtml"><i>x</i></span>. The bound names of <span class="texhtml">(ν<i>x</i>).<i>P</i></span> are <span class="texhtml"><i>x</i></span> and the bound names of <span class="texhtml"><i>P</i></span>.</li>
+</ul>
+<ul>
+<li>The free names of <span class="texhtml">!<i>P</i></span> are those of <span class="texhtml"><i>P</i></span>. The bound names of <span class="texhtml">!<i>P</i></span> are those of <span class="texhtml"><i>P</i></span>.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Structural congruence">edit</a>]</div>
+<p><a name="Structural_congruence" id="Structural_congruence"></a></p>
+<h3>Structural congruence</h3>
+<p>Central to both the reduction semantics and the labelled transition semantics is the notion of <b>structural congruence</b>. Two processes are structurally congruent, if they are identical up to structure. In particular, parallel composition is commutative and associative.</p>
+<p>More precisely, structural congruence is defined as the least equivalence relation preserved by the process constructs and satisfying:</p>
+<p><i>Alpha-conversion</i>:</p>
+<dl>
+<dd>
+<ul>
+<li><img class='tex' src="http://upload.wikimedia.org/math/e/4/9/e49b2cd1fcffbf159f340804bfcd50d2.png" alt="P \equiv Q" /> if <span class="texhtml"><i>Q</i></span> can be obtained from <span class="texhtml"><i>P</i></span> by renaming one or more bound names in <span class="texhtml"><i>P</i></span>.</li>
+</ul>
+</dd>
+</dl>
+<p><i>Axioms for parallel composition</i>:</p>
+<dl>
+<dd>
+<ul>
+<li><img class='tex' src="http://upload.wikimedia.org/math/c/5/c/c5c3c54027606d80888bebf58492c244.png" alt="P|Q \equiv Q|P" /></li>
+<li><img class='tex' src="http://upload.wikimedia.org/math/1/4/8/148b253f11d8cf2abd31f51440fe516d.png" alt="(P|Q)|R \equiv P|(Q|R)" /></li>
+<li><img class='tex' src="http://upload.wikimedia.org/math/f/8/6/f86a1a57119191a5d3a815d8726c5bfa.png" alt="P | 0 \equiv P" /></li>
+</ul>
+</dd>
+</dl>
+<p><i>Axioms for restriction</i>:</p>
+<dl>
+<dd>
+<ul>
+<li><img class='tex' src="http://upload.wikimedia.org/math/8/a/a/8aa2a0ffe26820b24c9dda20cddf4142.png" alt="(\nu x)(\nu y)P \equiv (\nu y)(\nu x)P" /></li>
+<li><img class='tex' src="http://upload.wikimedia.org/math/8/a/8/8a83d84dafaa09d8ecd42ae4061fca4d.png" alt="(\nu x)0 \equiv 0" /></li>
+</ul>
+</dd>
+</dl>
+<p><i>Axiom relating restriction and parallel</i>:</p>
+<dl>
+<dd>
+<ul>
+<li><img class='tex' src="http://upload.wikimedia.org/math/5/1/3/51383750702eb745869500c72ca8cd65.png" alt="(\nu x)(P | Q) \equiv (\nu x)P | Q" /> if <span class="texhtml"><i>x</i></span> is not a free name of <span class="texhtml"><i>Q</i></span>.</li>
+</ul>
+</dd>
+</dl>
+<p>This last axiom is known as the "scope extension" axiom. This axiom is central, since it describes how a bound name <span class="texhtml"><i>x</i></span> may be extruded by an output action, causing the scope of <span class="texhtml"><i>x</i></span> to be extended.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Reduction semantics">edit</a>]</div>
+<p><a name="Reduction_semantics" id="Reduction_semantics"></a></p>
+<h3>Reduction semantics</h3>
+<p>We write <img class='tex' src="http://upload.wikimedia.org/math/3/3/d/33dfc84845d110c4bbc65411926845d7.png" alt="P \rightarrow P'" /> if <span class="texhtml"><i>P</i></span> can perform a computation step, following which it is now <span class="texhtml"><i>P</i>'</span>. This <i>reduction relation</i> <img class='tex' src="http://upload.wikimedia.org/math/8/3/e/83e37b7246fdfcb99b2754210ebeae27.png" alt="\rightarrow" /> is defined as the least relation closed under a set of reduction rules.</p>
+<p>The main reduction rule which captures the ability of processes to communicate through channels is the following:</p>
+<ul>
+<li><img class='tex' src="http://upload.wikimedia.org/math/1/9/b/19b2e6745e85c13d32845040c8917562.png" alt="\overline{x}\langle z \rangle.P | x(y).Q \rightarrow P | Q[z/y]" /></li>
+</ul>
+<dl>
+<dd>where <span class="texhtml"><i>Q</i>[<i>z</i> / <i>y</i>]</span> denotes the process <span class="texhtml"><i>Q</i></span> in which the free name <span class="texhtml"><i>z</i></span> has been <i>substituted</i> for the free name <span class="texhtml"><i>y</i></span>. Note that this substitution may involve alpha-conversion to avoid name clashes.</dd>
+</dl>
+<p>There are three additional rules:</p>
+<ul>
+<li>If <img class='tex' src="http://upload.wikimedia.org/math/f/6/a/f6a7e09f0f3419c68aba9f8973f4935c.png" alt="P \rightarrow Q" /> then also <img class='tex' src="http://upload.wikimedia.org/math/0/5/b/05bcc1b9588407a6e2678de9faa831c7.png" alt="P|R \rightarrow Q|R" />.</li>
+</ul>
+<dl>
+<dd>This rule says that parallel composition does not inhibit computation.</dd>
+</dl>
+<ul>
+<li>If <img class='tex' src="http://upload.wikimedia.org/math/f/6/a/f6a7e09f0f3419c68aba9f8973f4935c.png" alt="P \rightarrow Q" />, then also <img class='tex' src="http://upload.wikimedia.org/math/8/0/2/8029401057c2214e9444c94fb1b06aef.png" alt="(\nu x)P \rightarrow (\nu x)Q" />.</li>
+</ul>
+<dl>
+<dd>This rule ensures that computation can proceed underneath a restriction.</dd>
+</dl>
+<ul>
+<li>If <img class='tex' src="http://upload.wikimedia.org/math/f/b/b/fbbf1b48de9ad97dc6d5bb56ff3b6270.png" alt="P \equiv P'" /> and <img class='tex' src="http://upload.wikimedia.org/math/d/1/a/d1af8c44c2d92c8333cbc2db00c39a57.png" alt="P' \rightarrow Q'" /> where <img class='tex' src="http://upload.wikimedia.org/math/0/7/5/075c5688adf2cedac50dae45d171d482.png" alt="Q' \equiv Q" />, then also <img class='tex' src="http://upload.wikimedia.org/math/f/6/a/f6a7e09f0f3419c68aba9f8973f4935c.png" alt="P \rightarrow Q" />.</li>
+</ul>
+<p>The latter rule states that processes that are structurally congruent have the same reductions.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: The example revisited">edit</a>]</div>
+<p><a name="The_example_revisited" id="The_example_revisited"></a></p>
+<h3>The example revisited</h3>
+<p>Consider again the process</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/e/0/f/e0f7b5c5d419d0adf585b3c3c4d0abbc.png" alt="(\nu x)(\overline{x} \langle z \rangle.0  |  x(y).   \overline{y}\langle x \rangle . x(y).0 ) | z(v) . \overline{v}\langle v \rangle. 0" /></dd>
+</dl>
+<p>Applying the definition of the reduction semantics, we get the reduction</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/5/0/5/50549a86547a4cd35812a643fc25acdf.png" alt="(\nu x)(\overline{x} \langle z \rangle.0  |  x(y).   \overline{y}\langle x \rangle . x(y).0 ) | z(v) . \overline{v}\langle v \rangle. 0  \rightarrow (\nu x)(0|  \overline{z}\langle x \rangle . x(y). 0 ) | z(v). \overline{v}\langle v \rangle .0" /></dd>
+</dl>
+<p>Next, we get the reduction</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/f/5/1/f5188150b4c29b5f16c4da11f718861b.png" alt="(\nu x)(0|  \overline{z}\langle x \rangle . x(y). 0 ) | z(v). \overline{v}\langle v \rangle .0 \rightarrow (\nu x)(0|  x(y). 0  | \overline{x}\langle x \rangle .0)" /></dd>
+</dl>
+<p>Note that since the local name <span class="texhtml"><i>x</i></span> has been output, the scope of <span class="texhtml"><i>x</i></span> is extended to cover the third component as well. This was captured using the scope extension axiom.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Labelled semantics">edit</a>]</div>
+<p><a name="Labelled_semantics" id="Labelled_semantics"></a></p>
+<h3>Labelled semantics</h3>
+<p>Alternatively, one may give the pi-calculus a labelled transition semantics (as has been done with the <a href="/wiki/Calculus_of_Communicating_Systems.html" title="Calculus of Communicating Systems">Calculus of Communicating Systems</a>). Transitions in this semantics are of the form:</p>
+<p><img class='tex' src="http://upload.wikimedia.org/math/a/a/3/aa3ff74f2b524543a89b202b43368838.png" alt="\begin{matrix}   &amp; \alpha &amp; \\ P &amp; \rightarrow  &amp; P' \\ \end{matrix}" /></p>
+<p>This <a href="/wiki/State_transition_system.html" title="State transition system">notation</a> signifies that <span class="texhtml"><i>p</i></span> after the action <span class="texhtml">α</span> becomes <span class="texhtml"><i>p</i>'</span>. <span class="texhtml">α</span> can be an <i>input action</i> <span class="texhtml"><i>a</i>(<i>x</i>)</span>, an <i>output action</i> <i><img class='tex' src="http://upload.wikimedia.org/math/d/b/9/db9114ab2ccd405545f4a0bf81e6173f.png" alt="a\langle x \rangle" /></i>, or a tau-action <span class="texhtml">τ</span> corresponding to an internal communication.</p>
+<p>A standard result about the labelled semantics is that it agrees with the reduction semantics in the sense that <img class='tex' src="http://upload.wikimedia.org/math/3/3/d/33dfc84845d110c4bbc65411926845d7.png" alt="P \rightarrow P'" /> if and only if <img class='tex' src="http://upload.wikimedia.org/math/f/e/c/fec837df1b237086b2f6c8fe9588588f.png" alt="\begin{matrix}   &amp; \tau &amp; \\ P &amp; \rightarrow  &amp; P' \\ \end{matrix}" /></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Extensions and variants">edit</a>]</div>
+<p><a name="Extensions_and_variants" id="Extensions_and_variants"></a></p>
+<h2>Extensions and variants</h2>
+<p>The syntax given above is a minimal one. However, the syntax may be modified in various ways.</p>
+<p>A <i>nondeterministic choice operator</i> <span class="texhtml"><i>P</i> + <i>Q</i></span> can be added to the syntax.</p>
+<p>A test for <i>name equality</i> <span class="texhtml">[<i>x</i> = <i>y</i>]<i>P</i></span> can be added to the syntax. This <i>match operator</i> can proceed as <span class="texhtml"><i>P</i></span> if and only if <span class="texhtml"><i>x</i></span> and <span class="texhtml"><i>y</i></span> are the same name. Similarly, one may add a <i>mismatch operator</i> for <b>name inequality</b>.</p>
+<p>The <i>asynchronous <span class="texhtml">π</span>-calculus</i> allows only outputs with no continuation, i.e. output atoms of the form <img class='tex' src="http://upload.wikimedia.org/math/c/a/e/cae750aef6140e10b40ec38a3c7e08ce.png" alt="\overline{x}\langle y \rangle" />. However, any process can be represented by the asynchronous <span class="texhtml">π</span>-calculus using an extra channel to simulate explicit acknowledgement from the receiving process.</p>
+<p>The <i>polyadic <span class="texhtml">π</span>-calculus</i> allows communicating more than one name in a single action: <img class='tex' src="http://upload.wikimedia.org/math/a/c/1/ac150d1fed1a39923ca1e9ff1942643d.png" alt="\overline{x}&lt;z_1,...z_n&gt;.P" /> <i>(polyadic output)</i> and <span class="texhtml"><i>x</i>(<i>z</i><sub>1</sub>,...<i>z</i><sub><i>n</i></sub>)</span> <i>(polyadic input)</i>. This polyadic extension can be encoded in the monadic calculus by passing the name of a private channel through which the multiple arguments are then passed in sequence. The encoding is defined recursively by the clauses</p>
+<p><img class='tex' src="http://upload.wikimedia.org/math/2/d/d/2ddb0175c4a20cc25c98808d7e251ae5.png" alt="\overline{x}\langle y_1,...,y_n\rangle.P" /> is encoded as <img class='tex' src="http://upload.wikimedia.org/math/0/9/d/09d68938863f1bc4ee8a866be0d6d23c.png" alt="(\nu w) \overline{x}\langle w \rangle.\overline{w}\langle y_1\rangle...\overline{w}\langle y_n\rangle.[P]" /></p>
+<p><span class="texhtml"><i>x</i>(<i>y</i><sub>1</sub>,...,<i>y</i><sub><i>n</i></sub>).<i>P</i></span> is encoded as <span class="texhtml"><i>x</i>(<i>w</i>).<i>w</i>(<i>y</i><sub>1</sub>)...<i>w</i>(<i>y</i><sub><i>n</i></sub>).[<i>P</i>]</span></p>
+<p>All other process constructs are left unchanged by the encoding.</p>
+<p>In the above, <span class="texhtml">[<i>P</i>]</span> denotes the encoding of all prefixes in the continuation <span class="texhtml"><i>P</i></span> in the same way.</p>
+<p>The full power of replication <span class="texhtml">!<i>P</i></span> is not needed. Often, one only considers <i>replicated input</i> <span class="texhtml">!<i>x</i>(<i>y</i>).<i>P</i></span>, whose structural congruence axiom is <img class='tex' src="http://upload.wikimedia.org/math/9/b/2/9b2b46034d2a9b1c33526575d0c5e911.png" alt="! x(y).P \equiv x(y).P |&#160;!x(y).P" />.</p>
+<p>Replicated input process such as <span class="texhtml">!<i>x</i>(<i>y</i>).<i>P</i></span> can be understood as servers, waiting on channel <span class="texhtml"><i>x</i></span> to be invoked by clients. Invocation of a server spawns a new copy of the process <span class="texhtml"><i>P</i>[<i>a</i> / <i>y</i>]</span>, where a is the name passed by the client to the server, during the latter's invocation.</p>
+<p>A <i>higher order <span class="texhtml">π</span>-calculus</i> can be defined where not names but processes are sent through channels. The key reduction rule for the higher order case is</p>
+<p><img class='tex' src="http://upload.wikimedia.org/math/d/1/5/d1536fdf8a0ea1f36f5a83804d786d5d.png" alt="\overline{x}\langle R \rangle.P | x(Y).Q \rightarrow P | Q[R/Y]" /></p>
+<p>Here, <span class="texhtml"><i>Y</i></span> denotes a <i>process variable</i> which can be instantiated by a process term. Sangiorgi established the surprising result that the ability to pass processes does not increase the expressivity of the <span class="texhtml">π</span>-calculus: passing a process <i>P</i> can be simulated by just passing a name that points to <i>P</i> instead.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Properties">edit</a>]</div>
+<p><a name="Properties" id="Properties"></a></p>
+<h2>Properties</h2>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Turing completeness">edit</a>]</div>
+<p><a name="Turing_completeness" id="Turing_completeness"></a></p>
+<h3>Turing completeness</h3>
+<p>The <span class="texhtml">π</span>-calculus is a universal model of computation. This was first observed by Milner in his paper "Functions as Processes" (Mathematical Structures in Computer Science, Vol. 2, pp. 119-141, 1992), in which he presents two encodings of the <a href="/wiki/Lambda-calculus.html" title="Lambda-calculus">lambda-calculus</a> in the <span class="texhtml">π</span>-calculus. One encoding simulates the call-by-value reduction strategy, the other encoding simulates the lazy (call-by-name) strategy.</p>
+<p>The features of the <span class="texhtml">π</span>-calculus that make these encodings possible are name-passing and replication (or, equivalently, recursively defined agents). In the absence of replication/recursion, the <span class="texhtml">π</span>-calculus ceases to be <a href="/wiki/Turing.html" title="Turing">Turing</a>-powerful. This can be seen by the fact the <a href="/wiki/Bisimulation.html" title="Bisimulation">bisimulation</a> equivalence becomes decidable for the recursion-free calculus and even for the finite-control <span class="texhtml">π</span>-calculus where the number of parallel components in any process is bounded by a constant (Mads Dam: On the Decidability of Process Equivalences for the pi-Calculus. Theoretical Computer Science 183, 1997, pp. 215-228.)</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Bisimulations in the &amp;pi;-calculus">edit</a>]</div>
+<p><a name="Bisimulations_in_the_.CF.80-calculus" id="Bisimulations_in_the_.CF.80-calculus"></a></p>
+<h2>Bisimulations in the <span class="texhtml">π</span>-calculus</h2>
+<p><i>See also article: <a href="/wiki/Bisimulation.html" title="Bisimulation">Bisimulation</a></i></p>
+<p>As for process calculi, the <span class="texhtml">π</span>-calculus allows for a definition of bisimulation equivalence. In the <span class="texhtml">π</span>-calculus, the definition of bisimulation equivalence (aka bisimilarity) may be based on either the reduction semantics or on the labelled transition semantics.</p>
+<p>There are (at least) three different ways of defining <i>labelled bisimulation equivalence</i> in the <span class="texhtml">π</span>-calculus: Early, late and open bisimilarity. This stems from the fact that the <span class="texhtml">π</span>-calculus is a value-passing process calculus.</p>
+<p>In the remainder of this section, we let <span class="texhtml"><i>p</i></span> and <span class="texhtml"><i>q</i></span> denote processes and <span class="texhtml"><i>R</i></span> denote binary relations over processes.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Early and late bisimilarity">edit</a>]</div>
+<p><a name="Early_and_late_bisimilarity" id="Early_and_late_bisimilarity"></a></p>
+<h3>Early and late bisimilarity</h3>
+<p>Early and late bisimilarity were both discovered by <a href="/wiki/Milner.html" title="Milner">Milner</a>, Parrow and Walker in their original paper on the <span class="texhtml">π</span>-calculus (R. Milner, J. Parrow, and D. Walker. A calculus of mobile processes, Information and Computation, 100:1--40, 1992.)</p>
+<p>A binary relation <span class="texhtml"><i>R</i></span> over processes is an <i>early bisimulation</i> if for every pair of elements <img class='tex' src="http://upload.wikimedia.org/math/3/9/6/3969781f551edc52cd07e412d449bfc6.png" alt="(p, q) \in R" />, whenever</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/1/a/4/1a4f252840930c5e516a5b9bd4747a0d.png" alt="\begin{matrix}   &amp; a(x) &amp; \\ p &amp; \rightarrow  &amp; p' \\ \end{matrix}" /></dd>
+</dl>
+<p>then for every name <span class="texhtml"><i>y</i></span> there exists some <img class='tex' src="http://upload.wikimedia.org/math/3/2/b/32b777122a60cd9937418240c5f03cfd.png" alt="q' \in R" /> such that</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/3/1/a/31ae141cbd82d3ecd7bb841c8a166a72.png" alt="\begin{matrix}   &amp; a(x) &amp; \\ q &amp;  \rightarrow &amp; q' \\ \end{matrix}" /></dd>
+</dl>
+<p>and <img class='tex' src="http://upload.wikimedia.org/math/7/a/1/7a13637574638d88190420ed6d3adbba.png" alt="(p'[y/x],q'[y/x]) \in R" /> , and for any other kind of action <span class="texhtml">α</span>:</p>
+<p><img class='tex' src="http://upload.wikimedia.org/math/a/2/e/a2e8988ce5b935ad18a0dc4a689f0c76.png" alt="\begin{matrix}   &amp; \alpha &amp; \\ p &amp; \rightarrow  &amp; p' \\ \end{matrix}" /></p>
+<p>implies that there exists some <img class='tex' src="http://upload.wikimedia.org/math/3/2/b/32b777122a60cd9937418240c5f03cfd.png" alt="q' \in R" /> such that</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/1/b/5/1b5b0ea3d8aa7924ce9dd055e7f63f78.png" alt="\begin{matrix}   &amp; \alpha &amp; \\ q &amp;  \rightarrow &amp; q' \\ \end{matrix}" /></dd>
+</dl>
+<p>and <img class='tex' src="http://upload.wikimedia.org/math/b/9/c/b9c250cd065a0f4f865ce361f90db053.png" alt="(p',q') \in R" /> Processes <span class="texhtml"><i>p</i></span> and <span class="texhtml"><i>q</i></span> are said to be early bisimilar, written <img class='tex' src="http://upload.wikimedia.org/math/f/2/e/f2ef4458b995e6024167bb4389ddcb74.png" alt="p \sim_e q" /> if the pair <img class='tex' src="http://upload.wikimedia.org/math/3/9/6/3969781f551edc52cd07e412d449bfc6.png" alt="(p,q) \in R" /> for some early bisimulation <span class="texhtml"><i>R</i></span>. <img class='tex' src="http://upload.wikimedia.org/math/d/9/5/d950955acbef701879e909bf927a4d3e.png" alt="\sim_e" /></p>
+<p>In late bisimilarity, the transition match must be independent of the name being transmitted. A binary relation <span class="texhtml"><i>R</i></span> over processes is a <i>late bisimulation</i> if for every pair of elements <img class='tex' src="http://upload.wikimedia.org/math/3/9/6/3969781f551edc52cd07e412d449bfc6.png" alt="(p, q) \in R" />, whenever</p>
+<p><img class='tex' src="http://upload.wikimedia.org/math/1/a/4/1a4f252840930c5e516a5b9bd4747a0d.png" alt="\begin{matrix}   &amp; a(x) &amp; \\ p &amp; \rightarrow  &amp; p' \\ \end{matrix}" /></p>
+<p>then for some <img class='tex' src="http://upload.wikimedia.org/math/3/2/b/32b777122a60cd9937418240c5f03cfd.png" alt="q' \in R" /> it holds that</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/3/1/a/31ae141cbd82d3ecd7bb841c8a166a72.png" alt="\begin{matrix}   &amp; a(x) &amp; \\ q &amp;  \rightarrow &amp; q' \\ \end{matrix}" /></dd>
+</dl>
+<p>and <img class='tex' src="http://upload.wikimedia.org/math/7/a/1/7a13637574638d88190420ed6d3adbba.png" alt="(p'[y/x],q'[y/x]) \in R" /> <i>for every name y</i>, and for any other kind of action <span class="texhtml">α</span>:</p>
+<p><img class='tex' src="http://upload.wikimedia.org/math/a/2/e/a2e8988ce5b935ad18a0dc4a689f0c76.png" alt="\begin{matrix}   &amp; \alpha &amp; \\ p &amp; \rightarrow  &amp; p' \\ \end{matrix}" /></p>
+<p>implies that there exists some <img class='tex' src="http://upload.wikimedia.org/math/3/2/b/32b777122a60cd9937418240c5f03cfd.png" alt="q' \in R" /> such that</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/1/b/5/1b5b0ea3d8aa7924ce9dd055e7f63f78.png" alt="\begin{matrix}   &amp; \alpha &amp; \\ q &amp;  \rightarrow &amp; q' \\ \end{matrix}" /></dd>
+</dl>
+<p>and <img class='tex' src="http://upload.wikimedia.org/math/b/9/c/b9c250cd065a0f4f865ce361f90db053.png" alt="(p',q') \in R" /></p>
+<p>Processes <span class="texhtml"><i>p</i></span> and <span class="texhtml"><i>q</i></span> are said to be late bisimilar, written <img class='tex' src="http://upload.wikimedia.org/math/b/b/1/bb16d1cb3bc8f013c8d92c0c273279b4.png" alt="p \sim_l q" /> if the pair <img class='tex' src="http://upload.wikimedia.org/math/3/9/6/3969781f551edc52cd07e412d449bfc6.png" alt="(p,q) \in R" /> for some late bisimulation <span class="texhtml"><i>R</i></span>.</p>
+<p>Both <img class='tex' src="http://upload.wikimedia.org/math/d/9/5/d950955acbef701879e909bf927a4d3e.png" alt="\sim_e" /> and <img class='tex' src="http://upload.wikimedia.org/math/2/f/1/2f140f50be93700055f099dc6e3de169.png" alt="\sim_l" /> suffer from the problem that they are not <i>congruence relations</i> in the sense that they are not preserved by all process constructs. More precisely, there exist processes <span class="texhtml"><i>p</i></span> and <span class="texhtml"><i>q</i></span> such that <img class='tex' src="http://upload.wikimedia.org/math/f/2/e/f2ef4458b995e6024167bb4389ddcb74.png" alt="p \sim_e q" /> but <img class='tex' src="http://upload.wikimedia.org/math/e/d/8/ed8dfd76c7b4d3d9c254c71062a2f164.png" alt="a(x)p \not \sim_e a(x).q" />. One may remedy this problem by considering the maximal congruence relations included in <img class='tex' src="http://upload.wikimedia.org/math/d/9/5/d950955acbef701879e909bf927a4d3e.png" alt="\sim_e" /> and <img class='tex' src="http://upload.wikimedia.org/math/2/f/1/2f140f50be93700055f099dc6e3de169.png" alt="\sim_l" />, known as <i>early congruence</i> and <i>late congruence</i>, respectively.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Open bisimilarity">edit</a>]</div>
+<p><a name="Open_bisimilarity" id="Open_bisimilarity"></a></p>
+<h3>Open bisimilarity</h3>
+<p>Fortunately, a third definition is possible, which avoids this problem, namely that of <i>open bisimilarity</i>, due to Sangiorgi (D. Sangiorgi. A theory of bisimulation for the <span class="texhtml">π</span>-calculus. Acta Informatica, Volume 33 , Issue 1, 1996.)</p>
+<p>A binary relation <span class="texhtml"><i>R</i></span> over processes is an <i>open bisimulation</i> if for every pair of elements <img class='tex' src="http://upload.wikimedia.org/math/3/9/6/3969781f551edc52cd07e412d449bfc6.png" alt="(p, q) \in R" /> and for every name substitution <span class="texhtml">σ</span> and every action <span class="texhtml">α</span>, whenever</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/f/f/2/ff26d7dbcd88a27d8d7b5fc379f8080b.png" alt="\begin{matrix}   &amp; \alpha &amp; \\ p\sigma &amp; \rightarrow  &amp; p' \\ \end{matrix}" /></dd>
+</dl>
+<p>then there exists some <img class='tex' src="http://upload.wikimedia.org/math/3/2/b/32b777122a60cd9937418240c5f03cfd.png" alt="q' \in R" /> such that</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/8/5/8/858c1090a7ebf06622919cfadd3d8836.png" alt="\begin{matrix}   &amp; \alpha &amp; \\ q\sigma &amp;  \rightarrow &amp; q' \\ \end{matrix}" /></dd>
+</dl>
+<p>and <img class='tex' src="http://upload.wikimedia.org/math/b/9/c/b9c250cd065a0f4f865ce361f90db053.png" alt="(p',q') \in R" /></p>
+<p>Processes <span class="texhtml"><i>p</i></span> and <span class="texhtml"><i>q</i></span> are said to be open bisimilar, written <img class='tex' src="http://upload.wikimedia.org/math/9/e/b/9eb1f34152fcf0fbea5879eb0fb3b0ed.png" alt="p \sim_o q" /> if the pair <img class='tex' src="http://upload.wikimedia.org/math/3/9/6/3969781f551edc52cd07e412d449bfc6.png" alt="(p,q) \in R" /> for some open bisimulation <span class="texhtml"><i>R</i></span>. <img class='tex' src="http://upload.wikimedia.org/math/0/6/5/065292d9eb6a9fce4c7c994c4c372659.png" alt="\sim_o" /></p>
+<p>Early, late and open bisimilarity are in fact all distinct. The containments are proper, so <img class='tex' src="http://upload.wikimedia.org/math/d/2/9/d29dcefcb72647185edf9aec615ed2fb.png" alt="\sim_o \subsetneq \sim_l \subsetneq \sim_e" />.</p>
+<p>In certain subcalculi such as the asynchronous pi-calculus, late, early and open bisimilarity are known to coincide. However, in this setting a more appropriate notion is that of <i>asynchronous bisimilarity</i>.</p>
+<p>The reader should note that, in the literature, the term <i>open bisimulation</i> usually refers to a more sophisticated notion, where processes and relations are indexed by distinction relations; details are in Sangiorgi's paper cited above.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Barbed equivalence">edit</a>]</div>
+<p><a name="Barbed_equivalence" id="Barbed_equivalence"></a></p>
+<h3>Barbed equivalence</h3>
+<p>Alternatively, one may define bisimulation equivalence directly from the reduction semantics. We write <img class='tex' src="http://upload.wikimedia.org/math/0/a/d/0ada47e2de4623c497c3003ff0f74873.png" alt="p \Downarrow a" /> if process <span class="texhtml"><i>p</i></span> immediately allows an input or an output on name <span class="texhtml"><i>a</i></span>.</p>
+<p>A binary relation <span class="texhtml"><i>R</i></span> over processes is a <i>barbed bisimulation</i> if it is a symmetric relation which satisfies that for every pair of elements <img class='tex' src="http://upload.wikimedia.org/math/3/9/6/3969781f551edc52cd07e412d449bfc6.png" alt="(p, q) \in R" /> we have that</p>
+<dl>
+<dd>(1) <img class='tex' src="http://upload.wikimedia.org/math/0/a/d/0ada47e2de4623c497c3003ff0f74873.png" alt="p \Downarrow a" /> if and only if <img class='tex' src="http://upload.wikimedia.org/math/c/3/9/c39e208db2e9d86f4064885271317039.png" alt="q \Downarrow a" /> for every name <span class="texhtml"><i>a</i></span></dd>
+</dl>
+<p>and</p>
+<dl>
+<dd>(2) for every reduction <img class='tex' src="http://upload.wikimedia.org/math/0/4/d/04dac99b846315b7561ed16b0d283ba4.png" alt="p \rightarrow p'" /> there exists a reduction <img class='tex' src="http://upload.wikimedia.org/math/a/3/c/a3cdd298bf23d2a7e36e80be60f8e8e9.png" alt="q \rightarrow  q'" /></dd>
+</dl>
+<p>such that <img class='tex' src="http://upload.wikimedia.org/math/b/9/c/b9c250cd065a0f4f865ce361f90db053.png" alt="(p',q') \in R" />.</p>
+<p>We say that <span class="texhtml"><i>p</i></span> and <span class="texhtml"><i>q</i></span> are <i>barbed bisimilar</i> if there exists a barbed bisimulation <span class="texhtml"><i>R</i></span> where <img class='tex' src="http://upload.wikimedia.org/math/3/9/6/3969781f551edc52cd07e412d449bfc6.png" alt="(p,q) \in R" />.</p>
+<p>Definying a context as a π term with a hole [] we say that two processes P and Q are <i>barbed congruent</i>, written <span class="texhtml"><i>P</i>˜<sub><i>b</i></sub></span> if for every context <span class="texhtml"><i>C</i>[]</span> we have that <span class="texhtml"><i>C</i>[<i>P</i>]˜<sub><i>b</i></sub><i>b</i>[<i>Q</i>]</span>. It turns out that barbed congruence coincides with the congruence induced by early bisimilarity.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Applications">edit</a>]</div>
+<p><a name="Applications" id="Applications"></a></p>
+<h2>Applications</h2>
+<p>The <span class="texhtml">π</span>-calculus has been used to describe many different kinds of concurrent systems. In fact, some of the most recent applications lie outside the realm of computer science.</p>
+<p>In 1997, <a  class="new" title="Martin Abadi">Martin Abadi</a> and Andrew Gordon proposed an extension of the <span class="texhtml">π</span>-calculus, the <a  class="new" title="Spi-calculus">Spi-calculus</a>, as a formal notation for describing and reasoning about cryptographic protocols. The spi-calculus extends the <span class="texhtml">π</span>-calculus with primitives for encryption and decryption. There is now a large body of work devoted to variants of the spi-calculus, including a number of experimental verification tools. One example is the tool ProVerif <a  class="external autonumber" title="http://www.di.ens.fr/~blanchet/crypto-eng.html">[1]</a> due to <a  class="new" title="Bruno Blanchet">Bruno Blanchet</a>, based on a translation of the applied <span class="texhtml">π</span>-calculus into Blanchet's logic programming framework. Another example is Cryptyc <a  class="external autonumber" title="http://www.cryptyc.org">[2]</a>, due to Andrew Gordon and Alan) Jeffrey, which uses Woo and Lam's method of correspondence assertions as the basis for type systems that can check for authentication properties of cryptographic protocols.</p>
+<p>Around 2002, Howard Smith and <a  class="new" title="Peter Fingar">Peter Fingar</a> became interested in using the <span class="texhtml">π</span>-calculus as a description tool for modelling business processes. As of July 2006, there is discussion in the community as to how useful this will be. Most recently, the <span class="texhtml">π</span>-calculus has been used as the theoretical basis of Business Process Modeling Language (BPML), and of Microsoft's XLANG.<sup title="The text in the vicinity of this tag needs citation." class="noprint">[<a  title="Wikipedia:Citing sources"><i>citation&#160;needed</i></a>]</sup></p>
+<p>The <span class="texhtml">π</span>-calculus has also attracted interest in molecular biology. In 1999, <a  class="new" title="Aviv Regev">Aviv Regev</a> and <a href="/wiki/Ehud_Shapiro.html" title="Ehud Shapiro">Ehud Shapiro</a> showed that one can describe a cellular signaling pathway (the so-called RTK/MAPK cascade) and in particular the molecular "lego" which implements these tasks of communication in an extension of the <span class="texhtml">π</span>-calculus.<sup id="_ref-0" class="reference"><a  title="">[1]</a></sup></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Implementations">edit</a>]</div>
+<p><a name="Implementations" id="Implementations"></a></p>
+<h2>Implementations</h2>
+<p>The following programming languages are implementations either of the <span class="texhtml">π</span>-calculus or of its variants:</p>
+<ul>
+<li>Acute</li>
+<li><a  class="new" title="BPML">BPML</a> (Business Process Modeling Language)</li>
+<li>The <a  class="new" title="Kell machine">Kell machine</a></li>
+<li><a  class="new" title="Nomadic Pict">Nomadic Pict</a></li>
+<li><a href="/wiki/Occam-Pi.html" title="Occam-Pi">Occam-Pi</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Notes">edit</a>]</div>
+<p><a name="Notes" id="Notes"></a></p>
+<h2>Notes</h2>
+<div class="references-small">
+<ol class="references">
+<li id="_note-0"><b><a  title="">^</a></b> <cite style="font-style:normal"><a  class="new" title="Aviv Regev">Regev, Aviv</a>, William Silverman and Ehud Y. Shapiro. "Representation and Simulation of Biochemical Processes Using the pi-Calculus Process Algebra". <i>Pacific Symposium on Biocomputing 2001</i>: 459–470.</cite></li>
+</ol>
+</div>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<ul>
+<li><a href="/wiki/Robin_Milner.html" title="Robin Milner">Robin Milner</a>: <i>Communicating and Mobile Systems: the Pi-Calculus</i>, Springer Verlag, <a  class="internal">ISBN 0-521-65869-1</a></li>
+</ul>
+<ul>
+<li><a href="/wiki/Robin_Milner.html" title="Robin Milner">Robin Milner</a>: <a  class="external text" title="http://www.lfcs.inf.ed.ac.uk/reports/91/ECS-LFCS-91-180/ECS-LFCS-91-180.ps"><i>The Polyadic <span class="texhtml">π</span>-Calculus: A Tutorial</i></a>. Logic and Algebra of Specification, 1993.</li>
+</ul>
+<ul>
+<li>Davide Sangiorgi and David Walker: <i>The Pi-calculus: A Theory of Mobile Processes</i>, Cambridge University Press, <a  class="internal">ISBN 0-521-78177-9</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://c2.com/cgi/wiki?PiCalculus">PiCalculus</a> on the C2 wiki</li>
+<li><a  class="external text" title="http://move.to/mobility">Calculi for Mobile Processes</a></li>
+</ul>
+
+<!-- 
+Pre-expand include size: 2420 bytes
+Post-expand include size: 925 bytes
+Template argument size: 584 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:420373-0!1!0!default!!en!2 and timestamp 20060910140015 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Articles with unsourced statements">Articles with unsourced statements</a></span> | <span dir='ltr'><a  title="Category:Process calculi">Process calculi</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Pi-calculus.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 20:07, 30 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv117 in 0.140 secs. --></body></html>

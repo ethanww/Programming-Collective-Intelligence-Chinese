@@ -1,0 +1,416 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="XPath,1999,Extensible Stylesheet Language,FLWOR,Java programming language,November 16,Prettyprint,Query language,Unicode,Union (set theory),Virtuoso Universal Server" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>XPath - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "XPath";
+			var wgTitle = "XPath";
+			var wgArticleId = 45308;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">XPath</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p><b>XPath</b> (XML Path Language) is a terse (non-XML) syntax for addressing portions of an <a href="/wiki/XML.html" title="XML">XML</a> document.</p>
+<p>Originally motivated by a desire to provide a common syntax and behavior model between <a href="/wiki/XPointer.html" title="XPointer">XPointer</a> and <a href="/wiki/XSLT.html" title="XSLT">XSLT</a>, XPath has rapidly been adopted by developers as a small <a href="/wiki/Query_language.html" title="Query language">query language</a>.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Notation</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">1.1</span> <span class="toctext">Abbreviated syntax</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.2</span> <span class="toctext">Expanded syntax</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Axis specifiers</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Node tests</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Predicates</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Functions and operators</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">5.1</span> <span class="toctext">Node set functions</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">5.2</span> <span class="toctext">String functions</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">5.3</span> <span class="toctext">Boolean functions</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">5.4</span> <span class="toctext">Number functions</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">XPath 2.0</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">Implementations</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">8</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">9</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Notation">edit</a>]</div>
+<p><a name="Notation" id="Notation"></a></p>
+<h2>Notation</h2>
+<p>The most common kind of XPath expression (and the one which gave the language its name) is a path expression. A path expression is written as a sequence of steps to get from one XML node (the current 'context node') to another node or set of nodes. The steps are separated by "/" (i.e. path) characters. Each step has three components:</p>
+<ul>
+<li>Axis Specifier</li>
+<li>Node Test</li>
+<li>Predicate</li>
+</ul>
+<p>Two notations are defined, one, the <b>abbreviated syntax</b>, is more compact and allows XPaths to be written and read easily using intuitive and, in many cases, familiar characters and constructs. The full syntax is more verbose, but allows for more options to be specified, and is more descriptive if read carefully.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Abbreviated syntax">edit</a>]</div>
+<p><a name="Abbreviated_syntax" id="Abbreviated_syntax"></a></p>
+<h3>Abbreviated syntax</h3>
+<p>The compact notation allows many defaults and abbreviations for common cases. The simplest XPath takes a form such as</p>
+<ul>
+<li><code>/A/B/C</code></li>
+</ul>
+<p>which selects C elements that are children of B elements that are children of the A element that forms the outermost element of the XML document. XPath syntax is designed to mimic URI (Uniform Resource Identifier) syntax and file path syntax.</p>
+<p>More complex expressions can be constructed by specifying an axis other than the default 'child' axis, a node test other than a simple name, or predicates, which can be written in square brackets after any step. For example, the expression</p>
+<ul>
+<li><code>A//B/*[1]</code></li>
+</ul>
+<p>selects the first element ('<code>[1]</code>'), whatever its name ('<code>*</code>'), that is a child ('<code>/</code>') of a B element that itself is a child or other, deeper descendant ('<code>//</code>') of an A element that is a child of the current context node (the expression does not begin with a '<code>/</code>').</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Expanded syntax">edit</a>]</div>
+<p><a name="Expanded_syntax" id="Expanded_syntax"></a></p>
+<h3>Expanded syntax</h3>
+<p>In the full, unabbreviated syntax, the two examples above would be written</p>
+<ul>
+<li><code>/child::A/child::B/child::C</code></li>
+<li><code>child::A/descendant-or-self::node()/child::B/child::*[1]</code></li>
+</ul>
+<p>Here, in each step of the XPath, the <b>axis</b> (e.g. <code>child</code> or <code>descendant-or-self</code>) is explicitly specified, followed by <code>::</code> and then the <b>node test</b>, such as <code>A</code> or <code>node()</code> in the examples above.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Axis specifiers">edit</a>]</div>
+<p><a name="Axis_specifiers" id="Axis_specifiers"></a></p>
+<h2>Axis specifiers</h2>
+<p>The Axis Specifier indicates navigation direction within the tree representation of the XML document. The axes available, in the full and then the abbreviated syntax, are:</p>
+<dl>
+<dt>child&#160;</dt>
+<dd>default, does not need specifying in abbreviated syntax</dd>
+<dt>attribute&#160;</dt>
+<dd><code>@</code></dd>
+<dt>descendant&#160;</dt>
+<dd>not available in abbreviated syntax</dd>
+<dt>descendant-or-self&#160;</dt>
+<dd><code>//</code></dd>
+<dt>parent&#160;</dt>
+<dd><code>..</code> i.e. dot-dot</dd>
+<dt>ancestor&#160;</dt>
+<dd>not available in abbreviated syntax</dd>
+<dt>ancestor-or-self&#160;</dt>
+<dd>not available in abbreviated syntax</dd>
+<dt>following&#160;</dt>
+<dd>not available in abbreviated syntax</dd>
+<dt>preceding&#160;</dt>
+<dd>not available in abbreviated syntax</dd>
+<dt>following-sibling&#160;</dt>
+<dd>not available in abbreviated syntax</dd>
+<dt>preceding-sibling&#160;</dt>
+<dd>not available in abbreviated syntax</dd>
+<dt>self&#160;</dt>
+<dd><code>.</code> i.e. dot</dd>
+<dt>namespace&#160;</dt>
+<dd>not available in abbreviated syntax</dd>
+</dl>
+<p>As an example of using the <b>attribute</b> axis in abbreviated syntax, <code>//a/@href</code> selects an attribute called <code>href</code> in an <code>a</code> element anywhere in the document tree. The <b>self</b> axis is most commonly used within a predicate to refer to the currently selected node. For example, <code>h3[.='See also']</code> selects an element called <code>h3</code> in the current context, whose text content is <code>See also</code>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Node tests">edit</a>]</div>
+<p><a name="Node_tests" id="Node_tests"></a></p>
+<h2>Node tests</h2>
+<p>Node tests may consist of specific node names or more general expressions. In the case of an XML document in which the namespace prefix <code>gs</code> has been defined, <code>//gs:enquiry</code> will find all the <code>enquiry</code> elements in that namespace, and <code>//gs:*</code> will find all elements, regardless of local name, in that namespace.</p>
+<p>Other node test formats are:</p>
+<dl>
+<dt>comment()&#160;</dt>
+<dd>finds an XML comment node, e.g. <code>&lt;!-- Comment --&gt;</code></dd>
+<dt>text()&#160;</dt>
+<dd>finds a node of type text, e.g. the <code>hello</code> in <code>&lt;k&gt;hello&lt;/k&gt;</code></dd>
+<dt>processing-instruction()&#160;</dt>
+<dd>finds XML <a  class="new" title="Processing instruction">processing instructions</a> such as <code>&lt;?php echo $a;&#160;?&gt;</code>. In this case, <code>processing-instruction('php')</code> would match.</dd>
+<dt>node()&#160;</dt>
+<dd>finds any node at all.</dd>
+</dl>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Predicates">edit</a>]</div>
+<p><a name="Predicates" id="Predicates"></a></p>
+<h2>Predicates</h2>
+<p>Expressions of any complexity can be specified in square brackets, that must be satisfied before the preceding node will be matched by an XPath. For example <code>//a[@href='help.php']</code>, which will match an <code>a</code> element with an <code>href</code> attribute whose value is <code>help.php</code>.</p>
+<p>There is no limit to the number of predicates in a step, and they need not be confined to the last step in an XPath. They can also be nested to any depth. Paths specified in predicates begin at the context of the current step (i.e. that of the immediately preceding node test) and do not alter that context. All predicates must be satisfied for a match to occur.</p>
+<p>When <code>//a[/html/@lang='en'][@href='help.php'][1]/@target</code> is applied to a <a href="/wiki/XHTML.html" title="XHTML">XHTML</a> document, it selects the value of the <code>target</code> attribute of the first <code>a</code> element that has its <code>href</code> attribute set to <code>help.php</code>, provided the document's <code>html</code> top-level element also has a <code>lang</code> attribute set to <code>en</code>. The reference to an attribute of the top-level element in the first predicate affects neither the context of other predicates nor that of the location step itself.</p>
+<p>Predicate order is significant, however. Each predicate 'filters' a location step's selected node-set in turn. <code>//a[1][/html/@lang='en'][@href='help.php']/@target</code> will find a match only if the first <code>a</code> element in a suitable document also meets <code>@href='help.php'</code></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Functions and operators">edit</a>]</div>
+<p><a name="Functions_and_operators" id="Functions_and_operators"></a></p>
+<h2>Functions and operators</h2>
+<p>XPath 1.0 defines four data types: node-sets (sets of nodes with no intrinsic order), strings, numbers and booleans.</p>
+<p>The available operators are:</p>
+<ul>
+<li>The "/", "//" and "[...]" operators, used in path expressions, as described above.</li>
+<li>A union operator, "|", which forms the union of two node-sets.</li>
+<li>Boolean operators "and" and "or", and a function "not()"</li>
+<li>Arithmetic operators "+", "-", "*", "div" (divide), and "mod"</li>
+<li>Comparison operators "=", "!=", "&lt;", "&gt;", "&lt;=", "&gt;="</li>
+</ul>
+<p>The function library includes:</p>
+<ul>
+<li>Functions to manipulate strings: concat(), substring(), contains(), substring-before(), substring-after(), translate(), normalize-space(), string-length()</li>
+<li>Functions to manipulate numbers: sum(), round(), floor(), ceiling()</li>
+<li>Functions to get properties of nodes: name(), local-name(), namespace-uri()</li>
+<li>Functions to get information about the processing context: position(), last()</li>
+<li>Type conversion functions: string(), number(), boolean()</li>
+</ul>
+<p>Some of the more commonly useful functions are detailed below. For a complete description, see <a  class="external text" title="http://www.w3.org/TR/xpath">the W3C Recommendation document</a></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Node set functions">edit</a>]</div>
+<p><a name="Node_set_functions" id="Node_set_functions"></a></p>
+<h3>Node set functions</h3>
+<dl>
+<dt>position()&#160;</dt>
+<dd>returns a number representing the position of this node in the sequence of nodes currently being processed (for example, the nodes selected by an xsl:for-each instruction in XSLT).</dd>
+<dt>count(<i>node-set</i>)&#160;</dt>
+<dd>returns the number of nodes in the node-set supplied as its argument.</dd>
+</dl>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: String functions">edit</a>]</div>
+<p><a name="String_functions" id="String_functions"></a></p>
+<h3>String functions</h3>
+<dl>
+<dt>string(<i>object</i>?)&#160;</dt>
+<dd>converts any of the four XPath data types into a string according to built-in rules. If the value of the argument is a node-set, the function returns the string-value of the first node in document order, ignoring any further nodes.</dd>
+<dt>concat(<i>string</i>, <i>string</i>, <i>string</i>*)&#160;</dt>
+<dd>concatenates any number of strings</dd>
+<dt>contains(<i>s1</i>, <i>s2</i>)&#160;</dt>
+<dd>returns <code>true</code> if <code>s1</code> contains <code>s2</code></dd>
+<dt>normalize-space(<i>string</i>?)&#160;</dt>
+<dd>all leading and trailing <a href="/wiki/Whitespace_%28computer_science%29.html" title="Whitespace (computer science)">whitespace</a> is removed and any sequences of whitespace characters are replaced by a single space. This is very useful when the original XML may have been <a href="/wiki/Prettyprint.html" title="Prettyprint">prettyprint</a> formatted, which could make further string processing unreliable.</dd>
+</dl>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Boolean functions">edit</a>]</div>
+<p><a name="Boolean_functions" id="Boolean_functions"></a></p>
+<h3>Boolean functions</h3>
+<dl>
+<dt>not(<i>boolean</i>)&#160;</dt>
+<dd>negates any boolean expression.</dd>
+</dl>
+<dl>
+<dt>true()&#160;</dt>
+<dd>evaluates to <i>true</i>.</dd>
+</dl>
+<dl>
+<dt>false()&#160;</dt>
+<dd>evaluates to <i>false</i>.</dd>
+</dl>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Number functions">edit</a>]</div>
+<p><a name="Number_functions" id="Number_functions"></a></p>
+<h3>Number functions</h3>
+<dl>
+<dt>sum(<i>node-set</i>)&#160;</dt>
+<dd>converts the string values of all the nodes found by the XPath argument into numbers, according to the built-in casting rules, then returns the sum of these numbers.</dd>
+</dl>
+<p>Expressions can be created inside predicates using the operators: <code>=, !=, &lt;=, &lt;, &gt;=</code> and <code>&gt;</code>. Boolean expressions may be combined with brackets <code>()</code> and the boolean operators <code>and</code> and <code>or</code> as well as the <code>not()</code> function described above. Numeric calculations can use <code>*, +, -, div</code> and <code>mod</code>. Strings can consist of any <a href="/wiki/Unicode.html" title="Unicode">Unicode</a> characters.</p>
+<p>Inside or outside of predicates, entire node-sets can be combined (<a href="/wiki/Union_%28set_theory%29.html" title="Union (set theory)">'unioned'</a>) using the pipe character |.</p>
+<p><code>v[x or y] | w[z]</code> will return a single node-set consisting of all the <code>v</code> elements that have <code>x</code> or <code>y</code> child-elements, as well as all the <code>w</code> elements that have <code>z</code> child-elements, that were found in the current context.</p>
+<p><code>//item[@price &gt; 2*@discount]</code> selects items whose price attribute is at least twice the numeric value of the discount attribute.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: XPath 2.0">edit</a>]</div>
+<p><a name="XPath_2.0" id="XPath_2.0"></a></p>
+<h2>XPath 2.0</h2>
+<dl>
+<dd>
+<div class="noprint"><i>Main article: <a href="/wiki/XPath_2.0.html" title="XPath 2.0">XPath 2.0</a></i></div>
+</dd>
+</dl>
+<p>XPath 1.0 was published as a <a href="/wiki/W3C.html" title="W3C">W3C</a> Recommendation on <a href="/wiki/November_16.html" title="November 16">November 16</a>, <a href="/wiki/1999.html" title="1999">1999</a>. <a href="/wiki/XPath_2.0.html" title="XPath 2.0">XPath 2.0</a> is in the final stages of the W3C approval process. XPath 2.0 represents a significant increase in the size and capability of the XPath language.</p>
+<p>The most notable change is that XPath 2.0 has a much richer type system; XPath 2.0 supports atomic types, defined as built-in types in <a href="/wiki/XML_Schema.html" title="XML Schema">XML Schema</a>, and may also import user-defined types from a schema. Every value is now a sequence (a single atomic value or node is regarded as a sequence of length one). XPath 1.0 node-sets are replaced by node sequences, which may be in any order.</p>
+<p>To support richer type sets, XPath 2.0 offers a greatly expanded set of functions and operators.</p>
+<p>XPath 2.0 is in fact a subset of <a href="/wiki/XQuery.html" title="XQuery">XQuery</a> 1.0. It offers a <code>for</code> expression which is cut-down version of the "<a href="/wiki/FLWOR.html" title="FLWOR">FLWOR</a>" expressions in XQuery. It is possible to describe the language by listing the parts of XQuery that it leaves out: the main examples are the query prolog, element and attribute constructors, the remainder of the "FLWOR" syntax, and the <code>typeswitch</code> expression.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Implementations">edit</a>]</div>
+<p><a name="Implementations" id="Implementations"></a></p>
+<h2>Implementations</h2>
+<dl>
+<dt>C++</dt>
+<dd>TinyXpath <a  class="external autonumber" title="http://sourceforge.net/projects/tinyxpath">[1]</a></dd>
+<dt>Implementations for Database Engines</dt>
+<dd><a href="/wiki/Virtuoso_Universal_Server.html" title="Virtuoso Universal Server">OpenLink Virtuoso</a></dd>
+<dt>Java</dt>
+<dd>the <a href="/wiki/Java_programming_language.html" title="Java programming language">Java</a> package javax.xml.xpath has been part of Java standard edition since Java 1.5 (also called Java 5.0) <a  class="external autonumber" title="http://java.sun.com/j2se/1.5.0/docs/api/javax/xml/xpath/package-summary.html">[2]</a></dd>
+</dl>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/XML.html" title="XML">XML</a></li>
+<li><a href="/wiki/Extensible_Stylesheet_Language.html" title="Extensible Stylesheet Language">XSL</a>, <a href="/wiki/XSLT.html" title="XSLT">XSLT</a>, <a href="/wiki/XSL-FO.html" title="XSL-FO">XSL-FO</a></li>
+<li><a href="/wiki/XQuery.html" title="XQuery">XQuery</a></li>
+<li><a href="/wiki/XLink.html" title="XLink">XLink</a>, <a href="/wiki/XPointer.html" title="XPointer">XPointer</a></li>
+<li><a href="/wiki/XML_Schema.html" title="XML Schema">XML Schema</a></li>
+<li><a  class="new" title="STXPath">STXPath</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://www.w3.org/TR/xpath">XPath 1.0 specification</a></li>
+<li><a  class="external text" title="http://www.w3schools.com/xpath/default.asp">XPath tutorial</a></li>
+<li><a  class="external text" title="http://js-xpath.sourceforge.net/">XPath JavaScript implementation</a></li>
+<li><a  class="external text" title="http://www.zvon.org/xxl/XPathTutorial/General/examples.html">Another tutorial</a></li>
+<li><a  class="external text" title="http://www.activsoftware.com/xml/xpath/">Practice XPath queries</a></li>
+<li><a  class="external text" title="http://www.topxml.com/xpathvisualizer/">XPath Visualizer - run queries on your own XML</a></li>
+</ul>
+
+<!-- 
+Pre-expand include size: 1775 bytes
+Post-expand include size: 114 bytes
+Template argument size: 113 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:45308-0!1!0!default!!en!2 and timestamp 20060906013127 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:W3C standards">W3C standards</a></span> | <span dir='ltr'><a  title="Category:XML-based standards">XML-based standards</a></span> | <span dir='ltr'><a  title="Category:Query languages">Query languages</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/XPath.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-cs"><a >Česky</a></li>
+				<li class="interwiki-da"><a >Dansk</a></li>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-eu"><a >Euskara</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-he"><a >עברית</a></li>
+				<li class="interwiki-lt"><a >Lietuvių</a></li>
+				<li class="interwiki-nl"><a >Nederlands</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+				<li class="interwiki-fi"><a >Suomi</a></li>
+				<li class="interwiki-sv"><a >Svenska</a></li>
+				<li class="interwiki-tr"><a >Türkçe</a></li>
+				<li class="interwiki-zh"><a >中文</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 05:50, 20 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv79 in 0.115 secs. --></body></html>

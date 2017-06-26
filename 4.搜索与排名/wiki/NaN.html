@@ -1,0 +1,274 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="NaN,0 (number),AMD,Absolute value,Arithmetic overflow,Arithmetic underflow,Complex number,Computing,Denormal number,Exponentiation,Extended real number line" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>NaN - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "NaN";
+			var wgTitle = "NaN";
+			var wgArticleId = 49244;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">NaN</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>In <a href="/wiki/Computing.html" title="Computing">computing</a>, <b>NaN</b> (<b>N</b>ot <b>a</b> <b>N</b>umber) is a value or symbol that is usually produced as the result of an operation on invalid input operands, especially in <a href="/wiki/Floating_point.html" title="Floating point">floating-point</a> calculations. For example, most <a href="/wiki/Floating_point_unit.html" title="Floating point unit">floating-point units</a> are unable to explicitly calculate the square root of negative numbers, and will instead indicate that the operation was invalid and return a NaN result.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">NaNs in floating point</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">1.1</span> <span class="toctext">Quiet NaNs</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.2</span> <span class="toctext">Signalling NaNs</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">NaNs in function definitions</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">NaNs in integers</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Displaying NaN</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">NaN encodings</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: NaNs in floating point">edit</a>]</div>
+<p><a name="NaNs_in_floating_point" id="NaNs_in_floating_point"></a></p>
+<h2>NaNs in floating point</h2>
+<p>In floating-point calculations, NaN is not the same as infinity, although both are typically handled as special cases in floating-point representations of real numbers as well as in floating-point operations. An invalid operation is also not the same as an <a href="/wiki/Arithmetic_overflow.html" title="Arithmetic overflow">arithmetic overflow</a> (which might return an infinity) or an <a href="/wiki/Arithmetic_underflow.html" title="Arithmetic underflow">arithmetic underflow</a> (which would return the smallest <a href="/wiki/Normal_number_%28computing%29.html" title="Normal number (computing)">normal number</a>, a <a href="/wiki/Denormal_number.html" title="Denormal number">denormal number</a>, or <a href="/wiki/0_%28number%29.html" title="0 (number)">zero</a>).</p>
+<p>IEEE 754 NaNs are represented with the exponential field filled with ones and some non-zero number in the mantissa. A bit-wise example of a <a href="/wiki/IEEE_floating-point_standard.html" title="IEEE floating-point standard">IEEE floating-point standard</a> single precision NaN: x11111111axxxxxxxxxxxxxxxxxxxxxx. x = undefined. If a = 1, it is a quiet NaN, otherwise it is a signalling NaN.</p>
+<p>A NaN does not compare equal to any floating-point number or NaN, even if the latter has an identical representation. One can therefore test whether a variable has a NaN value by comparing it to itself (i.e. if x&#160;!= x then x is NaN).</p>
+<p>In the <a href="/wiki/IEEE_floating-point_standard.html" title="IEEE floating-point standard">IEEE floating-point standard</a>, arithmetic operations involving NaN always produce NaN, allowing the value to propagate through a calculation. In the current (proposed) <a href="/wiki/IEEE_754r.html" title="IEEE 754r">IEEE 754r</a> revision of that standard, there are two exceptions to this rule: the <b>maxnum</b> and <b>minnum</b> functions return the maximum and minimum of two operands, and will favour numbers (if just one of the operands is a NaN then the other operand is returned). This behaviour is useful in the statistical processing of sparse data.</p>
+<p>A similar concept has been implemented in the NaN-toolbox <a  class="external autonumber" title="http://www.dpmi.tu-graz.ac.at/~schloegl/matlab/NaN/">[1]</a> for <a href="/wiki/GNU_Octave.html" title="GNU Octave">GNU Octave</a> and <a href="/wiki/MATLAB.html" title="MATLAB">MATLAB</a>. The NaN-toolbox contains statistical functions that ignore any NaN in the data. Most algorithms in the NaN-toolbox are based on the function SUMSKIPNAN <a  class="external autonumber" title="http://octave.cvs.sourceforge.net/octave/octave-forge/extra/NaN/sumskipnan.m">[2]</a> adds and counts all numerals and skips all NaN. Every <a href="/wiki/Statistic.html" title="Statistic">statistic</a> in the NaN-toolbox is based on the numerals only - this behaviour is useful in statistical data processing with missing values.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Quiet NaNs">edit</a>]</div>
+<p><a name="Quiet_NaNs" id="Quiet_NaNs"></a></p>
+<h3>Quiet NaNs</h3>
+<p>Quiet NaNs, or qNaNs, do not raise any additional exceptions as they propagate through most operations. The exceptions are where the NaN cannot simply be passed through unchanged to the output, such as in format conversions or certain comparison operations (which do not "expect" a NaN input).</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Signalling NaNs">edit</a>]</div>
+<p><a name="Signalling_NaNs" id="Signalling_NaNs"></a></p>
+<h3>Signalling NaNs</h3>
+<p>Signalling NaNs, or sNaNs, are special forms of a NaN which when consumed by most operations should raise an invalid exception and then, if appropriate, be "quieted" into a qNaN which may then propagate. They were introduced in <a href="/wiki/IEEE_754.html" title="IEEE 754">IEEE 754</a>. There have been several ideas for how these might be used:</p>
+<ul>
+<li>Filling uninitialized memory with signalling NaNs would produce an invalid exception if the data is used before it is initialized</li>
+<li>Using an sNaN as a place holder for a more complicated <a href="/wiki/Object_%28computer_science%29.html" title="Object (computer science)">object</a> such as:
+<ul>
+<li>a representation of a number which has <a href="/wiki/Arithmetic_underflow.html" title="Arithmetic underflow">underflowed</a></li>
+<li>a representation of a number which has <a href="/wiki/Arithmetic_overflow.html" title="Arithmetic overflow">overflowed</a></li>
+<li>number in a higher precision format</li>
+<li>a <a href="/wiki/Complex_number.html" title="Complex number">complex number</a></li>
+</ul>
+</li>
+</ul>
+<p>When encountered a trap handler could decode the sNaN and return an index to the computed result. In practice this approach is faced with many complications. The treatment of the <a href="/wiki/Sign_bit.html" title="Sign bit">sign bit</a> of NaNs for some simple operations (such as <a href="/wiki/Absolute_value.html" title="Absolute value">absolute value</a>) is different than for arithmetic operations. Traps are not required by the standard. There are other approaches to this sort of problem which would be more portable.</p>
+<p>There were questions about if signalling NaNs should continue to be required in the revised standard. In the end it appears they will be left in.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: NaNs in function definitions">edit</a>]</div>
+<p><a name="NaNs_in_function_definitions" id="NaNs_in_function_definitions"></a></p>
+<h2>NaNs in function definitions</h2>
+<p>There are differences of opinion about the proper definition for the result of a numeric <a href="/wiki/Subroutine.html" title="Subroutine">function</a> which receives a (quiet) NaN as input. One view is that the NaN should propagate to the output of the function in all cases to propagate the indication of an error. Another view is that if the function has multiple arguments and the output is uniquely determined by all the non-NaN inputs, then that value should be the result.</p>
+<pre>
+ If we define <a href="/wiki/Exponentiation.html" title="Exponentiation">pow</a>(x,y) = x ** y
+ What is pow(1, NaN)?
+</pre>
+<p>The first view is that the output should be NaN since one of the inputs is. The second view is that since pow(1, y) = 1 for any <a href="/wiki/Real_number.html" title="Real number">real number</a> y, or even if y is <a href="/wiki/Infinity.html" title="Infinity">infinity</a> or -infinity, then it is appropriate to return 1 for the case of pow(1, NaN). This is the approach in many <a  class="new" title="Math library">math libraries</a>.</p>
+<p>A similar concern is for the test</p>
+<pre>
+ (x &lt;= infinity)
+</pre>
+<p>which is true for all <a href="/wiki/Extended_real_number_line.html" title="Extended real number line">extended real values</a> of x. But in IEEE 754 (NaN &lt;= infinity) is <a href="/wiki/False.html" title="False">false</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: NaNs in integers">edit</a>]</div>
+<p><a name="NaNs_in_integers" id="NaNs_in_integers"></a></p>
+<h2>NaNs in integers</h2>
+<p>Most fixed sized <a href="/wiki/Integer.html" title="Integer">integer</a> formats do not have any way of explicitly indicating invalid data.</p>
+<p><a href="/wiki/Perl.html" title="Perl">Perl</a>'s BigInt package uses "NaN" for the result of strings which don't represent valid integers.</p>
+<pre>
+<code> &gt;perl -mMath::BigInt -e "print Math::BigInt-&gt;new('foo')" </code>
+<code> NaN </code>
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Displaying NaN">edit</a>]</div>
+<p><a name="Displaying_NaN" id="Displaying_NaN"></a></p>
+<h2>Displaying NaN</h2>
+<p>Note that the software libraries of different operating systems and programming languages will have different string representations of NaN.</p>
+<pre>
+ nan
+ NaN
+ NAN
+ NaNQ
+ NaNS
+ qNaN
+ sNaN
+ 1.#SNAN
+ 1.#QNAN
+ (other possible variants no doubt exist)
+</pre>
+<p><a href="/wiki/Infinity.html" title="Infinity">Infinity</a> has the same issue:</p>
+<pre>
+ inf
+ Inf
+ Infinity
+ 1.#INF
+ -inf
+ -Inf
+ -Infinity
+ -1.#INF
+ (other possible variants no doubt exist)
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: NaN encodings">edit</a>]</div>
+<p><a name="NaN_encodings" id="NaN_encodings"></a></p>
+<h2>NaN encodings</h2>
+<p>The encoding to distinguish a signaling NaN from a quiet NaN was not specified in IEEE 754, which has led to at least two variant encodings. The current <a href="/wiki/IEEE_754r.html" title="IEEE 754r">IEEE 754r</a> proposal recommends (for binary encodings, in section 6.2.1) that the first fraction bit of the <a href="/wiki/Significand.html" title="Significand">significand</a> be set to one for a qNaN and be zero for an sNaN. This ensures that when an sNaN is converted to a qNaN (by inverting that bit) the result is guaranteed to still be a NaN (rather than perhaps an infinity, should all remaining bits of the significand be zero).</p>
+<p>On processors from <a href="/wiki/Intel.html" title="Intel">Intel</a> and <a href="/wiki/AMD.html" title="AMD">AMD</a> the first fraction bit of a binary <a href="/wiki/Significand.html" title="Significand">significand</a> is set to one for a qNaN and is zero for an sNaN. Other vendors use different schemes.</p>
+<p>For the proposed <a href="/wiki/IEEE_754r.html" title="IEEE 754r">IEEE 754r</a> <i>decimal</i> encodings, Infinities and NaNs are distinguished at a 'higher level', and so there is no confusion between NaNs and Infinities. Therefore, in this case, a 1 is used (in the equivalent position) to indicate sNaN, because turning this to 0 still indicates a (quiet) NaN. Hence, an initialization of all-ones sets any storage for these encodings to signaling-NaN, which is an appropriate setting for 'uninitialized' numeric data.</p>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:49244-0!1!0!default!!en!2 and timestamp 20060906012232 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Computer arithmetic">Computer arithmetic</a></span> | <span dir='ltr'><a  title="Category:Computing acronyms">Computing acronyms</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/NaN.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-eo"><a >Esperanto</a></li>
+				<li class="interwiki-ko"><a >한국어</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-lt"><a >Lietuvių</a></li>
+				<li class="interwiki-nl"><a >Nederlands</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 06:08, 8 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv28 in 0.274 secs. --></body></html>

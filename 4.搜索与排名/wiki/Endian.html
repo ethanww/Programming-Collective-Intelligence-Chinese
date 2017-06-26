@@ -1,0 +1,517 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Endianness,Endianness,100 (number),ARM architecture,ASCII,Application programming interface,Arabic language,Berkeley sockets,Bitfield,Bitmask,Byte" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Endianness - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Endianness";
+			var wgTitle = "Endianness";
+			var wgArticleId = 43026;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Endianness</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub">(Redirected from <a  title="Endian">Endian</a>)</div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>In <a href="/wiki/Computing.html" title="Computing">computing</a>, <b>endianness</b> generally refers to sequencing methods used in a one-dimensional system (such as writing on <a href="/wiki/Computer_memory.html" title="Computer memory">computer memory</a>). The two main types of endianness are known as <b>big-endian</b> (big units <i>first</i>) and <b>little-endian</b> (little units first). Systems which exhibit aspects of both conventions are often described as <b>middle-endian</b>. When specifically talking about bytes in computing, endianness is also referred to as <b>byte order</b> or <b>byte sex</b>.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Explanation</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Endianness in computers</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">2.1</span> <span class="toctext">Logical and arithmetical description</span></a>
+<ul>
+<li class="toclevel-3"><a ><span class="tocnumber">2.1.1</span> <span class="toctext">Bit Endianness</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">2.1.2</span> <span class="toctext">Detecting Endianness</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.2</span> <span class="toctext">Portability issues</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.3</span> <span class="toctext">Example programming caveat</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Endianness in communications</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Endianness of date formats</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Endianness in addresses</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">Discussion, background, etymology</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">8</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">9</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Explanation">edit</a>]</div>
+<p><a name="Explanation" id="Explanation"></a></p>
+<h2>Explanation</h2>
+<p>When a sequence of small units is used to form a larger <a href="/wiki/Ordinal.html" title="Ordinal">ordinal</a> value, convention must establish the order in which those smaller units are placed. This could be considered similar to the situation in different <a href="/wiki/Written_language.html" title="Written language">written languages</a>, where some (such as <a href="/wiki/English_language.html" title="English language">English</a> and <a href="/wiki/French_language.html" title="French language">French</a>) are written left to right, while others (such as <a href="/wiki/Arabic_language.html" title="Arabic language">Arabic</a> and <a href="/wiki/Hebrew_language.html" title="Hebrew language">Hebrew</a>) are written right to left.</p>
+<p>For a left-to-right writing system, decimal numbering is big-endian when written using numbers, starting at the left with the highest order magnitude and progressing to smaller order magnitudes to the right. For example, the number "2958" starts with the thousands (2), continues through the hundreds (9), then tens (5) to units (8).</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Endianness in computers">edit</a>]</div>
+<p><a name="Endianness_in_computers" id="Endianness_in_computers"></a></p>
+<h2>Endianness in computers</h2>
+<p>There seems to be no significant advantage in using one method of endianness over the other, and both have remained common in terms of the number of different architectures that use them. However, because little-endian <a href="/wiki/Intel_x86.html" title="Intel x86">Intel x86</a> based processors (and their clones) are used in most personal computers and laptops, the vast majority of desktop computers in the world today are little-endian. This is sometimes called "Intel format". Networks generally use big-endian numbers as addresses; this is historically because this allowed the routing to be decided as a telephone number was dialed. <a href="/wiki/Motorola.html" title="Motorola">Motorola</a> processors have generally used big-endian numbers, and ARM processors gained truly switchable endianness in order to improve performance of networking devices based on them.</p>
+<p>Generally the <a href="/wiki/Byte.html" title="Byte">byte</a> (<a href="/wiki/Octet_%28computing%29.html" title="Octet (computing)">octet</a>) is considered an atomic unit from the point of view of storage at all but the lowest levels of network protocols and storage formats. Therefore sequences based around single bytes (e.g. text in <a href="/wiki/ASCII.html" title="ASCII">ASCII</a>, <a href="/wiki/UTF-8.html" title="UTF-8">UTF-8</a>, or one of the <a href="/wiki/ISO_8859.html" title="ISO 8859">ISO 8859</a> encodings) are not generally affected by endian issues. On the other hand, variable-width text encodings using the byte as their base unit, such as UTF-8, could be considered to have an inbuilt endianness that, at least in all commonly used text encodings, is fixed by the encoding’s design. However, <a href="/wiki/Unicode.html" title="Unicode">Unicode</a> strings encoded with <a href="/wiki/UTF-16.html" title="UTF-16">UTF-16</a> or <a href="/wiki/UTF-32.html" title="UTF-32">UTF-32</a> are affected by endianness, because each code unit must be further represented as two or four bytes.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Logical and arithmetical description">edit</a>]</div>
+<p><a name="Logical_and_arithmetical_description" id="Logical_and_arithmetical_description"></a></p>
+<h3>Logical and arithmetical description</h3>
+<dl>
+<dd><i>Note: all numerical values in this section presented in</i> <code>code style</code> <i>are in <a href="/wiki/Hexadecimal.html" title="Hexadecimal">hexadecimal</a> notation.</i></dd>
+</dl>
+<p>When some computers store a 32-bit integer value in memory, based on 1-byte atomic element size and 1-byte address increment, for example <code>4A3B2C1D</code> at address <code>100</code>, they store the bytes within the address range <code>100</code> through <code>103</code> in the following order given in first example.</p>
+<p>Furthermore, we present a step forward involving atomic element size. We still consider 32-bit integer values stored in memory, but based on 2-byte atomic element size and 1-byte address increment. For same example <code>4A3B2C1D</code> at address <code>100</code>, the bytes are stored within the address range <code>100</code> through <code>103</code> in the order given below in second example.</p>
+<p>Third example targets the major difference between atomic element size and address increment: in this third example, 32-bit integer values are stored in memory, still based on 2-byte atomic element size, with 2-byte address increment.</p>
+<p><b>Big-endian</b></p>
+<table border="1" cellpadding="4" style="border: 1px solid #ffffff; background-color: #ffffff; border-collapse: collapse; margin: 0.4em 0.4em; text-align: center">
+<tr>
+<td style="padding: 0em 1em;"></td>
+<td style="padding: 0em 1em;"><code>100</code></td>
+<td style="padding: 0em 1em;"><code>101</code></td>
+<td style="padding: 0em 1em;"><code>102</code></td>
+<td style="padding: 0em 1em;"><code>103</code></td>
+<td style="padding: 0em 1em;"></td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000; border-left: 1px solid #ffffff; padding: 0em 1em;"><code>...</code></td>
+<td style="border: 1px solid #000000; padding: 0em 1em;"><code>4A</code></td>
+<td style="border: 1px solid #000000; padding: 0em 1em;"><code>3B</code></td>
+<td style="border: 1px solid #000000; padding: 0em 1em;"><code>2C</code></td>
+<td style="border: 1px solid #000000; padding: 0em 1em;"><code>1D</code></td>
+<td style="border: 1px solid #000000; border-right: 1px solid #ffffff; padding: 0em 1em;"><code>...</code></td>
+</tr>
+</table>
+<p>That is, the <a href="/wiki/Most_significant_byte.html" title="Most significant byte">most significant byte</a> (also known as the <i>MSB</i>, which is <code>4A</code> in our example) is stored at the memory location with the lowest address, the next byte in significance, <code>3B</code>, is stored at the next memory location and so on.</p>
+<table border="1" cellpadding="4" style="border: 1px solid #ffffff; background-color: #ffffff; border-collapse: collapse; margin: 0.4em 0.4em; text-align: center">
+<tr>
+<td style="padding: 0em 1em;"></td>
+<td style="padding: 0em 1em;"><code>100</code></td>
+<td style="padding: 0em 1em;"><code>101</code></td>
+<td style="padding: 0em 1em;"><code>102</code></td>
+<td style="padding: 0em 1em;"><code>103</code></td>
+<td style="padding: 0em 1em;"></td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000; border-left: 1px solid #ffffff; padding: 0em 1em;"><code>...</code></td>
+<td style="border: 1px solid #000000; border-right: 1px solid #ffffff; padding: 0em 1em;"><code>4A</code></td>
+<td style="border: 1px solid #000000; border-left: 1px solid #ffffff; padding: 0em 1em;"><code>3B</code></td>
+<td style="border: 1px solid #000000; border-right: 1px solid #ffffff; padding: 0em 1em;"><code>2C</code></td>
+<td style="border: 1px solid #000000; border-left: 1px solid #ffffff; padding: 0em 1em;"><code>1D</code></td>
+<td style="border: 1px solid #000000; border-right: 1px solid #ffffff; padding: 0em 1em;"><code>...</code></td>
+</tr>
+</table>
+<p>The <a href="/wiki/Most_significant_byte.html" title="Most significant byte">most significant atomic element</a> becomes now <code>4A3B</code> in our example, followed by <code>2C1D</code> at address <code>102</code>.</p>
+<table border="1" cellpadding="4" style="border: 1px solid #ffffff; background-color: #ffffff; border-collapse: collapse; margin: 0.4em 0.4em; text-align: center">
+<tr>
+<td style="padding: 0em 1em;"></td>
+<td style="padding: 0em 1em;"><code>100</code></td>
+<td style="padding: 0em 1em;"></td>
+<td style="padding: 0em 1em;"><code>101</code></td>
+<td style="padding: 0em 1em;"></td>
+<td style="padding: 0em 1em;"></td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000; border-left: 1px solid #ffffff; padding: 0em 1em;"><code>...</code></td>
+<td style="border: 1px solid #000000; border-right: 1px solid #ffffff; padding: 0em 1em;"><code>4A</code></td>
+<td style="border: 1px solid #000000; border-left: 1px solid #ffffff; padding: 0em 1em;"><code>3B</code></td>
+<td style="border: 1px solid #000000; border-right: 1px solid #ffffff; padding: 0em 1em;"><code>2C</code></td>
+<td style="border: 1px solid #000000; border-left: 1px solid #ffffff; padding: 0em 1em;"><code>1D</code></td>
+<td style="border: 1px solid #000000; border-right: 1px solid #ffffff; padding: 0em 1em;"><code>...</code></td>
+</tr>
+</table>
+<p>The <a href="/wiki/Most_significant_byte.html" title="Most significant byte">most significant atomic element</a> still is <code>4A3B</code> in our example, followed by <code>2C1D</code> located at address <code>101</code>.</p>
+<p>Architectures that follow this rule are called <b>big-endian</b> (<a href="/wiki/Mnemonic.html" title="Mnemonic">mnemonic</a>: "big end in" - the big end goes in first) and include <a href="/wiki/Motorola_68000.html" title="Motorola 68000">Motorola 68000</a>, <a href="/wiki/SPARC.html" title="SPARC">SPARC</a>, <a href="/wiki/PowerPC.html" title="PowerPC">PowerPC</a> (which includes Apple's Macintosh line prior to the Intel switch), and <a href="/wiki/System/370.html" title="System/370">System/370</a>.</p>
+<p>Other computers store the value <code>4A3B2C1D</code> in the following order:</p>
+<p><b>Little-endian</b></p>
+<table border="1" cellpadding="4" style="border: 1px solid #ffffff; background-color: #ffffff; border-collapse: collapse; margin: 0.4em 0.4em; text-align: center">
+<tr>
+<td style="padding: 0em 1em;"></td>
+<td style="padding: 0em 1em;"><code>100</code></td>
+<td style="padding: 0em 1em;"><code>101</code></td>
+<td style="padding: 0em 1em;"><code>102</code></td>
+<td style="padding: 0em 1em;"><code>103</code></td>
+<td style="padding: 0em 1em;"></td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000; border-left: 1px solid #ffffff; padding: 0em 1em;"><code>...</code></td>
+<td style="border: 1px solid #000000; padding: 0em 1em;"><code>1D</code></td>
+<td style="border: 1px solid #000000; padding: 0em 1em;"><code>2C</code></td>
+<td style="border: 1px solid #000000; padding: 0em 1em;"><code>3B</code></td>
+<td style="border: 1px solid #000000; padding: 0em 1em;"><code>4A</code></td>
+<td style="border: 1px solid #000000; border-right: 1px solid #ffffff; padding: 0em 1em;"><code>...</code></td>
+</tr>
+</table>
+<p>That is, <a href="/wiki/Least_significant_byte.html" title="Least significant byte">least significant</a> ("littlest") byte (also known as <i>LSB</i>) first, represented by <code>1D</code> in our example.</p>
+<table border="1" cellpadding="4" style="border: 1px solid #ffffff; background-color: #ffffff; border-collapse: collapse; margin: 0.4em 0.4em; text-align: center">
+<tr>
+<td style="padding: 0em 1em;"></td>
+<td style="padding: 0em 1em;"><code>100</code></td>
+<td style="padding: 0em 1em;"><code>101</code></td>
+<td style="padding: 0em 1em;"><code>102</code></td>
+<td style="padding: 0em 1em;"><code>103</code></td>
+<td style="padding: 0em 1em;"></td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000; border-left: 1px solid #ffffff; padding: 0em 1em;"><code>...</code></td>
+<td style="border: 1px solid #000000; border-right: 1px solid #ffffff; padding: 0em 1em;"><code>2C</code></td>
+<td style="border: 1px solid #000000; border-left: 1px solid #ffffff; padding: 0em 1em;"><code>1D</code></td>
+<td style="border: 1px solid #000000; border-right: 1px solid #ffffff; padding: 0em 1em;"><code>4A</code></td>
+<td style="border: 1px solid #000000; border-left: 1px solid #ffffff; padding: 0em 1em;"><code>3B</code></td>
+<td style="border: 1px solid #000000; border-right: 1px solid #ffffff; padding: 0em 1em;"><code>...</code></td>
+</tr>
+</table>
+<p>The <a href="/wiki/Least_significant_byte.html" title="Least significant byte">least significant atomic element</a> becomes now <code>2C1D</code> in our example, followed by <code>4A3B</code> at address <code>102</code>.</p>
+<table border="1" cellpadding="4" style="border: 1px solid #ffffff; background-color: #ffffff; border-collapse: collapse; margin: 0.4em 0.4em; text-align: center">
+<tr>
+<td style="padding: 0em 1em;"></td>
+<td style="padding: 0em 1em;"><code>100</code></td>
+<td style="padding: 0em 1em;"></td>
+<td style="padding: 0em 1em;"><code>101</code></td>
+<td style="padding: 0em 1em;"></td>
+<td style="padding: 0em 1em;"></td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000; border-left: 1px solid #ffffff; padding: 0em 1em;"><code>...</code></td>
+<td style="border: 1px solid #000000; border-right: 1px solid #ffffff; padding: 0em 1em;"><code>2C</code></td>
+<td style="border: 1px solid #000000; border-left: 1px solid #ffffff; padding: 0em 1em;"><code>1D</code></td>
+<td style="border: 1px solid #000000; border-right: 1px solid #ffffff; padding: 0em 1em;"><code>4A</code></td>
+<td style="border: 1px solid #000000; border-left: 1px solid #ffffff; padding: 0em 1em;"><code>3B</code></td>
+<td style="border: 1px solid #000000; border-right: 1px solid #ffffff; padding: 0em 1em;"><code>...</code></td>
+</tr>
+</table>
+<p>The <a href="/wiki/Least_significant_byte.html" title="Least significant byte">least significant atomic element</a> still is <code>2C1D</code> in our example, followed by <code>4A3B</code> at address <code>101</code>.</p>
+<p>Architectures that follow this rule are called <b>little-endian</b> (<a href="/wiki/Mnemonic.html" title="Mnemonic">mnemonic</a>: "little end in" - the little end goes in first) and include the <a href="/wiki/MOS_Technology_6502.html" title="MOS Technology 6502">MOS Technology 6502</a>, DEC <a href="/wiki/VAX.html" title="VAX">VAX</a>, and most notably the <a href="/wiki/Intel_x86.html" title="Intel x86">Intel x86</a> based series of processors including <a href="/wiki/Intel_Pentium.html" title="Intel Pentium">Intel Pentium</a> based personal computers and laptops.</p>
+<p>In other words, endianness does not denote what the value <i>ends</i> with when stored in memory, but rather <i>which end</i> it begins with.</p>
+<p>Note that the stated mnemonics are not the origin of the terms, see <a href="/wiki/Endianness#Discussion.2C_background.2C_etymology.html" title="Endianness">below</a>.</p>
+<p><b>Bi-Endian</b></p>
+<p>Some architectures can be configured either way; these include <a href="/wiki/ARM_architecture.html" title="ARM architecture">ARM</a>, <a href="/wiki/PowerPC.html" title="PowerPC">PowerPC</a> (but not the <a href="/wiki/PowerPC_970.html" title="PowerPC 970">PPC970/G5</a>), <a href="/wiki/DEC_Alpha.html" title="DEC Alpha">DEC Alpha</a>, <a href="/wiki/MIPS_architecture.html" title="MIPS architecture">MIPS</a>, <a href="/wiki/PA-RISC.html" title="PA-RISC">PA-RISC</a> and <a href="/wiki/IA64.html" title="IA64">IA64</a>. The word <b>bi-endian</b>, said of hardware, denotes willingness to compute or pass data in either big-endian or little-endian format (depending, presumably, on a mode bit somewhere). Many of these architectures can be switched via software to default to a specific endian format (usually done when the computer starts up); however, on some architectures the default endianness is selected by some hardware on the motherboard and cannot be changed by software (e.g., the DEC Alpha, which runs only in big-endian mode on the Cray T3E).</p>
+<p>Note that there are some nominally bi-endian machines which are not bi-endian to both the program and to peripheral devices. Most notably, some <a href="/wiki/PowerPC.html" title="PowerPC">PowerPC</a> processors in little-endian mode do not act as <b>true-little-endian</b> systems. Although they act little-endian from the point of view of the executing programs, they do not store data in memory in little-endian format (multi-byte values are swapped during memory load/store operations). This can cause problems when memory is transferred to an external device if some part of the software, e.g., a device driver, does not account for the situation.</p>
+<p><b>Middle-endian</b></p>
+<p>Still other architectures, called <b>middle-endian</b> (or sometimes <b>mixed-endian</b>), may have a more complicated ordering such that bytes within a 16-bit unit are ordered differently from the 16-bit units within a 32-bit <a href="/wiki/Word_%28computer_science%29.html" title="Word (computer science)">word</a>. For instance, <code>4A3B2C1D</code> is stored as:</p>
+<table border="1" cellpadding="4" style="border: 1px solid #ffffff; background-color: #ffffff; border-collapse: collapse; margin: 0.4em 0.4em; text-align: center">
+<tr>
+<td style="padding: 0em 1em;"></td>
+<td style="padding: 0em 1em;"><code>100</code></td>
+<td style="padding: 0em 1em;"><code>101</code></td>
+<td style="padding: 0em 1em;"><code>102</code></td>
+<td style="padding: 0em 1em;"><code>103</code></td>
+<td style="padding: 0em 1em;"></td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000; border-left: 1px solid #ffffff; padding: 0em 1em;"><code>...</code></td>
+<td style="border: 1px solid #000000; padding: 0em 1em;"><code>3B</code></td>
+<td style="border: 1px solid #000000; padding: 0em 1em;"><code>4A</code></td>
+<td style="border: 1px solid #000000; padding: 0em 1em;"><code>1D</code></td>
+<td style="border: 1px solid #000000; padding: 0em 1em;"><code>2C</code></td>
+<td style="border: 1px solid #000000; border-right: 1px solid #ffffff; padding: 0em 1em;"><code>...</code></td>
+</tr>
+</table>
+<p>or alternatively:</p>
+<table border="1" cellpadding="4" style="border: 1px solid #ffffff; background-color: #ffffff; border-collapse: collapse; margin: 0.4em 0.4em; text-align: center">
+<tr>
+<td style="padding: 0em 1em;"></td>
+<td style="padding: 0em 1em;"><code>100</code></td>
+<td style="padding: 0em 1em;"><code>101</code></td>
+<td style="padding: 0em 1em;"><code>102</code></td>
+<td style="padding: 0em 1em;"><code>103</code></td>
+<td style="padding: 0em 1em;"></td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000; border-left: 1px solid #ffffff; padding: 0em 1em;"><code>...</code></td>
+<td style="border: 1px solid #000000; padding: 0em 1em;"><code>2C</code></td>
+<td style="border: 1px solid #000000; padding: 0em 1em;"><code>1D</code></td>
+<td style="border: 1px solid #000000; padding: 0em 1em;"><code>4A</code></td>
+<td style="border: 1px solid #000000; padding: 0em 1em;"><code>3B</code></td>
+<td style="border: 1px solid #000000; border-right: 1px solid #ffffff; padding: 0em 1em;"><code>...</code></td>
+</tr>
+</table>
+<p>The format for double-precision floating-point numbers on the VAX and ARM are middle-endian. 32-bit words were typically stored in a middle-endian format on the <a href="/wiki/PDP-11.html" title="PDP-11">PDP-11</a>, and the term <b>pdp-endian</b> is still sometimes used to refer specifically to this format. In general, these complex orderings are more confusing to work with than consistent big or little endianness.</p>
+<p>There is no guarantee that a platform will use any of these formats, but in practice, there are few if any exceptions.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Bit Endianness">edit</a>]</div>
+<p><a name="Bit_Endianness" id="Bit_Endianness"></a></p>
+<h4>Bit Endianness</h4>
+<p>The concept of endianness is less important in the numbering of bits within a byte, as computer architectures in general do not support the addressing of individual bits within bytes. Sub-byte addressing is instead accomplished with arithmetic and logical instructions which are well-defined in terms of the significance of the bits, rather than an arbitrary numbering in an address space, and therefore architecture-neutral.</p>
+<p>Issues similar to those of byte-endianness can still apply when interpreting bit position as something other than binary significance or when dealing with numbers that do not fill an exact multiple of bytes in a data format. In this case, a decision must be made as to whether the least significant bit is considered to be first or last. In particular, <a href="/wiki/C_programming_language.html" title="C programming language">C</a> allows fields in records to be <a href="/wiki/Bitfield.html" title="Bitfield">defined with bit level granularity</a>. In this case the assumed bit endianness (which is a compiler level abstraction, not a property of the processor) may be the same as the architecture's byte endianness.</p>
+<p>If a file is read by reading a record into memory, or written by writing the record as a single large block of bytes, consideration must be given to the fact that the fields in the record may not be in the correct byte order. Calls must be inserted to a routine that converts between host byte order and the byte order used in the file. Similar considerations must be made if handling network packets in this way. Bitfields that lie across byte boundaries are likely to make code for reading a format very awkward to port (if they don’t lie across byte boundaries, the order of the bitfields that make up a byte can simply be swapped).</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Detecting Endianness">edit</a>]</div>
+<p><a name="Detecting_Endianness" id="Detecting_Endianness"></a></p>
+<h4>Detecting Endianness</h4>
+<p>The following is a C function to check if a system is big-endian or little-endian. Middle-endian systems will be mistakenly labeled big-endian; systems with all standard integral types the same size will be harmlessly labeled little-endian. (If the endianness of larger types, such as C99 long long, needs to be determined, simply use the largest such type in place of long int below.)</p>
+<pre>
+#define LITTLE_ENDIAN   0
+#define BIG_ENDIAN      1
+
+int machineEndianness()
+{
+   long int i = 1;
+   const char *p = (const char *) &amp;i;
+   if (p[0] == 1)  // Lowest address contains the least significant byte
+      return LITTLE_ENDIAN;
+   else
+      return BIG_ENDIAN;
+}
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Portability issues">edit</a>]</div>
+<p><a name="Portability_issues" id="Portability_issues"></a></p>
+<h3>Portability issues</h3>
+<p>Endianness has grave implications in software <a href="/wiki/Portability.html" title="Portability">portability</a>. For example, in interpreting data stored in binary format and using an appropriate <a href="/wiki/Bitmask.html" title="Bitmask">bitmask</a>, the endianness is important because different endianness will lead to different results from the mask.</p>
+<p>Writing binary data from software to a common format leads to a concern of the proper endianness. For example saving data in the <a href="/wiki/Windows_bitmap.html" title="Windows bitmap">BMP</a> bitmap format requires little-endian integers - if the data are stored using big-endian integers then the data will be corrupted since they do not match the format.</p>
+<p>Software that needs to share information between hosts of different endianness typically uses one of two strategies. Either it can choose a single endianness for sharing data, or it can allow hosts to share data in any endianness that they choose, so long as they mark which one they are using. Both approaches have advantages: on the one hand, choosing a single endianness makes decoding easier, since software only needs to decode one format. On the other hand, allowing multiple endiannesses makes encoding easier, since software doesn’t need to convert data out of its native order; and also enables more efficient communication when the encoder and decoder share a single endianness, since neither needs to change the byte order. Most <a href="/wiki/Internet_standard.html" title="Internet standard">Internet standards</a> take the first approach, and specify big-endian byte order. Many vendor originated formats simply use the byte order of the platform they originated on. Some other applications, notably <a href="/wiki/X11.html" title="X11">X11</a>, take the second approach.</p>
+<p><a href="/wiki/UTF-16.html" title="UTF-16">UTF-16</a> can be written in big-endian or little-endian order. It permits a <a href="/wiki/Byte_Order_Mark.html" title="Byte Order Mark">Byte Order Mark</a> (BOM) of 2 bytes at the beginning of a string to denote its endianness. A similar 4 byte byte-order mark can be used with the rare encoding <a href="/wiki/UTF-32.html" title="UTF-32">UTF-32</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Example programming caveat">edit</a>]</div>
+<p><a name="Example_programming_caveat" id="Example_programming_caveat"></a></p>
+<h3>Example programming caveat</h3>
+<p>Below is an example application, written in <a href="/wiki/C_programming_language.html" title="C programming language">C</a>, which demonstrates the dangers of programming endianness unaware:</p>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main (int argc, char* argv[])
+{
+  FILE* fp;
+
+  /* Our example data structure */
+  struct 
+  {
+    char one[4];
+    int  two;
+    char three[4];
+  } data;
+
+  /* Fill our structure with data */
+  strcpy (data.one, "foo");
+  data.two = 0x01234567;
+  strcpy (data.three, "bar");
+
+  /* Write it to a file */
+  fp = fopen ("output", "wb");
+  if (fp)
+  {
+    fwrite (&amp;data, sizeof (data), 1, fp);
+    fclose (fp);
+  }
+}
+</pre>
+<p>This code compiles properly on an <a href="/wiki/I386.html" title="I386">i386</a> machine running FreeBSD and a <a href="/wiki/SPARC64.html" title="SPARC64">SPARC64</a> machine running Solaris, but the output is different when examined with the <a href="/wiki/Hexdump.html" title="Hexdump">hexdump</a> utility.</p>
+<pre>
+i386 $ hexdump -C output 
+00000000  66 6f 6f 00 67 45 23 01  62 61 72 00              |foo.gE#.bar.|
+0000000c
+</pre>
+<pre>
+sparc64 $ hexdump -C output
+00000000  66 6f 6f 00 01 23 45 67  62 61 72 00              |foo..#Egbar.|
+0000000c
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Endianness in communications">edit</a>]</div>
+<p><a name="Endianness_in_communications" id="Endianness_in_communications"></a></p>
+<h2>Endianness in communications</h2>
+<p>In general, the <b>NUXI problem</b> (also called the <b>endian problem</b>) is the problem of transferring data between computers with differing byte order. For example, the string "UNIX", packed with two bytes per 16-bit integer, might look like "NUXI" to a machine with a different byte order. The problem is caused by the difference in endianness. The problem was first discovered when porting an early version of <a href="/wiki/Unix.html" title="Unix">Unix</a> from <a href="/wiki/PDP-11.html" title="PDP-11">PDP-11</a> (a middle-endian architecture) to an <a href="/wiki/IBM.html" title="IBM">IBM</a> Series 1 minicomputer (a big-endian architecture); upon startup, the computer output replaced the string "UNIX" with "NUXI".</p>
+<p>The <a href="/wiki/Internet_Protocol.html" title="Internet Protocol">Internet Protocol</a> defines a standard "big-endian" <b>network byte order</b>. This byte order is used for all numeric values in the packet headers and by many higher level protocols and file formats that are designed for use over IP.</p>
+<p>The <a href="/wiki/Berkeley_sockets.html" title="Berkeley sockets">Berkeley sockets</a> <a href="/wiki/Application_programming_interface.html" title="Application programming interface">API</a> defines a set of functions to convert 16- and 32-bit integers to and from network byte order: the <tt>htonl</tt> and <tt>htons</tt> functions convert 32-bit ("long") and 16-bit ("short") values respectively from host to network order; whereas the <tt>ntohl</tt> and <tt>ntohs</tt> functions convert from network to host order.</p>
+<p><a href="/wiki/Serial_communications.html" title="Serial communications">Serial</a> devices also have bit-endianness: the bits in a byte can be sent little-endian (least significant bit first) or big-endian (most significant bit first). This decision is made in the very bottom of the <a href="/wiki/Data_link_layer.html" title="Data link layer">data link layer</a> of the <a href="/wiki/OSI_model.html" title="OSI model">OSI model</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Endianness of date formats">edit</a>]</div>
+<p><a name="Endianness_of_date_formats" id="Endianness_of_date_formats"></a></p>
+<h2>Endianness of date formats</h2>
+<p>Endianness is simply illustrated by the different manners in which countries format <a href="/wiki/Calendar_date.html" title="Calendar date">calendar dates</a>.</p>
+<p>In the <a href="/wiki/United_States.html" title="United States">United States</a>, dates are most commonly formatted as <i>Month; Day; Year</i> (e.g.: "May 24th, 2006″, "5/24/2006″). This is a middle-endian order.</p>
+<p>Most of <a href="/wiki/Oceania.html" title="Oceania">Oceania</a>, <a href="/wiki/South_America.html" title="South America">South America</a> and <a href="/wiki/Europe.html" title="Europe">Europe</a> (except <a href="/wiki/Sweden.html" title="Sweden">Sweden</a> and <a href="/wiki/Hungary.html" title="Hungary">Hungary</a> where ISO 8601 is most common), format dates as <i>Day; Month; Year</i> (e.g.: "24th May, 2006″, "24/5/2006″, "24/5-2006″, "24.5.06″). This is little-endian.</p>
+<p>In many other countries, including <a href="/wiki/China.html" title="China">China</a> and <a href="/wiki/Japan.html" title="Japan">Japan</a>, use of the <a href="/wiki/ISO_8601.html" title="ISO 8601">ISO 8601</a> <a href="/wiki/International_standard.html" title="International standard">international standard</a> ordering of dates is prevalent: <i>Year; Month; Day</i> (e.g., "2006 May 24th", or, more properly, "2006-05-24″). This is big-endian.</p>
+<p>The ISO 8601 ordering scheme lends itself to straightforward <a href="/wiki/Sorting_algorithm.html" title="Sorting algorithm">computerised sorting</a> of dates in <a href="/wiki/Lexicographical_order.html" title="Lexicographical order">lexicographical order</a>, or dictionary sort order. This means that sorting algorithms do not need to treat the numeric parts of the date string any differently from a string of non-numeric characters, and the dates will be sorted into chronological order. Note that for this to work, years must always be expressed as four digits, months as two, and days as two. Thus single-digit days and months must be padded with a zero yielding ‘01′, ‘02′, … , ‘09′.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Endianness in addresses">edit</a>]</div>
+<p><a name="Endianness_in_addresses" id="Endianness_in_addresses"></a></p>
+<h2>Endianness in addresses</h2>
+<p>Western <a href="/wiki/Postal_address.html" title="Postal address">postal addresses</a> are largely written in little-endian order, starting with the smallest component (the name of the recipient), progressing through house number, street, town, region, and country. In some Asian countries (e.g., Japan), postal addresses are instead written in big-endian order, that is starting with country, region, town, and ending in the recipient's name.</p>
+<p><a href="/wiki/Internet.html" title="Internet">Internet</a> <a href="/wiki/Domain_name_system.html" title="Domain name system">domain name system</a> and <a href="/wiki/Email.html" title="Email">email</a> addresses are little-endian, following the Western tradition of postal addressing. Filesystem pathnames in Unix (and most other contemporary operating systems), are big-endian, listing the highest-level directory first. <a href="/wiki/URL.html" title="URL">URLs</a>, which combine both these notations, are mixed-endian, with a little-endian hostname followed by a big-endian pathname, as in</p>
+<dl>
+<dd>protocol://organization.region.country/department/subdepartment/person</dd>
+</dl>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Discussion, background, etymology">edit</a>]</div>
+<p><a name="Discussion.2C_background.2C_etymology" id="Discussion.2C_background.2C_etymology"></a></p>
+<h2>Discussion, background, etymology</h2>
+<p>Big-endian numbers are easier to read when <a href="/wiki/Debugging.html" title="Debugging">debugging</a> a program. Some think they are less intuitive because the most significant byte is at the <i>smaller</i> address. Some think they are less confusing because the significance order is the same as the order of normal textual character strings in the computer, just as in non-computer text (see below).</p>
+<p>Little-endian numbers enjoy some slight computational advantages in that variables in memory do not have to be read and manipulated at their full widths. For example, a 32 bit variable in memory such as 00 00 00 4A can be read at the same address as either 8 bit (4A), 16 bit (00 4A), or 32 bit (00 00 00 4A) as long as its value stays within bounds. Big-endian cannot do this because the relative location of the least significant byte(s) change with the overall width of the variable. For example, 00 00 00 4A would become 00 when addressed as an 8 bit variable. Big-endian numbers are always corrupted if addressed as the wrong width unless the address is adjusted.</p>
+<p>A person’s preference usually is based both on which convention was studied first, and on which convention the person’s mental models were built. Specifically in the case of people with little background in low-level computing, <a href="/wiki/Linguistic_universal.html" title="Linguistic universal">most spoken languages</a> express most numbers, especially those larger than a <a href="/wiki/100_%28number%29.html" title="100 (number)">hundred</a>, in big-endian manner. In English, for example, one says "three hundred twenty-four", not "<a href="/wiki/Sing_a_Song_of_Sixpence.html" title="Sing a Song of Sixpence">four-and-twenty</a> and three hundred". <a  class="external autonumber" title="http://ling.uni-konstanz.de:591/Universals/FMPro?-db=Universals&amp;-format=result.html&amp;-lay=Layout+%231&amp;-max=10&amp;-LOP=and&amp;-op=eq&amp;number=539&amp;-op=bw&amp;Original=&amp;-op=bw&amp;Standardized=&amp;-op=bw&amp;Formula=&amp;-op=bw&amp;Keywords=&amp;-op=bw&amp;Domain=&amp;-op=bw&amp;Type=&amp;-op=bw&amp;Status=&amp;-op=bw&amp;Quality=&amp;-op=bw&amp;Basis=&amp;-op=bw&amp;Source=&amp;-op=bw&amp;Counterexamples=&amp;-op=bw&amp;Comments=&amp;-find=+Search+">[1]</a> <a  class="external autonumber" title="http://ling.uni-konstanz.de:591/Universals/FMPro?-db=Universals&amp;-format=result.html&amp;-lay=Layout+%231&amp;-max=10&amp;-LOP=and&amp;-op=eq&amp;number=704&amp;-op=bw&amp;Original=&amp;-op=bw&amp;Standardized=&amp;-op=bw&amp;Formula=&amp;-op=bw&amp;Keywords=&amp;-op=bw&amp;Domain=&amp;-op=bw&amp;Type=&amp;-op=bw&amp;Status=&amp;-op=bw&amp;Quality=&amp;-op=bw&amp;Basis=&amp;-op=bw&amp;Source=&amp;-op=bw&amp;Counterexamples=&amp;-op=bw&amp;Comments=&amp;-find=+Search+">[2]</a></p>
+<p>The <a href="/wiki/Hindu-Arabic_numeral_system.html" title="Hindu-Arabic numeral system">Hindu-Arabic numeral system</a> is used worldwide and is such that the most significant digits are always written to the left of the less significant ones. Writing left to right, this system is therefore big-endian. Writing right to left, this numeral system is little-endian. It is worth noting, however, that in quite a few languages the spoken order of numerals is inconsistent with how they appear written and in some languages, such as Hebrew, it is common to interrupt the writing of text (right-to-left) to write a number in the opposite order (left-to-right).</p>
+<p>The choice of big-endian vs. little-endian was as arbitrary as the entire concept is, and has been the subject of <a href="/wiki/Flame_war.html" title="Flame war">flame wars</a>. Emphasizing the futility of this argument, the very terms <i>big-endian</i> and <i>little-endian</i> were taken from the Big-Endians and Little-Endians of <a href="/wiki/Jonathan_Swift.html" title="Jonathan Swift">Jonathan Swift</a>’s satiric novel <i><a href="/wiki/Gulliver%E2%80%99s_Travels.html" title="Gulliver’s Travels">Gulliver’s Travels</a></i>, where in <a href="/wiki/Lilliput_and_Blefuscu.html" title="Lilliput and Blefuscu">Lilliput and Blefuscu</a> Gulliver finds two factions warring over which end of a boiled egg should be cracked open.</p>
+<p>See the <a  class="external text" title="http://www.rdrop.com/~cary/html/endian_faq.html"><i>Endian FAQ</i></a>, including the significant essay <a  class="external text" title="http://www.rdrop.com/~cary/html/endian_faq.html#danny_cohen">"<i>On Holy Wars and a Plea for Peace</i>"</a> by Danny Cohen (1980).</p>
+<p>Little-endian ordering has been used in compiling reverse dictionaries, such as <a href="/wiki/Rhyming_dictionary.html" title="Rhyming dictionary">rhyming dictionaries</a>, where the entries begin, for example, with "a, aa, baa, …" and end, for example, with "… buzz, abuzz, fuzz." An actual example is the pronouncing dictionary for <a href="/wiki/Standard_Cantonese.html" title="Standard Cantonese">Cantonese</a> <i><span title="Pronunciation in IPA" class="IPA">jyt jɐm dziŋ duk dzi wɐi</span></i> (<a  class="internal">ISBN 962-948-509-5</a>) which begins with "a, ba, da, dza,…" and ends with "…, tyt, tsyt, m̩, ŋ̩".</p>
+<p>Confusion exists in how the word <i>endianness</i> should be spelled. The two major variants are <i>endianness</i> and <i>endianess</i>. While neither of the two forms appears in current (non-computing) dictionaries, it appears that the former follows the pattern of similar words such as "barren" and "barrenness". Thus, <i>endianness</i> is more accepted.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Byte_backwards.html" title="Byte backwards">Byte backwards</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<p><span class="boilerplate" id="foldoc"><i>This article was originally based on material from the <a href="/wiki/Free_On-line_Dictionary_of_Computing.html" title="Free On-line Dictionary of Computing">Free On-line Dictionary of Computing</a>, which is <a  title="Wikipedia:Foldoc license">licensed</a> under the <a href="/wiki/GNU_Free_Documentation_License.html" title="GNU Free Documentation License">GFDL</a>.</i></span></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://www.rdrop.com/~cary/html/endian_faq.html">David Cary’s Endian FAQ</a> – Including the paper <i>On Holy Wars and a Plea for Peace</i> by Danny Cohen, 1 April 1980</li>
+<li><a  class="external text" title="http://www.cs.princeton.edu/~kazad/resources/cs/endian.htm">Kalid’s Endian issues page at Princeton</a> with examples in the <a href="/wiki/C_programming_language.html" title="C programming language">C programming language</a>.</li>
+<li><a  class="external text" title="http://www.catb.org/jargon/html/B/big-endian.html">big-endian</a>, <a  class="external text" title="http://www.catb.org/jargon/html/L/little-endian.html">little-endian</a>, etc., at the <a  class="external text" title="http://www.catb.org/jargon/html/">Jargon File</a>.</li>
+<li><a  class="external text" title="http://xahlee.org/p/Gullivers_Travels/gt1ch04.html">Original Text of Gulliver’s Travels, Part I, Chapter IV, where endianness is described.</a></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:43026-0!1!0!default!!en!2 and timestamp 20060910153008 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:FOLDOC sourced articles">FOLDOC sourced articles</a></span> | <span dir='ltr'><a  title="Category:Data unit">Data unit</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Endianness.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-cs"><a >Česky</a></li>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-nl"><a >Nederlands</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-pt"><a >Português</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+				<li class="interwiki-sr"><a >Српски / Srpski</a></li>
+				<li class="interwiki-fi"><a >Suomi</a></li>
+				<li class="interwiki-sv"><a >Svenska</a></li>
+				<li class="interwiki-tr"><a >Türkçe</a></li>
+				<li class="interwiki-uk"><a >Українська</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 12:11, 8 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv32 in 0.123 secs. --></body></html>

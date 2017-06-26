@@ -1,0 +1,440 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Analog-to-digital converter,A-law,Aliasing,Amplifier,Anti-aliasing,Audio level compression,Binary search,Bit,Calibration,Capacitance,Capacitor" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Analog-to-digital converter - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Analog-to-digital_converter";
+			var wgTitle = "Analog-to-digital converter";
+			var wgArticleId = 40367;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Analog-to-digital converter</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>An <b>analog-to-digital converter</b> (abbreviated <b>ADC</b>, <b>A/D</b> or <b>A to D</b>) is an electronic circuit that converts continuous <a href="/wiki/Signal_%28information_theory%29.html" title="Signal (information theory)">signals</a> to discrete <a href="/wiki/Digital.html" title="Digital">digital</a> numbers. The reverse operation is performed by a <a href="/wiki/Digital-to-analog_converter.html" title="Digital-to-analog converter">digital-to-analog converter</a> (DAC).</p>
+<p>Typically, an ADC is an <a href="/wiki/Electronics.html" title="Electronics">electronic</a> device that converts an input analog <a href="/wiki/Voltage.html" title="Voltage">voltage</a> to a <a href="/wiki/Digital.html" title="Digital">digital</a> number. The digital output may be using different coding schemes, such as binary and two's complement binary. However, some non-electronic or only partially electronic devices, such as <a href="/wiki/Shaft_encoder.html" title="Shaft encoder">shaft encoders</a>, can also be considered as ADCs.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Resolution</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Response type</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">2.1</span> <span class="toctext">Linear ADCs</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.2</span> <span class="toctext">Non-linear ADCs</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Accuracy</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">3.1</span> <span class="toctext">Quantization error</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.2</span> <span class="toctext">Non-linearity</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.3</span> <span class="toctext">Aperture error</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Sampling rate</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Aliasing</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">Dither</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">Oversampling</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">8</span> <span class="toctext">ADC structures</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">8.1</span> <span class="toctext">Commercial analog-to-digital converters</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">9</span> <span class="toctext">Application to music recording</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">10</span> <span class="toctext">Other applications</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">11</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">12</span> <span class="toctext">External links and book references</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Resolution">edit</a>]</div>
+<p><a name="Resolution" id="Resolution"></a></p>
+<h2>Resolution</h2>
+<p>The <a href="/wiki/Resolution_%28logic%29.html" title="Resolution (logic)">resolution</a> of the converter indicates the number of discrete values it can produce over the range of voltage values. It is usually expressed in <a href="/wiki/Bit.html" title="Bit">bits</a>. For example, an ADC that encodes an analog input to one of 256 discrete values (0..255) has a resolution of eight bits, since</p>
+<dl>
+<dd><span class="texhtml">2<sup>8</sup> = 256</span>.</dd>
+</dl>
+<p>Resolution can also be defined electrically, and expressed in <a href="/wiki/Volt.html" title="Volt">volts</a>. The voltage resolution of an ADC is equal to its overall voltage measurement range divided by the number of discrete values. Some examples may help:</p>
+<ul>
+<li>Example 1
+<ul>
+<li><a href="/wiki/Full_scale.html" title="Full scale">Full scale</a> measurement range = 0 to 10 volts</li>
+<li>ADC resolution is 12 bits: 2<sup>12</sup> = 4096 quantization levels</li>
+<li>ADC voltage resolution is: (10-0)/4096 = 0.00244 volts = 2.44 mV</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Example 2
+<ul>
+<li><a href="/wiki/Full_scale.html" title="Full scale">Full scale</a> measurement range = -10 to +10 volts</li>
+<li>ADC resolution is 14 bits: 2<sup>14</sup> = 16384 quantization levels</li>
+<li>ADC voltage resolution is: (10-(-10))/16384 = 20/16384 = 0.00122 volts = 1.22 mV</li>
+</ul>
+</li>
+</ul>
+<p>In practice, the resolution of the converter is limited by the <a href="/wiki/Signal-to-noise_ratio.html" title="Signal-to-noise ratio">signal-to-noise ratio</a> of the signal in question. If there is too much noise present in the analog input, it will be impossible to accurately resolve beyond a certain number of bits of resolution, the "effective number of bits" (ENOB). While the ADC will produce a result, the result is not accurate, since its lower bits are simply measuring noise. The S/N ratio should be around 6 dB per bit of resolution required.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Response type">edit</a>]</div>
+<p><a name="Response_type" id="Response_type"></a></p>
+<h2>Response type</h2>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Linear ADCs">edit</a>]</div>
+<p><a name="Linear_ADCs" id="Linear_ADCs"></a></p>
+<h3>Linear ADCs</h3>
+<p>Most ADCs are of a type known as <a href="/wiki/Linear.html" title="Linear">linear</a>, although analog-to-digital conversion is an inherently non-linear process (since the mapping of a continuous space to a discrete space is a non-invertible and therefore non-linear operation). The term <i>linear</i> as used here means that the range of the input values that map to each output value has a linear relationship with the output value, i.e., that the output value <i>k</i> is used for the range of input values from</p>
+<dl>
+<dd><i>m</i>(<i>k</i> + <i>b</i>)</dd>
+</dl>
+<p>to</p>
+<dl>
+<dd><i>m</i>(<i>k</i> + 1 + <i>b</i>),</dd>
+</dl>
+<p>where <i>m</i> and <i>b</i> are some constants. Here <i>b</i> is typically 0 or −0.5. When <i>b</i> = 0, the ADC is referred to as <i>mid-rise</i>, and when <i>b</i> = −0.5 it is referred to as <i>mid-tread</i>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Non-linear ADCs">edit</a>]</div>
+<p><a name="Non-linear_ADCs" id="Non-linear_ADCs"></a></p>
+<h3>Non-linear ADCs</h3>
+<p>If the <a href="/wiki/Probability_density_function.html" title="Probability density function">probability density function</a> of a signal being digitized is <a href="/wiki/Uniform_distribution.html" title="Uniform distribution">uniform</a>, then the signal-to-noise ratio relative to the quantization noise is the best possible. Because of this, it's usual to pass the signal through its <a href="/wiki/Cumulative_distribution_function.html" title="Cumulative distribution function">CDF</a> before the quantization. This is good because the regions that are more important get quantized with a better resolution. In the dequantization process, the inverse <a href="/wiki/Cumulative_distribution_function.html" title="Cumulative distribution function">CDF</a> is needed.</p>
+<p>This is the same principle behind the <a href="/wiki/Compander.html" title="Compander">companders</a> used in some tape-recorders and other communication systems, and is related to <a href="/wiki/Information_entropy.html" title="Information entropy">entropy</a> maximization. (Never confuse <a href="/wiki/Compander.html" title="Compander">companders</a> with <a href="/wiki/Audio_level_compression.html" title="Audio level compression">compressors</a>!)</p>
+<p>For example, a voice signal has a <a href="/wiki/Laplacian_distribution.html" title="Laplacian distribution">laplacian distribution</a>. This means that the region around 0 carries more information than the regions with higher amplitudes. Because of this, logarithmic ADCs are very common in <a  class="new" title="Voice communication system">voice communication systems</a> to increase the dynamic range of the representable values while retaining fine-granular fidelity in the low-amplitude region.</p>
+<p>An 8 bit <a href="/wiki/A-law.html" title="A-law">a-law</a> or the <a href="/wiki/Mu-law.html" title="Mu-law">μ-law</a> logarithmic ADC covers the wide <a href="/wiki/Dynamic_range.html" title="Dynamic range">dynamic range</a> and has a high resolution in the critical low-amplitude region, that would otherwise require a 12-bit linear ADC.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Accuracy">edit</a>]</div>
+<p><a name="Accuracy" id="Accuracy"></a></p>
+<h2>Accuracy</h2>
+<p>An ADC has several sources of errors. <a href="/wiki/Quantization.html" title="Quantization">Quantization</a> error and (assuming the ADC is intended to be linear) non-<a href="/wiki/Linearity.html" title="Linearity">linearity</a> is intrinsic to any analog-to-digital conversion. There is also a so-called <i>aperture error</i> which is due to a clock <a href="/wiki/Jitter.html" title="Jitter">jitter</a> and reveals when digitizing a signal (not a single value).</p>
+<p>These errors are measured in a unit called the <i>LSB</i>, which is an abbreviation for <a href="/wiki/Least_significant_bit.html" title="Least significant bit">least significant bit</a>. In the above example of an eight-bit ADC, an error of one LSB is 1/256 of the full signal range, or about 0.4%.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Quantization error">edit</a>]</div>
+<p><a name="Quantization_error" id="Quantization_error"></a></p>
+<h3>Quantization error</h3>
+<p>Quantization error is due to the finite resolution of the ADC, and is an unavoidable imperfection in all types of ADC. The <a href="/wiki/Magnitude.html" title="Magnitude">magnitude</a> of the quantization error at the sampling instant is between zero and half of one LSB.</p>
+<p>In the general case, the original signal is much larger than one LSB. When this happens, the <a href="/wiki/Quantization_error.html" title="Quantization error">quantization error</a> is not correlated with the signal, and has a <a href="/wiki/Uniform_distribution_%28continuous%29.html" title="Uniform distribution (continuous)">uniform distribution</a>. Its <a href="/wiki/Root_mean_square.html" title="Root mean square">RMS</a> value is the <a href="/wiki/Standard_deviation.html" title="Standard deviation">standard deviation</a> of this distribution, given by <img class='tex' src="http://upload.wikimedia.org/math/e/e/6/ee6b368c3a54a8a111a735b85a367c84.png" alt="{1 \over {\sqrt{12}}} \mathrm{LSB} \approx 0.289 \ \mathrm{LSB}" />. In the eight-bit ADC example, this represents 0.113 % of the full signal range.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Non-linearity">edit</a>]</div>
+<p><a name="Non-linearity" id="Non-linearity"></a></p>
+<h3>Non-linearity</h3>
+<p>All ADCs suffer from non-linearity errors caused by their physical imperfections, causing their output to deviate from a linear function (or some other function, in the case of a deliberately non-linear ADC) of their input. These errors can sometimes be mitigated by <a href="/wiki/Calibration.html" title="Calibration">calibration</a>, or prevented by testing.</p>
+<p>Important parameters for linearity are <b>integral non-linearity</b> (INL) and <b>differential non-linearity</b> (DNL).</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Aperture error">edit</a>]</div>
+<p><a name="Aperture_error" id="Aperture_error"></a></p>
+<h3>Aperture error</h3>
+<p>Imagine that we are digitizing a sine wave <span class="texhtml"><i>x</i>(<i>t</i>) = <i>A</i>sin2π<i>f</i><sub>0</sub><i>t</i></span>. Provided that the actual sampling time <i>uncertainty</i> due to the <i>clock jitter</i> is <span class="texhtml">Δ<i>t</i></span>, the error caused by this phenomenon can be estimated as <img class='tex' src="http://upload.wikimedia.org/math/3/1/0/310f97283ca51d556989d6c2bf092747.png" alt="E_{ap} \le |x'(t) \Delta t| \le 2A \pi f_0 \Delta t" />.</p>
+<p>One can see that the error is relatively small at low frequencies, but can become significant at high frequences.</p>
+<p>This effect can be ignored if it is relatively small as compared with <i>quantizing error</i>. Jitter requirements can be calculated using the following obvious formula: <img class='tex' src="http://upload.wikimedia.org/math/9/9/1/9917591ff9be0448704435d508bb4254.png" alt="\Delta t &lt; \frac{1}{2^q \pi f_0}" />, where q is a number of ADC bits.</p>
+<center>
+<table border="border">
+<tr>
+<td rowspan="2">ADC resolution</td>
+<td colspan="5">Input frequency</td>
+</tr>
+<tr>
+<td>44.1 kHz</td>
+<td>192 kHz</td>
+<td>1 MHz</td>
+<td>10 MHz</td>
+<td>100 MHz</td>
+</tr>
+<tr>
+<td>8</td>
+<td>28.2 ns</td>
+<td>6.48 ns</td>
+<td>1.24 ns</td>
+<td>124 ps</td>
+<td>12.4 ps</td>
+</tr>
+<tr>
+<td>10</td>
+<td>7.05 ns</td>
+<td>1.62 ns</td>
+<td>311 ps</td>
+<td>31.1 ps</td>
+<td>3.11 ps</td>
+</tr>
+<tr>
+<td>12</td>
+<td>1.76 ns</td>
+<td>405 ps</td>
+<td>77.7 ps</td>
+<td>7.77 ps</td>
+<td>777 fs</td>
+</tr>
+<tr>
+<td>14</td>
+<td>441 ps</td>
+<td>101 ps</td>
+<td>19.4 ps</td>
+<td>1.94 ps</td>
+<td>194 fs</td>
+</tr>
+<tr>
+<td>16</td>
+<td>110 ps</td>
+<td>25.3 ps</td>
+<td>4.86 ps</td>
+<td>486 fs</td>
+<td>48.6 fs</td>
+</tr>
+<tr>
+<td>18</td>
+<td>27.5 ps</td>
+<td>6.32 ps</td>
+<td>1.21 ps</td>
+<td>121 fs</td>
+<td>12.1 fs</td>
+</tr>
+<tr>
+<td>24</td>
+<td>430 fs</td>
+<td>98.8 fs</td>
+<td>19.0 fs</td>
+<td>1.9 fs</td>
+<td>190 as</td>
+</tr>
+</table>
+</center>
+<p>This table shows, for example, that it is not worth using a precise 24-bit ADC for sound recording if we don't have an <i>ultra low jitter</i> clock. One should consider taking this phenomenon into account before choosing an ADC.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Sampling rate">edit</a>]</div>
+<p><a name="Sampling_rate" id="Sampling_rate"></a></p>
+<h2>Sampling rate</h2>
+<p>The analog signal is <a href="/wiki/Continuous_function.html" title="Continuous function">continuous</a> in <a href="/wiki/Time.html" title="Time">time</a> and it is necessary to convert this to a flow of digital values. It is therefore required to define the rate at which new digital values are sampled from the analog signal. The rate of new values is called the <i>sampling rate</i> or <i><a href="/wiki/Sampling_frequency.html" title="Sampling frequency">sampling frequency</a></i> of the converter.</p>
+<p>A continuously varying bandlimited signal can be sampled (that is, the signal values at intervals of time T, the sampling time, are measured and stored) and then the original signal can be <i>exactly</i> reproduced from the discrete-time values by an <a href="/wiki/Interpolation.html" title="Interpolation">interpolation</a> formula. The accuracy is however limited by quantization error. However, this faithful reproduction is only possible if the sampling rate is higher than twice the highest frequency of the signal. This is essentially what is embodied in the <a href="/wiki/Shannon-Nyquist_sampling_theorem.html" title="Shannon-Nyquist sampling theorem">Shannon-Nyquist sampling theorem</a>.</p>
+<p>Since a practical ADC cannot make an instantaneous conversion, the input value must necessarily be held constant during the time that the converter performs a conversion (called the <i>conversion time</i>). An input circuit called a <a href="/wiki/Sample_and_hold.html" title="Sample and hold">sample and hold</a> performs this task—in most cases by using a <a href="/wiki/Capacitor.html" title="Capacitor">capacitor</a> to store the analogue voltage at the input, and using an electronic switch or gate to disconnect the capacitor from the input. Many ADC <a href="/wiki/Integrated_circuit.html" title="Integrated circuit">integrated circuits</a> include the sample and hold subsystem internally.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Aliasing">edit</a>]</div>
+<p><a name="Aliasing" id="Aliasing"></a></p>
+<h2>Aliasing</h2>
+<p>All ADCs work by sampling their input at discrete intervals of time. Their output is therefore an incomplete picture of the behaviour of the input. There is no way of knowing, by looking at the output, what the input was doing between one sampling instant and the next. If the input is known to be changing slowly compared to the sampling rate, then it can be assumed that the value of the signal between two sample instants was somewhere between the two sampled values. If, however, the input signal is changing fast compared to the sample rate, then this assumption is not valid.</p>
+<p>If the digital values produced by the ADC are, at some later stage in the system, converted back to analog values by a <a href="/wiki/Digital_to_analog_converter.html" title="Digital to analog converter">digital to analog converter</a> or <a href="/wiki/Digital-to-analog_converter.html" title="Digital-to-analog converter">DAC</a>, it is desirable that the output of the DAC be a faithful representation of the original signal. If the input signal is changing much faster than the sample rate, then this will not be the case, and spurious signals called <i>aliases</i> will be produced at the output of the DAC. The frequency of the aliased signal is the difference between the signal frequency and the sampling rate. For example, a 2 kHz sinewave being sampled at 1.5 kHz would be reconstructed as a 500 Hz sinewave. This problem is called <i><a href="/wiki/Aliasing.html" title="Aliasing">aliasing</a></i>.</p>
+<p>To avoid aliasing, the input to an ADC must be low-pass <a href="/wiki/Electronic_filter.html" title="Electronic filter">filtered</a> to remove frequencies above half the sampling rate. This filter is called an <i><a href="/wiki/Anti-aliasing.html" title="Anti-aliasing">anti-aliasing</a></i> filter, and is essential for a practical ADC system.</p>
+<p>Although aliasing in most systems is unwanted, it should also be noted that it can be exploited to provide simultaneous down-mixing of a band-limited high frequency signal (see <a  class="new" title="Frequency-mixer">frequency-mixer</a>).</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Dither">edit</a>]</div>
+<p><a name="Dither" id="Dither"></a></p>
+<h2>Dither</h2>
+<p>In A to D converters, performance can be improved using <a href="/wiki/Dither.html" title="Dither">dither</a>. This is a very small amount of random noise (<a href="/wiki/White_noise.html" title="White noise">white noise</a>) which is added to the input before conversion. Its amplitude is set to be about half of the least significant bit. Its effect is to cause the state of the LSB to randomly oscillate between 0 and 1 in the presence of very low levels of input, rather than sticking at a fixed value. Rather than the signal simply getting cut off altogether at this low level (which is only being quantized to a resolution of 1 bit), it extends the effective range of signals that the A to D converter can convert, at the expense of a slight increase in noise - effectively the quantization error is diffused across a series of noise values which is far less objectionable than a hard cutoff. The result is an accurate representation of the signal over time. A suitable filter at the output of the system can thus recover this small signal variation.</p>
+<p>An audio signal of very low level (w.r.t. the bit depth of the ADC) sampled without dither sounds extremely distorted and unpleasant. Without dither the low level always yields a '1' from the A to D. With dithering, the true level of the audio is still recorded as a series of values over time, rather than a series of separate bits at one instant in time.</p>
+<p>A virtually identical process, also called dither or <a href="/wiki/Dithering.html" title="Dithering">dithering</a>, is often used when quantizing photographic images to a fewer number of bits per pixel - the image becomes noisier but to the eye looks far more realistic than the quantized image, which otherwise becomes banded. This analogous process may help to visualize the effect of dither on an analogue audio signal that is converted to digital.</p>
+<p>Dithering is also used in integrating systems such as <a href="/wiki/Electricity_meter.html" title="Electricity meter">electricity meters</a>. Since the values are added together, the dithering produces results that are more exact than the LSB of the analog-to-digital converter.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Oversampling">edit</a>]</div>
+<p><a name="Oversampling" id="Oversampling"></a></p>
+<h2>Oversampling</h2>
+<p>Usually, signals are sampled at the minimum rate required, for economy, with the result that the quantization noise introduced is <a href="/wiki/White_noise.html" title="White noise">white noise</a> spread over the whole pass band of the converter. If a signal is sampled at a rate much higher than the <a href="/wiki/Nyquist_frequency.html" title="Nyquist frequency">Nyquist frequency</a> and then digitally filtered to limit it to the signal bandwidth, the <a href="/wiki/Signal-to-noise_ratio.html" title="Signal-to-noise ratio">signal-to-noise ratio</a> due to quantization noise will be lower than if the whole available band had been used. With this technique, it is possible to obtain an effective resolution larger than that provided by the converter alone.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: ADC structures">edit</a>]</div>
+<p><a name="ADC_structures" id="ADC_structures"></a></p>
+<h2>ADC structures</h2>
+<p>These are the most common ways of implementing an electronic ADC:</p>
+<ul>
+<li>A <b>direct conversion ADC</b> or <b>flash ADC</b> has a <a href="/wiki/Comparator.html" title="Comparator">comparator</a> that fires for each decoded voltage range. The comparator bank feeds a <a href="/wiki/Logic_circuit.html" title="Logic circuit">logic circuit</a> that generates a code for each voltage range. Direct conversion is very fast, but usually has only 8 bits of resolution (256 comparators) or fewer, as it needs a large, expensive circuit. ADCs of this type have a large <a href="/wiki/Die.html" title="Die">die</a> size, a high input <a href="/wiki/Capacitance.html" title="Capacitance">capacitance</a>, and are prone to produce <a href="/wiki/Glitch.html" title="Glitch">glitches</a> on the output (by outputting an out-of-sequence code). They are often used for <a href="/wiki/Video.html" title="Video">video</a> or other fast signals.</li>
+</ul>
+<ul>
+<li>A <a href="/wiki/Successive_Approximation_ADC.html" title="Successive Approximation ADC"><b>successive-approximation ADC</b></a> uses a comparator to reject ranges of voltages, eventually settling on a final voltage range. The way successive approximation works is through constantly comparing the input voltage to a known reference voltage until the best approximation is achieved. At each step in this process, a binary value of the approximation is stored in a successive approximation register (SAR).The SAR uses a reference voltage (which is predetermined and reflects the conditions for which the ADC is used for) for comparisons. For example if the input voltage is 100V and the reference voltage is 150V, in the 1st clock cycle the voltage out is negative (in the sense that 100V is less than 150V). In the 2nd clock cycle the voltage might increase by say 30V (the increment being predetermined) to 130V. This value is still negative. The 3rd clock cycle results in 160V, in which case the output is positive (as the output exceeds the input voltage). The result of this would be in the binary form 110. The 1’s refer to the times the voltage was negative and the 0’s refer to the positives (note in this case it is a 3-bit ADC, as the clock runs 3 times). This is also called <i>bit-weighting conversion</i>, and is similar to a <a href="/wiki/Binary_search.html" title="Binary search">binary search</a>. By increasing the number of bit cycles and decreasing the increment rise it is possible to construct an accurate ADC. ADCs of this type have good resolutions and quite wide ranges. They are more complex than some other designs.</li>
+<li>A <b>delta-encoded ADC</b> has an up-down <a href="/wiki/Counter.html" title="Counter">counter</a> that feeds a <a href="/wiki/Digital_to_analog_converter.html" title="Digital to analog converter">digital to analog converter</a> (DAC). The input signal and the DAC both go to a comparator. The comparator controls the counter. The circuit uses negative <a href="/wiki/Feedback.html" title="Feedback">feedback</a> from the comparator to adjust the counter until the DAC's output is close enough to the input signal. The number is read from the counter. Delta converters have very wide ranges, and high resolution, but the conversion time is dependent on the input signal level, though it will always have a guaranteed worst-case. Delta converters are often very good choices to read real-world signals. Most signals from physical systems do not change abruptly. Some converters combine the delta and successive approximation approaches; this works especially well when high frequencies are known to be small in magnitude.</li>
+</ul>
+<ul>
+<li>A <b>ramp-compare ADC</b> (also called <b>integrating</b>, <b>dual-slope</b> or <b>multi-slope</b> ADC) produces a <a href="/wiki/Sawtooth_wave.html" title="Sawtooth wave">saw-tooth signal</a> that ramps up, then quickly falls to zero. When the ramp starts, a timer starts counting. When the ramp voltage matches the input, a comparator fires, and the timer's value is recorded. Timed ramp converters require the least number of <a href="/wiki/Transistor.html" title="Transistor">transistors</a>. The ramp time is sensitive to temperature because the circuit generating the ramp is often just some simple <a href="/wiki/Electronic_oscillator.html" title="Electronic oscillator">oscillator</a>. There are two solutions: use a clocked counter driving a <a href="/wiki/Digital-to-analog_converter.html" title="Digital-to-analog converter">DAC</a> and then use the comparator to preserve the counter's value, or calibrate the timed ramp. A special advantage of the ramp-compare system is that comparing a second signal just requires another comparator, and another register to store the voltage value.</li>
+</ul>
+<ul>
+<li>A <b>pipeline ADC</b> (also called <b>subranging quantizer</b>) uses two or more steps of subranging. First, a coarse conversion is done. In a second step, the difference to the input signal is determined with a <a href="/wiki/Digital_to_analog_converter.html" title="Digital to analog converter">digital to analog converter</a> (DAC). This difference is then converted finer, and the results are combined in a last step. This type of ADC is fast, has a high resolution and only requires a small die size.</li>
+</ul>
+<ul>
+<li>A <b>Sigma-Delta ADC</b> (also known as a Delta-Sigma ADC) oversamples the desired signal by a large factor and filters the desired signal band. Generally a smaller number of bits than required are converted using a Flash ADC after the Filter. The resulting signal, along with the error generated by the discrete levels of the Flash, is fed back and subtracted from the input to the filter. This negative feedback has the effect of <a href="/wiki/Noise_shaping.html" title="Noise shaping">noise shaping</a> the error due to the Flash so that it does not appear in the desired signal frequencies. A digital filter (decimation filter) follows the ADC which reduces the sampling rate, filters off unwanted noise signal and increases the resolution of the output. (<a href="/wiki/Sigma-delta_modulation.html" title="Sigma-delta modulation">sigma-delta modulation</a>, also called <a href="/wiki/Delta-sigma_modulation.html" title="Delta-sigma modulation">delta-sigma modulation</a>)</li>
+</ul>
+<p>Nonelectronic ADCs usually use some scheme similar to one of the above.</p>
+<p><br /></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Commercial analog-to-digital converters">edit</a>]</div>
+<p><a name="Commercial_analog-to-digital_converters" id="Commercial_analog-to-digital_converters"></a></p>
+<h4>Commercial analog-to-digital converters</h4>
+<p>These are usually <a href="/wiki/Integrated_circuit.html" title="Integrated circuit">integrated circuits</a>.</p>
+<p>Most converters sample with 6 to 24 <a href="/wiki/Bit.html" title="Bit">bits</a> of resolution, and produce fewer than 1 megasample per second. Mega- and gigasample converters are available, though (Feb 2002). Megasample converters are required in digital <a href="/wiki/Video_camera.html" title="Video camera">video cameras</a>, <a href="/wiki/Video_capture_card.html" title="Video capture card">video capture cards</a>, and <a href="/wiki/TV_tuner_card.html" title="TV tuner card">TV tuner cards</a> to convert full-speed analog video to <a href="/wiki/Moving_Picture_Experts_Group.html" title="Moving Picture Experts Group">MPEG</a> digital video files. Commercial converters usually have ±0.5 to ±1.5 <a href="/wiki/Least_significant_bit.html" title="Least significant bit">LSB</a> error in their output.</p>
+<p>The most expensive part of an integrated circuit is the pins, because they make the package larger, and each pin has to be connected to the integrated circuit's silicon. To save pins, it's common for slow ADCs to send their data one bit at a time over a <a href="/wiki/Serial_bus.html" title="Serial bus">serial</a> interface to the computer, with the next bit coming out when a clock signal changes state, say from zero to 5V. This saves quite a few pins on the ADC package, and in many cases, does not make the overall design any more complex. (Even <a href="/wiki/Microprocessor.html" title="Microprocessor">microprocessors</a> which use <a href="/wiki/Memory-mapped_IO.html" title="Memory-mapped IO">memory-mapped IO</a> only need a few bits of a port to implement a <a href="/wiki/Serial_bus.html" title="Serial bus">serial bus</a> to an ADC.)</p>
+<p>Commercial ADCs often have several inputs that feed the same converter, usually through an analog <a href="/wiki/Multiplexer.html" title="Multiplexer">multiplexer</a>. Different models of ADC may include <a href="/wiki/Sample_and_hold.html" title="Sample and hold">sample and hold</a> circuits, instrumentation <a href="/wiki/Amplifier.html" title="Amplifier">amplifiers</a> or <a href="/wiki/High-voltage_differential_signalling.html" title="High-voltage differential signalling">differential</a> inputs, where the quantity measured is the difference between two voltages.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Application to music recording">edit</a>]</div>
+<p><a name="Application_to_music_recording" id="Application_to_music_recording"></a></p>
+<h2>Application to music recording</h2>
+<p>ADCs are integral to much current music reproduction technology, since much music production is done on computers; even when analog recording is used, an ADC is still needed to create the <a href="/wiki/Pulse_code_modulation.html" title="Pulse code modulation">PCM</a> data stream that goes onto a <a href="/wiki/Compact_disc.html" title="Compact disc">compact disc</a>.</p>
+<p>The current crop of AD converters utilized in music can sample at rates up to 192 <a href="/wiki/Kilohertz.html" title="Kilohertz">kilohertz</a>. Many people in the business consider this an overkill and pure marketing hype, due to the <a href="/wiki/Nyquist-Shannon_sampling_theorem.html" title="Nyquist-Shannon sampling theorem">Nyquist-Shannon sampling theorem</a>. Simply put, they say the analog waveform does not have enough information in it to necessitate such high sampling rates, and typical recording techniques for high-fidelity audio are usually sampled at either 44.1 kHz (the standard for CD) or 48 kHz (more typical for computer use). However, this kind of bandwidth headroom allows the use of cheaper or faster <a href="/wiki/Anti-aliasing.html" title="Anti-aliasing">anti-aliasing</a> filters.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Other applications">edit</a>]</div>
+<p><a name="Other_applications" id="Other_applications"></a></p>
+<h2>Other applications</h2>
+<p>AD converters are used virtually everywhere where an analog signal has to be processed, stored, or transported in digital form. Fast video ADCs are used, for example, in <a href="/wiki/TV_tuner_card.html" title="TV tuner card">TV tuner cards</a>. Slow on-chip 8, 10, 12, or 16 bit ADCs are common in <a href="/wiki/Microcontroller.html" title="Microcontroller">microcontrollers</a>. Very fast ADCs are needed in <a href="/wiki/Oscilloscope#Digital_storage_oscilloscope.html" title="Oscilloscope">digital oscilloscopes</a>, and are crucial for new applications like <a href="/wiki/Software_defined_radio.html" title="Software defined radio">software defined radio</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Digital_signal_processing.html" title="Digital signal processing">Digital signal processing</a></li>
+<li><a href="/wiki/Quantization_%28signal_processing%29.html" title="Quantization (signal processing)">quantization (signal processing)</a></li>
+<li><a href="/wiki/Quantization_noise.html" title="Quantization noise">quantization noise</a></li>
+<li><a href="/wiki/Modem.html" title="Modem">Modem</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links and book references">edit</a>]</div>
+<p><a name="External_links_and_book_references" id="External_links_and_book_references"></a></p>
+<h2>External links and book references</h2>
+<ul>
+<li><a  class="external text" title="http://www.vias.org/simulations/simusoft_adconversion.html">Learning by Simulations</a> A simulation showing the effects of sampling frequency and ADC resolution.</li>
+<li><a  class="external text" title="http://www.embedded.com/showArticle.jhtml?articleID=60403334">"Understanding analog to digital converter specifications"</a> article by Len Staller 2005-02-24.</li>
+<li><a  class="external text" title="http://www.maxim-ic.com/appnotes.cfm?appnote_number=810&amp;CMP=WP-2">"Understanding Flash ADCs"</a> Tutorial on how flash analog-to-digital converters (ADCs) work.</li>
+<li>S. Norsworthy, R. Schreier, G. Temes, <i>Delta-Sigma Data Converters</i>. <a  class="internal">ISBN 0-7803-1045-4</a>.</li>
+<li>Mingliang Liu, <i>Demystifying Switched-Capacitor Circuits</i>. <a  class="internal">ISBN 0-750-67907-7</a>.</li>
+<li>Behzad Razavi, <i>Principles of Data Conversion System Design</i>. <a  class="internal">ISBN 0-780-31093-4</a>.</li>
+<li>David Johns, Ken Martin, <i>Analog Integrated Circuit Design</i>. <a  class="internal">ISBN 0-471-14448-7</a>.</li>
+<li>Phillip E. Allen, Douglas R. Holberg, <i>CMOS Analog Circuit Design</i>. <a  class="internal">ISBN 0-195-11644-5</a>.</li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:40367-0!1!0!default!!en!2 and timestamp 20060906133851 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:Electronic circuits">Electronic circuits</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Analog-to-digital_converter.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-cs"><a >Česky</a></li>
+				<li class="interwiki-da"><a >Dansk</a></li>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-id"><a >Bahasa Indonesia</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-hu"><a >Magyar</a></li>
+				<li class="interwiki-nl"><a >Nederlands</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-pt"><a >Português</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+				<li class="interwiki-sk"><a >Slovenčina</a></li>
+				<li class="interwiki-fi"><a >Suomi</a></li>
+				<li class="interwiki-sv"><a >Svenska</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 22:33, 6 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv44 in 0.098 secs. --></body></html>

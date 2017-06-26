@@ -1,0 +1,307 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Header file,Application Programming Interface,C++,C programming language,Compiler,Computer programming,Include guard,Interface (computer science),Interface Definition Language,Java programming language,Library (computer science)" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Header file - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Header_file";
+			var wgTitle = "Header file";
+			var wgArticleId = 77847;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Header file</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>In <a href="/wiki/Computer_programming.html" title="Computer programming">computer programming</a>, especially in the <a href="/wiki/C_programming_language.html" title="C programming language">C programming language</a> or <a href="/wiki/C%2B%2B.html" title="C++">C++</a>, a <b>header file</b> is a text file containing small bits of program code, which is used to describe the contents of the main body of code to other modules.</p>
+<p>Programs are typically broken into pieces in order to make working with them easier. Related bits of code are collected into files, which can then be referred to from other files. However this leads to a problem when the code is collected into a runnable program, because all of the code must be <a href="/wiki/Compiler.html" title="Compiler">compiled</a> every time.</p>
+<p>One solution to this problem is to have the system examine the modification dates of the files that make up the program and recompile files that need it; <a  class="external text" title="http://directory.fsf.org/devel/build/make.html">GNU make</a> does this. However this might tell the system to compile files that have had rather innocuous changes made to them, like fixing <a href="/wiki/Whitespace.html" title="Whitespace">whitespace</a>, or adding comments.</p>
+<p>The header file provides a solution to this problem by separating out the parts that really have an effect when changed, from those that do not. Typically, header files are used to specify only <i><a href="/wiki/Interface_%28computer_science%29.html" title="Interface (computer science)">interfaces</a></i>, with the implementations left in the main code files.</p>
+<p>In this case, they consist of "stub" definitions containing only the definition for the interfaces implemented in the main file, along with documentation for that code. This way the header file only changes if and when the very <i>definition</i> of the code changes, which is the time when other modules must also be recompiled as well. Now the system only has to look at the modification dates on the header files to see what needs to be re-built, which can result in significant savings in compilation time.</p>
+<p>On the downside a header file means two files to modify when a change is made. Newer languages (like <a href="/wiki/Java_programming_language.html" title="Java programming language">Java</a>) typically dispense with header files and instead put a little more smarts into the system to see if the changes really have any effect.</p>
+<p>When constructing <a href="/wiki/Library_%28computer_science%29.html" title="Library (computer science)">libraries</a>, header files are commonly used to describe the functionality in them, with no need of compiling the library at all, instead it is linked to the resulting object files at the end of the compilation.</p>
+<p>Information from <a href="/wiki/C_programming_language.html" title="C programming language">C</a>/C++ header files is traditionally brought into other files using the C <a href="/wiki/Preprocessor.html" title="Preprocessor">preprocessor</a>'s "#include" directive. To prevent the same header file from being included more than once, an <a href="/wiki/Include_guard.html" title="Include guard">include guard</a> is put around the body of each header file.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">C header file:</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Examples:</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: C header file:">edit</a>]</div>
+<p><a name="C_header_file:" id="C_header_file:"></a></p>
+<h2>C header file:</h2>
+<p>A C header file is a text file that contains pieces of code written in C programming language syntax, and whose name, by convention, ends with “.h” extension. A C header file ( also informally known as “.h file” pronounced dot-H-file ), is used inside a program by coding the “#include” preprocessor directive. The syntax is as follows:</p>
+<pre>
+#include &lt;standard-library-header-file&gt;
+                 or
+#include "user-defined-header-file"
+</pre>
+<p>Note the slight difference in the syntax when including a standard library header files and user defined header files.</p>
+<p>In programs written in C, it is often desirable to separate function declarations, global, static and external variable declarations from the rest of the source code. This provides software developers with three major advantages:</p>
+<ul>
+<li>Organizes the source code into well defined entities.</li>
+<li>Separates interfaces and implementation of functionality.</li>
+<li>Provides flexibility and better opportunity of reuse.</li>
+</ul>
+<p>Header files in C (and C++) are meant exactly for this purpose.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Examples:">edit</a>]</div>
+<p><a name="Examples:" id="Examples:"></a></p>
+<h2>Examples:</h2>
+<p>Imagine you are writing a program to convert a measurement in Miles to Kilometers. In order to accomplish this task, you write a function that does the job. Further assume that your implementation of the function is as follows:</p>
+<p><b>ProgramA.c:</b></p>
+<pre>
+const double FACTOR = 1.609344;
+
+double cvtMileToKilom( double miles );
+
+int main()
+{
+  double miles = 0;
+  printf("Enter measurement in Miles:");
+  scanf("%lf", &amp;miles);
+  printf("%f miles is %f kilometers.\n", miles, cvtMileToKilom( miles ) );
+  return 0;
+}
+
+double cvtMileToKilom( double miles )
+{
+  return FACTOR * miles;
+}
+</pre>
+<p>A few days later you decide to write a program that converts miles to meters. Further assume that you love your previously written code, and you must reuse it for your new project. You have two options. One option is to copy your code and paste it into your new program, like the following:</p>
+<p><b>ProgramB.c</b></p>
+<pre>
+const double FACTOR = 1.609344;
+
+double cvtMileToKilom( double miles );
+double cvtMileToMeter( double miles );
+
+int main(void)
+{
+  double miles = 0;
+  printf("Enter measurement in Miles:");
+  scanf("%lf", &amp;miles);
+  printf("%f miles is %f meters.\n", miles, cvtMileToMeter( miles ) );
+  return 0;
+}
+
+double cvtMileToKilom( double miles )
+{
+  return FACTOR * miles;
+}
+
+double cvtMileToMeter( double miles )
+{
+  return cvtMileToKilom( miles ) * 1000;
+}
+</pre>
+<p>Another, better, option is to separate your function declaration for cvtMileToKilom from its implementation. Suppose in your first project you structured your program as follows:</p>
+<p><b>programA.h</b></p>
+<pre>
+const static double FACTOR = 1.609344;
+
+double cvtMileToKilom( double miles );
+</pre>
+<p><b>programA.c</b></p>
+<pre>
+
+#include "programA.h"
+double cvtMileToKilom( double miles )
+{
+  return FACTOR * miles;
+}
+</pre>
+<p>This way all you need to do for your new project is to include your header file, in your new program, and compile all your .c files:</p>
+<p><b>programB.c</b></p>
+<pre>
+#include "programA.h"
+#include &lt;stdio.h&gt;
+double cvtMileToMeter( double miles );
+
+int main()
+{
+  double miles = 0;
+  printf("Enter measurement in Miles:");
+  scanf("%lf", &amp;miles);
+  printf("%f miles is %f meters.\n", miles, cvtMileToMeter( miles ) );
+  return 0;
+}
+
+double cvtMileToMeter( double miles )
+{
+  return cvtMileToKilom( miles ) * 1000;
+}
+</pre>
+<p>The beauty of this method is that you don’t have to remember how you implemented cvtMileToKilom. All you need to be able to do is to use it, and the #include “programA.h” statement is all you need to access your previous work. No need for copy pasting! This is the basic example of software reuse.</p>
+<p>Please note that the code segments provided above are in no way the best way to do the projects. Nor are they examples of good C programming style. Rather they attempt to illustrate the use of header files. There is still a lot of room for improvement. For instance, you could put the function definitions of cvtMiletoMeter and cvtMiletoKilom in a single .c file, for example “conversion.c”. Also put the prototypes of these two functions in one .h file, for example “conversion.h”. This way, you can add more and more functions that convert from one unit to another. Every time you want to do another conversion, you can use your library and the functions available in it.</p>
+<p>The idea of header files is not limited to C. For example, packages in Java are analogous to C header files.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Application_Programming_Interface.html" title="Application Programming Interface">Application Programming Interface</a></li>
+<li><a href="/wiki/Interface_Definition_Language.html" title="Interface Definition Language">Interface Definition Language</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://www.gamedev.net/reference/programming/features/orgfiles/page2.asp">Organizing Code Files (and the pitfalls from using header files)</a></li>
+<li><a  class="external text" title="http://www.eventhelix.com/RealtimeMantra/HeaderFileIncludePatterns.htm">C++ Header File Inclusion Rules</a></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:77847-0!1!0!default!!en!2 and timestamp 20060906021344 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:C programming language">C programming language</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Header_file.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-bg"><a >Български</a></li>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 08:45, 17 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv2 in 0.118 secs. --></body></html>

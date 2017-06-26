@@ -1,0 +1,1696 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Virtual inheritance,Virtual inheritance,Application programming interface,C++,C Sharp,Central processing unit,Compiler,Computer,Computer science,Coupling (computer science),Delegation (programming)" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Virtual inheritance - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Virtual_inheritance";
+			var wgTitle = "Virtual inheritance";
+			var wgArticleId = 1907963;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Virtual inheritance</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<center>
+<div style="text-align: center; margin: 0 10% 1em 10%;">
+<table class="notice noprint" id="disputed" style="background: beige; border: 1px solid #aaa; padding: 0.1em; margin: 0.5em auto;">
+<tr>
+<td valign="top" style="padding: 0.1em"><a  class="image" title=" "><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Circle-question-red.svg/45px-Circle-question-red.svg.png" alt=" " width="45" height="45" longdesc="/wiki/Image:Circle-question-red.svg" /></a></td>
+<td style="padding: 0.1em"><b>The factual accuracy of this article or section is <a  title="Wikipedia:Accuracy dispute">disputed</a>.</b><br />
+<div style="font-size: 90%;">Please see the relevant discussion on the <a  title="Talk:Virtual inheritance">talk page</a>.</div>
+</td>
+</tr>
+</table>
+</div>
+</center>
+<p><b>Virtual inheritance</b> is a form of <a href="/wiki/Inheritance_%28computer_science%29.html" title="Inheritance (computer science)">inheritance</a> in <a href="/wiki/Object-oriented.html" title="Object-oriented">object-oriented</a> <a href="/wiki/Programming_languages.html" title="Programming languages">programming languages</a>.</p>
+<p>Virtual inheritance allows a parent <a href="/wiki/Superclass_%28computer_science%29.html" title="Superclass (computer science)">(the base class)</a> to define code elements which are implemented in the child <a href="/wiki/Subclass_%28computer_science%29.html" title="Subclass (computer science)">(the derived class)</a>. Methods, variables, properties, events and other <b>code elements</b> are <b>specified by the parent</b> and <b>implemented in the child</b>.</p>
+<p>A common use of Virtual Inheritance is when the parent specifies an abstract method that must exist in the child. In this case the child will do the work (perform some function) when <b>called upon</b> by the parent (i.e. controlled). Parents may also specify other code elements, such as primitive data types, to exist in the child which can then be <b>assigned and used</b> (i.e. controlled) by the parent.</p>
+<p>Virtual inheritance 'phenomena' should not be confused with 'keywords' such as the <a href="/wiki/Virtual_inheritance#C.2B.2B_virtual_Keyword_Vs._Virtual_Inheritance_.28VI.29.html" title="Virtual inheritance">C++ virtual keyword</a>. Other object oriented inheritance concepts such as <a href="/wiki/Virtual_function.html" title="Virtual function">virtual methods</a> and the <a href="/wiki/Diamond_problem.html" title="Diamond problem">Diamond Problem</a> are also implementation inheritance <a href="/wiki/Implementation_inheritance_%28object-oriented_programming%29#C.2B.2B_Inherited_Class_Ambiguity_.28ICA.29.html" title="Implementation inheritance (object-oriented programming)">(ICA)</a> phenomena.</p>
+<p>Virtual inheritance is often contrasted with <a href="/wiki/Implementation_inheritance_%28object-oriented_programming%29.html" title="Implementation inheritance (object-oriented programming)">implementation inheritance</a>. Both virtual and implementation inheritance phenomena are fundamental to all object-oriented programming languages.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">General</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">1.1</span> <span class="toctext">Specification Vs. Implementation</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.2</span> <span class="toctext">Virtual Code Elements</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.3</span> <span class="toctext">Use Context</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.4</span> <span class="toctext">Code Element Binding and Coupling</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.5</span> <span class="toctext">Abstract Method</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.6</span> <span class="toctext">Interfaces</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.7</span> <span class="toctext">Type Polymorphism</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.8</span> <span class="toctext">Control Mechanism Vs. Polymorphic Mechanism</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.9</span> <span class="toctext">Virtual Control Mechanism (VCM)</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.10</span> <span class="toctext">Different Forms of Virtual Inheritance</span></a>
+<ul>
+<li class="toclevel-3"><a ><span class="tocnumber">1.10.1</span> <span class="toctext">General Virtual Inheritance (GVI)</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">1.10.2</span> <span class="toctext">Simple Virtual Inheritance (SVI)</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Languages</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">2.1</span> <span class="toctext">C++</span></a>
+<ul>
+<li class="toclevel-3"><a ><span class="tocnumber">2.1.1</span> <span class="toctext">C++ virtual Keyword Vs. Virtual Inheritance (VI)</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">2.1.2</span> <span class="toctext">C++ Abstract methods</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">2.1.3</span> <span class="toctext">Resolution Inheritance</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">2.1.4</span> <span class="toctext">Stateful Diamond Point (SDP) Pattern in C++</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">2.1.5</span> <span class="toctext">Coexistence of Virtual and Resolution Inheritance in C++</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">2.1.6</span> <span class="toctext">Summary of Virtual and Resolution Inheritance in Object-oriented Languages</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.2</span> <span class="toctext">C#</span></a>
+<ul>
+<li class="toclevel-3"><a ><span class="tocnumber">2.2.1</span> <span class="toctext">Simple Virtual Inheritance (SVI) via Interface Inheritance</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">2.2.2</span> <span class="toctext">Use Context of Virtual Code Elements in C#</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">2.2.3</span> <span class="toctext">Stateful Diamond Point (SDP) Pattern in C#</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">2.2.4</span> <span class="toctext">Coexistence of Virtual and Interface Inheritance in C#</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">2.2.5</span> <span class="toctext">Summary of Virtual and Interface inheritance in Object Oriented Languages</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">See also</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">3.1</span> <span class="toctext">Logical Context of Virtual Inheritance</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.2</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.3</span> <span class="toctext">External links</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.4</span> <span class="toctext">Quotations</span></a></li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: General">edit</a>]</div>
+<p><a name="General" id="General"></a></p>
+<h2>General</h2>
+<p>Centric to virtual inheritance phenomena is the concept of a '<a href="/wiki/Virtual_inheritance#Virtual_Code_Elements.html" title="Virtual inheritance">virtual code element</a>' which is contrasted with an '<a href="/wiki/Implementation_inheritance_%28object-oriented_programming%29#Implementation_Code_Elements.html" title="Implementation inheritance (object-oriented programming)">implementation code element</a>'. For example, a parent can define an <a href="/wiki/Virtual_inheritance#C.2B.2B_Abstract_methods.html" title="Virtual inheritance">abstract method in c++</a> (a virtual code element) and use it to control the actual method (an implementation code element) in a child.</p>
+<p>Virtual code elements have a <a href="/wiki/Virtual_inheritance#Code_Element_Binding_and_Coupling.html" title="Virtual inheritance">language binding</a> that can make them callable, assignable or loadable. <a href="/wiki/Virtual_inheritance#Use_Context_of_Virtual_Code_Elements_in_C.23.html" title="Virtual inheritance">An example</a> is a C# Interface that defines a method (callable), a <code>bool</code> (assignable - single value), and an event (loadable - multivalve). Since the elements are more than just callable they are said to be '<a href="/wiki/Virtual_inheritance#Control_Mechanism_Vs._Polymorphic_Mechanism.html" title="Virtual inheritance">controllable</a>' to denote the control aspect (callable, assignable, loadable, etc) of the virtual code element.</p>
+<p>Software expressions that define virtual inheritance produce a <a href="/wiki/Virtual_inheritance#Virtual_Control_Mechanism_.28VCM.29.html" title="Virtual inheritance">Virtual Control Mechanism VCM</a> which is a specification for one or more virtual code elements. The VCM can include additional information about the code element such as who can use it. Interfaces are an example of a single VCM that can hold multiple virtual code elements. Another example is an abstract method which defines a VCM that holds the information of the method signature for a single code element (the method).</p>
+<p>Virtual code elements have a <a href="/wiki/Virtual_inheritance#Use_Context.html" title="Virtual inheritance">use context</a> that defines who can use the code element. Abstract methods in C# and C++ have a <a href="/wiki/Virtual_inheritance#General_Virtual_Inheritance_.28GVI.29.html" title="Virtual inheritance">parent use context</a>. Interfaces, on the other hand, define virtual code elements with a restricted client use context. Note that this use context restriction means that a parent can not use the virtual code element.</p>
+<p>Differences in use context and language binding lead to different <a href="/wiki/Virtual_inheritance#Different_Forms_of_Virtual_Inheritance.html" title="Virtual inheritance">forms of virtual inheritance</a> phenomena. One example of these differences is the difference between method code elements in '<a href="/wiki/Virtual_inheritance#C.2B.2B_Abstract_methods.html" title="Virtual inheritance">C++ Abstract methods</a>' and '<a href="/wiki/Virtual_inheritance#Use_Context_of_Virtual_Code_Elements_in_C.23.html" title="Virtual inheritance">C# Interface defined methods</a>'. There is an important and fundamental difference in use context of these virtual code elements (the methods). <a href="/wiki/Virtual_inheritance#General_Virtual_Inheritance_.28GVI.29.html" title="Virtual inheritance">General Virtual Inheritance GVI</a> has a parent use context. <a href="/wiki/Virtual_inheritance#Simple_Virtual_Inheritance_.28SVI.29.html" title="Virtual inheritance">Simple Virtual Inheritance (SVI)</a>, on the other hand, has a client use context. Note that both GVI and SVI may exist in a single code element such as C++ abstract methods.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Specification Vs. Implementation">edit</a>]</div>
+<p><a name="Specification_Vs._Implementation" id="Specification_Vs._Implementation"></a></p>
+<h3>Specification Vs. Implementation</h3>
+<p>Virtual Inheritance (VI) is a form of <a href="/wiki/Inheritance_%28object-oriented_programming%29.html" title="Inheritance (object-oriented programming)">class inheritance</a> phenomena and is generally contrasted with <a href="/wiki/Implementation_inheritance_%28object-oriented_programming%29.html" title="Implementation inheritance (object-oriented programming)">Implementation Inheritance (II)</a>.</p>
+<p>In Virtual Inheritance an inherited child <b>inherits only the specification</b> of the code elements defined in the parent. As such the child is <b>forced to implement the functionality</b> specified by the code elements defined in the specification. This 'forcing' may lead to <a href="/wiki/Polymorphism_%28computer_science%29.html" title="Polymorphism (computer science)">polymorphic behavior</a> within the operational structure (inheritance graph) of the <a href="/wiki/Hierarchy.html" title="Hierarchy">class hierarchy</a> created by class inheritance.</p>
+<p>Implementation Inheritance phenomena, on the other hand, <b>shares an implementation of functionality</b> located in the parent. This leads to the ability to move common code in the children to parents. The common code can then be shared by all children inheriting from that parent.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Virtual Code Elements">edit</a>]</div>
+<p><a name="Virtual_Code_Elements" id="Virtual_Code_Elements"></a></p>
+<h3>Virtual Code Elements</h3>
+<p>In Virtual Inheritance (VI) phenomena a child inherits the specification for one or more code elements. A code element may be a method, a variable or a property depending on the specific language features of an object-oriented language. Because the code element has no implementation it is called a 'virtual code element' to designate its <b>specification only aspect</b>. The elements are 'virtual' because they are controlled through the specification (not an implementation).</p>
+<p>Virtual code elements (specifications via inheritance) are centric to the concept of virtual inheritance phenomena. They always <b>force an implementation in the derived class</b> (child class). <a href="/wiki/Implementation_inheritance_%28object-oriented_programming%29.html" title="Implementation inheritance (object-oriented programming)">Implementation Inheritance</a>, on the other hand, always shares an implementation in derived classes.</p>
+<p>It is important to note that any object-oriented inheritance phenomena can be classified under Virtual Inheritance (VI) or Implementation Inheritance (II) via this articulation. Virtual code elements never have an implementation when specified. <a href="/wiki/Implementation_inheritance_%28object-oriented_programming%29#Implementation_Code_Elements.html" title="Implementation inheritance (object-oriented programming)">Implementation code elements</a>, on the other hand, always have an implementation when specified.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Use Context">edit</a>]</div>
+<p><a name="Use_Context" id="Use_Context"></a></p>
+<h3>Use Context</h3>
+<p>Virtual code elements produced by the specification can be used only in a specific context called the 'use context'. The use context determines who can use the Virtual Control Mechanism (VCM) formed via the inherited virtual code element specification.</p>
+<p>For example, a <a href="/wiki/Virtual_inheritance#C.2B.2B_Abstract_Methods.html" title="Virtual inheritance">parent use context</a> allows the parent to use the virtual code element. A <a href="/wiki/Virtual_inheritance#Simple_Virtual_Inheritance_.28SVI.29_via_Interface_Inheritance.html" title="Virtual inheritance">client use context</a> allows client objects to use the virtual code element. Both parent and child use contexts may coexist depending on the features of the object-oriented language.</p>
+<p>Other forms of use context may exist depending on the specific Virtual Inheritance (VI) features of an object-oriented language.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Code Element Binding and Coupling">edit</a>]</div>
+<p><a name="Code_Element_Binding_and_Coupling" id="Code_Element_Binding_and_Coupling"></a></p>
+<h3>Code Element Binding and Coupling</h3>
+<p>Virtual code elements have bindings at the language and binary levels.</p>
+<p>At the language level a code element may be called (method), assigned (primitive data type - single value assignment) or loaded (event - multiple value assignment). At the binary level various 'under the cover' operations are performed that connect the virtual code elements to their targets, sources and destinations. Binary bindings are <a href="/wiki/Central_processing_unit.html" title="Central processing unit">processor</a>, <a href="/wiki/Operating_system.html" title="Operating system">operating system</a>, and <a href="/wiki/Compiler.html" title="Compiler">compiler</a> dependent and are not addressed at the language independent level used herein.</p>
+<p>Code elements nominally represent class objects but they can also represent <a href="/wiki/Virtual_inheritance#Summary_of_Virtual_and_Interface_inheritance_in_Object_Oriented_Languages.html" title="Virtual inheritance">complex system level components</a>. Virtual code elements in <a href="/wiki/Design_pattern_%28computer_science%29.html" title="Design pattern (computer science)">software patterns</a> that represent such components are often <a href="/wiki/Interface_%28computer_science%29.html" title="Interface (computer science)">Interface</a> driven. The connections that <a href="/wiki/Coupling_%28computer_science%29.html" title="Coupling (computer science)">couple</a> these pattern participants may be 'tight or loose' depending on the intentions of the designer.</p>
+<p>Other issues of connecting code elements effect the determination to use tight or <a href="/wiki/Loose_coupling.html" title="Loose coupling">loose coupling</a>. These kinds of concerns are often 'under the cover issues' at the binary level which effect choices at the language level. For example;</p>
+<ul>
+<li>Is the code element in the same <a href="/wiki/Process_%28computing%29.html" title="Process (computing)">process</a>?</li>
+<li>Is the code element in the same <a href="/wiki/Thread_%28computer_science%29.html" title="Thread (computer science)">thread</a>?</li>
+<li>Is the code element on the same <a href="/wiki/Central_processing_unit.html" title="Central processing unit">CPU</a>?</li>
+<li>Is the code element on the same <a href="/wiki/Computer.html" title="Computer">machine</a>?</li>
+</ul>
+<p>Tight and loose coupling can determine parent or client use context for virtual code elements specified in virtual inheritance.</p>
+<p>Thus the two aspects of binding (call, assignment, load, etc) and coupling (tight/loose) have important implications on the use context of the virtual code element. Therefore virtual code element binding and coupling, at the language level, are fundamental aspects of Virtual Inheritance (VI).</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Abstract Method">edit</a>]</div>
+<p><a name="Abstract_Method" id="Abstract_Method"></a></p>
+<h3>Abstract Method</h3>
+<p>An <a href="/wiki/Method_%28programming%29.html" title="Method (programming)">abstract method</a> is one defined by the parent with <b>no default implementation</b>. Abstract methods are a definitive expression of Virtual Inheritance as they embody the <b>forced implementation in the child</b> by the specification in the parent (a primary requirement for delegation of functionality via inheritance).</p>
+<p>Abstract methods are <b>signature only specification</b> which leave the implementation to the child. The signature specification (of the abstract method) is the <a href="/wiki/Virtual_inheritance#Virtual_Control_Mechanism_.28VCM.29.html" title="Virtual inheritance">Virtual Control Mechanism</a> (VCM) that allows the parent to call the child without knowing the details of the child's implementation of the parent's specification. Thus the signature produces a virtual code element usable by the parent(i.e. a parent use context).</p>
+<p>Note the distinction between an 'abstract method' (which can never provide a default implementation) and a '<a href="/wiki/Implementation_inheritance_%28object-oriented_programming%29#Default_Virtual_Method_Implementation.html" title="Implementation inheritance (object-oriented programming)">default virtual method</a>' which will always provide a default implementation. The abstract method is a Virtual Inheritance (VI) phenomena while the default virtual method is an implementation Inheritance (II) phenomena.</p>
+<p>Note that abstract methods are just one of many kinds of code elements that can be specified by a parent. Assignable code elements such as events or primitive data types in interfaces distinguish Virtual Inheritance (VI) from Virtual Functions (which are conceptual subset of VI). <a href="/wiki/Virtual_inheritance#Code_Element_Binding_and_Coupling.html" title="Virtual inheritance">Code element binding</a> (call, assign, load, etc) is why parents (GVI) and clients (SVI) are said to 'control' virtual code elements rather than just call them (as with abstract methods).</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Interfaces">edit</a>]</div>
+<p><a name="Interfaces" id="Interfaces"></a></p>
+<h3>Interfaces</h3>
+<p>Virtual Inheritance is the core impetus for <a href="/wiki/Interface_%28computer_science%29.html" title="Interface (computer science)">Interfaces</a>. With Interfaces a child inherits only the specification and not the implementation of a set of code elements. Thus Interfaces <b>force a child to implement code elements</b> defined in the Interface.</p>
+<p>An interface is a Virtual Control Mechanism (VCM) that contains a <b>set of virtual code elements</b>. Nominally the use context of the interface is applicable to each of its virtual code elements. In <a href="/wiki/C_Sharp.html" title="C Sharp">C#</a> , for example, Interfaces have a restricted client use context and exhibit <a href="/wiki/Virtual_inheritance#Simple_Virtual_Inheritance_.28SVI.29.html" title="Virtual inheritance">Simple Virtual Inheritance (SVI)</a>.</p>
+<p>Note that Interfaces (language independent meaning) are more than just <a href="/wiki/Method_%28computer_science%29.html" title="Method (computer science)">method</a> specifications as they can <b>include all types of code elements</b> (state space code elements as well as operational elements). In C#, for example, interfaces can contain <a href="/wiki/Virtual_inheritance#Use_Context_of_Virtual_Code_Elements_in_C.23.html" title="Virtual inheritance">methods, properties and events</a>.</p>
+<p>Nominally Interfaces provide a formal specification mechanism that allows a virtual code element within the interface to be controlled by a client object (client use context).</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Type Polymorphism">edit</a>]</div>
+<p><a name="Type_Polymorphism" id="Type_Polymorphism"></a></p>
+<h3>Type Polymorphism</h3>
+<p>In <a href="/wiki/Polymorphism_%28computer_science%29.html" title="Polymorphism (computer science)">Type Polymorphism</a> the child may use both its implementation (defined in the child code body) and the parent's implementation (of the virtual method) in implementing the child's version of the target functionality.</p>
+<p>The 'abstract method' and 'forced implementation' are what distinguish Virtual Inheritance (GVI) from the more general 'Type Polymorphism'.</p>
+<p>Thus Type Polymorphism (TP) is a conceptual superset of Virtual Inheritance (GVI) in that <b>TP functionality can be composed of child AND parent</b> implementations while <b>GVI functionality is (by definition) the child</b> implementation alone.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Control Mechanism Vs. Polymorphic Mechanism">edit</a>]</div>
+<p><a name="Control_Mechanism_Vs._Polymorphic_Mechanism" id="Control_Mechanism_Vs._Polymorphic_Mechanism"></a></p>
+<h3>Control Mechanism Vs. Polymorphic Mechanism</h3>
+<p>Virtual Inheritance (VI) has both a control and polymorphic aspect to its <a href="/wiki/Inheritance_semantics_%28object-oriented_programming%29#Semantic_Scope.html" title="Inheritance semantics (object-oriented programming)">conceptual semantics</a>.</p>
+<p>Control of a virtual code element by a parent or client is centric to its use context. In this section the control aspect is articulated in terms of the parent use context. Thus, it is important to note that this section is equally applicable to the client use context of a virtual code element. The key point of a 'control mechanism' is that its use is centric to its 'use context' (parent, client, etc).</p>
+<p>The <b>virtual control aspect</b> is the ability of a parent to control a 'virtual code element' that is ultimately implemented in the child. The word 'control' means the code element may be callable (an abstract method), assignable (a primitive data type) or both (an event). Whatever the relationship (callable, assignable, etc) the parent 'controls' a 'virtual' code element. Thus the semantic control mechanism (of virtual inheritance) is <b>centric to the parent</b>.</p>
+<p>The <b>polymorphic aspect</b> is the ability of the child implementation to type the functionality (of its virtual implementation) to the child's specific needs (for that functionality). Thus the semantic polymorphic mechanism is <b>centric to the child</b>.</p>
+<p>In articulating these two aspects the relationship of Virtual Inheritance to <a href="/wiki/Polymorphism_%28computer_science%29.html" title="Polymorphism (computer science)">Type Polymorphism</a> becomes clear. The 'virtual control' functionality of 'Virtual Inheritance' is the primary benefit to the parent class. The polymorphic 'potential' of Virtual Inheritance is the primary benefit to the child class. Note that polymorphism (in the child) is NOT a requirement of General Virtual Inheritance (GVI).</p>
+<p>The semantic effect of 'virtual control' is that the parent can delegate responsibility for the functionality to the child. This <a href="/wiki/Delegation_%28programming%29.html" title="Delegation (programming)">functional delegation</a>, in turn, leads to the polymorphic aspect of Virtual Inheritance via the actual implementation in the child.</p>
+<p>Note that the <b>virtual code element</b> in the child <b>is virtual from the parent's point of view</b> (virtual code element) and actual from the child's point of view (implementation code element).</p>
+<p>Thus <b>Virtual Inheritance is a Virtual Control Mechanism (VCM) for parents</b> that allows functional delegation to the child. If a single line of inheritance exists (between first ancestor and final descendent) with several layers of inheritance then no polymorphism exists (its just pure functional delegation).</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Virtual Control Mechanism (VCM)">edit</a>]</div>
+<p><a name="Virtual_Control_Mechanism_.28VCM.29" id="Virtual_Control_Mechanism_.28VCM.29"></a></p>
+<h3>Virtual Control Mechanism (VCM)</h3>
+<p>The code element specification (in all forms of virtual inheritance - GVI, Interfaces) becomes a <b>Virtual Control Mechanism</b> (VCM). Nominally a VCM has a use context that is applicable to all the virtual code elements it contains.</p>
+<p>This means that all virtual code elements (specified via inheritance) have two important aspects to their design.</p>
+<ul>
+<li>(1) Specification&#160;: The specification can be <b>used independently</b> of how it is implemented.</li>
+<li>(2) Use context &#160;: The specification can be <b>used only in a specific context</b> (the use context)</li>
+</ul>
+<p>The difference between a Virtual Control Mechanism (VCM) and a 'virtual code element' is best seen in Interfaces. A VCM can be a single mechanism that contains a set of virtual code elements. On the other hand a VCM can also contain (or represent) a single virtual code element such as an abstract method. Interfaces are a VCM that can contain multiple virtual code elements.</p>
+<p>A VCM can also include <a href="/wiki/Metadata.html" title="Metadata">metadata</a> not seen in the virtual code element. The metadata controls the use of the virtual code element.</p>
+<p>The VCM metadata aspect of Virtual Inheritance (VI) is seen in the signature of abstract methods. The abstract method signature specification (source code expression) is the Virtual Control Mechanism that allows the parent to call the abstract method without knowing the details of the method's implementation of the parent's specification. The virtual code element (in this example) would be the abstract method and its metadata determines the context of its use (use context).</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Different Forms of Virtual Inheritance">edit</a>]</div>
+<p><a name="Different_Forms_of_Virtual_Inheritance" id="Different_Forms_of_Virtual_Inheritance"></a></p>
+<h3>Different Forms of Virtual Inheritance</h3>
+<p>Virtual Inheritance (VI) is a phenomena of specification that operates along the lines of inheritance between parent and child. There are several fundamental aspects of Virtual Inheritance (VI) which are;</p>
+<ul>
+<li>Lines of inheritance</li>
+<li>Virtual code elements</li>
+<li>Use context</li>
+<li>Code Element Binding (call, assignment, load, etc)</li>
+<li>Code Element Coupling (tight, loose, etc)</li>
+</ul>
+<p>The combination and permutation of these fundamental aspects create the different forms of VI. Several forms of VI, used herein, are listed below.</p>
+<ul>
+<li>GVI - General Virtual Inheritance - Parent use context</li>
+<li>SVI - Simple Virtual Inheritance - Client use context</li>
+</ul>
+<p>GVI and SVI compliment one another and may or may not coexist in the same virtual code element depending on the VI features of the object oriented language.</p>
+<p>Note that the <a href="/wiki/Inheritance_semantics_%28object-oriented_programming%29.html" title="Inheritance semantics (object-oriented programming)">terminology</a> for the different forms of VI in the software industry will evolve along with the advancement of virtual inheritance features in newer object-oriented languages.</p>
+<p>The most common forms of VI are covered in this article. Note that <b>other forms may exist</b> (now) or be developed in the future.</p>
+<p>Use context, lines of inheritance and code element binding/coupling (class/component) are important foundation concepts in understanding the role and form Virtual Inheritance (VI) takes in the object oriented design process.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: General Virtual Inheritance (GVI)">edit</a>]</div>
+<p><a name="General_Virtual_Inheritance_.28GVI.29" id="General_Virtual_Inheritance_.28GVI.29"></a></p>
+<h4>General Virtual Inheritance (GVI)</h4>
+<p>General Virtual Inheritance (GVI) has two primary criterion for its architecture;</p>
+<ul>
+<li>(1) Virtual Control Mechanism (VCM)</li>
+<li>(2) Direct Parental Use of the VCM (parental use context)</li>
+</ul>
+<p>The first GVI criterion is that the Virtual Control Mechanism is an abstract specification mechanism that can then be used to control the target code element as a 'virtual code element'. The specification is <b>virtually inherited</b> and will <b>force the implementation</b> to exist in the derived class.</p>
+<p>The second GVI criterion is that the <b>direct parental use context</b> allows the 'parent' to 'use' the code elements (VCM - in the child specification) as if the implementation (of the code elements) were its own.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Simple Virtual Inheritance (SVI)">edit</a>]</div>
+<p><a name="Simple_Virtual_Inheritance_.28SVI.29" id="Simple_Virtual_Inheritance_.28SVI.29"></a></p>
+<h4>Simple Virtual Inheritance (SVI)</h4>
+<p>Simple Virtual Inheritance has two primary criterion for its architecture;</p>
+<ul>
+<li>(1) Virtual Control Mechanism (VCM)</li>
+<li>(2) Client Use of the VCM (client use context)</li>
+</ul>
+<p>The first SVI criterion (just like GVI) is that the Virtual Control Mechanism (i.e. the virtual code element) is an abstract specification mechanism that can then be used to control the target code element (the implementation code element). The specification is <b>virtually inherited</b> (no implementation passing into the child via inheritance) and will <b>force the implementation</b> to exist in the derived class.</p>
+<p>The second SVI criterion is that the <b>direct client object use context</b> allows a 'client' to 'use' the code elements (VCM - in the child specification) as an accessible feature of an instance of the child.</p>
+<p>Client use context <b>requires a child object be instantiated</b>. Once the child is instantiated then a 'client' (some other object (class) or expression (main)) can use the VCM as if an implementation existed. Use of the implementation code element is always via the virtual code element.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Languages">edit</a>]</div>
+<p><a name="Languages" id="Languages"></a></p>
+<h2>Languages</h2>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: C++">edit</a>]</div>
+<p><a name="C.2B.2B" id="C.2B.2B"></a></p>
+<h3>C++</h3>
+<p>Virtual Inheritance is a term that has historically been used in three major Object-Oriented Language (OOL) contexts.</p>
+<ul>
+<li>The <a href="/wiki/C%2B%2B.html" title="C++">C++</a> community,</li>
+<li>The non C++ community</li>
+<li>Language independent OOL phenomena (general <b>conceptual semantics</b> in OOLs)</li>
+</ul>
+<p>Although there are other OOL contexts (for 'Virtual Inheritance') the C++ sections below seek to explain Virtual Inheritance phenomena within C++ in a <b>language independent context</b> (conceptual semantic meaning in a more <a href="/wiki/Inheritance_semantics_%28object-oriented_programming%29.html" title="Inheritance semantics (object-oriented programming)">general context</a>). The intention is to clearly articulate the <a href="/wiki/Inheritance_semantics_%28object-oriented_programming%29#Semantic_Scope.html" title="Inheritance semantics (object-oriented programming)">conceptual semantics</a> of the phenomena and show examples in specific languages such as C++.</p>
+<p>It is necessary, therefore, to explain the difference between Virtual Inheritance (VI) and the C++ '<code>virtual</code>' keyword.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: C++ virtual Keyword Vs. Virtual Inheritance (VI)">edit</a>]</div>
+<p><a name="C.2B.2B_virtual_Keyword_Vs._Virtual_Inheritance_.28VI.29" id="C.2B.2B_virtual_Keyword_Vs._Virtual_Inheritance_.28VI.29"></a></p>
+<h4>C++ virtual Keyword Vs. Virtual Inheritance (VI)</h4>
+<p><a href="/wiki/Virtual_inheritance#Virtual_Code_Elements.html" title="Virtual inheritance">Virtual code elements</a> are centric to the concept of Virtual Inheritance (VI). <a href="/wiki/Implementation_inheritance_%28object-oriented_programming%29#Implementation_Code_Elements.html" title="Implementation inheritance (object-oriented programming)">Implementation code elements</a>, on the other hand, are centric to <a href="/wiki/Implementation_inheritance_%28object-oriented_programming%29.html" title="Implementation inheritance (object-oriented programming)">Implementation Inheritance (II)</a> .</p>
+<p>Note that the C++ '<code>virtual</code>' <a href="/wiki/Keyword_%28computer%29.html" title="Keyword (computer)">keyword</a> does not connote the <b>phenomena involving virtual code elements</b>. In C++ the '<code>virtual</code>' keyword is used to resolve ambiguity problems. It is also used to define C++ abstract methods.</p>
+<p><a href="/wiki/Implementation_inheritance_%28object-oriented_programming%29#Ambiguity.html" title="Implementation inheritance (object-oriented programming)">Ambiguity</a> problems, caused by collisions between implementation code elements, are Implementation Inheritance (II) phenomena. The <a href="/wiki/Implementation_inheritance_%28object-oriented_programming%29#Resolution.html" title="Implementation inheritance (object-oriented programming)">resolution</a> of these collisions include <a href="/wiki/Implementation_inheritance_%28object-oriented_programming%29#C.2B.2B_Method_Override_Ambiguity_.28MOA.29.html" title="Implementation inheritance (object-oriented programming)">Method Override Ambiguity (MOA)</a> and <a href="/wiki/Implementation_inheritance_%28object-oriented_programming%29#C.2B.2B_Inherited_Class_Ambiguity_.28ICA.29.html" title="Implementation inheritance (object-oriented programming)">Inherited Class Ambiguity (ICA)</a>.</p>
+<p>Historically the term 'virtual inheritance' in C++ deals with Implementation Inheritance (II) phenomena (as described above). In the context of this article, however, the term Virtual Inheritance (VI) refers to all inheritance phenomena related to virtual code elements (as defined above).</p>
+<p>In much of the C++ programming community the term 'virtual inheritance' is the historic <a href="/wiki/Diamond_problem.html" title="Diamond problem">C++ Diamond problem</a> <b>resolution meaning</b> originating from the C++ <code>virtual</code> keyword used in inheritance. To avoid confusion this article uses the term Resolution Inheritance (RI) to qualify syntax mechanisms that resolve potential conflicts due to the collision of implementation code elements (such as the diamond problem). Note the <a href="/wiki/Virtual_inheritance#Stateful_Diamond_Point_.28SDP.29_Pattern_in_C.2B.2B.html" title="Virtual inheritance">Stateful Diamond Point</a> pattern is the basis of the <a href="/wiki/Virtual_inheritance#Coexistence_of_Virtual_and_Resolution_Inheritance_in_C.2B.2B.html" title="Virtual inheritance">example code</a> (below) that shows C++ inheritance in a <b>language independent context</b>.</p>
+<p>In contrast to the resolution of ambiguity problems, Virtual Inheritance (VI) deals with <a href="/wiki/Virtual_inheritance#Specification_Vs._Implementation.html" title="Virtual inheritance">specifications</a>. General Virtual Inheritance (GVI) in C++ is similar to other languages (such as Java and C#) in that a specification can be defined in a parent and inherited by a child. In C++ Virtual Inheritance (GVI) is demonstrated in the virtual code elements defined in abstract methods.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: C++ Abstract methods">edit</a>]</div>
+<p><a name="C.2B.2B_Abstract_methods" id="C.2B.2B_Abstract_methods"></a></p>
+<h4>C++ Abstract methods</h4>
+<p>C++ uses the <code>virtual</code> keyword to define abstract methods. Abstract methods are virtual code elements defined by a parent and implemented in a child.</p>
+<p>With 'C++ abstract methods' a parent can define the code element specification and use that specification within the body of its methods. The same virtual code element (abstract method) defined by the parent is also available to clients. The use context of C++ abstract methods allows both parent and client to use the same code element specification.</p>
+<p>In C++ the use context of abstract methods not restricted in any way. This compares with virtual code elements defined in <a href="/wiki/Virtual_inheritance#Simple_Virtual_Inheritance_.28SVI.29_via_Interface_Inheritance.html" title="Virtual inheritance">C# Interfaces</a> which have a client only use context.</p>
+<p>The Humanoid example code below shows <b>virtual code elements</b> via <b>abstract methods</b>. The example shows that the <b>use context</b> of abstract methods in C++ is less restricted than the use context of virtual code elements defined in C# interfaces.</p>
+<pre>
+  // Humanoid Example
+  //
+  class Humanoid
+     {
+  protected:
+              bool  Impersonation_flag;
+     virtual  void  Eye_color() = 0;     // Use_GVI :_: Abstract method - Parent use context
+  public:
+     virtual  void  Be_honest() = 0;     // Use_SVI :_: Abstract method - Client use context
+              void  Print_eye_color()
+                    {
+                    Eye_color();         // Show_GVI :_: Use virtual code element defined above
+                    }
+     };
+</pre>
+<pre>
+  class Human  : public Humanoid
+     {
+     virtual void   Eye_color() { printf("Eye color is : Green\n");  }
+             void   Be_honest() { /* Human is always honest */      }
+     };
+</pre>
+<pre>
+  class Mutant : public Humanoid
+     {
+  public:
+                    Mutant()    { Impersonation_flag = true;  }
+             void   Be_honest() { Impersonation_flag = false; }
+     virtual void   Eye_color()
+                       {
+                       if (  Impersonation_flag )
+                          {
+                          printf("Eye color is : Green\n");
+                          }
+                       else
+                          {
+                          printf("Eye color is : Red\n");
+                          }
+                       }
+     };
+</pre>
+<pre>
+  int main()
+     {
+     Human  human;
+     Mutant mutant;
+     //
+     Humanoid  * human_impersonator_ptr;
+     //
+     human_impersonator_ptr  =   &amp; mutant;
+     //
+     mutant.  Print_eye_color();
+     human.   Print_eye_color();
+     //
+     human_impersonator_ptr  -&gt;  Print_eye_color();
+     //    Show_SVI :_: Client calls method implementation forced via parent specification
+     human_impersonator_ptr  -&gt;  Be_honest();
+     human_impersonator_ptr  -&gt;  Print_eye_color();
+     }
+</pre>
+<pre>
+  // Test driver (main) output
+  //
+  // Eye color is : Green
+  // Eye color is : Green
+  // Eye color is : Green
+  // Eye color is : Red
+  //
+</pre>
+<p><b>Abstract Method</b> : Abstract methods in C++ are virtual code elements that exhibit both GVI and SVI phenomena. When the parent defines an abstract method there is no requirement to use the abstract method in the body of its code (SVI only access). In either case (parental GVI or client only SVI access) the child is forced to implement the parents code element specification (the abstract method).</p>
+<p><b>Use Context</b> : In C++ Abstract methods are accessible to both parent and client. This is similar to <a href="/wiki/Virtual_inheritance#Coexistence_of_Virtual_and_Interface_Inheritance_in_C.23.html" title="Virtual inheritance">C# abstract methods</a> which also allow a parent/client use context. This is in contrast to virtual code elements defined in C# Interfaces which are restricted to a client only use context.</p>
+<p><b>Virtual Code Elements</b> : Use context restrictions in Virtual Inheritance (VI) have important implications relative to single inheritance and multiple inheritance of virtual code elements.</p>
+<p>As the C++ and C# use context of abstract methods shows the <b>multiple inheritance of C# interfaces</b> is NOT COMPARABLE with <b>multiple inheritance of abstract methods in C++</b> because of use context restrictions (GVI Vs. SVI).</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Resolution Inheritance">edit</a>]</div>
+<p><a name="Resolution_Inheritance" id="Resolution_Inheritance"></a></p>
+<h4>Resolution Inheritance</h4>
+<p>Resolution Inheritance (RI) is an Implementation Inheritance (II) phenomena. It is important to distinguish Virtual Inheritance (VI) phenomena from Resolution Inheritance to show that the two concepts are actually separate things.</p>
+<p>In much of the C++ programming community the term 'virtual inheritance' is the historic <a href="/wiki/Diamond_problem.html" title="Diamond problem">C++ Diamond problem</a> resolution meaning.</p>
+<p>In the general context (language independent) of other languages that support Multiple Implementation Inheritance (MII) a better term (than the historic C++ 'virtual inheritance' meaning) would be <b>Resolution Inheritance</b> (RI). In a hypothetical object-oriented language, for example, the use of a <code>resolve</code> keyword, instead of the C++ <code>virtual</code> keyword, would be more accurate to the conceptual semantics of <b>state space collision</b> resolution (see below). The <a href="/wiki/Inheritance_semantics_%28object-oriented_programming%29#Semantic_scope.html" title="Inheritance semantics (object-oriented programming)">conceptual semantic</a> of <b>resolution</b> is the key point to keep in mind in the context of <a href="/wiki/Implementation_inheritance_%28object-oriented_programming%29#Single_.28SII.29_Vs._Multiple_Implementation_Inheritance_.28MII.29.html" title="Implementation inheritance (object-oriented programming)">Multiple Implementation Inheritance (MII)</a> of implementation code elements.</p>
+<p>With this in mind it is especially important to show both RI and VI in the same code example to demonstrate the difference between <a href="/wiki/Virtual_inheritance#Virtual_Code_Elements.html" title="Virtual inheritance">virtual code elements</a> (VI) and <a href="/wiki/Implementation_inheritance_%28object-oriented_programming%29#Implementation_Code_Elements.html" title="Implementation inheritance (object-oriented programming)">implementation code elements</a> (II).</p>
+<p>The ability to show the <b>historic C++ Diamond problem</b> in the context of Virtual Inheritance (as defined herein) helps to articulate <a href="/wiki/Implementation_inheritance_%28object-oriented_programming%29#Resolution.html" title="Implementation inheritance (object-oriented programming)">Resolution Inheritance</a> as an Implementation Inheritance (II) phenomena. This, in turn, helps to distinguish Virtual Inheritance phenomena in C++ and other languages. Finally the combined examples (in C++ and other languages) give an accurate presentation of the coexistence and complimentary nature of VI and II in software design.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Stateful Diamond Point (SDP) Pattern in C++">edit</a>]</div>
+<p><a name="Stateful_Diamond_Point_.28SDP.29_Pattern_in_C.2B.2B" id="Stateful_Diamond_Point_.28SDP.29_Pattern_in_C.2B.2B"></a></p>
+<h4>Stateful Diamond Point (SDP) Pattern in C++</h4>
+<p>A short but effective example of Virtual Inheritance in the context of other inheritance phenomena is presented below (High State Tracker). It shows how Virtual Inheritance compliments other inheritance phenomena (such as Implementation Inheritance). It also shows that <b>Virtual Inheritance</b> (GVI in all object-oriented languages) <b>coexists with Resolution Inheritance</b> (RI in C++).</p>
+<p>This example uses a specific pattern called the <span style="color:purple">Stateful Diamond Point (SDP)</span> pattern to clearly articulate multiple inheritance of state <b>without polymorphism</b>. The class participants are listed below.<br /></p>
+<table border="1" cellspacing="0" cellpadding="5">
+<caption>Stateful Diamond Point (SDP) - Pattern participants</caption>
+<tr>
+<td><span style="color: green">Pattern Role</span></td>
+<td><span style="color: green">Example Role</span></td>
+<td><span style="color: green">Class</span></td>
+<td><span style="color: green">Implementation Description</span></td>
+</tr>
+<tr>
+<td>Foundation</td>
+<td>State machine</td>
+<td><code>Base</code></td>
+<td>Controls current system state</td>
+</tr>
+<tr>
+<td>Functional Supporter</td>
+<td>Global manager</td>
+<td><code>Internet_child</code></td>
+<td>Logs high states to global office</td>
+</tr>
+<tr>
+<td>Functional Supporter</td>
+<td>Local manager</td>
+<td><code>Database_child</code></td>
+<td>Logs high states to local home office</td>
+</tr>
+<tr>
+<td>Execution Point</td>
+<td>Session manager</td>
+<td><code>Diamond_tracker</code></td>
+<td>Tracks high states in the current session</td>
+</tr>
+</table>
+<p><br /></p>
+<p>The SDP pattern features a descendent (Execution Point) that is controlled (parent use context) by the base (Foundation) and uses a <b>functionally orthogonal</b> middle layer (supporters) to execute the functionality of a Virtual Method implemented in the descendent. In the inheritance tree the state machine forms the foundation, followed by <b>functionally orthogonal</b> support managers, which, are joined at the 'Execution point'.</p>
+<p>The SDP pattern name is derived from the emphasis on <b>stateful MII</b> (Multiple Implementation Inheritance of state). The <b>Stateful</b> is contrasted to other similar <i><b>Diamond Point</b></i> patterns that would emphasize polymorphism or a combination of common state space (stateful MII) and polymorphism.</p>
+<p>The SDP pattern name also emphasizes the <i><b>Diamond Point</b></i> via the design concern to deal with the surface <a href="/wiki/Application_programming_interface.html" title="Application programming interface">API</a> of the final descendent. The <i><b>Execution Point</b></i> class implements the Virtual Method. The <i><b>Point</b></i> of the design is the desired functionality (<b>Surface API</b>) available to any client classes that use the pattern to perform some target functionality.</p>
+<p>In the SDP pattern the <b>core design concern</b> is the functionality (the <i><b>Point</b></i> of the design) presented by the surface API at the <i><b>Execution Point</b></i>. This <b>exposed functionality</b> (surface API) helps to contrast Object Aggregation and Composition design approaches from Inheritance approaches (balanced GVI/MII for <a href="/wiki/Polymorphism_%28computer_science%29.html" title="Polymorphism (computer science)">polymorphism</a> and <a href="/wiki/Functional_normalization_%28object-oriented_programming%29.html" title="Functional normalization (object-oriented programming)">normalization</a>). Note that, in this pattern, the functional supporters should be <b>functionally orthogonal</b>.<br />
+<br />
+The SDP pattern has a characteristic 'Arrow' data flow pattern embedded within it. Note that the data flows;</p>
+<ol>
+<li>From the (1) execution point to the (2) foundation</li>
+<li>From the (2) foundation to the (3) execution point</li>
+<li>From the (3) execution point to the (4,5) support classes</li>
+</ol>
+<p>Although not shown in the example, the <b>forward flow</b> of data can be (A) <b>conditional</b> and (B) <b>expansive</b>. Conditional data flow is dependent on <code>if</code> statements at points 1,2,3,4 and 5. Expansive is additional data, such as in data structures and messages, that is added to the original incoming datum at each point (1,2,3,4,5).</p>
+<p><br />
+The <i><b>High State Tracker</b></i> example of the SDP pattern is more reflective of real world production software (then the shorter C++ examples herein). It features the following C++ Virtual Inheritance phenomena (GVI/RI).<br /></p>
+<table border="1" cellspacing="0" cellpadding="5">
+<caption>High State Tracker Example - Code Features</caption>
+<tr>
+<td><span style="color: green">Code Feature</span></td>
+<td><span style="color: green">Implementation Description</span></td>
+</tr>
+<tr>
+<td>Coexistence</td>
+<td>GVI, RI, MII of state space, SII of state space</td>
+</tr>
+<tr>
+<td>GVI Control mechanism</td>
+<td>Virtual method specification - <code>Base::Log_state()</code></td>
+</tr>
+<tr>
+<td>GVI Implementation</td>
+<td>Virtual method implementation - <code>Diamond_tracker::Log_state()</code></td>
+</tr>
+<tr>
+<td>RI Resolution mechanism</td>
+<td>Inheritance in support layer - <code>virtual Base</code></td>
+</tr>
+<tr>
+<td>MII of state</td>
+<td><code>Base::Current_state</code></td>
+</tr>
+<tr>
+<td>SII of state</td>
+<td><code>Highest_local_state</code>, <code>Highest_global_state</code></td>
+</tr>
+<tr>
+<td>No polymorphic phenomena</td>
+<td>Only one instance of <code>Log_state()</code> in one child (<code>Diamond_tracker</code>)</td>
+</tr>
+<tr>
+<td>No polymorphic children</td>
+<td><code>Diamond_tracker</code> has no peer children in inheritance tree</td>
+</tr>
+</table>
+<p><br />
+Thus the High State Tracker example is reflective of a <a href="/wiki/Diamond_problem.html" title="Diamond problem">simple diamond</a> problem <a href="/wiki/Implementation_inheritance_%28object-oriented_programming%29#C.2B.2B_Inherited_Class_Ambiguity_.28ICA.29.html" title="Implementation inheritance (object-oriented programming)">(ICA)</a> that exhibits Multiple Implementation of state Inheritance (MII) but without any polymorphism.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Coexistence of Virtual and Resolution Inheritance in C++">edit</a>]</div>
+<p><a name="Coexistence_of_Virtual_and_Resolution_Inheritance_in_C.2B.2B" id="Coexistence_of_Virtual_and_Resolution_Inheritance_in_C.2B.2B"></a></p>
+<h4>Coexistence of Virtual and Resolution Inheritance in C++</h4>
+<p>The coexistence of <a href="/wiki/Virtual_inheritance#General_Virtual_Inheritance_.28GVI.29.html" title="Virtual inheritance">virtual (GVI)</a> and <a href="/wiki/Implementation_inheritance_%28object-oriented_programming%29#Resolution.html" title="Implementation inheritance (object-oriented programming)">resolution (RI)</a> inheritance in C++ is demonstrated in the High State Tracker example code presented below.</p>
+<p>Note that there is <b>no polymorphism phenomena</b> related to GVI in this code example. The parent (Base) only controls (<b>control phenomena</b>) the child (Diamond_tracker). There is no 'multiple versions of children' (peers to Diamond_tracker in the inheritance tree) with multiple versions of a virtual method (see Log_state() below).</p>
+<p>The code below is a state machine tracking unit (functional pattern unit) with an <b>execution point</b> that has a <b>surface API</b> presenting the unit interface. The pattern implementation proves that General Virtual Inheritance (<b>GVI</b>) and Resolution Inheritance (<b>RI</b>) are <b>separate phenomena</b>.</p>
+<pre>
+  // High_State_Tracker Example
+  //
+  //#------------------------------------------------------------------------------------------------#
+  //#   State machine     :_:   Manages state space - Ties all concerns together
+  //#                           Use GVI - Specify Child 'Log_State()' and use it as Virtual Method
+  //#------------------------------------------------------------------------------------------------#
+  class Base
+     {
+  private:
+     int   Current_state; // Initialize to zero (not shown in example)
+  public:
+           Base()
+           {
+           Current_state = 0;
+           }
+     //
+     void  Set_state(int next_state)
+           {
+           Current_state = next_state; // Move system to the new state (primary state transition)
+           printf("          :          Current state is - %d \n",Current_state  );
+           Log_state( Current_state ); // Use GVI : Control children and keep history of state changes
+           }
+     //
+     int   Get_current_state()
+           {
+           return Current_state;
+           }
+     //
+     virtual                           // Virtual Method (Shows GVI - General Virtual Inheritance)
+     void  Log_state(int new_state){}; // Specify here : Instantiate in Diamond class
+     };
+</pre>
+<pre>
+  //#------------------------------------------------------------------------------------------------#
+  //#   Global Manager    :_:   Logs high states to global office - manages global concerns
+  //#                           Use RI - Virtual forces one copy of Base in Diamond_tracker
+  //#------------------------------------------------------------------------------------------------#
+  class Internet_child : virtual public Base
+     {
+  private:
+     int   Highest_global_state; // Could be set to highest Home Office State (not shown in example)
+     void  Log_to_home_office(int latest_high_value)
+           {
+           // Code to send value to home office via Internet would go here
+           }
+  protected:
+     void  Log_global_high_value(int new_state)
+           {
+           if ( new_state &gt; Highest_global_state )
+              {
+              Highest_global_state = new_state;   // Save the 'next highest state'
+              Log_to_home_office( new_state );    // Inform home office
+              }
+           }
+  public:
+           Internet_child()                       // Internet retrieval could go here
+           {
+           Highest_global_state = 70;             // Init for demo : Highest 'global' state
+           }
+     //
+     int   Get_global_highest_state()
+           {
+           return Highest_global_state;
+           }
+     };
+</pre>
+<pre>
+  //#------------------------------------------------------------------------------------------------#
+  //#   Local Manager     :_:   Logs high states to local home office - manages local concerns
+  //#                           Use RI - Virtual forces one copy of Base in Diamond_tracker
+  //#------------------------------------------------------------------------------------------------#
+  class Database_child : virtual public Base
+     {
+  private:
+     int   Highest_local_state; // Could be set to highest local Office State (not shown in example)
+     void  Log_to_local_database(int latest_high_value)
+           {
+           // Code to save value in local database would go here
+           }
+  protected:
+     void  Log_local_high_value(int new_state)
+           {
+           if ( new_state &gt; Highest_local_state )
+              {
+              Highest_local_state = new_state;    // Save the 'next highest state'
+              Log_to_local_database( new_state ); // Save to local database
+              }
+           }
+  public:
+           Database_child()                       // Database retrieval could go here
+           {
+           Highest_local_state = 30;              // Init for demo : Highest 'local' state
+           }
+     //
+     int   Get_local_highest_state()
+           {
+           return Highest_local_state;
+           }
+     };
+</pre>
+<pre>
+  //#------------------------------------------------------------------------------------------------#
+  //#   Session Manager   :_:   Tracks high states in the current session - manages immediate concerns
+  //#                           Use GVI - Parent (Base) controls child (Diamond_tracker::Log_state())
+  //#                           Use RI - One copy of Base,
+  //#------------------------------------------------------------------------------------------------#
+  class Diamond_tracker : public Internet_child, public Database_child
+     {
+  private:
+     int   Session_state;                         // Save las
+     int   Highest_session_state;
+     //
+     void  Log_state( int new_value )             // Use GVI : Parent will control child implementation
+           {
+           Log_local_high_value    ( new_value ); // Save if highest locally
+           Log_global_high_value   ( new_value ); // Save if highest globally
+           }
+  public:
+           Diamond_tracker()
+           {
+           Session_state = 0;
+           Highest_session_state = 0;
+           }
+     //
+     void  New_state(int new_value)
+           {
+           Session_state = new_value;             // Move session manager to new state
+           if ( Session_state &gt; Highest_session_state )
+              {
+              Highest_session_state = new_value;  // Track high states for this instance
+              }
+            Set_state( new_value );               // Move system to new state via Base
+           }
+     //
+     int   Get_session_highest_state()
+           {
+           return Highest_session_state;
+           }
+     };
+</pre>
+<pre>
+  //#------------------------------------------------------------------------------------------------#
+  //#   Test Driver       :_:   Drives the high state tracker (Diamond_Tracker)
+  //#                           Show RI and GVI coexisting and working together
+  //#------------------------------------------------------------------------------------------------#
+  int main()
+     {
+     Diamond_tracker my_diamond;
+     //
+     printf("\n");
+     printf(" Start    :  Highest session state is : %d \n", my_diamond.Get_session_highest_state() );
+     printf(" Start    :  Highest local   state is : %d \n", my_diamond.Get_local_highest_state() );
+     printf(" Start    :  Highest global  state is : %d \n", my_diamond.Get_global_highest_state() );
+     printf("\n");
+     //
+     my_diamond.New_state( 10 );
+     my_diamond.New_state( 30 );                  // Highest local state at start
+     my_diamond.New_state( 40 );
+     //
+     printf("\n");
+     printf(" Middle   :  Highest session state is : %d \n", my_diamond.Get_session_highest_state() );
+     printf(" Middle   :  Highest local   state is : %d \n", my_diamond.Get_local_highest_state() );
+     printf(" Middle   :  Highest global  state is : %d \n", my_diamond.Get_global_highest_state() );
+     printf("\n");
+     //
+     my_diamond.New_state( 70 );                  // Highest global state at start
+     my_diamond.New_state( 10 );
+     my_diamond.New_state( 80 );
+     //
+     printf("\n");
+     printf(" End      :  Highest session state is : %d \n", my_diamond.Get_session_highest_state() );
+     printf(" End      :  Highest local   state is : %d \n", my_diamond.Get_local_highest_state() );
+     printf(" End      :  Highest global  state is : %d \n", my_diamond.Get_global_highest_state() );
+     printf("\n");
+     }
+</pre>
+<pre>
+  //#------------------------------------------------------------------------------------------------#
+  //#   Output            :_:   Show the state transitions - Highest state logged locally and globally
+  //#                           Show RI produces one state space copy    (  Current_State   )
+  //#                           Show GVI allows parent to control child   (  Log_state()     )
+  //#------------------------------------------------------------------------------------------------#
+  //
+  //    Start    :  Highest session state is : 0
+  //    Start    :  Highest local   state is : 30
+  //    Start    :  Highest global  state is : 70
+  //
+  //             :          Current state is - 10
+  //             :          Current state is - 30
+  //             :          Current state is - 40
+  //
+  //    Middle   :  Highest session state is : 40
+  //    Middle   :  Highest local   state is : 40
+  //    Middle   :  Highest global  state is : 70
+  //
+  //             :          Current state is - 70
+  //             :          Current state is - 10
+  //             :          Current state is - 80
+  //
+  //    End      :  Highest session state is : 80
+  //    End      :  Highest local   state is : 80
+  //    End      :  Highest global  state is : 80
+  //
+</pre>
+<p>Note the Internet and database code are not present but noted via comment (<code>Log_to_home_office(), Log_to_local_database()</code>). Also note that the key initial states (<code>Highest_local_state/Highest_global_state</code>) are not initialized from a database or the Internet. This is to keep the example as short as possible and still present features and phenomena relevant to GVI/RI.</p>
+<p><b>Execution point</b> : In the code the test driver (<code>Main()</code>) calls the session manager (<code>my_diamond</code>) to track the highest state in a state transition sequence. Transitions are printed to the console. The starting, middle and ending state space is printed as well.</p>
+<p><b>Surface API</b> : In C++ the support functionality of parents is available at the surface API via Multiple Implementation Inheritance (MII). This is because the use context of MII (GVI and SVI) is less restricted than the multiple inheritance of interfaces as in Java and C# (SVI - client use context restriction). This has important implications for functional normalization of the execution point in tightly bound high performance software patterns.</p>
+<p><b>GVI - RI as separate phenomena</b> : The <b>focus of the design</b> is to show how the parent (<code>Base) <b>controls</b> the child (</code>my_diamond) <b>using GVI</b> (<code>log_State()</code>). It shows that GVI coexists and operates <b>with RI</b> (<code>virtual Base inheritance</code>). It shows that RI resolves ambiguity (ICA) in C++. Each state transition also shows Multiple Inheritance of state Implementation (MII of state - <code>Current_state</code>) which is the primary basis for RI (which instance of state - state space collision) existence.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Summary of Virtual and Resolution Inheritance in Object-oriented Languages">edit</a>]</div>
+<p><a name="Summary_of_Virtual_and_Resolution_Inheritance_in_Object-oriented_Languages" id="Summary_of_Virtual_and_Resolution_Inheritance_in_Object-oriented_Languages"></a></p>
+<h4>Summary of Virtual and Resolution Inheritance in Object-oriented Languages</h4>
+<p>Inheritance in C++ is seemly complex in that many semantic aspects (control/use context/polymorphism/resolution/etc) are in effect at the same time (as in the High State Tracker code example). It is therefore necessary for the terminology of object-oriented (OO) computing to articulate the phenomena of Virtual Inheritance precisely.</p>
+<p>By articulating the difference between <b>virtual</b> (GVI) and <b>resoultion</b> (RI) inheritance we can discuss the role of polymorphism in C++ (without reference to other OO languages) as well as compare inheritance phenomena in C++ to other object-oriented languages (MII Vs. SII).</p>
+<p>Ambiguity (ICA) in state space collision (MII) MAY have polymorphic resolution aspects but it (polymorphism) is not REQUIRED. In 'High State Tracker' no polymorphism is selected or resolved. This example shows only a 'collision of state space' (via the potential for Base class multiple instances) being resolved (via RI). No resolution of virtual methods (as in the Human/Mutant example) is present</p>
+<p>Note that the functional similarity of logging to a database or the Internet is not polymorphism in the strict sense (dispatch VTables, etc). From a system point of view database and Internet logging are somewhat polymorphic (conceptually similar via persistence). From a syntax mechanism point of view, however, they have different functionality (Internet messaging Vs. database access).</p>
+<p>High State Tracker also shows that <b>polymorphism</b> (different children with different behavior) <b>is a separate phenomena from GVI (control) and RI (resolution)</b>. Polymorphism is child centric. General Virtual Inheritance (GVI) and Multiple Implementation Inheritance (MII) both allow an 'opportunity' for polymorphism to exist (i.e. they do not REQUIRE it in children). Thus, in the case of functionally orthogonal and <a href="/wiki/Functional_normalization_%28object-oriented_programming%29.html" title="Functional normalization (object-oriented programming)">functionally normalized</a> code, polymorphic phenomena need not be present (as this example shows via Log_state() and Current_state).</p>
+<p>The example code also shows that you can have GVI in a control only 'mode' (no polymorphism where only the control aspect phenomena exists - Log_state()). This emphasizes the fact that Type Polymorphism (polymorphism) IS NOT General Virtual Inheritance (control). The example also proves that GVI has control centric semantics <a href="/wiki/Virtual_inheritance#Control_Mechanism_Vs._Polymorphic_Mechanism.html" title="Virtual inheritance">control centric semantics</a> as its primary phenomena (Log_state()).</p>
+<p>From a language independent perspective RI is actually a Multiple Implementation Inheritance (MII) <a href="/wiki/Implementation_inheritance_%28object-oriented_programming%29#Single_.28SII.29_Vs._Multiple_Implementation_Inheritance_.28MII.29.html" title="Implementation inheritance (object-oriented programming)">Multiple Implementation Inheritance (MII)</a> phenomena of resolution. As such the term 'Resolution Inheritance' (RI) '<a href="/wiki/Implementation_inheritance_%28object-oriented_programming%29#Resolution.html" title="Implementation inheritance (object-oriented programming)">Resolution Inheritance</a>' is a more accurate rendition of the conceputal semantics needed to resolve state space collisions.</p>
+<p>State space collision (which instance of state) and its resolution is NOT a problem. Current Object-Oriented Languages (OOLs) have had controversy handling the state space collision issue. That does NOT imply that future OOL syntax will NOT correctly permute and <b>solve the conceptual semantics</b> of MII <b>state space implementation</b> (instance generation) options.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: C#">edit</a>]</div>
+<p><a name="C.23" id="C.23"></a></p>
+<h3>C#</h3>
+<p>Understanding use context restrictions of virtual code elements is an important part of object oriented design. The utility of virtual code elements defined via Virtual Inheritance (VI) is highly dependent on restrictions of use context.</p>
+<p>Software patterns implemented in different languages can have significant impact due to use context restrictions. A case in point is the comparison of implementations in both C++ and C#.</p>
+<p>Since C# does not have Multiple Implementation Inheritance (MII) it can not have multiple sources (parents) of virtual code elements (via GVI). C# offers Single Implementation Inheritance (SII) with Multiple Interface Inheritance (SVI - see below). This creates <b>significant differences in the use context</b> when compared to other languages such as C++.</p>
+<p>Therefore it is important to understand the difference in the <b>use context of virtual code elements</b> (GVI Vs. SVI). The use context determines who can use the virtual control mechanism formed via the inherited <b>virtual code element specification</b>. The 'use context' determines if the parents can directly use the virtual code elements or not.</p>
+<p>The sections below highlight the core aspects of virtual inheritance as it exists in the C# language.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Simple Virtual Inheritance (SVI) via Interface Inheritance">edit</a>]</div>
+<p><a name="Simple_Virtual_Inheritance_.28SVI.29_via_Interface_Inheritance" id="Simple_Virtual_Inheritance_.28SVI.29_via_Interface_Inheritance"></a></p>
+<h4>Simple Virtual Inheritance (SVI) via Interface Inheritance</h4>
+<p>The advantage with <a href="/wiki/Interface_%28computer_science%29.html" title="Interface (computer science)">Interfaces</a> is that the <b>Virtual Control Mechanism (VCM) has its own type</b>. Another advantage is that the 'type' is a set of code elements. A disadvantage of Interfaces is that the virtual code elements ARE NOT usable by the parent (as they are in GVI).</p>
+<p>Interfaces allow for a 'Simple Virtual Inheritance' (SVI not GVI) of the specification that <b>does not allow direct parental use of the virtual control mechanism</b>. Interface usage is open to all clients of the interface as a new object type. In effect the Interface is a <b>contract specifcation</b> that separates what an object (interface instance) does from how it does it.</p>
+<p>Both GVI and Interfaces (SVI) use 'virtual inheritance' to specify a control mechanism for code elements (specifications via inheritance). They differ however in WHO is going to use the Virtual Control Mechanism. With GVI its the parents who use the code elements. With Interfaces its everyone else who uses the code elements (which MAY be a 'parent-as-client').</p>
+<p>GVI provides parents a 'virtual' code element. Interfaces (SVI) provide client objects a 'virtual' set of code elements (contained in the interface implementation).</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Use Context of Virtual Code Elements in C#">edit</a>]</div>
+<p><a name="Use_Context_of_Virtual_Code_Elements_in_C.23" id="Use_Context_of_Virtual_Code_Elements_in_C.23"></a></p>
+<h4>Use Context of Virtual Code Elements in C#</h4>
+<p>The Subject Interface example below shows Virtual Inheritance (VI) in the context of <a href="/wiki/Interface_%28computer_science%29.html" title="Interface (computer science)">Interface Inheritance</a>. It demonstrates the <a href="/wiki/Virtual_inheritance#Control_Mechanism_Vs._Polymorphic_Mechanism.html" title="Virtual inheritance"><b>Virtual Control Mechanism (VCM)</b></a> aspect of Interfaces (SVI). It shows that virtual control mechanisms can contain <b>assignable state space</b> (in addition to callable code elements like methods). Finally it shows the <a href="/wiki/Virtual_inheritance#Simple_Virtual_Inheritance_.28SVI.29_via_Interface_Inheritance.html" title="Virtual inheritance"><b>client use context</b></a> of the VCM specified by the Interface.</p>
+<pre>
+  using System;
+  //
+  // Subject Interface Example
+  //
+  //#------------------------------------------------------------------------------------------------#
+  //#   Binding Mechanism :_:   Delegate for event binding between subject and observer
+  //#                           Use_SVI(4) an Interface event shows a loadable virtual control element
+  //#------------------------------------------------------------------------------------------------#
+  public   delegate    void     Delegate_signature( string p_notification_message );
+</pre>
+<pre>
+  //#------------------------------------------------------------------------------------------------#
+  //#   Pattern Manager   :_:   Binds the observer to the subject and fires subject events
+  //#------------------------------------------------------------------------------------------------#
+  class Observer_manager
+     {
+     private  Subject_API_surface    m_subject_ref;
+     //
+  //#------------------------------------------------------------------------------------------------#
+  //#   Subject Interface :_:   Subject interface used by binder to load delegates and fire events
+  //#                           Use_SVI(1) to define VCM as set of virtual code elements in specification
+  //#                           Use_SVI(4) an Interface bool shows an assignable virtual control element
+  //#------------------------------------------------------------------------------------------------#
+  public interface Subject_API_surface
+     {
+     bool  Fire_event(string signal_value);          // Method   : Will fire events in subject
+     event Delegate_signature notification_targets;  // Event    : Subscription list of observers
+     bool  Notification_gate_flag                    // Property : Turns notification (via event) on/off
+           {
+           get;
+           set;
+           }
+     }
+  //#------------------------------------------------------------------------------------------------#
+  //#   Subject Binder    :_:   Binds the manager to a preexistent subject defined outside the manager
+  //#                           Use object composition for external pattern participants
+  //#------------------------------------------------------------------------------------------------#
+     //
+  public Observer_manager( Subject_API_surface p_subject )
+     {
+     m_subject_ref = p_subject;
+     }
+     //
+  //#------------------------------------------------------------------------------------------------#
+  //#   Pattern Driver    :_:   Creates pattern participants, binds participants, fires subject events
+  //#                           Use object composition for internal pattern participants
+  //#                           Use_SVI(2) to drive different subjects via the Contract aspect of VCM
+  //#------------------------------------------------------------------------------------------------#
+  public
+  void  Main_process()
+        {
+        Observer    target_1    =  new   Observer("Number One");
+        Observer    target_2    =  new   Observer("Number Two");
+        //
+        m_subject_ref.notification_targets  +=  target_1.Notify_me;    // Loadable virtual code element
+        m_subject_ref.notification_targets  +=  target_2.Notify_me;
+        //
+        m_subject_ref.Notification_gate_flag   =  true;                // Assignable virtual code element
+        m_subject_ref.Fire_event( "Event_1" );
+        m_subject_ref.Notification_gate_flag   =  false;
+        m_subject_ref.Fire_event( "Event_2" );
+        m_subject_ref.Notification_gate_flag   =  true;
+        m_subject_ref.Fire_event( "Event_3" );
+        }
+     }
+</pre>
+<pre>
+  //#------------------------------------------------------------------------------------------------#
+  //#   Subject_A         :_:   Contains events that notify any observers (notification targets)
+  //#                           Use_SVI(3) do not have a notification count for this subject type
+  //#------------------------------------------------------------------------------------------------#
+  class Subject_A : Observer_manager.Subject_API_surface
+     {
+     private  string   m_my_identity;
+              string   m_notification_message;
+              //
+     public   Subject_A(string p_my_identity )
+              {
+              m_my_identity = p_my_identity;
+              }
+     bool     notification_gate_flag;
+              //
+     public   bool     Fire_event( string p_event_identity )
+              {
+              if ( Notification_gate_flag == false ) return false;
+              //
+              m_notification_message  =  "Notification : "
+                                      +  m_my_identity
+                                      +  " : "
+                                      +  p_event_identity;
+              //
+              notification_targets(    m_notification_message );
+              return true;
+              }
+              //
+     public   event    Delegate_signature   notification_targets;
+              //
+     public   bool     Notification_gate_flag
+              {
+              get
+                 {
+                 return notification_gate_flag;
+                 }
+              set
+                 {
+                 notification_gate_flag = value;
+                 }
+              }
+     }
+</pre>
+<pre>
+  //#------------------------------------------------------------------------------------------------#
+  //#   Subject_B         :_:   Contains events that notify any observers (notification targets)
+  //#                           Use_SVI(3) have a notification count for this subject type
+  //#------------------------------------------------------------------------------------------------#
+  class Subject_B : Observer_manager.Subject_API_surface
+     {
+     private  string   m_my_identity;
+              string   m_notification_message;
+              int      m_notification_count;
+              //
+     public   Subject_B(string p_my_identity )
+              {
+              m_my_identity = p_my_identity;
+              }
+     bool     notification_gate_flag;
+              //
+     public   bool     Fire_event( string p_event_identity )
+              {
+              if ( Notification_gate_flag == false ) return false;
+              //
+              m_notification_count ++;
+              m_notification_message  =  "Notification "
+                                      +  m_notification_count.ToString()
+                                      +  " : "
+                                      +  m_my_identity
+                                      +  " : "
+                                      +  p_event_identity;
+              //
+              notification_targets(   m_notification_message );
+              return true;
+              }
+              //
+     public   event    Delegate_signature   notification_targets;
+              //
+     public   bool     Notification_gate_flag
+              {
+              get
+                 {
+                 return notification_gate_flag;
+                 }
+              set
+                 {
+                 notification_gate_flag = value;
+                 }
+              }
+     }
+</pre>
+<pre>
+  //#------------------------------------------------------------------------------------------------#
+  //#   Observer          :_:   A 'notification target' - waits for notification - prints notification
+  //#------------------------------------------------------------------------------------------------#
+  public class Observer
+     {
+     string   my_identity;
+              //
+     public   Observer( string my_new_identity )
+              {
+              my_identity = my_new_identity;
+              }
+              //
+     public void Notify_me(string  p_notification_message )
+              {
+              Console.WriteLine("  Observer Instance {0} : Notification message - {1} ",
+                                my_identity,
+                                p_notification_message
+                                );
+              }
+     }  // End_of_class
+</pre>
+<pre>
+  //#------------------------------------------------------------------------------------------------#
+  //#   Test Driver       :_:   Main entry point for console application - Creates, runs binder/manager
+  //#------------------------------------------------------------------------------------------------#
+  class Test_driver
+     {
+     static void Main ()
+        {
+        Subject_A         subject_A   =  new   Subject_A( "System A");
+        Subject_B         subject_B   =  new   Subject_B( "System B");
+        //
+        // Bind subjects to the pattern
+        //
+        Observer_manager  manager_A   =  new Observer_manager ( subject_A );
+        Observer_manager  manager_B   =  new Observer_manager ( subject_B );
+        //
+        // Bind observers to the pattern and drive system
+        //
+        manager_A.  Main_process();
+        manager_B.  Main_process();
+        }
+     }
+</pre>
+<pre>
+  //#------------------------------------------------------------------------------------------------#
+  //#   Output            :_:   Show pattern binding via interface contract specification
+  //#
+  //#   Conceptual aspect  1    Show_SVI(1) as a 'client use context' VCM (manager VCM for subject)
+  //#   Conceptual aspect  2    Show_SVI(2) contract aspect, driving different type objects (Subject A,B)
+  //#   Conceptual aspect  3    Show_SVI(3) contract does not specify behaviour (polymorphic output A,B)
+  //#   Conceptual aspect  4    Show_SVI(4) virtual code elements are 'controllable'
+  //#------------------------------------------------------------------------------------------------#
+  //
+  //    Observer Instance Number One : Notification message - Notification : System A : Event_1
+  //    Observer Instance Number Two : Notification message - Notification : System A : Event_1
+  //    Observer Instance Number One : Notification message - Notification : System A : Event_3
+  //    Observer Instance Number Two : Notification message - Notification : System A : Event_3
+  //
+  //    Observer Instance Number One : Notification message - Notification 1 : System B : Event_1
+  //    Observer Instance Number Two : Notification message - Notification 1 : System B : Event_1
+  //    Observer Instance Number One : Notification message - Notification 2 : System B : Event_3
+  //    Observer Instance Number Two : Notification message - Notification 2 : System B : Event_3
+  //
+</pre>
+<p><b>Virtual Control Mechanism (VCM)</b>  : The <code>Subject_API_surface</code> interface defines the set of <a href="/wiki/Virtual_inheritance#Virtual_Code_Elements.html" title="Virtual inheritance">virtual code elements</a> needed by the manager to control the subject. The specification, via the Interface, forces the child to implement the code elements it defines. The elements are 'virtual' because they are controlled through the specification (not an implementation) defined by the interface.</p>
+<p>The <a href="/wiki/Virtual_inheritance#Virtual_Control_Mechanism_.28VCM.29.html" title="Virtual inheritance">VCM</a> allows different types of objects to be controlled by the same set of virtual code elements. Any class that inherits the Interface will be forced to provide the set of 'implementation code elements' represented by the virtual code elements. The <code>Observer_Manager</code> class displays this capability by being able to control the <code>Subject_A</code> and <code>Subject_B</code> object types (classes).</p>
+<p><b>Assignable State Space</b> : In the example above the <code>Main_process</code> of the <code>Observer_manager</code> contains the <code>Notification_gate_flag</code> code element which is an assignable code element (single value assignment). The <code>notification_targets</code> code element is a loadable code element (multi-value assignment).</p>
+<p>In Virtual Inheritance code elements are said to be 'controllable'. This means that a code element can be called (method), assigned (bool) or loaded (event). The conceptual semantics of the <a href="/wiki/Virtual_inheritance#Control_Mechanism_Vs._Polymorphic_Mechanism.html" title="Virtual inheritance">control aspect</a> do not, and should not, address the implementation details of a particular compiler or language. This <b>control aspect</b> is an important difference between virtual inheritance and virtual functions (VTables - compiler implementation).</p>
+<p><b>Client Use Context</b> : Note that virtual code elements, established via inheritance (in C#, C++, java or any language), ALWAYS have a <a href="/wiki/Virtual_inheritance#Use_Context.html" title="Virtual inheritance">use context aspect</a>. The use context aspect determines how the specification can be leveraged in the software design architecture.</p>
+<p>For example, can the parents leverage the code elements for polymorphic control (GVI)? Can client objects leverage the 'interface aspect' and drive a target object via the 'interface' without a concern about other 'aspects' of the object (SVI - contract aspect as in the code above)?</p>
+<p>The Subject Interface code shows that <b>Simple Virtual Inheritance (SVI)</b> has a <b>client use context</b> aspect to its <a href="/wiki/Inheritance_semantics_%28object-oriented_programming%29#Semantic_scope.html" title="Inheritance semantics (object-oriented programming)">conceptual semantics</a>. In <a href="/wiki/Virtual_inheritance#General_Virtual_Inheritance_.28GVI.29.html" title="Virtual inheritance">GVI</a> the parents have control. In <a href="/wiki/Virtual_inheritance#Simple_Virtual_Inheritance_.28SVI.29.html" title="Virtual inheritance">SVI</a> everyone, except the parents, has control.</p>
+<p>Object-oriented languages may feature <b>other use contexts</b> for virtual code elements besides parent/client (GVI/SVI). Thus it is important to note that Virtual Inheritance (VI) is <a href="/wiki/Virtual_inheritance#Virtual_Control_Mechanism_.28VCM.29.html" title="Virtual inheritance">centric first</a> to the specification aspect (VI) and then to the use context aspect (GVI/SVI/etc).</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Stateful Diamond Point (SDP) Pattern in C#">edit</a>]</div>
+<p><a name="Stateful_Diamond_Point_.28SDP.29_Pattern_in_C.23" id="Stateful_Diamond_Point_.28SDP.29_Pattern_in_C.23"></a></p>
+<h4>Stateful Diamond Point (SDP) Pattern in C#</h4>
+<p>Understanding the use context of virtual code elements is important in understanding the design advantages and disadvantages of virtual inheritance. The Stateful Diamond Point <a href="/wiki/Virtual_inheritance#Stateful_Diamond_Point_.28SDP.29_Pattern_in_C.2B.2B.html" title="Virtual inheritance">Stateful Diamond Point</a> pattern (presented in the C++ section) is implemented in the C# language below. It shows the coexistence of General and Simple virtual inheritance (GVI and SVI).</p>
+<p>In C# the same <b>pattern participants</b> exist but are <b>connected using Single Implementation Inheritance (SII) and object composition</b>. Virtual inheritance (VI), in the context of the C# design approach (GVI/SII), can be compared to VI in the C++ design approach using functional normalization, <a href="/wiki/Functional_normalization_%28object-oriented_programming%29.html" title="Functional normalization (object-oriented programming)">functional normalization</a>, composition and dispersion along the lines of inheritance (GVI/MII). The comparison shows how VI (GVI/SVI) effects the internal functionality of the SPD pattern.</p>
+<p>In the C# SPD pattern implementation the <b>core design concern</b> is still the functionality (the <i><b>Point</b></i> of the design) presented by the surface <a href="/wiki/Application_programming_interface.html" title="Application programming interface">API</a> at the <i><b>Execution Point</b></i>. With C# Interfaces the <b>pattern surface API</b> can be formalized as the <b>execution point interface</b>.<br />
+<br />
+The SPD pattern in C# has the same 'Arrow' data flow pattern as found in the <a href="/wiki/Virtual_inheritance#Coexistence_of_Virtual_and_Resolution_Inheritance_in_C.2B.2B.html" title="Virtual inheritance">C++ example</a>. In the C# example the data flows;</p>
+<ol>
+<li>From the (1) execution point (interface surface) to the (2) foundation (via SII)</li>
+<li>From the (2) foundation to the (3) execution point (via GVI)</li>
+<li>From the (3) execution point to the (4,5) support classes (via object composition)</li>
+</ol>
+<p>In the C++ example the data flows;</p>
+<ol>
+<li>From the (1) execution point (interface surface) to the (2) foundation (via MII)</li>
+<li>From the (2) foundation to the (3) execution point (via GVI)</li>
+<li>From the (3) execution point to the (4,5) support classes (via MII)</li>
+</ol>
+<p>The functional result, at the execution point surface, is the same for both the C++ and the C# examples. The output of both implementations is identical.</p>
+<p><br />
+The <i><b>High State Tracker</b></i> example of the SPD pattern is more reflective of real world production software (then the shorter C# examples herein). It features the following C# Virtual Inheritance phenomena (GVI/SVI-Interfaces).<br /></p>
+<table border="1" cellspacing="0" cellpadding="5">
+<caption>High State Tracker Example - Code Features</caption>
+<tr>
+<td><span style="color: green">Code Feature</span></td>
+<td><span style="color: green">Implementation Description</span></td>
+</tr>
+<tr>
+<td>Coexistence</td>
+<td>GVI, SVI, Interfaces, object composition (embedded members)</td>
+</tr>
+<tr>
+<td>GVI Control mechanism</td>
+<td>Abstract method specification - <code>Base::Log_state()</code></td>
+</tr>
+<tr>
+<td>GVI Implementation</td>
+<td>Abstract method implementation - <code>Diamond_tracker::Log_state()</code></td>
+</tr>
+<tr>
+<td>SVI Specification</td>
+<td>Interface inheritance - <code>Execution_point_interface</code></td>
+</tr>
+<tr>
+<td>SVI Parent</td>
+<td><code>Test_driver::Execution_point_interface</code></td>
+</tr>
+<tr>
+<td>SVI Child</td>
+<td><code>Diamond_tracker</code></td>
+</tr>
+<tr>
+<td>Execution Point Contract</td>
+<td>C# Interface for the surface API of the SPD pattern used by the test driver</td>
+</tr>
+<tr>
+<td>Object Composition</td>
+<td>Via embedded members <code>Internet_child</code>, <code>Database_child</code></td>
+</tr>
+<tr>
+<td>Composition Construction</td>
+<td>Construction code for <code>Internet_child</code>, <code>Database_child</code></td>
+</tr>
+<tr>
+<td>Surface API Replication</td>
+<td><code>Diamond_tracker</code> must replicate <code>Get_local_highest_state()</code>, <code>Get_global_highest_state()</code> API surface</td>
+</tr>
+<tr>
+<td>C# Abstract Method</td>
+<td>The <code>Log_state()</code> method is an abstract method with a parent/client use context</td>
+</tr>
+<tr>
+<td>Restricted use context</td>
+<td>The SVI virtual code element <code>New_state()</code> can not be used outside the client use context</td>
+</tr>
+</table>
+<p><br />
+<br />
+The C# and C++ examples help to distinguish the concepts;</p>
+<ul>
+<li><a href="/wiki/Functional_normalization_%28object-oriented_programming%29.html" title="Functional normalization (object-oriented programming)">Functional normalization</a>/dispersion/composition along lines of inheritance (GVI/MII)</li>
+<li>Object composition and interface specification (GVI/SII)</li>
+</ul>
+<p>Comparing the architecture of virtual inheritance in both these contexts helps to understand what benefits GVI and Interfaces (SVI) bring to the pattern functionality. It also helps to clarify how the code element use context of virtual (VI) and implementation (II) inheritance differs.</p>
+<p>Relative to Virtual Inheritance (GVI/SVI) the C# implementation of the SPD pattern differs from the C++ implementation in several important ways. A comparative examination of the code reveals these differences stem from the difference between GVI/MII and GVI/SII. This difference is relevant to SVI and its role in pattern functionality.</p>
+<p>It is important to note that the Interface <b>SVI adds nothing to the functionality of the pattern</b> itself. Thus SVI is not responsible for the key differences in the two designs (C++ Vs. C#). This highlights the <b>contractual mechanism</b> aspect of SVI in Interfaces brought about by the virtual code element use context (as explained above). It also allows SVI to be factored out in any functional partitioning design issues (as explained below).</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Coexistence of Virtual and Interface Inheritance in C#">edit</a>]</div>
+<p><a name="Coexistence_of_Virtual_and_Interface_Inheritance_in_C.23" id="Coexistence_of_Virtual_and_Interface_Inheritance_in_C.23"></a></p>
+<h4>Coexistence of Virtual and Interface Inheritance in C#</h4>
+<p>The coexistence of <a href="/wiki/Virtual_inheritance#General.html" title="Virtual inheritance">Virtual Inheritance (GVI)</a> and <a href="/wiki/Interface_%28computer_science%29.html" title="Interface (computer science)">Interfaces</a> (SVI) in C# is demonstrated in the High State Tracker example code presented below. The code is basically a port to C# from the C++ example (above).</p>
+<p>Since C# lacks <a href="/wiki/Implementation_inheritance_%28object-oriented_programming%29.html" title="Implementation inheritance (object-oriented programming)">Multiple Implementation Inheritance (MII)</a> the design of the C# code uses Single Implementation Inheritance and object composition. The functionality (the output) of the SPD pattern C# implementation is identical to the C++ example.</p>
+<pre>
+  using System;
+  //
+  // High_State_Tracker Example
+  //
+  //#------------------------------------------------------------------------------------------------#
+  //#   State machine     :_:   Manages state space - Ties all concerns together
+  //#                           Use GVI - Specify Child 'Log_State()' and use it as Virtual Method
+  //#------------------------------------------------------------------------------------------------#
+  internal abstract
+  class Base
+     {
+     int   Current_state; // Initialize to zero (not shown in example)
+     //
+  public   Base()
+           {
+           Current_state = 0;
+           }
+           //
+  protected void Set_state(int next_state)
+           {
+           Current_state = next_state; // Move system to the new state (primary state transition)
+           Console.WriteLine("          :          Current state is - {0} ", Current_state  );
+           Log_state( Current_state ); // Use GVI : Control children and keep history of state changes
+           }
+           //
+  public   int   Get_current_state()
+           {
+           return Current_state;
+           }
+           //
+  public   abstract                    // Virtual Method (Shows GVI - General Virtual Inheritance)
+           void  Log_state(int new_state);   // Specify here : Instantiate in Diamond class
+     } // End of class
+</pre>
+<pre>
+  //#------------------------------------------------------------------------------------------------#
+  //#   Global Manager    :_:   Logs high states to global office - manages global concerns
+  //#                           Use object composition to incorporate functionality in SII child class
+  //#------------------------------------------------------------------------------------------------#
+  class Internet_child
+     {
+     int   Highest_global_state; // Could be set to highest Home Office State (not shown in example)
+     //
+  public   void  Log_to_home_office(int latest_high_value)
+           {
+           // Code to send value to home office via Internet would go here
+           }
+           //
+  public   void  Log_global_high_value(int new_state)
+           {
+           if ( new_state &gt; Highest_global_state )
+              {
+              Highest_global_state = new_state;   // Save the 'next highest state'
+              Log_to_home_office( new_state );    // Inform home office
+              }
+           }
+           //
+  public   Internet_child()                       // Internet retrieval could go here
+           {
+           Highest_global_state = 70;             // Init for demo : Highest 'global' state
+           }
+           //
+  public   int   Get_global_highest_state()
+           {
+           return Highest_global_state;
+           }
+     } // End of class
+</pre>
+<pre>
+  //#------------------------------------------------------------------------------------------------#
+  //#   Local Manager     :_:   Logs high states to local home office - manages local concerns
+  //#                           Use object composition to incorporate functionality in SII child class
+  //#------------------------------------------------------------------------------------------------#
+  class Database_child
+     {
+     int   Highest_local_state; // Could be set to highest local Office State (not shown in example)
+     //
+  public   void     Log_to_local_database(int latest_high_value)
+           {
+           // Code to save value in local database would go here
+           }
+           //
+  public   void  Log_local_high_value(int new_state)
+           {
+           if ( new_state &gt; Highest_local_state )
+              {
+              Highest_local_state = new_state;    // Save the 'next highest state'
+              Log_to_local_database( new_state ); // Save to local database
+              }
+           }
+           //
+  public   Database_child()                       // Database retrieval could go here
+           {
+           Highest_local_state = 30;              // Init for demo : Highest 'local' state
+           }
+           //
+  public   int   Get_local_highest_state()
+           {
+           return Highest_local_state;
+           }
+     };
+</pre>
+<pre>
+  //#------------------------------------------------------------------------------------------------#
+  //#   Session Manager   :_:   Tracks high states in the current session - manages immediate concerns
+  //#                           Use GVI - Parent (Base) controls child (Diamond_tracker::Log_state())
+  //#                           Use SVI - Force child to implement surface API needed by test driver (Test_API_surface)
+  //#                           Use object composition to bring in local and global manager functionality
+  //#------------------------------------------------------------------------------------------------#
+  class Diamond_tracker : Base,  Test_driver.Execution_point_interface
+     {
+     int   Session_state;                         // Save las
+     int   Highest_session_state;
+     //
+     Database_child    Local_manager;
+     Internet_child    Global_manager;
+     //
+  public   override void  Log_state( int new_value )             // Use GVI : Parent will control child implementation
+           {
+           Local_manager. Log_local_high_value    ( new_value ); // Save if highest locally
+           Global_manager.Log_global_high_value   ( new_value ); // Save if highest globally
+           }
+           //
+  public   Diamond_tracker()
+           {
+           Session_state = 0;
+           Highest_session_state = 0;
+           //
+           Local_manager  =  new   Database_child();
+           Global_manager =  new   Internet_child();
+           }
+           //
+  public   void  New_state(int new_value)
+           {
+           Session_state = new_value;             // Move session manager to new state
+           if ( Session_state &gt; Highest_session_state )
+              {
+              Highest_session_state = new_value;  // Track high states for this instance
+              }
+            Set_state( new_value );               // Move system to new state via Base
+           }
+           //
+  public   int   Get_session_highest_state()
+           {
+           return Highest_session_state;
+           }
+           //
+  public   int   Get_local_highest_state()
+           {
+           return Local_manager.Get_local_highest_state();
+           }
+           //
+  public   int   Get_global_highest_state()
+           {
+           return Global_manager.Get_global_highest_state();
+           }
+     };
+</pre>
+<pre>
+  //#------------------------------------------------------------------------------------------------#
+  //#   Test Driver       :_:   Drives the high state tracker (Diamond_Tracker)
+  //#                           Show SVI as execution point contract via the C# Interface
+  //#------------------------------------------------------------------------------------------------#
+  class Test_driver
+     {
+  //#------------------------------------------------------------------------------------------------#
+  //#   Parent Interface  :_:   Specifies the API surface needed by the test driver
+  //#------------------------------------------------------------------------------------------------#
+  public interface Execution_point_interface
+     {
+        void  New_state(int new_value);
+              //
+        int   Get_session_highest_state();
+        int   Get_local_highest_state();
+        int   Get_global_highest_state();
+     }
+     //
+  public static void Main()
+     {
+     Diamond_tracker my_diamond;                                    // Drive child from parent via Virtual Method
+     my_diamond = new Diamond_tracker();                            //
+     //
+     Execution_point_interface parent_as_client_API;                // Drive child from parent via Interface
+     parent_as_client_API = (Execution_point_interface) my_diamond; //
+     //
+     Console.WriteLine();
+     Console.WriteLine(" End      :  Highest session state is : {0} ", parent_as_client_API.Get_session_highest_state() );
+     Console.WriteLine(" Start    :  Highest local   state is : {0} ", parent_as_client_API.Get_local_highest_state() );
+     Console.WriteLine(" Start    :  Highest global  state is : {0} ", parent_as_client_API.Get_global_highest_state() );
+     Console.WriteLine();
+     //
+     my_diamond.New_state( 10 );
+     my_diamond.New_state( 30 );                  // Highest local state at start
+     my_diamond.New_state( 40 );
+     //
+     Console.WriteLine();
+     Console.WriteLine(" End      :  Highest session state is : {0} ", my_diamond.Get_session_highest_state() );
+     Console.WriteLine(" Middle   :  Highest local   state is : {0} ", my_diamond.Get_local_highest_state() );
+     Console.WriteLine(" Middle   :  Highest global  state is : {0} ", my_diamond.Get_global_highest_state() );
+     Console.WriteLine();
+     //
+     my_diamond.New_state( 70 );                  // Highest global state at start
+     my_diamond.New_state( 10 );
+     my_diamond.New_state( 80 );
+     //
+     Console.WriteLine();
+     Console.WriteLine(" End      :  Highest session state is : {0} ", parent_as_client_API.Get_session_highest_state() );
+     Console.WriteLine(" End      :  Highest local   state is : {0} ", parent_as_client_API.Get_local_highest_state() );
+     Console.WriteLine(" End      :  Highest global  state is : {0} ", parent_as_client_API.Get_global_highest_state() );
+     Console.WriteLine();
+     //    Show_GVI : Show that the abstract method (AM) is accessible to clients as well as parents
+     my_diamond.Log_state( 99 );
+     //
+     Console.WriteLine(" AM Test  :  Highest session state is : {0} ", parent_as_client_API.Get_session_highest_state() );
+     Console.WriteLine(" AM Test  :  Highest local   state is : {0} ", parent_as_client_API.Get_local_highest_state() );
+     Console.WriteLine(" AM Test  :  Highest global  state is : {0} ", parent_as_client_API.Get_global_highest_state() );
+     Console.WriteLine();
+     }
+  //#------------------------------------------------------------------------------------------------#
+  //#   Parent Access     :_:   Shows that compiler errors occur if virtual code element used out of context
+  //#                           Prove_SVI : Prove that the SVI virtual code elements not be accessible by parent
+  //#------------------------------------------------------------------------------------------------#
+  public void SVI_parent_access_test()
+     {
+     // Show_SVI use context :  virtual code element New_state() is not   directly accessible
+     // New_state(2);                                // Remove comment to see compiler error
+     // Show_SVI use context :  virtual code element New_state() is not indirectly accessible
+     //                      :  Must access as a client to some instance implementing specification
+     //  Execution_point_interface.New_state(8);      // Remove comment to see compiler error
+     }
+     }  // End_of_class
+</pre>
+<pre>
+  //#------------------------------------------------------------------------------------------------#
+  //#   Output            :_:   Show the state transitions - Highest state logged locally and globally
+  //#                           Show GVI as an internal pattern unit mechanism - Parent use context
+  //#                           Show SVI as an external pattern unit mechanism - Client use context
+  //#------------------------------------------------------------------------------------------------#
+  //
+  //    Start    :  Highest session state is : 0
+  //    Start    :  Highest local   state is : 30
+  //    Start    :  Highest global  state is : 70
+  //
+  //             :          Current state is - 10
+  //             :          Current state is - 30
+  //             :          Current state is - 40
+  //
+  //    Middle   :  Highest session state is : 40
+  //    Middle   :  Highest local   state is : 40
+  //    Middle   :  Highest global  state is : 70
+  //
+  //             :          Current state is - 70
+  //             :          Current state is - 10
+  //             :          Current state is - 80
+  //
+  //    End      :  Highest session state is : 80
+  //    End      :  Highest local   state is : 80
+  //    End      :  Highest global  state is : 80
+  //
+  //
+  //    AM Test  :  Highest session state is : 80
+  //    AM Test  :  Highest local   state is : 99
+  //    AM Test  :  Highest global  state is : 99
+  //
+</pre>
+<p><b>SVI Specification</b> : For Virtual Inheritance (VI) the pattern interface (<code>Execution_point_interface</code>) functions just like a class. The child inherits the interface. In this example the interface is the specification of the 'parent' (<code>Test_driver</code>) to the child (<code>Diamond_tracker</code>). This shows how an interface can be used to consolidate a set of <a href="/wiki/Virtual_inheritance#Virtual_Code_Elements.html" title="Virtual inheritance">virtual code elements</a> (specifications via inheritance) as a single contract between the client and the <a href="/wiki/Design_pattern_%28computer_science%29.html" title="Design pattern (computer science)">pattern unit</a> (SVI - client use context).</p>
+<p><b>SVI Parent</b> : Note that the contract (<code>Execution_point_interface</code>) is in the namespace of the test driver. Syntactically the contract is the parent, not the test driver. Conceptually, however, the interface is a <a href="/wiki/Virtual_inheritance#Specification_Vs._Implementation.html" title="Virtual inheritance">specification mechanism</a> in the design architecture that binds the test driver to the target (<code>Diamond_tracer</code>). This design architecture is named 'parent-as-client' to note that the interface specification is located in the client class namespace.</p>
+<p><b>SVI Child</b> : <b>Note that the Interface (SVI) has nothing to do with the pattern functionality.</b> An identical functionality exists in the C++ SPD pattern unit without the SVI specification. This shows that the effects of <a href="/wiki/Virtual_inheritance#Simple_Virtual_Inheritance_.28SVI.29.html" title="Virtual inheritance">Simple Virtual Inheritance (SVI)</a> can be factored out in any functional partitioning issues (via inheritance) within the pattern unit. Only GVI, because of its parent use context (of the virtual code elements), can effect pattern functionality via inheritance (as is shown in the C# SPD example above).</p>
+<p><b>Execution Point Contract</b> : Note that the contract for the surface API of the SPD pattern unit is NOT the same as a contract for the target functionality (within the pattern unit). Interfaces, a form of virtual inheritance (SVI virtual code elements), only provide an 'interface specification'. No specification of the actual functionality (provided by the interface) of the pattern is provided.</p>
+<p><b>Object Composition</b> : Since C# does not have <a href="/wiki/Implementation_inheritance_%28object-oriented_programming%29#Single_.28SII.29_Vs._Multiple_Implementation_Inheritance_.28MII.29.html" title="Implementation inheritance (object-oriented programming)">Multiple Implementation Inheritance (MII)</a> the example must contain, create and 'surface replicate' functional support members (such as methods that exist at the pattern surface API).</p>
+<p><b>Composite Construction</b> : Unlike MII in C++ the <code>Internet_child</code> and <code>Database_child</code> require construction code at the execution point (Construction burden of composites).</p>
+<p><b>Surface API Replication</b> : Unlike MII in C++ the <code>Get_local_highest_state()</code> and <code>Get_global_highest_state()</code> support methods must be replicated at the execution point (surface burden of composites).</p>
+<p><b>C# Abstract Method</b> : The <code>Log_state()</code> abstract method can be accessed by both the parent and the client. The client access is shown at the end of <code>Test_driver.Main()</code>. Since Log_state() is a virtual code element we can see that the use context of abstract methods includes parents and clients (GVI/SVI). This compares with the restricted use context of virtual code elements defined in Interfaces (SVI).</p>
+<p><b>Restricted Use Context</b> : The <code>SVI_parent_access_test()</code> in the <code>Test_driver</code> shows that virtual code elements defined in C# Interfaces are not accessible to parents. Only client object access is allowed. This can be compared with abstract methods in C++ <a href="/wiki/Virtual_inheritance#C.2B.2B_Abstract_methods.html" title="Virtual inheritance">abstract methods in C++</a> where the virtual code element is usable by both the parent and client objects.</p>
+<p>The code features of the C# SPD implementation above combine to form a <b>single functional unit abstracted at the execution point surface</b>. The functional system, formed by the pattern participants, can be seen as a 'single balanced unit of functionality' which is the pattern implementation (<b>pattern unit</b>). Balance is achieved via <a href="/wiki/Functional_normalization_%28object-oriented_programming%29.html" title="Functional normalization (object-oriented programming)">Functional Normalization</a> among the participants.</p>
+<p>The example above shows a common use of Virtual Inheritance (VI - code element specification via inheritance) in the form of <a href="/wiki/Virtual_inheritance#General_Virtual_Inheritance_.28GVI.29.html" title="Virtual inheritance">GVI</a> (parent use context) and <a href="/wiki/Virtual_inheritance#Simple_Virtual_Inheritance_.28SVI.29.html" title="Virtual inheritance">SVI</a> (client use context). The most important aspect presented in the example is that <b>SVI is external to the pattern (external contract) while GVI is internal to the pattern (internal plumbing)</b>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Summary of Virtual and Interface inheritance in Object Oriented Languages">edit</a>]</div>
+<p><a name="Summary_of_Virtual_and_Interface_inheritance_in_Object_Oriented_Languages" id="Summary_of_Virtual_and_Interface_inheritance_in_Object_Oriented_Languages"></a></p>
+<h4>Summary of Virtual and Interface inheritance in Object Oriented Languages</h4>
+<p>Virtual Inheritance (VI) is the specification of code elements via inheritance. The virtual code elements produced by the specification have either a parent use context (GVI) or a client use context (SVI). The use of SVI and GVI is presented in the context of Class based functional units. In this case (class based design) the following hold true.</p>
+<p><b>GVI is an intra-pattern mechanism</b> : It provides <a href="/wiki/Virtual_inheritance#General_Virtual_Inheritance_.28GVI.29.html" title="Virtual inheritance">parental control</a> of virtual code elements (parental use context). GVI can leverage the features of MII more than it can SII. This is because SII based designs use object aggregation/composition which lacks the lines of inheritance needed for GVI functionality.</p>
+<p><b>SVI is an inter-pattern mechanism</b> : It provides <a href="/wiki/Virtual_inheritance#Simple_Virtual_Inheritance_.28SVI.29.html" title="Virtual inheritance">client control</a> of virtual code elements (client use context). SVI has no effects via inheritance other than the forced implementation of the specification. As such it can not be used within the pattern unit for parental control (no parent use context).</p>
+<p>The internal/external comparison of GVI/SVI in pattern unit design is valid for class based functional units like High State Tracker. System level component design patterns, on the other hand, use <a href="/wiki/Software_componentry.html" title="Software componentry">component</a> based participants to form functional pattern units.</p>
+<p>Component level patterns, which bind together complex pattern participants, may use SVI internally as contracts between participants. These types of systems are generally <a href="/wiki/Loose_coupling.html" title="Loose coupling">loosely coupled</a> and non-performant in comparison with tightly coupled high performance pattern units like High State Tracker.</p>
+<p><a href="/wiki/Virtual_inheritance#Use_Context.html" title="Virtual inheritance">Use context</a>, lines of inheritance and participant bindings (class/component) are important foundation concepts in understanding the role Virtual Inheritance (VI) takes in the object oriented design process. The coexistence of <b>GVI as internal plumbing</b> compliments <b>SVI as external contract</b>.</p>
+<p>It is clear from the example that virtual code element design (the specification process) starts with WHO will be using the elements. Internal parents, external clients and participant binding are the three perspectives to keep in mind to distinguish the architectural benefits of GVI and SVI.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Functional_normalization_%28object-oriented_programming%29.html" title="Functional normalization (object-oriented programming)">Functional normalization (object-oriented programming)</a></li>
+<li><a href="/wiki/Inheritance_semantics_%28object-oriented_programming%29.html" title="Inheritance semantics (object-oriented programming)">Inheritance semantics (object-oriented programming)</a></li>
+<li><a href="/wiki/Implementation_inheritance_%28object-oriented_programming%29.html" title="Implementation inheritance (object-oriented programming)">Implementation inheritance (object-oriented programming)</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Logical Context of Virtual Inheritance">edit</a>]</div>
+<p><a name="Logical_Context_of_Virtual_Inheritance" id="Logical_Context_of_Virtual_Inheritance"></a></p>
+<h3>Logical Context of Virtual Inheritance</h3>
+<p>Virtual Inheritance may be categorized and classified under the following headings.</p>
+<ul>
+<li><a href="/wiki/Inheritance_%28object-oriented_programming%29.html" title="Inheritance (object-oriented programming)">Inheritance</a></li>
+<li><a href="/wiki/Object-oriented_programming.html" title="Object-oriented programming">Object-oriented Programming</a></li>
+<li><a href="/wiki/Computer_science.html" title="Computer science">Computer Science</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h3>References</h3>
+<p>The references show that virtual and implementation inheritance phenomena was a fundamental concept of object-oriented programming from its inception in the 1960s.</p>
+<ul>
+<li>[1] Abelson, Sussman, Sussman : Structure and Interpretation of Computer Programs, MIT Press 1996</li>
+</ul>
+<dl>
+<dd>
+<dl>
+<dd><a  class="internal">ISBN 0-262-01153-0</a>
+<dl>
+<dd>p 217-218</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+<ul>
+<li>[2] Guttag, Horning : Larch: Languages and Tools for Formal Specifications, Springer-Verlag 1993</li>
+</ul>
+<dl>
+<dd>
+<dl>
+<dd><a  class="internal">ISBN 0-387-94006-5</a>
+<dl>
+<dd>p 2-3, 14, 25</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+<ul>
+<li>[3] Hares, Smart : Object Orientation, Wiley 1993,</li>
+</ul>
+<dl>
+<dd>
+<dl>
+<dd><a  class="internal">ISBN 0-471-94124-7</a>
+<dl>
+<dd>P 188, 190, 194-195</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+<ul>
+<li>[4] Martin, Odell : Principles of object-oriented analysis &amp; design, Prentice Hall 1993</li>
+</ul>
+<dl>
+<dd>
+<dl>
+<dd><a  class="internal">ISBN 0-13-720871-5</a>
+<dl>
+<dd>p 25, 263, 266</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+<ul>
+<li>[5] Nygaard, Dahl, (Wexelblat) : History of programming languages, Academic Press 1981</li>
+</ul>
+<dl>
+<dd>
+<dl>
+<dd>ACM Monograph series</dd>
+<dd><a  class="internal">ISBN 0-12-745040-8</a></dd>
+<dd>Paper : The development of the SIMULA languages
+<dl>
+<dd>p 447, 460, 461, 462, 463, 464</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+<ul>
+<li>[6] Schmidt : Denotational Semantics, Allyn and Bacon, Inc 1986</li>
+</ul>
+<dl>
+<dd>
+<dl>
+<dd><a  class="internal">ISBN 0-205-08974-7</a>
+<dl>
+<dd>p 20, 23-25, 181-185,</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h3>External links</h3>
+<ul>
+<li><a  class="external text" title="http://www.acm.org">Association for Computing Machinery (ACM)</a></li>
+</ul>
+<ul>
+<li>
+<dl>
+<dd>Held ACM SIGPLAN History of Programming Languages Conference, June 1-3 1978</dd>
+<dd>Conference papers consolidated in reference [5] - History of programming languages</dd>
+<dd>Conference participants included the founders of Object-Oriented Programming (OOP)</dd>
+<dd>Inception point for OOP - Conference Paper : The development of the SIMULA languages</dd>
+<dd>Recollections (of founders) covered object-oriented programming development in the mid 1960s</dd>
+</dl>
+</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Quotations">edit</a>]</div>
+<p><a name="Quotations" id="Quotations"></a></p>
+<h3>Quotations</h3>
+<p>The quotations show that virtual and implementation inheritance phenomena was a fundamental concept of object-oriented programming from its inception in the 1960s.</p>
+<ul>
+<li>[01] Schmidt - 1986 : p 20 - Chapter 2 introduction (relevant to - semantic domains)</li>
+</ul>
+<dl>
+<dd>
+<dl>
+<dd>... the concepts of set theory form a foundation for the theory of semantic domains...</dd>
+</dl>
+</dd>
+</dl>
+<ul>
+<li>[02] Hayes, Smart - 1993 : p 194 (relevant to - virtual code element)</li>
+</ul>
+<dl>
+<dd>
+<dl>
+<dd>...with dynamic binding one can write programs that will handle objects of</dd>
+<dd>derived classes that did not even exist when the program was written..</dd>
+</dl>
+</dd>
+</dl>
+<ul>
+<li>[03] Martin, Odell - 1993 : p 25 (relevant to - virtual code element)</li>
+</ul>
+<dl>
+<dd>
+<dl>
+<dd>...conversely, when the word virtual is used to refer to storage,</dd>
+<dd>transmission circuits, and other facilities, it indicates that a specified</dd>
+<dd>item appears to exist to the programmer or user</dd>
+<dd>when, in reality, it does not exist in that form...</dd>
+</dl>
+</dd>
+</dl>
+<ul>
+<li>[04] Nygaard, Dahl - 1981 : p 447 - (relevant to - concept of class/object)</li>
+</ul>
+<dl>
+<dd>
+<dl>
+<dd>...versions of program executions were used as models of the systems described by the language...</dd>
+<dd>...it was an important mode of thinking when SIMULA 67 was developed...</dd>
+</dl>
+</dd>
+</dl>
+<ul>
+<li>
+<dl>
+<dd>
+<dl>
+<dd>...1. The distinction between a piece of program text and an execution, or 'dynamic instance' of it [instance]</dd>
+<dd>...2. The fact that data and operations belong together, and that most useful program constructs contain both</dd>
+</dl>
+</dd>
+</dl>
+</li>
+</ul>
+<ul>
+<li>[05] Nygaard, Dahl - 1981 : p 460 - (relevant to - concept of class abstraction)</li>
+</ul>
+<dl>
+<dd>
+<dl>
+<dd>...our work to resolve these problems resulted in the class/subclass concepts which structured the rest of the</dd>
+<dd>new language...</dd>
+</dl>
+</dd>
+</dl>
+<ul>
+<li>[06] Nygaard, Dahl - 1981 : p 461 - (relevant to - lines of inheritance - Eureka!)</li>
+</ul>
+<dl>
+<dd>
+<dl>
+<dd>...These process classes would then be 'subclasses' of 'link'...</dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>
+<dl>
+<dd>...establishing hierarchies of process classes....</dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>
+<dl>
+<dd>....We immediately realized that we now had the necessary</dd>
+<dd>foundation for a completely new language approach ....</dd>
+</dl>
+</dd>
+</dl>
+<ul>
+<li>[07] Nygaard, Dahl - 1981 : p 462 - (relevant to - articulate terminology)</li>
+</ul>
+<dl>
+<dd>
+<dl>
+<dd>...Since the term 'process' could not apply to the unified concept,</dd>
+<dd>we introduced the more neutral word 'object' as a technical term.</dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>
+<dl>
+<dd>...In choosing the shorter term 'class' we felt that we had a good terminology which</dd>
+<dd>distinguished clearly between declared quantity (the class)</dd>
+<dd>and its dynamic offspring (the objects)...</dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>
+<dl>
+<dd>...Many users tend to use the term 'class', or perhaps 'class instance', to denote an object ....</dd>
+</dl>
+</dd>
+</dl>
+<ul>
+<li>[08] Nygaard, Dahl - 1981 : p 463 - (relevant to - concept of virtual specification)</li>
+</ul>
+<dl>
+<dd>
+<dl>
+<dd>...No mention of the class concept as an abstraction mechanism is made ...It took</dd>
+<dd>several years of slowly growing understanding ... until the fundamental difference</dd>
+<dd>between the internal ('concrete') view of an object and an external ('abstract') one</dd>
+<dd>finally was made clear ...</dd>
+</dl>
+</dd>
+</dl>
+<ul>
+<li>[09] Nygaard, Dahl - 1981 : p 464 - (relevant to - virtual code element)</li>
+</ul>
+<dl>
+<dd>
+<dl>
+<dd>...After much trial and error we hit on the virtual quantity concept where the</dd>
+<dd>actual would have to be declared in the object itself, but at a deeper subclass</dd>
+<dd>level than that of the virtual specification...</dd>
+</dl>
+</dd>
+</dl>
+
+<!-- 
+Pre-expand include size: 2356 bytes
+Post-expand include size: 1224 bytes
+Template argument size: 262 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:1907963-0!1!0!default!!en!2 and timestamp 20060910150223 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Accuracy disputes">Accuracy disputes</a></span> | <span dir='ltr'><a  title="Category:Class-based programming languages">Class-based programming languages</a></span> | <span dir='ltr'><a  title="Category:Object-oriented programming">Object-oriented programming</a></span> | <span dir='ltr'><a  title="Category:Programming language topics">Programming language topics</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Virtual_inheritance.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 03:21, 7 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv85 in 0.121 secs. --></body></html>

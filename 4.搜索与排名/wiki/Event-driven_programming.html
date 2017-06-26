@@ -1,0 +1,291 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Event-driven programming,Libsigc++,Callback (computer science),Libevent,Tcl,Twisted,Perl Object Environment,Gui4Cli,PRADO,Asynchrony,Ben Watson" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Event-driven programming - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Event-driven_programming";
+			var wgTitle = "Event-driven programming";
+			var wgArticleId = 62599;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Event-driven programming</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p><b>Event-driven programming</b> is a <a href="/wiki/Computer_programming.html" title="Computer programming">computer programming</a> paradigm. Unlike traditional programs, which follow their own control flow pattern, only sometimes changing course at branch points, the control flow of event-driven programs is largely driven by external events.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Example</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Event-driven frameworks and libraries</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Overview">edit</a>]</div>
+<p><a name="Overview" id="Overview"></a></p>
+<h2>Overview</h2>
+<p>Instead of waiting for a complete command which may order it to process information, the system is preprogrammed with an <b><a href="/wiki/Event_loop.html" title="Event loop">event loop</a></b>, to look repeatedly for information to process (whether this might be the appearance of a file in a folder, a keyboard or mouse operation, or a timer event) and then perform a <b>trigger function</b> to process it. Programming an <b>event driven</b> system is thus a matter of rewriting the default trigger functions of the system, to match the required behavior.</p>
+<p>The method by which information on events is acquired by the underlying system is immaterial. Inputs can be <a href="/wiki/Polling.html" title="Polling">polled</a> in the event loop, or <a href="/wiki/Interrupt.html" title="Interrupt">interrupt handlers</a> can be registered to react to hardware events; many systems use a mixture of both techniques. The preprogrammed algorithm ensures that triggers provided are executed when they are needed, thus providing a software abstraction that emulates an interrupt driven environment.</p>
+<p>Event-driven programs typically consist of a number of small programs called <a href="/wiki/Event_handler.html" title="Event handler">event handlers</a>, which are to be called in response to external events, and a <a href="/wiki/Dispatcher.html" title="Dispatcher">dispatcher</a>, which calls the event handlers, often using an <a href="/wiki/Event_queue.html" title="Event queue">event queue</a> to hold unprocessed events.</p>
+<p>In many cases event handlers can trigger events themselves, possibly leading to an <a href="/wiki/Event_cascade.html" title="Event cascade">event cascade</a>.</p>
+<p>Event-driven programming stresses flexibility and <a href="/wiki/Asynchrony.html" title="Asynchrony">asynchrony</a> as virtues, and tries to be as <a href="/wiki/Modeless.html" title="Modeless">modeless</a> as possible. <a href="/wiki/Graphical_user_interface.html" title="Graphical user interface">Graphical user interface</a> programs are typically programmed in an event-driven style.</p>
+<p>Computer <a href="/wiki/Operating_system.html" title="Operating system">operating systems</a> are another classic example of event-driven programs on at least two levels. At the lowest level, <a href="/wiki/Interrupt_handler.html" title="Interrupt handler">interrupt handlers</a> act as direct event handlers for hardware events, with the <a href="/wiki/Central_processing_unit.html" title="Central processing unit">CPU</a> hardware performing the role of the dispatcher. Operating systems also typically act as dispatchers for software processes, passing data and <a href="/wiki/Software_interrupt.html" title="Software interrupt">software interrupts</a> to <a  class="new" title="User process">user processes</a> that in many cases are programmed as event handlers themselves.</p>
+<p>A <a href="/wiki/Command_line_interface.html" title="Command line interface">command line interface</a> can be viewed as a special case of the event driven model in which the system, which is inactive, awaits one very complex event--the entry of a command by the user.</p>
+<p><a href="/wiki/Coroutine.html" title="Coroutine">Coroutine</a> libraries can be used to provide thread-like notation around a traditional <a href="/wiki/Event_loop.html" title="Event loop">event loop</a> core. <a href="/wiki/Ruby_programming_language.html" title="Ruby programming language">Ruby</a> is a popular scripting language that takes this approach. Ruby threads are simple coroutines scheduled around an <a href="/wiki/Event_loop.html" title="Event loop">event loop</a>. Libtask <a  class="external autonumber" title="http://swtch.com/libtask/">[1]</a> provides a similar facility for <a href="/wiki/C_programming_language.html" title="C programming language">C</a>.</p>
+<p><br />
+Event-driven programming is a flexible way to allow your programs to respond to many different inputs or events.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Example">edit</a>]</div>
+<p><a name="Example" id="Example"></a></p>
+<h2>Example</h2>
+<p>This example uses pseudocode to illustrate how data is read from a socket using an event driven approach:</p>
+<pre>
+function read_next_data(fd)
+   data = read_async( fd )
+   if len(data) == 0
+       =&gt; Nothing to read, register to be called back when something is ready
+       event_polling_register( fd, read_next_data )
+       =&gt; Go back to doing something else
+   else
+       =&gt; Data was available and len(data) was received
+       add_data_to_buffer( buffer, data )
+   end_if
+end_function
+</pre>
+<p>This example uses <a href="/wiki/Tcl.html" title="Tcl">Tcl</a> code to illustrate how data is read from a socket using an event driven approach:</p>
+<pre>
+# open channel
+set chan [socket $host $port]
+set buffer ""
+fconfigure $chan -blocking none
+# register event handler
+fileevent $chan readable [list read_next_data $chan buffer]  
+
+# process event until end of file
+proc read_next_data {chan bufferVar} {
+   upvar #0 $bufferVar buffer
+   append buffer [read $chan]
+   if {[eof $chan]} {close $chan}
+}
+</pre>
+<p>Event-driven programming is a flexible way to allow your programs to respond to many different inputs or events.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<ul>
+<li><a href="/wiki/Grant_Palmer.html" title="Grant Palmer">Grant Palmer</a>: <i>Java Event Handling</i>, Prentice Hall, <a  class="internal">ISBN 0-13-041802-1</a></li>
+<li><a  class="new" title="David Luckham">David Luckham</a>: <i>The Power of Events - An Introduction to Complex Event Processing in Distributed Enterprise Systems</i>, Addison-Wesley, <a  class="internal">ISBN 0-201-72789-7</a></li>
+<li><a  class="new" title="George S. Fishman">George S. Fishman</a>: <i>Discrete-Event Simulation - Modeling, Programming, and Analysis</i>, Springer, <a  class="internal">ISBN 0-387-95160-1</a></li>
+<li><a href="/wiki/Bertrand_Meyer.html" title="Bertrand Meyer">Bertrand Meyer</a> (2004): <i>The power of abstraction, reuse and simplicity: an object-oriented library for event-driven design</i>, in <cite>Festschrift in Honor of Ole-Johan Dahl</cite>, eds. Olaf Owe et al., Springer-Verlag, Lecture Notes in Computer Science 2635, also available <a  class="external text" title="http://se.ethz.ch/~meyer/publications/lncs/events.pdf">online</a>.</li>
+<li><a  class="new" title="Miro Samek">Miro Samek</a>: <i>Practical Statecharts in C/C++: Quantum Programming for Embedded Systems</i>, CMP Books, <a  class="internal">ISBN 1-57820-110-1</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Signal_programming.html" title="Signal programming">Signal programming</a> (a similar concept)</li>
+<li><a href="/wiki/Flow-driven_programming.html" title="Flow-driven programming">Flow-driven programming</a> (contrast)</li>
+<li><a href="/wiki/Programming_paradigm.html" title="Programming paradigm">Programming paradigms</a></li>
+<li><a  class="new" title="Reactor Pattern">Reactor Pattern</a></li>
+<li><a href="/wiki/SEDA.html" title="SEDA">SEDA</a></li>
+<li><a  class="new" title="Quantum Leaps">Quantum Leaps</a></li>
+<li><a href="/wiki/Event_driven_programming_language.html" title="Event driven programming language">Event driven programming language</a></li>
+<li><a href="/wiki/Event_Stream_Processing_%28ESP%29.html" title="Event Stream Processing (ESP)">Event Stream Processing (ESP)</a> (a similar concept)</li>
+<li><a href="/wiki/Message_Oriented_Middleware.html" title="Message Oriented Middleware">Message Oriented Middleware</a></li>
+<li><a href="/wiki/Publish/subscribe.html" title="Publish/subscribe">Publish/subscribe</a></li>
+<li><a href="/wiki/Visual_Basic.html" title="Visual Basic">Visual Basic</a>, generally speaking, an event-driven language</li>
+<li><a href="/wiki/Event_Driven_Architecture.html" title="Event Driven Architecture">Event Driven Architecture</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Event-driven frameworks and libraries">edit</a>]</div>
+<p><a name="Event-driven_frameworks_and_libraries" id="Event-driven_frameworks_and_libraries"></a></p>
+<h2>Event-driven frameworks and libraries</h2>
+<ul>
+<li><a  class="new" title="Liboop">Liboop</a>, event loop management library <a  class="external autonumber" title="http://liboop.org/">[2]</a></li>
+<li><a href="/wiki/Libsigc%2B%2B.html" title="Libsigc++">libsigc++</a>, a <a href="/wiki/Callback_%28computer_science%29.html" title="Callback (computer science)">callback</a> framework for C++</li>
+<li><a href="/wiki/Libevent.html" title="Libevent">libevent</a>, an event notification library for C/C++</li>
+<li><a  class="new" title="REBECA">REBECA</a>, Event-Based Electronic Commerce Architecture</li>
+<li><a href="/wiki/Tcl.html" title="Tcl">Tcl</a>, Tcl language has event driven programming built in</li>
+<li><a href="/wiki/Twisted.html" title="Twisted">Twisted</a>, Python</li>
+<li><a href="/wiki/Perl_Object_Environment.html" title="Perl Object Environment">POE</a>, Perl</li>
+<li><a href="/wiki/PRADO.html" title="PRADO">PRADO</a>, a component-based and event-driven Web programming framework for PHP 5</li>
+<li><a href="/wiki/Gui4Cli.html" title="Gui4Cli">Gui4Cli</a>, an event driven programming language for Windows</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://c2.com/cgi/wiki?EventDrivenProgramming">Description</a> from <a href="/wiki/Portland_Pattern_Repository.html" title="Portland Pattern Repository">Portland Pattern Repository</a></li>
+<li>Tutorial "<a  class="external text" title="http://eventdrivenpgm.sourceforge.net/">Event-Driven Programming: Introduction, Tutorial, History</a>" by Stephen Ferg</li>
+<li>Tutorial "<a  class="external text" title="http://www.freenetpages.co.uk/hp/alan.gauld/tutevent.htm">Event Driven Programming</a>" by <a  class="new" title="Alan Gauld">Alan Gauld</a></li>
+<li>Article "<a  class="external text" title="http://www.martinfowler.com/eaaDev/EventCollaboration.html">Event Collaboration</a>" by <a href="/wiki/Martin_Fowler.html" title="Martin Fowler">Martin Fowler</a></li>
+<li>Article "<a  class="external text" title="http://www.devhood.com/tutorials/tutorial_details.aspx?tutorial_id=504">Transitioning from Structured to Event-Driven Programming</a>" by <a href="/wiki/Ben_Watson.html" title="Ben Watson">Ben Watson</a></li>
+<li>Article "<a  class="external text" title="http://today.java.net/lpt/a/32">Rethinking Swing Threading</a>" by <a  class="new" title="Jonathan Simon">Jonathan Simon</a></li>
+<li>Article "<a  class="external text" title="http://www.csse.uwa.edu.au/cnet/eventdriven.html">The event driven programming style</a>" by <a href="/wiki/Chris_McDonald.html" title="Chris McDonald">Chris McDonald</a></li>
+<li>Article "<a  class="external text" title="http://codeproject.com/cpp/static-callbacks.asp">Event Driven Programming using Template Specialization</a>" by <a href="/wiki/Christopher_Diggins.html" title="Christopher Diggins">Christopher Diggins</a></li>
+<li>Article "<a  class="external text" title="http://visualbuilder.com/article/viewarticle.asp?id=1473">Delegates and Event Handling in C#</a>" by <a  class="new" title="Faisal Jawaid">Faisal Jawaid</a></li>
+<li>Article "<a  class="external text" title="http://www.swe.uni-linz.ac.at/people/schiffer/se-94-17/se-94-17.htm">Concepts and Architecture of Vista - a Multiparadigm Programming Environment</a>" by <a  class="new" title="Stefan Schiffer">Stefan Schiffer</a> and <a  class="new" title="Joachim Hans Fröhlich">Joachim Hans Fröhlich</a></li>
+<li>Chapter "<a  class="external text" title="http://ocaml-programming.de/packages/documentation/equeue/users-guide/c494.html">Event-driven programming vs. multi-threaded programming</a>" from the Equeue user's guide by <a  class="new" title="Gerd Stolpmann">Gerd Stolpmann</a></li>
+<li>Chapter "<a  class="external text" title="http://docs.eiffel.com/eiffelstudio/general/guided_tour/language/invitation-09.html">Event-Driven Programming and Agents</a>"</li>
+<li><a  class="external text" title="http://zone.ni.com/devzone/devzone.nsf/webcategories/FCE7EA7ECA51169C862567A9005878EA">LabWindows/CVI Resources</a></li>
+<li><a  class="external text" title="http://javalobby.org/forums/thread.jspa?threadID=13874&amp;messageID=91806918&amp;tstart=0">Comment</a> by <a  class="new" title="Tim Boudreau">Tim Boudreau</a></li>
+<li><a  class="external text" title="http://citeseer.ist.psu.edu/cis?q=event+driven+programming">Citations from CiteSeer</a></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:62599-0!1!0!default!!en!2 and timestamp 20060907011205 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:Programming paradigms">Programming paradigms</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Event-driven_programming.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-he"><a >עברית</a></li>
+				<li class="interwiki-nl"><a >Nederlands</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 10:04, 31 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv18 in 0.072 secs. --></body></html>

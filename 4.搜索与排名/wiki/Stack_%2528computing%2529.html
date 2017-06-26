@@ -1,0 +1,427 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Stack (data structure),68000 family,Abstract data type,Algorithm,Architecture,Array,Big O notation,Breadth-first search,Buffer overflow,Burroughs,Burroughs B5000" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Stack (data structure) - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Stack_(data_structure)";
+			var wgTitle = "Stack (data structure)";
+			var wgArticleId = 273993;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Stack (data structure)</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub">(Redirected from <a  title="Stack (computing)">Stack (computing)</a>)</div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<div class="thumb tright">
+<div style="width:202px;"><a  class="internal" title="Simple representation of a stack"><img src="http://upload.wikimedia.org/wikipedia/en/thumb/8/8c/Stack-sv.png/200px-Stack-sv.png" alt="Simple representation of a stack" width="200" height="135" longdesc="/wiki/Image:Stack-sv.png" /></a>
+<div class="thumbcaption">
+<div class="magnify" style="float:right"><a  class="internal" title="Enlarge"><img src="/skins-1.5/common/images/magnify-clip.png" width="15" height="11" alt="Enlarge" /></a></div>
+Simple representation of a stack</div>
+</div>
+</div>
+<p>In <a href="/wiki/Computer_science.html" title="Computer science">computer science</a>, a <b>stack</b> is a temporary <a href="/wiki/Abstract_data_type.html" title="Abstract data type">abstract data type</a> and <a href="/wiki/Data_structure.html" title="Data structure">data structure</a> based on the principle of <i><a href="/wiki/Last_In_First_Out.html" title="Last In First Out">Last In First Out</a> (LIFO)</i>. Stacks are used extensively at every level of a modern computer system. For example, a modern PC uses stacks at the <a href="/wiki/Architecture.html" title="Architecture">architecture</a> level, which are used to run an operating system. The operating system also uses stacks, which are used to run a <a href="/wiki/Java_Virtual_Machine.html" title="Java Virtual Machine">Java Virtual Machine</a>, which is stack oriented, and the <a href="/wiki/Java_programming_language.html" title="Java programming language">Java</a> language itself has a class called "Stack", which can be used by the programmer. The stack is ubiquitous.</p>
+<p>A <i>stack-based</i> computer system is one that stores temporary information primarily in stacks, rather than <a href="/wiki/Processor_register.html" title="Processor register">hardware CPU registers</a> (a <i>register-based</i> computer system).</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Abstract data type</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">1.1</span> <span class="toctext">Other Operations</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.2</span> <span class="toctext">Implementation</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.3</span> <span class="toctext">Related Data Structures</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Hardware Stacks</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">2.1</span> <span class="toctext">Basic architecture of a stack</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.2</span> <span class="toctext">Hardware support</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Software support</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Applications</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">4.1</span> <span class="toctext">Expression evaluation and syntax parsing</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.2</span> <span class="toctext">Runtime memory management</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.3</span> <span class="toctext">Solving search problems</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Security</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">History</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">8</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">9</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Abstract data type">edit</a>]</div>
+<p><a name="Abstract_data_type" id="Abstract_data_type"></a></p>
+<h2>Abstract data type</h2>
+<p>As an <a href="/wiki/Abstract_data_type.html" title="Abstract data type">abstract data type</a>, the stack is a <a href="/wiki/Container_%28data_structure%29.html" title="Container (data structure)">container (data structure)</a> of <a href="/wiki/Node_%28computer_science%29.html" title="Node (computer science)">nodes</a> and has two basic operations: <i>push</i> and <i>pop</i>. <i>Push</i> adds a given node to the top of the stack leaving previous nodes below. <i>Pop</i> removes and returns the current top node of the stack. A frequently used metaphor is the idea of a stack of plates in a spring loaded cafeteria stack. In such a stack, only the top plate is visible and accessible to the user, all other plates remain hidden. As new plates are added (pushed), each new plate becomes the top of the stack, and hides each plate below. As plates are removed (popped) from the stack, they can be used, and second plate becomes the top of the stack. Two important principles are illustrated by this metaphor, the <a href="/wiki/Last_In_First_Out.html" title="Last In First Out">Last In First Out</a> principle is one. The second is that the contents of the stack are hidden. Only the top plate is visible, so to see what is on the third plate, the first and second plates will have to be removed.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Other Operations">edit</a>]</div>
+<p><a name="Other_Operations" id="Other_Operations"></a></p>
+<h3>Other Operations</h3>
+<p>In modern computer languages, the stack is usually implemented with more operations than just "push" and "pop". The length of a stack can often be returned as a parameter. Another helper operation <i>peek</i> can return the current top node of the stack without removing it from the stack.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Implementation">edit</a>]</div>
+<p><a name="Implementation" id="Implementation"></a></p>
+<h3>Implementation</h3>
+<p>A typical storage requirement for a stack of <i>n</i> elements is <i><a href="/wiki/Big_O_notation.html" title="Big O notation">O</a>(n)</i>. The typical time requirement of <a href="/wiki/Big_O_notation.html" title="Big O notation">O</a>(1) operations is also easy to satisfy with an <a href="/wiki/Dynamic_array.html" title="Dynamic array">dynamic array</a> or (singly) <a href="/wiki/Linked_list.html" title="Linked list">linked list</a> implementation.</p>
+<p>C++'s <a href="/wiki/Standard_Template_Library.html" title="Standard Template Library">Standard Template Library</a> provides a "<code>stack</code>" templated class which is restricted to only push/pop operations. Java's library contains a <code><a  class="external text" title="http://java.sun.com/j2se/1.5.0/docs/api/java/util/Stack.html">Stack</a></code> class that is a specialization of Vector.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Related Data Structures">edit</a>]</div>
+<p><a name="Related_Data_Structures" id="Related_Data_Structures"></a></p>
+<h3>Related Data Structures</h3>
+<p>The abstract data type and data structure of the <i><a href="/wiki/First_In_First_Out.html" title="First In First Out">First In First Out</a> (FIFO)</i> principle is the <a href="/wiki/Queue.html" title="Queue">queue</a>, and the combination of stack and queue operations is provided by the <a href="/wiki/Deque.html" title="Deque">deque</a>. For example, changing a stack into a queue in a <a href="/wiki/Search_algorithm.html" title="Search algorithm">search algorithm</a> can change the algorithm from a <a href="/wiki/Depth-first_search.html" title="Depth-first search">depth-first search</a> (DFS) into a <a href="/wiki/Breadth-first_search.html" title="Breadth-first search">breadth-first search</a> (BFS).</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Hardware Stacks">edit</a>]</div>
+<p><a name="Hardware_Stacks" id="Hardware_Stacks"></a></p>
+<h2>Hardware Stacks</h2>
+<p>A common use of stacks at the Architecture level is as a means of allocating and accessing memory.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Basic architecture of a stack">edit</a>]</div>
+<p><a name="Basic_architecture_of_a_stack" id="Basic_architecture_of_a_stack"></a></p>
+<h3>Basic architecture of a stack</h3>
+<div class="thumb tright">
+<div style="width:352px;"><a  class="internal" title="A typical stack, storing local data and call information for nested procedures. This stack grows downward from its origin. The stack pointer points to the current topmost data item on the stack. A push operation decrements the pointer and copies the data to the stack; a pop operation copies data from the stack and then increments the pointer. Each procedure called in the program stores procedure return information (in yellow) and local data (in other colors) by pushing them onto the stack. This type of stack implementation is extremely common, but it is vulnerable to buffer overflow attacks (see the text)."><img src="http://upload.wikimedia.org/wikipedia/en/thumb/a/a7/ProgramCallStack2.png/350px-ProgramCallStack2.png" alt="A typical stack, storing local data and call information for nested procedures. This stack grows downward from its origin. The stack pointer points to the current topmost data item on the stack. A push operation decrements the pointer and copies the data to the stack; a pop operation copies data from the stack and then increments the pointer. Each procedure called in the program stores procedure return information (in yellow) and local data (in other colors) by pushing them onto the stack. This type of stack implementation is extremely common, but it is vulnerable to buffer overflow attacks (see the text)." width="350" height="416" longdesc="/wiki/Image:ProgramCallStack2.png" /></a>
+<div class="thumbcaption">
+<div class="magnify" style="float:right"><a  class="internal" title="Enlarge"><img src="/skins-1.5/common/images/magnify-clip.png" width="15" height="11" alt="Enlarge" /></a></div>
+A typical stack, storing local data and call information for nested procedures. This stack grows downward from its origin. The stack pointer points to the current topmost data item on the stack. A push operation decrements the pointer and copies the data to the stack; a pop operation copies data from the stack and then increments the pointer. Each procedure called in the program stores procedure return information (in yellow) and local data (in other colors) by pushing them onto the stack. This type of stack implementation is extremely common, but it is vulnerable to <a href="/wiki/Buffer_overflow.html" title="Buffer overflow">buffer overflow</a> attacks (see the text).</div>
+</div>
+</div>
+<p>A typical stack is an area of computer memory with a fixed origin and a variable size. Initially the size of the stack is zero. A <i>stack pointer,</i> usually in the form of a hardware register, points to the most recently referenced location on the stack; when the stack has a size of zero, the stack pointer points to the origin of the stack.</p>
+<p>The two operations applicable to all stacks are:</p>
+<ul>
+<li>a <i>push</i> operation, in which a data item is placed at the location pointed to by the stack pointer, and the address in the stack pointer is adjusted by the size of the data item;</li>
+<li>a <i>pop</i> or <i>pull</i> operation: a data item at the current location pointed to by the stack pointer is removed, and the stack pointer is adjusted by the size of the data item.</li>
+</ul>
+<p>There are many variations on the basic principle of stack operations. Every stack has a fixed location in memory at which it begins. As data items are added to the stack, the stack pointer is displaced to indicate the current extent of the stack, which expands away from the origin (either up or down, depending on the specific implementation).</p>
+<p>For example, a stack might start at a memory location of one thousand, and expand towards lower addresses, in which case new data items are stored at locations ranging below 1000, and the stack pointer is decremented each time a new item is added. When an item is removed from the stack, the stack pointer is incremented.</p>
+<p>Stack pointers may point to the origin of a stack or to a limited range of addresses either above or below the origin (depending on the direction in which the stack grows); however, the stack pointer cannot cross the origin of the stack. In other words, if the origin of the stack is at address 1000 and the stack grows downwards (towards addresses 999, 998, and so on), the stack pointer must never be incremented beyond 1000 (to 1001, 1002, etc.). If a pop operation on the stack causes the stack pointer to move past the origin of the stack, a <i>stack underflow</i> occurs. If a push operation causes the stack pointer to increment or decrement beyond the maximum extent of the stack, a <i>stack overflow</i> occurs.</p>
+<p>Some environments that rely heavily on stacks may provide additional operations, for example:</p>
+<ul>
+<li><i>Dup(licate)</i>: the top item is popped and pushed again so that an additional copy of the former top item is now on top, with the original below it.</li>
+<li><i>Peek</i>: the topmost item is popped, but the stack pointer is not changed, and the stack size does not change (meaning that the item remains on the stack). This is also called <b>top</b> operation in many articles.</li>
+<li><i>Swap</i> or <i>exchange</i>: the two topmost items on the stack exchange places.</li>
+<li><i>Rotate</i>: the <i>n</i> topmost items are moved on the stack in a rotating fashion. For example, if <i>n</i>=3, items 1, 2, and 3 on the stack are moved to positions 2, 3, and 1 on the stack, respectively. Many variants of this operation are possible, with the most common being called <i>left rotate</i> and <i>right rotate.</i></li>
+</ul>
+<p>Stacks are either visualized growing from the bottom up (like real-world stacks, see image, or, with the top of the stack in a fixed position, a coin holder <a  class="external autonumber" title="http://www.containerstore.com/browse/Product.jhtml?CATID=77006&amp;PRODID=64041">[1]</a>) or growing from left to right, so that "topmost" becomes "rightmost". This visualization may be independent of the actual structure of the stack in memory. This means that a <i>right rotate</i> will move the first element to the third position, the second to the first and the third to the second. Here are two equivalent visualisations of this process:</p>
+<pre>
+apple                                     banana
+banana                 ==right rotate==&gt;  cucumber
+cucumber                                  apple
+</pre>
+<pre>
+cucumber banana apple  ==right rotate==&gt;  apple cucumber banana
+</pre>
+<p>A stack is usually represented in computers by a block of memory cells, with the "bottom" at a fixed location, and the stack pointer holding the address of the current "top" cell in the stack. The top and bottom terminology are used irrespective of whether the stack actually grows towards lower memory addresses or towards higher memory addresses.</p>
+<p>Pushing an item on to the stack adjusts the stack pointer by the size of the item (either decrementing or incrementing, depending on the direction in which the stack grows in memory), pointing it to the next cell, and copies the new top item to the stack area. Depending again on the exact implementation, at the end of a push operation, the stack pointer may point to the next unused location in the stack, or it may point to the topmost item in the stack. If the stack points to the current topmost item, it will be updated before a new item is pushed onto the stack; if it points to the next available location in the stack, it will be updated <i>after</i> the new item is pushed onto the stack.</p>
+<p>Popping the stack is simply the inverse of pushing. The topmost item in the stack is removed and the stack pointer is updated, in the opposite order of that used in the push operation.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Hardware support">edit</a>]</div>
+<p><a name="Hardware_support" id="Hardware_support"></a></p>
+<h3>Hardware support</h3>
+<p>Many <a href="/wiki/Central_processing_unit.html" title="Central processing unit">CPUs</a> have registers that can be used as stack pointers. Some, like the <a href="/wiki/Intel_Corporation.html" title="Intel Corporation">Intel</a> <a href="/wiki/X86.html" title="X86">x86</a>, have special instructions that implicitly use a register dedicated to the job of being a stack pointer. Others, like the <a href="/wiki/Digital_Equipment_Corporation.html" title="Digital Equipment Corporation">DEC</a> <a href="/wiki/PDP-11.html" title="PDP-11">PDP-11</a> and the <a href="/wiki/Motorola.html" title="Motorola">Motorola</a> <a href="/wiki/68000_family.html" title="68000 family">68000 family</a> have addressing modes that make it possible to use any of a set of registers as a stack pointer. The <a href="/wiki/Intel_Corporation.html" title="Intel Corporation">Intel</a> <a href="/wiki/Intel_8087.html" title="Intel 8087">80x87</a> series of numeric coprocessors has a set of registers that can be accessed either as a stack or as a series of numbered registers. Some <a href="/wiki/Microcontroller.html" title="Microcontroller">microcontrollers</a>, for example, some <a href="/wiki/PIC_microcontroller.html" title="PIC microcontroller">PICs</a>, have a fixed-depth stack that is not directly accessible.</p>
+<p>There are also a number of microprocessors which implement a stack directly in hardware:</p>
+<ul>
+<li>Computer Cowboys MuP21</li>
+<li>Harris RTX line</li>
+<li>Novix NC4016</li>
+</ul>
+<p>Many stack-based microprocessors were used to implement the programming language <a href="/wiki/Forth.html" title="Forth">Forth</a> at the <a href="/wiki/Microcode.html" title="Microcode">microcode</a> level. Stacks were also used as a basis of a number of mainframes and mini computers. Such machines were called <a href="/wiki/Stack_machines.html" title="Stack machines">stack machines</a>, the most famous being the <a href="/wiki/Burroughs.html" title="Burroughs">Burroughs</a> <a href="/wiki/Burroughs_B5000.html" title="Burroughs B5000">B5000</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Software support">edit</a>]</div>
+<p><a name="Software_support" id="Software_support"></a></p>
+<h2>Software support</h2>
+<p>In application programs written in a <a href="/wiki/High_level_language.html" title="High level language">high level language</a>, a stack can be implemented efficiently using either <a href="/wiki/Array.html" title="Array">arrays</a> or <a href="/wiki/Linked_list.html" title="Linked list">linked lists</a>. In <a href="/wiki/LISP.html" title="LISP">LISP</a> there is no need to implement the stack, as the functions <b>push</b> and <b>pop</b> are available for any list. <a href="/wiki/PostScript.html" title="PostScript">Adobe PostScript</a> is also designed around a stack that is directly visible to and manipulated by the programmer.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Applications">edit</a>]</div>
+<p><a name="Applications" id="Applications"></a></p>
+<h2>Applications</h2>
+<p>Stacks are ubiquitous in the computing world.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Expression evaluation and syntax parsing">edit</a>]</div>
+<p><a name="Expression_evaluation_and_syntax_parsing" id="Expression_evaluation_and_syntax_parsing"></a></p>
+<h3>Expression evaluation and syntax parsing</h3>
+<p>Calculators employing <a href="/wiki/Reverse_Polish_notation.html" title="Reverse Polish notation">reverse Polish notation</a> use a stack structure to hold values. Expressions can be represented in prefix, postfix or infix notations. Conversion from one form of the expression to another form needs a stack. Many compilers use a stack for parsing the syntax of expressions, program blocks etc. before translating into low level code. Most of the programming languages are <a href="/wiki/Context-free_grammar.html" title="Context-free grammar">context-free languages</a> allowing them to be parsed with stack based machines. Note that natural languages are <a href="/wiki/Context_sensitive_language.html" title="Context sensitive language">context sensitive languages</a> and stacks alone are not enough to interpret their meaning.</p>
+<p>For example, The calculation: ((1 + 2) * 4) + 3 can be written down like this in postfix notation with the advantage of no precedence rules and parentheses needed:</p>
+<pre>
+12+4*3+
+</pre>
+<p>The expression is evaluated from the left to right using a stack:</p>
+<ul>
+<li>push when encountering an operand and</li>
+<li>pop two operands and evaluate the value when encountering an operation.</li>
+<li>push the result</li>
+</ul>
+<p>Like the following way (the <i>Stack</i> is displayed after <i>Operation</i> has taken place):</p>
+<table>
+<tr>
+<th>Input</th>
+<th>Operation</th>
+<th>Stack</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Push operand</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Push operand</td>
+<td>1, 2</td>
+</tr>
+<tr>
+<td>+</td>
+<td>Add</td>
+<td>3</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Push operand</td>
+<td>3, 4</td>
+</tr>
+<tr>
+<td>*</td>
+<td>Multiply</td>
+<td>12</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Push operand</td>
+<td>12, 3</td>
+</tr>
+<tr>
+<td>+</td>
+<td>Add</td>
+<td>15</td>
+</tr>
+</table>
+<p>The final result, 15, lies on the top of the stack at the end of the calculation.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Runtime memory management">edit</a>]</div>
+<p><a name="Runtime_memory_management" id="Runtime_memory_management"></a></p>
+<h3>Runtime memory management</h3>
+<dl>
+<dd>
+<div class="noprint"><i>Main articles: <a href="/wiki/Stack-based_memory_allocation.html" title="Stack-based memory allocation">Stack-based memory allocation</a> and <a href="/wiki/Stack_machine.html" title="Stack machine">Stack machine</a></i></div>
+</dd>
+</dl>
+<p>A number of <a href="/wiki/Programming_language.html" title="Programming language">programming languages</a> are <a href="/wiki/Stack-oriented_programming_language.html" title="Stack-oriented programming language">stack-oriented</a>, meaning they define most basic operations (adding two numbers, printing a character) as taking their arguments from the stack, and placing any return values back on the stack. For example, <a href="/wiki/PostScript.html" title="PostScript">PostScript</a> has a return stack and an operand stack, and also has a graphics state stack and a dictionary stack.</p>
+<p><a href="/wiki/Forth.html" title="Forth">Forth</a> uses two stacks, one for argument passing and one for subroutine return addresses. The use of a return stack is extremely commonplace, but the somewhat unusual use of an argument stack for a human-readable programming language is the reason Forth is referred to as a <i><a href="/wiki/Stack-oriented_programming_language.html" title="Stack-oriented programming language">stack-based</a></i> language.</p>
+<p>Many <a href="/wiki/Virtual_machine.html" title="Virtual machine">virtual machines</a> are also stack-oriented, including the <a href="/wiki/P-Code_machine.html" title="P-Code machine">p-Code machine</a> and the <a href="/wiki/Java_virtual_machine.html" title="Java virtual machine">Java virtual machine</a>.</p>
+<p>Almost all computer runtime memory environments use a special stack (the "<a href="/wiki/Call_stack.html" title="Call stack">call stack</a>") to hold information about procedure/function calling and nesting in order to switch to the context of the called function and restore to the caller function when the calling finishes. They follow a runtime protocol between caller and callee to save arguments and return value on the stack. Stacks are an important way of supporting nested or <a href="/wiki/Recursion.html" title="Recursion">recursive</a> function calls. This type of stack is used implicitly by the compiler to support CALL and RETURN statements (or their equivalents) and is not manipulated directly by the programmer.</p>
+<p>Some programming languages use the stack to store data that is local to a procedure. Space for local data items is allocated from the stack when the procedure is entered, and is deallocated when the procedure exits. The <a href="/wiki/C_programming_language.html" title="C programming language">C programming language</a> is typically implemented in this way. Using the same stack for both data and procedure calls has important security implications (see below) of which a programmer must be aware in order to avoid introducing serious security bugs into a program.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Solving search problems">edit</a>]</div>
+<p><a name="Solving_search_problems" id="Solving_search_problems"></a></p>
+<h3>Solving search problems</h3>
+<p>Solving a <a href="/wiki/Search_problem.html" title="Search problem">search problem</a>, regardless of whether the approach is exhaustive or optimal, needs stack space. Examples of exhaustive search methods are bruteforce and backtracking. Examples of optimal search exploring methods are branch and bound and <a href="/wiki/Heuristics.html" title="Heuristics">heuristic solutions</a>. All of these <a href="/wiki/Algorithm.html" title="Algorithm">algorithms</a> use stacks to remember the search nodes that have been noticed but not explored yet. The only alternative to using a stack is to use recursion and let the compiler do the remembering for you (but in this case the compiler is still using a stack internally). The use of stacks is prevalent in many problems, ranging from simple in-order traversals of trees or depth-first traversals of graphs to a <a href="/wiki/Crossword_puzzle.html" title="Crossword puzzle">crossword puzzle</a> solver or <a href="/wiki/Computer_chess.html" title="Computer chess">computer chess</a> game. Some of these problems can be solved by alternative data structures like a <a href="/wiki/Queue.html" title="Queue">queue</a>, when a different order of traversal is required.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Security">edit</a>]</div>
+<p><a name="Security" id="Security"></a></p>
+<h2>Security</h2>
+<p>Some computing environments use stacks in ways that may make them vulnerable to security breaches and attacks. Programmers working in such environments must take special care to avoid the pitfalls of these implementations.</p>
+<p>For example, some programming languages use a common stack to store both data local to a called procedure and the linking information that allows the procedure to return to its caller. This means that the program moves data into and out of the same stack that contains critical return addresses for the procedure calls. If data is moved to the wrong location on the stack, or an oversized data item is moved to a stack location that is not large enough to contain it, return information for procedure calls may be corrupted, causing the program to fail.</p>
+<p>Malicious parties may attempt to take advantage of this type of implementation by providing oversized data input to a program that does not check the length of input. Such a program may copy the data in its entirety to a location on the stack, and in so doing it may change the return addresses for procedures that have called it. An attacker can experiment to find a specific type of data that can be provided to such a program such that the return address of the current procedure is reset to point to an area within the stack itself (and within the data provided by the attacker), which in turn contains instructions that carry out unauthorized operations.</p>
+<p>This type of attack is a variation on the <a href="/wiki/Buffer_overflow.html" title="Buffer overflow">buffer overflow</a> attack and is an extremely frequent source of security breaches in software, mainly because some of the most popular programming languages (such as <a href="/wiki/C_programming_language.html" title="C programming language">C</a>) use a shared stack for both data and procedure calls, and do not verify the length of data items. Frequently programmers do not write code to verify the size of data items, either, and when an oversized or undersized data item is copied to the stack, a security breach may occur.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: History">edit</a>]</div>
+<p><a name="History" id="History"></a></p>
+<h2>History</h2>
+<p>The stack method of expression evaluation was first proposed by early German computer scientist <a href="/wiki/F.L._Bauer.html" title="F.L. Bauer">F.L. Bauer</a>, who received the <a href="/wiki/IEEE.html" title="IEEE">IEEE</a> Computer Society Pioneer Award in 1988 for his work on <i>Computer Stacks.</i></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li>Compare with <a href="/wiki/Queue.html" title="Queue">queue</a>, <a href="/wiki/Deque.html" title="Deque">deque</a></li>
+<li><a href="/wiki/Call_stack.html" title="Call stack">Call stack</a></li>
+<li>The <a href="/wiki/Computer_network.html" title="Computer network">computer networking</a> term <a href="/wiki/Protocol_stack.html" title="Protocol stack">protocol stack</a></li>
+<li><a href="/wiki/Stack_machine.html" title="Stack machine">stack machine</a></li>
+<li><a href="/wiki/Burroughs_B5000.html" title="Burroughs B5000">Burroughs B5000</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<ul>
+<li><a href="/wiki/Donald_Knuth.html" title="Donald Knuth">Donald Knuth</a>. <i>The Art of Computer Programming</i>, Volume 1: <i>Fundamental Algorithms</i>, Third Edition. Addison-Wesley, 1997. <a  class="internal">ISBN 0-201-89683-4</a>. Section 2.2.1: Stacks, Queues, and Deques, pp. 238–243.</li>
+<li><a href="/wiki/Thomas_H._Cormen.html" title="Thomas H. Cormen">Thomas H. Cormen</a>, <a href="/wiki/Charles_E._Leiserson.html" title="Charles E. Leiserson">Charles E. Leiserson</a>, <a href="/wiki/Ronald_L._Rivest.html" title="Ronald L. Rivest">Ronald L. Rivest</a>, and <a href="/wiki/Clifford_Stein.html" title="Clifford Stein">Clifford Stein</a>. <i><a href="/wiki/Introduction_to_Algorithms.html" title="Introduction to Algorithms">Introduction to Algorithms</a></i>, Second Edition. MIT Press and McGraw-Hill, 2001. <a  class="internal">ISBN 0-262-03293-7</a>. Section 10.1: Stacks and queues, pp.200–204.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://24bytes.com/stack.html">Stack program in c++</a></li>
+<li><a  class="external text" title="http://www.absint.com/stackanalyzer">StackAnalyzer</a></li>
+<li><a  class="external text" title="http://www.ece.cmu.edu/~koopman/stack_computers/index.html">Stack Machines - the new wave</a></li>
+<li><a  class="external text" title="http://www.cs.utah.edu/~regehr/stacktool">Bounding stack depth</a></li>
+<li><a  class="external text" title="http://research.avayalabs.com/project/libsafe/">Libsafe - Protecting Critical Elements of Stacks</a></li>
+<li><a  class="external text" title="http://compilers.cs.ucla.edu/avrora/stack.html">Stack Checker Tool</a></li>
+<li><a  class="external text" title="http://www.cs.ucla.edu/~palsberg/paper/sas03.pdf">Stack Size Analysis for Interrupt-driven Programs</a> (322 KB)</li>
+<li><a  class="external text" title="http://www.mycplus.com/utilitiesdetail.asp?iPro=1">Stack Implementation ( Graphical &amp; Text Mode)</a> C Language implementation of Stack</li>
+<li>Pointers to <a  class="external text" title="http://web-cat.cs.vt.edu/AlgovizWiki/Stacks">stack visualizations</a></li>
+</ul>
+
+<!-- 
+Pre-expand include size: 3219 bytes
+Post-expand include size: 489 bytes
+Template argument size: 310 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:273993-0!1!0!default!!en!2 and timestamp 20060906114500 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:Data structures">Data structures</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Stack_%28data_structure%29.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-be"><a >Беларуская</a></li>
+				<li class="interwiki-cs"><a >Česky</a></li>
+				<li class="interwiki-da"><a >Dansk</a></li>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-ko"><a >한국어</a></li>
+				<li class="interwiki-is"><a >Íslenska</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-he"><a >עברית</a></li>
+				<li class="interwiki-lb"><a >Lëtzebuergesch</a></li>
+				<li class="interwiki-lt"><a >Lietuvių</a></li>
+				<li class="interwiki-hu"><a >Magyar</a></li>
+				<li class="interwiki-nl"><a >Nederlands</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+				<li class="interwiki-sl"><a >Slovenščina</a></li>
+				<li class="interwiki-fi"><a >Suomi</a></li>
+				<li class="interwiki-sv"><a >Svenska</a></li>
+				<li class="interwiki-uk"><a >Українська</a></li>
+				<li class="interwiki-zh"><a >中文</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 11:44, 6 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv21 in 0.138 secs. --></body></html>

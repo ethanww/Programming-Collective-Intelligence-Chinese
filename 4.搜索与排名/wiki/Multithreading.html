@@ -1,0 +1,407 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Thread (computer science),1990s,Address space,Alan Burns,Andy Wellings,Apple Computer,Atomic (computer science),B programming language,Bill Lewis,Call stack,Central processing unit" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Thread (computer science) - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Thread_(computer_science)";
+			var wgTitle = "Thread (computer science)";
+			var wgArticleId = 45303;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Thread (computer science)</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub">(Redirected from <a  title="Multithreading">Multithreading</a>)</div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>A <b>thread</b> in <a href="/wiki/Computer_science.html" title="Computer science">computer science</a> is short for a <i>thread of execution</i>. Threads are a way for a <a href="/wiki/Computer_program.html" title="Computer program">program</a> to split itself into two or more simultaneously (or pseudo-simultaneously) running <a href="/wiki/Task_%28computers%29.html" title="Task (computers)">tasks</a>. The distinctions between threads and <a href="/wiki/Process_%28computing%29.html" title="Process (computing)">processes</a> differ from one <a href="/wiki/Operating_system.html" title="Operating system">operating system</a> to another, but in general, the way that a thread is created and shares its resources is different from the way a <a href="/wiki/Process_%28computing%29.html" title="Process (computing)">process</a> does.</p>
+<p>Multiple threads can be executed in parallel on many computer systems. This <i>multithreading</i> generally occurs by <a href="/wiki/Computer_multitasking.html" title="Computer multitasking">time slicing</a>, wherein a single <a href="/wiki/Central_processing_unit.html" title="Central processing unit">processor</a> <a href="/wiki/Context_switch.html" title="Context switch">switches</a> between different threads, in which case the processing is not literally simultaneous, for the single processor is only really doing one thing at a time. This switching can happen so fast as to give the illusion of simultaneity to an end user. For instance, a typical PC today contains only one processor, but you can run multiple programs at once, such as a word processor alongside an audio playback program; though the user experiences these things as simultaneous, in truth, the processor is quickly switching back and forth between these separate threads. On a multiprocessor system, threading can be achieved via <a href="/wiki/Multiprocessing.html" title="Multiprocessing">multiprocessing</a>, wherein different threads can run literally simultaneously on different processors.</p>
+<p>Many modern <a href="/wiki/Operating_system.html" title="Operating system">operating systems</a> directly support both time-sliced and multiprocessor threading with a process <a href="/wiki/Scheduler.html" title="Scheduler">scheduler</a>. The operating system <a href="/wiki/Kernel_%28computer_science%29.html" title="Kernel (computer science)">kernel</a> allows programmers to manipulate threads via the <a href="/wiki/System_call.html" title="System call">system call</a> interface. Some implementations are called a <i>kernel thread</i>, whereas a <i>lightweight process</i> is a specific type of <i>kernel thread</i> that shares the same state and information.</p>
+<p>Absent that, programs can still implement threading by using timers, signals, or other methods to interrupt their own execution and hence perform a sort of ad hoc time-slicing. These are sometimes called <i>user-space threads</i>.</p>
+<p>An unrelated use of the term <b>thread</b> is for <a href="/wiki/Threaded_code.html" title="Threaded code">threaded code</a>, which is a form of code consisting entirely of <a href="/wiki/Subroutine.html" title="Subroutine">subroutine</a> calls, written without the subroutine call instruction, and processed by an <a href="/wiki/Interpreter_%28computing%29.html" title="Interpreter (computing)">interpreter</a> or the <a href="/wiki/Central_processing_unit.html" title="Central processing unit">CPU</a>. Two threaded code languages are <a href="/wiki/Forth_programming_language.html" title="Forth programming language">Forth</a> and early <a href="/wiki/B_programming_language.html" title="B programming language">B programming languages</a>.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Threads compared with processes</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Processes, threads, and fibers</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">2.1</span> <span class="toctext">Thread and fiber issues</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.2</span> <span class="toctext">Relationships between processes, threads, and fibers</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Implementations</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">3.1</span> <span class="toctext">Kernel-level implementation examples</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.2</span> <span class="toctext">User-level implementation examples</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.3</span> <span class="toctext">Hybrid implementation examples</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Example program</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Threads compared with processes">edit</a>]</div>
+<p><a name="Threads_compared_with_processes" id="Threads_compared_with_processes"></a></p>
+<h2>Threads compared with processes</h2>
+<p>Threads are distinguished from traditional multi-tasking <a href="/wiki/Computer_process.html" title="Computer process">operating system processes</a> in that processes are typically independent, carry considerable <a href="/wiki/State_%28computer_science%29.html" title="State (computer science)">state</a> information, have separate <a href="/wiki/Address_space.html" title="Address space">address spaces</a>, and interact only through system-provided <a href="/wiki/Inter-process_communication.html" title="Inter-process communication">inter-process communication</a> mechanisms. Multiple threads, on the other hand, typically share the state information of a single process, and share <a href="/wiki/Computer_storage.html" title="Computer storage">memory</a> and other <a href="/wiki/Resource_%28computer_science%29.html" title="Resource (computer science)">resources</a> directly. <a href="/wiki/Context_switching.html" title="Context switching">Context switching</a> between threads in the same process is typically faster than context switching between processes. Systems like <a href="/wiki/Windows_NT.html" title="Windows NT">Windows NT</a> and <a href="/wiki/OS/2.html" title="OS/2">OS/2</a> are said to have "cheap" threads and "expensive" processes, while in other operating systems there is not so great a difference.</p>
+<p>Multithreading is a popular programming and execution model that allows multiple threads to exist within the context of a single process, sharing the process' resources but able to execute independently. The threaded programming model provides developers with a useful abstraction of concurrent execution. However, perhaps the most interesting application of the technology is when it is applied to a <i>single</i> process to enable <i>parallel execution</i> on a <i>multiprocessor</i> system.</p>
+<p>This advantage of a multi-threaded program allows it to operate faster on <a href="/wiki/Computer_system.html" title="Computer system">computer systems</a> that have multiple <a href="/wiki/Central_processing_unit.html" title="Central processing unit">CPUs</a>, CPUs with multiple cores, or across a <a href="/wiki/Computer_cluster.html" title="Computer cluster">cluster</a> of machines. This is because the threads of the program naturally lend themselves for truly <a href="/wiki/Concurrency_%28computer_science%29.html" title="Concurrency (computer science)">concurrent</a> <a href="/wiki/Execution_%28computers%29.html" title="Execution (computers)">execution</a>. In such a case, the <a href="/wiki/Programmer.html" title="Programmer">programmer</a> needs to be careful to avoid <a href="/wiki/Race_condition.html" title="Race condition">race conditions</a>, and other non-intuitive behaviors. In order for data to be correctly manipulated, threads will often need to <a href="/wiki/Rendezvous_problem.html" title="Rendezvous problem">rendezvous</a> in time in order to process the data in the correct order. Threads may also require <a href="/wiki/Atomic_%28computer_science%29.html" title="Atomic (computer science)">atomic</a> operations (often implemented using <a href="/wiki/Semaphore_%28programming%29.html" title="Semaphore (programming)">semaphores</a>) in order to prevent common data from being simultaneously modified, or read while in the process of being modified. Careless use of such primitives can lead to <a href="/wiki/Deadlock.html" title="Deadlock">deadlocks</a>.</p>
+<p>Operating systems generally implement threads in one of two ways: <a href="/wiki/Pre-emptive_multitasking.html" title="Pre-emptive multitasking">preemptive multithreading</a>, or <a href="/wiki/Co-operative_multitasking.html" title="Co-operative multitasking">cooperative multithreading</a>. Preemptive multithreading is generally considered the superior implementation, as it allows the operating system to determine when a <a href="/wiki/Context_switch.html" title="Context switch">context switch</a> should occur. Cooperative multithreading, on the other hand, relies on the threads themselves to relinquish control once they are at a stopping point. This can create problems if a thread is waiting for a resource to become available. The disadvantage to preemptive multithreading is that the system may make a context switch at an inappropriate time, causing <a href="/wiki/Priority_inversion.html" title="Priority inversion">priority inversion</a> or other bad effects which may be avoided by cooperative multithreading.</p>
+<p>Traditional mainstream computing hardware did not have much support for multithreading as switching between threads was generally already quicker than full process <a href="/wiki/Context_switch.html" title="Context switch">context switches</a>. Processors in <a href="/wiki/Embedded_systems.html" title="Embedded systems">embedded systems</a>, which have higher requirements for <a href="/wiki/Real-time.html" title="Real-time">real-time</a> behaviors, might support multithreading by decreasing the thread switch time, perhaps by allocating a dedicated register file for each thread instead of saving/restoring a common register file. In the late <a href="/wiki/1990s.html" title="1990s">1990s</a>, the idea of executing instructions from multiple threads simultaneously has become known as <a href="/wiki/Simultaneous_multithreading.html" title="Simultaneous multithreading">simultaneous multithreading</a>. This feature was introduced in <a href="/wiki/Intel.html" title="Intel">Intel</a>'s <a href="/wiki/Pentium_4.html" title="Pentium 4">Pentium 4</a> processor, with the name <i><a href="/wiki/Hyper-threading.html" title="Hyper-threading">Hyper-threading</a></i>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Processes, threads, and fibers">edit</a>]</div>
+<p><a name="Processes.2C_threads.2C_and_fibers" id="Processes.2C_threads.2C_and_fibers"></a></p>
+<h2>Processes, threads, and fibers</h2>
+<p>The concept of a <i>process</i>, <i>thread</i>, and <i>fiber</i> are interrelated by a sense of "ownership" and of containment.</p>
+<p>A <i>process</i> is the "heaviest" unit of kernel scheduling. Processes own resources allocated by the operating system. Resources include memory, file handles, sockets, device handles, and windows. Processes do not share address spaces or file resources except through explicit methods such as inheriting file handles or shared memory segments, or mapping the same file in a shared way. Processes are typically pre-emptively multitasked. However, Windows 3.1 and older versions of Mac OS used co-operative or non-preemptive multitasking.</p>
+<p>A <i>thread</i> is the "lightest" unit of kernel scheduling. At least one thread exists within each process. If multiple threads can exist within a process, then they share the same memory and file resources. Threads are pre-emptively multitasked if the operating system's process scheduler is pre-emptive. Threads do not own resources except for a <a href="/wiki/Call_stack.html" title="Call stack">stack</a> and a copy of the <a href="/wiki/Processor_register.html" title="Processor register">registers</a> including the <a href="/wiki/Program_counter.html" title="Program counter">program counter</a>.</p>
+<p>In some situations, there is a distinction between "kernel threads" and "user threads" -- the former are managed and scheduled by the kernel, whereas the latter are managed and scheduled in userspace. In this article, the term "thread" is used to refer to kernel threads, whereas "fiber" is used to refer to user threads. Fibers are <a href="/wiki/Co-operative_multitasking.html" title="Co-operative multitasking">co-operatively scheduled</a>: a running fiber must explicitly "yield" to allow another fiber to run. A fiber can be scheduled to run in any thread in the same process.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Thread and fiber issues">edit</a>]</div>
+<p><a name="Thread_and_fiber_issues" id="Thread_and_fiber_issues"></a></p>
+<h3>Thread and fiber issues</h3>
+<p>Typically fibers are implemented entirely in <a href="/wiki/Userspace.html" title="Userspace">userspace</a>. As a result, context switching between fibers in a process is extremely efficient: because the kernel is oblivious to the existence of fibers, a context switch does not require any interaction with the kernel at all. Instead, a context switch can be performed by locally saving the CPU registers used by the currently executing fiber and loading the registers required by the fiber to be executed. Since scheduling occurs in userspace, the scheduling policy can be more easily tailored to the requirements of the program's workload.</p>
+<p>However, the use of blocking system calls in fibers can be problematic. If a fiber performs a system call that blocks, the other fibers in the process are unable to run until the system call returns. A typical example of this problem is when performing I/O: most programs are written to perform I/O synchronously. When an I/O operation is initiated, a system call is made, and does not return until the I/O operation has been completed. In the intervening period, the entire process is "blocked" by the kernel and cannot run, which starves other fibers in the same process from executing.</p>
+<p>A common solution to this problem is providing an I/O API that implements a synchronous interface by using non-blocking I/O internally, and scheduling another fiber while the I/O operation is in progress. Similar solutions can be provided for other blocking system calls. Alternatively, the program can be written to avoid the use of synchronous I/O or other blocking system calls.</p>
+<p>Win32 supplies a fiber API. SunOS 4.x implemented "light-weight processes" or LWPs as fibers known as "green threads". <a href="/wiki/SunOS.html" title="SunOS">SunOS</a> 5.x and later, <a href="/wiki/NetBSD.html" title="NetBSD">NetBSD</a> 2.x, and <a href="/wiki/DragonFly_BSD.html" title="DragonFly BSD">DragonFly BSD</a> implement LWPs as threads as well.</p>
+<p>The use of kernel threads simplifies user code by moving some of the most complex aspects of threading into the kernel. The program doesn't need to schedule threads or explicitly yield the processor. User code can be written in a familiar procedural style, including calls to blocking APIs, without starving other threads. However, since the kernel may switch between threads at any time, kernel threading usually requires <a href="/wiki/Lock_%28computer_science%29.html" title="Lock (computer science)">locking</a> that wouldn't be necessary otherwise. Bugs caused by incorrect locking can be very subtle and hard to reproduce. Kernel threading also has performance limits. Each time a thread starts, blocks, or exits, the process must switch into kernel mode, then back into user mode. This context switch is fairly quick, but programs that create many short-lived threads can suffer a performance hit. Hybrid threading schemes are available which provide a balance between kernel threads and fibers.</p>
+<p>In most cases, the work required to use fibers is not justified, as most modern operating systems provide efficient support for threads.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Relationships between processes, threads, and fibers">edit</a>]</div>
+<p><a name="Relationships_between_processes.2C_threads.2C_and_fibers" id="Relationships_between_processes.2C_threads.2C_and_fibers"></a></p>
+<h3>Relationships between processes, threads, and fibers</h3>
+<p>The operating system creates a process for the purpose of running a program. Every process has at least one thread. On some operating systems, a process can have more than one thread. A thread can use fibers to implement cooperative multitasking to divide the thread's CPU time for multiple tasks. Generally, this is not done because threads are cheap, easy, and well-implemented in modern operating systems.</p>
+<p>Processes are used to run an instance of a program. Some programs like word processors are designed to have only one instance of themselves running at the same time. Sometimes, such programs just open up more windows to accommodate multiple simultaneous use. After all, you can go back and forth between five documents, but you can only edit one of them at a given instance.</p>
+<p>Other programs like <a href="/wiki/Operating_system_shell.html" title="Operating system shell">command shells</a> maintain a state that you want to keep separate. Each time you open a command shell in Windows, the operating system creates a process for that shell window. The shell windows do not affect each other. Some operating systems support multiple users being logged in simultaneously. It is typical for dozens or even hundreds to thousands of people to be logged into some <a href="/wiki/Unix.html" title="Unix">Unix</a> systems. Other than the possible sluggishness of an overloaded computer, the individual users are (usually) blissfully unaware of each other. If Bob runs a program, the operating system creates a process for it. If Alice then runs the same program, the operating system creates another process to run Alice's instance of that program. So if Bob's instance of the program crashes, Alice's instance does not. In this way, processes protect users from failures being experienced by other users. Because new processes created by a user also inherits its permissions, it also allows to maintain security between the users.</p>
+<p>However, there are times when a single process needs to do multiple things concurrently. The quintessential example is a program with a <a href="/wiki/Graphical_user_interface.html" title="Graphical user interface">graphical user interface</a> (GUI). The program must repaint its GUI and respond to user interaction even if it is currently <a href="/wiki/Spell-checker.html" title="Spell-checker">spell-checking</a> a document or playing a song. For situations like these, threads are used. Another example is the use of threads by <a href="/wiki/Web_server.html" title="Web server">web servers</a>. When a user visits a web site, a web server will often use a thread to serve the page to that user. If another user visits the site while the previous user is still being served, the web server can serve the second visitor by using a different thread. Thus, the second user does not have to wait for the first visitor to be served.</p>
+<p>Threads allow a program to do multiple things concurrently. Since the threads, spawned by a program, share the same address space, one thread can modify data that is used by another thread easily and efficiently. This is both a good and a bad thing. It is good because it facilitates easy communication between threads and allows high performance. It can be bad because a poorly written program may cause one thread to inadvertently overwrite data being used by another thread. The sharing of a single address space between multiple threads is one of the reasons that multithreaded programming is usually considered to be more difficult and error-prone than programming a single-threaded application.</p>
+<p>There are other potential problems as well such as deadlocks, <a href="/wiki/Livelock.html" title="Livelock">livelocks</a>, and <a href="/wiki/Race_condition.html" title="Race condition">race conditions</a>. However, all of these problems are concurrency issues and as such affect multi-process and multi-fiber models as well.</p>
+<p>There are situations where creating other processes remains useful, such as when an application requires some operations to be executed under the privileges of another user (<a href="/wiki/Privilege_separation.html" title="Privilege separation">privilege separation</a>), or that the operations are complex enough and that the application needs to make sure to avoid resource leaks. An example can be command shells, FTP or web servers which need to execute operations under various real system users (as opposed to virtual users). These being traditional processes, they independently have the ability to spawn threads as needed.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Implementations">edit</a>]</div>
+<p><a name="Implementations" id="Implementations"></a></p>
+<h2>Implementations</h2>
+<p>There are many different and incompatible implementations of threading. These include both kernel-level and user-level implementations.</p>
+<p>Note that fibers can be implemented without operating system support, although some operating systems or libraries provide explicit support for them. For example, recent versions of Microsoft Windows (Windows NT 3.51 SP3 and later) support a fiber API for applications that want to gain performance improvements by managing scheduling themselves, instead of relying on the kernel scheduler (which may not be tuned for the application). Microsoft SQL Server 2000's user mode scheduler, running in fiber mode, is an example of doing this.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Kernel-level implementation examples">edit</a>]</div>
+<p><a name="Kernel-level_implementation_examples" id="Kernel-level_implementation_examples"></a></p>
+<h3>Kernel-level implementation examples</h3>
+<ul>
+<li><a href="/wiki/Light_Weight_Kernel_Threads.html" title="Light Weight Kernel Threads">Light Weight Kernel Threads</a> in various BSDs</li>
+<li><a  class="new" title="MxN threading">M:N threading</a> (in BSDs)</li>
+<li><a href="/wiki/Native_POSIX_Thread_Library.html" title="Native POSIX Thread Library">Native POSIX Thread Library</a> for <a href="/wiki/Linux.html" title="Linux">Linux</a>, an implementation of the <a href="/wiki/POSIX_Threads.html" title="POSIX Threads">POSIX Threads</a> (pthreads) standard</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: User-level implementation examples">edit</a>]</div>
+<p><a name="User-level_implementation_examples" id="User-level_implementation_examples"></a></p>
+<h3>User-level implementation examples</h3>
+<ul>
+<li><a href="/wiki/GNU_Portable_Threads.html" title="GNU Portable Threads">GNU Portable Threads</a> <a  class="external autonumber" title="http://www.gnu.org/software/pth">[1]</a></li>
+<li><a href="/wiki/FSU_Pthreads.html" title="FSU Pthreads">FSU Pthreads</a></li>
+<li><a href="/wiki/Apple_Computer.html" title="Apple Computer">Apple Computer</a>'s <a  class="new" title="Thread Manager">Thread Manager</a></li>
+<li><a href="/wiki/REALbasic.html" title="REALbasic">REALbasic</a>'s cooperative threads</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Hybrid implementation examples">edit</a>]</div>
+<p><a name="Hybrid_implementation_examples" id="Hybrid_implementation_examples"></a></p>
+<h3>Hybrid implementation examples</h3>
+<ul>
+<li><a href="/wiki/Scheduler_activations.html" title="Scheduler activations">Scheduler activations</a> used by the NetBSD native POSIX threads library implementation (an N:M model as opposed to a 1:1 kernel or userspace implementation model)</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Example program">edit</a>]</div>
+<p><a name="Example_program" id="Example_program"></a></p>
+<h2>Example program</h2>
+<p>This is an example of a simple multi-threaded program written in the <a href="/wiki/Java_programming_language.html" title="Java programming language">Java programming language</a>. The program calculates <a href="/wiki/Prime_number.html" title="Prime number">prime numbers</a> until the user types the word "stop". Then the program prints how many prime numbers it found and exits. This example demonstrates how threads can access the same variable while working asynchronously. This example also demonstrates a simple "race condition". The thread printing prime numbers continues to do so for a short time after the user types "stop". Of course, this problem is easily corrected using standard programming techniques.</p>
+<pre>
+import java.io.*;
+
+public class Example implements Runnable
+{
+   static Thread threadCalculate;
+   static Thread threadListen;
+   long totalPrimesFound = 0;
+   
+   public static void main (String[] args)
+   {
+       Example e = new Example();
+       
+       threadCalculate = new Thread(e);
+       threadListen = new Thread(e);
+       
+       threadCalculate.start();
+       threadListen.start();
+   }
+   
+   public void run()
+   {
+       Thread currentThread = Thread.currentThread();
+       
+       if (currentThread == threadCalculate)
+           calculatePrimes();
+       else if (currentThread == threadListen)
+           listenForStop();
+   }
+   
+   public void calculatePrimes()
+   {
+       int n = 1;
+      
+       while (true)
+       {
+           n++;
+           boolean isPrime = true;
+          
+           for (int i = 2; i &lt; n; i++)
+               if ((n / i) * i == n)
+               {
+                   isPrime = false;
+                   break;
+               }
+          
+           if (isPrime)
+           {
+               totalPrimesFound++;
+               System.out.println(n);
+           }
+       }
+   }
+   
+   private void listenForStop()
+   {
+       BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
+       String line = "";
+       
+       while (!line.equals("stop"))
+       {
+           try
+           {
+               line = input.readLine();
+           }
+           catch (IOException exception) {}
+       }
+       
+       System.out.println("Found " + totalPrimesFound +
+           " prime numbers before you said stop");
+       System.exit(0);
+   }
+}
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Chip-level_multiprocessing.html" title="Chip-level multiprocessing">Chip-level multiprocessing</a></li>
+<li><a  class="new" title="Corn programming language">Corn programming language</a></li>
+<li><a href="/wiki/Simultaneous_multithreading.html" title="Simultaneous multithreading">Simultaneous multithreading</a></li>
+<li><a  class="new" title="List of multi-threading libraries">List of multi-threading libraries</a></li>
+<li><a href="/wiki/Clone_%28function%29.html" title="Clone (function)">clone()</a></li>
+<li><a href="/wiki/Communicating_sequential_processes.html" title="Communicating sequential processes">Communicating sequential processes</a></li>
+<li><a  class="new" title="Completion port">Completion port</a></li>
+<li><a href="/wiki/Computer_multitasking.html" title="Computer multitasking">Computer multitasking</a></li>
+<li><a href="/wiki/Exit_%28operating_system%29.html" title="Exit (operating system)">exit</a></li>
+<li><a href="/wiki/Fork_%28operating_system%29.html" title="Fork (operating system)">fork</a></li>
+<li><a href="/wiki/Lock-free_and_wait-free_algorithms.html" title="Lock-free and wait-free algorithms">Lock-free and wait-free algorithms</a></li>
+<li><a href="/wiki/Message_passing.html" title="Message passing">Message passing</a></li>
+<li><a href="/wiki/Priority_inversion.html" title="Priority inversion">Priority inversion</a></li>
+<li><a href="/wiki/Protothreads.html" title="Protothreads">Protothreads</a></li>
+<li><a href="/wiki/Synchronization.html" title="Synchronization">Synchronization</a></li>
+<li><a href="/wiki/Thread_safety.html" title="Thread safety">Thread safety</a></li>
+<li><a href="/wiki/Thread_pool_pattern.html" title="Thread pool pattern">Thread pool pattern</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<ul>
+<li><a  class="new" title="David R. Butenhof">David R. Butenhof</a>: <i>Programming with POSIX Threads</i>, Addison-Wesley, <a  class="internal">ISBN 0-201-63392-2</a></li>
+<li><a  class="new" title="Bradford Nichols">Bradford Nichols</a>, <a  class="new" title="Dick Buttlar">Dick Buttlar</a>, <a  class="new" title="Jacqueline Proulx Farell">Jacqueline Proulx Farell</a>: <i>Pthreads Programming</i>, O'Reilly &amp; Associates, <a  class="internal">ISBN 1-56592-115-1</a></li>
+<li><a  class="new" title="Charles J. Northrup">Charles J. Northrup</a>: <i>Programming with UNIX Threads</i>, John Wiley &amp; Sons, <a  class="internal">ISBN 0-471-13751-0</a></li>
+<li><a  class="new" title="Mark Walmsley">Mark Walmsley</a>: <i>Multi-Threaded Programming in C++</i>, Springer, <a  class="internal">ISBN 1-85233-146-1</a></li>
+<li><a href="/wiki/Paul_Hyde.html" title="Paul Hyde">Paul Hyde</a>: <i>Java Thread Programming</i>, Sams, <a  class="internal">ISBN 0-672-31585-8</a></li>
+<li><a href="/wiki/Bill_Lewis.html" title="Bill Lewis">Bill Lewis</a>: <i>Threads Primer: A Guide to Multithreaded Programming</i>, Prentice Hall, <a  class="internal">ISBN 0-13-443698-9</a></li>
+<li><a  class="new" title="Steve Kleiman">Steve Kleiman</a>, <a  class="new" title="Devang Shah">Devang Shah</a>, <a  class="new" title="Bart Smaalders">Bart Smaalders</a>: <i>Programming With Threads</i>, SunSoft Press, <a  class="internal">ISBN 0-13-172389-8</a></li>
+<li><a  class="new" title="Pat Villani">Pat Villani</a>: <i>Advanced WIN32 Programming: Files, Threads, and Process Synchronization</i>, Harpercollins Publishers, <a  class="internal">ISBN 0-87930-563-0</a></li>
+<li><a  class="new" title="Jim Beveridge">Jim Beveridge</a>, <a  class="new" title="Robert Wiener">Robert Wiener</a>: <i>Multithreading Applications in Win32</i>, Addison-Wesley, <a  class="internal">ISBN 0-201-44234-5</a></li>
+<li><a  class="new" title="Thuan Q. Pham">Thuan Q. Pham</a>, <a  class="new" title="Pankaj K. Garg">Pankaj K. Garg</a>: <i>Multithreaded Programming with Windows NT</i>, Prentice Hall, <a  class="internal">ISBN 0-13-120643-5</a></li>
+<li><a  class="new" title="Len Dorfman">Len Dorfman</a>, <a  class="new" title="Marc J. Neuberger">Marc J. Neuberger</a>: <i>Effective Multithreading in OS/2</i>, McGraw-Hill Osborne Media, <a  class="internal">ISBN 0-07-017841-0</a></li>
+<li><a href="/wiki/Alan_Burns.html" title="Alan Burns">Alan Burns</a>, <a href="/wiki/Andy_Wellings.html" title="Andy Wellings">Andy Wellings</a>: <i>Concurrency in ADA</i>, Cambridge University Press, <a  class="internal">ISBN 0-521-62911-X</a></li>
+<li><a  class="new" title="Uresh Vahalia">Uresh Vahalia</a>: <i>Unix Internals: the New Frontiers</i>, Prentice Hall, <a  class="internal">ISBN 0-13-101908-2</a></li>
+<li><a  class="new" title="Alan L. Dennis">Alan L. Dennis</a>: <i>.Net Multithreading</i> , Manning Publications Company, <a  class="internal">ISBN 1-930110-54-5</a></li>
+<li><a  class="new" title="Tobin Titus">Tobin Titus</a>, <a  class="new" title="Fabio Claudio Ferracchiati">Fabio Claudio Ferracchiati</a>, <a  class="new" title="Srinivasa Sivakumar">Srinivasa Sivakumar</a>, <a  class="new" title="Tejaswi Redkar">Tejaswi Redkar</a>, <a  class="new" title="Sandra Gopikrishna">Sandra Gopikrishna</a>: <i>C# Threading Handbook</i>, Peer Information Inc, <a  class="internal">ISBN 1-86100-829-5</a></li>
+<li><a  class="new" title="Tobin Titus">Tobin Titus</a>, <a  class="new" title="Fabio Claudio Ferracchiati">Fabio Claudio Ferracchiati</a>, <a  class="new" title="Srinivasa Sivakumar">Srinivasa Sivakumar</a>, <a  class="new" title="Tejaswi Redkar">Tejaswi Redkar</a>, <a  class="new" title="Sandra Gopikrishna">Sandra Gopikrishna</a>: <i>Visual Basic .Net Threading Handbook</i>, Wrox Press Inc, <a  class="internal">ISBN 1-86100-713-2</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://www.realworldtech.com/page.cfm?ArticleID=RWT122600000000">Real World Tech article by Paul DeMone</a> - Explaining different types of multithreading, hardware implementation requirements and the impact on software.</li>
+<li><a  class="external text" title="http://arstechnica.com/paedia/h/hyperthreading/hyperthreading-1.html">Ars Technica article about multithreading, etc</a></li>
+<li><a  class="external text" title="news:comp.programming.threads">Forum</a></li>
+<li><a  class="external text" title="http://www.serpentine.com/~bos/threads-faq/">Answers to frequently asked questions for comp.programming.threads</a></li>
+<li><a  class="external text" title="http://www.kegel.com/c10k.html">The C10K problem</a></li>
+<li><a  class="external text" title="http://www.cs.rice.edu/CS/Systems/ScalaServer/">System support for scalable network servers</a></li>
+<li>Article "<a  class="external text" title="http://gotw.ca/publications/concurrency-ddj.htm">The Free Lunch Is Over: A Fundamental Turn Toward Concurrency in Software</a>" by <a href="/wiki/Herb_Sutter.html" title="Herb Sutter">Herb Sutter</a></li>
+<li>Article "<a  class="external text" title="http://www.computer.org/portal/site/computer/index.jsp?pageID=computer_level1_article&amp;TheCat=1005&amp;path=computer/homepage/0506&amp;file=cover.xml&amp;xsl=article.xsl">The Problem with Threads</a>" by <a  class="new" title="Edward A. Lee">Edward A. Lee</a></li>
+<li><a  class="external text" title="http://www.dragonflybsd.org/goals/threads.cgi">DragonFly - Light Weight Kernel Threading Model</a></li>
+<li><a  class="external text" title="http://java.sun.com/docs/hotspot/threads/threads.html">Java(TM) and Solaris(TM) Threading</a></li>
+<li><a  class="external text" title="http://web.mit.edu/nathanw/www/usenix/">An Implementation of Scheduler Activations on the NetBSD Operating System</a></li>
+<li><a  class="external text" title="http://www.opengroup.org/onlinepubs/007908799/xsh/threads.html">POSIX Threads specification</a></li>
+<li><a  class="external text" title="http://developers.sun.com/prodtech/cc/cmt.html">Sun Studio multithreading tools</a> for Solaris OS and Linux</li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:45303-0!1!0!default!!en!2 and timestamp 20060909182832 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Operating system technology">Operating system technology</a></span> | <span dir='ltr'><a  title="Category:Concurrent computing">Concurrent computing</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Thread_%28computer_science%29.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-ar"><a >العربية</a></li>
+				<li class="interwiki-cs"><a >Česky</a></li>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-ko"><a >한국어</a></li>
+				<li class="interwiki-nl"><a >Nederlands</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+				<li class="interwiki-sr"><a >Српски / Srpski</a></li>
+				<li class="interwiki-sv"><a >Svenska</a></li>
+				<li class="interwiki-zh"><a >中文</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 18:28, 9 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv106 in 0.081 secs. --></body></html>

@@ -1,0 +1,446 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Reflection (computer science),Assembly language,C Sharp,C programming language,Citeseer,Class (computer science),Class library,Common Lisp,Compile-time,Compile time,Compiler" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Reflection (computer science) - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Reflection_(computer_science)";
+			var wgTitle = "Reflection (computer science)";
+			var wgArticleId = 314905;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Reflection (computer science)</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>In <a href="/wiki/Computer_science.html" title="Computer science">computer science</a>, <b>reflection</b> is the process by which a <a href="/wiki/Computer_program.html" title="Computer program">computer program</a> of the appropriate type can be modified in the process of being executed, in a manner that depends on abstract features of its code and its <a href="/wiki/Runtime.html" title="Runtime">runtime</a> behavior. Figuratively speaking, it is then said that the program has the ability to "observe" and possibly to modify its own structure and behavior. Typically, <b>reflection</b> refers to runtime or dynamic reflection, though some programming languages support <a href="/wiki/Compile_time.html" title="Compile time">compile time</a> or <a href="/wiki/Static.html" title="Static">static</a> reflection. It is most common in high-level virtual machine programming languages like <a href="/wiki/Smalltalk.html" title="Smalltalk">Smalltalk</a>, and less common in lower-level programming languages like <a href="/wiki/C_programming_language.html" title="C programming language">C</a>.</p>
+<p>More generally, <b>reflection</b> is an activity in computation that allows an <a href="/wiki/Object-oriented_programming.html" title="Object-oriented programming">object</a> to have information about the structure and reason about its own computation. The programming paradigm driven by reflection is called <i>reflective programming</i>.</p>
+<p>When program <a href="/wiki/Source_code.html" title="Source code">source code</a> is <a href="/wiki/Compiler.html" title="Compiler">compiled</a>, information about the structure of the program is normally lost as <a href="/wiki/Low-level_programming_language.html" title="Low-level programming language">lower level</a> code (typically <a href="/wiki/Assembly_language.html" title="Assembly language">assembly language</a> code) is produced. If a system supports reflection, the structure is preserved as <a href="/wiki/Metadata_%28computing%29.html" title="Metadata (computing)">metadata</a> with the emitted code.</p>
+<p>In languages that do not make a distinction between <a href="/wiki/Runtime.html" title="Runtime">runtime</a> and <a href="/wiki/Compile-time.html" title="Compile-time">compile-time</a> (<a href="/wiki/Lisp_programming_language.html" title="Lisp programming language">Lisp</a> and <a href="/wiki/Forth_programming_language.html" title="Forth programming language">Forth</a>, for example), there is no difference between compilation or interpretation of code and reflection.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Reflective paradigm</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Uses of reflection</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Implementation</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Example</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Reflective paradigm">edit</a>]</div>
+<p><a name="Reflective_paradigm" id="Reflective_paradigm"></a></p>
+<h2>Reflective paradigm</h2>
+<p>Reflective programming, also called reflection-oriented programming, is used to write programs in a reflective (or reflection-oriented) paradigm. Reflective programming is a new programming paradigm, used as an extension to the object-oriented programming paradigm, to add self-optimization to application programs, and to improve their flexibility. In this paradigm, computation is equated not with a program but with execution of a program. Other imperative approaches, such as procedural or object-oriented paradigm, specify that there is a pre-determined sequence of operations (function or method calls), that modify any data or object they are given. In contrast, the reflective paradigm states that the sequence of operations won't be decided at compile time, rather the flow of sequence will be decided dynamically, based on the data that needs to be operated upon, and what operation needs to be performed. The program will only code the sequence of how to identify the data and how to decide which operation to perform.</p>
+<p>Any computation can be classified as either of two:</p>
+<ul>
+<li>Atomic - The operation completes in a single logical step, such as addition of two numbers.</li>
+<li>Compound - Defined as a sequence of multiple atomic operations.</li>
+</ul>
+<p>A compound statement, in classic procedural or object-oriented program, loses its structure once it is compiled. But reflective paradigm introduces the concept of <i>meta-information</i>, which keeps knowledge of this structure. This meta-information stores information such as the name of the contained methods, name of the class, name of parent classes, or even what the compound statement is supposed to do. This is achieved by keeping information of the change of states that the statement causes the data to go through. So, when a datum (object) is encountered, it can be reflected to find out the operations that it supports, and the one that causes the required state transition can be chosen at run-time, without having any need to specify it in code.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Uses of reflection">edit</a>]</div>
+<p><a name="Uses_of_reflection" id="Uses_of_reflection"></a></p>
+<h2>Uses of reflection</h2>
+<p>Reflection can be used for self-optimization or self-modification of a program. A reflective sub-component of a program will monitor the execution of a program and will optimize or modify itself according to the function the program is solving. This is done by modifying the program's own memory area, where the code is stored.</p>
+<p>Reflection can also be used to adapt a given system dynamically to different situations. Consider, for example, an application that uses some class X to communicate with some service. Now suppose it needed to communicate with a different service, via a different class Y, which has different method names. If the method names were hard coded into the application, it would need to be rewritten, but if it used reflection this could be avoided. Using reflection, the application would have a knowledge about the methods in class X. And class X could be designed to provide information regarding which method is being used for what purpose. The application, depending on what it has to do, would select the required method and use it. Now, when the different service is being used, via class Y, the application would search the methods in the new class to find the required methods and use them. No modification of the code is necessary. Even the class name need not be hard coded, rather it can be stored in a configuration file, it will be correctly searched for and loaded at run time.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Implementation">edit</a>]</div>
+<p><a name="Implementation" id="Implementation"></a></p>
+<h2>Implementation</h2>
+<p>A language supporting reflection provides a number of features available at runtime that would otherwise be very obscure or impossible to accomplish in a lower-level language. Some of these features are the abilities to:</p>
+<ul>
+<li>Discover and modify source code constructions (such as code blocks, <a href="/wiki/Class_%28computer_science%29.html" title="Class (computer science)">classes</a>, methods, protocols, etc.) as first-class objects at runtime.</li>
+<li>Convert a <a href="/wiki/String_%28computer_science%29.html" title="String (computer science)">string</a> matching the symbolic name of a class or function into a reference to or invocation of that class or function.</li>
+<li>Evaluate a string as if it were a source code statement at runtime.</li>
+</ul>
+<p>These features can be implemented in different ways. <a href="/wiki/Interpreted_programming_language.html" title="Interpreted programming language">Interpreted programming languages</a>, such as <a href="/wiki/Ruby_programming_language.html" title="Ruby programming language">Ruby</a> and <a href="/wiki/PHP.html" title="PHP">PHP</a>, are ideally suited to reflection, since their source code is never lost in the process of translation to machine language—the interpreter has the source readily available.</p>
+<p>In <a href="/wiki/MOO_programming_language.html" title="MOO programming language">MOO</a>, reflection forms a natural part of everyday programming idiom. When verbs (methods) are called, various variables such as <i>verb</i> (the name of the verb being called) and <i>this</i> (the object on which the verb is called) are populated to give the context of the call. Security is typically managed by accessing the caller stack programmatically: Since <i>callers()</i> is a list of the methods by which the current verb was eventually called, performing tests on callers()[1] (the command invoked by the original user) allows the verb to protect itself against unauthorised use.</p>
+<p>Compiled languages rely on their runtime system to provide information about the source code. A compiled <a href="/wiki/Objective-C.html" title="Objective-C">Objective-C</a> executable, for example, records the names of all methods in a block of the executable, providing a table to correspond these with the underlying methods (or <a href="/wiki/Selector.html" title="Selector">selectors</a> for these methods) compiled into the program. In a compiled language that supports runtime creation of functions, such as <a href="/wiki/Common_Lisp.html" title="Common Lisp">Common Lisp</a>, the runtime environment must include a compiler or an interpreter.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Example">edit</a>]</div>
+<p><a name="Example" id="Example"></a></p>
+<h2>Example</h2>
+<p>The following is an example in <a href="/wiki/Java_programming_language.html" title="Java programming language">Java</a> using the <a href="/wiki/Java_package.html" title="Java package">Java package</a> <code><a  class="external text" title="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/reflect/package-summary.html">java.lang.reflect</a></code>. Consider two pieces of code</p>
+<pre>
+// Without reflection
+Foo foo = new Foo();
+foo.hello();
+</pre>
+<pre>
+// With reflection
+Class cl = Class.forName("Foo");
+Method method = cl.getMethod("hello", null);
+method.invoke(cl.newInstance(), null);
+</pre>
+<p>Both code fragments create an instance of a class <code>Foo</code> and call its <code>hello()</code> method. The difference is that, in the first fragment, the names of the class and method are hard-coded; it is not possible to use a class of another name. In the second fragment, the names of the class and method can easily be made to vary at <a href="/wiki/Runtime.html" title="Runtime">runtime</a>. The downside is that the second version is harder to read, and is not protected by compile-time syntax and semantic checking. For example, if no class Foo exists, an error will be generated at compile time for the first version. The equivalent error will only be generated at run time for the second version.</p>
+<p>Here is an equivalent example in <a href="/wiki/Perl.html" title="Perl">Perl</a>:</p>
+<pre>
+# without reflection
+Foo-&gt;new-&gt;hello;
+</pre>
+<pre>
+# with reflection
+my $class = "Foo";
+my $method = "hello";
+$class-&gt;new-&gt;$method;
+</pre>
+<p>The following example, written in <a href="/wiki/C_Sharp.html" title="C Sharp">C#</a>, demonstrates the use of advanced features of reflection. The program takes the name of an assembly as input from the command-line. An assembly can be thought of as a <a href="/wiki/Class_library.html" title="Class library">class library</a>. The assembly is loaded, and reflection is used to find its methods. For each method, it uses reflection to find whether it was recently modified or not. If it was recently modified, and if it does not require any parameters, the name and return type of the method is displayed.</p>
+<p>To find whether a method was recently modified or not, the developer needs to use a custom <i>attribute</i>, to define the method as recently modified, and the assembly which contains the class is attributed to be supporting the attribute. The presence of the attribute denotes the method to be recently modified, and its absence denotes it to be old. An attribute is <a href="/wiki/Metadata.html" title="Metadata">metadata</a> regarding the program structure, here a <a href="/wiki/Method_%28programming%29.html" title="Method (programming)">method</a>. An attribute is itself implemented as a class. When using the assembly, the program loads the assembly dynamically at runtime, and checks the assembly for the attribute which says that the assembly supports the attribute which specifies methods as old or recently modified. If it is supported, names of all the methods are then retrieved. For each method, its attributes are retrieved. If the attribute which marks the method as new is present, the list of parameters which the method takes is retrieved. If the list is empty, i.e., the method does not take any arguments, it is printed along with the return type of the method and the comment that the developer might have added to make the attribute, which defines the method to be recent, more informative.</p>
+<pre>
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Reflection;
+using Recent;
+
+namespace Reflect
+{
+    class Program
+    {
+        private Assembly a;
+        Program(String assemblyName)
+        {
+            a = Assembly.Load(new AssemblyName(assemblyName));
+            //Make sure the assembly supports the DateCreated attribute
+            Attribute c=Attribute.GetCustomAttribute(a, typeof(SupportsRecentlyModifiedAttribute));
+            if (c == null)
+            {
+                 //Retrieval of "SupportsRecentlyModified" attribute failed.
+                 //This means that the assembly probably doesn't support it.
+                 throw new Exception(assemblyName + " does not support required attributes");
+            }
+            Console.WriteLine("Loaded: " + a.FullName);
+        }
+
+        public void FindNewMethodsWithNoArgs()
+        {
+            //Get all types defined in the assembly
+            Type[] t = a.GetTypes();
+            foreach (Type type in t)
+            {
+                //If this type is not a class, skip it and try the next type
+                if (!type.IsClass)
+                    continue;
+                Console.WriteLine("Class: " + type.FullName);
+                MethodInfo[] methods = type.GetMethods();
+                foreach (MethodInfo method in methods)
+                {
+                    object[] a=method.GetCustomAttributes(typeof(RecentlyModifiedAttribute), true);
+                    //If no attribute is retrieved, the method is old.
+                    if (a.Length != 0)
+                    {
+                        //Otherwise, only one attribute will be received, as "RecentlyModified" does
+                        //not support usage with another attribute
+                        Console.Write("\tNew Method: " + method.Name);
+                        //A class representing "RecentlyModifiedAttribute" is instantiated
+                        //from the attribute and it is used to retrieve the comment that
+                        //the developer put in.
+                        if (method.GetParameters.Length &gt; 0)
+                            break;
+                        Console.WriteLine("\t" + (a[0] as RecentlyModifiedAttribute).comment);
+                        Console.WriteLine("\t\tReturn type: " + method.ReturnType.Name);
+                    }
+                }
+            }
+        }
+
+        static void Main(string[] args)
+        {
+            try
+            {
+                Program reflector = new Program("UseAttributes");//Console.ReadLine());
+                reflector.FindNewMethodsWithNoArgs();
+            }
+            catch (Exception e)
+            {
+                Console.Error.WriteLine(e.Message);
+            }
+        }
+    }
+}
+</pre>
+<p>The implementation of the custom attributes is shown here.</p>
+<pre>
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Recent
+{
+    //Make sure the attribute is applied only to methods 
+    //and that it can not be used with other attributes.
+    [AttributeUsage(AttributeTargets.Method, AllowMultiple=false, Inherited=true)]
+    public class RecentlyModifiedAttribute : Attribute
+    {
+        //The Attribute is expected to be used on methods without any arguments
+        //(as in [RecentlyModified])
+        //or with comments (as in [RecentlyModified(comment="&lt;someComment&gt;")])
+
+        private String Comment = "This method has recently been modified";
+        public RecentlyModifiedAttribute()
+        {
+            //This is an empty constructor handling instantiation of the attribute
+            //It is empty because no arguments is necessary for use of the attribute
+        }
+
+        //Optional named argument "comment" has to be supported. So a property "comment" is defined
+        //specifying how to handle the comment. It has to be used as a named argument when the 
+        //Attribute is being used. This will tell the compiler which property handles the argument.
+        public String comment
+        {
+            get
+            {
+                return Comment;
+            }
+            set
+            {
+                Comment = comment;
+            }
+        }
+    }
+
+    [AttributeUsage(AttributeTargets.Assembly, AllowMultiple=false)]
+    public class SupportsRecentlyModifiedAttribute : Attribute
+    {
+        //The attribute is to be used with classes without any arguments
+        //as in [SupportsRecentlyModified]
+        public SupportsRecentlyModifiedAttribute()
+        {
+            //The constructor is empty because no arguments are required to use the attribute
+        }
+    }
+}
+</pre>
+<p>And the usage of the custom attributes, defined above, in building a class is shown here.</p>
+<pre>
+using System;
+using System.Collections.Generic;
+using System.Text;
+using Recent;
+
+//Use "SupportsRecentlyModified" attribute to specify that the 
+//assembly supports the "RecentlyModified" attribute
+[assembly: SupportsRecentlyModified]
+
+namespace Reflect
+{
+    class UseAttributes
+    {
+        private Object info;
+
+        public UseAttributes()
+        {
+            info = (object) "Hello World";
+        }
+
+        public void OldMethodWithNoArgs()
+        {
+            Console.WriteLine("This is an old method which takes no arguments.");
+        }
+
+        //Use the "RecentlyModified" attribute to specify that the method was recently modified.
+        [RecentlyModified]
+        public void NewMethodWithNoArgs()
+        {
+            Console.WriteLine("This is a recently modified method that takes no arguments.");
+        }
+
+        public void OldMethodWithOneArg(object something)
+        {
+            info = something;
+            Console.WriteLine("This is an old method that takes one argument.");
+        }
+
+        [RecentlyModified]
+        public void NewMethodWithOneArg(object something)
+        {
+            info = something;
+            Console.WriteLine("This is a new method that takes one argument.");
+        } 
+
+    }
+}
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Self-modifying_code.html" title="Self-modifying code">Self-modifying code</a></li>
+<li><a href="/wiki/Programming_paradigm.html" title="Programming paradigm">Programming paradigms</a></li>
+<li><a href="/wiki/List_of_reflective_programming_languages_and_platforms.html" title="List of reflective programming languages and platforms">List of reflective programming languages and platforms</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<ul>
+<li><a  class="external text" title="http://www.cs.indiana.edu/~jsobel/rop.html">Reflection-oriented programming</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://citeseer.ist.psu.edu/106401.html">Reflection in logic, functional and object-oriented programming: a Short Comparative Study</a> (<a href="/wiki/Citeseer.html" title="Citeseer">Citeseer</a> page).</li>
+<li><a  class="external text" title="http://www.cs.indiana.edu/~jsobel/rop.html">An Introduction to Reflection-Oriented Programming</a></li>
+</ul>
+
+<!-- 
+Pre-expand include size: 1462 bytes
+Post-expand include size: 338 bytes
+Template argument size: 145 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:314905-0!1!0!default!!en!2 and timestamp 20060906012459 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:Programming paradigms">Programming paradigms</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Reflection_%28computer_science%29.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-ko"><a >한국어</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-lt"><a >Lietuvių</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+				<li class="interwiki-vi"><a >Tiếng Việt</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 21:33, 5 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv116 in 0.079 secs. --></body></html>

@@ -1,0 +1,314 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Exception handling,.NET Framework,Ada programming language,Anders Hejlsberg,C++,CLU programming language,Call stack,Common Lisp,Computer hardware,D programming language,Delphi programming language" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Exception handling - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Exception_handling";
+			var wgTitle = "Exception handling";
+			var wgArticleId = 59231;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Exception handling</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p><b>Exception handling</b> is a <a href="/wiki/Programming_language.html" title="Programming language">programming language</a> construct or <a href="/wiki/Computer_hardware.html" title="Computer hardware">computer hardware</a> mechanism designed to handle the occurrence of some condition that changes the normal flow of execution. The condition is called an <b>exception</b>. Alternative concepts are <a href="/wiki/Signal_%28computing%29.html" title="Signal (computing)">signal</a> and <a href="/wiki/Event_handler.html" title="Event handler">event handler</a>.</p>
+<p>In general, current state will be saved in a predefined location and execution will switch to a predefined <a href="/wiki/Subroutine.html" title="Subroutine">handler</a>. Depending on the situation, the handler may later resume the execution at the original location, using the saved information to restore the original state. For example, an exception which will usually be resumed is a <a href="/wiki/Page_fault.html" title="Page fault">page fault</a>, while a <a href="/wiki/Division_by_zero.html" title="Division by zero">division by zero</a> usually cannot be resolved transparently.</p>
+<p>From the processing point of view, hardware <a href="/wiki/Interrupt.html" title="Interrupt">interrupts</a> are similar to resumable exceptions, except they are usually not related to the current program flow.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Exception safety</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Exception support in programming languages</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Checked exceptions</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">3.1</span> <span class="toctext">Pros and cons</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Condition systems</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">4.1</span> <span class="toctext">Separating mechanism from policy</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Exception safety">edit</a>]</div>
+<p><a name="Exception_safety" id="Exception_safety"></a></p>
+<h2>Exception safety</h2>
+<p>A piece of code is said to be <b>exception-safe</b> if run-time failures within the code will not produce ill-effects, such as <a href="/wiki/Memory_leak.html" title="Memory leak">memory leaks</a>, garbled data or invalid output. Exception-safe code must satisfy <a href="/wiki/Invariant.html" title="Invariant">invariants</a> placed on the code even if exceptions occur. There are several levels of exception safety:</p>
+<ol>
+<li><b>failure transparency</b>, operations are guaranteed to succeed and satisfy all requirements even in presence of exceptional situations. (best)</li>
+<li><b>commit or rollback semantics</b>, operations can fail, but failed operations are guaranteed to have no side effects.</li>
+<li><b>basic exception safety</b>, partial execution of failed operations can cause side effects, but invariants on the state are preserved (that is, any stored data will contain valid values).</li>
+<li><b>minimal exception safety</b>, partial execution of failed operations may store invalid data but will not cause a crash.</li>
+<li><b>no exception safety</b>, no guarantees are made. (worst)</li>
+</ol>
+<p>Usually at least basic exception safety is required. Failure transparency is difficult to implement, and is usually not possible in libraries where complete knowledge of the application is not available.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Exception support in programming languages">edit</a>]</div>
+<p><a name="Exception_support_in_programming_languages" id="Exception_support_in_programming_languages"></a></p>
+<h2>Exception support in programming languages</h2>
+<dl>
+<dd>
+<div class="boilerplate seealso"><i>See also: <a href="/wiki/Exception_handling_syntax.html" title="Exception handling syntax">Exception handling syntax</a></i></div>
+</dd>
+</dl>
+<p>Many computer languages, such as <a href="/wiki/Ada_programming_language.html" title="Ada programming language">Ada</a>, <a href="/wiki/C%2B%2B.html" title="C++">C++</a>, <a href="/wiki/Common_Lisp.html" title="Common Lisp">Common Lisp</a>, <a href="/wiki/D_programming_language.html" title="D programming language">D</a>, <a href="/wiki/Delphi_programming_language.html" title="Delphi programming language">Delphi</a>, <a href="/wiki/Eiffel_programming_language.html" title="Eiffel programming language">Eiffel</a>, <a href="/wiki/Java_programming_language.html" title="Java programming language">Java</a>, <a href="/wiki/Objective-C.html" title="Objective-C">Objective-C</a>, <a href="/wiki/Ocaml.html" title="Ocaml">Ocaml</a>, <a href="/wiki/PHP.html" title="PHP">PHP</a> (as of version 5), <a href="/wiki/Python_programming_language.html" title="Python programming language">Python</a>, <a href="/wiki/REALbasic.html" title="REALbasic">REALbasic</a>, <a href="/wiki/Seed7.html" title="Seed7">Seed7</a>, <a href="/wiki/ML_programming_language.html" title="ML programming language">ML</a>, <a href="/wiki/Ruby_%28programming_language%29.html" title="Ruby (programming language)">Ruby</a>, and all <a href="/wiki/.NET_Framework.html" title=".NET Framework">.NET</a> languages have built-in support for exceptions and exception handling. In those languages, the advent of an exception (more precisely, an exception handled by the language) unwinds the <a href="/wiki/Call_stack.html" title="Call stack">stack</a> of function calls until an exception handler is found. That is, if function <i>f</i> contains a handler <i>H</i> for exception <i>E</i>, calls function <i>g</i>, which in turn calls function <i>h</i>, and an exception <i>E</i> occurs in <i>h</i>, then functions <i>h</i> and <i>g</i> will be terminated and <i>H</i> in <i>f</i> will handle <i>E</i>.</p>
+<p>Excluding minor syntactic differences, there are only a couple of exception handling styles in use. In the most popular style, an exception is initiated by a special statement (<code>throw</code>, or <code>raise</code>) with an exception object. The scope for exception handlers starts with a marker clause (<code>try</code>, or the language's block starter such as <code>begin</code>) and ends in the start of the first handler clause (<code>catch</code>, <code>except</code>, <code>rescue</code>). Several handler clauses can follow, and each can specify which exception classes it handles and what name it uses for the exception object.</p>
+<p>A few languages also permit a clause (<code>else</code>) that is used in case no exception occurred before the end of the handler's scope was reached. More common is a related clause (<code>finally</code>, or <code>ensure</code>) that is executed whether an exception occurred or not, typically to release resources acquired within the body of the exception-handling block. Notably, C++ lacks this clause, and the <a href="/wiki/Resource_Acquisition_Is_Initialization.html" title="Resource Acquisition Is Initialization">Resource Acquisition Is Initialization</a> technique is used to free such resources instead.</p>
+<p>In its whole, exception handling code might look like this (in <a href="/wiki/Pseudocode.html" title="Pseudocode">pseudocode</a>):</p>
+<pre>
+try {
+ line = console.readLine();
+ if (line.length() == 0) {
+  throw new EmptyLineException("The line read from console was empty!");
+ }
+ console.printLine("Hello %s!" % line);
+} catch (EmptyLineException e) {
+ console.printLine("Hello!");
+} catch (Exception e) {
+ console.printLine("Error: " + e.message());
+} else {
+ console.printLine("The program ran successfully");
+} finally {
+ console.printLine("The program terminates now");
+}
+</pre>
+<p>As a minor variation, some languages use a single handler clause, which deals with the class of the exception internally.</p>
+<p>Languages such as Perl and C don't use the term exception handling, but include facilities that allow implementing similar functionality.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Checked exceptions">edit</a>]</div>
+<p><a name="Checked_exceptions" id="Checked_exceptions"></a></p>
+<h2>Checked exceptions</h2>
+<p>Designers of Java introduced to the language <i><b>checked exceptions</b></i> which are a special set of exceptions. The checked exceptions that may arise when calling a method constitute part of the type of the method. For instance, if a method might throw an <code>IOException</code> instead of returning successfully, it must declare this fact in its method header. Failure to do so raises a compile-time error.</p>
+<p>This is related to exception checkers that exist at least for <a href="/wiki/OCaml.html" title="OCaml">OCaml</a>. The external tool for OCaml is both transparent (i.e. it does not require any syntactic annotations) and facultative (i.e. it is possible to compile and run a program without having checked the exceptions, although this is not suggested for production code).</p>
+<p>The <a href="/wiki/CLU_programming_language.html" title="CLU programming language">CLU programming language</a> had a feature that was technically closer to what Java has introduced later. A function could raise only exceptions listed in its type, but any leaking exceptions from called functions would automatically be turned into the sole runtime exception, <code>failure</code>, instead of resulting in compile-time error.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Pros and cons">edit</a>]</div>
+<p><a name="Pros_and_cons" id="Pros_and_cons"></a></p>
+<h3>Pros and cons</h3>
+<p>Checked exceptions can, at compile time, greatly reduce (but not entirely eliminate) the incidence of unhandled exceptions surfacing at runtime in a given application; the unchecked exceptions (<code>RuntimeException</code>s and <code>Error</code>s) can still go unhandled.</p>
+<p>However, some see checked exceptions as a nuisance, <a href="/wiki/Syntactic_sugar.html" title="Syntactic sugar">syntactic salt</a> that either requires large <code>throws</code> declarations, often revealing implementation details and reducing encapsulation, or encourages the (ab)use of poorly-considered <code>try/catch</code> blocks that can potentially hide legitimate exceptions from their appropriate handlers.</p>
+<p>Others do not consider this a nuisance as you can reduce the number of declared exceptions by either declaring a <a href="/wiki/Superclass_%28computer_science%29.html" title="Superclass (computer science)">superclass</a> of all potentionally thrown exceptions or by defining and declaring exception types that are suitable for the level of abstraction of the called method <sup><span class="reference" id="ref_Blochnone"><a  title="">(Bloch 2001:178)</a></span></sup>, and mapping lower level exceptions to these types, preferably wrapped using the <a href="/wiki/Exception_chaining.html" title="Exception chaining">exception chaining</a> in order to preserve the root cause.</p>
+<p>A simple <code>throws Exception</code> declaration or <code>catch (Exception e)</code> is always sufficient to satisfy the checking. While this technique is sometimes useful, it effectively circumvents the checked exception mechanism, so it should only be used after careful consideration.</p>
+<p>One prevalent view is that unchecked exception types should not be handled, except maybe at the outermost levels of scope, as they often represent scenarios that do not allow for recovery: <code>RuntimeException</code>s frequently reflect programming defects <sup><span class="reference" id="ref_Blochnone"><a  title="">(Bloch 2001:172)</a></span></sup>, and <code>Error</code>s generally represent unrecovereable JVM failures. The view is that, even in a language that supports checked exceptions, there are cases where the use of checked exceptions is not appropriate.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Condition systems">edit</a>]</div>
+<p><a name="Condition_systems" id="Condition_systems"></a></p>
+<h2>Condition systems</h2>
+<p><a href="/wiki/Common_Lisp.html" title="Common Lisp">Common Lisp</a>, <a href="/wiki/Dylan_programming_language.html" title="Dylan programming language">Dylan</a> and <a href="/wiki/Smalltalk.html" title="Smalltalk">Smalltalk</a> have a <a  class="new" title="Condition system">Condition system</a> which encompasses the aforementioned exception handling systems. In those languages or environments the advent of a condition (a "generalisation of an error" according to <a href="/wiki/Kent_Pitman.html" title="Kent Pitman">Kent Pitman</a>) implies a function call, and only late in the exception handler the decision to unwind the stack may be taken.</p>
+<p>Conditions are a generalization of exceptions. When a condition arises, an appropriate condition handler is searched for and selected, in stack order, to handle the condition. Conditions which do not represent errors may safely go unhandled entirely; their only purpose may be to propagate hints or warnings toward the user. <a  class="external autonumber" title="http://www.franz.com/support/documentation/6.2/ansicl/section/conditio.htm">[1]</a></p>
+<p>This is related to the so-called <b><a  class="new" title="Resumption model">resumption model</a></b> of exception handling, in which some <i>exceptions</i> are said to be <b>continuable</b>: it is permitted to return to the expression that signaled an exception, after having taken corrective action in the handler. The condition system is generalized thus: within the handler of a non-serious condition (a.k.a. <i>continuable exception</i>), it is possible to jump to predefined restart points (a.k.a. <i><a href="/wiki/Restart.html" title="Restart">restarts</a></i>) that lie between the signaling expression and the condition handler. Restarts are functions closed over some lexical environment, allowing the programmer to repair this environment before exiting the condition handler completely or unwinding the stack even partially.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Separating mechanism from policy">edit</a>]</div>
+<p><a name="Separating_mechanism_from_policy" id="Separating_mechanism_from_policy"></a></p>
+<h3>Separating mechanism from policy</h3>
+<p>Condition handling moreover provides a separation of mechanism from policy. Restarts provide various possible mechanisms for recovering from error, but do not select which mechanism is appropriate in a given situation. That is the province of the condition handler, which (since it is located in higher-level code) has access to a broader view.</p>
+<p>An example: Suppose there is a library function whose purpose is to parse a single <a href="/wiki/Syslog.html" title="Syslog">syslog</a> file entry. What should this function do if the entry is malformed? There is no one right answer, because the same library could be deployed in programs for many different purposes. In an interactive log-file browser, the right thing to do might be to return the entry unparsed, so the user can see it -- but in an automated log-summarizing program, the right thing to do might be to supply null values for the unreadable fields, but abort with an error if too many entries have been malformed.</p>
+<p>That is to say, the question can only be answered in terms of the broader goals of the program, which are not known to the general-purpose library function. Nonetheless, exiting with an error message is only rarely the right answer. So instead of simply exiting with an error, the function may <i>establish restarts</i> offering various ways to continue -- for instance, to skip the log entry, to supply default or null values for the unreadable fields, to ask the user for the missing values, <i>or</i> to unwind the stack and abort processing with an error message. The restarts offered constitute the <i><a href="/wiki/Mechanism.html" title="Mechanism">mechanisms</a></i> available for recovering from error; the selection of restart by the condition handler supplies the <i><a href="/wiki/Policy.html" title="Policy">policy</a></i>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<ol>
+<li><cite id="endnote_Blochnone"><a  title=""><b><sup>^</sup></b></a></cite>  <cite class="book" style="font-style:normal" id="Reference-Bloch-2001">Bloch, Joshua (2001). <i>Effective Java Programming Language Guide</i>. Addison-Wesley Professional. <a  class="internal">ISBN 0-201-31005-8</a>.</cite></li>
+</ol>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Triple_fault.html" title="Triple fault">Triple fault</a></li>
+<li><a href="/wiki/Setjmp/longjmp.html" title="Setjmp/longjmp">setjmp/longjmp</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li>Article "<a  class="external text" title="http://www.cs.nott.ac.uk/~gmh/exceptions.pdf">Compiling Exceptions Correctly</a>" by <a  class="new" title="Graham Hutton">Graham Hutton</a> and <a  class="new" title="Joel Wright">Joel Wright</a></li>
+<li>Article "<a  class="external text" title="http://onjava.com/pub/a/onjava/2003/11/19/exceptions.html">Best Practices for Exception Handling</a>" by <a  class="new" title="Gunjan Doshi">Gunjan Doshi</a></li>
+<li>Article "<a  class="external text" title="http://java.sun.com/developer/technicalArticles/Programming/exceptions2/index.html">Exceptional practices</a>" by <a  class="new" title="Brian Goetz">Brian Goetz</a></li>
+<li>Article "<a  class="external text" title="http://oreillynet.com/pub/a/network/2003/05/05/cpluspocketref.html">Programming with Exceptions in C++</a>" by <a  class="new" title="Kyle Loudon">Kyle Loudon</a></li>
+<li>Article "<a  class="external text" title="http://perl.com/pub/a/2002/11/14/exception.html">Object Oriented Exception Handling in Perl</a>" by <a  class="new" title="Arun Udaya Shankar">Arun Udaya Shankar</a></li>
+<li>Article "<a  class="external text" title="http://intel.com/cd/ids/developer/asmo-na/eng/81438.htm">How to Implement Software Exception Handling</a>"</li>
+<li>Article "<a  class="external text" title="http://codeproject.com/cpp/exceptionhandler.asp">How a C++ compiler implements exception handling</a>" by <a  class="new" title="Vishal Kochhar">Vishal Kochhar</a></li>
+<li>Article "<a  class="external text" title="http://codeproject.com/cpp/exception.asp">Several classes for exception handling</a>" by <a  class="new" title="Konstantin Boukreev">Konstantin Boukreev</a></li>
+<li>Article "<a  class="external text" title="http://codeproject.com/dotnet/ExceptionHandling.asp">User Friendly Exception Handling</a>"</li>
+<li>Article "<a  class="external text" title="http://www.on-time.com/ddj0011.htm">Exception Handling in C without C++</a>" by <a  class="new" title="Tom Schotland">Tom Schotland</a> and <a  class="new" title="Peter Petersen">Peter Petersen</a></li>
+<li>Article "<a  class="external text" title="http://www.andreashalter.ch/phpug/20040115/">What are Exceptions? - The Concept</a>" by <a  class="new" title="Andreas Halter">Andreas Halter</a></li>
+<li>Article "<a  class="external text" title="http://www.gamedev.net/reference/programming/features/sehbasics/">Structured Exception Handling Basics</a>" by <a  class="new" title="Vadim Kokielov">Vadim Kokielov</a></li>
+<li>Paper "<a  class="external text" title="http://www.informatik.uni-hamburg.de/TGI/pnbib/f/faustmann_g1.html">Exception Handling in Petri-Net-based Workflow Management</a>" by <a  class="new" title="Gert Faustmann">Gert Faustmann</a> and <a  class="new" title="Dietmar Wikarski">Dietmar Wikarski</a></li>
+<li>Paper "<a  class="external text" title="http://www.ssw.uni-linz.ac.at/Research/Papers/Hof97b.html">Zero-Overhead Exception Handling Using Metaprogramming</a>"</li>
+<li><a  class="external text" title="http://www.object-arts.com/EducationCentre/Overviews/ExceptionHandling.htm">Overview for Smalltalk</a></li>
+<li><a  class="external text" title="http://c2.com/cgi/wiki?CategoryException">Descriptions from Portland Pattern Repository</a></li>
+<li><a  class="external text" title="http://citeseer.ifi.unizh.ch/cis?q=exception+handling">Citations by CiteSeer</a></li>
+<li><a  class="external text" title="http://www.microsoft.com/msj/0197/exception/exception.aspx">A Crash Course on the Depths of Win32 Structured Exception Handling</a> by <a href="/wiki/Matt_Pietrek.html" title="Matt Pietrek">Matt Pietrek</a> - Microsoft Systems Journal (1997)</li>
+<li><a  class="external text" title="http://artima.com/intv/handcuffsP.html">The Trouble with Checked Exceptions</a> - a conversation with <a href="/wiki/Anders_Hejlsberg.html" title="Anders Hejlsberg">Anders Hejlsberg</a></li>
+<li><a  class="external text" title="http://www.mindview.net/Etc/Discussions/CheckedExceptions">Does Java Need Checked Exceptions?</a></li>
+<li><a  class="external text" title="http://neil.fraser.name/writing/exception/">Problems and Benefits of Exception Handling</a></li>
+<li><a  class="external text" title="http://www.digitalmars.com/d/exception-safe.html">Exception Safe Programming</a> in the D programming language</li>
+<li><a  class="external text" title="http://codebetter.com/blogs/karlseguin/archive/2006/04/05/142355.aspx">Understanding and Using Exceptions in .NET</a></li>
+</ul>
+
+<!-- 
+Pre-expand include size: 4687 bytes
+Post-expand include size: 1334 bytes
+Template argument size: 1222 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:59231-0!1!0!default!!en!2 and timestamp 20060909194818 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:Programming constructs">Programming constructs</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Exception_handling.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-he"><a >עברית</a></li>
+				<li class="interwiki-nl"><a >Nederlands</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+				<li class="interwiki-simple"><a >Simple English</a></li>
+				<li class="interwiki-fi"><a >Suomi</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 06:56, 8 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv106 in 0.701 secs. --></body></html>

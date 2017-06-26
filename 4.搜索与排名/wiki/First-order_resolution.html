@@ -1,0 +1,289 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Resolution (logic),Automated theorem proving,Clause (logic),Conjunctive normal form,DPLL algorithm,Davis-Putnam algorithm,Existential quantification,Factorization,First-order logic,Inference,Literal" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Resolution (logic) - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Resolution_(logic)";
+			var wgTitle = "Resolution (logic)";
+			var wgArticleId = 2724082;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Resolution (logic)</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub">(Redirected from <a  title="First-order resolution">First-order resolution</a>)</div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>In <a href="/wiki/Mathematical_logic.html" title="Mathematical logic">mathematical logic</a> and <a href="/wiki/Automated_theorem_proving.html" title="Automated theorem proving">automated theorem proving</a>, <b>resolution</b> is a rule of <a href="/wiki/Inference.html" title="Inference">inference</a> leading to a <a href="/wiki/Reductio_ad_absurdum.html" title="Reductio ad absurdum">refutation</a> <a href="/wiki/Theorem-proving.html" title="Theorem-proving">theorem-proving</a> technique for sentences in <a href="/wiki/Propositional_logic.html" title="Propositional logic">propositional logic</a> and <a href="/wiki/First-order_logic.html" title="First-order logic">first-order logic</a>.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Resolution in propositional logic</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">1.1</span> <span class="toctext">Resolution rule</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.2</span> <span class="toctext">A resolution technique</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Resolution in first order logic</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Resolution in propositional logic">edit</a>]</div>
+<p><a name="Resolution_in_propositional_logic" id="Resolution_in_propositional_logic"></a></p>
+<h3>Resolution in propositional logic</h3>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Resolution rule">edit</a>]</div>
+<p><a name="Resolution_rule" id="Resolution_rule"></a></p>
+<h4>Resolution rule</h4>
+<p>The <b>resolution rule</b> in propositional logic is a single valid <a href="/wiki/Inference.html" title="Inference">inference</a> rule producing, from two <a href="/wiki/Clause_%28logic%29.html" title="Clause (logic)">clauses</a>, a new clause implied by them. The resolution rule takes two clauses - a clause is a disjunction of <a href="/wiki/Literal.html" title="Literal">literals</a> - containing complementary literals, and produces a new clause with all the literals of both except for the complementary ones. Formally, whereas <span class="texhtml"><i>a</i><sub><i>i</i></sub></span> and <span class="texhtml"><i>b</i><sub><i>j</i></sub></span> are complementary literals:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/c/4/c/c4c787ea7cc1fce70aada86ebf3c0a1a.png" alt="\frac{ a_1 \lor \ldots \vee a_{i-1} \vee a_i \vee a_{i+1} \vee \ldots \lor a_n,  \quad b_1 \lor \ldots \vee b_{j-1} \vee b_j \vee b_{j+1} \vee \ldots \lor b_m} {a_1 \lor \ldots \lor a_{i-1} \lor a_{i+1} \lor \ldots \lor a_n  \lor  b_1 \lor \ldots \lor b_{j-1} \lor b_{j+1} \lor \ldots \lor b_m}" /></dd>
+</dl>
+<p>The clause produced by the resolution rule is called the <i>resolvent</i> of the two input clauses.</p>
+<p>When the two clauses contain more than one pair of complementary literals, the resolution rule can be applied (independently) for each such pair. However, only the pair of literals that are resolved upon can be removed: all other pair of literals remain in the resolvent clause.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: A resolution technique">edit</a>]</div>
+<p><a name="A_resolution_technique" id="A_resolution_technique"></a></p>
+<h4>A resolution technique</h4>
+<p>When coupled with a complete <a href="/wiki/Search_algorithm.html" title="Search algorithm">search algorithm</a>, the resolution rule yields a sound and complete algorithm for deciding the <i>satisfiability</i> of a propositional formula, and, by extension, the validity of a sentence under a set of axioms.</p>
+<p>This resolution technique uses <a href="/wiki/Proof_by_contradiction.html" title="Proof by contradiction">proof by contradiction</a> and is based on the fact that any sentence in propositional logic can be transformed into an equivalent sentence in <a href="/wiki/Conjunctive_normal_form.html" title="Conjunctive normal form">conjunctive normal form</a>. The steps are as follow:</p>
+<ul>
+<li>All sentences in the knowledge base and the <i>negation</i> of the sentence to be proved (the <i>conjecture</i>) are conjunctively connected.</li>
+<li>The resulting sentence is transformed into a conjunctive normal form (treated as a set of clauses, <i>S</i>).</li>
+<li>The resolution rule is applied to all possible pairs of clauses that contains complementary literals. After each application of the resolution rule, the resulting sentence is simplified by removing repeated literals. If the sentence contains complementary literals, it is discarded (as a <a href="/wiki/Tautology.html" title="Tautology">tautology</a>). If not, and if it is not yet present in the clause set <i>S</i>, it is added to <i>S</i>, and is considered for further resolution inferences.</li>
+<li>If after applying a resolution rule the <i>empty clause</i> is derived, the complete formula is unsatisfiable (or <i>contradictory</i>), and hence it can be concluded that the initial conjecture follows from the axioms.</li>
+<li>If, on the other hand, the empty clause cannot be derived, and the resolution rule cannot be applied to derive any more new clauses, the conjecture is not a theorem of the original knowledge base.</li>
+</ul>
+<p>One instance of this algorithm is the original <a href="/wiki/Davis-Putnam_algorithm.html" title="Davis-Putnam algorithm">Davis-Putnam algorithm</a> that was later refined into the <a href="/wiki/DPLL_algorithm.html" title="DPLL algorithm">DPLL algorithm</a> that removed the need for explicit representation of the resolvants.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Resolution in first order logic">edit</a>]</div>
+<p><a name="Resolution_in_first_order_logic" id="Resolution_in_first_order_logic"></a></p>
+<h3>Resolution in first order logic</h3>
+<p>In first order logic resolution condenses the traditional <a href="/wiki/Syllogism.html" title="Syllogism">syllogisms</a> of <a href="/wiki/Rule_of_inference.html" title="Rule of inference">logical inference</a> down to a single rule.</p>
+<p>To understand how resolution works, consider the following example syllogism of <a href="/wiki/Term_logic.html" title="Term logic">term logic</a>:</p>
+<pre>
+All Greeks are Europeans.
+Homer is a Greek.
+Therefore, Homer is a European.
+</pre>
+<p>Or, more generally:</p>
+<pre>
+∀X, P(X) implies Q(X).
+P(a).
+Therefore, Q(a).
+</pre>
+<p>To recast the reasoning using the resolution technique, first the clauses must be converted to <a href="/wiki/Conjunctive_normal_form.html" title="Conjunctive normal form">conjunctive normal form</a>. In this form, all <a href="/wiki/Quantification.html" title="Quantification">quantification</a> becomes implicit: <a href="/wiki/Universal_quantification.html" title="Universal quantification">universal quantifiers</a> on variables (X, Y...) are simply omitted as understood, while <a href="/wiki/Existential_quantification.html" title="Existential quantification">existentially-quantified</a> variables are replaced by <a href="/wiki/Skolem_function.html" title="Skolem function">Skolem functions</a>.</p>
+<pre>
+¬P(X) ∨ Q(X)
+P(a) 
+Therefore, Q(a)
+</pre>
+<p>So the question is, how does the resolution technique derive the last clause from the first two? The rule is simple:</p>
+<ul>
+<li>Find two clauses containing the same predicate, where it is negated in one clause but not in the other.</li>
+<li>Perform a <a href="/wiki/Unification.html" title="Unification">unification</a> on the two predicates. (If the unification fails, you made a bad choice of predicates. Go back to the previous step and try again.)</li>
+<li>If any unbound variables which were bound in the unified predicates also occur in other predicates in the two clauses, replace them with their bound values (terms) there as well.</li>
+<li>Discard the unified predicates, and combine the remaining ones from the two clauses into a new clause, also joined by the "∨" operator.</li>
+</ul>
+<p>To apply this rule to the above example, we find the predicate P occurs in negated form</p>
+<pre>
+¬P(X)
+</pre>
+<p>in the first clause, and in non-negated form</p>
+<pre>
+P(a)
+</pre>
+<p>in the second clause. X is an unbound variable, while a is a bound value (atom). Unifying the two produces the substitution</p>
+<pre>
+X =&gt; a
+</pre>
+<p>Discarding the unified predicates, and applying this substitution to the remaining predicates (just Q(X), in this case), produces the conclusion:</p>
+<pre>
+Q(a)
+</pre>
+<p>For another example, consider the syllogistic form</p>
+<pre>
+All Cretans are islanders.
+All islanders are liars.
+Therefore all Cretans are liars.
+</pre>
+<p>Or more generally,</p>
+<pre>
+∀X P(X) implies Q(X)
+∀X Q(X) implies R(X)
+Therefore, ∀X P(X) implies R(X)
+</pre>
+<p>In CNF, the antecedents become:</p>
+<pre>
+¬P(X) ∨ Q(X)
+¬Q(Y) ∨ R(Y)
+</pre>
+<p>(Note that the variable in the second clause was renamed to make it clear that variables in different clauses are distinct.)</p>
+<p>Now, unifying Q(X) in the first clause with ¬Q(Y) in the second clause means that X and Y become the same variable anyway. Substituting this into the remaining clauses and combining them gives the conclusion:</p>
+<pre>
+ ¬P(X) ∨ R(X)
+</pre>
+<p>The resolution rule (with additional <a href="/wiki/Factorization.html" title="Factorization">factoring</a>) similarly subsumes all the other syllogistic forms of traditional logic.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li>Alex Sakharov, <i><a  class="external text" title="http://mathworld.wolfram.com/ResolutionPrinciple.html">Resolution Principle</a></i> at <a href="/wiki/MathWorld.html" title="MathWorld">MathWorld</a>.</li>
+<li>Alex Sakharov, <i><a  class="external text" title="http://mathworld.wolfram.com/Resolution.html">Resolution</a></i> at <a href="/wiki/MathWorld.html" title="MathWorld">MathWorld</a>.</li>
+</ul>
+
+<!-- 
+Pre-expand include size: 1196 bytes
+Post-expand include size: 207 bytes
+Template argument size: 85 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:2724082-0!1!0!default!!en!2 and timestamp 20060906011637 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Rules of inference">Rules of inference</a></span> | <span dir='ltr'><a  title="Category:Logical calculi">Logical calculi</a></span> | <span dir='ltr'><a  title="Category:Mathematical logic">Mathematical logic</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Resolution_%28logic%29.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-hu"><a >Magyar</a></li>
+				<li class="interwiki-nl"><a >Nederlands</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-zh"><a >中文</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 10:10, 27 June 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv39 in 0.202 secs. --></body></html>

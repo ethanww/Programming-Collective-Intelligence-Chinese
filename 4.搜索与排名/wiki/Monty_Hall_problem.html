@@ -1,0 +1,485 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Monty Hall problem,Monty Hall problem.ogg,1990,1991,2005,2006,Asperger syndrome,August 6,Bayes' theorem,Boy or Girl,Calcul des probabilités" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Monty Hall problem - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Monty_Hall_problem";
+			var wgTitle = "Monty Hall problem";
+			var wgArticleId = 19671;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Monty Hall problem</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<div class="thumb tright">
+<div style="width:182px;"><a  class="internal" title="In search of a new car, the player picks door 1. The game host then opens door 3 to reveal a goat and offers to let the player pick door 2 instead of door 1."><img src="http://upload.wikimedia.org/wikipedia/en/1/1e/Montyflip.png" alt="In search of a new car, the player picks door 1. The game host then opens door 3 to reveal a goat and offers to let the player pick door 2 instead of door 1." width="180" height="96" longdesc="/wiki/Image:Montyflip.png" /></a>
+<div class="thumbcaption">
+<div class="magnify" style="float:right"><a  class="internal" title="Enlarge"><img src="/skins-1.5/common/images/magnify-clip.png" width="15" height="11" alt="Enlarge" /></a></div>
+In search of a new car, the player picks door 1. The game host then opens door 3 to reveal a goat and offers to let the player pick door 2 instead of door 1.</div>
+</div>
+</div>
+<p>The <b>Monty Hall problem</b> is a puzzle involving <a href="/wiki/Probability.html" title="Probability">probability</a> loosely based on the American game show <i><a href="/wiki/Let%27s_Make_a_Deal.html" title="Let's Make a Deal">Let's Make a Deal</a></i>. The name comes from the show's host, <a href="/wiki/Monty_Hall.html" title="Monty Hall">Monty Hall</a>. A widely known, but problematic (see below) statement of the problem is from Craig F. Whitaker of <a href="/wiki/Columbia%2C_Maryland.html" title="Columbia, Maryland">Columbia, Maryland</a> in a letter to <a href="/wiki/Marilyn_vos_Savant.html" title="Marilyn vos Savant">Marilyn vos Savant</a>'s <a href="/wiki/September_9.html" title="September 9">September 9</a>, <a href="/wiki/1990.html" title="1990">1990</a>, column in <i><a href="/wiki/Parade_Magazine.html" title="Parade Magazine">Parade Magazine</a></i> (as quoted by Bohl, Liberatore, and Nydick).</p>
+<blockquote>
+<p><i>Suppose you're on a game show, and you're given the choice of three doors: Behind one door is a car; behind the others, goats. You pick a door, say No. 1, and the host, who knows what's behind the doors, opens another door, say No. 3, which has a goat. He then says to you, "Do you want to pick door No. 2?" Is it to your advantage to switch your choice?</i></p>
+</blockquote>
+<p>The problem is also called the <b>Monty Hall paradox</b>; it is a <a href="/wiki/Paradox.html" title="Paradox">veridical paradox</a> in the sense that the solution is counterintuitive, although the problem does not yield a logical contradiction.</p>
+<div class="notice metadata" id="spoiler"><b><a  title="Wikipedia:Spoiler warning">Warning</a>: <i>Solution details follow.</i></b></div>
+<p><br />
+Many people incorrectly assume since there are only two doors left after the host opens one, that the remaining doors must have equal probability. However, assuming the host knows what is behind each door, always opens a door revealing a goat, and always makes the offer to switch, the host's actions do not affect the probability of the player initially choosing the car (1/3). This means the answer is <b>yes</b> — switching results in the chances of winning the car improving from 1/3 to 2/3.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Problem and solution</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">1.1</span> <span class="toctext">The problem, with all constraints explicit</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.2</span> <span class="toctext">The solution</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Aids to understanding</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">2.1</span> <span class="toctext">Increasing the number of doors</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.2</span> <span class="toctext">Venn diagram</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.3</span> <span class="toctext">Decision tree</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.4</span> <span class="toctext">Combining doors</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.5</span> <span class="toctext">Bayes' theorem</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.6</span> <span class="toctext">Simulation</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">The general case</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Variants</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">4.1</span> <span class="toctext">Two players</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.2</span> <span class="toctext">n doors</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.3</span> <span class="toctext">Bridge principle</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.4</span> <span class="toctext">Quantum version</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.5</span> <span class="toctext">Similar problems</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">History of the problem</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">Anecdotes</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">8</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">9</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Problem and solution">edit</a>]</div>
+<p><a name="Problem_and_solution" id="Problem_and_solution"></a></p>
+<h2>Problem and solution</h2>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: The problem, with all constraints explicit">edit</a>]</div>
+<p><a name="The_problem.2C_with_all_constraints_explicit" id="The_problem.2C_with_all_constraints_explicit"></a></p>
+<h3>The problem, with all constraints explicit</h3>
+<p>The version of the problem popularized by <i>Parade</i> unfortunately leaves room for possible misunderstandings, some of which may affect the correctness of the answer. An unambiguous statement of the problem, with explicit constraints on the host, was described by Mueser and Granberg (although even this version contains an unstated assumption that if the host can open either remaining door, the one that is opened is chosen randomly):</p>
+<dl>
+<dd><i>A thoroughly honest game-show host has placed a car behind one of three doors. There is a goat behind each of the other doors. You have no prior knowledge that allows you to distinguish among the doors. "First you point toward a door," he says. "Then I'll open one of the other doors to reveal a goat. After I've shown you the goat, you make your final choice whether to stick with your initial choice of doors, or to switch to the remaining door. You win whatever is behind the door."</i></dd>
+</dl>
+<dl>
+<dd><i>You begin by pointing to door number 1. The host shows you that door number 3 has a goat.</i></dd>
+</dl>
+<p>Do the player's odds of getting the car increase by switching to door number 2?</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: The solution">edit</a>]</div>
+<p><a name="The_solution" id="The_solution"></a></p>
+<h3>The solution</h3>
+<div class="notice metadata" id="spoiler"><b><a  title="Wikipedia:Spoiler warning">Warning</a>: <i>Solution details follow.</i></b></div>
+<p>The answer to the problem is <b>yes</b>; the chance of winning the car is doubled when the player switches to another door rather than sticking with the original choice. The reason for this is that to win the car by sticking with the original choice the player must choose the door with the car first, and the probability of initially choosing the car is one in three. Whereas, to win the car by switching the player must originally choose a door with a goat first, and the probability of choosing a goat door first is two in three.</p>
+<p>At the point the player is asked whether to switch there are three possible situations corresponding to the player's initial choice, each with equal probability (1/3):</p>
+<ul>
+<li>The player originally picked the door hiding goat number 1. The game host has shown the other goat.</li>
+<li>The player originally picked the door hiding goat number 2. The game host has shown the other goat.</li>
+<li>The player originally picked the door hiding the car. The game host has shown either of the two goats.</li>
+</ul>
+<p>If the player chooses to switch, the car is won in the first two cases. A player choosing to stay with the initial choice wins in only the third case. Since in two out of three equally likely cases switching wins, the odds of winning by switching are 2/3. In other words, a player who has a policy of always switching will win the car on average two times out of the three.</p>
+<p>The problem would be different if the game host were permitted to make the offer to switch more often (or only) depending on knowledge of the player's original choice or if the host does not know what is behind each door. Some statements of the problem, notably the one in <i>Parade Magazine</i>, do not explicitly exclude these possibilities. For example, if the game host only offers the opportunity to switch if the contestant originally chooses the car, the odds of winning by switching are 0%. In the problem as stated above, it is <b>because</b> the host must reveal a goat and must make the offer to switch that the player has a 2/3 chance of winning by switching.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Aids to understanding">edit</a>]</div>
+<p><a name="Aids_to_understanding" id="Aids_to_understanding"></a></p>
+<h2>Aids to understanding</h2>
+<p>The most common objection to the solution is the idea that, for various reasons, the past can be ignored when assessing the probability. Thus, the first door choice and the host's forced response are ignored. Because there are two doors to choose from, many people jump to the conclusion that there must be a fifty-fifty chance of choosing the right one.</p>
+<p>Although ignoring the past works fine for some games, like <a href="/wiki/Coin_flipping.html" title="Coin flipping">coin flipping</a>, it doesn't work for all games. In this case what should be ignored is the <i>opening of the door</i>. The player's choice is between the originally picked door and the <i>other two</i> — opening one is simply a distraction. There is only one car. The original choice divides the possible locations of the car between the one door the player picks (1/3 chance) and the other two (2/3 chance). It is already known that at least one of the two doors contains a goat. The revealing of the goat therefore gives the player no additional information about his own door. It doesn't change the 2/3 probability that the car is still in the block of two doors.</p>
+<p>Another possible reason for confusion is that the problem is often stated as though the host takes the player by surprise by opening the door and offering the choice. This tends to give the impression that the host is trying to confuse a player who has chosen correctly, and would mean the player did not know the rules in advance. If the player did not know the rules that would not alter the probability in the particular case, but it would mean that the <i>player</i> could not definitively make the optimal choice – i.e., he would not know which version of the game he was playing. This confusion is dealt with in the unambiguous statement of the problem where the host explicitly relates the rules to the contestant in advance.</p>
+<p>It has been speculated that one reason the Monty Hall problem is so counterintuitive is that we expect deceit in situations like this. If Monty only opens a door when the player has chosen correctly (deceitful Monty), then when Monty opens a door the player should <i>never</i> change their decision.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Increasing the number of doors">edit</a>]</div>
+<p><a name="Increasing_the_number_of_doors" id="Increasing_the_number_of_doors"></a></p>
+<h3>Increasing the number of doors</h3>
+<p>It may be easier to appreciate the result by considering a hundred doors instead of just three. In this case there are 99 doors with goats behind them and 1 door with a prize. The player picks a door; 99% of the time, the player will pick a door with a goat. Thus, the chances of picking the winning door at first are very small: only 1%. The game host then opens 98 of the other doors revealing 98 goats and offers the player the chance to switch to the only other unopened door. On 99 out of 100 occasions the other door will contain the prize, as 99 out of 100 times the player first picked a door with a goat. At this point a rational player should always switch.</p>
+<p>To drive the point home, one only has to imagine the host having to start with the first door and go down the line, opening the doors but skipping over only the player's door and one other door. The player can then more easily appreciate the randomness of his first choice and the large amount of information he has gained since he made that choice and then see the wisdom in switching.</p>
+<p>There is a reasonable question to this logic: if we increase the number of doors, why does this explanation assume the host would open 98 doors to make the problem similar to the original? Why doesn't the host open 33 doors instead? That's actually an essential ingredient for the counter-intuitiveness of the original problem. It's correct to assume the host would open 98 doors in this alternate game because in the 3 door game the player has only one switching option — so the player in the 100 door game must also be presented with a single switching option. The 3 door game is misleading because the player is always presented with 1/3 proportions: he has a 1/3 chance of winning, the host reveals 1/3 of the mystery, and he is allowed to switch to the other 1/3 option — therefore all options seem equal.</p>
+<p>Even if only one of the 100 doors are opened, switching still increases the player's chances of finding a car. The 99/100 chance that the car is not behind the door the player picked is spread evenly over 98 doors after the host reveals a goat. Each of those 98 doors (all doors other than the one the player picked and the one the host reveals) has a 99/9800 chance of having the car, so by switching the player improves his chances slightly from a .0100 chance to just over .0101. This is an improvement of 99/98 or just over 1%.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Venn diagram">edit</a>]</div>
+<p><a name="Venn_diagram" id="Venn_diagram"></a></p>
+<h3>Venn diagram</h3>
+<div class="floatright"><span><a  class="image" title=""><img src="http://upload.wikimedia.org/wikipedia/en/thumb/1/1a/Monty4.png/206px-Monty4.png" alt="" width="206" height="175" longdesc="/wiki/Image:Monty4.png" /></a></span></div>
+<p>The probability that the car is behind the remaining door can be calculated using <a href="/wiki/Venn_diagram.html" title="Venn diagram">Venn diagrams</a>. After choosing door 1, for example, the player has a 1/3 chance of having selected the door with the car, leaving a 2/3 chance between the other two doors. Note that there is a 100% chance of finding a <i>goat</i> behind at least one of the two unchosen doors because there is only one car.</p>
+<div class="floatleft"><span><a  class="image" title=""><img src="http://upload.wikimedia.org/wikipedia/en/thumb/1/1a/Monty3.png/248px-Monty3.png" alt="" width="248" height="211" longdesc="/wiki/Image:Monty3.png" /></a></span></div>
+<p>The host now opens door 3. Since the host must always open a door revealing a goat, opening this door does not affect the chance that the car is behind the originally chosen door which remains 1/3. The car is not behind door 3, so the entire 2/3 probability of the two unchosen doors is now carried only by door 2, as shown below. Another way to state this is that if the car is behind either door 2 or 3, by opening door 3 the host has revealed it must be behind door 2.<br clear="all" /></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Decision tree">edit</a>]</div>
+<p><a name="Decision_tree" id="Decision_tree"></a></p>
+<h3>Decision tree</h3>
+<div class="thumb tright">
+<div style="width:352px;"><a  class="internal" title="Tree listing the probability of every possible outcome"><img src="http://upload.wikimedia.org/wikipedia/en/thumb/9/9e/Monty_tree.svg/350px-Monty_tree.svg.png" alt="Tree listing the probability of every possible outcome" width="350" height="242" longdesc="/wiki/Image:Monty_tree.svg" /></a>
+<div class="thumbcaption">
+<div class="magnify" style="float:right"><a  class="internal" title="Enlarge"><img src="/skins-1.5/common/images/magnify-clip.png" width="15" height="11" alt="Enlarge" /></a></div>
+Tree listing the probability of every possible outcome</div>
+</div>
+</div>
+<p>More formally, the scenario can be depicted in a decision tree.</p>
+<p>In the first two cases, wherein the player has first chosen a goat, switching will yield the car. In the third and fourth cases, since the player has chosen the car initially, a switch will lead to a goat.</p>
+<p>The total probability that switching wins is equal to the sum of the first two events, <img class='tex' src="http://upload.wikimedia.org/math/a/8/b/a8ba6e2f244e04b3334fb54d6a5ee0eb.png" alt="{1 \over 3} + {1 \over 3} = {2 \over 3}" />. Likewise, the probability that staying wins is <img class='tex' src="http://upload.wikimedia.org/math/0/0/e/00e172fb740869cdd175f71b3f4cde82.png" alt="{1 \over 6} + {1 \over 6} = {1 \over 3}" />.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Combining doors">edit</a>]</div>
+<p><a name="Combining_doors" id="Combining_doors"></a></p>
+<h3>Combining doors</h3>
+<p>Instead of one losing door being opened (and thus eliminated from the possible array of choices), it may equivalently be regarded as combining two doors into one (i.e. reducing the two doors which were not chosen into a single option, since the player can't, and won't choose the opened, losing door anymore). In essence, this means the player has the choice of either sticking with the original choice of door (1/3 chances), or choosing the sum of the contents of the two other doors (2/3 chances). Notice how the game assumptions play a role here — the switching is equivalent to taking the combined contents <i>because</i> the game host is required to open a door with a goat.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Bayes' theorem">edit</a>]</div>
+<p><a name="Bayes.27_theorem" id="Bayes.27_theorem"></a></p>
+<h3>Bayes' theorem</h3>
+<p>Analysis of the problem using <a href="/wiki/Bayes%27_theorem.html" title="Bayes' theorem">Bayes' theorem</a> has the least reliance on verbiage and the most on formal mathematics. It also makes explicit the effect of the assumptions given earlier. Consider the position when door 3 has been chosen and no door has been opened; the probabilities P(C1) that the car is behind door 1, P(C2) (car behind door 2), and P(C3) (car behind door 3), are all plainly 1/3. The probability that the game host will open door 1, P(O1), is 1/2:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/4/5/9/459a0a3bca8b5f2bc7020c5c67413bb5.png" alt="P(O1) = P(C1) \times P(O1|C1) + P(C2) \times P(O1|C2) + P(C3) \times P(O1|C3)" /></dd>
+</dl>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/8/3/4/8346e409b5569997bef9508f3ba61193.png" alt="= \frac{1}{3} \times 0 + \frac{1}{3} \times 1 + \frac{1}{3} \times \frac{1}{2} = \frac{1}{2}" /></dd>
+</dl>
+<p>(when the car is behind door 1, the game host will never open door 1; when the car is behind door 2, the game host will certainly open door 1; and, when the car is behind door 3, he will open door 1 or door 2 with probabilities 1/2). Hence the probability that the car is behind door 2 <i>given</i> that the game host opens door 1 is</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/d/f/f/dff99f88425fac95936e3886b514aa90.png" alt="P(C2|O1) = \frac{P(O1|C2) \times P(C2)}{P(O1)}  = \frac{1 \times \frac{1}{3}}{\frac{1}{2}}  = \frac{2}{3}" /></dd>
+</dl>
+<p>(and, in the same way, you may find P(C1|O2) that is also 2/3).</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Simulation">edit</a>]</div>
+<p><a name="Simulation" id="Simulation"></a></p>
+<h3>Simulation</h3>
+<p>There is a simple way for people to convince themselves that a switching strategy really does win two out of three times on the average, and that is to simulate the game with <a href="/wiki/Playing_cards.html" title="Playing cards">playing cards</a>, playing Monty's role. The simulator takes three cards from an ordinary deck to represent the three doors; one 'special' card such as the Ace of Spades should be picked to represent the door with the car, and ordinary cards such as the two red twos picked to represent the goat doors.</p>
+<p>The simulator then repeats the following procedure several times, to simulate multiple rounds of the game: One card is dealt at random to the 'player', to represent the door the player picks initially. The simulator, as Monty, then looks at the two cards in his hand and discards a red two (of which he will have at least one.) If the card remaining in the simulator's hand is the Ace of Spades, this is recorded as a round where the player would have won by switching; if the simulator is holding a red two, the round is recorded as one where staying would have won.</p>
+<p>By the <a href="/wiki/Law_of_large_numbers.html" title="Law of large numbers">law of large numbers</a>, this experiment is likely to approximate the probability of winning, and indeed, running the experiment over enough rounds should not only verify that the player <i>does</i> win by switching two times out of three, but show the simulator why: two times out of three, after one card has been dealt to the player, the Ace of Spades is in Monty's hand -- and at that point, it is <i>already determined</i> whether staying or switching will win the round for the player.</p>
+<p>If this is not sufficiently convincing, the simulator can try the experiment with the entire deck, dealing one card to the player and keeping the other fifty-one: seeing that the Ace of Spades goes to Monty fifty-one times out of fifty-two, and stays with Monty no matter how many <i>non</i>-Ace cards he discards, should bring the point home.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: The general case">edit</a>]</div>
+<p><a name="The_general_case" id="The_general_case"></a></p>
+<h2>The general case</h2>
+<table align="right" style="margin-left:1em;" width="400" class="wikitable">
+<tr>
+<th colspan="2">Possible host behaviors in unspecified problem</th>
+</tr>
+<tr>
+<td>The host, to minimize the show's budget for prizes, only offers the option to switch when the player has chosen the door containing the car.</td>
+<td>Switching always yields a goat.</td>
+</tr>
+<tr>
+<td>The host, to maximize winnings, only offers the option to switch when the player has chosen incorrectly.</td>
+<td>Switching is always successful.</td>
+</tr>
+<tr>
+<td>The host acts as noted in the specific version of the problem.</td>
+<td>Switching is successful two-thirds of the time.</td>
+</tr>
+</table>
+<p>One common criticism of the Monty Hall problem is that the assumptions about the host's behavior are not specified, such as when the original question was posed to <a href="/wiki/Marilyn_vos_Savant.html" title="Marilyn vos Savant">Marilyn vos Savant</a> in 1990. In that instance, it was not specifically stated that the host would always open another door, or always offer a choice to switch, or even that the host must open a door containing a goat. The criticism is that without these behaviors specifically stated, the player does not have an assurance that switching is always the best option. One cannot conclude the best course of action unless these assumptions are explicitly stated in the problem.</p>
+<p>In this general case, without all of the assumptions of the host behavior specified, you cannot verify that switching will be successful two-thirds of the time. Consider various possible host behaviors: His decision to switch may be based upon the accuracy of the contestant's initial guess. Without knowing the host's behavior, there is no reason to assume that any of these is more or less likely.</p>
+<div style="clear: both"></div>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Variants">edit</a>]</div>
+<p><a name="Variants" id="Variants"></a></p>
+<h2>Variants</h2>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Two players">edit</a>]</div>
+<p><a name="Two_players" id="Two_players"></a></p>
+<h3>Two players</h3>
+<p>With several minutes remaining in the game, the game host chose two players for the "Big Deal". Behind one of three doors was the grand prize. Each player was allowed to choose a door (not the same one).</p>
+<p>In this scenario, a variant of Selvin's problem can be stated. The game host eliminates a player with a goat behind his door (if both players had a goat, one is eliminated at random, without letting the players know about it), opens the door and then offers the remaining player a chance to switch. Should the remaining player switch?</p>
+<p>The answer is <i>no</i>. The reason: a switcher in this game will win if and only if both players originally pick goats. How likely is that? 1/3. A sticker will win in the remaining 2/3 of the cases. So stickers will win twice as often as switchers.</p>
+<p>Alternatively, there are three possible scenarios, all with equal probability (1/3):</p>
+<ul>
+<li>Player 1 picks the door with the car. The host must eliminate player 2. Switching loses.</li>
+<li>Player 2 picks the door with the car. The host must eliminate player 1. Switching loses.</li>
+<li>Neither player picks the car. The host eliminates one of the players randomly. Switching wins.</li>
+</ul>
+<p>Player 1 is the remaining player in the first case and half the time in the third case and switching loses (1/3 chance) twice as often as it wins (1/6 chance). Similarly, player 2 is the remaining player in the second case and half the time in the third, and loses twice as often by switching. Regardless of which player remains, there is 2/3 probability of winning with the sticking strategy.</p>
+<p>The two player game, from the final player's point of view, sounds a lot like the single player game: the player chooses a door, a goat is revealed behind another door, and the player is given the opportunity to switch. However, the significant difference is that one player is eliminated. The process of surviving the initial elimination improves the <i>remaining</i> player's chances of having chosen the car initially from 1/3 to 2/3. Another way to look at this is that the chances of the remaining player having chosen the car initially is a combined probability: it is the chance that s/he chose the car initially <i>and</i> was not the eliminated player.</p>
+<p>Actually, the two player game is exactly the same as the one player game, except in reverse. In the one player game, it is the chosen door is guaranteed to not be opened, and which therefore retains the original probability of 1/3. In the two person game, it is the unchosen door that is guaranteed to not be opened, and which therefore retains the original probability. If there were a three person game, in which one of the goat doors is randomly chosen, then no door can be categorized as guaranteed not to be opened, and therefore none of them retain the original probability of 1/3. In such a game, there is a true symmetry between the doors, and there would be no benefit to either switching or not switching.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: n doors">edit</a>]</div>
+<p><a name="n_doors" id="n_doors"></a></p>
+<h3><i>n</i> doors</h3>
+<p>There is a generalization of the original problem to <i>n</i> doors: in the first step, you choose a door. The game host then opens some other door that's a loser. If you want, you may then switch your allegiance to another door. The game host will then open an as yet unopened losing door, different from your current preference. Then you may switch again, and so on. This continues until there are only two unopened doors left: your current choice and another one. How many times should you switch, and when, if at all?</p>
+<p>The best strategy is: <i>stick with your first choice all the way through but then switch at the very end</i>. With this strategy, the probability of winning is (<i>n</i>-1)/<i>n</i>. This was proven by Bapeswara Rao and Rao.</p>
+<p>This problem is very similar to the television show <a href="/wiki/Deal_or_No_Deal.html" title="Deal or No Deal">Deal or No Deal</a>, which begins with 22 boxes (typically — it depends on the version of the show). The player selects one to keep, then carries on to peek at random from amongst the remaining cases. Even until the end, the player's keeper is equally likely to be the winner as any of the others that are left unrevealed. The distinction is that the player's peek might at any point reveal the grand prize, thereby eliminating it from contention. Monty on the other hand, knows the contents and is forbidden from selecting the winner. Because the player is just as likely to expose the winning case as another losing case, the Monty Hall advantage is lost at the end when the player is given the option to switch the last two boxes.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Bridge principle">edit</a>]</div>
+<p><a name="Bridge_principle" id="Bridge_principle"></a></p>
+<h3>Bridge principle</h3>
+<p>A common variant has been understood by <a href="/wiki/Contract_bridge.html" title="Contract bridge">bridge</a> players for many years prior to the Vos Savant article. It is known as the <a href="/wiki/Principle_of_restricted_choice_%28bridge%29.html" title="Principle of restricted choice (bridge)">principle of restricted choice</a>. Another explanation is available at <a  class="external free" title="http://www.acbl-district13.org/artic003.htm">http://www.acbl-district13.org/artic003.htm</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Quantum version">edit</a>]</div>
+<p><a name="Quantum_version" id="Quantum_version"></a></p>
+<h3>Quantum version</h3>
+<p>There is a quantum version of the paradox, which illustrates some points about the relation between classical (non-quantum) information and <a href="/wiki/Quantum_information.html" title="Quantum information">quantum information</a>, as encoded in the states of quantum mechanical systems. The three doors are replaced by a quantum system allowing three alternatives, and opening a door and looking behind it is translated as making a particular measurement. The rules can be stated in this language, and once again the choice for the player is to stick by her first choice, or change to another ("orthogonal") option. The latter strategy turns out to double the chances, just as in the classical case. However, if the show host has not randomized the position of the prize in a fully quantum mechanical way, the player can do even better, and can sometimes even win the prize with certainty. There is an <a  class="external text" title="http://xxx.lanl.gov/abs/quant-ph/0202120">article</a> explaining it and an <a  class="external text" title="http://www.imaph.tu-bs.de/qi/monty/">applet</a> demonstrating the effects.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Similar problems">edit</a>]</div>
+<p><a name="Similar_problems" id="Similar_problems"></a></p>
+<h3>Similar problems</h3>
+<ul>
+<li><a href="/wiki/Three_cards_problem.html" title="Three cards problem">Three cards problem</a></li>
+<li><a href="/wiki/Boy_or_Girl.html" title="Boy or Girl">Boy or Girl</a></li>
+<li><a href="/wiki/Three_Prisoners_Problem.html" title="Three Prisoners Problem">Three Prisoners Problem</a></li>
+</ul>
+<p>Despite similarity in their names, the game used in the Monty Hall problem is not related to <a href="/wiki/Three-card_Monte.html" title="Three-card Monte">three-card Monte</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: History of the problem">edit</a>]</div>
+<p><a name="History_of_the_problem" id="History_of_the_problem"></a></p>
+<h2>History of the problem</h2>
+<p>The first appearance of the same general class of problem was probably the one presented in <a href="/wiki/Joseph_Bertrand.html" title="Joseph Bertrand">Joseph Bertrand</a>'s <i><a href="/wiki/Calcul_des_probabilit%C3%A9s.html" title="Calcul des probabilités">Calcul des probabilités</a></i> (1889), known as <a  class="new" title="Bertrand's Box Paradox">Bertrand's Box Paradox</a> <a  class="external autonumber" title="http://www.cenius.net/refer/articles/b/bertrandsboxparadox/bertrandsboxparadox.html">[1]</a>.</p>
+<p>An essentially identical problem appeared as the <a href="/wiki/Three_Prisoners_Problem.html" title="Three Prisoners Problem">Three Prisoners Problem</a> in <a href="/wiki/Martin_Gardner.html" title="Martin Gardner">Martin Gardner</a>'s <i>Mathematical Games</i> column in 1959. Gardner's version makes the selection procedure explicit, avoiding the unstated assumptions in the <i>Parade Magazine</i> version. This puzzle in <a href="/wiki/Probability_theory.html" title="Probability theory">probability theory</a> involves three prisoners, one of whom (already chosen at random but unknown to the prisoners) is to be executed in the morning. The first prisoner begs the guard to tell him which of the other two will go free, arguing that this reveals no information about whether the prisoner will be the victim; the guard responds by claiming that if the prisoner knows that a specific one of the other two prisoners will go free it will raise the first prisoner's subjective chance of being executed from 1/3 to 1/2. The question is whether the analysis of the prisoner or the guard is correct. In the version given by Martin Gardner, the guard then performs a particular randomizing procedure for selecting which name to give the prisoner; this gives the equivalent of the Monty Hall problem without the usual ambiguities in its presentation.</p>
+<p>In 1975, Steve Selvin wrote a pair of letters to the <i>American Statistician</i> (February and April issues) regarding the Monty Hall problem. The first letter presented the problem in a version close to its most popular form (the version presented by <i>Parade Magazine</i> is a restatement of Selvin's version.) The second letter appears to be the first use of the term "Monty Hall problem". The problem is actually an extrapolation from the game show; Monty Hall <i>did</i> open a wrong door to build excitement, but did not allow players to change their choice. As Monty Hall wrote to Selvin:</p>
+<blockquote>
+<p><i>And if you ever get on my show, the rules hold fast for you — no trading boxes after the selection.</i><br />
+—From the <a  class="external text" title="http://www.letsmakeadeal.com/problem.htm"><i>Let's Make a Deal</i></a> website</p>
+</blockquote>
+<p>In the May-June, 1989 issue of <a  class="external text" title="http://www.bridgetoday.com">Bridge Today</a> magazine, Phillip Martin wrote an article entitled "The Monty Hall Trap." The article presented Selvin's problem, with the correct solution, as an example of how one can fall into the trap of treating non-random information as if it were random. It went on to give examples in the game of bridge where players commonly miscalculate the odds by falling into the same trap. Given the controversy that would arise over this problem a year later, Martin showed a remarkable lack of prescience when he stated, "Here [, in the Monty Hall problem,] the trap is easy to spot. But the trap can crop up more subtly in a bridge setting."</p>
+<p>A restated version of Selvin's problem statement appeared in <a href="/wiki/Marilyn_vos_Savant.html" title="Marilyn vos Savant">Marilyn vos Savant</a>'s "Ask Marilyn" question-and-answer column of <i>Parade</i> magazine in September 1990. Though vos Savant gave the correct answer that switching would win 2/3rds of the time, vos Savant estimates 10,000 readers including several hundred mathematics professors wrote in to declare that her solution was wrong. As a result of the publicity the problem earned the alternative name <b>Marilyn and the Goats</b>.</p>
+<p>In November 1990, an equally contentious discussion of vos Savant's article took place in <a href="/wiki/Cecil_Adams.html" title="Cecil Adams">Cecil Adams</a>'s column <i><a href="/wiki/The_Straight_Dope.html" title="The Straight Dope">The Straight Dope</a></i>. Adams initially answered, incorrectly, that the chances for the two remaining doors must each be one in two. After a reader wrote in to correct the mathematics of Adams' analysis, Adams agreed that mathematically, he'd been wrong, but said that the <i>Parade</i> version left critical constraints unstated, and without those constraints, the chances of winning by switching were not necessarily 2/3. Numerous readers, however, wrote in to claim that Adams had been "right the first time" and that the correct chances were one in two.</p>
+<p>The <i>Parade</i> column and its response received considerable attention in the press, including a front page story in the <a href="/wiki/New_York_Times.html" title="New York Times">New York Times</a> (July 21, 1991) in which Monty Hall himself was interviewed. He appeared to understand the problem quite well, giving the reporter a demo with car keys and explaining how actual game play on <b>Let's Make a Deal</b> differed from the rules of the puzzle.</p>
+<p>Over 40 papers have been published about this problem in academic journals and the popular press.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Anecdotes">edit</a>]</div>
+<p><a name="Anecdotes" id="Anecdotes"></a></p>
+<h2>Anecdotes</h2>
+<p>The Monty Hall problem is discussed, from the perspective of a boy with <a href="/wiki/Asperger_syndrome.html" title="Asperger syndrome">Asperger syndrome</a>, in <i><a href="/wiki/The_Curious_Incident_of_the_Dog_in_the_Night-time.html" title="The Curious Incident of the Dog in the Night-time">The Curious Incident of the Dog in the Night-time</a></i>, a 2003 novel by <a href="/wiki/Mark_Haddon.html" title="Mark Haddon">Mark Haddon</a>.</p>
+<p>This situation is also addressed in a lecture by the character <a href="/wiki/Charlie_Eppes.html" title="Charlie Eppes">Charlie Eppes</a> in an episode of the CBS drama <i><a href="/wiki/NUMB3RS.html" title="NUMB3RS">NUMB3RS</a></i> (Episode 1.13).</p>
+<p>An account of mathematician <a href="/wiki/Paul_Erd%C5%91s.html" title="Paul Erdős">Paul Erdős</a>'s first encounter of the problem can be found in <i><a href="/wiki/The_Man_Who_Loved_Only_Numbers.html" title="The Man Who Loved Only Numbers">The Man Who Loved Only Numbers</a></i>. Like many others, he initially got it wrong.</p>
+<p>The syndicated NPR program, <i><a href="/wiki/Car_Talk.html" title="Car Talk">Car Talk</a></i>, featured this as one of their weekly "Puzzlers," and the answer they featured was quite clearly explained as the correct one. Transcript <a  class="external text" title="http://www.cartalk.com/content/puzzler/transcripts/199743/answer.html">here</a>. Also available in their book, <i>Haircut in Horse Town</i> (<cite class="book" style="font-style:normal">Magliozzi, Tom; Magliozzi, Ray (1998). <i>Haircut in Horse Town: &amp; Other Great Car Talk Puzzlers</i>. Diane Pub Co.. <a  class="internal">ISBN 0-7567-6423-8</a>.</cite>)</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Monty_Hall.html" title="Monty Hall">Monty Hall</a> — TV Game Show Host</li>
+<li><a href="/wiki/Monty_Hell_problem.html" title="Monty Hell problem">Monty Hell problem</a> — A problem with a similar name.</li>
+<li><i><a href="/wiki/Let%27s_Make_a_Deal.html" title="Let's Make a Deal">Let's Make a Deal</a></i> — TV Game Show</li>
+<li><a href="/wiki/Two_envelopes_problem.html" title="Two envelopes problem">Two envelopes problem</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<ul>
+<li>Bapeswara Rao, V. V. and Rao, M. Bhaskara (1992). "A three-door game show and some of its variants". <i>The Mathematical Scientist</i> 17, no. 2, pp. 89–94</li>
+<li>Bohl, Alan H.; Liberatore, Matthew J.; and Nydick, Robert L. (1995). "A Tale of Two Goats ... and a Car, or The Importance of Assumptions in Problem Solutions". <i>Journal of Recreational Mathematics</i> 1995, pp. 1–9.</li>
+<li>Joseph Bertrand (1889) <i>Calcul des probabilites</i></li>
+<li>Gardner, Martin (1959). "Mathematical Games" column, <i>Scientific American</i>, October 1959, pp. 180–182. Reprinted in <i>The Second Scientific American Book of Mathematical Puzzles and Diversions</i>.</li>
+<li>Martin, Phillip (1989). "The Monty Hall Trap", <i>Bridge Today</i>, May-June 1989. Reprinted in Granovetter, Pamela and Matthew, ed. (1993), <i>For Experts Only</i>, Granovetter Books.</li>
+<li>Mueser, Peter R. and Granberg, Donald (1999), "The Monty Hall Dilemma Revisited: Understanding the Interaction of Problem Definition and Decision Making" (University of Missouri Working Paper 99-06). <a  class="external free" title="http://econwpa.wustl.edu:80/eps/exp/papers/9906/9906001.html">http://econwpa.wustl.edu:80/eps/exp/papers/9906/9906001.html</a> (retrieved <a href="/wiki/July_5.html" title="July 5">July 5</a>, <a href="/wiki/2005.html" title="2005">2005</a>).</li>
+<li>Nahin, Paul J. <i>Duelling idiots and other probability puzzlers</i>. Princeton University Press, Princeton, NJ: 2000, pp. 192-193. (<a  class="internal">ISBN 0-691-00979-1</a>).</li>
+<li>Selvin, Steve (1975a). "A problem in probability" (letter to the editor). <i>American Statistician</i> 29(1):67 (February 1975).</li>
+<li>Selvin, Steve (1975b). "On the Monty Hall problem" (letter to the editor). <i>American Statistician</i> 29(3):134 (August 1975).</li>
+<li>Tierney, John (1991). "Behind Monty Hall's Doors: Puzzle, Debate and Answer?", <i>The New York Times</i> <a href="/wiki/July_21.html" title="July 21">21 July</a> <a href="/wiki/1991.html" title="1991">1991</a>, Sunday, Section 1; Part 1; Page 1; Column 5</li>
+<li>vos Savant, Marilyn (1990). "Ask Marilyn" column, <i>Parade Magazine</i> p. 12 (<a href="/wiki/February_17.html" title="February 17">17 February</a> <a href="/wiki/1990.html" title="1990">1990</a>). [cited in Bohl et al., 1995]</li>
+<li>Adams, Cecil (1990). "On 'Let's Make a Deal,' you pick Door #1. Monty opens Door #2--no prize. Do you stay with Door #1 or switch to #3?", <i>The Straight Dope</i> <a href="/wiki/November_2.html" title="November 2">November 2</a>, <a href="/wiki/1990.html" title="1990">1990</a>. <a  class="external free" title="http://www.straightdope.com/classics/a3_189.html">http://www.straightdope.com/classics/a3_189.html</a> (retrieved <a href="/wiki/July_25.html" title="July 25">July 25</a>, <a href="/wiki/2005.html" title="2005">2005</a>).</li>
+<li>Tijms, Henk (2004). <i>Understanding Probability, Chance Rules in Everyday Life</i>. Cambridge University Press, New York, pp. 213-215.</li>
+<li>Ziemer, Rodger E. (1997). <i>Elements of Engineering Probability &amp; Statistics</i>. Prentice Hall, pp. 31-32.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<div id="section_SpokenWikipedia" class="infobox sisterproject noprint">
+<div style="text-align: center"><b><a  class="internal" title="Monty Hall problem.ogg">Listen to this article</a> · <a  title="Image:Monty Hall problem.ogg">(info)</a></b></div>
+<div style="float: left; margin-left: 5px;">
+<div class="floatnone"><span><a  class="image" title="Spoken Wikipedia"><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Sound-icon.svg/45px-Sound-icon.svg.png" alt="Spoken Wikipedia" width="45" height="34" longdesc="/wiki/Image:Sound-icon.svg" /></a></span></div>
+</div>
+<div style="font-size: xx-small; line-height: 1.6em; margin-left: 60px;">This audio file was created from an article revision dated <a href="/wiki/2006.html" title="2006">2006</a>-<a href="/wiki/August_6.html" title="August 6">08-06</a>, and does not reflect subsequent edits to the article. (<a  title="Wikipedia:Media help">Audio help</a>)</div>
+<div style="text-align: center; clear: both"><b><a  title="Wikipedia:Spoken articles">More spoken articles</a></b></div>
+</div>
+<div style="right:30px; display:none;" class="metadata topicon" id="spoken-icon">
+<div style="position:relative; width:16px; height:12px; overflow:hidden;">
+<div style="position:absolute; font-size:12px; overflow:hidden; line-height:12px; letter-spacing:16px;"><a  class="internal" title="Monty Hall problem.ogg"><span title="This is a spoken article. Click here to listen." style="text-decoration:none;">&#160; &#160;</span></a></div>
+<a  class="image" title="This is a spoken article. Click here to listen."><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Sound-icon.svg/16px-Sound-icon.svg.png" alt="This is a spoken article. Click here to listen." width="16" height="12" longdesc="/wiki/Image:Sound-icon.svg" /></a></div>
+</div>
+<div class="infobox sisterproject">
+<div style="float: left;">
+<div class="floatnone"><span><a  class="image" title="Wikibooks"><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Wikibooks-logo-en.svg/50px-Wikibooks-logo-en.svg.png" alt="Wikibooks" width="50" height="57" longdesc="/wiki/Image:Wikibooks-logo-en.svg" /></a></span></div>
+</div>
+<div style="margin-left: 60px;"><a  class="extiw" title="wikibooks:Algorithm_implementation">Wikibooks Algorithm implementation</a> has more about this subject:
+<div style="margin-left:10px;"><i><b><a  class="extiw" title="wikibooks:Algorithm_implementation/Simulation/Monty_Hall_problem">Monty Hall problem simulation</a></b></i></div>
+</div>
+</div>
+<ul>
+<li><a  class="external text" title="http://mathworld.wolfram.com/MontyHallProblem.html">Monty Hall Problem</a> at <a  class="external text" title="http://mathworld.wolfram.com">Wolfram MathWorld</a></li>
+<li><a  class="external text" title="http://www.letsmakeadeal.com/problem.htm">The Monty Hall Problem</a> at <a  class="external text" title="http://www.letsmakeadeal.com">letsmakeadeal.com</a> <i>(quotes Monty's letter to Steve Selvin in full)</i></li>
+<li><a  class="external text" title="http://www.mathematik.uni-bielefeld.de/~sillke/PUZZLES/monty-hall">Monty Hall Paradox (let's make a deal)</a> <i>(lengthy bibliography)</i></li>
+<li><a  class="external text" title="http://math.ucr.edu/~jdp/Monty_Hall/Monty_Hall.html">Graphical Proof of the Monty Hall Problem</a> (<i>tea cups and diamonds</i>)</li>
+<li><a  class="external text" title="http://www.cut-the-knot.org/hall.shtml">Monty Hall Dilemma</a> at <a href="/wiki/Cut-the-knot.html" title="Cut-the-knot">cut-the-knot</a></li>
+<li><a  class="external text" title="http://www.userpages.de/monty_hall_problem">The Monty Hall Problem - A game simulation</a> <i>(illustration by a demonstrative, user-friendly and versatile game simulation)</i></li>
+<li><a  class="external text" title="http://alterlife.org/2006/04/16/a-javascript-simulator-for-the-monty-hall-problem/">A Monty Hall Simulator in Javascript</a> <i>(A Simulator that you can run in your web browser. )</i></li>
+<li><a  class="external text" title="http://www.grand-illusions.com/monty.htm">Grand Illusions</a> <i>Explanation and various simulators</i></li>
+<li><a  class="external text" title="http://www.geocities.com/scubusiness/montyhall">Secret of Monty Hall</a> <i>(explanation from the bad-door side)</i></li>
+<li><a  class="external text" title="http://www.buffalo.edu/~smc33/MH/">Monty Hall Simulator</a> <i>(Simulators for the keep and change strategy in Perl, with data files representing the results of playing the game one million times with each strategy)</i></li>
+<li><a  class="external text" title="http://delicategeniusblog.com/?page_id=134">Realtime global simulation</a> <i>A simulation which tallies up the results from every user who has ever played.</i></li>
+<li><a  class="external text" title="http://www.montyhallproblem.com/">The Monty Hall Problem Web Page</a> <i>A simple presentation of the problem and its solution.</i></li>
+<li><a  class="external text" title="http://mathforum.org/kb/plaintext.jspa?messageID=723345">A tree-diagram of the Monty Hall problem under the Marilyn vos Savant assumptions</a></li>
+<li><a  class="external text" title="http://www.marilynvossavant.com/articles/gameshow.html">The Game Show Problem</a> <i>The original question and responses on Marilyn's web site.</i></li>
+</ul>
+<div style="right:10px; display:none;" class="metadata topicon" id="featured-star">
+<div style="position: relative; width: 14px; height: 14px; overflow: hidden">
+<div style="position: absolute; top: 0px; left: 0px; font-size: 100px; overflow: hidden; line-height: 100px; z-index: 3"><a  title="Wikipedia:Featured articles"><span title="This is a featured article. Click here for more information.">&#160;&#160;&#160;</span></a></div>
+<div style="position: absolute; top: 0px; left: 0px; z-index: 2"><a  class="image" title="This is a featured article. Click here for more information."><img src="http://upload.wikimedia.org/wikipedia/en/6/60/LinkFA-star.png" alt="This is a featured article. Click here for more information." width="14" height="14" longdesc="/wiki/Image:LinkFA-star.png" /></a></div>
+</div>
+</div>
+<p><span class="FA" id="de" style="display:none;"></span></p>
+
+<!-- 
+Pre-expand include size: 8283 bytes
+Post-expand include size: 4556 bytes
+Template argument size: 1271 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:19671-0!1!0!default!!en!2 and timestamp 20060910155348 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Spoken articles">Spoken articles</a></span> | <span dir='ltr'><a  title="Category:Probability theory paradoxes">Probability theory paradoxes</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Monty_Hall_problem.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-da"><a >Dansk</a></li>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-he"><a >עברית</a></li>
+				<li class="interwiki-hu"><a >Magyar</a></li>
+				<li class="interwiki-nl"><a >Nederlands</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-pt"><a >Português</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+				<li class="interwiki-fi"><a >Suomi</a></li>
+				<li class="interwiki-sv"><a >Svenska</a></li>
+				<li class="interwiki-th"><a >ไทย</a></li>
+				<li class="interwiki-zh"><a >中文</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 14:44, 8 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv3 in 0.267 secs. --></body></html>

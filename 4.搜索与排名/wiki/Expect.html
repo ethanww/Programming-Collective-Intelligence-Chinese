@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Expect,Application software,Bash,Cron,Csh,DejaGnu,Fsck,Ftp,GNU Compiler Collection,GUI,Passwd" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Expect - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Expect";
+			var wgTitle = "Expect";
+			var wgArticleId = 1161030;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Expect</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p><b>Expect</b> is a <a href="/wiki/Unix.html" title="Unix">Unix</a> automation and testing tool, written by <a  class="new" title="Don Libes">Don Libes</a>, for interactive <a href="/wiki/Application_software.html" title="Application software">applications</a> such as <a href="/wiki/Telnet.html" title="Telnet">telnet</a>, <a href="/wiki/Ftp.html" title="Ftp">ftp</a>, <a href="/wiki/Passwd.html" title="Passwd">passwd</a>, <a href="/wiki/Fsck.html" title="Fsck">fsck</a>, <a href="/wiki/Rlogin.html" title="Rlogin">rlogin</a>, <a href="/wiki/Tip.html" title="Tip">tip</a>, <a href="/wiki/Ssh.html" title="Ssh">ssh</a>, and others. With <a href="/wiki/Tk_%28computing%29.html" title="Tk (computing)">Tk</a>, interactive applications can be wrapped in <a href="/wiki/X11.html" title="X11">X11</a> <a href="/wiki/GUI.html" title="GUI">GUIs</a>.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Basics</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Examples</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Usage</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Opinion</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">4.1</span> <span class="toctext">Pros</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.2</span> <span class="toctext">Cons</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Basics">edit</a>]</div>
+<p><a name="Basics" id="Basics"></a></p>
+<h2>Basics</h2>
+<p>Expect is an extension of <a href="/wiki/Tcl.html" title="Tcl">Tcl</a> with two significant commands added: <b>send</b>, and <b>expect</b>. These allow a script to control command-line tools originally designed to interact only with a human. For example, programs which interactively prompt for a password cannot be automated with shell scripts or other languages but can be trivially automated with an Expect script.</p>
+<p>Expect has <a href="/wiki/Regular_expression.html" title="Regular expression">regular expression</a> pattern matching and general program capabilities, allowing simple scripts to intelligently control programs such as telnet, ftp, and ssh, all of which lack a programming language, macros, or any other program mechanism. The result is that Expect scripts provide old tools with significantly new power, flexibility, and reliability.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Examples">edit</a>]</div>
+<p><a name="Examples" id="Examples"></a></p>
+<h2>Examples</h2>
+<p>A simple example is a script that automates a telnet session:</p>
+<pre>
+  # Assume $remote_server, $my_user_id, $my_password, and $my_command were read in earlier 
+  # in the script.<br />
+  # Open a telnet session to a remote server, and wait for a username prompt.
+  spawn telnet $remote_server
+  expect "username:"<br />
+  # Send the username, and then wait for a password prompt.
+  send "$my_user_id\r"
+  expect "password:"<br />
+  # Send the password, and then wait for a shell prompt.
+  send "$my_password\r"
+  expect "%"<br />
+  # Send the prebuilt command, and then wait for another shell prompt.
+  send "$my_command\r"
+  expect "%"<br />
+  # Capture the results of the command into a variable. This can be displayed, or written to disk.
+  set results $expect_out(buffer)<br />
+  # Exit the telnet session, and wait for a special end-of-file character.
+  send "exit\r"
+  expect eof
+</pre>
+<p>Another example is a script that automates ftp:</p>
+<pre>
+  # Open an ftp session to a remote server, and wait for a username prompt.
+  spawn ftp $remote_server
+  expect "username:"<br />
+  # Send the username, and then wait for a password prompt.
+  send "$my_user_id\r"
+  expect "password:"<br />
+  # Send the password, and then wait for an ftp prompt.
+  send "$my_password\r"
+  expect "ftp&gt;"<br />
+  # Switch to binary mode, and then wait for an ftp prompt.
+  send "bin\r"
+  expect "ftp&gt;"<br />
+  # Turn off prompting.
+  send "prompt\r"
+  expect "ftp&gt;"<br />
+  # Get all the files
+  send "mget *\r"
+  expect "ftp&gt;"<br />
+  # Exit the ftp session, and wait for a special end-of-file character.
+  send "bye\r"
+  expect eof
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Usage">edit</a>]</div>
+<p><a name="Usage" id="Usage"></a></p>
+<h2>Usage</h2>
+<p>Expect serves as a "glue" to link existing utilities together. The general idea is to try to figure out how to make Expect utilize the system's existing tools rather than figure out how to solve a problem inside of Expect.</p>
+<p>A key usage of Expect involves commercial software products. Many of these products provide some type of command-line interface, but these usually lack the power needed to write <a href="/wiki/Scripting_programming_language.html" title="Scripting programming language">scripts</a>. They were built to service the users administering the product, but the company often doesn't spend the resources to implement a fully robust scripting language. An Expect script can spawn a shell, look up environmental variables, perform some Unix commands to retrieve more information, and then enter into the product's command-line interface armed with the necessary information to achieve the user's goal. After looking up information inside the product's command-line interface, the script can make an intelligent decision about what action to take, if any.</p>
+<p>Every time an <b>Expect</b> operation is completed, the results are stored in a local variable called $expect_out. This allows the script to both harvest information to feedback to the user, and it also allows conditional behavior of what to <b>send</b> next based on the circumstances.</p>
+<p>A common use of Expect is to set up a testing suite, whether it be for programs, utilities or embedded systems. <a href="/wiki/DejaGnu.html" title="DejaGnu">DejaGnu</a> is a testing suite written using Expect for use in testing. It has been used extensively for testing <a href="/wiki/GNU_Compiler_Collection.html" title="GNU Compiler Collection">gcc</a> and is very well suited to testing remote targets such as embedded development.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Opinion">edit</a>]</div>
+<p><a name="Opinion" id="Opinion"></a></p>
+<h2>Opinion</h2>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Pros">edit</a>]</div>
+<p><a name="Pros" id="Pros"></a></p>
+<h3>Pros</h3>
+<p>Expect can be run at regular intervals through the use of <a href="/wiki/Cron.html" title="Cron">cron</a> to encapsulate system administration tasks. The reason this works is because Expect merely uses system administration tools already located on the host computer. No extra tools need to be learned. If the programmer has already learned <a href="/wiki/Tcl.html" title="Tcl">Tcl</a>, then migrating to Expect is a relatively easy transition. The same programming structures and syntax exist, but with additional features built in.</p>
+<p>There is large support in the industry for using Expect for many in-house administration tasks. It is widely used by companies such as Silicon Graphics, IBM, HP, Sun, Xerox, Amdahl, Tektronix, AT&amp;T, ComputerVision and the World Bank to run in-house automated testing for development projects, file transfers, account administration, and network testing.</p>
+<p>Expect has been ported to Python and Perl languages in various add-on module projects. Subroutines generally are an interpretation of the original version - with equivalent functionality. Once you understand the concepts, you can move to other languages as needed.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Cons">edit</a>]</div>
+<p><a name="Cons" id="Cons"></a></p>
+<h3>Cons</h3>
+<p>Expect inherits the same syntax convention as Tcl, which may seem unfamiliar if used to other script languages. Compared to languages such as <a href="/wiki/Bash.html" title="Bash">bash</a>, <a href="/wiki/Csh.html" title="Csh">csh</a>, and <a href="/wiki/Perl.html" title="Perl">Perl</a>, Expect has a different twist, and is sometimes challenging to remember when a variable must be prefixed with a "$", and when it is not. There are versions of expect available for Perl and <a href="/wiki/Python_programming_language.html" title="Python programming language">Python</a> for those familiar with their syntax.</p>
+<p>Another limitation is the difficulty in porting Expect scripts between platforms. For example, an Expect script that was written to use several Unix-based tools, might not be suitable if migrated to a Windows platform. If possible, the programmer must find counterpart command-line applications that provide the same information, and this will probably require changing the send/expect's, which can be a major part of the script. This is not an issue if you load tcl, perl or python on the machines in question, and use those languages native posix interfaces for accessing files (open/close) and so on, as well as using standard posix utilities (telnet, ftp etc.) for remote interaction.</p>
+<p>Also, Expect automates command-line tools, not <a href="/wiki/GUI.html" title="GUI">GUI</a>-based tools. While Windows offers many valuable tools, many are GUI-based and thus outside the reach of Expect. This however is a limitation of Windows - not Expect, and there are several ways to solve this problem.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<ul>
+<li><cite class="book" style="font-style:normal" id="Reference-Libes-1995">Libes, Don (1995). <i>Exploring Expect: A Tcl-Based Tool for Automating Interactive Programs</i>. O'Reilly &amp; Associates, Inc. <a  class="internal">ISBN 1-56592-090-2</a>.</cite></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://expect.nist.gov/">Official homepage</a></li>
+<li><a  class="external text" title="http://wiki.tcl.tk/201">Expect WIKI</a></li>
+<li><a  class="external text" title="http://www.google.com/search?q=exploring+expect"><i>Exploring Expect</i> by Don Libes</a></li>
+</ul>
+
+<!-- 
+Pre-expand include size: 2698 bytes
+Post-expand include size: 630 bytes
+Template argument size: 756 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:1161030-0!1!0!default!!en!2 and timestamp 20060909204349 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:Scripting languages">Scripting languages</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Expect.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-pl"><a >Polski</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 14:15, 25 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv38 in 0.079 secs. --></body></html>

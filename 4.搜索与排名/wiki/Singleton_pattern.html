@@ -1,0 +1,368 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Singleton pattern,2006,Abstract Windowing Toolkit,Abstract class,Abstract factory pattern,Adapter pattern,Alex Martelli,Anti-pattern,Binding (computer science),Bridge pattern,Builder pattern" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Singleton pattern - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Singleton_pattern";
+			var wgTitle = "Singleton pattern";
+			var wgArticleId = 65041;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Singleton pattern</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>In <a href="/wiki/Software_engineering.html" title="Software engineering">software engineering</a>, the <b>singleton</b> <a href="/wiki/Design_pattern_%28computer_science%29.html" title="Design pattern (computer science)">design pattern</a> is used to restrict instantiation of a class to one (or a few) <a href="/wiki/Object-oriented_programming.html" title="Object-oriented programming">objects</a>. This is useful when exactly one object is needed to coordinate actions across the system. Sometimes it is generalized to systems that operate more efficiently when only one or a few objects exist. It is also considered an <a href="/wiki/Anti-pattern.html" title="Anti-pattern">anti-pattern</a> since it is often used as a <a href="/wiki/Euphemism.html" title="Euphemism">euphemism</a> for <a href="/wiki/Global_variable.html" title="Global variable">global variable</a>. Before designing a class as a singleton, it is wise to consider whether it would be enough to design a normal class and just use one instance.</p>
+<p>The singleton pattern is implemented by creating a <a href="/wiki/Class.html" title="Class">class</a> with a method that creates a new instance of the object if one does not exist. If an instance already exists, it simply returns a reference to that object. To make sure that the object cannot be instantiated any other way, the <a href="/wiki/Constructor.html" title="Constructor">constructor</a> is made either private or protected. Note the distinction between a simple static instance of a class and a singleton. Although a singleton can be implemented as a static instance, it can also be lazily constructed, requiring no memory or resources until needed.</p>
+<p>The singleton pattern must be carefully constructed in <a href="/wiki/Thread_%28computer_programming%29.html" title="Thread (computer programming)">multi-threaded</a> applications. If two threads are to execute the creation method at the same time when a singleton does not yet exist, they both must check for an instance of the singleton and then only one should create the new one. If the programming language has concurrent processing capabilities the method should be constructed to execute as a mutually exclusive operation.</p>
+<p>The classic solution to this problem is to use <a href="/wiki/Mutual_exclusion.html" title="Mutual exclusion">mutual exclusion</a> on the class that indicates that the object is being instantiated.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Class diagram</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Java example implementation</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">C++ example implementation</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">C# example implementation</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">C# example implementation using Generics</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">REALbasic example implementation</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">Python Borg pattern</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">8</span> <span class="toctext">Example of usage with the factory method pattern</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">9</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">10</span> <span class="toctext">Footnotes</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">11</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Class diagram">edit</a>]</div>
+<p><a name="Class_diagram" id="Class_diagram"></a></p>
+<h2>Class diagram</h2>
+<p><a  class="image" title="Image:Singleton classdia.png"><img src="http://upload.wikimedia.org/wikipedia/commons/d/d7/Singleton_classdia.png" alt="Image:Singleton classdia.png" width="322" height="155" longdesc="/wiki/Image:Singleton_classdia.png" /></a></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Java example implementation">edit</a>]</div>
+<p><a name="Java_example_implementation" id="Java_example_implementation"></a></p>
+<h2>Java example implementation</h2>
+<p>A <b>correct</b> threadsafe <a href="/wiki/Java_programming_language.html" title="Java programming language">Java programming language</a> <a href="/wiki/Lazy_initialization.html" title="Lazy initialization">lazy-loaded</a> solution known as the <a href="/wiki/Initialization_on_Demand_Holder_Idiom.html" title="Initialization on Demand Holder Idiom">"Initialization On Demand Holder"</a> idiom suggested by <a href="/wiki/William_Pugh.html" title="William Pugh">Bill Pugh</a> follows:</p>
+<pre>
+ <span style="color: #7F0055; font-weight: bold">public class</span> Singleton {
+   <span style="color: green;">// Private constructor suppresses generation of a (public) default constructor</span>
+   <span style="color: #7F0055; font-weight: bold">private</span> Singleton() {}
+ 
+   <span style="color: #7F0055; font-weight: bold">private static class</span> SingletonHolder {
+     <span style="color: #7F0055; font-weight: bold">private static</span> Singleton <span style="color: blue">instance</span> = <span style="color: #7F0055; font-weight: bold">new</span> Singleton();
+   } 
+ 
+   <span style="color: #7F0055; font-weight: bold">public static</span> Singleton getInstance() {
+     <span style="color: #7F0055; font-weight: bold">return</span> SingletonHolder.<span style="color: blue">instance</span>;
+   }
+ }
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: C++ example implementation">edit</a>]</div>
+<p><a name="C.2B.2B_example_implementation" id="C.2B.2B_example_implementation"></a></p>
+<h2>C++ example implementation</h2>
+<p>A possible <a href="/wiki/C%2B%2B.html" title="C++">C++</a> solution using <a href="/wiki/Curiously_Recurring_Template_Pattern.html" title="Curiously Recurring Template Pattern">Curiously Recurring Template Pattern</a> (also known as Meyers singleton) where the singleton is a static local object (note: this solution is not thread-safe and is designed to give an idea of how singletons work rather than a solution usable in large-scale software project).</p>
+<pre>
+<b>template</b>&lt;<b>typename</b> T&gt; <b>class</b> Singleton
+<b>{</b>
+
+  <b>public:</b>
+    <b>static</b> T&amp; Instance()
+    <b>{</b>
+        <b>static</b> T theSingleInstance; //assumes T has a default constructor
+        <b>return</b> theSingleInstance;
+    <b>}</b>
+<b>}</b>;
+</pre>
+<pre>
+<b>class</b> OnlyOne : <b>public</b> Singleton&lt;OnlyOne&gt;
+<b>{</b>
+    //..rest of interface defined here
+<b>}</b>;
+</pre>
+<p><br /></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: C# example implementation">edit</a>]</div>
+<p><a name="C.23_example_implementation" id="C.23_example_implementation"></a></p>
+<h2>C# example implementation</h2>
+<pre>
+<b>public class Singleton</b>
+{
+     private static Singleton instance = new Singleton();
+     
+     private Singleton() {}
+     
+     public static Singleton Instance
+     {
+          get { return instance; }
+     }
+}
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: C# example implementation using Generics">edit</a>]</div>
+<p><a name="C.23_example_implementation_using_Generics" id="C.23_example_implementation_using_Generics"></a></p>
+<h2>C# example implementation using Generics</h2>
+<p>This example is thread safe with lazy initialization</p>
+<pre>
+ /// &lt;summary&gt;
+ /// Generic class implements singleton pattern.
+ /// &lt;/summary&gt;
+ /// &lt;typeparam name="T"&gt;Reference type. <b>Important: Must have private constructor (not public).</b>&lt;/typeparam&gt;
+ public class Singleton&lt;T&gt; where T : class
+ {
+   Singleton() { }<br />
+   public static T Instance
+   {
+     get { return SingletonCreator.instance; }
+   }<br />
+   class SingletonCreator
+   {
+     static SingletonCreator() { }<br />
+     internal static readonly T instance = typeof(T).InvokeMember(typeof(T).Name,
+                          BindingFlags.CreateInstance |
+                          BindingFlags.Instance |
+                          BindingFlags.NonPublic,
+                          null, null, null) as T;
+   }
+ }
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: REALbasic example implementation">edit</a>]</div>
+<p><a name="REALbasic_example_implementation" id="REALbasic_example_implementation"></a></p>
+<h2>REALbasic example implementation</h2>
+<p>An example <a href="/wiki/REALbasic.html" title="REALbasic">REALbasic</a> solution uses a "Shared" method (available only in REALbasic 2006r1 or greater) to provide the instance. Note that this is thread-safe because REALbasic uses a cooperative threading model (instead of a preemptive one).</p>
+<pre>
+<b>Class</b> Singleton
+  <b>Protected Sub</b> Constructor()
+     // Initialization code defined here
+  <b>End Sub</b>
+  <b>Shared Function</b> Instance() <b>as</b> Singleton
+     <b>static</b> s <b>as new</b> Singleton
+     <b>return</b> s
+  <b>End Function</b>
+<b>End Class</b>
+</pre>
+<p>In a <a href="/wiki/Prototype-based_programming.html" title="Prototype-based programming">prototype-based programming</a> language, where objects but not classes are used, a "singleton" simply refers to an object without copies or that is not used as the prototype for any other object.</p>
+<p>Singleton (LoadBalancer) defines an Instance operation that lets clients access its unique instance. Instance is a class operation responsible for creating and maintaining its own unique instance. Ensure a class has only one instance and provide a global point of access to it.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Python Borg pattern">edit</a>]</div>
+<p><a name="Python_Borg_pattern" id="Python_Borg_pattern"></a></p>
+<h2>Python Borg pattern</h2>
+<p>According to influential <a href="/wiki/Python_%28programming_language%29.html" title="Python (programming language)">Python</a> programmer <a href="/wiki/Alex_Martelli.html" title="Alex Martelli">Alex Martelli</a>, <i>The Singleton design pattern (DP) has a catchy name, but the wrong focus—on identity rather than on state. The Borg design pattern has all instances share state instead</i>.<sup id="_ref-0" class="reference"><a  title="">[1]</a></sup> A rough consensus in the Puthon community is that sharing state among instances is more elegant, at least in Python, than is caching creation of identical instances on class initialization. Coding shared state is nearly transparent:</p>
+<pre>
+class Borg:
+    __shared_state = {}
+    def __init__(self):
+        self.__dict__ = self.__shared_state
+    # and whatever else you want in your class -- that's all!
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Example of usage with the factory method pattern">edit</a>]</div>
+<p><a name="Example_of_usage_with_the_factory_method_pattern" id="Example_of_usage_with_the_factory_method_pattern"></a></p>
+<h2>Example of usage with the factory method pattern</h2>
+<p>The singleton pattern is often used in conjunction with the <a href="/wiki/Factory_method_pattern.html" title="Factory method pattern">factory method pattern</a> to create a system-wide resource whose specific type is not known to the code that uses it. An example of using these two patterns together is the Java <a href="/wiki/Abstract_Windowing_Toolkit.html" title="Abstract Windowing Toolkit">Abstract Windowing Toolkit</a> (AWT).</p>
+<p><code><a  class="external text" title="http://java.sun.com/j2se/1.5.0/docs/api/java/awt/Toolkit.html">java.awt.Toolkit</a></code> is an <a href="/wiki/Abstract_class.html" title="Abstract class">abstract class</a> that <a href="/wiki/Binding_%28computer_science%29.html" title="Binding (computer science)">binds</a> the various AWT components to particular native toolkit implementations. The <code>Toolkit</code> class has a <code><a  class="external text" title="http://java.sun.com/j2se/1.5.0/docs/api/java/awt/Toolkit.html#getDefaultToolkit()">Toolkit.getDefaultToolkit()</a></code> factory method that returns the <a href="/wiki/Platform-specific_model.html" title="Platform-specific model">platform-specific</a> <a href="/wiki/Subclass_%28computer_science%29.html" title="Subclass (computer science)">subclass</a> of <code>Toolkit</code>. The <code>Toolkit</code> object is a singleton because the AWT needs only a single object to perform the binding and the object is relatively expensive to create. The toolkit methods must be implemented in an object and not as <a href="/wiki/Static_method.html" title="Static method">static methods</a> of a class because the specific implementation is not known by the platform-independent components. The name of the specific <code>Toolkit</code> subclass used is specified by the "<tt>awt.toolkit</tt>" <a  class="new" title="Environment property">environment property</a> accessed through <code><a  class="external text" title="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/System.html#getProperties()">System.getProperties()</a></code>.</p>
+<p>The binding performed by the toolkit allows, for example, the backing implementation of a <code><a  class="external text" title="http://java.sun.com/j2se/1.5.0/docs/api/java/awt/Window.html">java.awt.Window</a></code> to bound to the platform-specific <code>java.awt.peer.WindowPeer</code> implementation. Neither the <code>Window</code> class nor the application using the window needs to be aware of which platform-specific subclass of the peer is used.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Initialization_on_Demand_Holder_Idiom.html" title="Initialization on Demand Holder Idiom">Initialization on Demand Holder Idiom</a></li>
+<li><a href="/wiki/Double-checked_locking.html" title="Double-checked locking">Double-checked locking</a></li>
+<li><a href="/wiki/Multiton_pattern.html" title="Multiton pattern">Multiton pattern</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Footnotes">edit</a>]</div>
+<p><a name="Footnotes" id="Footnotes"></a></p>
+<h2>Footnotes</h2>
+<ol class="references">
+<li id="_note-0"><b><a  title="">^</a></b> Alex Martelli. <a  class="external text" title="http://aspn.activestate.com/ASPN/Cookbook/Python/Recipe/66531">Singleton? We don't need no stinkin' singleton: the Borg design pattern</a>. <i>ASPN Python Cookbook</i>. Retrieved on <a href="/wiki/2006.html" title="2006">2006</a>-<a href="/wiki/September_7.html" title="September 7">09-07</a>.</li>
+</ol>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li>A <a  class="external text" title="http://pec.dev.java.net/">Pattern Enforcing Compiler™</a> that enforces the Singleton pattern amongst other patterns</li>
+<li><a  class="external text" title="http://c2.com/cgi/wiki?SingletonPattern">Description from the Portland Pattern Repository</a></li>
+<li><a  class="external text" title="http://home.earthlink.net/~huston2/dp/singleton.html">Description</a> by <a  class="new" title="Vince Huston">Vince Huston</a></li>
+<li><a  class="external text" title="http://www.yoda.arachsys.com/csharp/singleton.html">Implementing the Singleton Pattern in C#</a> by Jon Skeet</li>
+<li><a  class="external text" title="http://www.opbarnes.com/blog/Programming/OPB/Snippets/Singleton.html">A Threadsafe C++ Template Singleton Pattern for Windows Platforms</a> by O. Patrick Barnes</li>
+<li><a  class="external text" title="http://svn.shadanakar.org/filedetails.php?repname=onPHP&amp;path=%2Ftrunk%2Fcore%2FBase%2FSingleton.class.php&amp;rev=0&amp;sc=0">Implementing the Inheritable Singleton Pattern in PHP5</a></li>
+<li><a  class="external text" title="http://www.oaklib.org/docs/oak/singleton.html">Singleton Pattern and Thread Safety</a></li>
+<li><a  class="external text" title="http://www.php.net/manual/en/language.oop5.patterns.php">PHP patterns</a></li>
+<li><a  class="external text" title="http://opal.cabochon.com/~stevey/blog-rants/singleton-stupid.html">Singleton Considered Stupid</a></li>
+<li>Article "<a  class="external text" title="http://www-128.ibm.com/developerworks/java/library/j-dcl.html?loc=j">Double-checked locking and the Singleton pattern</a>" by Peter Haggar</li>
+<li>Article "<a  class="external text" title="http://www-106.ibm.com/developerworks/library/co-single.html">Use your singletons wisely</a>" by <a href="/wiki/J._B._Rainsberger.html" title="J. B. Rainsberger">J. B. Rainsberger</a></li>
+<li>Article "<a  class="external text" title="http://www.javaworld.com/javaworld/jw-04-2003/jw-0425-designpatterns.html">Simply Singleton</a>" by David Geary</li>
+<li>Article "<a  class="external text" title="http://www.dofactory.com/Patterns/PatternSingleton.aspx">Description of Singleton</a>" by Arun</li>
+</ul>
+<p><br /></p>
+<table style="margin:0.5em auto; clear:both; text-align:center" align="center" class="toccolours">
+<tr>
+<th style="background-color:#ccccff"><a href="/wiki/Design_pattern_%28computer_science%29.html" title="Design pattern (computer science)">Design patterns</a> in <i><a href="/wiki/Design_Patterns.html" title="Design Patterns">Design Patterns</a></i></th>
+</tr>
+<tr>
+<td><b>Creational:</b> <a href="/wiki/Abstract_factory_pattern.html" title="Abstract factory pattern">Abstract factory</a> • <a href="/wiki/Builder_pattern.html" title="Builder pattern">Builder</a> • <a href="/wiki/Factory_method_pattern.html" title="Factory method pattern">Factory</a> • <a href="/wiki/Prototype_pattern.html" title="Prototype pattern">Prototype</a> • <strong class="selflink">Singleton</strong></td>
+</tr>
+<tr>
+<td><b>Structural:</b> <a href="/wiki/Adapter_pattern.html" title="Adapter pattern">Adapter</a> • <a href="/wiki/Bridge_pattern.html" title="Bridge pattern">Bridge</a> • <a href="/wiki/Composite_pattern.html" title="Composite pattern">Composite</a> • <a href="/wiki/Decorator_pattern.html" title="Decorator pattern">Decorator</a> • <a href="/wiki/Fa%C3%A7ade_pattern.html" title="Façade pattern">Façade</a> • <a href="/wiki/Flyweight_pattern.html" title="Flyweight pattern">Flyweight</a> • <a href="/wiki/Proxy_pattern.html" title="Proxy pattern">Proxy</a></td>
+</tr>
+<tr>
+<td><b>Behavorial:</b> <a href="/wiki/Chain-of-responsibility_pattern.html" title="Chain-of-responsibility pattern">Chain of responsibility</a> • <a href="/wiki/Command_pattern.html" title="Command pattern">Command</a> • <a href="/wiki/Interpreter_pattern.html" title="Interpreter pattern">Interpreter</a> • <a href="/wiki/Iterator_pattern.html" title="Iterator pattern">Iterator</a> • <a href="/wiki/Mediator_pattern.html" title="Mediator pattern">Mediator</a> • <a href="/wiki/Memento_pattern.html" title="Memento pattern">Memento</a> • <a href="/wiki/Observer_pattern.html" title="Observer pattern">Observer</a> • <a href="/wiki/State_pattern.html" title="State pattern">State</a> • <a href="/wiki/Strategy_pattern.html" title="Strategy pattern">Strategy</a> • <a href="/wiki/Template_method_pattern.html" title="Template method pattern">Template method</a> • <a href="/wiki/Visitors_pattern.html" title="Visitors pattern">Visitor</a></td>
+</tr>
+</table>
+
+<!-- 
+Pre-expand include size: 10255 bytes
+Post-expand include size: 3582 bytes
+Template argument size: 1619 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:65041-0!1!0!default!!en!2 and timestamp 20060907185902 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:Software design patterns">Software design patterns</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Singleton_pattern.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-nl"><a >Nederlands</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-pt"><a >Português</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+				<li class="interwiki-zh"><a >中文</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 18:58, 7 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv110 in 0.389 secs. --></body></html>

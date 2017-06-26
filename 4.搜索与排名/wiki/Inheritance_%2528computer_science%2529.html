@@ -1,0 +1,320 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Inheritance (computer science),Override (object-oriented programming),Bertrand Meyer,Implementation inheritance (object-oriented programming),Subtyping (object-oriented programming),Concrete class,Abstract class,Subclass (computer science),Polymorphism in object-oriented programming,Delegation pattern,C++" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Inheritance (computer science) - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Inheritance_(computer_science)";
+			var wgTitle = "Inheritance (computer science)";
+			var wgArticleId = 2617746;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Inheritance (computer science)</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<dl>
+<dd><i>This article is about inheritance in object-oriented programming. For the use of this term in connection with genetic algorithms, see <a href="/wiki/Inheritance_%28genetic_algorithm%29.html" title="Inheritance (genetic algorithm)">inheritance (genetic algorithm)</a></i>.</dd>
+</dl>
+<p>In <a href="/wiki/Object-oriented_programming.html" title="Object-oriented programming">object-oriented programming</a>, <b>inheritance</b> is a way to form new <a href="/wiki/Class_%28computer_science%29.html" title="Class (computer science)">classes</a> (instances of which are called <a href="/wiki/Object_%28computer_science%29.html" title="Object (computer science)">objects</a>) using classes that have already been defined. The former, known as <b>derived classes</b>, take over (or <b>inherit</b>) attributes and behaviour of the latter, which are referred to as <b>base classes</b>. It is intended to help <a href="/wiki/Reusability.html" title="Reusability">reuse</a> of existing code with little or no modification.</p>
+<p>Moreover, <b>inheritance</b> is also called <b>generalization</b>, because the <b>is-a</b> relationships capture a hierarchical relationship between classes of objects. For instance, a "fruit" is a generalization of "apple", "orange", "mango" and many others. We say that fruit is an abstraction of apple, orange, etc. Conversely, we can say that since apples are fruit (i.e. an apple <b>is-a</b> fruit), that they inherit all the properties common to all fruit, such as being a fleshy container for the seed of a plant.</p>
+<p>Therefore, one of the powerful advantages of inheritance is that modules with sufficiently similar interfaces can be commanded by shared controlling code, reducing the complexity of the program. Inheritance therefore has another view, a <i>dual</i>, called <a href="/wiki/Polymorphism_%28computer_science%29.html" title="Polymorphism (computer science)">polymorphism</a>, which describes many pieces of code being controlled by shared control code.</p>
+<p>Complex inheritances may cause the <a href="/wiki/Yo-yo_problem.html" title="Yo-yo problem">Yo-yo problem</a>.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Applications of inheritance</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">1.1</span> <span class="toctext">Specialization</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.2</span> <span class="toctext">Overriding</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.3</span> <span class="toctext">Extension</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.4</span> <span class="toctext">Code re-use</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Examples</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">2.1</span> <span class="toctext">Java</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.2</span> <span class="toctext">Style sheets</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.3</span> <span class="toctext">Conic section</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Limitations and alternatives</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">3.1</span> <span class="toctext">Constraints of inheritance-based design</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.2</span> <span class="toctext">Roles and inheritance</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.3</span> <span class="toctext">Component-oriented design as an alternative to inheritance</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Applications of inheritance">edit</a>]</div>
+<p><a name="Applications_of_inheritance" id="Applications_of_inheritance"></a></p>
+<h2>Applications of inheritance</h2>
+<p>There are many different aspects to inheritance. Different uses focus on different properties, such as the external behaviour of objects, internal structure of the object, structure of the inheritance hierarchy, or software engineering properties of inheritance. Sometimes it's desirable to distinguish these uses, as it's not necessarily obvious from context.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Specialization">edit</a>]</div>
+<p><a name="Specialization" id="Specialization"></a></p>
+<h3>Specialization</h3>
+<p>One common reason to use inheritance is to create specializations of existing classes or objects. This is often called <i><a href="/wiki/Subtyping_%28object-oriented_programming%29.html" title="Subtyping (object-oriented programming)">subtyping</a></i> when applied to classes. In specialization, the new class or object has data or behavior aspects that are not part of the inherited class. For example, a "Bank Account" class might have data for an "account number", "owner", and "balance". An "Interest Bearing Account" class might inherit "Bank Account" and then add data for "interest rate" and "interest accrued" along with behavior for calculating interest earned.</p>
+<p>Another form of specialization occurs when an inherited class specifies that it has a particular behavior but does not actually implement the behavior. Each non-abstract, <a href="/wiki/Concrete_class#Abstract_and_concrete_classes.html" title="Concrete class">concrete class</a> which inherits from that <a href="/wiki/Abstract_class#Abstract_and_concrete_classes.html" title="Abstract class">abstract class</a> must provide an implementation of that behavior. This providing of actual behavior by a <a href="/wiki/Subclass_%28computer_science%29.html" title="Subclass (computer science)">subclass</a> is sometimes known as <i><a href="/wiki/Implementation_inheritance_%28object-oriented_programming%29.html" title="Implementation inheritance (object-oriented programming)">implementation</a></i> or <i><a href="/wiki/Reification_%28object-oriented_programming%29.html" title="Reification (object-oriented programming)">reification</a></i>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Overriding">edit</a>]</div>
+<p><a name="Overriding" id="Overriding"></a></p>
+<h3>Overriding</h3>
+<p>Many object-oriented programming languages permit a class or object to replace the implementation of an aspect—typically a behavior—that it has inherited. This process is usually called <i><a href="/wiki/Override_%28object-oriented_programming%29.html" title="Override (object-oriented programming)">overriding</a></i>. Overriding introduces a complication: which version of the behavior does code from the inherited class see—the one that is part of its own class, or the overriding behavior? The answer varies between programming languages, and some languages provide the ability to indicate that a particular behavior is not to be overridden.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Extension">edit</a>]</div>
+<p><a name="Extension" id="Extension"></a></p>
+<h3>Extension</h3>
+<p>Another reason to use inheritance is to provide additional data or behavior features. This practice is sometimes called <i><a  class="new" title="Extension (object-oriented programming)">extension</a></i> or <i>subclassing</i>. In contrast to the case of specialization, with extension the new data or behaviors could have been provided in the inherited class because they are generally applicable to all instances of the class.</p>
+<p>Extension is often used when incorporating the new features into the inherited class is either not possible or not appropriate. It can also be used at the object level, such as in the <a href="/wiki/Decorator_pattern.html" title="Decorator pattern">Decorator pattern</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Code re-use">edit</a>]</div>
+<p><a name="Code_re-use" id="Code_re-use"></a></p>
+<h3>Code re-use</h3>
+<p>One of the earliest motivations for using inheritance was to allow a new class to re-use code which already existed in another class. This practice is usually called <i><a href="/wiki/Implementation_inheritance_%28object-oriented_programming%29.html" title="Implementation inheritance (object-oriented programming)">implementation inheritance</a></i>.</p>
+<p>In most quarters, class inheritance for the sole purpose of code re-use has fallen out of favor. The primary concern is that implementation inheritance does not provide any assurance of <a href="/wiki/Polymorphism_in_object-oriented_programming.html" title="Polymorphism in object-oriented programming">polymorphic</a> substitutability—an instance of the re-using class cannot necessarily be substituted for an instance of the inherited class. An alternative technique, <a href="/wiki/Delegation_pattern.html" title="Delegation pattern">delegation</a>, requires more programming effort but avoids the substitutability issue. In <a href="/wiki/C%2B%2B.html" title="C++">C++</a> private inheritance can be used as form of <i><a href="/wiki/Implementation_inheritance_%28object-oriented_programming%29.html" title="Implementation inheritance (object-oriented programming)">implementation inheritance</a></i> without substitutability.</p>
+<p>The notion that implementation inheritance should be avoided is not universal. One prominent object-oriented programming expert who believes that implementation inheritance has its place is <a href="/wiki/Bertrand_Meyer.html" title="Bertrand Meyer">Bertrand Meyer</a>. In his book <cite>Object Oriented Software Construction, 2<sup>nd</sup> ed.</cite>, Meyer lists twelve different uses of inheritance that he considers to be legitimate, most of which involve some amount of implementation inheritance.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Examples">edit</a>]</div>
+<p><a name="Examples" id="Examples"></a></p>
+<h2>Examples</h2>
+<p>A program might have a class <code>Animal</code> that contained such data that denoted whether the animal was presently alive, where it was currently located, etc.; as well as methods instructing the animal to eat, move, mate, etc. If we wanted to create a class <code>Mammal</code>, most of those data elements and functions would be the same as for most animals, but a few would change. We therefore define <code>Mammal</code> as a <i>subclass</i> of <code>Animal</code> (we then say that <code>Animal</code> is <code>Mammal</code>'s <i>superclass</i> or <i>parent</i> class):</p>
+<p>Note here that we don't need to specify that a mammal has all the usual animal things: a location, ability to eat, move, etc. We do add some additional features such as hair and breasts that are unique to mammals, and we <i>redefine</i> the <code>reproduce</code> method to add functionality. Within the <code>reproduce</code> method, note the call <code>super.reproduce()</code>. This is a call to the superclass method which we are redefining. This roughly means "do whatever a member of my superclass would do", which is then followed by code specific to our new subclass.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Java">edit</a>]</div>
+<p><a name="Java" id="Java"></a></p>
+<h3><a href="/wiki/Java_programming_language.html" title="Java programming language">Java</a></h3>
+<pre>
+ class Mammal extends Animal 
+ {
+   Hair m_h;
+   Breasts m_b;
+   
+   Mammal reproduce() 
+   {
+     Mammal offspring;
+     
+     super.reproduce();
+     if (is_female())
+     {
+       offspring = super.give_birth();
+       offspring.breastfeed(m_b);
+     }
+     care_for_young(offspring);
+     return offspring;
+   }
+ }
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Style sheets">edit</a>]</div>
+<p><a name="Style_sheets" id="Style_sheets"></a></p>
+<h3>Style sheets</h3>
+<p>The concept of inheritance may also be applied more generally to any process in computer science in which one context receives certain traits from another. For example, in rabo some word processor applications, stylistic attributes such as font size, layout, or color, may be inherited from a template or from another document; a user may define specific attributes for some elements, while the remaining elements inherit attributes from a global style specification. Closely related to this is the use of inheritance in <a href="/wiki/Cascading_Style_Sheets.html" title="Cascading Style Sheets">Cascading Style Sheets</a> (CSS), a styles descriptions language commonly used in web design; here again, some stylistic attributes may be specifically defined, while other attributes are inherited, or <i>cascaded</i>. When browsing websites, for example, a user may choose to apply his own style sheet defining font size, while other characteristics, such as font color and typeface, may be inherited peido from the site-wide style sheet.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Conic section">edit</a>]</div>
+<p><a name="Conic_section" id="Conic_section"></a></p>
+<h3>Conic section</h3>
+<p>The class conic section can be specialized to class circle. The methods for changing the coefficient of the conic section then automagically adjust all other coefficients to meet the constraints of being a circle. This may be counterintuitive. New methods for setting the center and the radius are added. <a  class="external text" title="http://www.desi-tek.com/forum/index.php?showtopic=403">oops</a></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Limitations and alternatives">edit</a>]</div>
+<p><a name="Limitations_and_alternatives" id="Limitations_and_alternatives"></a></p>
+<h2>Limitations and alternatives</h2>
+<p>When using inheritance extensively in designing a program, one should be aware of certain constraints that it imposes.</p>
+<p>For example, consider a class <code>Person</code> that contains a person's name, address, phone number, age, sex, and race. We can define a subclass of <code>Person</code> called <code>Student</code> that contains the person's grade point average and classes taken, and another subclass of <code>Person</code> called <code>Employee</code> that contains the person's job title, employer, and salary.</p>
+<p>In defining this inheritance hierarchy we have already defined certain restrictions, not all of which are desirable:</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Constraints of inheritance-based design">edit</a>]</div>
+<p><a name="Constraints_of_inheritance-based_design" id="Constraints_of_inheritance-based_design"></a></p>
+<h3>Constraints of inheritance-based design</h3>
+<ul>
+<li><b>Singleness</b>: using single inheritance, a subclass can inherit from only one superclass. Continuing the example given above, <code>Person</code> can be either a <code>Student</code> or an <code>Employee</code>, but not both. Using <a href="/wiki/Multiple_inheritance.html" title="Multiple inheritance">multiple inheritance</a> partially solves this problem, as a <code>StudentEmployee</code> class can be defined that inherits from both <code>Student</code> and <code>Employee</code>. However, it can still inherit from each superclass only once; this scheme does not support cases in which a student has two jobs or attends two institutions.</li>
+<li><b>Staticness</b>: the inheritance hierarchy of an object is fixed at instantiation when the object's type is selected and does not change with time. For example, the inheritance graph does not allow a <code>Student</code> object to become a <code>Employee</code> object while retaining the state of its <code>Person</code> superclass.</li>
+<li><b>Visibility</b>: whenever client code has access to an object, it generally has access to all the object's superclass data. Even if the superclass is not a public one, the client can still <a href="/wiki/Typecast_%28programming%29.html" title="Typecast (programming)">cast</a> the object to its superclass type. For example, there is no way to give a function a pointer to a <code>Student</code>'s grade point average and transcript without also giving that function access to all of the personal data stored in the student's <code>Person</code> superclass.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Roles and inheritance">edit</a>]</div>
+<p><a name="Roles_and_inheritance" id="Roles_and_inheritance"></a></p>
+<h3>Roles and inheritance</h3>
+<p>Sometimes inheritance based design is used instead of roles. A role, say <b>Student</b> role of a <b>Person</b> describes a characteristic associated to the object that is present because the object happens to participate in some relationship with another object (say the person in student role -has enrolled- to the classes). Some object-oriented design methods do not distinguish this use of roles from more stable aspects of objects. Thus there is a tendency to use inheritance to model roles, say you would have a Student role of a Person modelled as a subclass of a Person. However, neither the inheritance hierarchy nor the types of the objects can change with time. Therefore, modelling roles as subclasses can cause the roles to be fixed on creation, say a Person cannot then easily change his role from Student to Employee when the circumstances change. From modelling point of view, such restrictions are often not desirable, because this causes artificial restrictions on future extensibility of the object system, which will make future changes harder to implement, because existing design needs to be updated. Inheritance is often better used with a generalization mindset, such that common aspects of instantiable classes are factored to superclasses; say having a common superclass 'LegalEntity' for both Person and Company classes for all the common aspects of both. The distinction between role based design and inheritance based design can be made based on the stability of the aspect. Role based design should be used when it's conceivable that the same object participates in different roles at different times, and inheritance based design should be used when the common aspects of multiple classes (not objects!) are factored as superclasses, and do not change with time.</p>
+<p>One consequence of separation of roles and superclasses is that <a href="/wiki/Compile-time.html" title="Compile-time">compile-time</a> and <a href="/wiki/Run-time.html" title="Run-time">run-time</a> aspects of the object system are cleanly separated. Inheritance is then clearly a compile-time construct. Inheritance does influence the structure of many objects at run-time, but the different kinds of structure that can be used are already fixed at compile-time.</p>
+<p>To model the example of Person as an employee with this method, the modelling ensures that a Person class can only contain operations or data that are common to every Person instance regardless of where they are used. This would prevent use of a Job member in a Person class, because every person does not have a job, or at least it is not known that the Person class is only used to model Person instances that have a job. Instead, object-oriented design would consider some subset of all person objects to be in an "employee" role. The job information would be associated only to objects that have the employee role. Object-oriented design would also model the "job" as a role, since a job can be restricted in time, and therefore is not a stable basis for modelling a class. The corresponding stable concept is either "WorkPlace" or just "Work" depending on which concept is meant. Thus, from object-oriented design point of view, there would be a "Person" class and a "WorkPlace" class, which are related by a many-to-many associatation "works-in", such that an instance of a Person is in employee role, when he works-in a job, where a job is a role of his work place in the situation when the employee works in it.</p>
+<p>Note that in this approach, all classes that are produced by this design process are part of the same domain, that is, they describe things clearly using just one terminology. This is often not true for other approaches.</p>
+<p>The difference between roles and classes is especially difficult to understand if <a href="/wiki/Referential_transparency.html" title="Referential transparency">referential transparency</a> is assumed, because roles are types of references and classes are types of the referred-to objects.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Component-oriented design as an alternative to inheritance">edit</a>]</div>
+<p><a name="Component-oriented_design_as_an_alternative_to_inheritance" id="Component-oriented_design_as_an_alternative_to_inheritance"></a></p>
+<h3>Component-oriented design as an alternative to inheritance</h3>
+<p>An alternative way to design the aforementioned system of persons, students, and employees would be to define helper classes <code>Transcript</code> and <code>Job</code> to store the additional information for a student and employee, respectively. Then, each <code>Person</code> object can contain a collection of <code>Transcript</code> objects and a collection of <code>Job</code> objects. This removes the aforementioned constraints:</p>
+<ul>
+<li>A <code>Person</code> can now have an arbitrary number of jobs and attend an arbitrary number of institutions</li>
+<li>These jobs can now be changed, added, and deleted dynamically</li>
+<li>It is now possible to pass a student's <code>Transcript</code> to a function--for example, one that makes college admissions decisions--without also automatically passing in the student's name, age, race, and other personal information.</li>
+</ul>
+<p>Using composition instead of inheritance also leads to less ambiguous syntax. For example, in an inheritance-oriented design, one might encounter the following code: <code>Employee e = getEmployee(); print(e.jobTitle());</code> While one might infer that the <code>jobTitle()</code> function is defined in the <code>Employee</code> class, it is also possible that it is defined in the <code>Person</code> class. As the inheritance hierarchy gets deeper, this effect, known as the <a href="/wiki/Yo-yo_problem.html" title="Yo-yo problem">yo-yo problem</a>, is magnified.</p>
+<p>A composition-based design allows the programmer to maintain a shallower inheritance hierarchy, and minimizes ambiguity, as in the following example: <code>Person p = getPerson(); print(p.job().title());</code> To a programmer that knows the <code>Job</code> class has no superclass, it is immediately obvious that the <code>title()</code> function is defined in the <code>Job</code> class.</p>
+<p>Component-oriented design cannot be substituted for an inheritance-based design in all cases. For example, inheritance enables <a href="/wiki/Polymorphism_%28computer_science%29.html" title="Polymorphism (computer science)">polymorphism</a> and <a href="/wiki/Information_hiding.html" title="Information hiding">encapsulation</a>. Also, defining component classes instead of subclasses can increase the length of source code.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Inheritance_semantics.html" title="Inheritance semantics">Inheritance semantics</a></li>
+<li><a href="/wiki/Implementation_inheritance.html" title="Implementation inheritance">Implementation inheritance</a></li>
+<li><a href="/wiki/Multiple_inheritance.html" title="Multiple inheritance">Multiple inheritance</a></li>
+<li><a href="/wiki/Virtual_inheritance.html" title="Virtual inheritance">Virtual inheritance</a></li>
+<li><a href="/wiki/Class_%28object-oriented_programming%29.html" title="Class (object-oriented programming)">Class (object-oriented programming)</a></li>
+<li><a href="/wiki/Hierarchy_%28object-oriented_programming%29.html" title="Hierarchy (object-oriented programming)">Hierarchy (object-oriented programming)</a></li>
+<li><a href="/wiki/Interface_%28computer_science%29.html" title="Interface (computer science)">Interface (computer science)</a></li>
+<li><a href="/wiki/Override_%28object-oriented_programming%29.html" title="Override (object-oriented programming)">Override (object-oriented programming)</a></li>
+<li><a href="/wiki/Composition_in_object-oriented_programming.html" title="Composition in object-oriented programming">Composition in object-oriented programming</a></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:2617746-0!1!0!default!!en!2 and timestamp 20060906170846 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:Object-oriented programming">Object-oriented programming</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Inheritance_%28computer_science%29.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-lt"><a >Lietuvių</a></li>
+				<li class="interwiki-nl"><a >Nederlands</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-pt"><a >Português</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+				<li class="interwiki-fi"><a >Suomi</a></li>
+				<li class="interwiki-ta"><a >தமிழ்</a></li>
+				<li class="interwiki-zh"><a >中文</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 12:03, 5 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv100 in 0.081 secs. --></body></html>

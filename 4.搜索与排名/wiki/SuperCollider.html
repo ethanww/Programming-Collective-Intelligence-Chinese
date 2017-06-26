@@ -1,0 +1,259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="SuperCollider programming language,Scope (programming),Coroutines,Currying,Moses Schönfinkel,Tail call,Function composition,First class (computing),C,Unit generator,Garbage collection (computer science)" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>SuperCollider programming language - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "SuperCollider_programming_language";
+			var wgTitle = "SuperCollider programming language";
+			var wgArticleId = 346978;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">SuperCollider programming language</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub">(Redirected from <a  title="SuperCollider">SuperCollider</a>)</div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<dl>
+<dd><i>For the <a href="/wiki/Particle_accelerator.html" title="Particle accelerator">particle accelerator</a>, see <a href="/wiki/Superconducting_Supercollider.html" title="Superconducting Supercollider">Superconducting Supercollider</a>.</i></dd>
+</dl>
+<p><b>SuperCollider</b> <sup id="_ref-0" class="reference"><a  title="">[1]</a></sup> is an environment and <a href="/wiki/Programming_language.html" title="Programming language">programming language</a> for <a href="/wiki/Real_time.html" title="Real time">real time</a> <a href="/wiki/Audio_synthesis.html" title="Audio synthesis">audio synthesis</a> and <a href="/wiki/Algorithmic_composition.html" title="Algorithmic composition">algorithmic composition</a>. Originating as <a href="/wiki/Proprietary_software.html" title="Proprietary software">proprietary software</a>, it was released in <a href="/wiki/2002.html" title="2002">2002</a> by its author, James McCartney, under the <a href="/wiki/Free_software.html" title="Free software">free software</a> <a href="/wiki/GNU_General_Public_License.html" title="GNU General Public License">GPL</a> license. Since then it has been evolving into a system used and further developed by both scientists and artists working with sound. It is an efficient and expressive <a href="/wiki/Dynamic_programming_language.html" title="Dynamic programming language">dynamic programming language</a> which makes it an interesting framework for <a href="/wiki/Acoustics.html" title="Acoustics">acoustic research</a>, <a href="/wiki/Algorithmic_composition.html" title="Algorithmic composition">algorithmic music</a> and <a href="/wiki/Interactive_programming.html" title="Interactive programming">interactive programming</a>.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Architecture</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Language Features</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Synthesis Server Features</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Code examples</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">System requirements</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Architecture">edit</a>]</div>
+<p><a name="Architecture" id="Architecture"></a></p>
+<h2>Architecture</h2>
+<p>Since version 3 the SuperCollider environment is split into a <a href="/wiki/Server_%28computing%29.html" title="Server (computing)">server</a>, <i>scsynth</i>, and a <a href="/wiki/Client_%28computing%29.html" title="Client (computing)">client</a>, <i>sclang</i>, that communicate using <a href="/wiki/OpenSound_Control.html" title="OpenSound Control">OpenSound Control</a>.</p>
+<p><i>SC Language</i> combines the object oriented structure of <a href="/wiki/Smalltalk.html" title="Smalltalk">Smalltalk</a> and features from <a href="/wiki/Functional_programming.html" title="Functional programming">functional programming languages</a> with a <a href="/wiki/C_programming_language.html" title="C programming language">C programming language</a> family syntax.</p>
+<p>The <i>SC Server</i> application supports a simple <a href="/wiki/C.html" title="C">C</a> plugin API making it easy to write efficient sound algorithms (<a href="/wiki/Unit_generator.html" title="Unit generator">unit generators</a>) which can then be combined into graphs of calculations. Due to the fact that all external control in the server happens via open sound control, it is possible to access its functionality from other languages or applications. <sup id="_ref-1" class="reference"><a  title="">[2]</a></sup></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Language Features">edit</a>]</div>
+<p><a name="Language_Features" id="Language_Features"></a></p>
+<h2>Language Features</h2>
+<ul>
+<li>Constant time message lookup</li>
+<li>Real time <a href="/wiki/Garbage_collection_%28computer_science%29.html" title="Garbage collection (computer science)">garbage collection</a></li>
+<li>Lexical <a href="/wiki/Closure_%28computer_science%29.html" title="Closure (computer science)">closure</a></li>
+<li>Functions as <a href="/wiki/First_class_%28computing%29.html" title="First class (computing)">first class</a> objects, <a href="/wiki/Function_composition.html" title="Function composition">function composition</a></li>
+<li><a href="/wiki/Coroutines.html" title="Coroutines">Coroutines</a></li>
+<li>Default argument values, variable length argument lists and any order keyword arguments</li>
+<li>Both lexical and dynamic <a href="/wiki/Scope_%28programming%29.html" title="Scope (programming)">scope</a></li>
+<li>Closure creation via partial application (i.e., explicit <a href="/wiki/Currying.html" title="Currying">currying</a> / <a href="/wiki/Moses_Sch%C3%B6nfinkel.html" title="Moses Schönfinkel">schönfinkelling</a>)</li>
+<li><a href="/wiki/Tail_call.html" title="Tail call">Tail call</a> optimization</li>
+<li><a href="/wiki/List_comprehension.html" title="List comprehension">List comprehensions</a></li>
+<li>allows to represent properties such as time and pitch in variable degrees of abstraction</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Synthesis Server Features">edit</a>]</div>
+<p><a name="Synthesis_Server_Features" id="Synthesis_Server_Features"></a></p>
+<h2>Synthesis Server Features</h2>
+<ul>
+<li>open sound control access</li>
+<li>simple <a href="/wiki/ANSI_C.html" title="ANSI C">ANSI C</a> plugin <a href="/wiki/API.html" title="API">API</a></li>
+<li>supports any number of input and output channels</li>
+<li>gives access to an <a href="/wiki/Ordered_tree_data_structure.html" title="Ordered tree data structure">ordered tree</a> structure of synthesis nodes which define the order of execution</li>
+<li>bus system which allows to dynamically restructure the signal flow</li>
+<li>buffers for writing and reading</li>
+<li>calculation at different rates depending on the needs: audio rate, control rate, demand rate</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Code examples">edit</a>]</div>
+<p><a name="Code_examples" id="Code_examples"></a></p>
+<h2>Code examples</h2>
+<pre>
+
+// play a mixture of pink noise and an 800 Hz sine tone
+{ SinOsc.ar(800, 0, 0.1) + PinkNoise.ar(0.01) }.play; 
+
+// modulate the sine frequency and the noise amplitude with another sine
+// whose frequency depends on the horizontal cursor position
+{ 
+        var x = SinOsc.ar(MouseX.kr(1, 100));
+        SinOsc.ar(300 * x + 800, 0, 0.1) 
+        + 
+        PinkNoise.ar(0.1 * x + 0.1) 
+}.play; 
+
+// list iteration: create a collection of indices multiplied by their values
+[1, 2, 5, 10, -3].collect { |item, i| item * i }
+
+// factorial function
+f = { |x| if(x == 0) { 1 } { f.(x-1) * x } }
+
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: System requirements">edit</a>]</div>
+<p><a name="System_requirements" id="System_requirements"></a></p>
+<h2>System requirements</h2>
+<p>SC runs under <a href="/wiki/GNU/Linux.html" title="GNU/Linux">GNU/Linux</a> and <a href="/wiki/Mac_OS_X.html" title="Mac OS X">Mac OS X</a>. There is also a port of the audio synthesis server available for <a href="/wiki/Microsoft_Windows.html" title="Microsoft Windows">Microsoft Windows</a>. The GNU/Linux version can easily be controlled from <a href="/wiki/GNU_Emacs.html" title="GNU Emacs">GNU Emacs</a>.</p>
+<p>SC is available on a <a href="/wiki/Live_CD.html" title="Live CD">Linux Live CD</a> called <a  title="Pure:dyne">pure:dyne</a> (a modified version of <a  title="Dyne:bolic">dyne:bolic</a>), so this is one way to use it on an ordinary <a href="/wiki/Microsoft_Windows.html" title="Microsoft Windows">Windows</a> computer by booting into Linux without altering your Windows computer at all.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<ol class="references">
+<li id="_note-0"><b><a  title="">^</a></b> The name <i>SuperCollider</i> is said to have its origin from the <a href="/wiki/Superconducting_Super_Collider.html" title="Superconducting Super Collider">Superconducting Super Collider</a> in Waxahachie, Texas, which was planned, but never built.</li>
+<li id="_note-1"><b><a  title="">^</a></b> One example for such a system is <a  class="external text" title="http://www.alphalink.com.au/~rd/sw/scheme.html">rsc</a>, a <a href="/wiki/Scheme_programming_language.html" title="Scheme programming language">Scheme</a> implementation for accessing scserver.</li>
+</ol>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://sourceforge.net/project/showfiles.php?group_id=54622">Download SuperCollider from here</a></li>
+<li><a  class="external text" title="http://www.audiosynth.com/">Author's page</a></li>
+<li><a  class="external text" title="http://swiki.hfbk-hamburg.de:8888/MusicTechnology/6">The SuperCollider Swiki</a></li>
+<li><a  class="external text" title="http://www.create.ucsb.edu/mailman/listinfo/sc-users">SuperCollider users mailing list</a></li>
+<li><a  class="external text" title="http://swiki.hfbk-hamburg.de:8888/MusicTechnology/437">Search the SuperCollider mailing lists archives</a></li>
+<li><a  class="external text" title="http://c2.com/cgi/wiki?SuperCollider">cunningham's wiki web</a></li>
+<li><a  class="external text" title="http://supercollider.sourceforge.net/">Location on SourceForge</a></li>
+<li><a  class="external text" title="http://www.audiosynth.com/icmc96paper.html">SuperCollider 1 presentation</a> (1998)</li>
+<li><a  class="external text" title="http://www.music.mcgill.ca/~ich/research/icmpc98/icmpc98.realsynth.html">Realtime Software Synthesis for Psychoacoustic Experiments</a> (1998)</li>
+<li><a  class="external text" title="http://www.ariada.uea.ac.uk/ariadatexts/ariada3/collins/ariada3_collins.html">Algorithmic Composition Methods for Breakbeat Science</a> (2003)</li>
+<li><a  class="external text" title="http://akustik.hfbk.net/publications/Uncertainty_and_waiting.pdf">Uncertainty and waiting in Computer Music Networks</a> (2004)</li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:346978-0!1!0!default!!en!2 and timestamp 20060909215533 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Domain-specific programming languages">Domain-specific programming languages</a></span> | <span dir='ltr'><a  title="Category:Audio programming languages">Audio programming languages</a></span> | <span dir='ltr'><a  title="Category:Free audio software">Free audio software</a></span> | <span dir='ltr'><a  title="Category:Software synthesizers">Software synthesizers</a></span> | <span dir='ltr'><a  title="Category:Curly bracket programming languages">Curly bracket programming languages</a></span> | <span dir='ltr'><a  title="Category:Music software">Music software</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/SuperCollider_programming_language.html">Article</a></li>
+				 <li id="ca-talk" class="new"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 03:37, 8 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv13 in 0.066 secs. --></body></html>

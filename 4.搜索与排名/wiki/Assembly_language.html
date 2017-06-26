@@ -1,0 +1,523 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Assembly language,Assembly language,1-to-1,1950s,3DNow!,6502,Addressing mode,AltiVec,As (Unix),BIOS,Bitwise operation" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Assembly language - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Assembly_language";
+			var wgTitle = "Assembly language";
+			var wgArticleId = 1368;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Assembly language</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub">(Redirected from <a  title="Assembly Language">Assembly Language</a>)</div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p><b>Assembly language</b>, commonly called <b>assembly</b>, <b>asm</b> or <b>symbolic machine code</b>, is a <a href="/wiki/Human-readable.html" title="Human-readable">human-readable</a> notation for the <a href="/wiki/Machine_language.html" title="Machine language">machine language</a> that a specific <a href="/wiki/Computer_architecture.html" title="Computer architecture">computer architecture</a> uses. Machine language, a pattern of bits encoding machine operations, is made readable by replacing the raw values with symbols called <i><a href="/wiki/Mnemonic.html" title="Mnemonic">mnemonics</a></i>. Assembly is derived from a similar representation called <a href="/wiki/Short_Code_%28Computer_language%29.html" title="Short Code (Computer language)">short code</a>, whose programming 'language' was of the same name. Contrast this with <a  class="new" title="Speedcode">speed code</a> / 'speedcoding'</p>
+<p>For example, a computer with the appropriate processor will understand this <a href="/wiki/X86.html" title="X86">x86</a>/<a href="/wiki/IA-32.html" title="IA-32">IA-32</a> <a href="/wiki/Machine_language.html" title="Machine language">machine language</a>:</p>
+<pre>
+10110000 01100001
+</pre>
+<p>For programmers, however, it is easier to remember the equivalent assembly language representation:</p>
+<pre>
+mov  al, 061h
+</pre>
+<p>which means to move the <a href="/wiki/Hexadecimal.html" title="Hexadecimal">hexadecimal</a> value 61 (97 <a href="/wiki/Decimal.html" title="Decimal">decimal</a>) into the <a href="/wiki/Processor_register.html" title="Processor register">processor register</a> with the name "al". The <a href="/wiki/Mnemonic.html" title="Mnemonic">mnemonic</a> "mov" is short for "move", and a comma-separated list of arguments or parameters follows it; this is a typical assembly language statement.</p>
+<p>Transforming assembly into machine language is accomplished by an <a href="/wiki/Assembly_language#Assembler.html" title="Assembly language">assembler</a>, and the reverse by a <a href="/wiki/Disassembler.html" title="Disassembler">disassembler</a>. Unlike in <a href="/wiki/High-level_language.html" title="High-level language">high-level languages</a>, there is usually a <a href="/wiki/1-to-1.html" title="1-to-1">1-to-1</a> correspondence between simple assembly statements and machine language instructions. However, in some cases an assembler may provide <i>pseudoinstructions</i> which expand into several machine language instructions to provide commonly needed functionality. For example, for a machine that lacks a "branch if greater or equal" instruction, an assembler may provide a pseudoinstruction that expands to the machine's "set if less than" and "branch if zero (on the result of the set instruction)". Most full-featured assemblers also allow programmers to define their own pseudoinstructions of this sort, usually called <i><a href="/wiki/Macro.html" title="Macro">macros</a></i>.</p>
+<p>Every <a href="/wiki/Computer_architecture.html" title="Computer architecture">computer architecture</a> has its own machine language, and therefore its own assembly language. Computers differ by the number and type of operations that they support. They may also have different sizes and numbers of registers, and different representations of data types in storage. While all general-purpose computers are able to carry out essentially the same functionality, the way they do it differs, and the corresponding assembly language must reflect these differences.</p>
+<p>In addition, multiple sets of <a href="/wiki/Mnemonic.html" title="Mnemonic">mnemonics</a> or assembly-language syntax may exist for a single instruction set. In these cases, the most popular one is usually that used by the manufacturer in their documentation.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Machine instructions</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Assembly language directives</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Usage of assembly language</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Assembler</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">4.1</span> <span class="toctext">Assemblers</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Example listing of assembly language source code</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">8</span> <span class="toctext">Books</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">9</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Machine instructions">edit</a>]</div>
+<p><a name="Machine_instructions" id="Machine_instructions"></a></p>
+<h2>Machine instructions</h2>
+<p>Instructions in assembly language are generally very simple, unlike in a <a href="/wiki/High-level_programming_language.html" title="High-level programming language">high-level language</a>. Any instruction that references memory (for data or as a jump target) will also have an <a href="/wiki/Addressing_mode.html" title="Addressing mode">addressing mode</a> to determine how to calculate the required memory address. More complex operations must be built up out of these simple operations. Some operations available in most instruction sets include:</p>
+<ul>
+<li>moving
+<ul>
+<li>set a <a href="/wiki/Processor_register.html" title="Processor register">register</a> (a temporary "scratchpad" location in the CPU itself) to a fixed constant value</li>
+<li>move data from a memory location to a register, or vice versa. This is done to obtain the data to perform a computation on it later, or to store the result of a computation.</li>
+<li>read and write data from hardware devices</li>
+</ul>
+</li>
+<li>computing
+<ul>
+<li>add, subtract, multiply, or divide the values of two registers, placing the result in a register</li>
+<li>perform <a href="/wiki/Bitwise_operation.html" title="Bitwise operation">bitwise operations</a>, taking the conjunction/disjunction (and/or) of corresponding bits in a pair of registers, or the negation (not) of each bit in a register</li>
+<li>compare two values in registers (for example, to see if one is less, or if they are equal)</li>
+</ul>
+</li>
+<li>affecting program flow
+<ul>
+<li>jump to another location in the program and execute instructions there</li>
+<li>jump to another location if a certain condition holds</li>
+<li>jump to another location, but save the location of the next instruction as a point to return to (a <i><a href="/wiki/Subroutine.html" title="Subroutine">call</a></i>)</li>
+</ul>
+</li>
+</ul>
+<p>Some computers include one or more "complex" instructions in their instruction set. A single "complex" instruction does something that may take many instructions on other computers. Such instructions are typified by instructions that take multiple steps, may issue to multiple functional units, or otherwise appear to be a design exception to the simplest instructions which are implemented for the given processor. Some examples of such instructions include:</p>
+<ul>
+<li>saving many registers on the stack at once</li>
+<li>moving large blocks of memory</li>
+<li>complex and/or floating-point arithmetic (<a href="/wiki/Sine.html" title="Sine">sine</a>, <a href="/wiki/Cosine.html" title="Cosine">cosine</a>, <a href="/wiki/Square_root.html" title="Square root">square root</a>, etc.)</li>
+<li>performing an atomic <a href="/wiki/Test-and-set.html" title="Test-and-set">test-and-set</a> instruction</li>
+<li>instructions that combine ALU with an operand from memory rather than a register</li>
+</ul>
+<p>A complex instruction type that has become particularly popular recently is the <a href="/wiki/SIMD.html" title="SIMD">SIMD</a> operation or <a href="/wiki/Vector_processing.html" title="Vector processing">vector instruction</a>, an operation that performs the same arithmetic operation on multiple pieces of data at the same time. SIMD instructions allow easy <a href="/wiki/Parallelization.html" title="Parallelization">parallelization</a> of algorithms commonly involved in sound, image, and video processing. Various SIMD implementations have been brought to market under trade names such as <a href="/wiki/MMX.html" title="MMX">MMX</a>, <a href="/wiki/3DNow%21.html" title="3DNow!">3DNow!</a> and <a href="/wiki/AltiVec.html" title="AltiVec">AltiVec</a>.</p>
+<p>The design of instruction sets is a complex issue, with a simpler instruction set (generally grouped under the concept <a href="/wiki/RISC.html" title="RISC">RISC</a>) perhaps offering the potential for higher speeds, while a more complex one (traditionally called <a href="/wiki/CISC.html" title="CISC">CISC</a>) may offer particularly fast implementations of common performance-demanding tasks, may use memory (and thus <a href="/wiki/Cache.html" title="Cache">cache</a>) more efficiently, and be somewhat easier to program directly in assembly. See <a href="/wiki/Instruction_set.html" title="Instruction set">instruction set</a> for a more full discussion of this issue.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Assembly language directives">edit</a>]</div>
+<p><a name="Assembly_language_directives" id="Assembly_language_directives"></a></p>
+<h2>Assembly language directives</h2>
+<p>In addition to codes for machine instructions, assembly languages have additional directives for assembling blocks of data (e.g. numbers and strings) and for assigning mnemonic symbols (often called <i>labels</i>) to address locations for code (such as subroutine entry points) or data areas. Symbols can also typically be assigned specific values or even the results of simple calculations. These all add to the assembler's capacity to allow the programmer to write code that is easier to read and maintain.</p>
+<p>Like most computer languages, comments can be added to assembly <a href="/wiki/Source_code.html" title="Source code">source code</a>; these often provide useful additional information to human readers of the code, but are ignored by the assembler and so may be used freely. Assembly source code without comments and meaningful symbols and data definitions, such as that generated by compilers or disassemblers, is quite difficult to read.</p>
+<p>Most assemblers have an embedded <a href="/wiki/Macro_language.html" title="Macro language">macro language</a> to make it easier to generate code or data. For example, with 8-bit processors it is common to use a macro that increments or decrements a 16-bit quantity stored in two consecutive bytes, a common operation which would normally require three or four instructions on, for example, the <a href="/wiki/6502.html" title="6502">6502</a>. On IBM mainframes, it is common to use a macro for currency formatting, typically a sequence of four instructions revolving around the Edit and Mark (EDMK) instruction. Most processor architectures have idiomatic instruction sequences of this type, and many assemblers even have built-in macros for the most common ones. Some assemblers have quite sophisticated macro languages, allowing for example conditionals and even "looping", i.e. assembling some number of instructions repeatedly while varying some operand on each repetition, thereby allowing easy generation of "unrolled" loops.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Usage of assembly language">edit</a>]</div>
+<p><a name="Usage_of_assembly_language" id="Usage_of_assembly_language"></a></p>
+<h2>Usage of assembly language</h2>
+<p>Historically, a large number of programs have been written entirely in assembly language. A classic example was the early IBM PC <a href="/wiki/Spreadsheet.html" title="Spreadsheet">spreadsheet</a> program <a href="/wiki/Lotus_123.html" title="Lotus 123">Lotus 123</a>. Almost all popular games for the Commodore 64 were written in assembly language. Even into the 1990s, the majority of console video games were written in assembly language, including most games written for the <a href="/wiki/Sega_Mega_Drive.html" title="Sega Mega Drive">Mega Drive/Genesis</a> and the <a href="/wiki/Super_Nintendo_Entertainment_System.html" title="Super Nintendo Entertainment System">Super Nintendo Entertainment System</a>. The popular arcade game <a href="/wiki/NBA_Jam.html" title="NBA Jam">NBA Jam</a> (1993) was also coded entirely using assembly language.</p>
+<p>There is some debate over the continued usefulness of assembly language. It is often said that modern compilers can render higher-level languages into codes that run as fast as hand-written assembly, but counter-examples can be made, and there is no clear consensus on this topic. It is reasonably certain that, given the increase in complexity of modern processors, effective hand-optimization is increasingly difficult and requires a great deal of knowledge. Thus for most programmers it is more useful to learn a low-level language like C instead of learning assembly language. Nowadays it is very difficult to write a C program which is less efficient than an assembly language program.</p>
+<p>However, some discrete calculations can still be rendered into faster running code with assembly, and some <a href="/wiki/Low-level_programming_language.html" title="Low-level programming language">low-level</a> programming is actually easier to do with assembly. Some system-dependent tasks performed by <a href="/wiki/Operating_system.html" title="Operating system">operating systems</a> simply cannot be expressed in high-level languages. In particular, assembly is often used in writing the low level interaction between the operating system and the hardware, for instance in <a href="/wiki/Device_driver.html" title="Device driver">device drivers</a>. Many compilers also render high-level languages into assembly first before fully compiling, allowing the assembly code to be viewed for debugging and optimization purposes.</p>
+<p>It's also common, especially in relatively low-level languages such as <a href="/wiki/C_programming_language.html" title="C programming language">C</a>, to be able to embed assembly language into the source code with special syntax. Programs using such facilities, such as the <a href="/wiki/Linux_kernel.html" title="Linux kernel">Linux kernel</a>, often construct abstractions where different assembly language is used on each platform the program supports, but it is called by portable code through a uniform interface.</p>
+<p>Many <a href="/wiki/Embedded_system.html" title="Embedded system">embedded systems</a> are also programmed in assembly to obtain the absolute maximum functionality out of what is often very limited computational resources, though this is gradually changing in some areas as more powerful chips become available for the same minimal cost.</p>
+<p>Another common area of assembly language use is in the system <a href="/wiki/BIOS.html" title="BIOS">BIOS</a> of a computer. This low-level code is used to initialize and test the system hardware prior to booting the OS and is stored in <a href="/wiki/Read-only_memory.html" title="Read-only memory">ROM</a>. Once a certain level of hardware initialization has taken place, code written in higher level languages can be used, but almost always the code running immediately after power is applied is written in assembly language.</p>
+<p>Assembly language is also valuable in <a href="/wiki/Reverse_engineering.html" title="Reverse engineering">reverse engineering</a>, since many programs are distributed only in machine code form, and machine code is usually easy to translate into assembly language and carefully examine in this form, but very difficult to translate into a higher-level language. Tools such as the <a href="/wiki/Interactive_Disassembler.html" title="Interactive Disassembler">Interactive Disassembler</a> make extensive use of disassembly for such a purpose.</p>
+<p>While the modern role of assembly differs greatly from the past in that most software developers do not use assembly coding for entire projects anymore, it is still a very valuable tool to use when writing frequently-accessed components of an application or an operating system; a commonly cited example is an operating system's <a href="/wiki/Boot_loader.html" title="Boot loader">boot loader</a>, which is almost always written entirely in assembly language for compactness and speed.</p>
+<p>Regardless of whether a programmer will actually use assembly in day-to-day work, a case can be made that any serious programmer should learn at least one assembly language to better understand how computers work (and to appreciate all the work high-level languages save).</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Assembler">edit</a>]</div>
+<p><a name="Assembler" id="Assembler"></a></p>
+<h2>Assembler</h2>
+<p><sup id="_ref-0" class="reference"><a  title="">[1]</a></sup> An <b>assembler</b> is a <a href="/wiki/Computer_program.html" title="Computer program">computer program</a> for translating <b>assembly language</b> — essentially, a <a href="/wiki/Mnemonic.html" title="Mnemonic">mnemonic</a> representation of <a href="/wiki/Machine_language.html" title="Machine language">machine language</a> — into <a href="/wiki/Object_code.html" title="Object code">object code</a>. A <b>cross assembler</b> (see <a href="/wiki/Cross_compiler.html" title="Cross compiler">cross compiler</a>) produces code for one type of processor, but runs on another. The computational step where an assembler is run is known as <b>assembly time</b>.</p>
+<p>As well as translating assembly instruction mnemonics into <a href="/wiki/Opcode.html" title="Opcode">opcodes</a>, assemblers provide the ability to use symbolic names for memory locations (saving tedious calculations and manually updating addresses when a program is slightly modified), and <a href="/wiki/Macro.html" title="Macro">macro</a> facilities for performing textual substitution — typically used to encode common short sequences of instructions to run inline instead of in a <a href="/wiki/Subroutine.html" title="Subroutine">subroutine</a>.</p>
+<p>Assemblers are far simpler to write than <a href="/wiki/Compiler.html" title="Compiler">compilers</a> for <a href="/wiki/High-level_language.html" title="High-level language">high-level languages</a>, and have been available since the <a href="/wiki/1950s.html" title="1950s">1950s</a>. Modern assemblers, especially for <a href="/wiki/RISC.html" title="RISC">RISC</a> based architectures, such as <a href="/wiki/MIPS_architecture.html" title="MIPS architecture">MIPS</a>, Sun <a href="/wiki/SPARC.html" title="SPARC">SPARC</a> and HP <a href="/wiki/PA-RISC.html" title="PA-RISC">PA-RISC</a>, optimize <a href="/wiki/Instruction_scheduling.html" title="Instruction scheduling">instruction scheduling</a> to exploit the <a href="/wiki/CPU_pipeline.html" title="CPU pipeline">CPU pipeline</a> efficiently.</p>
+<p><a href="/wiki/High-level_assembler.html" title="High-level assembler">High-level assemblers</a> provide high-level-language abstractions such as advanced control structures, high-level procedure/function declarations and invocations, and high-level abstract data types including structures/records, unions, classes, and sets.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Assemblers">edit</a>]</div>
+<p><a name="Assemblers" id="Assemblers"></a></p>
+<h3>Assemblers</h3>
+<p>For any given personal computer, mainframe, embedded system, and game console, both past and present, at least one--possibly dozens--of assemblers have been written. For some examples, see the <a href="/wiki/List_of_assemblers.html" title="List of assemblers">list of assemblers</a>.</p>
+<p>On <a href="/wiki/Unix.html" title="Unix">Unix</a> systems, the assembler is traditionally called <a href="/wiki/As_%28Unix%29.html" title="As (Unix)">as</a>, although it is not a single body of code, being typically written anew for each port. A number of Unix variants use <a href="/wiki/GNU_Assembler.html" title="GNU Assembler">GAS</a>.</p>
+<p>Within processor groups, each assembler has its own dialect. Sometimes, some assemblers can read another assembler's dialect, for example, TASM can read old MASM code, but not the reverse. FASM and NASM have similar syntax, but each support different macros that could make them difficult to translate to each other. The basics are all the same, but the advanced features will differ.</p>
+<p>Also, assembly can sometimes be portable across different operating systems on the same type of <a href="/wiki/CPU.html" title="CPU">CPU</a>. Calling conventions between operating systems often differ slightly to none at all, and with care it is possible to gain some portability in assembly language, usually by linking with a <a href="/wiki/C_programming_language.html" title="C programming language">C</a> library that does not change between operating systems. However, it is not possible to link portably with C libraries that require the caller to use preprocessor macros that may change between operating systems.</p>
+<p>For example, many things in <a href="/wiki/Libc.html" title="Libc">libc</a> depend on the preprocessor to do OS-specific, C-specific things to the program before compiling. In fact, some functions and symbols are not even guaranteed to exist outside of the preprocessor. Worse, the size and field order of structs, as well as the size of certain typedefs such as off_t, are entirely unavailable in assembly language, and differ even between versions of <a href="/wiki/Linux.html" title="Linux">Linux</a>, making it impossible to portably call functions in libc other than ones that only take simple integers and pointers as parameters.</p>
+<p>Some higher level computer languages, such as <a href="/wiki/C_programming_language.html" title="C programming language">C</a>, support <a href="/wiki/Inline_assembler.html" title="Inline assembler">Inline assembly</a> where relatively brief sections of assembly code can be embedded into the high level language code. <a href="/wiki/Borland_Pascal.html" title="Borland Pascal">Borland Pascal</a> also had an assembler <a href="/wiki/Compiler.html" title="Compiler">compiler</a>, which was initialized with a keyword "asm". It was mainly used to create <a href="/wiki/Mouse.html" title="Mouse">mouse</a> and <a  class="new" title="COM-port">COM-port</a> <a href="/wiki/Drivers.html" title="Drivers">drivers</a>.</p>
+<p>Many people use an <a href="/wiki/Emulator.html" title="Emulator">emulator</a> to debug assembly-language programs.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Example listing of assembly language source code">edit</a>]</div>
+<p><a name="Example_listing_of_assembly_language_source_code" id="Example_listing_of_assembly_language_source_code"></a></p>
+<h2>Example listing of assembly language source code</h2>
+<table class="wikitable">
+<tr>
+<th>Addr</th>
+<th>Label</th>
+<th>Instruction</th>
+<th>Object code<sup id="_ref-Murdocca_0" class="reference"><a  title="">[2]</a></sup></th>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><tt>.begin</tt></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><tt>.org 2048</tt></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><tt>a_start</tt></td>
+<td><tt>.equ 3000</tt></td>
+<td></td>
+</tr>
+<tr>
+<td><tt>2048</tt></td>
+<td></td>
+<td><tt>ld [length],%r1</tt></td>
+<td><tt>11000010 00000000 00101000 00101100</tt></td>
+</tr>
+<tr>
+<td><tt>2052</tt></td>
+<td></td>
+<td><tt>ld [address],%r2</tt></td>
+<td><tt>11000100 00000000 00101000 00110000</tt></td>
+</tr>
+<tr>
+<td><tt>2056</tt></td>
+<td></td>
+<td><tt>addcc %r3,%r0,%r3</tt></td>
+<td><tt>10000110 10001000 11000000 00000000</tt></td>
+</tr>
+<tr>
+<td><tt>2060</tt></td>
+<td><tt>loop:</tt></td>
+<td><tt>addcc %r1,%r1,%r0</tt></td>
+<td><tt>10000000 10001000 01000000 00000001</tt></td>
+</tr>
+<tr>
+<td><tt>2064</tt></td>
+<td></td>
+<td><tt>be done</tt></td>
+<td><tt>00000010 10000000 00000000 00000110</tt></td>
+</tr>
+<tr>
+<td><tt>2068</tt></td>
+<td></td>
+<td><tt>addcc %r1,-4,%r1</tt></td>
+<td><tt>10000010 10000000 01111111 11111100</tt></td>
+</tr>
+<tr>
+<td><tt>2072</tt></td>
+<td></td>
+<td><tt>addcc %r1,%r2,%r4</tt></td>
+<td><tt>10001000 10000000 01000000 00000010</tt></td>
+</tr>
+<tr>
+<td><tt>2076</tt></td>
+<td></td>
+<td><tt>ld %r4,%r5</tt></td>
+<td><tt>11001010 00000001 00000000 00000000</tt></td>
+</tr>
+<tr>
+<td><tt>2080</tt></td>
+<td></td>
+<td><tt>ba loop</tt></td>
+<td><tt>00010000 10111111 11111111 11111011</tt></td>
+</tr>
+<tr>
+<td><tt>2084</tt></td>
+<td></td>
+<td><tt>addcc %r3,%r5,%r3</tt></td>
+<td><tt>10000110 10000000 11000000 00000101</tt></td>
+</tr>
+<tr>
+<td><tt>2088</tt></td>
+<td><tt>done:</tt></td>
+<td><tt>jmpl %r15+4,%r0</tt></td>
+<td><tt>10000001 11000011 11100000 00000100</tt></td>
+</tr>
+<tr>
+<td><tt>2092</tt></td>
+<td><tt>length:</tt></td>
+<td><tt>20</tt></td>
+<td><tt>00000000 00000000 00000000 00010100</tt></td>
+</tr>
+<tr>
+<td><tt>2096</tt></td>
+<td><tt>address:</tt></td>
+<td><tt>a_start</tt></td>
+<td><tt>00000000 00000000 00001011 10111000</tt></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><tt>.org a_start</tt></td>
+<td></td>
+</tr>
+<tr>
+<td><tt>3000</tt></td>
+<td><tt>a:</tt></td>
+<td><tt>25</tt></td>
+<td><tt>00000000 00000000 00000000 00011001</tt></td>
+</tr>
+<tr>
+<td><tt>3004</tt></td>
+<td></td>
+<td><tt>-10</tt></td>
+<td><tt>11111111 11111111 11111111 11110110</tt></td>
+</tr>
+<tr>
+<td><tt>3008</tt></td>
+<td></td>
+<td><tt>33</tt></td>
+<td><tt>00000000 00000000 00000000 00100001</tt></td>
+</tr>
+<tr>
+<td><tt>3012</tt></td>
+<td></td>
+<td><tt>-5</tt></td>
+<td><tt>11111111 11111111 11111111 11111011</tt></td>
+</tr>
+<tr>
+<td><tt>3016</tt></td>
+<td></td>
+<td><tt>7</tt></td>
+<td><tt>00000000 00000000 00000000 00000111</tt></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><tt>.end</tt></td>
+<td></td>
+</tr>
+</table>
+<p>Example of a selection of instructions (for a <a href="/wiki/Universal_Virtual_Computer.html" title="Universal Virtual Computer">virtual computer</a><sup id="_ref-wwwPOCA_0" class="reference"><a  title="">[3]</a></sup>) with the corresponding <a href="/wiki/Memory_address.html" title="Memory address">address</a> in memory where each instruction will be placed. These addresses are not static, see <a href="/wiki/Memory_management.html" title="Memory management">memory management</a>. Accompanying each instruction is the generated (by the assembler) <a href="/wiki/Object_file.html" title="Object file">object code</a> that coincides with the virtual computer's architecture (or <a href="/wiki/Instruction_set.html" title="Instruction set">ISA</a>).</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/X86_assembly_language.html" title="X86 assembly language">x86 assembly language</a> - the assembly language for common Intel 80<a href="/wiki/X86.html" title="X86">x86</a> microprocessors</li>
+<li><a href="/wiki/Compiler.html" title="Compiler">Compiler</a></li>
+<li><a href="/wiki/Disassembler.html" title="Disassembler">Disassembler</a></li>
+<li><a href="/wiki/List_of_assemblers.html" title="List of assemblers">List of assemblers</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<ol class="references">
+<li id="_note-0"><b><a  title="">^</a></b> David Salomon, <i>Assemblers and Loaders</i>. 1993 <a  class="external autonumber" title="http://www.davidsalomon.name/assem.advertis/asl.pdf">[1]</a></li>
+<li id="_note-Murdocca"><b><a  title="">^</a></b> <cite class="book" style="font-style:normal" id="Reference-Murdocca-2000">Murdocca, Miles J.; Vincent P. Heuring (2000). <i>Principles of Computer Architecture</i>. Prentice-Hall. <a  class="internal">ISBN 0-201-43664-7</a>.</cite></li>
+<li id="_note-wwwPOCA"><b><a  title="">^</a></b> <a  class="external text" title="http://iiusaedu.com/~murdocca/POCA">Principles of Computer Architecture</a> (POCA) – ARCTools virtual computer available for download to execute referenced code, accessed August 24, 2005</li>
+</ol>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Books">edit</a>]</div>
+<p><a name="Books" id="Books"></a></p>
+<h2>Books</h2>
+<ul>
+<li><a  class="external text" title="http://cs.smith.edu/~thiebaut/ArtOfAssembly/artofasm.html">The Art of Assembly Language Programming</a>, <a  class="external autonumber" title="http://www.arl.wustl.edu/~lockwood/class/cs306/books/artofasm/toc.html">[2]</a> by <a href="/wiki/Randall_Hyde.html" title="Randall Hyde">Randall Hyde</a></li>
+<li><a  class="external text" title="http://www.computer-books.us/assembler.php">Computer-Books.us</a>, Online Assembly Language Books</li>
+<li><a  class="external text" title="http://www.drpaulcarter.com/pcasm/redir.php?file=pcasm-book-pdf.zip">PC Assembly Language</a> by <a  class="new" title="Dr Paul Carter">Dr Paul Carter</a>; *<a  class="external text" title="http://drpaulcarter.com/pcasm/">PC Assembly Tutorial using NASM and GCC</a> by Paul Carter</li>
+<li><a  class="external text" title="http://savannah.nongnu.org/projects/pgubook/">Programming from the Ground Up</a> by Jonathan Bartlett</li>
+<li><a  class="external text" title="http://www.asmcommunity.net/x86book/">The x86 ASM Book</a> by the <a  class="external text" title="http://www.asmcommunity.net">ASM Community</a></li>
+<li>Dominic Sweetman: <b>See MIPS Run</b>. Morgan Kaufmann Publishers. <a  class="internal">ISBN 1-55860-410-3</a></li>
+<li>Robert Britton: <b>MIPS Assembly Language Programming</b>. Prentice Hall. <a  class="internal">ISBN 0-13-142044-5</a></li>
+<li>John Waldron: <b>Introduction to RISC Assembly Language Programming</b>. Addison Wesley. <a  class="internal">ISBN 0-201-39828-1</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<div class="infobox sisterproject">
+<div style="float: left;">
+<div class="floatnone"><span><a  class="image" title="Wikibooks"><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Wikibooks-logo-en.svg/50px-Wikibooks-logo-en.svg.png" alt="Wikibooks" width="50" height="57" longdesc="/wiki/Image:Wikibooks-logo-en.svg" /></a></span></div>
+</div>
+<div style="margin-left: 60px;"><a  class="extiw" title="wikibooks:">Wikibooks</a> has more about this subject:
+<div style="margin-left: 10px;"><i><b><a  class="extiw" title="wikibooks:Assembly_Language">Assembly Language</a></b></i></div>
+</div>
+</div>
+<ul>
+<li><a  class="external text" title="http://www.asmcommunity.net/board/">The ASM Community Messageboard</a></li>
+<li><a  class="external text" title="http://www.menuetos.net/">MenuetOS - hobby Operating System for the PC written entirely in 64bit assembly language</a></li>
+<li><a  class="external text" title="http://home.comcast.net/~dtgm/asm_links.html">List of resources; books, websites, newsgroups, and IRC channels</a></li>
+<li><a  class="external text" title="http://asm.sf.net">Linux Assembly</a></li>
+<li><a  class="external text" title="http://www.int80h.org/">Unix Assembly Language Programming</a></li>
+<li><a  class="external text" title="http://c2.com/cgi/wiki?LearningAssemblyLanguage">PPR: Learning Assembly Language</a></li>
+<li><a  class="external text" title="http://www.codeteacher.com">CodeTeacher</a></li>
+<li><a  class="external text" title="http://www.azillionmonkeys.com/qed/asmexample.html">Assembly Language Programming Examples</a></li>
+<li><a  class="external text" title="http://www.cs.cornell.edu/talc/">Typed Assembly Language (TAL)</a></li>
+<li><a  class="external text" title="http://www.grc.com/smgassembly.htm">Authoring Windows Applications In Assembly Language</a></li>
+<li><a  class="external text" title="http://www.rosasm.org">RosAsm assembler/ RosAsm assembly Forum</a></li>
+<li><a  class="external text" title="http://www.emu8086.com/">80x86 emulator</a></li>
+<li><a  class="external text" title="http://avr-asm.tripod.com/">AVR Assembler</a></li>
+<li><a  class="external text" title="http://www.program-transformation.org/">The Program Transformation Wiki</a></li>
+<li><a  class="external text" title="http://c2.com/cgi/wiki?LearningAssemblyLanguage">C2: Learning Assembly Language</a></li>
+<li><a  class="external text" title="http://www.gnu.org/software/lightning/lightning.html">GNU lightning</a> is a library that generates assembly language code at run-time which is useful for Just-In-Time compilers</li>
+<li><a  class="external text" title="http://linuxassembly.org/">"information on assembly programming under different platforms: IA32 (x86), IA64 (Itanium), x86-64, SPARC, Alpha, or whatever platform we find contributors for."</a></li>
+<li><a  class="external text" title="http://terse.com/">"Terse: Algebraic Assembly Language for x86"</a></li>
+<li><a  class="external text" title="http://win32assembly.online.fr/tutorials.html">Iczelion's Win32 Assembly Tutorial</a></li>
+<li><a  class="external text" title="http://www.sbprojects.com/">SB-Assembler for most 8-bit processors/controllers</a></li>
+<li><a  class="external text" title="http://www.beginnerscode.com/guides.php?lang=assembly">Assembly Tutorials</a> BeginnersCode.com</li>
+</ul>
+
+<!-- 
+Pre-expand include size: 3205 bytes
+Post-expand include size: 1111 bytes
+Template argument size: 771 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:1368-0!1!0!default!!en!2 and timestamp 20060909195836 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Assembly languages">Assembly languages</a></span> | <span dir='ltr'><a  title="Category:Programming languages">Programming languages</a></span> | <span dir='ltr'><a  title="Category:Assemblers">Assemblers</a></span> | <span dir='ltr'><a  title="Category:Programming language implementation">Programming language implementation</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Assembly_language.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-bg"><a >Български</a></li>
+				<li class="interwiki-cs"><a >Česky</a></li>
+				<li class="interwiki-da"><a >Dansk</a></li>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-eo"><a >Esperanto</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-et"><a >Eesti</a></li>
+				<li class="interwiki-fi"><a >Suomi</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-he"><a >עברית</a></li>
+				<li class="interwiki-hr"><a >Hrvatski</a></li>
+				<li class="interwiki-is"><a >Íslenska</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-ko"><a >한국어</a></li>
+				<li class="interwiki-nl"><a >Nederlands</a></li>
+				<li class="interwiki-no"><a >Norsk (bokmål)</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-pt"><a >Português</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+				<li class="interwiki-sl"><a >Slovenščina</a></li>
+				<li class="interwiki-sr"><a >Српски / Srpski</a></li>
+				<li class="interwiki-sv"><a >Svenska</a></li>
+				<li class="interwiki-th"><a >ไทย</a></li>
+				<li class="interwiki-zh"><a >中文</a></li>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-he"><a >עברית</a></li>
+				<li class="interwiki-id"><a >Bahasa Indonesia</a></li>
+				<li class="interwiki-lb"><a >Lëtzebuergesch</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-lt"><a >Lietuvių</a></li>
+				<li class="interwiki-sk"><a >Slovenčina</a></li>
+				<li class="interwiki-pt"><a >Português</a></li>
+				<li class="interwiki-tr"><a >Türkçe</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 16:25, 8 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv92 in 0.103 secs. --></body></html>

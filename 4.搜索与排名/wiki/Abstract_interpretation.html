@@ -1,0 +1,257 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Abstract interpretation,Abstraction,Calculation,Compiler,Complexity,Computability theory (computation),Computer program,Computer science,Control structure,DAEDALUS,Debugging" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Abstract interpretation - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Abstract_interpretation";
+			var wgTitle = "Abstract interpretation";
+			var wgArticleId = 60490;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Abstract interpretation</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>In <a href="/wiki/Computer_science.html" title="Computer science">computer science</a>, <b>abstract interpretation</b> is a theory of sound approximation of the <a href="/wiki/Semantics.html" title="Semantics">semantics</a> of computer programs, based on <a href="/wiki/Monotonic_function.html" title="Monotonic function">monotonic functions</a> over <a href="/wiki/Ordered_set.html" title="Ordered set">ordered sets</a>, especially <a href="/wiki/Lattice_%28order%29.html" title="Lattice (order)">lattices</a>. It can be viewed as a partial <a href="/wiki/Execution_%28computers%29.html" title="Execution (computers)">execution</a> of a <a href="/wiki/Computer_program.html" title="Computer program">computer program</a> which gains information about its <a href="/wiki/Semantics.html" title="Semantics">semantics</a> (e.g. <a href="/wiki/Control_structure.html" title="Control structure">control structure</a>, <a href="/wiki/Information_flow.html" title="Information flow">flow of information</a>) without performing all the <a href="/wiki/Calculation.html" title="Calculation">calculations</a>.</p>
+<p>Its main concrete application is formal <a href="/wiki/Static_analysis.html" title="Static analysis">static analysis</a>, the automatic extraction of information about the possible executions of computer programs; such analyses have two main usages:</p>
+<ul>
+<li>inside <a href="/wiki/Compiler.html" title="Compiler">compilers</a>, to analyse programs in order to decide whether certain <a href="/wiki/Optimization_%28computer_science%29.html" title="Optimization (computer science)">optimisations</a> or <a href="/wiki/Program_transformation.html" title="Program transformation">transformations</a> are applicable;</li>
+<li>for <a href="/wiki/Debugging.html" title="Debugging">debugging</a> or even the certification of programs against classes of bugs.</li>
+</ul>
+<p>Abstract interpretation was formalized by <a  class="new" title="Patrick Cousot">Patrick Cousot</a> and <a  class="new" title="Radhia Cousot">Radhia Cousot</a>.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Intuition</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Abstract interpretation of computer programs</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Formalization</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Examples of abstract domains</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Tools</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Intuition">edit</a>]</div>
+<p><a name="Intuition" id="Intuition"></a></p>
+<h2>Intuition</h2>
+<p>We shall now illustrate what abstract interpretation would mean on real-world, non-computing examples.</p>
+<p>Let us consider the people in a conference room. If we wish to prove that some persons were not present, one concrete method is to look up a list of the names and <a href="/wiki/Social_security_number.html" title="Social security number">social security numbers</a> of all participants. Since no two persons have the same number, it is possible to prove or disprove the presence of a participant simply by looking up his or her number in the list.</p>
+<p>We may however have restricted ourselves to registering only their names. If the name of a person is not found in the list, we may safely conclude that that person was not present; but if it is, we cannot conclude definitely without further enquiries, due to the possibility of <a href="/wiki/Homonym.html" title="Homonym">homonyms</a>. Let us note that this imprecise information will still be adequate for most purposes, because homonyms are rare in practice. However, in all rigor, we cannot say for sure that somebody was present in the room; all we can say is that he or she was <i>possibly</i> here. If the person we are looking up is a criminal, we will issue an <i>alarm</i>; but there is of course the possibility of issuing a <i>false alarm</i>. Similar phenomena will occur in the analysis of programs.</p>
+<p>If we are only interested in some specific information, say, "was there a person of age <i>n</i> in the room", keeping a list of all names and dates of births is unnecessary. We may safely and without loss of precision restrict ourselves to keeping a list of the participants' ages. If this is already too much to handle, we might keep only the minimal <i>m</i> and maximal <i>M</i> ages. If the question is about an age strictly lower than <i>m</i> or strictly higher than <i>M</i>, then we may safely respond that no such participant was present. Otherwise, we may only be able to say that we do not know.</p>
+<p>In the case of computing, concrete, precise information is in general not computable within finite time and memory (see <a href="/wiki/Rice%27s_theorem.html" title="Rice's theorem">Rice's theorem</a> and the <a href="/wiki/Halting_problem.html" title="Halting problem">halting problem</a>). <a href="/wiki/Abstraction.html" title="Abstraction">Abstraction</a> is used to simplify problems up to problems amenable to automatic solutions. One crucial issue is to diminish precision so as to make problems manageable while still keeping enough precision for answering the questions (such as "may the program crash?") one is interested in.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Abstract interpretation of computer programs">edit</a>]</div>
+<p><a name="Abstract_interpretation_of_computer_programs" id="Abstract_interpretation_of_computer_programs"></a></p>
+<h2>Abstract interpretation of computer programs</h2>
+<p>Given a programming or specification language, abstract interpretation consists in giving several semantics linked by relations of abstraction. A semantics is a mathematical characterization of the possible behaviors of the program. The most precise semantics, describing very closely the actual execution of the program, is called the <b>concrete semantics</b>. For instance, the concrete semantics of an imperative programming language may associate to each program the set of execution traces it may produce – an execution trace being a sequence of possible consecutive states of the execution of the program; a state typically consists of the value of the program counter and the memory locations (globals, stack and heap). More abstract semantics are then derived; for instance, one may consider only the set of reachable states in the executions (which amounts to considering the last states in finite traces).</p>
+<p>The goal of static analysis is to derive a computable semantic interpretation at some point. For instance, one may choose to represent the state of a program manipulating integer variables by forgetting the actual values of the variables and only keeping their signs (+, - or 0). For some elementary operations, such as <a href="/wiki/Multiplication.html" title="Multiplication">multiplication</a>, such an abstraction does not lose any precision: to get the sign of a product, it is sufficient to know the sign of the operands. For some other operations, the abstraction may lose precision: for instance, it is impossible to know the sign of a sum whose operands are respectively positive and negative.</p>
+<p>Sometimes a loss of precision is necessary to make the semantics decidable (see <a href="/wiki/Rice%27s_theorem.html" title="Rice's theorem">Rice's theorem</a>, <a href="/wiki/Halting_problem.html" title="Halting problem">halting problem</a>). In general, there is a compromise to be made between the precision of the analysis and its decidability (<a href="/wiki/Computability_theory_%28computation%29.html" title="Computability theory (computation)">computability</a>), or tractability (<a href="/wiki/Complexity.html" title="Complexity">complexity</a>).</p>
+<p>In practice the abstractions that are defined, are tailored to both the program properties one desires to analyse, and to the set of target programs.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Formalization">edit</a>]</div>
+<p><a name="Formalization" id="Formalization"></a></p>
+<h2>Formalization</h2>
+<p>Let <i>L</i> be an ordered set, called a <b>concrete set</b> and let <i>L</i>′ be another ordered set, called an <b>abstract set</b>. These two sets are related to each other by defining total functions that map elements from one to the other.</p>
+<p>A function α is called an <b>abstraction function</b> if it maps an element <i>x</i> in the concrete set <i>L</i> to an element α(<i>x</i>) in the abstract set <i>L</i>′. That is, element α(<i>x</i>) in <i>L</i>′ is the <b>abstraction</b> of <i>x</i> in <i>L</i>.</p>
+<p>A function γ is called a <b>concretization function</b> if it maps an element <i>x</i>′ in the abstract set <i>L</i>′ to an element γ(<i>x</i>′) in the concrete set <i>L</i>. That is, element γ(<i>x</i>′) in <i>L</i> is a <b>concretization</b> of <i>x</i>′ in <i>L</i>′.</p>
+<p>Let <i>L</i><sub>1</sub>, <i>L</i><sub>2</sub>, <i>L</i>′<sub>1</sub> and <i>L</i>′<sub>2</sub> be ordered sets. The concrete semantics <i>f</i> is a monotonic function from <i>L</i><sub>1</sub> to <i>L</i><sub>2</sub>. A function <i>f</i>′ from <i>L</i>′<sub>1</sub> to <i>L</i>′<sub>2</sub> is said to be a <b>valid abstraction</b> of <i>f</i> if for all <i>x</i>′ in <i>L</i>′<sub>1</sub>, (<i>f</i> ∘ γ)(<i>x</i>′) ≤ (γ ∘ <i>f</i>′)(<i>x</i>′).</p>
+<p>Program semantics are generally described using <a href="/wiki/Fixed_point_%28mathematics%29.html" title="Fixed point (mathematics)">fixed points</a> in the presence of loops or recursive procedures. Let us suppose that <i>L</i> is a complete lattice and let <i>f</i> be a monotonic function from <i>L</i> into <i>L</i>. Then, any <i>x</i>′ such that <i>f</i>′(<i>x</i>′) ≤ <i>x</i>′ is an abstraction of the least fixed-point of <i>f</i>, which exists, according to the <a href="/wiki/Knaster-Tarski_theorem.html" title="Knaster-Tarski theorem">Knaster-Tarski theorem</a>.</p>
+<p>The difficulty is now to obtain such an <i>x</i>′. If L' is of finite height, or at least verifies the "ascending chain condition" (all ascending sequences are ultimately stationary), then such an <i>x</i>′ may be obtained as the stationary limit of the ascending sequence <i>x</i>′<sub><i>n</i></sub> defined by induction as follows: <i>x</i>′<sub>0</sub>=⊥ (the least element of <i>L</i>′) and <i>x</i>′<sub><i>n</i>+1</sub>=<i>f</i>′(<i>x</i>′<sub><i>n</i></sub>).</p>
+<p>In other cases, it is still possible to obtain such an <i>x</i>′ through a <b>widening operator</b> ∇: for all <i>x</i> and <i>y</i>, <i>x</i> ∇ <i>y</i> should be greater or equal than both <i>x</i> and <i>y</i>, and for all sequence <i>y</i>′<sub><i>n</i></sub>, the sequence defined by <i>x</i>′<sub>0</sub>=⊥ and <i>x</i>′<sub><i>n</i>+1</sub>=<i>x</i>′<sub><i>n</i></sub> ∇ <i>y</i>′<sub><i>n</i></sub> is ultimately stationary. We can then take <i>y</i>′<sub><i>n</i></sub>=<i>f</i>(<i>x</i>′<sub><i>n</i></sub>).</p>
+<p>In some cases, it is possible to define abstractions using <a href="/wiki/Galois_connection.html" title="Galois connection">Galois connections</a> (α, γ) where α is from <i>L</i> to <i>L</i>′ and γ is from <i>L</i>′ to <i>L</i>. This supposes the existence of best abstractions, which is not necessarily the case. For instance, if we abstract sets of couples (<i>x</i>,<i>y</i>) of <a href="/wiki/Real_number.html" title="Real number">real numbers</a> by enclosing convex <a href="/wiki/Polyhedron.html" title="Polyhedron">polyhedra</a>, there is no optimal abstraction to the disc defined by <i>x</i><sup>2</sup>+<i>y</i><sup>2</sup> ≤ 1.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Examples of abstract domains">edit</a>]</div>
+<p><a name="Examples_of_abstract_domains" id="Examples_of_abstract_domains"></a></p>
+<h2>Examples of abstract domains</h2>
+<p>One can assign to each variable <i>x</i> available at a given program point an interval [l<sub>x</sub>,h<sub>x</sub>]. A state assigning the value <i>v</i>(<i>x</i>) to variable <i>x</i> will be a concretization of these intervals if for all <i>x</i>, then <i>v</i>(<i>x</i>) is in [l<sub>x</sub>,h<sub>x</sub>]. From the intervals [l<sub>x</sub>,h<sub>x</sub>] and [l<sub>y</sub>,h<sub>y</sub>] for variables <i>x</i> and <i>y</i>, one can easily obtain intervals for <i>x</i>+<i>y</i> ([l<sub>x</sub>+l<sub>y</sub>,h<sub>x</sub>+h<sub>y</sub>]) and for <i>x</i>-<i>y</i> ([l<sub>x</sub>-h<sub>y</sub>,h<sub>x</sub>-l<sub>y</sub>]); note that these are <i>exact</i> abstractions, since the set of possible outcomes for, say, <i>x</i>+<i>y</i>, is precisely the interval ([l<sub>x</sub>+l<sub>y</sub>,h<sub>x</sub>+h<sub>y</sub>]). More complex formulas can be derived for multiplication, division, etc., yielding so-called <b>interval arithmetics</b>.</p>
+<p>Let us now consider the following very simple program:</p>
+<pre>
+y = x;
+z = x - y;
+</pre>
+<p>With reasonable arithmetic types, the result for <tt>z</tt> should be zero. But if we do interval arithmetics starting from <tt>x</tt> in [0,1], one gets <tt>z</tt> in [-1,1]. While each of the operations taken individually was exactly abstracted, their composition isn't.</p>
+<p>The problem is evident: we did not keep track of the equality relationship between <tt>x</tt> <tt>y</tt>; actually, this domain of intervals does not take into account any relationships between variables, and is thus a <b>non-relational domain</b>. Non-relational domains tend to be fast and simple to implement, but imprecise.</p>
+<p>Some examples of Relational numerical abstract domains are:</p>
+<ul>
+<li>convex <a href="/wiki/Polyhedra.html" title="Polyhedra">polyhedra</a> – with some high computational costs</li>
+<li>"octagons"</li>
+<li>difference-bound matrices</li>
+<li>linear equalities</li>
+</ul>
+<p>and combinations thereof.</p>
+<p>When one chooses an abstract domain, one typically has to strike a balance between keeping fine-grained relationships, and high computational costs.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Tools">edit</a>]</div>
+<p><a name="Tools" id="Tools"></a></p>
+<h2>Tools</h2>
+<ul>
+<li><a  class="external text" title="http://www.astree.ens.fr">ASTRÉE</a></li>
+<li><a  class="external text" title="http://www.polyspace.com">PolySpace Technologies</a></li>
+<li><a  class="external text" title="http://www.absint.com/pag">PAG</a> and <a  class="external text" title="http://www.program-analysis.com">PAG/WWW</a></li>
+<li><a  class="external text" title="http://ropas.snu.ac.kr/airac5">Airac</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/DAEDALUS.html" title="DAEDALUS">DAEDALUS</a></li>
+<li><a href="/wiki/Interpreter_%28computing%29.html" title="Interpreter (computing)">Standard interpretation</a></li>
+<li><a href="/wiki/Model_checking.html" title="Model checking">Model checking</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://citeseer.org/cs?q=abstract+interpretation">Citations from CiteSeer</a></li>
+<li><a  class="external text" title="http://metacrawler.com/info.metac/search/redir.htm?qkw=abstract+interpretation&amp;qexact=on">Search results from MetaCrawler</a></li>
+<li><a  class="external text" title="http://www.cis.ksu.edu/santos/schmidt/Escuela03/">David Schmidt's lecture notes on abstract interpretation</a></li>
+<li><a  class="external text" title="http://www.brics.dk/~mis/static.pdf">Michael Schwarzbach's lecture notes on static analysis</a></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:60490-0!1!0!default!!en!2 and timestamp 20060906011101 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Formal methods">Formal methods</a></span> | <span dir='ltr'><a  title="Category:Logic in computer science">Logic in computer science</a></span> | <span dir='ltr'><a  title="Category:Programming language implementation">Programming language implementation</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Abstract_interpretation.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 06:55, 31 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv100 in 0.118 secs. --></body></html>

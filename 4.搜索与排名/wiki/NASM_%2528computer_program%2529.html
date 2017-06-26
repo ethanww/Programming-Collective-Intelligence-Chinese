@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="NASM (computer program),A.out (file format),Assembler,Boot loaders,COFF,Executable and Linkable Format,Free software,GNU Assembler,GNU Lesser General Public License,IA-32,Intel Corporation" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>NASM (computer program) - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "NASM_(computer_program)";
+			var wgTitle = "NASM (computer program)";
+			var wgArticleId = 60647;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">NASM (computer program)</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p><b>NASM</b>, the Netwide Assembler, is a <a href="/wiki/Free_software.html" title="Free software">free software</a> <a href="/wiki/Intel_Corporation.html" title="Intel Corporation">Intel</a> <a href="/wiki/X86.html" title="X86">x86</a> <a href="/wiki/Assembler.html" title="Assembler">assembler</a>. It can be used to write both 16-bit and 32-bit (<a href="/wiki/IA-32.html" title="IA-32">IA-32</a>) programs. 32-bit programs can be written for NASM in such a way that they are portable between any 32-bit x86 OSes, if the right libraries are used.</p>
+<p>NASM was originally written by <a href="/wiki/Simon_Tatham.html" title="Simon Tatham">Simon Tatham</a> with assistance from Julian Hall, and is currently developed by a small team of maintainers at <a href="/wiki/SourceForge.html" title="SourceForge">SourceForge</a>. It was originally released under its own license, but this license was later changed to the <a href="/wiki/GNU_Lesser_General_Public_License.html" title="GNU Lesser General Public License">GNU Lesser General Public License</a> following a number of political problems caused by the choice of license.</p>
+<p>NASM will output various binary formats on any machine, ranging from <a href="/wiki/COFF.html" title="COFF">COFF</a> (and the subtly different <a href="/wiki/Portable_Executable.html" title="Portable Executable">Portable Executable</a> format used by <a href="/wiki/Microsoft_Windows.html" title="Microsoft Windows">Microsoft Windows</a>) and <a href="/wiki/A.out_%28file_format%29.html" title="A.out (file format)">a.out</a> to <a href="/wiki/Executable_and_Linkable_Format.html" title="Executable and Linkable Format">ELF</a> and the native <a href="/wiki/Minix.html" title="Minix">Minix</a> binary format (NASM even defines its own binary format, RDOFF, which is currently used only by the <a href="/wiki/RadiOS.html" title="RadiOS">RadiOS</a> <a href="/wiki/Operating_system.html" title="Operating system">operating system</a> project). This allows one to <a  class="new" title="Cross-assemble">cross-assemble</a> programs for one x86 operating system on a different, presumably more capable, one. In addition, NASM can create <a  class="new" title="Flat binary files">flat binary files</a>, usable in writing <a href="/wiki/Boot_loaders.html" title="Boot loaders">boot loaders</a>, <a href="/wiki/Read-only_memory.html" title="Read-only memory">ROM</a> images, and various facets of OS development. NASM will even run on non-x86 platforms, such as the <a href="/wiki/Sparc.html" title="Sparc">Sparc</a> and the <a href="/wiki/PowerPC.html" title="PowerPC">PowerPC</a>, even though it will not output programs usable by those machines.</p>
+<p>NASM's overriding philosophy is to allow programmers familiar with Intel assembly language to use the appropriate approach that is easiest for the progammers to understand. Therefore, it uses the traditional <a  class="new" title="Intel syntax">Intel syntax</a> for <a href="/wiki/X86_assembly_language.html" title="X86 assembly language">x86 assembly language</a> (whereas other free assemblers, such as the <a href="/wiki/GNU_Assembler.html" title="GNU Assembler">GNU Assembler</a> (GAS), use the <a  class="new" title="AT&amp;T syntax">AT&amp;T syntax</a>). It also avoids facilities such as automatic generation of segment overrides (and the related ASSUME directive) used by <a href="/wiki/MASM.html" title="MASM">MASM</a> and compatible assemblers, as these can often be confusing -- programmers should track the contents of segment registers and location of variables they refer to themselves.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<div style="margin: 0 0 1em 1em; border: solid #aaa 1px; background: #f9f9f9; padding: 1ex; font-size: 90%;" class="tright">
+<table style="background: transparent;" width="0">
+<tr>
+<td>
+<div style="position: relative; width: 36px; height: 32px; overflow: hidden">
+<div style="position: absolute; top: 0px; left: 0px; z-index: 2"><a  class="image" title="Portal:free software"><img src="http://upload.wikimedia.org/wikipedia/commons/3/3b/Portal.gif" alt="Portal:free software" width="36" height="32" longdesc="/wiki/Image:Portal.gif" /></a></div>
+</div>
+</td>
+<td><i><b><a  title="Portal:Free software">free software Portal</a></b></i></td>
+</tr>
+</table>
+</div>
+<ul>
+<li><a  class="external text" title="http://sourceforge.net/projects/nasm">NASM (SourceForge)</a></li>
+</ul>
+
+<!-- 
+Pre-expand include size: 1624 bytes
+Post-expand include size: 513 bytes
+Template argument size: 108 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:60647-0!1!0!default!!en!2 and timestamp 20060910144705 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Assemblers">Assemblers</a></span> | <span dir='ltr'><a  title="Category:Free compilers and interpreters">Free compilers and interpreters</a></span> | <span dir='ltr'><a  title="Category:SourceForge projects">SourceForge projects</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/NASM_%28computer_program%29.html">Article</a></li>
+				 <li id="ca-talk" class="new"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-cs"><a >Česky</a></li>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 12:36, 11 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv116 in 0.098 secs. --></body></html>

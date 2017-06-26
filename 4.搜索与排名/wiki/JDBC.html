@@ -1,0 +1,499 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Java Database Connectivity,Flat file database,Comparison of SQL syntax,Drop (SQL),Create (SQL),Deductive database,Dimensional database,Temporal database,Object database,Hierarchical model,Union (SQL)" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Java Database Connectivity - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Java_Database_Connectivity";
+			var wgTitle = "Java Database Connectivity";
+			var wgArticleId = 42755;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Java Database Connectivity</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub">(Redirected from <a  title="JDBC">JDBC</a>)</div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p><b>JDBC</b> is an <a href="/wiki/Application_programming_interface.html" title="Application programming interface">API</a> for the <a href="/wiki/Java_programming_language.html" title="Java programming language">Java programming language</a> that defines how a client may access a <a href="/wiki/Database.html" title="Database">database</a>. It provides methods for querying and updating data in a database. JDBC is oriented towards <a href="/wiki/Relational_database_management_system.html" title="Relational database management system">relational databases</a>.</p>
+<p>The <a href="/wiki/Java_Platform%2C_Standard_Edition.html" title="Java Platform, Standard Edition">Java Platform, Standard Edition</a> includes the JDBC API together with an <a  class="new" title="Open database connectivity">ODBC</a> implementation of the API enabling connections to any relational database that supports <a  class="new" title="Open database connectivity">ODBC</a>. This driver is <a href="/wiki/Native_code.html" title="Native code">native code</a> and not Java, and is <a href="/wiki/Closed_source.html" title="Closed source">closed source</a>.<a  class="external autonumber" title="http://java.sun.com/products/jdbc/jdbc-3_0-fr-spec-license.html">[1]</a></p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Example</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Drivers</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">3.1</span> <span class="toctext">Types</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.2</span> <span class="toctext">Sources</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Overview">edit</a>]</div>
+<p><a name="Overview" id="Overview"></a></p>
+<h2>Overview</h2>
+<p>JDBC has been part of the Java Standard Edition since the release of JDK 1.1. The JDBC classes are contained in the <a href="/wiki/Java_package.html" title="Java package">Java package</a> <code><a  class="external text" title="http://java.sun.com/j2se/1.5.0/docs/api/java/sql/package-summary.html">java.sql</a></code>. Starting with version 3.0, JDBC has been developed under the <a href="/wiki/Java_Community_Process.html" title="Java Community Process">Java Community Process</a>. JSR 54 specifies JDBC 3.0 (included in J2SE 1.3), JSR 114 specifies the JDBC Rowset additions, and JSR 221 is the specification of JDBC 4.0 (included in Java SE 6).</p>
+<p>JDBC allows multiple implementations to exist and be used by the same application. The API provides a mechanism for dynamically loading the correct Java packages and registering them with the JDBC Driver Manager. The Driver Manager is used as a connection factory for creating JDBC connections.</p>
+<p>JDBC connections support creating and executing statements. These statements may be update statements such as <a href="/wiki/SQL.html" title="SQL">SQL</a> INSERT, UPDATE and DELETE or they may be query statements using the SELECT statement. Additionally, stored procedures may be invoked through a statement. Statements are one of the following types:</p>
+<ul>
+<li><code><a  class="external text" title="http://java.sun.com/j2se/1.5.0/docs/api/java/sql/Statement.html">Statement</a></code> – the statement is sent to the database server each and every time.</li>
+<li><code><a  class="external text" title="http://java.sun.com/j2se/1.5.0/docs/api/java/sql/PreparedStatement.html">PreparedStatement</a></code> – the statement is cached and then the execution path is pre determined on the database server allowing it to be executed multiple times in an efficient manner.</li>
+<li><code><a  class="external text" title="http://java.sun.com/j2se/1.5.0/docs/api/java/sql/CallableStatement.html">CallableStatement</a></code> – used for executing stored procedures on the database.</li>
+</ul>
+<p>Update statements such as INSERT, UPDATE and DELETE return an update count that indicates how many rows were affected in the database. These statements do not return any other information.</p>
+<p>Query statements return a JDBC row result set. The row result set is used to walk over the result set. Individual columns in a row are retrieved either by name or by column number. There may be any number of rows in the result set. The row result set has metadata that describes the names of the columns and their types.</p>
+<p>There is an extension to the basic JDBC API in the <code><a  class="external text" title="http://java.sun.com/j2se/1.5.0/docs/api/javax/sql/package-summary.html">javax.sql</a></code> package that allows for scrollable result sets and cursor support among other things.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Example">edit</a>]</div>
+<p><a name="Example" id="Example"></a></p>
+<h2>Example</h2>
+<p>The method <code><a  class="external text" title="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Class.html#forName(java.lang.String)">Class.forName(String)</a></code> is used to load the JDBC driver class. The line below causes the JDBC driver from <i>some jdbc vendor</i> to be loaded into the application.</p>
+<pre>
+Class.forName( "com.somejdbcvendor.TheirJdbcDriver" );
+</pre>
+<p>When a <code><a  class="external text" title="http://java.sun.com/j2se/1.5.0/docs/api/java/sql/Driver.html">Driver</a></code> class is loaded, it creates an instance of itself and registers it with the <code><a  class="external text" title="http://java.sun.com/j2se/1.5.0/docs/api/java/sql/DriverManager.html">DriverManager</a></code>. This can be done by including the needed code in the driver class's <code>static</code> block. e.g. <code>DriverManager.registerDriver(Driver driver)</code></p>
+<p>Now when a connection is needed, one of the <code>DriverManager.getConnection()</code> methods is used to create a JDBC connection.</p>
+<pre>
+Connection conn = DriverManager.getConnection( 
+     "jdbc:somejdbcvendor:other data needed by some jdbc vendor",
+     "myLogin",
+     "myPassword" );
+</pre>
+<p>The URL used is dependent upon the particular JDBC driver. It will always begin with the "jdbc:" protocol, but the rest is upto the particular vendor. Once a connection is established, a statement must be created.</p>
+<pre>
+Statement stmt = conn.createStatement();
+stmt.executeUpdate( "INSERT INTO MyTable( name ) VALUES ( 'my name' ) " );
+</pre>
+<p>Data is retrieved from the database using a database query mechanism. The example below shows creating a statement and executing a query.</p>
+<pre>
+Statement stmt = conn.createStatement();
+ResultSet rs = stmt.executeQuery( "SELECT * FROM MyTable" );
+while ( rs.next() ) {
+    int numColumns = rs.getMetaData().getColumnCount();
+    for ( int i = 1 ; i &lt;= numColumns ; i++ ) {
+        //Column numbers start at 1.
+        //Also there are many methods on the result set to return
+        // the column as a particular type. Refer to the Sun documentation
+        // for the list of valid conversions.
+        System.out.println( "COLUMN " + i + " = " + rs.getObject(i) );
+    }
+}
+rs.close();
+stmt.close();
+</pre>
+<p>Typically, however, it would be rare for a seasoned Java programmer to code in such a fashion. The usual practice would be to abstract the database logic into an entirely different class and to pass preprocessed strings (perhaps derived themselves from a further abstracted class) containing SQL statements and the connection to the required methods. Abstracting the data model from the application code makes it more likely that changes to the application and data model can be made independently.</p>
+<p>An example of a <code>PreparedStatement</code> query. Using <code>conn</code> and class from first example.</p>
+<pre>
+   PreparedStatement ps = null;
+   ResultSet rs = null;
+   ps = conn.prepareStatement( "SELECT i.*, j.* FROM Omega i, Zappa j"
+     + "WHERE i = ? AND j = ?" );
+   try {
+     // In the prepared statement ps, the question mark denotes variable input,
+     // which can be passed through a parameter list, for example.
+     // The following replaces the question marks,
+     // with the string or int, before sending it to SQL.
+     // The first parameter corresponds to the nth occurrence of the ?,
+     // the second parameter tells Java to replace it with
+     // the second item.
+     ps.setString(1, "Poor Yorick");
+     ps.setInt(2, 8008);
+     // The ResultSet rs, receives the SQL Query response.
+     rs = ps.executeQuery();
+     try {
+       while ( rs.next() ) {
+         int numColumns = rs.getMetaData().getColumnCount();
+         for ( int i = 1 ; i &lt;= numColumns ; i++ ) {
+           //Column numbers start at 1.
+           //Also there are many methods on the result set to return
+           // the column as a particular type. Refer to the Sun documentation
+           // for the list of valid conversions.
+           System.out.println( "COLUMN " + i + " = " + rs.getObject(i) );
+         } // for
+       } // while
+     } catch( SQLException e ) { // some error handling
+     } finally {
+       try { rs.close(); } catch( SQLException se ) { /* handle errors here or ignore them */ }
+     }
+   } catch (SQLException e) { // typical exception handling here
+   } finally { // note that these resources need to be closed in the finally clause to avoid
+     // a resource leak since it should always be called
+     try { ps.close; } catch( SQLException e){ /* handle errors here or ignore them */ }
+   } // try
+</pre>
+<p><b>Here are examples of host database types, Java can convert to with a function</b>. </p>
+<p><tt><font>setXXX()</font></tt>Methods</p>
+<table border="border" cellspacing="0" cellpadding="3">
+<tr class="FormalW">
+<th align="left" valign="top" class="FormalW"><b><font face="Arial, Helvetica, sans-serif">Oracle Datatype</font></b></th>
+<th align="left" valign="bottom" class="FormalW"><b><font face="Arial, Helvetica, sans-serif">setXXX()</font></b></th>
+</tr>
+<tr align="left" valign="top" class="FormalW">
+<td class="FormalW">
+<div class="TB">CHAR </div>
+</td>
+<td class="FormalW">
+<div class="TB">setString()</div>
+</td>
+</tr>
+<tr align="left" valign="top" class="FormalW">
+<td class="FormalW">
+<div class="TB">VARCHAR2 </div>
+</td>
+<td class="FormalW">
+<div class="TB">setString()</div>
+</td>
+</tr>
+<tr align="left" valign="top" class="FormalW">
+<td rowspan="8" class="FormalW">
+<div class="TB">NUMBER </div>
+</td>
+<td class="FormalW">setBigDecimal()</td>
+</tr>
+<tr align="left" valign="top" class="FormalW">
+<td class="FormalW">
+<div class="TB">setBoolean() </div>
+</td>
+</tr>
+<tr align="left" valign="top" class="FormalW">
+<td class="FormalW">
+<div class="TB">setByte() </div>
+</td>
+</tr>
+<tr align="left" valign="top" class="FormalW">
+<td class="FormalW">
+<div class="TB">setShort() </div>
+</td>
+</tr>
+<tr align="left" valign="top" class="FormalW">
+<td class="FormalW">
+<div class="TB">setInt() </div>
+</td>
+</tr>
+<tr align="left" valign="top" class="FormalW">
+<td class="FormalW">
+<div class="TB">setLong() </div>
+</td>
+</tr>
+<tr align="left" valign="top" class="FormalW">
+<td class="FormalW">
+<div class="TB">setFloat() </div>
+</td>
+</tr>
+<tr align="left" valign="top" class="FormalW">
+<td class="FormalW">
+<div class="TB">setDouble()</div>
+</td>
+</tr>
+<tr align="left" valign="top" class="FormalW">
+<td class="FormalW">INTEGER</td>
+<td class="FormalW">setInt()</td>
+</tr>
+<tr align="left" valign="top" class="FormalW">
+<td class="FormalW">FLOAT</td>
+<td class="FormalW">setDouble() </td>
+</tr>
+<tr align="left" valign="top" class="FormalW">
+<td class="FormalW">CLOB</td>
+<td class="FormalW">setClob() </td>
+</tr>
+<tr align="left" valign="top" class="FormalW">
+<td class="FormalW">BLOB</td>
+<td class="FormalW">setBlob() </td>
+</tr>
+<tr align="left" valign="top" class="FormalW">
+<td class="FormalW">
+<div class="TB">RAW</div>
+</td>
+<td class="FormalW">
+<div class="TB">setBytes()</div>
+</td>
+</tr>
+<tr align="left" valign="top" class="FormalW">
+<td class="FormalW">
+<div class="TB">LONGRAW </div>
+</td>
+<td class="FormalW">
+<div class="TB">setBytes() </div>
+</td>
+</tr>
+<tr align="left" valign="top" class="FormalW">
+<td rowspan="3" class="FormalW">
+<div class="TB">DATE </div>
+</td>
+<td class="FormalW">
+<div class="TB">setDate() </div>
+</td>
+</tr>
+<tr align="left" valign="top" class="FormalW">
+<td class="FormalW">
+<div class="TB">setTime() </div>
+</td>
+</tr>
+<tr align="left" valign="top" class="FormalW">
+<td class="FormalW">
+<div class="TB">setTimestamp() </div>
+</td>
+</tr>
+</table>
+<p>For an example of a <code>CallableStatement</code> (to call stored procedures in the database), see the <a  class="external text" title="http://java.sun.com/j2se/1.5.0/docs/guide/jdbc/getstart/callablestatement.html">JDBC API Guide</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Drivers">edit</a>]</div>
+<p><a name="Drivers" id="Drivers"></a></p>
+<h2>Drivers</h2>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Types">edit</a>]</div>
+<p><a name="Types" id="Types"></a></p>
+<h3>Types</h3>
+<p>There are commercial and free drivers available for most relational database servers. These drivers fall into one of the following types:</p>
+<ul>
+<li><a href="/wiki/JDBC_type_1_driver.html" title="JDBC type 1 driver">Type 1</a>, the JDBC-ODBC bridge</li>
+<li><a href="/wiki/JDBC_type_2_driver.html" title="JDBC type 2 driver">Type 2</a>, the Native-API driver</li>
+<li><a href="/wiki/JDBC_type_3_driver.html" title="JDBC type 3 driver">Type 3</a>, the network-protocol driver</li>
+<li><a href="/wiki/JDBC_type_4_driver.html" title="JDBC type 4 driver">Type 4</a>, the native-protocol drivers</li>
+<li><a  class="new" title="Internal JDBC driver">Internal JDBC driver</a>, driver embedded with JRE in Java-enabled SQL databases. Used for Java stored procedures.</li>
+<li><a  class="new" title="JDBC URL">JDBC URL</a>, all Database Connection String</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Sources">edit</a>]</div>
+<p><a name="Sources" id="Sources"></a></p>
+<h3>Sources</h3>
+<ul>
+<li><a  class="external text" title="http://www.SQLSummit.com/JDBCVend.htm">SQLSummit.com</a> publishes list of drivers, including JDBC drivers and vendors</li>
+<li><a href="/wiki/Sun_Microsystems.html" title="Sun Microsystems">Sun Microsystems</a> provides a <a  class="external text" title="http://servlet.java.sun.com/products/jdbc/drivers">list of some JDBC drivers and vendors</a></li>
+<li><a  class="external text" title="http://www.simba.com/odbc-sdk.htm">Simba Technologies</a> ships an SDK for building custom JDBC Drivers for any custom/proprietary relational data source</li>
+<li><a  class="external text" title="http://www.datadirect.com/products/jdbc/index.ssp">DataDirect Technologies</a> provides a comprehensive suite of fast Type 4 JDBC drivers for all major database</li>
+<li><a  class="external text" title="http://www.inetsoftware.de/products/jdbc/">i-net software</a> provides fast Type 4 JDBC drivers for all major databases</li>
+<li><a  class="external text" title="http://uda.openlinksw.com/jdbc/">OpenLink Software</a> ships JDBC Drivers for a number of target databases, including Bridges to other data access mechanisms (e.g., ODBC, JDBC) which can provide more functionality than the targeted mechanism</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://java.sun.com/j2se/1.5.0/docs/guide/jdbc">JDBC API Guide</a></li>
+<li><code><a  class="external text" title="http://java.sun.com/j2se/1.5.0/docs/api/java/sql/package-summary.html">java.sql</a></code> API <a href="/wiki/Javadoc.html" title="Javadoc">Javadoc</a> documentation</li>
+<li><code><a  class="external text" title="http://java.sun.com/j2se/1.5.0/docs/api/javax/sql/package-summary.html">javax.sql</a></code> API Javadoc documentation</li>
+<li><a  class="external text" title="http://www.datadirect.com/knowledgebase/kbase.nsf/Code+Samples?OpenView&amp;RestrictToCategory=Connect+for+JDBC">DataDirect Technologies - JDBC Code Samples</a></li>
+<li><a  class="external text" title="http://java.sun.com/docs/books/tutorial/jdbc/">Sun tutorial</a></li>
+<li><a  class="external text" title="http://java.sun.com/developer/technicalArticles//Database/dukesbakery/">Duke's Bakery - A JDBC Order Entry Prototype</a></li>
+<li><a  class="external text" title="http://java.sun.com/developer/technicalArticles//Database/dbaccessor/">DBAccessor: A JDBC Wrapper Package</a></li>
+<li><a  class="external text" title="http://java-source.net/open-source/database-engines">List of Java Open Source Databases with JDBC drivers</a></li>
+<li><a  class="external text" title="http://docs.maggi.cc/my_thesis_polijdbc.pdf">A sample implementation of a tiny-JDBC layer for an embedded DBMS</a> (PDF) by Federico Maggi (Introduction in both Italian and English: Other chapters in English)</li>
+<li><a  class="external text" title="http://www.easysoft.com/developer/interfaces/jdbc/index.html">JDBC Articles and Resources</a></li>
+<li><a  class="external text" title="http://www.alnaja7.org/Programmer/393/JDBC/jdbc.htm">Useful site for JDBC using Derby</a></li>
+</ul>
+<p><br /></p>
+<table align="center" class="toccolours" cellspacing="0" width="95%">
+<tr bgcolor="#CCCCFF">
+<td align="center"><b>Topics in <a href="/wiki/Database_management_system.html" title="Database management system">database management systems</a> (DBMS)</b> ( <span class="noprint plainlinksneverexpand" id="Tnavbar-nodiv" style="white-space: nowrap; font-size:xx-small;"><a  class="external text" title="http://en.wikipedia.org/wiki/Template:Databases"><span style="color:#002bb8;" title="View this template.">view</span></a> • <a  class="external text" title="http://en.wikipedia.org/wiki/Template_talk:Databases"><span style="color:#002bb8;" title="Discussion about this template.">talk</span></a> • <a  class="external text" title="http://en.wikipedia.org/w/index.php?title=Template:Databases&amp;action=edit"><span style="color:#002bb8;" title="You can edit this template. Please use the preview button before saving.">edit</span></a></span> )</td>
+</tr>
+<tr>
+<td align="center" style="font-size: small">
+<p><i>Concepts</i><br />
+<a href="/wiki/Database.html" title="Database">Database</a> | <a href="/wiki/Database_model.html" title="Database model">Database model</a> | <a href="/wiki/Relational_database.html" title="Relational database">Relational database</a> | <a href="/wiki/Relational_model.html" title="Relational model">Relational model</a> | <a href="/wiki/Relational_algebra.html" title="Relational algebra">Relational algebra</a> | <a href="/wiki/Primary_key.html" title="Primary key">Primary key</a> - <a href="/wiki/Foreign_key.html" title="Foreign key">Foreign key</a> - <a href="/wiki/Surrogate_key.html" title="Surrogate key">Surrogate key</a> - <a href="/wiki/Superkey.html" title="Superkey">Superkey</a><br />
+<a href="/wiki/Database_normalization.html" title="Database normalization">Database normalization</a> | <a href="/wiki/Referential_integrity.html" title="Referential integrity">Referential integrity</a> | <a href="/wiki/Relational_database_management_system.html" title="Relational database management system">Relational DBMS</a> | <a href="/wiki/Distributed_database_management_system.html" title="Distributed database management system">Distributed DBMS</a> | <a href="/wiki/ACID.html" title="ACID">ACID</a></p>
+<table width="100%" cellspacing="0" cellpadding="2" border="0">
+<tr class="toccolours" style="font-size: small">
+<td width="50%" align="center" style="vertical-align:top; border-top: 1px solid #ccccff; border-right: 1px solid #ccccff">
+<p><i>Objects</i><br />
+<a href="/wiki/Database_trigger.html" title="Database trigger">Trigger</a> | <a href="/wiki/View_%28database%29.html" title="View (database)">View</a> | <a href="/wiki/Table_%28database%29.html" title="Table (database)">Table</a> | <a href="/wiki/Cursor_%28databases%29.html" title="Cursor (databases)">Cursor</a> | <a href="/wiki/Transaction_log.html" title="Transaction log">Log</a> | <a href="/wiki/Database_transaction.html" title="Database transaction">Transaction</a> | <a href="/wiki/Index_%28database%29.html" title="Index (database)">Index</a> | <a href="/wiki/Stored_procedure.html" title="Stored procedure">Stored procedure</a> | <a href="/wiki/Partition_%28database%29.html" title="Partition (database)">Partition</a></p>
+</td>
+<td width="50%" align="center" style="vertical-align:top; border-top: 1px solid #ccccff">
+<p><i>Topics in <a href="/wiki/SQL.html" title="SQL">SQL</a></i><br />
+<a href="/wiki/Select_%28SQL%29.html" title="Select (SQL)">Select</a> | <a href="/wiki/Insert_%28SQL%29.html" title="Insert (SQL)">Insert</a> | <a href="/wiki/Update_%28SQL%29.html" title="Update (SQL)">Update</a> | <a href="/wiki/Merge_%28SQL%29.html" title="Merge (SQL)">Merge</a> | <a href="/wiki/Delete_%28SQL%29.html" title="Delete (SQL)">Delete</a> | <a href="/wiki/Join_%28SQL%29.html" title="Join (SQL)">Join</a> | <a href="/wiki/Union_%28SQL%29.html" title="Union (SQL)">Union</a> | <a href="/wiki/Create_%28SQL%29.html" title="Create (SQL)">Create</a> | <a href="/wiki/Drop_%28SQL%29.html" title="Drop (SQL)">Drop</a><br />
+<a href="/wiki/Comparison_of_SQL_syntax.html" title="Comparison of SQL syntax">Comparison of syntax</a></p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr bgcolor="#CCCCFF">
+<td align="center"><b>Implementations of database management systems</b></td>
+</tr>
+<tr>
+<td align="center" style="font-size: small">
+<table width="100%" cellspacing="0" cellpadding="2" border="0">
+<tr class="toccolours" style="font-size: small">
+<td width="50%" align="center" style="vertical-align:top; border-top: 1px solid #ccccff; border-right: 1px solid #ccccff">
+<p><i>Types of implementations</i><br />
+<a href="/wiki/Flat_file_database.html" title="Flat file database">Flat file</a> | <a href="/wiki/Deductive_database.html" title="Deductive database">Deductive</a> | <a href="/wiki/Dimensional_database.html" title="Dimensional database">Dimensional</a> | <a href="/wiki/Hierarchical_model.html" title="Hierarchical model">Hierarchical</a> | <a href="/wiki/Object_database.html" title="Object database">Object oriented</a> | <a href="/wiki/Temporal_database.html" title="Temporal database">Temporal</a><br />
+<br />
+<i>Products</i><br />
+<a href="/wiki/DBASE.html" title="DBASE">dBASE</a> | <a href="/wiki/Oracle_database.html" title="Oracle database">Oracle</a> | <a href="/wiki/Sybase_SQL_Server.html" title="Sybase SQL Server">Sybase</a> | <a href="/wiki/MySQL.html" title="MySQL">MySQL</a> | <a href="/wiki/SQLite.html" title="SQLite">SQLite</a> | <a href="/wiki/Microsoft_SQL_Server.html" title="Microsoft SQL Server">Microsoft SQL Server</a> | <a href="/wiki/Essbase.html" title="Essbase">Essbase</a> | <a href="/wiki/PostgreSQL.html" title="PostgreSQL">PostgreSQL</a> | <a href="/wiki/IBM_DB2.html" title="IBM DB2">DB2</a> | <a href="/wiki/Informix.html" title="Informix">Informix</a> | <a href="/wiki/Helix_database.html" title="Helix database">Helix database</a> | <a href="/wiki/Comparison_of_relational_database_management_systems.html" title="Comparison of relational database management systems">Comparison - relational</a> | <a href="/wiki/Comparison_of_object-relational_database_management_systems.html" title="Comparison of object-relational database management systems">Comparison - object-relational</a></p>
+</td>
+<td width="50%" align="center" style="vertical-align:top; border-top: 1px solid #ccccff">
+<p><i>Components</i><br />
+<a href="/wiki/Query_language.html" title="Query language">Query language</a> | <a href="/wiki/Query_optimizer.html" title="Query optimizer">Query optimizer</a> | <a href="/wiki/Query_plan.html" title="Query plan">Query plan</a> | <a href="/wiki/Open_Database_Connectivity.html" title="Open Database Connectivity">ODBC</a> | <strong class="selflink">JDBC</strong><br />
+<i>Lists</i><br />
+<a href="/wiki/List_of_object-oriented_database_management_systems.html" title="List of object-oriented database management systems">List of object-oriented database management systems</a><br />
+<a href="/wiki/List_of_relational_database_management_systems.html" title="List of relational database management systems">List of relational database management systems</a><br />
+<a href="/wiki/List_of_truly_relational_database_management_systems.html" title="List of truly relational database management systems">List of truly relational database management systems</a></p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+<!-- 
+Pre-expand include size: 20974 bytes
+Post-expand include size: 8352 bytes
+Template argument size: 1438 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:42755-0!1!0!default!!en!2 and timestamp 20060910041646 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Java platform">Java platform</a></span> | <span dir='ltr'><a  title="Category:Java specification requests">Java specification requests</a></span> | <span dir='ltr'><a  title="Category:Application programming interfaces">Application programming interfaces</a></span> | <span dir='ltr'><a  title="Category:SQL data access">SQL data access</a></span> | <span dir='ltr'><a  title="Category:Databases">Databases</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Java_Database_Connectivity.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-nl"><a >Nederlands</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-no"><a >Norsk (bokmål)</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-pt"><a >Português</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+				<li class="interwiki-sv"><a >Svenska</a></li>
+				<li class="interwiki-zh"><a >中文</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 17:09, 7 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv108 in 0.110 secs. --></body></html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Model-based testing,ATLAS Transformation Language,Abstract test suite,Black-box testing,Boolean satisfiability problem,Boundary value analysis,Constraint programming,Deterministic,Disjunctive normal form,Domain-specific modelling,Domain Specific Language" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Model-based testing - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Model-based_testing";
+			var wgTitle = "Model-based testing";
+			var wgArticleId = 1343866;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Model-based testing</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p><b>Model-based testing</b> is <a href="/wiki/Software_testing.html" title="Software testing">software testing</a> in which <a href="/wiki/Test_case.html" title="Test case">test cases</a> are derived in whole or in part from a <a href="/wiki/Model_%28abstract%29.html" title="Model (abstract)">model</a> that describes some (usually functional) aspects of the <a href="/wiki/System_under_test.html" title="System under test">system under test</a> (SUT).</p>
+<div class="thumb tright">
+<div style="width:212px;"><a  class="internal" title="General model-based testing setting"><img src="http://upload.wikimedia.org/wikipedia/en/3/36/Mbt-overview.png" alt="General model-based testing setting" width="210" height="185" longdesc="/wiki/Image:Mbt-overview.png" /></a>
+<div class="thumbcaption">General model-based testing setting</div>
+</div>
+</div>
+<p>The model is usually an abstract, partial presentation of the system under test's desired behavior. The test cases derived from this model are functional tests on the same level of abstraction as the model. These test cases are collectively known as the <a href="/wiki/Abstract_test_suite.html" title="Abstract test suite">abstract test suite</a>. The abstract test suite cannot be directly executed against the system under test because it is on the wrong level of abstraction. Therefore an <a href="/wiki/Executable_test_suite.html" title="Executable test suite">executable test suite</a> must be derived from the abstract test suite that can communicate with the system under test. This is done by mapping the abstract test cases to concrete test cases suitable for execution.</p>
+<p>There are many different ways to "derive" tests from a model. Because testing is usually experimental and based on heuristics, there is no one best way to do this. It is common to consolidate all test derivation related design decisions into a package that is often known as "test requirements", "test purpose" or even "use case". This package can contain e.g. information about the part of the model that should be the focus for testing, or about the conditions where it is correct to stop testing (test stopping criteria).</p>
+<div class="thumb tright">
+<div style="width:262px;"><a  class="internal" title="An example of a model-based testing workflow. IXIT refers to &quot;implementation extra information&quot; and denotes here the total package of information that is needed when the abstract test suite is converted into an executable one. Typically it includes information about test harness, data mappings and SUT configuration."><img src="http://upload.wikimedia.org/wikipedia/en/4/43/Mbt-process-example.png" alt="An example of a model-based testing workflow. IXIT refers to &quot;implementation extra information&quot; and denotes here the total package of information that is needed when the abstract test suite is converted into an executable one. Typically it includes information about test harness, data mappings and SUT configuration." width="260" height="227" longdesc="/wiki/Image:Mbt-process-example.png" /></a>
+<div class="thumbcaption">An example of a model-based testing workflow. IXIT refers to "implementation extra information" and denotes here the total package of information that is needed when the abstract test suite is converted into an executable one. Typically it includes information about test harness, data mappings and SUT configuration.</div>
+</div>
+</div>
+<p>Because test suites are derived from models and not from source code, model-based testing is usually seen as one form of <a href="/wiki/Black-box_testing.html" title="Black-box testing">black-box testing</a>. In some aspects, this is not completely accurate. Model-based testing can be combined with source-code level test coverage measurement, and functional models can be based on existing source code in the first place.</p>
+<p>Model-based testing for complex software systems is still an evolving field.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Models</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Deriving tests algorithmically</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">2.1</span> <span class="toctext">Test case generation by theorem proving</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.2</span> <span class="toctext">Test case generation by constraint logic programming</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.3</span> <span class="toctext">Test case generation by model checking</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.4</span> <span class="toctext">Test case generation by symbolic execution</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">External links</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">3.1</span> <span class="toctext">Related concepts</span></a></li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Models">edit</a>]</div>
+<p><a name="Models" id="Models"></a></p>
+<h2>Models</h2>
+<p>Especially in <a href="/wiki/Model_Driven_Engineering.html" title="Model Driven Engineering">Model Driven Engineering</a> or in OMG's <a href="/wiki/Model-driven_architecture.html" title="Model-driven architecture">model-driven architecture</a> the model is built before or parallel to the development process of the system under test. The model can also be constructed from the completed system. Recently the model is created mostly manually, but there are also attempts to create the model automatically, for instance out of the source code. One important way to create new models is by model transformation, using languages like <a href="/wiki/ATLAS_Transformation_Language.html" title="ATLAS Transformation Language">ATL</a>, a <a href="/wiki/QVT.html" title="QVT">QVT</a>-like <a href="/wiki/Domain_Specific_Language.html" title="Domain Specific Language">Domain Specific Language</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Deriving tests algorithmically">edit</a>]</div>
+<p><a name="Deriving_tests_algorithmically" id="Deriving_tests_algorithmically"></a></p>
+<h2>Deriving tests algorithmically</h2>
+<p>The effectiveness of model-based testing is primarily due to the potential for automation it offers. If the model is machine-readable and formal to the extent that it has a well-defined behavioral interpretation, test cases can in principle be derived mechanically.</p>
+<p>Often the model is translated to or interpreted as a <a href="/wiki/Finite_state_automaton.html" title="Finite state automaton">finite state automaton</a> or a <a href="/wiki/State_transition_system.html" title="State transition system">state transition system</a>. This automaton represents the possible configurations of the system under test. To find test cases, the automaton is searched for executable paths. A possible execution path can serve as a test case. This method works if the model is <a href="/wiki/Deterministic.html" title="Deterministic">deterministic</a> or can be transformed into a deterministic one.</p>
+<p>Depending on the complexity of the system under test and the corresponding model the number of paths can be very large, because of the huge amount of possible configurations of the system. For finding appropriate test cases, i.e. paths that refer to a certain requirement to proof, the search of the paths has to be guided. For the test case selection multiple techniques are applied.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Test case generation by theorem proving">edit</a>]</div>
+<p><a name="Test_case_generation_by_theorem_proving" id="Test_case_generation_by_theorem_proving"></a></p>
+<h3>Test case generation by theorem proving</h3>
+<p><a href="/wiki/Theorem_proving.html" title="Theorem proving">Theorem proving</a> has been originally used for automated proving of logical formulas. For model-based testing approaches the system is modelled by a set of logical expressions (<a href="/wiki/Predicate.html" title="Predicate">predicates</a>) specifying the system's behavior. For selecting test cases the model is partitioned into <a href="/wiki/Equivalence_classes.html" title="Equivalence classes">equivalence classes</a> over the valid interpretation of the set of the logical expressions describing the system under test. Each class is representing a certain system behavior and can therefore serve as a test case.</p>
+<p>The simpliest partitioning is done by the disjunctive normal form approach. The logical expressions describing the system's behavior are transformed into the <a href="/wiki/Disjunctive_normal_form.html" title="Disjunctive normal form">disjunctive normal form</a>.</p>
+<p>The classification tree-method provides a more sophisticated hierarchical partitioning. Also partitioning heuristics are used supporting the partitioning algorithms, e.g. heuristics based on <a href="/wiki/Boundary_value_analysis.html" title="Boundary value analysis">boundary value analysis</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Test case generation by constraint logic programming">edit</a>]</div>
+<p><a name="Test_case_generation_by_constraint_logic_programming" id="Test_case_generation_by_constraint_logic_programming"></a></p>
+<h3>Test case generation by constraint logic programming</h3>
+<p><a href="/wiki/Constraint_programming.html" title="Constraint programming">Constraint programming</a> can be used to select test cases satisfying specific constraints by solving a set of constraints over a set of variables. The system is described by the means of constraints. Solving the set of constraints can be done by boolean solvers (e.g. SAT-solvers based on the <a href="/wiki/Boolean_satisfiability_problem.html" title="Boolean satisfiability problem">boolean satisfiability problem</a>) or by <a href="/wiki/Numerical_analysis.html" title="Numerical analysis">numerical analysis</a>, like the <a href="/wiki/Gaussian_elimination.html" title="Gaussian elimination">Gaussian elimination</a>. A solution found by solving the set of constraints formulas can serve as a test cases for the corresponding system.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Test case generation by model checking">edit</a>]</div>
+<p><a name="Test_case_generation_by_model_checking" id="Test_case_generation_by_model_checking"></a></p>
+<h3>Test case generation by model checking</h3>
+<p>Originally model checking was developed as a technique to check if a property of a specification is valid in a model. We provide a model of the system under test and a property we want to test to the model checker. Within the procedure of proofing if this property is valid in the model the model checker detects witnesses and counterexamples. A witness is a path, where the property is satisfied, a counterexample is a path in the execution of the model, where the property is violated. This paths can again be used as test cases.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Test case generation by symbolic execution">edit</a>]</div>
+<p><a name="Test_case_generation_by_symbolic_execution" id="Test_case_generation_by_symbolic_execution"></a></p>
+<h3>Test case generation by symbolic execution</h3>
+<p>Symbolic execution is often used in frameworks for model-based testing. It can be a means in searching for execution traces in an abstract model. In principle the program execution is simulated using symbols for variables rather than actual values. Then the program can be executed in a symbolic way. Each execution path represents one possible program execution and can be used as a test case. For that, the symbols have to instantiated by assigning values to the symbols.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external free" title="http://www.model-based-testing.org">http://www.model-based-testing.org</a> is a website about model-based testing in general</li>
+<li><a  class="external free" title="http://www.goldpractices.com/practices/mbt/index.php">http://www.goldpractices.com/practices/mbt/index.php</a> gives a survey of applying model-based testing</li>
+<li><a  class="external free" title="http://www.mdqa.org/">http://www.mdqa.org/</a> (also <a  class="external free" title="http://www.modelbasedtesting.info/">http://www.modelbasedtesting.info/</a>) is a website about model-based testing and, more broadly, model driven quality assurance</li>
+</ul>
+<dl>
+<dt>Tools (in alphabetical order)</dt>
+</dl>
+<ul>
+<li><a  class="external text" title="http://research.microsoft.com/fse/asml/">AsmL Test Tool</a> can generate tests directly from an AsmL model</li>
+<li><a  class="external text" title="http://www.atyoursideconsulting.com/">ATD-Automated Test Designer</a> is a model-based testing tool that generates automatically test cases, test data and test automation scripts from requirement specifications</li>
+<li><a  class="external text" title="http://autofocus.informatik.tu-muenchen.de/">AutoFocus</a> (in German) is a graphical tool for developing and modeling distributed systems with integrated testing facilities</li>
+<li><a  class="external text" title="http://www.conformiq.com/qtronic.php">Conformiq Qtronic</a> is a design model driven automatic on-the-fly testing tool employing <a href="/wiki/Unified_Modeling_Language.html" title="Unified Modeling Language">UML</a> and <a href="/wiki/Java_platform.html" title="Java platform">Java</a> models</li>
+<li><a  class="external text" title="http://www.conformiq.com/ctg.php">Conformiq Test Generator</a> is a tool that executes tests from <a href="/wiki/Unified_Modeling_Language.html" title="Unified Modeling Language">UML</a> state charts that represent testing strategies</li>
+<li><a  class="external text" title="http://www.leirios.com/">Leirios Test Generator</a> is a model-based testing tool that generates tests automatically from UML 2.0 system specifications</li>
+<li><a  class="external text" title="http://www-verimag.imag.fr/~synchron/index.php?page=lurette/lurette">Lurette</a> is an automated testing tool of reactive programs written in Lustre</li>
+<li><a  class="external text" title="http://www.reactive-systems.com/">Reactis Tester</a> is another model-based testing tool that focuses on control systems</li>
+<li><a  class="external text" title="http://research.microsoft.com/specexplorer/">Spec Explorer</a> is a model exploration and test suite generation tool from Microsoft that uses Spec#, C#, or AsmL to describe models</li>
+<li><a  class="external text" title="http://www-verimag.imag.fr/~async/TGV/index.shtml.en">TGV</a> is a tool for the generation of conformance test suites for protocols</li>
+<li><a  class="external text" title="http://fmt.cs.utwente.nl/tools/torx/introduction.html">TorX</a> is also a prototype testing tool for conformance testing of reactive software</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Related concepts">edit</a>]</div>
+<p><a name="Related_concepts" id="Related_concepts"></a></p>
+<h3>Related concepts</h3>
+<ul>
+<li><a href="/wiki/Model-driven_architecture.html" title="Model-driven architecture">Model-driven architecture</a> (MDA is an OMG Trademark)</li>
+<li><a href="/wiki/Model_Driven_Engineering.html" title="Model Driven Engineering">Model Driven Engineering</a> (MDE is <b>not</b> an OMG Trademark)</li>
+<li><a  class="new" title="Model Integrated Computing">Model Integrated Computing</a> (MIC)</li>
+<li><a href="/wiki/Generic_Modeling_Environment.html" title="Generic Modeling Environment">Generic Modeling Environment</a> (GME)</li>
+<li><a href="/wiki/Domain_Specific_Language.html" title="Domain Specific Language">Domain Specific Language</a> (DSL)</li>
+<li><a href="/wiki/Domain-specific_modelling.html" title="Domain-specific modelling">Domain-specific modelling</a> (DSM)</li>
+<li><a href="/wiki/Meta-modeling.html" title="Meta-modeling">Meta-modeling</a></li>
+<li><a href="/wiki/ATLAS_Transformation_Language.html" title="ATLAS Transformation Language">ATL</a></li>
+<li><a href="/wiki/VIATRA.html" title="VIATRA">VIATRA</a></li>
+<li><a href="/wiki/XMI.html" title="XMI">XMI</a></li>
+<li><a href="/wiki/OCL.html" title="OCL">OCL</a></li>
+<li><a href="/wiki/Meta-Object_Facility.html" title="Meta-Object Facility">MOF</a></li>
+<li><a href="/wiki/Object-oriented_analysis_and_design.html" title="Object-oriented analysis and design">Object-oriented analysis and design</a> (OOAD)</li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:1343866-0!1!0!default!!en!2 and timestamp 20060906022534 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:Software testing">Software testing</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Model-based_testing.html">Article</a></li>
+				 <li id="ca-talk" class="new"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-als"><a >Alemannisch</a></li>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 00:15, 1 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv33 in 0.111 secs. --></body></html>

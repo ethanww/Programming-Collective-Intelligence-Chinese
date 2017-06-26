@@ -1,0 +1,403 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="C preprocessor,C++,C programming language,C trigraph,Compiler,Macro,Make,Makefile,Preprocessing directive,Preprocessor,Radian" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>C preprocessor - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "C_preprocessor";
+			var wgTitle = "C preprocessor";
+			var wgArticleId = 231835;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">C preprocessor</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>The <b>C preprocessor</b> (<b>cpp</b>) is the <a href="/wiki/Preprocessor.html" title="Preprocessor">preprocessor</a> for the <a href="/wiki/C_programming_language.html" title="C programming language">C programming language</a>. It is invoked by the <a href="/wiki/Compiler.html" title="Compiler">compiler</a> to handle directives such as <tt>#include</tt>, <tt>#define</tt>, and <tt>#if</tt>. Since the language of such directives is not strictly specific to the grammar of C, the preprocessor can also be invoked independently to process another type of file.</p>
+<p>The transformations it makes on its input form the first four so-called <i>Phases of Translation</i>. Though an implementation may choose to perform some or all phases simultaneously, it must behave <b>as if</b> it performed them one-by-one in order.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Phases</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Examples</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Macro definition and expansion</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Quoting the Macro Arguments</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">X-Macros</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">User-defined compilation errors and warnings</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">Compiler-specific preprocessor features</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">8</span> <span class="toctext">Standard positioning macros</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">9</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Phases">edit</a>]</div>
+<p><a name="Phases" id="Phases"></a></p>
+<h2>Phases</h2>
+<ol>
+<li>Trigraph Replacement - The preprocessor replaces <a href="/wiki/C_trigraph.html" title="C trigraph">trigraph sequences</a> with the characters they represent.</li>
+<li>Line Splicing - Physical source lines that are continued with escaped newline sequences are <i>spliced</i> to form logical lines.</li>
+<li>Tokenization - The preprocessor breaks the result into <i>preprocessing tokens</i> and <a href="/wiki/Whitespace.html" title="Whitespace">whitespace</a>. It replaces comments with whitespace.</li>
+<li>Macro Expansion and Directive Handling - <a href="/wiki/Preprocessing_directive.html" title="Preprocessing directive">Preprocessing directive</a> lines, including file inclusion and conditional compilation, are executed. The preprocessor simultaneously expands macros and, in the 1999 version of the C standard, handles <code>_Pragma</code> operators.</li>
+</ol>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Examples">edit</a>]</div>
+<p><a name="Examples" id="Examples"></a></p>
+<h2>Examples</h2>
+<p>This section goes into some detail about C preprocessor usage. Good programming practice when writing C macros is crucial, particularly in a collaborative setting, so notes on this have been included. Of course, it is possible to abuse these features, but this is not recommended in a production environment.</p>
+<p>The most common use of the preprocessor is to include another file:</p>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main (void)
+{
+    printf("Hello, world!\n");
+    return 0;
+}
+</pre>
+<p>The preprocessor replaces the line <code>#include &lt;stdio.h&gt;</code> with the system header file of that name, which declares the <code>printf()</code> <a href="/wiki/Subroutine.html" title="Subroutine">function</a> amongst other things. More precisely, the entire text of the file 'stdio.h' replaces the <code>#include</code> directive.</p>
+<p>This can also be written using double quotes, e.g. <code>#include "stdio.h"</code>. The angle brackets were originally used to indicate 'system' include files, and double quotes user-written include files, and it is good practice to retain this distinction. C compilers and programming environments all have a facility which allows the programmer to define where include files can be found. This can be introduced through a command line flag, which can be parameterized using a <a href="/wiki/Make.html" title="Make">makefile</a>, so that a different set of include files can be swapped in for different operating systems, for instance.</p>
+<p>Conventionally include files are given a .h extension, and files not included by others are given a .c extension. However, there is no requirement that this be observed. Occasionally you will see files with other extensions included from a .c file, in particular others with a .c extension.</p>
+<p>The <code>#ifdef</code>, <code>#ifndef</code>, <code>#else</code>, <code>#elif</code> and <code>#endif</code> directives can be used for conditional compilation.</p>
+<pre>
+#define __WINDOWS__
+
+#ifdef __WINDOWS__
+#include &lt;windows.h&gt;
+#else
+#include &lt;unistd.h&gt;
+#endif
+</pre>
+<p>The first line defines a <a href="/wiki/Macro.html" title="Macro">macro</a> __WINDOWS__. The macro could instead be defined from the compiler's command line, perhaps to control compilation of the program from a <a href="/wiki/Makefile.html" title="Makefile">makefile</a>.</p>
+<p>The subsequent code tests if a macro __WINDOWS__ is defined. If it is, as in this example, the file <code>&lt;windows.h&gt;</code> is included, otherwise <code>&lt;unistd.h&gt;</code>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Macro definition and expansion">edit</a>]</div>
+<p><a name="Macro_definition_and_expansion" id="Macro_definition_and_expansion"></a></p>
+<h2>Macro definition and expansion</h2>
+<p>There are two types of macros, <i>object-like</i> and <i>function-like</i>. Function-like macros take parameters; object-like macros don't. The generic syntax for declaring an identifier as a macro of each type is, respectively,</p>
+<pre>
+ #define &lt;identifier&gt; &lt;replacement token list&gt;
+ #define &lt;identifier&gt;(&lt;parameter list&gt;) &lt;replacement token list&gt;
+</pre>
+<p>Wherever the identifier appears in the source code it is replaced with the replacement token list, which can be empty. For an identifier declared to be a function-like macro, it is only replaced when the following token is also a left parenthesis that begins the argument list of the macro invocation. The exact procedure followed for expansion of function-like macros with arguments is subtle.</p>
+<p>Object-like macros are conventionally used as part of good programming practice to create symbolic names for constants, e.g.</p>
+<pre>
+#define PI 3.14159
+</pre>
+<p>instead of hard-coding those numbers throughout one's code.</p>
+<p>An example of a function-like macro is:</p>
+<pre>
+#define RADTODEG(x) ((x) * 57.29578)
+</pre>
+<p>This defines a <a href="/wiki/Radian.html" title="Radian">radians</a> to degrees conversion which can be written subsequently, e.g. <code>RADTODEG(34)</code>. This is expanded in-place, so the caller does not need to litter copies of the multiplication constant all over his code. The macro here is written as all uppercase to emphasize that it is a macro, not a compiled function.</p>
+<p>Note that the macro uses parentheses both around the argument and around the entire expression. Omitting either of these can lead to unexpected results. For example:</p>
+<ul>
+<li>Without parentheses around the argument:</li>
+</ul>
+<dl>
+<dd>
+<ul>
+<li>Macro defined as <tt>#define RADTODEG(x) (x * 57.29578)</tt></li>
+<li><tt>RADTODEG(a + b)</tt> expands to <tt>(a + b * 57.29578)</tt></li>
+</ul>
+</dd>
+</dl>
+<ul>
+<li>Without parentheses around the whole expression:</li>
+</ul>
+<dl>
+<dd>
+<ul>
+<li>Macro defined as <tt>#define RADTODEG(x) (x) * 57.29578</tt></li>
+<li><tt>1 / RADTODEG(a)</tt> expands to <tt>1 / (a) * 57.29578</tt></li>
+</ul>
+</dd>
+</dl>
+<p>neither of which give the probably intended result.</p>
+<p>Another example of a function-like macro is:</p>
+<pre>
+#define MIN(a,b) ((a)&gt;(b)?(b):(a))
+</pre>
+<p>This macro illustrates one of the dangers of using function-like macros. One of the arguments, <i>a</i> or <i>b</i>, will be evaluated twice when this "function" is called. So, if the expression <code>MIN(++firstnum,secondnum)</code> is evaluated, then <i>firstnum</i> may be incremented <b>twice</b>, not once as would be expected.</p>
+<p>One of the most subtle and easy to abuse features of the C macropreprocessor is string concatenation. This is a feature of macrofunctions where two arguments can be 'glued' together using <code>##</code> preprocessor operator. This allows two strings to be concatenated in the preprocessed code. This can be used to construct elaborate macros which act much like <a href="/wiki/C%2B%2B.html" title="C++">C++</a> <a href="/wiki/Template_%28programming%29.html" title="Template (programming)">templates</a> (without many of their benefits).</p>
+<p>For instance:</p>
+<pre>
+#define MYCASE(_item,_id) \
+   case _id: \
+     _item##_##_id=_id;\
+   break 
+
+  switch(x) {
+      MYCASE(widget,23);
+  }
+</pre>
+<p>The line <code>MYCASE(widget,23)</code> gets expanded here into <code>case 23: widget_23=23; break</code>. (The semicolon after the right parentheses does not get expanded, but becomes the semicolon that completes the break statement.)</p>
+<p>Note that the _ between the <code>##</code> is 'literal' whereas the <i>_id</i> and <i>_item</i> arguments are 'arguments' to the function-style macro.</p>
+<p>One stylistic note about this macro is that the semicolon on the last line of the macro definition is omitted so that the macro looks 'natural' when written. It could be included in the macro definition, but then there would be lines in the code without semicolons at the end which would throw off the casual reader.</p>
+<p>The macro can be extended over as many lines as required using a backslash escape at the end of the line. The macro ends on the last line which does not end in a backslash.</p>
+<p>Properly used, multi-line macros can greatly reduce the size and complexity of a C program and enhance its readability and maintainability.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Quoting the Macro Arguments">edit</a>]</div>
+<p><a name="Quoting_the_Macro_Arguments" id="Quoting_the_Macro_Arguments"></a></p>
+<h2>Quoting the Macro Arguments</h2>
+<p>Although macro expansion does not occur within a quoted string, the text of the macro arguments can be quoted and treated as a string literal by using the "#" directive. For example, with the macro</p>
+<pre>
+#define QUOTEME(x) #x
+</pre>
+<p>the code</p>
+<pre>
+printf("%s\n", QUOTEME(1+2));
+</pre>
+<p>will expand to</p>
+<pre>
+printf("%s\n", "1+2");
+</pre>
+<p>This capability can be used with automatic string concatenation to make debugging macros. For example, the macro in</p>
+<pre>
+#define dumpme(x, fmt) printf("%s:%u: %s=" fmt, __FILE__, __LINE__, #x, x)
+
+int some_function() {
+    int foo;
+    /* [a lot of complicated code goes here] */
+    dumpme(x, "%u");
+    /* [more complicated code goes here] */
+}
+</pre>
+<p>would print the name of an expression and its value, along with the file name and the line number.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: X-Macros">edit</a>]</div>
+<p><a name="X-Macros" id="X-Macros"></a></p>
+<h2>X-Macros</h2>
+<p>One little-known use pattern of the C preprocessor is known by the name X-Macros. X-Macros are the practice of using the #include directive multiple times on the same source header file, each time in a different environment of defined macros.</p>
+<pre>
+File: commands.x.h
+
+COMMAND(ADD, "Addition command")
+COMMAND(SUB, "Subtraction command")
+COMMAND(XOR, "Exclusive-or command")
+</pre>
+<pre>
+enum command_indices {
+#define COMMAND(name, description)              COMMAND_##name ,
+#include "commands.x.h"
+#undef COMMAND
+    COMMAND_COUNT /* The number of existing commands */
+};
+
+typedef result_t (*command_handler_t)(state_t *);
+
+command_handler_t command_handlers[] = {
+#define COMMAND(name, description)              &amp;handler_##name ,
+#include "commands.x.h"
+#undef COMMAND
+    NULL
+};
+
+char *command_descriptions[] = {
+#define COMMAND(name, description)              description ,
+#include "commands.x.h"
+#undef COMMAND
+    NULL
+};
+
+</pre>
+<p>The above allows for definition of new commands to consist of changing the command list in the X-Macro header file, and defining a new command handler of the proper name. The command descriptions list, handler list, and enumeration are updated automatically by the preprocessor.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: User-defined compilation errors and warnings">edit</a>]</div>
+<p><a name="User-defined_compilation_errors_and_warnings" id="User-defined_compilation_errors_and_warnings"></a></p>
+<h2>User-defined compilation errors and warnings</h2>
+<p>The <code>#error</code> directive inserts an error message into the compiler output.</p>
+<pre>
+#error Gosh!
+</pre>
+<p>This prints Gosh! in the compiler output and halts the computation at that point. This is extremely useful if you aren't sure whether a given line is being compiled or not. It is also useful if you have a heavily parameterized body of code and want to make sure a particular <code>#define</code> has been introduced from the makefile, e.g.:</p>
+<pre>
+#ifdef WINDOWS
+    ... /* windows specific code */
+#elif defined(UNIX)
+    ... /* unix specific code */
+#else
+    #error "What's your operating system?"
+#endif
+</pre>
+<p>Also, you can use the <code>#warning</code> directive to print out a warning message in the compiler output, but <i>not</i> stop the compilation process. A typical use is to warn about the usage of some old code, which is now unfavored and only included for compatibility reasons, e. g.:</p>
+<pre>
+#warning "Do not use ABC, which is deprecated. Use XYZ instead."
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Compiler-specific preprocessor features">edit</a>]</div>
+<p><a name="Compiler-specific_preprocessor_features" id="Compiler-specific_preprocessor_features"></a></p>
+<h2>Compiler-specific preprocessor features</h2>
+<p>The <code>#pragma</code> directive is a compiler specific directive which compiler vendors may use for their own purposes. For instance, <code>#pragma</code>s are often used to allow suppression of specific error messages, manage heap and stack debugging, etc.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Standard positioning macros">edit</a>]</div>
+<p><a name="Standard_positioning_macros" id="Standard_positioning_macros"></a></p>
+<h2>Standard positioning macros</h2>
+<p>Certain symbols are predefined in ANSI C. Two useful ones are <code>__FILE__</code> and <code>__LINE__</code>, which expand into the current file and line number. For instance:</p>
+<pre>
+// debugging macros so we can pin down message provenance at a glance
+#define WHERESTR "[file %s, line %d] "
+#define WHEREARG __FILE__,__LINE__
+
+printf(WHERESTR ": hey, x=%d\n", WHEREARG, x);
+</pre>
+<p>This prints the value of <code>x</code>, preceded by the file and line number, allowing quick access to which line the message was produced on. Note that the <code>WHERESTR</code> argument is concatenated with the following string.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<div class="infobox sisterproject">
+<div style="float: left;">
+<div class="floatnone"><span><a  class="image" title="Wikibooks"><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Wikibooks-logo-en.svg/50px-Wikibooks-logo-en.svg.png" alt="Wikibooks" width="50" height="57" longdesc="/wiki/Image:Wikibooks-logo-en.svg" /></a></span></div>
+</div>
+<div style="margin-left: 60px;"><a  class="extiw" title="wikibooks:">Wikibooks</a> has more about this subject:
+<div style="margin-left: 10px;"><i><b><a  class="extiw" title="wikibooks:Programming:C_The_Preprocessor">Programming:C The Preprocessor</a></b></i></div>
+</div>
+</div>
+<ul>
+<li><a  class="external text" title="http://www.open-std.org/JTC1/SC22/WG14/www/standards">ISO/IEC 9899</a>. The official C:1999 standard, along with defect reports and a rationale. As of 2005 the latest version is <a  class="external text" title="http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1124.pdf">ISO/IEC 9899:TC2</a>.</li>
+<li><a  class="external text" title="http://gcc.gnu.org/onlinedocs/cpp/index.html">GNU CPP online manual</a></li>
+<li><a  class="external text" title="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/vclang/html/vcrefPreprocessorReference.asp">Visual Studio .NET preprocessor reference</a></li>
+<li><a  class="external text" title="http://predef.sourceforge.net/">Collection of pre-defined macros</a></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:231835-0!1!0!default!!en!2 and timestamp 20060906011602 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:C programming language">C programming language</a></span> | <span dir='ltr'><a  title="Category:Transformation languages">Transformation languages</a></span> | <span dir='ltr'><a  title="Category:Macro programming languages">Macro programming languages</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/C_preprocessor.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-tr"><a >Türkçe</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 20:03, 16 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv53 in 0.068 secs. --></body></html>

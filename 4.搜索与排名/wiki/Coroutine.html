@@ -1,0 +1,299 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Coroutine,Actor model,As of 2003,C programming language,Computer game,Computer science,Continuation,Cooperative multitasking,Donald Knuth,Event-driven programming,Generator (computer science)" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Coroutine - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Coroutine";
+			var wgTitle = "Coroutine";
+			var wgArticleId = 243800;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Coroutine</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>In <a href="/wiki/Computer_science.html" title="Computer science">computer science</a>, <b>coroutines</b> are program components that generalize <a href="/wiki/Subroutine.html" title="Subroutine">subroutines</a> to allow multiple entry points and suspending and resuming of execution at certain locations. Coroutines are more generic and flexible than subroutines, but are less widely used in practice. Coroutines originated as an assembly-language technique, but are supported in some high-level languages, <a href="/wiki/Simula.html" title="Simula">Simula</a> and <a href="/wiki/Modula-2.html" title="Modula-2">Modula-2</a> being two early examples. Coroutines are well-suited for implementing more familiar program components such as <a href="/wiki/Cooperative_multitasking.html" title="Cooperative multitasking">cooperative tasks</a>, <a href="/wiki/Iterator.html" title="Iterator">iterators</a>, <a href="/wiki/Lazy_evaluation.html" title="Lazy evaluation">infinite lists</a>, and <a href="/wiki/Pipe_%28computing%29.html" title="Pipe (computing)">pipes</a>. Since coroutines are not as widely known as subroutines, a comparison with subroutines may be helpful.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Brief comparison and example</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Detailed comparison</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Common uses of coroutines</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Programming languages supporting coroutines</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Coroutine alternatives and implementations</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">5.1</span> <span class="toctext">Implementations for C</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">5.2</span> <span class="toctext">Implementations for Python</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">5.3</span> <span class="toctext">Implementations for Ruby</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">5.4</span> <span class="toctext">Implementations for Perl</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Brief comparison and example">edit</a>]</div>
+<p><a name="Brief_comparison_and_example" id="Brief_comparison_and_example"></a></p>
+<h2>Brief comparison and example</h2>
+<p>Coroutines are more generic than subroutines. The start of a subroutine is the only point of entry; the start of a coroutine is the first point of entry, and places within a coroutine following returns (yields) are subsequent points of entry. Subroutines can return only once; in contrast, coroutines can return (yield) several times. The lifespan of subroutines is dictated by <a href="/wiki/LIFO.html" title="LIFO">last in, first out</a> (the last subroutine called is the first to return); in contrast, the lifespan of coroutines is dictated entirely by their use and need.</p>
+<p>Here's a simple example of how coroutines can be useful. Suppose you have a consumer-producer relationship where one routine creates items and adds them to a queue and another removes items from the queue and uses them. For reasons of efficiency, you want to add and remove several items at once. The code might look like this:</p>
+<pre>
+<i>var</i> q := new queue
+
+<b>coroutine</b> produce
+    <b>loop</b>
+        <b>while</b> q is not full
+            create some new items
+            add the items to q
+        <b>yield</b> to consume
+
+<b>coroutine</b> consume
+    <b>loop</b>
+        <b>while</b> q is not empty
+            remove some items from q
+            use the items
+        <b>yield</b> to produce
+</pre>
+<p>Each coroutine does as much work as it can before yielding control to the other using the <i>yield</i> command. The <i>yield</i> causes control in the other coroutine to pick up where it left off, but now with the queue modified so that it can do more work. Although this example is often used to introduce <a href="/wiki/Multithreading.html" title="Multithreading">multithreading</a>, it's not necessary to have two threads to effect this dynamic: the <i>yield</i> statement can be implemented by a branch directly from one routine into the other.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Detailed comparison">edit</a>]</div>
+<p><a name="Detailed_comparison" id="Detailed_comparison"></a></p>
+<h2>Detailed comparison</h2>
+<p>Since coroutines can have more points of entry and exit than subroutines, it is possible to implement any subroutine as a coroutine. "Subroutines are special cases of ... coroutines." —<a href="/wiki/Donald_Knuth.html" title="Donald Knuth">Donald Knuth</a></p>
+<p>Each time a subroutine is called (invoked), execution starts at the beginning of the invoked subroutine. Likewise, the first time a coroutine is invoked, execution starts at the beginning of the coroutine; however, each subsequent time a coroutine is invoked, execution resumes following the place where the coroutine last returned (yielded).</p>
+<p>Since a subroutine returns only once, it cannot return multiple values. In contrast, since a coroutine can return multiple times, returning multiple values merely requires returning additional values upon subsequent calls to the coroutine. Coroutines in which subsequent calls yield additional results are often known as <a href="/wiki/Generator_%28computer_science%29.html" title="Generator (computer science)">generators</a>.</p>
+<p>Subroutines only require a single <a href="/wiki/Stack_%28data_structure%29.html" title="Stack (data structure)">stack</a> that can be preallocated at the beginning of program execution. In contrast, coroutines, able to call on other coroutines as peers, are best implemented using <a href="/wiki/Continuation.html" title="Continuation">continuations</a>. Continuations may require allocation of additional stacks and therefore are more commonly implemented in garbage-collected high-level languages. Coroutine creation can be done cheaply by preallocating stacks or caching previously allocated stacks.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Common uses of coroutines">edit</a>]</div>
+<p><a name="Common_uses_of_coroutines" id="Common_uses_of_coroutines"></a></p>
+<h2>Common uses of coroutines</h2>
+<p>Coroutines are useful to implement the following:</p>
+<ul>
+<li><a href="/wiki/State_machine.html" title="State machine">State machines</a> within a single subroutine, where the state is determined by the current entry/exit point of the procedure; this can result in more readable code.</li>
+<li><a href="/wiki/Actor_model.html" title="Actor model">Actor model</a> of concurrency, for instance in <a href="/wiki/Computer_game.html" title="Computer game">computer games</a>. Each actor has its own procedures (this again logically separates the code), but they voluntarily give up control to central scheduler, which executes them sequentially (this is a form of <a href="/wiki/Cooperative_multitasking.html" title="Cooperative multitasking">cooperative multitasking</a>).</li>
+<li><a href="/wiki/Generator_%28computer_science%29.html" title="Generator (computer science)">Generators</a>, and these are useful for input/output and for generic traversal of data structures.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Programming languages supporting coroutines">edit</a>]</div>
+<p><a name="Programming_languages_supporting_coroutines" id="Programming_languages_supporting_coroutines"></a></p>
+<h2>Programming languages supporting coroutines</h2>
+<ul>
+<li><a href="/wiki/Simula.html" title="Simula">Simula</a></li>
+<li><a href="/wiki/Modula-2.html" title="Modula-2">Modula-2</a></li>
+<li><a href="/wiki/Stackless_Python.html" title="Stackless Python">Stackless Python</a></li>
+<li><a href="/wiki/Lua_programming_language.html" title="Lua programming language">Lua</a></li>
+<li><a href="/wiki/Io_programming_language.html" title="Io programming language">Io</a></li>
+<li><a href="/wiki/%CE%9CC%2B%2B.html" title="ΜC++">μC++</a></li>
+<li><a href="/wiki/High_Level_Assembly.html" title="High Level Assembly">High Level Assembly</a></li>
+</ul>
+<p>Since <a href="/wiki/Continuation.html" title="Continuation">continuations</a> can be used to implement coroutines, programming languages that support them can also quite easily support coroutines.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Coroutine alternatives and implementations">edit</a>]</div>
+<p><a name="Coroutine_alternatives_and_implementations" id="Coroutine_alternatives_and_implementations"></a></p>
+<h2>Coroutine alternatives and implementations</h2>
+<p><a href="/wiki/As_of_2003.html" title="As of 2003">As of 2003</a>, many of the most popular programming languages, including C and its derivatives, do not have direct support for coroutines within the language or their standard libraries. (This is, in large part, due to the limitations of stack-based subroutine implementation).</p>
+<p>In situations in which a coroutine would be the natural implementation of a mechanism, but is not available, the typical response is to create a subroutine that uses an ad-hoc assemblage of boolean flags and other state variables to maintain an internal state between calls. Conditionals within the code result in the execution of different code paths on successive calls, based on the values of the state variables. Another typical response is to implement an explicit state machine in the form of a large and complex switch statement. Such implementations are difficult to understand and maintain.</p>
+<p><a href="/wiki/Thread_%28computer_science%29.html" title="Thread (computer science)">Threads</a> are an alternative to coroutines in mainstream programming environments today. Threads provide facilities for managing the realtime cooperative interaction of "simultaneously" executing pieces of code. Because they solve a large and difficult problem, they include many powerful and complex facilities and have a concomitantly difficult learning curve. When a coroutine is all that is needed, using a thread can be overkill. However—unlike other alternatives—threads are widely available in environments that support C, are familiar to many programmers, and are usually well-implemented, well-documented and well-supported. A standard and well-defined thread implementation is available within <a href="/wiki/POSIX.html" title="POSIX">POSIX</a> under the name <a href="/wiki/Pthreads.html" title="Pthreads">pthread</a>.</p>
+<p>One important difference between threads and coroutines is that threads are typically preemptively scheduled while coroutines are not. Because threads can be rescheduled at any instant and can execute concurrently, programs using threads must be careful about <a href="/wiki/Lock_%28computer_science%29.html" title="Lock (computer science)">locking</a>. In contrast, because coroutines can only be rescheduled at specific points in the program and do not execute concurrently, programs using coroutines can often avoid locking entirely. (This property is also cited as a benefit of <a href="/wiki/Event-driven_programming.html" title="Event-driven programming">event-driven</a> or asynchronous programming.)</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Implementations for C">edit</a>]</div>
+<p><a name="Implementations_for_C" id="Implementations_for_C"></a></p>
+<h3>Implementations for <a href="/wiki/C_programming_language.html" title="C programming language">C</a></h3>
+<p>The <a href="/wiki/Standard_C_library.html" title="Standard C library">standard C library</a> includes functions named <a href="/wiki/Setjmp/longjmp.html" title="Setjmp/longjmp">setjmp and longjmp</a> which can be used to implement a form of coroutine. Unfortunately, as <a  class="new" title="Harbison and Steele">Harbison and Steele</a> note, "the <i>setjmp</i> and <i>longjmp</i> functions are notoriously difficult to implement, and the programmer would do well to make minimal assumptions about them." What this means is if Harbison and Steele's many cautions and caveats are not carefully heeded, uses of setjmp and longjmp that appear to work in one environment may not work in another. Worse yet, faulty implementations of these routines are not rare. The <a href="/wiki/Setcontext.html" title="Setcontext">setcontext</a> family of functions are considerably more powerful than <i>setjmp/longjmp</i>, but conforming implementations are as rare if not rarer.</p>
+<p>Several attempts have been made, with varying degrees of success, to implement coroutines in C with combinations of subroutines and macros. <a href="/wiki/Simon_Tatham.html" title="Simon Tatham">Simon Tatham</a>'s contribution (see below) is a good example of the genre, and his own comments provide a good evaluation of the limitations of this approach. The use of such a device truly can improve the writability, readability and maintainability of a piece of code, but is likely to prove controversial. In Tatham's words: "Of course, this trick violates every coding standard in the book... [but] any coding standard which insists on syntactic clarity at the expense of algorithmic clarity should be rewritten. If your employer fires you for using this trick, tell them that repeatedly as the security staff drag you out of the building."</p>
+<p>A more reliable approach to implementing coroutines in C is to give up on absolute portability and write processor-family-specific implementations, in assembly, of functions to save and restore a coroutine context. A third function, which can usually be written in machine-specific C, is needed to create the context for a new coroutine. Some C libraries provide such routines under the <a href="/wiki/Setcontext.html" title="Setcontext">getcontext, setcontext, makecontext and swapcontext</a>. Russ Cox's libtask library (see below) is a good example of this genre. It uses the context functions if they are provided by the native C library; otherwise it provides its own implementations for ARM, PowerPC, Sparc, and x86. The main shortcoming of this approach is that the coroutine's stack is a fixed size and cannot be grown during execution. Thus, programs tend to allocate much more stack than they actually need in order to avoid the potential for stack overflow.</p>
+<p>Notable implementations:</p>
+<ul>
+<li><a  class="external autonumber" title="http://www.chiark.greenend.org.uk/~sgtatham/coroutines.html">[1]</a> - Simon Tatham's implementation of coroutines in C.</li>
+<li><a  class="external text" title="http://xmailserver.org/libpcl.html"><i>Portable Coroutine Library</i></a> - C library using <a href="/wiki/POSIX.html" title="POSIX">POSIX</a>/<a href="/wiki/Single_UNIX_Specification.html" title="Single UNIX Specification">SUSv3</a> facilities.</li>
+<li><a  class="external autonumber" title="http://www.goron.de/~froese/coro/">[2]</a> - Edgar Toernig's coro library for x86, Linux &amp; FreeBSD.</li>
+<li><a  class="external autonumber" title="http://swtch.com/libtask/">[3]</a> - Russ Cox's libtask coroutine library for FreeBSD, Linux, OS X, and SunOS.</li>
+<li><a  class="external autonumber" title="http://www.dekorte.com/projects/opensource/libCoroutine/">[4]</a> - libCoroutine for FreeBSD, Linux, OS X PPC and x86, SunOS, Symbian and others.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Implementations for Python">edit</a>]</div>
+<p><a name="Implementations_for_Python" id="Implementations_for_Python"></a></p>
+<h3>Implementations for <a href="/wiki/Python_programming_language.html" title="Python programming language">Python</a></h3>
+<ul>
+<li><a  class="external text" title="http://www.python.org/peps/pep-0342.html">PEP 342</a> - better support for coroutine-like functionality, based on extended generators (implemented in Python 2.5)</li>
+<li><a  class="external text" title="http://codespeak.net/py/current/doc/greenlet.html">Greenlets</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Implementations for Ruby">edit</a>]</div>
+<p><a name="Implementations_for_Ruby" id="Implementations_for_Ruby"></a></p>
+<h3>Implementations for <a href="/wiki/Ruby_programming_language.html" title="Ruby programming language">Ruby</a></h3>
+<ul>
+<li><a  class="external text" title="http://mono.kmc.gr.jp/~oxy/w/hiki.cgi?Coroutine">Coroutines in Ruby</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Implementations for Perl">edit</a>]</div>
+<p><a name="Implementations_for_Perl" id="Implementations_for_Perl"></a></p>
+<h3>Implementations for <a href="/wiki/Perl.html" title="Perl">Perl</a></h3>
+<ul>
+<li><a  class="external text" title="http://search.cpan.org/~mlehmann/Coro-1.9/">Coro</a></li>
+</ul>
+<p><br /></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<ul>
+<li><a href="/wiki/Donald_Knuth.html" title="Donald Knuth">Donald Knuth</a>. <i>Fundamental Algorithms</i>, Third Edition. Addison-Wesley, 1997. <a  class="internal">ISBN 0-201-89683-4</a>. Section 1.4.2: Coroutines, pp.193–200.</li>
+<li><i>C: A Reference Manual.</i> Samuel P. Harbison and Guy L. Steele, Jr. Third edition; Prentice-Hall, 1991, <a  class="internal">ISBN 0-13-110933-2</a>.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Cooperative_multitasking.html" title="Cooperative multitasking">Cooperative multitasking</a></li>
+<li><a href="/wiki/Iterator.html" title="Iterator">Iterator</a></li>
+<li><a href="/wiki/Generator_%28computer_science%29.html" title="Generator (computer science)">Generator (computer science)</a></li>
+<li><a href="/wiki/Lazy_evaluation.html" title="Lazy evaluation">Lazy evaluation</a></li>
+<li><a href="/wiki/Pipe_%28computing%29.html" title="Pipe (computing)">Pipe (computing)</a></li>
+<li><a href="/wiki/Protothreads.html" title="Protothreads">Protothreads</a></li>
+<li><a href="/wiki/Subroutine.html" title="Subroutine">Subroutine</a></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:243800-0!1!0!default!!en!2 and timestamp 20060906012446 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:Programming constructs">Programming constructs</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Coroutine.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+				<li class="interwiki-zh"><a >中文</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 07:56, 31 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv106 in 0.076 secs. --></body></html>

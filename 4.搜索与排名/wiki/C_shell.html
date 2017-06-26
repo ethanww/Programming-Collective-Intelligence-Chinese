@@ -1,0 +1,232 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="C shell,1990s,Arithmetic,Backslash,Berkeley Software Distribution,Bill Joy,Bourne-Again shell,Bourne shell,C programming language,GNU,Korn shell" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>C shell - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "C_shell";
+			var wgTitle = "C shell";
+			var wgArticleId = 95833;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">C shell</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>The <b>C shell</b> (<b>csh</b>) is a <a href="/wiki/Unix_shell.html" title="Unix shell">Unix shell</a> developed by <a href="/wiki/Bill_Joy.html" title="Bill Joy">Bill Joy</a> for the <a href="/wiki/Berkeley_Software_Distribution.html" title="Berkeley Software Distribution">BSD</a> Unix system. It was originally derived from the 6th Edition <a href="/wiki/Unix.html" title="Unix">Unix</a> /bin/sh (which was the <a href="/wiki/Thompson_shell.html" title="Thompson shell">Thompson shell</a>), the predecessor of the <a href="/wiki/Bourne_shell.html" title="Bourne shell">Bourne shell</a>. Its syntax is modeled after the <a href="/wiki/C_programming_language.html" title="C programming language">C programming language</a>. The C shell added many feature improvements over the Bourne shell, such as aliases and command history. Today, the original C shell is not in wide use on Unix; it has been superseded by other shells such as the <a href="/wiki/Tcsh.html" title="Tcsh">Tenex C shell</a> (tcsh) based on the original C shell code, but adding filename completion and command line editing, the <a href="/wiki/Korn_shell.html" title="Korn shell">Korn shell</a> (ksh), and the <a href="/wiki/GNU.html" title="GNU">GNU</a> <a href="/wiki/Bourne-Again_shell.html" title="Bourne-Again shell">Bourne-Again shell</a> (bash). An independently-developed and modernized C shell, created by Nicole Hamilton, also survives on Windows in the form of Hamilton C shell.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Features</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">1.1</span> <span class="toctext">New features</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.2</span> <span class="toctext">Syntax differences</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Criticism</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Features">edit</a>]</div>
+<p><a name="Features" id="Features"></a></p>
+<h2>Features</h2>
+<p>The C shell has the typical Unix shell structure: each line of input (or line of a script file) is interpreted as a separate command to execute, with <a href="/wiki/Backslash.html" title="Backslash">backslashes</a> "escaping" newlines where needed (so that multiple input lines can comprise a single command to be executed.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: New features">edit</a>]</div>
+<p><a name="New_features" id="New_features"></a></p>
+<h3>New features</h3>
+<p>These features were first introduced in C shell, though most are now common to many Unix and Unix-like shells.</p>
+<dl>
+<dt>Job control&#160;</dt>
+<dd>The ability to suspend an interactive job and resume it at a later time, or send it into the "background".</dd>
+<dt>History substitution&#160;</dt>
+<dd>The <code>!</code>-substitution feature allowed previous commands to be re-executed or edited in a variety of ways.</dd>
+<dt>Arrays&#160;</dt>
+<dd>Variables could contain multiple elements, which could be numerically indexed.</dd>
+<dt><code>~</code> expansion&#160;</dt>
+<dd>Home directory by username lookup, using <code>~</code> was popular enough that most modern, Unix-based <a href="/wiki/Web_server.html" title="Web server">Web servers</a> now support it, in addition to most shells.</dd>
+<dt>Aliases&#160;</dt>
+<dd>A command could be aliased to another command or command sequence.</dd>
+<dt>Math operations&#160;</dt>
+<dd>Provided <a href="/wiki/Arithmetic.html" title="Arithmetic">arithmetical</a> operations which sh does not provide except by calling external programs.</dd>
+</dl>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Syntax differences">edit</a>]</div>
+<p><a name="Syntax_differences" id="Syntax_differences"></a></p>
+<h3>Syntax differences</h3>
+<p>The most obvious difference between C shell and Bourne shell syntax was the use of parentheses for built-in conditional operations that Bourne shell called out to test for using square brackets (later versions of Bourne shell would rectify this by using a built-in test operator).</p>
+<p>Variable assignment was also performed slightly differently with "<code>set a = b</code>" rather than Bourne shell's "<code>a=b</code>".</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Criticism">edit</a>]</div>
+<p><a name="Criticism" id="Criticism"></a></p>
+<h2>Criticism</h2>
+<p>While the C shell introduced many innovative features in interactive mode, the C shell's scripting capabilities came under criticism in the early-to-mid <a href="/wiki/1990s.html" title="1990s">1990s</a> for their ambiguity, especially with respect to quoting and redirection. Combined with the fact that Bourne shell is guaranteed to be present on all <a href="/wiki/Single_UNIX_Specification.html" title="Single UNIX Specification">Single UNIX Specification</a>-compliant systems, <tt>sh</tt> is usually used for scripting purposes over C shell on Unix.</p>
+<p>An example of possibly unwelcome behaviour of csh scripts is the following:</p>
+<pre>
+ if ( ! -e foo ) echo bar &gt; foo
+</pre>
+<p>It would appear to say "if file 'foo' does not exist, create it with contents 'bar'". But it will in fact create an empty file, as the line is parsed such that the output redirect is set up before the file existence is tested. (These and other criticisms do not, however, apply to the more-modern Hamilton C shell variant of the csh language.)</p>
+<p>If scripts are written in csh, it is often useful to run the script with the <tt>-f</tt> flag, (e.g. by starting with the line <tt>#!/bin/csh -f</tt>) in order to avoid running the user's setup file as this may affect the script's behaviour.</p>
+<p>Other known problem of csh is its message "0 event not found", which yields no information about what the problem was.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://www.faqs.org/faqs/unix-faq/shell/csh-whynot/"><i>Csh Programming Considered Harmful</i></a> by <a href="/wiki/Tom_Christiansen.html" title="Tom Christiansen">Tom Christiansen</a></li>
+<li><a  class="external text" title="http://www.grymoire.com/Unix/CshTop10.txt"><i>Top 10 Reasons not to use the C shell</i></a> by Bruce Barnett</li>
+<li><a  class="external text" title="http://tille.xalasys.com/training/tldp/apc.html">A comparison of features of various Unix shells</a></li>
+<li><a  class="external text" title="http://www.hamiltonlabs.com/cshell.htm">Hamilton C shell</a></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:95833-0!1!0!default!!en!2 and timestamp 20060907124455 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Curly bracket programming languages">Curly bracket programming languages</a></span> | <span dir='ltr'><a  title="Category:Domain-specific programming languages">Domain-specific programming languages</a></span> | <span dir='ltr'><a  title="Category:Text-oriented programming languages">Text-oriented programming languages</a></span> | <span dir='ltr'><a  title="Category:Scripting languages">Scripting languages</a></span> | <span dir='ltr'><a  title="Category:Unix shells">Unix shells</a></span> | <span dir='ltr'><a  title="Category:Unix software">Unix software</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/C_shell.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-pt"><a >Português</a></li>
+				<li class="interwiki-zh"><a >中文</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 12:05, 17 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv94 in 0.141 secs. --></body></html>

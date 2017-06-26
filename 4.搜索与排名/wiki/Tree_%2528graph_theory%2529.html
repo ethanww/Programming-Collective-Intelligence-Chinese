@@ -1,0 +1,264 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Tree (graph theory),Asymptotic behavior,Binary Search Tree,Bipartite graph,Cayley's formula,Complete graph,Computer Science,Connected graph,Countable set,Cycle (graph theory),Data structures" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Tree (graph theory) - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Tree_(graph_theory)";
+			var wgTitle = "Tree (graph theory)";
+			var wgArticleId = 48560;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Tree (graph theory)</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<div class="thumb tright">
+<div style="width:164px;"><a  class="internal" title="A labeled tree with 6 vertices and 5 edges"><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Tree_graph.svg/162px-Tree_graph.svg.png" alt="A labeled tree with 6 vertices and 5 edges" width="162" height="189" longdesc="/wiki/Image:Tree_graph.svg" /></a>
+<div class="thumbcaption">A labeled tree with 6 vertices and 5 edges</div>
+</div>
+</div>
+<p>In <a href="/wiki/Graph_theory.html" title="Graph theory">graph theory</a>, a <b>tree</b> is a graph in which any two <a href="/wiki/Vertex.html" title="Vertex">vertices</a> are connected by <i>exactly one</i> path. A <b>forest</b> is a graph in which any two vertices are connected by <i>at most one</i> path. An equivalent definition is that a forest is a <a href="/wiki/Disjoint_union.html" title="Disjoint union">disjoint union</a> of trees (hence the name).</p>
+<p>A tree may sometimes be referred to as a <i>free tree,</i> coming from the common usage of Graph Theoretic names and methods in <a href="/wiki/Computer_Science.html" title="Computer Science">Computer Science</a> <a href="/wiki/Data_structures.html" title="Data structures">data structures</a>. As the idea of a tree is so widely used in that discipline, it's ambiguous to call something just a tree -- the speaker might mean a <a href="/wiki/Binary_Search_Tree.html" title="Binary Search Tree">Binary Search Tree</a>, <a href="/wiki/Heap.html" title="Heap">Heap</a>, <a href="/wiki/Trie.html" title="Trie">Trie</a>, etc. So the convention of calling a tree without limits beyond those defined here a <i>free tree</i> has developed.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Definitions</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Example</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Facts</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Types of trees</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">References</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Definitions">edit</a>]</div>
+<p><a name="Definitions" id="Definitions"></a></p>
+<h2>Definitions</h2>
+<p>A <b>tree</b> is an undirected simple graph <i>G</i> that satisfies any of the following <a href="/wiki/Equivalent.html" title="Equivalent">equivalent</a> conditions:</p>
+<ul>
+<li><i>G</i> is <a href="/wiki/Connected_graph.html" title="Connected graph">connected</a> and has no simple <a href="/wiki/Cycle_%28graph_theory%29.html" title="Cycle (graph theory)">cycles</a>.</li>
+<li><i>G</i> has no simple cycles, and a simple cycle is formed if any <a href="/wiki/Edge_%28graph_theory%29.html" title="Edge (graph theory)">edge</a> is added to <i>G</i>.</li>
+<li><i>G</i> is connected, and it is not connected anymore if any edge is removed from <i>G</i>.</li>
+<li><i>G</i> is connected and the 3-vertex <a href="/wiki/Complete_graph.html" title="Complete graph">complete graph</a> <span class="texhtml"><i>K</i><sub>3</sub></span> is not a <a href="/wiki/Minor_%28graph_theory%29.html" title="Minor (graph theory)">minor</a> of <i>G</i>.</li>
+<li>Any two vertices in <i>G</i> can be connected by a unique <a href="/wiki/Simple_path.html" title="Simple path">simple path</a>.</li>
+</ul>
+<p>If <i>G</i> has finitely many vertices, say <i>n</i> of them, then the above statements are also equivalent to any of the following conditions:</p>
+<ul>
+<li><i>G</i> is connected and has <i>n</i> − 1 edges.</li>
+<li><i>G</i> has no simple cycles and has <i>n</i> − 1 edges.</li>
+</ul>
+<p>An undirected simple graph <i>G</i> is called a <i>forest</i> if it has no simple cycles.</p>
+<p>A <b>directed tree</b> is a <a href="/wiki/Directed_graph.html" title="Directed graph">directed graph</a> which would be a tree if the directions on the edges were ignored. Some authors restrict the phrase to the case where the edges are all directed towards a particular vertex, or all directed away from a particular vertex.</p>
+<p>A <i>tree</i> is called a <b>rooted tree</b> if one vertex has been designated the <i>root</i>, in which case the edges have a natural orientation, <i>towards</i> or <i>away</i> from the root. Rooted trees, often with additional structure such as ordering of the neighbors at each vertex, are a key data structure in computer science; see <a href="/wiki/Tree_data_structure.html" title="Tree data structure">tree data structure</a>.</p>
+<p>A <b>labeled tree</b> (or <b>plane tree</b>) is a tree in which each vertex is given a unique label. The vertices of a labeled tree on <i>n</i> vertices are typically given the labels 1, 2, …, <i>n</i>.</p>
+<p>A <i>regular</i> (or <i>homogeneous</i>) tree is a tree in which every vertex has the same <a href="/wiki/Degree_%28graph_theory%29.html" title="Degree (graph theory)">degree</a>. See <a href="/wiki/Regular_graph.html" title="Regular graph">regular graph</a>.</p>
+<p>An <i>irreducible</i> (or <i>series-reduced</i>) tree is a tree in which there is no vertex of degree 2.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Example">edit</a>]</div>
+<p><a name="Example" id="Example"></a></p>
+<h2>Example</h2>
+<p>The example tree shown to the right has 6 vertices and 6 − 1 = 5 edges. The unique simple path connecting the vertices 2 and 6 is 2-4-5-6.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Facts">edit</a>]</div>
+<p><a name="Facts" id="Facts"></a></p>
+<h2>Facts</h2>
+<ul>
+<li>Every tree is a <a href="/wiki/Bipartite_graph.html" title="Bipartite graph">bipartite</a> graph. Every tree with only <a href="/wiki/Countable_set.html" title="Countable set">countably</a> many vertices is a <a href="/wiki/Planar_graph.html" title="Planar graph">planar graph</a>.</li>
+</ul>
+<ul>
+<li>Every connected graph <i>G</i> admits a <a href="/wiki/Spanning_tree_%28mathematics%29.html" title="Spanning tree (mathematics)">spanning tree</a>, which is a tree that contains every vertex of <i>G</i> and whose edges are edges of <i>G</i>.</li>
+</ul>
+<ul>
+<li>Given <i>n</i> labeled vertices, there are <i>n</i><sup><i>n</i>−2</sup> different ways to connect them to make a tree. This result is called <a href="/wiki/Cayley%27s_formula.html" title="Cayley's formula">Cayley's formula</a>.</li>
+</ul>
+<ul>
+<li>The number of trees with <i>n</i> vertices of degree <i>d</i><sub>1</sub>,<i>d</i><sub>2</sub>,...,<i>d</i><sub>n</sub> is</li>
+</ul>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/d/6/0/d6074f67c362f841be670d527011e2a6.png" alt="{n-2 \choose d_1-1, d_2-1, \ldots, d_n-1}," /></dd>
+<dd>which is a <a href="/wiki/Multinomial_theorem.html" title="Multinomial theorem">multinomial coefficient</a>.</dd>
+</dl>
+<ul>
+<li>No closed formula for the number <i>t</i>(<i>n</i>) of trees with <i>n</i> vertices <a href="/wiki/Up_to.html" title="Up to">up to</a> <a href="/wiki/Graph_isomorphism.html" title="Graph isomorphism">graph isomorphism</a> is known. However, the <a href="/wiki/Asymptotic_behavior.html" title="Asymptotic behavior">asymptotic behavior</a> of <i>t</i>(<i>n</i>) is known: there are numbers α ≈ 3 and β ≈ 0.5 such that</li>
+</ul>
+<dl>
+<dd>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/9/5/0/9504e8c38c40782fb56023da911e3306.png" alt="\lim_{n\to\infty} \frac{t(n)}{\beta \alpha^n n^{-5/2}} = 1." /></dd>
+</dl>
+</dd>
+</dl>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Types of trees">edit</a>]</div>
+<p><a name="Types_of_trees" id="Types_of_trees"></a></p>
+<h2>Types of trees</h2>
+<p><i>See <a href="/wiki/List_of_graph_theory_topics#Trees.html" title="List of graph theory topics">List of graph theory topics: Trees</a>.</i></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Tree_structure.html" title="Tree structure">Tree structure</a></li>
+<li><a href="/wiki/Tree_data_structure.html" title="Tree data structure">Tree data structure</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:48560-0!1!0!default!!en!2 and timestamp 20060906011727 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:Trees (structure)">Trees (structure)</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Tree_%28graph_theory%29.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-cs"><a >Česky</a></li>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-he"><a >עברית</a></li>
+				<li class="interwiki-lt"><a >Lietuvių</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+				<li class="interwiki-fi"><a >Suomi</a></li>
+				<li class="interwiki-sv"><a >Svenska</a></li>
+				<li class="interwiki-th"><a >ไทย</a></li>
+				<li class="interwiki-vi"><a >Tiếng Việt</a></li>
+				<li class="interwiki-zh"><a >中文</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 10:05, 31 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv106 in 0.086 secs. --></body></html>

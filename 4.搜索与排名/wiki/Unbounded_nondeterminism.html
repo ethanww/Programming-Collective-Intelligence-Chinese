@@ -1,0 +1,331 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Unbounded nondeterminism,Unbounded nondeterminism,Actor model,Arbiter (electronics),Automata theory,Bill Roscoe,Carl Hewitt,Channel (communications),Communicating Sequential Processes,Communicating sequential processes,Completeness (order theory)" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Unbounded nondeterminism - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Unbounded_nondeterminism";
+			var wgTitle = "Unbounded nondeterminism";
+			var wgArticleId = 2647475;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Unbounded nondeterminism</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>In <a href="/wiki/Computer_science.html" title="Computer science">computer science</a>, <b>unbounded nondeterminism</b> (sometimes called <b>unbounded indeterminacy</b>) is a property of <a href="/wiki/Concurrency_%28computer_science%29.html" title="Concurrency (computer science)">concurrency</a> by which the amount of delay in servicing a request can become unbounded as a result of arbitration of contention for shared resources <i>while still guaranteeing that the request will eventually be serviced</i>. Unbounded nondeterminism became an important issue in the development of the <a href="/wiki/Denotational_semantics#Denotational_semantics_of_concurrency.html" title="Denotational semantics">denotational semantics of concurrency</a>.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Originally thought to be impossible to implement</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Arguments for dealing with unbounded nondeterminism</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Nondeterministic automata</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Indeterminacy versus nondeterministic automata</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Unbounded nondeterminism in the original and later version of CSP</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">Power domain semantics</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">Indeterminacy in the Actor model</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">8</span> <span class="toctext">No unbounded nondeterminism in Concurrent Processes of Milne and Milner</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">9</span> <span class="toctext">Semantics versus implementation</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">10</span> <span class="toctext">Fairness</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">11</span> <span class="toctext">Recent developments in the semantics of CSP</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">12</span> <span class="toctext">References</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Originally thought to be impossible to implement">edit</a>]</div>
+<p><a name="Originally_thought_to_be_impossible_to_implement" id="Originally_thought_to_be_impossible_to_implement"></a></p>
+<h2>Originally thought to be impossible to implement</h2>
+<p><a href="/wiki/Edsger_Dijkstra.html" title="Edsger Dijkstra">Edsger Dijkstra</a> [1976] argued that it is impossible to implement systems with unbounded nondeterminism. Since it was widely assumed at the time that unbounded nondeterminism was unimplementable, <a href="/wiki/Tony_Hoare.html" title="Tony Hoare">Tony Hoare</a> [1978] suggested that "an efficient implementaton should try to be reasonably fair." This gave rise to the <a href="/wiki/Actor_model#The_unbounded_nondeterminism_controversy.html" title="Actor model">controversy over unbounded nondeterminism</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Arguments for dealing with unbounded nondeterminism">edit</a>]</div>
+<p><a name="Arguments_for_dealing_with_unbounded_nondeterminism" id="Arguments_for_dealing_with_unbounded_nondeterminism"></a></p>
+<h2>Arguments for dealing with unbounded nondeterminism</h2>
+<p><a href="/wiki/Carl_Hewitt.html" title="Carl Hewitt">Carl Hewitt</a> [2006] argued otherwise (the <a href="/wiki/Actor_model.html" title="Actor model">Actor model</a> has the property of unbounded nondeterminism):</p>
+<ul>
+<li>There is no bound that can be placed on how long it takes a computational circuit called an <a href="/wiki/Arbiter_%28electronics%29.html" title="Arbiter (electronics)"><i>arbiter</i></a> to settle (see <a href="/wiki/Metastability_in_electronics.html" title="Metastability in electronics">metastability in electronics</a>). Arbiters are used in computers to deal with the circumstance that computer clocks operate asynchronously with input from outside, <i>e.g..</i>, keyboard input, disk access, network input, <i>etc.</i> So it could take an unbounded time for a message sent to a computer to be received and in the meantime the computer could traverse an unbounded number of states.</li>
+</ul>
+<ul>
+<li><a href="/wiki/Electronic_mail.html" title="Electronic mail">Electronic mail</a> enables unbounded nondeterminism since mail can be stored on servers indefinitely before being delivered.</li>
+</ul>
+<ul>
+<li><a href="/wiki/Channel_%28communications%29.html" title="Channel (communications)">Communication links</a> to <a href="/wiki/Server_%28computing%29.html" title="Server (computing)">servers</a> on the <a href="/wiki/Internet.html" title="Internet">Internet</a> can be out of service indefinitely.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Nondeterministic automata">edit</a>]</div>
+<p><a name="Nondeterministic_automata" id="Nondeterministic_automata"></a></p>
+<h2>Nondeterministic automata</h2>
+<p>Nondeterministic Turing machines have only bounded nondeterminism. Sequential programs containing guarded commands as the only sources of nondeterminism have only bounded nondeterminism [ <a href="/wiki/Edsger_Dijkstra.html" title="Edsger Dijkstra">Edsger Dijkstra</a> 1976]. Briefly, choice nondeterminism is bounded. Gordon Plotkin gave a proof in his original paper on power domains [1976]:</p>
+<dl>
+<dd>Now the set of initial segments of execution sequences of a given nondeterministic program <tt>P</tt>, starting from a given state, will form a tree. The branching points will correspond to the choice points in the program. Since there are always only finitely many alternatives at each choice point, the branching factor of the tree is always finite. That is, the tree is finitary. Now <a href="/wiki/K%C3%B6nig%27s_lemma.html" title="König's lemma">König's lemma</a> says that if every branch of a <a href="/wiki/Finitary.html" title="Finitary">finitary</a> tree is finite, then so is the tree itself. In the present case this means that if every execution sequence of <tt>P</tt> terminates, then there are only finitely many execution sequences. So if an output set of <tt>P</tt> is infinite, it must contain [a nonterminating computation].</dd>
+</dl>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Indeterminacy versus nondeterministic automata">edit</a>]</div>
+<p><a name="Indeterminacy_versus_nondeterministic_automata" id="Indeterminacy_versus_nondeterministic_automata"></a></p>
+<h2><a href="/wiki/Indeterminacy_in_computation.html" title="Indeterminacy in computation">Indeterminacy</a> versus nondeterministic automata</h2>
+<p>Will Clinger [1981] provided the following analysis of the above proof by Plotkin:</p>
+<dl>
+<dd>This proof depends upon the premise that if every node <tt>x</tt> of a certain infinite branch can be reached by some computation <tt>c</tt>, then there exists a computation <tt>c</tt> that goes every node <tt>x</tt> on the branch. ... Clearly this premise follows not from logic but rather from the interpretation given to choice points. This premise fails for arrival nondeterminism [in the arrival of messages in the Actor model] because of finite delay [in the arrival of messages]. Though each node on an infinite branch must lie on a branch with a limit, the infinite branch need not itself have a limit. Thus the existence of an infinite branch does not necessarily imply a nonterminating computation.</dd>
+</dl>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Unbounded nondeterminism in the original and later version of CSP">edit</a>]</div>
+<p><a name="Unbounded_nondeterminism_in_the_original_and_later_version_of_CSP" id="Unbounded_nondeterminism_in_the_original_and_later_version_of_CSP"></a></p>
+<h2>Unbounded nondeterminism in the original and later version of <a href="/wiki/Communicating_sequential_processes.html" title="Communicating sequential processes">CSP</a></h2>
+<p>Consider a program written in CSP [1978]:</p>
+<pre>
+[X :: Z!stop() ||
+ Y :: guard: boolean; guard := true;
+     *[guard  →  Z!go(); Z?guard] ||
+ Z :: n: integer; n:= 0;
+      continue: boolean; continue := true;
+       *[X?stop()  →  continue := true;
+         [] Y?go()  →  n := n+1; Y!continue]
+]
+</pre>
+<p>According to Clinger [1981]</p>
+<dl>
+<dd>this program illustrates global nondeterminism, since the nondeterminism arises from incomplete specification of the timing of signals between the three processes <tt>X</tt>, <tt>Y</tt>, and <tt>Z</tt>. The repetitive guarded command in the definition of <tt>Z</tt> has two alternatives: either the <tt>stop</tt> message is accepted from <tt>X</tt>, in which case <tt>continue</tt> is set to <tt>false</tt>, or a <tt>go</tt> message is accepted from <tt>Y</tt>, in which case <tt>n</tt> is incremented and <tt>Y</tt> is sent the value of <tt>continue</tt>. If <tt>Z</tt> ever accepts the <tt>stop</tt> message from <tt>X</tt>, then <tt>X</tt> terminates. Accepting the <tt>stop</tt> causes <tt>continue</tt> to be set to <tt>false</tt>, so after <tt>Y</tt> sends its next <tt>go</tt> message, <tt>Y</tt> will receive <tt>false</tt> as the value of its guard and will terminate. When both <tt>X</tt> and <tt>Y</tt> have terminated, <tt>Z</tt> terminates because it no longer has live processes providing input.</dd>
+</dl>
+<dl>
+<dd>As the author of CSP points out, therefore, if the repetitive guarded command in the definition of <tt>Z</tt> were required to be <a href="/wiki/Unbounded_nondeterminism#Fairness.html" title="Unbounded nondeterminism">fair</a>, this program would have unbounded nondeterminism: it would be guaranteed to halt but there would be no bound on the final value of <tt>n</tt>. In actual fact, the repetitive guarded commands of CSP are not required to be fair, and so the program may not halt [Hoare 1978]. This fact may be confirmed by a tedious calculation using the semantics of CSP [Francez, Hoare, Lehmann, and de Roever 1979] or simply by noting that the semantics of CSP is based upon a conventional power domain and thus does not give rise to unbounded nondeterminism.</dd>
+</dl>
+<p>However, the modern theoretical <a href="/wiki/Communicating_sequential_processes.html" title="Communicating sequential processes">CSP</a> ([Hoare 1985] and [Roscoe 1988 and 2005]) explicitly provides unbounded nondeterminism.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Power domain semantics">edit</a>]</div>
+<p><a name="Power_domain_semantics" id="Power_domain_semantics"></a></p>
+<h2>Power domain semantics</h2>
+<p>According to Clinger [1981]</p>
+<dl>
+<dd>The reason unbounded nondeterminism does not appear in conventional power domain semantics is that each element of the power domain is interpreted as a finitely generable subset of the underlying <a href="/wiki/Completeness_%28order_theory%29.html" title="Completeness (order theory)">ω-complete</a> domain [see <a href="/wiki/Denotational_semantics#Power_domains_from_incomplete_domains.html" title="Denotational semantics">Power domains from incomplete domains</a> ]. In the ω-complete domains that have been proposed (previous to the publication of Clinger [1981]), finitely generable subsets are either finite or contain an element representing a nonterminating or undefined computation, for essentially the same reason that choice nondeterminism is bounded [Plotkin 1976]. In the Actor event diagram domain and its completion, however, the augmented diagrams contain information that can distinguish computations that violate finite delay [of message arrival] from other nonterminating computations. Intuitively, the Actor event diagram domain is incomplete because the computations that violate finite delay [in the arrival of messages] have been thrown out.</dd>
+</dl>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Indeterminacy in the Actor model">edit</a>]</div>
+<p><a name="Indeterminacy_in_the_Actor_model" id="Indeterminacy_in_the_Actor_model"></a></p>
+<h2><a href="/wiki/Indeterminacy_in_computation.html" title="Indeterminacy in computation">Indeterminacy</a> in the Actor model</h2>
+<p>According to Clinger [1981]</p>
+<dl>
+<dd>To return to the proof that choice nondeterminism is bounded and to see why that proof does not work for arrival nondeterminism [of messages in the Actor model], it is first of all not clear that the tree of initial segments of executions sequences of a concurrent program is always finitary, since the alternatives may for example correspond to the wait times allowed by finite delay [Lynch and Fisher 1979; see also Back 1980]. Secondly, an infinite branch does not necessarily indicate a nonterminating computation since the path may violate the requirement of finite delay [in the arrival of messages] and thus not have a limit.</dd>
+</dl>
+<dl>
+<dd>Apparently the designer of CSP stopped short of requiring <a href="/wiki/Unbounded_nondeterminism#Fairness.html" title="Unbounded nondeterminism">fairness</a> because at the time languages with unbounded nondeterminism were widely regarded as unimplementable [Hoare 1978]. Additionally unbounded nondeterminism would have precluded giving a conventional power domain semantics for CSP.</dd>
+</dl>
+<p>In contrast indeterminacy is an inherent part of the Actor model (see <a href="/wiki/Indeterminacy_in_computation.html" title="Indeterminacy in computation">Indeterminacy in computation</a>).</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: No unbounded nondeterminism in Concurrent Processes of Milne and Milner">edit</a>]</div>
+<p><a name="No_unbounded_nondeterminism_in_Concurrent_Processes_of_Milne_and_Milner" id="No_unbounded_nondeterminism_in_Concurrent_Processes_of_Milne_and_Milner"></a></p>
+<h2>No unbounded nondeterminism in Concurrent Processes of Milne and Milner</h2>
+<p>According to Clinger [1981]</p>
+<dl>
+<dd>Another important proposal, based like CSP on message passing but more abstract than a programming language, is Concurrent Processes [Milne and <a href="/wiki/Robin_Milner.html" title="Robin Milner">Milner</a> 1979]. The semantics of Concurrent Processes also uses conventional power domains, so there is no unbounded nondeterminism and a <a href="/wiki/Unbounded_nondeterminism#Fairness.html" title="Unbounded nondeterminism">fair</a> merge cannot be specified.</dd>
+</dl>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Semantics versus implementation">edit</a>]</div>
+<p><a name="Semantics_versus_implementation" id="Semantics_versus_implementation"></a></p>
+<h2>Semantics versus implementation</h2>
+<p>According to <a href="/wiki/Dana_Scott.html" title="Dana Scott">Dana Scott</a> [1980]:</p>
+<dl>
+<dd>It is not necessary for the semantics to determine an implementation, but it should provide criteria for showing that an implementation is correct.</dd>
+</dl>
+<p>According to Clinger [1981]::</p>
+<dl>
+<dd>Usually, however, the formal semantics of a conventional sequential programming language may itself be interpreted to provide an (inefficient) implementation of the language. A formal semantics need not always provide such an implementation, though, and to believe that semantics must provide an implementation leads to confusion about the formal semantics of concurrent languages. Such confusion is painfully evident when the presence of unbounded nondeterminism in a programming language's semantics is said to imply that the programming language cannot be implemented.</dd>
+</dl>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Fairness">edit</a>]</div>
+<p><a name="Fairness" id="Fairness"></a></p>
+<h2>Fairness</h2>
+<p>Discussion of unbounded nondeterminism tends to get involved with discussions of <i>fairness</i>.</p>
+<p>Hewitt argued that issues in fairness derive in part from the global state point of view. The first models of computation (e.g.. <a href="/wiki/Turing_machines.html" title="Turing machines">Turing machines</a>, Post productions, the <a href="/wiki/Lambda_calculus.html" title="Lambda calculus">lambda calculus</a>, etc.) are based on mathematics that makes use of a global state to represent a computational <i>step</i>. Each computational step is from one global state of the computation to the next global state. The global state approach was continued in <a href="/wiki/Automata_theory.html" title="Automata theory">automata theory</a> for <a href="/wiki/Finite_state_machine.html" title="Finite state machine">finite state</a> machines and <a href="/wiki/Stack_machine.html" title="Stack machine">push down stack</a> machines including their <a href="/wiki/Nondeterministic.html" title="Nondeterministic">nondeterministic</a> versions. All of these models have the property of bounded nondeterminism that is: if a machine always halts when started in its initial state, then there is a bound on the number of states in which it halts.</p>
+<p>Hewitt argued that there is a fundamental difference between choices in global state nondeterminism and the arrival order indeterminacy (nondeterminism) of the <a href="/wiki/Actor_model.html" title="Actor model">Actor model</a>. In global state nondeterminism, a "choice" is made for the "next" global state. In arrival order indeterminacy, arbitration locally decides each arrival order in an unbounded amount of time. While a local arbitration is proceeding, unbounded activity can take place elsewhere. There is no global state and consequently no "choice" to be made as to the "next" global state.</p>
+<p>Of course, there is also local fairness as in flipping a "fair" coin by which it is understood that it is possible (all be it extraordinarily unlikely) for the outcome always to be heads.</p>
+<p>Questions of fairness are involved in the merging of streams. Clinger [1981] argued</p>
+<dl>
+<dd>It appers that a fair <a href="/wiki/Merge_algorithm.html" title="Merge algorithm">merge</a> cannot be written as a nondeterministic data flow program operating on streams. The reason is that for any monotonic function
+<dl>
+<dd><tt><i>merge</i>: S × S → <i>P</i>[S]</tt></dd>
+</dl>
+</dd>
+<dd>from pairs of input streams to set of possible output stream it must be that
+<dl>
+<dd><tt><i>merge</i>(⊥,1<sup>ω</sup>)⊆ <i>merge</i>(0,1<sup>ω</sup>)</tt></dd>
+</dl>
+</dd>
+<dd>where <tt>⊥</tt> is the empty stream. Since the only fair merge of <tt>⊥</tt> and <tt>1<sup>ω</sup></tt> is <tt>1<sup>ω</sup>, 1<sup>ω</sup></tt> should be an element of <tt><i>merge</i>(⊥,1<sup>ω</sup>)</tt>, but that would mean <tt>1<sup>ω</sup></tt> must be an element of <tt><i>merge</i>(0,1<sup>ω</sup>)</tt> also.</dd>
+</dl>
+<p>Of course it is easy to define and implement an Actor that behaves as a fair merge of two stream Actors.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Recent developments in the semantics of CSP">edit</a>]</div>
+<p><a name="Recent_developments_in_the_semantics_of_CSP" id="Recent_developments_in_the_semantics_of_CSP"></a></p>
+<h2>Recent developments in the semantics of CSP</h2>
+<p>Recently Stephen Brookes [2005] has published a further development of the semantics of <a href="/wiki/Communicating_Sequential_Processes.html" title="Communicating Sequential Processes">CSP</a> which presents solutions to some of the semantic issues that have been encountered. However some significant issues remain. For example, in the semantics of Brookes [2005], the concurrent assignment of a value to a variable is semantically equivalent to a program which terminates abnormally, <i>i.e.</i>,</p>
+<pre>
+  [(x:=1)||(x:=2)] = [abort]
+</pre>
+<p>In contrast, for the Actor semantics of Clinger [1981], concurrently sending two <tt>write</tt> messages with values <tt>1</tt> and <tt>2</tt> to an Actor <tt>x</tt> acting as a storage would result in <tt>x</tt> storing <tt>1</tt> and then storing <tt>2</tt> or <i>vice versa</i> and execution would continue normally.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<ul>
+<li>Carl Hewitt, Peter Bishop and Richard Steiger. <i>A Universal Modular Actor Formalism for Artificial Intelligence</i> IJCAI 1973.</li>
+<li>Robin Milner. <i>Processes: A Mathematical Model of Computing Agents</i> in Logic Colloquium 1973.</li>
+<li>Carl Hewitt, <i>et. al.</i> <i>Actor Induction and Meta-evaluation</i> Conference Record of ACM Symposium on Principles of Programming Languages, January 1974.</li>
+<li>Carl Hewitt, <i>et. al.</i> <i>Behavioral Semantics of Nonrecursive Control Structure</i> Proceedings of Colloque sur la Programmation, April 1974.</li>
+<li>Irene Greif. <i>Semantics of Communicating Parallel Professes</i> MIT EECS Doctoral Dissertation. August 1975.</li>
+<li>Gordon Plotkin. <i>A powerdomain construction</i> SIAM Journal of Computing September 1976.</li>
+<li>Edsger Dijkstra. <i>A Discipline of Programming</i> <a href="/wiki/Prentice_Hall.html" title="Prentice Hall">Prentice Hall</a>. 1976.</li>
+<li>Carl Hewitt and Henry Baker <i>Actors and Continuous Functionals</i> Proceeding of IFIP Working Conference on Formal Description of Programming Concepts. August 1-5, 1977.</li>
+<li>Gilles Kahn and David MacQueen. <i>Coroutines and networks of parallel processes</i> IFIP. 1977</li>
+<li>Henry Baker. <i>Actor Systems for Real-Time Computation</i> MIT EECS Doctoral Dissertation. January 1978.</li>
+<li>Michael Smyth. <i>Power domains</i> Journal of Computer and System Sciences. 1978.</li>
+<li>George Milne and Robin Milner. <i>Concurrent processes and their syntax</i> JACM. April, 1979.</li>
+<li>CAR Hoare. <i>Communicating Sequential Processes</i> CACM. August, 1978.</li>
+<li>Nissim Francez, CAR Hoare, Daniel Lehmann, and Willem de Roever. <i>Semantics of nondeterminism, concurrency, and communication</i> Journal of Computer and System Sciences. December 1979.</li>
+<li>Nancy Lynch and Michael Fischer. <i>On describing the behavior of distributed systems</i> in Semantics of Concurrent Computation. Springer-Verlag. 1979.</li>
+<li>Jerald Schwartz <i>Denotational semantics of parallelism</i> in Semantics of Concurrent Computation. Springer-Verlag. 1979.</li>
+<li>William Wadge. <i>An extensional treatment of dataflow deadlock</i> Semantics of Concurrent Computation. Springer-Verlag. 1979.</li>
+<li>Ralph-Johan Back. <i>Semantics of Unbounded Nondeterminism</i> ICALP 1980.</li>
+<li>David Park. <i>On the semantics of fair parallelism</i> Proceedings of the Winter School on Formal Software Specification. Springer-Verlarg. 1980.</li>
+<li>Dana Scott. <i>What is Denotational Semantics?</i> MIT Laboratory for Computer Science Distinguished Lecture Series. April 17, 1980.</li>
+<li>Will Clinger, <i>Foundations of Actor Semantics</i>. MIT Mathematics Doctoral Dissertation, June 1981.</li>
+<li>Stephen Brookes, Tony Hoare and Bill Roscoe <i>A Theory of Communicating Sequential Processes</i> JACM. July 1984.</li>
+<li>Carl Hewitt. <i>The Challenge of Open Systems</i> Byte Magazine. April 1985.</li>
+<li>Bill Roscoe. <i>Unbounded nondeterminism in CSP</i> in `Two papers on CSP', technical monograph PRG-67, Oxford University Computing Laboratory. July 1988.</li>
+<li><a href="/wiki/Bill_Roscoe.html" title="Bill Roscoe">A. W. Roscoe</a><cite id="endnote_Roscoe1998"><a  title=""><b><sup>1998</sup></b></a></cite> : <i>The Theory and Practice of Concurrency</i>, Prentice Hall, <a  class="internal">ISBN 0-13-674409-5</a>.</li>
+<li>David A. Schmidt, <i>The Structure of Typed Programming Languages</i>. MIT Press, Cambridge, Massachusetts, 1994.</li>
+<li>Butler, M. J. and Morgan, C. C. <i>Action Systems, Unbounded Nondeterminism, and Infinite Traces</i> Formal Aspect of Computing. 1995</li>
+<li>Luca Aceto and Andrew D. Gordon (editors). <i>Algebraic Process Calculi: The First Twenty Five Years and Beyond'</i> Process Algebra. Bertinoro, Forl`ı, Italy, August 1–5, 2005</li>
+<li>Stephen Brooke. <i>Retracing CSP</i> in <i>Algebraic Process Calculi: The First Twenty Five Years and Beyond</i>. August 2005.</li>
+<li><cite id="endnote_Roscoe2005-"><a  title=""><b><sup>-</sup></b></a></cite>  <a href="/wiki/Bill_Roscoe.html" title="Bill Roscoe">A. W. Roscoe</a>: <i>The Theory and Practice of Concurrency</i>, Prentice Hall, <a  class="internal">ISBN 0-13-674409-5</a>. Revised 2005.</li>
+<li>Carl Hewitt. <i>The repeated demise of logic programming and why it will be reincarnated</i> What Went Wrong and Why: Lessons from AI Research and Applications. Technical Report SS-06-08. AAAI Press. March 2006.</li>
+<li>Carl Hewitt, <a  class="external text" title="http://www.pcs.usp.br/~coin-aamas06/10_commitment-43_16pages.pdf"><i>What is Commitment? Physical, Organizational, and Social</i></a> COIN@AAMAS. April 27, 2006.</li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:2647475-0!1!0!default!!en!2 and timestamp 20060910154025 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Actor model">Actor model</a></span> | <span dir='ltr'><a  title="Category:Concurrency">Concurrency</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Unbounded_nondeterminism.html">Article</a></li>
+				 <li id="ca-talk" class="new"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 19:54, 27 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv56 in 0.205 secs. --></body></html>

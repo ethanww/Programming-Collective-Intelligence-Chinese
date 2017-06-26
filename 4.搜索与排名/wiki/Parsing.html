@@ -1,0 +1,264 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Parsing,ANTLR,Attribute grammar,Bottom-up parsing,CKY algorithm,CYK algorithm,Canonical LR parser,Chart parser,Chart parsing,Coco/R,Compiler-compiler" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Parsing - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Parsing";
+			var wgTitle = "Parsing";
+			var wgArticleId = 310015;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Parsing</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<dl>
+<dd><span class="plainlinks"><i>For information about parsing within Wikipedia, see <a  title="Category:Templates using ParserFunctions">Category:Templates using ParserFunctions</a> and <a  class="extiw" title="meta:ParserFunctions">meta:ParserFunctions</a></i></span></dd>
+</dl>
+<p>In <a href="/wiki/Computer_science.html" title="Computer science">computer science</a>, <b>parsing</b> is the process of analyzing an input sequence (read from a file or a keyboard, for example) in order to determine its grammatical structure with respect to a given <a href="/wiki/Formal_grammar.html" title="Formal grammar">formal grammar</a>. It is formally named <a href="/wiki/Syntax_analysis.html" title="Syntax analysis">syntax analysis</a>. A <b>parser</b> is a <a href="/wiki/Computer_program.html" title="Computer program">computer program</a> that carries out this task. The name is analogous with the usage in <a href="/wiki/Grammar.html" title="Grammar">grammar</a> and <a href="/wiki/Linguistics.html" title="Linguistics">linguistics</a>. The term <b>parseable</b> is generally applied to text or data which can be parsed.</p>
+<p>Parsing transforms input text into a data structure, usually a tree, which is suitable for later processing and which captures the implied hierarchy of the input. Generally, parsers operate in two stages, first identifying the meaningful <a href="/wiki/Token_%28parser%29.html" title="Token (parser)">tokens</a> in the input, and then building a <a href="/wiki/Parse_tree.html" title="Parse tree">parse tree</a> from those tokens.</p>
+<p>Parsing is also an earlier term for diagraming of sentences in grammar of the English language, and is still used to digram the grammar of <a href="/wiki/Inflection.html" title="Inflection">inflected</a> languages, such as the <a href="/wiki/Romance_languages.html" title="Romance languages">Romance languages</a> or <a href="/wiki/Latin.html" title="Latin">Latin</a>.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Human languages</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Programming languages</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Overview of process</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Types of parsers</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Examples of parsers</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">5.1</span> <span class="toctext">Top-down parsers</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">5.2</span> <span class="toctext">Bottom-up parsers</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Human languages">edit</a>]</div>
+<p><a name="Human_languages" id="Human_languages"></a></p>
+<h2>Human languages</h2>
+<p>In some <a href="/wiki/Machine_translation.html" title="Machine translation">machine translation</a> and <a href="/wiki/Natural_language_processing.html" title="Natural language processing">natural language processing</a> systems, human languages are parsed by computer programs. Human sentences are not easily parsed by programs, as there is substantial <a href="/wiki/Syntactic_ambiguity.html" title="Syntactic ambiguity">ambiguity</a> in the structure of human language. In order to parse natural language data, researchers must first agree on the <a href="/wiki/Grammar.html" title="Grammar">grammar</a> to be used. The choice of grammar is affected by both <a href="/wiki/Linguistic.html" title="Linguistic">linguistics</a> and computational concerns; for instance some parsing systems use <a href="/wiki/Lexical_functional_grammar.html" title="Lexical functional grammar">lexical functional grammar</a>, but in general, parsing for grammars of this type is known to be <a href="/wiki/NP-complete.html" title="NP-complete">NP-complete</a>. <a href="/wiki/HPSG.html" title="HPSG">HPSG</a> is another linguistic formalism which has been popular in the parsing community, but other research efforts have focused on less complex formalisms such as the one used in the Penn <a href="/wiki/Treebank.html" title="Treebank">Treebank</a>. <a href="/wiki/Shallow_parsing.html" title="Shallow parsing">Shallow parsing</a> aims to find only the boundaries of major constituents such as noun phrases. Another popular strategy for avoiding linguistic controversy is <a href="/wiki/Dependency.html" title="Dependency">dependency grammar</a> parsing.</p>
+<p>Most modern parsers are at least partly <a href="/wiki/Statistics.html" title="Statistics">statistical</a>; that is, they rely on a corpus of training data which has already been annotated (parsed by hand). This approach allows the system to gather information about the frequency with which various constructions occur in specific contexts. <i>(See <a href="/wiki/Machine_learning.html" title="Machine learning">machine learning</a>.)</i> Approaches which have been used include straightforward <a href="/wiki/PCFG.html" title="PCFG">PCFGs</a> (probabilistic context free grammars), <a href="/wiki/Maximum_entropy.html" title="Maximum entropy">maximum entropy</a>, and <a href="/wiki/Neural_net.html" title="Neural net">neural nets</a>. Most of the more successful systems use <i>lexical</i> statistics (that is, they consider the identities of the words involved, as well as their <a href="/wiki/Part_of_speech.html" title="Part of speech">part of speech</a>). However such systems are vulnerable to <a href="/wiki/Overfitting.html" title="Overfitting">overfitting</a> and require some kind of smoothing to be effective.</p>
+<p>Parsing algorithms for natural language cannot rely on the grammar having 'nice' properties as with manually-designed grammars for programming languages. As mentioned earlier some grammar formalisms are very computationally difficult to parse; in general, even if the desired structure is not <a href="/wiki/Context-free.html" title="Context-free">context-free</a>, some kind of context-free approximation to the grammar is used to perform a first pass. Algorithms which use context-free grammars often rely on some variant of the <a href="/wiki/CKY_algorithm.html" title="CKY algorithm">CKY algorithm</a>, usually with some <a href="/wiki/Heuristic_%28computer_science%29.html" title="Heuristic (computer science)">heuristic</a> to prune away unlikely analyses to save time. <i>(See <a href="/wiki/Chart_parsing.html" title="Chart parsing">chart parsing</a>.)</i> However some systems trade speed for accuracy using, eg, linear-time versions of the <a  class="new" title="Shift-reduce">shift-reduce</a> algorithm. A somewhat recent development has been <a  class="new" title="Parse reranking">parse reranking</a> in which the parser proposes some large number of analyses, and a more complex system selects the best option.</p>
+<p>The most commonly-cited English-language parsers are those developed by <a href="/wiki/Michael_Collins.html" title="Michael Collins">Michael Collins (MIT)</a> and <a  class="new" title="Eugene Charniak">Eugene Charniak</a>, and the <a href="/wiki/Link_grammar.html" title="Link grammar">Link Grammar</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Programming languages">edit</a>]</div>
+<p><a name="Programming_languages" id="Programming_languages"></a></p>
+<h2>Programming languages</h2>
+<p>The most common use of parsers is to parse <a href="/wiki/Computer_programming_language.html" title="Computer programming language">computer programming languages</a>. These have simple and regular grammars. Parsers for programming languages tend to be based on <a href="/wiki/Context-free_grammar.html" title="Context-free grammar">context-free grammars</a> because fast and efficient parsers can be written for them. However, context-free grammars are limited in their expressiveness because they can describe only a limited set of languages. Informally, the reason is that the memory of such a language is limited. The grammar cannot remember the presence of a construct over an arbitrarily long input; this is necessary for a language in which, for example, a name must be declared before it may be referenced. More powerful grammars, however, cannot be parsed efficiently. Thus, it is a common strategy to create a relaxed parser for a context-free grammar which accepts a superset of the desired language constructs (that is, it accepts some invalid constructs); later, the unwanted constructs can be filtered out. It is usually easy to define a context-free grammar which includes all desired language constructs; on the other hand, it is often impossible to create a context-free grammar which admits <i>only</i> the desirable constructs. Parsers are usually not written by hand but are generated by <a href="/wiki/Parser_generator.html" title="Parser generator">parser generators</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Overview of process">edit</a>]</div>
+<p><a name="Overview_of_process" id="Overview_of_process"></a></p>
+<h2>Overview of process</h2>
+<p>The example below demonstrates the common case of parsing a language with two levels of grammar: lexical and syntactic.</p>
+<p>The first stage is the token generation, or <a href="/wiki/Lexical_analysis.html" title="Lexical analysis">lexical analysis</a>, by which the input character stream is split into meaningful symbols defined by a grammar of <a href="/wiki/Regular_expression.html" title="Regular expression">regular expressions</a>. For example, a calculator program would look at an input such as "12*(3+4)^2" and split it into the tokens 12, *, (, 3, +, 4, ), ^ and 2, each of which is a meaningful symbol in the context of an arithmetic expression. The parser would contain rules to tell it that the characters *, +, ^, ( and ) mark the start of a new token, so meaningless tokens like "12*" or "(3" will not be generated.</p>
+<p>The next stage is syntactic parsing or <a href="/wiki/Syntax_analysis.html" title="Syntax analysis">syntax analysis</a>, which is checking that the tokens form an allowable expression. This is usually done with reference to a <a href="/wiki/Context-free_grammar.html" title="Context-free grammar">context-free grammar</a> which recursively defines components that can make up an expression and the order in which they must appear. However, not all rules defining programming languages can be expressed by context-free grammars alone, for example type validity and proper declaration of identifiers. These rules can be formally expressed with <a href="/wiki/Attribute_grammar.html" title="Attribute grammar">attribute grammars</a>.</p>
+<p>The final phase is <a href="/wiki/Semantic_analysis_%28computer_science%29.html" title="Semantic analysis (computer science)">semantic parsing</a> or analysis, which is working out the implications of the expression just validated and taking the appropriate action. In the case of a calculator, the action is to evaluate the expression; a compiler, on the other hand, would generate code. Attribute grammars can also be used to define these actions.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Types of parsers">edit</a>]</div>
+<p><a name="Types_of_parsers" id="Types_of_parsers"></a></p>
+<h2>Types of parsers</h2>
+<p>The task of the parser is essentially to determine if and how the input can be derived from the <a  class="new" title="Start symbol">start symbol</a> within the rules of the formal grammar. This can be done in essentially two ways:</p>
+<ul>
+<li><a href="/wiki/Top-down_parsing.html" title="Top-down parsing">Top-down parsing</a> - A parser can start with the start symbol and try to transform it to the input. Intuitively, the parser starts from the largest elements and breaks them down into incrementally smaller parts. <a href="/wiki/LL_parser.html" title="LL parser">LL parsers</a> are examples of top-down parsers.</li>
+<li><a href="/wiki/Bottom-up_parsing.html" title="Bottom-up parsing">Bottom-up parsing</a> - A parser can start with the input and attempt to rewrite it to the start symbol. Intuitively, the parser attempts to locate the most basic elements, then the elements containing these, and so on. <a href="/wiki/LR_parser.html" title="LR parser">LR parsers</a> are examples of bottom-up parsers. Another term used for this type of parser is <a  class="new" title="Shift-Reduce parsing">Shift-Reduce parsing</a></li>
+</ul>
+<p>Another important distinction is whether the parser generates a <i>leftmost derivation</i> or a <i>rightmost derivation</i> (see <a href="/wiki/Context-free_grammar.html" title="Context-free grammar">context-free grammar</a>). LL parsers will generate a leftmost <a href="/wiki/Derivation.html" title="Derivation">derivation</a> and LR parsers will generate a rightmost derivation (although usually in reverse).</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Examples of parsers">edit</a>]</div>
+<p><a name="Examples_of_parsers" id="Examples_of_parsers"></a></p>
+<h2>Examples of parsers</h2>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Top-down parsers">edit</a>]</div>
+<p><a name="Top-down_parsers" id="Top-down_parsers"></a></p>
+<h3>Top-down parsers</h3>
+<p>Some of the parsers that use <a href="/wiki/Top-down_parsing.html" title="Top-down parsing">top-down parsing</a> include:</p>
+<ul>
+<li><a href="/wiki/Recursive_descent_parser.html" title="Recursive descent parser">Recursive descent parser</a></li>
+<li><a href="/wiki/LL_parser.html" title="LL parser">LL parser</a></li>
+<li><a href="/wiki/Packrat_parser.html" title="Packrat parser">Packrat parser</a></li>
+<li><a  class="new" title="Unger's method">Unger parser</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Bottom-up parsers">edit</a>]</div>
+<p><a name="Bottom-up_parsers" id="Bottom-up_parsers"></a></p>
+<h3>Bottom-up parsers</h3>
+<p>Some of the parsers that use <a href="/wiki/Bottom-up_parsing.html" title="Bottom-up parsing">bottom-up parsing</a> include:</p>
+<ul>
+<li>precedence parsing</li>
+<li>BC (bounded context) parsing</li>
+<li><a href="/wiki/LR_parser.html" title="LR parser">LR parser</a>
+<ul>
+<li><a href="/wiki/SLR_parser.html" title="SLR parser">SLR parser</a></li>
+<li><a href="/wiki/LALR_parser.html" title="LALR parser">LALR parser</a></li>
+<li><a href="/wiki/Canonical_LR_parser.html" title="Canonical LR parser">Canonical LR parser</a></li>
+<li><a href="/wiki/GLR_parser.html" title="GLR parser">GLR parser</a></li>
+</ul>
+</li>
+<li><a href="/wiki/Earley_parser.html" title="Earley parser">Earley parser</a></li>
+<li><a href="/wiki/CYK_algorithm.html" title="CYK algorithm">CYK parser</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/ANTLR.html" title="ANTLR">ANTLR</a></li>
+<li><a href="/wiki/Chart_parser.html" title="Chart parser">Chart parser</a></li>
+<li><a href="/wiki/Compiler-compiler.html" title="Compiler-compiler">Compiler-compiler</a></li>
+<li><a href="/wiki/Deterministic_parsing.html" title="Deterministic parsing">Deterministic parsing</a></li>
+<li><a href="/wiki/SableCC.html" title="SableCC">SableCC</a></li>
+<li><a href="/wiki/JavaCC.html" title="JavaCC">JavaCC</a></li>
+<li><a href="/wiki/Yacc.html" title="Yacc">Yacc</a></li>
+<li><a href="/wiki/Lemon_Parser.html" title="Lemon Parser">Lemon Parser</a><a  class="external autonumber" title="http://www.hwaci.com/sw/lemon/">[1]</a></li>
+<li><a href="/wiki/Lex_programming_tool.html" title="Lex programming tool">Lex</a></li>
+<li><a href="/wiki/Lexing.html" title="Lexing">Lexing</a></li>
+<li><a href="/wiki/Pass.html" title="Pass">pass</a></li>
+<li><a href="/wiki/Coco/R.html" title="Coco/R">Coco/R</a></li>
+<li><a href="/wiki/Spirit_parser_framework.html" title="Spirit parser framework">Spirit parser framework</a></li>
+<li><a href="/wiki/Shallow_parsing.html" title="Shallow parsing">Shallow parsing</a></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:310015-0!1!0!default!!en!2 and timestamp 20060910054644 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:Algorithms on strings">Algorithms on strings</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Parsing.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-ta"><a >தமிழ்</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 20:24, 8 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv87 in 0.117 secs. --></body></html>

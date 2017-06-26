@@ -1,0 +1,600 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Discrete Fourier transform,A derivation of the discrete Fourier transform,Alan V Oppenheim,Algebraic multiplicity,Aliasing,Array,Bluestein's FFT algorithm,Carl Friedrich Gauss,Characteristic equation,Charles E. Leiserson,Circular convolution" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Discrete Fourier transform - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Discrete_Fourier_transform";
+			var wgTitle = "Discrete Fourier transform";
+			var wgArticleId = 8811;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Discrete Fourier transform</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<table class="infobox">
+<tr>
+<th style="background:#ccccff"><a href="/wiki/Fourier_transform.html" title="Fourier transform">Fourier transforms</a></th>
+</tr>
+<tr>
+<td><a href="/wiki/Continuous_Fourier_transform.html" title="Continuous Fourier transform">Continuous Fourier transform</a></td>
+</tr>
+<tr>
+<td><a href="/wiki/Fourier_series.html" title="Fourier series">Fourier series</a></td>
+</tr>
+<tr>
+<td><strong class="selflink">Discrete Fourier transform</strong></td>
+</tr>
+<tr>
+<td><a href="/wiki/Discrete-time_Fourier_transform.html" title="Discrete-time Fourier transform">Discrete-time Fourier transform</a></td>
+</tr>
+<tr align="right">
+<td>
+<center><small><a href="/wiki/List_of_Fourier-related_transforms.html" title="List of Fourier-related transforms">Related transforms</a></small></center>
+<small class="plainlinksneverexpand"><a  class="external text" title="http://en.wikipedia.org/w/index.php?title=Template:Fourier_transforms&amp;action=edit">edit</a></small></td>
+</tr>
+</table>
+<p>In <a href="/wiki/Mathematics.html" title="Mathematics">mathematics</a>, the <b>discrete Fourier transform (DFT)</b>, sometimes called the <b>finite Fourier transform</b>, is a <a href="/wiki/Fourier_transform.html" title="Fourier transform">Fourier transform</a> widely employed in <a href="/wiki/Digital_signal_processing.html" title="Digital signal processing">signal processing</a> and related fields to analyze the frequencies contained in a sampled <a href="/wiki/Signal_%28information_theory%29.html" title="Signal (information theory)">signal</a>, to solve <a href="/wiki/Partial_differential_equations.html" title="Partial differential equations">partial differential equations</a>, and to perform other operations such as <a href="/wiki/Convolution.html" title="Convolution">convolutions</a>. The DFT can be computed efficiently in practice using a <a href="/wiki/Fast_Fourier_transform.html" title="Fast Fourier transform">fast Fourier transform</a> (FFT) algorithm.</p>
+<p>The sequence of <i>N</i> complex numbers <i>x</i><sub>0</sub>, ..., <i>x</i><sub><i>N</i>−1</sub> is transformed into the sequence of <i>N</i> complex numbers <i>X</i><sub>0</sub>, ..., <i>X</i><sub><i>N</i>−1</sub> by the DFT according to the formula:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/5/a/1/5a1bdb3dc1e15ef35045138624ecd6d3.png" alt="X_k = \sum_{n=0}^{N-1} x_n e^{-\frac{2 \pi i}{N} k n} \quad \quad k = 0, \dots, N-1" /></dd>
+</dl>
+<p>where <i>e</i> is the <a href="/wiki/E_%28mathematical_constant%29.html" title="E (mathematical constant)">base of the natural logarithm</a>, <img class='tex' src="http://upload.wikimedia.org/math/6/6/c/66c1e9c9357288ba6a1a52d275a97896.png" alt="i\," /> is the <a href="/wiki/Imaginary_unit.html" title="Imaginary unit">imaginary unit</a> (<span class="texhtml"><i>i</i><sup>2</sup> = − 1</span>), and π is <a href="/wiki/Pi.html" title="Pi">Pi</a>. The transform is sometimes denoted by the symbol <img class='tex' src="http://upload.wikimedia.org/math/2/6/a/26afd73f8c17f310707120691ccc4a35.png" alt="\mathcal{F}" />, as in <img class='tex' src="http://upload.wikimedia.org/math/7/9/2/7925a29581cae2e0e29b417d761faa96.png" alt="\mathbf{X} = \mathcal{F}(\mathbf{x})" /> or <img class='tex' src="http://upload.wikimedia.org/math/2/9/2/292ac86bb6e21991dae485e4ab2cbc70.png" alt="\mathcal{F} \mathbf{x}" />.</p>
+<p>The <b>inverse discrete Fourier transform (IDFT)</b> is given by</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/e/0/c/e0c28ea47623cc63ebcda04c2696110f.png" alt="x_n = \frac{1}{N} \sum_{k=0}^{N-1} X_k e^{\frac{2\pi i}{N} k n} \quad \quad n = 0,\dots,N-1." /></dd>
+</dl>
+<p>Note that the normalization factor multiplying the DFT and IDFT (here 1 and 1/<i>N</i>) and the signs of the exponents are merely conventions, and differ in some treatments. The only requirements of these conventions are that the DFT and IDFT have opposite-sign exponents and that the product of their normalization factors be 1/<i>N</i>. A normalization of <img class='tex' src="http://upload.wikimedia.org/math/2/2/9/22963a8d496c0693bb832beef49cc13d.png" alt="1/\sqrt{N}" /> for both the DFT and IDFT makes the transforms <a href="/wiki/Unitary_matrix.html" title="Unitary matrix">unitary</a>, which has some theoretical advantages, but it is often more practical in numerical computation to perform the scaling all at once as above (and a unit scaling can be convenient in other ways).</p>
+<p>(The convention of a negative sign in the exponent is often convenient because it means that <span class="texhtml"><i>X</i><sub><i>k</i></sub></span> is the amplitude of a "positive frequency" <span class="texhtml">2π<i>k</i> / <i>N</i></span>. Equivalently, the DFT is often thought of as a <a href="/wiki/Matched_filter.html" title="Matched filter">matched filter</a>: when looking for a frequency of +1, one correlates the incoming signal with a frequency of −1.)</p>
+<p>In the following discussion the terms "sequence" and "vector" will be considered interchangeable.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Properties</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">1.1</span> <span class="toctext">Completeness</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.2</span> <span class="toctext">Orthogonality</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.3</span> <span class="toctext">The Plancherel theorem and Parseval's theorem</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.4</span> <span class="toctext">The shift theorem</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.5</span> <span class="toctext">Periodicity</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.6</span> <span class="toctext">Circular convolution theorem and cross-correlation theorem</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.7</span> <span class="toctext">Trigonometric interpolation polynomial</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.8</span> <span class="toctext">The unitary DFT</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.9</span> <span class="toctext">Expressing the inverse DFT in terms of the DFT</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.10</span> <span class="toctext">Eigenvalues and eigenvectors</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.11</span> <span class="toctext">The real-input DFT</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Generalized/shifted DFT</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Multidimensional DFT</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Applications</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">4.1</span> <span class="toctext">Spectral analysis</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.2</span> <span class="toctext">Data compression</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.3</span> <span class="toctext">Partial differential equations</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.4</span> <span class="toctext">Multiplication of large integers</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.5</span> <span class="toctext">Outline of DFT polynomial multiplication algorithm</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Some discrete Fourier transform pairs</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">8</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Properties">edit</a>]</div>
+<p><a name="Properties" id="Properties"></a></p>
+<h2>Properties</h2>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Completeness">edit</a>]</div>
+<p><a name="Completeness" id="Completeness"></a></p>
+<h3>Completeness</h3>
+<p>The discrete Fourier transform is an invertible, <a href="/wiki/Linear_transformation.html" title="Linear transformation">linear transformation</a></p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/1/7/7/177a2282907bb3dfb2c4ae7e29ee39db.png" alt="\mathcal{F}:\mathbf{C}^N \to \mathbf{C}^N" /></dd>
+</dl>
+<p>with <img class='tex' src="http://upload.wikimedia.org/math/3/9/6/39652eaf6bb68bf9769f17cb8088fece.png" alt="\mathbf{C}" /> denoting the set of <a href="/wiki/Complex_number.html" title="Complex number">complex numbers</a>. In other words, for any <i>N</i>&#160;&gt;&#160;0, an <i>N</i>-dimensional complex vector has a DFT and an IDFT which are in turn <i>N</i>-dimensional complex vectors.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Orthogonality">edit</a>]</div>
+<p><a name="Orthogonality" id="Orthogonality"></a></p>
+<h3>Orthogonality</h3>
+<p>The vectors <img class='tex' src="http://upload.wikimedia.org/math/f/d/0/fd0ae88154c17ad9b66f10b366dab8d2.png" alt="e^{ \frac{2\pi i}{N} kn}" /> form an <a href="/wiki/Orthogonal.html" title="Orthogonal">orthogonal</a> basis over the set of <i>N</i>-dimensional complex vectors:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/7/9/a/79a26f783542117fba40a653332702dd.png" alt="\sum_{n=0}^{N-1} \left(e^{ \frac{2\pi i}{N} kn}\right) \left(e^{-\frac{2\pi i}{N} k'n}\right) =N~\delta_{kk'}" /></dd>
+</dl>
+<p>where <img class='tex' src="http://upload.wikimedia.org/math/e/7/2/e7237ae72e9d68dbfc9a3dea1bd0bf0b.png" alt="~\delta_{kk'}" /> is the <a href="/wiki/Kronecker_delta.html" title="Kronecker delta">Kronecker delta</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: The Plancherel theorem and Parseval's theorem">edit</a>]</div>
+<p><a name="The_Plancherel_theorem_and_Parseval.27s_theorem" id="The_Plancherel_theorem_and_Parseval.27s_theorem"></a></p>
+<h3>The Plancherel theorem and Parseval's theorem</h3>
+<p>If <i>X</i><sub><i>k</i></sub> and <i>Y</i><sub><i>k</i></sub> are the DFTs of <i>x</i><sub><i>n</i></sub> and <i>y</i><sub><i>n</i></sub> respectively then we have the <a href="/wiki/Plancherel_theorem.html" title="Plancherel theorem">Plancherel theorem</a>:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/0/9/1/0915b049335a23cad75f927ee9d4e699.png" alt="\sum_{n=0}^{N-1} x_n y^*_n = \frac{1}{N} \sum_{k=0}^{N-1} X_k Y^*_k" /></dd>
+</dl>
+<p>where the star denotes complex conjugation. <a href="/wiki/Parseval%27s_theorem.html" title="Parseval's theorem">Parseval's theorem</a> is a special case of the Plancherel theorem and states:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/b/e/8/be83fa81d5079316074327a33c367ba1.png" alt="\sum_{n=0}^{N-1} |x_n|^2 = \frac{1}{N} \sum_{k=0}^{N-1} |X_k|^2." /></dd>
+</dl>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: The shift theorem">edit</a>]</div>
+<p><a name="The_shift_theorem" id="The_shift_theorem"></a></p>
+<h3>The shift theorem</h3>
+<p>Multiplying <span class="texhtml"><i>x</i><sub><i>n</i></sub></span> by a <i>linear phase</i> <img class='tex' src="http://upload.wikimedia.org/math/3/e/8/3e83c1e5df7e67bb4bc2182a3e1feea9.png" alt="e^{\frac{2\pi i}{N}n m}" /> for some integer <span class="texhtml"><i>m</i></span> corresponds to a <i>circular shift</i> of the output <span class="texhtml"><i>X</i><sub><i>k</i></sub></span>: <span class="texhtml"><i>X</i><sub><i>k</i></sub></span> is replaced by <span class="texhtml"><i>X</i><sub><i>k</i> − <i>m</i></sub></span>, where the subscript is interpreted <a href="/wiki/Modulo.html" title="Modulo">modulo</a> <span class="texhtml"><i>N</i></span> (i.e. periodically). Similarly, a circular shift of the input <span class="texhtml"><i>x</i><sub><i>n</i></sub></span> corresponds to multiplying the output <span class="texhtml"><i>X</i><sub><i>k</i></sub></span> by a linear phase. Mathematically, if <span class="texhtml">{<i>x</i><sub><i>n</i></sub>}</span> represents the vector <b>x</b> then</p>
+<dl>
+<dd>if <img class='tex' src="http://upload.wikimedia.org/math/3/4/0/340bbaffa0bd3551f03455046c00f4b1.png" alt="\mathcal{F}(\{x_n\})_k=X_k" /></dd>
+</dl>
+<dl>
+<dd>then <img class='tex' src="http://upload.wikimedia.org/math/0/1/d/01d440ceebae96ede06d75243e3f695f.png" alt="\mathcal{F}(\{ x_n e^{\frac{2\pi i}{N}n m} \})_k=X_{k-m}" /></dd>
+</dl>
+<dl>
+<dd>and <img class='tex' src="http://upload.wikimedia.org/math/4/4/6/44678b1e18d33ee0d1f7571ccb9f1799.png" alt="\mathcal{F}(\{x_{n-m}\})_k=X_k e^{-\frac{2\pi i}{N}k m}" /></dd>
+</dl>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Periodicity">edit</a>]</div>
+<p><a name="Periodicity" id="Periodicity"></a></p>
+<h3>Periodicity</h3>
+<p>It is shown in the <a href="/wiki/Discrete-time_Fourier_transform.html" title="Discrete-time Fourier transform">Discrete-time Fourier transform</a> (DTFT) article that the Fourier transform of a discrete time sequence is periodic. A finite length sequence is just a special case. I.e., it is an infinite sequence of zeros containing a region (aka <i>window</i>) in which non-zero values may occur. So <img class='tex' src="http://upload.wikimedia.org/math/5/6/7/5675631a6a6b18c5a23492abd1a9bb04.png" alt="X(\omega)\," />, the DTFT of the finite sequence <img class='tex' src="http://upload.wikimedia.org/math/b/0/f/b0f955b87baf7377b98b47ed9c723949.png" alt="x[n]\," />, is periodic. Not surprisingly, the DFT is periodic; e.g. <img class='tex' src="http://upload.wikimedia.org/math/b/5/7/b579526c574a78ca7ee67ef26cdee97e.png" alt="X[k+N] = X[k]\," />. Less obvious, perhaps, is that the inverse DFT is also periodic; e.g., <img class='tex' src="http://upload.wikimedia.org/math/f/0/f/f0ff500f83ab5b259ef0e1779ea37180.png" alt="x[n+N] = x[n]\," />. It is a <i>periodically extended</i> version of the finite sequence.</p>
+<p>The DTFT of the periodically extended sequence is zero-valued except at the discrete set of frequencies sampled by the DFT. I.e., it is effectively identical to the DFT. The DTFT of the finite sequence has other non-zero values, but it is still identical to the DFT at the frequencies sampled by the DFT. So the approximation error of <img class='tex' src="http://upload.wikimedia.org/math/1/c/f/1cfd57c0b36332e1696a4884705ef2bd.png" alt="X[k]\," />, as an approximation to <img class='tex' src="http://upload.wikimedia.org/math/5/6/7/5675631a6a6b18c5a23492abd1a9bb04.png" alt="X(\omega)\," />, lies in the missing non-zero values, not in the <img class='tex' src="http://upload.wikimedia.org/math/1/c/f/1cfd57c0b36332e1696a4884705ef2bd.png" alt="X[k]\," /> coefficients. In terms of the inverse DFT, that approximation error becomes the periodic extension of the finite sequence.</p>
+<ul>
+<li>Commonly, <img class='tex' src="http://upload.wikimedia.org/math/b/0/f/b0f955b87baf7377b98b47ed9c723949.png" alt="x[n]\," /> is a modification of a longer, perhaps infinite, sequence, whose DTFT is only approximated by <img class='tex' src="http://upload.wikimedia.org/math/5/6/7/5675631a6a6b18c5a23492abd1a9bb04.png" alt="X(\omega)\," />. In that case, of course, <img class='tex' src="http://upload.wikimedia.org/math/1/c/f/1cfd57c0b36332e1696a4884705ef2bd.png" alt="X[k]\," /> too is only an approximation to [samples of] the original DTFT.</li>
+</ul>
+<ul>
+<li>The shift theorem, above, is also an expression of the implicit periodicity of the inverse DFT, because it shows that the DFT amplitudes <img class='tex' src="http://upload.wikimedia.org/math/5/c/8/5c84973823c55e4b6d6732fa2c515197.png" alt="|X[k]|\," /> are unaffected by a circular (periodic) shift of the inputs, which is simply a choice of <a href="/wiki/Origin_%28mathematics%29.html" title="Origin (mathematics)">origin</a> and therefore only affects the phase. Periodic boundary conditions play an important role in many applications of the DFT. When solving <a href="/wiki/Differential_equation.html" title="Differential equation">differential equations</a> they allow periodic boundary conditions to be automatically satisfied, and thus can be a useful property. See also the <i>applications</i> section below.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Circular convolution theorem and cross-correlation theorem">edit</a>]</div>
+<p><a name="Circular_convolution_theorem_and_cross-correlation_theorem" id="Circular_convolution_theorem_and_cross-correlation_theorem"></a></p>
+<h3>Circular convolution theorem and cross-correlation theorem</h3>
+<p>The cyclic or <a href="/wiki/Circular_convolution.html" title="Circular convolution">circular convolution</a> <b>x</b>*<b>y</b> of the two vectors <b>x</b> = <i>x<sub>k</sub></i>&#160; and <b>y</b> = <i>y<sub>n</sub></i>&#160; is the vector <b>x</b>*<b>y</b> with components</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/4/8/5/485dd996fb9912be504532f88c19ec6f.png" alt="(\mathbf{x*y})_n = \sum_{m=0}^{N-1} x_m y_{n-m} \quad \quad n = 0,\dots,N-1" /></dd>
+</dl>
+<p>where we continue <b>y</b> cyclically so that</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/e/e/1/ee1612cf0f2dd515963504c3d0841c58.png" alt="y_{-m} = y_{N-m}\quad\quad~~~~~~~~~~ m = 0, ..., N-1" /></dd>
+</dl>
+<p>The discrete Fourier transform turns cyclic convolutions into component-wise multiplication. That is, if <img class='tex' src="http://upload.wikimedia.org/math/3/d/b/3db5f2f6c5565068c0a12df87fe88aec.png" alt="z_n = (\mathbf{x*y})_n" /> then</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/9/e/0/9e01e8b85e6968ae6cc6aba5c1266cae.png" alt="Z_k=X_k Y_k \quad \quad~~~~~~~~~~ k = 0,\dots,N-1" /></dd>
+</dl>
+<p>where capital letters (<i>X</i>, <i>Y</i>, <i>Z</i>) represent the DFTs of sequences represented by small letters (<i>x</i>, <i>y</i>, <i>z</i>). Note that if a different normalization convention is adopted for the DFT (e.g., the unitary normalization), then there will in general be a constant factor multiplying the above relation.</p>
+<p>The direct evaluation of the convolution summation, above, would require <span class="texhtml"><i>O</i>(<i>N</i><sup>2</sup>)</span> operations, but the DFT (via an FFT) provides an <span class="texhtml"><i>O</i>(<i>N</i>log<i>N</i>)</span> method to compute the same thing. Conversely, convolutions can be used to efficiently compute DFTs via <a href="/wiki/Rader%27s_FFT_algorithm.html" title="Rader's FFT algorithm">Rader's FFT algorithm</a> and <a href="/wiki/Bluestein%27s_FFT_algorithm.html" title="Bluestein's FFT algorithm">Bluestein's FFT algorithm</a>.</p>
+<p><i>See also:</i> <a href="/wiki/Convolution_theorem.html" title="Convolution theorem">Convolution theorem</a></p>
+<p>In an analogous manner, it can be shown that if <span class="texhtml"><i>z</i><sub><i>n</i></sub></span> is the <a href="/wiki/Cross-correlation.html" title="Cross-correlation">cross-correlation</a> of <span class="texhtml"><i>x</i><sub><i>n</i></sub></span> and <span class="texhtml"><i>y</i><sub><i>n</i></sub></span>:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/3/8/f/38f827e9982a4b8e2e576cae648713d0.png" alt="z_n=(\mathbf{x\star y})_n = \sum_{m=0}^{N-1}x_m^*\,y_{m+n}" /></dd>
+</dl>
+<p>where the sum is again cyclic in <i>m</i>, then the discrete Fourier transform of <span class="texhtml"><i>z</i><sub><i>n</i></sub></span> is:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/8/5/0/850f3d8dc677841f67a406c07a7a820d.png" alt="Z_k = X_k^*\,Y_k" /></dd>
+</dl>
+<p>where capital letters are again used to signify the discrete Fourier transform.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Trigonometric interpolation polynomial">edit</a>]</div>
+<p><a name="Trigonometric_interpolation_polynomial" id="Trigonometric_interpolation_polynomial"></a></p>
+<h3>Trigonometric interpolation polynomial</h3>
+<p>The <a href="/wiki/Trigonometric_interpolation_polynomial.html" title="Trigonometric interpolation polynomial">trigonometric interpolation polynomial</a></p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/5/1/0/510480362a721ef1914906224531d4e0.png" alt="p(t) = \frac{X_0}{N} + \frac{X_1}{N} e^{it} + \cdots + \frac{X_{N/2}}{N} \cos(Nt/2) + \frac{X_{N/2+1}}{N} e^{(-N/2+1)it} + \cdots + \frac{X_{N-1}}{N} e^{-it}" /> for <span class="texhtml"><i>N</i></span> <a href="/wiki/Even_and_odd_numbers.html" title="Even and odd numbers">even</a> ,</dd>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/e/9/a/e9ac95a2dbadf9e64c1941462622adfb.png" alt="p(t) = \frac{X_0}{N} + \frac{X_1}{N} e^{it} + \cdots + \frac{X_{\lfloor N/2 \rfloor}}{N} e^{\lfloor N/2 \rfloor it} + \frac{X_{\lfloor N/2 \rfloor+1}}{N} e^{-\lfloor N/2 \rfloor it} + \cdots + \frac{X_{N-1}}{N} e^{-it}" /> for <span class="texhtml"><i>N</i></span> odd,</dd>
+</dl>
+<p>where the coefficients <i>X</i><sub><i>k</i></sub> /<i>N</i> are given by the DFT of <i>x</i><sub><i>n</i></sub> above, satisfies the interpolation property <span class="texhtml"><i>p</i>(2π<i>n</i> / <i>N</i>) = <i>x</i><sub><i>n</i></sub></span> for <img class='tex' src="http://upload.wikimedia.org/math/5/3/c/53c5c949a1e567ad395aac2a2ff809ed.png" alt="n=0,\ldots,N-1" />.</p>
+<p>For even <span class="texhtml"><i>N</i></span>, notice that the <a href="/wiki/Nyquist_frequency.html" title="Nyquist frequency">Nyquist component</a> <img class='tex' src="http://upload.wikimedia.org/math/3/e/1/3e17bb48409fb586572480baa48f7dfc.png" alt="\frac{X_{N/2}}{N} \cos(Nt/2)" /> is handled specially.</p>
+<p>This interpolation is <i>not unique</i>: aliasing implies that one could add <i>N</i> to any of the complex-sinusoid frequencies (e.g. changing <span class="texhtml"><i>e</i> <sup>− <i>i</i><i>t</i></sup></span> to <span class="texhtml"><i>e</i><sup><i>i</i>(<i>N</i> − 1)<i>t</i></sup></span> ) without changing the interpolation property, but giving <i>different</i> values in between the <span class="texhtml"><i>x</i><sub><i>n</i></sub></span> points. The choice above, however, is typical because it has two useful properties. First, it consists of sinusoids whose frequencies have the smallest possible magnitudes, and therefore minimizes the mean-square <a href="/wiki/Slope.html" title="Slope">slope</a> <img class='tex' src="http://upload.wikimedia.org/math/1/4/7/147a607aa00ab038f4f5a3bf2a380ee4.png" alt="\int |p'(t)|^2 dt" /> of the interpolating function. Second, if the <span class="texhtml"><i>x</i><sub><i>n</i></sub></span> are real numbers, then <span class="texhtml"><i>p</i>(<i>t</i>)</span> is real as well.</p>
+<p>In contrast, the most obvious trigonometric interpolation polynomial is the one in which the frequencies range from 0 to <span class="texhtml"><i>N</i> − 1</span> (instead of roughly <span class="texhtml">− <i>N</i> / 2</span> to <span class="texhtml">+ <i>N</i> / 2</span> as above), similar to the inverse DFT formula. This interpolation does <i>not</i> minimize the slope, and is <i>not</i> generally real-valued for real <span class="texhtml"><i>x</i><sub><i>n</i></sub></span>; its use is a common mistake.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: The unitary DFT">edit</a>]</div>
+<p><a name="The_unitary_DFT" id="The_unitary_DFT"></a></p>
+<h3>The unitary DFT</h3>
+<p>Another way of looking at the DFT is to note that in the above discussion, the DFT can be expressed as a <a href="/wiki/Vandermonde_matrix.html" title="Vandermonde matrix">Vandermonde matrix</a>:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/9/1/e/91efb3aca84fbf8d59402231ae4adc13.png" alt="\mathbf{F} = \begin{bmatrix}  \omega_N^{0 \cdot 0}     &amp; \omega_N^{0 \cdot 1}     &amp; \ldots &amp; \omega_N^{0 \cdot (N-1)}     \\  \omega_N^{1 \cdot 0}     &amp; \omega_N^{1 \cdot 1}     &amp; \ldots &amp; \omega_N^{1 \cdot (N-1)}     \\  \vdots                   &amp; \vdots                   &amp; \ddots &amp; \vdots                       \\  \omega_N^{(N-1) \cdot 0} &amp; \omega_N^{(N-1) \cdot 1} &amp; \ldots &amp; \omega_N^{(N-1) \cdot (N-1)} \\ \end{bmatrix}" /></dd>
+</dl>
+<p>where</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/6/f/e/6fea88c35fbe11238d66489bcab28474.png" alt="\omega_N = e^{-2 \pi i/N}\," /></dd>
+</dl>
+<p>is a primitive <a href="/wiki/Roots_of_unity.html" title="Roots of unity">Nth root of unity</a>. The inverse transform is then given by the inverse of the above matrix:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/a/9/c/a9cb068e64bc4a266e4d76181360b771.png" alt="\mathbf{F}^{-1}=\frac{1}{N}\mathbf{F}^*" /></dd>
+</dl>
+<p>With <a href="/wiki/Unitary_operator.html" title="Unitary operator">unitary</a> normalization constants <img class='tex' src="http://upload.wikimedia.org/math/2/2/9/22963a8d496c0693bb832beef49cc13d.png" alt="1/\sqrt{N}" />, the DFT becomes a <a href="/wiki/Unitary_transformation.html" title="Unitary transformation">unitary transformation</a>, defined by a unitary matrix:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/f/0/0/f007eee210ede5fe71c1609f01c41657.png" alt="\mathbf{U}=\mathbf{F}/\sqrt{N}" /></dd>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/9/f/0/9f025e4c831bf2e4d2a4c41143bc9ff5.png" alt="\mathbf{U}^{-1}=\mathbf{U}^*" /></dd>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/5/f/5/5f51113754739febfa88999fb72a830f.png" alt="|\det(\mathbf{U})|=1" /></dd>
+</dl>
+<p>where <i>det()</i>&#160; is the <a href="/wiki/Determinant.html" title="Determinant">determinant</a> function. The determinant is the product of the eigenvalues, and therefore (see below) is always <img class='tex' src="http://upload.wikimedia.org/math/9/6/7/967ffa3ca82c4b8aad1075067fb3fec5.png" alt="\pm 1" /> or <img class='tex' src="http://upload.wikimedia.org/math/3/6/5/36589c0963bd9597f22f7a7e659cae3b.png" alt="\pm i" />. In a real vector space, a unitary transformation can be thought of as simply a rigid rotation of the coordinate system, and all of the properties of a rigid rotation can be found in the unitary DFT.</p>
+<p>The orthogonality of the DFT is now expressed as an <a href="/wiki/Orthonormal.html" title="Orthonormal">orthonormality</a> condition (which arises in many areas of mathematics as described in <a href="/wiki/Root_of_unity.html" title="Root of unity">root of unity</a>):</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/9/6/3/9630cd828bb0a9fed3c8a942116be725.png" alt="\sum_{m=0}^{N-1}U_{km}U_{mn}^*=\delta_{kn}" /></dd>
+</dl>
+<p>If <img class='tex' src="http://upload.wikimedia.org/math/5/9/8/598f6444904755dda4a859a1e377468e.png" alt="\mathbf{X}" /> is defined as the unitary DFT of the vector <img class='tex' src="http://upload.wikimedia.org/math/3/c/6/3c66d9170d4c3fb75456e1a9fc6ead37.png" alt="\mathbf{x}" /> then</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/c/1/1/c11b864f8452d25485f5579298a33212.png" alt="X_k=\sum_{n=0}^{N-1} U_{kn}x_n" /></dd>
+</dl>
+<p>and the <a href="/wiki/Plancherel_theorem.html" title="Plancherel theorem">Plancherel theorem</a> is expressed as:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/4/2/2/4221d72d86b6b92c848d0ff80b1c081f.png" alt="\sum_{n=0}^{N-1}x_n y_n^* = \sum_{k=0}^{N-1}X_k Y_k^*" /></dd>
+</dl>
+<p>If we view the DFT as just a coordinate transformation which simply specifies the components of a vector in a new coordinate system, then the above is just the statement that the dot product of two vectors is preserved under a unitary DFT transformation. For the special case <img class='tex' src="http://upload.wikimedia.org/math/1/a/6/1a6e491a19983f03835f0e086fb00055.png" alt="\mathbf{x} = \mathbf{y}" />, this implies that the length of a vector is preserved as well—this is just <a href="/wiki/Parseval%27s_theorem.html" title="Parseval's theorem">Parseval's theorem</a>:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/3/6/e/36e4f196e8cad7647f98dfa3ded61179.png" alt="\sum_{n=0}^{N-1}|x_n|^2 = \sum_{k=0}^{N-1}|X_k|^2" /></dd>
+</dl>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Expressing the inverse DFT in terms of the DFT">edit</a>]</div>
+<p><a name="Expressing_the_inverse_DFT_in_terms_of_the_DFT" id="Expressing_the_inverse_DFT_in_terms_of_the_DFT"></a></p>
+<h3>Expressing the inverse DFT in terms of the DFT</h3>
+<p>A useful property of the DFT is that the inverse DFT can be easily expressed in terms of the (forward) DFT, via several well-known "tricks". (For example, in computations, it is often convenient to only implement a fast Fourier transform corresponding to one transform direction and then to get the other transform direction from the first.)</p>
+<p>First, we can compute the inverse DFT by reversing the inputs:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/f/6/8/f68b82402e79ba99c5baf8d9286a4225.png" alt="\mathcal{F}^{-1}(\{x_n\}) = \mathcal{F}(\{x_{N - n}\}) / N" /></dd>
+</dl>
+<p>(As usual, the subscripts are interpreted <a href="/wiki/Modulo.html" title="Modulo">modulo</a> <span class="texhtml"><i>N</i></span>; thus, for <span class="texhtml"><i>n</i> = 0</span>, we have <span class="texhtml"><i>x</i><sub><i>N</i> − 0</sub> = <i>x</i><sub>0</sub></span>.)</p>
+<p>Second, one can also conjugate the inputs and outputs:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/6/7/7/6772f3ee69be0e1e7f26d547199e4ec9.png" alt="\mathcal{F}^{-1}(\mathbf{x}) = \mathcal{F}(\mathbf{x}^*)^* / N" /></dd>
+</dl>
+<p>Third, a variant of this conjugation trick, which is sometimes preferable because it requires no modification of the data values, involves swapping real and imaginary parts (which can be done on a computer simply by modifying <a href="/wiki/Pointer.html" title="Pointer">pointers</a>). Define swap(<span class="texhtml"><i>x</i><sub><i>n</i></sub></span>) as <span class="texhtml"><i>x</i><sub><i>n</i></sub></span> with its real and imaginary parts swapped—that is, if <span class="texhtml"><i>x</i><sub><i>n</i></sub> = <i>a</i> + <i>b</i><i>i</i></span> then swap(<span class="texhtml"><i>x</i><sub><i>n</i></sub></span>) is <span class="texhtml"><i>b</i> + <i>a</i><i>i</i></span>. Equivalently, swap(<span class="texhtml"><i>x</i><sub><i>n</i></sub></span>) equals <img class='tex' src="http://upload.wikimedia.org/math/0/c/e/0ceb30d87d9e2c3c4f2feac939d7bcc3.png" alt="i x_n^*" />. Then</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/5/a/1/5a1101de5c948b77cbbd02c72e049490.png" alt="\mathcal{F}^{-1}(\mathbf{x}) = \textrm{swap}(\mathcal{F}(\textrm{swap}(\mathbf{x}))) / N" /></dd>
+</dl>
+<p>That is, the inverse transform is the same as the forward transform with the real and imaginary parts swapped for both input and output, up to a normalization (Duhamel <i>et al.</i>, 1988).</p>
+<p>The conjugation trick can also be used to define a new transform, closely related to the DFT, that is <a href="/wiki/Involutary.html" title="Involutary">involutary</a>—that is, which is its own inverse. In particular, <img class='tex' src="http://upload.wikimedia.org/math/b/d/7/bd737d5ee8eaef46fd9d1123ee163247.png" alt="T(\mathbf{x}) = \mathcal{F}(\mathbf{x}^*) / \sqrt{N}" /> is clearly its own inverse: <img class='tex' src="http://upload.wikimedia.org/math/8/9/d/89dfe7eecbb3d54ea31d548423a7633b.png" alt="T(T(\mathbf{x})) = \mathbf{x}" />. A closely related involutary transformation (by a factor of (1+<i>i</i>)/√2) is <img class='tex' src="http://upload.wikimedia.org/math/8/b/e/8be845240b70842605c287bc48b478c4.png" alt="H(\mathbf{x}) = \mathcal{F}((1+i) \mathbf{x}^*) / \sqrt{2N}" />, since the <span class="texhtml">(1 + <i>i</i>)</span> factors in <img class='tex' src="http://upload.wikimedia.org/math/7/b/8/7b86f0ba0a68c7e9188ee07fa37fc247.png" alt="H(H(\mathbf{x}))" /> cancel the 2. For real inputs <img class='tex' src="http://upload.wikimedia.org/math/3/c/6/3c66d9170d4c3fb75456e1a9fc6ead37.png" alt="\mathbf{x}" />, the real part of <img class='tex' src="http://upload.wikimedia.org/math/d/4/a/d4a15d6519b4618254a0adc028f599db.png" alt="H(\mathbf{x})" /> is none other than the <a href="/wiki/Discrete_Hartley_transform.html" title="Discrete Hartley transform">discrete Hartley transform</a>, which is also involutary.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Eigenvalues and eigenvectors">edit</a>]</div>
+<p><a name="Eigenvalues_and_eigenvectors" id="Eigenvalues_and_eigenvectors"></a></p>
+<h3>Eigenvalues and eigenvectors</h3>
+<p>The <a href="/wiki/Eigenvalue.html" title="Eigenvalue">eigenvalues</a> of the DFT matrix are simple and well-known, whereas the <a href="/wiki/Eigenvector.html" title="Eigenvector">eigenvectors</a> are complicated, not unique, and are the subject of ongoing research.</p>
+<p>Consider the unitary form <img class='tex' src="http://upload.wikimedia.org/math/c/d/e/cde39ddaaa78c0006d9807fa457e0102.png" alt="\mathbf{U}" /> defined above for the DFT of length <span class="texhtml"><i>N</i></span>, where <img class='tex' src="http://upload.wikimedia.org/math/d/e/d/ded789c67578665422d1b10a4cc1c1e4.png" alt="\mathbf{U}_{m,n} = \omega_N^{mn}/\sqrt{N} = \exp(-2\pi i mn/N)/\sqrt{N}" />. This matrix satisfies the equation:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/8/0/e/80e07d8227826fedd764b481e05aa427.png" alt="\mathbf{U}^4 = 1." /></dd>
+</dl>
+<p>This can be seen from the inverse properties above: operating <img class='tex' src="http://upload.wikimedia.org/math/c/d/e/cde39ddaaa78c0006d9807fa457e0102.png" alt="\mathbf{U}" /> twice gives the original data in reverse order, so operating <img class='tex' src="http://upload.wikimedia.org/math/c/d/e/cde39ddaaa78c0006d9807fa457e0102.png" alt="\mathbf{U}" /> four times gives back the original data and is thus the <a href="/wiki/Identity_matrix.html" title="Identity matrix">identity matrix</a>. This means that the eigenvalues <span class="texhtml">λ</span> satisfy a <a href="/wiki/Characteristic_equation.html" title="Characteristic equation">characteristic equation</a>:</p>
+<dl>
+<dd><span class="texhtml">λ<sup>4</sup> = 1.</span></dd>
+</dl>
+<p>Therefore, the eigenvalues of <img class='tex' src="http://upload.wikimedia.org/math/c/d/e/cde39ddaaa78c0006d9807fa457e0102.png" alt="\mathbf{U}" /> are the fourth <a href="/wiki/Roots_of_unity.html" title="Roots of unity">roots of unity</a>: <span class="texhtml">λ</span> is +1, −1, +<i>i</i>, or −<i>i</i>.</p>
+<p>Since there are only four distinct eigenvalues for this <img class='tex' src="http://upload.wikimedia.org/math/3/9/5/395a9af17f8642e02a32af8637542947.png" alt="N\times N" /> matrix, they have some <a href="/wiki/Algebraic_multiplicity.html" title="Algebraic multiplicity">multiplicity</a>. The multiplicity gives the number of <a href="/wiki/Linearly_independent.html" title="Linearly independent">linearly independent</a> eigenvectors corresponding to each eigenvalue. (Note that there are <i>N</i> independent eigenvectors; the matrix is not <a href="/wiki/Defective_matrix.html" title="Defective matrix">defective</a>.)</p>
+<p>The problem of their multiplicity was solved by McClellan and Parks (1972), although it was later shown to have been equivalent to a problem solved by <a href="/wiki/Carl_Friedrich_Gauss.html" title="Carl Friedrich Gauss">Gauss</a> (Dickinson and Steiglitz, 1982). The multiplicity depends on the value of <span class="texhtml"><i>N</i></span> <a href="/wiki/Modulo.html" title="Modulo">modulo</a> 4, and is given by the following table:</p>
+<table class="wikitable" align="center">
+<caption align="bottom">Multiplicities of the eigenvalues λ of the unitary DFT matrix <b>U</b> as a function of the transform size <i>N</i> (in terms of an integer <i>m</i>).</caption>
+<tr>
+<th>size <i>N</i></th>
+<th>λ = +1</th>
+<th>λ = −1</th>
+<th>λ = +<i>i</i></th>
+<th>λ = −<i>i</i></th>
+</tr>
+<tr>
+<td>4<i>m</i></td>
+<td><i>m</i> + 1</td>
+<td><i>m</i></td>
+<td><i>m</i></td>
+<td><i>m</i> − 1</td>
+</tr>
+<tr>
+<td>4<i>m</i> + 1</td>
+<td><i>m</i> + 1</td>
+<td><i>m</i></td>
+<td><i>m</i></td>
+<td><i>m</i></td>
+</tr>
+<tr>
+<td>4<i>m</i> + 2</td>
+<td><i>m</i> + 1</td>
+<td><i>m</i> + 1</td>
+<td><i>m</i></td>
+<td><i>m</i></td>
+</tr>
+<tr>
+<td>4<i>m</i> + 3</td>
+<td><i>m</i> + 1</td>
+<td><i>m</i> + 1</td>
+<td><i>m</i> + 1</td>
+<td><i>m</i></td>
+</tr>
+</table>
+<p>Unfortunately, no simple analytical formula for the eigenvectors is known. Moreover, the eigenvectors are not unique because any linear combination of eigenvectors for the same eigenvalue is also an eigenvector for that eigenvalue. Various researchers have proposed different choices of eigenvectors, selected to satisfy useful properties like <a href="/wiki/Orthogonality.html" title="Orthogonality">orthogonality</a> and to have "simple" forms (e.g., McClellan and Parks, 1972; Dickinson and Steiglitz, 1982; Grünbaum, 1982; Atakishiyev and Wolf, 1997; Hanna <i>et al.</i>, 2004).</p>
+<p>The choice of eigenvectors of the DFT matrix has become important in recent years in order to define a discrete analogue of the <a href="/wiki/Fractional_Fourier_transform.html" title="Fractional Fourier transform">fractional Fourier transform</a>—the DFT matrix can be taken to fractional powers by exponentiating the eigenvalues (e.g., Rubio and Santhanam, 2005). For the <a href="/wiki/Continuous_Fourier_transform.html" title="Continuous Fourier transform">continuous Fourier transform</a>, the natural orthogonal eigenfunctions are the <a href="/wiki/Hermite_function.html" title="Hermite function">Hermite functions</a>, so various discrete analogues of these have been employed as the eigenvectors of the DFT, such as the <a  class="new" title="Kravchuk polynomials">Kravchuk polynomials</a> (Atakishiyev and Wolf, 1997). The "best" choice of eigenvectors to define a fractional discrete Fourier transform remains an open question, however.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: The real-input DFT">edit</a>]</div>
+<p><a name="The_real-input_DFT" id="The_real-input_DFT"></a></p>
+<h3>The real-input DFT</h3>
+<p>If <img class='tex' src="http://upload.wikimedia.org/math/1/6/2/162bf779f64e5d467babb8e9489664d8.png" alt="x_0, \ldots, x_{N-1}" /> are <a href="/wiki/Real_number.html" title="Real number">real numbers</a>, as they often are in practical applications, then the DFT obeys the symmetry:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/f/3/9/f39d77604a3caf3cbb13585be5adebaf.png" alt="X_k = X_{N-k}^* ," /></dd>
+</dl>
+<p>where the star denotes complex conjugation and the subscripts are interpreted modulo <i>N</i>.</p>
+<p>Therefore, the DFT output for real inputs is half redundant, and one obtains the complete information by only looking at roughly half of the outputs <img class='tex' src="http://upload.wikimedia.org/math/6/3/5/635de2b6a0c68dc097fd32402a0b70d0.png" alt="X_0, \ldots, X_{N-1}" />. In this case, the "DC" element <span class="texhtml"><i>X</i><sub>0</sub></span> is purely real, and for even <i>N</i> the "Nyquist" element <span class="texhtml"><i>X</i><sub><i>N</i> / 2</sub></span> is also real, so there are exactly <i>N</i> non-redundant real numbers in the first half + Nyquist element of the complex output <i>X</i>.</p>
+<p>Using <a href="/wiki/Euler%27s_formula_in_complex_analysis.html" title="Euler's formula in complex analysis">Euler's formula</a>, the interpolating trigonometric polynomial can then be interpreted as a sum of sine and cosine functions.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Generalized/shifted DFT">edit</a>]</div>
+<p><a name="Generalized.2Fshifted_DFT" id="Generalized.2Fshifted_DFT"></a></p>
+<h2>Generalized/shifted DFT</h2>
+<p>It is possible to shift the transform sampling in time and/or frequency domain by some real shifts <i>a</i> and <i>b</i>, respectively. This is sometimes known as a <b>generalized DFT</b> (or <b>GDFT</b>), also called the <b>shifted DFT</b> or <b>offset DFT</b>, and has analogous properties to the ordinary DFT:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/6/0/e/60ec22ede594e60d911a51a9a84292f9.png" alt="X_k = \sum_{n=0}^{N-1} x_n e^{-\frac{2 \pi i}{N} (k+b) (n+a)} \quad \quad k = 0, \dots, N-1" /></dd>
+</dl>
+<p>Most often, shifts of <span class="texhtml">1 / 2</span> (half a sample) are used. While the ordinary DFT corresponds to a periodic signal in both time and frequency domains, <span class="texhtml"><i>a</i> = 1 / 2</span> produces a signal that is anti-periodic in frequency domain (<span class="texhtml"><i>X</i><sub><i>k</i> + <i>N</i></sub> = − <i>X</i><sub><i>k</i></sub></span>) and vice-versa for <span class="texhtml"><i>b</i> = 1 / 2</span>. Thus, the specific case of <span class="texhtml"><i>a</i> = <i>b</i> = 1 / 2</span> is known as an <i>odd-time odd-frequency</i> discrete Fourier transform (or O<sup>2</sup> DFT). Such shifted transforms are most often used for symmetric data, to represent different boundary symmetries, and for real-symmetric data they correspond to different forms of the discrete <a href="/wiki/Discrete_cosine_transform.html" title="Discrete cosine transform">cosine</a> and <a href="/wiki/Discrete_sine_transform.html" title="Discrete sine transform">sine</a> transforms.</p>
+<p>Another interesting choice is <span class="texhtml"><i>a</i> = <i>b</i> = − (<i>N</i> − 1) / 2</span>, which is called the <b>centered DFT</b> (or <b>CDFT</b>). The centered DFT has the useful property that, when <span class="texhtml"><i>N</i></span> is a multiple of four, all four of its eigenvalues (see above) have equal multiplicities (Rubio and Santhanam, 2005).</p>
+<p>The discrete Fourier transform can be viewed as a special case of the <a href="/wiki/Z-transform.html" title="Z-transform">z-transform</a>, evaluated on the unit circle in the complex plane; more general z-transforms correspond to <i>complex</i> shifts <i>a</i> and <i>b</i> above.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Multidimensional DFT">edit</a>]</div>
+<p><a name="Multidimensional_DFT" id="Multidimensional_DFT"></a></p>
+<h2>Multidimensional DFT</h2>
+<p>The ordinary DFT computes the transform of a "one-dimensional" dataset: a sequence (or <a href="/wiki/Array.html" title="Array">array</a>) <span class="texhtml"><i>x</i><sub><i>n</i></sub></span> that is a function of one discrete variable <span class="texhtml"><i>n</i></span>. More generally, one can define the <b>multidimensional</b> DFT of a multidimensional array <img class='tex' src="http://upload.wikimedia.org/math/7/0/6/706c00350b481e9ca88052211d5357e3.png" alt="x_{n_1, n_2, \cdots, n_d}" /> that is a function of <span class="texhtml"><i>d</i></span> discrete variables <img class='tex' src="http://upload.wikimedia.org/math/4/e/5/4e5ed4d9556c699786c64ede7ba2e8dd.png" alt="n_\ell = 0, 1, \cdots, N_\ell-1" /> for <img class='tex' src="http://upload.wikimedia.org/math/3/3/4/334ce9eb79df1178b0380461c9eaa09e.png" alt="\ell" /> in <img class='tex' src="http://upload.wikimedia.org/math/3/e/4/3e4c41ad92ef36f7a8dbf7a7a07c384a.png" alt="1, 2, \cdots, d" />:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/e/5/7/e5759dfa7624858dbdc32121c845583b.png" alt="X_{k_1, k_2, \cdots, k_d} = \sum_{n_1=0}^{N_1-1} \left(\omega_{N_1}^{~k_1 n_1} \sum_{n_2=0}^{N_2-1} \left( \omega_{N_2}^{~k_2 n_2} \cdots \sum_{n_d=0}^{N_d-1} \omega_{N_d}^{~k_d n_d}\cdot x_{n_1, n_2, \cdots, n_d} \right) \cdots \right) \, ," /></dd>
+</dl>
+<p>where <img class='tex' src="http://upload.wikimedia.org/math/6/0/2/6027fbb2000476eeb204e339f34acb8d.png" alt="\omega_{N_\ell} = \exp(-2\pi i/N_\ell)" /> as above and the <span class="texhtml"><i>d</i></span> output indices run from <img class='tex' src="http://upload.wikimedia.org/math/8/4/6/84625536db28347ab210358fea910bb6.png" alt="k_\ell = 0, 1, \cdots, N_\ell-1" />. This is more compactly expressed in <a href="/wiki/Coordinate_vector.html" title="Coordinate vector">vector</a> notation, where <img class='tex' src="http://upload.wikimedia.org/math/8/2/e/82ed63a2477cb0b6988882a7af9a3125.png" alt="\mathbf{n} \equiv (n_1, n_2, \cdots, n_d)" /> and <img class='tex' src="http://upload.wikimedia.org/math/7/e/b/7eb62559e03f623c7ab201158ae70d51.png" alt="\mathbf{k} \equiv (k_1, k_2, \cdots, k_d)" /> are <span class="texhtml"><i>d</i></span>-dimensional vectors of indices from 0 to <img class='tex' src="http://upload.wikimedia.org/math/2/1/9/219d41c1ba9affa79261154a322a5916.png" alt="\mathbf{N} - 1 \equiv (N_1 - 1, N_2 - 1, \cdots, N_d - 1)" />:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/f/5/4/f54bda4745125559ba62c11d348e37cf.png" alt="X_\mathbf{k} = \sum_{\mathbf{n}=0}^{\mathbf{N}-1} e^{-2\pi i \mathbf{k} \cdot (\mathbf{n} / \mathbf{N})} x_\mathbf{n} \, ," /></dd>
+</dl>
+<p>where the division <img class='tex' src="http://upload.wikimedia.org/math/2/f/b/2fbfababddb8a53fea3e7fc0acf80397.png" alt="\mathbf{n} / \mathbf{N} \equiv (n_1/N_1, \cdots, n_d/N_d)" /> is performed element-wise, and the sum denotes the set of nested summations above.</p>
+<p>The inverse of the multi-dimensional DFT is, analogous to the one-dimensional case, given by:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/7/8/2/782688f2b65aeeac0957ddadb31ce8f8.png" alt="x_\mathbf{n} = \frac{1}{\prod_{\ell=1}^d N_\ell} \sum_{\mathbf{k}=0}^{\mathbf{N}-1} e^{2\pi i \mathbf{n} \cdot (\mathbf{k} / \mathbf{N})} X_\mathbf{k} \, ." /></dd>
+</dl>
+<p>The multidimensional DFT has a simple interpretation. Just as the one-dimensional DFT expresses the input <span class="texhtml"><i>x</i><sub><i>n</i></sub></span> as a superposition of sinusoids, the multidimensional DFT expresses the input as a superposition of <a href="/wiki/Plane_wave.html" title="Plane wave">plane waves</a>, or sinusoids oscillating along the direction <img class='tex' src="http://upload.wikimedia.org/math/9/a/d/9adb161855a92d4923a2a0e5fdff0458.png" alt="\mathbf{k} / \mathbf{N}" /> in space and having amplitude <img class='tex' src="http://upload.wikimedia.org/math/4/7/9/4798deb105cf3cf307ed45994cd1154f.png" alt="X_\mathbf{k}" />. Such a decomposition is of great importance for everything from <a href="/wiki/Digital_image_processing.html" title="Digital image processing">digital image processing</a> (<span class="texhtml"><i>d</i></span>=2) to solving <a href="/wiki/Partial_differential_equations.html" title="Partial differential equations">partial differential equations</a> in three dimensions (<span class="texhtml"><i>d</i></span>=3) by breaking the solution up into plane waves.</p>
+<p>Computationally, the multidimensional DFT is simply the <a href="/wiki/Function_composition.html" title="Function composition">composition</a> of a sequence of one-dimensional DFTs along each dimension. For example, in the two-dimensional case <img class='tex' src="http://upload.wikimedia.org/math/f/6/a/f6acf281dd8699d958a047a144bd16ba.png" alt="x_{n_1,n_2}" /> one can first compute the <span class="texhtml"><i>N</i><sub>1</sub></span> independent DFTs of the rows (i.e., along <span class="texhtml"><i>n</i><sub>2</sub></span>) to form a new array <img class='tex' src="http://upload.wikimedia.org/math/2/f/0/2f05201b3c7ebdc28b8870bb018d86f2.png" alt="y_{n_1,k_2}" />, and then compute the <span class="texhtml"><i>N</i><sub>2</sub></span> independent DFTs of <span class="texhtml"><i>y</i></span> along the columns (along <span class="texhtml"><i>n</i><sub>1</sub></span>) to form the final result <img class='tex' src="http://upload.wikimedia.org/math/9/b/c/9bcd44333fe90756ef27d8646c5fb70f.png" alt="X_{k_1,k_2}" />. Or, one can transform the columns and then the rows—the order is immaterial because the nested summations above <a href="/wiki/Commutative_operation.html" title="Commutative operation">commute</a>.</p>
+<p>Because of this, given a way to compute a one-dimensional DFT (e.g. an ordinary one-dimensional FFT algorithm), one immediately has a way to efficiently compute the multidimensional DFT. This is known as a <i>row-column</i> algorithm, although there are also intrinsically <a href="/wiki/Fast_Fourier_transform#Multidimensional_FFT_algorithms.html" title="Fast Fourier transform">multidimensional FFT algorithms</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Applications">edit</a>]</div>
+<p><a name="Applications" id="Applications"></a></p>
+<h2>Applications</h2>
+<p>The DFT has seen wide usage across a large number of fields; we only sketch a few examples below (see also the references at the end). All applications of the DFT depend crucially on the availability of a fast algorithm to compute discrete Fourier transforms and their inverses, a <a href="/wiki/Fast_Fourier_transform.html" title="Fast Fourier transform">fast Fourier transform</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Spectral analysis">edit</a>]</div>
+<p><a name="Spectral_analysis" id="Spectral_analysis"></a></p>
+<h3>Spectral analysis</h3>
+<p>When the DFT is used for <a href="/wiki/Frequency_spectrum#Spectrum_analysis.html" title="Frequency spectrum">spectral analysis</a>, the <img class='tex' src="http://upload.wikimedia.org/math/d/3/f/d3f0f389f30448bd13b0219ddbe52e1d.png" alt="\{x_n\}\," /> sequence usually represents a finite set of uniformly-spaced time-samples of some signal <img class='tex' src="http://upload.wikimedia.org/math/a/2/7/a27835f2b7c4245cec82dbab64ba277d.png" alt="x(t)\," />, where <i>t</i> of course represents time. The conversion from continuous time to samples (discrete-time) changes the underlying <a href="/wiki/Continuous_Fourier_transform.html" title="Continuous Fourier transform">Fourier transform</a> of x(t) into a <a href="/wiki/Discrete-time_Fourier_transform.html" title="Discrete-time Fourier transform">discrete-time Fourier transform</a> (DTFT), which generally entails a type of distortion called <a href="/wiki/Aliasing.html" title="Aliasing">aliasing</a>. Choice of an appropriate sample-rate (see <a href="/wiki/Nyquist_frequency.html" title="Nyquist frequency">Nyquist frequency</a>) is the key to minimizing that distortion. Similarly, the conversion from a very long (or infinite) sequence to a manageable size entails a type of distortion called <a href="/wiki/Window_function#Spectral_analysis.html" title="Window function"><i>leakage</i></a>, which is manifested as a loss of detail (aka resolution) in the DTFT. Choice of an appropriate sub-sequence length is the primary key to minimizing that effect. When the available data (and time to process it) is more than the amount needed to attain the desired frequency resolution, a standard technique is to perform multiple DFTs, for example to create a <a href="/wiki/Spectrogram.html" title="Spectrogram">spectrogram</a>. If the desired result is a power spectrum and noise or randomness is present in the data, averaging the magnitude components of the multiple DFTs is a useful procedure to reduce the <a href="/wiki/Variance.html" title="Variance">variance</a> of the spectrum (also called a <a href="/wiki/Periodogram.html" title="Periodogram">periodogram</a> in this context); two examples of such techniques are the <a href="/wiki/Welch_method.html" title="Welch method">Welch method</a> and the <a  class="new" title="Bartlett method">Bartlett method</a>.</p>
+<p>A final source of distortion (or perhaps <i>illusion</i>) is the DFT itself, because it is just a discrete sampling of the DTFT, which is a function of a continuous frequency domain. That can be mitigated by increasing the resolution of the DFT. That procedure is illustrated in the <a href="/wiki/Discrete-time_Fourier_transform.html" title="Discrete-time Fourier transform">discrete-time Fourier transform</a> article.</p>
+<ul>
+<li>The procedure is sometimes referred to as <i>zero-padding</i>, which is a particular implementation used in conjunction with the <a href="/wiki/Fast_Fourier_transform.html" title="Fast Fourier transform">fast Fourier transform</a> (FFT) algorithm. The inefficiency of performing multiplications and additions with zero-valued "samples" is more than offset by the inherent efficiency of the FFT.</li>
+<li>As already noted, leakage imposes a limit on the inherent resolution of the DTFT. So there is a practical limit to the benefit that can be obtained from a fine-grained DFT.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Data compression">edit</a>]</div>
+<p><a name="Data_compression" id="Data_compression"></a></p>
+<h3>Data compression</h3>
+<p>The field of digital signal processing relies heavily on operations in the frequency domain (i.e. on the Fourier transform). For example, several <a href="/wiki/Lossy.html" title="Lossy">lossy</a> image and sound compression methods employ the discrete Fourier transform: the signal is cut into short segments, each is transformed, and then the Fourier coefficients of high frequencies, which are assumed to be unnoticeable, are discarded. The decompressor computes the inverse transform based on this reduced number of Fourier coefficients. (Compression applications often use a specialized form of the DFT, the <a href="/wiki/Discrete_cosine_transform.html" title="Discrete cosine transform">discrete cosine transform</a> or sometimes the <a href="/wiki/Modified_discrete_cosine_transform.html" title="Modified discrete cosine transform">modified discrete cosine transform</a>).</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Partial differential equations">edit</a>]</div>
+<p><a name="Partial_differential_equations" id="Partial_differential_equations"></a></p>
+<h3>Partial differential equations</h3>
+<p>Discrete Fourier transforms, especially in more than one dimension, are often used to solve partial differential equations, where again the DFT is used as an approximation for the <a href="/wiki/Fourier_series.html" title="Fourier series">Fourier series</a> (which is recovered in the limit of infinite <i>N</i>). The reason is that it expands the signal in complex exponentials <i>e</i><sup><i>inx</i></sup>, which are eigenfunctions of differentiation: <i>d</i>/<i>dx</i> <i>e</i><sup><i>inx</i></sup> = <i>in</i> <i>e</i><sup><i>inx</i></sup>. Thus, in the Fourier representation, a <a  class="new" title="Linear differential equation with constant coefficients">linear differential equation with constant coefficients</a> is transformed into an easily solvable algebraic equation. One then uses the inverse DFT to transform the result back into the ordinary spatial representation. Such an approach is called a <a href="/wiki/Spectral_method.html" title="Spectral method">spectral method</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Multiplication of large integers">edit</a>]</div>
+<p><a name="Multiplication_of_large_integers" id="Multiplication_of_large_integers"></a></p>
+<h3>Multiplication of large integers</h3>
+<p>The fastest known <a href="/wiki/Multiplication_algorithms.html" title="Multiplication algorithms">algorithms</a> for the multiplication of large <a href="/wiki/Integer.html" title="Integer">integers</a> or <a href="/wiki/Polynomial.html" title="Polynomial">polynomials</a> are based on the discrete Fourier transform: the sequences of digits or coefficients are interpreted as vectors whose convolution needs to be computed; in order to do this, they are first Fourier-transformed, then multiplied component-wise, then transformed back.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Outline of DFT polynomial multiplication algorithm">edit</a>]</div>
+<p><a name="Outline_of_DFT_polynomial_multiplication_algorithm" id="Outline_of_DFT_polynomial_multiplication_algorithm"></a></p>
+<h3>Outline of DFT polynomial multiplication algorithm</h3>
+<p>Suppose we wish to compute the polynomial product <i>c</i>(<i>x</i>) = <i>a</i>(<i>x</i>) · <i>b</i>(<i>x</i>). The ordinary product expression for the coefficients of <i>c</i> involves a linear (acyclic) convolution, where indices do not "wrap around." This can be rewritten as a cyclic convolution by taking the coefficient vectors for <i>a</i>(<i>x</i>) and <i>b</i>(<i>x</i>) with constant term first, then appending zeros so that the resultant coefficient vectors <b>a</b> and <b>b</b> have dimension <i>d</i> &gt; deg(<i>a</i>(<i>x</i>)) + deg(<i>b</i>(<i>x</i>)). Then,</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/7/8/3/78325eb3473b403b7bff17284d8888f9.png" alt="\mathbf{c} = \mathbf{a} * \mathbf{b}" /></dd>
+</dl>
+<p>Where <b>c</b> is the vector of coefficients for <i>c</i>(<i>x</i>), and the convolution operator <img class='tex' src="http://upload.wikimedia.org/math/d/4/4/d444149ae76a4f54d547ca6aee1bb02c.png" alt="*\," /> is defined so</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/1/6/c/16c58b5c415c3871b89c4820b1e1d3c7.png" alt="c_n = \sum_{m=0}^{d-1}a_m b_{n-m\ \mathrm{mod}\ d} \qquad\qquad\qquad n=0,1,...,d-1" /></dd>
+</dl>
+<p>But convolution becomes multiplication under the DFT:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/5/1/2/512cdc73d1a9bfd779e4d0bd75930d27.png" alt="\mathcal{F}(\mathbf{c}) = \mathcal{F}(\mathbf{a})\mathcal{F}(\mathbf{b})" /></dd>
+</dl>
+<p>Here the vector product is taken elementwise. Thus the coefficients of the product polynomial <i>c</i>(<i>x</i>) are just the terms 0, ..., deg(<i>a</i>(<i>x</i>)) + deg(<i>b</i>(<i>x</i>)) of the coefficient vector</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/b/3/0/b3059da02ed44fbfd5e8fed1f74f19ba.png" alt="\mathbf{c} = \mathcal{F}^{-1}(\mathcal{F}(\mathbf{a})\mathcal{F}(\mathbf{b}))" /></dd>
+</dl>
+<p>With a <a href="/wiki/Fast_Fourier_transform.html" title="Fast Fourier transform">Fast Fourier transform</a>, the resulting algorithm takes O(<i>N</i> log <i>N</i>) arithmetic operations. Due to its simplicity and speed, the <a href="/wiki/Cooley-Tukey_FFT_algorithm.html" title="Cooley-Tukey FFT algorithm">Cooley-Tukey FFT algorithm</a>, which is limited to <a href="/wiki/Composite_number.html" title="Composite number">composite</a> sizes, is often chosen for the transform operation. In this case, <i>d</i> should be chosen as the smallest integer greater than the sum of the input polynomial degrees that is factorizable into small prime factors (e.g. 2, 3, and 5, depending upon the FFT implementation).</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Some discrete Fourier transform pairs">edit</a>]</div>
+<p><a name="Some_discrete_Fourier_transform_pairs" id="Some_discrete_Fourier_transform_pairs"></a></p>
+<h2>Some discrete Fourier transform pairs</h2>
+<table border="1" cellpadding="5" cellspacing="0" align="center">
+<caption><b>Some DFT pairs</b></caption>
+<tr>
+<td align="center"><img class='tex' src="http://upload.wikimedia.org/math/9/4/f/94fca2022124f7b1ccc170f24b748c4b.png" alt="x_n\equiv\frac{1}{N}\sum_{k=0}^{N-1}X_k \cdot e^{i 2 \pi kn/N}" /></td>
+<td align="center"><img class='tex' src="http://upload.wikimedia.org/math/c/e/1/ce191b2cc6550ec6350bbb683fc43ca4.png" alt="X_k\equiv\sum_{n=0}^{N-1}x_n \cdot e^{-i 2 \pi kn/N}" /></td>
+<th>Note</th>
+</tr>
+<tr>
+<td align="center"><img class='tex' src="http://upload.wikimedia.org/math/e/0/d/e0d74f4131bb4d64e2180795aa770219.png" alt="x_n \cdot e^{i 2 \pi kn/N} \," /></td>
+<td align="center"><img class='tex' src="http://upload.wikimedia.org/math/0/0/4/0047cdbaa90b540d5437f85baf9c8fb4.png" alt="X_{n-k}\," /></td>
+<td rowspan="2">Shift theorem</td>
+</tr>
+<tr>
+<td align="center"><img class='tex' src="http://upload.wikimedia.org/math/b/7/1/b7195a528b1cc9552fa91f99b357fb7f.png" alt="x_{n-k}\," /></td>
+<td align="center"><img class='tex' src="http://upload.wikimedia.org/math/b/f/8/bf89c86ec549d1bc364f8ca2b0236699.png" alt="X_k \cdot e^{-i 2 \pi kn/N}" /></td>
+</tr>
+<tr>
+<td align="center"><img class='tex' src="http://upload.wikimedia.org/math/0/2/2/0224003d05df49223869dd44af863401.png" alt="x_n \in \mathbf{R}" /></td>
+<td align="center"><img class='tex' src="http://upload.wikimedia.org/math/7/5/a/75a86c6592145ce92019991c5f15236d.png" alt="X_k=X_{N-k}^*\," /></td>
+<td>Real DFT</td>
+</tr>
+<tr>
+<td align="center"><img class='tex' src="http://upload.wikimedia.org/math/f/5/0/f50590408bacac3299b75d00b664d327.png" alt="a^n\," /></td>
+<td align="center"><img class='tex' src="http://upload.wikimedia.org/math/f/2/e/f2e0d2d7f5c93b38148eaa97faa33074.png" alt="\frac{1-a^N}{1-a \cdot e^{-i 2 \pi k/N} }" /></td>
+<td>&#160;</td>
+</tr>
+<tr>
+<td align="center"><img class='tex' src="http://upload.wikimedia.org/math/d/3/5/d3519bd553f721090ccdb1967fa43fc2.png" alt="{N-1 \choose n}\," /></td>
+<td align="center"><img class='tex' src="http://upload.wikimedia.org/math/3/c/e/3cecb004dc65d213393c7a53365d6439.png" alt="\left(1+e^{-i 2 \pi k/N} \right)^{N-1}\," /></td>
+<td>&#160;</td>
+</tr>
+</table>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<p><a href="/wiki/A_derivation_of_the_discrete_Fourier_transform.html" title="A derivation of the discrete Fourier transform">Derivation of the discrete Fourier transform</a> The DFT can be derived as the <a href="/wiki/Continuous_Fourier_transform.html" title="Continuous Fourier transform">continuous Fourier transform</a> of infinite periodic sequences of <a href="/wiki/Dirac_delta_function.html" title="Dirac delta function">impulses</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<ul>
+<li><cite class="book" style="font-style:normal" id="Reference-Brigham-1988">Brigham, E. Oran (1988). <i>The fast Fourier transform and its applications</i>. Englewood Cliffs, N.J.: Prentice Hall. <a  class="internal">ISBN 0-13-307505-2</a>.</cite></li>
+<li><cite class="book" style="font-style:normal"><a href="/wiki/Alan_V_Oppenheim.html" title="Alan V Oppenheim">Oppenheim, Alan V.</a>; <a href="/wiki/Ronald_W_Schafer.html" title="Ronald W Schafer">Schafer, R. W.</a>; and Buck, J. R. (1999). <i>Discrete-time signal processing</i>. Upper Saddle River, N.J.: Prentice Hall. <a  class="internal">ISBN 0-13-754920-2</a>.</cite></li>
+<li><cite class="book" style="font-style:normal" id="Reference-Smith-1997">Smith, Steven W. (1997). <i><a  class="external text" title="http://www.dspguide.com/pdfbook.htm">The Scientist and Engineer's Guide to Digital Signal Processing</a></i>. San Diego, Calif.: California Technical Publishing. <a  class="internal">ISBN 0-9660176-3-3</a>.</cite></li>
+<li><cite class="book" style="font-style:normal" id="Reference-Cormen-2001"><a href="/wiki/Thomas_H._Cormen.html" title="Thomas H. Cormen">Cormen, Thomas H.</a>; <a href="/wiki/Charles_E._Leiserson.html" title="Charles E. Leiserson">Charles E. Leiserson</a>, <a href="/wiki/Ronald_L._Rivest.html" title="Ronald L. Rivest">Ronald L. Rivest</a>, and <a href="/wiki/Clifford_Stein.html" title="Clifford Stein">Clifford Stein</a> (2001). “Chapter 30: Polynomials and the FFT”, <i><a href="/wiki/Introduction_to_Algorithms.html" title="Introduction to Algorithms">Introduction to Algorithms</a></i>, Second Edition, MIT Press and McGraw-Hill, pp.822–848. <a  class="internal">ISBN 0-262-03293-7</a>.</cite> esp. section 30.2: The DFT and FFT, pp.830–838.</li>
+<li><cite style="font-style:normal">P. Duhamel, B. Piron, and J. M. Etcheto (1988). "On computing the inverse DFT". <i>IEEE Trans. Acoust., Speech and Sig. Processing</i> <b>36</b> (2): 285–286.</cite></li>
+<li><cite style="font-style:normal">J. H. McClellan and T. W. Parks (1972). "Eigenvalues and eigenvectors of the discrete Fourier transformation". <i>IEEE Trans. Audio Electroacoust.</i> <b>20</b> (1): 66-74.</cite></li>
+<li><cite style="font-style:normal">Bradley W. Dickinson and Kenneth Steiglitz (1982). "Eigenvectors and functions of the discrete Fourier transform". <i>IEEE Trans. Acoust., Speech and Sig. Processing</i> <b>30</b> (1): 25-31.</cite></li>
+<li><cite style="font-style:normal">F. A. Grünbaum (1982). "The eigenvectors of the discrete Fourier transform". <i>J. Math. Anal. Appl.</i> <b>88</b> (2): 355-363.</cite></li>
+<li><cite style="font-style:normal">Natig M. Atakishiyev and Kurt Bernardo Wolf (1997). "Fractional Fourier-Kravchuk transform". <i>J. Opt. Soc. Am. A</i> <b>14</b> (7): 1467-1477.</cite></li>
+<li><cite style="font-style:normal">Magdy Tawfik Hanna, Nabila Philip Attalla Seif, and Waleed Abd El Maguid Ahmed (2004). "Hermite-Gaussian-like eigenvectors of the discrete Fourier transform matrix based on the singular-value decomposition of its orthogonal projection matrices". <i>IEEE Trans. Circ. Syst. I</i> <b>51</b> (11): 2245-2254.</cite></li>
+<li><cite style="font-style:normal">Juan G. Vargas-Rubio and Balu Santhanam (2005). "On the multiangle centered discrete fractional Fourier transform". <i>IEEE Sig. Proc. Lett.</i> <b>12</b> (4): 273-276.</cite></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://ccrma.stanford.edu/~jos/mdft/mdft.html">Mathematics of the Discrete Fourier Transform by Julius O. Smith III</a></li>
+</ul>
+
+<!-- 
+Pre-expand include size: 26961 bytes
+Post-expand include size: 8756 bytes
+Template argument size: 7821 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:8811-0!1!0!default!!en!2 and timestamp 20060910145114 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Fourier analysis">Fourier analysis</a></span> | <span dir='ltr'><a  title="Category:Digital signal processing">Digital signal processing</a></span> | <span dir='ltr'><a  title="Category:Numerical analysis">Numerical analysis</a></span> | <span dir='ltr'><a  title="Category:Transforms">Transforms</a></span> | <span dir='ltr'><a  title="Category:Unitary operators">Unitary operators</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Discrete_Fourier_transform.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-ar"><a >العربية</a></li>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-nl"><a >Nederlands</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-sr"><a >Српски / Srpski</a></li>
+				<li class="interwiki-zh"><a >中文</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 15:51, 31 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv69 in 0.071 secs. --></body></html>

@@ -1,0 +1,341 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="PL/0,C. A. R. Hoare,Communicating sequential processes,Compiler,Educational programming language,Extended Backus-Naur form,General-purpose programming language,Modula2,Niklaus Wirth,P-code machine,PL/I" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>PL/0 - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "PL/0";
+			var wgTitle = "PL/0";
+			var wgArticleId = 507221;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">PL/0</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>There are at least two programming languages known as <b>PL/0</b>. One is a subset of IBM's <a href="/wiki/General-purpose_programming_language.html" title="General-purpose programming language">general purpose</a> <a href="/wiki/Programming_language.html" title="Programming language">programming language</a> <a href="/wiki/PL/I.html" title="PL/I">PL/I</a>.</p>
+<p>The other <b>PL/0</b> is a simplified version of the general-purpose programming language <a href="/wiki/Pascal_programming_language.html" title="Pascal programming language">Pascal</a>, intended as an <a href="/wiki/Educational_programming_language.html" title="Educational programming language">educational programming language</a>. It serves as an example of how to construct a <a href="/wiki/Compiler.html" title="Compiler">compiler</a>. It was originally introduced in the book, <i>Algorithms + Data Structures = Programs</i>, by <a href="/wiki/Niklaus_Wirth.html" title="Niklaus Wirth">Niklaus Wirth</a> in 1975. It features quite limited language constructs: there are no real numbers, very few basic arithmetic operations and no control-flow constructs other than "if" and "while" blocks. While these limitations makes writing real applications in this language impractical, it helps the compiler remain compact and simple.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Grammar</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Compiler construction</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Examples</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Oberon-0</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">Notes</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">8</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Grammar">edit</a>]</div>
+<p><a name="Grammar" id="Grammar"></a></p>
+<h2>Grammar</h2>
+<p>The following is the syntax rules of the model language defined in <a href="/wiki/Extended_Backus-Naur_form.html" title="Extended Backus-Naur form">EBNF</a>:</p>
+<pre>
+program = block "." .
+
+block = [ "const" ident "=" number {"," ident "=" number} ";"]
+        [ "var" ident {"," ident} ";"]
+        { "procedure" ident ";" block ";" } statement .
+statement = [ ident ":=" expression | "call" ident |
+            "begin" statement {";" statement } "end" |
+            "if" condition "then" statement |
+            "while" condition "do" statement ].
+condition = "odd" expression |
+            expression ("="|"#"|"&lt;"|"&lt;="|"&gt;"|"&gt;=") expression .
+expression = [ "+"|"-"] term { ("+"|"-") term}.
+term = factor {("*"|"/") factor}.
+factor = ident | number | "(" expression ")".
+</pre>
+<p>It is rather easy for students to write a <a href="/wiki/Recursive_descent_parser.html" title="Recursive descent parser">recursive descent parser</a> for such a simple syntax. Therefore, the PL/0 compiler is still widely used in courses on compiler construction throughout the world. Due to the lack of features in the original specification, students usually spend most of their time with extending the language and their compiler. They usually start with introducing <tt>REPEAT .. UNTIL</tt> and continue with more advanced features like parameter passing to procedures or data structures like arrays, strings or floating point numbers.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Compiler construction">edit</a>]</div>
+<p><a name="Compiler_construction" id="Compiler_construction"></a></p>
+<h2>Compiler construction</h2>
+<p>In December 1976, Wirth wrote a small booklet about compiler construction, containing the full source code of the PL/0 compiler. The syntax rules above were taken from this first edition of Wirth's book Compilerbau.<sup id="_ref-0" class="reference"><a  title="">[1]</a></sup>. In later editions of this book (under the influence of his ongoing research) Wirth changed the syntax of PL/0. He changed the spelling of keywords like <tt>const</tt> and <tt>procedure</tt> to uppercase. This change made PL/0 resemble <a href="/wiki/Modula2.html" title="Modula2">Modula2</a> more closely. At the same time, Wirth's friend and collaborator <a href="/wiki/C._A._R._Hoare.html" title="C. A. R. Hoare">C. A. R. Hoare</a> was working on his influential <a href="/wiki/Communicating_sequential_processes.html" title="Communicating sequential processes">communicating sequential processes</a> concept, which used the exclamation mark <i>!</i> and the question mark <i>?</i> to denote communication primitives. Wirth added both symbols to the PL/0 language, but he did not mention their semantics in the book.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Examples">edit</a>]</div>
+<p><a name="Examples" id="Examples"></a></p>
+<h2>Examples</h2>
+<p>The following example is taken from such an extended language called PL/0E.<sup id="_ref-1" class="reference"><a  title="">[2]</a></sup></p>
+<pre>
+VAR x, squ;
+
+PROCEDURE square;
+BEGIN
+   squ := x * x
+END;
+
+BEGIN
+   x := 1;
+   WHILE x &lt;= 10 DO
+   BEGIN
+      CALL square;
+      ! squ;
+      x := x + 1;
+   END
+END.
+</pre>
+<p>This program outputs the squares of numbers from 1 to 10. Most courses in compiler construction today have replaced the exclamation mark with the <tt>WriteLn</tt> procedure.</p>
+<p>The following example was taken from the second edition of Wirth's book Compilerbau,<sup id="_ref-2" class="reference"><a  title="">[3]</a></sup> which appeared in 1986 in Germany.</p>
+<pre>
+CONST
+  m =  7,
+  n = 85;
+
+VAR
+  x, y, z, q, r;
+
+PROCEDURE multiply;
+VAR a, b;
+
+BEGIN
+  a := x;
+  b := y;
+  z := 0;
+  WHILE b &gt; 0 DO BEGIN
+    IF ODD b THEN z := z + a;
+    a := 2 * a;
+    b := b / 2;
+  END
+END;
+
+PROCEDURE divide;
+VAR w;
+BEGIN
+  r := x;
+  q := 0;
+  w := y;
+  WHILE w &lt;= r DO w := 2 * w;
+  WHILE w &gt; y DO BEGIN
+    q := 2 * q;
+    w := w / 2;
+    IF w &lt;= r THEN BEGIN
+      r := r - w;
+      q := q + 1
+    END
+  END
+END;
+
+PROCEDURE gcd;
+VAR f, g;
+BEGIN
+  f := x;
+  g := y;
+  WHILE f # g DO BEGIN
+    IF f &lt; g THEN g := g - f;
+    IF g &lt; f THEN f := f - g;
+  END;
+  z := f
+END;
+
+BEGIN
+  x := m;
+  y := n;
+  CALL multiply;
+  x := 25;
+  y :=  3;
+  CALL divide;
+  x := 84;
+  y := 36;
+  CALL gcd;
+END.
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Oberon-0">edit</a>]</div>
+<p><a name="Oberon-0" id="Oberon-0"></a></p>
+<h2>Oberon-0</h2>
+<p>In the third and last edition of his book on compiler construction, Wirth has replaced PL/0 with Oberon-0. The compiler is still presented in entirety, although the language Oberon-0 is much more complete than PL/0. For example. Oberon-0 offers arrays, records, type declarations and procedure parameters. The publisher of Wirth's books (Addison-Wesley) has decided to phase out all his books, but Wirth has revised the third edition of his book in 2005 and the result is now available online.<sup id="_ref-3" class="reference"><a  title="">[4]</a></sup></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Compiler.html" title="Compiler">Compiler</a></li>
+<li><a href="/wiki/Pascal.html" title="Pascal">Pascal</a></li>
+<li><a href="/wiki/Recursive_descent_parser.html" title="Recursive descent parser">Recursive descent parser</a></li>
+<li><a href="/wiki/P-code_machine.html" title="P-code machine">P-code machine</a></li>
+<li><a href="/wiki/Niklaus_Wirth.html" title="Niklaus Wirth">Niklaus Wirth</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Notes">edit</a>]</div>
+<p><a name="Notes" id="Notes"></a></p>
+<h2>Notes</h2>
+<ol class="references">
+<li id="_note-0"><b><a  title="">^</a></b> Wirth, 1986</li>
+<li id="_note-1"><b><a  title="">^</a></b> <a  class="external text" title="http://www.ntecs.de/old-hp/uu9r/lang/html/pl0.en.html">PL/0E</a></li>
+<li id="_note-2"><b><a  title="">^</a></b> Wirth, 1986</li>
+<li id="_note-3"><b><a  title="">^</a></b> The <a  class="external text" title="http://www.oberon.ethz.ch/WirthPubl/CBEAll.pdf">revised third edition</a> (2005) of <i>Compiler Construction</i>, Niklaus Wirth, 1996, <a  class="internal">ISBN 0-201-40353-6</a> has never seen the printing press, but it is available online.</li>
+</ol>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<div class="references-small">
+<ul>
+<li>Liffick, Blaise W., Ed (1979), <i>The Byte Book of Pascal</i>, <a  class="internal">ISBN 0-07-037823-1</a></li>
+<li>Wirth, Niklaus (1975), <i>Algorithms + Data Structures = Programs</i>, <a  class="internal">ISBN 0-13-022418-9</a></li>
+<li>Wirth, Niklaus (1986), <i>Compilerbau</i>, B.G. Teubner, Stuttgart <a  class="internal">ISBN 3-519-32338-9</a></li>
+</ul>
+</div>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li>The <a  class="external text" title="http://www.246.dk/pl0.html">compiler</a> from the first edition of the <i>Compilerbau</i> book, written in <a href="/wiki/Pascal_programming_language.html" title="Pascal programming language">Pascal</a></li>
+<li>A paper explaining the use of <a  class="external text" title="http://www.cs.rochester.edu/courses/254/PLzero/guide.pdf">PL/0 at the University of Rochester</a></li>
+<li>Course notes from <a  class="external text" title="http://www.cosc.canterbury.ac.nz/~tad/cosc230/index.html">CS Dept., Univ. of Canterbury, Christchurch, New Zealand</a> containing compilers written in C, Pascal and Java</li>
+<li>Course notes from <a  class="external text" title="http://www.cs.appstate.edu/~blk/cs3490/pl0/">Appalachian State University</a> explaining the addition of arrays, value parameters and functions to PL/0</li>
+<li>The homepage of the PL/0 reference book, "Algorithms + Data Structures = Programs" <a  class="external autonumber" title="http://www.cs.inf.ethz.ch/~wirth/books/AlgorithmE0/">[1]</a></li>
+</ul>
+
+<!-- 
+Pre-expand include size: 1962 bytes
+Post-expand include size: 92 bytes
+Template argument size: 8 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:507221-0!1!0!default!!en!2 and timestamp 20060906042800 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:PL/I programming language family">PL/I programming language family</a></span> | <span dir='ltr'><a  title="Category:Imperative programming languages">Imperative programming languages</a></span> | <span dir='ltr'><a  title="Category:Structured programming languages">Structured programming languages</a></span> | <span dir='ltr'><a  title="Category:Procedural programming languages">Procedural programming languages</a></span> | <span dir='ltr'><a  title="Category:Educational programming languages">Educational programming languages</a></span> | <span dir='ltr'><a  title="Category:Compilers">Compilers</a></span> | <span dir='ltr'><a  title="Category:Programming language implementation">Programming language implementation</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/PL/0.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 19:55, 8 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv63 in 0.504 secs. --></body></html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Self-modifying code,1980s,Assembly language,Brute force,Buffer overflow,Byte-code,CPU cache,C programming language,Clipper programming language,Closure (computer science),Code (computer programming)" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Self-modifying code - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Self-modifying_code";
+			var wgTitle = "Self-modifying code";
+			var wgArticleId = 217647;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Self-modifying code</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>In <a href="/wiki/Computer_science.html" title="Computer science">computer science</a>, <b>self-modifying code</b> is <a href="/wiki/Code_%28computer_programming%29.html" title="Code (computer programming)">code</a> that alters its own <a href="/wiki/Instruction_%28computer_science%29.html" title="Instruction (computer science)">instructions</a>, whether or not it is on purpose, while it is <a href="/wiki/Execution_%28computers%29.html" title="Execution (computers)">executing</a>.</p>
+<p>Self-modifying code is quite straightforward to write when using <a href="/wiki/Assembly_language.html" title="Assembly language">assembly language</a> (taking into account the CPU <a href="/wiki/CPU_cache.html" title="CPU cache">cache</a>). It is also supported by some high level language <a href="/wiki/Interpreter_%28computing%29.html" title="Interpreter (computing)">interpreters</a> such as <a href="/wiki/SNOBOL4.html" title="SNOBOL4">SNOBOL4</a> or the <a href="/wiki/Lisp_programming_language.html" title="Lisp programming language">Lisp programming language</a>. It is more difficult to implement on <a href="/wiki/Compiler.html" title="Compiler">compilers</a> but compilers such as <a href="/wiki/Clipper_programming_language.html" title="Clipper programming language">Clipper</a> and <a href="/wiki/Spitbol.html" title="Spitbol">Spitbol</a> make a fair attempt at it. Batch programming <a href="/wiki/Scripting_language.html" title="Scripting language">scripts</a> often involve self-modifying code as well.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Usage of self-modifying code</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">1.1</span> <span class="toctext">Self-modifying code used to optimize a state-dependent loop</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.2</span> <span class="toctext">Attitudes towards self-modifying code</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.3</span> <span class="toctext">Self-modifying code used as camouflage</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.4</span> <span class="toctext">Operating systems and self-modifying code</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.5</span> <span class="toctext">Just-in-time compilers</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.6</span> <span class="toctext">Interaction of cache and self-modifying code</span></a>
+<ul>
+<li class="toclevel-3"><a ><span class="tocnumber">1.6.1</span> <span class="toctext">Example JavaScript self-modifying code</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">1.6.2</span> <span class="toctext">Example NASM-syntax self-modifying x86-assembly algorithm that determines the size of the Prefetch Input Queue</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.7</span> <span class="toctext">Henry Massalin's Synthesis Kernel</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Usage of self-modifying code">edit</a>]</div>
+<p><a name="Usage_of_self-modifying_code" id="Usage_of_self-modifying_code"></a></p>
+<h2>Usage of self-modifying code</h2>
+<p>Self-modifying code can be used for various purposes:</p>
+<ol>
+<li><a href="/wiki/Optimization_%28computer_science%29.html" title="Optimization (computer science)">Optimization</a> of a state dependent loop.</li>
+<li><a href="/wiki/Runtime.html" title="Runtime">Runtime</a> code generation, or specialization of an algorithm in runtime or loadtime (which is popular, for example, in the domain of real-time graphics).</li>
+<li>Altering of <a href="/wiki/Inline_function.html" title="Inline function">inlined</a> state of an <a href="/wiki/Object_%28computer_science%29.html" title="Object (computer science)">object</a>, or simulating the high level construction of <a href="/wiki/Closure_%28computer_science%29.html" title="Closure (computer science)">closures</a>.</li>
+<li>Patching of <a href="/wiki/Subroutine.html" title="Subroutine">subroutine</a> address calling, as done usually at load time of <a href="/wiki/DLL.html" title="DLL">dynamic libraries</a>. Whether this is regarded as 'self-modifying code' or not is a case of <a href="/wiki/Terminology.html" title="Terminology">terminology</a>.</li>
+<li>Evolutionary computing systems such as <a href="/wiki/Genetic_programming.html" title="Genetic programming">genetic programming</a>.</li>
+<li>Hiding of code to prevent <a href="/wiki/Reverse_engineering.html" title="Reverse engineering">reverse engineering</a>, as through use of a <a href="/wiki/Disassembler.html" title="Disassembler">disassembler</a> or <a href="/wiki/Debugger.html" title="Debugger">debugger</a></li>
+<li>Hiding of code to evade detection by virus/spyware scanning software and the like</li>
+<li><a href="/wiki/Data_compression.html" title="Data compression">Compression</a> of code to be decompressed and executed at runtime, e.g. when memory or disk space is limited.</li>
+<li>Some very limited <a href="/wiki/Instruction_Set.html" title="Instruction Set">instruction sets</a> leave no option but to use self-modifying code to achieve certain functionality. For example, a <a href="/wiki/OISC.html" title="OISC">"One Instruction Set Computer"</a> machine that uses only the subtract-and-branch-if-negative "instruction" cannot do an indirect copy (something like the equivalent of "*a = **b" in the <a href="/wiki/C_programming_language.html" title="C programming language">C programming language</a>) without using self-modifying code.</li>
+</ol>
+<p>The second and third types are probably the kinds mostly used also in high-level languages, such as <a href="/wiki/LISP.html" title="LISP">LISP</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Self-modifying code used to optimize a state-dependent loop">edit</a>]</div>
+<p><a name="Self-modifying_code_used_to_optimize_a_state-dependent_loop" id="Self-modifying_code_used_to_optimize_a_state-dependent_loop"></a></p>
+<h3>Self-modifying code used to optimize a state-dependent loop</h3>
+<p><a href="/wiki/Pseudocode.html" title="Pseudocode">Pseudocode</a> example:</p>
+<pre>
+repeat N times {
+  if STATE is 1
+   increase A by one
+  else
+   decrease A by one
+
+  do something with A
+}
+</pre>
+<p>Self-modifying code in this case would simply be a matter of rewriting the loop like this:</p>
+<pre>
+ repeat N times {
+
+  <i>increase</i> A by one
+  do something with A
+ }
+ 
+ when STATE has to switch {
+    replace the <a href="/wiki/Opcode.html" title="Opcode">opcode</a> "increase" above with the opcode to decrease
+ }
+</pre>
+<p>Note that 2-state replacement of the opcode can be easily written as 'xor var at address with the value "opcodeOf(Inc) xor opcodeOf(dec)".</p>
+<p>Choosing this solution will have to depend of course on the value of 'N' and the frequency of state changing.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Attitudes towards self-modifying code">edit</a>]</div>
+<p><a name="Attitudes_towards_self-modifying_code" id="Attitudes_towards_self-modifying_code"></a></p>
+<h3>Attitudes towards self-modifying code</h3>
+<p>Some claim that use of self-modifying code is not recommended when a viable alternative exists, because such code can be difficult to understand and maintain.</p>
+<p>Others simply view self-modifying code as something one would be doing while editing code (in the above example, replacing a line, or keyword), only done in run-time.</p>
+<p>Self-modifying code was used in the early days of computers in order to save memory space, which was limited. It was also used to implement subroutine calls and returns when the instruction set only provided simple branching or skipping instructions to vary the flow of control (this is still relevant in certain ultra-<a href="/wiki/RISC.html" title="RISC">RISC</a> architectures, at least theoretically, e.g. one such system has a sole branching instruction with three <a href="/wiki/Operand.html" title="Operand">operands</a>: subtract-and-branch-if-negative).</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Self-modifying code used as camouflage">edit</a>]</div>
+<p><a name="Self-modifying_code_used_as_camouflage" id="Self-modifying_code_used_as_camouflage"></a></p>
+<h3>Self-modifying code used as camouflage</h3>
+<p>Self-modifying code was used to hide copy protection instructions in <a href="/wiki/1980s.html" title="1980s">1980s</a> <a href="/wiki/DOS.html" title="DOS">DOS</a> based games. The <a href="/wiki/Floppy_disk.html" title="Floppy disk">floppy disk</a> drive access instruction '<a href="/wiki/Interrupt.html" title="Interrupt">int</a> 0x13' would not appear in the executable program's image but it would be written into the executable's memory image after the program started executing.</p>
+<p>Self-modifying code is also sometimes used by programs that do not want to reveal their presence — such as <a href="/wiki/Computer_virus.html" title="Computer virus">computer viruses</a> and some <a href="/wiki/Shellcode.html" title="Shellcode">shellcodes</a>. Viruses and shellcodes that use self-modifying code mostly do this in combination with <a href="/wiki/Polymorphic_code.html" title="Polymorphic code">polymorphic code</a>. Polymorphic viruses are sometimes called primitive self-mutators. Modifying a piece of running code is also used in certain attacks, such as <a href="/wiki/Buffer_overflow.html" title="Buffer overflow">buffer overflows</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Operating systems and self-modifying code">edit</a>]</div>
+<p><a name="Operating_systems_and_self-modifying_code" id="Operating_systems_and_self-modifying_code"></a></p>
+<h3>Operating systems and self-modifying code</h3>
+<p>Because of the security implications of self-modifying code, some <a href="/wiki/Operating_system.html" title="Operating system">operating systems</a> go to lengths to rule it out. Recent versions of <a href="/wiki/OpenBSD.html" title="OpenBSD">OpenBSD</a>, for instance, have a feature known as <a href="/wiki/W%5EX.html" title="W^X">W^X</a> (for "write <a href="/wiki/Xor.html" title="Xor">xor</a> execute", meaning that, for a given memory page, a program can only write, or execute, <i>but not both</i>). Versions of OpenBSD with W^X do not allow alteration of most memory pages which harbor executable code. Programs which depend upon rewriting their own machine code must use mmap to allocate pages with PROT_EXEC | PROT_WRITE protections.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Just-in-time compilers">edit</a>]</div>
+<p><a name="Just-in-time_compilers" id="Just-in-time_compilers"></a></p>
+<h3>Just-in-time compilers</h3>
+<p><a href="/wiki/Just-in-time_compilation.html" title="Just-in-time compilation">Just in time</a> compilers for <a href="/wiki/Java_programming_language.html" title="Java programming language">Java</a>, <a href="/wiki/Microsoft_.NET.html" title="Microsoft .NET">.NET</a> and other <a href="/wiki/Programming_language.html" title="Programming language">programming languages</a> often compile short blocks of <a href="/wiki/Byte-code.html" title="Byte-code">byte-code</a> or <a href="/wiki/P-Code_machine.html" title="P-Code machine">p-code</a> into machine code suitable for the host processor and then immediately execute them.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Interaction of cache and self-modifying code">edit</a>]</div>
+<p><a name="Interaction_of_cache_and_self-modifying_code" id="Interaction_of_cache_and_self-modifying_code"></a></p>
+<h3>Interaction of cache and self-modifying code</h3>
+<p>In some cases self-modifying code executes more slowly on modern processors. This is because a modern processor will usually try to keep blocks of code in its cache memory. Each time the program rewrites a part of itself, the rewritten part must be loaded into the cache again, which results in a slight delay.</p>
+<p>The cache invalidation issue on modern processors usually means that self-modifying code would still be faster only when the modification will occur rarely, such as in the case of a state switching inside an inner loop. This consideration is not unique to processors with code cache, since on any processor rewriting the code never comes for free.</p>
+<p>Most modern processors load the machine code before they execute it, which means that if an instruction that is too near the <a href="/wiki/Instruction_pointer.html" title="Instruction pointer">instruction pointer</a> is modified, the processor will not notice, but instead execute the code as it was <i>before</i> it was modified. See <a href="/wiki/Prefetch_Input_Queue.html" title="Prefetch Input Queue">Prefetch Input Queue</a> (PIQ). PC processors have to handle self modifying code correctly for backwards compatibility reasons but they are far from efficient at doing so.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Example JavaScript self-modifying code">edit</a>]</div>
+<p><a name="Example_JavaScript_self-modifying_code" id="Example_JavaScript_self-modifying_code"></a></p>
+<h4>Example <a href="/wiki/JavaScript.html" title="JavaScript">JavaScript</a> self-modifying code</h4>
+<pre>
+action = function(x) { return x+1; }
+
+code = function() {
+  for (i=1; i&gt;0 &amp;&amp; i&lt;10; i=action(i)) {
+    if (i==5) {
+      action = function(x) { return x-1; }
+      // if i=5 then modify code
+    }
+    print(i); // defined somewhere else
+  }
+}
+
+code()
+</pre>
+<p>would print: 1 2 3 4 5 4 3 2 1</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Example NASM-syntax self-modifying x86-assembly algorithm that determines the size of the Prefetch Input Queue">edit</a>]</div>
+<p><a name="Example_NASM-syntax_self-modifying_x86-assembly_algorithm_that_determines_the_size_of_the_Prefetch_Input_Queue" id="Example_NASM-syntax_self-modifying_x86-assembly_algorithm_that_determines_the_size_of_the_Prefetch_Input_Queue"></a></p>
+<h4>Example <a href="/wiki/NASM_%28computer_program%29.html" title="NASM (computer program)">NASM</a>-<a href="/wiki/Syntax.html" title="Syntax">syntax</a> self-modifying <a href="/wiki/X86.html" title="X86">x86</a>-assembly algorithm that determines the size of the <a href="/wiki/Prefetch_Input_Queue.html" title="Prefetch Input Queue">Prefetch Input Queue</a></h4>
+<pre>
+ code_starts_here:
+   xor cx, cx                  ; zero register cx
+   xor ax, ax                  ; zero register ax
+ 
+around:
+   cmp ax, 1                   ; check if ax has been altered
+   je found_size
+
+   mov [nop_field+cx], 0x90    ; 0x90 = opcode "nop" (No OPeration)
+   inc cx
+
+   jmp short flush_queue
+flush_queue:
+
+   mov [nop_field+cx], 0x40    ; 0x40 = opcode "inc ax" (INCrease ax)
+
+nop_field:
+   nop times 256
+   jmp around
+found_size:
+
+   ;    register cx now contains the size of the PIQ
+</pre>
+<p>What this code essentially does is change the execution flow, and determine by <a href="/wiki/Brute_force.html" title="Brute force">brute force</a> how large the PIQ is. "How far away do I have to change the code in front of me for it to affect me?" If it is too near (it is already in the PIQ) the update will not have any effect. If it is far enough, the change of the code will affect the program and the program has then found the size of the processor's PIQ. If this code is being executed in protected mode, the operating system must not make any <a href="/wiki/Context_switch.html" title="Context switch">context switch</a>, or else this program may return the wrong value.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Henry Massalin's Synthesis Kernel">edit</a>]</div>
+<p><a name="Henry_Massalin.27s_Synthesis_Kernel" id="Henry_Massalin.27s_Synthesis_Kernel"></a></p>
+<h3>Henry Massalin's Synthesis Kernel</h3>
+<p>The Synthesis <a href="/wiki/Kernel_%28computer_science%29.html" title="Kernel (computer science)">kernel</a> written by Dr. <a  class="new" title="Henry Massalin">Henry Massalin</a> as his PhD. thesis is commonly viewed to be the "mother of all self-modifying code." Massalin's tiny <a href="/wiki/Unix.html" title="Unix">Unix</a> kernel takes a <a href="/wiki/Structured_programming.html" title="Structured programming">structured</a>, or even <a href="/wiki/Object-oriented_programming.html" title="Object-oriented programming">object oriented</a>, approach to self-modifying code, where code is created for individual objects, like filehandles, and such code may be reoptimized later.</p>
+<p>The Synthesis kernel is blindingly fast, but was written entirely in assembler. The resulting lack of portability has prevented Massalin's optimization ideas from being adopted by any production kernel. However, the structure of the techniques suggests that they could be captured by a higher level <a href="/wiki/Programming_language.html" title="Programming language">language</a>, albeit one more complex than existing mid-level languages. Such a language and compiler could allow development of extremely fast operating systems and applications.</p>
+<p>Paul Haeberli and Bruce Karsh have objected to the "marginalization" of self-modifying code, and optimization in general, in favor of reduced development costs; drawing a parallel to the "heavy religious atmosphere" which the <a href="/wiki/Futurism_%28art%29.html" title="Futurism (art)">Italian Futurist</a> movement rebelled against.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Reflection_%28computer_science%29.html" title="Reflection (computer science)">Reflection (computer science)</a></li>
+<li><a href="/wiki/Self-replication.html" title="Self-replication">Self-replication</a></li>
+<li><a href="/wiki/Quine.html" title="Quine">Quine</a></li>
+<li><a href="/wiki/Quaject.html" title="Quaject">Quaject</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://asm.sourceforge.net/articles/smc.html">Using self modifying code under Linux</a></li>
+<li><a  class="external text" title="http://public.carnet.hr/~jbrecak/sm.html">self modifying C code</a></li>
+<li><a  class="external text" title="http://thayer.b2si.com/library/synthesis-cucs-039-92.ps">"Synthesis: An Efficient Implementation of Fundamental Operating System Services"</a> -Henry Massalin's PhD thesis on the Synthesis kernel</li>
+<li><a  class="external text" title="http://www.sgi.com/misc/grafica/future/">Futurist Programming</a> -Page has been removed, but you can check for new location.</li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:217647-0!1!0!default!!en!2 and timestamp 20060909130559 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:Programming paradigms">Programming paradigms</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Self-modifying_code.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 12:23, 9 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv22 in 0.072 secs. --></body></html>

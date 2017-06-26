@@ -1,0 +1,419 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Matrix (mathematics),Determinant,Leibniz formula (determinant),Associative algebra,Strassen algorithm,Semiring,Field (mathematics),Polynomial ring,Linear equations,Magic square,Latin square" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Matrix (mathematics) - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Matrix_(mathematics)";
+			var wgTitle = "Matrix (mathematics)";
+			var wgArticleId = 124914;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Matrix (mathematics)</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub">(Redirected from <a  title="Matrix (math)">Matrix (math)</a>)</div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<dl>
+<dd><i>For the</i> <b>square matrix</b> <i>section, see</i> <a href="/wiki/Matrix_%28mathematics%29#Square_matrices_and_related_definitions.html" title="Matrix (mathematics)">square matrix</a>.</dd>
+</dl>
+<p>In <a href="/wiki/Mathematics.html" title="Mathematics">mathematics</a>, a <b>matrix</b> (plural <b>matrices</b>) is a rectangular table of <a href="/wiki/Number.html" title="Number">numbers</a> or, more generally, a table consisting of <a href="/wiki/Ring_%28mathematics%29.html" title="Ring (mathematics)">abstract quantities that can be added and multiplied</a>. Matrices are used to describe <a href="/wiki/System_of_linear_equations.html" title="System of linear equations">linear equations</a>, keep track of the <a href="/wiki/Coefficient.html" title="Coefficient">coefficients</a> of <a href="/wiki/Linear_transformation.html" title="Linear transformation">linear transformations</a> and to record data that depend on two parameters. Matrices can be added, multiplied, and decomposed in various ways, marking them as a key concept in <a href="/wiki/Linear_algebra.html" title="Linear algebra">linear algebra</a> and <a href="/wiki/Matrix_theory.html" title="Matrix theory">matrix theory</a>.</p>
+<p>In this article, the entries of a matrix are <a href="/wiki/Real_number.html" title="Real number">real</a> or <a href="/wiki/Complex_number.html" title="Complex number">complex</a> numbers unless otherwise noted.</p>
+<div class="thumb tright">
+<div style="width:245px;"><a  class="internal" title="Organization of a matrix"><img src="http://upload.wikimedia.org/wikipedia/commons/8/84/Matrix.png" alt="Organization of a matrix" width="243" height="220" longdesc="/wiki/Image:Matrix.png" /></a>
+<div class="thumbcaption">
+<div class="magnify" style="float:right"><a  class="internal" title="Enlarge"><img src="/skins-1.5/common/images/magnify-clip.png" width="15" height="11" alt="Enlarge" /></a></div>
+Organization of a matrix</div>
+</div>
+</div>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Definitions and notations</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Example</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Adding and multiplying matrices</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">3.1</span> <span class="toctext">Sum</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.2</span> <span class="toctext">Scalar multiplication</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.3</span> <span class="toctext">Matrix multiplication</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Linear transformations, ranks and transpose</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Square matrices and related definitions</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">Special types of matrices</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">Matrices in abstract algebra</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">8</span> <span class="toctext">History</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">9</span> <span class="toctext">Further reading</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">10</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">11</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Definitions and notations">edit</a>]</div>
+<p><a name="Definitions_and_notations" id="Definitions_and_notations"></a></p>
+<h2>Definitions and notations</h2>
+<p>The horizontal lines in a matrix are called <b>rows</b> and the vertical lines are called <b>columns</b>. A matrix with <i>m</i> rows and <i>n</i> columns is called an <i>m</i>-by-<i>n</i> matrix (written <i>m</i>×<i>n</i>) and <i>m</i> and <i>n</i> are called its <b>dimensions</b>. The dimensions of a matrix are always given with the number of rows first, then the number of columns.</p>
+<p>The entry of a matrix <i>A</i> that lies in the <i>i</i> -th row and the <i>j</i>-th column is called the <i>i,j</i> entry or (<i>i</i>,<i>j</i>)-th entry of <i>A</i>. This is written as <i>A</i><sub>i,j</sub> or <i>A</i>[<i>i,j</i>].</p>
+<p>We often write <img class='tex' src="http://upload.wikimedia.org/math/c/e/b/cebc92fd9e524ce466def32d17daecce.png" alt="A:=(a_{i,j})_{m \times n}" /> to define an <i>m</i> × <i>n</i> matrix <i>A</i> with each entry in the matrix <i>A</i>[<i>i,j</i>] called <i>a</i><sub><i>ij</i></sub> for all 1 ≤ <i>i</i> ≤ <i>m</i> and 1 ≤ <i>j</i> ≤ <i>n</i>. However, the convention that the indices <i>i</i> and <i>j</i> start at 1 is not universal: some programming languages start at zero, in which case we have 0 ≤ <i>i</i> ≤ <i>m</i> − 1 and 0 ≤ <i>j</i> ≤ <i>n</i> − 1.</p>
+<p>A matrix where one of the dimensions equals one is often called a <i>vector</i>, and interpreted as an element of <a href="/wiki/Real_coordinate_space.html" title="Real coordinate space">real coordinate space</a>. A 1 × <i>n</i> matrix (one row and <i>n</i> columns) is called a <a href="/wiki/Row_vector.html" title="Row vector">row vector</a>, and an <i>m</i> × 1 matrix (one column and <i>m</i> rows) is called a <a href="/wiki/Column_vector.html" title="Column vector">column vector</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Example">edit</a>]</div>
+<p><a name="Example" id="Example"></a></p>
+<h2>Example</h2>
+<p>The matrix</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/d/2/5/d25cb26b9c61b65bd7537601318a61a1.png" alt="A = \begin{bmatrix} 1 &amp; 2 &amp; 3 \\ 1 &amp; 2 &amp; 7 \\ 4&amp;9&amp;2 \\ 6&amp;0&amp;5\end{bmatrix}" /></dd>
+</dl>
+<p>is a 4×3 matrix. The element <i>A</i>[2,3] or <i>a</i><sub>2,3</sub> is 7.</p>
+<p>The matrix</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/3/d/7/3d7521eb3f0c2f402eaf37c5aed862d4.png" alt="R = \begin{bmatrix} 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 6 &amp; 7 &amp; 8 &amp; 9 \end{bmatrix}" /></dd>
+</dl>
+<p>is a 1×9 matrix, or 9-element row vector.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Adding and multiplying matrices">edit</a>]</div>
+<p><a name="Adding_and_multiplying_matrices" id="Adding_and_multiplying_matrices"></a></p>
+<h2>Adding and multiplying matrices</h2>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Sum">edit</a>]</div>
+<p><a name="Sum" id="Sum"></a></p>
+<h3>Sum</h3>
+<dl>
+<dd>
+<div class="noprint"><i>Main article: <a href="/wiki/Matrix_addition.html" title="Matrix addition">Matrix addition</a></i></div>
+</dd>
+</dl>
+<p>Given <i>m</i>-by-<i>n</i> matrices <i>A</i> and <i>B</i>, their <b>sum</b> <i>A + B</i> is the <i>m</i>-by-<i>n</i> matrix computed by adding corresponding elements (i.e. (<i>A + B</i>)[<i>i, j</i>] = <i>A</i>[<i>i, j</i>] + <i>B</i>[<i>i,&#160;j</i>] ). For example:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/0/d/3/0d324a0fb59ef3783a780b91e9f6d274.png" alt="\begin{bmatrix}     1 &amp; 3 &amp; 2 \\     1 &amp; 0 &amp; 0 \\     1 &amp; 2 &amp; 2   \end{bmatrix} +   \begin{bmatrix}     0 &amp; 0 &amp; 5 \\     7 &amp; 5 &amp; 0 \\     2 &amp; 1 &amp; 1   \end{bmatrix} =   \begin{bmatrix}     1+0 &amp; 3+0 &amp; 2+5 \\     1+7 &amp; 0+5 &amp; 0+0 \\     1+2 &amp; 2+1 &amp; 2+1   \end{bmatrix} =   \begin{bmatrix}     1 &amp; 3 &amp; 7 \\     8 &amp; 5 &amp; 0 \\     3 &amp; 3 &amp; 3   \end{bmatrix}" /></dd>
+</dl>
+<p>Another, much less often used notion of matrix addition is the <a href="/wiki/Direct_sum_%28matrix%29.html" title="Direct sum (matrix)">direct sum</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Scalar multiplication">edit</a>]</div>
+<p><a name="Scalar_multiplication" id="Scalar_multiplication"></a></p>
+<h3>Scalar multiplication</h3>
+<dl>
+<dd>
+<div class="noprint"><i>Main article: <a href="/wiki/Matrix_multiplication.html" title="Matrix multiplication">Matrix multiplication</a></i></div>
+</dd>
+</dl>
+<p>Given a matrix <i>A</i> and a number <i>c</i>, the <b><a href="/wiki/Scalar_multiplication.html" title="Scalar multiplication">scalar multiplication</a></b> <i>cA</i> is computed by multiplying the <a href="/wiki/Scalar_%28mathematics%29.html" title="Scalar (mathematics)">scalar</a> <i>c</i> by every element of <i>A</i> (i.e. (<i>cA</i>)[<i>i</i>, <i>j</i>] = <i>cA</i>[<i>i</i>, <i>j</i>] ). For example:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/8/9/5/8951d4762a38dcb7a372bb6a5ee0d623.png" alt="2   \begin{bmatrix}     1 &amp; 8 &amp; -3 \\     4 &amp; -2 &amp; 5   \end{bmatrix} =   \begin{bmatrix}     2\times 1 &amp; 2\times 8 &amp; 2\times -3 \\     2\times 4 &amp; 2\times -2 &amp; 2\times 5   \end{bmatrix} =   \begin{bmatrix}     2 &amp; 16 &amp; -6 \\     8 &amp; -4 &amp; 10   \end{bmatrix}" /></dd>
+</dl>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Matrix multiplication">edit</a>]</div>
+<p><a name="Matrix_multiplication" id="Matrix_multiplication"></a></p>
+<h3>Matrix multiplication</h3>
+<dl>
+<dd>
+<div class="noprint"><i>Main article: <a href="/wiki/Matrix_multiplication.html" title="Matrix multiplication">Matrix multiplication</a></i></div>
+</dd>
+</dl>
+<p><b>Multiplication</b> of two matrices is well-defined only if the number of columns of the left matrix is the same as the number of rows of the right matrix. If <i>A</i> is an <i>m</i>-by-<i>n</i> matrix and <i>B</i> is an <i>n</i>-by-<i>p</i> matrix, then their <b>matrix product</b> <i>AB</i> is the <i>m</i>-by-<i>p</i> matrix (<i>m</i> rows, <i>p</i> columns) given by:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/3/6/8/3685038eaea4a600957beea930ad474c.png" alt="(AB)[i,j] = A[i,1]  B[1,j] + A[i,2]  B[2,j] + ... + A[i,n]  B[n,j] \!\" /></dd>
+</dl>
+<p>for each pair <i>i</i> and <i>j</i>.</p>
+<p>For example:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/e/0/7/e072560f558bc14c45270fbb09b891c1.png" alt="\begin{bmatrix}     1 &amp; 0 &amp; 2 \\     -1 &amp; 3 &amp; 1 \\   \end{bmatrix} \times   \begin{bmatrix}     3 &amp; 1 \\     2 &amp; 1 \\     1 &amp; 0   \end{bmatrix} =   \begin{bmatrix}      (1 \times 3  +  0 \times 2  +  2 \times 1) &amp; (1 \times 1   +   0 \times 1   +   2 \times 0) \\     (-1 \times 3  +  3 \times 2  +  1 \times 1) &amp; (-1 \times 1   +   3 \times 1   +   1 \times 0) \\   \end{bmatrix} =   \begin{bmatrix}     5 &amp; 1 \\     4 &amp; 2 \\   \end{bmatrix}" /></dd>
+</dl>
+<p>These two operations turn the set M(<i>m</i>, <i>n</i>, <b>R</b>) of all <i>m</i>-by-<i>n</i> matrices with real entries into a real <a href="/wiki/Vector_space.html" title="Vector space">vector space</a> of dimension <i>mn</i>.</p>
+<p>Matrix multiplication has the following properties:</p>
+<ul>
+<li>(<i>AB</i>)<i>C</i> = <i>A</i>(<i>BC</i>) for all <i>k</i>-by-<i>m</i> matrices <i>A</i>, <i>m</i>-by-<i>n</i> matrices <i>B</i> and <i>n</i>-by-<i>p</i> matrices <i>C</i> ("associativity").</li>
+<li>(<i>A + B</i>)<i>C</i> = <i>AC</i> + <i>BC</i> for all <i>m</i>-by-<i>n</i> matrices <i>A</i> and <i>B</i> and <i>n</i>-by-<i>k</i> matrices <i>C</i> ("right distributivity").</li>
+<li><i>C</i>(<i>A + B</i>) = <i>CA</i> + <i>CB</i> for all <i>m</i>-by-<i>n</i> matrices <i>A</i> and <i>B</i> and <i>k</i>-by-<i>m</i> matrices <i>C</i> ("left distributivity").</li>
+</ul>
+<p>It is important to note that <a href="/wiki/Commutativity.html" title="Commutativity">commutativity</a> does <i>not</i> generally hold; that is, given matrices <i>A</i> and <i>B</i> and their product defined, then generally <i>AB</i> ≠ <i>BA</i>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Linear transformations, ranks and transpose">edit</a>]</div>
+<p><a name="Linear_transformations.2C_ranks_and_transpose" id="Linear_transformations.2C_ranks_and_transpose"></a></p>
+<h2>Linear transformations, ranks and transpose</h2>
+<dl>
+<dd>
+<div class="noprint"><i>Main article: <a href="/wiki/Transformation_matrix.html" title="Transformation matrix">Transformation matrix</a></i></div>
+</dd>
+</dl>
+<p>Matrices can conveniently represent <a href="/wiki/Linear_transformation.html" title="Linear transformation">linear transformations</a> because matrix multiplication neatly corresponds to the composition of maps, as will be described next. This same property makes them powerful data structures in high-level programming languages.</p>
+<p>Here and in the sequel we identify <b>R</b><sup><i>n</i></sup> with the set of "columns" or <i>n</i>-by-1 matrices. For every linear map <i>f</i>&#160;: <b>R</b><sup><i>n</i></sup> → <b>R</b><sup><i>m</i></sup> there exists a unique <i>m</i>-by-<i>n</i> matrix <i>A</i> such that <i>f</i>(<i>x</i>) = <i>Ax</i> for all <i>x</i> in <b>R</b><sup><i>n</i></sup>. We say that the matrix <i>A</i> "represents" the linear map <i>f</i>. Now if the <i>k</i>-by-<i>m</i> matrix <i>B</i> represents another linear map <i>g</i>&#160;: <b>R</b><sup><i>m</i></sup> → <b>R</b><sup><i>k</i></sup>, then the linear map <i>g</i> o <i>f</i> is represented by <i>BA</i>. This follows from the above-mentioned associativity of matrix multiplication.</p>
+<p>More generally, a linear map from an <i>n</i>-dimensional vector space to an <i>m</i>-dimensional vector space is represented by an <i>m</i>-by-<i>n</i> matrix, provided that <a href="/wiki/Basis_%28linear_algebra%29.html" title="Basis (linear algebra)">bases</a> have been chosen for each.</p>
+<p>The <a href="/wiki/Rank_of_a_matrix.html" title="Rank of a matrix">rank</a> of a matrix <i>A</i> is the <a href="/wiki/Hamel_dimension.html" title="Hamel dimension">dimension</a> of the <a href="/wiki/Image_%28mathematics%29.html" title="Image (mathematics)">image</a> of the linear map represented by <i>A</i>; this is the same as the dimension of the space generated by the rows of <i>A</i>, and also the same as the dimension of the space generated by the columns of <i>A</i>.</p>
+<p>The <a href="/wiki/Transpose.html" title="Transpose">transpose</a> of an <i>m</i>-by-<i>n</i> matrix <i>A</i> is the <i>n</i>-by-<i>m</i> matrix <i>A</i><sup>tr</sup> (also sometimes written as <i>A</i><sup>T</sup> or <sup>t</sup><i>A</i>) formed by turning rows into columns and columns into rows, i.e. <i>A</i><sup>tr</sup>[<i>i</i>, <i>j</i>] = <i>A</i>[<i>j</i>, <i>i</i>] for all indices <i>i</i> and <i>j</i>. If <i>A</i> describes a linear map with respect to two bases, then the matrix <i>A</i><sup>tr</sup> describes the transpose of the linear map with respect to the dual bases, see <a href="/wiki/Dual_space.html" title="Dual space">dual space</a>.</p>
+<p>We have (<i>A + B</i>)<sup>tr</sup> = <i>A</i><sup>tr</sup> + <i>B</i><sup>tr</sup> and (<i>AB</i>)<sup>tr</sup> = <i>B</i><sup>tr</sup> <i>A</i><sup>tr</sup>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Square matrices and related definitions">edit</a>]</div>
+<p><a name="Square_matrices_and_related_definitions" id="Square_matrices_and_related_definitions"></a></p>
+<h2>Square matrices and related definitions</h2>
+<p>A <b>square matrix</b> is a matrix which has the same number of rows and columns. The set of all square <i>n</i>-by-<i>n</i> matrices, together with matrix addition and matrix multiplication is a <a href="/wiki/Ring_%28mathematics%29.html" title="Ring (mathematics)">ring</a>. Unless <i>n</i> = 1, this ring is not <a href="/wiki/Commutative_ring.html" title="Commutative ring">commutative</a>.</p>
+<p>M(<i>n</i>, <b>R</b>), the ring of real square matrices, is a real unitary <a href="/wiki/Associative_algebra.html" title="Associative algebra">associative algebra</a>. M(<i>n</i>, <b>C</b>), the ring of complex square matrices, is a complex associative algebra.</p>
+<p>The <b>unit matrix</b> or <b><a href="/wiki/Identity_matrix.html" title="Identity matrix">identity matrix</a></b> <i>I<sub>n</sub></i>, with elements on the main diagonal set to 1 and all other elements set to 0, satisfies <i>MI<sub>n</sub>=M</i> and <i>I<sub>n</sub>N=N</i> for any <i>m</i>-by-<i>n</i> matrix <i>M</i> and <i>n</i>-by-<i>k</i> matrix <i>N</i>. For example, if <i>n</i> = 3:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/f/1/d/f1d517d57e1bffe11ac509adb3794845.png" alt="I_3 =   \begin{bmatrix}     1 &amp; 0 &amp; 0 \\     0 &amp; 1 &amp; 0 \\     0 &amp; 0 &amp; 1   \end{bmatrix}" /></dd>
+</dl>
+<p>The identity matrix is the identity element in the ring of square matrices.</p>
+<p>Invertible elements in this ring are called <b><a href="/wiki/Invertible_matrix.html" title="Invertible matrix">invertible matrices</a></b> or <b>non-singular matrices</b>. An <i>n</i> by <i>n</i> matrix <i>A</i> is invertible if and only if there exists a matrix <i>B</i> such that</p>
+<dl>
+<dd><i>AB</i> = I<sub><i>n</i></sub> ( = <i>BA</i>).</dd>
+</dl>
+<p>In this case, <i>B</i> is the <b>inverse matrix</b> of <i>A</i>, denoted by <i>A</i><sup>−1</sup>. The set of all invertible <i>n</i>-by-<i>n</i> matrices forms a <a href="/wiki/Group_%28mathematics%29.html" title="Group (mathematics)">group</a> (specifically a <a href="/wiki/Lie_group.html" title="Lie group">Lie group</a>) under matrix multiplication, the <a href="/wiki/General_linear_group.html" title="General linear group">general linear group</a>.</p>
+<p>If λ is a number and <b>v</b> is a non-zero vector such that <i>A</i><b>v</b> = λ<b>v</b>, then we call <b>v</b> an <a href="/wiki/Eigenvector.html" title="Eigenvector">eigenvector</a> of <i>A</i> and λ the associated <a href="/wiki/Eigenvalue.html" title="Eigenvalue">eigenvalue</a>. (Eigen means "own" in German.) The number λ is an eigenvalue of <i>A</i> if and only if <i>A</i>−λ<i>I</i><sub><i>n</i></sub> is not invertible, which happens if and only if <i>p</i><sub><i>A</i></sub>(λ) = 0. Here <i>p</i><sub><i>A</i></sub>(<i>x</i>) is the <a href="/wiki/Characteristic_polynomial.html" title="Characteristic polynomial">characteristic polynomial</a> of <i>A</i>. This is a <a href="/wiki/Polynomial.html" title="Polynomial">polynomial</a> of degree <i>n</i> and has therefore <i>n</i> complex roots (counting multiple roots according to their multiplicity). In this sense, every square matrix has <i>n</i> complex eigenvalues.</p>
+<p>The <a href="/wiki/Determinant.html" title="Determinant">determinant</a> of a square matrix <i>A</i> is the product of its <i>n</i> eigenvalues, but it can also be defined by the <i><a href="/wiki/Determinant#General_definition_and_computation.html" title="Determinant">Leibniz formula</a></i>. Invertible matrices are precisely those matrices with nonzero determinant.</p>
+<p>The <a href="/wiki/Gaussian_elimination.html" title="Gaussian elimination">Gaussian elimination</a> algorithm is of central importance: it can be used to compute determinants, ranks and inverses of matrices and to solve <a href="/wiki/System_of_linear_equations.html" title="System of linear equations">systems of linear equations</a>.</p>
+<p>The <a href="/wiki/Trace_of_a_matrix.html" title="Trace of a matrix">trace</a> of a square matrix is the sum of its diagonal entries, which equals the sum of its <i>n</i> eigenvalues.</p>
+<p><a href="/wiki/Matrix_exponential.html" title="Matrix exponential">Matrix exponential</a> is defined for square matrices, using <a href="/wiki/Power_series.html" title="Power series">power series</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Special types of matrices">edit</a>]</div>
+<p><a name="Special_types_of_matrices" id="Special_types_of_matrices"></a></p>
+<h2>Special types of matrices</h2>
+<p>In many areas in mathematics, matrices with certain structure arise. A few important examples are</p>
+<ul>
+<li><a href="/wiki/Symmetric_matrix.html" title="Symmetric matrix">Symmetric matrices</a> are such that elements symmetric about the <i>main diagonal</i> (from the upper left to the lower right) are equal, that is, a<sub>i,j</sub>=a<sub>j,i</sub>.</li>
+<li><a href="/wiki/Skew-symmetric_matrix.html" title="Skew-symmetric matrix">Skew-symmetric matrices</a> are such that elements symmetric about the <i>main diagonal</i> are the negative of each other, that is, a<sub>i,j</sub>= - a<sub>j,i</sub>. In a skew-symmetric matrix, all diagonal elements are zero, that is, a<sub>i,i</sub>=0.</li>
+<li><a href="/wiki/Hermitian_matrix.html" title="Hermitian matrix">Hermitian</a> (or self-adjoint) matrices are such that elements symmetric about the diagonal are each others <a href="/wiki/Complex_conjugate.html" title="Complex conjugate">complex conjugates</a>, that is, a<sub>i,j</sub>=a<sup>*</sup><sub>j,i</sub>, where the superscript '*' signifies complex conjugation.</li>
+<li><a href="/wiki/Toeplitz_matrix.html" title="Toeplitz matrix">Toeplitz matrices</a> have common elements on their diagonals, that is, a<sub>i,j</sub>=a<sub>i+1,j+1</sub>.</li>
+<li><a href="/wiki/Stochastic_matrix.html" title="Stochastic matrix">Stochastic matrices</a> are square matrices whose columns are <a href="/wiki/Probability_vector.html" title="Probability vector">probability vectors</a>; they are used to define <a href="/wiki/Markov_chain.html" title="Markov chain">Markov chains</a>.</li>
+</ul>
+<p>For a more extensive list see <a href="/wiki/List_of_matrices.html" title="List of matrices">list of matrices</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Matrices in abstract algebra">edit</a>]</div>
+<p><a name="Matrices_in_abstract_algebra" id="Matrices_in_abstract_algebra"></a></p>
+<h2>Matrices in abstract algebra</h2>
+<p>If we start with a <a href="/wiki/Ring_%28mathematics%29.html" title="Ring (mathematics)">ring</a> <i>R</i>, we can consider the set M(<i>m</i>,<i>n</i>, <i>R</i>) of all <i>m</i> by <i>n</i> matrices with entries in <i>R</i>. Addition and multiplication of these matrices can be defined as in the case of real or complex matrices (see <a  title="">above</a>). The set M(<i>n</i>, <i>R</i>) of all square <i>n</i> by <i>n</i> matrices over <i>R</i> is a ring in its own right, isomorphic to the <a href="/wiki/Endomorphism_ring.html" title="Endomorphism ring">endomorphism ring</a> of the left <i>R</i>-<a href="/wiki/Module_%28mathematics%29.html" title="Module (mathematics)">module</a> <i>R</i><sup><i>n</i></sup>.</p>
+<p>Similarly, if the entries are taken from a <a href="/wiki/Semiring.html" title="Semiring">semiring</a> <i>S</i>, matrix addition and multiplication can still be defined as usual. The set of all square <i>n</i>×<i>n</i> matrices over <i>S</i> is itself a semiring. Note that fast matrix multiplication algorithms such as the <a href="/wiki/Strassen_algorithm.html" title="Strassen algorithm">Strassen algorithm</a> generally only apply to matrices over rings and will not work for matrices over semirings that are not rings.</p>
+<p>If <i>R</i> is a commutative ring, then M(<i>n</i>, <i>R</i>) is a unitary <a href="/wiki/Associative_algebra.html" title="Associative algebra">associative algebra</a> over <i>R</i>. It is then also meaningful to define the <a href="/wiki/Determinant.html" title="Determinant">determinant</a> of square matrices using the <i><a href="/wiki/Leibniz_formula_%28determinant%29.html" title="Leibniz formula (determinant)">Leibniz formula</a></i>; a matrix is invertible if and only if its determinant is invertible in <i>R</i>.</p>
+<p>All statements mentioned in this article for real or complex matrices remain correct for matrices over an arbitrary <a href="/wiki/Field_%28mathematics%29.html" title="Field (mathematics)">field</a>.</p>
+<p>Matrices over a <a href="/wiki/Polynomial_ring.html" title="Polynomial ring">polynomial ring</a> are important in the study of <a href="/wiki/Control_theory.html" title="Control theory">control theory</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: History">edit</a>]</div>
+<p><a name="History" id="History"></a></p>
+<h2>History</h2>
+<p>The study of matrices is quite old. <a href="/wiki/Latin_square.html" title="Latin square">Latin squares</a> and <a href="/wiki/Magic_square.html" title="Magic square">magic squares</a> have been studied since prehistoric times.</p>
+<p>Matrices have a long history of application in solving <a href="/wiki/Linear_equations.html" title="Linear equations">linear equations</a>. <a href="/wiki/Gottfried_Leibniz.html" title="Gottfried Leibniz">Leibniz</a>, one of the two founders of calculus, developed the theory of <a href="/wiki/Determinant.html" title="Determinant">determinants</a> in <a href="/wiki/1693.html" title="1693">1693</a>. <a href="/wiki/Gabriel_Cramer.html" title="Gabriel Cramer">Cramer</a> developed the theory further, presenting <a href="/wiki/Cramer%27s_rule.html" title="Cramer's rule">Cramer's rule</a> in <a href="/wiki/1750.html" title="1750">1750</a>. <a href="/wiki/Carl_Friedrich_Gauss.html" title="Carl Friedrich Gauss">Carl Friedrich Gauss</a> and <a href="/wiki/Wilhelm_Jordan.html" title="Wilhelm Jordan">Wilhelm Jordan</a> developed <a href="/wiki/Gauss-Jordan_elimination.html" title="Gauss-Jordan elimination">Gauss-Jordan elimination</a> in the 1800s.</p>
+<p>The term "matrix" was first coined in <a href="/wiki/1848.html" title="1848">1848</a> by <a href="/wiki/J._J._Sylvester.html" title="J. J. Sylvester">J. J. Sylvester</a>. <a href="/wiki/Arthur_Cayley.html" title="Arthur Cayley">Cayley</a>, <a href="/wiki/William_Rowan_Hamilton.html" title="William Rowan Hamilton">Hamilton</a>, <a href="/wiki/Hermann_Grassmann.html" title="Hermann Grassmann">Grassmann</a>, <a href="/wiki/Ferdinand_Georg_Frobenius.html" title="Ferdinand Georg Frobenius">Frobenius</a> and <a href="/wiki/John_von_Neumann.html" title="John von Neumann">von Neumann</a> are among the famous mathematicians who have worked on matrix theory.</p>
+<p><a href="/wiki/Olga_Taussky_Todd.html" title="Olga Taussky Todd">Olga Taussky Todd</a> (1906-1995) started to use matrix theory when investigating an aerodynamic phenomenon called <a href="/wiki/Flutter.html" title="Flutter">fluttering</a> or <a href="/wiki/Aeroelasticity.html" title="Aeroelasticity">aeroelasticity</a>, during <a href="/wiki/World_War_II.html" title="World War II">WWII</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Further reading">edit</a>]</div>
+<p><a name="Further_reading" id="Further_reading"></a></p>
+<h2>Further reading</h2>
+<p>A more advanced article on matrices is <i><a href="/wiki/Matrix_theory.html" title="Matrix theory">Matrix theory</a></i>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Logical_matrix.html" title="Logical matrix">Logical matrix</a></li>
+<li><a href="/wiki/Relation_composition.html" title="Relation composition">Relation composition</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<div class="infobox sisterproject">
+<div style="float: left;">
+<div class="floatnone"><span><a  class="image" title="Wikibooks"><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Wikibooks-logo-en.svg/50px-Wikibooks-logo-en.svg.png" alt="Wikibooks" width="50" height="57" longdesc="/wiki/Image:Wikibooks-logo-en.svg" /></a></span></div>
+</div>
+<div style="margin-left: 60px;"><a  class="extiw" title="wikibooks:Algebra">Wikibooks Algebra</a> has more about this subject:
+<div style="margin-left: 10px;"><i><b><a  class="extiw" title="wikibooks:Algebra:Matrices">Matrices</a></b></i></div>
+</div>
+</div>
+<ul>
+<li>Resources
+<ul>
+<li><a  class="external text" title="http://www.ualr.edu/lasmoller/matrices.html">Matrix name and history: very brief overview</a>, ualr.edu</li>
+<li><a  class="external text" title="http://www.xycoon.com/matrix_algebra.htm">Introduction to Matrix Algebra: definitions and properties</a>, xycoon.com</li>
+<li><a  class="external text" title="http://www.sosmath.com/matrix/matrix.html">Matrix Algebra</a>, sosmath.com</li>
+<li><a  class="external text" title="http://www.ee.ic.ac.uk/hp/staff/dmb/matrix/intro.html">The Matrix Reference Manual</a>, <a href="/wiki/Imperial_College.html" title="Imperial College">Imperial College</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Online Matrix Calculators
+<ul>
+<li><a  class="external text" title="http://www.easycalculation.com/matrix/index.php">easycalculation.com</a></li>
+<li><a  class="external text" title="http://www.bluebit.gr/matrix-calculator/">bluebit.gr</a></li>
+<li><a  class="external text" title="http://wims.unice.fr/wims/wims.cgi?module=tool/linear/matrix.en">wims.unice.fr</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Freeware
+<ul>
+<li><a  class="external text" title="http://digilander.libero.it/foxes/">MATRIX 2.1 Excel add-in</a>, foxes</li>
+<li><a  class="external text" title="http://www.stat.umn.edu/macanova/macanova.home.html">MacAnova</a>, <a href="/wiki/University_of_Minnesota.html" title="University of Minnesota">University of Minnesota</a> School of Statistics</li>
+</ul>
+</li>
+</ul>
+
+<!-- 
+Pre-expand include size: 7473 bytes
+Post-expand include size: 862 bytes
+Template argument size: 615 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:124914-0!1!0!default!!en!2 and timestamp 20060907025817 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Abstract algebra">Abstract algebra</a></span> | <span dir='ltr'><a  title="Category:Linear algebra">Linear algebra</a></span> | <span dir='ltr'><a  title="Category:Matrices">Matrices</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Matrix_%28mathematics%29.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-ar"><a >العربية</a></li>
+				<li class="interwiki-bn"><a >বাংলা</a></li>
+				<li class="interwiki-bg"><a >Български</a></li>
+				<li class="interwiki-ca"><a >Català</a></li>
+				<li class="interwiki-cs"><a >Česky</a></li>
+				<li class="interwiki-da"><a >Dansk</a></li>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-eo"><a >Esperanto</a></li>
+				<li class="interwiki-fa"><a >فارسی</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-ko"><a >한국어</a></li>
+				<li class="interwiki-is"><a >Íslenska</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-he"><a >עברית</a></li>
+				<li class="interwiki-lt"><a >Lietuvių</a></li>
+				<li class="interwiki-nl"><a >Nederlands</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-no"><a >Norsk (bokmål)</a></li>
+				<li class="interwiki-nn"><a >Norsk (nynorsk)</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-pt"><a >Português</a></li>
+				<li class="interwiki-ro"><a >Română</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+				<li class="interwiki-simple"><a >Simple English</a></li>
+				<li class="interwiki-sl"><a >Slovenščina</a></li>
+				<li class="interwiki-fi"><a >Suomi</a></li>
+				<li class="interwiki-sv"><a >Svenska</a></li>
+				<li class="interwiki-th"><a >ไทย</a></li>
+				<li class="interwiki-vi"><a >Tiếng Việt</a></li>
+				<li class="interwiki-uk"><a >Українська</a></li>
+				<li class="interwiki-zh"><a >中文</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 19:47, 31 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv100 in 0.116 secs. --></body></html>

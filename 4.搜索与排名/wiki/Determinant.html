@@ -1,0 +1,458 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Determinant,16th century,Absolute value,Adjugate,Algebra,Algebraic form,Alternating form,Area (geometry),Arthur Cayley,Basis (linear algebra),Bezout" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Determinant - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Determinant";
+			var wgTitle = "Determinant";
+			var wgArticleId = 8468;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Determinant</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>In <a href="/wiki/Algebra.html" title="Algebra">algebra</a>, a <b>determinant</b> is a <a href="/wiki/Function_%28mathematics%29.html" title="Function (mathematics)">function</a> depending on <i>n</i> that associates a <a href="/wiki/Scalar_%28mathematics%29.html" title="Scalar (mathematics)">scalar</a> det(<i>A</i>) to every <i>n</i>×<i>n</i> square <a href="/wiki/Matrix_%28mathematics%29.html" title="Matrix (mathematics)">matrix</a> <i>A</i>. The fundamental geometric meaning of a determinant is as the <a href="/wiki/Scale_factor.html" title="Scale factor">scale factor</a> for <a href="/wiki/Volume.html" title="Volume">volume</a> when <i>A</i> is regarded as a <a href="/wiki/Linear_transformation.html" title="Linear transformation">linear transformation</a>. Determinants are important both in <a href="/wiki/Calculus.html" title="Calculus">calculus</a>, where they enter the <a href="/wiki/Substitution_rule.html" title="Substitution rule">substitution rule</a> for several variables, and in <a href="/wiki/Multilinear_algebra.html" title="Multilinear algebra">multilinear algebra</a>.</p>
+<p>For a fixed positive integer <i>n</i>, there is a unique determinant function for the <i>n</i>×<i>n</i> matrices over any <a href="/wiki/Commutative_ring.html" title="Commutative ring">commutative ring</a> <i>R</i>. In particular, this function exists when <i>R</i> is the <a href="/wiki/Field_%28mathematics%29.html" title="Field (mathematics)">field</a> of <a href="/wiki/Real_number.html" title="Real number">real</a> or <a href="/wiki/Complex_number.html" title="Complex number">complex numbers</a>.</p>
+<p>A determinant of <i>A</i> is also sometimes denoted by |<i>A</i>|, but this notation is ambiguous: it is also used to for certain <a href="/wiki/Matrix_norm.html" title="Matrix norm">matrix norms</a>, and for the <a href="/wiki/Absolute_value.html" title="Absolute value">absolute value</a>.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Determinants of 2-by-2 matrices</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Determinants as a wedge product</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Applications</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">General definition and computation</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Quick Reference</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">Example</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">Properties</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">7.1</span> <span class="toctext">Derivative</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">8</span> <span class="toctext">Algorithmic implementation</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">9</span> <span class="toctext">History</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">10</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Determinants of 2-by-2 matrices">edit</a>]</div>
+<p><a name="Determinants_of_2-by-2_matrices" id="Determinants_of_2-by-2_matrices"></a></p>
+<h2>Determinants of 2-by-2 matrices</h2>
+<p>The 2×2 matrix <img class='tex' src="http://upload.wikimedia.org/math/3/0/c/30c18e978441b2b2dfc0d3fe5499ad21.png" alt="A=\begin{bmatrix}a&amp;b\\ c&amp;d\end{bmatrix}" /> has determinant <img class='tex' src="http://upload.wikimedia.org/math/b/b/c/bbc2a1cf69c23a9afb8898ff89494ee7.png" alt="\det(A)=ad-bc\," />.</p>
+<p>The interpretation when the matrix has real number entries is that this gives the <a href="/wiki/Area_%28geometry%29.html" title="Area (geometry)">area</a> of the <a href="/wiki/Parallelogram.html" title="Parallelogram">parallelogram</a> with vertices at (0,0), (<i>a</i>,<i>c</i>), (<i>b</i>,<i>d</i>), and (<i>a</i> + <i>b</i>, <i>c</i> + <i>d</i>), with a sign factor (which is −1 if <i>A</i> as a <a href="/wiki/Transformation_matrix.html" title="Transformation matrix">transformation matrix</a> flips the <a href="/wiki/Unit_square.html" title="Unit square">unit square</a> over).</p>
+<p>A formula for larger matrices will be given below.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Determinants as a wedge product">edit</a>]</div>
+<p><a name="Determinants_as_a_wedge_product" id="Determinants_as_a_wedge_product"></a></p>
+<h2>Determinants as a wedge product</h2>
+<p>If u and v are vectors in an n-dimensional vector space, we may introduce the <a href="/wiki/Wedge_product.html" title="Wedge product">wedge product</a> with the property u ⋀ v = - v ⋀ u. This antisymmetric property also entails u ⋀ u = 0. With such a product defined for vectors in an n(n-1)/2 dimensional vector space, and we can continue the process to k-fold products. Then an n-fold wedge product v<sub>1</sub> ⋀ v<sub>2</sub> ⋀ ... ⋀ v<sub>n</sub> is vector in a 1-dimensional vector space, whose single coefficient is a scalar. This scalar quantity is the determinant of the square matrix whose rows are the vectors v<sub>1</sub>, ..., v<sub>n</sub>. From the defining properties of a wedge product it easily follows that the determinant is zero if and only if v<sub>1</sub> ... v<sub>n</sub> are linearly dependent, and that the determinant is antisymmetric with respect to swapping rows. Transposing, this is also true of columns.</p>
+<p>This gives a means of computing the determinant, but more significantly, a means of demonstrating the basic properties of the determinant and placing it in a broader context.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Applications">edit</a>]</div>
+<p><a name="Applications" id="Applications"></a></p>
+<h2>Applications</h2>
+<p>Determinants are used to characterize <a href="/wiki/Invertible_matrix.html" title="Invertible matrix">invertible matrices</a> (namely as those matrices, and only those matrices, with non-zero determinants), and to explicitly describe the solution to a system of <a href="/wiki/Linear_equation.html" title="Linear equation">linear equations</a> with <a href="/wiki/Cramer%27s_rule.html" title="Cramer's rule">Cramer's rule</a>. They can be used to find the <a href="/wiki/Eigenvalue.html" title="Eigenvalue">eigenvalues</a> of the matrix <span class="texhtml"><i>A</i></span> through the <a href="/wiki/Characteristic_polynomial.html" title="Characteristic polynomial">characteristic polynomial</a></p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/7/0/c/70cfb0e8d38e157a8f9104cce47aba41.png" alt="p(x) = \det(xI - A) \," /></dd>
+</dl>
+<p>where <i>I</i> is the <a href="/wiki/Identity_matrix.html" title="Identity matrix">identity matrix</a> of the same dimension as <i>A</i>.</p>
+<p>One often thinks of the determinant as assigning a number to every <a href="/wiki/Sequence.html" title="Sequence">sequence</a> of <span class="texhtml"><i>n</i></span> vectors in <img class='tex' src="http://upload.wikimedia.org/math/3/0/c/30c28f76ef7517dbd19df4d4c683dbe6.png" alt="\Bbb{R}^n" />, by using the square matrix whose columns are the given vectors. With this understanding, the sign of the determinant of a <a href="/wiki/Basis_%28linear_algebra%29.html" title="Basis (linear algebra)">basis</a> can be used to define the notion of <a href="/wiki/Orientation_%28mathematics%29.html" title="Orientation (mathematics)">orientation</a> in <a href="/wiki/Euclidean_space.html" title="Euclidean space">Euclidean spaces</a>. The determinant of a set of vectors is <a href="/wiki/Negative_and_non-negative_numbers.html" title="Negative and non-negative numbers">positive</a> if the vectors form a right-handed <a href="/wiki/Coordinate_system.html" title="Coordinate system">coordinate system</a>, and negative if left-handed.</p>
+<p>Determinants are used to calculate <a href="/wiki/Volume.html" title="Volume">volumes</a> in <a href="/wiki/Vector_calculus.html" title="Vector calculus">vector calculus</a>: the <a href="/wiki/Absolute_value.html" title="Absolute value">absolute value</a> of the determinant of real vectors is equal to the volume of the <a href="/wiki/Parallelepiped.html" title="Parallelepiped">parallelepiped</a> spanned by those vectors. As a consequence, if the <a href="/wiki/Linear_transformation.html" title="Linear transformation">linear map</a> <img class='tex' src="http://upload.wikimedia.org/math/f/c/a/fca7507d44591374caa4dd1e96dce3d0.png" alt="f: \Bbb{R}^n \rightarrow \Bbb{R}^n" /> is represented by the matrix <span class="texhtml"><i>A</i></span>, and <span class="texhtml"><i>S</i></span> is any <a href="/wiki/Lebesgue_measure.html" title="Lebesgue measure">measurable</a> <a href="/wiki/Subset.html" title="Subset">subset</a> of <img class='tex' src="http://upload.wikimedia.org/math/3/0/c/30c28f76ef7517dbd19df4d4c683dbe6.png" alt="\Bbb{R}^n" />, then the volume of <span class="texhtml"><i>f</i>(<i>S</i>)</span> is given by <img class='tex' src="http://upload.wikimedia.org/math/e/5/8/e5845210585d69a2f581dbfb860de6db.png" alt="\left| \det(A) \right| \times \operatorname{volume}(S)" />. More generally, if the linear map <img class='tex' src="http://upload.wikimedia.org/math/3/a/f/3af1c55bea3f7aa050dc0e10b3761cb7.png" alt="f: \Bbb{R}^n \rightarrow \Bbb{R}^m" /> is represented by the <span class="texhtml"><i>m</i></span>-by-<span class="texhtml"><i>n</i></span> matrix <span class="texhtml"><i>A</i></span>, and <span class="texhtml"><i>S</i></span> is any measurable subset of <img class='tex' src="http://upload.wikimedia.org/math/c/6/e/c6ec82a44393c0e7953beb5cae3d971e.png" alt="\Bbb{R}^{n}" />, then the <span class="texhtml"><i>n</i></span>-<a href="/wiki/Dimension.html" title="Dimension">dimensional</a> volume of <span class="texhtml"><i>f</i>(<i>S</i>)</span> is given by <img class='tex' src="http://upload.wikimedia.org/math/5/6/f/56fe33ace9fff0a6d4d5eee712e0d8cd.png" alt="\sqrt{\det(A^\top A)} \times \operatorname{volume}(S)" />. By calculating the volume of the <a href="/wiki/Tetrahedron.html" title="Tetrahedron">tetrahedron</a> bounded by four points, they can be used to identify <a href="/wiki/Skew_line.html" title="Skew line">skew lines</a>.</p>
+<p>The volume of any <a href="/wiki/Tetrahedron.html" title="Tetrahedron">tetrahedron</a>, given its vertices <b>a</b>, <b>b</b>, <b>c</b>, and <b>d</b>, is (1/6)·|<strong class="selflink">det</strong>(<b>a</b>−<b>b</b>, <b>b</b>−<b>c</b>, <b>c</b>−<b>d</b>)|, or any other combination of pairs of vertices that form a simply connected <a href="/wiki/Graph_theory.html" title="Graph theory">graph</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: General definition and computation">edit</a>]</div>
+<p><a name="General_definition_and_computation" id="General_definition_and_computation"></a></p>
+<h2>General definition and computation</h2>
+<p>The definition of the determinant comes from the following Theorem.</p>
+<p><b>Theorem.</b> Let <i>M</i><sub><i>n</i></sub>(<i>K</i>) denote the set of all <img class='tex' src="http://upload.wikimedia.org/math/6/0/7/607acaa73c762411b20745149a11e90b.png" alt="n \times n" /> matrices over the field <i>K</i>. There exists exactly one function</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/f/4/5/f45f7405b4bde0c7bc8f09899f10e451.png" alt="F&#160;: M_n(K) \longrightarrow K" /></dd>
+</dl>
+<p>with the two properties:</p>
+<ul>
+<li><span class="texhtml"><i>F</i></span> is <a href="/wiki/Alternating_form.html" title="Alternating form">alternating</a> <a href="/wiki/Multilinear.html" title="Multilinear">multilinear</a> with regard to columns;</li>
+<li><span class="texhtml"><i>F</i>(<i>I</i>) = 1</span>.</li>
+</ul>
+<p>One can then define the determinant as the unique function with the above properties.</p>
+<p>In proving the above theorem, one also obtains the <a href="/wiki/Leibniz_formula_%28determinant%29.html" title="Leibniz formula (determinant)">Leibniz formula</a>:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/3/4/c/34c48199132f4e6d06792751b47d72b1.png" alt="\det(A) = \sum_{\sigma \in S_n} \sgn(\sigma) \prod_{i=1}^n A_{i,\sigma(i)}" /></dd>
+</dl>
+<p>Here the sum is computed over all <a href="/wiki/Permutation.html" title="Permutation">permutations</a> <span class="texhtml">σ</span> of the numbers {1,2,...,<i>n</i>} and <span class="texhtml">sgn(σ)</span> denotes the <a href="/wiki/Signature_%28permutation%29.html" title="Signature (permutation)">signature</a> of the permutation <span class="texhtml">σ</span>: +1 if <span class="texhtml">σ</span> is an <a href="/wiki/Even_and_odd_permutations.html" title="Even and odd permutations">even permutation</a> and −1 if it is <a href="/wiki/Even_and_odd_permutations.html" title="Even and odd permutations">odd</a>.</p>
+<p>This formula contains <span class="texhtml"><i>n</i>!</span> (<a href="/wiki/Factorial.html" title="Factorial">factorial</a>) summands, and it is therefore impractical to use it to calculate determinants for large <span class="texhtml"><i>n</i></span>.</p>
+<p>For small matrices, one does not actually need to take permutations, i.e.:</p>
+<ul>
+<li>if <span class="texhtml"><i>A</i></span> is a 1-by-1 matrix, then <img class='tex' src="http://upload.wikimedia.org/math/9/f/c/9fce1c0015201b38cdf2dd520c3309da.png" alt="\det(A) = A_{1,1}. \," /></li>
+</ul>
+<ul>
+<li>if <span class="texhtml"><i>A</i></span> is a 2-by-2 matrix, then <img class='tex' src="http://upload.wikimedia.org/math/5/5/d/55d07a2b6c3470f06a76bcdd013cf784.png" alt="\det(A) = A_{1,1}A_{2,2} - A_{2,1}A_{1,2}. \," /></li>
+</ul>
+<ul>
+<li>for a 3-by-3 matrix <span class="texhtml"><i>A</i></span>, the formula is more complicated:</li>
+</ul>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/3/4/9/349cc3a034a3025455d56afdc67ae09c.png" alt="\begin{matrix} \det(A) &amp; = &amp; A_{1,1}A_{2,2}A_{3,3} + A_{1,3}A_{2,1}A_{3,2} + A_{1,2}A_{2,3}A_{3,1}\\ &amp; &amp; - A_{1,3}A_{2,2}A_{3,1} - A_{1,1}A_{2,3}A_{3,2} - A_{1,2}A_{2,1}A_{3,3}. \end{matrix}\," /></dd>
+</dl>
+<p>In general, determinants can be computed using <a href="/wiki/Gaussian_elimination.html" title="Gaussian elimination">Gaussian elimination</a> using the following rules:</p>
+<ul>
+<li>If <span class="texhtml"><i>A</i></span> is a <a href="/wiki/Triangular_matrix.html" title="Triangular matrix">triangular matrix</a>, i.e. <img class='tex' src="http://upload.wikimedia.org/math/2/9/b/29bfa2c3eca85a193bb0c4221bb3aad6.png" alt="A_{i,j} = 0 \," /> whenever <span class="texhtml"><i>i</i> &gt; <i>j</i></span> or, alternatively, whenever <span class="texhtml"><i>i</i> &lt; <i>j</i></span>, then <img class='tex' src="http://upload.wikimedia.org/math/9/2/5/925dec23d42db0a81f55b1e546ad81b1.png" alt="\det(A) =  A_{1,1} A_{2,2} \cdots A_{n,n} \," /> (the product of the diagonal entries of <span class="texhtml"><i>A</i></span>).</li>
+<li>If <span class="texhtml"><i>B</i></span> results from <span class="texhtml"><i>A</i></span> by exchanging two rows or columns, then <img class='tex' src="http://upload.wikimedia.org/math/c/6/c/c6c6433887a4a2931405f619ec23f3bb.png" alt="\det(B) = -\det(A). \," /></li>
+<li>If <span class="texhtml"><i>B</i></span> results from <span class="texhtml"><i>A</i></span> by multiplying one row or column with the number <span class="texhtml"><i>c</i></span>, then <img class='tex' src="http://upload.wikimedia.org/math/f/5/8/f58436fef4a0d2924274c7f0aa803f3a.png" alt="\det(B) = c\,\det(A). \," /></li>
+<li>If <span class="texhtml"><i>B</i></span> results from <span class="texhtml"><i>A</i></span> by adding a multiple of one row to another row, or a multiple of one column to another column, then <img class='tex' src="http://upload.wikimedia.org/math/e/9/7/e979f92bc520767b06737cdc30f962c4.png" alt="\det(B) = \det(A). \," /></li>
+</ul>
+<p>Explicitly, starting out with some matrix, use the last three rules to convert it into a triangular matrix, then use the first rule to compute its determinant.</p>
+<p>It is also possible to expand a determinant along a row or column using <i><a href="/wiki/Laplace_expansion.html" title="Laplace expansion">Laplace's formula</a></i>, which is efficient for relatively small matrices. To do this along row <span class="texhtml"><i>i</i></span>, say, we write</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/6/4/d/64dfdf1e8bc66340f3c6f90a61089b36.png" alt="\det(A) = \sum_{j=1}^n A_{i,j}C_{i,j} = \sum_{j=1}^n A_{i,j} (-1)^{i+j} M_{i,j}" /></dd>
+</dl>
+<p>where the <span class="texhtml"><i>C</i><sub><i>i</i>,<i>j</i></sub></span> represent the matrix <a href="/wiki/Cofactor_%28mathematics%29.html" title="Cofactor (mathematics)">cofactors</a>, i.e. <span class="texhtml"><i>C</i><sub><i>i</i>,<i>j</i></sub></span> is <span class="texhtml">( − 1)<sup><i>i</i> + <i>j</i></sup></span> times the <a href="/wiki/Minor_%28matrix%29.html" title="Minor (matrix)">minor</a> <span class="texhtml"><i>M</i><sub><i>i</i>,<i>j</i></sub></span>, which is the determinant of the matrix that results from <span class="texhtml"><i>A</i></span> by removing the <span class="texhtml"><i>i</i></span>-th row and the <span class="texhtml"><i>j</i></span>-th column.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Quick Reference">edit</a>]</div>
+<p><a name="Quick_Reference" id="Quick_Reference"></a></p>
+<h2>Quick Reference</h2>
+<p>The determinants for square matrices of size 1 to 3 are:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/6/9/f/69fe06e63fc18206f2ff0cff9aee2031.png" alt="\det \begin{bmatrix} a \end{bmatrix}  = a" /></dd>
+</dl>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/7/d/1/7d14659121820edb64fa24b34cc96e9a.png" alt="\det \begin{bmatrix}a&amp;b\\ c&amp;d\end{bmatrix}  = ad - bc" /></dd>
+</dl>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/d/f/0/df0166283a843158ec5c3d10a6469b4e.png" alt="\det \begin{bmatrix}a&amp;b&amp;c\\ d&amp;e&amp;f\\ g&amp;h&amp;i\end{bmatrix}  = a(ei - hf) - b(di - gf) + c(dh - ge)" /></dd>
+</dl>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Example">edit</a>]</div>
+<p><a name="Example" id="Example"></a></p>
+<h2>Example</h2>
+<p>Suppose we want to compute the determinant of</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/3/4/3/343df64cc1fdeee79ee5b44c5a8e6f9a.png" alt="A = \begin{bmatrix}-2&amp;2&amp;-3\\ -1&amp; 1&amp; 3\\ 2 &amp;0 &amp;-1\end{bmatrix}." /></dd>
+</dl>
+<p>We can go ahead and use the Leibniz formula directly:</p>
+<dl>
+<dd>
+<table>
+<tr>
+<td><img class='tex' src="http://upload.wikimedia.org/math/7/0/f/70f816d873f3b4693c8ed9e77203f376.png" alt="\det(A)\," /></td>
+<td><img class='tex' src="http://upload.wikimedia.org/math/4/4/8/4488ba5f7e82e2d8c136b559d95283d5.png" alt="=\," /></td>
+<td><img class='tex' src="http://upload.wikimedia.org/math/0/1/1/0114d7080f467b96a0d597b1d34e8cc8.png" alt="(-2\cdot 1 \cdot -1) + (-3\cdot 0 \cdot -1) + (2\cdot 3\cdot 2)" /></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><img class='tex' src="http://upload.wikimedia.org/math/a/8/7/a8735cf24bb73f19695a0b18ffd7becc.png" alt="- (-3\cdot 1 \cdot 2) - (-2\cdot 3 \cdot 0) - (2\cdot -1 \cdot -1)" /></td>
+</tr>
+<tr>
+<td></td>
+<td><img class='tex' src="http://upload.wikimedia.org/math/4/4/8/4488ba5f7e82e2d8c136b559d95283d5.png" alt="=\," /></td>
+<td><img class='tex' src="http://upload.wikimedia.org/math/9/c/8/9c8c5c2ae08cf17fd9cbe9bb750c16bc.png" alt="2 + 0 + 12 - (-6) - 0 - 2 = 18.\," /></td>
+</tr>
+</table>
+</dd>
+</dl>
+<p>Alternatively, we can use Laplace's formula to expand the determinant along a row or column. It is best to choose a row or column with many zeros, so we will expand along the second column:</p>
+<dl>
+<dd>
+<table>
+<tr>
+<td><img class='tex' src="http://upload.wikimedia.org/math/7/0/f/70f816d873f3b4693c8ed9e77203f376.png" alt="\det(A)\," /></td>
+<td><img class='tex' src="http://upload.wikimedia.org/math/4/4/8/4488ba5f7e82e2d8c136b559d95283d5.png" alt="=\," /></td>
+<td><img class='tex' src="http://upload.wikimedia.org/math/2/2/4/22450a1b3daf7bcf744548e137fba21e.png" alt="(-1)^{1+2}\cdot 2 \cdot \det \begin{bmatrix}-1&amp;3\\ 2 &amp;-1\end{bmatrix} + (-1)^{2+2}\cdot 1 \cdot \det \begin{bmatrix}-2&amp;-3\\ 2&amp;-1\end{bmatrix}" /></td>
+</tr>
+<tr>
+<td></td>
+<td><img class='tex' src="http://upload.wikimedia.org/math/4/4/8/4488ba5f7e82e2d8c136b559d95283d5.png" alt="=\," /></td>
+<td><img class='tex' src="http://upload.wikimedia.org/math/5/8/9/58934f15093043ac46b810d6c304f33f.png" alt="(-2)\cdot((-1)\cdot(-1)-2\cdot3)+1\cdot((-2)\cdot(-1)-2\cdot(-3))" /></td>
+</tr>
+<tr>
+<td></td>
+<td><img class='tex' src="http://upload.wikimedia.org/math/4/4/8/4488ba5f7e82e2d8c136b559d95283d5.png" alt="=\," /></td>
+<td><img class='tex' src="http://upload.wikimedia.org/math/1/5/d/15d1e271d686186a2e124d3e5115d7f3.png" alt="(-2)(-5)+8 = 18.\," /></td>
+</tr>
+</table>
+</dd>
+</dl>
+<p>A third way (and the method of choice for larger matrices) would involve the Gauss algorithm. When doing computations by hand, one can often shorten things dramatically by smartly adding multiples of columns or rows to other columns or rows; this does not change the value of the determinant, but may create zero entries which simplifies the subsequent calculations. In this example, adding the second column to the first one is especially useful:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/9/d/5/9d51f758b235cff62daf9592e5240f9b.png" alt="\begin{bmatrix}0&amp;2&amp;-3\\ 0 &amp;1 &amp;3\\ 2 &amp;0 &amp;-1\end{bmatrix}" /></dd>
+</dl>
+<p>and this determinant can be quickly expanded along the first column:</p>
+<dl>
+<dd>
+<table>
+<tr>
+<td><img class='tex' src="http://upload.wikimedia.org/math/7/0/f/70f816d873f3b4693c8ed9e77203f376.png" alt="\det(A)\," /></td>
+<td><img class='tex' src="http://upload.wikimedia.org/math/4/4/8/4488ba5f7e82e2d8c136b559d95283d5.png" alt="=\," /></td>
+<td><img class='tex' src="http://upload.wikimedia.org/math/0/7/a/07a5482e6fde50fac9ebe28ee641ac67.png" alt="(-1)^{3+1}\cdot 2\cdot \det \begin{bmatrix}2&amp;-3\\ 1&amp;3\end{bmatrix}" /></td>
+</tr>
+<tr>
+<td></td>
+<td><img class='tex' src="http://upload.wikimedia.org/math/4/4/8/4488ba5f7e82e2d8c136b559d95283d5.png" alt="=\," /></td>
+<td><img class='tex' src="http://upload.wikimedia.org/math/e/8/0/e804bfcecaa0f14e6a5e2efe0de0e4a0.png" alt="2\cdot(2\cdot3-1\cdot(-3)) = 2\cdot 9 = 18.\," /></td>
+</tr>
+</table>
+</dd>
+</dl>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Properties">edit</a>]</div>
+<p><a name="Properties" id="Properties"></a></p>
+<h2>Properties</h2>
+<p>The determinant is a <i>multiplicative map</i> in the sense that</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/5/7/b/57b72e08fabae4ca6a0951d55ad2bcd1.png" alt="\det(AB) = \det(A)\det(B) \," /> for all <i>n</i>-by-<i>n</i> matrices <span class="texhtml"><i>A</i></span> and <span class="texhtml"><i>B</i></span>.</dd>
+</dl>
+<p>This is generalized by the <a href="/wiki/Cauchy-Binet_formula.html" title="Cauchy-Binet formula">Cauchy-Binet formula</a> to products of non-square matrices.</p>
+<p>It is easy to see that <img class='tex' src="http://upload.wikimedia.org/math/c/d/c/cdcc6403b516aadc97b9cf7e453e575c.png" alt="\det(rI_n) = r^n \," /> and thus</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/c/4/b/c4bad31880be02fd56fa96a91f3d4c5f.png" alt="\det(rA) = \det(rI_n \cdot A) = r^n \det(A) \," /> for all <span class="texhtml"><i>n</i></span>-by-<span class="texhtml"><i>n</i></span> matrices <span class="texhtml"><i>A</i></span> and all <a href="/wiki/Scalar_%28mathematics%29.html" title="Scalar (mathematics)">scalars</a> <span class="texhtml"><i>r</i></span>.</dd>
+</dl>
+<p>A matrix over a <a href="/wiki/Commutative_ring.html" title="Commutative ring">commutative ring</a> <i>R</i> is invertible if and only if its determinant is a <a href="/wiki/Unit_%28ring_theory%29.html" title="Unit (ring theory)">unit</a> in <i>R</i>. In particular, if <i>A</i> is a matrix over a <a href="/wiki/Field_%28mathematics%29.html" title="Field (mathematics)">field</a> such as the <a href="/wiki/Real_number.html" title="Real number">real</a> or <a href="/wiki/Complex_number.html" title="Complex number">complex numbers</a>, then <i>A</i> is invertible if and only if det(<i>A</i>) is not zero. In this case we have</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/4/4/2/44202a533f35a316908af89db080b033.png" alt="\det(A^{-1}) = \det(A)^{-1}. \," /></dd>
+</dl>
+<p>Expressed differently: the vectors <i>v</i><sub>1</sub>,...,<i>v</i><sub><i>n</i></sub> in <b>R</b><sup><i>n</i></sup> form a <a href="/wiki/Basis_%28linear_algebra%29.html" title="Basis (linear algebra)">basis</a> if and only if det(<i>v</i><sub>1</sub>,...,<i>v</i><sub><i>n</i></sub>) is non-zero.</p>
+<p>A matrix and its <a href="/wiki/Transpose.html" title="Transpose">transpose</a> have the same determinant:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/a/a/7/aa7822105ee65014e92eae59b10b5ae7.png" alt="\det(A^\top) = \det(A). \," /></dd>
+</dl>
+<p>The determinants of a complex matrix and of its <a href="/wiki/Complex_conjugate.html" title="Complex conjugate">conjugate</a> <a href="/wiki/Transpose.html" title="Transpose">transpose</a> are conjugate:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/e/9/9/e99606250d1305bc8bcee927031204cf.png" alt="\det(A^*) = \det(A)^*. \," /></dd>
+</dl>
+<p>(Note the conjugate transpose is identical to the transpose for a real matrix)</p>
+<p>The determinant of a matrix <span class="texhtml"><i>A</i></span> exhibits the following properties under <a href="/wiki/Elementary_matrix_transformations.html" title="Elementary matrix transformations">elementary matrix transformations</a> of <span class="texhtml"><i>A</i></span>:</p>
+<ol>
+<li>Exchanging rows or columns multiplies the determinant by -1.</li>
+<li>Multiplying a row or column by <span class="texhtml"><i>m</i></span> multiplies the determinant by <span class="texhtml"><i>m</i></span>.</li>
+<li>Adding a multiple of a row or column to another leaves the determinant unchanged.</li>
+</ol>
+<p>This follows from the multiplicative property and the determinants of the <a href="/wiki/Elementary_matrix_transformations.html" title="Elementary matrix transformations">elementary matrix transformation</a> matrices.</p>
+<p>If <span class="texhtml"><i>A</i></span> and <span class="texhtml"><i>B</i></span> are <a href="/wiki/Similar.html" title="Similar">similar</a>, i.e., if there exists an invertible matrix <span class="texhtml"><i>X</i></span> such that <span class="texhtml"><i>A</i></span> = <span class="texhtml"><i>X</i> <sup>− 1</sup><i>B</i><i>X</i></span>, then by the multiplicative property,</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/9/d/c/9dc78c5c16a4780d8f3990579ab4eccd.png" alt="\det(A) = \det(B). \," /></dd>
+</dl>
+<p>This means that the determinant is a <a  class="new" title="Similarity invariant">similarity invariant</a>. Because of this, the determinant of some linear transformation <i>T</i>&#160;: <i>V</i> → <i>V</i> for some finite dimensional <a href="/wiki/Vector_space.html" title="Vector space">vector space</a> <i>V</i> is independent of the basis for <i>V</i>. The relationship is one-way, however: there exist matrices which have the same determinant but are not similar.</p>
+<p>If <span class="texhtml"><i>A</i></span> is a square <span class="texhtml"><i>n</i></span>-by-<span class="texhtml"><i>n</i></span> matrix with <a href="/wiki/Real_number.html" title="Real number">real</a> or <a href="/wiki/Complex_number.html" title="Complex number">complex</a> entries and if λ<sub>1</sub>,...,λ<sub><i>n</i></sub> are the (complex) <a href="/wiki/Eigenvectors.html" title="Eigenvectors">eigenvalues</a> of <span class="texhtml"><i>A</i></span> listed according to their algebraic multiplicities, then</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/a/2/3/a239738ee897d08557232e560bd78d86.png" alt="\det(A) = \lambda_{1}\lambda_{2} \cdots \lambda_{n}.\," /></dd>
+</dl>
+<p>This follows from the fact that <span class="texhtml"><i>A</i></span> is always similar to its <a href="/wiki/Jordan_normal_form.html" title="Jordan normal form">Jordan normal form</a>, an upper triangular matrix with the eigenvalues on the main diagonal.</p>
+<p>From this connection between the determinant and the eigenvalues, one can derive a connection between the <a href="/wiki/Trace_%28linear_algebra%29.html" title="Trace (linear algebra)">trace function</a>, the <a href="/wiki/Exponential_function.html" title="Exponential function">exponential function</a>, and the determinant:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/8/8/8/88827dada987ef49972437a6b7df27ea.png" alt="\det(\exp(A)) = \exp(\operatorname{tr}(A))." /></dd>
+</dl>
+<p>Performing the substitution <img class='tex' src="http://upload.wikimedia.org/math/c/e/4/ce4e753083b8b5e992e2dd2bd6091f20.png" alt="A \mapsto \log A" /> in the above equation yields</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/6/8/d/68dd4d3c6f82ee97486d66cac8adac67.png" alt="\det(A) = e^{\operatorname{tr}(\log A)}. \" /></dd>
+</dl>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Derivative">edit</a>]</div>
+<p><a name="Derivative" id="Derivative"></a></p>
+<h3>Derivative</h3>
+<p>The determinant of real square matrices is a <a href="/wiki/Polynomial.html" title="Polynomial">polynomial function</a> from <img class='tex' src="http://upload.wikimedia.org/math/9/2/7/927fc06382152b0814e9071e610d746a.png" alt="\Bbb{R}^{n \times n}" /> to <img class='tex' src="http://upload.wikimedia.org/math/6/9/a/69a45f1e602cd2b2c2e67e41811fd226.png" alt="\Bbb{R}" />, and as such is everywhere <a href="/wiki/Derivative.html" title="Derivative">differentiable</a>. Its derivative can be expressed using <i><a href="/wiki/Jacobi%27s_formula.html" title="Jacobi's formula">Jacobi's formula</a></i>:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/8/6/3/86396537440e8e249f492d1aa014b9c7.png" alt="d \,\det(A) = \operatorname{tr}(\operatorname{adj}(A) \,dA)" /></dd>
+</dl>
+<p>where adj(<i>A</i>) denotes the <a href="/wiki/Adjugate.html" title="Adjugate">adjugate</a> of <i>A</i>. In particular, if <i>A</i> is invertible, we have</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/8/b/7/8b71c6b7143cf25e8fba749365923915.png" alt="d \,\det(A) = \det(A) \,\operatorname{tr}(A^{-1} \,dA)" /></dd>
+</dl>
+<p>or, more colloquially,</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/8/6/7/867dd0d857815cda9205ca47a97c9eea.png" alt="\det(A + X) - \det(A) \approx \det(A) \,\operatorname{tr}(A^{-1} X)" /></dd>
+</dl>
+<p>if the entries in the matrix <span class="texhtml"><i>X</i></span> are sufficiently small. The special case where <span class="texhtml"><i>A</i></span> is equal to the identity matrix <span class="texhtml"><i>I</i></span> yields</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/b/6/3/b63da58bd28a9c79982dd37b914609ba.png" alt="\det(I + X) \approx 1 + \operatorname{tr}(X)." /></dd>
+</dl>
+<p><br /></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Algorithmic implementation">edit</a>]</div>
+<p><a name="Algorithmic_implementation" id="Algorithmic_implementation"></a></p>
+<h2>Algorithmic implementation</h2>
+<ul>
+<li>The naive method of implementing an algorithm to compute the determinant is to use Laplace's formula for expansion by cofactors. This approach is extremely inefficient in general, however, as it is <a href="/wiki/Big_O_notation.html" title="Big O notation">of order</a> <i>n</i>! (<i>n</i> <a href="/wiki/Factorial.html" title="Factorial">factorial</a>) for an <i>n</i>×<i>n</i> matrix <i>M</i>.</li>
+<li>An improvement to order <i>n</i><sup>3</sup> can be achieved by using <a href="/wiki/LU_decomposition.html" title="LU decomposition">LU decomposition</a> to write <i>M</i>&#160;=&#160;<i>LU</i> for triangular matrices <i>L</i> and <i>U</i>. Now, det <i>M</i> = det <i>LU</i> = det <i>L</i> det <i>U</i>, and since <i>L</i> and <i>U</i> are triangular the determinant of each is simply the product of its diagonal elements. Alternatively one can perform the <a href="/wiki/Cholesky_decomposition.html" title="Cholesky decomposition">Cholesky decomposition</a> if possible or the <a href="/wiki/QR_decomposition.html" title="QR decomposition">QR decomposition</a> and find the determinant in a similar fashion.</li>
+<li>Since the definition of the determinant does not need divisions, the question arises, whether fast algorithms exist, which do not need divisions. This is especially interesting for matrices over rings. Indeed algorithms with run-time proportional to <i>n</i><sup>4</sup> exist. An <a  class="external text" title="http://page.inf.fu-berlin.de/~rote/Papers/pdf/Division-free+algorithms.pdf">algorithm of Mahajan and Vinay, and Berkowitz</a> is based on <a  class="new" title="Closed ordered walk">closed ordered walks</a> (short <i>clow</i>). It computes more products than the determinant definition requires, but some of these products cancel and the sum of these products can be computed more efficiently. The final algorithm looks very much like an iterated product of triangular matrices.</li>
+<li>What is not often discussed is the so-called "bit complexity" of the problem, i.e. how many bits of accuracy you need to store for intermediate values. For example, using <a href="/wiki/Gaussian_elimination.html" title="Gaussian elimination">Gaussian elimination</a>, you can reduce the matrix to upper triangular form, then multiply the main diagonal to get the determinant (this is essentially a special case of the LU decomposition as above), but a quick calculation will show that the bit size of intermediate values could potentially become exponential. One could talk about when it is appropriate to round intermediate values, but an elegant way of calculating the determinant uses the <a  class="new" title="Bareiss Algorithm">Bareiss Algorithm</a>, an exact division method based on <a  class="new" title="Sylvester's identity">Sylvester's identity</a> to give a run time of order <i>n</i><sup>3</sup> and bit complexity roughly the bit size of the original entries in the matrix times n.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: History">edit</a>]</div>
+<p><a name="History" id="History"></a></p>
+<h2>History</h2>
+<p>Historically, determinants were considered before matrices. Originally, a determinant was defined as a property of a <a href="/wiki/System_of_linear_equations.html" title="System of linear equations">system of linear equations</a>. The determinant "determines" whether the system has a unique solution (which occurs precisely if the determinant is non-zero). In this sense, two-by-two determinants were considered by <a href="/wiki/Gerolamo_Cardano.html" title="Gerolamo Cardano">Cardano</a> at the end of the <a href="/wiki/16th_century.html" title="16th century">16th century</a> and larger ones by <a href="/wiki/Gottfried_Leibniz.html" title="Gottfried Leibniz">Leibniz</a> about 100 years later. Following him <a href="/wiki/Gabriel_Cramer.html" title="Gabriel Cramer">Cramer</a> (1750) added to the theory, treating the subject in relation to sets of equations. The recurrent law was first announced by <a href="/wiki/Bezout.html" title="Bezout">Bezout</a> (1764).</p>
+<p>It was <a href="/wiki/Vandermonde.html" title="Vandermonde">Vandermonde</a> (1771) who first recognized determinants as independent functions. <a href="/wiki/Laplace.html" title="Laplace">Laplace</a> (1772) gave the general method of expanding a determinant in terms of its complementary <a href="/wiki/Minor_%28matrix%29.html" title="Minor (matrix)">minors</a>: Vandermonde had already given a special case. Immediately following, <a href="/wiki/Joseph_Louis_Lagrange.html" title="Joseph Louis Lagrange">Lagrange</a> (1773) treated determinants of the second and third order. Lagrange was the first to apply determinants to questions outside <a href="/wiki/Elimination_theory.html" title="Elimination theory">elimination theory</a>; he proved many special cases of general identities.</p>
+<p><a href="/wiki/Carl_Friedrich_Gauss.html" title="Carl Friedrich Gauss">Gauss</a> (1801) made the next advance. Like Lagrange, he made much use of determinants in the theory of numbers. He introduced the word <i><b>determinants</b></i> (Laplace had used <i>resultant</i>), though not in the present signification, but rather as applied to the <a href="/wiki/Discriminant.html" title="Discriminant">discriminant</a> of a <a href="/wiki/Algebraic_form.html" title="Algebraic form">quantic</a>. Gauss also arrived at the notion of reciprocal (inverse) determinants, and came very near the multiplication theorem.</p>
+<p>The next contributor of importance is <a href="/wiki/Binet.html" title="Binet">Binet</a> (1811, 1812), who formally stated the theorem relating to the product of two matrices of <span class="texhtml"><i>m</i></span> columns and <span class="texhtml"><i>n</i></span> rows, which for the special case of <span class="texhtml"><i>m</i> = <i>n</i></span> reduces to the multiplication theorem. On the same day (Nov. 30, 1812) that Binet presented his paper to the Academy, <a href="/wiki/Cauchy.html" title="Cauchy">Cauchy</a> also presented one on the subject. (See <a href="/wiki/Cauchy-Binet_formula.html" title="Cauchy-Binet formula">Cauchy-Binet formula</a>.) In this he used the word <i><b>determinant</b></i> in its present sense, summarized and simplified what was then known on the subject, improved the notation, and gave the multiplication theorem with a proof more satisfactory than Binet's. With him begins the theory in its generality.</p>
+<p>The next important figure was <a href="/wiki/Carl_Gustav_Jakob_Jacobi.html" title="Carl Gustav Jakob Jacobi">Jacobi</a> (from 1827). He early used the functional determinant which Sylvester later called the <a href="/wiki/Jacobian.html" title="Jacobian">Jacobian</a>, and in his memoirs in <i><a href="/wiki/Crelle.html" title="Crelle">Crelle</a></i> for 1841 he specially treats this subject, as well as the class of alternating functions which Sylvester has called <i>alternants</i>. About the time of Jacobi's last memoirs, <a href="/wiki/James_Joseph_Sylvester.html" title="James Joseph Sylvester">Sylvester</a> (1839) and <a href="/wiki/Arthur_Cayley.html" title="Arthur Cayley">Cayley</a> began their work.</p>
+<p>The study of special forms of determinants has been the natural result of the completion of the general theory. Axisymmetric determinants have been studied by <a href="/wiki/Lebesgue.html" title="Lebesgue">Lebesgue</a>, <a href="/wiki/Otto_Hesse.html" title="Otto Hesse">Hesse</a>, and Sylvester; <a  class="new" title="Persymmetric">persymmetric</a> determinants by Sylvester and <a href="/wiki/Hermann_Hankel.html" title="Hermann Hankel">Hankel</a>; <a href="/wiki/Circulant.html" title="Circulant">circulants</a> by <a href="/wiki/Eug%C3%A8ne_Charles_Catalan.html" title="Eugène Charles Catalan">Catalan</a>, <a  class="new" title="Spottiswoode">Spottiswoode</a>, <a href="/wiki/James_Whitbread_Lee_Glaisher.html" title="James Whitbread Lee Glaisher">Glaisher</a>, and Scott; skew determinants and <a href="/wiki/Pfaffian.html" title="Pfaffian">Pfaffians</a>, in connection with the theory of <a href="/wiki/Orthogonal_transformation.html" title="Orthogonal transformation">orthogonal transformation</a>, by Cayley; continuants by Sylvester; <a href="/wiki/Wronskian.html" title="Wronskian">Wronskians</a> (so called by <a href="/wiki/Thomas_Muir_%28mathematician%29.html" title="Thomas Muir (mathematician)">Muir</a>) by <a href="/wiki/Elwin_Bruno_Christoffel.html" title="Elwin Bruno Christoffel">Christoffel</a> and <a href="/wiki/Ferdinand_Georg_Frobenius.html" title="Ferdinand Georg Frobenius">Frobenius</a>; compound determinants by Sylvester, <a href="/wiki/Reiss.html" title="Reiss">Reiss</a>, and <a href="/wiki/Picquet.html" title="Picquet">Picquet</a>; Jacobians and <a href="/wiki/Hessian_matrix.html" title="Hessian matrix">Hessians</a> by Sylvester; and symmetric gauche determinants by <a  class="new" title="Trudi">Trudi</a>. Of the text-books on the subject Spottiswoode's was the first. In America, Hanus (1886) and Weld (1893) published treatises.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://www.bluebit.gr/matrix-calculator/">Online Matrix Calculator</a> Online determinant calculator.</li>
+<li><a  class="external text" title="http://bonnie.ourweb.net/~cached/determinant.php">Cached's Determinant Calculator</a> Online determinant calculator.</li>
+<li><a  class="external text" title="http://cs.nyu.edu/~yap/book/alge/ftpSite/l10.ps.gz">Linear Systems Chapter from "Fundamental Problems of Algorithmic Algebra"</a> Chee Yap's chapter on Linear Systems describing implementation aspects of Determinant computation.</li>
+<li>Mahajan, Meena and V. Vinay, <a  class="external text" title="http://cjtcs.cs.uchicago.edu/articles/1997/5/cj97-05.pdf">“Determinant: Combinatorics, Algorithms, and Complexity”</a>, <i>Chicago Journal of Theoretical Computer Science</i>, v. 1997 article 5 (1997).</li>
+</ul>
+<p><span class="FA" id="fr" style="display:none;"></span></p>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:8468-0!1!0!default!!en!2 and timestamp 20060906010152 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Determinants">Determinants</a></span> | <span dir='ltr'><a  title="Category:Matrix theory">Matrix theory</a></span> | <span dir='ltr'><a  title="Category:Linear algebra">Linear algebra</a></span> | <span dir='ltr'><a  title="Category:Abstract algebra">Abstract algebra</a></span> | <span dir='ltr'><a  title="Category:Algebra">Algebra</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Determinant.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-ar"><a >العربية</a></li>
+				<li class="interwiki-cs"><a >Česky</a></li>
+				<li class="interwiki-da"><a >Dansk</a></li>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-et"><a >Eesti</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-eo"><a >Esperanto</a></li>
+				<li class="interwiki-fa"><a >فارسی</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-ko"><a >한국어</a></li>
+				<li class="interwiki-is"><a >Íslenska</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-he"><a >עברית</a></li>
+				<li class="interwiki-lt"><a >Lietuvių</a></li>
+				<li class="interwiki-nl"><a >Nederlands</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+				<li class="interwiki-sv"><a >Svenska</a></li>
+				<li class="interwiki-vi"><a >Tiếng Việt</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 18:50, 4 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv71 in 0.083 secs. --></body></html>

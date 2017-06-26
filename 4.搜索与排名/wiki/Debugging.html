@@ -1,0 +1,351 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Debugging,Admiral Grace Hopper,Assembly language,Assertion (computing),BIOS,Binary search,Breakpoint,Buffer overflow,C programming language,Computer bug,Computer hardware" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Debugging - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Debugging";
+			var wgTitle = "Debugging";
+			var wgArticleId = 323395;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Debugging</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p><b>Debugging</b> is a methodical process of finding and reducing the number of <a href="/wiki/Computer_bug.html" title="Computer bug">bugs</a>, or defects, in a <a href="/wiki/Computer_program.html" title="Computer program">computer program</a> or a piece of <a href="/wiki/Electronic_hardware.html" title="Electronic hardware">electronic hardware</a> thus making it behave as expected. Debugging tends to be harder when various subsystems are <a href="/wiki/Low-Coupling_/_High-Cohesion_pattern.html" title="Low-Coupling / High-Cohesion pattern">tightly coupled</a>, as changes in one may cause bugs to emerge in another.</p>
+<p><br /></p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Origin</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Tools</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Basic steps</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">3.1</span> <span class="toctext">Recognize a bug exists</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.2</span> <span class="toctext">Isolate source of bug</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.3</span> <span class="toctext">Identify cause of bug</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.4</span> <span class="toctext">Determine fix for bug</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.5</span> <span class="toctext">Fix and test</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Steps to reduce debugging</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">4.1</span> <span class="toctext">The correct mindset</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.2</span> <span class="toctext">Start at the source</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.3</span> <span class="toctext">Treat user input with suspicion</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.4</span> <span class="toctext">Use of log files</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.5</span> <span class="toctext">Test suites</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.6</span> <span class="toctext">Change one thing at a time</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.7</span> <span class="toctext">Back out changes that have no effect</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.8</span> <span class="toctext">Think of similar situations</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Origin">edit</a>]</div>
+<p><a name="Origin" id="Origin"></a></p>
+<h2>Origin</h2>
+<p>There is some controversy over who first used the term "debug" (see the <a href="/wiki/Computer_bug.html" title="Computer bug">Computer bug</a> article for a full discussion). Some claim that the term "debugging" was first used by <a  class="new" title="Glenford J Myers">Glenford J Myers</a> in his 1976 book Software Reliability: Principles and Practices where he defined it as "diagnosing the precise nature of a known error and then correcting the error", while others claim it was associated with <a href="/wiki/Admiral_Grace_Hopper.html" title="Admiral Grace Hopper">Admiral Grace Hopper</a> in the 1940s.</p>
+<p>The story goes that when one of the early computers that Hopper was working with malfunctioned, it was discovered that a moth had gotten into a <a href="/wiki/Relay.html" title="Relay">relay</a>, causing it to fail. Some believe that the staff then started using the term debugging to describe the process of removing errors from computer programs.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Tools">edit</a>]</div>
+<p><a name="Tools" id="Tools"></a></p>
+<h2>Tools</h2>
+<p>Debugging is, in general, a cumbersome and tiring task. The debugging skill of the programmer is probably the biggest factor in the ability to debug a problem, but the difficulty of software debugging varies greatly with the <a href="/wiki/Programming_language.html" title="Programming language">programming language</a> used and the available tools, such as <i><a href="/wiki/Debugger.html" title="Debugger">debuggers</a></i>. Debuggers are software tools which enable the <a href="/wiki/Programmer.html" title="Programmer">programmer</a> to monitor the <a href="/wiki/Execution_%28computers%29.html" title="Execution (computers)">execution</a> of a program, stop it, re-start it, run it in slow motion, change values in memory and even, in some cases, go back in time. The term <i>debugger</i> can also refer to the person who is doing the debugging.</p>
+<p>Generally, <a href="/wiki/High-level_programming_language.html" title="High-level programming language">high-level programming languages</a>, such as <a href="/wiki/Java_programming_language.html" title="Java programming language">Java</a>, make debugging easier, because they have features such as <a href="/wiki/Exception_handling.html" title="Exception handling">exception handling</a> that make real sources of erratic behaviour easier to spot. In lower-level programming languages such as <a href="/wiki/C_programming_language.html" title="C programming language">C</a> or <a href="/wiki/Assembly_language.html" title="Assembly language">assembly</a>, bugs may cause silent problems such as <a href="/wiki/Memory_corruption.html" title="Memory corruption">memory corruption</a>, and it is often difficult to see where the initial problem happened; in those cases, sophisticated debugging tools may be needed.</p>
+<p>In certain situations, general purpose software tools that are language specific in nature can be very useful. These take the form of <i>static code analysis tools</i>. These tools look for a very specific set of known problems, some common and some rare, within the source code. All such issues detected by these tools would rarely be picked up by a compiler or interpreter, thus they are not syntax checkers, but more semantic checkers. Some tools claim to be able to detect 300+ unique problems. Both commercial and freeware tools exist in various languages. These tools can be extremely useful when checking very large source trees, where it is impractical to do code walkthroughs. A typical example of a problem detected would be a variable dereference that occurs <i>before</i> the variable is assigned a value. Another example would be to perform strong type checking when the language does not require such. Thus, they are better at locating likely errors, versus actual errors. As a result, these tools have a reputation of false positives. the old Unix <i>LINT</i> program is an early example.</p>
+<p>For debugging electronic hardware (e.g., <a href="/wiki/Computer_hardware.html" title="Computer hardware">computer hardware</a>) as well as low-level software (eg. <a href="/wiki/BIOS.html" title="BIOS">BIOSes</a>, <a href="/wiki/Device_driver.html" title="Device driver">device drivers</a>) and <a href="/wiki/Firmware.html" title="Firmware">firmware</a>, instruments such as <a href="/wiki/Oscilloscope.html" title="Oscilloscope">oscilloscopes</a>, <a href="/wiki/Logic_analyzer.html" title="Logic analyzer">logic analyzers</a> or <a href="/wiki/In-circuit_emulator.html" title="In-circuit emulator">in-circuit emulators (ICEs)</a> are often used, alone or in combination. An ICE may perform many of the typical software debugger's tasks on low-level <a href="/wiki/Software.html" title="Software">software</a> and <a href="/wiki/Firmware.html" title="Firmware">firmware</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Basic steps">edit</a>]</div>
+<p><a name="Basic_steps" id="Basic_steps"></a></p>
+<h2>Basic steps</h2>
+<p>Although each debugging experience is unique, certain general principles can be applied in debugging. This section particularly addresses debugging software, although many of these principles can also be applied to debugging hardware.</p>
+<p>The basic steps in debugging are:</p>
+<ul>
+<li>Recognize that a bug exists</li>
+<li>Isolate the source of the bug</li>
+<li>Identify the cause of the bug</li>
+<li>Determine a fix for the bug</li>
+<li>Apply the fix and test it</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Recognize a bug exists">edit</a>]</div>
+<p><a name="Recognize_a_bug_exists" id="Recognize_a_bug_exists"></a></p>
+<h3>Recognize a bug exists</h3>
+<p>Detection of bugs can be done proactively or passively.</p>
+<p>An experienced programmer often knows where errors are more likely to occur, based on the complexity of sections of the program as well as possible data corruption. For example, any data obtained from a user should be treated suspiciously. Great care should be taken to verify that the format and content of the data are correct. Data obtained from transmissions should be checked to make sure the entire message (data) was received. Complex data that must be parsed and/or processed may contain unexpected combinations of values that were not anticipated, and not handled correctly. By inserting checks for likely error symptoms, the program can detect when data has been corrupted or not handled correctly.</p>
+<p>If an error is severe enough to cause the program to terminate abnormally, the existence of a bug becomes obvious. If the program detects a less serious problem, the bug can be recognized, provided error and/or log messages are monitored. However, if the error is minor and only causes the wrong results, it becomes much more difficult to detect that a bug exists; this is especially true if it is difficult or impossible to verify the results of the program.</p>
+<p>The goal of this step is to identify the symptoms of the bug. Observing the symptoms of the problem, under what conditions the problem is detected, and what work-arounds, if any, have been found, will greatly help the remaining steps to debugging the problem.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Isolate source of bug">edit</a>]</div>
+<p><a name="Isolate_source_of_bug" id="Isolate_source_of_bug"></a></p>
+<h3>Isolate source of bug</h3>
+<p>This step is often the most difficult (and therefore rewarding) step in debugging. The idea is to identify what portion of the system is causing the error. Unfortunately, the source of the problem isn't always the same as the source of the symptoms. For example, if an input record is corrupted, an error may not occur until the program is processing a different record, or performing some action based on the erroneous information, which could happen long after the record was read.</p>
+<p>This step often involves iterative testing. The programmer might first verify that the input is correct, next if it was read correctly, processed correctly, etc. For modular systems, this step can be a little easier by checking the validity of data passed across interfaces between different modules. If the input was correct, but the output was not, then the source of the error is within the module. By iteratively testing inputs and outputs, the debugger can identify within a few lines of code where the error is occurring.</p>
+<p>Skilled debuggers are often able to hypothesize where the problem might be (based on analogies to previous similar situations), and test the inputs and outputs of the suspected areas of the program. This form of debugging is an instance of the <a href="/wiki/Scientific_method.html" title="Scientific method">scientific method</a>. Less skilled debuggers often step sequentially through the program, looking for a place where the behavior of the program is different from that expected. Note that this is still a form of scientific method as the programmer must decide what variables to examine when looking for unusual behavior. Another approach is to use a "<a href="/wiki/Binary_search.html" title="Binary search">binary search</a>" type of isolation process. By testing sections near the middle of the data / processing flow, the programmer can determine if the error happens during earlier or later sections of the program. If no data problems are detected, then the error is probably later in the process.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Identify cause of bug">edit</a>]</div>
+<p><a name="Identify_cause_of_bug" id="Identify_cause_of_bug"></a></p>
+<h3>Identify cause of bug</h3>
+<p>Having found the location of the bug, the next step is to determine the actual cause of the bug, which might involve other sections of the program. For example, if it has been determined that the program faults because a field is wrong, the next step is to identify why the field is wrong. This is the actual source of the bug, although some would argue that the inability of a program to handle bad data can be considered a bug as well.</p>
+<p>A good understanding of the system is vital to successfully identifying the source of the bug. A trained debugger can isolate where a problem originates, but only someone familiar with the system can accurately identify the actual cause behind the error. In some cases it might be external to the system: the input data was incorrect. In other cases it might be due to a logic error, where correct data was handled incorrectly. Other possibilities include unexpected values, where the initial assumptions were that a given field can have only "n" values, when in fact, it can have more, as well as unexpected combinations of values in different fields (field x was only supposed to have that value when field y was something different). Another possibility is incorrect reference data, such as a lookup table containing incorrect values relative to the record that was corrupted.</p>
+<p>Having determined the cause of the bug, it is a good idea to examine similar sections of the code to see if the same mistake is repeated elsewhere. If the error was clearly a typo, this is less likely, but if the original programmer misunderstood the initial design and/or requirements, the same or similar mistakes could have been made elsewhere.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Determine fix for bug">edit</a>]</div>
+<p><a name="Determine_fix_for_bug" id="Determine_fix_for_bug"></a></p>
+<h3>Determine fix for bug</h3>
+<p>Having identified the source of the problem, the next task is to determine how the problem can be fixed. An intimate knowledge of the existing system is essential for all but the simplest of problems. This is because the fix will modify the existing behavior of the system, which may produce unexpected results. Furthermore, fixing an existing bug can often either create additional bugs, or expose other bugs that were already present in the program, but never exposed because of the original bug. These problems are often caused by the program executing a previously untested branch of code, or under previously untested conditions.</p>
+<p>In some cases, a fix is simple and obvious. This is especially true for logic errors where the original design was implemented incorrectly. On the other hand, if the problem uncovers a major design flaw that permeates a large portion of the system, then the fix might range from difficult to impossible, requiring a total rewrite of the application.</p>
+<p>In some cases, it might be desirable to implement a "quick fix", followed by a more permanent fix. This decision is often made by considering the severity, visibility, frequency, and side effects of the problem, as well as the nature of the fix, and product schedules (e.g., are there more pressing problems?).</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Fix and test">edit</a>]</div>
+<p><a name="Fix_and_test" id="Fix_and_test"></a></p>
+<h3>Fix and test</h3>
+<p>After the fix has been applied, it is important to test the system and determine that the fix handles the former problem correctly. Testing should be done for two purposes: (1) does the fix now handle the original problem correctly, and (2) make sure the fix hasn't created any undesirable side effects.</p>
+<p>For large systems, it is a good idea to have <a href="/wiki/Software_testing.html" title="Software testing">regression tests</a>, a series of test runs that exercise the system. After significant changes and/or bug fixes, these tests can be repeated at any time to verify that the system still executes as expected. As new features are added, additional tests can be included in the test suite.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Steps to reduce debugging">edit</a>]</div>
+<p><a name="Steps_to_reduce_debugging" id="Steps_to_reduce_debugging"></a></p>
+<h2>Steps to reduce debugging</h2>
+<p>There are concrete steps that can be taken to reduce the amount of time spent debugging software. These are listed in the sections below.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: The correct mindset">edit</a>]</div>
+<p><a name="The_correct_mindset" id="The_correct_mindset"></a></p>
+<h3>The correct mindset</h3>
+<p>Probably the most important thing you can do when you are starting to debug a program is to realize that you don't understand what is going on. Programmers who are convinced that their program should work fine are less likely to find errors simply because they are refusing to admit their confusion. If the program behaved the way you think it does, you wouldn't be debugging; the program would be working fine. Even when the program appears to work, if you examine it with the thought that there is at least one bug remaining and you are going to find it, then you are more likely to find something wrong with the program</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Start at the source">edit</a>]</div>
+<p><a name="Start_at_the_source" id="Start_at_the_source"></a></p>
+<h3>Start at the source</h3>
+<p>The time when you are most aware of where problems are more likely to arise is usually when first designing and writing the code. By inserting integrity checks at various places within the program, problems can be detected and reported by the program itself. In addition to detecting problems, considerations should be given as to how best to handle each error. Options include:</p>
+<ul>
+<li>Report error, set invalid fields to a default value, and continue</li>
+<li>Report error, discard the record associated with the invalid value, and continue</li>
+<li>Report error, transfer invalid record into separate file/table so the user can examine and possibly correct the problem</li>
+<li>Report error and terminate the program</li>
+</ul>
+<p><i>See</i>: <a href="/wiki/Assertion_%28computing%29.html" title="Assertion (computing)">assertion (computing)</a></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Treat user input with suspicion">edit</a>]</div>
+<p><a name="Treat_user_input_with_suspicion" id="Treat_user_input_with_suspicion"></a></p>
+<h3>Treat user input with suspicion</h3>
+<p>Any data that originated from users (including external systems) should be treated with suspicion. Carefully validate all such input data, performing syntactical and semantical integrity checks. Such invalid data are a common source of programming errors. Think not just of data entered in error, but malicious data as well, as in <a href="/wiki/Buffer_overflow.html" title="Buffer overflow">buffer overflow</a> exploits.</p>
+<p>If data are entered interactively by users, you can provide appropriate <a href="/wiki/Error_message.html" title="Error message">error messages</a> and allow the user to correct the invalid field(s). If data are not from an interactive source, then the erroneous records should be handled as described above.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Use of log files">edit</a>]</div>
+<p><a name="Use_of_log_files" id="Use_of_log_files"></a></p>
+<h3>Use of log files</h3>
+<p>Programs that write information to log files can provide significant information that can be used to analyze what was going on before, during, and after problems are encountered. The number of entries to be searched can be reduced by creating various log files, such as a separate log for each major component of the system, plus one log file strictly for errors. Each entry should be date/time stamped so that entries from different logs can be correlated.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Test suites">edit</a>]</div>
+<p><a name="Test_suites" id="Test_suites"></a></p>
+<h3>Test suites</h3>
+<p>A standard set of tests that can be run to perform <a  class="external text" title="http://en.wikipedia.org/wiki/Software_testing#Regression_testingregression">tests</a> can assist in finding errors before they make it into production. These test cases should be automated as much as possible to reduce the amount of effort required to perform these tests. As new features are added to the system, additional tests should be created to exercise those features.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Change one thing at a time">edit</a>]</div>
+<p><a name="Change_one_thing_at_a_time" id="Change_one_thing_at_a_time"></a></p>
+<h3>Change one thing at a time</h3>
+<p>When making a lot of changes, apply them incrementally. Add one change, and then test that change thoroughly before starting on the next change. This will reduce the number of possible sources of new bugs. If several different changes are applied at the same time, then it is much more difficult to identify the source of the problem. Furthermore, minor errors in different areas can interact to produce errors that never would have happened if those changes had been applied one at a time.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Back out changes that have no effect">edit</a>]</div>
+<p><a name="Back_out_changes_that_have_no_effect" id="Back_out_changes_that_have_no_effect"></a></p>
+<h3>Back out changes that have no effect</h3>
+<p>If you make a change to fix a problem, but the program still behaves the same, back out those changes before proceeding. The fact that your changes didn't do anything indicates one of several things:</p>
+<ul>
+<li>The problem is not where you think it is</li>
+<li>The area you modified either isn't being called, or isn't being called the way you think it is</li>
+<li>Assuming the section you changed wasn't executed, you might have introduced new bugs that won't appear until you fix the current bug</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Think of similar situations">edit</a>]</div>
+<p><a name="Think_of_similar_situations" id="Think_of_similar_situations"></a></p>
+<h3>Think of similar situations</h3>
+<p>When a bug has been found, think of other places where the same mistake might have been made. Check those places and see if the same problem exists there as well.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Crash_%28computing%29.html" title="Crash (computing)">Crash (computing)</a></li>
+<li><a href="/wiki/Debugger.html" title="Debugger">Debugger</a></li>
+<li><a href="/wiki/Error-correction.html" title="Error-correction">Error-correction</a></li>
+<li><a href="/wiki/Breakpoint.html" title="Breakpoint">Breakpoint</a></li>
+<li><a href="/wiki/Memory_debugger.html" title="Memory debugger">Memory debugger</a></li>
+<li><a href="/wiki/Magic_number_%28programming%29#Magic_debug_values.html" title="Magic number (programming)">Magic number (programming)</a> (section "Magic debug values")</li>
+<li><a href="/wiki/Computer_programming.html" title="Computer programming">Computer programming</a></li>
+<li><a href="/wiki/Software_testing.html" title="Software testing">Software testing</a></li>
+<li><a href="/wiki/Framepointer.html" title="Framepointer">Framepointer</a></li>
+<li><a href="/wiki/Delta_Debugging.html" title="Delta Debugging">Delta Debugging</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<ul>
+<li><a  class="new" title="David J. Agans">David J. Agans</a>: <cite>Debugging: The Nine Indispensable Rules for Finding Even the Most Elusive Software and Hardware Problems</cite>, AMACOM, <a  class="internal">ISBN 0-8144-7168-4</a></li>
+<li><a  class="new" title="Matthew A. Telles">Matthew A. Telles</a>, <a  class="new" title="Yuan Hsieh">Yuan Hsieh</a>, <a  class="new" title="Matt Telles">Matt Telles</a>: <cite>The Science of Debugging</cite>, The Coriolis Group, <a  class="internal">ISBN 1-57610-917-8</a></li>
+<li><a  class="new" title="Robert Metzger">Robert Metzger</a>: <cite>Debugging by Thinking&#160;: A Multidisciplinary Approach</cite>, Digital Press, <a  class="internal">ISBN 1-55558-307-5</a></li>
+<li><a  class="new" title="John Robbins (technical writer)">John Robbins</a>: <cite>Debugging Applications</cite>, Microsoft Press, <a  class="internal">ISBN 0-7356-0886-5</a></li>
+<li><a  class="new" title="Ann R. Ford">Ann R. Ford</a>, <a  class="new" title="Toby J. Teorey">Toby J. Teorey</a>: <cite>Practical Debugging in C++</cite>, Prentice Hall, <a  class="internal">ISBN 0-13-065394-2</a></li>
+<li><a  class="new" title="Bill Blunden">Bill Blunden</a>: <cite>Software Exorcism: A Handbook for Debugging and Optimizing Legacy Code</cite>, APress, <a  class="internal">ISBN 1-59059-234-4</a></li>
+<li><a href="/wiki/Fred_Brooks.html" title="Fred Brooks">Frederick Phillips Brooks</a>: <cite>The Mythical Man-Month: Essays on Software Engineering</cite>, Pearson Addison Wesley, <a  class="internal">ISBN 0-201-00650-2</a></li>
+<li><a  class="new" title="Glenford J Myers">Glenford J Myers</a>: <cite>Software Reliability: Principles and Practices</cite>, John Wiley &amp; Sons inc, <a  class="internal">ISBN 0-471-62765-8</a></li>
+<li><a  class="new" title="Glenford J Myers">Glenford J Myers</a>: <cite>*The Art of Software Testing</cite>, John Wiley &amp; Sons inc, <a  class="internal">ISBN 0-471-04328-1</a></li>
+<li><a  class="new" title="Andreas Zeller">Andreas Zeller</a>: <cite>Why Programs Fail: A Guide to Systematic Debugging</cite>, Morgan Kaufmann, <a  class="internal">ISBN 1-55860-866-4</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://www.cs.nmsu.edu/~jeffery/aadebug.html">Algorithmic and Automatic Debugging</a> - extensive collection of links to debugging tools and methods</li>
+<li><a  class="external text" title="http://www.lambdacs.com/debugger/USENIX/Debugger_USENIX_2003.html">Debugging Backwards in Time</a> - Omniscient Debugging</li>
+<li><a  class="external text" title="http://citeseer.ist.psu.edu/cs?q=debugging">Citations from CiteSeer</a></li>
+<li><a  class="external text" title="http://www-106.ibm.com/developerworks/web/library/wa-debug.html?ca=dgr-lnxw03Dbug">Learn the essentials of debugging</a> A nice article exposing a debugging methodology.</li>
+<li><a  class="external text" title="http://www.eventhelix.com/RealtimeMantra/Basics/debugging_software_crashes.htm">Debugging Software Crashes in C</a></li>
+<li><a  class="external text" title="http://www.eventhelix.com/RealtimeMantra/Basics/debugging_software_crashes_2.htm">Debugging Software Crashes in C++</a></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:323395-0!1!0!default!!en!2 and timestamp 20060910082556 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:Debugging">Debugging</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Debugging.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-bg"><a >Български</a></li>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-ko"><a >한국어</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-he"><a >עברית</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-pt"><a >Português</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+				<li class="interwiki-fi"><a >Suomi</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 16:19, 9 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv44 in 0.069 secs. --></body></html>

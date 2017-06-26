@@ -1,0 +1,253 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Lex programming tool,C programming language,Compiler,Computer program,Eric Schmidt,Finite state machine,Flex lexical analyser,Formal grammar,Function (programming),Header file,Lexical analysis" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Lex programming tool - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Lex_programming_tool";
+			var wgTitle = "Lex programming tool";
+			var wgArticleId = 105985;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Lex programming tool</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p><b>Lex</b> is a <a href="/wiki/Computer_program.html" title="Computer program">program</a> that generates <a href="/wiki/Lexical_analysis.html" title="Lexical analysis">lexical analyzers</a> ("scanners" or "lexers"). Lex is commonly used with the <a href="/wiki/Yacc.html" title="Yacc">yacc</a> <a href="/wiki/Parser_generator.html" title="Parser generator">parser generator</a>. Lex, originally written by <a href="/wiki/Eric_Schmidt.html" title="Eric Schmidt">Eric Schmidt</a> and <a href="/wiki/Mike_Lesk.html" title="Mike Lesk">Mike Lesk</a>, is the standard lexical analyzer generator on <a href="/wiki/Unix.html" title="Unix">Unix</a> systems, and is included in the <a href="/wiki/POSIX.html" title="POSIX">POSIX</a> standard. Lex reads an input <a href="/wiki/Stream_%28computer%29.html" title="Stream (computer)">stream</a> specifying the lexical analyzer and outputs <a href="/wiki/Source_code.html" title="Source code">source code</a> implementing the lexer in the <a href="/wiki/C_programming_language.html" title="C programming language">C programming language</a>.</p>
+<p>Though traditionally proprietary software, versions of Lex based on the original AT&amp;T code are available as <a href="/wiki/Open_source.html" title="Open source">open source</a>, as part of systems such as <a href="/wiki/OpenSolaris.html" title="OpenSolaris">OpenSolaris</a> and <a href="/wiki/Plan_9_from_Bell_Labs.html" title="Plan 9 from Bell Labs">Plan 9 from Bell Labs</a>. Another popular <a href="/wiki/Open_source.html" title="Open source">open source</a> version of Lex is <a href="/wiki/Flex_lexical_analyser.html" title="Flex lexical analyser">Flex</a>, the "fast lexical analyzer".</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Structure of a lex file</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Example flex file</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Using Lex with Yacc</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Structure of a lex file">edit</a>]</div>
+<p><a name="Structure_of_a_lex_file" id="Structure_of_a_lex_file"></a></p>
+<h2>Structure of a lex file</h2>
+<p>The structure of a lex file is intentionally similar to that of a yacc file; files are divided up into three sections, separated by lines that contain only two percent signs, as follows:</p>
+<pre>
+<i>Definition section</i>
+%%
+<i>Rules section</i>
+%%
+<i>C code section</i>
+</pre>
+<ul>
+<li>The <b>definition</b> section is the place to define <a href="/wiki/Macro.html" title="Macro">macros</a> and to import <a href="/wiki/Header_file.html" title="Header file">header files</a> written in <a href="/wiki/C_programming_language.html" title="C programming language">C</a>. It is also possible to write any C code here, which will be copied verbatim into the generated source file.</li>
+<li>The <b>rules</b> section is the most important section; it associates patterns with C <a href="/wiki/Statement.html" title="Statement">statements</a>. Patterns are simply <a href="/wiki/Regular_expression.html" title="Regular expression">regular expressions</a>. When the lexer sees some text in the input matching a given pattern, it executes the associated C code. This is the basis of how lex operates.</li>
+<li>The <b>C code</b> section contains C statements and <a href="/wiki/Function_%28programming%29.html" title="Function (programming)">functions</a> that are copied verbatim to the generated source file. These statements presumably contain code called by the rules in the rules section. In large programs it is more convenient to place this code in a separate file and link it in at <a href="/wiki/Compiler.html" title="Compiler">compile</a> time.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Example flex file">edit</a>]</div>
+<p><a name="Example_flex_file" id="Example_flex_file"></a></p>
+<h2>Example flex file</h2>
+<p>The following is an example lex file for the <a href="/wiki/Flex_lexical_analyser.html" title="Flex lexical analyser">flex</a> version of lex. It recognizes strings of numbers (integers) in the input, and simply prints them out.</p>
+<pre>
+/*** Definition section ***/
+
+%{
+/* C code to be copied verbatim */
+#include &lt;stdio.h&gt;
+%}
+
+/* This tells flex to read only one input file */
+%option noyywrap
+
+%%
+    /*** Rules section ***/
+
+    /* [0-9]+ matches a string of one or more digits */
+[0-9]+  {
+            /* yytext is a string containing the matched text. */
+            printf("Saw an integer: %s\n", yytext);
+        }
+
+.       {   /* Ignore all other characters. */   }
+
+%%
+/*** C Code section ***/
+
+int main(void)
+{
+    /* Call the lexer, then quit. */
+    yylex();
+    return 0;
+}
+</pre>
+<p>If this input is given to flex, it will be converted into a C file, lex.yy.c. This can be compiled into an executable which matches and outputs strings of integers. For example, given the input:</p>
+<pre>
+abc123z.!&amp;*2ghj6
+</pre>
+<p>the program will print:</p>
+<pre>
+Saw an integer: 123
+Saw an integer: 2
+Saw an integer: 6
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Using Lex with Yacc">edit</a>]</div>
+<p><a name="Using_Lex_with_Yacc" id="Using_Lex_with_Yacc"></a></p>
+<h2>Using Lex with Yacc</h2>
+<p>Lex and <a href="/wiki/Yacc.html" title="Yacc">Yacc</a> (a parser generator) are commonly used together. Yacc uses a <a href="/wiki/Formal_grammar.html" title="Formal grammar">formal grammar</a> to parse an input stream, something which Lex cannot do using simple <a href="/wiki/Regular_expression.html" title="Regular expression">regular expressions</a> (Lex is limited to simple <a href="/wiki/Finite_state_machine.html" title="Finite state machine">finite state automata</a>). However, Yacc cannot read from a simple input stream - it requires a series of tokens. Lex is often used to provide Yacc with these tokens.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Flex_lexical_analyser.html" title="Flex lexical analyser">Flex lexical analyser</a></li>
+<li><a href="/wiki/Yacc.html" title="Yacc">Yacc</a></li>
+<li><a  class="external text" title="http://www.mkssoftware.com/products/ly">MKS Lex &amp; Yacc</a> is a commercial version of these compiler construction tools</li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:105985-0!1!0!default!!en!2 and timestamp 20060906014252 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Parsers">Parsers</a></span> | <span dir='ltr'><a  title="Category:Unix software">Unix software</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Lex_programming_tool.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 13:13, 6 July 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv113 in 0.078 secs. --></body></html>

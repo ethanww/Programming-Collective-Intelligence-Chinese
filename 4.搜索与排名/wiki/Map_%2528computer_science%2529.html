@@ -1,0 +1,690 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Associative array,Abstract data type,Array,Association list,Awk,B-trees,C++,C++/CLI,C Sharp,C programming language,Cocoa (API)" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Associative array - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Associative_array";
+			var wgTitle = "Associative array";
+			var wgArticleId = 95154;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Associative array</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub">(Redirected from <a  title="Map (computer science)">Map (computer science)</a>)</div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<div class="messagebox merge">
+<div class="floatleft"><span><a  class="image" title=""><img src="http://upload.wikimedia.org/wikipedia/commons/a/ae/Mergefrom.gif" alt="" width="50" height="20" longdesc="/wiki/Image:Mergefrom.gif" /></a></span></div>
+It has been suggested that <i><a href="/wiki/Map_%28C%2B%2B_container%29.html" title="Map (C++ container)">Map (C++ container)</a></i> be <a  title="Wikipedia:Merging and moving pages">merged</a> into this article or section. (<a  title="Talk:Associative array">Discuss</a>)</div>
+<p>An <b>associative array</b> (also <b>map</b>, <b>hash</b>, <b>dictionary</b>, <b>finite map</b>, <b><a href="/wiki/Lookup_table.html" title="Lookup table">lookup table</a></b>, and in query-processing an <b>index</b> or <b>index file</b>) is an <a href="/wiki/Abstract_data_type.html" title="Abstract data type">abstract data type</a> composed of a collection of keys and a collection of values, where each key is associated with one value. The operation of finding the value associated with a key is called a <i>lookup</i> or indexing, and this is the most important operation supported by an associative array. The relationship between a key and its value is sometimes called a <a href="/wiki/Mapping.html" title="Mapping">mapping</a> or binding. For example, if the value associated with the key <code>"bob"</code> is <code>7</code>, we say that our array <i>maps</i> <code>"bob"</code> to <code>7</code>. Associative arrays are very closely related to the mathematical concept of a <a href="/wiki/Function_%28mathematics%29.html" title="Function (mathematics)">function</a> with a finite <a href="/wiki/Function_domain.html" title="Function domain">domain</a>. As a consequence, a common and important use of associative arrays is in <a href="/wiki/Memoization.html" title="Memoization">memoization</a>.</p>
+<p>From the perspective of a programmer using an associative array, it can be viewed as a generalization of an array: While a regular <a href="/wiki/Array.html" title="Array">array</a> maps integers to arbitrarily typed objects (integers, strings, pointers, and, in an <a href="/wiki/Object-oriented_programming.html" title="Object-oriented programming">OO</a> sense, <a href="/wiki/Object_%28computer_science%29.html" title="Object (computer science)">objects</a>), an associative array maps arbitrarily typed objects to arbitrarily typed objects. (Implementations of the two data structures, though, may be considerably different.)</p>
+<p>The operations that are usually defined for an associative array are:</p>
+<ul>
+<li><b>Add</b>: Bind a new key to a new value</li>
+<li><b>Reassign</b>: Bind an old key to a new value</li>
+<li><b>Remove</b>: Unbind a key from a value and remove it from the key set</li>
+<li><b>Lookup</b>: Find the value (if any) that is bound to a key</li>
+</ul>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Examples</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Data structures for associative arrays</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">2.1</span> <span class="toctext">Efficient representations</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.2</span> <span class="toctext">Association lists</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.3</span> <span class="toctext">Specialized representations</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.4</span> <span class="toctext">Multimap</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Language support</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">3.1</span> <span class="toctext">Awk</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.2</span> <span class="toctext">C</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.3</span> <span class="toctext">.NET</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.4</span> <span class="toctext">C++</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.5</span> <span class="toctext">Cocoa (Obj-C)</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.6</span> <span class="toctext">D</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.7</span> <span class="toctext">Java</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.8</span> <span class="toctext">JavaScript</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.9</span> <span class="toctext">Lisp</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.10</span> <span class="toctext">MUMPS</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.11</span> <span class="toctext">OCaml</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.12</span> <span class="toctext">Perl</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.13</span> <span class="toctext">PHP</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.14</span> <span class="toctext">Python</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.15</span> <span class="toctext">Ruby</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.16</span> <span class="toctext">Smalltalk</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.17</span> <span class="toctext">TCL</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Examples">edit</a>]</div>
+<p><a name="Examples" id="Examples"></a></p>
+<h2>Examples</h2>
+<p>One can think of a telephone book as an example of an associative array, where names are the keys and phone numbers are the values. Another example would be a dictionary where words are the keys and definitions are the values. A <a href="/wiki/Database.html" title="Database">database</a> is a sort of generalized associative array.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Data structures for associative arrays">edit</a>]</div>
+<p><a name="Data_structures_for_associative_arrays" id="Data_structures_for_associative_arrays"></a></p>
+<h2>Data structures for associative arrays</h2>
+<p>Associative arrays are usually used when lookup is the most frequent operation. For this reason, implementations are usually designed to allow speedy lookup, at the expense of slower insertion and a larger storage footprint than other data structures (such as <a href="/wiki/Association_list.html" title="Association list">association lists</a>).</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Efficient representations">edit</a>]</div>
+<p><a name="Efficient_representations" id="Efficient_representations"></a></p>
+<h3>Efficient representations</h3>
+<p>There are two main efficient data structures used to represent associative arrays, the <a href="/wiki/Hash_table.html" title="Hash table">hash table</a> and the <a href="/wiki/Self-balancing_binary_search_tree.html" title="Self-balancing binary search tree">self-balancing binary search tree</a>. <a href="/wiki/Skip_list.html" title="Skip list">Skip lists</a> are also an alternative, though relatively new and not as widely used. Relative advantages and disadvantages include:</p>
+<ul>
+<li>Hash tables have faster average lookup and insertion time (O(1)), while some kinds of balanced binary trees have faster worst-case lookup and insertion time (O(log <var>n</var>) instead of O(<var>n</var>)). Hash tables have seen extensive use in realtime systems, but trees can be useful in high-security realtime systems where untrusted users may deliberately supply information that triggers worst-case performance in a hash table, although careful design can remove that issue. Hash tables shine in very large arrays, where O(1) performance is important. Skip lists have worst-case operation time of O(<var>n</var>), but average-case of O(log <var>n</var>), with much less insertion and deletion overhead than balanced binary trees.</li>
+<li>Hash tables can have more compact storage for small value types, especially when the values are bits.</li>
+<li>There are simple <a href="/wiki/Persistent_data_structure.html" title="Persistent data structure">persistent</a> versions of balanced binary trees, which are especially prominent in <a href="/wiki/Functional_language.html" title="Functional language">functional languages</a>.</li>
+<li>Building a hash table requires a reasonable <a href="/wiki/Hash_function.html" title="Hash function">hash function</a> for the key type, which can be difficult to write well, while balanced binary trees and skip lists only require a <a href="/wiki/Total_ordering.html" title="Total ordering">total ordering</a> on the keys. On the other hand, with hash tables the data may be <a href="/wiki/Cyclic_order.html" title="Cyclic order">cyclically</a> or <a href="/wiki/Partial_ordering.html" title="Partial ordering">partially ordered</a> without any problems.</li>
+<li>Balanced binary trees and skip lists preserve ordering — allowing one to efficiently iterate over the keys in order or to efficiently locate an association whose key is nearest to a given value. Hash tables do not preserve ordering and therefore cannot perform these operations as efficiently.</li>
+<li>Balanced binary trees can be easily adapted to efficiently assign a single value to a large ordered range of keys, or to count the number of keys in an ordered range.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Association lists">edit</a>]</div>
+<p><a name="Association_lists" id="Association_lists"></a></p>
+<h3>Association lists</h3>
+<p>A simple but generally inefficient type of associative array is an <i>association list</i>, often called an <i>alist</i> for short, which simply stores a <a href="/wiki/Linked_list.html" title="Linked list">linked list</a> of key-value pairs. Each lookup does a <a href="/wiki/Linear_search.html" title="Linear search">linear search</a> through the list looking for a key match.</p>
+<p>Strong advantages of association lists include:</p>
+<ul>
+<li>No knowledge is needed about the keys, such as an order or a hash function.</li>
+<li>For small associative arrays, common in some applications, association lists can take less time and space than other data structures.</li>
+<li>Insertions are done in constant time by <a href="/wiki/Cons.html" title="Cons">consing</a> the new association to the head of the list.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Specialized representations">edit</a>]</div>
+<p><a name="Specialized_representations" id="Specialized_representations"></a></p>
+<h3>Specialized representations</h3>
+<p>If the keys have a specific type, one can often use specialized data structures to gain performance. For example, integer-keyed maps can be implemented using <a href="/wiki/Patricia_tree.html" title="Patricia tree">Patricia trees</a> or <a href="/wiki/Judy_array.html" title="Judy array">Judy arrays</a>, and are useful space-saving replacements for sparse arrays. Because this type of data structure can perform longest-prefix matching, they're particularly useful in applications where a single value is assigned to most of a large range of keys with a common prefix except for a few exceptions, such as in <a href="/wiki/Routing_table.html" title="Routing table">routing tables</a>.</p>
+<p>String-keyed maps can avoid extra comparisons during lookups by using <a href="/wiki/Trie.html" title="Trie">tries</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Multimap">edit</a>]</div>
+<p><a name="Multimap" id="Multimap"></a></p>
+<h3>Multimap</h3>
+<p>A variation of the map (associative array) is the <b>multimap</b>, which is the same as map data structures, but allows a key to be mapped to more than one value. Formally, a multimap can be thought of as a regular associative array that maps unique keys to nonempty multisets of values, although actual implementation may vary. C++'s Standard Template Library provides the "<code>multimap</code>" class for the sorted multiset, and SGI's STL provides the "<code>hash_multimap</code>" class, which implements a multimap using a hash table.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Language support">edit</a>]</div>
+<p><a name="Language_support" id="Language_support"></a></p>
+<h2>Language support</h2>
+<p>Associative arrays are known by many names in different programming languages. In <a href="/wiki/Smalltalk_programming_language.html" title="Smalltalk programming language">Smalltalk</a>, <a href="/wiki/Objective-C_programming_language.html" title="Objective-C programming language">Objective-C</a> and <a href="/wiki/Python_programming_language.html" title="Python programming language">Python</a> they are called <i>dictionaries</i>; in <a href="/wiki/Perl_programming_language.html" title="Perl programming language">Perl</a> and <a href="/wiki/Ruby_programming_language.html" title="Ruby programming language">Ruby</a> they are called <i>hashes</i>; in <a href="/wiki/Java_programming_language.html" title="Java programming language">Java</a> they are called <i>Maps</i> (see <code><a  class="external text" title="http://java.sun.com/j2se/1.5.0/docs/api/java/util/Map.html">Map</a></code>) and in <a href="/wiki/Common_Lisp.html" title="Common Lisp">Common Lisp</a> they are called <i>hash tables</i> (since Common Lisp typically uses this implementation). In <a href="/wiki/PHP.html" title="PHP">PHP</a> all arrays can be associative, except that the keys are limited to integers and strings and can only be a single level of subscripts. In <a href="/wiki/MUMPS.html" title="MUMPS">MUMPS</a>, all arrays are associative, with multiple dimensional arrays (ie: with variable numbers of keys), MUMPS keys are strings with values at any dimensional level allowed to store string values.</p>
+<p>In the scripting language <a href="/wiki/Lua_programming_language.html" title="Lua programming language">Lua</a>, associative arrays, called <i>tables</i>, are used as the primitive building block for all data structures, even arrays. Likewise, in <a href="/wiki/JavaScript.html" title="JavaScript">JavaScript</a>, all objects are associative arrays. In MUMPS, the associative arrays are typically stored as <a href="/wiki/B-trees.html" title="B-trees">B-trees</a>.</p>
+<p>Associative arrays can be implemented in any programming language, and one or more implementations of them is typically found either built into the language or the standard library distributed with it (<a href="/wiki/C_programming_language.html" title="C programming language">C</a> is a notable exception, as neither the language nor the standard library directly provide one).</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Awk">edit</a>]</div>
+<p><a name="Awk" id="Awk"></a></p>
+<h3>Awk</h3>
+<p><a href="/wiki/Awk.html" title="Awk">Awk</a> has built-in, language-level support for associative arrays.</p>
+<p>For example:</p>
+<pre>
+phonebook["Sally Smart"] = "555-9999"
+phonebook["John Doe"] = "555-1212"
+phonebook["J. Random Hacker"] = "555-1337"
+</pre>
+<p>You can also loop through an associated array as follows:</p>
+<pre>
+for (name in phonebook)
+{
+    print name, " ", phonebook[name]
+}
+</pre>
+<p>You can also check if an element is in the associative array, and delete elements from an associative array.</p>
+<p>Multi-dimensional associative arrays can be implemented in standard Awk using concatenation and e.g. SUBSEP:</p>
+<pre>
+{ # for every input line
+    multi[$1 SUBSEP $2]++;
+}
+#
+END {
+    for (x in multi) {
+        split(x, arr, SUBSEP);
+        print arr[1], arr[2], multi[x];
+    }
+ }
+</pre>
+<p>Thompson AWK <a  class="external autonumber" title="http://www.tasoft.com/tawk.html">[1]</a> provides built-in multi-dimensional associative arrays:</p>
+<pre>
+{ # for every input line
+    multi[$1][$2]++;
+}
+#
+END {
+    for (x in multi)
+        for (y in multi[x])
+            print x, y, multi[x][y];
+ }
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: C">edit</a>]</div>
+<p><a name="C" id="C"></a></p>
+<h3>C</h3>
+<p>There is no standard implementation of an associative array in C, but a 3rd party library with BSD license is available <a  class="external text" title="http://www.cl.cam.ac.uk/~cwc22/hashtable/">here</a></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: .NET">edit</a>]</div>
+<p><a name=".NET"></a></p>
+<h3>.NET</h3>
+<p><a href="/wiki/NET_Framework.html" title="NET Framework">.NET</a> languages utilize the <a href="/wiki/Hashtable.html" title="Hashtable">System.Collections.Hashtable</a> class to store Associative arrays as follows:</p>
+<p><a href="/wiki/Visual_Basic_.NET.html" title="Visual Basic .NET">Basic 7.x</a>:</p>
+<pre>
+Dim ht As New Hashtable()
+ht.Add("testKey", "AssociatedData")
+MessageBox.Show(CStr(ht("testKey")))
+</pre>
+<p><a href="/wiki/C_Sharp.html" title="C Sharp">C# 1.x</a></p>
+<pre>
+Hashtable ht = new Hashtable();
+ht.Add("testKey", "AssociatedData");
+MessageBox.Show((string) ht["testKey"]);
+</pre>
+<p>In the above sample the Hashtable class is only capable of associating a String key with a value of Object type. Because in .NET all types (save pointers) ultimately derive form Object anything can be put into a Hashtable, even data of different types. This could lead to errors if consuming code expects data to be of a singular type. In the above code casting is required to convert the Object variables back to their original type. Additionally, casting value-types (structures such as integers) to Object to put into the Hashtable and casting them back requires boxing/unboxing which incurs both a slight performance penalty and pollutes the heap with garbage.</p>
+<p>In .NET 2.0 generic (similar to C++ Templates) collections were introduced. These collections are type safe, don't require boxing when typed for ValueTypes, and may be constructed to use particular types. The v2.0 generic equivalent of the Hashtable is the System.Collections.Generic.Dictionary class.</p>
+<p>Basic 8.0:</p>
+<pre>
+Dim earnings As New Dictionary(Of Date, Decimal)()
+earnings.Add(#10/12/1984#, 64586.53D)
+MessageBox.WriteLine(earnings(#10/12/1984#))
+</pre>
+<p>C# 2.0:</p>
+<pre>
+Dictionary&lt;DateTime, Decimal&gt; earnings = new Dictionary&lt;DateTime, Decimal&gt;();
+...
+</pre>
+<p><a href="/wiki/C%2B%2B/CLI.html" title="C++/CLI">C++/CLI 1.0</a>:</p>
+<pre>
+Dictionary&lt;DateTime, Decimal&gt;^ earnings = gcnew Dictionary&lt;DateTime, Decimal&gt;();
+...
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: C++">edit</a>]</div>
+<p><a name="C.2B.2B" id="C.2B.2B"></a></p>
+<h3>C++</h3>
+<p><a href="/wiki/C%2B%2B.html" title="C++">C++</a> also has a form of associative array called <code>std::map</code> (see <a href="/wiki/Standard_Template_Library#Containers.html" title="Standard Template Library">Standard Template Library#Containers</a>). One could create a map with the same information as above using C++ with the following code:</p>
+<pre>
+#include &lt;map&gt;
+#include &lt;string&gt;
+
+int main()
+{
+   std::map&lt;std::string, std::string&gt; phone_book;
+   phone_book["Sally Smart"] = "555-9999";
+   phone_book["John Doe"] = "555-1212";
+   phone_book["J. Random Hacker"] = "553-1337";
+   return 0;
+}
+</pre>
+<p>In C++, the <code>std::map</code> class is <a href="/wiki/Generic_programming#Templates_in_C.2B.2B.html" title="Generic programming">templated</a> which allows keys and values to be different <a href="/wiki/Data_type.html" title="Data type">data types</a>. For a given instance of the <code>map</code> class the keys must be of the same base type. The same must be true for all of the values. Although <code>std::map</code> is typically implemented using a <a href="/wiki/Self-balancing_binary_search_tree.html" title="Self-balancing binary search tree">self-balancing binary search tree</a>, the SGI STL also provides a <code>std::hash_map</code> which has the algorithmic benefits of a <a href="/wiki/Hash_table.html" title="Hash table">hash table</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Cocoa (Obj-C)">edit</a>]</div>
+<p><a name="Cocoa_.28Obj-C.29" id="Cocoa_.28Obj-C.29"></a></p>
+<h3>Cocoa (Obj-C)</h3>
+<p><a href="/wiki/Cocoa_%28API%29.html" title="Cocoa (API)">Cocoa (API)</a> handles associative arrays using NSMutableDictionary (a mutable version of NSDictionary) class cluster. This class allows assignments between any two objects to be made. A copy of key object is made before it is being inserted into NSMutableDictionary. For immutable objects retain count of that object is increased instead of making a hard copy.</p>
+<pre>
+NSMutableDictionary *aDictionary = [[NSMutableDictionary alloc] init];
+[aDictionary setObject:@"555-9999" forKey:@"Sally Smart"]; 
+[aDictionary setObject:@"555-1212" forKey:@"John Doe"]; 
+[aDictionary setObject:@"553-1337" forKey:@"Random Hacker"]; 
+</pre>
+<p>To access assigned objects this command may be used:</p>
+<pre>
+id anObject = [aDictionary objectForKey:@"Sally Smart"];
+</pre>
+<p>All keys or values can be simply enumerated using NSEnumerator</p>
+<pre>
+NSEnumerator *keyEnumerator = [[aDictionary allKeys] objectEnumerator];
+id key;
+while (( key = [keyEnumerator nextObject] ))
+{
+  // ... process it here ...
+}
+</pre>
+<p>What is even more practical, structured data graphs may be easily created using <a href="/wiki/Cocoa_%28API%29.html" title="Cocoa (API)">Cocoa (API)</a>, especially NSDictionary (NSMutableDictionary). This can be ilustrated with this compact example:</p>
+<pre>
+NSDictionary *aDictionary =
+       [NSDictionary dictionaryWithObjectsAndKeys:
+                           [NSDictionary dictionaryWithObjectsAndKeys:
+                                   @"555-9999", @"Sally Smart",
+                                   @"555-1212", @"John Doe",
+                                   nil], @"students",
+                           [NSDictionary dictionaryWithObjectsAndKeys:
+                                   @"553-1337", @"Random Hacker",
+                                   nil], @"hackers",
+                           nil];
+</pre>
+<p>And relevant fields can be quickly accessed using key paths:</p>
+<pre>
+id anObject = [aDictionary valueForKeyPath:@"students.Sally Smart"];
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: D">edit</a>]</div>
+<p><a name="D" id="D"></a></p>
+<h3>D</h3>
+<p><a href="/wiki/D_programming_language.html" title="D programming language">D</a> offers direct support for associative arrays in the core language. The equivalent example would be:</p>
+<pre>
+int main()
+{
+   char[][char[]] phone_book;
+   phone_book["Sally Smart"] = "555-9999";
+   phone_book["John Doe"] = "555-1212";
+   phone_book["J. Random Hacker"] = "553-1337";
+   return 0;
+}
+</pre>
+<p>Keys and values can be any types, but all the keys in an associative array must be of the same type, and the same for values.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Java">edit</a>]</div>
+<p><a name="Java" id="Java"></a></p>
+<h3>Java</h3>
+<p>In <a href="/wiki/Java_programming_language.html" title="Java programming language">Java</a> associative arrays are implemented as "maps"; they are part of the <a  class="external text" title="http://java.sun.com/j2se/1.5.0/docs/guide/collections">Java Collections Framework</a>. Since <a href="/wiki/J2SE.html" title="J2SE">J2SE</a> 5.0 and the introduction of <a href="/wiki/Generic_programming.html" title="Generic programming">generics</a> into Java, collections can have a type specified; for example, an associative array mapping strings to strings might be specified as follows:</p>
+<pre>
+Map&lt;String, String&gt; phoneBook = new HashMap&lt;String, String&gt;();
+phoneBook.put("Sally Smart", "555-9999");
+phoneBook.put("John Doe", "555-1212");
+phoneBook.put("J. Random Hacker", "555-1337");
+</pre>
+<p>The <code>get</code> method is used to access a key; for example, the value of the expression <code>phoneBook.get("Sally Smart")</code> is <code>"555-9999"</code>.</p>
+<p>This code uses a hash map to store the associative array, by calling the constructor of the <code><a  class="external text" title="http://java.sun.com/j2se/1.5.0/docs/api/java/util/HashMap.html">HashMap</a></code> class; however, since the code only uses methods common to the interface <code><a  class="external text" title="http://java.sun.com/j2se/1.5.0/docs/api/java/util/Map.html">Map</a></code>, one could also use a self-balancing binary tree by calling the constructor of the <code><a  class="external text" title="http://java.sun.com/j2se/1.5.0/docs/api/java/util/TreeMap.html">TreeMap</a></code> class (which implements the subinterface <code><a  class="external text" title="http://java.sun.com/j2se/1.5.0/docs/api/java/util/SortedMap.html">SortedMap</a></code>, without changing the definition of the <code>phone_book</code> variable or the rest of the code, or use a number of other underlying data structures that implement the <code>Map</code> interface.</p>
+<p>The hash function in Java is provided by the method <code><a  class="external text" title="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html#hashCode()">Object.hashCode()</a></code>. Since every class in Java <a href="/wiki/Inheritance_%28computer_science%29.html" title="Inheritance (computer science)">inherits</a> from <code><a  class="external text" title="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html">Object</a></code>, every object has a hash function. A class can <a href="/wiki/Method_overriding_%28programming%29.html" title="Method overriding (programming)">override</a> the default implementation of <code>hashCode()</code> to provide a custom hash function based on the properties of the object.</p>
+<p>The <code>Object</code> class also contains the method <code><a  class="external text" title="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html#equals(java.lang.Object)">equals(Object)</a></code> that tests the object for equality with another object. Maps in Java rely on objects maintaining the following contract between their <code>hashCode()</code> and <code>equals()</code> methods:</p>
+<dl>
+<dd>For two objects <i>a</i> and <i>b</i>
+<ul>
+<li>a.equals(b) == b.equals(a)</li>
+<li>if a.equals(b) then a.hashCode() == b.hashCode()</li>
+</ul>
+</dd>
+</dl>
+<p>In order to maintain this contract, a class that overrides <code>equals()</code> must also override <code>hashCode()</code>, and vice versa, so that <code>hashCode()</code> is based on the same properties (or a subset of the properties) as <code>equals()</code>.</p>
+<p>A further contract that the map has with the object is that the results of the <code>hashCode()</code> and <code>equals()</code> methods will not change once the object has been inserted into the map. For this reason, it is generally a good practice to base the hash function on <a href="/wiki/Immutable.html" title="Immutable">immutable</a> properties of the object.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: JavaScript">edit</a>]</div>
+<p><a name="JavaScript" id="JavaScript"></a></p>
+<h3>JavaScript</h3>
+<p>JavaScript (and its standardized version: <a href="/wiki/ECMAScript.html" title="ECMAScript">ECMAScript</a>) is a <a href="/wiki/Prototype-based_programming.html" title="Prototype-based programming">prototype-based</a> <a href="/wiki/Object-oriented_programming.html" title="Object-oriented programming">object-oriented</a> language. In JavaScript an object is a mapping from property names to values -- that is, an associative array. The only difference is that objects have a prototype link to the object they inherit from. Doing a lookup for a property will forward the lookup to the prototype if the object does not define the property itself.</p>
+<p>An object literal is written as <code>{ property1 : value1, property2 : value2, ... }</code>. For example:</p>
+<pre>
+var myObject = { "Sally Smart"      : "555-9999",
+                 "John Doe"         : "555-1212",
+                 "J. Random Hacker" : "553-1337" };
+</pre>
+<p>If the property name is a valid identifier, the quotes can be omitted, e.g.:</p>
+<pre>
+var myOtherObject = { foo : 42, bar : false }
+</pre>
+<p>Lookup is written using property access notation, either square brackets, which always works, or dot notation, which only works for identifier keys:</p>
+<pre>
+myObject["John Doe"]
+myOtherObject.foo  
+</pre>
+<p>Any object, including built-in objects such as Array, can be dynamically extended with new properties. For example:</p>
+<pre>
+Array.prototype.removeAllObjects = function () {
+    /* ... */
+}
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Lisp">edit</a>]</div>
+<p><a name="Lisp" id="Lisp"></a></p>
+<h3>Lisp</h3>
+<p><a href="/wiki/Lisp_programming_language.html" title="Lisp programming language">Lisp</a> was originally conceived as a "LISt Processing" language, and one of its most important data types is the linked list, which can be treated as an association list ("alist").</p>
+<pre>
+'(("Sally Smart" . "555-9999")
+  ("John Doe" . "555-1212")
+  ("J. Random Hacker" . "553-1337"))
+</pre>
+<p>The syntax <code>(x . y)</code> is used to indicate a <a href="/wiki/Cons.html" title="Cons"><code>cons</code>ed</a> pair. Keys and values need not be the same type within an alist. Lisp and Scheme provide operators such as <code>assoc</code> to manipulate alists in ways similar to associative arrays.</p>
+<p>Because of their linear nature, alists are used for relatively small sets of data. <a href="/wiki/Common_Lisp.html" title="Common Lisp">Common Lisp</a> also supports a <a href="/wiki/Hash_table.html" title="Hash table">hash table</a> data type, and for <a href="/wiki/Scheme.html" title="Scheme">Scheme</a> they are implemented in <a  class="new" title="SRFI">SRFI</a> 69. Hash tables have greater overhead than alists, but provide much faster access when there are many elements.</p>
+<p>It is easy to construct composite abstract data types in Lisp, using the object-oriented programming features in conjunction with lists, arrays, and hash tables.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: MUMPS">edit</a>]</div>
+<p><a name="MUMPS" id="MUMPS"></a></p>
+<h3>MUMPS</h3>
+<p>In <a href="/wiki/MUMPS.html" title="MUMPS">MUMPS</a> every array is an associative array. The built-in, language-level, direct support for associative arrays applies to private, process-specific arrays stored in memory called "locals" as well as to the permanent, shared arrays stored on disk which are available concurrently by multiple jobs. The name for globals is preceded by the circumflex "^" to distinquish it from local variable names.</p>
+<pre>
+SET ^phonebook("Sally Smart")="555-9999"      ;; storing permanent data
+SET phonebook("John Doe")="555-1212"          ;; storing temporary data
+SET phonebook("J. Random Hacker")="553-1337"  ;;storing temporary data
+MERGE ^phonebook=phonebook                    ;;copying temporary data into permanent data
+</pre>
+<p>To access the value of an element, simply requires using the name with the subscript:</p>
+<pre>
+WRITE "Phone Number :",^phonebook("Sally Smart"),!
+</pre>
+<p>You can also loop through an associated array as follows:</p>
+<pre>
+SET NAME="" FOR  S NAME=$ORDER(^phonebook(NAME)) QUIT:NAME=""
+. WRITE NAME,"  Phone Number :",^phonebook(NAME),!
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: OCaml">edit</a>]</div>
+<p><a name="OCaml" id="OCaml"></a></p>
+<h3>OCaml</h3>
+<p>The <a href="/wiki/OCaml.html" title="OCaml">OCaml</a> programming language provides three different associative containers. The simplest is a list of pairs:</p>
+<pre>
+# let m = ["Sally Smart", "555-9999";
+           "John Doe", "555-1212";
+           "J. Random Hacker", "553-1337"];;
+val m : (string * string) list =
+  [("Sally Smart", "555-9999"); ("John Doe", "555-1212");
+   ("J. Random Hacker", "553-1337")]
+# List.assoc "John Doe" m;;
+- : string = "555-1212"
+</pre>
+<p>The second is a polymorphic hash table:</p>
+<pre>
+# let m = Hashtbl.create 3;;
+val m : ('_a, '_b) Hashtbl.t = &lt;abstr&gt;
+# Hashtbl.add m "Sally Smart" "555-9999";
+  Hashtbl.add m "John Doe" "555-1212";
+  Hashtbl.add m "J. Random Hacker" "553-1337";;
+- : unit = ()
+# Hashtbl.find m "John Doe";;
+- : string = "555-1212"
+</pre>
+<p>Finally, functional maps (represented as immutable balanced binary trees):</p>
+<pre>
+# include (Map.Make(String));;
+...
+# let m = add "Sally Smart" "555-9999" empty
+  let m = add "John Doe" "555-1212" m
+  let m = add "J. Random Hacker" "553-1337" m;;
+val m : string t = &lt;abstr&gt;
+# find "John Doe" m;;
+- : string = "555-1212"
+</pre>
+<p>Lists of pairs and functional maps both provide a purely functional interface. In contrast, hash tables provide an imperative interface. For many operations, hash tables are significantly faster than lists of pairs and functional maps.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Perl">edit</a>]</div>
+<p><a name="Perl" id="Perl"></a></p>
+<h3>Perl</h3>
+<p><a href="/wiki/Perl.html" title="Perl">Perl</a> has built-in, language-level support for associative arrays. Modern Perl vernacular refers to associative arrays as <i>hashes</i>; the term <i>associative array</i> is found in older documentation, but is considered somewhat archaic. Perl hashes are flat: keys are strings and values are scalars. However, values may be <a href="/wiki/Reference_%28computer_science%29.html" title="Reference (computer science)">references</a> to arrays or other hashes.</p>
+<p>A hash variable is marked by a <code>%</code> <a href="/wiki/Sigil_%28computer_programming%29.html" title="Sigil (computer programming)">sigil</a>, to distinguish it from scalar, array and other data types. A hash can be initialized from a key-value list:</p>
+<pre>
+%phone_book = ("Sally Smart",      "555-9999", 
+               "John Doe",         "555-1212", 
+               "J. Random Hacker", "553-1337");
+</pre>
+<p>Perl offers the <code>=&gt;</code> syntax, semantically (almost) equivalent to the comma, to make the key-value association more visible:</p>
+<pre>
+%phone_book = ("Sally Smart"      =&gt; "555-9999",
+               "John Doe"         =&gt; "555-1212",
+               "J. Random Hacker" =&gt; "553-1337");
+</pre>
+<p>Accessing a hash element uses the syntax <code>$hash_name{$key}</code> - the key is surrounded by <i>curly braces</i> and the hash name is prefixed by a <code>$</code>, indicating that the hash element itself is a <i>scalar</i> value, even though it is part of a hash. The value of <code>$phone_book{"John Doe"}</code> is <code>"555-1212"</code>. The <code>%</code> sigil is only used when referring to the hash as a whole, such as when asking for <code>keys %phone_book</code>.</p>
+<p>The list of keys and values can be extracted using the built-in functions <code>keys</code> and <code>values</code>, respectively. So, for example, to print all the keys of a hash:</p>
+<pre>
+foreach $name (keys %phone_book) {
+    print "$name\n";
+}
+</pre>
+<p>One can iterate through (key, value) pairs using the <code>each</code> function:</p>
+<pre>
+while (($name, $number) = each %phone_book) {
+    print "Number for $name: $number\n";
+}
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: PHP">edit</a>]</div>
+<p><a name="PHP" id="PHP"></a></p>
+<h3>PHP</h3>
+<p><a href="/wiki/PHP.html" title="PHP">PHP</a> also has built-in support for Associative Arrays. In fact, this is the major kind of array used in PHP programming. An associative array can be formed in one of two ways:</p>
+<pre>
+$phonebook = array () ;
+$phonebook['Sally Smart']      = '555-9999' ;
+$phonebook['John Doe']         = '555-1212' ;
+$phonebook['J. Random Hacker'] = '555-1337' ;
+</pre>
+<pre>
+$phonebook = array (
+   'Sally Smart'      =&gt; '555-9999',
+   'John Doe'         =&gt; '555-1212',
+   'J. Random Hacker' =&gt; '555-1337'   // final , is optional
+) ;
+</pre>
+<p>You can also loop through an associative array as follows:</p>
+<pre>
+foreach ($phonebook as $name =&gt; $number) {
+   echo "Number for $name: $number\n";
+}
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Python">edit</a>]</div>
+<p><a name="Python" id="Python"></a></p>
+<h3>Python</h3>
+<p>In <a href="/wiki/Python_programming_language.html" title="Python programming language">Python</a>, associative arrays are called <i><a href="/wiki/Python_programming_language#Collection_types.html" title="Python programming language">dictionaries</a></i>. Dictionary literals are marked with curly braces:</p>
+<pre>
+phonebook = {'Sally Smart' : '555-9999', 
+             'John Doe' : '555-1212', 
+             'J. Random Hacker' : '553-1337'}
+</pre>
+<p>To access an entry in python simply use the array indexing operator. For example, the expression <code>phonebook['Sally Smart']</code> would return <code>'555-9999'</code>.</p>
+<p>An example loop <a href="/wiki/Iterator#Python.html" title="Iterator">iterating</a> through all the keys of the dictionary:</p>
+<pre>
+for key in phonebook:
+    print key, phonebook[key]
+</pre>
+<p>Iterating through (key, value) tuples:</p>
+<pre>
+for key, value in phonebook.iteritems():
+    print key, value
+</pre>
+<p>Dictionaries can also be constructed with the <code>dict</code> builtin, which takes a key-value list:</p>
+<pre>
+dict((key, value) for key, value in phonebook.items() if 'J' in key)
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Ruby">edit</a>]</div>
+<p><a name="Ruby" id="Ruby"></a></p>
+<h3>Ruby</h3>
+<p>In <a href="/wiki/Ruby_programming_language.html" title="Ruby programming language">Ruby</a> a Hash is used as follows:</p>
+<pre>
+phonebook = {
+  'Sally Smart' =&gt; '555-9999', 
+  'John Doe' =&gt; '555-1212', 
+  'J. Random Hacker' =&gt; '553-1337'
+}
+</pre>
+<p><code>phonebook['John Doe']</code> produces <code>'555-1212'</code></p>
+<p>To iterate over the hash, use something like the following:</p>
+<pre>
+phonebook.each {|key, value| puts key + " =&gt; " + value}
+</pre>
+<p>Additionally, each key may be shown individually:</p>
+<pre>
+phonebook.each_key {|key| puts key}
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Smalltalk">edit</a>]</div>
+<p><a name="Smalltalk" id="Smalltalk"></a></p>
+<h3>Smalltalk</h3>
+<p>In <a href="/wiki/Smalltalk.html" title="Smalltalk">Smalltalk</a> a dictionary is used:</p>
+<pre>
+phonebook := Dictionary new.
+phonebook at: 'Sally Smart'      put:  '555-9999'.
+phonebook at: 'John Doe'         put:  '555-1212'.
+phonebook at: 'J. Random Hacker' put:  '553-1337'.
+</pre>
+<p>To access an entry the message <code>#at:</code> is sent to the dictionary object.</p>
+<pre>
+phonebook at: 'Sally Smart'
+</pre>
+<p>gives</p>
+<pre>
+'555-9999'
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: TCL">edit</a>]</div>
+<p><a name="TCL" id="TCL"></a></p>
+<h3>TCL</h3>
+<p>In <a href="/wiki/Tcl.html" title="Tcl">Tcl</a> every array is an associative array.</p>
+<pre>
+set "phonebook(Sally Smart)"       555-9999
+set "phonebook(John Doe)"          555-1212
+set "phonebook(J. Random Hacker)"  553-1337
+</pre>
+<p>The first argument of the <code>set</code> command has to be enclosed by double quotes, as it contains a space. In Tcl, space is used to separate arguments. Alternatively, array setting can be grouped into a single command (keys braced because they contain whitespace):</p>
+<pre>
+array set phonebook {
+    {Sally Smart}      555-9999
+    {John Doe}         555-1212
+    {J. Random Hacker} 553-1337
+}
+</pre>
+<p>To access an entry and put it on standard output</p>
+<pre>
+puts "$phonebook(Sally Smart)"
+</pre>
+<p>The result is here</p>
+<pre>
+555-9999
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://goletas.com/solutions/collections/">TreeDictionary&lt;K,V&gt; Implementation in C#</a></li>
+<li><a  class="external text" title="http://www.nist.gov/dads/HTML/assocarray.html">NIST's Dictionary of Algorithms and Data Structures: Associative Array</a></li>
+<li><a  class="external text" title="http://www.nist.gov/dads/HTML/dictionary.html">NIST's Dictionary of Algorithms and Data Structures: Association List</a></li>
+<li><a  class="external text" title="http://www.sgi.com/tech/stl/Map.html">SGI STL page on Associative Containers</a></li>
+<li><a  class="external text" title="http://www.sgi.com/tech/stl/Map.html">SGI STL page on std::map</a></li>
+<li><a  class="external text" title="http://www.sgi.com/tech/stl/hash_map.html">SGI STL page on std::hash_map</a></li>
+</ul>
+
+<!-- 
+Pre-expand include size: 12545 bytes
+Post-expand include size: 2676 bytes
+Template argument size: 1039 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:95154-0!1!0!default!!en!2 and timestamp 20060910154951 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Articles to be merged">Articles to be merged</a></span> | <span dir='ltr'><a  title="Category:Data structures">Data structures</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Associative_array.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-cs"><a >Česky</a></li>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-nl"><a >Nederlands</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 09:50, 3 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv83 in 0.100 secs. --></body></html>

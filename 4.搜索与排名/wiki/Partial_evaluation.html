@@ -1,0 +1,235 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Partial evaluation,1970s,C++,Computer program,Computer programming,Computing,Eager evaluation,Evaluation function,Evaluation strategy,Lazy evaluation,Minimal evaluation" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Partial evaluation - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Partial_evaluation";
+			var wgTitle = "Partial evaluation";
+			var wgArticleId = 62428;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Partial evaluation</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<table class="infobox" style="text-align: center; font-size: 90%;">
+<tr style="background:#CCCCFF;">
+<th><a href="/wiki/Computer_programming.html" title="Computer programming">Programming</a><br />
+evaluation</th>
+</tr>
+<tr style="background:F9F9F9;">
+<td>
+<p><a href="/wiki/Eager_evaluation.html" title="Eager evaluation">Eager</a><br />
+<a href="/wiki/Evaluation_function.html" title="Evaluation function">Function</a><br />
+<a href="/wiki/Lazy_evaluation.html" title="Lazy evaluation">Lazy</a><br />
+<a href="/wiki/Minimal_evaluation.html" title="Minimal evaluation">Minimal</a><br />
+<strong class="selflink">Partial</strong><br />
+<a href="/wiki/Remote_evaluation.html" title="Remote evaluation">Remote</a><br />
+<a href="/wiki/Evaluation_strategy.html" title="Evaluation strategy">Strategy</a></p>
+</td>
+</tr>
+</table>
+<p>In <a href="/wiki/Computing.html" title="Computing">computing</a>, <b>partial evaluation</b> is a technique for <a href="/wiki/Optimization_%28computer_science%29.html" title="Optimization (computer science)">program optimization</a> by <a href="/wiki/Specialization.html" title="Specialization">specialization</a>.</p>
+<p>A <a href="/wiki/Computer_program.html" title="Computer program">computer program</a> is seen as a mapping <i>prog</i> of input data into output data:</p>
+<dl>
+<dd><i>prog: {I<sub>static</sub>, I<sub>dynamic</sub>} <img class='tex' src="http://upload.wikimedia.org/math/8/3/e/83e37b7246fdfcb99b2754210ebeae27.png" alt="\rightarrow" /> O</i></dd>
+</dl>
+<p><i>I<sub>static</sub></i>, the <i>static data</i>, is the part of the input data known at compile time.</p>
+<p>The partial evaluator transforms <i>{prog, I<sub>static</sub>}</i> into <i>prog*</i> i.e. precomputes all static input at compile time. <i>prog*</i> is called the "residual program", and the act of partial evaluation is said to "residualize" <i>prog</i> to <i>prog*</i>.</p>
+<p><i>prog: {I<sub>static</sub>, I<sub>dynamic</sub>} <img class='tex' src="http://upload.wikimedia.org/math/8/3/e/83e37b7246fdfcb99b2754210ebeae27.png" alt="\rightarrow" /> O</i> becomes <i>prog*: I<sub>dynamic</sub> <img class='tex' src="http://upload.wikimedia.org/math/8/3/e/83e37b7246fdfcb99b2754210ebeae27.png" alt="\rightarrow" /> O</i> which in general runs more efficiently.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Futamura projections</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Futamura projections">edit</a>]</div>
+<p><a name="Futamura_projections" id="Futamura_projections"></a></p>
+<h2>Futamura projections</h2>
+<p>A particularly interesting example of this, first described in the <a href="/wiki/1970s.html" title="1970s">1970s</a> by <a  class="new" title="Yoshihiko Futamura">Yoshihiko Futamura</a>, is when <i>prog</i> is an interpreter for a programming language.</p>
+<p>If I<sub>static</sub> is source code designed to run inside said interpreter, then partial evaluation of the interpreter with respect to this data/program produces <i>prog*</i>, a version of the interpreter that only runs that source code, is written in the implementation language of the interpreter, does not require the source code to be resupplied, and runs faster than the original combination of the interpreter and the source. In this case prog* is effectively a compiled version of I<sub>static</sub>.</p>
+<p>This technique is known as the first Futamura projection, of which there are three:</p>
+<ol>
+<li>Compiling by specializing an interpreter</li>
+<li>Compiler generation by self-application</li>
+<li>Compiler generator generation by double self-application</li>
+</ol>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<ul>
+<li>Yoshihiko Futamura. <i>Partial Evaluation of Computation Process -- An Approach to a Compiler-Compiler</i> Systems . Computers . Controls 2(5):45-50, 1971. Reprinted in Higher-Order and Symbolic Computation 12(4):381-391, 1999, with a foreword</li>
+<li>Charles Consel and Olivier Danvy. <i>Tutorial Notes on Partial Evaluation</i> Proceedings of the Twentieth Annual ACM Symposium on Principles of Programming Languages pp. 493-501, 1993</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/C%2B%2B.html" title="C++">C++</a> <a href="/wiki/Template_metaprogramming.html" title="Template metaprogramming">Template metaprogramming</a></li>
+<li><a href="/wiki/Run-time_algorithm_specialisation.html" title="Run-time algorithm specialisation">Run-time algorithm specialisation</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://www.dina.kvl.dk/~sestoft/pebook/">Neil D. Jones, Carsten K. Gomard, and Peter Sestoft: <i>Partial Evaluation and Automatic Program Generation</i> (1993)</a></li>
+<li><a  class="external text" title="http://partial-eval.org">partial-eval.org</a> - a large "Online Bibliography of Partial Evaluation Research".</li>
+<li><a  class="external text" title="http://www.brics.dk/~pepm99/">1999 ACM SIGPLAN Workshop on Partial Evaluation and Semantics-Based Program Manipulation (PEPM'99)</a></li>
+<li><a  class="external text" title="http://osl.iu.edu/~tveldhui/papers/pepm99/">C++ Templates as Partial Evaluation, 1999 ACM SIGPLAN Workshop on Partial Evaluation and Semantics-Based Program Manipulation (PEPM'99)</a></li>
+<li><a  class="external text" title="http://arxiv.org/pdf/cs.PL/9810010">C++ Templates as Partial Evaluation</a> a different version including Catat (pdf)</li>
+<li><a  class="external text" title="http://people.csail.mit.edu/gregs/dynamic-pe.html">Applying Dynamic Partial Evaluation to dynamic, reflective programming languages</a></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:62428-0!1!0!default!!en!2 and timestamp 20060910160500 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Compiler optimizations">Compiler optimizations</a></span> | <span dir='ltr'><a  title="Category:Programming evaluation">Programming evaluation</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Partial_evaluation.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-eo"><a >Esperanto</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 01:18, 27 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv62 in 0.156 secs. --></body></html>

@@ -1,0 +1,362 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Technical Report 1,Algorithmic complexity,Array,Beta function,Boost library,C++,C++ Standard Library,C programming language,Compilers,Container (data structure),Datatype" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Technical Report 1 - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Technical_Report_1";
+			var wgTitle = "Technical Report 1";
+			var wgArticleId = 2581482;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Technical Report 1</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p><b>Technical Report 1 (TR1)</b> is a draft document specifying additions to the <a href="/wiki/C%2B%2B_Standard_Library.html" title="C++ Standard Library">C++ Standard Library</a> such as <a href="/wiki/Regular_expressions.html" title="Regular expressions">regular expressions</a>, <a href="/wiki/Smart_pointers.html" title="Smart pointers">smart pointers</a>, <a href="/wiki/Hash_tables.html" title="Hash tables">hash tables</a>, and <a href="/wiki/Random_number_generators.html" title="Random number generators">random number generators</a>. TR1 is not yet standardized, but likely will be part of the next official standard mostly as it stands now. In the meantime, vendors can use this document as a guide to create extensions. The report's goal is "to build more widespread existing practice for an expanded C++ standard library."<a  class="external autonumber" title="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2005/n1745.pdf">[1]</a></p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Components</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">2.1</span> <span class="toctext">General Utilities</span></a>
+<ul>
+<li class="toclevel-3"><a ><span class="tocnumber">2.1.1</span> <span class="toctext">Reference Wrapper</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">2.1.2</span> <span class="toctext">Smart Pointers</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.2</span> <span class="toctext">Function Objects</span></a>
+<ul>
+<li class="toclevel-3"><a ><span class="tocnumber">2.2.1</span> <span class="toctext">Polymorphic Function Wrapper</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">2.2.2</span> <span class="toctext">Function Object Binders</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">2.2.3</span> <span class="toctext">Function Return Types</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">2.2.4</span> <span class="toctext">mem_fn</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.3</span> <span class="toctext">Metaprogramming and Type Traits</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.4</span> <span class="toctext">Numerical Facilities</span></a>
+<ul>
+<li class="toclevel-3"><a ><span class="tocnumber">2.4.1</span> <span class="toctext">Random Number Generation</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">2.4.2</span> <span class="toctext">Mathematical Functions</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.5</span> <span class="toctext">Containers</span></a>
+<ul>
+<li class="toclevel-3"><a ><span class="tocnumber">2.5.1</span> <span class="toctext">Tuple Types</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">2.5.2</span> <span class="toctext">Fixed Size Array</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">2.5.3</span> <span class="toctext">Hash Tables</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.6</span> <span class="toctext">Regular Expressions</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.7</span> <span class="toctext">C Compatibility</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Literature</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Overview">edit</a>]</div>
+<p><a name="Overview" id="Overview"></a></p>
+<h2>Overview</h2>
+<p><a href="/wiki/Compilers.html" title="Compilers">Compilers</a> need not include the TR1 components to be conforming, as TR1 is not yet officially part of the standard. Much of it is available from <a href="/wiki/Boost_library.html" title="Boost library">Boost</a>, and several compiler/library distributors currently implement all or part of the components.</p>
+<p>TR1 is not a complete list of additions to the library that will appear in the next standard; for example, the next standard, <b>C++0x</b>, may include support for <a href="/wiki/Thread_%28computer_science%29.html" title="Thread (computer science)">threading</a>. There is also a second technical report, TR2, planned <a  class="external autonumber" title="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2005/n1810.html">[2]</a>.</p>
+<p>The new components are in the <code>std::tr1</code> <a href="/wiki/Namespace_%28computer_science%29.html" title="Namespace (computer science)">namespace</a> to distinguish them from the current standard library.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Components">edit</a>]</div>
+<p><a name="Components" id="Components"></a></p>
+<h2>Components</h2>
+<p>TR1 includes the following components:</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: General Utilities">edit</a>]</div>
+<p><a name="General_Utilities" id="General_Utilities"></a></p>
+<h3>General Utilities</h3>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Reference Wrapper">edit</a>]</div>
+<p><a name="Reference_Wrapper" id="Reference_Wrapper"></a></p>
+<h4>Reference Wrapper</h4>
+<ul>
+<li>lifted from Boost.Ref <sup><a  class="external autonumber" title="http://www.boost.org/doc/html/ref.html">[3]</a></sup></li>
+<li>additions to the <code>&lt;functional&gt;</code> <a href="/wiki/Header_file.html" title="Header file">header file</a> - <code>cref</code>, <code>ref</code>, <code>reference_wrapper</code></li>
+<li>enables passing <a href="/wiki/Reference#Computer_science.html" title="Reference">references</a>, rather than copies, into algorithms or function objects</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Smart Pointers">edit</a>]</div>
+<p><a name="Smart_Pointers" id="Smart_Pointers"></a></p>
+<h4>Smart Pointers</h4>
+<ul>
+<li>based on Boost Smart Pointer library <sup><a  class="external autonumber" title="http://www.boost.org/libs/smart_ptr/smart_ptr.htm">[4]</a></sup></li>
+<li>additions to the <code>&lt;memory&gt;</code> header file - <code>shared_ptr</code>, <code>weak_ptr</code>, etc</li>
+<li>utility for memory management and exception safety using the <a href="/wiki/Resource_Acquisition_Is_Initialization.html" title="Resource Acquisition Is Initialization">Resource Acquisition Is Initialization</a> (RAII) idiom</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Function Objects">edit</a>]</div>
+<p><a name="Function_Objects" id="Function_Objects"></a></p>
+<h3><a href="/wiki/Function_object.html" title="Function object">Function Objects</a></h3>
+<p>These four modules are added to the <code>&lt;functional&gt;</code> header file:</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Polymorphic Function Wrapper">edit</a>]</div>
+<p><a name="Polymorphic_Function_Wrapper" id="Polymorphic_Function_Wrapper"></a></p>
+<h4><a href="/wiki/Polymorphism_%28computer_science%29.html" title="Polymorphism (computer science)">Polymorphic</a> Function Wrapper</h4>
+<ul>
+<li><code>function</code></li>
+<li>based on Boost.Function <sup><a  class="external autonumber" title="http://www.boost.org/doc/html/function.html">[5]</a></sup></li>
+<li>allows for higher order programming and function object manipulation</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Function Object Binders">edit</a>]</div>
+<p><a name="Function_Object_Binders" id="Function_Object_Binders"></a></p>
+<h4>Function Object Binders</h4>
+<ul>
+<li><code>bind</code></li>
+<li>taken from Boost Bind library <sup><a  class="external autonumber" title="http://www.boost.org/libs/bind/bind.html">[6]</a></sup></li>
+<li>generalized version of the standard <code>std::bind1st</code> and <code>std::bind2nd</code></li>
+<li>binds <a href="/wiki/Parameter#Computer_science.html" title="Parameter">parameters</a> to function objects</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Function Return Types">edit</a>]</div>
+<p><a name="Function_Return_Types" id="Function_Return_Types"></a></p>
+<h4>Function Return Types</h4>
+<ul>
+<li><code>result_of</code></li>
+<li>taken from Boost</li>
+<li>determines the type of a call expression</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: mem_fn">edit</a>]</div>
+<p><a name="mem_fn" id="mem_fn"></a></p>
+<h4>mem_fn</h4>
+<ul>
+<li><code>mem_fn</code></li>
+<li>based on Boost Mem Fn library <sup><a  class="external autonumber" title="http://www.boost.org/libs/bind/mem_fn.html">[7]</a></sup></li>
+<li>enhancement to the standard <code>std::mem_fun</code> and <code>std::mem_fun_ref</code></li>
+<li>allows <a href="/wiki/Pointers.html" title="Pointers">pointers</a> to member <a href="/wiki/Subroutine.html" title="Subroutine">functions</a> to be treated as objects</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Metaprogramming and Type Traits">edit</a>]</div>
+<p><a name="Metaprogramming_and_Type_Traits" id="Metaprogramming_and_Type_Traits"></a></p>
+<h3><a href="/wiki/Metaprogramming.html" title="Metaprogramming">Metaprogramming</a> and Type Traits</h3>
+<ul>
+<li>new <code>&lt;type_traits&gt;</code> header file - <code>is_pod</code>, <code>has_<a href="/wiki/Virtual#Computing.html" title="Virtual">virtual</a>_destructor</code>, <code>remove_<a href="/wiki/Extent.html" title="Extent">extent</a></code>, etc</li>
+<li>based on Boost Type Traits library <sup><a  class="external autonumber" title="http://www.boost.org/doc/html/boost_typetraits.html">[8]</a></sup></li>
+<li>facilitates metaprogramming by enabling queries on and transformation between different <a href="/wiki/Datatype.html" title="Datatype">types</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Numerical Facilities">edit</a>]</div>
+<p><a name="Numerical_Facilities" id="Numerical_Facilities"></a></p>
+<h3>Numerical Facilities</h3>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Random Number Generation">edit</a>]</div>
+<p><a name="Random_Number_Generation" id="Random_Number_Generation"></a></p>
+<h4>Random Number Generation</h4>
+<ul>
+<li>new <code>&lt;random&gt;</code> header file - <code>variate_generator</code>, <code><a href="/wiki/Mersenne_twister.html" title="Mersenne twister">mersenne_twister</a></code>, <code><a href="/wiki/Poisson_distribution.html" title="Poisson distribution">poisson_distribution</a></code>, etc</li>
+<li>utilities for generating random numbers using various <a href="/wiki/Pseudorandom_number_generator.html" title="Pseudorandom number generator">engines</a> and <a href="/wiki/Probability_distributions.html" title="Probability distributions">probability distributions</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Mathematical Functions">edit</a>]</div>
+<p><a name="Mathematical_Functions" id="Mathematical_Functions"></a></p>
+<h4>Mathematical Functions</h4>
+<ul>
+<li>additions to the <code>&lt;cmath&gt;</code>/<code>&lt;math.h&gt;</code> header files - <code><a href="/wiki/Beta_function.html" title="Beta function">beta</a></code>, <code><a href="/wiki/Legendre_polynomials.html" title="Legendre polynomials">legendre</a></code>, etc</li>
+<li>mathematical functions</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Containers">edit</a>]</div>
+<p><a name="Containers" id="Containers"></a></p>
+<h3><a href="/wiki/Container_%28data_structure%29.html" title="Container (data structure)">Containers</a></h3>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Tuple Types">edit</a>]</div>
+<p><a name="Tuple_Types" id="Tuple_Types"></a></p>
+<h4><a href="/wiki/Tuple.html" title="Tuple">Tuple</a> <a href="/wiki/Datatype.html" title="Datatype">Types</a></h4>
+<ul>
+<li>new <code>&lt;tuple&gt;</code> header file - <code>tuple</code></li>
+<li>based on Boost Tuple library <sup><a  class="external autonumber" title="http://www.boost.org/libs/tuple/doc/tuple_users_guide.html">[9]</a></sup></li>
+<li>vaguely an extension of the standard <code>std::pair</code></li>
+<li>fixed size collection of elements, which may be of different <a href="/wiki/Datatype.html" title="Datatype">types</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Fixed Size Array">edit</a>]</div>
+<p><a name="Fixed_Size_Array" id="Fixed_Size_Array"></a></p>
+<h4>Fixed Size <a href="/wiki/Array.html" title="Array">Array</a></h4>
+<ul>
+<li>new <code>&lt;array&gt;</code> header file - <code>array</code></li>
+<li>lifted from Boost Array library <sup><a  class="external autonumber" title="http://www.boost.org/doc/html/array.html">[10]</a></sup></li>
+<li>as opposed to dynamic array types such as the standard <code>std::vector</code></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Hash Tables">edit</a>]</div>
+<p><a name="Hash_Tables" id="Hash_Tables"></a></p>
+<h4>Hash Tables</h4>
+<ul>
+<li>new <code>&lt;unordered_set&gt;</code>, <code>&lt;unordered_map&gt;</code> header files</li>
+<li>new implementation, not derived from an existing library, not fully API compatible with existing libraries</li>
+<li>like all hash tables, often provide <a href="/wiki/Algorithmic_complexity.html" title="Algorithmic complexity">constant time</a> lookup of elements but the worst case can be linear in the size of the container</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Regular Expressions">edit</a>]</div>
+<p><a name="Regular_Expressions" id="Regular_Expressions"></a></p>
+<h3>Regular Expressions</h3>
+<ul>
+<li>new <code>&lt;regex&gt;</code> header file - <code>regex</code>, <code>regex_match</code>, <code>regex_search</code>, <code>regex_replace</code>, etc</li>
+<li>based on Boost RegEx library <sup><a  class="external autonumber" title="http://www.boost.org/libs/regex/doc/index.html">[11]</a></sup></li>
+<li>pattern matching library</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: C Compatibility">edit</a>]</div>
+<p><a name="C_Compatibility" id="C_Compatibility"></a></p>
+<h3>C Compatibility</h3>
+<p><a href="/wiki/C%2B%2B.html" title="C++">C++</a> is designed to be compatible with the <a href="/wiki/C_programming_language.html" title="C programming language">C programming language</a>, but is not a strict superset of C due to diverging standards. TR1 attempts to reconcile some of these differences through additions to various headers in the C++ library, such as &lt;complex&gt;, &lt;locale&gt;, &lt;cmath&gt;, etc. These changes help to bring C++ more in line with the C99 version of the C standard (not all parts of C99 are included in TR1).</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Boost_library.html" title="Boost library">Boost library</a>, a large collection of portable C++ libraries, several of which were included in TR1</li>
+<li><a href="/wiki/Standard_Template_Library.html" title="Standard Template Library">Standard Template Library</a>, part of the current C++ Standard Library</li>
+<li><a href="/wiki/Dinkumware.html" title="Dinkumware">Dinkumware</a>, the only commercial vendor to fully implement TR1</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Literature">edit</a>]</div>
+<p><a name="Literature" id="Literature"></a></p>
+<h2>Literature</h2>
+<ul>
+<li>Peter Becker: "The C++ Standard Library Extensions: A Tutorial and Reference", 2006, <a  class="internal">ISBN 0321412990</a>. Covers also the TR1 extensions.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external free" title="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2005/n1836.pdf">http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2005/n1836.pdf</a> - pdf of the Proposed Draft</li>
+<li><a  class="external free" title="http://aristeia.com/EC3E/TR1_info_frames.html">http://aristeia.com/EC3E/TR1_info_frames.html</a> - <a href="/wiki/Scott_Meyers.html" title="Scott Meyers">Scott Meyers</a>' TR1 page, links to documents and articles</li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:2581482-0!1!0!default!!en!2 and timestamp 20060909211229 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:C++ standard library">C++ standard library</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Technical_Report_1.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-fi"><a >Suomi</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 21:26, 18 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv117 in 0.245 secs. --></body></html>

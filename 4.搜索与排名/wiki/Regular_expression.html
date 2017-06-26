@@ -1,0 +1,558 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Regular expression,.NET Framework,1940s,ASCII,Algorithm,Apache HTTP Server,Automata theory,Awk,BBEdit,Backtracking,Basic Multilingual Plane" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Regular expression - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Regular_expression";
+			var wgTitle = "Regular expression";
+			var wgArticleId = 25717;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Regular expression</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>A <b>regular expression</b> (abbreviated as <b>regexp</b> or <b>regex</b>, with plural forms <b>regexps</b>, <b>regexes</b>, or <b>regexen</b>) is a <a href="/wiki/String_%28computer_science%29.html" title="String (computer science)">string</a> that describes or matches a <a href="/wiki/Set.html" title="Set">set</a> of strings, according to certain <a href="/wiki/Syntax.html" title="Syntax">syntax</a> rules. Regular expressions are used by many <a href="/wiki/Text_editor.html" title="Text editor">text editors</a> and utilities to search and manipulate bodies of text based on certain patterns. Many programming languages support regular expressions for string manipulation. For example, <a href="/wiki/Perl.html" title="Perl">Perl</a> and <a href="/wiki/Tcl.html" title="Tcl">Tcl</a> have a powerful regular expression engine built directly into their syntax. The set of utilities (including the editor <a href="/wiki/Sed.html" title="Sed">sed</a> and the filter <a href="/wiki/Grep.html" title="Grep">grep</a>) provided by <a href="/wiki/Unix.html" title="Unix">Unix</a> distributions were the first to popularize the concept of regular expressions.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Basic concepts</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">History</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Formal language theory</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Syntax</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">4.1</span> <span class="toctext">Traditional Unix regular expressions</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.2</span> <span class="toctext">Greedy expressions</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.3</span> <span class="toctext">POSIX modern (extended) regular expressions</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.4</span> <span class="toctext">Perl-compatible regular expressions (PCRE)</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.5</span> <span class="toctext">Patterns for irregular languages</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.6</span> <span class="toctext">Implementations and running times</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Regular expressions and Unicode</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">8</span> <span class="toctext">External links</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">8.1</span> <span class="toctext">Articles</span></a></li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Basic concepts">edit</a>]</div>
+<p><a name="Basic_concepts" id="Basic_concepts"></a></p>
+<h2>Basic concepts</h2>
+<p>A regular expression, often called a <i>pattern</i>, is an expression that describes a set of strings. They are usually used to give a concise description of a set, without having to list all elements. For example, the set containing the three strings <i>Handel</i>, <i>Händel</i>, and <i>Haendel</i> can be described by the pattern "H(ä|ae?)ndel" (or alternatively, it is said that the pattern <i>matches</i> each of the three strings). In most formalisms, if there is any regex that matches a particular set then there is an infinite number of such expressions. Most formalisms provide the following operations to construct regular expressions.</p>
+<dl>
+<dt>alternation</dt>
+<dd>A vertical bar separates alternatives. For example, "gray|grey" matches <i>gray</i> or <i>grey</i>, which can commonly be shortened to "gr(a|e)y".</dd>
+<dt>grouping</dt>
+<dd>Parentheses are used to define the scope and precedence of the operators. For example, "gray|grey" and "gr(a|e)y" are different patterns, but they both describe the set containing <i>gray</i> and <i>grey</i>.</dd>
+<dt>quantification</dt>
+<dd>A quantifier after a character or group specifies how often that preceding expression is allowed to occur. The most common quantifiers are&#160;?, *, and +:
+<dl>
+<dt>?</dt>
+<dd>The question mark indicates there is <b>0 or 1</b> of the previous expression. For example, "colou?r" matches both <i>color</i> and <i>colour</i>.</dd>
+<dt>*</dt>
+<dd>The asterisk indicates there are <b>0, 1 or any number</b> of the previous expression. For example, "go*gle" matches <i>ggle</i>, <i>gogle</i>, <i>google</i>, etc.</dd>
+<dt>+</dt>
+<dd>The plus sign indicates that there is <b>at least 1</b> of the previous expression. For example, "go+gle" matches <i>gogle</i>, <i>google</i>, etc. (but not <i>ggle</i>).</dd>
+</dl>
+</dd>
+</dl>
+<p>These constructions can be combined to form arbitrarily complex expressions, very much like one can construct arithmetical expressions from the numbers and the operations +, -, * and /.</p>
+<p>So "H(ae?|ä)ndel" and "H(a|ae|ä)ndel" are valid patterns, and furthermore, they both match the same strings as the example from the beginning of the article. The pattern "((great&#160;)*grand&#160;)?(father|mother)" matches any ancestor: <i>father</i>, <i>mother</i>, <i>grand father</i>, <i>grand mother</i>, <i>great grand father</i>, <i>great grand mother</i>, <i>great great grand father</i>, <i>great great grand mother</i>, <i>great great great grand father</i>, <i>great great great grand mother</i> and so on.</p>
+<p>The precise <a href="/wiki/Syntax.html" title="Syntax">syntax</a> for regular expressions varies among tools and application areas; more detail is given in the <i>Syntax</i> section.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: History">edit</a>]</div>
+<p><a name="History" id="History"></a></p>
+<h2>History</h2>
+<p>The origins of regular expressions lies in <a href="/wiki/Automata_theory.html" title="Automata theory">automata theory</a> and <a href="/wiki/Formal_language_theory.html" title="Formal language theory">formal language theory</a>, both of which are part of <a href="/wiki/Theoretical_computer_science.html" title="Theoretical computer science">theoretical computer science</a>. These fields study models of computation (automata) and ways to describe and classify <a href="/wiki/Formal_language.html" title="Formal language">formal languages</a>. In the <a href="/wiki/1940s.html" title="1940s">1940s</a>, <a href="/wiki/Warren_McCulloch.html" title="Warren McCulloch">Warren McCulloch</a> and <a href="/wiki/Walter_Pitts.html" title="Walter Pitts">Walter Pitts</a> described the nervous system by modelling neurons as small simple automata. The mathematician <a href="/wiki/Stephen_Kleene.html" title="Stephen Kleene">Stephen Kleene</a> later (mid 1950s) described these models using his mathematical notation called <i>regular sets</i>. <a href="/wiki/Ken_Thompson_%28computer_programmer%29.html" title="Ken Thompson (computer programmer)">Ken Thompson</a> built this notation into the editor <a href="/wiki/QED_%28text_editor%29.html" title="QED (text editor)">QED</a>, and then into the Unix editor <a href="/wiki/Ed_%28UNIX%29.html" title="Ed (UNIX)">ed</a>, which eventually led to <a href="/wiki/Grep.html" title="Grep">grep</a>'s use of regular expressions. Ever since that time, regular expressions have been widely used in Unix and Unix-like utilities such as: <a href="/wiki/Expr.html" title="Expr">expr</a>, <a href="/wiki/Awk.html" title="Awk">awk</a>, <a href="/wiki/Emacs.html" title="Emacs">Emacs</a>, <a href="/wiki/Vi.html" title="Vi">vi</a>, <a href="/wiki/Lex_programming_tool.html" title="Lex programming tool">lex</a>, and <a href="/wiki/Perl.html" title="Perl">Perl</a>.</p>
+<p>Perl and Tcl regular expressions were derived from regex written by <a href="/wiki/Henry_Spencer.html" title="Henry Spencer">Henry Spencer</a>. Philip Hazel developed <a href="/wiki/PCRE.html" title="PCRE">PCRE</a> (Perl Compatible Regular Expressions) which attempts to closely mimic Perl's regular expression functionality, and is used by many modern tools such as <a href="/wiki/PHP.html" title="PHP">PHP</a>, <a href="/wiki/ColdFusion.html" title="ColdFusion">ColdFusion</a>, and <a href="/wiki/Apache_HTTP_Server.html" title="Apache HTTP Server">Apache</a>. Part of the effort in the design of the future <a  class="external text" title="http://dev.perl.org/perl6">Perl6</a> is to improve Perl's regular expression integration. This is the subject of <a  class="external text" title="http://dev.perl.org/perl6/apocalypse/A05.html">Apocalypse 5</a>.</p>
+<p>The use of regular expressions in structured information standards (for document and database modeling) was very important, started in the 1960s, and expanded in the 1980s, when industry standards like <a href="/wiki/SGML.html" title="SGML">ISO SGML</a> (precursored by ANSI "GCA 101-1983") consolidated. The kernel of the "structure specification languages" of these standards are regular expressions. The more simple and evident use are in the <a href="/wiki/Document_Type_Definition.html" title="Document Type Definition">DTD</a> element group syntax.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Formal language theory">edit</a>]</div>
+<p><a name="Formal_language_theory" id="Formal_language_theory"></a></p>
+<h2>Formal language theory</h2>
+<p>Regular expressions can be expressed in terms of <a href="/wiki/Formal_language_theory.html" title="Formal language theory">formal language theory</a>. Regular expressions consist of constants and operators that denote sets of strings and operations over these sets, respectively. Given a finite alphabet Σ the following constants are defined:</p>
+<ul>
+<li>(<i>empty set</i>) <span class="Unicode">∅</span> denoting the set <span class="Unicode">∅</span></li>
+<li>(<i>empty string</i>) ε denoting the set {ε}</li>
+<li>(<i><a href="/wiki/Literal_string.html" title="Literal string">literal character</a></i>) <i>a</i> in Σ denoting the set {<i>a</i>}</li>
+</ul>
+<p>and the following operations:</p>
+<ul>
+<li>(<i>concatenation</i>) <i>RS</i> denoting the set { αβ | α in <i>R</i> and β in <i>S</i> }. For example {"ab", "c"}{"d", "ef"} = {"abd", "abef", "cd", "cef"}.</li>
+<li>(<i>alternation</i>) <i>R|S</i> denoting the set union of <i>R</i> and <i>S</i>.</li>
+<li>(<i><a href="/wiki/Kleene_star.html" title="Kleene star">Kleene star</a></i>) <i>R</i>* denoting the smallest <a href="/wiki/Superset.html" title="Superset">superset</a> of <i>R</i> that contains ε and is closed under string concatenation. This is the set of all strings that can be made by concatenating zero or more strings in <i>R</i>. For example, {"ab", "c"}* = {ε, "ab", "c", "abab", "abc", "cab", "cc", "ababab", ... }.</li>
+</ul>
+<p>The above constants and operators form a <a href="/wiki/Kleene_algebra.html" title="Kleene algebra">Kleene algebra</a>.</p>
+<p>Many textbooks use the symbols <span class="Unicode">∪</span>, <span class="Unicode">+</span>, or <span class="Unicode">∨</span> for alternation instead of the vertical bar.</p>
+<p>To avoid brackets it is assumed that the Kleene star has the highest priority, then concatenation and then set union. If there is no ambiguity then brackets may be omitted. For example, (ab)c is written as abc and a|(b(c*)) can be written as a|bc*.</p>
+<p><b>Examples:</b></p>
+<ul>
+<li>a|b* denotes {ε, <i>a</i>, <i>b</i>, <i>bb</i>, <i>bbb</i>, ...}</li>
+<li>(a|b)* denotes the set of all strings consisting of any number of <i>a</i> and <i>b</i> symbols, including the empty string</li>
+<li>b*(ab*)* the same</li>
+<li>ab*(c|ε) denotes the set of strings starting with <i>a</i>, then zero or more <i>b</i>s and finally optionally a <i>c</i>.</li>
+<li>(aa|ab(bb)*ba)*(b|ab(bb)*a)(a(bb)*a|(b|a(bb)*ba)(aa|ab(bb)*ba)*(b|ab(bb)*a))* denotes the set of all strings which contain an even number of <i>a</i>s and an odd number of <i>b</i>s.</li>
+</ul>
+<p>The formal definition of regular expressions is purposely parsimonious and avoids defining the redundant quantifiers&#160;? and +, which can be expressed as follows: <i>a</i><sup>+</sup>= aa*, and <i>a</i>? = (ε|a). Sometimes the complement operator ~ is added; ~<i>R</i> denotes the set of all strings over Σ that are not in <i>R</i>. The complement operator is redundant: it can always be expressed by only using the other operators (the process for computing such a representation is complex, and the result may be exponentially larger, but it is possible).</p>
+<p>Regular expressions in this sense can express exactly the class of languages accepted by <a href="/wiki/Finite_state_automaton.html" title="Finite state automaton">finite state automata</a>: the <a href="/wiki/Regular_language.html" title="Regular language">regular languages</a>. There is, however, a significant difference in compactness: some classes of regular languages can only be described by automata that grow <a href="/wiki/Exponential_growth.html" title="Exponential growth">exponentially</a> in size, while the length of the required regular expressions only grow linearly. Regular expressions correspond to the type 3 <a href="/wiki/Formal_grammar.html" title="Formal grammar">grammars</a> of the <a href="/wiki/Chomsky_hierarchy.html" title="Chomsky hierarchy">Chomsky hierarchy</a> and may be used to describe a <a href="/wiki/Regular_language.html" title="Regular language">regular language</a>. On the other hand, there is a simple mapping between regular expressions and <a href="/wiki/Nondeterministic_finite_automaton.html" title="Nondeterministic finite automaton">nondeterministic finite automata</a> (NFAs) that does not lead to such a blowup in size; for this reason NFAs are often used as alternative representations of regular expressions.</p>
+<p>We can also study expressive power within the formalism. As the example shows, different regular expressions can express the same language: the formalism is redundant.</p>
+<p>It is possible to write an <a href="/wiki/Algorithm.html" title="Algorithm">algorithm</a> which for two given regular expressions decides whether the described languages are essentially equal, it reduces each expression to a minimal deterministic finite state automaton and determines whether they are <a href="/wiki/Isomorphic.html" title="Isomorphic">isomorphic</a> (equivalent).</p>
+<p>To what extent can this redundancy be eliminated? Can we find an interesting subset of regular expressions that is still fully expressive? Kleene star and set union are obviously required, but perhaps we can restrict their use. This turns out to be a surprisingly difficult problem. As simple as the regular expressions are, it turns out there is no method to systematically rewrite them to some normal form. They are not finitely axiomatizable. So we have to resort to other methods. This leads to the <a href="/wiki/Star_height_problem.html" title="Star height problem">star height problem</a>.</p>
+<p>It is worth noting that many real-world "regular expression" engines implement features that cannot be expressed in the regular expression algebra; see <a  title="">below</a> for more on this.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Syntax">edit</a>]</div>
+<p><a name="Syntax" id="Syntax"></a></p>
+<h2>Syntax</h2>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Traditional Unix regular expressions">edit</a>]</div>
+<p><a name="Traditional_Unix_regular_expressions" id="Traditional_Unix_regular_expressions"></a></p>
+<h3>Traditional Unix regular expressions</h3>
+<p>The "basic" <a href="/wiki/Unix.html" title="Unix">Unix</a> regular expression syntax is now defined as obsolete by <a href="/wiki/POSIX.html" title="POSIX">POSIX</a>, but is still widely used for the purposes of backwards compatibility. Most regular-expression-aware Unix utilities, for example <i><a href="/wiki/Grep.html" title="Grep">grep</a></i> and <i><a href="/wiki/Sed.html" title="Sed">sed</a></i>, use it by default.</p>
+<p>In this syntax, most characters are treated as <a href="/wiki/Literal.html" title="Literal">literals</a>—they match only themselves ("a" matches "a", "(bc" matches "(bc", etc). The exceptions are called <a href="/wiki/Metacharacters.html" title="Metacharacters">metacharacters</a>:</p>
+<table>
+<tr>
+<td><b>.</b></td>
+<td>Matches any single character</td>
+</tr>
+<tr valign="top">
+<td>[ ]</td>
+<td>Matches a single character that is contained within the brackets. For example, [abc] matches "a", "b", or "c". [a-z] matches any lowercase letter. These can be mixed: [abcq-z] matches a, b, c, q, r, s, t, u, v, w, x, y, z, and so does [a-cq-z].
+<p>The '-' character should be literal only if it is the last or the first character within the brackets: [abc-] or [-abc]. To match an '[' or ']' character, the easiest way is to make sure the closing bracket is first in the enclosing square brackets: [][ab] matches ']', '[', 'a' or 'b'.</p>
+</td>
+</tr>
+<tr valign="top">
+<td>[^ ]</td>
+<td>Matches a single character that is not contained within the brackets. For example, [^abc] matches any character other than "a", "b", or "c". [^a-z] matches any single character that is not a lowercase letter. As above, these can be mixed.</td>
+</tr>
+<tr valign="top">
+<td>^</td>
+<td>Matches the start of the line (or any line, when applied in multiline mode)</td>
+</tr>
+<tr valign="top">
+<td>$</td>
+<td>Matches the end of the line (or any line, when applied in multiline mode)</td>
+</tr>
+<tr valign="top">
+<td>( )</td>
+<td>Defines a "marked subexpression". What the enclosed expression matched can be recalled later. See the next entry, \<i>n</i>. Note that a "marked subexpression" is also a "block". Note that this is not found in some instances of regex.</td>
+</tr>
+<tr valign="top">
+<td>\<i>n</i></td>
+<td>Where <i>n</i> is a digit from 1 to 9; matches what the <i>n</i>th marked subexpression matched. This construct is theoretically <b>irregular</b> and has not been adopted in the extended regular expression syntax.</td>
+</tr>
+<tr valign="top">
+<td>*</td>
+<td>
+<ul>
+<li>A single character expression followed by "*" matches zero or more copies of the expression. For example, "[xyz]*" matches "", "x", "y", "zx", "zyx", and so on.</li>
+<li>\<i>n</i>*, where <i>n</i> is a digit from 1 to 9, matches zero or more iterations of what the <i>n</i>th marked subexpression matched. For example, "(a.)c\1*" matches "abcab" and "abcabab" but not "abcac".</li>
+<li>An expression enclosed in "\(" and "\)" followed by "*" is deemed to be invalid. In some cases (e.g. /usr/bin/xpg4/grep of SunOS 5.8), it matches zero or more iterations of the string that the enclosed expression matches. In other cases (e.g. /usr/bin/grep of SunOS 5.8), it matches what the enclosed expression matches, followed by a literal "*".</li>
+</ul>
+</td>
+</tr>
+<tr valign="top">
+<td>{<i>x</i>,<i>y</i>}</td>
+<td>Match the last "block" at least <i>x</i> and not more than <i>y</i> times. For example, "a\{3,5\}" matches "aaa", "aaaa" or "aaaaa". Note that this is not found in some instances of regex.</td>
+</tr>
+</table>
+<p>Note that particular implementations of regular expressions interpret backslash differently in front of some of the metacharacters. For example, egrep and Perl interpret <i>unbackslashed</i> parentheses and vertical bars as metacharacters, reserving the backslashed versions to mean the literal characters themselves. Old versions of <i>grep</i> did not support the alternation operator "|".</p>
+<p>Examples:</p>
+<dl>
+<dd>".at" matches any three-character string like <i>hat</i>, <i>cat</i> or <i>bat</i></dd>
+<dd>"[hc]at" matches <i>hat</i> and <i>cat</i></dd>
+<dd>"[^b]at" matches all the matched strings from the regex ".at" except <i>bat</i></dd>
+<dd>"^[hc]at" matches <i>hat</i> and <i>cat</i> but only at the beginning of a line</dd>
+<dd>"[hc]at$" matches <i>hat</i> and <i>cat</i> but only at the end of a line</dd>
+</dl>
+<p>Since many ranges of characters depends on the chosen locale setting (e.g., in some settings letters are organized as abc..yzABC..YZ while in some others as aAbBcC..yYzZ) the POSIX standard defines some classes or categories of characters as shown in the following table:</p>
+<table class="wikitable">
+<tr align="left">
+<th>POSIX class</th>
+<th>similar to</th>
+<th>meaning</th>
+</tr>
+<tr>
+<td>[:upper:]</td>
+<td>[A-Z]</td>
+<td>uppercase letters</td>
+</tr>
+<tr>
+<td>[:lower:]</td>
+<td>[a-z]</td>
+<td>lowercase letters</td>
+</tr>
+<tr>
+<td>[:alpha:]</td>
+<td>[A-Za-z]</td>
+<td>upper- and lowercase letters</td>
+</tr>
+<tr>
+<td>[:alnum:]</td>
+<td>[A-Za-z0-9]</td>
+<td>digits, upper- and lowercase letters</td>
+</tr>
+<tr>
+<td>[:digit:]</td>
+<td>[0-9]</td>
+<td>digits</td>
+</tr>
+<tr>
+<td>[:xdigit:]</td>
+<td>[0-9A-Fa-f]</td>
+<td>hexadecimal digits</td>
+</tr>
+<tr>
+<td>[:punct:]</td>
+<td>[.,!?:...]</td>
+<td>punctuation</td>
+</tr>
+<tr>
+<td>[:blank:]</td>
+<td>[ \t]</td>
+<td>space and TAB</td>
+</tr>
+<tr>
+<td>[:space:]</td>
+<td>[ \t\n\r\f\v]</td>
+<td>blank characters</td>
+</tr>
+<tr>
+<td>[:cntrl:]</td>
+<td></td>
+<td>control characters</td>
+</tr>
+<tr>
+<td>[:graph:]</td>
+<td>[^ \t\n\r\f\v]</td>
+<td>printed characters</td>
+</tr>
+<tr>
+<td>[:print:]</td>
+<td>[^\t\n\r\f\v]</td>
+<td>printed characters and space</td>
+</tr>
+</table>
+<p>Example: [[:upper:]ab] should only match the uppercase letters and lowercase 'a' and 'b'.</p>
+<p>It is generally agreed that [:print:] consists of [:graph:] plus the space character. However, in PERL regular expressions [:print:] matches [:graph:] union [:space:].</p>
+<p>An additional non-POSIX class understood by some tools is [:word:], which is usually defined as [:alnum:] plus underscore. This reflects the fact that in many programming languages these are the characters that may be used in identifiers. The editor <a href="/wiki/Vim_%28text_editor%29.html" title="Vim (text editor)">vim</a> further distinguishes <i>word</i> and <i>word-head</i> classes (using the notation \w and \h) since in many programming languages the characters that can begin an identifier are not the same as those that can occur in other positions.</p>
+<p>(For an ASCII chart color-coded to show the POSIX classes, see <a  class="external text" title="http://billposer.org/Linguistics/Computation/ascii.html">ASCII</a>.)</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Greedy expressions">edit</a>]</div>
+<p><a name="Greedy_expressions" id="Greedy_expressions"></a></p>
+<h3>Greedy expressions</h3>
+<p>Quantifiers in regular expressions match as much as they can; they are greedy (meaning they try to match the maximum available). This can be a significant problem. For example, someone wishing to find the first instance of an item in double-brackets in the text</p>
+<dl>
+<dd><i>Another whale explosion occurred on <b>[[January 26]], [[2004]], in [[Tainan City]], [[Taiwan]]</b>.</i></dd>
+</dl>
+<p>would most likely use the pattern <code>(\[\[.*\]\])</code>, which seems correct (note that the square bracket is preceded by a back slash as it is to be interpreted as a literal character). However, this pattern will actually return <i>[[January 26]], [[2004]], in [[Tainan City]], [[Taiwan]]</i> instead of the expected <i>[[January 26]]</i>.</p>
+<p>There are two ways to avoid this common problem; Firstly, rather than specifying what is to be matched, specify what is <i>not</i> to be matched, in this case the ] is not to be matched, so the pattern would be <code>(\[\[[^\]]*\]\])</code>. However, this would fail to match at all on this string:</p>
+<dl>
+<dd><i>A B C [[D E] F G]]</i></dd>
+</dl>
+<p>Secondly, modern regular expression tools allow a quantifier to be specified as non-greedy, by putting a question mark after the quantifier: <code>(\[\[.*?\]\])</code>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: POSIX modern (extended) regular expressions">edit</a>]</div>
+<p><a name="POSIX_modern_.28extended.29_regular_expressions" id="POSIX_modern_.28extended.29_regular_expressions"></a></p>
+<h3>POSIX modern (extended) regular expressions</h3>
+<p>The more modern "extended" regular expressions can often be used with modern Unix utilities by including the <a href="/wiki/Command_line.html" title="Command line">command line</a> flag "-E".</p>
+<p><a href="/wiki/POSIX.html" title="POSIX">POSIX</a> extended regular expressions are similar in syntax to the traditional Unix regular expressions, with some exceptions. The following metacharacters are added:</p>
+<table>
+<tr>
+<td>+</td>
+<td>Match the last "block" one or more times - "ba+" matches "ba", "baa", "baaa" and so on</td>
+</tr>
+<tr>
+<td>?</td>
+<td>Match the last "block" zero or one times - "ba?" matches "b" or "ba"</td>
+</tr>
+<tr>
+<td>|</td>
+<td>The choice (or set union) operator: match either the expression before or the expression after the operator - "abc|def" matches "abc" or "def".</td>
+</tr>
+</table>
+<p>Also, backslashes are removed: \{...\} becomes {...} and \(...\) becomes (...). Examples:</p>
+<dl>
+<dd>"[hc]+at" matches with "hat", "cat", "hhat", "chat", "hcat", "ccchat" etc.</dd>
+<dd>"[hc]?at" matches "hat", "cat" and "at"</dd>
+<dd>"([cC]at)|([dD]og)" matches "cat", "Cat", "dog" and "Dog"</dd>
+</dl>
+<p>Since the characters '(', ')', '[', ']', '.', '*', '?', '+', '^' and '$' are used as special symbols they have to be <a href="/wiki/Escape_sequence.html" title="Escape sequence">escaped</a> if they are meant literally. This is done by preceding them with '\' which therefore also has to be escaped this way if meant literally. Examples:</p>
+<dl>
+<dd>"a\.(\(|\))" matches with the string "a.)" or "a.("</dd>
+</dl>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Perl-compatible regular expressions (PCRE)">edit</a>]</div>
+<p><a name="Perl-compatible_regular_expressions_.28PCRE.29" id="Perl-compatible_regular_expressions_.28PCRE.29"></a></p>
+<h3>Perl-compatible regular expressions (PCRE)</h3>
+<dl>
+<dd>
+<div class="noprint"><i>Main article: <a href="/wiki/PCRE.html" title="PCRE">PCRE</a></i></div>
+</dd>
+</dl>
+<p><a href="/wiki/Perl.html" title="Perl">Perl</a> has a richer and more predictable syntax than even the extended POSIX regexp. An example of its predictability is that \ always quotes a non-alphanumeric character. An example of something that you can specify with Perl but not POSIX is whether you want part of the match to be greedy or not. For instance in the pattern /a.*b/, the .* will match as much as it can, while in the pattern /a.*?b/, .*? will match as little. So given the string "a bad dab", the first pattern will match the whole string, and the second will only match "a b".</p>
+<p>For these reasons, many other utilities and applications have adopted syntaxes that look a lot like Perl's — for example, <a href="/wiki/Python_programming_language.html" title="Python programming language">Python</a>, <a href="/wiki/Exim.html" title="Exim">exim</a>, <a href="/wiki/BBEdit.html" title="BBEdit">BBEdit</a>, and even Microsoft's <a href="/wiki/.NET_Framework.html" title=".NET Framework">.NET Framework</a> all use regular expression syntax similar to Perl's. But not all claims to implement Perl regexps are completely correct: for instance, <a href="/wiki/Tcl.html" title="Tcl">Tcl</a> tries to both follow the POSIX specification and implement Perl's extensions. Unfortunately this means that Tcl's definition of a non-greedy match is, "Match as little as you can here while still having the overall match be as long as possible." So in the above example, both patterns will match the whole string.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Patterns for irregular languages">edit</a>]</div>
+<p><a name="Patterns_for_irregular_languages" id="Patterns_for_irregular_languages"></a></p>
+<h3>Patterns for irregular languages</h3>
+<p>Many patterns provide an expressive power that far exceeds the <a href="/wiki/Regular_language.html" title="Regular language">regular languages</a>. For example, the ability to group subexpressions with brackets and recall them in the same expression means that a pattern can match strings of repeated words like "papa" or "WikiWiki", called <i>squares</i> in formal language theory. The pattern for these strings is just "(.*)\1". However, the language of squares is not <a href="/wiki/Regular.html" title="Regular">regular</a>, nor is it <a href="/wiki/Context-free.html" title="Context-free">context-free</a>. Pattern matching with an unbounded number of back references, as supported by a number of modern tools, is <a href="/wiki/NP-hard.html" title="NP-hard">NP-hard</a>.</p>
+<p>However, many tools, libraries, and engines that provide such constructions still use the term <i>regular expression</i> for their patterns. This has led to a nomenclature where the term "regular expression" has different meanings in <a href="/wiki/Formal_language_theory.html" title="Formal language theory">formal language theory</a> and pattern matching. It has been suggested to use the term <i>regex</i> or simply "pattern" for the latter. Larry Wall (author of Perl) writes in Apocalypse 5:</p>
+<dl>
+<dd><i>"'[R]egular expressions' […] are only marginally related to real regular expressions. Nevertheless, the term has grown with the capabilities of our pattern matching engines, so I'm not going to try to fight linguistic necessity here. I will, however, generally call them "regexes" (or "regexen", when I'm in an Anglo-Saxon mood)."</i></dd>
+</dl>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Implementations and running times">edit</a>]</div>
+<p><a name="Implementations_and_running_times" id="Implementations_and_running_times"></a></p>
+<h3>Implementations and running times</h3>
+<p>There are at least two different <a href="/wiki/Algorithm.html" title="Algorithm">algorithms</a> that decide if (and how) a given string matches a regular expression.</p>
+<p>The oldest and fastest relies on a result in formal language theory that allows every <a href="/wiki/Nondeterministic_Finite_State_Machine.html" title="Nondeterministic Finite State Machine">Nondeterministic Finite State Machine</a> (NFA) to be transformed into a <a href="/wiki/Deterministic_finite_state_machine.html" title="Deterministic finite state machine">deterministic finite state machine</a> (DFA). The algorithm performs or simulates this transformation and then runs the resulting DFA on the input string, one symbol at a time. The latter process takes time linear to the length of the input string. More precisely, an input string of size <i>n</i> can be tested against a regular expression of size <i>m</i> in time <i>O</i>(<i>n+2<sup>m</sup></i>) or <i>O</i>(<i>nm</i>), depending on the details of the implementation. This algorithm is often referred to as DFA. It is fast, but can be used only for matching and not for recalling grouped subexpressions. There is a variant that can recall grouped subexpressions, but its running time slows down to <i>O</i>(<i>n<sup>2</sup>m</i>).</p>
+<p>The other algorithm is to match the pattern against the input string by <a href="/wiki/Backtracking.html" title="Backtracking">backtracking</a>. (This algorithm is sometimes called NFA, but this terminology is highly confusing.) Its running time can be exponential, which simple implementations exhibit when matching against expressions like "(a|aa)*b" that contain both alternation and unbounded quantification and force the algorithm to consider an exponential number of subcases. More complex implementations identify and speed up various common cases where they would otherwise run slowly.</p>
+<p>Even though backtracking implementations only give an exponential guarantee in the worst case, they allow much greater flexibility and provide more expressive power. For instance any implementation that allows the use of backreferences, or implements the various improvements that Perl introduced, must use a backtracking implementation.</p>
+<p>Some implementations try to provide the best of both algorithms by first running a fast DFA match to see if the string matches the regular expression at all, and only in that case perform a potentially slower backtracking match.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Regular expressions and Unicode">edit</a>]</div>
+<p><a name="Regular_expressions_and_Unicode" id="Regular_expressions_and_Unicode"></a></p>
+<h2>Regular expressions and Unicode</h2>
+<p>Regular expressions were originally used with <a href="/wiki/ASCII.html" title="ASCII">ASCII</a> characters. Many regular expression engines can now handle <a href="/wiki/Unicode.html" title="Unicode">Unicode</a>. In most respects it makes no difference what the character set is, but certain issues do arise in the extension of regular expressions to Unicode.</p>
+<p>One issue is which Unicode format is supported. All command-line regular expression engines expect <a href="/wiki/UTF-8.html" title="UTF-8">UTF-8</a>, but regular expression libraries vary. Some expect UTF-8, while others expect other encodings of Unicode (<a href="/wiki/UTF-16.html" title="UTF-16">UTF-16</a>, obsolete <a href="/wiki/UCS-2.html" title="UCS-2">UCS-2</a> or <a href="/wiki/UTF-32.html" title="UTF-32">UTF-32</a>).</p>
+<p>A second issue is whether the full Unicode range is supported. Many regular expression engines support only the <a href="/wiki/Basic_Multilingual_Plane.html" title="Basic Multilingual Plane">Basic Multilingual Plane</a>, that is, the characters encodable in only 16 bits. Only a few regular expression engines can at present handle the full 21 bit Unicode range.</p>
+<p>A third issue is variation in how ASCII-oriented constructs are extended to Unicode. For example, in ASCII-based implementations, character ranges of the form <i>[x-y]</i> are valid wherever <i>x</i> and <i>y</i> are codepoints in the range [0x00,0x7F] and codepoint(x) &lt;= codepoint(y). The natural extension of such character ranges to Unicode would simply change the requirement that the endpoints lie in [0x00,0x7F] to the requirement that they lie in [0,0x1FFFFF]. However, in practice this is often not the case. Some implementations, such as that of <a href="/wiki/Gawk.html" title="Gawk">gawk</a>, do not allow character ranges to cross Unicode blocks. A range like [0x61,0x7F] is valid since both endpoints fall within the Basic Latin block, as is [0x0530,0x0560] since both endpoints fall within the Armenian block, but a range like [0x0061,0x0532] is invalid since it includes multiple Unicode blocks. Other engines, such as that of the <a href="/wiki/Vim.html" title="Vim">Vim</a> editor, allow block-crossing but limit the number of characters in a range to 128.</p>
+<p>Another area in which there is variation is in the interpretation of case-insensitive flags. Some such flags affect only the ASCII characters. Others flags affect all characters. Some engines have two different flags, one for ASCII, the other for Unicode. Exactly which characters belong to the POSIX classes also varies.</p>
+<p>Another response to Unicode has been the introduction of character classes for Unicode blocks and Unicode general character properties. In <a href="/wiki/Perl.html" title="Perl">Perl</a> and in the <a href="/wiki/Java_platform.html" title="Java platform">Java</a> library <code><a  class="external text" title="http://java.sun.com/j2se/1.5.0/docs/api/java/util/regex/package-summary.html">java.util.regex</a></code>, classes of the form \p{InX} match characters in block X and \P{InX} match the complement. For example, \p{Armenian} matches any character in the Armenian block. Similarly, \p{X} matches any character with the general character property X and \P{X} the complement. For example, \p{Lu} matches any upper-case letter.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Perl_regular_expression_examples.html" title="Perl regular expression examples">Regular expressions with Perl examples</a></li>
+<li><a href="/wiki/Parsing_expression_grammar.html" title="Parsing expression grammar">Parsing expression grammar</a></li>
+<li><a href="/wiki/Extended_Backus%E2%80%93Naur_form.html" title="Extended Backus–Naur form">Extended Backus–Naur form</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<ul>
+<li><cite class="book" style="font-style:normal"><a href="/wiki/Ben_Forta.html" title="Ben Forta">Forta, Ben</a>. <i>Sams Teach Yourself Regular Expressions in 10 Minutes</i>. Sams. <a  class="internal">ISBN 0-672-32566-7</a>.</cite></li>
+<li><cite class="book" style="font-style:normal"><a href="/wiki/Jeffrey_Friedl.html" title="Jeffrey Friedl">Friedl, Jeffrey</a>. <i><a  class="external text" title="http://regex.info/">Mastering Regular Expressions</a></i>. <a href="/wiki/O%27Reilly_Media.html" title="O'Reilly Media">O'Reilly</a>. <a  class="internal">ISBN 0-596-00289-0</a>.</cite></li>
+<li><cite class="book" style="font-style:normal"><a  class="new" title="Mehran Habibi">Habibi, Mehran</a>. <i>Real World Regular Expressions with Java 1.4</i>. Springer. <a  class="internal">ISBN 1-59059-107-0</a>.</cite></li>
+<li><cite class="book" style="font-style:normal"><a  class="new" title="Francois Liger">Liger, Francois</a>; <a  class="new" title="Craig McQueen">Craig McQueen</a>, <a  class="new" title="Paul Wilton">Paul Wilton</a>. <i>Visual Basic .NET Text Manipulation Handbook</i>. <a href="/wiki/Wrox_Press.html" title="Wrox Press">Wrox Press</a>. <a  class="internal">ISBN 1-86100-730-2</a>.</cite></li>
+<li><cite class="book" style="font-style:normal"><a href="/wiki/Michael_Sipser.html" title="Michael Sipser">Sipser, Michael</a>. “Chapter 1: Regular Languages”, <i>Introduction to the Theory of Computation</i>. PWS Publishing, 31–90. <a  class="internal">ISBN 0-534-94728-X</a>.</cite></li>
+<li><cite class="book" style="font-style:normal"><a  class="new" title="Tony Stubblebine">Stubblebine, Tony</a>. <i>Regular Expression Pocket Reference</i>. O'Reilly. <a  class="internal">ISBN 0-596-00415-X</a>.</cite></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<div class="infobox sisterproject">
+<div style="float: left;">
+<div class="floatnone"><span><a  class="image" title="Wikibooks"><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Wikibooks-logo-en.svg/50px-Wikibooks-logo-en.svg.png" alt="Wikibooks" width="50" height="57" longdesc="/wiki/Image:Wikibooks-logo-en.svg" /></a></span></div>
+</div>
+<div style="margin-left: 60px;"><a href="/wiki/Wikibooks.html" title="Wikibooks">Wikibooks</a> has more on the topic of
+<div style="margin-left:10px;"><i><a  class="extiw" title="wikibooks:Special:Search/Regular_expression">Regular expression</a></i></div>
+</div>
+</div>
+<ul>
+<li><a  class="external text" title="http://regex.osherove.com/">The Regulator</a> Free advanced Regular Expression testing and creation tool with syntax highlighting and intellisense.</li>
+<li><a  class="external text" title="http://regulazy.osherove.com/">Regulazy</a> Point &amp; Click Visual Regular Expressions builder - No knowledge of Regex Syntax is required by the user.</li>
+<li><a  class="external text" title="http://regexadvice.com/">RegexAdvice.com</a> Forums and blogs dedicated to regular expressions.</li>
+<li><a  class="external text" title="http://www.dlsi.ua.es/~mlf/nnafmc/pbook/node10.html">McCulloch and Pitts' neural logical calculus</a> Some historical notes on McCulloch and Pitts' neural logical calculus, and the neural-net-related paper that ultimately led to Kleene's creation of regular expressions.</li>
+<li><a  class="external text" title="http://billposer.org/Linguistics/Computation/Resources.html#patterns">Pattern matching tools</a></li>
+<li><a  class="external text" title="http://dmoz.org/Computers/Programming/Languages/Regular_Expressions/">DMOZ listing</a></li>
+<li><a  class="external text" title="http://www.regextester.com/">REGex Tester</a> Online Javascript, PHP PCRE, POSIX regular expression tester</li>
+<li><a  class="external text" title="http://www.regexlib.com/">Regular Expression Library</a> Currently contains over 1000 expressions from contributors around the world.</li>
+<li><a  class="external text" title="http://www.fileformat.info/tool/regex.htm">Regular Expression Testing</a> RegEx: online regular expression testing.</li>
+<li><a  class="external text" title="http://www.regular-expressions.info">Regular Expression Tutorial and Reference</a> One of the most comprehensive, free regular expression tutorials on the net.</li>
+<li><a  class="external text" title="http://etext.lib.virginia.edu/services/helpsheets/unix/regex.html">Using Regular Expressions</a> Brief introduction to regular expressions</li>
+<li><a  class="external text" title="http://www.discoverymedia.net/programs-and-code/regular-expressions.php">Regular Expressions Links</a> Directory page from DiscoveryMedia.net</li>
+<li><a  class="external text" title="http://perl.plover.com/NPC/">PCRE Matching is NP-hard</a> A proof that uses backtracking to solve 3-sat.</li>
+<li><a  class="external text" title="http://developer.mozilla.org/en/docs/Core_JavaScript_1.5_Reference:Global_Objects:RegExp">Mozilla Developer Center's Regex Help Page</a></li>
+<li><a  class="external text" title="http://gtlregex.sourceforge.net">GTLRegEx</a>Free and Opensource Java based software to generate, test and learn regular expressions</li>
+<li><a  class="external text" title="http://www.georgiecasey.com/tools/regular-expression-tester/">Regular Expression Tester</a> Online regular expression tester that can take a URL as the subject.</li>
+<li><a  class="external text" title="http://www.cuneytyilmaz.com/prog/jrx/">JRX: real-time JavaScript RegExp evaluator</a> Much like the online testers above but in JavaScript, i.e. without server-connection.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Articles">edit</a>]</div>
+<p><a name="Articles" id="Articles"></a></p>
+<h3>Articles</h3>
+<ul>
+<li><a  class="external text" title="http://regexlib.com/cheatsheet.aspx">Regular Expression Cheat Sheet</a> A one page printable reference for regular expressions</li>
+<li><a  class="external text" title="http://www.regextester.com/jssyntax.html">Regular Expression Reference</a> JavaScript, PCRE and POSIX reference for regular expressions, Test tool</li>
+<li><a  class="external text" title="http://gmckinney.info/resources/regex.pdf">Regular Expression Quick Reference</a> (<a href="/wiki/PDF.html" title="PDF">PDF</a>)</li>
+<li><a  class="external text" title="http://rudd-o.com/projects/wp-search-replace/wp-search-replace-regexptut/">Regular expressions: a short tutorial</a> A five-minute tutorial on how to learn the most useful regular expressions</li>
+<li><a  class="external text" title="http://cm.bell-labs.com/cm/cs/who/dmr/qed.html">An Incomplete History of the QED Text Editor</a></li>
+<li><a  class="external text" title="http://gnosis.cx/publish/programming/regular_expressions.html">Learning to Use Regular Expressions</a> Brief regular expression tutorial by <a href="/wiki/David_Mertz.html" title="David Mertz">David Mertz</a></li>
+<li><a  class="external text" title="http://wiki.castlecops.com/A_list_of_Regex_topics">A List of Regex Topics</a> Wiki with various topics about regular expressions.</li>
+<li><a  class="external text" title="http://www.regex.info/"><i>Mastering Regular Expressions</i></a> Official website for Jeffrey Friedl's book.</li>
+<li><a  class="external text" title="http://www.greenend.org.uk/rjk/2002/06/regexp.html">Regexp Syntax Summary</a> Reference table for UNIX grep, Emacs, Perl, Python and Tcl regular expressions.</li>
+<li><a  class="external text" title="http://www.regenechsen.de/phpwcms/index.php?regex_englisch">Regenechsen</a> Beginners regular expression tutorial with exercises.</li>
+<li><a  class="external text" title="http://codeproject.com/dotnet/RegexTutorial.asp">The 30 Minute Regex Tutorial</a> Learn how to use regular expressions in 30 minutes.</li>
+<li><a  class="external text" title="http://zvon.org/other/reReference/Output/index.html">ZVON Regular Expression Reference</a> Brief reference with one paragraph and one example per regex token.</li>
+<li><a  class="external text" title="http://visualbasic.about.com/od/usingvbnet/l/blregexa.htm">VB Regular Expressions</a> for VBA/6 and VB.NET.</li>
+<li><a  class="external text" title="http://authors.aspalliance.com/brettb/VBScriptRegularExpressions.asp">VBScript Regular Expressions</a> Regular Expression tutorial for VBScript(ASP).</li>
+<li><a  class="external text" title="http://authors.aspalliance.com/wsk/aboutregularexpression.asp">JScript Regular Expressions</a> Regular Expression tutorial for JScript</li>
+<li><a  class="external text" title="http://seeingwithc.org/topic7html.html">SWC - Regular Expressions</a> A regular expression primer connecting the Theory of Computation and popular usage aspects.</li>
+</ul>
+
+<!-- 
+Pre-expand include size: 22841 bytes
+Post-expand include size: 4491 bytes
+Template argument size: 4607 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:25717-0!1!0!default!!en!2 and timestamp 20060910150926 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Formal languages">Formal languages</a></span> | <span dir='ltr'><a  title="Category:Mathematical logic">Mathematical logic</a></span> | <span dir='ltr'><a  title="Category:Pattern matching">Pattern matching</a></span> | <span dir='ltr'><a  title="Category:Programming language topics">Programming language topics</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Regular_expression.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-cs"><a >Česky</a></li>
+				<li class="interwiki-da"><a >Dansk</a></li>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-eu"><a >Euskara</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-ko"><a >한국어</a></li>
+				<li class="interwiki-is"><a >Íslenska</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-nl"><a >Nederlands</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-pt"><a >Português</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+				<li class="interwiki-fi"><a >Suomi</a></li>
+				<li class="interwiki-uk"><a >Українська</a></li>
+				<li class="interwiki-zh"><a >中文</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 12:03, 10 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv83 in 0.114 secs. --></body></html>

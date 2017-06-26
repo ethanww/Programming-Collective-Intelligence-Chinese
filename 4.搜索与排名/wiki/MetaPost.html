@@ -1,0 +1,255 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="MetaPost,1986,Addison-Wesley,Asymptote (vector graphics language),Bézier curve,CTAN,Computers and Typesetting,ConTeXt,Donald Knuth,Encapsulated PostScript,Gouraud shading" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>MetaPost - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "MetaPost";
+			var wgTitle = "MetaPost";
+			var wgArticleId = 287733;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">MetaPost</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p><b>MetaPost</b> is both a <a href="/wiki/Programming_language.html" title="Programming language">programming language</a> and the only known <a href="/wiki/Interpreter_%28computer_software%29.html" title="Interpreter (computer software)">interpreter</a> of the MetaPost programming language. Both are derived from <a href="/wiki/Donald_Knuth.html" title="Donald Knuth">Donald Knuth</a>'s <a href="/wiki/Metafont.html" title="Metafont">Metafont</a> language and interpreter. MetaPost excels at producing diagrams in the <a href="/wiki/PostScript_programming_language.html" title="PostScript programming language">PostScript programming language</a> from a geometric/algebraic description. The language shares <a href="/wiki/Metafont.html" title="Metafont">Metafont</a>'s elegant declarative syntax for manipulating lines, curves, points and geometric transformations. However,</p>
+<ul>
+<li><a href="/wiki/Metafont.html" title="Metafont">Metafont</a> is set up to produce fonts, in the form of image files (in .gf format) with associated font metric files (in .tfm format), whereas MetaPost produces <a href="/wiki/Encapsulated_PostScript.html" title="Encapsulated PostScript">encapsulated PostScript</a> files</li>
+<li>The output of <a href="/wiki/Metafont.html" title="Metafont">Metafont</a> consists of the fonts at a fixed resolution in a raster-based format, whereas MetaPost's output is vector-based postscript graphics (lines, <a href="/wiki/B%C3%A9zier_curve.html" title="Bézier curve">Bézier curves</a>)</li>
+<li><a href="/wiki/Metafont.html" title="Metafont">Metafont</a> output is monochrome, whereas MetaPost uses a simple <a href="/wiki/RGB.html" title="RGB">RGB</a> colour specification.</li>
+<li>The MetaPost language can include text labels on the diagrams, either strings from a specified font, or pretty much anything that can be typeset with <a href="/wiki/TeX.html" title="TeX">TeX</a></li>
+<li>The Metafont interpreter was written by <a href="/wiki/Donald_Knuth.html" title="Donald Knuth">Donald Knuth</a> under an <a href="/wiki/Open_source.html" title="Open source">open source</a> license, allowing <a  class="new" title="John D. Hobby">John D. Hobby</a> (and later <a  class="new" title="Ulrik Vieth">Ulrik Vieth</a>) to adapt the interpreter to their own ends, giving us MetaPost.</li>
+</ul>
+<p>Many of the limitations of MetaPost derive from features of Metafont. For instance, numbers have a low-precision fixed-point representation, sufficient for representing the coordinates of points in a glyph, and this can be restrictive when working with figures in a larger coordinate space. Moreover, MetaPost does not support all features of PostScript. Most notably, paths can have only one segment (so that regions are <a href="/wiki/Simply_connected.html" title="Simply connected">simply connected</a>), and regions only be filled with uniform colours. PostScript level 1 supports tiled patterns and PostScript 3 supports <a href="/wiki/Gouraud_shading.html" title="Gouraud shading">Gouraud shading</a>. To this end, the <a href="/wiki/Asymptote_%28vector_graphics_language%29.html" title="Asymptote (vector graphics language)">Asymptote</a> graphics language is being developed to address these shortcomings.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Availability, usage">edit</a>]</div>
+<p><a name="Availability.2C_usage" id="Availability.2C_usage"></a></p>
+<h2>Availability, usage</h2>
+<p>MetaPost is distributed with many current distributions of the <a href="/wiki/TeX.html" title="TeX">TeX</a> and <a href="/wiki/Metafont.html" title="Metafont">Metafont</a> framework. In particular, it is included in the <a href="/wiki/TeTeX.html" title="TeTeX">teTeX</a> distribution, common on <a href="/wiki/Linux.html" title="Linux">Linux</a> and <a href="/wiki/Unix.html" title="Unix">Unix</a> (including <a href="/wiki/Mac_OS_X.html" title="Mac OS X">Mac OS X</a>) platforms.</p>
+<p>The encapsulated postscript produced by Metapost is easily included in <a href="/wiki/TeX.html" title="TeX">TeX</a>, <a href="/wiki/ConTeXt.html" title="ConTeXt">ConTeXt</a>, and <a href="/wiki/LaTeX.html" title="LaTeX">LaTeX</a> documents via standard eps-inclusion commands. Particularly useful is the ability to include this output in the <a href="/wiki/PDFTeX.html" title="PDFTeX">PDFTeX</a> dialect of <a href="/wiki/TeX.html" title="TeX">TeX</a>, thus giving <a href="/wiki/Portable_Document_Format.html" title="Portable Document Format">Portable Document Format</a> output from <a href="/wiki/TeX.html" title="TeX">TeX</a> in a single step. This ability is implemented in <a href="/wiki/ConTeXt.html" title="ConTeXt">ConTeXt</a> and in the LaTeX graphics package, and can be used from plain TeX via the supp-pdf.tex macro file. ConTeXt even supports the creation of MetaPost files from within the TeX file.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Examples">edit</a>]</div>
+<p><a name="Examples" id="Examples"></a></p>
+<h2>Examples</h2>
+<p>This is a single file <tt>example.mp</tt> which when processed by the MetaPost interpreter (via the command <tt>mpost</tt> on <a href="/wiki/Linux.html" title="Linux">Linux</a>) produces three eps files <tt>example.1</tt>, <tt>example.2</tt>, <tt>example.3</tt>. These are pictured on the right.</p>
+<div style="float:right; margin: 0 0 1em 1em;"><a  class="image" title="Image:metapost_ex.png"><img src="http://upload.wikimedia.org/wikipedia/en/7/70/Metapost_ex.png" alt="Image:metapost_ex.png" width="198" height="578" longdesc="/wiki/Image:Metapost_ex.png" /></a></div>
+<pre>
+transform pagecoords;
+pagecoords:=identity scaled 10mm shifted (100mm,150mm);
+</pre>
+<pre>
+beginfig (1)
+    fill ((0,0)--(2,0)--(2,1)--(1,1)--(1,2)--(0,2)--cycle)
+        transformed pagecoords withcolor green;
+    draw ((2,0)..(2,1)..(1,1)..(1,2)..(0,2))
+        transformed pagecoords;
+    drawarrow ((0,0)--(2,2)) transformed pagecoords;
+endfig;
+</pre>
+<pre>
+beginfig (2)
+    draw (for i=0 upto 7: dir (135i)-- endfor cycle)
+        transformed pagecoords;
+endfig;
+</pre>
+<pre>
+pagecoords:=identity scaled 15mm shifted (100mm,150mm);
+beginfig (3);
+    % declare paths to be used
+    path p[],p[]t;
+    % set up points by defining relationships
+    z1=(0,0);   z2=z1+2up;
+    z3=z1+whatever*dir (60)=z2+whatever*dir (-50);
+    z4=z3+(-1.5,-.5);
+    z5=z1+dir (135);
+    z0=whatever[z1,z2]=whatever[z3,z4];
+    % set up paths
+    p0=fullcircle yscaled .5 rotated 45 shifted z0 ;
+    p1=z2--z4..z0..z3---z1;
+    p2=p1 cutbefore p0 cutafter p0;
+    p3=p0 cutbefore p1 cutafter p1;
+    p4=p2--p3--cycle;
+    % define transformed versions of paths and points
+    for i=0 upto 4: p[i]t=p[i] transformed pagecoords; endfor
+    for i=0 upto 5: z[i]t=z[i] transformed pagecoords; endfor
+    % do some drawing
+    fill p4t withcolor (1,1,0.2);
+    draw z1t--z2t withcolor .5white;
+    draw z3t--z4t withcolor .5white;
+    pickup pencircle;
+    draw p0t dashed withdots scaled .3;
+    draw p1t dashed evenly;
+    draw p2t withcolor blue;
+    draw p3t withcolor red;
+    label.lrt (btex $z_0$ etex, z0t);
+    label.llft (btex $z_1$ etex, z1t);
+    label.top (btex $z_2$ etex, z2t);
+    label.rt (btex $z_3$ etex, z3t);
+    label.llft (btex $z_4$ etex, z4t);
+    for i=0 upto 4:
+        drawdot z[i]t withpen pencircle scaled 2;
+    endfor
+endfig;
+bye
+</pre>
+<p>The resulting three eps files can be used in <a href="/wiki/TeX.html" title="TeX">TeX</a> via <a href="/wiki/LaTeX.html" title="LaTeX">LaTeX</a>'s <tt>\includegraphics</tt> command, <a href="/wiki/ConTeXt.html" title="ConTeXt">ConTeXt</a>'s <tt>\externalfigure</tt>, Plain TeX's <tt>\epsfbox</tt> command, or (in Plain pdftex) the <tt>\convertMPtoPDF</tt> command from <tt>supp-pdf.tex</tt>. To view or print the third diagram, this inclusion is necessary, as the <a  class="new" title="TeX fonts">TeX fonts</a> are not included in the eps files produced by MetaPost.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References and external links">edit</a>]</div>
+<p><a name="References_and_external_links" id="References_and_external_links"></a></p>
+<h2>References and external links</h2>
+<ul>
+<li>The TeX users group (<a href="/wiki/TUG.html" title="TUG">TUG</a>) <a  class="external free" title="http://www.tug.org/">http://www.tug.org/</a> has a page devoted to MetaPost: <a  class="external free" title="http://www.tug.org/metapost.html">http://www.tug.org/metapost.html</a></li>
+<li>John D. Hobby has a homepage at <a  class="external free" title="http://cm.bell-labs.com/who/hobby/index.html">http://cm.bell-labs.com/who/hobby/index.html</a> and some other pages and publications devoted to MetaPost
+<ul>
+<li>MetaPost homepage: <a  class="external free" title="http://cm.bell-labs.com/who/hobby/MetaPost.html">http://cm.bell-labs.com/who/hobby/MetaPost.html</a></li>
+<li><i>A User's Manual for MetaPost</i> John D. Hobby. Available as a file mpman.ps distributed with MetaPost, or from the <a  class="external text" title="http://cm.bell-labs.com/cm/cs/doc/92/2-21.ps.gz">Bell Labs web site</a>. Also available in <a  class="external text" title="http://www.tug.org/tutorials/mp/mpman.pdf">PDF format</a> from <a href="/wiki/CTAN.html" title="CTAN">CTAN</a>.</li>
+</ul>
+</li>
+<li>MetaFun (modules for Metapost) by Hans Hagen, <a  class="external autonumber" title="http://wiki.contextgarden.net/MetaFun">[1]</a></li>
+<li><a href="/wiki/Donald_Knuth.html" title="Donald Knuth">Donald Knuth</a>: <i>The <a href="/wiki/METAFONT.html" title="METAFONT">METAFONTbook</a></i>, (<a href="/wiki/Computers_and_Typesetting.html" title="Computers and Typesetting">Computers and Typesetting</a> Volume C) <a href="/wiki/Addison-Wesley.html" title="Addison-Wesley">Addison-Wesley</a> <a href="/wiki/1986.html" title="1986">1986</a>. <a  class="internal">ISBN 0-201-13444-6</a></li>
+<li>Comprehensive T<sub>E</sub>X Archive Network (<a href="/wiki/CTAN.html" title="CTAN">CTAN</a>): <a  class="external free" title="http://www.ctan.org/">http://www.ctan.org/</a>. Repository of the T<sub>E</sub>X source and hundreds of add-ons and style files.</li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:287733-0!1!0!default!!en!2 and timestamp 20060909121839 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Domain-specific programming languages">Domain-specific programming languages</a></span> | <span dir='ltr'><a  title="Category:Declarative programming languages">Declarative programming languages</a></span> | <span dir='ltr'><a  title="Category:Free TeX software">Free TeX software</a></span> | <span dir='ltr'><a  title="Category:PostScript">PostScript</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/MetaPost.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+				<li class="interwiki-sv"><a >Svenska</a></li>
+				<li class="interwiki-uk"><a >Українська</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 06:29, 21 June 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv53 in 0.103 secs. --></body></html>

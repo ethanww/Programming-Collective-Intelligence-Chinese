@@ -1,0 +1,235 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Canonical LR parser,LALR parsers,LR(0) parser,LR parser,Parser" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Canonical LR parser - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Canonical_LR_parser";
+			var wgTitle = "Canonical LR parser";
+			var wgArticleId = 73056;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Canonical LR parser</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub">(Redirected from <a  title="LR(1)">LR(1)</a>)</div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>A <b>canonical LR parser</b> or <b>LR(1) parser</b> is an <a href="/wiki/LR_parser.html" title="LR parser">LR parser</a> whose parsing tables are constructed in a similar way as with <a href="/wiki/LR%280%29_parser.html" title="LR(0) parser">LR(0) parsers</a> except that the items in the item sets also contain a <i>follow</i>, i.e., a terminal that is expected by the <a href="/wiki/Parser.html" title="Parser">parser</a> after the right-hand side of the rule. For example, such an item for a rule A → B C might be</p>
+<dl>
+<dd>A → B · C, a</dd>
+</dl>
+<p>which would mean that the parser has read a string corresponding to B and expects next a string corresponding to C followed by the terminal 'a'. LR(1) parsers can deal with a very large class of grammars but their parsing tables are often very big. This can often be solved by merging item sets if they are identical except for the follows, which results in so-called <a href="/wiki/LALR_parsers.html" title="LALR parsers">LALR parsers</a>.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Constructing LR(1) parsing tables</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">1.1</span> <span class="toctext">Validity</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.2</span> <span class="toctext">Initial item</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.3</span> <span class="toctext">Closure</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.4</span> <span class="toctext">Goto</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.5</span> <span class="toctext">Shift actions</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.6</span> <span class="toctext">Reduce actions</span></a></li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Constructing LR(1) parsing tables">edit</a>]</div>
+<p><a name="Constructing_LR.281.29_parsing_tables" id="Constructing_LR.281.29_parsing_tables"></a></p>
+<h2>Constructing LR(1) parsing tables</h2>
+<p>An <b>LR(1) item</b> is a production with a marker together with a terminal, e.g., [S → a A · B e, c]. Intuitively, such an item indicates how much of a certain production we have seen already (a A), what we could expect next (B e), and a lookahead that agrees with what should follow in the input if we ever reduce by the production S → a A B e. By incorporating such lookahead information into the item concept, we can make more wise reduce decisions. The lookahead of an LR(1) item is used directly only when considering reduce actions (i.e., when the · marker is at the right end).</p>
+<p>The <b>core</b> of an LR(1) item [S → a A · B e, c] is the LR(0) item S → a A · B e. Different LR(1) items may share the same core. For example, if we have two LR(1) items of the form</p>
+<ul>
+<li>[A → α ·, a] and</li>
+<li>[B → α ·, b],</li>
+</ul>
+<p>we take advantage of the lookahead to decide which reduction to use. (The same setting would perhaps produce a reduce/reduce conflict in the SLR approach.)</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Validity">edit</a>]</div>
+<p><a name="Validity" id="Validity"></a></p>
+<h3>Validity</h3>
+<p>The notion of validity changes. An item [A → β<sub>1</sub> · β<sub>2</sub>, a] is <b>valid</b> for a viable prefix α β<sub>1</sub> if there is a rightmost derivation that yields α A a w which in one step yields α β<sub>1</sub>β<sub>2</sub> a w</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Initial item">edit</a>]</div>
+<p><a name="Initial_item" id="Initial_item"></a></p>
+<h3>Initial item</h3>
+<p>To get the parsing started, we begin with the initial item of</p>
+<dl>
+<dd>[S’ → · S, $].</dd>
+</dl>
+<p>Here $ is a special character denoting the end of the string.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Closure">edit</a>]</div>
+<p><a name="Closure" id="Closure"></a></p>
+<h3>Closure</h3>
+<p>Closure is more refined. If [A → α · B β, a] belongs to the set of items, and B → γ is a production of the grammar, then we add the item [B → · γ, b] for all b in FIRST(β a).</p>
+<p>Every state is closed according to Closure.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Goto">edit</a>]</div>
+<p><a name="Goto" id="Goto"></a></p>
+<h3>Goto</h3>
+<p>Goto is the same. A state containing [A → α · X β, a] will move to a state containing [A → α X · β, a] with label X.</p>
+<p>Every state has transitions according to Goto.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Shift actions">edit</a>]</div>
+<p><a name="Shift_actions" id="Shift_actions"></a></p>
+<h3>Shift actions</h3>
+<p>The shift actions are the same. If [A → α · b β, a] is in state I<sub>k</sub> and I<sub>k</sub> moves to state I<sub>m</sub> with label b, then we add the action</p>
+<dl>
+<dd>action[k, b] = "shift m"</dd>
+</dl>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Reduce actions">edit</a>]</div>
+<p><a name="Reduce_actions" id="Reduce_actions"></a></p>
+<h3>Reduce actions</h3>
+<p>The reduce actions are more refined. If [A→α., a] is in state I<sub>k</sub>, then we add the action: "Reduce A → α" to action[I<sub>k</sub>, a]. Observe that we don’t use information from FOLLOW(A) anymore. The goto part of the table is as before.</p>
+<dl>
+<dd>S’ → S</dd>
+<dd>S → CC</dd>
+<dd>C → c C | d</dd>
+<dd>FIRST</dd>
+<dd>S c d</dd>
+<dd>C c d</dd>
+<dd>S’ → SS → L = R | R</dd>
+<dd>L → * R | id</dd>
+<dd>R → L</dd>
+<dd>FIRST</dd>
+<dd>S * id</dd>
+<dd>L * id</dd>
+<dd>R * id</dd>
+</dl>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:73056-0!1!0!default!!en!2 and timestamp 20060909212235 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:Parsing algorithms">Parsing algorithms</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Canonical_LR_parser.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 22:46, 26 June 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv69 in 0.094 secs. --></body></html>

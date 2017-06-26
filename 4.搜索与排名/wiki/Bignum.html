@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Arbitrary-precision arithmetic,Assembly language,Ruby (programming language),Forth,Arithmetic overflow,Fractal,Modular arithmetic,Saturation arithmetic,Lisp programming language,Scheme programming language,Exception handling" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Arbitrary-precision arithmetic - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Arbitrary-precision_arithmetic";
+			var wgTitle = "Arbitrary-precision arithmetic";
+			var wgArticleId = 600892;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Arbitrary-precision arithmetic</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub">(Redirected from <a  title="Bignum">Bignum</a>)</div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<div class="messagebox cleanup">Some information in this article or section has <b>not</b> been <b><a  title="Wikipedia:Verifiability">verified</a></b> and may not be reliable.<br />
+Please <b><a  title="Wikipedia:WikiProject Fact and Reference Check">check for any inaccuracies</a></b>, and modify and <b><a  title="Wikipedia:Cite sources">cite sources</a></b> as needed.</div>
+<p>On a <a href="/wiki/Computer.html" title="Computer">computer</a>, <b>arbitrary-precision arithmetic</b>, also called <b>bignum</b> arithmetic, is a technique that allows <a href="/wiki/Computer_program.html" title="Computer program">computer programs</a> to perform <a href="/wiki/Calculation.html" title="Calculation">calculations</a> on <a href="/wiki/Integer.html" title="Integer">integers</a> and <a href="/wiki/Rational_number.html" title="Rational number">rational numbers</a> with an arbitrary number of <a href="/wiki/Numerical_digit.html" title="Numerical digit">digits</a> of precision, limited only by the available <a href="/wiki/Memory_%28computers%29.html" title="Memory (computers)">memory</a> of the host system. It typically works by storing a number as a variable-length <a href="/wiki/Array.html" title="Array">array</a> of digits in some <a href="/wiki/Base_%28mathematics%29.html" title="Base (mathematics)">base</a>, in contrast to most computer arithmetic which uses a fixed number of <a href="/wiki/Bit.html" title="Bit">bits</a> given by the size of the <a href="/wiki/Processor_register.html" title="Processor register">processor registers</a>. Rational numbers can be stored as a pair of two integers for the <a href="/wiki/Numerator.html" title="Numerator">numerator</a> and <a href="/wiki/Denominator.html" title="Denominator">denominator</a>, in a <a href="/wiki/Fixed-point_arithmetic.html" title="Fixed-point arithmetic">fixed-point</a> format with a fixed denominator, or in a <a href="/wiki/Floating_point.html" title="Floating point">floating point</a> format as a <a href="/wiki/Significand.html" title="Significand">significand</a> multiplied by an arbitrary exponent.</p>
+<p>Perhaps the earliest widespread implementation of arbitrary precision arithmetic was in <a href="/wiki/Maclisp.html" title="Maclisp">Maclisp</a>. Later, the <a href="/wiki/VAX.html" title="VAX">VAX</a>/<a href="/wiki/OpenVMS.html" title="OpenVMS">VMS</a> <a href="/wiki/Operating_system.html" title="Operating system">operating system</a> offered bignum facilities as a collection of <a href="/wiki/Literal_string.html" title="Literal string">string</a> <a href="/wiki/Subprogram.html" title="Subprogram">functions</a>. Today, bignum libraries are available for most modern programming languages (see below). Almost all <a href="/wiki/Computer_algebra_system.html" title="Computer algebra system">computer algebra systems</a> implement arbitrary precision arithmetic.</p>
+<p>Arbitrary-precision arithmetic is sometimes called <b>infinite-precision arithmetic</b>, which is something of a misnomer: the number of digits of precision always remains finite (and is bounded in practice), although it can grow very large.</p>
+<p>Arbitrary-precision arithmetic should not be confused with symbolic computation, as provided by computer algebra systems. The latter represent numbers by symbolic expressions such as <span class="texhtml">πsin(3)</span>, or even by <a href="/wiki/Computer_program.html" title="Computer program">computer programs</a>, and in this way can symbolically represent any <a href="/wiki/Computable_number.html" title="Computable number">computable number</a> (limited by available memory). Numeric results can still only be provided to arbitrary (finite) precision in general, however, by evaluating the symbolic expression using arbitrary-precision arithmetic.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Applications</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Algorithms</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Arbitrary-precision software</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">References</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Applications">edit</a>]</div>
+<p><a name="Applications" id="Applications"></a></p>
+<h2>Applications</h2>
+<p>Arbitrary-precision arithmetic is usually much slower than arithmetic using numbers that fit entirely within processor registers, since the latter are usually implemented in <a href="/wiki/Arithmetic_logic_unit.html" title="Arithmetic logic unit">hardware arithmetic</a> whereas the former must be implemented in software. Consequently, arbitrary precision is used in a limited range of applications that require extremely precise results or exact integer arithmetic with very large numbers.</p>
+<p>The most common application is <a href="/wiki/Encryption.html" title="Encryption">encryption</a>, whose algorithms commonly employ arithmetic with integers of hundreds or thousands of digits.</p>
+<p>Arbitrary precision arithmetic is also used to compute fundamental <a href="/wiki/Mathematical_constant.html" title="Mathematical constant">mathematical constants</a> such as <a href="/wiki/Pi.html" title="Pi">pi</a> to millions or more digits and to analyze their properties.</p>
+<p>A third example is in rendering <a href="/wiki/Fractal.html" title="Fractal">Fractal</a> images with an extremely high magnification, such as those found in the <a href="/wiki/Mandelbrot_set.html" title="Mandelbrot set">Mandelbrot set</a>.</p>
+<p>Arbitrary-precision arithmetic can also be used to avoid <a href="/wiki/Arithmetic_overflow.html" title="Arithmetic overflow">overflow</a>, which is an inherent limitation of fixed-precision arithmetic. Just like an odometer rolling around from 9999 to 0000, a fixed-precision integer can exhibit <i>wraparound</i> if numbers grow too large to represent at the fixed level of precision. (For example, if you are using 16-bit unsigned integers, adding 1 to 65535 wraps around to 0 — see <a href="/wiki/Modular_arithmetic.html" title="Modular arithmetic">Modular arithmetic</a>.) Some processors can deal with overflow by <i>saturation,</i> which means that if a result would be unrepresentable, it is replaced with the nearest representable value. (With 16-bit unsigned saturation, adding 1 to 65535 yields 65535 — see <a href="/wiki/Saturation_arithmetic.html" title="Saturation arithmetic">Saturation arithmetic</a>.) Some processors can generate an <a href="/wiki/Exception_handling.html" title="Exception handling">exception</a> if an arithmetic result exceeds the available precision.</p>
+<p>Since many computers now routinely use 32-bit or even 64-bit integers, it can often be guaranteed that the numbers in a specific application will never grow large enough to cause an overflow. However, some programming languages such as <a href="/wiki/Scheme_programming_language.html" title="Scheme programming language">Scheme</a>, <a href="/wiki/Lisp_programming_language.html" title="Lisp programming language">Lisp</a>, and <a href="/wiki/Ruby_%28programming_language%29.html" title="Ruby (programming language)">Ruby</a> use, or have an option to use, arbitrary-precision integers for <i>all</i> arithmetic. Although this reduces performance, it eliminates the possibility of incorrect results (or exceptions) due to overflow, and makes it possible to guarantee that arithmetic results will be the same on all machines, regardless of any particular machine’s word size.</p>
+<p>Another approach, available in the <a href="/wiki/Forth.html" title="Forth">Forth</a> language and many <a href="/wiki/Assembly_language.html" title="Assembly language">assembly languages</a>, is <a  class="new" title="Mixed-precision arithmetic">Mixed-precision arithmetic</a>. Mixed-precision arithmetic can be used to implement arbitrary-precision arithmetic.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Algorithms">edit</a>]</div>
+<p><a name="Algorithms" id="Algorithms"></a></p>
+<h2>Algorithms</h2>
+<p>Numerous <a href="/wiki/Algorithms.html" title="Algorithms">algorithms</a> have been developed to efficiently perform arithmetic operations on numbers stored with arbitrary precision. In particular, supposing that <i>N</i> digits are employed, algorithms have been designed to minimize the asymptotic <a href="/wiki/Computational_complexity_theory.html" title="Computational complexity theory">complexity</a> for large <i>N</i>. <sup title="The text in the vicinity of this tag needs citation." class="noprint">[<a  title="Wikipedia:Citing sources"><i>citation&#160;needed</i></a>]</sup></p>
+<p>The simplest algorithms are for <a href="/wiki/Addition.html" title="Addition">addition</a> and <a href="/wiki/Subtraction.html" title="Subtraction">subtraction</a>, where one simply adds or subtracts the digits in sequence, carrying as necessary, which yields an <i>O</i>(<i>N</i>) algorithm (see <a href="/wiki/Big_O_notation.html" title="Big O notation">big O notation</a>).</p>
+<p>For <a href="/wiki/Multiplication.html" title="Multiplication">multiplication</a>, the most straightforward algorithms used for multiplying numbers by hand requires <span class="texhtml"><i>O</i>(<i>N</i><sup>2</sup>)</span> operations, but <span class="texhtml"><i>O</i>(<i>N</i>log(<i>N</i>)log(log(<i>N</i>)))</span> <a href="/wiki/Multiplication_algorithm.html" title="Multiplication algorithm">multiplication algorithms</a> have been devised (and also algorithms with slightly worse complexity but with sometimes superior real-world performance for moderate <i>N</i>). It is also possible to use the <a href="/wiki/Fast_Fourier_transform.html" title="Fast Fourier transform">Fast Fourier transform</a> to multiply arbitrary-precision integers in <span class="texhtml"><i>O</i>(<i>N</i>log(<i>N</i>))</span> time, although this method only becomes advantageous when N is large.</p>
+<p>For a list of algorithms along with complexity estimates, see: <a href="/wiki/Computational_complexity_of_mathematical_operations.html" title="Computational complexity of mathematical operations">Computational complexity of mathematical operations</a></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Arbitrary-precision software">edit</a>]</div>
+<p><a name="Arbitrary-precision_software" id="Arbitrary-precision_software"></a></p>
+<h2>Arbitrary-precision software</h2>
+<p>Arbitrary-precision arithmetic in most computer software is implemented by calling an external <a href="/wiki/Library_%28computer_science%29.html" title="Library (computer science)">library</a> that provides <a href="/wiki/Datatype.html" title="Datatype">datatypes</a> and <a href="/wiki/Subroutine.html" title="Subroutine">subroutines</a> to store numbers with the requested precision and to perform computations.</p>
+<ul>
+<li><a href="/wiki/GNU_Multi-Precision_Library.html" title="GNU Multi-Precision Library">GNU Multi-Precision Library</a> (and <a href="/wiki/MPFR.html" title="MPFR">MPFR</a>): <a href="/wiki/C_programming_language.html" title="C programming language">C programming language</a> bignum library</li>
+<li><a href="/wiki/Java.math.html" title="Java.math">Java.math</a>: standard bignum interface for <a href="/wiki/Java_programming_language.html" title="Java programming language">Java</a></li>
+<li><a  class="external text" title="http://math.libtomcrypt.com/">LibTomMath</a>: <a href="/wiki/Public_domain.html" title="Public domain">public domain</a> number theoretic multiple-precision integer library by <a  class="new" title="Tom St Denis">Tom St Denis</a>, for the C and <a href="/wiki/C%2B%2B_programming_language.html" title="C++ programming language">C++</a> programming languages</li>
+<li><a  class="external text" title="http://www.haible.de/bruno/MichaelStoll/reals.html">Computable Real Numbers</a>: arbitrary-precision library for <a href="/wiki/Common_Lisp.html" title="Common Lisp">Common Lisp</a></li>
+<li><a  class="external text" title="http://jscience.org/api/org/jscience/mathematics/numbers/LargeInteger.html">LargeInteger</a> - <a href="/wiki/JScience.html" title="JScience">JScience</a> Library</li>
+<li><a  class="external text" title="http://perldoc.perl.org/Math/BigFloat.html">Math::BigFloat</a> is an arbitrary-precision module for <a href="/wiki/Perl.html" title="Perl">perl</a></li>
+</ul>
+<p>Stand-alone <a href="/wiki/Application_software.html" title="Application software">application software</a> that supports arbitrary precision computations.</p>
+<ul>
+<li><a href="/wiki/PARI/GP_computer_algebra_system.html" title="PARI/GP computer algebra system">PARI/GP</a>, an <a href="/wiki/Open_source.html" title="Open source">open source</a> computer algebra system that supports arbitrary precision.</li>
+<li><a href="/wiki/Mathematica.html" title="Mathematica">Mathematica</a>, <a href="/wiki/Maple_computer_algebra_system.html" title="Maple computer algebra system">Maple computer algebra system</a>, and <a href="/wiki/Macsyma.html" title="Macsyma">Macsyma</a>: <a href="/wiki/Computer_algebra.html" title="Computer algebra">computer algebra</a> software including arbitrary-precision arithmetic</li>
+<li><a href="/wiki/BCMath.html" title="BCMath">BCMath</a>: the <a href="/wiki/PHP.html" title="PHP">PHP</a> binary calculator functions</li>
+<li><a href="/wiki/Bc_programming_language.html" title="Bc programming language">bc programming language</a>: the <a href="/wiki/POSIX.html" title="POSIX">POSIX</a> / <a href="/wiki/GNU.html" title="GNU">GNU</a> basic calculator</li>
+<li><a href="/wiki/Dc_%28Unix%29.html" title="Dc (Unix)">dc programming language</a>: the POSIX desk calculator</li>
+<li><a href="/wiki/REXX.html" title="REXX">REXX</a> programming language (incl. NetRexx)</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<div class="messagebox cleanup metadata">This article or section does not cite its <b><a  title="Wikipedia:Citing sources">references or sources</a>.</b><br />
+<small>You can <a  title="Wikipedia:WikiProject Fact and Reference Check">help</a> Wikipedia by introducing appropriate citations.</small></div>
+<ol class="references"></ol>
+
+<!-- 
+Pre-expand include size: 2441 bytes
+Post-expand include size: 1035 bytes
+Template argument size: 164 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:600892-0!1!0!default!!en!2 and timestamp 20060910162803 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Wikipedia articles needing factual verification">Wikipedia articles needing factual verification</a></span> | <span dir='ltr'><a  title="Category:Articles with unsourced statements">Articles with unsourced statements</a></span> | <span dir='ltr'><a  title="Category:Articles lacking sources">Articles lacking sources</a></span> | <span dir='ltr'><a  title="Category:Computer arithmetic">Computer arithmetic</a></span> | <span dir='ltr'><a  title="Category:Arbitrary precision algorithms">Arbitrary precision algorithms</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Arbitrary-precision_arithmetic.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-pt"><a >Português</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 16:25, 10 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv91 in 0.103 secs. --></body></html>

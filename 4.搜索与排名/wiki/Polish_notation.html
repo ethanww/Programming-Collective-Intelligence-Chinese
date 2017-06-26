@@ -1,0 +1,321 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Polish notation,Infix notation,Stack-oriented programming language,Arity,Biconditional,Binary operation,Calculator,Computer science,Disjunction,HP calculators,Jan Łukasiewicz" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Polish notation - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Polish_notation";
+			var wgTitle = "Polish notation";
+			var wgArticleId = 25056;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Polish notation</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p><b>Polish notation</b>, also known as <b>prefix notation</b>, is a form of notation for logic, arithmetic, and algebra. Its distinguishing feature is that it places <a href="/wiki/Operator.html" title="Operator">operators</a>, whose <a href="/wiki/Arity.html" title="Arity">arity</a> is assumed known, to the left of their <a href="/wiki/Operand.html" title="Operand">operands</a>. The result is a syntax lacking parentheses or other brackets, that can still be parsed without ambiguity. The Polish logician <a href="/wiki/Jan_%C5%81ukasiewicz.html" title="Jan Łukasiewicz">Jan Łukasiewicz</a> invented this notation around 1920 in order to simplify <a href="/wiki/Sentential_logic.html" title="Sentential logic">sentential logic</a>. While no longer much used in logic, it has since found a place in <a href="/wiki/Computer_science.html" title="Computer science">computer science</a>.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Arithmetic</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Order of operations</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Application of mathematical laws</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Polish notation for logic</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">Further reading</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Arithmetic">edit</a>]</div>
+<p><a name="Arithmetic" id="Arithmetic"></a></p>
+<h2>Arithmetic</h2>
+<p>The following expression:</p>
+<pre>
++ 1 2
+</pre>
+<p>evaluates to 3. This more complex expression:</p>
+<pre>
+(× (+ 0 1) (+ 2 3)) 
+</pre>
+<p>evaluates to 5.</p>
+<p>Parentheses were added for ease of comprehension, but they are unnecessary. One of the benefits of Polish notation is that it saves typing. Assuming the <a href="/wiki/Arity.html" title="Arity">arity</a> of each operator is known and the expression is well-formed, the <a href="/wiki/Order_of_operations.html" title="Order of operations">order of operations</a> is unique and easy to determine. For example, assuming <tt>×</tt> and <tt>+</tt> are binary, then this expression:</p>
+<pre>
+× + 0 1 + 2 3
+</pre>
+<p>can mean <i>only</i> this:</p>
+<pre>
+(× (+ 0 1) (+ 2 3))
+</pre>
+<p>Polish notation has seen wide application in <a href="/wiki/Lisp_programming_language.html" title="Lisp programming language">Lisp</a> <a href="/wiki/S-expressions.html" title="S-expressions">s-expressions</a>, where the brackets are required due to the arithmetic operators having variable arity. It has not seen much other use, but a variant called <a href="/wiki/Reverse_Polish_notation.html" title="Reverse Polish notation">reverse Polish notation</a>, or <i>postfix</i> notation, is used in many <a href="/wiki/Stack-oriented_programming_language.html" title="Stack-oriented programming language">stack-based</a> <a href="/wiki/Programming_language.html" title="Programming language">programming languages</a>, and is the operating principle of certain <a href="/wiki/Calculator.html" title="Calculator">calculators</a>, notably from <a href="/wiki/HP_calculators.html" title="HP calculators">Hewlett-Packard</a>.</p>
+<p>Although obvious, it is important to note that the number of operands in an expression must equal the number of operators plus one, otherwise the statement makes no sense (assuming only <a href="/wiki/Binary_operation.html" title="Binary operation">binary operators</a> are used in the expression). This can be easy to overlook when dealing with longer, more complicated expressions with several operators, so care must be taken to double check that an expression makes sense when using Polish notation.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Order of operations">edit</a>]</div>
+<p><a name="Order_of_operations" id="Order_of_operations"></a></p>
+<h2>Order of operations</h2>
+<p>Order of operations is defined within the structure of Polish notation and can be easily determined. One thing to keep in mind is that when executing an operation, the operation is applied TO the first operand BY the second operand. This is not an issue with operations that commute, but for non-commutative operations like division or subtraction, this fact is crucial to the analysis of a statement. For example, the following statement:</p>
+<pre>
+ / 10 5
+</pre>
+<p>is read as "Divide 10 BY 5". Thus the solution is 2, not ½ as would be the result of an incorrect analysis.</p>
+<p>Polish notation is especially popular with <a href="/wiki/Stack-oriented_programming_language.html" title="Stack-oriented programming language">stack-based</a> operations due to its innate ability to easily distinguish order of operations without the need for parentheses. To evaluate order of operations under polish notation, one does not even need to memorize an operational hierarchy, as with <a href="/wiki/Infix_notation.html" title="Infix notation">infix notation</a>. Instead, one looks directly to the notation to discover which operator to evaluate first. Reading an expression from left to right, one first looks for an operator and proceeds to look for two operands. If another operator is found before two operands are found, then the old operator is placed aside until this new operator is resolved. This process iterates until an operator is resolved, which must happen eventually, as there must be one more operand than there are operators in a complete statement. Once resolved, the operator and the two operands are replaced with a new operand. Because one operator and two operands were removed and one operand was added, there was a net loss of one operator and one operand, meaning that there still exist more operators than operands by a factor of one, allowing the iterative process to complete once again. This is the general theory behind using stacks in programming languages to evaluate a statement in Polish notation, although there are various algorithms that manipulate the process. Once analyzed, a statement in Polish notation becomes less intimidating to the human mind as it allows some separation from convention with added convenience. An example shows the ease with which a complex statement in Polish notation can be deciphered through order of operations:</p>
+<pre>
+ - * / 15 - 7 <b>+ 1 1</b> 3 + 2 + 1 1 =
+ - * / 15 <b>- 7   2</b>   3 + 2 + 1 1 =
+ - * <b>/ 15     5</b>     3 + 2 + 1 1 =
+ - <b>*        3       3</b> + 2 + 1 1 =
+ -          9         + 2 <b>+ 1 1</b> =
+ -          9         <b>+ 2   2</b>   =
+ <b>-          9         4</b>         =
+                <b>5</b>
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Application of mathematical laws">edit</a>]</div>
+<p><a name="Application_of_mathematical_laws" id="Application_of_mathematical_laws"></a></p>
+<h2>Application of mathematical laws</h2>
+<p>It is important to see that with Polish notation, basic mathematical laws still hold true but must be adopted to the notation. For example, under Polish notation, the law of Additive Commutativity is expressed mathematically as:</p>
+<pre>
+ + A B = + B A
+</pre>
+<p>Or in a more technically polish way:</p>
+<pre>
+ =  + A B  + B A
+</pre>
+<p>Similarly, under this notation, since parentheses are not necessary, the law of Additive Associativity involves the repositioning of operators to be expressed notationally as follows:</p>
+<pre>
+ + + A B C = + A + B C
+</pre>
+<p>Or in a more technically polish way:</p>
+<pre>
+ =  + + A B C  + A + B C
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Polish notation for logic">edit</a>]</div>
+<p><a name="Polish_notation_for_logic" id="Polish_notation_for_logic"></a></p>
+<h2>Polish notation for logic</h2>
+<p>The table below shows the core of <a href="/wiki/Jan_%C5%81ukasiewicz.html" title="Jan Łukasiewicz">Jan Łukasiewicz</a>'s notation for <a href="/wiki/Sentential_logic.html" title="Sentential logic">sentential logic</a>. The "conventional" notation did not become so until the 1970s and 80s.</p>
+<table class="wikitable">
+<tr>
+<th>Concept</th>
+<th>Conventional<br />
+notation</th>
+<th>Polish<br />
+notation</th>
+</tr>
+<tr>
+<td><a href="/wiki/Negation.html" title="Negation">Negation</a></td>
+<td>¬φ</td>
+<td>Nφ</td>
+</tr>
+<tr>
+<td><a href="/wiki/Logical_conjunction.html" title="Logical conjunction">Conjunction</a></td>
+<td>φ∧ψ</td>
+<td>Kφψ</td>
+</tr>
+<tr>
+<td><a href="/wiki/Disjunction.html" title="Disjunction">Disjunction</a></td>
+<td>φ∨ψ</td>
+<td>Aφψ</td>
+</tr>
+<tr>
+<td><a href="/wiki/Material_conditional.html" title="Material conditional">Material conditional</a></td>
+<td>φ→ψ</td>
+<td>Cφψ</td>
+</tr>
+<tr>
+<td><a href="/wiki/Biconditional.html" title="Biconditional">Biconditional</a></td>
+<td>φ↔ψ</td>
+<td>Eφψ</td>
+</tr>
+<tr>
+<td><a href="/wiki/Sheffer_stroke.html" title="Sheffer stroke">Sheffer stroke</a></td>
+<td><span class="texhtml">φ | ψ</span></td>
+<td>Dφψ</td>
+</tr>
+<tr>
+<td><a href="/wiki/Modal_logic.html" title="Modal logic">Possibility</a></td>
+<td><img class='tex' src="http://upload.wikimedia.org/math/6/a/2/6a2084de787fb2d1c3e408d926425904.png" alt="\Diamond" />φ</td>
+<td>Mφ</td>
+</tr>
+<tr>
+<td><a href="/wiki/Modal_logic.html" title="Modal logic">Necessity</a></td>
+<td><img class='tex' src="http://upload.wikimedia.org/math/9/d/8/9d8f6d53ad070771a6910933810023c4.png" alt="\Box" />φ</td>
+<td>Lφ</td>
+</tr>
+<tr>
+<td>Universal Quantifier</td>
+<td><img class='tex' src="http://upload.wikimedia.org/math/d/4/d/d4d49bead125261b226eaa867bd016ce.png" alt="\forall" />φ</td>
+<td>Πφ</td>
+</tr>
+<tr>
+<td>Existential Quantifier</td>
+<td><img class='tex' src="http://upload.wikimedia.org/math/9/3/e/93ebe8636e1f8d60004fe33d1321674e.png" alt="\exists" />φ</td>
+<td>Σφ</td>
+</tr>
+</table>
+<p>Note that the quantifiers ranged over propositional values in Łukasiewicz's work on many-valued logics.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Reverse_Polish_notation.html" title="Reverse Polish notation">Reverse Polish notation</a></li>
+<li><a href="/wiki/Infix_notation.html" title="Infix notation">Infix notation</a></li>
+<li><a href="/wiki/Lisp_programming_language.html" title="Lisp programming language">Lisp programming language</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Further reading">edit</a>]</div>
+<p><a name="Further_reading" id="Further_reading"></a></p>
+<h2>Further reading</h2>
+<p>Jan Łukasiewicz, "Philosophische Bemerkungen zu mehrwertigen Systemen des Aussagenkalküls", <b>Comptes rendus des séances de la Société des Sciences et des Lettres de Varsovie</b> 23:51-77 (1930). Translated by H. Weber as "Philosophical Remarks on Many-Valued Systems of Propositional Logics", in Storrs McCall, <b>Polish Logic 1920-1939</b>, Clardendon Press: Oxford (1967).</p>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:25056-0!1!0!default!!en!2 and timestamp 20060904021120 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:Mathematical notation">Mathematical notation</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Polish_notation.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-bg"><a >Български</a></li>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-eo"><a >Esperanto</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-nl"><a >Nederlands</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-pt"><a >Português</a></li>
+				<li class="interwiki-sv"><a >Svenska</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 19:56, 30 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv92 in 0.075 secs. --></body></html>

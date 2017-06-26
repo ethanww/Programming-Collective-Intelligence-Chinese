@@ -1,0 +1,314 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Formal language,Alphabet (computer science),Automata theory,Automaton,Chomsky hierarchy,Computability theory,Computational complexity theory,Computer language,Computer science,Concatenation,Context-free grammar" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Formal language - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Formal_language";
+			var wgTitle = "Formal language";
+			var wgArticleId = 10939;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Formal language</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>In <a href="/wiki/Mathematics.html" title="Mathematics">mathematics</a>, <a href="/wiki/Logic.html" title="Logic">logic</a>, and <a href="/wiki/Computer_science.html" title="Computer science">computer science</a>, a <b>formal language</b> <b>L</b> is a <a href="/wiki/Set.html" title="Set">set</a> of finite-length sequences of elements drawn from a specified finite set <b>A</b> of <a href="/wiki/Symbol.html" title="Symbol">symbols</a>. Among the more common options that are found in applications, a formal language may be viewed as being analogous to (1) a collection of words or (2) a collection of sentences. In Case 1, the set <b>A</b> is called the <i><a href="/wiki/Alphabet_%28computer_science%29.html" title="Alphabet (computer science)">alphabet</a></i> of <b>L</b>, whose elements are called <i>words</i>. In Case 2, the set <b>A</b> is called the <i>lexicon</i> or the <i>vocabulary</i> of <b>L</b>, whose elements are then called <i>sentences</i>. In any case, the mathematical theory that treats formal languages in general is known as <i>formal language theory</i>.</p>
+<p>Although it is common to hear the term <i>formal language</i> used in other contexts to refer to a mode of expression that is more disciplined or more precise than everyday speech, the sense of <i>formal language</i> discussed in this article is restricted to its meaning in formal language theory.</p>
+<p>An alphabet might be <img class='tex' src="http://upload.wikimedia.org/math/4/6/e/46ede123b63a700cfe15460d40266d25.png" alt="\left \{ a , b \right \}" />, and a string over that alphabet might be <span class="texhtml"><i>a</i><i>b</i><i>a</i><i>b</i><i>b</i><i>a</i></span>.</p>
+<p>A typical language over that alphabet, containing that string, would be the set of all strings which contain the same number of symbols <span class="texhtml"><i>a</i></span> and <span class="texhtml"><i>b</i></span>.</p>
+<p>The <b>empty word</b> (that is, length-zero string) is allowed and is often denoted by <span class="texhtml"><i>e</i></span>, <span class="texhtml">ε</span> or <span class="texhtml">Λ</span>. While the alphabet is a finite set and every string has finite length, a language may very well have infinitely many member strings (because the length of words in it may be unbounded).</p>
+<p>A question often asked about formal languages is "how difficult is it to decide whether a given word belongs to a particular language?" This is the domain of <a href="/wiki/Computability_theory.html" title="Computability theory">computability theory</a> and <a href="/wiki/Computational_complexity_theory.html" title="Computational complexity theory">complexity theory</a>.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Examples</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Specification</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Operations</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Further reading</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Examples">edit</a>]</div>
+<p><a name="Examples" id="Examples"></a></p>
+<h2>Examples</h2>
+<p>Some examples of formal languages:</p>
+<ul>
+<li>the set of all words over <span class="texhtml"><i>a</i>,<i>b</i></span></li>
+<li>the set <img class='tex' src="http://upload.wikimedia.org/math/4/3/9/439dc705aab990647d3cb8449617c67a.png" alt="\left \{ a^{n}\right\}" />, n is a <a href="/wiki/Natural_number.html" title="Natural number">natural number</a> and <span class="texhtml"><i>a</i><sup><i>n</i></sup></span> means <span class="texhtml"><i>a</i></span> repeated <span class="texhtml"><i>n</i></span> times</li>
+<li>Finite languages, such as <span class="texhtml"><i>a</i>,<i>a</i><i>a</i>,<i>b</i><i>b</i><i>a</i></span> -</li>
+<li>the set of syntactically correct programs in a given programming language; or</li>
+<li>the set of inputs upon which a certain <a href="/wiki/Turing_machine.html" title="Turing machine">Turing machine</a> halts.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Specification">edit</a>]</div>
+<p><a name="Specification" id="Specification"></a></p>
+<h2>Specification</h2>
+<p>A formal language can be specified in a great variety of ways, such as:</p>
+<ul>
+<li>Strings produced by some <a href="/wiki/Formal_grammar.html" title="Formal grammar">formal grammar</a> (see <a href="/wiki/Chomsky_hierarchy.html" title="Chomsky hierarchy">Chomsky hierarchy</a>);</li>
+<li>Strings produced by a <a href="/wiki/Regular_expression.html" title="Regular expression">regular expression</a>;</li>
+<li>Strings accepted by some <a href="/wiki/Automaton.html" title="Automaton">automaton</a>, such as a <a href="/wiki/Turing_machine.html" title="Turing machine">Turing machine</a> or <a href="/wiki/Finite_state_machine.html" title="Finite state machine">finite state automaton</a>;</li>
+<li>From a set of related YES/NO questions, those questions for which the answer is YES — see <a href="/wiki/Decision_problem.html" title="Decision problem">decision problem</a>.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Operations">edit</a>]</div>
+<p><a name="Operations" id="Operations"></a></p>
+<h2>Operations</h2>
+<p>Several operations can be used to produce new languages from given ones. Suppose <span class="texhtml"><i>L</i><sub>1</sub></span> and <span class="texhtml"><i>L</i><sub>2</sub></span> are languages over some common alphabet.</p>
+<ul>
+<li>The <i><a href="/wiki/Concatenation.html" title="Concatenation">concatenation</a></i> <span class="texhtml"><i>L</i><sub>1</sub><i>L</i><sub>2</sub></span> consists of all strings of the form <span class="texhtml"><i>v</i><i>w</i></span> where <span class="texhtml"><i>v</i></span> is a string from <span class="texhtml"><i>L</i><sub>1</sub></span> and <span class="texhtml"><i>w</i></span> is a string from <span class="texhtml"><i>L</i><sub>2</sub></span>.</li>
+<li>The <i>intersection</i> <img class='tex' src="http://upload.wikimedia.org/math/f/0/3/f0324b22bdc504fce655c3e1594d129c.png" alt="L_1 \cap L_2" /> of <span class="texhtml"><i>L</i><sub>1</sub></span> and <span class="texhtml"><i>L</i><sub>2</sub></span> consists of all strings which are contained in <span class="texhtml"><i>L</i><sub>1</sub></span> and also in <span class="texhtml"><i>L</i><sub>2</sub></span>.</li>
+<li>The <i>union</i> <img class='tex' src="http://upload.wikimedia.org/math/9/4/b/94b1a4d657ee4fa28d358edd93446fe0.png" alt="L_1 \cup L_2" /> of <span class="texhtml"><i>L</i><sub>1</sub></span> and <span class="texhtml"><i>L</i><sub>2</sub></span> consists of all strings which are contained in <span class="texhtml"><i>L</i><sub>1</sub></span> or in <span class="texhtml"><i>L</i><sub>2</sub></span>.</li>
+<li>The <i>complement</i> of the language <span class="texhtml"><i>L</i><sub>1</sub></span> consists of all strings over the alphabet which are not contained in <span class="texhtml"><i>L</i><sub>1</sub></span>.</li>
+<li>The <i>right quotient</i> <span class="texhtml"><i>L</i><sub>1</sub> / <i>L</i><sub>2</sub></span> of <span class="texhtml"><i>L</i><sub>1</sub></span> by <span class="texhtml"><i>L</i><sub>2</sub></span> consists of all strings <span class="texhtml"><i>v</i></span> for which there exists a string <span class="texhtml"><i>w</i></span> in <span class="texhtml"><i>L</i><sub>2</sub></span> such that <span class="texhtml"><i>v</i><i>w</i></span> is in <span class="texhtml"><i>L</i><sub>1</sub></span>.</li>
+<li>The <i><a href="/wiki/Kleene_star.html" title="Kleene star">Kleene star</a></i> <img class='tex' src="http://upload.wikimedia.org/math/8/1/d/81d3dbe2f1c155701b8ef463276c88cf.png" alt="L_{1}^{*}" /> consists of all strings which can be written in the form <span class="texhtml"><i>w</i><sub>1</sub><i>w</i><sub>2</sub>...<i>w</i><sub><i>n</i></sub></span> with strings <span class="texhtml"><i>w</i><sub><i>i</i></sub></span> in <span class="texhtml"><i>L</i><sub>1</sub></span> and <img class='tex' src="http://upload.wikimedia.org/math/e/2/d/e2dbd4b26d758137070f5b0edfc107d6.png" alt="n \ge 0" />. Note that this includes the empty string <span class="texhtml">ε</span> because <span class="texhtml"><i>n</i> = 0</span> is allowed.</li>
+<li>The <i>reverse</i> <img class='tex' src="http://upload.wikimedia.org/math/7/1/b/71be5b6a9065b8522b1a5567ef4f6451.png" alt="L_{1}^{R}" /> contains the reversed versions of all the strings in <span class="texhtml"><i>L</i><sub>1</sub></span>.</li>
+<li>The <i>shuffle</i> of <span class="texhtml"><i>L</i><sub>1</sub></span> and <span class="texhtml"><i>L</i><sub>2</sub></span> consists of all strings which can be written in the form <span class="texhtml"><i>v</i><sub>1</sub><i>w</i><sub>1</sub><i>v</i><sub>2</sub><i>w</i><sub>2</sub>...<i>v</i><sub><i>n</i></sub><i>w</i><sub><i>n</i></sub></span> where <img class='tex' src="http://upload.wikimedia.org/math/f/e/3/fe37f48a6bb040c06c5e7ccaac63bc66.png" alt="n \ge 1" /> and <span class="texhtml"><i>v</i><sub>1</sub>,...,<i>v</i><sub><i>n</i></sub></span> are strings such that the concatenation <span class="texhtml"><i>v</i><sub>1</sub>...<i>v</i><sub><i>n</i></sub></span> is in <span class="texhtml"><i>L</i><sub>1</sub></span> and <span class="texhtml"><i>w</i><sub>1</sub>,...,<i>w</i><sub><i>n</i></sub></span> are strings such that <span class="texhtml"><i>w</i><sub>1</sub>...<i>w</i><sub><i>n</i></sub></span> is in <span class="texhtml"><i>L</i><sub>2</sub></span>.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Language.html" title="Language">Language</a> for languages in general</li>
+<li><a href="/wiki/Syntax.html" title="Syntax">Syntax</a> for the form of a language in general</li>
+<li><a href="/wiki/Semantics.html" title="Semantics">Semantics</a> for the meanings in a language</li>
+<li><a href="/wiki/Natural_language.html" title="Natural language">Natural language</a> for languages that are not formal</li>
+<li><a href="/wiki/Computer_language.html" title="Computer language">Computer language</a> for application of formal languages in computing</li>
+<li><a href="/wiki/Programming_language.html" title="Programming language">Programming language</a> for the application of formal languages to program computers</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Further reading">edit</a>]</div>
+<p><a name="Further_reading" id="Further_reading"></a></p>
+<h2>Further reading</h2>
+<ul>
+<li>Hopcroft, J. &amp; Ullman, J (1979). <i>Introduction to Automata Theory, Languages, and Computation.</i> Addison Wesley. <a  class="internal">ISBN 0-201-02988-X</a></li>
+</ul>
+<ul>
+<li>G. Rozenberg, A. Salomaa eds. Handbook of Formal Languages. Springer-Verlag. 3 vol.</li>
+</ul>
+<ul>
+<li><a  class="external free" title="http://icalp06.dsi.unive.it/">http://icalp06.dsi.unive.it/</a> ICALP 2006 33rd International Colloquium on</li>
+</ul>
+<p>Automata, Languages and Programming.</p>
+<ul>
+<li><a  class="external free" title="http://www.cs.auckland.ac.nz/CDMTCS/conferences/dlt/DLTConfSeries.html">http://www.cs.auckland.ac.nz/CDMTCS/conferences/dlt/DLTConfSeries.html</a> International Conferences on Developments in Language Theory</li>
+</ul>
+<table align="center" border="0" cellpadding="2" cellspacing="0" class="toccolours">
+<tr>
+<th colspan="4" style="background:#ddd;"><a href="/wiki/Automata_theory.html" title="Automata theory">Automata theory</a>: <strong class="selflink">formal languages</strong> and <a href="/wiki/Formal_grammar.html" title="Formal grammar">formal grammars</a></th>
+</tr>
+<tr align="left">
+<th style="border-bottom:2px solid"><b><a href="/wiki/Chomsky_hierarchy.html" title="Chomsky hierarchy">Chomsky<br />
+hierarchy</a></b></th>
+<th style="border-bottom:2px solid"><b><a href="/wiki/Formal_grammar.html" title="Formal grammar">Grammars</a></b></th>
+<th style="border-bottom:2px solid"><b><strong class="selflink">Languages</strong></b></th>
+<th style="border-bottom:2px solid"><b>Minimal<br />
+<a href="/wiki/Finite_state_machine.html" title="Finite state machine">automaton</a></b></th>
+</tr>
+<tr align="left">
+<td>Type-0</td>
+<td><a href="/wiki/Unrestricted_grammar.html" title="Unrestricted grammar">Unrestricted</a></td>
+<td><a href="/wiki/Recursively_enumerable_language.html" title="Recursively enumerable language">Recursively enumerable</a></td>
+<td><a href="/wiki/Turing_machine.html" title="Turing machine">Turing machine</a></td>
+</tr>
+<tr align="left">
+<td>n/a</td>
+<td>(no common name)</td>
+<td><a href="/wiki/Recursive_language.html" title="Recursive language">Recursive</a></td>
+<td><a href="/wiki/Machine_that_always_halts.html" title="Machine that always halts">Decider</a></td>
+</tr>
+<tr align="left">
+<td>Type-1</td>
+<td><a href="/wiki/Context-sensitive_grammar.html" title="Context-sensitive grammar">Context-sensitive</a></td>
+<td><a href="/wiki/Context-sensitive_language.html" title="Context-sensitive language">Context-sensitive</a></td>
+<td><a href="/wiki/Linear_bounded_automaton.html" title="Linear bounded automaton">Linear-bounded</a></td>
+</tr>
+<tr align="left">
+<td>Type-2</td>
+<td><a href="/wiki/Context-free_grammar.html" title="Context-free grammar">Context-free</a></td>
+<td><a href="/wiki/Context-free_language.html" title="Context-free language">Context-free</a></td>
+<td><a href="/wiki/Pushdown_automaton.html" title="Pushdown automaton">Pushdown</a></td>
+</tr>
+<tr align="left">
+<td>Type-3</td>
+<td><a href="/wiki/Regular_grammar.html" title="Regular grammar">Regular</a></td>
+<td><a href="/wiki/Regular_language.html" title="Regular language">Regular</a></td>
+<td><a href="/wiki/Finite_automaton.html" title="Finite automaton">Finite</a></td>
+</tr>
+<tr>
+<th style="border-top:2px solid" colspan="4"><small>Each category of languages or grammars is a <a href="/wiki/Subset.html" title="Subset">proper subset</a> of the category directly above it.</small></th>
+</tr>
+</table>
+
+<!-- 
+Pre-expand include size: 1462 bytes
+Post-expand include size: 1392 bytes
+Template argument size: 0 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:10939-0!1!0!default!!en!2 and timestamp 20060906011154 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:Formal languages">Formal languages</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Formal_language.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-ar"><a >العربية</a></li>
+				<li class="interwiki-bg"><a >Български</a></li>
+				<li class="interwiki-cs"><a >Česky</a></li>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-el"><a >Ελληνικά</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-ko"><a >한국어</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-he"><a >עברית</a></li>
+				<li class="interwiki-nl"><a >Nederlands</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-pt"><a >Português</a></li>
+				<li class="interwiki-ro"><a >Română</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+				<li class="interwiki-sk"><a >Slovenčina</a></li>
+				<li class="interwiki-fi"><a >Suomi</a></li>
+				<li class="interwiki-tr"><a >Türkçe</a></li>
+				<li class="interwiki-zh"><a >中文</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 16:51, 28 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv99 in 0.114 secs. --></body></html>

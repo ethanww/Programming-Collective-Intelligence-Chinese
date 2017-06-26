@@ -1,0 +1,281 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Machine code,Addressing mode,Andrew S. Tanenbaum,Assembly language,Binary numeral system,Bit,CISC,Central processing unit,Computer,Computer architecture,Conditional branch" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Machine code - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Machine_code";
+			var wgTitle = "Machine code";
+			var wgArticleId = 20683;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Machine code</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub">(Redirected from <a  title="Machine language">Machine language</a>)</div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p><b>Machine code</b> or <b>machine language</b> is a system of instructions and data directly understandable by a <a href="/wiki/Computer.html" title="Computer">computer</a>'s <a href="/wiki/Central_processing_unit.html" title="Central processing unit">central processing unit</a>.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Machine code instructions</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Programs</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Assembly languages</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Example</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Are machine languages special?</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">Relationship to microcode</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">8</span> <span class="toctext">Further reading</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Machine code instructions">edit</a>]</div>
+<p><a name="Machine_code_instructions" id="Machine_code_instructions"></a></p>
+<h2>Machine code instructions</h2>
+<p>The "words" of a machine. Instructions are patterns of <a href="/wiki/Bit.html" title="Bit">bits</a> with different patterns corresponding to different commands to the machine.</p>
+<p>Every CPU model does not have its own machine code, or <a href="/wiki/Instruction_set.html" title="Instruction set">instruction set</a>, although there is considerable overlap between some. If CPU <i>A</i> understands the full language of CPU <i>B</i> it is said that <i>A</i> is compatible with <i>B</i>. CPU <i>B</i> may not be compatible with CPU <i>A</i>, as <i>A</i> may know a few codes that <i>B</i> does not.</p>
+<p>Some machine languages give all their instructions the same number of bits, while the instruction length differs in others. How the patterns are organised depends largely on the specification of the machine code. Common to most is the division of one field (the <a href="/wiki/Opcode.html" title="Opcode">opcode</a>) which specifies the exact operation (for example "add"). Other fields may give the type of the <a href="/wiki/Operand.html" title="Operand">operands</a>, their <a href="/wiki/Addressing_mode.html" title="Addressing mode">location</a>, or their value directly (operands contained in an instruction are called <i>immediate</i>). Some exotic instruction sets do not have an opcode field (such as <a href="/wiki/Transport_Triggered_Architectures.html" title="Transport Triggered Architectures">Transport Triggered Architectures</a> or the <a href="/wiki/Forth_virtual_machine.html" title="Forth virtual machine">Forth virtual machine</a>), only operand(s). Other instruction sets lack any operand fields, such as <a  class="new" title="NOSC">NOSCs</a>"<a  class="external autonumber" title="http://strangegizmo.com/forth/NOSC/">[1]</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Programs">edit</a>]</div>
+<p><a name="Programs" id="Programs"></a></p>
+<h2>Programs</h2>
+<p>A program is a sequence of instructions that are executed by a CPU. While simple processors execute instructions one after the other, <a href="/wiki/Superscalar.html" title="Superscalar">superscalar</a> processors are capable of executing several instructions at once.</p>
+<p><a href="/wiki/Program_flow.html" title="Program flow">Program flow</a> may be influenced by special <i>jump</i> instructions that transfer execution to an instruction other than the following one. <a href="/wiki/Conditional_branch.html" title="Conditional branch">Conditional jumps</a> are taken (execution continues at another address) or not (execution continues at the next instruction) depending on some condition.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Assembly languages">edit</a>]</div>
+<p><a name="Assembly_languages" id="Assembly_languages"></a></p>
+<h2>Assembly languages</h2>
+<p>Humans use <a href="/wiki/Mnemonic#Assembly_mnemonics.html" title="Mnemonic">mnemonic codes</a> to refer to machine code instructions. Such a more readable rendition of the machine language is called an <a href="/wiki/Assembly_language.html" title="Assembly language">assembly language</a> and consists of both <a href="/wiki/Binary_numeral_system.html" title="Binary numeral system">binary numbers</a> and simple words whereas <i>machine code</i> is composed only of the two binary digits 0 and 1.</p>
+<p>For example, on the <a href="/wiki/Zilog_Z80.html" title="Zilog Z80">Zilog Z80</a> processor, the machine code <code>00000101</code> causes the CPU to decrement the <code>B</code> <a href="/wiki/Processor_register.html" title="Processor register">processor register</a>. In assembly language this would be written as <code>DEC B</code>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Example">edit</a>]</div>
+<p><a name="Example" id="Example"></a></p>
+<h2>Example</h2>
+<p>The <a href="/wiki/MIPS_architecture.html" title="MIPS architecture">MIPS architecture</a> provides a specific example for a machine code whose instructions are always 32 bits long. The general type of instruction is given by the <i>op</i> (operation) field, the highest 6 bits. J-type (jump) and I-type (immediate) instructions are fully specified by <i>op</i>. R-type (register) instructions include an additional field <i>funct</i> to determine the exact operation. The fields used in these types are:</p>
+<pre>
+   6      5     5     5     5      6 bits
+[  op  |  rs |  rt |  rd |shamt| funct]  R-type
+[  op  |  rs |  rt | address/immediate]  I-type
+[  op  |        target address        ]  J-type
+</pre>
+<p><i>rs</i>, <i>rt</i>, and <i>rd</i> indicate register operands; <i>shamt</i> gives a shift amount; and the <i>address</i> or <i>immediate</i> fields contain an operand directly.</p>
+<p>For example adding the registers 1 and 2 and placing the result in register 6 is encoded:</p>
+<pre>
+[  op  |  rs |  rt |  rd |shamt| funct]
+    0     1     2     6     0     32     decimal
+ 000000 00001 00010 00110 00000 100000   binary
+</pre>
+<p>Loading a value from the memory cell 68 cells after the one register 3 points to into register 8:</p>
+<pre>
+[  op  |  rs |  rt | address/immediate]
+   35     3     8           68           decimal
+ 100011 00011 01000 00000 00001 000100   binary
+</pre>
+<p>Jumping to the address 1025:</p>
+<pre>
+[  op  |        target address        ]
+    2                 1025               decimal
+ 000010 00000 00000 00000 10000 000001   binary
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Are machine languages special?">edit</a>]</div>
+<p><a name="Are_machine_languages_special.3F" id="Are_machine_languages_special.3F"></a></p>
+<h2>Are machine languages special?</h2>
+<p>There is on occasion among programmers a tendency to see machine language as exceptional or basic. As a matter of fact, a machine language is in no sense more fundamental than any other language in which programs are described. Rather, machine language is a consequence of the necessity of simple elements in the electrical design of computers. Indeed, machine language programs are among the most difficult kinds of programs for a human being to read and modify, and, although familiarity with machine language will allow able programmers to compensate for the deficiencies of automatic code generation by compilers or interpreters, it will not simplify the job.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Relationship to microcode">edit</a>]</div>
+<p><a name="Relationship_to_microcode" id="Relationship_to_microcode"></a></p>
+<h2>Relationship to microcode</h2>
+<p>In some <a href="/wiki/Computer_architecture.html" title="Computer architecture">computer architectures</a>, the machine code is implemented by a more fundamental underlying layer of programs called <a href="/wiki/Microprogram.html" title="Microprogram">microprograms</a>, providing a common machine language interface across a line or family of different models of computer with widely different underlying <a href="/wiki/Dataflow.html" title="Dataflow">dataflows</a>. This is done to facilitate <a href="/wiki/Porting.html" title="Porting">porting</a> of machine language programs between different models. An example of this use is the IBM <a href="/wiki/System/360.html" title="System/360">System/360</a> family of computers and their successors. With dataflow path widths of 8 bits to 64 bits and beyond, they nevertheless present a common architecture at the machine language level across the entire line.</p>
+<p>Using a microcode layer to implement an <a href="/wiki/Emulator.html" title="Emulator">emulator</a> enables the computer to present the architecture of an entirely different computer. The System/360 line used this to allow porting programs from earlier IBM machines to the new family of computers, e.g. an <a href="/wiki/IBM_1400_series.html" title="IBM 1400 series">IBM 1401/1440/1460</a> emulator on the IBM S/360 model 40.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Turing_machine.html" title="Turing machine">Turing machine</a></li>
+<li><a href="/wiki/CISC.html" title="CISC">CISC</a></li>
+<li><a href="/wiki/RISC.html" title="RISC">RISC</a></li>
+<li><a href="/wiki/VLIW.html" title="VLIW">VLIW</a></li>
+<li><a href="/wiki/Endianness.html" title="Endianness">Endianness</a>.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Further reading">edit</a>]</div>
+<p><a name="Further_reading" id="Further_reading"></a></p>
+<h2>Further reading</h2>
+<ul>
+<li><cite class="book" style="font-style:normal"><a href="/wiki/John_L._Hennessy.html" title="John L. Hennessy">Hennessy, John L.</a>; <a href="/wiki/David_A._Patterson.html" title="David A. Patterson">Patterson, David A.</a>. <i>Computer Organization and Design. The Hardware/Software Interface.</i>. Morgan Kaufmann Publishers. <a  class="internal">ISBN 1-55860-281-X</a>.</cite></li>
+<li><cite class="book" style="font-style:normal"><a href="/wiki/Andrew_S._Tanenbaum.html" title="Andrew S. Tanenbaum">Tanenbaum, Andrew S.</a>. <i>Structured Computer Organization</i>. Prentice Hall. <a  class="internal">ISBN 0-13-020435-8</a>.</cite></li>
+</ul>
+
+<!-- 
+Pre-expand include size: 5517 bytes
+Post-expand include size: 1403 bytes
+Template argument size: 1673 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:20683-0!1!0!default!!en!2 and timestamp 20060909200805 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Assembly languages">Assembly languages</a></span> | <span dir='ltr'><a  title="Category:Machine code">Machine code</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Machine_code.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-ca"><a >Català</a></li>
+				<li class="interwiki-cs"><a >Česky</a></li>
+				<li class="interwiki-da"><a >Dansk</a></li>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-et"><a >Eesti</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-fa"><a >فارسی</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-ko"><a >한국어</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-he"><a >עברית</a></li>
+				<li class="interwiki-hu"><a >Magyar</a></li>
+				<li class="interwiki-nl"><a >Nederlands</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-no"><a >Norsk (bokmål)</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-pt"><a >Português</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+				<li class="interwiki-simple"><a >Simple English</a></li>
+				<li class="interwiki-sk"><a >Slovenčina</a></li>
+				<li class="interwiki-sl"><a >Slovenščina</a></li>
+				<li class="interwiki-fi"><a >Suomi</a></li>
+				<li class="interwiki-sv"><a >Svenska</a></li>
+				<li class="interwiki-vi"><a >Tiếng Việt</a></li>
+				<li class="interwiki-uk"><a >Українська</a></li>
+				<li class="interwiki-zh"><a >中文</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 14:30, 7 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv103 in 0.082 secs. --></body></html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Inetd,AIX,BSD,C programming language,Daemon (computer software),Distributed processing,File Transfer Protocol,HTTP,Httpd,Internet,Launchd" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Inetd - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Inetd";
+			var wgTitle = "Inetd";
+			var wgArticleId = 2173291;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Inetd</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<dl>
+<dd><span class="plainlinks"><i>The correct title of this article is <b>inetd</b>. The initial letter is capitalized due to <a  title="Wikipedia:Naming conventions (technical restrictions)">technical restrictions</a>.</i></span></dd>
+</dl>
+<p><b>inetd</b> is a <a href="/wiki/Daemon_%28computer_software%29.html" title="Daemon (computer software)">daemon</a> on many <a href="/wiki/Unix.html" title="Unix">Unix</a> systems that manages <a href="/wiki/Internet.html" title="Internet">Internet</a> services. First appearing in <a href="/wiki/BSD.html" title="BSD">4.3BSD</a> <a  class="external autonumber" title="http://www.freebsd.org/cgi/man.cgi?query=inetd">[1]</a>, it is generally located at <tt>/usr/sbin/inetd</tt>.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Function</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Setup</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Creating an inetd service</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">inetd replacements</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Security concerns</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">References</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Function">edit</a>]</div>
+<p><a name="Function" id="Function"></a></p>
+<h2>Function</h2>
+<p>Often called a <i>super-server</i>, inetd listens on all <a href="/wiki/TCP_and_UDP_port.html" title="TCP and UDP port">ports</a> used by internet services such as <a href="/wiki/File_Transfer_Protocol.html" title="File Transfer Protocol">FTP</a>, <a href="/wiki/POP3.html" title="POP3">POP3</a>, and <a href="/wiki/Telnet.html" title="Telnet">telnet</a>. When a <a href="/wiki/Transmission_Control_Protocol.html" title="Transmission Control Protocol">TCP</a> packet or <a href="/wiki/User_Datagram_Protocol.html" title="User Datagram Protocol">UDP</a> packet comes in with a particular port number, inetd launches the appropriate server program to handle the connection. For services that are not expected to run with high loads, this method uses memory more efficiently, as the specific servers run only when needed. Furthermore, no network code is required in the application-specific daemons, as inetd hooks the sockets directly to <a href="/wiki/Stdin.html" title="Stdin">stdin</a>, <a href="/wiki/Stdout.html" title="Stdout">stdout</a> and <a href="/wiki/Stderr.html" title="Stderr">stderr</a> of the spawned process. For protocols that have frequent traffic, such as <a href="/wiki/HTTP.html" title="HTTP">HTTP</a> and POP3, a dedicated server that intercepts the traffic directly may be preferable.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Setup">edit</a>]</div>
+<p><a name="Setup" id="Setup"></a></p>
+<h2>Setup</h2>
+<p>The file <tt>/etc/services</tt> is used to map port numbers and protocols to service names, and the file <tt>/etc/inetd.conf</tt> is used to map service names to server names. For example, if a TCP request comes in on port 23, <tt>/etc/services</tt> shows:</p>
+<pre>
+telnet          23/tcp
+</pre>
+<p>The corresponding line in the <tt>/etc/inetd.conf</tt> file (in this case, taken from a machine running <a href="/wiki/AIX.html" title="AIX">AIX</a> version 5.1) is:</p>
+<pre>
+telnet  stream  tcp6    nowait  root    /usr/sbin/telnetd      telnetd -a
+</pre>
+<p>This tells inetd to launch the program <tt>/usr/sbin/telnetd</tt> with the command line arguments <code>telnetd -a</code>. inetd automatically hooks the socket to stdin, stdout, and stderr of the server program.</p>
+<p>Generally TCP sockets are handled by spawning a separate server to handle each connection concurrently. UDP sockets are generally handled by a single server instance that handles all packets on that port.</p>
+<p>Some simple services, such as echo, are handled directly by inetd, without spawning an external server.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Creating an inetd service">edit</a>]</div>
+<p><a name="Creating_an_inetd_service" id="Creating_an_inetd_service"></a></p>
+<h2>Creating an inetd service</h2>
+<p>This is a simple inetd service, written in <a href="/wiki/C_programming_language.html" title="C programming language">C</a>. It accepts an optional command line argument containing a filename for a log file, and then it logs all strings sent through the socket to the log file. This program is based on a logging service for a <a href="/wiki/Distributed_processing.html" title="Distributed processing">distributed processing</a> program that may be accepting messages from multiple processes running on different machines. By using an <tt>inetd</tt> service for receiving the logging messages, all machines can send the messages to a common machine to be stored in a single log file.</p>
+<pre>
+ #include &lt;stdio.h&gt;
+ #include &lt;stdlib.h&gt;
+ #include &lt;unistd.h&gt;
+ #include &lt;string.h&gt;
+
+ int main(int argc, char **argv)
+ {
+   /* this is a buffer for the messages to be logged */
+   char str[4096];
+
+   /* pointer to the log file */
+   FILE *fp = NULL;
+
+   /* if inetd passes an argument, use that as the filename */
+   if(argc == 2)
+     fp = fopen(argv[1], "at");
+   else
+     /* else open a file in the /tmp directory */
+     fp = fopen("/tmp/errorLog.txt", "at");
+
+   /* fail if the logfile cannot be opened */
+   if(fp == NULL) 
+     return -1;
+
+   while(!feof(stdin))
+   {
+     /* read up to the newline, up to 4095 characters; 
+        fgets will null terminate the string for us */
+     fgets(str, 4096, stdin);
+
+     /* write string to logfile and flush it */
+     fprintf(fp, "%s", str);
+     fflush(fp);
+   }
+
+   /* close logfile and exit */
+   fclose(fp);
+   return 0;
+ }
+</pre>
+<p>In this case, we want all messages logged to a single file, so we only want one instance of the service running to service all requests. This means UDP would be the correct protocol to use. First, an unused port number must be picked. In this sample, 9999 will be used, as it was free on the machine on which the code was developed. The <tt>/etc/services</tt> entry will look like this:</p>
+<pre>
+errorLogger 9999/udp
+</pre>
+<p>And the entry in <tt>/etc/inetd.conf</tt> will look like this:</p>
+<pre>
+errorLogger dgram udp wait root /usr/local/bin/errlogd errlogd /tmp/logfile.txt
+</pre>
+<p>This tells inetd to run the <tt>/usr/local/bin/errlogd</tt> program, passing in the argument list <tt>errlogd /tmp/logfile.txt</tt> (refer to the inetd.conf <a href="/wiki/Man_page.html" title="Man page">man page</a> for information on the other arguments). The first argument is always the executable name, and the second argument (argument 1 in the zero based arrays used in C) contains the filename to be used for the log file, <tt>/tmp/logfile.txt</tt>. inetd will run the service when needed, and attach port 9999 to the input and output streams, and all strings sent to that port will be logged to the file. By specifying <b>wait</b>, it tells inetd to only use one instance of the server to handle all requests, unlike the <a href="/wiki/Telnet.html" title="Telnet">telnet</a> example above, where a new server is spawned to handle each incoming request.</p>
+<p>Note: the functionality of the above example is usually implemented by using <a href="/wiki/Syslog.html" title="Syslog">syslog</a> and a process like syslogd. syslogd would normally be started in parallel with inetd, not as an inetd service.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: inetd replacements">edit</a>]</div>
+<p><a name="inetd_replacements" id="inetd_replacements"></a></p>
+<h2>inetd replacements</h2>
+<p>In recent years, because of the security limitations in the original design of inetd, it has been replaced by <a href="/wiki/Xinetd.html" title="Xinetd">xinetd</a>, rlinetd, <a href="/wiki/Ucspi-tcp.html" title="Ucspi-tcp">ucspi-tcp</a> and others in many systems. Distributions of <a href="/wiki/Linux.html" title="Linux">Linux</a> especially have many options and <a href="/wiki/Mac_OS_X.html" title="Mac OS X">Mac OS X</a> (beginning with <a href="/wiki/Mac_OS_X_v10.2.html" title="Mac OS X v10.2">Mac OS X v10.2</a>) uses <a href="/wiki/Xinetd.html" title="Xinetd">xinetd</a>. As of version <a href="/wiki/Mac_OS_X_v10.4.html" title="Mac OS X v10.4">Mac OS X v10.4</a>, Apple has merged the functionality of inetd into <a href="/wiki/Launchd.html" title="Launchd">launchd</a>.</p>
+<p>The services provided by inetd can be omitted entirely. This is becoming more common where machines are dedicated to a single function. For example, an HTTP server could be configured to just run <a href="/wiki/Httpd.html" title="Httpd">httpd</a> and have no other ports open. A dedicated firewall could have no services started.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Security concerns">edit</a>]</div>
+<p><a name="Security_concerns" id="Security_concerns"></a></p>
+<h2>Security concerns</h2>
+<p>While the inetd concept as a service dispatcher is not inherently insecure, the long list of services that inetd traditionally provided gave computer security experts pause. The possibility of a service having an exploitable flaw, or the service just being abused, had to be considered. Unnecessary services were disabled and off by default became the mantra. It is not uncommon to find an /etc/inetd.conf with almost all the services commented out in a modern Unix distribution.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/TCP_Wrappers.html" title="TCP Wrappers">TCP Wrappers</a></li>
+<li><a href="/wiki/List_of_TCP_and_UDP_port_numbers.html" title="List of TCP and UDP port numbers">List of TCP and UDP port numbers</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<ul>
+<li><a  class="external text" title="http://www.freebsd.org/cgi/man.cgi?query=inetd">FreeBSD man page for inetd</a></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:2173291-0!1!0!default!!en!2 and timestamp 20060910153134 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:Unix software">Unix software</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Inetd.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 14:33, 25 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv96 in 0.076 secs. --></body></html>

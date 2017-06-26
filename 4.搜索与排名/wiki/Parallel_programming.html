@@ -1,0 +1,387 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Parallel computing,Amdahl's law,Atari Transputer Workstation,Automatic parallelization,BBN Butterfly computers,Beowulf cluster,Blue Gene,Cellular automaton,Central processing unit,Cilk,Communicating sequential processes" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Parallel computing - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Parallel_computing";
+			var wgTitle = "Parallel computing";
+			var wgArticleId = 145162;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Parallel computing</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub">(Redirected from <a  title="Parallel programming">Parallel programming</a>)</div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p><b>Parallel computing</b> is the simultaneous execution of the <i>same task</i> (split up and specially adapted) on multiple <a href="/wiki/Central_processing_unit.html" title="Central processing unit">processors</a> in order to obtain results faster. The idea is based on the fact that the process of solving a problem usually can be divided into smaller tasks, which may be carried out simultaneously with some coordination.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Parallel computing systems</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Theory and practice</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">2.1</span> <span class="toctext">Performance vs. cost</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Terminology in parallel computing</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Algorithms</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Parallel problems</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">Parallel programming</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">6.1</span> <span class="toctext">Parallel programming models</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">Topics in parallel computing</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">8</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">9</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">10</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Parallel computing systems">edit</a>]</div>
+<p><a name="Parallel_computing_systems" id="Parallel_computing_systems"></a></p>
+<h2>Parallel computing systems</h2>
+<p>A parallel computing system is a computer with more than one <a href="/wiki/Central_processing_unit.html" title="Central processing unit">processor</a> for parallel processing. In the past, each processor of a multiprocessing system always came in its own <a  class="new" title="Processor packaging">processor packaging</a>, but recently introduced <i><a href="/wiki/Multicore.html" title="Multicore">multicore</a></i> processors contain multiple logical processors in a single package.</p>
+<p>There are many different kinds of parallel computers. They are distinguished by the kind of interconnection between processors (known as "processing elements" or PEs), processors and memories.</p>
+<p>Traditionally, <a href="/wiki/Flynn%27s_taxonomy.html" title="Flynn's taxonomy">Flynn's taxonomy</a> classifies parallel (and serial) computers according to</p>
+<ul>
+<li>whether all processors execute the same instructions at the same time (<i>single instruction/multiple data</i> -- <a href="/wiki/SIMD.html" title="SIMD">SIMD</a>) or</li>
+<li>each processor executes different instructions (<i>multiple instruction/multiple data</i> -- <a href="/wiki/MIMD.html" title="MIMD">MIMD</a>).</li>
+</ul>
+<p>One major way to classify parallel computers is based on their memory architectures. <a href="/wiki/Shared_memory.html" title="Shared memory">Shared memory</a> parallel computers have multiple processors accessing all available memory as global address space. They can be further divided into two main classes based on memory access times: Uniform memory access (UMA), in which access times to all parts of memory are equal, or Non-Uniform memory access (NUMA), in which they are not. <a href="/wiki/Distributed_memory.html" title="Distributed memory">Distributed memory</a> parallel computers also have multiple processors, but each of the processors can only access its own local memory; no global memory address space exists across them.</p>
+<p>Parallel computing systems can also be categorized by the numbers of processors in them. Systems with thousands of such processors are known as <i><a href="/wiki/Massively_parallel_processing.html" title="Massively parallel processing">massively parallel</a></i>. Subsequently there are what are referred to as "Large scale" vs "Small scale" parallel processors. This depends on the size of the processor, eg. a PC based parallel system would generally be considered a small scale system.</p>
+<p>Parallel processor machines are also divided into symmetric and asymmetric <a href="/wiki/Multiprocessing.html" title="Multiprocessing">multiprocessors</a>, depending on whether all the processors are the same or not (for instance if only one is capable of running the operating system code and others are less privileged).</p>
+<p>A variety of architectures have been developed for parallel processing. For example a Ring architecture has processors linked by a ring structure. Other architectures include Hypercubes, Fat trees, systolic arrays, and so on.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Theory and practice">edit</a>]</div>
+<p><a name="Theory_and_practice" id="Theory_and_practice"></a></p>
+<h2>Theory and practice</h2>
+<p>Parallel computers can be modelled as <a href="/wiki/Parallel_Random_Access_Machine.html" title="Parallel Random Access Machine">Parallel Random Access Machines</a> (PRAMs). The PRAM model ignores the cost of interconnection between the constituent computing units, but is nevertheless very useful in providing upper bounds on the parallel solvability of many problems. In reality the interconnection plays a significant role.</p>
+<p>The processors may communicate and cooperate in solving a problem or they may run independently, often under the control of another processor which distributes work to and collects results from them (a "<a  class="new" title="Processor farm">processor farm</a>").</p>
+<p>Processors in a parallel computer may communicate with each other in a number of ways, including shared (either multiported or multiplexed) memory, a crossbar, a shared bus or an interconnect network of a myriad of <a href="/wiki/Network_topology.html" title="Network topology">topologies</a> including star, ring, tree, hypercube, fat hypercube (a hypercube with more than one processor at a node), an n-dimensional mesh, etc. Parallel computers based on interconnect network need to employ some kind of <a href="/wiki/Routing.html" title="Routing">routing</a> to enable passing of messages between nodes that are not directly connected. The communication medium used for communication between the processors is likely to be hierarchical in large multiprocessor machines. Similarly, memory may be either private to the processor, shared between a number of processors, or globally shared. <a href="/wiki/Systolic_array.html" title="Systolic array">Systolic array</a> is an example of a multiprocessor with fixed function nodes, local-only memory and no message routing.</p>
+<p>Approaches to parallel computers include:</p>
+<ul>
+<li><a href="/wiki/Multiprocessing.html" title="Multiprocessing">Multiprocessing</a></li>
+<li><a href="/wiki/Computer_cluster.html" title="Computer cluster">Computer cluster</a></li>
+<li>Parallel <a href="/wiki/Supercomputer.html" title="Supercomputer">supercomputers</a></li>
+<li><a href="/wiki/Distributed_computing.html" title="Distributed computing">Distributed computing</a></li>
+<li><a href="/wiki/Non-Uniform_Memory_Access.html" title="Non-Uniform Memory Access">NUMA</a> vs. <a href="/wiki/Symmetric_multiprocessing.html" title="Symmetric multiprocessing">SMP</a> vs. <a href="/wiki/Massively_parallel_computer.html" title="Massively parallel computer">massively parallel computer</a> systems</li>
+<li><a href="/wiki/Grid_computing.html" title="Grid computing">Grid computing</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Performance vs. cost">edit</a>]</div>
+<p><a name="Performance_vs._cost" id="Performance_vs._cost"></a></p>
+<h3>Performance vs. cost</h3>
+<p>While a system of <i>n</i> parallel processors is less efficient than one <i>n</i>-times-faster processor, the parallel system is often cheaper to build. Parallel computation is used for tasks which require very large amounts of computation, take a lot of time, and can be divided into <i>n</i> independent subtasks. In recent years, most high performance computing systems, also known as <a href="/wiki/Supercomputer.html" title="Supercomputer">supercomputers</a>, have parallel architectures.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Terminology in parallel computing">edit</a>]</div>
+<p><a name="Terminology_in_parallel_computing" id="Terminology_in_parallel_computing"></a></p>
+<h2>Terminology in parallel computing</h2>
+<p>Some frequently used terms in parallel computing are:</p>
+<dl>
+<dt>Task</dt>
+<dd>a logically high level, discrete, independent section of computational work. A task is typically executed by a processor as a program</dd>
+<dt><a href="/wiki/Synchronization_%28computer_science%29.html" title="Synchronization (computer science)">Synchronization</a></dt>
+<dd>the coordination of simultaneous tasks to ensure correctness and avoid unexpected <a href="/wiki/Race_condition.html" title="Race condition">race conditions</a>.</dd>
+<dt><a href="/wiki/Speedup.html" title="Speedup">Speedup</a></dt>
+<dd>also called <i>parallel speedup</i>, which is defined as wall-clock time of best serial execution divided by wall-clock time of parallel execution.</dd>
+<dt><a  class="new" title="Parallel overhead">Parallel overhead</a></dt>
+<dd>the extra work associated with parallel version compared to its sequential code, mostly the extra CPU time and memory space requirements from synchronization, data communications, parallel environment creation and cancellation, etc.</dd>
+<dt><a href="/wiki/Scalability.html" title="Scalability">Scalability</a></dt>
+<dd>a parallel system's ability to gain proportionate increase in parallel speedup with the addition of more processors.</dd>
+</dl>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Algorithms">edit</a>]</div>
+<p><a name="Algorithms" id="Algorithms"></a></p>
+<h2>Algorithms</h2>
+<p><a href="/wiki/Parallel_algorithm.html" title="Parallel algorithm">Parallel algorithms</a> can be constructed by redesigning serial algorithms to make effective use of parallel hardware. However, not all algorithms can be parallelized. This is summed up in a famous saying:</p>
+<dl>
+<dd>One woman can have a baby in nine months, but nine women can't have a baby in one month.</dd>
+</dl>
+<p>In practice, linear <a href="/wiki/Speedup.html" title="Speedup">speedup</a> (i.e., speedup proportional to the number of processors) is very difficult to achieve. This is because many algorithms are essentially sequential in nature (<a href="/wiki/Amdahl%27s_law.html" title="Amdahl's law">Amdahl's law</a> states this more formally).</p>
+<p>Certain workloads can benefit from <a href="/wiki/Pipeline_%28software%29.html" title="Pipeline (software)">pipeline parallelism</a> when extra processors are added. This uses a factory assembly line approach to divide the work. If the work can be divided into <i>n</i> stages where a discrete deliverable is passed from stage to stage, then up to <i>n</i> processors can be used. However, the slowest stage will hold up the other stages so it is rare to be able to fully use <i>n</i> processors.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Parallel problems">edit</a>]</div>
+<p><a name="Parallel_problems" id="Parallel_problems"></a></p>
+<h2>Parallel problems</h2>
+<p>Well known parallel software problem sets include <a href="/wiki/Embarrassingly_parallel.html" title="Embarrassingly parallel">embarrassingly parallel</a> and <a href="/wiki/Grand_Challenge_problem.html" title="Grand Challenge problem">Grand Challenge problems</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Parallel programming">edit</a>]</div>
+<p><a name="Parallel_programming" id="Parallel_programming"></a></p>
+<h2>Parallel programming</h2>
+<p>Parallel programming is the design, implementation, and tuning of parallel <a href="/wiki/Computer_program.html" title="Computer program">computer programs</a> which take advantage of parallel computing systems. It also refers to the application of parallel programming methods to existing serial programs (<a href="/wiki/Parallelization.html" title="Parallelization">parallelization</a>).</p>
+<p>Parallel programming focuses on partitioning the overall problem into separate tasks, allocating tasks to processors and synchronizing the tasks to get meaningful results. Parallel programming can only be applied to problems that are inherently parallelizable, mostly without <a  class="new" title="Data dependence">data dependence</a>. A problem can be partitioned based on <a  class="new" title="Domain decomposition">domain decomposition</a> or <a href="/wiki/Functional_decomposition.html" title="Functional decomposition">functional decomposition</a>, or a combination.</p>
+<p>There are two major approaches to parallel programming.</p>
+<ul>
+<li><a href="/wiki/Implicit_parallelism.html" title="Implicit parallelism">implicit parallelism</a> -- the system (the <a href="/wiki/Compiler.html" title="Compiler">compiler</a> or some other program) partitions the problem and allocates tasks to processors automatically (also called <a href="/wiki/Implicit_parallelism.html" title="Implicit parallelism">automatic parallelizing compilers</a>) -- or</li>
+<li><a href="/wiki/Explicit_parallelism.html" title="Explicit parallelism">explicit parallelism</a> where the programmer must annotate his program to show how it is to be partitioned.</li>
+</ul>
+<p>Many factors and techniques impact the performance of parallel programming:</p>
+<ul>
+<li><a href="/wiki/Load_balancing.html" title="Load balancing">Load balancing</a> attempts to keep all processors busy by moving tasks from heavily loaded processors to less loaded ones.</li>
+</ul>
+<p>Some people consider parallel programming to be synonymous with <a href="/wiki/Concurrent_programming_language.html" title="Concurrent programming language">concurrent programming</a>. Others draw a distinction between <i>parallel programming</i>, which uses well-defined and structured patterns of communications between processes and focuses on parallel execution of processes to enhance throughput, and <i>concurrent programming</i>, which typically involves defining new patterns of communication between processes that may have been made concurrent for reasons other than performance. In either case, communication between processes is performed either via <a href="/wiki/Shared_memory.html" title="Shared memory">shared memory</a> or with <a href="/wiki/Message_passing.html" title="Message passing">message passing</a>, either of which may be implemented in terms of the other.</p>
+<p>Programs which work correctly in a single CPU system may not do so in a parallel environment. This is because multiple copies of the same program may interfere with each other, for instance by accessing the same <a href="/wiki/Computer_memory.html" title="Computer memory">memory</a> location at the same time. Therefore, careful programming (synchronization) is required in a parallel system.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Parallel programming models">edit</a>]</div>
+<p><a name="Parallel_programming_models" id="Parallel_programming_models"></a></p>
+<h3>Parallel programming models</h3>
+<dl>
+<dd>
+<div class="noprint"><i>Main article: <a href="/wiki/Parallel_programming_model.html" title="Parallel programming model">Parallel programming model</a></i></div>
+</dd>
+</dl>
+<p>A parallel programming model is a set of software technologies to express parallel algorithms and match applications with the underlying parallel systems. It encloses the areas of applications, languages, compilers, libraries, communication systems, and parallel I/O. People have to choose a proper parallel programming model or a form of mixture of them to develop their parallel applications on a particular platform.</p>
+<p>Parallel models are implemented in several ways: as libraries invoked from traditional sequential languages, as language extensions, or complete new execution models. They are also roughly categorized for two kinds of systems: <a href="/wiki/Shared_memory.html" title="Shared memory">shared memory</a> systems and <a href="/wiki/Distributed_memory.html" title="Distributed memory">distributed memory</a> systems, though the lines between them are largely blurred nowadays.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Topics in parallel computing">edit</a>]</div>
+<p><a name="Topics_in_parallel_computing" id="Topics_in_parallel_computing"></a></p>
+<h2>Topics in parallel computing</h2>
+<p>Generic:</p>
+<ul>
+<li><a href="/wiki/Automatic_parallelization.html" title="Automatic parallelization">Automatic parallelization</a></li>
+<li><a href="/wiki/Parallel_algorithm.html" title="Parallel algorithm">Parallel algorithm</a></li>
+<li><a href="/wiki/Cellular_automaton.html" title="Cellular automaton">Cellular automaton</a></li>
+<li><a href="/wiki/Grand_Challenge_problem.html" title="Grand Challenge problem">Grand Challenge problems</a></li>
+</ul>
+<p>Computer science topics:</p>
+<ul>
+<li><a href="/wiki/Lazy_evaluation.html" title="Lazy evaluation">Lazy evaluation</a> vs <a href="/wiki/Strict_evaluation.html" title="Strict evaluation">strict evaluation</a></li>
+<li><a href="/wiki/Complexity_class.html" title="Complexity class">Complexity class</a> <a href="/wiki/NC_%28complexity%29.html" title="NC (complexity)">NC</a></li>
+<li><a href="/wiki/Communicating_sequential_processes.html" title="Communicating sequential processes">Communicating sequential processes</a></li>
+<li><a href="/wiki/Dataflow_architecture.html" title="Dataflow architecture">Dataflow architecture</a></li>
+<li><a  class="new" title="Parallel graph reduction">Parallel graph reduction</a></li>
+</ul>
+<p>Practical problems:</p>
+<ul>
+<li>Parallel computer interconnects</li>
+<li>Parallel computer I/O</li>
+<li>Reliability problems in large systems</li>
+</ul>
+<p>Programming languages/models:</p>
+<ul>
+<li><a href="/wiki/OpenMP.html" title="OpenMP">OpenMP</a></li>
+<li><a href="/wiki/Message_Passing_Interface.html" title="Message Passing Interface">Message Passing Interface</a>/<a href="/wiki/MPICH.html" title="MPICH">MPICH</a></li>
+<li><a href="/wiki/Occam_programming_language.html" title="Occam programming language">Occam</a></li>
+<li><a href="/wiki/Linda_%28coordination_language%29.html" title="Linda (coordination language)">Linda</a></li>
+<li><a href="/wiki/Cilk.html" title="Cilk">Cilk</a></li>
+</ul>
+<p>Specific:</p>
+<ul>
+<li><a href="/wiki/Atari_Transputer_Workstation.html" title="Atari Transputer Workstation">Atari Transputer Workstation</a></li>
+<li><a href="/wiki/BBN_Butterfly_computers.html" title="BBN Butterfly computers">BBN Butterfly computers</a></li>
+<li><a href="/wiki/Beowulf_cluster.html" title="Beowulf cluster">Beowulf cluster</a></li>
+<li><a href="/wiki/Blue_Gene.html" title="Blue Gene">Blue Gene</a></li>
+<li><a href="/wiki/Deep_Blue.html" title="Deep Blue">Deep Blue</a></li>
+<li><a href="/wiki/Fifth_generation_computer_systems_project.html" title="Fifth generation computer systems project">Fifth generation computer systems project</a></li>
+<li><a href="/wiki/ILLIAC_III.html" title="ILLIAC III">ILLIAC III</a></li>
+<li><a href="/wiki/ILLIAC_IV.html" title="ILLIAC IV">ILLIAC IV</a></li>
+<li><a href="/wiki/Parallel_Element_Processing_Ensemble.html" title="Parallel Element Processing Ensemble">Parallel Element Processing Ensemble</a></li>
+<li><a href="/wiki/Meiko_Computing_Surface.html" title="Meiko Computing Surface">Meiko Computing Surface</a></li>
+<li><a href="/wiki/NCUBE.html" title="NCUBE">NCUBE</a></li>
+<li><a href="/wiki/Transputer.html" title="Transputer">Transputer</a></li>
+</ul>
+<p><br />
+Parallel computing to increase fault tolerance:</p>
+<ul>
+<li><a href="/wiki/Master-checker.html" title="Master-checker">Master-checker</a></li>
+</ul>
+<p>Companies (largely historical):</p>
+<ul>
+<li><a href="/wiki/Thinking_Machines.html" title="Thinking Machines">Thinking Machines</a></li>
+<li><a href="/wiki/Convex_Computer_Corporation.html" title="Convex Computer Corporation">Convex Computer Corporation</a></li>
+<li><a href="/wiki/Meiko.html" title="Meiko">Meiko</a></li>
+<li><a href="/wiki/Control_Data_Corporation.html" title="Control Data Corporation">Control Data Corporation</a></li>
+<li><a href="/wiki/Myrias_Research_Corporation.html" title="Myrias Research Corporation">Myrias Research Corporation</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Computer_cluster.html" title="Computer cluster">Computer cluster</a></li>
+<li><a href="/wiki/Concurrent_computing.html" title="Concurrent computing">Concurrent computing</a></li>
+<li><a href="/wiki/DNA_computing.html" title="DNA computing">DNA computing</a></li>
+<li><a href="/wiki/Grid_computing.html" title="Grid computing">Grid computing</a></li>
+<li><a href="/wiki/List_of_important_publications_in_computer_science#Parallel_computing.html" title="List of important publications in computer science">Important publications in parallel computing</a></li>
+<li><a href="/wiki/Parallel_rendering.html" title="Parallel rendering">Parallel rendering</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<p><span class="boilerplate" id="foldoc"><i>This article was originally based on material from the <a href="/wiki/Free_On-line_Dictionary_of_Computing.html" title="Free On-line Dictionary of Computing">Free On-line Dictionary of Computing</a>, which is <a  title="Wikipedia:Foldoc license">licensed</a> under the <a href="/wiki/GNU_Free_Documentation_License.html" title="GNU Free Documentation License">GFDL</a>.</i></span></p>
+<ul>
+<li><a  class="external free" title="http://www.llnl.gov/computing/tutorials/parallel_comp/">http://www.llnl.gov/computing/tutorials/parallel_comp/</a> Introduction to Parallel Computing</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://www.parawiki.org">The Parawiki - a wiki on Parallel Computing</a></li>
+<li><a  class="external text" title="http://www.llnl.gov/computing/tutorials/parallel_comp/">Introduction to Parallel Computing</a></li>
+<li>"<a  class="external text" title="http://msdn.microsoft.com/msdnmag/issues/01/08/concur/default.aspx">Multiprocessor Optimizations: Fine-Tuning Concurrent Access to Large Data Collections</a>" by <a  class="new" title="Ian Emmons">Ian Emmons</a></li>
+<li><a  class="external text" title="http://www.pmodels.org/">The Center for Programming Models for Scalable Parallel Computing</a></li>
+<li><a  class="external text" title="http://wotug.ukc.ac.uk/parallel/">Internet Parallel Computing Archive</a></li>
+<li><a  class="external text" title="http://nhse.org/index.htm">National HPCC Software Exchange</a></li>
+<li><a  class="external text" title="http://dsonline.computer.org/portal/site/dsonline/index.jsp?pageID=dso_level1_home&amp;path=dsonline/topics/parallel&amp;file=index.xml&amp;xsl=generic.xsl">Parallel processing topic area at IEEE Distributed Computing Online</a></li>
+<li>"<a  class="external text" title="http://gotw.ca/publications/concurrency-ddj.htm">The Free Lunch Is Over: A Fundamental Turn Toward Concurrency in Software</a>" by <a href="/wiki/Herb_Sutter.html" title="Herb Sutter">Herb Sutter</a></li>
+<li><a  class="external text" title="http://citeseer.ist.psu.edu/cis?q=parallel+and+programming">Parallel programming citations from CiteSeer</a></li>
+</ul>
+
+<!-- 
+Pre-expand include size: 2201 bytes
+Post-expand include size: 464 bytes
+Template argument size: 164 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:145162-0!1!0!default!!en!2 and timestamp 20060910155443 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:FOLDOC sourced articles">FOLDOC sourced articles</a></span> | <span dir='ltr'><a  title="Category:Parallel computing">Parallel computing</a></span> | <span dir='ltr'><a  title="Category:Concurrent computing">Concurrent computing</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Parallel_computing.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-bs"><a >Bosanski</a></li>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-fa"><a >فارسی</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-ko"><a >한국어</a></li>
+				<li class="interwiki-id"><a >Bahasa Indonesia</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-pt"><a >Português</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+				<li class="interwiki-sl"><a >Slovenščina</a></li>
+				<li class="interwiki-tr"><a >Türkçe</a></li>
+				<li class="interwiki-zh"><a >中文</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 16:11, 5 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv108 in 0.102 secs. --></body></html>

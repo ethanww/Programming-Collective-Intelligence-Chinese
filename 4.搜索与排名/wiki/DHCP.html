@@ -1,0 +1,905 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Dynamic Host Configuration Protocol,1998,2005,As of 2004,As of 2006,BOOTP,Cable modem,Cisco Systems,Client-side,Computer,Computer Network" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Dynamic Host Configuration Protocol - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Dynamic_Host_Configuration_Protocol";
+			var wgTitle = "Dynamic Host Configuration Protocol";
+			var wgArticleId = 8622;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Dynamic Host Configuration Protocol</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub">(Redirected from <a  title="DHCP">DHCP</a>)</div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<dl>
+<dd><i>This article discusses the DHCP networking protocol. For other uses, see <a href="/wiki/DHCP_%28disambiguation%29.html" title="DHCP (disambiguation)">DHCP (disambiguation)</a>.</i></dd>
+</dl>
+<div class="messagebox cleanup metadata"><b>To meet Wikipedia's <a  title="Category:Wikipedia style guidelines">quality standards</a>, this article or section may require <a  title="Wikipedia:Cleanup">cleanup</a>.</b><br />
+<span style="font-size: 90%">Please discuss this issue on the <a  title="Talk:Dynamic Host Configuration Protocol">talk page</a>, or replace this tag with a <a  title="Wikipedia:Template messages/Cleanup">more specific message</a>. <a  title="Help:Editing">Editing help</a> is available.<br />
+This article has been tagged since <b>June 2006</b>.</span></div>
+<p>The <b>Dynamic Host Configuration Protocol</b> (<b>DHCP</b>) is a set of rules used by a communications device (such as a <a href="/wiki/Computer.html" title="Computer">computer</a>, <a href="/wiki/Router.html" title="Router">router</a> or networking adapter) to allow the device to request and obtain an Internet address from a server which has a list of addresses available for assignment.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Implementations</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Extent of DHCP usage</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">IP address allocation</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">DHCP and firewalls</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">6.1</span> <span class="toctext">Example in ipfw firewall</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">6.2</span> <span class="toctext">Example in Cisco IOS Extended ACL</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">Technical details</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">7.1</span> <span class="toctext">DHCP discovery</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">7.2</span> <span class="toctext">DHCP offers</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">7.3</span> <span class="toctext">DHCP requests</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">7.4</span> <span class="toctext">DHCP acknowledgement</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">7.5</span> <span class="toctext">DHCP selection</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">7.6</span> <span class="toctext">DHCP information</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">7.7</span> <span class="toctext">DHCP releasing</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">7.8</span> <span class="toctext">Client configuration parameters</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">8</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">9</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Introduction">edit</a>]</div>
+<p><a name="Introduction" id="Introduction"></a></p>
+<h2>Introduction</h2>
+<p>DHCP is a protocol used by networked computers (<i>clients</i>) to obtain unique <a href="/wiki/IP_addresses.html" title="IP addresses">IP addresses</a>, and other parameters such as <a href="/wiki/Default_router.html" title="Default router">default router</a>, <a href="/wiki/Subnet_mask.html" title="Subnet mask">subnet mask</a>, and IP addresses for <a href="/wiki/Domain_name_system.html" title="Domain name system">DNS</a> servers from a DHCP server. This protocol is used when computers are added to a network because these settings are necessary for the host to participate in the network. This setting is periodically refreshed (it <i>expires</i>, meaning the client must obtain another assignment) with typical intervals ranging from one hour to several months, and can, if desired, be set to <i>infinite</i> (never expire). The length of time the address is available to the device it was assigned to is called a <i>lease</i>, and is determined by the server.</p>
+<p>The DHCP server ensures that all IP addresses are unique, that is, no IP address is assigned to a second client while the first client's assignment is valid (its <i>lease</i> has not expired). Thus IP address pool management is done by the server and not by a human network administrator.</p>
+<p>DHCP emerged as a <a href="/wiki/Standardization.html" title="Standardization">standard protocol</a> in October 1993. <a href="/wiki/As_of_2006.html" title="As of 2006">As of 2006</a>, <a  class="external" title="http://tools.ietf.org/html/rfc2131">RFC 2131</a> provides the latest ([dated March 1997]) DHCP definition. DHCP functionally became a successor to the older <a href="/wiki/BOOTP.html" title="BOOTP">BOOTP</a> protocol, whose leases were given for infinite time and did not support options. Due to the backward-compatibility of DHCP, very few networks continue to use pure BOOTP.</p>
+<p>The <a href="/wiki/As_of_2004.html" title="As of 2004">latest</a> non-standard of the protocol, describing <a href="/wiki/DHCPv6.html" title="DHCPv6">DHCPv6</a> (DHCP in a <a href="/wiki/IPv6.html" title="IPv6">IPv6</a> environment), appeared in July 2003 as <a  class="external" title="http://tools.ietf.org/html/rfc3315">RFC 3315</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Overview">edit</a>]</div>
+<p><a name="Overview" id="Overview"></a></p>
+<h2>Overview</h2>
+<p>The Dynamic Host Configuration Protocol (DHCP) automates the assignment of IP addresses, subnet masks, default routers, and other IP parameters. The assignment usually occurs when the DHCP configured machine boots up or regains connectivity to the network. The DHCP client sends out a query requesting a response from a DHCP server on the locally attached network. The DHCP server then replies to the client with its assigned IP address, subnet mask, DNS server and default gateway information.</p>
+<p>The assignment of the IP address usually expires after a predetermined period of time, at which point the DHCP client and server renegotiate a new IP address from the server's predefined pool of addresses. Configuring <a href="/wiki/Firewall_%28networking%29.html" title="Firewall (networking)">firewall</a> rules to accommodate access from machines who receive their IP addresses via DHCP is therefore more difficult because the remote IP address will vary from time to time. Administrators must usually allow access to the entire remote DHCP subnet for a particular TCP/UDP port.</p>
+<p>Most home routers and firewalls are configured in the factory to be DHCP servers for a home network. An alternative to a home router is to use a <a href="/wiki/Linux.html" title="Linux">Linux</a> computer with a fixed IP address as a DHCP server. ISPs generally use DHCP to assign clients individual IP addresses.</p>
+<p>DHCP is a broadcast-based protocol. As with other types of broadcast traffic, it does not cross a router unless specifically configured to do so. Users who desire this capability must configure their routers to pass DHCP traffic across UDP ports 67 and 68.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Implementations">edit</a>]</div>
+<p><a name="Implementations" id="Implementations"></a></p>
+<h2>Implementations</h2>
+<p><a href="/wiki/Microsoft.html" title="Microsoft">Microsoft</a> introduced DHCP on their <a href="/wiki/Windows_NT.html" title="Windows NT">NT server</a> with Windows NT version 3.5 in late 1994. <a href="/wiki/Windows_2000.html" title="Windows 2000">Windows 2000</a> and <a href="/wiki/Windows_2003.html" title="Windows 2003">Windows 2003</a> included DHCP as a product feature.</p>
+<p><a  class="external text" title="http://www.infoblox.com">Infoblox</a> has been shipping a DHCP server appliance since 1999. The Infoblox appliances also include DNS, IP Address Management, RADIUS, TFTP, HTTP, NTP and Syslog.</p>
+<p>The <a  class="external text" title="http://www.isc.org">ISC</a> DHCP server is an open source DHCP server that is used in many commercial implementations of DHCP.</p>
+<p><a  class="external text" title="http://www.kame.net/">KAME Project</a> released a DHCPv6 implementation, <a href="/wiki/As_of_2006.html" title="As of 2006">now</a> separately maintained. It uses the new home page <a  class="external free" title="http://wide-dhcpv6.sourceforge.net/">http://wide-dhcpv6.sourceforge.net/</a></p>
+<p><a href="/wiki/Novell.html" title="Novell">Novell</a> has included a DHCP server in their <a href="/wiki/Novell_NetWare.html" title="Novell NetWare">NetWare</a> operating system since version 5, released in <a href="/wiki/1998.html" title="1998">1998</a>. It integrates with Novell's directory service - <a href="/wiki/Novell_eDirectory.html" title="Novell eDirectory">Novell eDirectory</a>. For Novell Netware 4, it is an add-on services configured for dynamic allocation of IP, but Netware 4 still natively using <a href="/wiki/IPX/SPX.html" title="IPX/SPX">IPX/SPX</a>, so it is not widely used on Netware 4.</p>
+<p><a  class="external text" title="http://www.weird-solutions.com">Weird Solutions</a> has produced a variety of multi-platform DHCP implementations since 1997, targeted at both the <a href="/wiki/Internet_service_provider.html" title="Internet service provider">Internet service provider</a> and consumer markets.</p>
+<p>Other major implementations include:</p>
+<ul>
+<li><a href="/wiki/Cisco_Systems.html" title="Cisco Systems">Cisco</a>, with a DHCP server made available in Cisco IOS 12.0 in February 1999</li>
+<li><a href="/wiki/Sun_Microsystems.html" title="Sun Microsystems">Sun</a>, who added DHCP support in the July 2001 release of <a href="/wiki/Solaris_Operating_Environment.html" title="Solaris Operating Environment">Solaris</a> 8.</li>
+</ul>
+<p><a href="/wiki/Cisco_Systems.html" title="Cisco Systems">Cisco Systems</a> offers DHCP servers in routers and switches with their IOS software. Moreover, they offer <a  class="external text" title="http://www.cisco.com/en/US/products/sw/netmgtsw/ps1982/index.html">Cisco Network Registrar</a> (CNR) - a highly scalable and flexible DNS, DHCP and TFTP server.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Extent of DHCP usage">edit</a>]</div>
+<p><a name="Extent_of_DHCP_usage" id="Extent_of_DHCP_usage"></a></p>
+<h2>Extent of DHCP usage</h2>
+<p>Most <a href="/wiki/Cable_modem.html" title="Cable modem">cable internet</a> providers in the United States of America use DHCP to allocate IP addresses.</p>
+<p>In the UK many broad-band ISP networks use DHCP, but <a href="/wiki/XDSL.html" title="XDSL">XDSL</a> providers make extensive use of "infinite lease", which amounts to assigning semi-static IPs.</p>
+<p>In addition, many <a href="/wiki/Router.html" title="Router">routers</a> and other gateway devices provide DHCP support for <a href="/wiki/Computer_Network.html" title="Computer Network">networks</a> running many computers being assigned private IP addresses.</p>
+<p>Office networks also use DHCP, in particular when workers make extensive use of laptops which link directly to the in-house network only occasionally .</p>
+<p>Network <a href="/wiki/Router.html" title="Router">routers</a> and often <a href="/wiki/Multilayer_switch.html" title="Multilayer switch">multilayer switches</a> employ a <i>DHCP relay agent</i>, which relays DHCP "Discover" broadcasts from a LAN which does not include a DHCP server to a network which does have one. These devices may be sometimes configured to append information about port from which DHCP request originates (also known as <i>option 82</i>).</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: IP address allocation">edit</a>]</div>
+<p><a name="IP_address_allocation" id="IP_address_allocation"></a></p>
+<h2>IP address allocation</h2>
+<p>Depending on implementation, the DHCP server has three methods of allocating IP-addresses:</p>
+<ul>
+<li><b>manual allocation</b>, where the DHCP server performs the allocation based on a table with <a href="/wiki/MAC_address.html" title="MAC address">MAC address</a> - IP address pairs manually filled by the <a href="/wiki/Server_administrator.html" title="Server administrator">server administrator</a>. Only requesting clients with a MAC address listed in this table get the IP address according to the table.</li>
+<li><b>automatic allocation</b>, where the DHCP server permanently assigns to a requesting client a free IP-address from a range given by the administrator.</li>
+<li><b>dynamic allocation</b>, the only method which provides dynamic re-use of IP addresses. A <a href="/wiki/Network_administrator.html" title="Network administrator">network administrator</a> assigns a range of IP addresses to DHCP, and each client computer on the LAN has its <a href="/wiki/TCP/IP.html" title="TCP/IP">TCP/IP</a> software configured to request an IP address from the DHCP <a href="/wiki/Server_%28computing%29.html" title="Server (computing)">server</a> when that client computer's <a href="/wiki/Network_interface_card.html" title="Network interface card">network interface card</a> starts up. The request-and-grant process uses a lease concept with a controllable time period. This eases the network installation procedure on the client computer side considerably.</li>
+</ul>
+<p>This decision remains transparent to clients.</p>
+<p>Some DHCP server implementations can update the DNS name associated with the client hosts to reflect the new IP address. They make use of the DNS update protocol established with <a  class="external" title="http://tools.ietf.org/html/rfc2136">RFC 2136</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: DHCP and firewalls">edit</a>]</div>
+<p><a name="DHCP_and_firewalls" id="DHCP_and_firewalls"></a></p>
+<h2>DHCP and firewalls</h2>
+<p><a href="/wiki/Firewall_%28networking%29.html" title="Firewall (networking)">Firewalls</a> usually have to permit DHCP traffic explicitly. Specification of the DHCP client-server protocol describes several cases when packets must have the source address of <tt>0x00000000</tt> or the destination address of <tt>0xffffffff</tt>. Anti-<a href="/wiki/Spoofing_attack.html" title="Spoofing attack">spoofing</a> policy rules and tight inclusive firewalls often stop such packets. <a href="/wiki/Multi-homed.html" title="Multi-homed">Multi-homed</a> DHCP servers require special consideration and further complicate configuration.</p>
+<p>To allow DHCP, network administrators need to allow several types of packets through the server-side firewall. All DHCP packets travel as <a href="/wiki/User_Datagram_Protocol.html" title="User Datagram Protocol">UDP</a> datagrams; all client-sent packets have source port 68 and destination port 67; all server-sent packets have source port 67 and destination port 68. For example, a server-side firewall should allow the following types of packets:</p>
+<ul>
+<li>Incoming packets from 0.0.0.0 or dhcp-pool to dhcp-ip</li>
+<li>Incoming packets from any address to 255.255.255.255</li>
+<li>Outgoing packets from dhcp-ip to dhcp-pool or 255.255.255.255</li>
+</ul>
+<p>where <i>dhcp-ip</i> represents any address configured on a DHCP server host and <i>dhcp-pool</i> stands for the pool from which a DHCP server assigns addresses to clients</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Example in ipfw firewall">edit</a>]</div>
+<p><a name="Example_in_ipfw_firewall" id="Example_in_ipfw_firewall"></a></p>
+<h3>Example in ipfw firewall</h3>
+<p>To give an idea of how a configuration would look in production, the following rules for a server-side <a href="/wiki/Ipfirewall.html" title="Ipfirewall">ipfirewall</a> to allow DHCP traffic through. Dhcpd operates on interface rl0 and assigns addresses from 192.168.0.0/24&#160;:</p>
+<pre>
+pass udp from 0.0.0.0,192.168.0.0/24 68 to me 67 in recv rl0
+pass udp from any 68 to 255.255.255.255 67 in recv rl0
+pass udp from me 67 to 192.168.0.0/24,255.255.255.255 68 out xmit rl0
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Example in Cisco IOS Extended ACL">edit</a>]</div>
+<p><a name="Example_in_Cisco_IOS_Extended_ACL" id="Example_in_Cisco_IOS_Extended_ACL"></a></p>
+<h3>Example in Cisco IOS Extended ACL</h3>
+<p>The following entries are valid on a Cisco 3560 switch with enabled DHCP service. The ACL is applied to a routed interface, 10.32.73.129, on input. The subnet is 10.32.73.128/26.</p>
+<pre>
+10 permit udp host 0.0.0.0 eq bootpc host 10.32.73.129 eq bootps
+20 permit udp 10.32.73.128 0.0.0.63 eq bootpc host 10.32.73.129 eq bootps
+30 permit udp any eq bootpc host 255.255.255.255 eq bootps
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Technical details">edit</a>]</div>
+<p><a name="Technical_details" id="Technical_details"></a></p>
+<h2>Technical details</h2>
+<p>DHCP uses the same two <a href="/wiki/IANA.html" title="IANA">IANA</a> assigned ports as <a href="/wiki/BOOTP.html" title="BOOTP">BOOTP</a>: 67/udp for the <a href="/wiki/Server-side.html" title="Server-side">server side</a>, and 68/udp for the <a href="/wiki/Client-side.html" title="Client-side">client side</a>.</p>
+<p>DHCP operations fall into four basic phases. These phases are IP lease request, IP lease offer, IP lease selection, and IP lease acknowledgement.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: DHCP discovery">edit</a>]</div>
+<p><a name="DHCP_discovery" id="DHCP_discovery"></a></p>
+<h3>DHCP discovery</h3>
+<p>The client broadcasts on the local physical subnet to find available servers. Network administrators can configure a local router to forward DHCP packets to a DHCP server on a different subnet. This client-implementation creates a <a href="/wiki/User_Datagram_Protocol.html" title="User Datagram Protocol">UDP</a> packet with the broadcast destination of 255.255.255.255 or subnet broadcast address and also requests its last-known IP address (in the example below, 192.168.1.100) although the server may ignore this optional parameter....</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: DHCP offers">edit</a>]</div>
+<p><a name="DHCP_offers" id="DHCP_offers"></a></p>
+<h3>DHCP offers</h3>
+<p>When a DHCP server receives an IP lease request from a client, it extends an IP lease offer. This is done by reserving an IP address for the client and broadcasting a DHCPOFFER message across the network. This message contains the client's MAC address, followed by the IP address that the server is offering, the subnet mask, the lease duration, and the IP address of the DHCP server making the offer.</p>
+<p>The server determines the configuration, based on the client's hardware address as specified in the CHADDR field. Here the server, 192.168.1.1, specifies the IP address in the YIADDR field.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: DHCP requests">edit</a>]</div>
+<p><a name="DHCP_requests" id="DHCP_requests"></a></p>
+<h3>DHCP requests</h3>
+<p>Whenever a computer comes on line, it checks to see if it currently has an IP address leased. If it does not, it requests a lease from a DHCP server. Because the client computer does not know the address of a DHCP server, it uses 0.0.0.0 as its own IP address and 255.255.255.255 as the destination address. Doing so allows the client to broadcast a DHCPDISCOVER message across the network. Such a message consists of the client computer's Media Access Control (MAC) address (the hardware address built into the network card) and its <a href="/wiki/NetBIOS.html" title="NetBIOS">NetBIOS</a> name.</p>
+<p>The client selects a configuration out of the DHCP "Offer" packets it has received and broadcasts it on the local subnet. Again, this client requests the 192.168.1.100 address that the server specified. In case the client has received multiple offers it specifies the server from which it has accepted the offer.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: DHCP acknowledgement">edit</a>]</div>
+<p><a name="DHCP_acknowledgement" id="DHCP_acknowledgement"></a></p>
+<h3>DHCP acknowledgement</h3>
+<p>When the DHCP server receives the DHCPREQUEST message from the client, it initiates the final phase of the configuration process. This acknowledgement phase involves sending a DHCPACK packet to the client. This packet includes the lease duration and any other configuration information that the client might have requested. At this point, the TCP/IP configuration process is complete.</p>
+<p>The server acknowledges the request and sends the acknowledgement to the client. The system as a whole expects the client to configure its network interface with the supplied options.</p>
+<table border="0">
+<tr>
+<td valign="top">
+<table border="1" cellspacing="0">
+<caption>DHCPDISCOVER</caption>
+<tr>
+<td colspan="4"><a href="/wiki/User_Datagram_Protocol.html" title="User Datagram Protocol">UDP</a> Src=0.0.0.0 sPort=68 Dest=255.255.255.255 dPort=67</td>
+</tr>
+<tr>
+<th>OP</th>
+<th>HTYPE</th>
+<th>HLEN</th>
+<th>HOPS</th>
+</tr>
+<tr>
+<td>0x01</td>
+<td>0x01</td>
+<td>0x06</td>
+<td>0x00</td>
+</tr>
+<tr>
+<th colspan="4">XID</th>
+</tr>
+<tr>
+<td colspan="4">0x3903F326</td>
+</tr>
+<tr>
+<th colspan="2">SECS</th>
+<th colspan="2">FLAGS</th>
+</tr>
+<tr>
+<td colspan="2">0x0000</td>
+<td colspan="2">0x0000</td>
+</tr>
+<tr>
+<th colspan="4">CIADDR</th>
+</tr>
+<tr>
+<td colspan="4">0x00000000</td>
+</tr>
+<tr>
+<th colspan="4">YIADDR</th>
+</tr>
+<tr>
+<td colspan="4">0x00000000</td>
+</tr>
+<tr>
+<th colspan="4">SIADDR</th>
+</tr>
+<tr>
+<td colspan="4">0x00000000</td>
+</tr>
+<tr>
+<th colspan="4">GIADDR</th>
+</tr>
+<tr>
+<td colspan="4">0x00000000</td>
+</tr>
+<tr>
+<th colspan="4">CHADDR</th>
+</tr>
+<tr>
+<td colspan="4">0x00053C04</td>
+</tr>
+<tr>
+<td colspan="4">0x8D590000</td>
+</tr>
+<tr>
+<td colspan="4">0x00000000</td>
+</tr>
+<tr>
+<td colspan="4">0x00000000</td>
+</tr>
+<tr>
+<td colspan="4">192 octets of 0's. <a href="/wiki/BOOTP.html" title="BOOTP">BOOTP</a> legacy</td>
+</tr>
+<tr>
+<td colspan="4">DHCP option 53: DHCP Discover</td>
+</tr>
+<tr>
+<td colspan="4">DHCP option 50: 192.168.1.100 requested</td>
+</tr>
+</table>
+</td>
+<td valign="top">
+<table border="1" cellspacing="0">
+<caption>DHCPOFFER</caption>
+<tr>
+<td colspan="4">UDP Src=192.168.1.1 sPort=67 Dest=255.255.255.255 dPort=68</td>
+</tr>
+<tr>
+<th>OP</th>
+<th>HTYPE</th>
+<th>HLEN</th>
+<th>HOPS</th>
+</tr>
+<tr>
+<td>0x02</td>
+<td>0x01</td>
+<td>0x06</td>
+<td>0x00</td>
+</tr>
+<tr>
+<th colspan="4">XID</th>
+</tr>
+<tr>
+<td colspan="4">0x3903F326</td>
+</tr>
+<tr>
+<th colspan="2">SECS</th>
+<th colspan="2">FLAGS</th>
+</tr>
+<tr>
+<td colspan="2">0x0000</td>
+<td colspan="2">0x0000</td>
+</tr>
+<tr>
+<th colspan="4">CIADDR</th>
+</tr>
+<tr>
+<td colspan="4">0x00000000</td>
+</tr>
+<tr>
+<th colspan="4">YIADDR</th>
+</tr>
+<tr>
+<td colspan="4">0xC0A80164</td>
+</tr>
+<tr>
+<th colspan="4">SIADDR</th>
+</tr>
+<tr>
+<td colspan="4">0x00000000</td>
+</tr>
+<tr>
+<th colspan="4">GIADDR</th>
+</tr>
+<tr>
+<td colspan="4">0x00000000</td>
+</tr>
+<tr>
+<th colspan="4">CHADDR</th>
+</tr>
+<tr>
+<td colspan="4">0x00053C04</td>
+</tr>
+<tr>
+<td colspan="4">0x8D590000</td>
+</tr>
+<tr>
+<td colspan="4">0x00000000</td>
+</tr>
+<tr>
+<td colspan="4">0x00000000</td>
+</tr>
+<tr>
+<td colspan="4">192 octets of 0's. <a href="/wiki/BOOTP.html" title="BOOTP">BOOTP</a> legacy</td>
+</tr>
+<tr>
+<td colspan="4">DHCP option 53: DHCP Offer</td>
+</tr>
+<tr>
+<td colspan="4">DHCP option 1: 255.255.255.0 subnet mask</td>
+</tr>
+<tr>
+<td colspan="4">DHCP option 3: 192.168.1.1 router</td>
+</tr>
+<tr>
+<td colspan="4">DHCP option 51: 1 day IP lease time</td>
+</tr>
+<tr>
+<td colspan="4">DHCP option 54: 192.168.1.1 DHCP server</td>
+</tr>
+</table>
+</td>
+<td valign="top">
+<table border="1" cellspacing="0">
+<caption>DHCPREQUEST</caption>
+<tr>
+<td colspan="4">UDP Src=0.0.0.0 sPort=68 Dest=255.255.255.255 dPort=67</td>
+</tr>
+<tr>
+<th>OP</th>
+<th>HTYPE</th>
+<th>HLEN</th>
+<th>HOPS</th>
+</tr>
+<tr>
+<td>0x01</td>
+<td>0x01</td>
+<td>0x06</td>
+<td>0x00</td>
+</tr>
+<tr>
+<th colspan="4">XID</th>
+</tr>
+<tr>
+<td colspan="4">0x3903F326</td>
+</tr>
+<tr>
+<th colspan="2">SECS</th>
+<th colspan="2">FLAGS</th>
+</tr>
+<tr>
+<td colspan="2">0x0000</td>
+<td colspan="2">0x0000</td>
+</tr>
+<tr>
+<th colspan="4">CIADDR</th>
+</tr>
+<tr>
+<td colspan="4">0x00000000</td>
+</tr>
+<tr>
+<th colspan="4">YIADDR</th>
+</tr>
+<tr>
+<td colspan="4">0x00000000</td>
+</tr>
+<tr>
+<th colspan="4">SIADDR</th>
+</tr>
+<tr>
+<td colspan="4">0x00000000</td>
+</tr>
+<tr>
+<th colspan="4">GIADDR</th>
+</tr>
+<tr>
+<td colspan="4">0x00000000</td>
+</tr>
+<tr>
+<th colspan="4">CHADDR</th>
+</tr>
+<tr>
+<td colspan="4">0x00053C04</td>
+</tr>
+<tr>
+<td colspan="4">0x8D590000</td>
+</tr>
+<tr>
+<td colspan="4">0x00000000</td>
+</tr>
+<tr>
+<td colspan="4">0x00000000</td>
+</tr>
+<tr>
+<td colspan="4">192 octets of 0's. <a href="/wiki/BOOTP.html" title="BOOTP">BOOTP</a> legacy</td>
+</tr>
+<tr>
+<td colspan="4">DHCP option 53: DHCP Request</td>
+</tr>
+<tr>
+<td colspan="4">DHCP option 50: 192.168.1.100 requested</td>
+</tr>
+<tr>
+<td colspan="4">DHCP option 54: 192.168.1.1 DHCP server</td>
+</tr>
+</table>
+</td>
+<td valign="top">
+<table border="1" cellspacing="0">
+<caption>DHCPACK</caption>
+<tr>
+<td colspan="4">UDP Src=192.168.1.1 sPort=67 Dest=255.255.255.255 dPort=68</td>
+</tr>
+<tr>
+<th>OP</th>
+<th>HTYPE</th>
+<th>HLEN</th>
+<th>HOPS</th>
+</tr>
+<tr>
+<td>0x02</td>
+<td>0x01</td>
+<td>0x06</td>
+<td>0x00</td>
+</tr>
+<tr>
+<th colspan="4">XID</th>
+</tr>
+<tr>
+<td colspan="4">0x3903F326</td>
+</tr>
+<tr>
+<th colspan="2">SECS</th>
+<th colspan="2">FLAGS</th>
+</tr>
+<tr>
+<td colspan="2">0x0000</td>
+<td colspan="2">0x0000</td>
+</tr>
+<tr>
+<th colspan="4">CIADDR</th>
+</tr>
+<tr>
+<td colspan="4">0x00000000</td>
+</tr>
+<tr>
+<th colspan="4">YIADDR</th>
+</tr>
+<tr>
+<td colspan="4">0xC0A80164</td>
+</tr>
+<tr>
+<th colspan="4">SIADDR</th>
+</tr>
+<tr>
+<td colspan="4">0x00000000</td>
+</tr>
+<tr>
+<th colspan="4">GIADDR</th>
+</tr>
+<tr>
+<td colspan="4">0x00000000</td>
+</tr>
+<tr>
+<th colspan="4">CHADDR</th>
+</tr>
+<tr>
+<td colspan="4">0x00053C04</td>
+</tr>
+<tr>
+<td colspan="4">0x8D590000</td>
+</tr>
+<tr>
+<td colspan="4">0x00000000</td>
+</tr>
+<tr>
+<td colspan="4">0x00000000</td>
+</tr>
+<tr>
+<td colspan="4">192 octets of 0's. <a href="/wiki/BOOTP.html" title="BOOTP">BOOTP</a> legacy</td>
+</tr>
+<tr>
+<td colspan="4">DHCP option 53: DHCP ACK</td>
+</tr>
+<tr>
+<td colspan="4">DHCP option 1: 255.255.255.0 subnet mask</td>
+</tr>
+<tr>
+<td colspan="4">DHCP option 3: 192.168.1.1 router</td>
+</tr>
+<tr>
+<td colspan="4">DHCP option 51: 1 day IP lease time</td>
+</tr>
+<tr>
+<td colspan="4">DHCP option 54: 192.168.1.1 DHCP server</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: DHCP selection">edit</a>]</div>
+<p><a name="DHCP_selection" id="DHCP_selection"></a></p>
+<h3>DHCP selection</h3>
+<p>When the client PC receives an IP lease offer, it must tell all the other DHCP servers that it has accepted an offer. To do this, the client broadcasts a DHCPREQUEST message containing the IP address of the server that made the offer. When the other DHCP servers receive this message, they withdraw any offers that they might have made to the client. They then return the address that they had reserved for the client back to the pool of valid addresses that they can offer to another computer. Any number of DHCP servers can respond to an IP lease request, but the client can only accept one offer per network interface card.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: DHCP information">edit</a>]</div>
+<p><a name="DHCP_information" id="DHCP_information"></a></p>
+<h3>DHCP information</h3>
+<p>The client sends a request to the DHCP server: either to request more information than the server sent with the original DHCPACK; or to repeat data for a particular application - for example, browsers use <i>DHCP Inform</i> to obtain web proxy settings via <a href="/wiki/Web_Proxy_Autodiscovery_Protocol.html" title="Web Proxy Autodiscovery Protocol">WPAD</a>. Such queries do not cause the DHCP server to refresh the IP expiry time in its database.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: DHCP releasing">edit</a>]</div>
+<p><a name="DHCP_releasing" id="DHCP_releasing"></a></p>
+<h3>DHCP releasing</h3>
+<p>The client sends a request to the DHCP server to release the DHCP and the client unconfigures its IP address. As clients usually do not know when users may unplug them from the network, the protocol does not define the sending of <i>DHCP Release</i> as mandatory.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Client configuration parameters">edit</a>]</div>
+<p><a name="Client_configuration_parameters" id="Client_configuration_parameters"></a></p>
+<h3>Client configuration parameters</h3>
+<p>A DHCP server can provide optional configuration parameters to the client. <a  class="external" title="http://tools.ietf.org/html/rfc2132">RFC 2132</a> defines the available DHCP options, which are summarized here.</p>
+<p><i><a  class="external" title="http://tools.ietf.org/html/rfc1497">RFC 1497</a> Vendor Extensions:</i></p>
+<pre>
+                                 Data 
+  Tag     Name                  Length  Meaning                              
+  ---     ----                  ------  -------                              
+   0      Pad Option               0    None                                 
+  255     End Option               0    None
+   1      Subnet Mask              4    Subnet Mask Value                    
+   2      Time Offset              4    Time Offset in                       
+                                        Seconds from UTC 
+   3      Router                  N×4   Router addresses                 
+   4      Time Server             N×4   Timeserver addresses             
+   5      Name Server             N×4   IEN-116 Server addresses         
+   6      Domain Server           N×4   DNS Server addresses             
+   7      Log Server              N×4   Logging Server addresses         
+   8      Quotes Server           N×4   Quotes Server addresses          
+   9      LPR Server              N×4   Printer Server addresses         
+  10      Impress Server          N×4   Impress Server addresses         
+  11      RLP Server              N×4   N RLP Server addresses             
+  12      Hostname                 N    Hostname string                      
+  13      Boot File Size           2    Size of boot file in 512-octet        
+                                        blocks 
+  14      Merit Dump File          N    Client to dump and name              
+                                        the file to dump it to 
+  15      Domain Name              N    The DNS domain name of the           
+                                        client 
+  16      Swap Server              4    Swap Server address                  
+  17      Root Path                N    Path name for root disk              
+  18      Extensions File          N    Path name for more BOOTP info        
+</pre>
+<p><i>IP Layer Parameters per Host:</i></p>
+<pre>
+  19      Forward On/Off           1    Enable/Disable IP Forwarding         
+  20      SrcRte On/Off            1    Enable/Disable Non-Local Source Routing        
+  21      Policy Filter           N×8   Non-Local Source Routing Policy Filters             
+  22      Max DG Assembly          2    Max Datagram Reassembly Size         
+  23      Default IP TTL           1    Default IP Time to Live              
+  24      MTU Timeout              4    Path MTU Aging Timeout               
+  25      MTU Plateau             N×2   Path MTU Plateau Table              
+</pre>
+<p><i>IP Layer Parameters per Interface:</i></p>
+<pre>
+  26      MTU Interface            2    Interface MTU Size                   
+  27      MTU Subnet               1    All Subnets are Local                
+  28      Broadcast Address        4    Broadcast Address                    
+  29      Mask Discovery           1    Perform Mask Discovery               
+  30      Mask Supplier            1    Provide Mask to Others               
+  31      Router Discovery         1    Perform Router Discovery             
+  32      Router Request           4    Router Solicitation Address          
+  33      Static Route            N×8   Static Routing Table                 
+</pre>
+<p><i>Link Layer Parameters per Interface:</i></p>
+<pre>
+  34      Trailers                 1    Trailer Encapsulation                
+  35      ARP Timeout              4    ARP Cache Timeout                    
+  36      Ethernet                 1    Ethernet Encapsulation               
+</pre>
+<p><i>TCP Parameters:</i></p>
+<pre>
+  37      Default TCP TTL          1    Default TCP Time to Live             
+  38      Keepalive Time           4    TCP Keepalive Interval               
+  39      Keepalive Data           1    TCP Keepalive Garbage                
+</pre>
+<p><i>Application and Service Parameters:</i></p>
+<pre>
+  40      NIS Domain               N    NIS Domain Name                      
+  41      NIS Servers             N×4   NIS Server Addresses                 
+  42      NTP Servers             N×4   NTP Server Addresses                 
+  43      Vendor Specific          N    Vendor Specific Information          
+  44      NETBIOS Name Srv        N×4   NETBIOS Name Servers                 
+  45      NETBIOS Dist Srv        N×4   NETBIOS Datagram Distribution        
+  46      NETBIOS Node Type        1    NETBIOS Node Type                    
+  47      NETBIOS Scope            N    NETBIOS Scope                        
+  48      X Window Font           N×4   X Window Font Server                 
+  49      X Window Manager        N×4   X Window Display Manager             
+  64      NIS-Domain-Name          N    NIS+ v3 Client Domain Name           
+  65      NIS-Server-Addr         N×4   NIS+ v3 Server Addresses             
+  68      Home-Agent-Addrs        N×4   Mobile IP Home Agent Addresses                 
+  69      SMTP-Server             N×4   Simple Mail Server Addresses         
+  70      POP3-Server             N×4   Post Office Server Addresses         
+  71      NNTP-Server             N×4   Network News Server Addresses        
+  72      WWW-Server              N×4   WWW Server Addresses                 
+  73      Finger-Server           N×4   Finger Server Addresses              
+  74      IRC-Server              N×4   Chat Server Addresses                
+  75      StreetTalk-Server       N×4   StreetTalk Server Addresses          
+  76      STDA-Server             N×4   ST Directory Assist. Addresses       
+</pre>
+<p><i>DHCP Extensions:</i></p>
+<pre>
+  50      Address Request          4    Requested IP Address                 
+  51      Address Time             4    IP Address Lease Time                
+  52      Option Overload          1    Overload "sname" or "file"           
+  53      DHCP Msg Type            1    DHCP Message Type                    
+  54      DHCP Server Id           4    DHCP Server Identification           
+  55      Parameter List           N    Parameter Request List               
+  56      DHCP Message             N    DHCP Error Message                   
+  57      DHCP Max Msg Size        2    DHCP Maximum Message Size            
+  58      Renewal Time             4    DHCP Renewal (T1) Time               
+  59      Rebinding Time           4    DHCP Rebinding (T2) Time             
+  60      Class Id                 N    Vendor Class Identifier                     
+  61      Client Id                N    Client Identifier                    
+  66      Server-Name              N    TFTP Server Name                     
+  67      Bootfile-Name            N    Boot File Name                       
+</pre>
+<p><i>Newer extensions:</i></p>
+<pre>
+  62      Netware/IP Domain        N    Netware/IP Domain Name               
+  63      Netware/IP Option        N    Netware/IP sub Options               
+  77      User-Class               N    User Class Information               
+  78      Directory Agent          N    directory agent information          
+  79      Service Scope            N    service location agent scope         
+  80      Rapid Commit             0    Rapid Commit                         
+  81      Client FQDN              N    Fully Qualified Domain Name          
+  82      Relay Agent Information  N    Relay Agent Information, <a  class="external" title="http://tools.ietf.org/html/rfc3046">RFC 3046</a>    
+  83      iSNS                     N    Internet Storage Name Service        
+  84      REMOVED/Unassigned                                                 
+  85      NDS Servers              N    Novell Directory Services            
+  86      NDS Tree Name            N    Novell Directory Services            
+  87      NDS Context              N    Novell Directory Services            
+  88      BCMCS Controller Domain Name list                                  
+  89      BCMCS Controller IPv4 address option                               
+  90      Authentication           N    Authentication                       
+  91-92   REMOVED/Unassigned                                            
+  93      Client System            N    Client System Architecture           
+  94      Client NDI               N    Client Network Device Interface      
+  95      LDAP                     N    Lightweight Directory Access Protocol
+  96      REMOVED/Unassigned                                                 
+  97      UUID/GUID                N    UUID/GUID-based Client Identifier    
+  98      User-Auth                N    Open Group's User Authentication     
+  99-111  REMOVED/Unassigned
+  112     Netinfo Address          N    NetInfo Parent Server Address        
+  113     Netinfo Tag              N    NetInfo Parent Server Tag            
+  114     URL                      N    URL                                  
+  115     REMOVED/Unassigned                                                 
+  116     Auto-Config              N    DHCP Auto-Configuration              
+  117     Name Service Search      N    Name Service Search                  
+  118     Subnet Selection Option  4    Subnet Selection Option              
+  119     Domain Search            N    DNS domain search list               
+  120     SIP Servers DHCP Option  N    SIP Servers DHCP Option              
+  121     Classless Static Route   N    Classless Static Route Option        
+          Option 
+  122     CCC                      N    CableLabs Client Configuration       
+  123     GeoConf Option          16    GeoConf Option                       
+  124     V-I Vendor Class              Vendor-Identifying Vendor Class      
+  125     V-I Vendor-Specific           Vendor-Identifying Vendor-Specific   
+          Information                   Information
+  126-127 Removed/Unassigned                                                 
+  128     PXE - undefined (vendor specific) (Tentatively Assigned - <a href="/wiki/June_23.html" title="June 23">23 June</a> <a href="/wiki/2005.html" title="2005">2005</a>) 
+  128     Etherboot signature. 6 bytes: E4:45:74:68:00:00       
+  128     DOCSIS "full security" server IP address      
+  128     TFTP Server IP address (for IP Phone software load)   
+  129     PXE - undefined (vendor specific) (Tentatively Assigned - <a href="/wiki/June_23.html" title="June 23">23 June</a> <a href="/wiki/2005.html" title="2005">2005</a>)
+  129     Kernel options. Variable length string        
+  129     Call Server IP address        
+  130     PXE - undefined (vendor specific) (Tentatively Assigned - <a href="/wiki/June_23.html" title="June 23">23 June</a> <a href="/wiki/2005.html" title="2005">2005</a>)
+  130     Ethernet interface. Variable length string.   
+  130     Discrimination string (to identify vendor)    
+  131     PXE - undefined (vendor specific) (Tentatively Assigned - <a href="/wiki/June_23.html" title="June 23">23 June</a> <a href="/wiki/2005.html" title="2005">2005</a>)
+  131     Remote statistics server IP address   
+  132     PXE - undefined (vendor specific) (Tentatively Assigned - <a href="/wiki/June_23.html" title="June 23">23 June</a> <a href="/wiki/2005.html" title="2005">2005</a>)
+  132     802.1P VLAN ID        
+  133     PXE - undefined (vendor specific) (Tentatively Assigned - <a href="/wiki/June_23.html" title="June 23">23 June</a> <a href="/wiki/2005.html" title="2005">2005</a>)
+  133     802.1Q L2 Priority    
+  134     PXE - undefined (vendor specific) (Tentatively Assigned - <a href="/wiki/June_23.html" title="June 23">23 June</a> <a href="/wiki/2005.html" title="2005">2005</a>)
+  134     Diffserv Code Point   
+  135     PXE - undefined (vendor specific) (Tentatively Assigned - <a href="/wiki/June_23.html" title="June 23">23 June</a> <a href="/wiki/2005.html" title="2005">2005</a>)
+  135     HTTP Proxy for phone-specific applications    
+  136-149 Unassigned                                                         
+  150     TFTP server address (Tentatively Assigned - <a href="/wiki/June_23.html" title="June 23">23 June</a> <a href="/wiki/2005.html" title="2005">2005</a>)
+  150     Etherboot     
+  150     GRUB configuration path name  
+  151-174 Unassigned                                                         
+  175     Etherboot (Tentatively Assigned - <a href="/wiki/June_23.html" title="June 23">23 June</a> <a href="/wiki/2005.html" title="2005">2005</a>)
+  176     IP Telephone (Tentatively Assigned - <a href="/wiki/June_23.html" title="June 23">23 June</a> <a href="/wiki/2005.html" title="2005">2005</a>)
+  177     Etherboot (Tentatively Assigned - <a href="/wiki/June_23.html" title="June 23">23 June</a> <a href="/wiki/2005.html" title="2005">2005</a>)
+  177     PacketCable and CableHome (replaced by 122)   
+  178-207 Unassigned                                                         
+  208     pxelinux.magic (string) = F1:00:74:7E (241.0.116.126) (Tentatively
+            Assigned - <a href="/wiki/June_23.html" title="June 23">23 June</a> <a href="/wiki/2005.html" title="2005">2005</a>)
+  209     pxelinux.configfile (text) (Tentatively Assigned - <a href="/wiki/June_23.html" title="June 23">23 June</a> <a href="/wiki/2005.html" title="2005">2005</a>)
+  210     pxelinux.pathprefix (text) (Tentatively Assigned - <a href="/wiki/June_23.html" title="June 23">23 June</a> <a href="/wiki/2005.html" title="2005">2005</a>)
+  211     pxelinux.reboottime (unsigned integer 32 bits) (Tentatively Assigned
+            - <a href="/wiki/June_23.html" title="June 23">23 June</a> <a href="/wiki/2005.html" title="2005">2005</a>)
+  212-219 Unassigned
+  220     Subnet Allocation Option (Tentatively Assigned - <a href="/wiki/June_23.html" title="June 23">23 June</a> <a href="/wiki/2005.html" title="2005">2005</a>)
+  221     Virtual Subnet Selection Option       (Tentatively Assigned - <a href="/wiki/June_23.html" title="June 23">23 June</a> <a href="/wiki/2005.html" title="2005">2005</a>)
+  222-223 Unassigned                                                         
+  224-254 Private Use
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/RARP.html" title="RARP">RARP</a></li>
+<li><a href="/wiki/BOOTP.html" title="BOOTP">BOOTP</a></li>
+<li><a href="/wiki/Zeroconf.html" title="Zeroconf">Zeroconf</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external" title="http://tools.ietf.org/html/rfc2131">RFC 2131</a> - Dynamic Host Configuration Protocol</li>
+<li><a  class="external" title="http://tools.ietf.org/html/rfc2132">RFC 2132</a> - DHCP Options and BOOTP Vendor Extensions</li>
+<li><a  class="external text" title="http://www.bind9.net/rfc-dhcp">DHCP RFC</a> - Dynamic Host Configuration Protocol RFC's (IETF)</li>
+<li><a  class="external text" title="http://www.windowsecurity.com/articles/DHCP-Security-Part1.html">DHCP Server Security</a> - This article looks at the different types of threats faced by DHCP servers and counter-measures for mitigating these threats.</li>
+<li><a  class="external" title="http://tools.ietf.org/html/rfc4242">RFC 4242</a> - Information Refresh Time Option for Dynamic Host Configuration Protocol for IPv6</li>
+<li><a  class="external text" title="http://www.eventhelix.com/RealtimeMantra/Networking/DHCP.pdf">DHCP Sequence Diagram</a> - This sequence diagram covers several scenarios of DHCP operation.</li>
+<li><a  class="external" title="http://tools.ietf.org/html/rfc3046">RFC 3046</a>, <a  class="external text" title="http://www.odva.org/10_2/03_events/New-EtherNet/PUB0088R0%20ODVA%20DHCP%20Option%2082v2.pdf">Recommended Operation for Switches Running Relay Agent and Option 82</a> describes how DHCP option 82 works</li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:8622-0!1!0!default!!en!2 and timestamp 20060910155635 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Cleanup from June 2006">Cleanup from June 2006</a></span> | <span dir='ltr'><a  title="Category:Internet protocols">Internet protocols</a></span> | <span dir='ltr'><a  title="Category:Internet standards">Internet standards</a></span> | <span dir='ltr'><a  title="Category:Network protocols">Network protocols</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Dynamic_Host_Configuration_Protocol.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-cs"><a >Česky</a></li>
+				<li class="interwiki-da"><a >Dansk</a></li>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-et"><a >Eesti</a></li>
+				<li class="interwiki-el"><a >Ελληνικά</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-eu"><a >Euskara</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-id"><a >Bahasa Indonesia</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-he"><a >עברית</a></li>
+				<li class="interwiki-hu"><a >Magyar</a></li>
+				<li class="interwiki-nl"><a >Nederlands</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-no"><a >Norsk (bokmål)</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-pt"><a >Português</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+				<li class="interwiki-simple"><a >Simple English</a></li>
+				<li class="interwiki-sl"><a >Slovenščina</a></li>
+				<li class="interwiki-fi"><a >Suomi</a></li>
+				<li class="interwiki-sv"><a >Svenska</a></li>
+				<li class="interwiki-th"><a >ไทย</a></li>
+				<li class="interwiki-tr"><a >Türkçe</a></li>
+				<li class="interwiki-zh"><a >中文</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 09:28, 8 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv35 in 0.172 secs. --></body></html>

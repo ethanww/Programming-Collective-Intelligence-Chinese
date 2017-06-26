@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Theory of computation,Algorithm,Beta reduction,Big O notation,Chomsky hierarchy,Church-Turing thesis,Complexity classes P and NP,Composition (computer science),Computability theory (computation),Computability theory (computer science),Computational complexity theory" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Theory of computation - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Theory_of_computation";
+			var wgTitle = "Theory of computation";
+			var wgArticleId = 30402;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Theory of computation</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>The <b>theory of computation</b> is the branch of <a href="/wiki/Computer_science.html" title="Computer science">computer science</a> that deals with whether and how efficiently problems can be solved on a <a href="/wiki/Computer.html" title="Computer">computer</a>. The field is divided into two major branches: <a href="/wiki/Computability_theory_%28computation%29.html" title="Computability theory (computation)">computability theory</a> and <a href="/wiki/Computational_complexity_theory.html" title="Computational complexity theory">complexity theory</a>, but both branches deal with <a href="/wiki/Model_of_computation.html" title="Model of computation">formal models of computation</a>.</p>
+<p>In order to perform a rigorous study of computation, computer scientists work with a mathematical abstractions of computers called a <a href="/wiki/Model_of_computation.html" title="Model of computation">model of computation</a>. There are several formulations in use, but the most commonly examined is the <a href="/wiki/Turing_machine.html" title="Turing machine">Turing machine</a>. A Turing machine can be thought of as a desktop PC with an infinite memory capacity, though it can only access this memory in small discrete chunks. Computer scientists study the Turing machine because it is simple to formulate, can be analyzed and used to prove results, and because it represents what many consider the most powerful possible "reasonable" model of computation. While the infinite memory capacity might be considered an unphysical attribute, for any problem actually solved by a Turing machine the memory used will always be finite, so any problem that can be solved on a Turing machine could be solved on a desktop PC which has enough memory installed.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Computability theory</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Complexity theory</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Other formal definitions of computation</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Further reading</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Computability theory">edit</a>]</div>
+<p><a name="Computability_theory" id="Computability_theory"></a></p>
+<h2>Computability theory</h2>
+<dl>
+<dd>
+<div class="noprint"><i>Main article: <a href="/wiki/Computability_theory_%28computer_science%29.html" title="Computability theory (computer science)">Computability theory (computer science)</a></i></div>
+</dd>
+</dl>
+<p><a href="/wiki/Computability_theory_%28computation%29.html" title="Computability theory (computation)">Computability theory</a> deals primarily with the question of whether a problem is solvable at all on a computer. The <a href="/wiki/Halting_problem.html" title="Halting problem">halting problem</a> is one of the most important results in computability theory, as it is an example of a concrete problem that is both easy to formulate and impossible to solve using a Turing machine. Much of computability theory builds on the halting problem result.</p>
+<p>Computability theory is closely related to the branch of <a href="/wiki/Mathematical_logic.html" title="Mathematical logic">mathematical logic</a> called <a href="/wiki/Recursion_theory.html" title="Recursion theory">recursion theory</a>, which removes the restriction of studying only models of computation which are close to physically realizable. Many mathematicians and <a href="/wiki/Computational_theorist.html" title="Computational theorist">Computational theorists</a> who study recursion theory will refer to it as computability theory. There is no real difference between the fields other than whether a researcher working in this area has his or her office in the <a href="/wiki/Computer_science.html" title="Computer science">computer science</a> or <a href="/wiki/Mathematics.html" title="Mathematics">mathematics</a> department.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Complexity theory">edit</a>]</div>
+<p><a name="Complexity_theory" id="Complexity_theory"></a></p>
+<h2>Complexity theory</h2>
+<dl>
+<dd>
+<div class="noprint"><i>Main article: <a href="/wiki/Computational_complexity_theory.html" title="Computational complexity theory">Computational complexity theory</a></i></div>
+</dd>
+</dl>
+<p><a href="/wiki/Computational_complexity_theory.html" title="Computational complexity theory">Complexity theory</a> considers not only whether a problem can be solved at all on a computer, but also how efficiently the problem can be solved. Two major aspects are considered: time complexity and space complexity, which are respectively how many steps does it take to perform a computation, and how much memory is required to perform that computation.</p>
+<p>In order to analyze how much time and space a given <a href="/wiki/Algorithm.html" title="Algorithm">algorithm</a> requires, computer scientists express the time or space required to solve the problem as a function of the size of the input problem. For example, finding a particular number in a long list of numbers becomes harder as the list of numbers grows larger. If we say there are <span class="texhtml"><i>n</i></span> numbers in the list, then if the list is not sorted or indexed in any way we may have to look at every number in order to find the number we're seeking. We thus say that in order to solve this problem, the computer needs to perform a number of steps that grows linearly in the size of the problem.</p>
+<p>To simplify this problem, computer scientists have adopted <a href="/wiki/Big_O_notation.html" title="Big O notation">Big O notation</a>, which allows functions to be compared in a way that ensures that particular aspects of a machine's construction do not need to be considered, but rather only the asymptotic behavior as problems become large. So in our previous example we might say that the problem requires <span class="texhtml"><i>O</i>(<i>n</i>)</span> steps to solve.</p>
+<p>Perhaps the most important open problem in all of computer science is the question of whether a certain broad class of problems denoted <a href="/wiki/NP_%28complexity%29.html" title="NP (complexity)">NP</a> can be solved efficiently. This is discussed further at <a href="/wiki/Complexity_classes_P_and_NP.html" title="Complexity classes P and NP">Complexity classes P and NP</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Other formal definitions of computation">edit</a>]</div>
+<p><a name="Other_formal_definitions_of_computation" id="Other_formal_definitions_of_computation"></a></p>
+<h2>Other formal definitions of computation</h2>
+<p>Aside from a <a href="/wiki/Turing_machine.html" title="Turing machine">Turing machine</a>, other equivalent (See: <a href="/wiki/Church-Turing_thesis.html" title="Church-Turing thesis">Church-Turing thesis</a>) models of computation are in use.</p>
+<dl>
+<dt><a href="/wiki/Lambda_calculus.html" title="Lambda calculus">lambda calculus</a></dt>
+<dd>A computation is an initial lambda expression (or two if you want to separate the function and its input) plus a finite sequence of lambda terms, each deduced from the preceding term by one application of <a href="/wiki/Beta_reduction.html" title="Beta reduction">Beta reduction</a>.</dd>
+</dl>
+<dl>
+<dt><a href="/wiki/Mu-recursive_function.html" title="Mu-recursive function">mu-recursive functions</a></dt>
+<dd>a computation is a mu-recursive function, <i>i.e.</i> its defining sequence, any input value(s) and a sequence of recursive functions appearing in the defining sequence with inputs and outputs. Thus, if in the defining sequence of a recursive function <span class="texhtml"><i>f</i>(<i>x</i>)</span> the functions <span class="texhtml"><i>g</i>(<i>x</i>)</span> and <span class="texhtml"><i>h</i>(<i>x</i>,<i>y</i>)</span> appear, then terms of the form 'g(5)=7' or 'h(3,2)=10' might appear. Each entry in this sequence needs to be an application of a basic function or follow from the entries above by using <a href="/wiki/Composition_%28computer_science%29.html" title="Composition (computer science)">composition</a>, <a href="/wiki/Primitive_recursion.html" title="Primitive recursion">primitive recursion</a> or <a href="/wiki/Mu-recursive_function.html" title="Mu-recursive function">mu recursion</a>. For instance if <span class="texhtml"><i>f</i>(<i>x</i>) = <i>h</i>(<i>x</i>,<i>g</i>(<i>x</i>))</span>, then for 'f(5)=3' to appear, terms like 'g(5)=6' and 'h(3,6)=3' must occur above. The computation terminates only if the final term gives the value of the recursive function applied to the inputs.</dd>
+</dl>
+<dl>
+<dt><a href="/wiki/Markov_algorithm.html" title="Markov algorithm">Markov algorithm</a></dt>
+<dd>a <a href="/wiki/String_rewriting_system.html" title="String rewriting system">string rewriting system</a> that uses <a href="/wiki/Grammar.html" title="Grammar">grammar</a>-like rules to operate on <a href="/wiki/String_%28computer_science%29.html" title="String (computer science)">strings</a> of symbols.</dd>
+</dl>
+<p>In addition to the general computational models, some simpler computational models are useful for special, restricted applications. <a href="/wiki/Regular_expressions.html" title="Regular expressions">Regular expressions</a>, for example, are used to specify string patterns in many contexts, from office productivity software to <a href="/wiki/Programming_language.html" title="Programming language">programming languages</a>. Another formalism mathematically equivalent to regular expressions, <a href="/wiki/Finite_state_machines.html" title="Finite state machines">Finite automata</a> are used in circuit design and in some kinds of problem-solving. <a href="/wiki/Context-free_grammar.html" title="Context-free grammar">Context-free grammars</a> are used to specify programming language syntax. Non-deterministic <a href="/wiki/Pushdown_automaton.html" title="Pushdown automaton">pushdown automata</a> are another formalism equivalent to context-free grammars. <a href="/wiki/Primitive_recursive_function.html" title="Primitive recursive function">Primitive recursive functions</a> are a defined subclass of the recursive functions.</p>
+<p>Different models of computation have the ability to do different tasks. One way to measure the power of a computational model is to study the class of <a href="/wiki/Formal_language.html" title="Formal language">formal languages</a> that the model can generate; this leads to the <a href="/wiki/Chomsky_hierarchy.html" title="Chomsky hierarchy">Chomsky hierarchy</a> of languages.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Further reading">edit</a>]</div>
+<p><a name="Further_reading" id="Further_reading"></a></p>
+<h2>Further reading</h2>
+<ul>
+<li><cite class="book" style="font-style:normal"><a href="/wiki/Michael_Sipser.html" title="Michael Sipser">Michael Sipser</a> (2006). <i>Introduction to the Theory of Computation 2ed</i>. PWS Publishing. <a  class="internal">ISBN 0-534-94728-X</a>.</cite> Part Two: Computability Theory, chapters 3–6, pp.123–222.</li>
+<li>Hein, James L: <i>Theory of Computation.</i> Sudbury, MA: Jones &amp; Bartlett, 1996. A gentle introduction to the field, appropriate for second-year undergraduate computer science students.</li>
+<li>Hopcroft, John E., and Jeffrey D. Ullman: <i>Introduction to Automata Theory, Languages, and Computation. 2ed</i> Reading, MA: Addison-Wesley, 2001. One of the standard references in the field.</li>
+<li>Taylor, R. Gregory: <i>Models of Computation.</i> New York: Oxford University Press, 1998. An unusually readable textbook, appropriate for upper-level undergraduates or beginning graduate students.</li>
+<li>Hartley Rogers, Jr, <i>Theory of Recursive Functions and Effective Computability</i>, MIT Press, 1987, <a  class="internal">ISBN 0-262-68052-1</a> (<a href="/wiki/Paperback.html" title="Paperback">paperback</a>)</li>
+<li><a  class="external text" title="http://www.cis.upenn.edu/~giorgi/cl.html">Computability Logic</a>: A theory of interactive computation. The main web source on this subject.</li>
+<li><a  class="external autonumber" title="http://www.cs.uky.edu/~lewis/texts/theory/title.pdf">[1]</a> A nice (pdf) textbook by Forbes D. Lewis, covering the topics of formal languages, automata and grammars. The emphasis appears to be on presenting an overview of the results and their applications rather than providing proofs of the results.</li>
+</ul>
+
+<!-- 
+Pre-expand include size: 6189 bytes
+Post-expand include size: 848 bytes
+Template argument size: 1120 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:30402-0!1!0!default!!en!2 and timestamp 20060909194333 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:Theory of computation">Theory of computation</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Theory_of_computation.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-ar"><a >العربية</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-ko"><a >한국어</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 17:24, 9 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv95 in 0.082 secs. --></body></html>

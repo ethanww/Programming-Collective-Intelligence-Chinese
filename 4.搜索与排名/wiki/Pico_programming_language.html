@@ -1,0 +1,298 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Pico programming language,Array,Backquote,Char,Datatype,First-class object,Integer,Lambda calculus,Pico (disambiguation),Programming language,Real number" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Pico programming language - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Pico_programming_language";
+			var wgTitle = "Pico programming language";
+			var wgArticleId = 379013;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Pico programming language</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<dl>
+<dd><i>See also <a href="/wiki/Pico_%28disambiguation%29.html" title="Pico (disambiguation)">Pico (disambiguation)</a>.</i></dd>
+</dl>
+<p><b>Pico</b> is a <a href="/wiki/Programming_language.html" title="Programming language">programming language</a> developed at the PROG lab at the <a href="/wiki/Vrije_Universiteit_Brussel.html" title="Vrije Universiteit Brussel">Vrije Universiteit Brussel</a>. The language was created to introduce the essentials of programming to non computer science students.</p>
+<p>Pico can be seen as an effort to generate a palatable and enjoyable language for people who do not want to study hard for the elegance and power of a language. They have done it by adapting <a href="/wiki/Scheme_programming_language.html" title="Scheme programming language">Scheme</a>'s <a href="/wiki/Semantics.html" title="Semantics">semantics</a>.</p>
+<p>While designing Pico, the PROG lab was inspired by the Abelson and Sussman's book "Structure and Interpretation of Computer Programs". Furthermore, they were influenced by the teaching of programming at high school or academic level.</p>
+<p>Pico should be interpreted as 'small', the idea was to create a small language for educational purposes.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Language Elements</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">1.1</span> <span class="toctext">Comments</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.2</span> <span class="toctext">Variables</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.3</span> <span class="toctext">Functions</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.4</span> <span class="toctext">Operators</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.5</span> <span class="toctext">Data Types</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.6</span> <span class="toctext">Control Structures</span></a>
+<ul>
+<li class="toclevel-3"><a ><span class="tocnumber">1.6.1</span> <span class="toctext">Conditional Evaluation</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Code Snippets</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Implementations</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">3.1</span> <span class="toctext">Mac OS / Mac OS X</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.2</span> <span class="toctext">Windows</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.3</span> <span class="toctext">Linux</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.4</span> <span class="toctext">Crossplatform</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Language Elements">edit</a>]</div>
+<p><a name="Language_Elements" id="Language_Elements"></a></p>
+<h2>Language Elements</h2>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Comments">edit</a>]</div>
+<p><a name="Comments" id="Comments"></a></p>
+<h3>Comments</h3>
+<p>Comments are surrounded by a <a href="/wiki/Backquote.html" title="Backquote">backquote</a> ("`").</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Variables">edit</a>]</div>
+<p><a name="Variables" id="Variables"></a></p>
+<h3>Variables</h3>
+<p><a href="/wiki/Variables.html" title="Variables">Variables</a> are dynamically <a href="/wiki/Datatype.html" title="Datatype">typed</a>; pico uses static <a href="/wiki/Scope_%28programming%29.html" title="Scope (programming)">scope</a>.</p>
+<pre>
+var: value
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Functions">edit</a>]</div>
+<p><a name="Functions" id="Functions"></a></p>
+<h3>Functions</h3>
+<p>Functions are <a href="/wiki/First-class_object.html" title="First-class object">first-class objects</a> in Pico. They can be assigned to variables. For example a function with two arguments arg1 and arg2 can be defined as</p>
+<pre>
+func(arg1, arg2): ...
+</pre>
+<p>Functions can be called with the following syntax:</p>
+<pre>
+func(value1, value2)
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Operators">edit</a>]</div>
+<p><a name="Operators" id="Operators"></a></p>
+<h3>Operators</h3>
+<p>Operators can be used as prefix or infix in Pico:</p>
+<pre>
++(5, 2)
+5 + 2
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Data Types">edit</a>]</div>
+<p><a name="Data_Types" id="Data_Types"></a></p>
+<h3>Data Types</h3>
+<p>Pico has the following types: <a href="/wiki/String_%28computer_science%29.html" title="String (computer science)">string</a>, <a href="/wiki/Integer.html" title="Integer">integer</a>, <a href="/wiki/Real_number.html" title="Real number">real</a> and <a href="/wiki/Array.html" title="Array">tables</a>.</p>
+<p>It does not have a native <a href="/wiki/Char.html" title="Char">char</a> type, so users should resort to size 1 strings.</p>
+<p>Tables are compound datastructures that may contain any of the regular datatypes.</p>
+<p>Boolean types are represented by functions, in the same way as <a href="/wiki/Lambda_calculus.html" title="Lambda calculus">lambda calculus</a> does.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Control Structures">edit</a>]</div>
+<p><a name="Control_Structures" id="Control_Structures"></a></p>
+<h3>Control Structures</h3>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Conditional Evaluation">edit</a>]</div>
+<p><a name="Conditional_Evaluation" id="Conditional_Evaluation"></a></p>
+<h4>Conditional Evaluation</h4>
+<p>Only the usual if statement is included</p>
+<pre>
+if(condition, then, else)
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Code Snippets">edit</a>]</div>
+<p><a name="Code_Snippets" id="Code_Snippets"></a></p>
+<h2>Code Snippets</h2>
+<pre>
+display('Hello World', eoln)
+</pre>
+<pre>
+max(a, b):
+ if(a &lt; b, b, a)
+</pre>
+<pre>
+` <a  class="external free" title="http://www.paulgraham.com/accgen.html">http://www.paulgraham.com/accgen.html</a>
+accgen(n):
+ accfun(num): n + num
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Implementations">edit</a>]</div>
+<p><a name="Implementations" id="Implementations"></a></p>
+<h2>Implementations</h2>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Mac OS / Mac OS X">edit</a>]</div>
+<p><a name="Mac_OS_.2F_Mac_OS_X" id="Mac_OS_.2F_Mac_OS_X"></a></p>
+<h3>Mac OS / Mac OS X</h3>
+<ul>
+<li><a  class="external text" title="http://pico.vub.ac.be/downloads.html">MacPico</a></li>
+<li><a  class="external text" title="http://wilma.vub.ac.be/~pvdabeel/stuff/Xpico-Snaps/">XPico</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Windows">edit</a>]</div>
+<p><a name="Windows" id="Windows"></a></p>
+<h3>Windows</h3>
+<ul>
+<li><a  class="external text" title="http://pico.vub.ac.be/downloads.html">WinPico</a> <i>This version is buggy</i></li>
+<li><a  class="external text" title="http://student.vub.ac.be/~nkaraogl/WinPico/">WinPico Stable</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Linux">edit</a>]</div>
+<p><a name="Linux" id="Linux"></a></p>
+<h3>Linux</h3>
+<ul>
+<li><a  class="external text" title="http://dirk.rave.org/">TextPico for Linux</a></li>
+<li><a  class="external text" title="http://infogroep.be/Toon">gPico (and sPico)</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Crossplatform">edit</a>]</div>
+<p><a name="Crossplatform" id="Crossplatform"></a></p>
+<h3>Crossplatform</h3>
+<ul>
+<li><a  class="external text" title="http://www.infogroep.be/sPico">sPico for DrScheme</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://pico.vub.ac.be/">Pico Homepage</a></li>
+<li><a  class="external text" title="http://prog.vub.ac.be/">PROG lab</a></li>
+<li><a  class="external text" title="http://dinf.vub.ac.be/">Department of Computer Science at VUB</a></li>
+<li><a  class="external text" title="http://www.vub.ac.be/">VUB</a></li>
+<li><a  class="external text" title="http://www.infogroep.be/Pico">The Infogroep Pico-page</a></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:379013-0!1!0!default!!en!2 and timestamp 20060910095804 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Programming languages">Programming languages</a></span> | <span dir='ltr'><a  title="Category:Educational programming languages">Educational programming languages</a></span> | <span dir='ltr'><a  title="Category:Curly bracket programming languages">Curly bracket programming languages</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Pico_programming_language.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 18:34, 24 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv60 in 0.173 secs. --></body></html>

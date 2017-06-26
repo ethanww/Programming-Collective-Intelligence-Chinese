@@ -1,0 +1,397 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Sed,1998,AWK programming language,Anacron,Asterisk,At (Unix),Awk,Banner (Unix),Bc (Unix),Bell Labs,Bracket" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Sed - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Sed";
+			var wgTitle = "Sed";
+			var wgArticleId = 27163;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Sed</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<dl>
+<dd>
+<div class="dablink"><i>For other uses, see <a href="/wiki/Sed_%28disambiguation%29.html" title="Sed (disambiguation)">Sed (disambiguation)</a>.</i></div>
+</dd>
+</dl>
+<dl>
+<dd><span class="plainlinks"><i>The correct title of this article is <b>sed</b>. The initial letter is capitalized due to <a  title="Wikipedia:Naming conventions (technical restrictions)">technical restrictions</a>.</i></span></dd>
+</dl>
+<p><b>sed</b> (which stands for <b>S</b>tream <b>ED</b>itor) is a simple but powerful <a href="/wiki/Computer_program.html" title="Computer program">computer program</a> used to apply various pre-specified textual transformations to a sequential stream of text data. It reads input files line by line, edits each line according to rules specified in its simple language (the <i>sed script</i>), and then outputs the line. While originally created as a <a href="/wiki/Unix.html" title="Unix">Unix</a> utility by Lee E. McMahon of <a href="/wiki/Bell_Labs.html" title="Bell Labs">Bell Labs</a> from 1973 to 1974, sed is now available for virtually every operating system that supports a <a href="/wiki/Command_line.html" title="Command line">command line</a>.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Functions</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Usage</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">History</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Samples</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">4.1</span> <span class="toctext">The Address Command (submatches)</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Further reading</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Functions">edit</a>]</div>
+<p><a name="Functions" id="Functions"></a></p>
+<h2>Functions</h2>
+<p>sed is often thought of as a non-interactive <a href="/wiki/Text_editor.html" title="Text editor">text editor</a>. It differs from conventional text editors in that the processing of the two inputs is inverted. Instead of iterating once through a list of edit commands applying each one to the whole text file in memory, sed iterates once through the text file applying the whole list of edit commands to each line. Because only one line at a time is in <a href="/wiki/Computer_storage.html" title="Computer storage">memory</a>, sed can process text files with an arbitrarily-large number of lines. Some implementations of sed can only process lines of limited lengths.</p>
+<p>sed's command set is modeled after the <a href="/wiki/Ed_%28UNIX%29.html" title="Ed (UNIX)">ed</a> editor, and most commands work similarly in this inverted paradigm. For example, the command <b>25d</b> means <i>if this is line 25, then delete (don't output) it</i>, rather than <i>go to line 25 and delete it</i> as it does in ed. The notable exceptions are the copy and move commands, which span a range of lines and thus don't have straightforward equivalents in sed. Instead, sed introduces an extra buffer called the <i>hold</i> space, and additional commands to manipulate it. The ed command to copy line 25 to line 76 (<b>25t76</b>) for example would be coded as two separate commands in sed (<b>25h; 76g</b>), to store the line in the hold space until the point at which it should be retrieved.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Usage">edit</a>]</div>
+<p><a name="Usage" id="Usage"></a></p>
+<h2>Usage</h2>
+<p>The following example shows a typical usage of sed, where the <i>-e</i> option indicates that the sed expression follows:</p>
+<pre>
+sed -e 's/oldstuff/newstuff/g' inputFileName &gt; outputFileName
+</pre>
+<p>The <i>s</i> stands for substitute; the <i>g</i> stands for global, which means that all matching occurrences in the line would be replaced. After the first slash is the <a href="/wiki/Regular_expression.html" title="Regular expression">regular expression</a> to search for and after the second slash is the expression to replace it with. The substitute command (s///) is by far the most powerful and most commonly used sed command.</p>
+<p>Under Unix, sed is often used as a <a href="/wiki/Filter_%28Unix%29.html" title="Filter (Unix)">filter</a> in a <a href="/wiki/Pipeline_%28Unix%29.html" title="Pipeline (Unix)">pipeline</a>:</p>
+<pre>
+generate_data | sed -e 's/x/y/'
+</pre>
+<p>That is, generate the data, but make the small change of replacing <i>x</i> with <i>y</i>.</p>
+<p>Several substitutions or other commands can be put together in a file called, for example, <i>subst.sed</i> and then be applied using the <i>-f</i> option to read the commands from the file:</p>
+<pre>
+sed -f subst.sed inputFileName &gt; outputFileName
+</pre>
+<p>Besides substitution, other forms of simple processing are possible. For example, the following deletes empty lines or lines that only contain spaces:</p>
+<pre>
+sed -e '/^ *$/d' inputFileName 
+</pre>
+<p>This example used some of the following regular expression <a href="/wiki/Metacharacter.html" title="Metacharacter">metacharacters</a>:</p>
+<ul>
+<li>The <a href="/wiki/Caret.html" title="Caret">caret</a> (<code>^</code>) matches the beginning of the line.</li>
+<li>The <a href="/wiki/Dollar_sign.html" title="Dollar sign">dollar sign</a> (<code>$</code>) matches the end of the line.</li>
+<li>A period (<code>.</code>) matches any single character.</li>
+<li>The <a href="/wiki/Asterisk.html" title="Asterisk">asterisk</a> (<code>*</code>) matches zero or more occurrences of the previous character.</li>
+<li>A <a href="/wiki/Bracket.html" title="Bracket">bracketed</a> expression delimited by <code>[</code> and <code>]</code> matches any of the characters inside the brackets.</li>
+</ul>
+<p>Complex sed constructs are possible, to the extent that it can be conceived of as a highly specialised, albeit simple, <a href="/wiki/Programming_language.html" title="Programming language">programming language</a>. Flow of control, for example, can be managed by use of a label (a colon followed by a string which is to be the label name) and the branch instruction <b>b</b>; an instruction <b>b</b> followed by a valid label name will move processing to the block following the label; if the label does not exist then the branch will end the script.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: History">edit</a>]</div>
+<p><a name="History" id="History"></a></p>
+<h2>History</h2>
+<p>sed is one of the very early Unix commands that permitted command line processing of data files. It evolved as the natural successor to the popular <a href="/wiki/Grep.html" title="Grep">grep</a> command. Cousin to the later <a href="/wiki/AWK_programming_language.html" title="AWK programming language">AWK</a>, sed allowed powerful and interesting data processing to be done by shell scripts. sed was probably the earliest Unix tool that really encouraged regular expressions to be used ubiquitously. In terms of speed of operation, sed is generally faster than Perl in execution and markedly faster than AWK.</p>
+<p>sed and AWK are often cited as the progenitors and inspiration for <a href="/wiki/Perl.html" title="Perl">Perl</a>; in particular the s/// syntax from the example above is part of Perl's syntax.</p>
+<p>sed's language does not have variables and has only primitive <a href="/wiki/GOTO.html" title="GOTO">GOTO</a> and branching functionality; nevertheless, the language is <a href="/wiki/Turing-complete.html" title="Turing-complete">Turing-complete</a>. <a  class="external autonumber" title="http://sed.sourceforge.net/grabbag/scripts/turing.sed">[1]</a></p>
+<p><a href="/wiki/GNU.html" title="GNU">GNU</a> sed includes several new features such as in-place editing of files (i.e., replace the original file with the result of applying the sed program). In-place editing is often used instead of <a href="/wiki/Ed_%28UNIX%29.html" title="Ed (UNIX)">ed</a> scripts: for example,</p>
+<pre>
+sed -i 's/abc/def/' file
+</pre>
+<p>can be used instead of</p>
+<pre>
+ed file
+1,$ s/abc/def/
+w
+q
+</pre>
+<p>There is an extended version of sed called <b>Super-sed</b> (<strong class="selflink">ssed</strong>) that includes regular expressions compatible with <a href="/wiki/Perl.html" title="Perl">Perl</a>.</p>
+<p>Another version of sed is <b>minised</b>, originally reverse-engineered from the 4.1BSD sed by <a href="/wiki/Eric_S._Raymond.html" title="Eric S. Raymond">Eric S. Raymond</a> and currently maintained by <a  class="new" title="René Rebe">René Rebe</a>. <b>minised</b> was used by the <a href="/wiki/GNU_project.html" title="GNU project">GNU project</a> until the GNU project wrote a new version of sed based on the new GNU regular expression library. The current <b>minised</b> contains some extensions to BSD sed but is not as feature-rich as GNU sed. Its advantage is that it is very fast and uses little memory. It is used on embedded systems and is the version of sed provided with <a href="/wiki/Minix.html" title="Minix">Minix</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Samples">edit</a>]</div>
+<p><a name="Samples" id="Samples"></a></p>
+<h2>Samples</h2>
+<p>This example will enable sed, which usually only works on one line, to remove newlines from sentences where the second sentence starts with one space.</p>
+<p>Consider the following text:</p>
+<pre>
+This is my cat
+ my cat's name is betty
+This is my dog
+ my dog's name is frank
+</pre>
+<p>The sed script below will turn it into:</p>
+<pre>
+This is my cat my cat's name is betty
+This is my dog my dog's name is frank
+</pre>
+<p>Here's the script:</p>
+<pre>
+sed 'N;s/\n / /;P;D;'
+</pre>
+<ul>
+<li>(N) add the next line to the work buffer</li>
+<li>(s) substitute</li>
+<li>(/\n /) match: \n and one space</li>
+<li>(/ /) replace with: one space</li>
+<li>(P) print the top line of the work buffer</li>
+<li>(D) delete the top line from the work buffer and run the script again</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: The Address Command (submatches)">edit</a>]</div>
+<p><a name="The_Address_Command_.28submatches.29" id="The_Address_Command_.28submatches.29"></a></p>
+<h3>The Address Command (submatches)</h3>
+<p>More complex substitutions are possible using the "Address" command:</p>
+<pre>
+/pattern1/s/pattern2/replacement/flags   
+</pre>
+<dl>
+<dd>will replace pattern2 with replacement where pattern1 is matched.</dd>
+</dl>
+<p>Likewise:</p>
+<pre>
+/pattern1/!s/pattern2/replacement/flags  
+</pre>
+<dl>
+<dd>will replace pattern2 where pattern1 is *not* matched.</dd>
+</dl>
+<p>For example, if you have a file (text.txt) containing the following lines:</p>
+<pre>
+Hello world.
+Hello world. I love sed.
+</pre>
+<p>And you want to replace "world" with "mom", but only on those lines that contain the word "sed", you can use:</p>
+<pre>
+sed -e '/sed/s/world/mom/g' text.txt
+</pre>
+<p>will result in:</p>
+<pre>
+Hello world.
+Hello mom.  I love sed.
+</pre>
+<p>You can negate this behavior with:</p>
+<pre>
+sed -e '/sed/!s/world/mom/g' text.txt
+</pre>
+<p>which will result in the opposite:</p>
+<pre>
+Hello mom.
+Hello world.  I love sed.
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Further reading">edit</a>]</div>
+<p><a name="Further_reading" id="Further_reading"></a></p>
+<h2>Further reading</h2>
+<ul>
+<li><cite class="book" style="font-style:normal">Arnold Robbins (June, 2002). <i>sed and awk Pocket Reference, 2nd Edition</i>. <a href="/wiki/O%27Reilly_and_Associates.html" title="O'Reilly and Associates">O'Reilly and Associates</a>. <a  class="internal">ISBN 0-596-00352-8</a>.</cite></li>
+<li><cite class="book" style="font-style:normal">Peter Patsis (<a href="/wiki/1998.html" title="1998">1998</a>-<a href="/wiki/December_30.html" title="December 30">12-30</a>). <i>UNIX AWK and SED Programmer's Interactive Workbook (UNIX Interactive Workbook)</i>. <a href="/wiki/Prentice_Hall.html" title="Prentice Hall">Prentice Hall</a>. <a  class="internal">ISBN 0-13-082675-8</a>.</cite></li>
+<li><a  class="external text" title="http://sed.sourceforge.net/sedfaq.html">The sed FAQ</a></li>
+<li><a  class="external text" title="http://www.gnu.org/software/sed/manual/sed.html">GNU sed manual</a></li>
+<li><a  class="external text" title="http://www.linuxmanpages.com/man1/sed.1.php">Manual page for sed version 4.1.2</a>, the program's <a href="/wiki/Manpage.html" title="Manpage">manpage</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/List_of_Unix_programs.html" title="List of Unix programs">List of Unix programs</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://sed.sourceforge.net">Major sources for sed scripts, files, usage</a></li>
+<li><a  class="external text" title="http://sed.sourceforge.net/sed1line.txt">Handy one-line sed scripts</a></li>
+<li><a  class="external text" title="http://www.pement.org/sed/">A home page for sed, some focus on Windows/DOS</a></li>
+<li><a  class="external text" title="http://sed.sourceforge.net/grabbag/scripts/turing.txt">Paper describing Turing machine in sed, and its universality</a></li>
+<li><a  class="external text" title="http://sed.sourceforge.net/grabbag/scripts/turing.sed">Turing machine in sed, the actual script</a></li>
+<li><a  class="external text" title="http://www.npcguild.org/~ksb/hack/math.sed">A calculator written in sed</a></li>
+<li><a  class="external text" title="http://www.gnu.org/directory/text/editors/super-sed.html">Super-sed</a></li>
+<li><a  class="external text" title="http://aurelio.net/sed/sokoban/">sed Sokoban</a></li>
+<li><a  class="external text" title="http://unxutils.sourceforge.net">GNU utilities for Win32</a></li>
+<li><a  class="external text" title="http://users.cybercity.dk/~bse26236/batutil/help/SED.HTM#11.20">More on the address command and sub-matched replacements</a></li>
+<li><a  class="external text" title="http://www.exactcode.de/oss/minised/">Minised homepage</a></li>
+</ul>
+<p><br /></p>
+<table align="center" class="toccolours" cellspacing="0" cellpadding="5" width="75%">
+<tr bgcolor="#CCCCFF">
+<td align="center" colspan="4" style="margin: 0; padding: 1px;"><b><a href="/wiki/Unix.html" title="Unix">Unix</a> <a href="/wiki/Command_line.html" title="Command line">command line</a> programs</b> (<i><a href="/wiki/List_of_Unix_programs.html" title="List of Unix programs">more</a></i>)  <span class="noprint plainlinksneverexpand" id="Tnavbar-nodiv" style="white-space: nowrap; font-size:xx-small;"><a  class="external text" title="http://en.wikipedia.org/wiki/Template:Unix_commands"><span style="color:#002bb8;" title="View this template.">view</span></a> • <a  class="external text" title="http://en.wikipedia.org/wiki/Template_talk:Unix_commands"><span style="color:#002bb8;" title="Discussion about this template.">talk</span></a> • <a  class="external text" title="http://en.wikipedia.org/w/index.php?title=Template:Unix_commands&amp;action=edit"><span style="color:#002bb8;" title="You can edit this template. Please use the preview button before saving.">edit</span></a></span> </td>
+</tr>
+<tr>
+<td style="padding-left: 2em; border-top: 1px solid #bbbbff;"><b>File and file system management:</b></td>
+<td style="border-top: 1px solid #bbbbff;" colspan="3"><a href="/wiki/Cat_%28Unix%29.html" title="Cat (Unix)">cat</a> | <a href="/wiki/Chdir.html" title="Chdir">chdir</a>/<a href="/wiki/Chdir.html" title="Chdir">cd</a> | <a href="/wiki/Chmod.html" title="Chmod">chmod</a> | <a href="/wiki/Chown.html" title="Chown">chown</a> | <a href="/wiki/Chgrp.html" title="Chgrp">chgrp</a> | <a href="/wiki/Cp_%28Unix%29.html" title="Cp (Unix)">cp</a> | <a href="/wiki/Du_%28Unix%29.html" title="Du (Unix)">du</a> | <a href="/wiki/Df_%28Unix%29.html" title="Df (Unix)">df</a> | <a href="/wiki/File_%28Unix%29.html" title="File (Unix)">file</a> | <a href="/wiki/Fsck.html" title="Fsck">fsck</a> | <a href="/wiki/Ln_%28Unix%29.html" title="Ln (Unix)">ln</a> | <a href="/wiki/Ls_%28Unix%29.html" title="Ls (Unix)">ls</a> | <a href="/wiki/Lsof.html" title="Lsof">lsof</a> | <a href="/wiki/Mkdir.html" title="Mkdir">mkdir</a> | <a href="/wiki/More_%28Unix%29.html" title="More (Unix)">more</a> | <a href="/wiki/Mount_%28Unix%29.html" title="Mount (Unix)">mount</a> | <a href="/wiki/Mv.html" title="Mv">mv</a> | <a href="/wiki/Pwd.html" title="Pwd">pwd</a> | <a href="/wiki/Rcp_%28Unix%29.html" title="Rcp (Unix)">rcp</a> | <a href="/wiki/Rm_%28Unix%29.html" title="Rm (Unix)">rm</a> | <a href="/wiki/Rmdir.html" title="Rmdir">rmdir</a> | <a href="/wiki/Split_%28Unix%29.html" title="Split (Unix)">split</a> | <a href="/wiki/Touch_%28Unix%29.html" title="Touch (Unix)">touch</a> | <a href="/wiki/Tree_%28Unix%29.html" title="Tree (Unix)">tree</a></td>
+</tr>
+<tr>
+<td style="padding-left: 2em; border-top: 1px solid #bbbbff;"><b>Process management:</b></td>
+<td style="border-top: 1px solid #bbbbff;" colspan="3"><a href="/wiki/Anacron.html" title="Anacron">anacron</a> | <a href="/wiki/At_%28Unix%29.html" title="At (Unix)">at</a> | <a href="/wiki/Chroot.html" title="Chroot">chroot</a> | <a href="/wiki/Crontab.html" title="Crontab">cron</a>/<a href="/wiki/Crontab.html" title="Crontab">crontab</a> | <a href="/wiki/Kill_%28Unix%29.html" title="Kill (Unix)">kill</a> | <a href="/wiki/Nice_%28Unix%29.html" title="Nice (Unix)">nice</a> | <a href="/wiki/Ps_%28Unix%29.html" title="Ps (Unix)">ps</a> | <a href="/wiki/Sleep_%28Unix%29.html" title="Sleep (Unix)">sleep</a> | <a href="/wiki/GNU_Screen.html" title="GNU Screen">screen</a> | <a href="/wiki/Time_%28Unix%29.html" title="Time (Unix)">time</a> | <a href="/wiki/Timex_%28Unix%29.html" title="Timex (Unix)">timex</a> | <a href="/wiki/Top_%28Unix%29.html" title="Top (Unix)">top</a> | <a href="/wiki/Nice_%28Unix%29.html" title="Nice (Unix)">renice</a> | <a href="/wiki/Wait.html" title="Wait">wait</a></td>
+</tr>
+<tr>
+<td style="padding-left: 2em; border-top: 1px solid #bbbbff;"><b>User Management/Environment:</b></td>
+<td style="border-top: 1px solid #bbbbff;" colspan="3"><a href="/wiki/Env.html" title="Env">env</a> | <a href="/wiki/Finger_protocol.html" title="Finger protocol">finger</a> | <a href="/wiki/Id_%28Unix%29.html" title="Id (Unix)">id</a> | <a href="/wiki/Locale.html" title="Locale">locale</a> | <a href="/wiki/Mesg.html" title="Mesg">mesg</a> | <a href="/wiki/Passwd.html" title="Passwd">passwd</a> | <a href="/wiki/Su_%28Unix%29.html" title="Su (Unix)">su</a> | <a href="/wiki/Sudo.html" title="Sudo">sudo</a> | <a href="/wiki/Uname.html" title="Uname">uname</a> | <a href="/wiki/Uptime.html" title="Uptime">uptime</a> | <a href="/wiki/W_%28Unix%29.html" title="W (Unix)">w</a> | <a href="/wiki/Wall_%28Unix%29.html" title="Wall (Unix)">wall</a> | <a href="/wiki/Who_%28Unix%29.html" title="Who (Unix)">who</a> | <a href="/wiki/Write_%28Unix%29.html" title="Write (Unix)">write</a></td>
+</tr>
+<tr>
+<td style="padding-left: 2em; border-top: 1px solid #bbbbff;"><b>Text processing:</b></td>
+<td style="border-top: 1px solid #bbbbff;" colspan="3"><a href="/wiki/Awk.html" title="Awk">awk</a> | <a href="/wiki/Cut_%28Unix%29.html" title="Cut (Unix)">cut</a> | <a href="/wiki/Diff.html" title="Diff">diff</a> | <a href="/wiki/Ex_%28Unix%29.html" title="Ex (Unix)">ex</a> | <a href="/wiki/Head_%28Unix%29.html" title="Head (Unix)">head</a> | <a href="/wiki/Iconv.html" title="Iconv">iconv</a> | <a href="/wiki/Join_%28Unix%29.html" title="Join (Unix)">join</a> | <a href="/wiki/Less_%28Unix%29.html" title="Less (Unix)">less</a> | <a href="/wiki/More_%28Unix%29.html" title="More (Unix)">more</a> | <a href="/wiki/NKF_Japanese_Encoder.html" title="NKF Japanese Encoder">nkf</a> | <a href="/wiki/Paste_%28Unix%29.html" title="Paste (Unix)">paste</a> | <strong class="selflink">sed</strong> | <a href="/wiki/Sort_%28Unix%29.html" title="Sort (Unix)">sort</a> | <a href="/wiki/Tail_%28Unix%29.html" title="Tail (Unix)">tail</a> | <a href="/wiki/Tr_%28Unix%29.html" title="Tr (Unix)">tr</a> | <a href="/wiki/Uniq.html" title="Uniq">uniq</a> | <a href="/wiki/Wc_%28Unix%29.html" title="Wc (Unix)">wc</a> | <a href="/wiki/Xargs.html" title="Xargs">xargs</a> | <a href="/wiki/Perl.html" title="Perl">perl</a></td>
+</tr>
+<tr>
+<td style="padding-left: 2em; border-top: 1px solid #bbbbff;"><b><a href="/wiki/Shell_%28computing%29.html" title="Shell (computing)">Shell</a> programming:</b></td>
+<td style="border-top: 1px solid #bbbbff; border-right: 1px solid #bbbbff;"><a href="/wiki/Echo_%28computing%29.html" title="Echo (computing)">echo</a> | <a href="/wiki/Expr_%28Unix%29.html" title="Expr (Unix)">expr</a> | <a href="/wiki/Unset.html" title="Unset">unset</a></td>
+<td style="padding-left: 2em; border-top: 1px solid #bbbbff;"><b>Printing:</b></td>
+<td style="border-top: 1px solid #bbbbff;"><a href="/wiki/Lp_%28Unix%29.html" title="Lp (Unix)">lp</a></td>
+</tr>
+<tr>
+<td align="center" style="vertical-align: top; border-top: 1px solid #bbbbff; border-right: 1px solid #bbbbff;"><b>Communications:</b><br />
+<span style="white-space: nowrap"><a href="/wiki/Inetd.html" title="Inetd">inetd</a> | <a href="/wiki/Netstat.html" title="Netstat">netstat</a> | <a href="/wiki/Ping_%28Unix%29.html" title="Ping (Unix)">ping</a> | <a href="/wiki/Rlogin.html" title="Rlogin">rlogin</a> | <a href="/wiki/Traceroute.html" title="Traceroute">traceroute</a></span></td>
+<td align="center" style="border-top: 1px solid #bbbbff; border-right: 1px solid #bbbbff;"><b>Searching:</b><br />
+<a href="/wiki/Find.html" title="Find">find</a> | <a href="/wiki/Grep.html" title="Grep">grep</a> | <a href="/wiki/Strings_%28Unix%29.html" title="Strings (Unix)">strings</a></td>
+<td align="center" style="border-top: 1px solid #bbbbff;" colspan="2"><b>Miscellaneous:</b><br />
+<a href="/wiki/Banner_%28Unix%29.html" title="Banner (Unix)">banner</a> | <a href="/wiki/Bc_%28Unix%29.html" title="Bc (Unix)">bc</a> | <a href="/wiki/Cal_%28Unix%29.html" title="Cal (Unix)">cal</a> | <a href="/wiki/Unix_manual.html" title="Unix manual">man</a> | <a href="/wiki/Yes_%28Unix%29.html" title="Yes (Unix)">yes</a></td>
+</tr>
+</table>
+
+<!-- 
+Pre-expand include size: 12199 bytes
+Post-expand include size: 7122 bytes
+Template argument size: 1911 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:27163-0!1!0!default!!en!2 and timestamp 20060910154229 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Domain-specific programming languages">Domain-specific programming languages</a></span> | <span dir='ltr'><a  title="Category:Text-oriented programming languages">Text-oriented programming languages</a></span> | <span dir='ltr'><a  title="Category:Scripting languages">Scripting languages</a></span> | <span dir='ltr'><a  title="Category:Unix software">Unix software</a></span> | <span dir='ltr'><a  title="Category:Free compilers and interpreters">Free compilers and interpreters</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Sed.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-als"><a >Alemannisch</a></li>
+				<li class="interwiki-ca"><a >Català</a></li>
+				<li class="interwiki-cs"><a >Česky</a></li>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-nl"><a >Nederlands</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-pt"><a >Português</a></li>
+				<li class="interwiki-ro"><a >Română</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 22:31, 4 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv48 in 0.152 secs. --></body></html>

@@ -1,0 +1,506 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Hash table,Charles E. Leiserson,Thomas H. Cormen,Donald Knuth,Ronald L. Rivest,Clifford Stein,Introduction to Algorithms,Amortized analysis,Array,Associative array,Avalanche effect" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Hash table - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Hash_table";
+			var wgTitle = "Hash table";
+			var wgArticleId = 13833;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Hash table</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>In <a href="/wiki/Computer_science.html" title="Computer science">computer science</a>, a <b>hash table</b>, or a <b>hash map</b>, is a <a href="/wiki/Data_structure.html" title="Data structure">data structure</a> that associates <i>keys</i> with <i>values</i>. The primary operation it supports efficiently is a <i>lookup</i>: given a key (e.g. a person's name), find the corresponding value (e.g. that person's telephone number). It works by transforming the key using a <a href="/wiki/Hash_function.html" title="Hash function">hash function</a> into a <i>hash</i>, a number that the hash table uses to locate the desired value.</p>
+<div class="thumb tright">
+<div style="width:364px;"><a  class="internal" title="A small phone book as a hash table."><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/HASHTB08.svg/362px-HASHTB08.svg.png" alt="A small phone book as a hash table." width="362" height="195" longdesc="/wiki/Image:HASHTB08.svg" /></a>
+<div class="thumbcaption">
+<div class="magnify" style="float:right"><a  class="internal" title="Enlarge"><img src="/skins-1.5/common/images/magnify-clip.png" width="15" height="11" alt="Enlarge" /></a></div>
+A small phone book as a hash table.</div>
+</div>
+</div>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Time complexity and common uses of hash tables</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Choosing a good hash function</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Collision resolution</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">3.1</span> <span class="toctext">Chaining</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.2</span> <span class="toctext">Open addressing</span></a>
+<ul>
+<li class="toclevel-3"><a ><span class="tocnumber">3.2.1</span> <span class="toctext">Example pseudocode</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.3</span> <span class="toctext">Open addressing versus chaining</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.4</span> <span class="toctext">Coalesced hashing</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.5</span> <span class="toctext">Perfect hashing</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.6</span> <span class="toctext">Probabilistic hashing</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Table resizing</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Ordered retrieval issue</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">Problems with hash tables</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">Implementations</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">8</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">9</span> <span class="toctext">External links</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">10</span> <span class="toctext">References</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Time complexity and common uses of hash tables">edit</a>]</div>
+<p><a name="Time_complexity_and_common_uses_of_hash_tables" id="Time_complexity_and_common_uses_of_hash_tables"></a></p>
+<h2>Time complexity and common uses of hash tables</h2>
+<p>Hash tables are often used to implement <a href="/wiki/Associative_array.html" title="Associative array">associative arrays</a>, <a href="/wiki/Set_%28computer_science%29.html" title="Set (computer science)">sets</a> and <a href="/wiki/Cache.html" title="Cache">caches</a>. Like <a href="/wiki/Array.html" title="Array">arrays</a>, hash tables provide constant-time <a href="/wiki/Big-O_notation.html" title="Big-O notation">O(1)</a> lookup on average, regardless of the number of items in the table. However, the rare worst-case lookup time can be as bad as O(<i>n</i>). Compared to other associative array data structures, hash tables are most useful when large numbers of records of data are to be stored, especially if the size of the data set can be predicted.</p>
+<p>Hash tables may be used as in-memory data structures. Hash tables may also be adopted for use with <a href="/wiki/Persistent_data_structure.html" title="Persistent data structure">persistent data structures</a>; database indexes commonly use disk-based data structures based on hash tables.</p>
+<p>In <a href="/wiki/Computer_chess.html" title="Computer chess">computer chess</a>, a hash table is generally used to implement the <a href="/wiki/Transposition_table.html" title="Transposition table">transposition table</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Choosing a good hash function">edit</a>]</div>
+<p><a name="Choosing_a_good_hash_function" id="Choosing_a_good_hash_function"></a></p>
+<h2>Choosing a good hash function</h2>
+<p>A good hash function is essential for good hash table performance. A poor choice of hash function is likely to lead to <i>clustering</i>, in which probability of keys mapping to the same hash bucket (i.e. a <i>collision</i>) is significantly greater than would be expected from a random function. Nonzero probability of collisions is inevitable in any hash implementation, but usually the number of operations to resolve collisions scales linearly with the number of keys mapping to the same bucket, so excess collisions will degrade performance significantly. In addition, some hash functions are computationally expensive, so the amount of time (and, in some cases, memory) taken to compute the hash may be burdensome.</p>
+<p>Choosing a good hash function is tricky. The literature is replete with poor choices, at least when measured by modern standards. For example, the very popular multiplicative hash advocated by Knuth in The Art of Computer Programming (see reference below) has particularly poor clustering behavior. However, since poor hashing merely degrades hash table performance for particular input key distributions, such problems commonly go undetected.</p>
+<p>The literature is similarly sparse on the criteria for choosing a hash function. Unlike most other fundamental algorithms and data structures, there is no universal consensus on what makes a "good" hash function. The remainder of this section is organized by three criteria: simplicity, speed, and strength, and will survey algorithms known to perform well by these criteria.</p>
+<p>Simplicity and speed are readily measured objectively (by number of lines of code and CPU benchmarks, for example), but strength is a more slippery concept. Obviously, a <a href="/wiki/Cryptographic_hash_function.html" title="Cryptographic hash function">cryptographic hash function</a> such as SHA-1 would satisfy the relatively lax strength requirements needed for hash tables, but their slowness and complexity makes them unappealing. In fact, even a cryptographic hash does not provide protection against an adversary who wishes to degrade hash table performance by choosing keys all hashing to the same bucket. For these specialized cases, a <a href="/wiki/Universal_hash_function.html" title="Universal hash function">universal hash function</a> should be used instead of any one static hash, no matter how sophisticated.</p>
+<p>In the absence of a standard measure for hash function strength, the current state of the art is to employ a battery of <a href="/wiki/Statistics.html" title="Statistics">statistical</a> tests to measure whether the hash function can be readily distinguished from a random function. Arguably the most important such test is to determine whether the hash function displays the <a href="/wiki/Avalanche_effect.html" title="Avalanche effect">avalanche effect</a>, which essentially states that any single-bit change in the input key should affect on average half the bits in the output. Bret Mulvey advocates testing the <i>strict avalanche condition</i> in particular, which states that, for any single-bit change, each of the output bits should change with probability one-half, independent of the other bits in the key. Purely additive hash functions such as <a href="/wiki/Cyclic_redundancy_check.html" title="Cyclic redundancy check">CRC</a> fail this stronger condition miserably.</p>
+<p>Clearly, a strong hash function should have a <a href="/wiki/Uniform_distribution.html" title="Uniform distribution">uniform distribution</a> of hash values. Bret Mulvey proposes the use of a chi-squared test for uniformity, based on <a href="/wiki/Power_of_two.html" title="Power of two">power of two</a> hash table sizes ranging from 2<sup>1</sup> to 2<sup>16</sup>. This test is considerably more sensitive than many others proposed for measuring hash functions, and finds problems in many popular hash functions.</p>
+<p>Fortunately, there are good hash functions that satisfy all these criteria. The simplest class all consume one byte of the input key per iteration of the inner loop. Within this class, simplicity and speed are closely related, as fast algorithms simply don't have time to perform complex calculations. Of these, one that performs particularly well is the Jenkins One-at-a-time hash, adapted here from <a  class="external text" title="http://www.burtleburtle.net/bob/hash/doobs.html">an article by Bob Jenkins</a>, its creator.</p>
+<pre>
+ uint32 joaat_hash(uchar *key, size_t len)
+ {
+     uint32 hash = 0;
+     size_t i;
+     
+     for (i = 0; i &lt; len; i++)
+     {
+         hash += key[i];
+         hash += (hash &lt;&lt; 10);
+         hash ^= (hash &gt;&gt; 6);
+     }
+     hash += (hash &lt;&lt; 3);
+     hash ^= (hash &gt;&gt; 11);
+     hash += (hash &lt;&lt; 15);
+     return hash;
+ }
+</pre>
+<div class="thumb tright">
+<div style="width:257px;"><a  class="internal" title="Avalanche behavior of Jenkins One-at-a-time hash over 3-byte keys"><img src="http://upload.wikimedia.org/wikipedia/en/0/01/JenkinsOneAtATime-3.png" alt="Avalanche behavior of Jenkins One-at-a-time hash over 3-byte keys" width="255" height="191" longdesc="/wiki/Image:JenkinsOneAtATime-3.png" /></a>
+<div class="thumbcaption">
+<div class="magnify" style="float:right"><a  class="internal" title="Enlarge"><img src="/skins-1.5/common/images/magnify-clip.png" width="15" height="11" alt="Enlarge" /></a></div>
+Avalanche behavior of Jenkins One-at-a-time hash over 3-byte keys</div>
+</div>
+</div>
+<p>The avalanche behavior of this hash shown on the right. The image was made using Bret Mulvey's AvalancheTest in his <a  class="external text" title="http://bretm.home.comcast.net/hash/11.html">Hash.cs toolset</a>. Each row corresponds to a single bit in the input, and each column to a bit in the output. A green square indicates good mixing behavior, a yellow square weak mixing behavior, and red would indicate no mixing. Only a few bits in the last byte are weakly mixed, a performance vastly better than a number of widely used hash functions.</p>
+<p>Many commonly used hash functions perform poorly when subjected to such rigorous avalanche testing. The widely favored <a href="/wiki/Fowler_Noll_Vo_hash.html" title="Fowler Noll Vo hash">FNV</a> hash, for example, shows many bits with no mixing at all, especially for short keys. See the <a  class="external text" title="http://bretm.home.comcast.net/hash/6.html">evaluation of FNV</a> by Bret Mulvey for a more thorough analysis.</p>
+<p>If speed is more important than simplicity, then the class of hash functions which consume multibyte chunks per iteration may be of interest. One of the most sophisticated is "lookup3" by Bob Jenkins, which consumes input in 12 byte (96 bit) chunks. Note, though, that any speed improvement from the use of this hash is only likely to be useful for large keys, and that the increased complexity may also have speed consequences such as preventing an optimizing compiler from inlining the hash function. Bret Mulvey analyzed an <a  class="external text" title="http://bretm.home.comcast.net/hash/7.html">earlier version, lookup2</a>, and found it to have excellent avalanche behavior.</p>
+<p>One desirable property of a hash function is that conversion from the hash value (typically 32 bits) to a bucket index for a particular-size hash table can be done simply by masking, preserving only the lower k bits for a table of size 2<sup>k</sup> (an operation equivalent to computing the hash value <a href="/wiki/Modular_arithmetic.html" title="Modular arithmetic">modulo</a> the table size). This property enables the technique of incremental doubling of the size of the hash table - each bucket in the old table maps to only two in the new table. Because of its use of XOR-folding, the FNV hash does not have this property. Some older hashes are even worse, requiring table sizes to be a prime number rather than a power of two, again computing the bucket index as the hash value modulo the table size. In general, such a requirement is a sign of a fundamentally weak function; using a prime table size is a poor substitute for using a stronger function.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Collision resolution">edit</a>]</div>
+<p><a name="Collision_resolution" id="Collision_resolution"></a></p>
+<h2>Collision resolution</h2>
+<p>If two keys hash to the same index, the corresponding records cannot be stored in the same location. So, if it's already occupied, we must find another location to store the new record, and do it so that we can find it when we look it up later on.</p>
+<p>To give an idea of the importance of a good collision resolution strategy, consider the following result, derived using the <a href="/wiki/Birthday_paradox#Generalization.html" title="Birthday paradox">birthday paradox</a>. Even if we assume that our hash function outputs random indices <a href="/wiki/Uniform_distribution_%28discrete%29.html" title="Uniform distribution (discrete)">uniformly distributed</a> over the array, and even for an array with 1 million entries, there is a 95% chance of at least one collision occurring before it contains 2500 records.</p>
+<p>There are a number of collision resolution techniques, but the most popular are <i>chaining</i> and <i>open addressing</i>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Chaining">edit</a>]</div>
+<p><a name="Chaining" id="Chaining"></a></p>
+<h3>Chaining</h3>
+<div class="thumb tright">
+<div style="width:364px;"><a  class="internal" title="Hash collision resolved by chaining."><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/3/34/HASHTB32.svg/362px-HASHTB32.svg.png" alt="Hash collision resolved by chaining." width="362" height="195" longdesc="/wiki/Image:HASHTB32.svg" /></a>
+<div class="thumbcaption">
+<div class="magnify" style="float:right"><a  class="internal" title="Enlarge"><img src="/skins-1.5/common/images/magnify-clip.png" width="15" height="11" alt="Enlarge" /></a></div>
+Hash collision resolved by chaining.</div>
+</div>
+</div>
+<p>In the simplest chained hash table technique, each slot in the array references a <a href="/wiki/Linked_list.html" title="Linked list">linked list</a> of inserted records that collide to the same slot. Insertion requires finding the correct slot, and appending to either end of the list in that slot; deletion requires searching the list and removal.</p>
+<p>Chained hash tables have advantages over open addressed hash tables in that the removal operation is simple and resizing the table can be postponed for a much longer time because performance <a href="/wiki/Graceful_degradation.html" title="Graceful degradation">degrades more gracefully</a> even when every slot is used. Indeed, many chaining hash tables may not require resizing at all since performance degradation is linear as the table fills. For example, a chaining hash table containing twice its recommended capacity of data would only be about twice as slow on average as the same table at its recommended capacity.</p>
+<p>Chained hash tables inherit the disadvantages of linked lists. When storing small records, the overhead of the linked list can be significant. An additional disadvantage is that traversing a linked list has poor <a href="/wiki/Locality_of_reference.html" title="Locality of reference">cache performance</a>.</p>
+<p>Alternative data structures can be used for chains instead of linked lists. By using a <a href="/wiki/Self-balancing_binary_search_tree.html" title="Self-balancing binary search tree">self-balancing tree</a>, for example, the theoretical worst-case time of a hash table can be brought down to O(log <i>n</i>) rather than O(<i>n</i>). However, since each list is intended to be short, this approach is usually inefficient unless the hash table is designed to run at full capacity or there are unusually high collision rates, as might occur in input designed to cause collisions. <a href="/wiki/Dynamic_array.html" title="Dynamic array">Dynamic arrays</a> can also be used to decrease space overhead and improve cache performance when records are small.</p>
+<p>Some chaining implementations use an optimization where the first record of each chain is stored in the table. Although this can increase performance, it is generally not recommended: chaining tables with reasonable load factors contain a large proportion of empty slots, and the larger slot size causes them to waste large amounts of space.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Open addressing">edit</a>]</div>
+<p><a name="Open_addressing" id="Open_addressing"></a></p>
+<h3>Open addressing</h3>
+<div class="thumb tright">
+<div style="width:364px;"><a  class="internal" title="Hash collision resolved by linear probing (interval=1)."><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/9/90/HASHTB12.svg/362px-HASHTB12.svg.png" alt="Hash collision resolved by linear probing (interval=1)." width="362" height="226" longdesc="/wiki/Image:HASHTB12.svg" /></a>
+<div class="thumbcaption">
+<div class="magnify" style="float:right"><a  class="internal" title="Enlarge"><img src="/skins-1.5/common/images/magnify-clip.png" width="15" height="11" alt="Enlarge" /></a></div>
+Hash collision resolved by linear probing (interval=1).</div>
+</div>
+</div>
+<p>Open addressing hash tables can store the records directly within the array. A hash collision is resolved by <i>probing</i>, or searching through alternate locations in the array (the <i>probe sequence</i>) until either the target record is found, or an unused array slot is found, which indicates that there is no such key in the table. Well known probe sequences include:</p>
+<dl>
+<dt><a href="/wiki/Linear_probing.html" title="Linear probing">linear probing</a> </dt>
+<dd>in which the interval between probes is fixed--often at 1,</dd>
+<dt><a href="/wiki/Quadratic_probing.html" title="Quadratic probing">quadratic probing</a> </dt>
+<dd>in which the interval between probes increases linearly (hence, the indices are described by a quadratic function), and</dd>
+<dt><a href="/wiki/Double_hashing.html" title="Double hashing">double hashing</a> </dt>
+<dd>in which the interval between probes is fixed for each record but is computed by another hash function.</dd>
+</dl>
+<p>The main tradeoffs between these methods are that linear probing has the best cache performance but is most sensitive to clustering, while double hashing has poor cache performance but exhibits virtually no clustering; quadratic hashing falls in-between in both areas. Double hashing can also require more computation than other forms of probing. Some open addressing methods, such as <a  class="new" title="Last-come-first-served hashing">last-come-first-served hashing</a> and <a href="/wiki/Cuckoo_hashing.html" title="Cuckoo hashing">cuckoo hashing</a> move existing keys around in the array to make room for the new key. This gives better maximum search times than the methods based on probing.</p>
+<p>A critical influence on performance of an open addressing hash table is the <i>load factor</i>; that is, the proportion of the slots in the array that are used. As the load factor increases towards 100%, the number of probes that may be required to find or insert a given key rises dramatically. Once the table becomes full, probing algorithms may even fail to terminate. Even with good hash functions, load factors are normally limited to 80%. A poor hash function can exhibit poor performance even at very low load factors by generating significant clustering. What causes hash functions to cluster is not well understood, and it is easy to unintentionally write a hash function which causes severe clustering.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Example pseudocode">edit</a>]</div>
+<p><a name="Example_pseudocode" id="Example_pseudocode"></a></p>
+<h4>Example pseudocode</h4>
+<p>The following <a href="/wiki/Pseudocode.html" title="Pseudocode">pseudocode</a> is an implementation of an open addressing hash table with linear probing and single-slot stepping, a common approach that is effective if the hash function is good. Each of the <b>lookup</b>, <b>set</b> and <b>remove</b> functions use a common internal function <b>findSlot</b> to locate the array slot that either does or should contain a given key.</p>
+<pre>
+ <b>record</b> pair { key, value }
+ <b>var</b> <i>pair array</i> slot[0..numSlots-1]
+ 
+ <b>function</b> findSlot(key)
+     i := hash(key) modulus numSlots
+     <b>loop</b>
+         <b>if</b> slot[i] is not occupied <b>or</b> slot[i].key = key
+             <b>return</b> i
+         i := (i + 1) modulus numSlots
+ 
+ <b>function</b> lookup(key)
+     i := findSlot(key)
+     <b>if</b> slot[i] is occupied   <i>// key is in table</i>
+         <b>return</b> slot[i].value
+     <b>else</b>                     <i>// key is not in table</i>
+         <b>return</b> not found     
+ 
+ <b>function</b> set(key, value)
+     i := findSlot(key)
+     <b>if</b> slot[i] is occupied
+         slot[i].value := value
+     <b>else</b>
+         <b>if</b> the table is almost full
+             rebuild the table larger <i>(note 1)</i>
+             i := findSlot(key)
+         slot[i].key   := key
+         slot[i].value := value
+</pre>
+<p>Another example showing open addressing technique. Presented function is converting each part(4) of an internet protocol address, where NOT is bitwise NOT, XOR is bitwise XOR, OR is bitwise OR, AND is bitwise AND and &lt;&lt; and &gt;&gt; are shift-left and shift-right:</p>
+<pre>
+ <i>// key_1,key_2,key_3,key_4 are following 3-digit numbers - parts of ip address xxx.xxx.xxx.xxx</i>
+ <b>function</b> ip(key parts)
+     j := 1
+     <b>do</b>
+         key := (key_2 &lt;&lt; 2)
+         key := (key + (key_3 &lt;&lt; 7))
+         key := key + (j OR key_4 &gt;&gt; 2) * (key_4) * (j + key_1) XOR j
+         key := key AND _prime_    <i>// _prime_ is a prime number</i>
+         j := (j+1) 
+     <b>while</b> collision
+     <b>return</b> key
+</pre>
+<dl>
+<dt>note 1 </dt>
+<dd>Rebuilding the table requires allocating a larger array and recursively using the <b>set</b> operation to insert all the elements of the old array into the new larger array. It is common to increase the array size <a href="/wiki/Exponential_growth.html" title="Exponential growth">exponentially</a>, for example by doubling the old array size.</dd>
+</dl>
+<pre>
+ <b>function</b> remove(key)
+     i := findSlot(key)
+     <b>if</b> slot[i] is unoccupied
+         return   <i>// key is not in the table</i>
+     j := i
+     <b>loop</b>
+         j := (j+1) modulus numSlots
+         <b>if</b> slot[j] is unoccupied
+             <b>exit loop</b>
+         k := hash(slot[j].key) modulus numSlots
+         <b>if</b> (j &gt; i <b>and</b> (k &lt;= i <b>or</b> k &gt; j)) <b>or</b>
+            (j &lt; i <b>and</b> (k &lt;= i <b>and</b> k &gt; j)) <i>(note 2)</i>
+             slot[i] := slot[j]
+             i := j
+     mark slot[i] as unoccupied
+</pre>
+<dl>
+<dt>note 2 </dt>
+<dd>For all records in a cluster, there must be no vacant slots between their natural hash position and their current position (else lookups will terminate before finding the record). At this point in the pseudocode, <i>i</i> is a vacant slot that might be invalidating this property for subsequent records in the cluster. <i>j</i> is such as subsequent record. <i>k</i> is the raw hash where the record at <i>j</i> would naturally land in the hash table if there were no collisions. This test is asking if the record at <i>j</i> is invalidly positioned with respect to the required properties of a cluster now that <i>i</i> is vacant.</dd>
+</dl>
+<p>Another technique for removal is simply to mark the slot as deleted. However this eventually requires rebuilding the table simply to remove deleted records. The methods above provide O(1) updating and removal of existing records, with occasional rebuilding if the high water mark of the table size grows.</p>
+<p>The O(1) remove method above is only possible in linearly probed hash tables with single-slot stepping. In the case where many records are to be deleted in one operation, marking the slots for deletion and later rebuilding may be more efficient.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Open addressing versus chaining">edit</a>]</div>
+<p><a name="Open_addressing_versus_chaining" id="Open_addressing_versus_chaining"></a></p>
+<h3>Open addressing versus chaining</h3>
+<p>Chained hash tables have the following benefits over open addressing:</p>
+<ul>
+<li>They are simple to implement effectively and only require basic data structures.</li>
+<li>From the point of view of writing suitable hash functions, chained hash tables are insensitive to clustering, only requiring minimization of collisions. Open addressing depends upon better hash functions to avoid clustering. This is particularly important if novice programmers can add their own hash functions, but even experienced programmers can be caught out by unexpected clustering effects.</li>
+<li>They degrade in performance more gracefully. Although chains grow longer as the table fills, a chained hash table cannot "fill up" and does not exhibit the sudden increases in lookup times that occur in a near-full table with open addressing. (<i>see right</i>)</li>
+<li>If the hash table stores large records, about 5 or more words per record, chaining uses less memory than open addressing.</li>
+<li>If the hash table is sparse (that is, it has a big array with many free array slots), chaining uses less memory than open addressing even for small records of 2 to 4 words per record due to its external storage.</li>
+</ul>
+<div class="thumb tright">
+<div style="width:364px;"><a  class="internal" title="This graph compares the average number of cache misses required to lookup elements in tables with chaining and linear probing. As the table passes the 80%-full mark, linear probing's performance drastically degrades."><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Hash_table_average_insertion_time.png/362px-Hash_table_average_insertion_time.png" alt="This graph compares the average number of cache misses required to lookup elements in tables with chaining and linear probing. As the table passes the 80%-full mark, linear probing's performance drastically degrades." width="362" height="235" longdesc="/wiki/Image:Hash_table_average_insertion_time.png" /></a>
+<div class="thumbcaption">
+<div class="magnify" style="float:right"><a  class="internal" title="Enlarge"><img src="/skins-1.5/common/images/magnify-clip.png" width="15" height="11" alt="Enlarge" /></a></div>
+This graph compares the average number of cache misses required to lookup elements in tables with chaining and linear probing. As the table passes the 80%-full mark, linear probing's performance drastically degrades.</div>
+</div>
+</div>
+<p>For small record sizes (a few words or less) the benefits of in-place open addressing compared to chaining are:</p>
+<ul>
+<li>They can be more space-efficient than chaining since they don't need to store any pointers or allocate any additional space outside the hash table. Simple linked lists require a word of overhead per element.</li>
+<li>Insertions avoid the time overhead of memory allocation, and can even be implemented in the absence of a memory allocator.</li>
+<li>Because it uses internal storage, open addressing avoids the extra indirection required for chaining's external storage. It also has better <a href="/wiki/Locality_of_reference.html" title="Locality of reference">locality of reference</a>, particularly with linear probing. With small record sizes, these factors can yield better performance than chaining, particularly for lookups.</li>
+<li>They can be easier to <a href="/wiki/Serialization.html" title="Serialization">serialize</a>, because they don't use pointers.</li>
+</ul>
+<p>On the other hand, normal open addressing is a poor choice for large elements, since these elements fill entire cache lines (negating the cache advantage), and a large amount of space is wasted on large empty table slots. If the open addressing table only stores references to elements (external storage), it uses space comparable to chaining even for large records but loses its speed advantage.</p>
+<p>Generally speaking, open addressing is better used for hash tables with small records that can be stored within the table (internal storage) and fit in a cache line. They are particularly suitable for elements of one word or less. In cases where the tables are expected to have high load factors, the records are large, or the data is variable-sized, chained hash tables often perform as well or better.</p>
+<p>Ultimately, used sensibly any kind of hash table algorithm is usually fast <i>enough</i>; and the percentage of a calculation spent in hash table code is low. Memory usage is rarely considered excessive. Therefore, in most cases the differences between these algorithms is marginal, and other considerations typically come into play.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Coalesced hashing">edit</a>]</div>
+<p><a name="Coalesced_hashing" id="Coalesced_hashing"></a></p>
+<h3>Coalesced hashing</h3>
+<dl>
+<dd>
+<div class="noprint"><i>Main article: <a href="/wiki/Coalesced_hashing.html" title="Coalesced hashing">Coalesced hashing</a></i></div>
+</dd>
+</dl>
+<p>A hybrid of chaining and open addressing, coalesced hashing links together chains of nodes within the table itself. Like open addressing, it achieves space usage and (somewhat diminished) cache advantages over chaining. Like chaining, it does not exhibit clustering effects; in fact, the table can be efficiently filled to a high density. Unlike chaining, it cannot have more elements than table slots.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Perfect hashing">edit</a>]</div>
+<p><a name="Perfect_hashing" id="Perfect_hashing"></a></p>
+<h3>Perfect hashing</h3>
+<dl>
+<dd>
+<div class="noprint"><i>Main article: <a href="/wiki/Perfect_hashing.html" title="Perfect hashing">Perfect hashing</a></i></div>
+</dd>
+</dl>
+<p>If all of the keys that will be used are known ahead of time, and there are no more keys that can fit the hash table, <a href="/wiki/Perfect_hashing.html" title="Perfect hashing">perfect hashing</a> can be used to create a perfect hash table, in which there will be no collisions. If <a href="/wiki/Minimal_perfect_hashing.html" title="Minimal perfect hashing">minimal perfect hashing</a> is used, every location in the hash table can be used as well.</p>
+<p>Perfect hashing gives a hash table where the time to make a lookup is constant in the worst case. This is in contrast to chaining and open addressing methods, where the time for lookup is low on average, but may be arbitrarily large. There exist methods for maintaining a perfect hash function under insertions of keys, known as <a  class="new" title="Dynamic perfect hashing">dynamic perfect hashing</a>. A simpler alternative, that also gives worst case constant lookup time, is <a href="/wiki/Cuckoo_hashing.html" title="Cuckoo hashing">cuckoo hashing</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Probabilistic hashing">edit</a>]</div>
+<p><a name="Probabilistic_hashing" id="Probabilistic_hashing"></a></p>
+<h3>Probabilistic hashing</h3>
+<p>Perhaps the simplest solution to a collision is to replace the value that is already in the slot with the new value, or slightly less commonly, drop the record that is to be inserted. In later searches, this may result in a search not finding a record which has been inserted. This technique is particularly useful for implementing caching.</p>
+<p>An even more space-efficient solution which is similar to this is use a <a href="/wiki/Bit_array.html" title="Bit array">bit array</a> (an array of one-bit fields) for our table. Initially all bits are set to zero, and when we insert a key, we set the corresponding bit to one. False negatives cannot occur, but <a href="/wiki/False_positives.html" title="False positives">false positives</a> can, since if the search finds a 1 bit, it will claim that the value was found, even if it was just another value that hashed into the same array slot by coincidence. In reality, such a hash table is merely a specific type of <a href="/wiki/Bloom_filter.html" title="Bloom filter">Bloom filter</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Table resizing">edit</a>]</div>
+<p><a name="Table_resizing" id="Table_resizing"></a></p>
+<h2>Table resizing</h2>
+<p>With a good hash function, a hash table can typically contain about 70%–80% as many elements as it does table slots and still perform well. Depending on the collision resolution mechanism, performance can begin to suffer either gradually or dramatically as more elements are added. To deal with this, when the load factor exceeds some threshold, we allocate a new, larger table, and add all the contents of the original table to this new table. In <a href="/wiki/Java_programming_language.html" title="Java programming language">Java</a>'s HashMap class, for example, the default load factor threshold is 0.75.</p>
+<p>This can be a very expensive operation, and the necessity for it is one of the hash table's disadvantages. In fact, some naive methods for doing this, such as enlarging the table by one each time you add a new element, reduce performance so drastically as to make the hash table useless. However, if we enlarge the table by some fixed percent, such as 10% or 100%, it can be shown using <a href="/wiki/Amortized_analysis.html" title="Amortized analysis">amortized analysis</a> that these resizings are so infrequent that the average time per lookup remains constant-time. To see why this is true, suppose a hash table using chaining begins at the minimum size of 1 and is doubled each time it fills above 100%. If in the end it contains <i>n</i> elements, then the total add operations performed for all the resizings is:</p>
+<dl>
+<dd>1 + 2 + 4 + ... + <i>n</i> = 2<i>n</i> - 1.</dd>
+</dl>
+<p>Because the costs of the resizings form a <a href="/wiki/Geometric_series.html" title="Geometric series">geometric series</a>, the total cost is O(<i>n</i>). But we also perform <i>n</i> operations to add the <i>n</i> elements in the first place, so the total time to add <i>n</i> elements with resizing is O(<i>n</i>), an amortized time of O(1) per element.</p>
+<p>On the other hand, some hash table implementations, notably in <a href="/wiki/Real-time_system.html" title="Real-time system">real-time systems</a>, cannot pay the price of enlarging the hash table all at once, because it may interrupt time-critical operations. One simple approach is to initially allocate the table with enough space for the expected number of elements and forbid the addition of too many elements. Another useful but more memory-intensive technique is to perform the resizing gradually:</p>
+<ul>
+<li>Allocate the new hash table, but leave the old hash table and check both tables during lookups.</li>
+<li>Each time an insertion is performed, add that element to the new table and also move <i>k</i> elements from the old table to the new table.</li>
+<li>When all elements are removed from the old table, deallocate it.</li>
+</ul>
+<p>To ensure that the old table will be completely copied over before the new table itself needs to be enlarged, it's necessary to increase the size of the table by a factor of at least (<i>k</i> + 1)/<i>k</i> during the resizing.</p>
+<p><a href="/wiki/Linear_hashing.html" title="Linear hashing">Linear hashing</a> is a hash table algorithm that permits incremental hash table expansion. It is implemented using a single hash table, but with two possible look-up functions.</p>
+<p>Another way to decrease the cost of table resizing is to choose a hash function in such a way that the hashes of most values do not change when the table is resized. This approach, called <a href="/wiki/Consistent_hashing.html" title="Consistent hashing">consistent hashing</a>, is prevalent in disk-based and distributed hashes, where resizing is prohibitively costly.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Ordered retrieval issue">edit</a>]</div>
+<p><a name="Ordered_retrieval_issue" id="Ordered_retrieval_issue"></a></p>
+<h2>Ordered retrieval issue</h2>
+<p>Hash tables store data in pseudo-random locations, so accessing the data in a sorted manner is a very time consuming operation. Other data structures such as <a href="/wiki/Self-balancing_binary_search_tree.html" title="Self-balancing binary search tree">self-balancing binary search trees</a> generally operate more slowly (since their lookup time is O(log <i>n</i>)) and are rather more complex to implement than hash tables but maintain a sorted data structure at all times. See <a href="/wiki/Associative_array#Efficient_representations.html" title="Associative array">a comparison of hash tables and self-balancing binary search trees</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Problems with hash tables">edit</a>]</div>
+<p><a name="Problems_with_hash_tables" id="Problems_with_hash_tables"></a></p>
+<h2>Problems with hash tables</h2>
+<p>Although hash table lookups use constant time on average, the time spent can be significant. Evaluating a good hash function can be a slow operation. In particular, if simple array indexing can be used instead, this is usually faster.</p>
+<p>Hash tables in general exhibit poor <a href="/wiki/Locality_of_reference.html" title="Locality of reference">locality of reference</a>—that is, the data to be accessed is distributed seemingly at random in memory. Because hash tables cause access patterns that jump around, this can trigger <a href="/wiki/CPU_cache.html" title="CPU cache">microprocessor cache</a> misses that cause long delays. Compact data structures such as arrays, searched with <a href="/wiki/Linear_search.html" title="Linear search">linear search</a>, may be faster if the table is relatively small and keys are cheap to compare, such as with simple integer keys. According to <a href="/wiki/Moore%27s_Law.html" title="Moore's Law">Moore's Law</a>, cache sizes are growing exponentially and so what is considered "small" may be increasing. The optimal performance point varies from system to system; for example, a trial on <a href="/wiki/Parrot_virtual_machine.html" title="Parrot virtual machine">Parrot</a> shows that its hash tables outperform linear search in all but the most trivial cases (one to three entries).</p>
+<p>More significantly, hash tables are more difficult and error-prone to write and use. Hash tables require the design of an effective hash function for each key type, which in some situations is more difficult and time-consuming to design and debug than the mere comparison function required for a <a href="/wiki/Self-balancing_binary_search_tree.html" title="Self-balancing binary search tree">self-balancing binary search tree</a>. In open-addressed hash tables it's fairly easy to create a poor hash function.</p>
+<p>Additionally, in some applications, a <a href="/wiki/Black_hat.html" title="Black hat">black hat</a> with knowledge of the hash function may be able to supply information to a hash which creates worst-case behavior by causing excessive collisions, resulting in very poor performance (i.e., a <a href="/wiki/Denial_of_service_attack.html" title="Denial of service attack">denial of service attack</a>). In critical applications, either <a href="/wiki/Universal_hashing.html" title="Universal hashing">universal hashing</a> can be used or a data structure with better worst-case guarantees may be preferable. For details, see Crosby and Wallach's <i><a  class="external text" title="http://www.cs.rice.edu/~scrosby/hash/CrosbyWallach_UsenixSec2003.pdf">Denial of Service via Algorithmic Complexity Attacks</a></i>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Implementations">edit</a>]</div>
+<p><a name="Implementations" id="Implementations"></a></p>
+<h2>Implementations</h2>
+<p>While many programming languages already provide hash table functionality (see <i><a href="/wiki/Associative_array#Language_support.html" title="Associative array">language support for associative arrays</a></i>), there are several independent implementations worth mentioning.</p>
+<ul>
+<li><a  class="external text" title="http://goog-sparsehash.sourceforge.net/">Google Sparse Hash</a> The Google SparseHash project contains several hash-map implementations in use at Google, with different performance characteristics, including an implementation that optimizes for space and one that optimizes for speed. The memory-optimized one is extremely memory-efficient with only 2 bits/entry of overhead.</li>
+<li>A number of language runtimes and/or standard libraries use hash tables to implement their support for associative arrays because of their efficiency.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Bloom_filter.html" title="Bloom filter">Bloom filter</a></li>
+<li><a href="/wiki/Distributed_hash_table.html" title="Distributed hash table">Distributed hash tables</a></li>
+<li><a href="/wiki/Hash_function.html" title="Hash function">Hash function</a></li>
+<li><a href="/wiki/Rabin-Karp_string_search_algorithm.html" title="Rabin-Karp string search algorithm">Rabin-Karp string search algorithm</a></li>
+<li><a href="/wiki/Hash_list.html" title="Hash list">Hash list</a></li>
+<li><a href="/wiki/Hash_tree.html" title="Hash tree">Hash tree</a></li>
+<li><a href="/wiki/Judy_array.html" title="Judy array">Judy array</a></li>
+<li><a href="/wiki/Trie.html" title="Trie">Trie</a></li>
+<li><a href="/wiki/Stable_hashing.html" title="Stable hashing">Stable hashing</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://www.burtleburtle.net/bob/hash/doobs.html">A Hash Function for Hash Table Lookup</a> by Bob Jenkins</li>
+<li><a  class="external text" title="http://bretm.home.comcast.net/hash/">Hash Functions</a> by Bret Mulvey (Pluto Scarab) - with nice graphs</li>
+<li><a  class="external text" title="http://www.azillionmonkeys.com/qed/hash.html">Hash functions</a> by Paul Hsieh</li>
+<li><a  class="external text" title="http://eternallyconfuzzled.com/tuts/hashing.html">The Art of Hashing</a> by Julienne Walker</li>
+<li><a  class="external text" title="http://webkit.opendarwin.org/blog/?p=8">Hashtables, Part 2</a> by Maciej Stachowiak</li>
+<li><a href="/wiki/NIST.html" title="NIST">NIST</a> entry on <a  class="external text" title="http://www.nist.gov/dads/HTML/hashtab.html">hash tables</a></li>
+<li>Open addressing hash table removal algorithm from <a href="/wiki/ICI_programming_language.html" title="ICI programming language">ICI programming language</a>, <i>ici_set_unassign</i> in <a  class="external text" title="http://cvs.sourceforge.net/viewcvs.py/ici/ici/set.c?rev=1.14&amp;view=auto">set.c</a> (and other occurrences, with permission).</li>
+<li><a  class="external text" title="http://en.wikibooks.org/wiki/Programming:Perl">The Perl Wikibook</a> - <a  class="external text" title="http://en.wikibooks.org/wiki/Programming:Perl_Hash_Variables">Perl Hash Variables</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<ul>
+<li><a href="/wiki/Donald_Knuth.html" title="Donald Knuth">Donald Knuth</a>. <i>The Art of Computer Programming</i>, Volume 3: <i>Sorting and Searching</i>, Second Edition. Addison-Wesley, 1998. <a  class="internal">ISBN 0-201-89685-0</a>. Section 6.4: Hashing, pp.513–558.</li>
+<li><a href="/wiki/Thomas_H._Cormen.html" title="Thomas H. Cormen">Thomas H. Cormen</a>, <a href="/wiki/Charles_E._Leiserson.html" title="Charles E. Leiserson">Charles E. Leiserson</a>, <a href="/wiki/Ronald_L._Rivest.html" title="Ronald L. Rivest">Ronald L. Rivest</a>, and <a href="/wiki/Clifford_Stein.html" title="Clifford Stein">Clifford Stein</a>. <i><a href="/wiki/Introduction_to_Algorithms.html" title="Introduction to Algorithms">Introduction to Algorithms</a></i>, Second Edition. MIT Press and McGraw-Hill, 2001. <a  class="internal">ISBN 0-262-03293-7</a>. Chapter 11: Hash Tables, pp.221–252.</li>
+<li><a  class="new" title="Michael T. Goodrich">Michael T. Goodrich</a> and <a  class="new" title="Roberto Tamassia">Roberto Tamassia</a>. <i>Data Structures and Algorithms in Java</i>, 4th edition. John Wiley &amp; Sons, Inc. <a  class="internal">ISBN 0-471-73884-0</a>. Chapter 9: Maps and Dictionaries. pp.369–418</li>
+</ul>
+
+<!-- 
+Pre-expand include size: 3550 bytes
+Post-expand include size: 256 bytes
+Template argument size: 268 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:13833-0!1!0!default!!en!2 and timestamp 20060910055239 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Data structures">Data structures</a></span> | <span dir='ltr'><a  title="Category:Search algorithms">Search algorithms</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Hash_table.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-fi"><a >Suomi</a></li>
+				<li class="interwiki-da"><a >Dansk</a></li>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-he"><a >עברית</a></li>
+				<li class="interwiki-lt"><a >Lietuvių</a></li>
+				<li class="interwiki-nl"><a >Nederlands</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-pt"><a >Português</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+				<li class="interwiki-sk"><a >Slovenčina</a></li>
+				<li class="interwiki-zh"><a >中文</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 05:51, 10 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv116 in 0.195 secs. --></body></html>

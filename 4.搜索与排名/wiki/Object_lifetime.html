@@ -1,0 +1,407 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Object lifetime,Abstract factory pattern,C++,Cartesian coordinate,Class (computer science),Class invariant,Class invariants,Computer science,Computer storage,Constructor (computer science),Coordinates (elementary mathematics)" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Object lifetime - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Object_lifetime";
+			var wgTitle = "Object lifetime";
+			var wgArticleId = 233954;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Object lifetime</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>In <a href="/wiki/Computer_science.html" title="Computer science">computer science</a>, the <b>object lifetime</b> (or <b>life cycle</b>) of an <a href="/wiki/Object_%28computing%29.html" title="Object (computing)">object</a> in <a href="/wiki/Object-oriented_programming.html" title="Object-oriented programming">object-oriented programming</a> is the time between an object's creation (also known as <b>instantiation</b> or <b>construction</b>) till the object is no longer used, and is <b>destructed</b> or <b>freed</b>.</p>
+<p>In object-oriented programming (OOP), the meaning of creating objects is far more subtle than simple allocating of spaces for variables. First, this is due to the fact that, in the OOP paradigm, the lifetime of each object tends to vary more widely than in the case in conventional programming. There are a lot of subtle questions, including whether the object be considered alive in the process of creation, and concerning the order of calling initializing code. In some sense, the creation can happen before the beginning of the program when objects are placed in a global scope.</p>
+<p><br /></p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Creating objects</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">1.1</span> <span class="toctext">Creation methods</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Destroying objects</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Examples</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">3.1</span> <span class="toctext">C++</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.2</span> <span class="toctext">Java</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.3</span> <span class="toctext">Objective-C</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.4</span> <span class="toctext">Python</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Creating objects">edit</a>]</div>
+<p><a name="Creating_objects" id="Creating_objects"></a></p>
+<h2>Creating objects</h2>
+<p>In a typical case, the process is as follows:</p>
+<ul>
+<li>calculate the size of an object - the size is mostly the same as that of the <a href="/wiki/Class_%28computer_science%29.html" title="Class (computer science)">class</a> but can vary. When the object in question is not derived from a class, but from a <a href="/wiki/Prototype_based_programming.html" title="Prototype based programming">prototype</a> instead, the size of an object is usually that of the internal data structure (a hash for instance) that holds its slots.</li>
+<li>allocation - allocating memory space with the size of an object plus the growth later, if possible to know in advance</li>
+<li>binding methods - this is usually either left to the class of the object, or is resolved at dispatch time, but nevertheless it is possible that some object models bind methods at creation time</li>
+<li>calling an initializing code (namely, <i>constructor</i>) of superclass</li>
+<li>calling an initializing code of class being created</li>
+</ul>
+<p>Those tasks can be completed at once but are sometimes left unfinished and the order of the tasks can vary and can cause several strange behaviors. For example, in <a href="/wiki/Multi-inheritance.html" title="Multi-inheritance">multi-inheritance</a>, which initializing code should be called first is a difficult question to answer. However, superclass constructors should be called before subclass constructors.</p>
+<p>It is a complex problem to create each object as an element of an array. Some languages (e.g. C++) leave this to programmers.</p>
+<p>Handling <a href="/wiki/Exception_handling.html" title="Exception handling">exceptions</a> in the midst of creation of an object is particularly problematic because usually the implementation of throwing exceptions relies on valid object states. For instance, there is no way to allocate a new space for an exception object when the allocation of an object failed before that due to a lack of free space on the memory. Due to this, implementations of OO languages should provide mechanisms to allow raising exceptions even when there is short supply of resources, and programmers or the type system should ensure that their code is <a href="/wiki/Exception-safe.html" title="Exception-safe">exception-safe</a>. Note that propagating an exception is likely to free resources (rather than allocate them). However, in object oriented programming, object construction may always fail, because constructing an object should establish the <a href="/wiki/Class_invariants.html" title="Class invariants">class invariants</a>, which are often not valid for every combination of constructor arguments. Thus, constructors can always raise exceptions.</p>
+<p>The <a href="/wiki/Abstract_factory_pattern.html" title="Abstract factory pattern">abstract factory pattern</a> is a way to decouple a particular implementation of an object from code for the creation of such an object.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Creation methods">edit</a>]</div>
+<p><a name="Creation_methods" id="Creation_methods"></a></p>
+<h3>Creation methods</h3>
+<p>The way to create objects varies across languages. In some class-based languages, a special method known as a <i><a href="/wiki/Constructor_%28computer_science%29.html" title="Constructor (computer science)">constructor</a></i>, is responsible for validating the state of an object. Just like ordinary methods, constructors can be overloaded in order to make it so that an object can be created with different attributes specified. Also, the constructor is the only place to set the state of <a href="/wiki/Immutable_object.html" title="Immutable object">immutable objects</a>. A <i>copy constructor</i> is a constructor which takes a (single) parameter of an existing object of the same type as the constructor's class, and returns a copy of the object sent as a parameter.</p>
+<p>Other programming languages, such as <a href="/wiki/Objective-C.html" title="Objective-C">Objective-C</a>, have class methods, which can include constructor-type methods, but are not restricted to merely instantiating objects.</p>
+<p>C++ and Java have been criticized for not providing named constructors. This can be problematic, for instance, when a programmer wants to provide ways to create a point object either from <a href="/wiki/Cartesian_coordinate.html" title="Cartesian coordinate">cartesian coordinate</a> or from the <a href="/wiki/Coordinates_%28elementary_mathematics%29.html" title="Coordinates (elementary mathematics)">polar coordinate</a>--because both coordinates would be represented by two integers. Objective-C can circumvent this problem, in that the programmer can create a Point class, with initialization methods, for example, <tt>+newPointWithX:andY:</tt>, and <tt>+newPointWithR:andTheta:</tt>.</p>
+<p>A constructor can also refer to a function which is used to create a value of a <a href="/wiki/Tagged_union.html" title="Tagged union">tagged union</a>, particularly in functional languages.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Destroying objects">edit</a>]</div>
+<p><a name="Destroying_objects" id="Destroying_objects"></a></p>
+<h2>Destroying objects</h2>
+<p>It is generally the case that after an object is used, it is removed from memory to make room for other programs or objects to take that object's place. In order for this to happen, a destruction method is called upon that object. Destroying an object will cause any <a href="/wiki/Reference.html" title="Reference">references</a> to the object to become invalid.</p>
+<p>A <i><a href="/wiki/Destructor_%28computer_science%29.html" title="Destructor (computer science)">destructor</a></i> is a <a href="/wiki/Method_%28computer_science%29.html" title="Method (computer science)">method</a> called when an instance of a class is deleted, before the <a href="/wiki/Computer_storage.html" title="Computer storage">memory</a> is deallocated. Note that in C++, a destructor can not be overloaded like a constructor can. It has to have no arguments. A destructor does not need to maintain <a href="/wiki/Class_invariant.html" title="Class invariant">class invariants</a>. In certain garbage-collect languages, <i><a href="/wiki/Finalizer.html" title="Finalizer">finalizers</a></i> are used instead of destructors since garbage-collection may be non-deterministic in these languages. An example of this is <a href="/wiki/Ruby_programming_language.html" title="Ruby programming language">Ruby</a>.</p>
+<p>In a <a href="/wiki/Garbage_collection_%28computer_science%29.html" title="Garbage collection (computer science)">garbage collecting</a> language, objects are destroyed when they can no longer be reached by the running code. Examples of this are Python and Java. Python has destructors, and they are optional.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Examples">edit</a>]</div>
+<p><a name="Examples" id="Examples"></a></p>
+<h2>Examples</h2>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: C++">edit</a>]</div>
+<p><a name="C.2B.2B" id="C.2B.2B"></a></p>
+<h3><a href="/wiki/C%2B%2B.html" title="C++">C++</a></h3>
+<pre>
+class Foo
+{
+    // This is the prototype of the constructors
+public:
+    Foo(int x);
+    Foo(int x, int y); // Overloaded Constructor
+    Foo(const Foo &amp;old); // Copy Constructor
+    ~Foo(); // Destructor
+};
+
+Foo::Foo(int x)
+{
+    // This is the implementation of
+    // the one-argument constructor
+}
+
+Foo::Foo(int x, int y)
+{
+    // This is the implementation of
+    // the two-argument constructor
+}
+
+Foo::Foo(const Foo &amp;old)
+{
+    // This is the implementation of
+    // the copy constructor
+}
+
+Foo::~Foo()
+{
+    // This is the implementation of the destructor
+}
+
+int main()
+{
+    Foo foo(14); // call first constructor
+    Foo foo2(12, 16); // call overloaded constructor
+    Foo foo3(foo); // call the copy constructor
+ 
+    return 0;
+    // destructors called in backwards-order
+    // here, automatically
+}
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Java">edit</a>]</div>
+<p><a name="Java" id="Java"></a></p>
+<h3><a href="/wiki/Java_programming_language.html" title="Java programming language">Java</a></h3>
+<pre>
+class Foo
+{
+    public Foo(int x)
+    {
+        // This is the implementation of
+        // the one-argument constructor
+    }
+
+    public Foo(int x, int y)
+    {
+        // This is the implementation of
+        // the two-argument constructor
+    }
+
+    public Foo(Foo old)
+    {
+        // This is the implementation of
+        // the copy constructor
+    }
+
+    public static void main(String[] args)
+    {
+        Foo foo = new Foo(14); // call first constructor
+        Foo foo2 = new Foo(12, 16); // call overloaded constructor
+        Foo foo3 = new Foo(foo); // call the copy constructor
+        // garbage collection happens under the covers, and classes are destroyed
+    }
+}
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Objective-C">edit</a>]</div>
+<p><a name="Objective-C" id="Objective-C"></a></p>
+<h3><a href="/wiki/Objective-C.html" title="Objective-C">Objective-C</a></h3>
+<pre>
+#import &lt;objc/Object.h&gt;
+
+@interface Point : Object
+{
+   double x;
+   double y;
+}
+
+//These are the class methods; we have declared two constructors
++ (Point *) newWithX: (double) andY: (double);
++ (Point *) newWithR: (double) andTheta: (double);
+
+//Instance methods
+- (Point *) setFirstCoord: (double);
+- (Point *) setSecondCoord: (double);
+
+/* Since Point is a subclass of the generic Object 
+ * class, we already gain generic allocation and initialization
+ * methods, +alloc and -init. For our specific constructors
+ * we can make these from these methods we have
+ * inherited.
+ */
+@end
+
+@implementation Point
+
+- (Point *) setFirstCoord: (double) new_val
+{
+   x = new_val;
+}
+
+- (Point *) setSecondCoord: (double) new_val
+{
+   y = new_val;
+}
+
++ (Point *) newWithX: (double) x_val andY: (double) y_val
+{
+   //Concisely written class method to automatically allocate and 
+   //perform specific initialization.
+   return [[[Point alloc] setFirstCoord:x_val] setSecondCoord:y_val]; 
+}
+
++ (Point *) newWithR: (double) r_val andTheta: (double) theta_val
+{
+   //Instead of performing the same as the above, we can underhandedly
+   //use the same result of the previous method
+   return [Point newWithX:r_val andY:theta_val];
+}
+
+@end
+
+int
+main(void)
+{
+   //Constructs two points, p and q.
+   Point *p = [Point newWithX:4.0 andY:5.0];
+   Point *q = [Point newWithR:1.0 andTheta:2.28];
+
+   //...program text....
+   
+   //We're finished with p, say, so, free it.
+   //If p allocates more memory for itself, may need to
+   //override Object's free method in order to recursively
+   //free p's memory. But this is not the case, so we can just
+   [p free];
+
+   //...more text...
+
+   [q free];
+
+   return 0;
+ }
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Python">edit</a>]</div>
+<p><a name="Python" id="Python"></a></p>
+<h3><a href="/wiki/Python_programming_language.html" title="Python programming language">Python</a></h3>
+<pre>
+class Socket:
+    def __init__(self, remote_host):
+        self.connection = connectTo(remote_host)
+
+    def send(self):
+        # send data
+
+    def recv(self):
+        # receive data
+
+def f():
+    s = Socket('example.com')
+    s.send('blah')
+    return s.recv()
+</pre>
+<p>Socket will be closed at the next garbage collection round, as all references to it have been lost.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Resource_Acquisition_Is_Initialization.html" title="Resource Acquisition Is Initialization">Resource Acquisition Is Initialization</a> (RAII), an approach to managing object lifetime</li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:233954-0!1!0!default!!en!2 and timestamp 20060906014021 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:Object-oriented programming">Object-oriented programming</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Object_lifetime.html">Article</a></li>
+				 <li id="ca-talk" class="new"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-he"><a >עברית</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-sl"><a >Slovenščina</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 12:30, 27 July 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv2 in 0.083 secs. --></body></html>

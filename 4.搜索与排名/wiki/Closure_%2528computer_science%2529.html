@@ -1,0 +1,336 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Closure (computer science),1981,Actor model,C++,C Sharp programming language,C programming language,Callback (computer science),Class (object-oriented programming),Command pattern,Concurrent programming,Continuation" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Closure (computer science) - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Closure_(computer_science)";
+			var wgTitle = "Closure (computer science)";
+			var wgArticleId = 62319;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Closure (computer science)</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>In <a href="/wiki/Programming_language.html" title="Programming language">programming languages</a>, a <b>closure</b> is a <a href="/wiki/Function_%28programming%29.html" title="Function (programming)">function</a> that refers to <a href="/wiki/Free_variable.html" title="Free variable">free variables</a> in its lexical context.</p>
+<p>A closure typically comes about when one function is declared entirely within the body of another, and the inner function refers to local variables of the outer function. At <a href="/wiki/Runtime.html" title="Runtime">runtime</a>, when the outer function executes, a closure is formed. It consists of the inner function's code and references to any variables in the outer function's scope that the closure needs.</p>
+<p>Closures are commonly used in <a href="/wiki/Functional_programming.html" title="Functional programming">functional programming</a> to defer calculation, to <a href="/wiki/Information_hiding.html" title="Information hiding">hide state</a>, and as arguments to <a href="/wiki/Higher-order_functions.html" title="Higher-order functions">higher-order functions</a>.</p>
+<p>A closure combines the code of a function with a special lexical environment bound to that function (<b><a href="/wiki/Scope_%28programming%29.html" title="Scope (programming)">scope</a></b>). Closure lexical variables differ from <a href="/wiki/Global_variable.html" title="Global variable">global variables</a> in that they do not occupy the global variable <a href="/wiki/Namespace_%28computer_science%29.html" title="Namespace (computer science)">namespace</a>. They differ from <a href="/wiki/Object_oriented.html" title="Object oriented">object oriented</a> member variables in that they are bound to function invocations, not object instances.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Implementation and theory</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Examples</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Uses of closures</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Programming languages with closures</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Closure-like constructs in other languages</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">Implementation</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">8</span> <span class="toctext">Reference</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">9</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Implementation and theory">edit</a>]</div>
+<p><a name="Implementation_and_theory" id="Implementation_and_theory"></a></p>
+<h2>Implementation and theory</h2>
+<p>Closures are typically implemented with a special <a href="/wiki/Data_structure.html" title="Data structure">data structure</a> that contains a pointer to the function code, plus a representation of the function's lexical environment (i.e., the set of available variables and their values) at the time when the function was created.</p>
+<p>Closures are closely related to Actors in the <a href="/wiki/Actor_model.html" title="Actor model">Actor model</a> of concurrent computation where the values in the function's lexical environment are called <i>acquaintances</i>. An important issue for closures in <a href="/wiki/Concurrent_programming.html" title="Concurrent programming">concurrent programming</a> languages is whether the variables in a closure can be updated and if so how these updates can be synchronized. Actors provide one solution (Will Clinger <a href="/wiki/1981.html" title="1981">1981</a>).</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Examples">edit</a>]</div>
+<p><a name="Examples" id="Examples"></a></p>
+<h2>Examples</h2>
+<p>Closures typically appear in languages in which functions are <a href="/wiki/First-class_object.html" title="First-class object">first-class values</a>—in other words, such languages allow functions to be passed as arguments, returned from function calls, bound to variable names, etc., just like simpler types such as strings and integers.</p>
+<p>For example, consider the following <a href="/wiki/Lisp_programming_language.html" title="Lisp programming language">Lisp</a> function:</p>
+<pre>
+ (defun best-selling-books (threshold)
+   "Return a list of all books with at least THRESHOLD copies sold."
+   (filter
+     #'(lambda (book) (&gt;= (book-sales book) threshold))
+     *book-list*))
+</pre>
+<p>Here the lambda expression <code>(lambda (book) (&gt;= (book-sales book) threshold))</code> appears within the function <code>best-selling-books</code>. When the lambda expression is evaluated, Lisp creates a closure consisting of the code for the lambda and a reference to the <code>threshold</code> variable, which the lambda uses.</p>
+<p>The closure is then passed to the <code>filter</code> function, which calls it repeatedly to determine which books are to be added to the result list and which are to be discarded. Because the closure itself has a reference to <code>threshold</code>, it can use that variable each time <code>filter</code> calls it. <code>filter</code> might be defined in a completely separate file.</p>
+<p>A function may create a closure and return it. The following example is a function that returns a function.</p>
+<pre>
+ (defun derivative (f dx)
+   "Return a function that approximates the derivative of f
+    using an interval of dx, which should be appropriately small."
+   #'(lambda (x) (/ (- (funcall f (+ x dx)) (funcall f x))
+                    dx)))
+</pre>
+<p>Because the closure in this case outlives the scope of the function that creates it, the variables <code>f</code> and <code>dx</code> live on after the function <code>derivative</code> returns. In languages without closures, the lifetime of a local variable coincides with the execution of the scope where that variable is declared. In languages with closures, variables continue to exist as long as any existing closures have references to them.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Uses of closures">edit</a>]</div>
+<p><a name="Uses_of_closures" id="Uses_of_closures"></a></p>
+<h2>Uses of closures</h2>
+<p>Closures have many uses:</p>
+<ul>
+<li>Designers of <a href="/wiki/Library_%28computer_science%29.html" title="Library (computer science)">software libraries</a> can allow users to customize behavior by passing closures as arguments to important functions. For example, a function that <a href="/wiki/Sorting_algorithm.html" title="Sorting algorithm">sorts</a> values can accept a closure argument that compares the values to be sorted according to a user-defined criterion.</li>
+<li>Because closures delay evaluation—i.e., they do not "do" anything until they are called—they can be used to define control structures. For example, all Smalltalk's standard control structures, including branches (if/then/else) and loops (while and for), are defined using objects whose methods accept closures. Users can easily define their own control structures as well.</li>
+<li>Multiple functions can be produced which close over the same environment, enabling them to communicate privately by altering that environment.</li>
+<li>Closures are sometimes <a  class="external text" title="http://people.csail.mit.edu/gregs/ll1-discuss-archive-html/msg03277.html">better alternatives</a> to objects.</li>
+</ul>
+<p>Note: Some speakers call any data structure that binds a lexical environment a closure, but the term usually refers specifically to functions.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Programming languages with closures">edit</a>]</div>
+<p><a name="Programming_languages_with_closures" id="Programming_languages_with_closures"></a></p>
+<h2>Programming languages with closures</h2>
+<p><a href="/wiki/Scheme_programming_language.html" title="Scheme programming language">Scheme</a> was the first programming language to have fully general, lexically scoped closures. Virtually all <a href="/wiki/Functional_programming.html" title="Functional programming">functional programming</a> languages, as well as the <a href="/wiki/Smalltalk.html" title="Smalltalk">Smalltalk</a>-descended <a href="/wiki/Object-oriented_programming.html" title="Object-oriented programming">object-oriented programming</a> languages, support some form of closures.</p>
+<p>Among other programming languages with closures are: <a href="/wiki/ECMAScript.html" title="ECMAScript">ECMAScript</a>, <a href="/wiki/Perl.html" title="Perl">Perl</a>, <a href="/wiki/Ruby_programming_language.html" title="Ruby programming language">Ruby</a>, <a href="/wiki/Lua_programming_language.html" title="Lua programming language">Lua</a>, <a href="/wiki/Nice_programming_language.html" title="Nice programming language">Nice</a> and <a href="/wiki/Pike_programming_language.html" title="Pike programming language">Pike</a>.</p>
+<p>Though semantics vary greatly, many modern, general-purpose programming languages have lexical scoping and some variation on closures.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Closure-like constructs in other languages">edit</a>]</div>
+<p><a name="Closure-like_constructs_in_other_languages" id="Closure-like_constructs_in_other_languages"></a></p>
+<h2>Closure-like constructs in other languages</h2>
+<p>In <a href="/wiki/C_programming_language.html" title="C programming language">C</a>, libraries that support <a href="/wiki/Callback_%28computer_science%29.html" title="Callback (computer science)">callbacks</a> sometimes allow a callback to be registered using two values: a function pointer and a separate <code>void *</code> pointer to arbitrary data of the user's choice. Each time the library executes the callback function, it passes in the data pointer. This allows the callback to maintain state and to refer to information captured at the time it was registered. The idiom is similar to closures in functionality, but not in syntax.</p>
+<p>Several object-oriented techniques and language features simulate some features of closures. For example:</p>
+<ul>
+<li><a href="/wiki/Eiffel_programming_language.html" title="Eiffel programming language">Eiffel</a> includes <b>inline agents</b> defining closures. An inline agent is an object representing a routine, defined by giving the code of the routine in line. For example, in</li>
+</ul>
+<pre>
+  OK_button.click_event.subscribe (
+     <b>agent</b> (x, y: INTEGER) <b>do</b> country := map.country_at_coordinates (x, y) ; country.display <b>end</b>
+     )
+</pre>
+<p>the argument to `subscribe' is an agent, representing a procedure with two arguments; the procedure finds the country at the corresponding coordinates and displays it. The whole agent is `subscribed' to the event type `click_event' for a certain button, so that whenever an instance of the event type occurs on that button — because a user has clicked the button — the procedure will be executed with the mouse coordinates being passed as arguments for x and y.</p>
+<p>The main limitation of Eiffel agents, which distinguishes them from true closures, is that they cannot reference local variables from enclosing scope. Only <tt>Current</tt> (a reference to current object, analogous to <tt>this</tt> in Java), its features, and arguments of the agent itself can be accessed from within the agent body.</p>
+<ul>
+<li><a href="/wiki/C%2B%2B.html" title="C++">C++</a> allows defining <a href="/wiki/Function_object.html" title="Function object">function objects</a> by overloading <code>operator()</code>. These objects behave somewhat like functions in a functional programming language. They may be created at runtime and may contain state. But, they do not implicitly capture local variables as closures do. Two proposals to introduce C++ language support for closures (both proposals call them lambda functions) are being considered by the C++ Standards Committee <a  class="external autonumber" title="http://www.open-std.org/JTC1/SC22/WG21/docs/papers/2006/#mailing2006-02">[1]</a>, <a  class="external autonumber" title="http://val.samko.info/lambda/">[2]</a>. The main difference between these proposals is that one stores a copy of all the local variables in a closure by default, and another stores references to original variables. Both provide functionality to override the default behaviour. If some form of these proposals is accepted, one would be able to write</li>
+</ul>
+<pre>
+ void foo(string myname) {
+   typedef vector&lt;string&gt; names;
+   int y;
+   names n;
+   // ...
+   names::iterator i =
+     find_if(n.begin(), n.end(), &lt;&gt;(const string&amp; s){return s != myname &amp;&amp; s.size() &gt; y;});
+   // <tt>i</tt> is now either <tt>n.end()</tt> or points to the first string in <tt>n</tt>
+   // which is not equal to <tt> myname</tt> and which length is greater than <tt>y</tt>
+ }
+</pre>
+<ul>
+<li><a href="/wiki/Java_programming_language.html" title="Java programming language">Java</a> allows defining "anonymous <a href="/wiki/Class_%28object-oriented_programming%29.html" title="Class (object-oriented programming)">classes</a>" inside a <a href="/wiki/Method_%28object-oriented_programming%29.html" title="Method (object-oriented programming)">method</a>; an anonymous class may refer to names in lexically enclosing classes, or <tt>final</tt> (i.e., read-only) variables in the lexically enclosing method.</li>
+</ul>
+<pre>
+ class CalculationWindow extends JFrame {
+     private JButton btnSave;
+     ...
+ 
+     public final calculateInSeparateThread(final URI uri) {
+         // The expression "new Runnable() { ... }" is an anonymous class.
+         Runnable runner = new Runnable() {
+                 void run() {
+                     // It can access final local variables:
+                     calculate(uri);
+                     // It can access private fields of the enclosing class:
+                     // Always update the Graphic components into the Swing Thread
+                     SwingUtilities.invokeLater(new Runnable() {
+                          public void run() {
+                          btnSave.setEnabled(true);
+                          }
+                     });                   
+                 }
+             };
+         new Thread(runner).start();
+     }
+ }
+</pre>
+<p>Note that closures can be emulated that way by using a <tt>final</tt> reference to a single-element array. The inner class will not be able to change the value of the reference itself, but it will be able to change the value of the element in the array referenced. This technique is not limited to Java, and will work in any other language with similar restrictions, e.g. <a href="/wiki/C_Sharp_programming_language.html" title="C Sharp programming language">C#</a> or <a href="/wiki/Python_programming_language.html" title="Python programming language">Python</a>.</p>
+<ul>
+<li>In <a href="/wiki/C_Sharp_programming_language.html" title="C Sharp programming language">C#</a> the anonymous methods <a  class="external autonumber" title="http://msdn.microsoft.com/msdnmag/issues/06/00/C20/default.aspx">[3]</a> look and behave much like closures. In particular have access to all local variables in surrounding scope, unlike Java anonymous inner classes, which are limited to read-only variables. However, any changes to such variables from within the body of anonymous method are not visible after it returns. This is because anonymous methods are in fact implemented in a way very similar to anonymous inner classes in Java, and do not have direct access to variables from the enclosing scope; rather, the method makes a copy of all local variables it uses. If there is a need to propagate changes made in the body of anonymous method outside, the same workaround as described above for Java can be used.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Implementation">edit</a>]</div>
+<p><a name="Implementation" id="Implementation"></a></p>
+<h2>Implementation</h2>
+<p>A language implementation cannot easily support full closures if its run-time memory model allocates all local variables on a linear stack. In such languages, a function's local variables are deallocated when the function returns. However, a closure requires that the free variables it references survive the enclosing function's execution. Therefore those variables must be allocated so that they persist until no longer needed. This explains why typically languages that natively support closures use <a href="/wiki/Garbage_collection_%28computer_science%29.html" title="Garbage collection (computer science)">garbage collection</a>.</p>
+<p>A typical modern Scheme implementation allocates local variables that might be used by closures dynamically and stores all other local variables on the stack.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Funarg_problem.html" title="Funarg problem">Funarg problem</a></li>
+<li><a href="/wiki/Continuation.html" title="Continuation">Continuation</a></li>
+<li><a href="/wiki/Spaghetti_stack.html" title="Spaghetti stack">Spaghetti stack</a></li>
+<li><a href="/wiki/Value-level_programming.html" title="Value-level programming">Value-level programming</a></li>
+<li><a href="/wiki/Command_pattern.html" title="Command pattern">Command pattern</a></li>
+<li><a href="/wiki/Eiffel_programming_language.html" title="Eiffel programming language">Eiffel programming language</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Reference">edit</a>]</div>
+<p><a name="Reference" id="Reference"></a></p>
+<h2>Reference</h2>
+<ul>
+<li>Will Clinger. <i><a  class="external text" title="https://dspace.mit.edu/handle/1721.1/6935">Foundations of Actor Semantics</a></i>. MIT Mathematics Doctoral Dissertation. June 1981.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://library.readscheme.org/page1.html">The Original "Lambda Papers"</a>: A classic series of papers by <a href="/wiki/Guy_Steele.html" title="Guy Steele">Guy Steele</a> and <a href="/wiki/Gerald_Sussman.html" title="Gerald Sussman">Gerald Sussman</a> discussing, among other things, the versatility of closures in the context of Scheme (where they appear as <i><a href="/wiki/Lambda_calculus.html" title="Lambda calculus">lambda</a> expressions</i>).</li>
+<li><a  class="external text" title="http://archive.eiffel.com/doc/manuals/language/agent/page.html">Agents in Eiffel</a>, also latest version in <a  class="external text" title="http://www.ecma-international.org/publications/standards/Ecma-367.htm">Eiffel standard</a>.</li>
+<li><a  class="external text" title="http://c2.com/cgi/wiki?WhatIsClosure">Description from the Portland Pattern Repository</a></li>
+<li><a  class="external text" title="http://www.perl.com/pub/a/2002/05/29/closure.html">"Achieving Closure"</a>: A tutorial on closures in <a href="/wiki/Perl.html" title="Perl">Perl</a> by Simon Cozens.</li>
+<li><a  class="external text" title="http://wiki.cs.uiuc.edu/VisualWorks/Closures">Description from the VisualWorks wiki</a></li>
+<li><a  class="external text" title="http://boost.org/libs/spirit/doc/closures.html">Closures by the Spirit library of Boost</a></li>
+<li><a  class="external text" title="http://developer.gnome.org/doc/API/2.0/gobject/gobject-Closures.html">Description from the GObject Reference Manual</a></li>
+<li><a  class="external text" title="http://jibbering.com/faq/faq_notes/closures.html">Javascript Closures</a></li>
+<li><a  class="external text" title="http://boo.codehaus.org/Closures">Boo Closures</a></li>
+<li><a  class="external text" title="http://ivan.truemesh.com/archives/000392.html">Python closures</a></li>
+<li><a  class="external text" title="http://steike.com/PhpClosures">PHP Closures</a></li>
+<li><a  class="external text" title="http://sleep.hick.org/sleeplang.html#10a">Sleep Closures</a></li>
+<li><a  class="external text" title="http://doi.acm.org/10.1145/62678.62687">Syntactic Closures</a>: A 1988 paper, by Alan Bawden and Jonathan Rees, that discusses a special use of closures in LISP syntax macros</li>
+<li><a  class="external text" title="http://www.martinfowler.com/bliki/Closure.html">Martin Fowler's Bliki: Closure</a></li>
+<li><a  class="external text" title="http://msdn2.microsoft.com/library/0yw3tz5k.aspx">C# Anonymous methods</a></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:62319-0!1!0!default!!en!2 and timestamp 20060906010208 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:Theoretical computer science">Theoretical computer science</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Closure_%28computer_science%29.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+				<li class="interwiki-th"><a >ไทย</a></li>
+				<li class="interwiki-pt"><a >Português</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 07:25, 3 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv103 in 0.099 secs. --></body></html>

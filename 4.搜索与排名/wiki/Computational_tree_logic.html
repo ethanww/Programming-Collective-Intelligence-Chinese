@@ -1,0 +1,288 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Computational tree logic,False,First-order logic,Formal verification,Linear temporal logic,Logical operator,Modal μ calculus,Model checking,Temporal logic,True,Temporal operator" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Computational tree logic - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Computational_tree_logic";
+			var wgTitle = "Computational tree logic";
+			var wgArticleId = 840894;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Computational tree logic</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<div class="messagebox cleanup metadata"><b>To meet Wikipedia's <a  title="Category:Wikipedia style guidelines">quality standards</a>, this article or section may require <a  title="Wikipedia:Cleanup">cleanup</a>.</b><br />
+<span style="font-size: 90%">Please discuss this issue on the <a  title="Talk:Computational tree logic">talk page</a>, or replace this tag with a <a  title="Wikipedia:Template messages/Cleanup">more specific message</a>. <a  title="Help:Editing">Editing help</a> is available.<br />
+This article has been tagged since <b>July 2006</b>.</span></div>
+<p><b>Computational tree logic (CTL)</b> is a <a href="/wiki/Temporal_logic.html" title="Temporal logic">temporal logic</a>. It is also referred as Computation tree logic. It is often used to express properties of a system in the context of <a href="/wiki/Formal_verification.html" title="Formal verification">formal verification</a> or <a href="/wiki/Model_checking.html" title="Model checking">model checking</a>.</p>
+<p>It uses <a href="/wiki/First-order_logic#Vocabulary.html" title="First-order logic">atomic propositions</a> as its building blocks to make statements about the states of a system. CTL then combines theses propositions into formulas using <a href="/wiki/Logical_operator.html" title="Logical operator">logical operators</a> and <a  class="new" title="Temporal operator">temporal operators</a>.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Operators</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">1.1</span> <span class="toctext">Logical operators</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.2</span> <span class="toctext">Temporal operators</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.3</span> <span class="toctext">Minimal set of operators</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Examples</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Relations with other logics</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">References</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Operators">edit</a>]</div>
+<p><a name="Operators" id="Operators"></a></p>
+<h2>Operators</h2>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Logical operators">edit</a>]</div>
+<p><a name="Logical_operators" id="Logical_operators"></a></p>
+<h3>Logical operators</h3>
+<p>The logical operators are the usual ones: <img class='tex' src="http://upload.wikimedia.org/math/e/2/8/e285e8c707e9fade9a2e737a93004590.png" alt="\neg,\or,\and,\rightarrow" /> and <img class='tex' src="http://upload.wikimedia.org/math/1/b/1/1b18a4c4fc578ef4cfd1cc0eb0daa473.png" alt="\leftrightarrow" />. Along with these operators CTL formulas can also make use of the boolean constants <a href="/wiki/True.html" title="True">true</a> and <a href="/wiki/False.html" title="False">false</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Temporal operators">edit</a>]</div>
+<p><a name="Temporal_operators" id="Temporal_operators"></a></p>
+<h3>Temporal operators</h3>
+<p>The temporal operators are the following:</p>
+<ul>
+<li>State operators
+<ul>
+<li><b>A</b> <span class="texhtml">φ</span> - <b>A</b>ll: <span class="texhtml">φ</span> has to hold on all paths starting from the current state.</li>
+<li><b>E</b> <span class="texhtml">φ</span> - <b>E</b>xists: there exists at least one path starting from the current state where <span class="texhtml">φ</span> holds.</li>
+</ul>
+</li>
+<li>Path operators
+<ul>
+<li><b>N</b> <span class="texhtml">φ</span> - <b>N</b>ext: <span class="texhtml">φ</span> has to hold at the next state (this operator is sometimes noted <b>X</b> instead of <b>N</b>).</li>
+<li><b>G</b> <span class="texhtml">φ</span> - <b>G</b>lobally: <span class="texhtml">φ</span> has to hold on the entire subsequent path.</li>
+<li><b>F</b> <span class="texhtml">φ</span> - <b>F</b>inally: <span class="texhtml">φ</span> eventually has to hold (somewhere on the subsequent path).</li>
+<li><span class="texhtml">φ</span> <b>U</b> <span class="texhtml">ψ</span> - <b>U</b>ntil: <span class="texhtml">φ</span> has to hold until at some position <span class="texhtml">ψ</span> holds. This implies that <span class="texhtml">ψ</span> will be verified in the future.</li>
+<li><span class="texhtml">φ</span> <b>W</b> <span class="texhtml">ψ</span> - <b>W</b>eak until: <span class="texhtml">φ</span> has to hold until <span class="texhtml">ψ</span> holds. The difference with <b>U</b> is that there is no guarantee that <span class="texhtml">ψ</span> will ever be verified. The <b>W</b> operator is sometimes called "unless".</li>
+</ul>
+</li>
+</ul>
+<p>In CTL*, the temporal operators can be freely mixed. In CTL, the operator must always be grouped in two: one path operator followed by a state operator. See the examples bellow.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Minimal set of operators">edit</a>]</div>
+<p><a name="Minimal_set_of_operators" id="Minimal_set_of_operators"></a></p>
+<h3>Minimal set of operators</h3>
+<p>In CTL their is a minimal set of operators. All CTL formula can be transformed to use only those operators. This is useful in <a href="/wiki/Model_checking.html" title="Model checking">model checking</a>. One minimal set of operator are: false, <img class='tex' src="http://upload.wikimedia.org/math/2/e/8/2e8f3e078bc6d8d5fb7615fbb6f0a773.png" alt="\or, \neg" />, <b>EG</b>, <b>EU</b>, <b>EX</b>. (Is <img class='tex' src="http://upload.wikimedia.org/math/8/3/e/83e37b7246fdfcb99b2754210ebeae27.png" alt="\rightarrow" /> in the set?)</p>
+<p>Here are some of the transformation used for temporal operator:</p>
+<ul>
+<li><b>EF</b><span class="texhtml">φ</span> == <img class='tex' src="http://upload.wikimedia.org/math/a/0/c/a0c4c2ce7f9c78efeedd2bfb53ab9f3e.png" alt="\neg" /><b>E</b>[true<b>U</b>(<img class='tex' src="http://upload.wikimedia.org/math/a/0/c/a0c4c2ce7f9c78efeedd2bfb53ab9f3e.png" alt="\neg" /><span class="texhtml">φ</span>)]</li>
+<li><b>AX</b><span class="texhtml">φ</span> == <img class='tex' src="http://upload.wikimedia.org/math/a/0/c/a0c4c2ce7f9c78efeedd2bfb53ab9f3e.png" alt="\neg" /><b>EX</b>(<img class='tex' src="http://upload.wikimedia.org/math/a/0/c/a0c4c2ce7f9c78efeedd2bfb53ab9f3e.png" alt="\neg" /><span class="texhtml">φ</span>)</li>
+<li><b>AG</b><span class="texhtml">φ</span> == <img class='tex' src="http://upload.wikimedia.org/math/a/0/c/a0c4c2ce7f9c78efeedd2bfb53ab9f3e.png" alt="\neg" /><b>EF</b><img class='tex' src="http://upload.wikimedia.org/math/a/0/c/a0c4c2ce7f9c78efeedd2bfb53ab9f3e.png" alt="\neg" /><span class="texhtml">φ</span> == <img class='tex' src="http://upload.wikimedia.org/math/a/0/c/a0c4c2ce7f9c78efeedd2bfb53ab9f3e.png" alt="\neg" /> <b>E</b>[true<b>U</b><img class='tex' src="http://upload.wikimedia.org/math/a/0/c/a0c4c2ce7f9c78efeedd2bfb53ab9f3e.png" alt="\neg" /><span class="texhtml">φ</span>]</li>
+<li><b>AF</b><span class="texhtml">φ</span> == <b>A</b>[1<b>U</b><span class="texhtml">φ</span>] == <img class='tex' src="http://upload.wikimedia.org/math/a/0/c/a0c4c2ce7f9c78efeedd2bfb53ab9f3e.png" alt="\neg" /><b>EG</b>(<img class='tex' src="http://upload.wikimedia.org/math/a/0/c/a0c4c2ce7f9c78efeedd2bfb53ab9f3e.png" alt="\neg" /><span class="texhtml">φ</span>)</li>
+<li><b>A</b>[<span class="texhtml">φ</span><b>U</b><span class="texhtml">ψ</span>] == <img class='tex' src="http://upload.wikimedia.org/math/a/0/c/a0c4c2ce7f9c78efeedd2bfb53ab9f3e.png" alt="\neg" />(<b>E</b>[<img class='tex' src="http://upload.wikimedia.org/math/a/0/c/a0c4c2ce7f9c78efeedd2bfb53ab9f3e.png" alt="\neg" /><span class="texhtml">ψ</span><b>U</b><img class='tex' src="http://upload.wikimedia.org/math/a/0/c/a0c4c2ce7f9c78efeedd2bfb53ab9f3e.png" alt="\neg" />(<span class="texhtml">φ</span> <img class='tex' src="http://upload.wikimedia.org/math/5/a/d/5addb134385e47a2efa484f6306e75a1.png" alt="\or" /> <span class="texhtml">ψ</span>)] <img class='tex' src="http://upload.wikimedia.org/math/5/a/d/5addb134385e47a2efa484f6306e75a1.png" alt="\or" /> <b>EG</b> <img class='tex' src="http://upload.wikimedia.org/math/a/0/c/a0c4c2ce7f9c78efeedd2bfb53ab9f3e.png" alt="\neg" /> <span class="texhtml">ψ</span>)</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Examples">edit</a>]</div>
+<p><a name="Examples" id="Examples"></a></p>
+<h2>Examples</h2>
+<p>Let P mean "I like chocolate" and Q mean "It's warm outside".</p>
+<p><b>AG</b>.P</p>
+<dl>
+<dd>I will like chocolate from now on, no matter what happens.</dd>
+</dl>
+<p><b>EF</b>.P</p>
+<dl>
+<dd>It's possible I may like chocolate some day, at least for one day.</dd>
+</dl>
+<p><b>AF</b>.<b>EG</b>.P</p>
+<dl>
+<dd>It's always possible (AF) that I will suddenly start liking chocolate for the rest of time. (Note: not just the rest of my life, since my life is finite, while <b>G</b> is infinite).</dd>
+</dl>
+<p><b>EG</b>.<b>AF</b>.P</p>
+<dl>
+<dd>This is a critical time in my life. Depending on what happens next (E), it's possible that for the rest of time (G), there will always be some time in the future (AF) when I will like chocolate. However, if the <i>wrong</i> thing happens next, then all bets are off and there's no guarantee about whether I'll ever like chocolate.</dd>
+</dl>
+<p><b>A</b>(P<b>U</b>Q)</p>
+<dl>
+<dd>From now until it's warm outside, I will like chocolate every single day. Once it's warm outside, all bets are off as to whether I'll like chocolate anymore. Oh, and it's guaranteed to be warm outside eventually, even if only for a single day.</dd>
+</dl>
+<p><b>E</b>((<b>EX</b>.P)<b>U</b>(<b>AG</b>.Q))</p>
+<dl>
+<dd>It's possible that: there will eventually come a time when it will be warm forever (AG.Q) and that before that time there will always be <i>some</i> way to get me to like chocolate the next day (EX.P).</dd>
+</dl>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Relations with other logics">edit</a>]</div>
+<p><a name="Relations_with_other_logics" id="Relations_with_other_logics"></a></p>
+<h2>Relations with other logics</h2>
+<p>Computational tree logic (CTL) is a subset of CTL* as well as of the <a href="/wiki/Modal_%CE%BC_calculus.html" title="Modal μ calculus">modal μ calculus</a>. More interestingly, CTL is a fragment of Alur, Henziger and Kupferman's <a  class="new" title="Alternating-time Temporal Logic">Alternating-time Temporal Logic</a> (ATL).</p>
+<p>Computational tree logic (CTL) and <a href="/wiki/Linear_temporal_logic.html" title="Linear temporal logic">Linear temporal logic</a> (LTL) are both a subset of CTL*. CTL and LTL are not equivalent and they have a common subset.</p>
+<ul>
+<li><b>GF</b>.P exists is LTL but not in CTL.</li>
+<li><b>AG</b>(P<img class='tex' src="http://upload.wikimedia.org/math/8/3/e/83e37b7246fdfcb99b2754210ebeae27.png" alt="\rightarrow" />((<b>EN</b>.Q)∧(<b>EN</b>¬Q))) existe in CTL but not in LTL.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Linear_temporal_logic.html" title="Linear temporal logic">Linear temporal logic</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<ul>
+<li><cite style="font-style:normal">Emerson, E. A. and Halpern, J. Y. (1985). "Decision procedures and expressiveness in the temporal logic of branching time". <i>Journal of Computer and System Sciences</i> <b>30</b> (1): 1-24.</cite></li>
+</ul>
+<ul>
+<li><cite style="font-style:normal">Clarke, E. M., Emerson, E. A., and Sistla, A. P. (1986). "Automatic verification of finite-state concurrent systems using temporal logic specifications". <i>ACM Transactions on Programming Languages and Systems</i> <b>8</b> (2): 244-263.</cite></li>
+</ul>
+<ul>
+<li><cite class="book" style="font-style:normal">Emerson, E. A. (1990). “Temporal and modal logic”, J. van Leeuwen (ed.) <i>Handbook of Theoretical Computer Science, vol. B</i>. MIT Press, pp. 955-1072. <a  class="internal">ISBN 0-262-22039-3</a>.</cite></li>
+</ul>
+
+<!-- 
+Pre-expand include size: 7673 bytes
+Post-expand include size: 2712 bytes
+Template argument size: 2117 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:840894-0!1!0!default!!en!2 and timestamp 20060910160006 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Cleanup from July 2006">Cleanup from July 2006</a></span> | <span dir='ltr'><a  title="Category:Logic in computer science">Logic in computer science</a></span> | <span dir='ltr'><a  title="Category:Modal logic">Modal logic</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Computational_tree_logic.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 07:42, 5 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv41 in 0.477 secs. --></body></html>

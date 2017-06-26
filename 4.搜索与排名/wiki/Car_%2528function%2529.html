@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Car and cdr,CAR,CDR,Common Lisp,Cons,IBM 704,International Phonetic Alphabet,Lambda expression,Linked list,Lisp machine,Lisp programming language" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Car and cdr - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Car_and_cdr";
+			var wgTitle = "Car and cdr";
+			var wgArticleId = 206195;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Car and cdr</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub">(Redirected from <a  title="Car (function)">Car (function)</a>)</div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<dl>
+<dd><span class="plainlinks"><i>The correct title of this article is <b>car and cdr</b>. The initial letter is capitalized due to <a  title="Wikipedia:Naming conventions (technical restrictions)">technical restrictions</a>.</i></span></dd>
+<dd><i>"CADR" redirects here. This was also the name of the second version of MIT's <a href="/wiki/Lisp_machine.html" title="Lisp machine">Lisp machine</a></i></dd>
+<dd><i>For other meanings, see <a href="/wiki/CAR.html" title="CAR">CAR</a> and <a href="/wiki/CDR.html" title="CDR">CDR</a>.</i></dd>
+</dl>
+<p>Introduced in the <a href="/wiki/Lisp_programming_language.html" title="Lisp programming language">Lisp programming language</a>, <b>car</b> (<a href="/wiki/International_Phonetic_Alphabet.html" title="International Phonetic Alphabet">IPA</a> ['kar], just like the English word "car") and <b>cdr</b> (<a href="/wiki/International_Phonetic_Alphabet.html" title="International Phonetic Alphabet">IPA</a> ['kʌ dər] or ['ku dər]) are primitive operations upon <a href="/wiki/Linked_list.html" title="Linked list">linked lists</a> composed of <a href="/wiki/Cons.html" title="Cons">cons</a> cells. A cons cell is composed of two pointers; the <i>car</i> operation extracts the first pointer, and the <i>cdr</i> operation extracts the second.</p>
+<p>Thus, the expression <code>(car (cons <i>x</i> <i>y</i>))</code> evaluates to <i>x</i>, and <code>(cdr (cons <i>x</i> <i>y</i>))</code> evaluates to <i>y</i>.</p>
+<p>When cons cells are used to implement singly-linked lists (rather than trees and other more complicated structures), the <i>car</i> operation returns the <i>first</i> element of the list, while <i>cdr</i> returns the <i>rest</i> of the list. For this reason, the operations are sometimes given the names <b>first</b> and <b>rest</b>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Origin of the names car and cdr">edit</a>]</div>
+<p><a name="Origin_of_the_names_car_and_cdr" id="Origin_of_the_names_car_and_cdr"></a></p>
+<h2>Origin of the names car and cdr</h2>
+<p>Lisp was originally designed for the <a href="/wiki/IBM_704.html" title="IBM 704">IBM 704</a> computer, in the late 1950s. On the 704, a cons cell was represented by a single 36-bit machine word containing two parts: an <i>address part</i> and a <i>decrement part</i>, each 15 bits long. The assembly functions used to extract either part of a machine word were called <code>car</code> (Contents of Address of Register) and <code>cdr</code> (Contents of Decrement of Register).</p>
+<p>The 704 assembler macro for <code>cdr</code> was</p>
+<dl>
+<dd>LXD JLOC,4</dd>
+<dd>CLA 0,4</dd>
+<dd>PDX 0,4</dd>
+<dd>PXD 0,4<sup id="_ref-assm_0" class="reference"><a  title="">[1]</a></sup></dd>
+</dl>
+<p>Nowadays some people mostly use <i>first</i> and <i>rest</i> when programming Lisp due to their greater clarity. However, the words <code>car</code> and <code>cdr</code> have an advantage over these synonyms: they can be <i>composed</i>. In Lisp, <code>(cadr '(1 2 3))</code> is the equivalent of <code>(car (cdr '(1 2 3))</code>; its value is <code>2</code> (the <i>first</i> item of the <i>rest</i> of <code>(1 2 3)</code>. Similarly, <code>(caar '((1 2) (3 4)))</code> is the same as <code>(car (car '((1 2) (3 4))))</code>; its value is <code>1</code>. Most Lisps set a limit on the number of composed forms they support; <a href="/wiki/Common_Lisp.html" title="Common Lisp">Common Lisp</a> and <a href="/wiki/Scheme_programming_language.html" title="Scheme programming language">Scheme</a> both provide forms with up to four repetitions of the <i>a</i> and <i>d</i>. While it's not clear that a complex composed form such as <code>(cadadr ...)</code> is any easier for the untrained eye to parse than the spelled out equivalent <code>(car (cdr (car (cdr ...))))</code> these composed forms can be convenient in certain idiomatic uses such as taking apart lists representing code. For instance given a <a href="/wiki/Lambda_expression.html" title="Lambda expression">lambda expression</a> like the following:</p>
+<pre>
+ (lambda (a b) (one-thing) (another-thing))
+</pre>
+<p>an experienced Lisper would read:</p>
+<pre>
+ (let ((p1 (caadr form))
+       (p2 (cadadr form))
+       (body (cddr form))
+   ...)
+</pre>
+<p>as extracting the first and second parameters and then the list containing the body of the lambda expression. However this kind of "list destructuring" is common enough, especially when writing macros, that modern Lisps such as Common Lisp provide facilities for doing it directly. That code would be written in Common Lisp using the <i>destructuring-bind</i> macro like this:</p>
+<pre>
+ (destructuring-bind ((p1 p2) &amp;body body) form 
+   ...)
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Use in conversation">edit</a>]</div>
+<p><a name="Use_in_conversation" id="Use_in_conversation"></a></p>
+<h2>Use in conversation</h2>
+<p><code>cdr</code> is sometimes used colloquially in conversation (notably at <a href="/wiki/MIT.html" title="MIT">MIT</a>), usually in the expression "cdr down". For example:</p>
+<blockquote>
+<p>Can you cdr down that list of restaurants to see if any are open at 3AM?</p>
+</blockquote>
+<p>Note that this usage implies looking at each element in turn, which would actually be done by <code>car</code>ing the result of repeated <code>cdr</code>s. See also <a href="/wiki/Cons.html" title="Cons">cons</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<ol class="references">
+<li id="_note-assm"><b><a  title="">^</a></b> Portions from NILS' LISP PAGES- <a  class="external free" title="http://t3x.dyndns.org/LISP/QA/carcdr.html">http://t3x.dyndns.org/LISP/QA/carcdr.html</a></li>
+</ol>
+<ul>
+<li>Russel, S. (undated, c. late 1950's) Writing and Debugging Programs. MIT Artificial Intelligence Laboratory Memo 6.</li>
+<li><cite class="book" style="font-style:normal" id="Reference-Graham-1996"><a href="/wiki/Paul_Graham.html" title="Paul Graham">Graham, Paul</a> (1996). <i>ANSI Common Lisp</i>. Prentice Hall. <a  class="internal">ISBN 0-13-370875-6</a>.</cite></li>
+</ul>
+
+<!-- 
+Pre-expand include size: 3437 bytes
+Post-expand include size: 1062 bytes
+Template argument size: 882 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:206195-0!1!0!default!!en!2 and timestamp 20060910161200 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Lisp programming language">Lisp programming language</a></span> | <span dir='ltr'><a  title="Category:Programming constructs">Programming constructs</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Car_and_cdr.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 02:37, 29 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv97 in 0.256 secs. --></body></html>

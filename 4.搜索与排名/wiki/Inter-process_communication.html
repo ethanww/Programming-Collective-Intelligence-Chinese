@@ -1,0 +1,307 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Inter-process communication,.NET Remoting,API,ActiveX,Anonymous pipe,Apple Computer,Apple events,Berkeley sockets,CORBA,Common Object Request Broker Architecture,Component Object Model" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Inter-process communication - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Inter-process_communication";
+			var wgTitle = "Inter-process communication";
+			var wgArticleId = 152106;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Inter-process communication</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p><b>Inter-Process Communication</b> (<b>IPC</b>) is a set of techniques for the exchange of data between two or more <a href="/wiki/Thread_%28computer_science%29.html" title="Thread (computer science)">threads</a> in one or more <a href="/wiki/Process_%28computing%29.html" title="Process (computing)">processes</a>. Processes may be running on one computer or on two or more computers connected by a <a href="/wiki/Computer_network.html" title="Computer network">network</a>. IPC techniques are divided into methods for <a href="/wiki/Message_passing.html" title="Message passing">message passing</a>, <a href="/wiki/Synchronization.html" title="Synchronization">synchronization</a>, <a href="/wiki/Shared_memory.html" title="Shared memory">shared memory</a>, and <a href="/wiki/Remote_procedure_call.html" title="Remote procedure call">remote procedure calls</a> (RPC). The method of IPC used may vary based on the bandwidth and latency of communication between the threads, and the type of data being communicated.</p>
+<p>It is widely accepted that IPC can be implemented significantly faster in a <a href="/wiki/Microkernel.html" title="Microkernel">microkernel</a> environment than in classical <a href="/wiki/Monolithic_kernel.html" title="Monolithic kernel">monolithic kernel</a> systems<sup id="_ref-hartig97p74_0" class="reference"><a  title="">[1]</a></sup>.</p>
+<p>IPC may also be referred to as <i>inter-thread communication</i> and <i>inter-application communication.</i></p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Implementations</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">External links</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">References</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Implementations">edit</a>]</div>
+<p><a name="Implementations" id="Implementations"></a></p>
+<h2>Implementations</h2>
+<p>There are a number of <a href="/wiki/API.html" title="API">APIs</a> which may be used for IPC. A number of platform independent APIs include the following:</p>
+<ul>
+<li><a href="/wiki/Anonymous_pipe.html" title="Anonymous pipe">Anonymous pipes</a> and <a href="/wiki/Named_pipe.html" title="Named pipe">named pipes</a></li>
+<li><a href="/wiki/Unix_socket.html" title="Unix socket">Sockets</a></li>
+<li><a href="/wiki/Distributed_Computing_Environment.html" title="Distributed Computing Environment">Distributed Computing Environment</a> (DCE)</li>
+<li><a href="/wiki/Common_Object_Request_Broker_Architecture.html" title="Common Object Request Broker Architecture">Common Object Request Broker Architecture</a> (CORBA)</li>
+<li><a  class="new" title="Message Bus">Message Bus</a> (MBUS) (specified in <a  class="external" title="http://tools.ietf.org/html/rfc3259">RFC 3259</a>)</li>
+<li><a href="/wiki/XML.html" title="XML">XML</a> <a href="/wiki/XML-RPC.html" title="XML-RPC">XML-RPC</a> or <a href="/wiki/SOAP.html" title="SOAP">SOAP</a></li>
+<li><a href="/wiki/ZeroC.html" title="ZeroC">ZeroC</a>'s <a href="/wiki/Internet_Communications_Engine.html" title="Internet Communications Engine">Internet Communications Engine</a> (ICE)</li>
+</ul>
+<p>The following are platform specific APIs:</p>
+<ul>
+<li><a href="/wiki/Apple_Computer.html" title="Apple Computer">Apple Computer</a>'s <a href="/wiki/Apple_events.html" title="Apple events">Apple events</a> (previously known as Interapplication Communications (IAC)).</li>
+<li><a href="/wiki/Freedesktop.org.html" title="Freedesktop.org">Freedesktop.org</a>'s <a href="/wiki/D-Bus.html" title="D-Bus">D-Bus</a></li>
+<li><a href="/wiki/KDE.html" title="KDE">KDE</a>'s <a href="/wiki/DCOP.html" title="DCOP">Desktop Communications Protocol</a> (DCOP)</li>
+<li>The <a href="/wiki/Mach_kernel.html" title="Mach kernel">Mach kernel</a>'s <a href="/wiki/Mach_kernel.html" title="Mach kernel">Mach Ports</a></li>
+<li><a href="/wiki/Microsoft.html" title="Microsoft">Microsoft</a>'s <a href="/wiki/ActiveX.html" title="ActiveX">ActiveX</a>, <a href="/wiki/Component_Object_Model.html" title="Component Object Model">Component Object Model</a> (COM), <a href="/wiki/Distributed_Component_Object_Model.html" title="Distributed Component Object Model">Distributed Component Object Model</a> (DCOM), <a href="/wiki/Dynamic_Data_Exchange.html" title="Dynamic Data Exchange">Dynamic Data Exchange</a> (DDE), <a href="/wiki/Object_Linking_and_Embedding.html" title="Object Linking and Embedding">Object Linking and Embedding</a> (OLE), <a href="/wiki/Anonymous_pipe#Microsoft_Windows.html" title="Anonymous pipe">anonymous pipes</a>, <a href="/wiki/Named_pipe#Named_pipes_in_Windows.html" title="Named pipe">named pipes</a>, <a href="/wiki/Local_Procedure_Call.html" title="Local Procedure Call">Local Procedure Call</a></li>
+<li><a href="/wiki/Novell.html" title="Novell">Novell</a>'s <a href="/wiki/IPX/SPX.html" title="IPX/SPX">SPX</a></li>
+<li><a href="/wiki/POSIX.html" title="POSIX">POSIX</a> <a href="/wiki/Mmap.html" title="Mmap">mmap</a>, message queues, semaphores, and shared memory</li>
+<li><a href="/wiki/RISC_OS.html" title="RISC OS">RISC OS</a>'s messages</li>
+<li><a href="/wiki/Solaris_Operating_System.html" title="Solaris Operating System">Solaris</a>'s <a href="/wiki/Doors_%28computing%29.html" title="Doors (computing)">Doors</a></li>
+<li><a href="/wiki/Sun_Microsystems.html" title="Sun Microsystems">Sun Microsystems</a>' <a href="/wiki/Remote_procedure_call.html" title="Remote procedure call">RPC</a></li>
+<li><a href="/wiki/System_V.html" title="System V">System V</a>'s message queues, semaphores, and shared memory</li>
+</ul>
+<p><b>Table of IPC Methods:</b></p>
+<table class="wikitable">
+<tr>
+<th>Method</th>
+<th>Provided by (<a href="/wiki/Operating_system.html" title="Operating system">Operating systems</a> or other environments)</th>
+</tr>
+<tr>
+<td><a href="/wiki/Computer_file.html" title="Computer file">File</a></td>
+<td>All <a href="/wiki/Operating_system.html" title="Operating system">operating systems</a>.</td>
+</tr>
+<tr>
+<td><a href="/wiki/Signal_%28computing%29.html" title="Signal (computing)">Signal</a></td>
+<td>Most <a href="/wiki/Operating_system.html" title="Operating system">operating systems</a>; some systems, such as Windows, only implement signals in the C run-time library and do not actually provide support for their use as an IPC technique.</td>
+</tr>
+<tr>
+<td><a href="/wiki/Berkeley_sockets.html" title="Berkeley sockets">Socket</a></td>
+<td>Most <a href="/wiki/Operating_system.html" title="Operating system">operating systems</a>.</td>
+</tr>
+<tr>
+<td><a href="/wiki/Pipeline_%28Unix%29.html" title="Pipeline (Unix)">Pipe</a></td>
+<td>All <a href="/wiki/POSIX.html" title="POSIX">POSIX systems</a>.</td>
+</tr>
+<tr>
+<td><a href="/wiki/Named_pipe.html" title="Named pipe">Named pipe</a></td>
+<td>All <a href="/wiki/POSIX.html" title="POSIX">POSIX systems</a>.</td>
+</tr>
+<tr>
+<td><a href="/wiki/Semaphore_%28programming%29.html" title="Semaphore (programming)">Semaphore</a></td>
+<td>All <a href="/wiki/POSIX.html" title="POSIX">POSIX systems</a>.</td>
+</tr>
+<tr>
+<td><a href="/wiki/Shared_memory.html" title="Shared memory">Shared memory</a></td>
+<td>All <a href="/wiki/POSIX.html" title="POSIX">POSIX systems</a>.</td>
+</tr>
+<tr>
+<td><a href="/wiki/Message_passing.html" title="Message passing">Message passing</a><br />
+(shared nothing)</td>
+<td>Used in <a href="/wiki/Message_Passing_Interface.html" title="Message Passing Interface">MPI</a> paradigm, <a href="/wiki/Java_RMI.html" title="Java RMI">Java RMI</a>, <a href="/wiki/CORBA.html" title="CORBA">CORBA</a> and others.</td>
+</tr>
+<tr>
+<td><a href="/wiki/Mmap.html" title="Mmap">Memory map</a></td>
+<td>All <a href="/wiki/POSIX.html" title="POSIX">POSIX systems</a>; may carry <a href="/wiki/Race_condition.html" title="Race condition">race condition</a> risk if a <a href="/wiki/Temporary_file.html" title="Temporary file">temporary file</a> is used. Windows also supports this technique but the APIs used are platform specific.</td>
+</tr>
+<tr>
+<td><a href="/wiki/Message_queue.html" title="Message queue">Message queue</a></td>
+<td>Most <a href="/wiki/Operating_system.html" title="Operating system">operating systems</a>.</td>
+</tr>
+<tr>
+<td><a href="/wiki/Mailbox_%28computing%29.html" title="Mailbox (computing)">Mailbox</a></td>
+<td>Some <a href="/wiki/Operating_system.html" title="Operating system">operating systems</a>.</td>
+</tr>
+</table>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Computer_network_programming.html" title="Computer network programming">Computer network programming</a></li>
+<li><a href="/wiki/.NET_Remoting.html" title=".NET Remoting">.NET Remoting</a></li>
+<li><a href="/wiki/Microkernel.html" title="Microkernel">Microkernel</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://www.wlug.org.nz/ipc(5)">Linux System V IPC Man Page</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<ol class="references">
+<li id="_note-hartig97p74"><b><a  title="">^</a></b> <cite style="font-style:normal">Hermann Härtig, Michael Hohmuth, <a href="/wiki/Jochen_Liedtke.html" title="Jochen Liedtke">Jochen Liedtke</a>, Sebastian Schönberg, Jean Wolter (October 1997). "<a  class="external text" title="http://portal.acm.org/citation.cfm?id=266660&amp;dl=ACM&amp;coll=&amp;CFID=15151515&amp;CFTOKEN=6184618">The performance of μ-kernel-based systems</a>". <i>Proceedings of the 16th ACM symposium on Operating systems principles (SOSP), Saint-Malo, France</i>: 74. <a  class="internal">ISBN 0-89791-916-5</a>.</cite> <a  class="external text" title="http://os.inf.tu-dresden.de/pubs/sosp97/">url2</a></li>
+</ol>
+<ul>
+<li><cite style="font-style:normal"><a href="/wiki/Jochen_Liedtke.html" title="Jochen Liedtke">J. Liedtke</a>, K. Elphinstone, S. Schiinberg, H. Hartig, G. Heiser, N. Islam, T Jaeger (1997). "<a  class="external text" title="http://portal.acm.org/citation.cfm?id=822414&amp;dl=ACM&amp;coll=&amp;CFID=15151515&amp;CFTOKEN=6184618">Achieved IPC Performance</a>". <i>Proceedings of the 6th Workshop on Hot Topics in Operating Systems (HotOS-VI)</i>: 28. <a  class="internal">ISBN 0-8186-7834-8</a>.</cite>.</li>
+</ul>
+<ul>
+<li><a href="/wiki/Jochen_Liedtke.html" title="Jochen Liedtke">Jochen Liedtke</a>. <i><a  class="external text" title="http://portal.acm.org/citation.cfm?id=168633&amp;dl=ACM&amp;coll=&amp;CFID=15151515&amp;CFTOKEN=6184618">Improving IPC by kernel design</a></i>, ACM Press 1994, <a  class="internal">ISBN 0-89791-632-8</a></li>
+<li><a href="/wiki/W._Richard_Stevens.html" title="W. Richard Stevens">Stevens, Richard</a>. <i>UNIX Network Programming, Volume 2, Second Edition: Interprocess Communications.</i> Prentice Hall, 1999. <a  class="internal">ISBN 0-13-081081-9</a></li>
+<li>Nenad Marovac. <a  class="external text" title="http://portal.acm.org/citation.cfm?id=641598&amp;coll=&amp;dl=ACM&amp;CFID=15151515&amp;CFTOKEN=6184618">"On interprocess interaction in distributed architectures"</a>, ACM SIGARCH Computer Architecture News, 11(4), 1983</li>
+</ul>
+<p><br /></p>
+<div class="boilerplate metadata" id="stub">
+<table cellpadding="0" cellspacing="0" style="background-color: transparent;">
+<tr>
+<td><a  class="image" title=" "><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Nuvola_apps_mycomputer.png/24px-Nuvola_apps_mycomputer.png" alt=" " width="24" height="24" longdesc="/wiki/Image:Nuvola_apps_mycomputer.png" /></a></td>
+<td><i>&#160;This <a href="/wiki/Computer.html" title="Computer">computer</a>-related article is a <a  title="Wikipedia:Stub">stub</a>. You can <a  title="Wikipedia:Stub">help</a> Wikipedia by <a  class="external text" title="http://en.wikipedia.org/w/index.php?title=Inter-process_communication&amp;action=edit">expanding it</a></i>.</td>
+</tr>
+</table>
+</div>
+
+<!-- 
+Pre-expand include size: 5462 bytes
+Post-expand include size: 2876 bytes
+Template argument size: 2212 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:152106-0!1!0!default!!en!2 and timestamp 20060910143536 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Inter-process communication">Inter-process communication</a></span> | <span dir='ltr'><a  title="Category:Computer stubs">Computer stubs</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Inter-process_communication.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-cs"><a >Česky</a></li>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-pt"><a >Português</a></li>
+				<li class="interwiki-zh"><a >中文</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 06:26, 4 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv119 in 0.074 secs. --></body></html>

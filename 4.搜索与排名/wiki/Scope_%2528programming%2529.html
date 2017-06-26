@@ -1,0 +1,277 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Scope (programming),Scope (programming),Algol programming language,Algorithm,Block (programming),C programming language,Call stack,Closure (computer science),Common Lisp,Computer programming,Control flow" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Scope (programming) - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Scope_(programming)";
+			var wgTitle = "Scope (programming)";
+			var wgArticleId = 62068;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Scope (programming)</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>In <a href="/wiki/Computer_programming.html" title="Computer programming">computer programming</a> in general, a <b>scope</b> is an enclosing context. Scopes have contents which are associated with them. Various programming languages have various types of scopes. The type of scope determines what kind of entities it can contain and how it affects them. Depending on its type, a scope can:</p>
+<ul>
+<li>contain declarations or definitions of <a href="/wiki/Identifier.html" title="Identifier">identifiers</a>;</li>
+<li>contain <a href="/wiki/Statement_%28programming%29.html" title="Statement (programming)">statements</a> and/or <a href="/wiki/Expression_%28programming%29.html" title="Expression (programming)">expressions</a> which define an executable <a href="/wiki/Algorithm.html" title="Algorithm">algorithm</a> or part thereof;</li>
+<li>nest or be nested.</li>
+</ul>
+<p>A <a href="/wiki/Namespace_%28programming%29.html" title="Namespace (programming)">namespace</a> is a scope that uses the enclosing nature of the scope to group logically related identifiers under a single identifier. Thus, scopes can affect the <a href="/wiki/Name_resolution.html" title="Name resolution">name resolution</a> for their contents.</p>
+<p>Variables are associated with scopes. See <a href="/wiki/Variable#Scope_and_extent.html" title="Variable">variables (scope and extent)</a>. Different scoping types affect how local variables are <a href="/wiki/Name_binding.html" title="Name binding">bound</a>, see <a href="/wiki/Scope_%28programming%29#Static_versus_dynamic_scoping.html" title="Scope (programming)">static versus dynamic scoping</a>.</p>
+<p>Programmers often <a href="/wiki/Indentation.html" title="Indentation">indent</a> scopes in their <a href="/wiki/Source_code.html" title="Source code">source code</a> text to improve readability.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Example scopes</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Static versus dynamic scoping</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">2.1</span> <span class="toctext">Static scoping</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.2</span> <span class="toctext">Dynamic scoping</span></a>
+<ul>
+<li class="toclevel-3"><a ><span class="tocnumber">2.2.1</span> <span class="toctext">Implementation</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.3</span> <span class="toctext">Example</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.4</span> <span class="toctext">History</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Example scopes">edit</a>]</div>
+<p><a name="Example_scopes" id="Example_scopes"></a></p>
+<h2>Example scopes</h2>
+<pre>
+namespace
+{                        // namespace scope, merely groups identifiers
+   class C
+   {                     // class scope, defines/declares member variables and functions
+      void f (bool b)
+      {                  // function scope, contains executable statements
+         if (b)
+         {               // unnamed scope for conditionally executed statements
+           ...
+         }
+      }
+   };
+}
+</pre>
+<p>(Note that this example merely illustrates basic scoping ideas, it is not meant as a formal complete description of what the various C++ scopes can contain.)</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Static versus dynamic scoping">edit</a>]</div>
+<p><a name="Static_versus_dynamic_scoping" id="Static_versus_dynamic_scoping"></a></p>
+<h2>Static versus dynamic scoping</h2>
+<p>One of the basic reasons for scoping is to keep variables in different parts of the program distinct from one another. Since there are only a small number of short variable names, and programmers share habits about the naming of variables (e.g., <code>i</code> for an array index), in any program of moderate size the same variable name will be used in multiple different scopes. The question of how to match various variable occurrences to the appropriate binding sites is generally answered in one of two ways: <b>static scoping</b> and <b>dynamic scoping</b>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Static scoping">edit</a>]</div>
+<p><a name="Static_scoping" id="Static_scoping"></a></p>
+<h3>Static scoping</h3>
+<p>With <b>static</b> scoping, a variable always refers to its nearest enclosing binding. This is a property of the program text and unrelated to the runtime <a href="/wiki/Call_stack.html" title="Call stack">call stack</a>. Because matching a variable to its binding only requires analysis of the program text, this type of scoping is sometimes also called <i>lexical</i> scoping. Static scope is standard in modern functional languages such as <a href="/wiki/ML_programming_language.html" title="ML programming language">ML</a> and <a href="/wiki/Haskell_programming_language.html" title="Haskell programming language">Haskell</a> because it allows the programmer to reason as if variable bindings are carried out by substitution. Static scoping also makes it much easier to make modular code and reason about it, since its binding structure can be understood in isolation. In contrast, dynamic scope forces the programmer to anticipate all possible dynamic contexts in which the module's code may be invoked.</p>
+<p>Correct implementation of static scope in languages with first-class nested functions can be subtle, as it requires each function value to carry with it a record of the values of the variables that it depends on (the pair of the function and this environment is called a <a href="/wiki/Closure_%28computer_science%29.html" title="Closure (computer science)">closure</a>). When first-class nested functions are not used or not available (such as in C), this overhead is of course not incurred. Variable lookup is always very efficient with static scope, as the location of each value is known at compile time.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Dynamic scoping">edit</a>]</div>
+<p><a name="Dynamic_scoping" id="Dynamic_scoping"></a></p>
+<h3>Dynamic scoping</h3>
+<p>In dynamic scoping, each identifier has a global <a href="/wiki/Stack.html" title="Stack">stack</a> of bindings. Introducing a local variable with name <i>x</i> pushes a binding onto the global <i>x</i> stack (which may have been empty), which is popped off when the <a href="/wiki/Control_flow.html" title="Control flow">control flow</a> leaves the scope. Evaluating <i>x</i> in any context always yields the top binding. In other words, a global identifier refers to the identifier associated with the most recent environment. Note that this cannot be done at compile time because the binding stack only exists at runtime, which is why this type of scoping is called <i>dynamic</i> scoping.</p>
+<p>Generally certain <a href="/wiki/Block_%28programming%29.html" title="Block (programming)">blocks</a> are defined to create bindings whose lifetime is the execution time of the block; this adds a hint of lexicality to the scoping. However, since a section of code can be called from many different locations and situations, it can be difficult to determine at the outset what bindings will apply when a variable is used. This can be beneficial; application of the <a  class="new" title="Principle of least knowledge">principle of least knowledge</a> suggests that code avoid depending on the <i>reasons</i> for (or circumstances of) a variable's value, but simply use the value according to the variable's definition. This narrow interpretation of shared data can provide a very flexible system for adapting the behavior of a function to the current state (or policy) of the system. However, this benefit relies on careful documentation of all variables used this way as well as on careful avoidance of assumptions about a variable's behavior, and does not provide any mechanism to detect interference between different parts of a program. As such, dynamic scoping can be dangerous and many modern languages do not use it. Some languages, like <a href="/wiki/Perl.html" title="Perl">Perl</a> and <a href="/wiki/Common_Lisp.html" title="Common Lisp">Common Lisp</a>, allow the programmer to choose lexical or dynamic scoping when (re)defining a variable.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Implementation">edit</a>]</div>
+<p><a name="Implementation" id="Implementation"></a></p>
+<h4>Implementation</h4>
+<p>Dynamic scoping is extremely simple to implement. To find an identifier's value, the program traverses the runtime stack, checking each activation record (each function's stack frame) for a value for the identifier. This is known as <a href="/wiki/Deep_binding.html" title="Deep binding">deep binding</a>. An alternate strategy that is usually more efficient is to maintain a stack of bindings for each identifier; the stack is modified whenever the variable is bound or unbound, and a variable's value is simply that of the top binding on the stack. This is called <a href="/wiki/Shallow_binding.html" title="Shallow binding">shallow binding</a>. Note that both of these strategies assume a last-in-first-out (LIFO) ordering to bindings for any one variable; in practice all bindings are so ordered.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Example">edit</a>]</div>
+<p><a name="Example" id="Example"></a></p>
+<h3>Example</h3>
+<pre>
+int x = 0;
+int f () { return x; }
+int g () { int x = 1; return f(); }
+</pre>
+<p>With static scoping, calling <i>g</i> will return 0 since it has been determined at compile time that the expression <i>x</i> in any invocation of <i>f</i> will yield the global <i>x</i> binding which is unaffected by the introduction of a local variable of the same name in <i>g</i>.</p>
+<p>With dynamic scoping, the binding stack for the <i>x</i> identifier will contain two items when <i>f</i> is invoked: the global binding to 0, and the binding to 1 introduced in <i>g</i> (which is still present on the stack since the control flow hasn't left <i>g</i> yet). Since evaluating the identifier expression by definition always yields the top binding, the result is 1.</p>
+<p>To clarify this further we note that Perl offers both dynamic and lexical scoping so we can define two functions of two variables one which is dynamic in both and one which is lexical in one and dynamic in the other:</p>
+<pre>
+#!/usr/bin/perl
+{
+   my $x = "lexical"; # $x is defined lexically for function lexical()
+   sub lexical {
+       print "\nXL=$x, YL=$y";
+   }
+}
+sub dynamic {
+   print "\nXD=$x, YD=$y";
+}
+($x,$y) = ('dynamic','dynamic');
+lexical();
+dynamic();
+</pre>
+<p>When this code is run it will produce the output</p>
+<pre>
+XL=lexical, YL=dynamic
+XD=dynamic, YD=dynamic
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: History">edit</a>]</div>
+<p><a name="History" id="History"></a></p>
+<h3>History</h3>
+<p>Lexical scoping was first introduced in Lisp 1.5 (via the FUNARG device developed by <a href="/wiki/Steve_Russell.html" title="Steve Russell">Steve Russell</a>, working under <a href="/wiki/John_McCarthy_%28computer_scientist%29.html" title="John McCarthy (computer scientist)">John McCarthy</a>) and added later into <a href="/wiki/Algol_programming_language.html" title="Algol programming language">Algol</a> 60 (also by Steve Russell), and has been picked up in other languages since then. Descendants of dynamically scoped languages often adopt lexical scoping. In <a href="/wiki/Lisp_programming_language.html" title="Lisp programming language">Lisp</a>, for example, <a href="/wiki/Emacs_Lisp.html" title="Emacs Lisp">Emacs Lisp</a> uses dynamic scoping, <a href="/wiki/Common_Lisp.html" title="Common Lisp">Common Lisp</a> has both dynamic and lexical scoping, and <a href="/wiki/Scheme_programming_language.html" title="Scheme programming language">Scheme</a> uses lexical scoping exclusively. The original Lisp used dynamic scoping. In other cases, languages which already had dynamic scoping have added lexical scoping afterwards, such as <a href="/wiki/Perl.html" title="Perl">Perl</a>. <a href="/wiki/C_programming_language.html" title="C programming language">C</a> and <a href="/wiki/Pascal_programming_language.html" title="Pascal programming language">Pascal</a> have always had lexical scoping, since they are both influenced by the ideas that went into Algol.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Variable#Scope_and_extent.html" title="Variable">variables (scope and extent)</a></li>
+<li><a href="/wiki/Closure_%28computer_science%29.html" title="Closure (computer science)">closures</a></li>
+<li><a href="/wiki/Name_resolution.html" title="Name resolution">name resolution</a></li>
+<li><a href="/wiki/Name_binding.html" title="Name binding">name binding</a></li>
+<li><a href="/wiki/Local_variable.html" title="Local variable">local variables</a></li>
+<li><a href="/wiki/Global_variable.html" title="Global variable">Global variable</a></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:62068-0!1!0!default!!en!2 and timestamp 20060904220645 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:Programming constructs">Programming constructs</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Scope_%28programming%29.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-nl"><a >Nederlands</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 21:48, 21 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv60 in 0.159 secs. --></body></html>

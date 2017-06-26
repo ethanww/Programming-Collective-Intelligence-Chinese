@@ -1,0 +1,267 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Shebang (Unix),AWK programming language,BSD,Bash,Batch file,Binfmt misc,Bourne shell,C shell,Computer program,Computing,Contraction (linguistics)" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Shebang (Unix) - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Shebang_(Unix)";
+			var wgTitle = "Shebang (Unix)";
+			var wgArticleId = 4030279;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Shebang (Unix)</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>In <a href="/wiki/Computing.html" title="Computing">computing</a>, a <b>shebang</b> (also called a <b>hashbang</b>) is a specific pair of characters used in a special line that begins a <a href="/wiki/Text_file.html" title="Text file">text file</a> (commonly called a <a href="/wiki/Script_%28computer_programming%29.html" title="Script (computer programming)">script</a>) causing <a href="/wiki/Unix-like.html" title="Unix-like">Unix-like</a> <a href="/wiki/Operating_system.html" title="Operating system">operating systems</a> to execute the commands in the text file using a specified <a href="/wiki/Interpreter_%28computer_software%29.html" title="Interpreter (computer software)">interpreter</a> (<a href="/wiki/Computer_program.html" title="Computer program">program</a>) when executed.</p>
+<p>A shebang consists of a <a href="/wiki/Number_sign.html" title="Number sign">number sign</a> and an <a href="/wiki/Exclamation_point.html" title="Exclamation point">exclamation point</a> character ("<tt>#!</tt>") in the first two columns of the first line, followed by the <a href="/wiki/Path_%28computing%29.html" title="Path (computing)">path</a> to the interpreter program that will provide the interpretation. The name <i>shebang</i> comes from an inexact <a href="/wiki/Contraction_%28linguistics%29.html" title="Contraction (linguistics)">contraction</a> of <i><a href="/wiki/Sharp.html" title="Sharp">sharp</a> bang</i> or <i>haSH bang</i>, referring to the two typical Unix names of the two characters. Unix jargon uses <i>sharp</i> or <i>hash</i> to refer to the number sign character and <i>bang</i> to refer to the exclamation point, hence <i>shebang</i>. Another theory on <i>sh</i> in shebang's name is from default shell <code>sh</code>, usually invoked with shebang.</p>
+<p>Because the "<tt>#</tt>" character is used as the comment marker in these executable text files, the actual contents of the shebang line will be ignored by the interpreter; the shebang line only exists to specify the correct interpreter to be used.</p>
+<p>The shebang is actually a human-readable instance of a <a href="/wiki/Magic_number_%28programming%29.html" title="Magic number (programming)">magic number</a> in the executable file (with shebang equalling the magic byte string <code>0x23 0x21</code>). Executable files that do not require an interpreter program start with other magic combinations. (See <a href="/wiki/File_format.html" title="File format">File format</a> for more details of magic numbers.)</p>
+<p>Some typical shebang lines:</p>
+<ul>
+<li><code>#!/bin/bash</code> — Execute using <code><a href="/wiki/Bash.html" title="Bash">bash</a></code> program in the <code>/bin/</code> directory</li>
+<li><code>#!/bin/csh</code> — Execute using <code>csh</code>, the <a href="/wiki/C_shell.html" title="C shell">C shell</a> instead</li>
+<li><code>#!/bin/ksh</code> — Execute using the <a href="/wiki/Korn_shell.html" title="Korn shell">Korn shell</a></li>
+<li><code>#!/bin/awk</code> — Execute using <a href="/wiki/AWK_programming_language.html" title="AWK programming language">awk</a> program in the <code>/bin/</code> directory</li>
+<li><code>#!/usr/bin/perl</code> — Execute using <a href="/wiki/Perl.html" title="Perl">Perl</a></li>
+<li><code>#!/bin/sh</code> — Execute using <code>sh</code> program in the <code>/bin/</code> directory (On some systems, such as <a href="/wiki/Solaris_Operating_Environment.html" title="Solaris Operating Environment">Solaris</a>, this is the <a href="/wiki/Bourne_shell.html" title="Bourne shell">Bourne shell</a>. On <a href="/wiki/Linux.html" title="Linux">Linux</a> systems there is usually no Bourne shell and this is a link to another shell, such as bash. Using <tt>#!/bin/sh</tt> in <a href="/wiki/Shell_script.html" title="Shell script">shell scripts</a> will thus invoke different shells on different systems. However, the <a href="/wiki/Single_UNIX_Specification.html" title="Single UNIX Specification">Single UNIX Specification</a> specifies certain requirements for /bin/sh, and some shells, such as bash, will alter their behaviour to match them when invoked with the name "sh".)</li>
+<li><code>#!/usr/bin/env</code> — Invocation of some other program using <a href="/wiki/Env.html" title="Env">env</a> program in <code>/usr/bin</code> directory</li>
+</ul>
+<p>Shebang lines can also include specific options that will be passed to the interpreter; see the examples below. However, implementations differ widely on how options are parsed.</p>
+<p>It is common for different variants of even the same operating system to have different locations for the desired interpreter. In the absence of a rigidly standardised filesystem structure among different Unix systems, this method can also limit the portability of the file. Thus, it is not uncommon to need to edit the shebang line after copying a <a href="/wiki/Script_%28computer_programming%29.html" title="Script (computer programming)">script</a> from one computer to another because the path that was coded into the script may not apply on a new machine. For this and other reasons, <a href="/wiki/POSIX.html" title="POSIX">POSIX</a> does not standardize the feature.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">History</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Example shebang lines</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">External links</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: History">edit</a>]</div>
+<p><a name="History" id="History"></a></p>
+<h2>History</h2>
+<p>The shebang was introduced by <a href="/wiki/Dennis_Ritchie.html" title="Dennis Ritchie">Dennis Ritchie</a> between <a href="/wiki/Version_7_Unix.html" title="Version 7 Unix">Version 7 Unix</a> and <a href="/wiki/Version_8_Unix.html" title="Version 8 Unix">8</a> at Bell Labs. It was then also added to the <a href="/wiki/BSD.html" title="BSD">BSD</a> line at Berkeley (present in 4BSD and activated per default in 4.2BSD)<sup id="_ref-0" class="reference"><a  title="">[1]</a></sup>. As Version 8 and later versions were not released to the public, the first widely known appearance of this feature was on BSD.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Example shebang lines">edit</a>]</div>
+<p><a name="Example_shebang_lines" id="Example_shebang_lines"></a></p>
+<h2>Example shebang lines</h2>
+<p>This file is a <a href="/wiki/Shell.html" title="Shell">shell</a> script, the equivalent under <a href="/wiki/Unix.html" title="Unix">Unix</a> systems of a <a href="/wiki/DOS.html" title="DOS">DOS</a> <a href="/wiki/Batch_file.html" title="Batch file">batch file</a>:</p>
+<pre>
+#!/bin/sh
+#
+# The rest of the shell script
+...
+</pre>
+<p>This file is an <a href="/wiki/AWK_programming_language.html" title="AWK programming language">AWK</a> script:</p>
+<pre>
+#!/bin/awk -f
+#
+# The rest of the AWK script
+...
+</pre>
+<p>This file is a <a href="/wiki/Perl.html" title="Perl">Perl</a> script, to be run with 'warnings' enabled (-w):</p>
+<pre>
+#!/usr/bin/perl -w
+#
+# The rest of the Perl script
+...
+</pre>
+<p>This file is also a Perl script, but it assumes that the Perl interpreter is in a different place. Also, the Perl interpreter is run without extra warnings being enabled.</p>
+<pre>
+#!/usr/local/bin/perl
+#
+# The rest of the Perl script
+...
+</pre>
+<p>This file is a <a href="/wiki/Quine.html" title="Quine">quine</a> (though an illegal one):</p>
+<pre>
+#!/bin/cat
+Any text can be placed below the shebang.
+</pre>
+<p>Invocation via the <a href="/wiki/Env.html" title="Env">env</a> program is useful for two purposes:</p>
+<p>searching for a program via the PATH environment variable:</p>
+<pre>
+#!/usr/bin/env python
+#
+# The rest of the Python script
+...
+</pre>
+<p>and invoking a program which is itself a <code>#!</code> script:</p>
+<pre>
+#!/usr/bin/env /usr/local/bin/compileAndGo
+...
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<ol class="references">
+<li id="_note-0"><b><a  title="">^</a></b> <a  class="external text" title="http://www.in-ulm.de/~mascheck/various/shebang/sys1.c.html">extracts from 4.0BSD /usr/src/sys/newsys/sys1.c</a></li>
+</ol>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://www.in-ulm.de/~mascheck/various/shebang/">Details about the shebang mechanism on various Unix flavours</a></li>
+<li><a  class="external text" title="http://homepages.cwi.nl/~aeb/std/hashexclam.html">#! - the Unix truth as far as I know it</a> (a more generic approach)</li>
+<li><a  class="extiw" title="foldoc:shebang">FOLDOC shebang article</a></li>
+<li><a  class="external text" title="http://info.unix-fu.org/General-UNIX/UnixFAQ3of7.txt">Unix F.A.Q</a> (search for #! there)</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Binfmt_misc.html" title="Binfmt misc">binfmt misc</a></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:4030279-0!1!0!default!!en!2 and timestamp 20060906142207 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:Unix">Unix</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Shebang_%28Unix%29.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 14:21, 6 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv85 in 0.077 secs. --></body></html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="SOAP,1998,2003,BEEP,Binary XML,Burlap,CORBA,Computer network,DCOM,Dave Winer,Don Box" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>SOAP - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "SOAP";
+			var wgTitle = "SOAP";
+			var wgArticleId = 29215;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">SOAP</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<dl>
+<dd><i>This article is about the computer protocol. For the common cleaning mixture, see <a href="/wiki/Soap.html" title="Soap">Soap</a>. For other uses, see <a href="/wiki/Soap_%28disambiguation%29.html" title="Soap (disambiguation)">Soap (disambiguation)</a>.</i></dd>
+</dl>
+<p><b>SOAP</b> is a <a href="/wiki/Protocol_%28computing%29.html" title="Protocol (computing)">protocol</a> for exchanging <a href="/wiki/XML.html" title="XML">XML</a>-based messages over a <a href="/wiki/Computer_network.html" title="Computer network">computer network</a>, normally using <a href="/wiki/HTTP.html" title="HTTP">HTTP</a>. SOAP forms the foundation layer of the <a href="/wiki/Web_Services_Protocol_Stack.html" title="Web Services Protocol Stack">Web services stack</a>, providing a basic messaging framework that more abstract layers can build on.</p>
+<p>There are several different types of messaging patterns in SOAP, but by far the most common is the <a href="/wiki/Remote_Procedure_Call.html" title="Remote Procedure Call">Remote Procedure Call</a> (RPC) pattern, in which one network node (the <i>client</i>) sends a request message to another node (the <i>server</i>), and the server immediately sends a response message to the client. SOAP is the successor of <a href="/wiki/XML-RPC.html" title="XML-RPC">XML-RPC</a>, though it borrows its transport and interaction neutrality and the envelope/header/body structure elsewhere, probably from <a href="/wiki/WDDX.html" title="WDDX">WDDX</a>.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Transport methods</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Weaknesses</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Example SOAP messages</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">See also</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">5.1</span> <span class="toctext">Related technologies</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">5.2</span> <span class="toctext">Alternatives to SOAP</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Overview">edit</a>]</div>
+<p><a name="Overview" id="Overview"></a></p>
+<h2>Overview</h2>
+<p>Originally designed by <a href="/wiki/Dave_Winer.html" title="Dave Winer">Dave Winer</a>, <a href="/wiki/Don_Box.html" title="Don Box">Don Box</a>, <a  class="new" title="Bob Atkinson">Bob Atkinson</a>, and <a  class="new" title="Mohsen Al-Ghosein">Mohsen Al-Ghosein</a> in <a href="/wiki/1998.html" title="1998">1998</a> with backing from <a href="/wiki/Microsoft.html" title="Microsoft">Microsoft</a> (where Atkinson and Al-Ghosein worked at the time) as an object access protocol, the SOAP specification is currently maintained by the <a  class="new" title="XML Protocol Working Group">XML Protocol Working Group</a> of the <a href="/wiki/World_Wide_Web_Consortium.html" title="World Wide Web Consortium">World Wide Web Consortium</a>.</p>
+<p>At the time of the creation of the standard, SOAP was an acronym for "<b>Simple Object Access Protocol</b>". Version 1.2 of the standard, which became a W3C Recommendation on <a href="/wiki/June_24.html" title="June 24">June 24</a>, <a href="/wiki/2003.html" title="2003">2003</a>, dropped this acronym as it was considered to be misleading.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Transport methods">edit</a>]</div>
+<p><a name="Transport_methods" id="Transport_methods"></a></p>
+<h2>Transport methods</h2>
+<p>Both <a href="/wiki/SMTP.html" title="SMTP">SMTP</a> and <a href="/wiki/HTTP.html" title="HTTP">HTTP</a> are valid application layer protocols for SOAP, but <a href="/wiki/HTTP.html" title="HTTP">HTTP</a> has gained wider acceptance as it works well with today's Internet infrastructure; specifically, SOAP works well with network <a href="/wiki/Firewall_%28networking%29.html" title="Firewall (networking)">firewalls</a>. This is a major advantage over other distributed protocols like <a href="/wiki/GIOP.html" title="GIOP">GIOP</a>/<a href="/wiki/IIOP.html" title="IIOP">IIOP</a> or <a href="/wiki/DCOM.html" title="DCOM">DCOM</a> which are normally filtered by firewalls.</p>
+<p><a href="/wiki/XML.html" title="XML">XML</a> was chosen as the standard message format because of its widespread acceptance by major corporations and <a href="/wiki/Open_source.html" title="Open source">open source</a> development efforts. Additionally, a wide variety of freely available <a href="/wiki/Software_development_tool.html" title="Software development tool">tools</a> significantly ease the transition to a SOAP-based implementation.</p>
+<p>The somewhat lengthy <a href="/wiki/Syntax.html" title="Syntax">syntax</a> of XML can be both a benefit and a drawback. Its format is easy for humans to read, but can be complex and can have slow processing times. For example, <a href="/wiki/CORBA.html" title="CORBA">CORBA</a>, GIOP and DCOM use much shorter, binary message formats. On the other hand, hardware appliances are available to accelerate processing of XML messages. <a href="/wiki/Binary_XML.html" title="Binary XML">Binary XML</a> is also being explored as a means for streamlining the throughput requirements of XML.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Weaknesses">edit</a>]</div>
+<p><a name="Weaknesses" id="Weaknesses"></a></p>
+<h2>Weaknesses</h2>
+<ul>
+<li>Because of the lengthy XML format, SOAP is considerably slower than competing <a href="/wiki/Middleware.html" title="Middleware">middleware</a> technologies such as <a href="/wiki/CORBA.html" title="CORBA">CORBA</a>. Typically, SOAP is about 10 times slower than binary network protocols such as <a href="/wiki/Java_remote_method_invocation.html" title="Java remote method invocation">RMI</a> or <a href="/wiki/IIOP.html" title="IIOP">IIOP</a><sup title="The text in the vicinity of this tag needs citation." class="noprint">[<a  title="Wikipedia:Citing sources"><i>citation&#160;needed</i></a>]</sup>. This may not be an issue when only small messages are sent<sup title="The text in the vicinity of this tag needs citation." class="noprint">[<a  title="Wikipedia:Citing sources"><i>citation&#160;needed</i></a>]</sup>.</li>
+<li>When relying on <a href="/wiki/HTTP.html" title="HTTP">HTTP</a> as a transfer protocol and not using <a href="/wiki/WS-Addressing.html" title="WS-Addressing">WS-Addressing</a> or an <a href="/wiki/Enterprise_service_bus.html" title="Enterprise service bus">ESB</a>, the roles of the interacting parties are fixed. Only one party (the client) can use the services of the other. So developers must use <a href="/wiki/Polling_%28computer_science%29.html" title="Polling (computer science)">polling</a> instead of notification in these common cases.</li>
+<li>Relies on <a href="/wiki/Web_Services_Description_Language.html" title="Web Services Description Language">Web Services Description Language</a>, an external standard. There is no standard way to dynamically discover the services (methods, parameters) offered, nor to get a <a href="/wiki/WSDL.html" title="WSDL">WSDL</a> for a particular endpoint.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Example SOAP messages">edit</a>]</div>
+<p><a name="Example_SOAP_messages" id="Example_SOAP_messages"></a></p>
+<h2>Example SOAP messages</h2>
+<p>Here is an example of how a client might format a SOAP message requesting product information from a fictional warehouse web service. The client needs to know which product corresponds with the ID 827635:</p>
+<pre>
+ &lt;soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+   &lt;soap:Body&gt;
+     &lt;getProductDetails xmlns="http://warehouse.example.com/ws"&gt;
+       &lt;productID&gt;827635&lt;/productID&gt;
+     &lt;/getProductDetails&gt;
+   &lt;/soap:Body&gt;
+ &lt;/soap:Envelope&gt;
+</pre>
+<p>Here is how the warehouse web service might format its reply message with the requested product information:</p>
+<pre>
+ &lt;soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+   &lt;soap:Body&gt;
+     &lt;getProductDetailsResponse xmlns="http://warehouse.example.com/ws"&gt;
+       &lt;getProductDetailsResult&gt;
+         &lt;productName&gt;Toptimate 3-Piece Set&lt;/productName&gt;
+         &lt;productID&gt;827635&lt;/productID&gt;
+         &lt;description&gt;3-Piece luggage set. Black Polyester.&lt;/description&gt;
+         &lt;price&gt;96.50&lt;/price&gt;
+         &lt;inStock&gt;true&lt;/inStock&gt;
+       &lt;/getProductDetailsResult&gt;
+     &lt;/getProductDetailsResponse&gt;
+   &lt;/soap:Body&gt;
+ &lt;/soap:Envelope&gt;
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Related technologies">edit</a>]</div>
+<p><a name="Related_technologies" id="Related_technologies"></a></p>
+<h3>Related technologies</h3>
+<ul>
+<li><a href="/wiki/List_of_Web_service_markup_languages.html" title="List of Web service markup languages">List of Web service markup languages</a></li>
+<li><a href="/wiki/Software_componentry.html" title="Software componentry">Component technologies</a></li>
+<li><a href="/wiki/Web_service.html" title="Web service">Web service</a> and some of its core technologies: <a href="/wiki/Web_Services_Description_Language.html" title="Web Services Description Language">Web Services Description Language</a> (WSDL) and <a href="/wiki/Universal_Description%2C_Discovery%2C_and_Integration.html" title="Universal Description, Discovery, and Integration">Universal Description, Discovery, and Integration</a> (UDDI)</li>
+<li><a href="/wiki/WS-I_Basic_Profile.html" title="WS-I Basic Profile">WS-I Basic Profile</a></li>
+<li><a href="/wiki/XMLHTTP.html" title="XMLHTTP">XMLHTTP</a></li>
+<li><a href="/wiki/Netconf.html" title="Netconf">Netconf</a></li>
+<li><a href="/wiki/SOAP_with_Attachments.html" title="SOAP with Attachments">SOAP with Attachments</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Alternatives to SOAP">edit</a>]</div>
+<p><a name="Alternatives_to_SOAP" id="Alternatives_to_SOAP"></a></p>
+<h3>Alternatives to SOAP</h3>
+<ul>
+<li><a href="/wiki/JSON-RPC.html" title="JSON-RPC">JSON-RPC</a></li>
+<li><a href="/wiki/XINS.html" title="XINS">XINS</a></li>
+<li><a href="/wiki/Burlap.html" title="Burlap">Burlap</a> <a  class="external autonumber" title="http://www.caucho.com/burlap/">[1]</a></li>
+<li><a href="/wiki/GXA.html" title="GXA">GXA</a></li>
+<li><a href="/wiki/Hessian_Web_Service_Protocol.html" title="Hessian Web Service Protocol">Hessian Web Service Protocol</a> <a  class="external autonumber" title="http://www.caucho.com/hessian/index.xtp">[2]</a></li>
+<li><a href="/wiki/Representational_State_Transfer.html" title="Representational State Transfer">REST</a></li>
+<li><a href="/wiki/XML-RPC.html" title="XML-RPC">XML-RPC</a></li>
+<li><a href="/wiki/BEEP.html" title="BEEP">BEEP</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://soapclient.com/soaptest.html">Generic SOAP Client</a></li>
+<li><a  class="external text" title="http://www.xmlrpc.com/stories/storyReader$555">Dave Winer's history of SOAP</a></li>
+<li><a  class="external text" title="http://www.advogato.org/article/464.html">Discussion on Web Services technology (SOAP and REST)</a></li>
+<li><a  class="external text" title="http://webservices.xml.com/pub/a/ws/2001/04/04/soap.html">Don Box's history of SOAP</a></li>
+<li><a  class="external text" title="http://soap-portlet.sourceforge.net/">Dynamic SOAP Portlet</a>, for dynamic integration of SOAP services in <a href="/wiki/JSR168.html" title="JSR168">JSR168</a> portals</li>
+<li><a  class="external text" title="http://www.pocketsoap.com">Simon Fell's PocketSOAP</a> and <a  class="external text" title="http://www.pocketsoap.com/weblog/">his blog</a>, which frequently covers contemporary SOAP topics</li>
+<li><a  class="external text" title="http://dmoz.org/Computers/Programming/Internet/Web_Services/">SOAP Category at ODP</a></li>
+<li><a  class="external text" title="http://www.soaprpc.com/ws_implementations.html">SOAP Implementations (list)</a></li>
+<li><a  class="external text" title="http://xml.coverpages.org/soap.html">Technology Report</a></li>
+<li><a  class="external text" title="http://soap2corba.sourceforge.net/">Two-way SOAP to CORBA bridge</a></li>
+<li><a  class="external text" title="http://searchwebservices.techtarget.com/searchWebServices/downloads/what_is_soap.swf">What is SOAP?</a> (<a href="/wiki/Macromedia_Flash.html" title="Macromedia Flash">Flash</a> presentation; requires plugin.)</li>
+<li><a  class="external text" title="http://www.w3schools.com/soap/">W3Schools SOAP Tutorial</a> (Note: This is an outdated tutorial, which advocates the incorrect SOAP <a href="/wiki/XML_namespace.html" title="XML namespace">namespace</a>)</li>
+<li><a  class="external text" title="http://www.w3.org/TR/soap12-part0/">W3C SOAP: Primer</a></li>
+<li><a  class="external text" title="http://www.w3.org/TR/soap12-part1/">W3C SOAP: Messaging Framework</a></li>
+<li><a  class="external text" title="http://www.w3.org/TR/soap12-part2/">W3C SOAP: Adjuncts</a></li>
+<li><a  class="external text" title="http://www.w3.org/2000/xp/">XML protocol activity</a></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:29215-0!1!0!default!!en!2 and timestamp 20060910145309 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Articles with unsourced statements">Articles with unsourced statements</a></span> | <span dir='ltr'><a  title="Category:Inter-process communication">Inter-process communication</a></span> | <span dir='ltr'><a  title="Category:W3C standards">W3C standards</a></span> | <span dir='ltr'><a  title="Category:Web service specifications">Web service specifications</a></span> | <span dir='ltr'><a  title="Category:XML-based standards">XML-based standards</a></span> | <span dir='ltr'><a  title="Category:Web services">Web services</a></span> | <span dir='ltr'><a  title="Category:Data serialization formats">Data serialization formats</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/SOAP.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-ca"><a >Català</a></li>
+				<li class="interwiki-da"><a >Dansk</a></li>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-eo"><a >Esperanto</a></li>
+				<li class="interwiki-eu"><a >Euskara</a></li>
+				<li class="interwiki-fa"><a >فارسی</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-gl"><a >Galego</a></li>
+				<li class="interwiki-id"><a >Bahasa Indonesia</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-he"><a >עברית</a></li>
+				<li class="interwiki-nl"><a >Nederlands</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-pt"><a >Português</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+				<li class="interwiki-fi"><a >Suomi</a></li>
+				<li class="interwiki-sv"><a >Svenska</a></li>
+				<li class="interwiki-zh"><a >中文</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 19:37, 4 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv32 in 0.120 secs. --></body></html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Transact-SQL,Adaptive Server Enterprise,Computer language,Microsoft,Microsoft SQL Server,Microsoft Windows,SQL,Sqsh,Stored procedure,Sybase,Sybase SQL Server" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Transact-SQL - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Transact-SQL";
+			var wgTitle = "Transact-SQL";
+			var wgArticleId = 295710;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Transact-SQL</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>Sometimes abbreviated T-SQL, <b>Transact-SQL</b> is <a href="/wiki/Microsoft.html" title="Microsoft">Microsoft</a>'s and <a href="/wiki/Sybase.html" title="Sybase">Sybase</a>'s proprietary extension to the <a href="/wiki/SQL.html" title="SQL">SQL</a> language. Microsoft's implementation ships in the <a href="/wiki/Microsoft_SQL_Server.html" title="Microsoft SQL Server">Microsoft SQL Server</a> product. Sybase uses the language in its <a href="/wiki/Adaptive_Server_Enterprise.html" title="Adaptive Server Enterprise">Adaptive Server Enterprise</a>, the successor to <a href="/wiki/Sybase_SQL_Server.html" title="Sybase SQL Server">Sybase SQL Server</a>.</p>
+<p>In order to make it more powerful, SQL has been enhanced with additional features such as:</p>
+<ul>
+<li>Control-of-flow language</li>
+<li>Local variables</li>
+<li>User authentication integrated with <a href="/wiki/Microsoft_Windows.html" title="Microsoft Windows">Microsoft Windows</a></li>
+<li>Various support functions for string processing, date processing, mathematics, etc.</li>
+</ul>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Control-of-flow Language</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Local variables</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">External links</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Control-of-flow Language">edit</a>]</div>
+<p><a name="Control-of-flow_Language" id="Control-of-flow_Language"></a></p>
+<h2>Control-of-flow Language</h2>
+<p>Keywords for flow control in Transact-SQL include <code>BEGIN</code> and <code>END</code>, <code>BREAK</code>, <code>CONTINUE</code>, <code>GOTO</code>, <code>IF</code> and <code>ELSE</code>, <code>RETURN</code>, <code>WAITFOR</code>, and <code>WHILE</code>.</p>
+<p><code>IF</code> and <code>ELSE</code> allow conditional execution. This batch statement will print "weekend" if the current date is a weekend day, or "weekday" if the current date is a weekday.</p>
+<pre>
+IF DATEPART(dw, GETDATE()) = 7 OR DATEPART(dw, GETDATE()) = 1
+   PRINT 'It is the weekend.'
+ELSE
+   PRINT 'It is a weekday.'
+</pre>
+<p><br />
+<code>BEGIN</code> and <code>END</code> mark a block of statements. If more than one statement is to be controlled by the conditional in the example above, we can use BEGIN and END like this:</p>
+<pre>
+IF DATEPART(dw, GETDATE()) = 7 OR DATEPART(dw, GETDATE()) = 1
+BEGIN
+   PRINT 'It is the weekend.'
+   PRINT 'Get some rest!'
+END
+ELSE
+BEGIN
+   PRINT 'It is a weekday.'
+   PRINT 'Get to work!'
+END
+</pre>
+<p><code>WAITFOR</code> will wait for a given amount of time, or until a particular time of day. The statement can be used for delays or to block execution until the set time.</p>
+<p><code>RETURN</code> is used to immediately return from a <a href="/wiki/Stored_procedure.html" title="Stored procedure">stored procedure</a> or function.</p>
+<p><code>BREAK</code> ends the enclosing <code>WHILE</code> loop, while <code>CONTINUE</code> causes the next iteration of the loop to execute. An example of a <code>WHILE</code> loop is given below.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Local variables">edit</a>]</div>
+<p><a name="Local_variables" id="Local_variables"></a></p>
+<h2>Local variables</h2>
+<p>Local variables are so named because they're local to the script executing them. Transact SQL doesn't support user-defined global variables.</p>
+<p><code>DECLARE</code> will declare a variable, giving it a name and a type. The SET statement can be used to provide a value, and the variable may be used in a statement by referencing its name.</p>
+<p>This script declares a variable as an integer, initializes it, then uses <code>WHILE</code> to execute a loop.</p>
+<pre>
+DECLARE @Counter AS INT
+SET @Counter = 10
+WHILE @Counter &gt; 0
+BEGIN
+   PRINT 'The count is ' + CONVERT(VARCHAR(10), @Counter)
+   SET @Counter = @Counter - 1
+END
+</pre>
+<p>The body of the loop will print a message including the value of the variable, and then decrement the counter.</p>
+<p>A variable may be initialized as the result of a statement, like this:</p>
+<pre>
+DECLARE @ArticleCount INT
+SELECT @ArticleCount = COUNT(*) FROM Articles
+
+INSERT INTO SizeLog (SampleTime, ArticleCount) VALUES (GETDATE(), @ArticleCount)
+</pre>
+<p>which will get the count of rows in the Articles table, then insert a row including that count and the current clock time into the SizeLog table.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://msdn.microsoft.com/library/en-us/tsqlref/ts_tsqlcon_6lyk.asp">Transact-SQL Reference for SQL Server 2000 (MSDN)</a></li>
+<li><a  class="external text" title="http://msdn2.microsoft.com/en-us/library/ms189826.aspx">Transact-SQL Reference for SQL Server 2005 (MSDN)</a></li>
+<li><a  class="external text" title="http://manuals.sybase.com/onlinebooks/group-as/asg1250e/refman">ASE Reference Manual</a></li>
+<li><a  class="external text" title="http://devguru.com/technologies/t-sql/">DevGuru T-SQL Quick Reference</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Microsoft_SQL_Server.html" title="Microsoft SQL Server">Microsoft SQL Server</a></li>
+<li><a href="/wiki/Adaptive_Server_Enterprise.html" title="Adaptive Server Enterprise">Adaptive Server Enterprise</a></li>
+<li><a href="/wiki/SQL.html" title="SQL">SQL</a></li>
+<li><a href="/wiki/Sqsh.html" title="Sqsh">Sqsh</a> - open source Transact-SQL client</li>
+</ul>
+<div class="boilerplate metadata" id="stub"><a  class="image" title="Soft Eng logo"><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/9/91/LampFlowchart.svg/20px-LampFlowchart.svg.png" alt="Soft Eng logo" width="20" height="27" longdesc="/wiki/Image:LampFlowchart.svg" /></a> <i>This <a href="/wiki/Computer_language.html" title="Computer language">computer language</a>-related article is a <a  title="Wikipedia:Perfect stub article">stub</a>. You can <a  title="Wikipedia:Stub">help</a> Wikipedia by <a  class="external text" title="http://en.wikipedia.org/w/index.php?title=Transact-SQL&amp;action=edit">expanding it</a></i>.</div>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:295710-0!1!0!default!!en!2 and timestamp 20060910150850 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Computer language stubs">Computer language stubs</a></span> | <span dir='ltr'><a  title="Category:SQL">SQL</a></span> | <span dir='ltr'><a  title="Category:Data-centric programming languages">Data-centric programming languages</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Transact-SQL.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 19:45, 20 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv13 in 0.077 secs. --></body></html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="P-complete,BPP,BQP,Big O notation,Binary numeral system,Boolean satisfiability problem,Co-NP,Co-NP-complete,Co-RE,Co-RE-complete,Complete (complexity)" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>P-complete - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "P-complete";
+			var wgTitle = "P-complete";
+			var wgArticleId = 54683;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">P-complete</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>In <a href="/wiki/Computational_complexity_theory.html" title="Computational complexity theory">complexity theory</a>, the <a href="/wiki/Complexity_class.html" title="Complexity class">complexity class</a> <b>P-complete</b> is a set of <a href="/wiki/Decision_problem.html" title="Decision problem">decision problems</a> and is useful in the analysis of which problems can be efficiently solved on <a href="/wiki/Parallel_computing.html" title="Parallel computing">parallel computers</a>. A <a href="/wiki/Decision_problem.html" title="Decision problem">decision problem</a> is in <b>P-complete</b> if it is <a href="/wiki/Complete_%28complexity%29.html" title="Complete (complexity)">complete</a> for <b><a href="/wiki/P_%28complexity%29.html" title="P (complexity)">P</a></b>, meaning that it is in <b>P</b>, and that every problem in <b>P</b> can be reduced to it in polylogarithmic time on a parallel computer with a polynomial number of processors. In other words, a problem <i>A</i> is in <b>P-complete</b> if, for each problem <i>B</i> in <b>P</b>, there are constants <i>c</i> and <i>k</i> such that <i>B</i> can be reduced to <i>A</i> in time <a href="/wiki/Big_O_notation.html" title="Big O notation">O</a>((log <i>n</i>)<sup><i>c</i></sup>) using O(<i>n</i><sup><i>k</i></sup>) parallel processors. See <b><a href="/wiki/NC_%28complexity%29.html" title="NC (complexity)">NC</a></b> for the definition of parallel processors.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Motivation</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">P-complete problems</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Problems not known to be P-complete</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">References</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Motivation">edit</a>]</div>
+<p><a name="Motivation" id="Motivation"></a></p>
+<h2>Motivation</h2>
+<p>The class <b>P</b>, typically taken to consist of all the "tractable" problems for a sequential computer, contains the class <b><a href="/wiki/NC_%28complexity%29.html" title="NC (complexity)">NC</a></b>, which consists of those problems which can be efficiently solved on a parallel computer. This is because parallel computers can be simulated on a sequential machine. It is not known whether <b>NC</b>=<b>P</b>. In other words, it is not known whether there are any tractable problems that are inherently sequential. Just as it is widely suspected that <b>P</b> does not equal <b>NP</b>, so it is widely suspected that <b>NC</b> does not equal <b>P</b>.</p>
+<p>The class <b><a href="/wiki/NP-complete.html" title="NP-complete">NP-complete</a></b>, which can be thought of as containing the "probably intractable" problems, is introduced to analyze the <b>P</b>=<b>NP</b> question, and the class <b>P-complete</b>, which can be thought of as containing the "probably not parallelizable" or "probably inherently sequential" problems, serves in a similar manner to study the <b>NC</b>=<b>P</b> question. Finding an efficient way to parallelize the solution to some <b>P-complete</b> problem would disprove the suspicion that <b>NC</b> ≠ <b>P</b>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: P-complete problems">edit</a>]</div>
+<p><a name="P-complete_problems" id="P-complete_problems"></a></p>
+<h2>P-complete problems</h2>
+<p>The most basic <b>P-complete</b> problem is this: given a <a href="/wiki/Turing_machine.html" title="Turing machine">Turing machine</a>, an input for that machine, and a number <i>T</i> (written in <a href="/wiki/Unary_numeral_system.html" title="Unary numeral system">unary</a>), does that machine halt on that input within the first <i>T</i> steps? It is clear that this problem is <b>P-complete</b>: if we can parallelize a general simulation of a sequential computer, then we will be able to parallelize any program that runs on that computer. If this problem is in <b>NC</b>, then so is every other problem in <b>P</b>. If the number of steps is written in binary, the problem is <a href="/wiki/EXPTIME-complete.html" title="EXPTIME-complete">EXPTIME-complete</a>.</p>
+<p>This problem illustrates a common trick in the theory of <b>P-complete</b>ness. We aren't really interested in whether a problem can be solved quickly on a parallel machine. We're just interested in whether a parallel machine solves it <i>much more</i> quickly than a sequential machine. Therefore, we have to reword the problem so that the sequential version is in <b>P</b>. That is why this problem required <i>T</i> to be written in unary. If a number <i>T</i> is written as a <a href="/wiki/Binary_numeral_system.html" title="Binary numeral system">binary</a> number (a string of <i>n</i> ones and zeros, where <i>n</i>=log(<i>T</i>)), then the obvious sequential algorithm can take time 2<sup><i>n</i></sup>. On the other hand, if <i>T</i> is written as a unary number (a string of <i>n</i> ones, where <i>n</i>=<i>T</i>), then it only takes time <i>n</i>. By writing <i>T</i> in unary rather than binary, we have reduced the obvious sequential algorithm from exponential time to linear time. That puts the sequential problem in <b>P</b>. Then, it will be in <b>NC</b> if and only if it is parallelizable.</p>
+<p>Many other problems have been proved to be <b>P-complete</b>, and therefore are widely believed to be inherently sequential. These include the following problems, either as given, or in a <a href="/wiki/Decision_problem.html" title="Decision problem">decision-problem</a> form:</p>
+<ul>
+<li>Circuit Value Problem (CVP) - Given a <a  class="new" title="Boolean circuit">circuit</a>, the inputs to the circuit, and one gate in the circuit, calculate the output of that gate</li>
+<li>Restricted Case of CVP - Like CVP, except each gate has two inputs and two outputs (F and Not F), every other layer is just AND gates, the rest are OR gates (or, equivalently, all gates are NAND gates, or all gates or NOR gates), the inputs of a gate come from the immediately-preceding layer</li>
+<li><a href="/wiki/Linear_programming.html" title="Linear programming">Linear programming</a> - Maximize a linear function subject to linear inequality constraints</li>
+<li>Depth First Search Ordering - Given a <a href="/wiki/Graph_theory.html" title="Graph theory">graph</a> with fixed ordered adjacency lists, and nodes <i>u</i> and <i>v</i>, is vertex <i>u</i> visited before vertex <i>v</i> in a depth-first search?</li>
+<li>Context Free Grammar Membership - Given a <a href="/wiki/Context-free_grammar.html" title="Context-free grammar">context-free grammar</a> and a string, can that string be generated by that grammar?</li>
+<li><a href="/wiki/Horn-satisfiability.html" title="Horn-satisfiability">Horn-satisfiability</a>: given a set of <a href="/wiki/Horn_clause.html" title="Horn clause">Horn clauses</a>, is there a variable assignment which satisfies them? This is <b>P'</b>s version of the <a href="/wiki/Boolean_satisfiability_problem.html" title="Boolean satisfiability problem">boolean satisfiability problem</a>.</li>
+<li>Game of Life - Given an initial configuration of <a href="/wiki/Conway%27s_Game_of_Life.html" title="Conway's Game of Life">Conway's Game of Life</a>, a particular cell, and a time <i>T</i> (in unary), is that cell alive after <i>T</i> steps?</li>
+<li><a href="/wiki/LZW_%28algorithm%29.html" title="LZW (algorithm)">LZW (algorithm)</a> (1978 paradigm) Data Compression - given strings <i>s</i> and <i>t</i>, will compressing <i>s</i> with an LZ78 method (such as Unisys's <a href="/wiki/LZW.html" title="LZW">LZW</a> technology) add <i>t</i> to the dictionary? (Note that for <a href="/wiki/LZ77.html" title="LZ77">LZ77</a> compression such as <a href="/wiki/Gzip.html" title="Gzip">gzip</a>, this is much easier, as the problem reduces to "Is <i>t</i> in <i>s</i>?".)</li>
+<li>Type inference for partial types - Given an <a href="/wiki/Type_theory.html" title="Type theory">untyped</a> term from the <a href="/wiki/Lambda_calculus.html" title="Lambda calculus">lambda calculus</a>, determine whether this term has a partial type.</li>
+</ul>
+<p>In order to prove that a given problem is P-complete, one typically tries to reduce a known <b>P-complete</b> problem to the given one, using an efficient parallel algorithm.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Problems not known to be P-complete">edit</a>]</div>
+<p><a name="Problems_not_known_to_be_P-complete" id="Problems_not_known_to_be_P-complete"></a></p>
+<h2>Problems not known to be P-complete</h2>
+<p>Some problems are not known to be either <b>NP-complete</b> or <b>P</b>. These problems (e.g. <a href="/wiki/Integer_factorization.html" title="Integer factorization">factoring</a>) are suspected to be difficult. Similarly there are problems that are not known to be either <b>P-complete</b> or <b>NC</b>, but are thought to be difficult to parallelize. Examples include the <a href="/wiki/Decision_problem.html" title="Decision problem">decision problem</a> forms of finding the <a href="/wiki/Greatest_common_divisor.html" title="Greatest common divisor">greatest common divisor</a> of two binary numbers, and determining what answer the <a href="/wiki/Extended_Euclidean_algorithm.html" title="Extended Euclidean algorithm">extended Euclidean algorithm</a> would return when given two binary numbers.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<ul>
+<li>Greenlaw, Raymond, James Hoover, and Walter Ruzzo. 1995. <i>Limits To Parallel computation; P-Completeness Theory</i>. <a  class="internal">ISBN 0-19-508591-4</a>. — Develops the theory, then catalogs 96 P-Complete problems.</li>
+</ul>
+<ul>
+<li>Satoru Miyano, Shuji Shiraishi, and Takayoshi Shoudai. <i>A List of P-Complete Problems</i>. Kyushu University, RIFIS-TR-CS-17. December 1990.</li>
+</ul>
+<p><br /></p>
+<table class="toccolours" style="clear: both; width: 94%; margin: 0.5em auto; text-align: center; padding: 0em 0em 0em 0em">
+<tr>
+<th style="padding-top: 0.2em; padding-bottom: 0.2em; background: #ccccff">Important <a href="/wiki/Complexity_class.html" title="Complexity class">complexity classes</a> (<a href="/wiki/List_of_complexity_classes.html" title="List of complexity classes">more</a>)</th>
+</tr>
+<tr>
+<td style="font-size: 90%; padding: 0.5em 1em"><a href="/wiki/P_%28complexity%29.html" title="P (complexity)">P</a>&#160;• <a href="/wiki/NP_%28complexity%29.html" title="NP (complexity)">NP</a>&#160;• <a href="/wiki/Co-NP.html" title="Co-NP">co-NP</a>&#160;• <a href="/wiki/NP-complete.html" title="NP-complete">NP-C</a>&#160;• <a href="/wiki/Co-NP-complete.html" title="Co-NP-complete">co-NP-C</a>&#160;• <a href="/wiki/NP-hard.html" title="NP-hard">NP-hard</a>&#160;• <a href="/wiki/UP_%28complexity%29.html" title="UP (complexity)">UP</a>&#160;• <a href="/wiki/Sharp-P.html" title="Sharp-P">#P</a>&#160;• <a href="/wiki/Sharp-P-complete.html" title="Sharp-P-complete">#P-C</a>&#160;• <a href="/wiki/L_%28complexity%29.html" title="L (complexity)">L</a>&#160;• <a href="/wiki/NL_%28complexity%29.html" title="NL (complexity)">NL</a>&#160;• <a href="/wiki/NC_%28complexity%29.html" title="NC (complexity)">NC</a>&#160;• <strong class="selflink">P-C</strong>&#160;• <a href="/wiki/PSPACE.html" title="PSPACE">PSPACE</a>&#160;• <a href="/wiki/PSPACE-complete.html" title="PSPACE-complete">PSPACE-C</a>&#160;• <a href="/wiki/EXPTIME.html" title="EXPTIME">EXPTIME</a>&#160;• <a href="/wiki/EXPSPACE.html" title="EXPSPACE">EXPSPACE</a>&#160;• <a href="/wiki/PR_%28complexity%29.html" title="PR (complexity)">PR</a>&#160;• <a href="/wiki/RE_%28complexity%29.html" title="RE (complexity)">RE</a>&#160;• <a href="/wiki/Co-RE.html" title="Co-RE">Co-RE</a>&#160;• <a href="/wiki/RE-complete.html" title="RE-complete">RE-C</a>&#160;• <a href="/wiki/Co-RE-complete.html" title="Co-RE-complete">Co-RE-C</a>&#160;• <a href="/wiki/R_%28complexity%29.html" title="R (complexity)">R</a>&#160;• <a href="/wiki/BQP.html" title="BQP">BQP</a>&#160;• <a href="/wiki/BPP.html" title="BPP">BPP</a>&#160;• <a href="/wiki/RP_%28complexity%29.html" title="RP (complexity)">RP</a>&#160;• <a href="/wiki/ZPP.html" title="ZPP">ZPP</a>&#160;• <a href="/wiki/PCP_%28complexity%29.html" title="PCP (complexity)">PCP</a>&#160;• <a href="/wiki/IP_%28complexity%29.html" title="IP (complexity)">IP</a>&#160;• <a href="/wiki/PH_%28complexity%29.html" title="PH (complexity)">PH</a></td>
+</tr>
+</table>
+
+<!-- 
+Pre-expand include size: 7394 bytes
+Post-expand include size: 2329 bytes
+Template argument size: 902 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:54683-0!1!0!default!!en!2 and timestamp 20060910113813 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:Complexity classes">Complexity classes</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/P-complete.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-es"><a >Español</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 00:49, 31 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv116 in 0.165 secs. --></body></html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="RT-11,8.3,BASIC,C programming language,Computer display,Computer multitasking,Computer terminal,DECUS,DIGITAL Command Language,Data acquisition,Digital Equipment Corporation" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>RT-11 - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "RT-11";
+			var wgTitle = "RT-11";
+			var wgArticleId = 69309;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">RT-11</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p><b>RT-11</b> ('RT' for <i>Real Time</i>) was a small, single-user <a href="/wiki/Real-time_operating_system.html" title="Real-time operating system">real-time operating system</a> for the <a href="/wiki/Digital_Equipment_Corporation.html" title="Digital Equipment Corporation">DEC</a> <a href="/wiki/PDP-11.html" title="PDP-11">PDP-11</a> family of 16-bit computers.</p>
+<p>Users could choose from three variants with differing levels of support for <a href="/wiki/Computer_multitasking.html" title="Computer multitasking">multitasking</a>:</p>
+<ul>
+<li><b>RT-11SJ</b> (Single Job) allowed only one task.</li>
+<li><b>RT-11FB</b> (Foreground/Background) supported two tasks: a high-priority, non-interactive "Foreground" job, and a low-priority, interactive "Background" job.</li>
+<li><b>RT-11XM</b> (eXtended Memory) provided support for memory beyond 64kb, but required a CPU with memory management hardware.</li>
+</ul>
+<p>In later versions, an additional <b>RT-11ZM</b> monitor provided support for kernel, supervisor and user modes, but required a CPU with memory management hardware which supported separated I&amp;D (instruction and data) space.</p>
+<p>All variants of the monitors provided the Background Job. The FB, XM and ZM monitors typically provided a Foreground Job. With System Job support, selected via SYSGEN, the FB, XM and ZM monitors provided 6 additional non-interactive "System" jobs (higher in priority than the background job, but lower in priority than the foreground job). It was also possible, via SYSGEN, to specify that a monitor was to provide a single background job. This resulted in the XB and ZB variants.</p>
+<p>RT-11 was written in assembly language with heavy use of the conditional assembly and macro programming features of the <a href="/wiki/MACRO-11.html" title="MACRO-11">MACRO-11</a> assembler. Every distribution included the <a href="/wiki/Source_code.html" title="Source code">source code</a> of the operating system and its device drivers (with all the comments removed), and a utility named "SYSGEN" which would build the operating system and drivers according to a user-specified configuration. (The <a href="/wiki/Linux_kernel.html" title="Linux kernel">Linux kernel</a> uses a similar approach; see <a href="/wiki/Menuconfig.html" title="Menuconfig">menuconfig</a>.) In early versions of RT-11, the device drivers were built into the kernel. In later versions of RT-11, the device drivers were built separate from the kernel and were loadable. It was not uncommon for end-users to write or enhance device drivers.</p>
+<p>Users generally operated RT-11 via a <a href="/wiki/Teletype.html" title="Teletype">printing terminal</a> or a <a href="/wiki/Computer_terminal.html" title="Computer terminal">video terminal</a>, but DEC also supported the VT-11 and VS-11 graphics display devices (<a href="/wiki/Vector_graphics.html" title="Vector graphics">vector graphics</a> <a href="/wiki/Computer_display.html" title="Computer display">terminals</a> with a graphic character generator for displaying text, and a <a href="/wiki/Light_pen.html" title="Light pen">light pen</a> for graphical input).</p>
+<p>RT-11 came with several programs available including the KED visual editor (a cut-down version of the <a href="/wiki/EDT_text_editor.html" title="EDT text editor">EDT text editor</a>), <a href="/wiki/Text_Editor_and_Corrector.html" title="Text Editor and Corrector">TECO</a>, DEC's version of <a href="/wiki/Runoff_%28program%29.html" title="Runoff (program)">runoff</a>, a command <a href="/wiki/Shell_%28computing%29.html" title="Shell (computing)">shell</a> named "KMON" (for Keyboard Monitor) and a batch processor. Later versions supported <a href="/wiki/DIGITAL_Command_Language.html" title="DIGITAL Command Language">DCL</a>. The system was complete enough to handle most modern personal computing tasks, except for web browsing. Large amounts of free, user-contributed software for RT-11 were available from the <a href="/wiki/DECUS.html" title="DECUS">DIGITAL Equipment Corporation Users Society</a>, including an implementation of <a href="/wiki/C_programming_language.html" title="C programming language">C</a>.</p>
+<p>The RT-11 operating system could be stored on a 2.5MB removable hard disk platter, or quickly booted from an 8 inch floppy disk. The system supported a real time clock, printing terminal, VT-11 vector graphic unit, 16 channel 100&#160;kHz A/D converter with 2 channel D/A, 9600 baud serial port, 16 bit bidirectional boards, etc. The file system supported names with six characters and a three-character extension ("6.3" vs. the <a href="/wiki/MS-DOS.html" title="MS-DOS">MS-DOS</a> <a href="/wiki/8.3.html" title="8.3">8.3</a> format) encoded in <a href="/wiki/RAD50.html" title="RAD50">RAD50</a>, which packed those 9 characters into only six bytes. Tools to develop and debug assembly-language programs were provided, but other languages including C, <a href="/wiki/FORTRAN.html" title="FORTRAN">FORTRAN</a>, <a href="/wiki/PASCAL.html" title="PASCAL">PASCAL</a>, and several versions of <a href="/wiki/BASIC.html" title="BASIC">BASIC</a> were available from DEC as "layered products" at extra cost. Versions of these and other programming languages were also available from other, third-party, sources.</p>
+<p>One factor contributing to the simplicity (and speed) of RT-11 was the architecture of the <a href="/wiki/File_system.html" title="File system">file system</a>; all files were contiguous, meaning that each file occupied consecutive blocks (the minimally addressable unit of disk storage, 512 bytes) on the disk. This meant that an entire file could be read (or written) very quickly. A side effect of this file system structure was that a disk might need to be periodically 'squeezed' to consolidate the unused portions.</p>
+<p>Later, when DEC introduced the LSI computers, they were able to run RT-11 from an 8 inch <a href="/wiki/Floppy_disk.html" title="Floppy disk">floppy disk</a>. DEC also sold <a href="/wiki/RSX-11.html" title="RSX-11">RSX-11</a>, a multiuser, multitasking operating system, but RT-11 remained the operating system of choice for <a href="/wiki/Data_acquisition.html" title="Data acquisition">data acquisition</a> systems where real time response was required.</p>
+<p>RT-11 ran on all members of the PDP-11 family, from the PDP-11[/20] (the earliest released by DEC) to the PDP-11/93,94 (the last -11 released by DEC). It also ran on the Professional 300 Series and the PDT-11 ('PDT' for Programmed Data Terminal), both series of computers being based on a PDP-11 CPU, but using different bus and/or interrupt structures.</p>
+<p>S&amp;H Computing developed <a href="/wiki/TSX-Plus.html" title="TSX-Plus">TSX-Plus</a>, which was essentially a multi-user, multi-processing extension of RT-11.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Specialized versions">edit</a>]</div>
+<p><a name="Specialized_versions" id="Specialized_versions"></a></p>
+<h2>Specialized versions</h2>
+<p>Several specialized PDP-11 systems were sold based on RT-11:</p>
+<ul>
+<li>LAB-11 provided an LPS-11 analog peripheral for the collection of laboratory data</li>
+<li>PEAK-11 provided further customization for use with <a href="/wiki/Gas_chromatograph.html" title="Gas chromatograph">gas chromatographs</a> (analyzing the peaks produced by the GC); data collection ran in RT11's foreground process while the user's data analysis programs ran in the background.</li>
+<li>GT4x systems added a VT11 vector graphics peripheral. Several very popular demo programs were provided with these systems including <a href="/wiki/Lunar_Lander.html" title="Lunar Lander">Lunar Lander</a> and a version of <a href="/wiki/Spacewar%21.html" title="Spacewar!">Spacewar!</a>.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Compatibility with other DEC operating systems">edit</a>]</div>
+<p><a name="Compatibility_with_other_DEC_operating_systems" id="Compatibility_with_other_DEC_operating_systems"></a></p>
+<h2>Compatibility with other DEC operating systems</h2>
+<p>Many RT11 programs (those that did not need specialized peripherals or direct access to the hardware) could be directly executed under the RT11 <a href="/wiki/Run-time_system.html" title="Run-time system">Run-time system</a> of the <a href="/wiki/RSTS/E.html" title="RSTS/E">RSTS/E</a> timesharing system.</p>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:69309-0!1!0!default!!en!2 and timestamp 20060909162844 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:DEC Operating Systems">DEC Operating Systems</a></span> | <span dir='ltr'><a  title="Category:Real-time operating systems">Real-time operating systems</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/RT-11.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 01:49, 30 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv21 in 0.063 secs. --></body></html>

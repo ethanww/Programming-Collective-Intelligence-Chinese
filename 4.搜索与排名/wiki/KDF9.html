@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="English Electric KDF9,1963,Atlas Computer,Dhrystone,Eldon,English Electric,Ferranti,International Computers Ltd,PDP-8,Whetstone (benchmark),Egdon/COTAN" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>English Electric KDF9 - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "English_Electric_KDF9";
+			var wgTitle = "English Electric KDF9";
+			var wgArticleId = 1111421;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">English Electric KDF9</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub">(Redirected from <a  title="KDF9">KDF9</a>)</div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p><b>KDF9</b> was an early British computer designed and built by <a href="/wiki/English_Electric.html" title="English Electric">English Electric</a>, later <a  class="new" title="English Electric Leo Marconi, EELM">English Electric Leo Marconi, EELM</a>, later still incorporated into <a href="/wiki/International_Computers_Ltd.html" title="International Computers Ltd">ICL</a>. It came into service ca. <a href="/wiki/1963.html" title="1963">1963</a> and was still in use in 1980 in at least one installation.</p>
+<p>Its logic circuits were entirely solid-state, being built from germanium diodes and pulse transformers, and ran on a 1 MHz two-phase clock. The maximum configuration incorporated 32K words of 48-bit core storage (192K bytes) with a cycle time of 6 microseconds. Each word could hold a 48-bit integer or floating-point number, two 24-bit integer or floating-point numbers, six 8-bit instruction <i>syllables</i>, or eight 6-bit characters. There was also provision for efficient handling of double-word, 96-bit, numbers in both integer and floating point formats. However, there was no standard character set. Each I/O device type had its own more or less similar character code. Not every character that could be read from paper tape could be successfully printed, for example.</p>
+<p>The CPU architecture featured three register sets. The <i>Nest</i> was a 16-deep pushdown stack of arithmetic registers, The <i>SJNS</i> (Subroutine Jump Nesting Store) was a similar stack of return addresses. The <i>Q Store</i> was a set of 16 index registers, each of 48 bits divided into <i>Counter</i> (C), <i>Increment</i> (I) and <i>Modifier</i> (M) parts of 16 bits each. Flags on a memory-reference instruction specified whether the address should be modified by the M part of a Q Store, and, if so, whether the C part should be decremented by 1 and the M part incremented by the contents of the I part. This made the coding of counting loops very efficient. However,there was no facility for byte or character addressing, so that non-numerical work suffered by comparison.</p>
+<p>Instructions were of 1, 2 or 3 syllables. All arithmetic took place at the top of the Nest and used <i>zero-address</i>, 1-syllable instructions. Q Store handling, and some memory reference instructions, used 2 syllables. Memory reference instructions with a 16-bit address offset, and 16-bit literal load instructions, used 3 syllables. Dense instruction coding, and extensive use of the register sets, meant that a minimum of store cycles were needed for common scientific codes, such as scalar product and polynomial inner loops. This did much to offset the relatively slow core cycle, giving the KDF9 about a half of the speed of its more famous, but much more expensive and less commercially successful, contemporary, the Manchester/<a href="/wiki/Ferranti.html" title="Ferranti">Ferranti</a> <a href="/wiki/Atlas_Computer.html" title="Atlas Computer">Atlas Computer</a>.</p>
+<p>The KDF9 was one of the earliest fully hardware-secured multiprogramming systems. Up to four programs could be run at once under the control of its elegantly simple operating system, the <i>Timesharing Director</i>, each being locked into its own core area by BASE address and NOL (Number of Locations) registers. Each program had its own sets of stack and Q store registers, which were activated when that program was dispatched, so that context switching was very efficient. Each program could drive hardware I/O devices directly, but was limited by hardware checks to those that the Director had allocated to it. Any attempt to use an unallocated device caused an error interrupt. A similar interrupt resulted from overfilling the Nest or SJNS, or attempting to access storage at an address above that given in the NOL register. Somewhat different was the Lock-Out interrupt, which resulted from trying to access an area of store that was currently being used by an I/O device, so that there was hardware mutual exclusion of access to DMA buffers. When a program blocked on a Lock-Out, or by voluntarily waiting for an I/O transfer to terminate, it was interrupted and Director switched to the program of highest priority that was not itself blocked. When a Lock-Out cleared, or an awaited transfer terminated, and the newly unblocked program was of higher priority than the program currently running, an interrupt to Director allowed for an immediate context switch.</p>
+<p>Later operating systems, including <a href="/wiki/Eldon.html" title="Eldon">Eldon</a> at the University of Leeds, and <a  class="new" title="Egdon/COTAN">Egdon/COTAN</a>, developed by a collaboration of Culham Laboratories, the University of Glasgow, and others, were fully interactive multi-access systems, usually with <a href="/wiki/PDP-8.html" title="PDP-8">PDP-8</a> front ends to handle the terminals.</p>
+<p>The Kidsgrove and Whetstone Algol 60 compilers were among the first of their class. The Kidsgrove compiler stressed optimization; the Whetstone compiler produced an interpretive object code aimed at debugging. It was by instrumenting the latter that Brian Wichmann obtained the statistics on program behaviour that led him to devise the <a href="/wiki/Whetstone_%28benchmark%29.html" title="Whetstone (benchmark)">Whetstone</a> benchmark for scientific computation, which inspired in turn the <a href="/wiki/Dhrystone.html" title="Dhrystone">Dhrystone</a> benchmark for non-numerical workloads.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Reminiscence">edit</a>]</div>
+<p><a name="Reminiscence" id="Reminiscence"></a></p>
+<h2>Reminiscence</h2>
+<p>Machine code programming used an unusual form of octal, known locally as 'bastardised octal'. It represented 8 bits with three octal digits but the first represented only two bits, whilst the others, the usual three.</p>
+<p>Within English Electric, its predecessor, DEUCE, had a well-used matrix package. The unreliability of valve machines led to the inclusion of a sum-check mechanism to detect single errors in matrix operations. The package used fixed-point arithmetic, in which the sum-checks were precise. However, when the corresponding package was implemented on KDF9, it used floating point, a new concept that had only limited mathematical analysis. It quickly became clear that sum checks were longer precise and a project was established in an attempt to provide a usable check. (In floating point (A+B)+C is not necessarily the same as A+(B+C) i.e. the + operation does not commute.) Before long, however, it was recognised that error rates with transistor machines was not an issue - they either worked or did not! Consequently the idea of sum checks was abandoned. The initial matrix package proved a very useful system testing tool as it was able to generate lengthy performance checks well before more formal test packages which were subsequently developed.</p>
+<p>Legend has it that the KDF9 was developed as project KD9 (Kidsgrove Development 9) and that the 'F' in its designation was contributed by the then Chairman after a long and tedious discussion on what to name the machine at launch - "I don't care if you call it the .......".</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://www.cs.ncl.ac.uk/research/pubs/articles/papers/427.pdf">History of KDF9 Algol compiler</a></li>
+<li><a  class="external text" title="http://www.cs.ncl.ac.uk/research/pubs/trNN/papers/38.pdf">Whetstone compiler, 1962</a> (pdf)</li>
+<li><a  class="external text" title="http://www.cs.man.ac.uk/CCS/res/res04.htm#d">Some KDF9 Algol compiler anecdotes</a></li>
+<li><a  class="external text" title="http://www.cs.ncl.ac.uk/research/pubs/trNN/papers/34.pdf">Presentation on KDF9 Algol on visit from Dijkstra</a></li>
+<li><a  class="external text" title="http://homepages.cwi.nl/~dik/english/codes/8tape.html#kdf">KDF9 8-level papertape format</a></li>
+<li><a  class="external text" title="http://themotionstore.com/leeedavison/kdf9/">KDF9 Nest</a> (images)</li>
+<li><a  class="external text" title="http://www.cs.ncl.ac.uk/research/pubs/books/papers/124.pdf">The Whetstone KDF9 Algol Translator</a></li>
+<li><a  class="external text" title="http://history.dcs.ed.ac.uk/archive/languages/atlas-autocode/imp9.imp.txt">Source Code for KDF9 port of Atlas Autocode compiler</a></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:1111421-0!1!0!default!!en!2 and timestamp 20060910153355 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:Early computers">Early computers</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/English_Electric_KDF9.html">Article</a></li>
+				 <li id="ca-talk" class="new"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 06:22, 29 July 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv47 in 0.152 secs. --></body></html>

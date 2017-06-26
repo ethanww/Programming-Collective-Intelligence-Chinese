@@ -1,0 +1,327 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Type polymorphism,1967,1976,1985,Abstract class,Abstract data type,Ad-hoc,Black box (systems),C++,CLOS,C programming language" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Type polymorphism - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Type_polymorphism";
+			var wgTitle = "Type polymorphism";
+			var wgArticleId = 261811;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Type polymorphism</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub">(Redirected from <a  title="Polymorphism (computer science)">Polymorphism (computer science)</a>)</div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<dl>
+<dd><span class="dablink"><i>This article is about using the same code for different datatypes. For other uses of the term "polymorphism", see <a href="/wiki/Polymorphism.html" title="Polymorphism">polymorphism</a>.</i></span></dd>
+</dl>
+<p>In <a href="/wiki/Computer_science.html" title="Computer science">computer science</a>, <b>polymorphism</b> means allowing a single definition to be used with different <a href="/wiki/Type_system.html" title="Type system">types</a> of data (specifically, different <a href="/wiki/Class_%28computer_science%29.html" title="Class (computer science)">classes</a> of <a href="/wiki/Object_%28computer_science%29.html" title="Object (computer science)">objects</a>). For instance, a polymorphic function definition can replace several type-specific ones, and a single polymorphic operator can act in expressions of various types. Many programming languages and paradigms implement some forms of polymorphism; for a popular example, see <a href="/wiki/Polymorphism_in_object-oriented_programming.html" title="Polymorphism in object-oriented programming">polymorphism in object-oriented programming</a>.</p>
+<p>The concept of polymorphism applies to <a href="/wiki/Data_type.html" title="Data type">data types</a> in addition to <a href="/wiki/Function_%28programming%29.html" title="Function (programming)">functions</a>. A function that can evaluate to and be applied to values of different types is known as a <i>polymorphic function</i>. A data type that contains elements of different types is known as a <i>polymorphic data type</i>.</p>
+<p>There are two fundamentally different kinds of polymorphism, as first informally described by <a href="/wiki/Christopher_Strachey.html" title="Christopher Strachey">Christopher Strachey</a> in <a href="/wiki/1967.html" title="1967">1967</a>. If the range of actual types that can be used is finite and the combinations must be specified individually prior to use, it is called <i><a href="/wiki/Ad-hoc.html" title="Ad-hoc">ad-hoc</a> polymorphism</i>. If all code is written without mention of any specific type and thus can be used transparently with any number of new types, it is called <i><a href="/wiki/Parametric.html" title="Parametric">parametric</a> polymorphism</i>. In their formal treatment of the topic in <a href="/wiki/1985.html" title="1985">1985</a>, <a href="/wiki/Luca_Cardelli.html" title="Luca Cardelli">Luca Cardelli</a> and <a  class="new" title="Peter Wegner">Peter Wegner</a> later restricted the term parametric polymorphism to instances with type parameters, recognizing also other kinds of <i>universal polymorphism</i>.</p>
+<p>Programming using parametric polymorphism is called <i><a href="/wiki/Generic_programming.html" title="Generic programming">generic programming</a></i>, particularly in the <a href="/wiki/Object-oriented.html" title="Object-oriented">object-oriented</a> community. Advocates of object-oriented programming often cite polymorphism as one of the major benefits of that paradigm over others. Advocates of <a href="/wiki/Functional_programming.html" title="Functional programming">functional programming</a> reject this claim on the grounds that the notion of parametric polymorphism is so deeply ingrained in many <a href="/wiki/Static_typing.html" title="Static typing">statically typed</a> <a href="/wiki/Functional_programming_language.html" title="Functional programming language">functional programming languages</a> that most programmers simply take it for granted. However, the rise in popularity of object-oriented programming languages did contribute greatly to awareness and use of polymorphism in the mainstream programming community.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Parametric polymorphism</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">1.1</span> <span class="toctext">Predicative and impredicative polymorphism</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Subtyping polymorphism</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Ad-hoc polymorphism</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">3.1</span> <span class="toctext">Overloading</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.2</span> <span class="toctext">Coercion</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Example</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">4.1</span> <span class="toctext">Overloading</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.2</span> <span class="toctext">Coercion</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.3</span> <span class="toctext">Parametric polymorphism</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Other meanings</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">References</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Parametric polymorphism">edit</a>]</div>
+<p><a name="Parametric_polymorphism" id="Parametric_polymorphism"></a></p>
+<h2>Parametric polymorphism</h2>
+<p>Using <b><a href="/wiki/Parametric.html" title="Parametric">parametric</a> polymorphism</b>, a function or a data type can be written generically so that it can deal equally well with any objects without depending on their type. For example, a function <code>append</code> that joins two lists can be constructed so that it does not care about the type of elements: it can append lists of integers, lists of real numbers, lists of strings, and so on. Let the <i>type variable <b>a</b></i> denote the type of elements in the lists. Then <code>append</code> can be typed [<i>a</i>]&#160;×&#160;[<i>a</i>]&#160;→&#160;[<i>a</i>], where [<i>a</i>] denotes a list of elements of type <i>a</i>. We say that the type of <code>append</code> is <i>parameterized by <b>a</b></i> for all values of <i>a</i>. (Note that since there is only one type variable, the function cannot be applied to just any pair of lists: the pair, as well as the result list, must consist of the same type of elements.) For each place where <code>append</code> is applied, a value is decided for <i>a</i>.</p>
+<p>Parametric polymorphism was first introduced to programming languages in <a href="/wiki/ML_programming_language.html" title="ML programming language">ML</a> in <a href="/wiki/1976.html" title="1976">1976</a>. Today it exists in <a href="/wiki/Standard_ML.html" title="Standard ML">Standard ML</a>, <a href="/wiki/O%27Caml.html" title="O'Caml">O'Caml</a>, <a href="/wiki/Haskell_programming_language.html" title="Haskell programming language">Haskell</a>, and others. Some argue that <a href="/wiki/Template_%28programming%29.html" title="Template (programming)">templates</a> should be considered an example of parametric polymorphism, though instead of actually producing generic code, the implementations generate specific code for each type value of <i>a</i> that a function is used with.</p>
+<p>Parametric polymorphism is a way to make a language more expressive, while still maintaining full static <a href="/wiki/Type-safety.html" title="Type-safety">type-safety</a>. It is thus irrelevant in <a href="/wiki/Datatypes#Type_checking.html" title="Datatypes">dynamically typed</a> languages, since <i>by definition</i> they lack static type-safety. However, any dynamically typed function <i>f</i> that takes <i>n</i> arguments can be given a static type using parametric polymorphism: <i>f</i>&#160;:&#160;<i>p<sub>1</sub></i>&#160;×&#160;...&#160;×&#160;<i>p<sub>n</sub></i>&#160;→&#160;<i>r</i>, where <i>p<sub>1</sub></i>,&#160;...,&#160;<i>p<sub>n</sub></i> and <i>r</i> are type parameters. Of course, this type is completely insubstantial and thus essentially useless. Instead, the types of arguments and return value are observed in run-time to match the operations performed on them.</p>
+<p>Cardelli and Wegner recognized in 1985 the advantages of allowing <i>bounds</i> on the type parameters. Many operations require some knowledge of the data types but can otherwise work parametrically. For example, to check if an item is included in a list, we need to compare the items for equality. In <a href="/wiki/Standard_ML.html" title="Standard ML">Standard ML</a>, type parameters of the form <i>’’a</i> are restricted so that the equality operation is available, thus the function would have the type <i>’’a</i> × <i>’’a</i> list → bool and <i>’’a</i> can only be a type with defined equality. In <a href="/wiki/Haskell_programming_language.html" title="Haskell programming language">Haskell</a>, bounding is achieved by requiring types to belong to a <a href="/wiki/Type_class.html" title="Type class">type class</a>; thus the same function has the type <b>Eq <i>a</i> ⇒</b> <i>a</i> → [<i>a</i>] → Bool in Haskell. In most object-oriented programming languages that support parametric polymorphism, parameters can be constrained to be <a href="/wiki/Subtype.html" title="Subtype">subtypes</a> of a given type (see <a  title="">#Subtyping polymorphism</a> below and the article on <a href="/wiki/Generic_programming.html" title="Generic programming">Generic programming</a>).</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Predicative and impredicative polymorphism">edit</a>]</div>
+<p><a name="Predicative_and_impredicative_polymorphism" id="Predicative_and_impredicative_polymorphism"></a></p>
+<h3>Predicative and impredicative polymorphism</h3>
+<p>Type systems with parametric polymorphism can be classified into <i>predicative</i> and <i><a href="/wiki/Impredicative.html" title="Impredicative">impredicative</a></i> systems. The key difference is in how parametric values may be instantiated. For example, consider the <code>append</code> function described above, which has type [<i>a</i>]&#160;×&#160;[<i>a</i>]&#160;→&#160;[<i>a</i>]; in order to apply this function to a pair of lists, a type must be substituted for the variable <i>a</i> in the type of the function such that the type of the arguments matches up with the resulting function type. In an <i>impredicative</i> system, the type being substituted may be any type whatsoever, including a type that is itself polymorphic; thus <code>append</code> can be applied to pairs of lists with elements of any type -- even to lists of polymorphic functions such as <code>append</code> itself. In a <i>predicative</i> system, type variables may not be instantiated with polymorphic types. This restriction makes the distinction between polymorphic and non-polymorphic types very important; thus in predicative systems polymorphic types are sometimes referred to as <i>type schemas</i> to distinguish them from ordinary (monomorphic) types, which are sometimes called <i>monotypes</i>.</p>
+<p>Polymorphism in the language ML and its close relatives is predicative. This is because predicativity, together with other restrictions, makes the type system simple enough that <a href="/wiki/Type_inference.html" title="Type inference">type inference</a> is possible. In languages where explicit type annotations are necessary when applying a polymorphic function, the predicativity restriction is less important; thus these languages are generally impredicative. Haskell manages to achieve type inference without predicativity but with a few complications.</p>
+<p>In <a href="/wiki/Type_theory.html" title="Type theory">type theory</a>, the most frequently studied impredicative <a href="/wiki/Typed_lambda_calculus.html" title="Typed lambda calculus">typed λ-calculi</a> are based on those of the <a href="/wiki/Lambda_cube.html" title="Lambda cube">lambda cube</a>, especially <a href="/wiki/System_F.html" title="System F">System F</a>. Predicative type theories include <a href="/wiki/Intuitionistic_Type_Theory.html" title="Intuitionistic Type Theory">Martin-Löf Type Theory</a> and <a href="/wiki/NuPRL.html" title="NuPRL">NuPRL</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Subtyping polymorphism">edit</a>]</div>
+<p><a name="Subtyping_polymorphism" id="Subtyping_polymorphism"></a></p>
+<h2>Subtyping polymorphism</h2>
+<p>Some languages employ the idea of <i><a href="/wiki/Subtype.html" title="Subtype">subtypes</a></i> to restrict the range of types that can be used in a particular case of parametric polymorphism. In these languages, <b>subtyping polymorphism</b> (sometimes referred to as dynamic polymorphism or dynamic typing) allows a function to be written to take an object of a certain type <i>T</i>, but also work correctly if passed an object that belongs to a type <i>S</i> that is a subtype of <i>T</i> (according to the <a href="/wiki/Liskov_substitution_principle.html" title="Liskov substitution principle">Liskov substitution principle</a>). This type relation is sometimes written <i>S</i>&#160;&lt;:&#160;<i>T</i>. Conversely, <i>T</i> is said to be a <i>supertype</i> of <i>S</i>—written <i>T</i>&#160;:&gt;&#160;<i>S</i>.</p>
+<p>For example, if <code>Number</code>, <code>Rational</code>, and <code>Integer</code> are types such that <code>Number</code>&#160;:&gt;&#160;<code>Rational</code> and <code>Number</code>&#160;:&gt;&#160;<code>Integer</code>, a function written to take a <code>Number</code> will work equally well when passed an <code>Integer</code> or <code>Rational</code> as when passed a <code>Number</code>. The actual type of the object can be hidden from clients into a <a href="/wiki/Black_box_%28systems%29.html" title="Black box (systems)">black box</a>, and accessed via object <a href="/wiki/Identity_%28object-oriented_programming%29.html" title="Identity (object-oriented programming)">identity</a>. In fact, if the <code>Number</code> type is <i>abstract</i>, it may not even be possible to get your hands on an object whose <i>most-derived</i> type is <code>Number</code> (see <a href="/wiki/Abstract_data_type.html" title="Abstract data type">abstract data type</a>, <a href="/wiki/Abstract_class.html" title="Abstract class">abstract class</a>). This particular kind of type hierarchy is known—especially in the context of the <a href="/wiki/Scheme_programming_language.html" title="Scheme programming language">Scheme programming language</a>—as a <i><a href="/wiki/Numerical_tower.html" title="Numerical tower">numerical tower</a></i>, and usually contains a lot more types.</p>
+<p><a href="/wiki/Object-oriented_programming_language.html" title="Object-oriented programming language">Object-oriented programming languages</a> offer subtyping polymorphism using <i><a href="/wiki/Subclass_%28computer_science%29.html" title="Subclass (computer science)">subclassing</a></i> (also known as <i><a href="/wiki/Inheritance_in_object-oriented_programming.html" title="Inheritance in object-oriented programming">inheritance</a></i>). In typical implementations, each class contains what is called a <i><a href="/wiki/Virtual_table.html" title="Virtual table">virtual table</a></i>—a table of functions that implement the polymorphic part of the class interface—and each object contains a pointer to the "vtable" of its class, which is then consulted whenever a polymorphic method is called. This mechanism is an example of</p>
+<ul>
+<li><i><a href="/wiki/Late_binding.html" title="Late binding">late binding</a></i>, because virtual function calls are not bound until the time of invocation, and</li>
+<li><i><a href="/wiki/Single_dispatch.html" title="Single dispatch">single dispatch</a></i> (i.e., single-argument polymorphism), because virtual function calls are bound simply by looking through the vtable provided by the first argument (the <code>this</code> object), so the runtime types of the other arguments are completely irrelevant.</li>
+</ul>
+<p>The same goes for most other popular object systems. Some, however, such as <a href="/wiki/CLOS.html" title="CLOS">CLOS</a>, provide <i><a href="/wiki/Multiple_dispatch.html" title="Multiple dispatch">multiple dispatch</a></i>, under which method calls are polymorphic in <i>all</i> arguments.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Ad-hoc polymorphism">edit</a>]</div>
+<p><a name="Ad-hoc_polymorphism" id="Ad-hoc_polymorphism"></a></p>
+<h2>Ad-hoc polymorphism</h2>
+<p><b><a href="/wiki/Ad-hoc.html" title="Ad-hoc">Ad-hoc</a> polymorphism</b> usually refers to <b><a href="/wiki/Function_overloading.html" title="Function overloading">overloading</a></b>, but sometimes automatic type conversion, known as <b><a  title="">coercion</a></b>, is also considered to be a kind of ad-hoc polymorphism (see the example section below). Common to these two types is the fact that the programmer has to specify exactly what types are to be usable with the polymorphic function.</p>
+<p>The name refers to the manner in which this kind of polymorphism is typically introduced: "Oh, hey, let's make the <code>+</code> operator work on strings, too!" Some argue that ad-hoc polymorphism is not polymorphism in a meaningful computer science sense at all—that it is just <a href="/wiki/Syntactic_sugar.html" title="Syntactic sugar">syntactic sugar</a> for calling <code>append_integer</code>, <code>append_string</code>, etc., manually. One way to see it is that</p>
+<ul>
+<li>to the user, there appears to be only one function, but one that takes different types of input and is thus type polymorphic; on the other hand,</li>
+<li>to the author, there are several functions that need to be written—one for each type of input—so there's essentially no polymorphism.</li>
+</ul>
+<p>In other words, ad hoc polymorphism is a <a href="/wiki/Dispatch.html" title="Dispatch">dispatch</a> mechanism: code moving through one named function is dispatched to various other functions without having to specify the exact function being called.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Overloading">edit</a>]</div>
+<p><a name="Overloading" id="Overloading"></a></p>
+<h3>Overloading</h3>
+<p>Overloading allows multiple functions taking different types to be defined with the same name; the <a href="/wiki/Compiler.html" title="Compiler">compiler</a> or <a href="/wiki/Interpreter_%28computing%29.html" title="Interpreter (computing)">interpreter</a> automatically calls the right one. This way, functions appending lists of integers, lists of strings, lists of real numbers, and so on could be written, and all be called <i>append</i>—and the right <i>append</i> function would be called based on the type of lists being appended. This differs from parametric polymorphism, in which the function would need to be written <i>generically</i>, to work with any kind of list. Using overloading, it is possible to have a function perform two completely different things based on the type of input passed to it; this is not possible with parametric polymorphism. Another way to look at overloading is that a routine is uniquely identified not by its name, but by the combination of its name and the number, order and types of its parameters.</p>
+<p>This type of polymorphism is common in <a href="/wiki/Object-oriented_programming.html" title="Object-oriented programming">object-oriented programming</a> languages, many of which allow <a href="/wiki/Operator.html" title="Operator">operators</a> to be overloaded in a manner similar to functions (see <a href="/wiki/Operator_overloading.html" title="Operator overloading">operator overloading</a>). It is also used extensively in the purely functional programming language <a href="/wiki/Haskell_programming_language.html" title="Haskell programming language">Haskell</a> in the form of <a href="/wiki/Type_class.html" title="Type class">type classes</a>. Many languages lacking ad-hoc polymorphism suffer from long-winded names such as <code>print_int</code>, <code>print_string</code>, etc. (see <a href="/wiki/C_programming_language.html" title="C programming language">C</a>, <a href="/wiki/Objective_Caml.html" title="Objective Caml">Objective Caml</a>).</p>
+<p>An advantage that is sometimes gained from overloading is the appearance of specialization, e.g., a function with the same name can be implemented in multiple different ways, each optimized for the particular data types that it operates on. This can provide a convenient interface for code that needs to be specialized to multiple situations for performance reasons.</p>
+<p>Since overloading is done at compile time, it is not a substitute for <a href="/wiki/Late_binding.html" title="Late binding">late binding</a> as found in <a  title="">subtyping polymorphism</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Coercion">edit</a>]</div>
+<p><a name="Coercion" id="Coercion"></a></p>
+<h3>Coercion</h3>
+<dl>
+<dd>
+<div class="noprint"><i>Main article: <a href="/wiki/Type_conversion.html" title="Type conversion">type conversion</a></i></div>
+</dd>
+</dl>
+<p>Most languages provide mechanisms (collectively called <i>type conversion</i>) that programmers can use to convert, or translate, values of one type into semantically analogous values of another type. For instance, it is usually possible to convert a value of a floating-point numeric type into a value of integer type with a rounding operation, or to convert an integer to a string using a function that constructs the integer's decimal representation. In some languages, certain of these conversions are performed automatically when a value of one type appears in a context that demands a value of a different type. This feature is called <i>coercion</i>. It is also called <i>implicit type conversion</i>, to reflect the understanding that a programmer who writes such an expression is "implicitly" asking that the value he provides be converted to the required type before use.</p>
+<p>The <a href="/wiki/C_programming_language.html" title="C programming language">C programming language</a> provides a typical example. C implicitly performs any type conversions that do not "lose information": for instance, when an expression of type <code>int</code> appears in a context that requires a value of type <code>double</code>, the compiler inserts a conversion operation to turn the integer into a double-precision floating-point value. The same applies to "widening" coercions such as from <code>int</code> to <code>long</code>. Conversions that may not preserve the meaning of the original value, such as from <code>double</code> to <code>int</code>, are not performed implicitly and must be specified by the programmer. Some languages, notably <a href="/wiki/C%2B%2B.html" title="C++">C++</a> and <a href="/wiki/C_sharp.html" title="C sharp">C#</a>, allow programmers to specify implicit conversion operations of their own in addition to those built into the language; in these cases it is the programmer's responsibility to ensure that such conversions are well-behaved in any appropriate sense.</p>
+<p>In statically typed languages, the need to coerce a value is evident at compile time, and the exact nature of the coercion is statically determined. In dynamically typed languages, the need to convert a value to a different type is generally not discovered until the moment when the conversion must be performed, and only then can it be known <i>from</i> what type it must be converted and what must be done to convert it.</p>
+<p>Strictly speaking, coercion is not polymorphism, since operations do not need to act on values of more than one type if their operands are implicitly converted beforehand. However, it is tempting for programmers to perceive coercion as a weakened form of overloading, and indeed, in some cases the distinction between the two is difficult to draw and not very useful, especially in languages that support both. For instance, does C have one addition operator per numeric type and perform implicit conversion, or does it have a separate addition operator for every combination of operand types? This is not a particularly useful distinction. (It is unarguable that C supports implicit conversion, however: a programmer is allowed to write a function expecting a parameter of type <code>double</code> and call that function with an integer argument.) In general, however, coercion is a strictly weaker construct than overloading: coercion only affects the way a function or operator can be <i>applied</i>, while overloading allows the <i>meaning</i> of a name or symbol to vary depending on the context.</p>
+<p>Coercion is also related to subtyping, and indeed it is possible to consider <span class="texhtml">σ</span> to be a subtype of <span class="texhtml">τ</span> if there exists an implicit conversion from <span class="texhtml">σ</span> to <span class="texhtml">τ</span>, although this form of subtyping is qualitatively different from the kind of subtyping in which every member of <span class="texhtml">σ</span> <i>is</i> a member of <span class="texhtml">τ</span>. See <a href="/wiki/Subtype.html" title="Subtype">Subtype</a> for details.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Example">edit</a>]</div>
+<p><a name="Example" id="Example"></a></p>
+<h2>Example</h2>
+<p>This example aims to illustrate three different kinds of polymorphism described in this article. Though overloading an originally arithmetic operator to do a wide variety of things in this way may not be the most clear-cut example, it allows some subtle points to be made. In practice, the different types of polymorphism are not generally mixed up as much as they are here.</p>
+<p>Imagine, if you will, an operator <code>+</code> that may be used in the following ways:</p>
+<ol>
+<li><code>1 + 2 = 3</code></li>
+<li><code>3.14 + 0.0015 = 3.1415</code></li>
+<li><code>1 + 3.7 = 4.7</code></li>
+<li><code>[1, 2, 3] + [4, 5, 6] = [1, 2, 3, 4, 5, 6]</code></li>
+<li><code>[true, false] + [false, true] = [true, false, false, true]</code></li>
+<li><code>"foo" + "bar" = "foobar"</code></li>
+</ol>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Overloading">edit</a>]</div>
+<p><a name="Overloading_2" id="Overloading_2"></a></p>
+<h3>Overloading</h3>
+<p>To handle these six function calls, four different pieces of code are needed—or <i>three</i>, if strings are considered to be lists of characters:</p>
+<ul>
+<li>In the first case, <a href="/wiki/Integer_%28computer_science%29.html" title="Integer (computer science)">integer</a> addition must be invoked.</li>
+<li>In the second and third cases, <a href="/wiki/Floating_point.html" title="Floating point">floating-point</a> addition must be invoked.</li>
+<li>In the fourth and fifth cases, <a href="/wiki/List_%28computing%29.html" title="List (computing)">list</a> <a href="/wiki/Concatenation.html" title="Concatenation">concatenation</a> must be invoked.</li>
+<li>In the last case, <a href="/wiki/Literal_string.html" title="Literal string">string</a> concatenation must be invoked, unless this too is handled as list concatenation (as in, e.g., <a href="/wiki/Haskell_%28programming_language%29.html" title="Haskell (programming language)">Haskell</a>).</li>
+</ul>
+<p>Thus, the name <code>+</code> actually refers to three or four completely different functions. This is an example of <i>overloading</i>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Coercion">edit</a>]</div>
+<p><a name="Coercion_2" id="Coercion_2"></a></p>
+<h3>Coercion</h3>
+<p>As we've seen, there's one function for adding two integers and one for adding two floating-point numbers in this hypothetical programming environment, but note that there is no function for adding an integer to a floating-point number. The reason why we can still do this is that when the <a href="/wiki/Compiler.html" title="Compiler">compiler</a>/<a href="/wiki/Interpreter_%28computing%29.html" title="Interpreter (computing)">interpreter</a> finds a function call <code>f(a1,&#160;a2,&#160;...)</code> that no existing function named <code>f</code> can handle, it starts to look for ways to convert the arguments into different types in order to make the call conform to the signature of one of the functions named <code>f</code>. This is called <i>coercion</i>. Both coercion and overloading are kinds of <i>ad-hoc polymorphism</i>.</p>
+<p>In our case, since any integer can be converted into a floating-point number without loss of precision, <code>1</code> is converted into <code>1.0</code> and floating-point addition is invoked. There was really only one reasonable outcome in this case, because a floating-point number cannot generally be converted into an integer, so integer addition could not have been used; but significantly more complex, subtle, and ambiguous situations can occur in, e.g., C++.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Parametric polymorphism">edit</a>]</div>
+<p><a name="Parametric_polymorphism_2" id="Parametric_polymorphism_2"></a></p>
+<h3>Parametric polymorphism</h3>
+<p>Finally, the reason why we can concatenate both lists of integers, lists of booleans, and lists of characters, is that the function for list concatenation was written without any regard to the type of elements stored in the lists. This is an example of <i>parametric polymorphism</i>. If you wanted to, you could make up a thousand different new types of lists, and the generic list concatenation function would happily and without requiring any augmentation accept instances of them all.</p>
+<p>It can be argued, however, that this polymorphism is not really a property of the function <i>per se</i>; that if the function is polymorphic, it is due to the fact that the <i>list data type</i> is polymorphic. This is true—to an extent, at least—but it is important to note that the function could just as well have been defined to take as a second argument an <i>element</i> to append to the list, instead of another list to concatenate to the first. If this were the case, the function would indisputably be parametrically polymorphic, because it could then not know <i>anything</i> about its second argument, except that the type of the element should match the type of the elements of the list.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Other meanings">edit</a>]</div>
+<p><a name="Other_meanings" id="Other_meanings"></a></p>
+<h2>Other meanings</h2>
+<p>Polymorphism in computer science can refer also to <a href="/wiki/Polymorphic_code.html" title="Polymorphic code">polymorphic code</a>, that is code that mutates while keeping the original algorithm intact. See article for details.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Duck_typing.html" title="Duck typing">Duck typing</a> for polymorphism without (static) types</li>
+<li><a href="/wiki/Implementation_inheritance.html" title="Implementation inheritance">Implementation inheritance</a></li>
+<li><a href="/wiki/Inheritance_semantics.html" title="Inheritance semantics">Inheritance semantics</a></li>
+<li><a href="/wiki/System_F.html" title="System F">System F</a> for a <a href="/wiki/Lambda_calculus.html" title="Lambda calculus">lambda calculus</a> with parametric polymorphism.</li>
+<li><a href="/wiki/Virtual_inheritance.html" title="Virtual inheritance">Virtual inheritance</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<ul>
+<li>Luca Cardelli, Peter Wegner. <i>On Understanding Types, Data Abstraction, and Polymorphism,</i> from Computing Surveys, (December, 1985) <a  class="external autonumber" title="http://research.microsoft.com/Users/luca/Papers/OnUnderstanding.pdf">[1]</a></li>
+<li>Philip Wadler, Stephen Blott. <i>How to make ad-hoc polymorphism less ad hoc,</i> from Proc. 16th ACM Symposium on Principles of Programming Languages, (January, 1989) <a  class="external autonumber" title="http://citeseer.ist.psu.edu/wadler88how.html">[2]</a></li>
+<li>Christopher Strachey. <i>Fundamental Concepts in Programming Languages,</i> from Higher-Order and Symbolic Computation, (April, 2000) <a  class="external autonumber" title="http://scholar.google.com/scholar?q=Strachey+%22Fundamental+Concepts+in+Programming+Languages%22">[3]</a></li>
+<li>Paul Hudak, John Peterson, Joseph Fasel. <i>A Gentle Introduction to Haskell Version 98</i>. <a  class="external autonumber" title="http://www.haskell.org/tutorial/">[4]</a></li>
+</ul>
+
+<!-- 
+Pre-expand include size: 2378 bytes
+Post-expand include size: 433 bytes
+Template argument size: 315 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:261811-0!1!0!default!!en!2 and timestamp 20060910142626 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Functional programming">Functional programming</a></span> | <span dir='ltr'><a  title="Category:Object-oriented programming">Object-oriented programming</a></span> | <span dir='ltr'><a  title="Category:Software design patterns">Software design patterns</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Type_polymorphism.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-bs"><a >Bosanski</a></li>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-et"><a >Eesti</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-he"><a >עברית</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-lt"><a >Lietuvių</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-pt"><a >Português</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+				<li class="interwiki-zh"><a >中文</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 12:20, 5 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv88 in 0.243 secs. --></body></html>

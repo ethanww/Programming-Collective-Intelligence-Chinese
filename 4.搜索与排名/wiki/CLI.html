@@ -1,0 +1,303 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="C++/CLI,Common Intermediate Language,Ecma International,Garbage collection (computer science),Interface (computer science),Managed Extensions for C++,Microsoft .NET,Visual Basic .NET,Visual C++" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>C++/CLI - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "C++/CLI";
+			var wgTitle = "C++/CLI";
+			var wgArticleId = 1957924;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">C++/CLI</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p><b>C++/CLI</b> (Common Language Infrastructure) is the newer language specification due to supersede <a href="/wiki/Managed_Extensions_for_C%2B%2B.html" title="Managed Extensions for C++">Managed Extensions for C++</a>. Completely reviewed to simplify the older Managed C++ syntax, it provides much more clarity over code readability than Managed C++. Like <a href="/wiki/Microsoft_.NET.html" title="Microsoft .NET">Microsoft .NET</a>, C++/CLI is standardized by <a href="/wiki/Ecma_International.html" title="Ecma International">ECMA</a>. It is currently only available on <a href="/wiki/Visual_C%2B%2B.html" title="Visual C++">Visual C++</a> 2005. Some aspects of the language are protected by patents or patent applications.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Syntax changes</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">1.1</span> <span class="toctext">Handles</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.2</span> <span class="toctext">Tracking references</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.3</span> <span class="toctext">Finalizers and automatic variables</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Syntax changes">edit</a>]</div>
+<p><a name="Syntax_changes" id="Syntax_changes"></a></p>
+<h2>Syntax changes</h2>
+<p>C++/CLI is thought of as a language of its own (with a new set of keywords, for example), instead of the C++ superset-oriented of MC++ (whose non-standard keywords were styled like __gc or __value). Because of this, there are some big syntactic changes, especially related to the elimination of ambiguous identifiers and the addition of .NET-specific features.</p>
+<p>Many conflicting syntaxes, such as the multiple versions of operator new() in MC++ have been split: in C++/CLI, .NET reference types are created with the new keyword gcnew. Also, C++/CLI has introduced the concept of generics (similar to unmanaged C++ templates, but quite different).</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Handles">edit</a>]</div>
+<p><a name="Handles" id="Handles"></a></p>
+<h3>Handles</h3>
+<p>Back in MC++, there were two different types of pointers: __nogc pointers were normal C++ pointers, while __gc pointers worked on .NET reference types. In C++/CLI the only type of pointer is the normal C++ pointer, and the .NET reference types are accessed through a "handle", with the new syntax ClassName^ instead of ClassName*. This new construct is especially helpful when managed and unmanaged code is mixed; it clarifies which objects are under .NET automatic garbage collection and which must be destroyed.</p>
+<pre>
+// Managed extensions for C++
+#using &lt;mscorlib.dll&gt;
+using namespace System::Collections;
+__gc class referencetype
+{
+protected:
+    String* stringVar;
+    int intArr __gc[];
+    ArrayList* doubleList;
+public:
+    referencetype(String* str, int* pointer, int number) // Which one is managed?
+    {
+        doubleList = new ArrayList();
+        System::Console::WriteLine(str-&gt;Trim() + number.ToString());
+    }
+};
+</pre>
+<pre>
+// C++/CLI
+#using &lt;mscorlib.dll&gt;
+using namespace System::Collections::Generic;
+ref class referencetype
+{
+protected:
+    String^ stringVar;
+    array&lt;int&gt; intArr;
+    List&lt;double&gt;^ doubleList;
+public:
+    referencetype(String^ str, int* pointer, int number) // Ambiguous no more
+    {
+        doubleList = gcnew List&lt;double&gt;();
+        System::Console::WriteLine(str-&gt;Trim() + number);
+    }
+};
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Tracking references">edit</a>]</div>
+<p><a name="Tracking_references" id="Tracking_references"></a></p>
+<h3>Tracking references</h3>
+<p>A <b>tracking reference</b> in C++/CLI is a handle that is passed by reference rather than by value. They correspond to the "ref" keyword applied to types in C#, or "ByRef" in <a href="/wiki/Visual_Basic_.NET.html" title="Visual Basic .NET">Visual Basic .NET</a>. C++/CLI uses a "^%" syntax to indicate a tracking reference to a handle. It is similar in concept to using "*&amp;" (reference to a pointer) in Standard C++.</p>
+<p>The following code shows an example use for tracking references. Replacing the tracking reference with a regular handle variable would leave the resulting string array with 10 uninitialized string handles, as only copies of the string handles in the array would be set, due to them being passed by value rather than by reference.</p>
+<pre>
+int main()
+{
+    array&lt;String^&gt;^ arr = gcnew array&lt;String^&gt;(10);
+    int i = 0;
+
+    for each(String^% s in arr)
+        s = gcnew String(i++.ToString());
+
+    return 0;
+}
+</pre>
+<p>The code above additionally serves as an example in how .NET languages allow users to do slightly different things, as e.g. C# does not allow the user to use foreach loops in the directly corresponding way. That is; <code>foreach(ref string s in arr)</code> is illegal in C# as it does not allow foreach loops to pass values by reference, and other workarounds need to be used in this case.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Finalizers and automatic variables">edit</a>]</div>
+<p><a name="Finalizers_and_automatic_variables" id="Finalizers_and_automatic_variables"></a></p>
+<h3>Finalizers and automatic variables</h3>
+<p>Another change in C++/CLI is the introduction of the finalizer syntax !ClassName(), a special type of nondeterministic destructor that is run as a part of the <a href="/wiki/Garbage_collection_%28computer_science%29.html" title="Garbage collection (computer science)">garbage collection routine</a>, so now the destructor syntax ~ClassName() better reflects the "traditional" C++ semantics of deterministic destruction (that is, destructors that can be called by user code). Moreover, the destruction of all managed objects with a defined destructor in a method can be made automatic with the new syntax shown in the example.</p>
+<p>In the raw .NET paradigm (for example, direct programming in <a href="/wiki/Common_Intermediate_Language.html" title="Common Intermediate Language">CIL</a>), the deterministic destruction model is implemented through the IDisposable <a href="/wiki/Interface_%28computer_science%29.html" title="Interface (computer science)">interface</a> method Dispose (which is just what the C++/CLI compiler turns the destructor into), while the nondeterministic one overrides the protected Finalize method of the root Object class.</p>
+<p>Usually, deterministic destruction is recommended when non-managed resources are involved or when system-wide limited resources (network/database connections, file streams, etc.) are used. In all other cases, the non-deterministic approach should suffice. Whenever a deterministic destructor is used, the programmer can still benefit from the Garbage Collector, to avoid possible unmanaged memory/resource leaks, by also creating a finalizer (GC-destructor) that just checks whether the destructor has been invoked and calls it if it hasn't (thus adding little performance penalty).</p>
+<pre>
+// C++/CLI
+ref class MyClass // : IDisposable (this is added by the compiler)
+{
+public:
+    MyClass();  // constructor
+    ~MyClass(); // (deterministic) destructor (turned into IDisposable.Dispose() by the compiler)
+protected:
+    !MyClass(); // finalizer (non-deterministic destructor) (former destructor syntax =&gt; virtual void Finalize())
+
+public:
+    static void Test()
+    {
+        MyClass auto; // Not a handle, no initialization: compiler calls constructor here
+        // Use auto anywhere in the method
+
+        // Equivalent user code:
+
+        MyClass^ user = gcnew MyClass();
+        try { /* Use user here */ } finally { delete user; }
+
+        // Compiler calls auto's destructor in the finally of a try containing the whole method
+    }
+};
+</pre>
+<pre>
+// C#
+class MyClass : IDisposable
+{
+    public MyClass() {} // constructor
+    ~MyClass() {} // destructor (non-deterministic) (C++/CLI finalizer =&gt; protected override void Finalize())
+    public void Dispose() {} // Dispose method (C++/CLI deterministic destructor)
+
+    public static void Test()
+    {
+        using(MyClass auto = new MyClass()) { /* Use auto here */ }
+        // Compiler calls auto.Dispose(), in the finally of a try containing the using block
+
+        // Equivalent user code:
+
+        MyClass user = new MyClass();
+        try { /* Use user here */ } finally { user.Dispose(); }
+    }
+}
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://www.ecma-international.org/publications/standards/Ecma-372.htm">ECMA 372</a></li>
+<li><a  class="external text" title="http://appft1.uspto.gov/netacgi/nph-Parser?Sect1=PTO1&amp;Sect2=HITOFF&amp;d=PG01&amp;p=1&amp;u=%2Fnetahtml%2FPTO%2Fsrchnum.html&amp;r=1&amp;f=G&amp;l=50&amp;s1=%2220060089942%22.PGNR.&amp;OS=DN/20060089942&amp;RS=DN/20060089942">Patent application regarding whitespace in keywords</a></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:1957924-0!1!0!default!!en!2 and timestamp 20060906010331 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:.NET programming languages">.NET programming languages</a></span> | <span dir='ltr'><a  title="Category:C++ programming language family">C++ programming language family</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/C%2B%2B/CLI.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-zh"><a >中文</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 09:30, 28 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv87 in 0.152 secs. --></body></html>

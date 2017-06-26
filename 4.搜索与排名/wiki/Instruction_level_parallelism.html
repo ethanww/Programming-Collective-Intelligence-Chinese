@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Instruction level parallelism,Branch prediction,Central processing unit,Compiler,Computer program,Cryptography,Execution unit,Explicitly Parallel Instruction Computing,Instruction pipelining,Memory dependence prediction,Multiprocessing" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Instruction level parallelism - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Instruction_level_parallelism";
+			var wgTitle = "Instruction level parallelism";
+			var wgArticleId = 245960;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Instruction level parallelism</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p><b>Instruction-level parallelism</b> (ILP) is a measure of how many of the operations in a <a href="/wiki/Computer_program.html" title="Computer program">computer program</a> can be performed simultaneously. Consider the following program:</p>
+<pre>
+1. e = a + b
+2. f = c + d
+3. g = e * f
+</pre>
+<p>Operation 3 depends on the results of operations 1 and 2, so it cannot be calculated until both of them are completed. However, operations 1 and 2 do not depend on any other operation, so they can be calculated simultaneously. (See below for more on which operations are dependent on each other, and on the various types of instruction dependencies). If we assume that each operation can be completed in one unit of time then these three instructions can be completed in a total of two units of time, giving an ILP of 3/2.</p>
+<p>A goal of <a href="/wiki/Compiler.html" title="Compiler">compiler</a> and <a href="/wiki/Central_processing_unit.html" title="Central processing unit">processor</a> designers is to identify and take advantage of as much ILP as possible. Ordinary programs are typically written under a sequential execution model where instructions execute one after the other and in the order specified by the programmer. ILP allows the compiler and the processor to overlap the execution of multiple instructions or even to change the order in which instructions are executed.</p>
+<p>How much ILP exists in programs is very application specific. In certain fields, such as graphics and scientific computing the amount can be very large. However, workloads such as <a href="/wiki/Cryptography.html" title="Cryptography">cryptography</a> exhibit much less parallelism.</p>
+<p>Micro-architectural techniques that are used to exploit ILP include:</p>
+<ul>
+<li><a href="/wiki/Instruction_pipelining.html" title="Instruction pipelining">Instruction pipelining</a> where the execution of multiple instructions can be partially overlapped.</li>
+<li><a href="/wiki/Superscalar.html" title="Superscalar">Superscalar</a> execution in which multiple <a href="/wiki/Execution_unit.html" title="Execution unit">execution units</a> are used to execute multiple instructions in parallel. In typical superscalar processors, the instructions executing simultaneously are adjacent in the original program order.</li>
+<li><a href="/wiki/Out-of-order_execution.html" title="Out-of-order execution">Out-of-order execution</a> where instructions execute in any order that does not violate data dependencies. Out-of-order execution is orthogonal to pipelining and superscalar in that it can be used with or without these other two technqqiues.</li>
+<li><a href="/wiki/Register_renaming.html" title="Register renaming">Register renaming</a> which refers to a technique used to avoid unnecessary serialization of program operations imposed by the reuse of registers by those operations. Register renaming is used with out-of-order execution.</li>
+<li><a href="/wiki/Speculative_execution.html" title="Speculative execution">Speculative execution</a> which allow the execution of complete instructions or parts of instructions before being certain whether this execution should take place. A commonly used form of speculative execution is control flow speculation where instructions past a control flow instruction (e.g., a branch) are executed before the target of the control flow instruction is determined. Several other forms of speculative execution have been proposed and are in use including speculative execution driven by <a  class="new" title="Value prediction">value prediction</a>, <a href="/wiki/Memory_dependence_prediction.html" title="Memory dependence prediction">memory dependence prediction</a> and <a  class="new" title="Cache latency prediction">cache latency prediction</a>.</li>
+<li><a href="/wiki/Branch_prediction.html" title="Branch prediction">Branch prediction</a> which is used to avoid stalling for control dependencies to be resolved. Branch prediction is used with speculative execution.</li>
+</ul>
+<p>Current implementations of out-of-order execution dynamically (i.e., while the program is executing and without any help from the compiler) extract ILP from ordinary programs. An alternative is to extract this parallelism at compile time and somehow convey this information to the hardware. Due to the complexity of scaling the out-of-order execution technique, the industry has re-examined instruction sets which explicitly encode multiple independent operations per instruction. These instruction set types include:</p>
+<ul>
+<li><a href="/wiki/Very_long_instruction_word.html" title="Very long instruction word">VLIW</a> and the closely related <a href="/wiki/Explicitly_Parallel_Instruction_Computing.html" title="Explicitly Parallel Instruction Computing">Explicitly Parallel Instruction Computing</a> concepts</li>
+</ul>
+<p>VLIW is an example of an <a  class="new" title="Independence instruction set architecture">independence instruction set architecture</a> where the instruction set allows for the explicity specification of independence across instructions. VLIW and out-of-order execution are orthogonal techniques since in principle they can be used together.</p>
+<p><a  class="new" title="Dataflow architectures">Dataflow architectures</a> is another class of architectures where ILP is explicitly specified.</p>
+<p>In recent years, ILP techniques have been used to provide performance improvements in spite of the growing disparity between processor operating frequencies and memory access times (early ILP designs such as the IBM 360 used ILP techniques to overcome the limitations imposed by a relatively small register file). Presently, a cache miss penalty to main memory costs several hundreds of CPU cycles. While in principle it is possible to use ILP to tolerate even such memory latencies the associated resource and power dissipation costs are disproportionate. Moreover, the complexity and often the latency of the underlying hardware structures results in reduced operating frequency further reducing any benefits. Hence, the aforementioned techniques prove inadequate to keep the CPU from stalling for the off-chip data. Instead, the industry is heading towards exploiting higher levels of parallelism that can be exploited through techniques such as <a href="/wiki/Multiprocessing.html" title="Multiprocessing">multiprocessing</a> and <a href="/wiki/Multithreading.html" title="Multithreading">multithreading</a>. <sup id="_ref-0" class="reference"><a  title="">[1]</a></sup></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Dependencies">edit</a>]</div>
+<p><a name="Dependencies" id="Dependencies"></a></p>
+<h2>Dependencies</h2>
+<p>There are two types of dependencies: data and control. Conventional programs are written assuming the sequential execution model. Under this model, instructions execute one after the other, atomically (i.e., at any given point of time only one instruction is executed) and in the order specified by the program.</p>
+<p>There are various dependencies that may hinder instruction level parallelism - parallel execution of multiple instructions may lead to a different instruction execution order, and a different instruction ordering will change the final effect of a set of instructions in the case of a dependency. The data dependencies are the following:</p>
+<dl>
+<dt>True dependency</dt>
+</dl>
+<p>A true dependency, also known as a data dependency, occurs when an instruction depends on the result of a previous instruction:</p>
+<pre>
+1. A = 3
+2. B = A
+3. C = B
+</pre>
+<p>Instruction 3 is truly dependent on instruction 2, as the final value of C depends on the instruction updating B. Instruction 2 is truly dependent on instruction 1, as the final value of B depends on the instruction updating A. Since instruction 3 is truly dependent upon instruction 2 and instruction 2 is truly dependent on instruction 1, instruction 3 is also truly dependent on instruction 1. Instruction level parallelism is therefore not an option in this example. <sup id="_ref-architecture_0" class="reference"><a  title="">[2]</a></sup></p>
+<dl>
+<dt>Anti-dependency</dt>
+</dl>
+<p>An anti-dependency occurs when an instruction requires a value that is later updated. In the below example, instruction 3 anti-depends on instruction 2 - the ordering of these instructions cannot be changed, nor can they be executed in parallel (possibly changing the instruction ordering), as this would affect the final value of A.</p>
+<pre>
+1. B = 3
+2. A = B + 1
+3. B = 7
+</pre>
+<p>An anti-dependency is an example of a <i>name dependency</i>. That is, renaming of variables could remove the dependency, as in the below example:</p>
+<pre>
+1. B = 3
+N. B2 = B
+2. A = B2 + 1
+3. B = 7
+</pre>
+<p>A new variable, B2, has been declared as a copy of B in a new instruction, instruction N. The anti-dependency between 2 and 3 has been removed, meaning that these instructions may now be executed in parallel. However, the modification has introduced a new dependency: instruction A is now truly dependent on instruction N, which is truly dependent upon instruction 1. As true dependencies, these new dependencies are impossible to safely remove. <sup id="_ref-architecture_1" class="reference"><a  title="">[2]</a></sup></p>
+<dl>
+<dt>Output dependency</dt>
+</dl>
+<p>An output dependency occurs when the ordering of instructions will affect the final output value of a variable. In the below example, there is an output dependency between instructions 3 and 1 - changing the ordering of instructions in this example will change the final value of A, thus these instructions cannot be executed in parallel.</p>
+<pre>
+1 A = 2 * X
+2 B = A / 3
+3 A = 9 * Y
+</pre>
+<p>As with anti-dependencies, output dependencies are <i>name dependencies</i>. That is, they may be removed through renaming of variables, as in the below modification of the above example:</p>
+<pre>
+1 A2 = 2 * X
+2 B = A2 /3
+3 A = 9 * Y
+</pre>
+<p>A commonly used naming convention for data dependencies is the following: Read-after-Write (true dependency), Write-after-Write (output dependency), and Write-After-Read (anti-dependency).</p>
+<p>An instruction B is control dependent on a preceding instruction A if the latter determines whether B should execute or not. In the following example, instruction 2 is control dependent on instruction 1.</p>
+<pre>
+1.         if a == b goto AFTER
+2.         A = 2 * X
+3. AFTER:
+</pre>
+<p><sup id="_ref-architecture_2" class="reference"><a  title="">[2]</a></sup></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<ol class="references">
+<li id="_note-0"><b><a  title="">^</a></b> <a  class="external text" title="http://www.csl.cornell.edu/~sam/papers/cf04.pdf">Reflections of the Memory Wall</a></li>
+<li id="_note-architecture">^ <a  title=""><sup><i><b>a</b></i></sup></a> <a  title=""><sup><i><b>b</b></i></sup></a> <a  title=""><sup><i><b>c</b></i></sup></a> <cite class="book" style="font-style:normal">Hennesy; Patterson (2003). <i>Computer Architecture: a quantitative approach (3rd ed)</i>. Morgan Kaufman. <a  class="internal">ISBN 1-55860-724-2</a>.</cite></li>
+</ol>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://www.csl.cornell.edu/~sam/papers/cf04.pdf">Reflections of the Memory Wall</a></li>
+<li><a  class="external text" title="http://www.wired.com/wired/archive/4.08/geek.html">Wired magazine article that refers to the above paper</a></li>
+<li><a  class="external text" title="http://www.itee.uq.edu.au/~philip/Publications/Techreports/2002/Reports/memory-wall-survey.pdf">Approaches to addressing the Memory Wall</a></li>
+</ul>
+
+<!-- 
+Pre-expand include size: 2649 bytes
+Post-expand include size: 536 bytes
+Template argument size: 758 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:245960-0!1!0!default!!en!2 and timestamp 20060909203816 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:Instruction processing">Instruction processing</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Instruction_level_parallelism.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 16:20, 27 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv37 in 0.190 secs. --></body></html>

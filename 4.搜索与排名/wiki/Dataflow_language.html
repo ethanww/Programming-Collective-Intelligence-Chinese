@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Dataflow language,Agilent VEE,Apple Macintosh,Assembly line,BMDFM,C programming language,Command line,Compiler,Computer programming,Dataflow,Directed graph" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Dataflow language - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Dataflow_language";
+			var wgTitle = "Dataflow language";
+			var wgArticleId = 1079396;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Dataflow language</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>In <a href="/wiki/Computer_programming.html" title="Computer programming">computer programming</a>, a <b>dataflow language</b> is a <a href="/wiki/Visual_programming_language.html" title="Visual programming language">visual</a> <a href="/wiki/Programming_language.html" title="Programming language">programming language</a> that implements <a href="/wiki/Dataflow.html" title="Dataflow">dataflow</a> principles and architecture, and models a program, conceptually if not physically, as a <a href="/wiki/Directed_graph.html" title="Directed graph">directed graph</a> of the data flowing between operations. Dataflow languages share some features of <a href="/wiki/Functional_language.html" title="Functional language">functional languages</a>, and were generally developed in order to bring some functional concepts to a language more suitable for numeric processing.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Properties of Dataflow Languages">edit</a>]</div>
+<p><a name="Properties_of_Dataflow_Languages" id="Properties_of_Dataflow_Languages"></a></p>
+<h2>Properties of Dataflow Languages</h2>
+<p>Dataflow languages contrast with the majority of programming languages, which use the <a href="/wiki/Imperative_programming.html" title="Imperative programming">imperative programming</a> model. In imperative programming the program is modelled as a series of operations, the data being effectively invisible. This distinction may seem minor, but the <a href="/wiki/Paradigm_shift.html" title="Paradigm shift">paradigm shift</a> is fairly dramatic, and allows dataflow languages to be spread out across <a href="/wiki/Multiprocessor.html" title="Multiprocessor">multiprocessor</a> systems for free.</p>
+<p>One of the key concepts in computer programming is the idea of "state", essentially a snapshot of the measure of various conditions in the system. Most programming languages require a considerable amount of state information in order to operate properly, information which is generally hidden from the programmer. For a real world example, consider a three-way light switch. Typically a switch turns on a light by moving it to the "up" position, but in a three-way case that may turn the light back off -- the result is based on the state of the other switch, which is likely out of view.</p>
+<p>In fact, the state is often hidden from the computer itself as well, which normally has no idea that <i>this</i> piece of information encodes state, while <i>that</i> is temporary and will soon be discarded. This is a serious problem, as the state information needs to be shared across multiple processors in <a href="/wiki/Parallel_processing.html" title="Parallel processing">parallel processing</a> machines. Without knowing which state is important and which isn't, most languages force the programmer to add a considerable amount of extra code to indicate which data and parts of the code are important in this respect.</p>
+<p>This code tends to be both expensive in terms of performance, as well as difficult to debug and often downright ugly; most programmers simply ignore the problem. Those that cannot must pay a heavy performance cost, which is paid even in the most common case when the program runs on one processor. Explicit parallelism is one of the main reasons for the poor performance of <a href="/wiki/Enterprise_Java_Beans.html" title="Enterprise Java Beans">Enterprise Java Beans</a> system, for instance.</p>
+<p>Dataflow languages promote the data to become the main concept behind any program. It may be considered odd that this is not always the case, as programs generally take in data, process it, and then feed it back out. This was especially true of older programs, and is well represented in the <a href="/wiki/Unix.html" title="Unix">Unix</a> <a href="/wiki/Operating_system.html" title="Operating system">operating system</a> which pipes the data between small single-purpose tools. Programs in a dataflow language start with an input, perhaps the <a href="/wiki/Command_line.html" title="Command line">command line</a> parameters, and illustrate how that data is used and modified. The data is now explicit, often illustrated physically on the screen as a line or pipe showing where the information flows.</p>
+<p>Operations consist of "black boxes" with inputs and outputs, all of which are always explicitly defined. They run as soon as all of their inputs become valid, as opposed to when the program encounters them. Whereas a traditional program essentially consists of a series of statements saying "do this, now do this", a dataflow program is more like a series of workers on an <a href="/wiki/Assembly_line.html" title="Assembly line">assembly line</a>, who will do their assigned task as soon as the materials arrive. And this is why dataflow languages are inherently parallel; the operations have no hidden state to keep track of, and the operations are all "ready" at the same time.</p>
+<p>Dataflow programs are generally represented very differently inside the computer as well. A traditional program is just what it seems, a series of instructions that run one after the other. A dataflow program might be implemented as a big <a href="/wiki/Hash_table.html" title="Hash table">hash table</a> instead, with uniquely identified inputs as the keys, and pointers to the code as data. When any operation completes, the program scans down the list until it finds the first operation where all of the inputs are currently valid, and runs it. When that operation finishes it will typically put data into one or more outputs, thereby making some other operation become valid.</p>
+<p>For parallel operation only the list needs to be shared; the list itself is the state of the entire program. Thus the task of maintaining state is removed from the programmer and given to the language's <a href="/wiki/Runtime.html" title="Runtime">runtime</a> instead. On machines with a single processor core where an implementation designed for parallel operation would simply introduce overhead, this overhead can be removed completely by using a different runtime.</p>
+<p>There are many hardware architectures oriented toward the efficient implementation of dataflow programming models. MIT's tagged token dataflow architecture was designed by <a href="/wiki/Greg_Papadopoulos.html" title="Greg Papadopoulos">Greg Papadopoulos</a> who is now the CTO of <a href="/wiki/Sun_Microsystems.html" title="Sun Microsystems">Sun Microsystems</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: History">edit</a>]</div>
+<p><a name="History" id="History"></a></p>
+<h2>History</h2>
+<p>As it might be expected, dataflow languages were originally developed in order to make parallel programming easier. Thus, they were typically developed at the large <a href="/wiki/Supercomputer.html" title="Supercomputer">supercomputer</a> labs. One of the most popular was <a href="/wiki/SISAL.html" title="SISAL">SISAL</a>, developed at <a href="/wiki/Lawrence_Livermore_National_Laboratory.html" title="Lawrence Livermore National Laboratory">Lawrence Livermore National Laboratory</a>. SISAL looks like most statement-driven languages, but demands that every variable be defined only once. This allows the <a href="/wiki/Compiler.html" title="Compiler">compiler</a> to easily identify the inputs and outputs. A number of offshoots of SISAL have been developed, including <a href="/wiki/SAC_programming_language.html" title="SAC programming language">SAC</a>, <i>Single Assignment C</i>, which tries to remain as close to the popular <a href="/wiki/C_programming_language.html" title="C programming language">C programming language</a> as possible.</p>
+<p>A more radical concept is <a href="/wiki/Prograph.html" title="Prograph">Prograph</a>, in which programs are constructed as graphs onscreen, and variables are replaced entirely with lines linking inputs to outputs. Oddly, Prograph was originally written on the <a href="/wiki/Apple_Macintosh.html" title="Apple Macintosh">Macintosh</a>, the only computer with a powerful enough <a href="/wiki/GUI.html" title="GUI">GUI</a> at the time, which remained single-processor, until very recently.</p>
+<p>The most popular dataflow languages are more practical however, the most famous being <a href="/wiki/National_Instruments.html" title="National Instruments">National Instruments</a>' <a href="/wiki/LabVIEW.html" title="LabVIEW">LabVIEW</a>. It was originally intended to make linking data between lab equipment easy for non-programmers, but has since become fairly general purpose. Another is <a href="/wiki/Agilent_VEE.html" title="Agilent VEE">VEE</a>, optimized to use with data acquisition devices like digital voltmeters and oscilloscopes, and source devices like arbitrary waveform generators and power supplies.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Languages">edit</a>]</div>
+<p><a name="Languages" id="Languages"></a></p>
+<h2>Languages</h2>
+<ul>
+<li>Bioera</li>
+<li><a  class="external text" title="http://flowdesigner.sourceforge.net/">Flowdesigner</a></li>
+<li><a href="/wiki/Flow-based_programming.html" title="Flow-based programming">Flow-based programming</a></li>
+<li><a href="/wiki/Hartmann_pipelines.html" title="Hartmann pipelines">Hartmann pipelines</a></li>
+<li><a  class="external text" title="http://www.csail.mit.edu/timeline/timeline.php/timeline.php?query=event&amp;id=417">ID</a></li>
+<li><a href="/wiki/LabVIEW.html" title="LabVIEW">LabVIEW</a></li>
+<li><a href="/wiki/Lucid.html" title="Lucid">Lucid</a></li>
+<li><a href="/wiki/Max.html" title="Max">Max</a></li>
+<li><a  class="external text" title="http://www.andescotia.com/products/marten/">Marten</a> - A commercial low-cost Mac OS X Prograph clone</li>
+<li><a  class="external text" title="http://mindscript.sourceforge.net/">Mindscript</a> - Open Source visualization and software development environment.</li>
+<li><a href="/wiki/Prograph.html" title="Prograph">Prograph</a></li>
+<li><a href="/wiki/Informatica_PowerCenter.html" title="Informatica PowerCenter">Informatica PowerCenter</a> -- Data Integration product built and sold by <a href="/wiki/Informatica_Corporation.html" title="Informatica Corporation">Informatica Corporation</a></li>
+<li><a href="/wiki/Pure_data.html" title="Pure data">Pure data</a></li>
+<li>Show and Tell</li>
+<li><a href="/wiki/Agilent_VEE.html" title="Agilent VEE">VEE</a></li>
+<li><a href="/wiki/VVVV.html" title="VVVV">VVVV</a></li>
+<li><a href="/wiki/BMDFM.html" title="BMDFM">BMDFM</a> Binary Modular Dataflow Machine <a  class="external text" title="http://bmdfm.com">BMDFM</a></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:1079396-0!1!0!default!!en!2 and timestamp 20060910124712 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Computer languages">Computer languages</a></span> | <span dir='ltr'><a  title="Category:Concurrent programming languages">Concurrent programming languages</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Dataflow_language.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 06:16, 25 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv103 in 0.127 secs. --></body></html>

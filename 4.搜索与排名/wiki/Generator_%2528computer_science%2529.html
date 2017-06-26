@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Generator (computer science),CLU programming language,C Sharp,Computer science,Continuation,Control flow,Corecursion,Coroutine,Execution (computers),Generator (disambiguation),Iteration" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Generator (computer science) - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Generator_(computer_science)";
+			var wgTitle = "Generator (computer science)";
+			var wgArticleId = 572997;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Generator (computer science)</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<dl>
+<dd><span class="dablink"><i>For other uses, see <a href="/wiki/Generator_%28disambiguation%29.html" title="Generator (disambiguation)">Generator (disambiguation)</a>.</i></span></dd>
+</dl>
+<p>In <a href="/wiki/Computer_science.html" title="Computer science">computer science</a>, a <b>generator</b> is a special <a href="/wiki/Subroutine.html" title="Subroutine">routine</a> that can be used to control the <a href="/wiki/Iteration.html" title="Iteration">iteration</a> behaviour of a <a href="/wiki/Control_flow#Loops.html" title="Control flow">loop</a>. A generator is very similar to a function that returns an array, in that a generator has parameters, can be called, and generates a sequence of values. However, instead of building an array containing all the values and returning them all at once, a generator yields the values one at a time, which requires less memory and allows the caller to get started processing the first few values immediately. In short, a generator <i>looks like</i> a function but <i>behaves like</i> an <a href="/wiki/Iterator.html" title="Iterator">iterator</a>.</p>
+<p>Generators first appeared in <a href="/wiki/CLU_programming_language.html" title="CLU programming language">CLU</a> (1975) <a  class="external autonumber" title="http://www.lcs.mit.edu/publications/pubs/pdf/MIT-LCS-TR-561.pdf">[1]</a> and are now available in <a href="/wiki/Python_programming_language.html" title="Python programming language">Python</a> and <a href="/wiki/C_Sharp.html" title="C Sharp">C#</a>. (In CLU and C#, generators are called <i>iterators</i>.)</p>
+<p>Generators are usually <a href="/wiki/Execution_%28computers%29.html" title="Execution (computers)">invoked</a> inside loops. The first time that a generator invocation is reached in a loop, an iterator <a href="/wiki/Object_%28computer_science%29.html" title="Object (computer science)">object</a> is created that encapsulates the state of the generator routine at its beginning, with arguments bound to the corresponding <a href="/wiki/Parameter_%28computer_science%29.html" title="Parameter (computer science)">parameters</a>. The generator's body is then executed in the context of that iterator until a special <i>yield</i> action is encountered; at that time, the value provided with the <i>yield</i> action is used as the value of the invocation expression. The next time the same generator invocation is reached in a subsequent iteration, the execution of the generator's body is resumed after the <i>yield</i> action, until yet another <i>yield</i> action is encountered. In addition to the <i>yield</i> action, execution of the generator body can also be terminated by a <i>finish</i> action, at which time the innermost loop enclosing the generator invocation is terminated.</p>
+<p>In the presence of generators, loop constructs of a language can be reduced into a single loop ... end loop construct; all the usual loop constructs can then be comfortably simulated by using suitable generators in the right way.</p>
+<p>An example Python generator:</p>
+<pre>
+def countfrom(n):
+    while True:
+        yield n
+        n += 1
+
+# Example use: printing out the integers from 10 to 20.
+# Note that this iteration terminates normally, despite countfrom() being
+# written as an infinite loop.
+
+for i in countfrom(10):
+    if i &lt;= 20:
+        print i
+    else:
+        break
+</pre>
+<p>In Python, a generator can be thought of as an iterator that contains a frozen <a href="/wiki/Stack_frame.html" title="Stack frame">stack frame</a>. Whenever the iterator's <code>next()</code> method is called, Python resumes the frozen frame, which executes normally until the next <code>yield</code> statement is reached. The generator's frame is then frozen again, and the yielded value is returned to the caller.</p>
+<p>Because generators compute their yielded values only on demand, they are useful for representing sequences that are expensive to compute, or even infinite.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/List_comprehension.html" title="List comprehension">List comprehension</a> for another construct that generates a sequence of values</li>
+<li><a href="/wiki/Iterator.html" title="Iterator">Iterator</a> for the concept of producing a list one element at a time</li>
+<li><a href="/wiki/Lazy_evaluation.html" title="Lazy evaluation">Lazy evaluation</a> for producing values when needed</li>
+<li><a href="/wiki/Corecursion.html" title="Corecursion">Corecursion</a> for potentially infinite data by recursion instead of <i>yield</i></li>
+<li><a href="/wiki/Coroutine.html" title="Coroutine">Coroutine</a> for even more generalization from subroutine</li>
+<li><a href="/wiki/Continuation.html" title="Continuation">Continuation</a> for generalization of control flow</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<ul>
+<li>Stephan Murer, <a href="/wiki/Steve_Omohundro.html" title="Steve Omohundro">Stephen Omohundro</a>, David Stoutamire and Clemens Szyperski: Iteration abstraction in Sather. <i>ACM Transactions on Programming Languages and Systems</i>, 18(1):1-15 (1996) <a  class="external autonumber" title="http://portal.acm.org/citation.cfm?doid=225540.225541">[2]</a></li>
+<li><a href="/wiki/Python_Enhancement_Proposal.html" title="Python Enhancement Proposal">PEPs</a> (Python Enhancement Proposals):
+<ul>
+<li><a  class="external text" title="http://www.python.org/peps/pep-0255.html">PEP 255: <i>Simple Generators</i></a></li>
+<li><a  class="external text" title="http://python.org/peps/pep-0289.html">PEP 289: <i>Generator Expressions</i></a></li>
+<li><a  class="external text" title="http://www.python.org/peps/pep-0342.html">PEP 342: <i>Coroutines via Enhanced Generators</i></a></li>
+</ul>
+</li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:572997-0!1!0!default!!en!2 and timestamp 20060910145744 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:Programming constructs">Programming constructs</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Generator_%28computer_science%29.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-pt"><a >Português</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 21:10, 30 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv104 in 0.241 secs. --></body></html>

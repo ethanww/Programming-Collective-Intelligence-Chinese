@@ -1,0 +1,261 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Test-and-set,Atomic (computer science),Busy waiting,Cache coherency,Central processing unit,Compare-and-swap,Computer science,Fetch-and-add,Interrupt,Load-Link/Store-Conditional,Memory barrier" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Test-and-set - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Test-and-set";
+			var wgTitle = "Test-and-set";
+			var wgArticleId = 394099;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Test-and-set</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>In <a href="/wiki/Computer_science.html" title="Computer science">computer science</a>, the <b>test-and-set</b> instruction is an instruction used to <a href="/wiki/Atomic_%28computer_science%29.html" title="Atomic (computer science)">atomically</a> write to a memory location. This means setting a value, but first performing some test (such as, the value is equal to another given value). If the test fails, the value is not set. If multiple processes may access the same memory, and if a process is currently performing a test-and-set, no other process may begin a "test and set" until the first process is done. <a href="/wiki/Central_processing_unit.html" title="Central processing unit">CPUs</a> may use test-and-set instructions offered by other electronic components, such as Dual-Port RAM (DPRAM); CPUs may also offer a test-and-set instruction themselves.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Hardware Implementation</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">1.1</span> <span class="toctext">Variation 1</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.2</span> <span class="toctext">Variation 2</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Pseudo- and C code</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Using test-and-set to implement semaphores</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Hardware Implementation">edit</a>]</div>
+<p><a name="Hardware_Implementation" id="Hardware_Implementation"></a></p>
+<h2>Hardware Implementation</h2>
+<p>DPRAM test-and-set instructions can work in many ways. Here are two variations, both of which describe a DPRM which provides exactly 2 ports, allowing 2 separate electronic components (such as 2 CPUs) access to every memory location on the DPRAM.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Variation 1">edit</a>]</div>
+<p><a name="Variation_1" id="Variation_1"></a></p>
+<h3>Variation 1</h3>
+<p>When CPU 1 issues a test-and-set instruction, the DPRAM first makes an "internal note" of this by storing the address of the memory location in a special place. If at this point, CPU 2 happens to issue a test-and-set instruction for the same memory location, the DPRAM first checks its "internal note", recognizes the situation, and issues a BUSY interrupt, which tells CPU 2 that it must wait and retry. This is an implementation of a <a href="/wiki/Busy_waiting.html" title="Busy waiting">busy_waiting</a> or <a href="/wiki/Spinlock.html" title="Spinlock">spinlock</a> using the interrupt mechanism. Since this all happens at hardware speeds, CPU 2's wait to get out of the spin-lock is very short.</p>
+<p>Whether or not CPU 2 was trying access the memory location, the DPRAM performs the test given by CPU 1. If the test succeeds, the DPRAM sets the memory location to the value given by CPU 1. Then the DPRAM wipes out its "internal note" that CPU 1 was writing there. At this point, CPU 2 could issue a test-and-set, which would succeed.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Variation 2">edit</a>]</div>
+<p><a name="Variation_2" id="Variation_2"></a></p>
+<h3>Variation 2</h3>
+<p>CPU 1 issues a test-and-set instruction to write to "memory location A". The DPRAM does not immediately store the value in memory location A, but instead simultaneously moves the current value to a special register, while setting the contents of memory location A to a special "flag value". If at this point, CPU 2 issues a test-and-set to memory location A, the DPRAM detects the special flag value, and as above, issues a BUSY interrupt.</p>
+<p>Whether or not CPU 2 was trying access the memory location, the DPRAM now performs CPU 1's test. If the test succeeds, the DPRAM sets memory location A to the value specified by CPU 1. If the test fails, the DPRAM copies the value back from the special register to memory location A. Either operation wipes out the special flag value. If CPU 2 now issues a test-and-set, it will succeed.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Pseudo- and C code">edit</a>]</div>
+<p><a name="Pseudo-_and_C_code" id="Pseudo-_and_C_code"></a></p>
+<h2>Pseudo- and C code</h2>
+<p>The test and set instruction when used with boolean values behaves like the following function. Crucially the entire function is executed <a href="/wiki/Atomic_%28computer_science%29.html" title="Atomic (computer science)">atomically</a>: no process can interrupt the function mid-execution and hence see a state that only exists during the execution of the function. This code only serves to help explain the behaviour of test-and-set, atomicity requires explicit hardware support and hence can't be implemented as a simple function.</p>
+<pre>
+<b>function</b> TestAndSet(<i>boolean</i> lock) {
+    <i>boolean</i> initial = lock
+    lock = true
+    <b>return</b> initial
+}
+</pre>
+<p>In the C programming language, the implementation would be like:</p>
+<pre>
+int TestAndSet(int* lockPtr) {
+    int oldValue;
+    oldValue = SwapAtomic(lockPtr, 1);
+    return oldValue != 0;
+}
+</pre>
+<p>where SwapAtomic atomically first reads the current value pointed to by lockPtr and then writes 1 to the location. Being atomic, SwapAtomic never uses cached values and always commits to the shared memory store (RAM).</p>
+<p>The code also shows that TestAndSet is really two operations: an atomical swap and a test. Only the swap needs to be atomic.</p>
+<p>Thus mutual exclusion can be implemented using:</p>
+<pre>
+<i>boolean</i> lock = false
+<b>function</b> Critical(){
+    <b>while</b> TestAndSet(lock) 
+        skip <i>//spin until lock is acquired</i>
+    critical section <i>//only one process can be in this section at a time</i>
+    lock = false <i>//release lock when finished with the critical section</i>
+}
+</pre>
+<p>In pseudo C it would be like:</p>
+<pre>
+volatile int lock = 0;
+
+void Critical() {
+    while (TestAndSet(&amp;lock) == 1);
+    critical section <i>//only one process can be in this section at a time</i>
+    lock = 0 <i>//release lock when finished with the critical section</i>
+}
+</pre>
+<p>Note the <i>volatile</i> keyword. In absence of volatile, the compiler and/or the cpus will quite certainly optimize access to lock and/or use cached values, thus rendering the above code erroneous.</p>
+<p>Conversely, and unfortunately, the presence of <i>volatile</i> does <i>not</i> guarantee that reads and writes are committed to memory. Some compilers issue <a href="/wiki/Memory_barrier.html" title="Memory barrier">memory barriers</a> to ensure that operations are committed to memory, but since the semantics of <i>volatile</i> in C/C++ is quite vague, not all compilers will do that: the only help is to read the compiler's doc very carefully.</p>
+<p>This function can be called by multiple processes, but it is guaranteed that only one process will be in the critical section at a time. The solution is unfortunately inefficient in multiprocessor machines as the constant reading and writing of the lock causes <a href="/wiki/Cache_coherency.html" title="Cache coherency">cache coherence</a> problems. <a href="/wiki/Test_and_Test-and-set.html" title="Test and Test-and-set">Test and Test-and-set</a> is a more efficient solution. This usage of TestAndSet is an example of a <a href="/wiki/Spinlock.html" title="Spinlock">Spinlock</a>: the while-loop spins waiting to acquire the lock.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Using test-and-set to implement semaphores">edit</a>]</div>
+<p><a name="Using_test-and-set_to_implement_semaphores" id="Using_test-and-set_to_implement_semaphores"></a></p>
+<h2>Using test-and-set to implement semaphores</h2>
+<p>It's possible to use the test-and-set instruction to implement <a href="/wiki/Semaphore_%28programming%29.html" title="Semaphore (programming)">semaphores</a>. In uniprocessor systems this technique isn't needed; to use semaphores, it is sufficient to disable <a href="/wiki/Interrupt.html" title="Interrupt">interrupts</a> before accessing a semaphore. However, in multiprocessor systems, it is undesirable, if not impossible, to disable interrupts on all processors at the same time. Even with interrupts disabled, two or more processors could be attempting to access the same semaphore's memory at the same time. In this case, the test-and-set instruction may be used.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Fetch-and-add.html" title="Fetch-and-add">Fetch-and-add</a></li>
+<li><a href="/wiki/Test_and_Test-and-set.html" title="Test and Test-and-set">Test and Test-and-set</a></li>
+<li><a href="/wiki/Load-Link/Store-Conditional.html" title="Load-Link/Store-Conditional">Load-Link/Store-Conditional</a></li>
+<li><a href="/wiki/Compare-and-swap.html" title="Compare-and-swap">Compare-and-swap</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://edis.win.tue.nl/sys/test-and-set/">Description</a> from <a  class="new" title="Encyclopaedia of Delay-Insensitive Systems">Encyclopaedia of Delay-Insensitive Systems</a></li>
+<li>"<a  class="external text" title="http://citeseer.ist.psu.edu/355291.html">Wait-free Test-and-Set</a>" by <a  class="new" title="Yehuda Afek">Yehuda Afek</a></li>
+<li><a  class="external text" title="http://www.cs.clemson.edu/~wayne/cpsc823/threads/testandset.s">int testandset(int *lock)</a> - C-callable routine written in Sun Sparc assembly language</li>
+<li><a  class="external text" title="http://sankofa.loc.edu/chu/web/Courses/Cosi410/Ch2/testset.htm">Techniques for mutual exclusion</a></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:394099-0!1!0!default!!en!2 and timestamp 20060906014340 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Concurrency control">Concurrency control</a></span> | <span dir='ltr'><a  title="Category:Computer arithmetic">Computer arithmetic</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Test-and-set.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-ja"><a >日本語</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 10:03, 7 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv85 in 0.115 secs. --></body></html>

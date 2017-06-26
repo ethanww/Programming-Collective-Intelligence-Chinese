@@ -1,0 +1,394 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Cross-site scripting,Social engineering (computer security),2005,2006,Anti-phishing,April 19,Bugtraq,Bugzilla,Cascading Style Sheets,Characters in cryptography,Computer insecurity" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Cross-site scripting - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Cross-site_scripting";
+			var wgTitle = "Cross-site scripting";
+			var wgArticleId = 241154;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Cross-site scripting</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p><b>Cross-site scripting</b> (<b>XSS</b>) is a type of <a href="/wiki/Computer_insecurity.html" title="Computer insecurity">computer security</a> <a href="/wiki/Vulnerability_%28computer_science%29.html" title="Vulnerability (computer science)">vulnerability</a> typically found in web applications which can be used by an attacker to compromise the <a href="/wiki/Same_origin_policy.html" title="Same origin policy">same origin policy</a> of client-side scripting languages.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Terminology</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Background</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Types</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">3.1</span> <span class="toctext">Type 0</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.2</span> <span class="toctext">Type 1</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.3</span> <span class="toctext">Type 2</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Exploit scenarios</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Real-world examples</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">Avoiding XSS vulnerabilities</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">Other forms of mitigation</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">8</span> <span class="toctext">Related vulnerabilities</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">9</span> <span class="toctext">External links</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">9.1</span> <span class="toctext">General</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">9.2</span> <span class="toctext">Attack vectors</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">9.3</span> <span class="toctext">Prevention</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">9.4</span> <span class="toctext">Occurrances</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">9.5</span> <span class="toctext">Other</span></a></li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Terminology">edit</a>]</div>
+<p><a name="Terminology" id="Terminology"></a></p>
+<h2>Terminology</h2>
+<p>The term <i>cross-site scripting</i> is not a very accurate description of this class of vulnerability. In the words of XSS pioneer Marc Slemko:</p>
+<blockquote>
+<p><i>This issue isn't just about scripting, and there isn't necessarily anything cross-site about it. So why the name? It was coined earlier on when the problem was less understood, and it stuck. Believe me, we have had more important things to do than think of a better name.</i></p>
+</blockquote>
+<p>The acronym CSS was often used in the early days to refer to cross-site scripting vulnerabilities, but this quickly became confusing in technical circles because both <a href="/wiki/Cascading_Style_Sheets.html" title="Cascading Style Sheets">Cascading Style Sheets</a> and the <a href="/wiki/Content-scrambling_system.html" title="Content-scrambling system">Content-scrambling system</a> shared the same acronym. Perhaps the first use of the abbreviation XSS was by Steve Champeon in his <a href="/wiki/Webmonkey.html" title="Webmonkey">Webmonkey</a> article <a  class="external text" title="http://webmonkey.wired.com/webmonkey/00/18/index3a.html">"XSS, Trust, and Barney"</a>. In 2002, Steve also posted the suggestion of using XSS as an alternative abbreviation to the <a href="/wiki/Bugtraq.html" title="Bugtraq">Bugtraq</a> mailing list. In a rare show of unity, the security community quickly adopted the alternative, and CSS is rarely used today to refer to cross-site scripting.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Background">edit</a>]</div>
+<p><a name="Background" id="Background"></a></p>
+<h2>Background</h2>
+<p>When <a href="/wiki/Netscape.html" title="Netscape">Netscape</a> first introduced the <a href="/wiki/JavaScript.html" title="JavaScript">JavaScript</a> language, they realized the security risks of allowing a Web server to send executable code to a browser (even if only in a browser <a href="/wiki/Sandbox_%28computer_security%29.html" title="Sandbox (computer security)">sandbox</a>). One key issue with this is the case where users have more than one browser window open at once. In some instances, a script from one page should be allowed to access data from another page or object, but in others, this should be strictly forbidden, as a malicious Web site could attempt to steal sensitive information this way. For this reason, the same-origin policy was introduced. Essentially, this policy allows any interaction between objects and pages, so long as these objects come from the same domain and over the same protocol. That way, a malicious Web site wouldn't be able to access sensitive data in another browser window via JavaScript.</p>
+<p>Since then, other similar access-control policies have been adopted in other browsers and client-side scripting languages to protect users from malicious Web sites. In general, cross-site scripting holes can be seen as vulnerabilities which allow attackers to bypass these mechanisms. By finding clever ways of injecting malicious script into pages served by other domains, an attacker can gain elevated privilege to sensitive page content, session cookies, and a variety of other objects.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Types">edit</a>]</div>
+<p><a name="Types" id="Types"></a></p>
+<h2>Types</h2>
+<p>There are three distinct known types of XSS vulnerability to date. (These will be labeled <b>Type 0</b>, <b>Type 1</b>, and <b>Type 2</b> for the purposes of this discussion, but these names are by no means industry standard nomenclature. Where possible, other names for these will be provided.)</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Type 0">edit</a>]</div>
+<p><a name="Type_0" id="Type_0"></a></p>
+<h3>Type 0</h3>
+<p>This form of XSS vulnerability has been referred to as <b>DOM-based</b> or <b>Local</b> cross-site scripting, and while it isn't new by any means, a recent paper (<a  class="external text" title="http://www.webappsec.org/projects/articles/071105.shtml">DOM-Based cross-site scripting</a>) does a good job of defining its characteristics. With Type 0 cross-site scripting vulnerabilities, the problem exists within a page's client-side script itself. For instance, if a piece of JavaScript accesses a URL request parameter and uses this information to write some HTML to its own page, and this information is not encoded using HTML entities, an XSS hole will likely be present, since this written data will be re-interpreted by browsers as HTML which could include additional client-side script.</p>
+<p><br />
+In practice, exploiting such a hole would be very similar to the exploit of Type 1 vulnerabilities (see below), except in one very important situation. Because of the way <a href="/wiki/Internet_Explorer.html" title="Internet Explorer">Internet Explorer</a> treats client-side script in objects located in the "local zone" (for instance, on the client's local hard drive), an XSS hole of this kind in a local page can result in remote execution vulnerabilities. For example, if an attacker hosts a malicious website, which contains a link to a vulnerable page on a client's local system, a script could be injected and would run with privileges of that user's browser on their system. This bypasses the entire client-side sandbox, not just the cross-domain restrictions that are normally bypassed with XSS exploits.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Type 1">edit</a>]</div>
+<p><a name="Type_1" id="Type_1"></a></p>
+<h3>Type 1</h3>
+<p>This kind of cross-site scripting hole is also referred to as a <b>non-persistent</b> or <b>reflected</b> vulnerability, and is by far the most common type. These holes show up when data provided by a web client is used immediately by server-side scripts to generate a page of results for that user. If unvalidated user-supplied data is included in the resulting page without HTML encoding, this will allow client-side code to be injected into the dynamic page. A classic example of this is in site search engines: if one searches for a string which includes some HTML special characters, often the search string will be redisplayed on the result page to indicate what was searched for, or will at least include the search terms in the text box for easier editing. If all occurrences of the search terms aren't HTML entity encoded, an XSS hole will result.</p>
+<p>At first blush, this doesn't appear to be a serious problem since users can only inject code into their own pages. However, with a small amount of <a href="/wiki/Social_engineering_%28computer_security%29.html" title="Social engineering (computer security)">social engineering</a>, an attacker could convince a user to follow a malicious URL which injects code into the results page, giving the attacker full access to that page's content. Due to the general requirement of the use of some social engineering in this case (and normally in Type 0 vulnerabilities as well), many programmers have disregarded these holes as not terribly important. This misconception is sometimes applied to XSS holes in general (even though this is only one type of XSS) and there is often disagreement in the security community as to the importance of cross-site scripting vulnerabilities.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Type 2">edit</a>]</div>
+<p><a name="Type_2" id="Type_2"></a></p>
+<h3>Type 2</h3>
+<p>This type of XSS vulnerability is also referred to as a <b>stored</b> or <b>persistent</b> or <b>second-order</b> vulnerability, and it allows the most powerful kinds of attacks. A type 2 XSS vulnerability exists when data provided to a web application by a user is first stored persistently on the server (in a database, filesystem, or other location), and later displayed to users in a web page without being encoded using HTML entities. A classic example of this is with online message boards, where users are allowed to post HTML formatted messages for other users to read. These vulnerabilities are usually more significant than other types because an attacker can inject the script just once, and could potentially hit a large number of other users with little need for <a href="/wiki/Social_engineering_%28computer_security%29.html" title="Social engineering (computer security)">social engineering</a>. The methods of injection can vary a great deal, and an attacker may not need to use the web application itself to exploit such a hole. Any data received by the web application (via email, system logs, etc) that can be controlled by an attacker must be encoded prior to re-display in a dynamic page, else an XSS vulnerability of this type could result.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Exploit scenarios">edit</a>]</div>
+<p><a name="Exploit_scenarios" id="Exploit_scenarios"></a></p>
+<h2>Exploit scenarios</h2>
+<p>Attackers intending to exploit cross-site scripting vulnerabilities must approach each class of vulnerability differently. For each class, a specific attack vector is described here. (The names below come from the <a href="/wiki/Characters_in_cryptography.html" title="Characters in cryptography">cast of characters</a> commonly used in computer security.)</p>
+<p><b>Type-0 attack</b></p>
+<ol>
+<li>Mallory sends an URL to Alice (via email or another mechanism) of a maliciously constructed web page.</li>
+<li>Alice clicks on the link.</li>
+<li>The malicious web page's <a href="/wiki/JavaScript.html" title="JavaScript">JavaScript</a> opens a vulnerable HTML page installed locally on Alice's computer.</li>
+<li>The vulnerable HTML page is tricked into executing <a href="/wiki/JavaScript.html" title="JavaScript">JavaScript</a> in the computer's local zone.</li>
+<li>Mallory's malicious script now may run commands with the privileges Alice holds on her own computer.</li>
+</ol>
+<p><b>Type-1 attack</b></p>
+<ol>
+<li>Alice often visits a particular website, which is hosted by Bob. Bob's website allows Alice to log in with a username/password pair and store sensitive information, such as billing information.</li>
+<li>Mallory observes that Bob's website contains a reflected XSS vulnerability.</li>
+<li>Mallory crafts a URL to exploit the vulnerability, and sends Alice an email, <a href="/wiki/Spoofing_attack.html" title="Spoofing attack">making it look</a> as if it came from Bob.</li>
+<li>Alice visits the URL provided by Mallory while logged into Bob's website.</li>
+<li>The malicious script embedded in the URL executes in Alice's browser, as if it came directly from Bob's server. The script steals sensitive information (authentication credentials, billing info, etc) and sends this to Mallory's web server without Alice's knowledge.</li>
+</ol>
+<p><b>Type-2 attack</b></p>
+<ol>
+<li>Bob hosts a web site which allows users to post messages and other content to the site for later viewing by other members.</li>
+<li>Mallory notices that Bob's website is vulnerable to a type 2 XSS attack.</li>
+<li>Mallory posts a message, controversial in nature, which may encourage many other users of the site to view it.</li>
+<li>Upon merely viewing the posted message, site users' session cookies or other credentials could be taken and sent to Mallory's webserver without their knowledge.</li>
+<li>Later, Mallory logs in as other site users and posts messages on their behalf....</li>
+</ol>
+<p>Please note, the preceding examples are merely a representation of common methods of exploit and are not meant to encompass all vectors of attack.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Real-world examples">edit</a>]</div>
+<p><a name="Real-world_examples" id="Real-world_examples"></a></p>
+<h2>Real-world examples</h2>
+<p>There are literally hundreds of examples of cross-site scripting vulnerabilities available publicly. Just a few examples to illustrate the different types of holes will be listed here.</p>
+<ul>
+<li>An example of a type-0 vulnerability was once found in an error page produced by <a href="/wiki/Bugzilla.html" title="Bugzilla">Bugzilla</a> where <a href="/wiki/JavaScript.html" title="JavaScript">JavaScript</a> was used to write the current URL, through the document.location variable, to the page without any filtering or encoding. In this case, an attacker who controlled the URL might have been able to inject script, depending on the behavior of the browser in use. <a  class="external text" title="https://bugzilla.mozilla.org/show_bug.cgi?id=272620">This vulnerability</a> was fixed by encoding the special characters in the document.location string prior to writing it to the page.</li>
+</ul>
+<ul>
+<li>A recent type-1 vulnerability can be found in older versions of <a  class="external text" title="http://www.atutor.ca/">ATutor</a>, an Open Source Web-based Learning Content Management System (LCMS) written in PHP. <a  class="external text" title="http://www.osvdb.org/17355">This vulnerability</a> exists in the application's site search page. Script could be injected into nearly every URL request parameter, and the result page would include the malicious script.</li>
+</ul>
+<ul>
+<li>An example of a type 2 vulnerability was found in <a href="/wiki/Hotmail.html" title="Hotmail">Hotmail</a>, in October of 2001 by Marc Slemko, which allowed an attacker to steal a user's <a href="/wiki/Microsoft_.NET_Passport.html" title="Microsoft .NET Passport">Microsoft .NET Passport</a> session cookies. The exploit for <a  class="external text" title="http://alive.znep.com/~marcs/passport/">this vulnerability</a> consisted of sending a malicious email to a Hotmail user, which contained malformed HTML. The script filtering code in Hotmail's site failed to remove the broken HTML and <a href="/wiki/Internet_Explorer.html" title="Internet Explorer">Internet Explorer</a>'s parsing algorithm happily interpreted the malicious code. This problem was quickly fixed, but multiple similar problems were found in Hotmail and other Passport sites later on.</li>
+</ul>
+<ul>
+<li><a  class="external text" title="http://www.derkeiler.com/Mailing-Lists/securityfocus/bugtraq/2002-04/0396.html">A similar example</a>, which was more fatal, was found in Indiatimes Email portal by <a  class="new" title="Sandeep Giri">Sandeep Giri</a>. This example demonstrated that if a mailing service is vulnerable to such kind of attack a victim's inbox can be hijacked even if victim doesn't open the mail sent by malicious user.</li>
+</ul>
+<ul>
+<li>On <a href="/wiki/October_13.html" title="October 13">October 13</a>, <a href="/wiki/2005.html" title="2005">2005</a> <a href="/wiki/Samy_%28XSS%29.html" title="Samy (XSS)">Samy</a> exploited a security flaw in <a href="/wiki/MySpace.html" title="MySpace">MySpace</a> resulting in over one million friend requests being made to its creators profile. Qualifying as a type 2 vulnerability, it used multiple <a href="/wiki/XMLHttpRequest.html" title="XMLHttpRequest">XMLHttpRequests</a> to propogate itself.</li>
+</ul>
+<ul>
+<li>An <a  class="external text" title="http://secunia.com/advisories/19742">XSS vulnerability</a> in <a  class="external text" title="http://communityarchitect.com/">Community Architect</a> Guestbook was disclosed by <a href="/wiki/Susam_Pal.html" title="Susam Pal">Susam Pal</a> on <a href="/wiki/April_19.html" title="April 19">April 19</a>, <a href="/wiki/2006.html" title="2006">2006</a> which can be exploited by malicious people to conduct script insertion attacks. As a result, many free web-hosting services which used the guestbook were vulnerable such attacks.</li>
+</ul>
+<ul>
+<li><a href="/wiki/Netcraft.html" title="Netcraft">Netcraft</a> announced on <a href="/wiki/June_16.html" title="June 16">June 16</a>, <a href="/wiki/2006.html" title="2006">2006</a>. A security flaw in the <a href="/wiki/PayPal.html" title="PayPal">PayPal</a> web site is being actively exploited by fraudsters to steal credit card numbers and other personal information belonging to <a href="/wiki/PayPal.html" title="PayPal">PayPal</a> users. The issue was reported to <a href="/wiki/Netcraft.html" title="Netcraft">Netcraft</a> via <a  class="external text" title="http://toolbar.netcraft.com/">their own</a> <a href="/wiki/Anti-phishing.html" title="Anti-phishing">anti-phishing</a> toolbar. Soon after, <a  class="external text" title="http://news.com.com/PayPal+fixes+phishing+hole/2100-7349_3-6084974.html">Paypal reported</a> that a "change in some of the code" on the Paypal website had removed the vulnerability.</li>
+</ul>
+<ul>
+<li>Netscape's new social networking website was being exploited from an XSS vulnerability on <a href="/wiki/July_26.html" title="July 26">July 26</a>, <a href="/wiki/2006.html" title="2006">2006</a> by an upset <a href="/wiki/Digg.html" title="Digg">Digg</a> fan nicknamed D.</li>
+</ul>
+<ul>
+<li>An XSS <a  class="external text" title="http://www.securitylab.ru/news/extra/272756.php">Joke</a> claiming President Bush appointed a 9 year old boy to be the chairperson of the Information Security Department by exploiting XSS on <a  class="external autonumber" title="http://www.cbsnews.com">[1]</a> and <a  class="external autonumber" title="http://www.bbc.co.uk">[2]</a>.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Avoiding XSS vulnerabilities">edit</a>]</div>
+<p><a name="Avoiding_XSS_vulnerabilities" id="Avoiding_XSS_vulnerabilities"></a></p>
+<h2>Avoiding XSS vulnerabilities</h2>
+<p>Reliable avoidance of cross-site scripting vulnerabilities currently requires the encoding of all HTML special characters in potentially malicious data. This is generally done right before display by web applications (or client-side script), and many programming languages have built-in functions or libraries which provide this encoding (in this context, also called <i>quoting</i> or <i>escaping</i>).</p>
+<p>An example of this kind of quoting is shown below, from within the <a href="/wiki/Python_programming_language.html" title="Python programming language">Python</a> interpreter:</p>
+<pre>
+~&gt; python
+Python 2.3.5 (#2, Aug 30 2005, 15:50:26) 
+Type "help", "copyright", "credits" or "license" for more information.
+&gt;&gt;&gt; import cgi
+
+&gt;&gt;&gt; print "&lt;script&gt;alert('xss');&lt;/script&gt;"
+&lt;script&gt;alert('xss');&lt;/script&gt;
+
+&gt;&gt;&gt; print cgi.escape("&lt;script&gt;alert('xss');&lt;/script&gt;");
+&amp;lt;script&amp;gt;alert('xss');&amp;lt;/script&amp;gt;
+</pre>
+<p>Here, the first print statement produces executable client-side script, whereas the second print statement outputs a string which is an HTML-quoted version of the original script. The quoted versions of these characters will appear as literals in a browser, rather than with their special meaning as HTML tags. This prevents any script from being injected into HTML output, but it also prevents any user-supplied input from being formatted with benign HTML.</p>
+<p>The ultimate problem with trying to avoid XSS vulnerabilities is that every situation is different. For any given situation, the needs and the issues change. For instance, if user input is going into the src attribute of a hyperlink, cgi.escape() would not be sufficient. Let's say a picture was to be added to a page of pictures, in this fashion:</p>
+<pre>
+ &lt;img src='$url'&gt;
+</pre>
+<p>An attacker could enter "doesntexist.jpg' onerror='alert(document.cookie)" to add an event which triggers when the browser fails to load "doesntexist.jpg", executing the code.</p>
+<p>If one were to implement a function like cgi.escape() (which comes with <a href="/wiki/Python_programming_language.html" title="Python programming language">Python</a>), one would be best off converting all but known-safe characters to their equivalent <a href="/wiki/List_of_XML_and_HTML_character_entity_references.html" title="List of XML and HTML character entity references">HTML entity</a>. Because browsers implement complex (and often buggy) parsing algorithms for HTML (in all of its flavors), it is difficult to predict what characters could be treated as special. In particular, support for <a href="/wiki/Unicode.html" title="Unicode">Unicode</a> character sets by browsers could leave an application open to XSS attacks if the HTML quoting algorithms only look for known-bad characters.</p>
+<p>As stated above, the unfortunate consequence of this fix is that users are prevented from embedding non-malicious HTML into pages. Because HTML standards do not provide any simple mechanism to disable client-side scripts in specific portions of a web-page, it is difficult to reliably cleanse script from normal HTML. The most reliable method is for web applications to parse the HTML, strip tags and attributes that don't appear in a whitelist, and output valid HTML.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Other forms of mitigation">edit</a>]</div>
+<p><a name="Other_forms_of_mitigation" id="Other_forms_of_mitigation"></a></p>
+<h2>Other forms of mitigation</h2>
+<p>The easiest way to eliminate XSS vulnerabilities is to encode (HTML quote) all user-supplied HTML special characters, thereby preventing them from being interpreted as HTML. Unfortunately, users of many kinds of web applications (commonly forums and webmail) wish to use some of the features HTML provides. There are some web applications, which attempt to identify all "evil" HTML, and neutralize it, either by removing it or encoding it. These algorithms usually end up being incredibly complex, and for this reason it is almost impossible to know for sure if all possible injections are eliminated. This is because <a href="/wiki/JavaScript.html" title="JavaScript">JavaScript</a> has been so tightly integrated into HTML syntax, in addition to the fact that browser and web technologies are still heavily under development. In order to eliminate certain injections, any server-side algorithm must either reject broken HTML, understand how every browser will interpret broken HTML, or (preferably) fix the HTML to be well-formed using techniques akin to those of <a href="/wiki/HTML_Tidy.html" title="HTML Tidy">HTML Tidy</a>.</p>
+<p>Besides content filtering, other methods for XSS mitigation are also commonly used. One example is that of <a href="/wiki/HTTP_cookie.html" title="HTTP cookie">cookie</a> security. Many web applications rely on session cookies for authentication between individual HTTP requests, and because client-side scripts generally have access to these cookies, most simple XSS exploits are written to steal these cookies. To mitigate this particular threat (though not the XSS problem in general), many web applications tie session cookies to the IP address of the user who originally logged in, and only permit that IP to use that cookie. This is effective in most situations (if an attacker is only after the cookie), but obviously breaks down in situations where an attacker is behind the same <a href="/wiki/NAT.html" title="NAT">NATed</a> IP address or <a href="/wiki/Web_proxy.html" title="Web proxy">web proxy</a>. <a href="/wiki/Internet_Explorer.html" title="Internet Explorer">Internet Explorer</a> also has a feature, called the HTTP Only flag, which allows a webserver to set a cookie which is unavailable to client-side scripts. While this seems like a useful feature, it does not prevent the use of XSS to steal passwords or perform cross-site request forgery attacks.</p>
+<p>An additional common mitigation, is to use input validation of all potentially malicious data sources. This is a common theme in application development (even outside of web development) and is generally very useful. For instance, if a form accepts some field, which is supposed to contain a phone number, a server-side routine could remove all characters other than digits, parentheses, and dashes, such that the result cannot contain a script. (Incidentally, this can be used to prevent other injection attacks, such as <a href="/wiki/SQL_injection.html" title="SQL injection">SQL injection</a>, from being successful.) While effective for most types of input, there are times when an application, by design, must be able to accept special HTML characters, such as '&lt;' and '&gt;'. In these situations, HTML entity encoding is the only option.</p>
+<p>Finally, some web applications are written to operate completely without the need for client-side scripts. This allows users, if they choose, to completely disable scripting in their browsers before using the application. In this way, even potentially malicious HTML can be displayed unencoded on a page, and users will not be susceptible to XSS attacks. Many browsers can be configured to disable client-side scripts on a per-domain basis, which greatly enhances the convenience of such a system. The major drawback to this mitigation is that most users are ignorant of such measures, and would not know how to properly secure their browsers for such applications.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Related vulnerabilities">edit</a>]</div>
+<p><a name="Related_vulnerabilities" id="Related_vulnerabilities"></a></p>
+<h2>Related vulnerabilities</h2>
+<p>There are several classes of vulnerabilities or attack techniques which are related, and worth mentioning:</p>
+<ul>
+<li><a href="/wiki/Cross_Zone_Scripting.html" title="Cross Zone Scripting">Cross Zone Scripting</a> vulnerabilities, which exploits "zone" concepts in software, usually execute code with a greater privilege.</li>
+<li><a  class="new" title="HTTP Header Injection">HTTP Header Injection</a> vulnerabilities, which can be used to create cross-site scripting conditions in addition to allowing attacks such as <a href="/wiki/HTTP_response_splitting.html" title="HTTP response splitting">HTTP response splitting</a></li>
+<li><a href="/wiki/Cross-site_tracing.html" title="Cross-site tracing">Cross-site tracing</a> attacks, which exploits the <a href="/wiki/HTTP.html" title="HTTP">HTTP</a> TRACE method to glean more information from a user's browser when a XSS vulnerability is present.</li>
+<li><a href="/wiki/SQL_Injection.html" title="SQL Injection">SQL Injection</a> vulnerabilities, which are much different, but often found in web applications along with XSS holes.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: General">edit</a>]</div>
+<p><a name="General" id="General"></a></p>
+<h3>General</h3>
+<ul>
+<li><a  class="external text" title="http://www.cgisecurity.com/articles/xss-faq.shtml">CGISecurity — The Cross-Site Scripting (XSS) FAQ</a></li>
+<li><a  class="external text" title="http://www.cert.org/advisories/CA-2000-02.html">CERT® Advisory CA-2000-02: Malicious HTML Tags Embedded in Client Web Requests</a></li>
+<li><a  class="external text" title="http://httpd.apache.org/info/css-security/">Apache Software Foundation — Cross-Site Scripting Info</a></li>
+<li><a  class="external text" title="http://webmonkey.wired.com/webmonkey/00/18/index3a.html">Webmonkey — XSS, Trust, and Barney</a></li>
+<li><a  class="external text" title="http://www.mozilla.org/projects/security/components/same-origin.html">Mozilla — The Same Origin Policy</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Attack vectors">edit</a>]</div>
+<p><a name="Attack_vectors" id="Attack_vectors"></a></p>
+<h3>Attack vectors</h3>
+<ul>
+<li><a  class="external text" title="http://ha.ckers.org/xss.html">Ha.ckers.org Security Lab — XSS Cheat sheet</a></li>
+<li><a  class="external text" title="http://www.webappsec.org/projects/articles/071105.shtml">DOM-Based Cross-Site Scripting</a></li>
+</ul>
+<dl>
+<dd>
+<ul>
+<li><a  class="external text" title="http://seclists.org/lists/pen-test/2005/Jul/0086.html">Reply post to Pen-Test mailing list by Tom Gallagher in regard to Type 0 attacks and local zone</a></li>
+</ul>
+</dd>
+</dl>
+<ul>
+<li><a  class="external text" title="http://www.nextgenss.com/papers/SecondOrderCodeInjection.pdf">Second-order Code Injection Attacks (PDF)</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Prevention">edit</a>]</div>
+<p><a name="Prevention" id="Prevention"></a></p>
+<h3>Prevention</h3>
+<ul>
+<li><a  class="external text" title="http://shiflett.org/articles/foiling-cross-site-attacks">Foiling Cross-Site Attacks</a></li>
+<li><a  class="external text" title="http://alistapart.com/articles/secureyourcode">A List Apart — Community Creators, Secure Your Code!</a></li>
+<li><a  class="external text" title="http://alistapart.com/articles/secureyourcode2">A List Apart — Community Creators, Secure Your Code! Part II</a></li>
+<li><a  class="external text" title="http://springenwerk.org">Springenwerk Open Source Cross-Site Scripting Scanner</a></li>
+<li><a  class="external text" title="http://neelneel.blogspot.com/2006/07/how-safe-we-are-from-malicious.html">Prevention of Malicious JavaScript!</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Occurrances">edit</a>]</div>
+<p><a name="Occurrances" id="Occurrances"></a></p>
+<h3>Occurrances</h3>
+<ul>
+<li><a  class="external text" title="http://it.slashdot.org/it/05/10/14/126233.shtml?tid=172&amp;tid=95&amp;tid=220">Slashdot — Cross-Site Scripting Worm Floods MySpace</a></li>
+<li><a  class="external text" title="http://shiflett.org/archive/178">Google XSS Example</a></li>
+<li><a  class="external text" title="http://www.pointblanksecurity.com/xss/">The XSS Blacklist</a></li>
+<li><a  class="external text" title="http://pointblanksecurity.com/xss/xss2.php">Current Blacklist</a></li>
+<li><a  class="external text" title="http://it.slashdot.org/it/06/07/30/0547227.shtml">JavaScript Malware Open The Door to the Intranet</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Other">edit</a>]</div>
+<p><a name="Other" id="Other"></a></p>
+<h3>Other</h3>
+<ul>
+<li><a  class="external text" title="http://xss-proxy.sourceforge.net/">XSS Proxy Tool</a></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:241154-0!1!0!default!!en!2 and timestamp 20060909051834 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:Web security exploits">Web security exploits</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Cross-site_scripting.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-et"><a >Eesti</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-nl"><a >Nederlands</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-no"><a >Norsk (bokmål)</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+				<li class="interwiki-sv"><a >Svenska</a></li>
+				<li class="interwiki-tr"><a >Türkçe</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 12:38, 30 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv97 in 0.194 secs. --></body></html>

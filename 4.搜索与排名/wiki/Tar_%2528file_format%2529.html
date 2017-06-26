@@ -1,0 +1,682 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Tar (file format),.tar.gz.gpg,ASCII,Ar (Unix),Archive formats,Archiving,Ark (computing),BSD,Backup,Bitstream,Bzip" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Tar (file format) - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Tar_(file_format)";
+			var wgTitle = "Tar (file format)";
+			var wgArticleId = 151694;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Tar (file format)</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<table class="infobox" style="text-align: left; width: 20em;">
+<caption><b>Tar</b></caption>
+<tr>
+<th style="white-space: nowrap;"><a href="/wiki/Filename_extension.html" title="Filename extension">File extension</a>:</th>
+<td><code><tt>.tar</tt></code></td>
+</tr>
+<tr>
+<th style="white-space: nowrap;"><a href="/wiki/MIME.html" title="MIME">MIME type</a>:</th>
+<td><code><code>application/x-tar</code></code></td>
+</tr>
+<tr>
+<th style="white-space: nowrap;">Type of format:</th>
+<td><a href="/wiki/File_archiver.html" title="File archiver">file archive</a></td>
+</tr>
+<tr>
+<th style="white-space: nowrap;">Container for:</th>
+<td>Misc. files (often&#160;source&#160;code)</td>
+</tr>
+<tr>
+<th style="white-space: nowrap;">Contained by:</th>
+<td><a href="/wiki/Compress.html" title="Compress">compress</a>, <a href="/wiki/Gzip.html" title="Gzip">gzip</a>, <a href="/wiki/Bzip2.html" title="Bzip2">bzip2</a></td>
+</tr>
+<tr>
+<td></td>
+</tr>
+</table>
+<dl>
+<dd><span class="plainlinks"><i>The correct title of this article is <b>tar (file format)</b>. The initial letter is capitalized due to <a  title="Wikipedia:Naming conventions (technical restrictions)">technical restrictions</a>.</i></span></dd>
+</dl>
+<p>In <a href="/wiki/Computing.html" title="Computing">computing</a>, the <b>tar</b> (<b>file</b>) <b>format</b> (derived from <i><b>t</b>ape <b>ar</b>chive</i>) is a type of <a href="/wiki/Archive_formats.html" title="Archive formats">archive</a> <a href="/wiki/Bitstream.html" title="Bitstream">bitstream</a> or <a href="/wiki/File_format.html" title="File format">file format</a>. The format is traditionally produced by the <a href="/wiki/Unix-like.html" title="Unix-like">Unix</a> command, <code>tar</code>, and was standardized by <i><a href="/wiki/POSIX.html" title="POSIX">POSIX</a>.1-1998</i> and later <i>POSIX.1-2001</i>. Initially used for <a href="/wiki/Tape_backup.html" title="Tape backup">tape backup</a>, it is now commonly used to collate collections of files into one larger file, for <a href="/wiki/Distribution_%28software%29.html" title="Distribution (software)">distribution</a> or <a href="/wiki/Archiving.html" title="Archiving">archiving</a>, while preserving <a href="/wiki/File_system.html" title="File system">file system</a> information such as user and group permissions, dates, and <a href="/wiki/Directory_%28file_systems%29.html" title="Directory (file systems)">directory</a> structures.</p>
+<p>The format was originally developed as a <a  class="new" title="Raw format">raw format</a> for use with <a href="/wiki/Sequential_access.html" title="Sequential access">sequential access</a> devices such as <a href="/wiki/Tape_drive.html" title="Tape drive">tape drives</a>, specifically for <a href="/wiki/Backup.html" title="Backup">backup</a> purposes. However, it is now almost always used as a general <a  class="new" title="File archiving">file archiving</a> utility. <code>tar</code>'s linear roots can still be seen in its ability to work on any data stream and its slow partial extraction performance, as it has to read through the whole archive to extract only the final file. A tar file (<var>somefile</var>.tar), when subsequently compressed using a zip utility such as gzip or bzip, produces a zipped tar file with a filename extension (<i>e.g.</i>: <var>somefile</var>.tar.gz, <var>somefile</var>.tar.bz2). GNU or other program source code is commonly referred to as a <b>tarball</b> .</p>
+<p>As is common with Unix utilities, <code>tar</code> is a single specialist program. It follows the <a href="/wiki/Unix_philosophy.html" title="Unix philosophy">Unix philosophy</a> in that it can <i>"do only one thing"</i> (archive), <i>"but do it well"</i>. <code>tar</code> is most commonly used in tandem with an external compression utility such as <a href="/wiki/Gzip.html" title="Gzip">gzip</a>, <a href="/wiki/Bzip2.html" title="Bzip2">bzip2</a> or, formerly, <a href="/wiki/Compress.html" title="Compress">compress</a>, since it has no built-in <a href="/wiki/Data_compression.html" title="Data compression">data compression</a> facilities. These compression utilities generally only compress a single file, hence the pairing with tar, which can produce a single file from many files. To speed this up, the <a href="/wiki/BSD.html" title="BSD">BSD</a> and <a href="/wiki/GNU.html" title="GNU">GNU</a> versions of tar support the command line options <code>-z</code> (gzip), <code>-j</code> (bzip2), and <code>-Z</code> (compress), which will compress or decompress the archive file it is currently working with, although even in this case the (de)compression is still actually performed by an external program. Compression is sometimes avoided because of the greatly amplified potential for damage to data in long term storage.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Usage</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">1.1</span> <span class="toctext">On the command line</span></a>
+<ul>
+<li class="toclevel-3"><a ><span class="tocnumber">1.1.1</span> <span class="toctext">Compression options</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">1.1.2</span> <span class="toctext">Historical tricks</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.2</span> <span class="toctext">In graphical user interfaces</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Filename extensions</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Internet Content Type</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Format details</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">4.1</span> <span class="toctext">File header</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.2</span> <span class="toctext">USTAR format</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.3</span> <span class="toctext">Example</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Tarbombs</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">Notes</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">8</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Usage">edit</a>]</div>
+<p><a name="Usage" id="Usage"></a></p>
+<h2>Usage</h2>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: On the command line">edit</a>]</div>
+<p><a name="On_the_command_line" id="On_the_command_line"></a></p>
+<h3>On the command line</h3>
+<ul>
+<li><b>To <i>pack</i> tar files</b>, use the following commands:
+<ul>
+<li>for an <i>uncompressed</i> tar file:
+<dl>
+<dd><code>tar -cf <var>packed_files.tar</var> <var>file_to_pack1</var> <var>file_to_pack2</var> <var>...</var></code></dd>
+</dl>
+</li>
+<li>to pack <i>and</i> compress (one step at a time):
+<dl>
+<dd><code>tar -cf <var>packed_files.tar</var> <var>file_to_pack1</var> <var>file_to_pack2</var> <var>...</var><br />
+gzip <var>packed_files.tar</var></code></dd>
+</dl>
+</li>
+<li>to pack and compress <i>all at once</i>:
+<dl>
+<dd><code>tar -cf - <var>file_to_pack1</var> <var>file_to_pack2</var> <var>...</var> | gzip -c &gt; <var>packed_files.tar.gz</var></code></dd>
+</dl>
+</li>
+<li>to create a tar from a directory and its subdirectories:
+<dl>
+<dd><code>tar -cvf <var>packed_files.tar</var> <var>dir_to_pack</var></code></dd>
+</dl>
+</li>
+</ul>
+</li>
+<li><b>To <i>unpack</i> tar files</b>, use the following commands:
+<ul>
+<li>for an <i>uncompressed</i> tar file:</li>
+</ul>
+<dl>
+<dd>
+<dl>
+<dd><code>tar -xf <var>file_to_unpack.tar</var></code></dd>
+</dl>
+</dd>
+</dl>
+<ul>
+<li>to decompress and unpack one step at a time:
+<dl>
+<dd><code>gunzip <var>packed_files.tar.gz</var><br />
+tar -xf <var>packed_files.tar</var></code></dd>
+</dl>
+</li>
+<li>to decompress and unpack <i>all at once</i>:
+<dl>
+<dd><code>gunzip -c <var>packed_files.tar.gz</var> | tar -xf -</code></dd>
+</dl>
+</li>
+</ul>
+</li>
+<li><b>To <i>list the contents</i> of a tar file</b>, use the following command:
+<dl>
+<dd>
+<dl>
+<dd><code>tar -tvf <var>file_to_list.tar</var></code></dd>
+</dl>
+</dd>
+</dl>
+</li>
+</ul>
+<p>To use <i>bzip2</i> instead of <i>gzip</i>, simply replace the commands above with <code>bzip2</code> where <code>gzip</code> is used and <code>bunzip2</code> where <code>gunzip</code> is used.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Compression options">edit</a>]</div>
+<p><a name="Compression_options" id="Compression_options"></a></p>
+<h4>Compression options</h4>
+<p><a href="/wiki/BSD.html" title="BSD">BSD</a> and <a href="/wiki/GNU.html" title="GNU">GNU</a> tar have a <b>compression flag feature</b> making it easier to archive and compress <i>gzip</i>ped, <i>bzip</i>ped or <i>compress</i>ed tarballs in one go. The following commands can be used to take advantage of this:</p>
+<ul>
+<li><b>To pack <i>and</i> compress</b>:
+<ul>
+<li>using <i><a href="/wiki/Gzip.html" title="Gzip">gzip</a></i>:</li>
+</ul>
+<dl>
+<dd><code>tar -czf <var>packed_files.tgz</var> <var>file_to_pack1</var> <var>file_to_pack2</var> <var>...</var></code></dd>
+</dl>
+<ul>
+<li>using <i><a href="/wiki/Bzip2.html" title="Bzip2">bzip2</a></i>:</li>
+</ul>
+<dl>
+<dd><code>tar -cjf <var>packed_files.tbz2</var> <var>file_to_pack1</var> <var>file_to_pack2</var> ...</code></dd>
+</dl>
+<ul>
+<li>using <i><a href="/wiki/Compress.html" title="Compress">compress</a></i>:</li>
+</ul>
+<dl>
+<dd><code>tar -cZf <var>packed_files.tar.Z</var> <var>file_to_pack1</var> <var>file_to_pack2</var> <var>...</var></code></dd>
+</dl>
+<ul>
+<li>using some other arbitrary compression utility that works as a filter:</li>
+</ul>
+<dl>
+<dd><code>tar --use-compress-program=<var>name_of_program</var> -cf <var>packed_files.tar.XXX</var> <var>file_to_pack1</var> <var>file_to_pack2</var> ...</code></dd>
+</dl>
+</li>
+</ul>
+<ul>
+<li><b>To uncompress <i>and</i> unpack</b>:
+<ul>
+<li>a <i>gzip</i> compressed tar file:</li>
+</ul>
+<dl>
+<dd><code>tar -xzf <var>file_to_unpack.tar.gz</var></code></dd>
+</dl>
+<ul>
+<li>a <i>bzip2</i> compressed tar file:</li>
+</ul>
+<dl>
+<dd><code>tar -xjf <var>file_to_unpack.tar.bz2</var></code></dd>
+</dl>
+<ul>
+<li>a <i>compress</i> compressed tar file:</li>
+</ul>
+<dl>
+<dd><code>tar -xZf <var>file_to_unpack.tar.Z</var></code></dd>
+</dl>
+<ul>
+<li>an arbitrary-compression-utility-compressed tar file:</li>
+</ul>
+<dl>
+<dd><code>tar --use-compress-program=<var>name_of_program</var> -xf <var>file_to_unpack.tar.XXX</var></code></dd>
+</dl>
+</li>
+</ul>
+<p>Some versions of tar use the <code>-y</code> switch to invoke bzip2 rather than <code>-j</code>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Historical tricks">edit</a>]</div>
+<p><a name="Historical_tricks" id="Historical_tricks"></a></p>
+<h4>Historical tricks</h4>
+<p>The following syntax (not related to archiving) was used almost universally before the <code>-d</code>, <code>-R</code>, <code>-p</code> and <code>-a</code> options were added to the <a href="/wiki/Cp_%28Unix%29.html" title="Cp (Unix)">cp</a> command.</p>
+<ul>
+<li><b>To copy directories precisely</b>:
+<dl>
+<dd><code>tar -cf - <var>one_directory</var> | (cd <var>another_directory</var> &amp;&amp; tar -xpf - )</code></dd>
+</dl>
+</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: In graphical user interfaces">edit</a>]</div>
+<p><a name="In_graphical_user_interfaces" id="In_graphical_user_interfaces"></a></p>
+<h3>In graphical user interfaces</h3>
+<p>Within <a href="/wiki/Graphical_user_interfaces.html" title="Graphical user interfaces">graphical user interfaces</a> (GUIs), one can often create and extract tar files (without using the complex command line methods of <code>tar</code>) in <a href="/wiki/List_of_file_archivers#Graphical.html" title="List of file archivers">graphical file archivers</a>—or the archiving capabilities increasingly being built into <a href="/wiki/File_managers.html" title="File managers">file managers</a>.</p>
+<p>With <a href="/wiki/Desktop_environments.html" title="Desktop environments">desktop environments</a> such as <a href="/wiki/KDE.html" title="KDE">KDE</a> or <a href="/wiki/GNOME.html" title="GNOME">GNOME</a>, a downloaded tar file can be clicked on with the secondary button on a <a href="/wiki/Pointing_device.html" title="Pointing device">pointing device</a> causing a <a href="/wiki/Context_menu.html" title="Context menu">context menu</a> to appear allowing the user to simply choose to extract the file (or, alternatively, clicking on a file with the primary button allows the user to view the contents). Similar context-menu options exist for archiving a group of selected files.</p>
+<p>In such a manner, a computer user more used to GUIs can extract or create tar files, without knowing the sometimes apparently cryptic tar command line options.</p>
+<p>An example for KDE would be <a href="/wiki/Ark_%28computing%29.html" title="Ark (computing)">Ark</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Filename extensions">edit</a>]</div>
+<p><a name="Filename_extensions" id="Filename_extensions"></a></p>
+<h2>Filename extensions</h2>
+<p>The following is a list of common <a href="/wiki/Filename_extension.html" title="Filename extension">filename extensions</a> for uncompressed and compressed tar archives:</p>
+<ul>
+<li>tar file:
+<ul>
+<li><code>.tar</code></li>
+</ul>
+</li>
+<li><i><a href="/wiki/Gzip.html" title="Gzip">gzip</a></i>ped tar file:
+<ul>
+<li><code>.tar.gz</code></li>
+<li><code>.tgz</code></li>
+<li><code>.tar.gzip</code></li>
+<li><code>.war</code> <a href="/wiki/Konqueror.html" title="Konqueror">Konqueror</a> Web ARchive file</li>
+</ul>
+</li>
+<li><i><a href="/wiki/Bzip.html" title="Bzip">bzip</a></i>ped tar file:
+<ul>
+<li><code>.tar.bz2</code></li>
+<li><code>.tar.bzip2</code></li>
+<li><code>.tbz2</code></li>
+<li><code>.tbz</code></li>
+</ul>
+</li>
+<li>tar file compressed with <i><a href="/wiki/Compress.html" title="Compress">compress</a></i>
+<ul>
+<li><code>.tar.Z</code></li>
+<li><code>.taz</code></li>
+</ul>
+</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Internet Content Type">edit</a>]</div>
+<p><a name="Internet_Content_Type" id="Internet_Content_Type"></a></p>
+<h2>Internet Content Type</h2>
+<p>The Internet <a href="/wiki/MIME#content-type.html" title="MIME">content type</a>, media type or MIME type for tar archives is <code>application/x-tar</code>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Format details">edit</a>]</div>
+<p><a name="Format_details" id="Format_details"></a></p>
+<h2>Format details</h2>
+<p>A limitation of early tape drives was that data could only be written to them in 512 byte blocks. As a result data in tar files is arranged in 512 byte blocks.</p>
+<p>A tar file is the concatenation of one or more files. Each file is preceded by a <a href="/wiki/Header_%28information_technology%29.html" title="Header (information technology)">header</a> block. The file data is written unaltered except that its length is rounded up to a multiple of 512 bytes and the extra space is zero filled. The end of an archive is marked by at least two consecutive zero-filled blocks.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: File header">edit</a>]</div>
+<p><a name="File_header" id="File_header"></a></p>
+<h3>File header</h3>
+<p>The file header block contains <a href="/wiki/Metadata.html" title="Metadata">metadata</a> about a file. To ensure portability across different architectures with different <a href="/wiki/Endianness.html" title="Endianness">byte orderings</a>, the information in the header block is encoded in <a href="/wiki/ASCII.html" title="ASCII">ASCII</a>. Thus if all the files in an archive are text files, then the archive is essentially an ASCII file.</p>
+<p>The fields defined by the original Unix tar format are listed in the table below. When a field is unused it is zero filled. The header is padded with zero bytes to make it up to a 512 byte block.</p>
+<table class="wikitable">
+<tr bgcolor="#CCCCCC">
+<th>Field Offset</th>
+<th>Field Size</th>
+<th>Field</th>
+</tr>
+<tr>
+<td>0</td>
+<td>100</td>
+<td>File name</td>
+</tr>
+<tr>
+<td>100</td>
+<td>8</td>
+<td>File mode</td>
+</tr>
+<tr>
+<td>108</td>
+<td>8</td>
+<td>Owner user ID</td>
+</tr>
+<tr>
+<td>116</td>
+<td>8</td>
+<td>Group user ID</td>
+</tr>
+<tr>
+<td>124</td>
+<td>12</td>
+<td>File size in bytes</td>
+</tr>
+<tr>
+<td>136</td>
+<td>12</td>
+<td>Last modification time</td>
+</tr>
+<tr>
+<td>148</td>
+<td>8</td>
+<td>Check sum for header block</td>
+</tr>
+<tr>
+<td>156</td>
+<td>1</td>
+<td>Link indicator</td>
+</tr>
+<tr>
+<td>157</td>
+<td>100</td>
+<td>Name of linked file</td>
+</tr>
+</table>
+<p>The <b>Link indicator</b> field can have the following values:</p>
+<table class="wikitable">
+<tr bgcolor="#CCCCCC">
+<th>Value</th>
+<th>Meaning</th>
+</tr>
+<tr>
+<td>0</td>
+<td>Normal file</td>
+</tr>
+<tr>
+<td>(<a href="/wiki/ASCII.html" title="ASCII">ASCII</a> NUL)<sup id="_ref-0" class="reference"><a  title="">[1]</a></sup></td>
+<td>Normal file</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="/wiki/Hard_link.html" title="Hard link">Hard link</a></td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="/wiki/Symbolic_link.html" title="Symbolic link">Symbolic link</a><sup id="_ref-1" class="reference"><a  title="">[2]</a></sup></td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="/wiki/Device_file.html" title="Device file">Character special</a></td>
+</tr>
+<tr>
+<td>4</td>
+<td><a href="/wiki/Device_file.html" title="Device file">Block special</a></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Directory</td>
+</tr>
+<tr>
+<td>6</td>
+<td><a href="/wiki/Named_pipe.html" title="Named pipe">FIFO</a></td>
+</tr>
+<tr>
+<td>7</td>
+<td>Contiguous file<sup id="_ref-2" class="reference"><a  title="">[3]</a></sup></td>
+</tr>
+</table>
+<p>A directory is also indicated by having a trailing slash(/) in the name.</p>
+<p>For historical reasons numerical values are encoded in <a href="/wiki/Octal.html" title="Octal">octal</a> with leading zeroes. The final character is either a <a href="/wiki/Null.html" title="Null">null</a> or a <a href="/wiki/Space_%28punctuation%29.html" title="Space (punctuation)">space</a>. Thus although there are 12 bytes reserved for storing the file size, only 11 octal digits can be stored. This gives a maximum file size of 8 <a href="/wiki/Gigabyte.html" title="Gigabyte">gigabytes</a> on archived files. To overcome this limitation some versions of tar, including the <a href="/wiki/GNU.html" title="GNU">GNU</a> implementation, support an extension in which the file size is encoded in binary.</p>
+<p>The checksum is calculated by taking the sum of the byte values of the header block <i>with the eight checksum bytes taken to be ascii spaces</i> (value 32). It is stored as a six digit octal number with leading zeroes followed by a nul and then a space.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: USTAR format">edit</a>]</div>
+<p><a name="USTAR_format" id="USTAR_format"></a></p>
+<h3>USTAR format</h3>
+<p>Most modern tar programs read and write archives in the new <a  class="new" title="USTAR">USTAR</a> format, which has an extended header definition. Older tar programs will ignore the extra information, while newer programs will test for the presence of the "ustar" string to determine if the new format is in use. The USTAR format allows for longer file names and stores extra information about each file.</p>
+<table class="wikitable">
+<tr bgcolor="#CCCCCC">
+<th>Field Offset</th>
+<th>Field Size</th>
+<th>Field</th>
+</tr>
+<tr>
+<td>0</td>
+<td>156</td>
+<td><i>(as in old format)</i></td>
+</tr>
+<tr>
+<td>156</td>
+<td>1</td>
+<td>Type flag</td>
+</tr>
+<tr>
+<td>157</td>
+<td>100</td>
+<td><i>(as in old format)</i></td>
+</tr>
+<tr>
+<td>257</td>
+<td>6</td>
+<td>USTAR indicator</td>
+</tr>
+<tr>
+<td>263</td>
+<td>2</td>
+<td>USTAR version</td>
+</tr>
+<tr>
+<td>265</td>
+<td>32</td>
+<td>Owner user name</td>
+</tr>
+<tr>
+<td>297</td>
+<td>32</td>
+<td>Owner group name</td>
+</tr>
+<tr>
+<td>329</td>
+<td>8</td>
+<td>Device major number</td>
+</tr>
+<tr>
+<td>337</td>
+<td>8</td>
+<td>Device minor number</td>
+</tr>
+<tr>
+<td>345</td>
+<td>155</td>
+<td>Filename prefix</td>
+</tr>
+</table>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Example">edit</a>]</div>
+<p><a name="Example" id="Example"></a></p>
+<h3>Example</h3>
+<p>The example below shows the <a href="/wiki/Hexadecimal.html" title="Hexadecimal">hex</a> dump of a header block from a tar file created using the GNU tar program. It was dumped with the <a href="/wiki/Od_%28Unix%29.html" title="Od (Unix)">od</a> program. The "ustar" magic string can be seen, meaning that the tar file is in USTAR format.</p>
+<pre>
+0000000   e   t   c   /   p   a   s   s   w   d nul nul nul nul nul nul
+0000020 nul nul nul nul nul nul nul nul nul nul nul nul nul nul nul nul
+*
+0000140 nul nul nul nul   0   1   0   0   6   4   4 nul   0   0   0   0
+0000160   0   0   0 nul   0   0   0   0   0   0   0 nul   0   0   0   0
+0000200   0   0   4   1   3   5   5 nul   1   0   1   5   5   0   6   1
+0000220   1   0   5 nul   0   1   1   5   5   6 nul  sp   0 nul nul nul
+0000240 nul nul nul nul nul nul nul nul nul nul nul nul nul nul nul nul
+*
+0000400 nul   u   s   t   a   r  sp  sp nul   r   o   o   t nul nul nul
+0000420 nul nul nul nul nul nul nul nul nul nul nul nul nul nul nul nul
+0000440 nul nul nul nul nul nul nul nul nul   r   o   o   t nul nul nul
+0000460 nul nul nul nul nul nul nul nul nul nul nul nul nul nul nul nul
+*
+0001000
+</pre>
+<p><b>Note</b>, the <a href="/wiki/OpenBSD.html" title="OpenBSD">OpenBSD</a> 3.7 tar does not have the 2 space characters after <i>ustar</i>. They are <i>nul</i> characters.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Tarbombs">edit</a>]</div>
+<p><a name="Tarbombs" id="Tarbombs"></a></p>
+<h2>Tarbombs</h2>
+<p><i>Tarbomb</i> is derogatory <a href="/wiki/Hacker_slang.html" title="Hacker slang">hacker slang</a> used to refer to a tarball containing files that untar to the current directory instead of untarring into a directory of their own. Such behaviour is often considered bad etiquette on the part of the archive's creator.</p>
+<p>For example:</p>
+<pre>
+$ tar zxvf urchin5703_redhat_ent3.tar.gz
+gunzip
+inspector
+install.sh
+install.txt
+license.txt
+README
+urchin.tar.gz
+$ pwd
+/home/suso
+</pre>
+<p>In the above example, all the files are untarred into the directory that the user is currently in. It should have untarred into a directory called 'urchin' or something similar. This can be a potential problem if it overwrites files using the same name in the current directory. It can also be a pain for the user who then needs to delete all the files that are scattered over the directory amongst other files. Often times this ends up happening in the user's home directory.</p>
+<p>To protect yourself against tarbombs, you should always use the <code>-t</code> action/option first to list the files contained in the archive before using the <code>-x</code> option to extract. Here is an example:</p>
+<pre>
+tar ztvf tarfile.tar.gz
+</pre>
+<p>To prevent making tarbombs when you create a tar file, create a working directory for all the files and directories that you want in the tar file and then move into the parent directory and run the following:</p>
+<pre>
+tar zcvf tarfile.tar.gz directory_name_you_want_to_tar
+</pre>
+<p>For programs, a common convention is to call the directory by the name of the program followed by a hyphen and then the version of the program in the directory. For example.</p>
+<pre>
+mkdir randomsig-1.9
+mv workingdir/* randomsig-1.9/
+tar zcvf randomsig-1.9.tar.gz randomsig-1.9
+</pre>
+<p>This way when a user downloads your program and untars it, it will not overwrite older versions of the same program or other important files in her current or other directories.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Notes">edit</a>]</div>
+<p><a name="Notes" id="Notes"></a></p>
+<h2>Notes</h2>
+<ol class="references">
+<li id="_note-0"><b><a  title="">^</a></b> This is probably a workaround for buggy <b>tar</b> implementations (the byte 0x00 is <a href="/wiki/ASCII.html" title="ASCII">ASCII</a> NUL).</li>
+<li id="_note-1"><b><a  title="">^</a></b> GNU tar's headers mark this field as "Reserved"<a  class="external autonumber" title="http://savannah.gnu.org/cgi-bin/viewcvs/*checkout*/tar/tar/src/tar.h?content-type=text/plain">[1]</a></li>
+<li id="_note-2"><b><a  title="">^</a></b> Apparently relevant on an OS called <a  class="new" title="Real Time Unix (Concurrent)">RTU</a>, this would be a normal file written in one contiguous section on-disc. GNU tar's headers mark this field as 'Reserved', and such items will probably be extracted as normal files on other operating systems.</li>
+</ol>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Ar_%28Unix%29.html" title="Ar (Unix)">ar</a></li>
+<li><a href="/wiki/Shar.html" title="Shar">shar</a></li>
+<li><a href="/wiki/CPIO.html" title="CPIO">cpio</a></li>
+<li><a href="/wiki/Pax_%28program%29.html" title="Pax (program)">pax</a></li>
+<li><a href="/wiki/Gzip.html" title="Gzip">gzip</a></li>
+<li><a href="/wiki/ZIP_%28file_format%29.html" title="ZIP (file format)">Zip</a></li>
+<li><a href="/wiki/List_of_archive_formats.html" title="List of archive formats">List of archive formats</a></li>
+<li><a href="/wiki/List_of_file_archivers.html" title="List of file archivers">List of file archivers</a></li>
+<li><a href="/wiki/Comparison_of_file_archivers.html" title="Comparison of file archivers">Comparison of file archivers</a></li>
+<li><a href="/wiki/List_of_Unix_programs.html" title="List of Unix programs">List of Unix programs</a></li>
+<li><a href="/wiki/.tar.gz.gpg.html" title=".tar.gz.gpg">.tar.gz.gpg</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://www.gnu.org/software/tar/">Official website of GNU tar</a></li>
+<li><a  class="external text" title="http://savannah.gnu.org/cgi-bin/viewcvs/*checkout*/tar/tar/src/tar.h?content-type=text/plain">The file 'tar.h' from GNU tar</a></li>
+<li><a  class="external text" title="http://www.7-zip.org/">7-Zip</a> is an <a href="/wiki/LGPL.html" title="LGPL">LGPL</a> licensed utility that supports several compression formats including <a href="/wiki/Gzip.html" title="Gzip">GZIP</a>, <a href="/wiki/Bzip2.html" title="Bzip2">BZIP2</a> and <a href="/wiki/Tar_file_format.html" title="Tar file format">TAR</a>.</li>
+<li><a  class="external text" title="http://www.mkssoftware.com/docs/man4/tar.4.asp">Detailed information on tar and USTAR file headers</a></li>
+<li><a  class="external text" title="http://www.linuxtecharticles.com/viewarticle.php?name=Typical%20Tar">linux tar command simplified</a></li>
+<li><a  class="external text" title="http://www.openbsd.org/cgi-bin/man.cgi?query=tar">tar(1) man page</a> via <a href="/wiki/OpenBSD.html" title="OpenBSD">OpenBSD</a></li>
+</ul>
+
+<!-- 
+Pre-expand include size: 3742 bytes
+Post-expand include size: 1705 bytes
+Template argument size: 660 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:151694-0!1!0!default!!en!2 and timestamp 20060910153900 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Archive formats">Archive formats</a></span> | <span dir='ltr'><a  title="Category:Backup software">Backup software</a></span> | <span dir='ltr'><a  title="Category:Unix software">Unix software</a></span> | <span dir='ltr'><a  title="Category:Package management systems">Package management systems</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Tar_%28file_format%29.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-ca"><a >Català</a></li>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-pt"><a >Português</a></li>
+				<li class="interwiki-sv"><a >Svenska</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 22:17, 6 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv106 in 0.125 secs. --></body></html>

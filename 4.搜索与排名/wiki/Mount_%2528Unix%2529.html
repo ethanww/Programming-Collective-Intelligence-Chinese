@@ -1,0 +1,390 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="File system,2005,2006,8.3,9P,Abstract data type,Access control list,Alias (Mac OS),Apple Filing Protocol,Apple Macintosh,Be File System" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>File system - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "File_system";
+			var wgTitle = "File system";
+			var wgArticleId = 1010280;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">File system</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub">(Redirected from <a  title="Mount (Unix)">Mount (Unix)</a>)</div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<dl>
+<dd>
+<div class="dablink"><i>For library and office filing systems, see <a href="/wiki/Library_classification.html" title="Library classification">Library classification</a>.</i></div>
+</dd>
+</dl>
+<p>In <a href="/wiki/Computing.html" title="Computing">computing</a>, a <b>file system</b> is a method for storing and organizing <a href="/wiki/Computer_file.html" title="Computer file">computer files</a> and the data they contain to make it easy to find and access them. File systems may use a <a href="/wiki/Storage_device.html" title="Storage device">storage device</a> such as a <a href="/wiki/Hard_disk.html" title="Hard disk">hard disk</a> or <a href="/wiki/CD-ROM.html" title="CD-ROM">CD-ROM</a> and involve maintaining the physical location of the files, they might provide access to data on a file server by acting as clients for a network protocol (e.g., <a href="/wiki/Network_File_System.html" title="Network File System">NFS</a>, <a href="/wiki/Server_Message_Block.html" title="Server Message Block">SMB</a>, or <a href="/wiki/9P.html" title="9P">9P</a> clients), or they may be virtual and exist only as an access method for virtual data (e.g. <a href="/wiki/Procfs.html" title="Procfs">procfs</a>).</p>
+<p>More formally, a file system is a set of <a href="/wiki/Abstract_data_type.html" title="Abstract data type">abstract data types</a> that are implemented for the storage, hierarchical organization, manipulation, navigation, access, and retrieval of <a href="/wiki/Data.html" title="Data">data</a>. It is debatable whether a file system can be classified as a special-purpose database (<a href="/wiki/DBMS.html" title="DBMS">DBMS</a>). Needless to say, file systems share much in common with database technology.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Aspects of file systems</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Types of file systems</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">2.1</span> <span class="toctext">Disk file systems</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.2</span> <span class="toctext">Database file systems</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.3</span> <span class="toctext">Transactional file systems</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.4</span> <span class="toctext">Network file systems</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.5</span> <span class="toctext">Special purpose file systems</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">File systems and operating systems</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">3.1</span> <span class="toctext">Flat file systems</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.2</span> <span class="toctext">File systems under Unix and Unix-like systems</span></a>
+<ul>
+<li class="toclevel-3"><a ><span class="tocnumber">3.2.1</span> <span class="toctext">File systems under Mac OS X</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.3</span> <span class="toctext">File systems under Plan 9 from Bell Labs</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.4</span> <span class="toctext">File systems under Microsoft Windows</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.5</span> <span class="toctext">File systems under OpenVMS</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.6</span> <span class="toctext">File systems under MVS [IBM Mainframe]</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">References</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">5.1</span> <span class="toctext">Further reading</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Aspects of file systems">edit</a>]</div>
+<p><a name="Aspects_of_file_systems" id="Aspects_of_file_systems"></a></p>
+<h2>Aspects of file systems</h2>
+<p>The most familiar file systems make use of an underlying <a href="/wiki/Data_storage_device.html" title="Data storage device">data storage device</a> that offers access to an array of fixed-size <a href="/wiki/Block_size_%28data_storage_and_transmission%29.html" title="Block size (data storage and transmission)">blocks</a>, sometimes called <i>sectors</i>, generally 512 bytes each. The file system software is responsible for organizing these sectors into <a href="/wiki/Computer_file.html" title="Computer file">files</a> and <a href="/wiki/Directory_%28file_systems%29.html" title="Directory (file systems)">directories</a>, and keeping track of which sectors belong to which file and which are not being used.</p>
+<p>However, file systems need not make use of a storage device at all. A file system can be used to organize and represent access to any data, whether it be stored or dynamically generated (eg, from a network connection).</p>
+<p>Whether the file system has an underlying storage device or not, file systems typically have directories which associate <b>file names</b> with files, usually by connecting the file name to an index into a <a href="/wiki/File_allocation_table.html" title="File allocation table">file allocation table</a> of some sort, such as the <a href="/wiki/File_Allocation_Table.html" title="File Allocation Table">FAT</a> in an <a href="/wiki/MS-DOS.html" title="MS-DOS">MS-DOS</a> file system, or an <a href="/wiki/Inode.html" title="Inode">inode</a> in a <a href="/wiki/Unix-like.html" title="Unix-like">Unix-like</a> filesystem. Directory structures may be flat, or allow hierarchies where directories may contain subdirectories. In some file systems, file names are structured, with special syntax for <a href="/wiki/Filename_extension.html" title="Filename extension">filename extensions</a> and version numbers. In others, file names are simple strings, and per-file <a href="/wiki/Metadata_%28computing%29.html" title="Metadata (computing)">metadata</a> is stored elsewhere.</p>
+<p>The hierarchical filesystem was an early research interest of <a href="/wiki/Dennis_Ritchie.html" title="Dennis Ritchie">Dennis Ritchie</a> of Unix fame; previous implementations were restricted to only a few levels, notably the IBM implementations, even of their early databases like IMS. After the success of Unix, Ritchie extended the filesystem concept to every object in his later operating system developments, such as <a href="/wiki/Plan_9_from_Bell_Labs.html" title="Plan 9 from Bell Labs">Plan 9</a> and <a href="/wiki/Inferno_%28operating_system%29.html" title="Inferno (operating system)">Inferno</a>.</p>
+<p>Traditional filesystems offer facilities to create, move and delete both files and directories. They lack facilities to create additional links to a directory (<a href="/wiki/Hard_link.html" title="Hard link">hard links</a> in <a href="/wiki/Unix.html" title="Unix">Unix</a>), rename parent links (".." in <a href="/wiki/Unix-like.html" title="Unix-like">Unix-like</a> OS), and create bidirectional links to files.</p>
+<p>Traditional filesystems also offer facilities to truncate, append to, create, move, delete and in-place modify files. They do not offer facilities to <a  class="new" title="Prepend">prepend</a> to or truncate from the beginning of a file, let alone arbitrary insertion into or deletion from a file. The operations provided are highly asymmetric and lack the generality to be useful in unexpected contexts. For example, interprocess <a href="/wiki/Pipeline_%28Unix%29.html" title="Pipeline (Unix)">pipes</a> in <a href="/wiki/Unix.html" title="Unix">Unix</a> have to be implemented outside of the filesystem because the pipes concept does not offer <a href="/wiki/Truncation.html" title="Truncation">truncation</a> from the beginning of files.</p>
+<p>Secure access to basic file system operations can be based on a scheme of <a href="/wiki/Access_control_list.html" title="Access control list">access control lists</a> or <a href="/wiki/Capability_%28computers%29.html" title="Capability (computers)">capabilities</a>. Research has shown access control lists to be difficult to secure properly, which is why research operating systems tend to use capabilities. Commercial file systems still use access control lists. <i>see: <a href="/wiki/Secure_computing.html" title="Secure computing">secure computing</a></i></p>
+<p>Arbitrary attributes can be associated on advanced file systems, such as XFS, ext2/3, and HDF+, using <a href="/wiki/Extended_file_attributes.html" title="Extended file attributes">extended file attributes</a>. This feature is implemented in the kernels of <a href="/wiki/Linux_kernel.html" title="Linux kernel">Linux</a>, <a href="/wiki/FreeBSD.html" title="FreeBSD">FreeBSD</a> and <a href="/wiki/Mac_OS_X.html" title="Mac OS X">Mac OS X</a> operating systems, and allows metadata to be associated with the file at the <i>file system</i> level. This, for example, could be the author of a document, the character encoding of a plain-text document, or a checksum.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Types of file systems">edit</a>]</div>
+<p><a name="Types_of_file_systems" id="Types_of_file_systems"></a></p>
+<h2>Types of file systems</h2>
+<p>File system types can be classified into disk file systems, network file systems and special purpose file systems.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Disk file systems">edit</a>]</div>
+<p><a name="Disk_file_systems" id="Disk_file_systems"></a></p>
+<h3>Disk file systems</h3>
+<p>A <i>disk file system</i> is a file system designed for the storage of <a href="/wiki/Computer_file.html" title="Computer file">files</a> on a <a href="/wiki/Data_storage_device.html" title="Data storage device">data storage device</a>, most commonly a <a href="/wiki/Disk_drive.html" title="Disk drive">disk drive</a>, which might be directly or indirectly connected to the computer. Examples of disk file systems include <a href="/wiki/File_Allocation_Table.html" title="File Allocation Table">FAT</a>, <a href="/wiki/NTFS.html" title="NTFS">NTFS</a>, <a href="/wiki/Hierarchical_File_System.html" title="Hierarchical File System">HFS</a> and <a href="/wiki/HFS_Plus.html" title="HFS Plus">HFS+</a>, <a href="/wiki/Ext2.html" title="Ext2">ext2</a>, <a href="/wiki/Ext3.html" title="Ext3">ext3</a>, <a href="/wiki/ISO_9660.html" title="ISO 9660">ISO 9660</a>, <a href="/wiki/Files-11.html" title="Files-11">ODS-5</a>, and <a href="/wiki/Universal_Disk_Format.html" title="Universal Disk Format">UDF</a>. Some disk file systems are also <a href="/wiki/Journaling_file_system.html" title="Journaling file system">journaling file systems</a> or <a href="/wiki/Versioning_file_system.html" title="Versioning file system">versioning file systems</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Database file systems">edit</a>]</div>
+<p><a name="Database_file_systems" id="Database_file_systems"></a></p>
+<h3>Database file systems</h3>
+<p>A new concept for file management is the concept of a database-based file system. Instead of, or in addition to, hierarchical structured management, files are identified by their characteristics, like type of file, topic, author, or similar <a href="/wiki/Metadata_%28computing%29.html" title="Metadata (computing)">metadata</a>. Therefore a file search can be formulated in <a href="/wiki/SQL.html" title="SQL">SQL</a> or in natural speech. Examples include <a href="/wiki/Be_File_System.html" title="Be File System">BFS</a> and <a href="/wiki/WinFS.html" title="WinFS">WinFS</a>.<br style="clear:both;" /></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Transactional file systems">edit</a>]</div>
+<p><a name="Transactional_file_systems" id="Transactional_file_systems"></a></p>
+<h3>Transactional file systems</h3>
+<p>This is a special kind of file system in that it logs events or transactions to files. Each operation that you do may involve changes to a number of different files and disk structures. In many cases, these changes are related, meaning that it is important that they all be executed at the same time. Take for example a bank sending another bank some money electronically. The bank's computer will "send" the transfer instruction to the other bank and also update its own records to indicate the transfer has occurred. If for some reason the computer crashes before it has had a chance to update its own records, then on reset, there will be no record of the transfer but the bank will be missing some money. A transactional system can rebuild the actions by resynchronizing the "transactions" on both ends to correct the failure. All transactions can be saved, as well, providing a complete record of what was done and where. This type of file system is designed and intended to be fault tolerant and necessarily, incurs a high degree of overhead.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Network file systems">edit</a>]</div>
+<p><a name="Network_file_systems" id="Network_file_systems"></a></p>
+<h3>Network file systems</h3>
+<p>A "network file system" is a file system that acts as a client for a remote file access protocol, providing access to files on a server. Examples of network file systems include clients for the <a href="/wiki/Network_File_System.html" title="Network File System">NFS</a>, <a href="/wiki/Server_Message_Block.html" title="Server Message Block">SMB</a>, <a href="/wiki/Apple_Filing_Protocol.html" title="Apple Filing Protocol">AFP</a>, and <a href="/wiki/9P.html" title="9P">9P</a> protocols, and file-system-like clients for <a href="/wiki/File_Transfer_Protocol.html" title="File Transfer Protocol">FTP</a> and <a href="/wiki/WebDAV.html" title="WebDAV">WebDAV</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Special purpose file systems">edit</a>]</div>
+<p><a name="Special_purpose_file_systems" id="Special_purpose_file_systems"></a></p>
+<h3>Special purpose file systems</h3>
+<p>A special purpose file system is basically any file system that is not a disk file system or network file system. This includes systems where the <a href="/wiki/Computer_file.html" title="Computer file">files</a> are arranged dynamically by <a href="/wiki/Software.html" title="Software">software</a>, intended for such purposes as communication between <a href="/wiki/Computer_process.html" title="Computer process">computer processes</a> or temporary file space.</p>
+<p>Special purpose file systems are most commonly used by file-centric operating systems such as Unix. Examples include the <a href="/wiki/Procfs.html" title="Procfs">procfs</a> (<tt>/proc</tt>) filesystem used by some Unix variants, which grants access to information about <a href="/wiki/Process_%28computing%29.html" title="Process (computing)">processes</a> and other operating system features.</p>
+<p>Deep space science exploration craft, like <a href="/wiki/Voyager_I.html" title="Voyager I">Voyager I</a> &amp; <a href="/wiki/Voyager_II.html" title="Voyager II">II</a> used digital tape based special file systems. Most modern space exploration craft like <a href="/wiki/Cassini-Huygens.html" title="Cassini-Huygens">Cassini-Huygens</a> used <a href="/wiki/Real-time_operating_system.html" title="Real-time operating system">Real-time operating system</a> file systems or RTOS influenced file systems. The <a href="/wiki/Mars_Rover.html" title="Mars Rover">Mars Rovers</a> are one such example of an RTOS file system, important in this case because they are implemented in flash memory.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: File systems and operating systems">edit</a>]</div>
+<p><a name="File_systems_and_operating_systems" id="File_systems_and_operating_systems"></a></p>
+<h2>File systems and operating systems</h2>
+<p>Most <a href="/wiki/Operating_system.html" title="Operating system">operating systems</a> provide a file system, as a file system is an integral part of any modern operating system. Early <a href="/wiki/Microcomputer.html" title="Microcomputer">microcomputer</a> operating systems' only real task was file management — fact reflected in their names (see <a href="/wiki/DOS.html" title="DOS">DOS</a> and <a href="/wiki/QDOS.html" title="QDOS">QDOS</a>). Some early operating systems had a separate component for handling file systems which was called a <a href="/wiki/Disk_operating_system.html" title="Disk operating system">disk operating system</a>. On some microcomputers, the disk operating system was loaded separately from the rest of the operating system. On early operating systems, there was usually support for only one, native, unnamed file system; for example, <a href="/wiki/CP/M.html" title="CP/M">CP/M</a> supports only its own file system, which might be called "CP/M file system" if needed, but which didn't bear any official name at all.</p>
+<p>Because of this, there needs to be an interface provided by the operating system software between the user and the file system. This interface can be textual (such as provided by a <a href="/wiki/Command_line_interface.html" title="Command line interface">command line interface</a>, such as the <a href="/wiki/Unix_shell.html" title="Unix shell">Unix shell</a>, or <a href="/wiki/DIGITAL_Command_Language.html" title="DIGITAL Command Language">OpenVMS DCL</a>) or graphical (such as provided by a <a href="/wiki/Graphical_user_interface.html" title="Graphical user interface">graphical user interface</a>, such as <a href="/wiki/File_browser.html" title="File browser">file browsers</a>). If graphical, the metaphor of the <i><a href="/wiki/Folder.html" title="Folder">folder</a></i>, containing documents, other files, and nested folders is often used (see also: <a href="/wiki/Directory_%28file_systems%29.html" title="Directory (file systems)">directory</a> and <a href="/wiki/Folder.html" title="Folder">folder</a>).</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Flat file systems">edit</a>]</div>
+<p><a name="Flat_file_systems" id="Flat_file_systems"></a></p>
+<h3>Flat file systems</h3>
+<p>In a flat file system, there are no <a href="/wiki/Directory_%28file_systems%29.html" title="Directory (file systems)">directories</a> — everything is stored at the same (root) level on the media, be it a <a href="/wiki/Hard_disk.html" title="Hard disk">hard disk</a>, <a href="/wiki/Floppy_disk.html" title="Floppy disk">floppy disk</a>, etc. While simple, this system rapidly becomes inefficient as the number of files grows, and makes it difficult for users to organise data into related groups.</p>
+<p>Like many small systems before it, the original <a href="/wiki/Apple_Macintosh.html" title="Apple Macintosh">Apple Macintosh</a> featured a flat file system, called <a href="/wiki/Macintosh_File_System.html" title="Macintosh File System">Macintosh File System</a>. Its version of <a href="/wiki/Mac_OS.html" title="Mac OS">Mac OS</a> was unusual in that the file management software (<a href="/wiki/Macintosh_Finder.html" title="Macintosh Finder">Macintosh Finder</a>) created the illusion of a partially hierarchical filing system on top of MFS. MFS was quickly replaced with <a href="/wiki/Hierarchical_File_System.html" title="Hierarchical File System">Hierarchical File System</a>, which supported real <a href="/wiki/Directory_%28file_systems%29.html" title="Directory (file systems)">directories</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: File systems under Unix and Unix-like systems">edit</a>]</div>
+<p><a name="File_systems_under_Unix_and_Unix-like_systems" id="File_systems_under_Unix_and_Unix-like_systems"></a></p>
+<h3>File systems under Unix and Unix-like systems</h3>
+<div class="infobox sisterproject">
+<div style="float: left;">
+<div class="floatnone"><span><a  class="image" title="Wikibooks"><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Wikibooks-logo-en.svg/50px-Wikibooks-logo-en.svg.png" alt="Wikibooks" width="50" height="57" longdesc="/wiki/Image:Wikibooks-logo-en.svg" /></a></span></div>
+</div>
+<div style="margin-left: 60px;"><a  class="extiw" title="wikibooks:Guide_to_Unix">Wikibooks Guide to Unix</a> has more about this subject:
+<div style="margin-left:10px;"><i><b><a  class="extiw" title="wikibooks:Guide_to_Unix/Explanations/Filesystems_and_Swap">Filesystems and Swap</a></b></i></div>
+</div>
+</div>
+<p>Unix and Unix-like operating systems assign a device name to each device, but this is not how the files on that device are accessed. Instead, Unix creates a virtual file system, which makes all the files on all the devices appear to exist under one hierarchy. This means, in Unix, there is one <a href="/wiki/Root_directory.html" title="Root directory">root directory</a>, and every file existing on the system is located under it somewhere. Furthermore, the Unix root directory does not have to be in any physical place. It might not be on your first hard drive - it might not even be on your computer. Unix can use a network shared resource as its root directory.</p>
+<p>To gain access to files on another device, you must first inform the operating system where in the directory tree you would like those files to appear. This process is called <a href="/wiki/Mount_%28computing%29.html" title="Mount (computing)">mounting</a> a file system. For example, to access the files on a <a href="/wiki/CD-ROM.html" title="CD-ROM">CD-ROM</a>, one must tell the operating system "Take the file system from this CD-ROM and make it appear under thus-and-such a directory". The directory given to the operating system is called the <i><a href="/wiki/Mount_point.html" title="Mount point">mount point</a></i> - it might, for example, be <tt>/mnt</tt>. The <tt>/mnt</tt> directory exists on many Unix-like systems (as specified in the <a href="/wiki/Filesystem_Hierarchy_Standard.html" title="Filesystem Hierarchy Standard">Filesystem Hierarchy Standard</a>) and is intended specifically for use as a mount point for temporary media like floppy disks or <a href="/wiki/Compact_disc.html" title="Compact disc">CDs</a>. It may be empty, or it may contain subdirectories for mounting individual devices. Generally, only the <a href="/wiki/System_administrator.html" title="System administrator">administrator</a> (i.e. <a href="/wiki/Root_user.html" title="Root user">root user</a>) may authorize the mounting of file systems.</p>
+<p><a href="/wiki/Unix-like.html" title="Unix-like">Unix-like</a> operating systems often include software and tools that assist in the mounting process and provide it new functionality. Some of these strategies have been coined "auto-mounting" as a reflection of their purpose.</p>
+<ol>
+<li>In many situations, filesystems other than the root need to be available as soon as the operating system has <a href="/wiki/Booting.html" title="Booting">booted</a>. All Unix-like systems therefore provide a facility for mounting filesystems at boot time. System <a href="/wiki/System_administrator.html" title="System administrator">administrators</a> define these filesystems in the configuration file <a href="/wiki/Fstab.html" title="Fstab">fstab</a>, which also indicates options and mount points.</li>
+<li>In some situations, there is no need to mount certain filesystems at <a href="/wiki/Booting.html" title="Booting">boot time</a>, although their use may be desired thereafter. There are some utilities for Unix-like systems that allow the mounting of predefined filesystems upon demand.</li>
+<li>Removable media have become very common with <a href="/wiki/Microcomputer.html" title="Microcomputer">microcomputer</a> platforms. They allow programs and data to be transferred between machines without a physical connection. Two common examples include <a href="/wiki/CD-ROM.html" title="CD-ROM">CD-ROMs</a> and <a href="/wiki/DVD.html" title="DVD">DVDs</a>. Utilities have therefore been developed to detect the presence and availability of a medium and then mount that medium without any user intervention.</li>
+<li>Progressive Unix-like systems have also introduced a concept called <b>supermounting</b>; see, for example, <a  class="external text" title="http://sourceforge.net/projects/supermount-ng">the Linux supermount-ng project</a>. For example, a floppy disk that has been supermounted can be physically removed from the system. Under normal circumstances, the disk should have been synchronised and then unmounted before its removal. Provided synchronisation has occurred, a different disk can be inserted into the drive. The system automatically notices that the disk has changed and updates the mount point contents to reflect the new medium. Similar functionality is found on standard Windows machines.</li>
+<li>A similar innovation preferred by some users is the use of <a  class="external text" title="http://freshmeat.net/projects/autofs/">autofs</a>, a system that, like supermounting, eliminates the need for manual mounting commands. The difference from supermount, other than compatibility in an apparent greater range of applications such as access to <a href="/wiki/Distributed_file_system.html" title="Distributed file system">file systems on network servers</a>, is that devices are mounted transparently when requests to their filesystems are made, as would be appropriate for file systems on network servers, rather than relying on events such as the insertion of media, as would be appropriate for removable media.</li>
+</ol>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: File systems under Mac OS X">edit</a>]</div>
+<p><a name="File_systems_under_Mac_OS_X" id="File_systems_under_Mac_OS_X"></a></p>
+<h4>File systems under Mac OS X</h4>
+<p><a href="/wiki/Mac_OS_X.html" title="Mac OS X">Mac OS X</a> uses a file system that it inherited from <a href="/wiki/Mac_OS.html" title="Mac OS">Mac OS</a> called <a href="/wiki/HFS_Plus.html" title="HFS Plus">HFS Plus</a>. HFS Plus is a <a href="/wiki/Metadata_%28computing%29.html" title="Metadata (computing)">metadata</a>-rich and <a href="/wiki/Case_preservation.html" title="Case preservation">case preserving</a> file system. Due to the Unix roots of Mac OS X, Unix permissions were added to HFS Plus. Later versions of HFS Plus added a <a href="/wiki/Journaling_file_system.html" title="Journaling file system">journal</a> to prevent corruption of the file system structure and introduced a number of optimizations to the allocation algorithms in an attempt to defragment files automatically without requiring an external defragmenter.</p>
+<p>Filenames can be up to 255 characters. HFS Plus uses <a href="/wiki/Unicode.html" title="Unicode">Unicode</a> to store filenames. On Mac OS X, the <a href="/wiki/File_format.html" title="File format">filetype</a> can come from the <a href="/wiki/Type_code.html" title="Type code">Type code</a> stored in file's metadata or the filename.</p>
+<p>HFS Plus has three kinds of links: <a href="/wiki/Hard_link.html" title="Hard link">Hard links</a>, <a href="/wiki/Symbolic_link.html" title="Symbolic link">Symbolic links</a> and <a href="/wiki/Alias_%28Mac_OS%29.html" title="Alias (Mac OS)">Aliases</a>. Aliases are designed to maintain a link to their original file even if they are moved or renamed.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: File systems under Plan 9 from Bell Labs">edit</a>]</div>
+<p><a name="File_systems_under_Plan_9_from_Bell_Labs" id="File_systems_under_Plan_9_from_Bell_Labs"></a></p>
+<h3>File systems under Plan 9 from Bell Labs</h3>
+<p><a href="/wiki/Plan_9_from_Bell_Labs.html" title="Plan 9 from Bell Labs">Plan 9 from Bell Labs</a> was originally designed to extend some of Unix's good points, and to introduce some new ideas of its own while fixing the shortcomings of Unix.</p>
+<p>With respect to file systems, the Unix system of treating things as files was continued, but in Plan 9, <i>everything</i> is treated as a file, and accessed as a file would be (ie., no <a href="/wiki/Ioctl.html" title="Ioctl">ioctl</a> or <a href="/wiki/Mmap.html" title="Mmap">mmap</a>). Perhaps surprisingly, while the file interface is made universal it is also simplified considerably, for example symlinks, hard links and suid are made obsolete, and an atomic create/open operation is introduced. More importantly the set of file operations becomes well defined and subversions of this like ioctl are eliminated.</p>
+<p>Secondly, the underlying <a href="/wiki/9P.html" title="9P">9P</a> protocol was used to remove the difference between local and remote files (except for a possible difference in <a href="/wiki/Latency.html" title="Latency">latency</a>). This has the advantage that a device or devices, represented by files, on a remote computer could be used as though it were the local computer's own device(s). This means that under Plan 9, multiple file servers provide access to devices, classing them as file systems. Servers for "synthetic" file systems can also run in user space bringing many of the advantages of micro kernel systems while maintaining the simplicity of the system.</p>
+<p>Everything on a Plan 9 system has an abstraction as a file; networking, graphics, debugging, authentication, capabilities, encryption, and other services are accessed via I-O operations on file descriptors. For example, this allows the use of the IP stack of a gateway machine without need of NAT, or provides a network-transparent window system without the need of any extra code.</p>
+<p>Another example: a Plan-9 application receives <a href="/wiki/File_Transfer_Protocol.html" title="File Transfer Protocol">FTP</a> service by opening an FTP site. The <a  class="new" title="Ftpfs">ftpfs</a> server handles the open by essentially mounting the remote FTP site as part of the local file system. With ftpfs as an intermediary, the application can now use the usual file-system operations to access the FTP site as if it were part of the local file system. A further example is the mail system which uses file servers that synthesize <a  class="new" title="Virtual file">virtual files</a> and directories to represent a user mailbox as <tt>/mail/fs/mbox</tt>. The <a href="/wiki/Wikifs.html" title="Wikifs">wikifs</a> provides a file system interface to a wiki.</p>
+<p>These file systems are organized with the help of private, per-process namespaces, allowing each process to have a different view of the many file systems that provide resources in a distributed system.</p>
+<p>The <a href="/wiki/Inferno_%28operating_system%29.html" title="Inferno (operating system)">Inferno operating system</a> shares these concepts with Plan 9.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: File systems under Microsoft Windows">edit</a>]</div>
+<p><a name="File_systems_under_Microsoft_Windows" id="File_systems_under_Microsoft_Windows"></a></p>
+<h3>File systems under Microsoft Windows</h3>
+<p><a href="/wiki/Microsoft_Windows.html" title="Microsoft Windows">Microsoft Windows</a> developed out of an earlier operating system (<a href="/wiki/MS-DOS.html" title="MS-DOS">MS-DOS</a> which in turn was based on <a href="/wiki/QDOS.html" title="QDOS">QDOS</a> and that on <a href="/wiki/CP/M-80.html" title="CP/M-80">CP/M-80</a>, which took many ideas from still earlier operating systems, notably several from <a href="/wiki/Digital_Equipment_Corporation.html" title="Digital Equipment Corporation">DEC</a>), and has added file system from several other sources since its first release (e.g. Unix). As such, Windows makes use of the <a href="/wiki/File_Allocation_Table.html" title="File Allocation Table">FAT (File Allocation Table)</a> and <a href="/wiki/NTFS.html" title="NTFS">NTFS (New Technology File System)</a> filesystems. Older versions of the FAT file system (<a href="/wiki/FAT12.html" title="FAT12">FAT12</a> and <a href="/wiki/FAT16.html" title="FAT16">FAT16</a>) had file name length limits, a limit on the number of entries in the root directory of the filesystem and had restrictions on the maximum size of FAT-formatted disks or <a href="/wiki/Partition_%28computing%29.html" title="Partition (computing)">partitions</a>. Specifically, FAT12 and FAT16 had a limitation of 8 characters for the file name, and 3 characters for the extension. (This is commonly referred to as the <a href="/wiki/8.3.html" title="8.3">8.3</a> limit.) <a href="/wiki/VFAT.html" title="VFAT">VFAT</a>, which was an extension to FAT12 and FAT16 introduced in <a href="/wiki/Windows_NT_3.5.html" title="Windows NT 3.5">Windows NT 3.5</a> and subsequently included in Windows 95, allowed for long file names (<a href="/wiki/Long_File_Name.html" title="Long File Name">LFN</a>). <a href="/wiki/FAT32.html" title="FAT32">FAT32</a> also addressed many of the limits in FAT12 and FAT16, though such limits are still small compared to NTFS.</p>
+<p>NTFS, introduced with the <a href="/wiki/Windows_NT.html" title="Windows NT">Windows NT</a> operating system, allowed <a href="/wiki/Access_control_list.html" title="Access control list">ACL</a>-based permission control. Hard links, multiple file streams, attribute indexing, quota tracking, compression and mount-points for other file systems (called "junctions") are also supported, though not all these features are well-documented.</p>
+<p>Unlike many other operating systems, Windows uses a <i>drive letter</i> abstraction at the user level to distinguish one disk or partition from another. For example, the <a href="/wiki/Path_%28computing%29.html" title="Path (computing)">path</a> <tt>C:\WINDOWS\</tt> represents a directory <tt>WINDOWS</tt> on the partition represented by the letter C. The C drive is most commonly used for the primary hard disk partition, on which Windows is installed and from which it boots. This "tradition" has become so firmly ingrained that bugs came about in older versions of Windows which made assumptions that the drive that the operating system was installed on was C. The tradition of using "C" for the drive letter can be traced to MS-DOS, where the letters A and B were reserved for up to two floppy disk drives; in a common configuration, A would be the <a href="/wiki/Floppy_disk#The_3.C2.BD-inch_micro_floppy_diskette.html" title="Floppy disk">3½-inch floppy drive</a>, and B the <a href="/wiki/Floppy_disk#The_5.C2.BC-inch_minifloppy.html" title="Floppy disk">5¼-inch one</a>. Network drives may also be mapped to drive letters.</p>
+<p>Since Windows primarily interacts with the user via a <a href="/wiki/Graphical_user_interface.html" title="Graphical user interface">graphical user interface</a>, its documentation refers to directories as a <i>folder</i> which contains files, and is represented graphically with a folder icon.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: File systems under OpenVMS">edit</a>]</div>
+<p><a name="File_systems_under_OpenVMS" id="File_systems_under_OpenVMS"></a></p>
+<h3>File systems under OpenVMS</h3>
+<p>This topic is discussed here: <a href="/wiki/Files-11.html" title="Files-11">Files-11</a></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: File systems under MVS [IBM Mainframe]">edit</a>]</div>
+<p><a name="File_systems_under_MVS_.5BIBM_Mainframe.5D" id="File_systems_under_MVS_.5BIBM_Mainframe.5D"></a></p>
+<h3>File systems under MVS [IBM Mainframe]</h3>
+<p>This topic is discussed here: <a href="/wiki/MVS#MVS_filesystem.html" title="MVS">MVS#MVS filesystem</a></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/List_of_file_systems.html" title="List of file systems">List of file systems</a></li>
+<li><a href="/wiki/Comparison_of_file_systems.html" title="Comparison of file systems">Comparison of file systems</a></li>
+<li><a href="/wiki/Filename_extension.html" title="Filename extension">Filename extension</a></li>
+<li><a href="/wiki/Virtual_file_system.html" title="Virtual file system">Virtual file system</a></li>
+<li><a href="/wiki/Distributed_file_system.html" title="Distributed file system">Distributed file system</a></li>
+<li><a href="/wiki/Filesystem_API.html" title="Filesystem API">Filesystem API</a></li>
+<li><a href="/wiki/Physical_and_logical_storage.html" title="Physical and logical storage">Physical and logical storage</a></li>
+<li><a href="/wiki/List_of_Unix_programs.html" title="List of Unix programs">List of Unix programs</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<div class="references-small">
+<p><b>Cited references</b></p>
+<ol class="references"></ol>
+<p><b>General references</b></p>
+<ul>
+<li>Jonathan de Boyne Pollard. <a  class="external text" title="http://homepages.tesco.net./~J.deBoynePollard/FGA/os2-disc-and-volume-size-limits.html">Disc and volume size limits</a>. <i>Frequently Given Answers</i>. Retrieved on <a href="/wiki/February_9.html" title="February 9">February 9</a>, <a href="/wiki/2005.html" title="2005">2005</a>.</li>
+<li>IBM. <a  class="external text" title="ftp://service.boulder.ibm.com/ps/products/os2/fixes/v4warp/english-us/jr09427/JR09427.TXT">OS/2 corrective service fix JR09427</a>. Retrieved on <a href="/wiki/February_9.html" title="February 9">February 9</a>, <a href="/wiki/2005.html" title="2005">2005</a>.</li>
+<li><a  class="external text" title="http://linux-ntfs.sourceforge.net/ntfs/attributes/ea_information.html">Attribute - $EA_INFORMATION (0xD0)</a>. <i>NTFS Information, Linux-NTFS Project</i>. Retrieved on <a href="/wiki/February_9.html" title="February 9">February 9</a>, <a href="/wiki/2005.html" title="2005">2005</a>.</li>
+<li><a  class="external text" title="http://linux-ntfs.sourceforge.net/ntfs/attributes/ea.html">Attribute - $EA (0xE0)</a>. <i>NTFS Information, Linux-NTFS Project</i>. Retrieved on <a href="/wiki/February_9.html" title="February 9">February 9</a>, <a href="/wiki/2005.html" title="2005">2005</a>.</li>
+<li><a  class="external text" title="http://linux-ntfs.sourceforge.net/ntfs/attributes/standard_information.html">Attribute - $STANDARD_INFORMATION (0x10)</a>. <i>NTFS Information, Linux-NTFS Project</i>. Retrieved on <a href="/wiki/February_21.html" title="February 21">February 21</a>, <a href="/wiki/2005.html" title="2005">2005</a>.</li>
+<li>Apple Computer Inc. <a  class="external text" title="http://developer.apple.com/technotes/tn/tn1150.html">Technical Note TN1150: HFS Plus Volume Format</a>. <i>Detailed HFS Plus and HFSX description</i>. Retrieved on <a href="/wiki/May_2.html" title="May 2">May 2</a>, <a href="/wiki/2006.html" title="2006">2006</a>.</li>
+</ul>
+</div>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Further reading">edit</a>]</div>
+<p><a name="Further_reading" id="Further_reading"></a></p>
+<h3>Further reading</h3>
+<ul>
+<li><a  class="external text" title="http://www.microsoft.com/whdc/device/storage/LocFileSys.mspx">Local Filesystems for Windows</a></li>
+<li><a  class="external text" title="http://www.winnetmag.com/Article/ArticleID/38803/38803.html">Understanding File-Size Limits on NTFS and FAT</a></li>
+<li><a  class="external text" title="http://linuxgazette.net/122/piszcz.html">Benchmarking Filesystems Part II</a> using kernel 2.6, by Justin Piszcz, Linux Gazette 122, January 2006</li>
+<li><a  class="external text" title="http://fsbench.netnation.com/">Linux File System Benchmarks</a> v2.6 kernel with a stress on CPU usage</li>
+<li><a  class="external text" title="http://www.osnews.com/story.php?news_id=69">Interview With the People Behind JFS, ReiserFS &amp; XFS</a></li>
+<li><a  class="external text" title="http://www.osdata.com/system/logical/logical.htm">Large List of File System Summaries</a></li>
+<li><a  class="external text" title="http://www.debian-administration.org/articles/388">Filesystems (ext3, ReiserFS, XFS, JFS) comparison on Debian Etch</a></li>
+<li><a  class="external text" title="http://osdev.berlios.de/osd-fs.html">Overview of some filesystems (outdated)</a></li>
+<li><a  class="external text" title="http://www.suse.de/~aj/linux_lfs.html">Linux large file support (outdated)</a></li>
+<li><a  class="external text" title="http://www.lrdev.com/lr/unix/sparsefile.html">Sparse files support (outdated)</a></li>
+<li><a  class="external text" title="http://linuxgazette.net/102/piszcz.html">Benchmarking Filesystems (outdated)</a> by Justin Piszcz, Linux Gazette 102, May 2004</li>
+<li><a  class="external text" title="http://staff.osuosl.org/~kveton/fs/">Journaled Filesystem Benchmarks (outdated)</a>: A comparison of ReiserFS, XFS, JFS, ext3 &amp; ext2</li>
+<li><a  class="external text" title="http://www.open-mag.com/features/Vol_18/filesystems/filesystems.htm">Journal File System Performance (outdated)</a>: ReiserFS, JFS, and Ext3FS show their merits on a fast RAID appliance</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://filesystems.palconit.com/">Filesystems of Operating Systems</a></li>
+<li><a  class="external text" title="http://www.forensics.nl/filesystems">Filesystem Specifications and Technical Whitepapers</a></li>
+<li><a  class="external text" title="http://filesystems.org/all-projects.html">Interesting File System Projects</a></li>
+<li><a  class="external text" title="http://recls.org/">recls</a> - Recursive file-system search library (Platform-independent C++ implementation; C API; mappings for C++, COM, C# (.NET), Java, Python, Ruby, STL)</li>
+</ul>
+
+<!-- 
+Pre-expand include size: 18063 bytes
+Post-expand include size: 5760 bytes
+Template argument size: 5661 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:1010280-0!1!0!default!!en!2 and timestamp 20060910084952 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Computer file systems">Computer file systems</a></span> | <span dir='ltr'><a  title="Category:Data management">Data management</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/File_system.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-da"><a >Dansk</a></li>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-eu"><a >Euskara</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-ko"><a >한국어</a></li>
+				<li class="interwiki-id"><a >Bahasa Indonesia</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-he"><a >עברית</a></li>
+				<li class="interwiki-lt"><a >Lietuvių</a></li>
+				<li class="interwiki-nl"><a >Nederlands</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-no"><a >Norsk (bokmål)</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-pt"><a >Português</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+				<li class="interwiki-sk"><a >Slovenčina</a></li>
+				<li class="interwiki-sl"><a >Slovenščina</a></li>
+				<li class="interwiki-fi"><a >Suomi</a></li>
+				<li class="interwiki-sv"><a >Svenska</a></li>
+				<li class="interwiki-uk"><a >Українська</a></li>
+				<li class="interwiki-zh"><a >中文</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 08:47, 10 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv106 in 0.124 secs. --></body></html>

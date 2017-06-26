@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Freescale CPU32,68000,68020,Bitfield,Central processing unit,Ethernet,Freescale,Freescale 68HC11,Freescale 68HC12,Glue logic,HDLC" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Freescale CPU32 - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Freescale_CPU32";
+			var wgTitle = "Freescale CPU32";
+			var wgArticleId = 140530;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Freescale CPU32</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub">(Redirected from <a  title="Motorola CPU32">Motorola CPU32</a>)</div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>The <b>Motorola 683XX</b> aka <b>CPU32</b> is a family of compatible <a href="/wiki/Microcontroller.html" title="Microcontroller">microcontrollers</a> that use a <a href="/wiki/Freescale.html" title="Freescale">Freescale</a> <a href="/wiki/68000.html" title="68000">68000</a>-based <a href="/wiki/Central_processing_unit.html" title="Central processing unit">CPU</a> core. The instruction set is similar to the <a href="/wiki/68020.html" title="68020">68020</a> without <a href="/wiki/Bitfield.html" title="Bitfield">bitfield</a> instructions, and with a few instructions unique to the CPU32 core, such as table lookup and interpolate instructions, and a low-power stop mode. The family was designed using a <a href="/wiki/Hardware_description_language.html" title="Hardware description language">Hardware Description Language</a>, making the parts synthesizable, and amenable to improved fabrication processes, such as die shrinks.</p>
+<p>The modules of the microcontroller were designed independently and released as new CPUs could be tested. This process let the architects perform "design-ahead" so that when silicon technlogies were available, Motorola had designs ready to implement and go to market. Many of these submodules have been carried forward into the <a href="/wiki/Motorola_Coldfire.html" title="Motorola Coldfire">Coldfire</a> line of processors.</p>
+<p>The microcontrollers consist of a series of modules, connected by an internal bus:</p>
+<ul>
+<li>A fully-static CPU core, capable of running at any clock speed from dead stop to maximum rated speed (25 or 33MHz).</li>
+<li>A CPU core designed to minimize transistors while maximizing performance.</li>
+<li>A high-speed clocked serial interface for debugging called <a href="/wiki/In-circuit_emulator.html" title="In-circuit emulator">background debug mode</a> (BDM). The 683XX-series was the first to have a clocked serial interface to the CPU to perform debugging. Now, many CPUs use a standard serial test interface, usually <a href="/wiki/JTAG.html" title="JTAG">JTAG</a>, for this purpose.</li>
+<li>The SIM (System Interface Module), which eliminates much <a href="/wiki/Glue_logic.html" title="Glue logic">glue logic</a> by providing chip selects and address decoding. The SIM also provides a clock generator, watchdogs for various system operations, configuration of processor pins, a periodic timer, and an interrupt controller.</li>
+</ul>
+<p>Other modules available on various processors in the CPU32 family are:</p>
+<ul>
+<li>The Timing Processor Unit (TPU), which performs almost any timing related task: timers, counters, proportional pulse width control, pulse width measurement, pulse generation, stepper motor controllers, quadrature detection, etc. Freescale gives the development system and <a href="/wiki/Source_code.html" title="Source code">code</a> away for free.</li>
+<li>An auxiliary <a href="/wiki/Random-access_memory.html" title="Random-access memory">RAM</a> doubles as a programmable microcontroller store for the TPU.</li>
+<li>Some early models have two conventional counter-timers.</li>
+<li>A general purpose timer (GPT) module provides pulse accumulators, capture/compare, and <a href="/wiki/PWM.html" title="PWM">Pulse-width modulation</a> capabilities.</li>
+<li>Some models have a <a  class="new" title="Network interface processor">network interface processor</a> in the form of a communications processor module (CPM) and serial communications controllers (SCC) which can be interfaced to <a href="/wiki/Ethernet.html" title="Ethernet">Ethernet</a> or <a href="/wiki/HDLC.html" title="HDLC">HDLC</a> busses.</li>
+<li>Most models have a queued serial module (QSM) which provides both synchronous <a href="/wiki/SPI.html" title="SPI">Serial Peripheral Interface</a>, and logic-level <a href="/wiki/RS232.html" title="RS232">RS232</a> <a href="/wiki/UART.html" title="UART">UART</a> capabilities.</li>
+</ul>
+<table class="toccolours" style="margin: 0.5em 2em">
+<tr>
+<th style="background:#ccccff"><a href="/wiki/List_of_Motorola_products#Microcontrollers.html" title="List of Motorola products">List of Motorola/Freescale microcontrollers</a></th>
+</tr>
+<tr>
+<td align="center" style="font-size: 90%;">
+<p><a  class="new" title="Motorola 6801/6803">6801/6803</a> | <a  class="new" title="Motorola 6802">6802</a> | <a  class="new" title="Motorola 6804">6804</a> | <a  class="new" title="Motorola 68HC05">68HC05</a> | <a  class="new" title="Freescale 68HC08">68HC08</a> | <a href="/wiki/Freescale_68HC11.html" title="Freescale 68HC11">68HC11</a> | <a href="/wiki/Freescale_68HC12.html" title="Freescale 68HC12">68HC12</a> | <a  class="new" title="Motorola 68HC16">68HC16</a> | <a href="/wiki/Motorola_CPU32.html" title="Motorola CPU32">683XX (CPU32)</a> | <a  class="new" title="Motorola M&amp;aster;CORE">M*CORE</a> | <a  class="new" title="Motorola MPC500">MPC500</a> | <a  class="new" title="Motorola MPC8XX, 82XX, 85XX">PowerQUICC I/II/III</a> | <a href="/wiki/Motorola_56000.html" title="Motorola 56000">DSP568XX</a> (DSPcontroller)</p>
+</td>
+</tr>
+</table>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://www.freescale.com/webapp/sps/site/taxonomy.jsp?nodeId=0162468rH3YTLC61650795">Freescale M683xx processors</a></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:140530-0!1!0!default!!en!2 and timestamp 20060906051159 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Microcontrollers">Microcontrollers</a></span> | <span dir='ltr'><a  title="Category:68k microprocessors">68k microprocessors</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Freescale_CPU32.html">Article</a></li>
+				 <li id="ca-talk" class="new"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-ja"><a >日本語</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 05:15, 28 March 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv80 in 0.151 secs. --></body></html>

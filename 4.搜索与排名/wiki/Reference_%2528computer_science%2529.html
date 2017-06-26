@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Reference (computer science),Abstraction (computer science),Algebraic datatype,Assembly language,Associative array,Binary tree,C++,C programming language,C sharp,Call-by-reference,Cast (computer science)" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Reference (computer science) - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Reference_(computer_science)";
+			var wgTitle = "Reference (computer science)";
+			var wgArticleId = 229292;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Reference (computer science)</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<dl>
+<dd><i>This article discusses a general notion of reference in computing. See also the more specific notion of <a href="/wiki/Reference_%28C%2B%2B%29.html" title="Reference (C++)">reference</a> used in <a href="/wiki/C%2B%2B.html" title="C++">C++</a>.</i></dd>
+</dl>
+<hr />
+<p>In <a href="/wiki/Computer_science.html" title="Computer science">computer science</a>, a <b>reference</b> is a small <a href="/wiki/Object_%28computer_science%29.html" title="Object (computer science)">object</a> containing information which refers to data elsewhere, as opposed to containing the data itself. Accessing the <a href="/wiki/Value_%28computer_science%29.html" title="Value (computer science)">value</a> that a reference refers to is called <b>dereferencing</b> it. References are fundamental in constructing many data structures and in exchanging information between different parts of a program.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Address analogy</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Benefits of references</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Formal representation</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">External and internal storage</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Language support</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">5.1</span> <span class="toctext">Fortran</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">5.2</span> <span class="toctext">Functional languages</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Address analogy">edit</a>]</div>
+<p><a name="Address_analogy" id="Address_analogy"></a></p>
+<h2>Address analogy</h2>
+<p>A reference may be compared to the address of a house. It is a small identifier that helps you to find a potentially much larger object with more information in it. For example, although looking at a house will tell you its color, the address will not; it only enables you to find it. However, if you want to find out the color of a house, the address is enough information, because you can use it to find the house, then look at the house itself. Finding a house based on its address is analogous to dereferencing a reference.</p>
+<p>In a more complicated example, suppose you leave a forwarding address in your old house each time you move. A person could visit your first house, then follow the forwarding address to the next house, and so on until they finally find your current house. This is analogous to how references are used in singly <a href="/wiki/Linked_list.html" title="Linked list">linked lists</a>.</p>
+<p>Another benefit of addresses is that they're much easier to deal with than actual houses. Say you want to be able to easily locate people on your street based on their last name. One way to do this is to use a large crane to physically pick up and rearrange all the houses based on the last names of the residents. A much easier solution is to make a list of addresses of people on your street and sort it by their last names. References have the same benefit: you can manipulate references to data without actually having to modify the data itself, which in some cases can be much more efficient.</p>
+<p>Other examples of references abound in everyday life: telephone numbers, e-mail addresses, <a href="/wiki/Uniform_Resource_Locator.html" title="Uniform Resource Locator">URLs</a>, and so on. Each refers to and facilitates access to a remote resource.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Benefits of references">edit</a>]</div>
+<p><a name="Benefits_of_references" id="Benefits_of_references"></a></p>
+<h2>Benefits of references</h2>
+<p>References increase flexibility in where objects can be stored, how they are allocated, and how they are passed between areas of code. As long as we can access a reference to the data, we can access the data through it, and the data itself need not be moved. They also make sharing of data between different code areas easier; each keeps a reference to it.</p>
+<p>The mechanism of references, if varying in implementation, is a fundamental programming language feature common to nearly all modern programming languages. Even some languages that support no direct use of references have some internal or implicit use. For example, the <a href="/wiki/Evaluation_strategy.html" title="Evaluation strategy">call by reference</a> calling convention can be implemented with either explicit or implicit use of references.</p>
+<p><a href="/wiki/Pointer.html" title="Pointer">Pointers</a> are the most primitive and error-prone but also one of the most powerful and efficient types of references, storing only the address of an object in memory. <a href="/wiki/Smart_pointer.html" title="Smart pointer">Smart pointers</a> are <a href="/wiki/Opaque_pointer.html" title="Opaque pointer">opaque data structures</a> that act like pointers but can only be accessed through particular methods.</p>
+<p>A <b>file handle</b>, or <b>handle</b> is a type of reference used to abstract file content. It usually represents both the file itself, as when requesting a <a href="/wiki/Lock_%28computer_science%29.html" title="Lock (computer science)">lock</a> on the file, and a specific position within the file's content, as when reading a file.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Formal representation">edit</a>]</div>
+<p><a name="Formal_representation" id="Formal_representation"></a></p>
+<h2>Formal representation</h2>
+<p>More generally, a reference can be considered as a piece of data that allows unique retrieval of another piece of data. This includes <a href="/wiki/Primary_key.html" title="Primary key">primary keys</a> in <a href="/wiki/Database.html" title="Database">databases</a> and keys in an <a href="/wiki/Associative_array.html" title="Associative array">associative array</a>. If we have a set of data <i>D</i>, any well-defined (single-valued) function from <i>D</i> onto <i>D</i> ∪ {<a href="/wiki/Null_%28computer%29.html" title="Null (computer)">null</a>} defines a type of reference, where <i>null</i> is the image of a piece of data not referring to anything meaningful.</p>
+<p>An alternative representation of such a function is a directed graph called a <a  class="new" title="Reachability graph">reachability graph</a>. Here, each datum is represented by a vertex and there is an edge from <i>u</i> to <i>v</i> if the datum in <i>u</i> refers to the datum in <i>v</i>. The maximum <a href="/wiki/Out-degree.html" title="Out-degree">out-degree</a> is one. These graphs are valuable in <a href="/wiki/Garbage_collection_%28computer_science%29.html" title="Garbage collection (computer science)">garbage collection</a>, where they can be used to separate accessible from <a href="/wiki/Unreachable_object.html" title="Unreachable object">inaccessible objects</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External and internal storage">edit</a>]</div>
+<p><a name="External_and_internal_storage" id="External_and_internal_storage"></a></p>
+<h2>External and internal storage</h2>
+<p>In many data structures, large, complex objects are composed of smaller objects. These objects are typically stored in one of two ways:</p>
+<ol>
+<li>With internal storage, the contents of the smaller object are stored inside the larger object.</li>
+<li>With external storage, the smaller objects are allocated in their own location, and the larger object only stores references to them.</li>
+</ol>
+<p>Internal storage is usually more efficient, because there is a space cost for the references and <a href="/wiki/Dynamic_memory_allocation.html" title="Dynamic memory allocation">dynamic allocation</a> metadata, and a time cost associated with dereferencing a reference and with allocating the memory for the smaller objects. Internal storage also enhances <a href="/wiki/Locality_of_reference.html" title="Locality of reference">locality of reference</a> by keeping different parts of the same large object close together in memory. However, there are a variety of situations in which external storage is preferred:</p>
+<ul>
+<li>If the data structure is recursive, meaning it may contain itself. This cannot be represented in the internal way.</li>
+<li>If the larger object is being stored in an area with limited space, such as the stack, then we can prevent running out of storage by storing large component objects in another memory region and referring to them using references.</li>
+<li>If the smaller objects may vary in size, it's often inconvenient or expensive to resize the larger object so that it can still contain them.</li>
+<li>References are often easier to work with and adapt better to new requirements.</li>
+</ul>
+<p>Some languages, such as <a href="/wiki/Java_programming_language.html" title="Java programming language">Java</a>, do not support internal storage. In these languages, all objects are uniformly accessed through references.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Language support">edit</a>]</div>
+<p><a name="Language_support" id="Language_support"></a></p>
+<h2>Language support</h2>
+<p>In <a href="/wiki/Assembly_language.html" title="Assembly language">assembly languages</a>, the first languages used, it is typical to express references using either raw memory addresses or indexes into tables. These work, but are somewhat tricky to use, because an address tells you nothing about the value it points to, not even how large it is or how to interpret it; such information is encoded in the program logic. The result is that misinterpretations can occur in incorrect programs, causing bewildering errors.</p>
+<p>One of the earliest opaque references was that of the <a href="/wiki/Lisp_programming_language.html" title="Lisp programming language">Lisp programming language</a> <a href="/wiki/Cons.html" title="Cons">cons cell</a>, which is simply a <a href="/wiki/Object_composition.html" title="Object composition">record</a> containing two references to other Lisp objects, including possibly other cons cells. This simple structure is most commonly used to build singly <a href="/wiki/Linked_list.html" title="Linked list">linked lists</a>, but can also be used to build simple <a href="/wiki/Binary_tree.html" title="Binary tree">binary trees</a> and so-called "dotted lists", which terminate not with a null reference but a value.</p>
+<p>Another early language, Fortran, does not have an explicit representation of references, but does use them implicitly in its <a href="/wiki/Call-by-reference.html" title="Call-by-reference">call-by-reference</a> calling semantics.</p>
+<p>The <a href="/wiki/C_programming_language.html" title="C programming language">C programming language</a> introduced the <a href="/wiki/Pointer.html" title="Pointer">pointer</a>, still one of the most popular types of references today. It is similar to the assembly representation of a raw address, except that it carries a static <a href="/wiki/Datatype.html" title="Datatype">datatype</a> which can be used at compile-time to ensure that the data it refers to is not misinterpreted. However, because C has a <a href="/wiki/Weak_typing.html" title="Weak typing">weak type system</a> which can be violated using <a href="/wiki/Cast_%28computer_science%29.html" title="Cast (computer science)">casts</a> (explicit conversions between various pointer types and between pointer types and integers), misinterpretation is still possible, if more difficult. Its successor <a href="/wiki/C%2B%2B.html" title="C++">C++</a> tried to increase <a href="/wiki/Type_safety.html" title="Type safety">type safety</a> of pointers with new cast operators and smart pointers in its standard <a href="/wiki/Library_%28computer_science%29.html" title="Library (computer science)">library</a>, but still retained the ability to circumvent these safety mechanisms for compatibility.</p>
+<p>A number of popular mainstream languages today such as <a href="/wiki/Java_programming_language.html" title="Java programming language">Java</a>, <a href="/wiki/C_sharp.html" title="C sharp">C#</a>, and <a href="/wiki/Visual_Basic.html" title="Visual Basic">Visual Basic</a> have adopted a much more opaque type of reference, usually referred to as simply a <i>reference</i>. These references have types like C pointers indicating how to interpret the data they reference, but they are typesafe in that they cannot be interpreted as a raw address and unsafe conversions are not permitted. In those <i>managed</i> languages, the references are actually pointers of pointers of the referred data. In C/C++, the reference concept of managed languages means two-step pointing. The <a href="/wiki/Garbage_Collector.html" title="Garbage Collector">Garbage Collector</a> is the sole actor that can directly access the mid-step pointers, which cause the opacity. Typically pointer arithmetic is also not supported.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Fortran">edit</a>]</div>
+<p><a name="Fortran" id="Fortran"></a></p>
+<h3>Fortran</h3>
+<p>A <a href="/wiki/Fortran.html" title="Fortran">Fortran</a> reference is best thought of as an <i>alias</i> of another object, such as a scalar variable or a row or column of an array. There is no syntax to dereference the reference or manipulate the contents of the referent directly. Fortran references can be null. As in other languages, these references facilitate the processing of dynamic structures, such as linked lists, queues, and trees.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Functional languages">edit</a>]</div>
+<p><a name="Functional_languages" id="Functional_languages"></a></p>
+<h3>Functional languages</h3>
+<p>In all of the above settings, the concept of <a  class="new" title="Mutable variable">mutable variables</a>, data that can be modified, often makes implicit use of references. In <a href="/wiki/Standard_ML.html" title="Standard ML">Standard ML</a>, <a href="/wiki/O%27Caml.html" title="O'Caml">O'Caml</a>, and many other functional languages, most values are persistent: they cannot be modified by assignment. Assignable "reference cells" serve the unavoidable purposes of mutable references in imperative languages, and make the capability to be modified explicit. Such reference cells can hold any value, and so are given the <a href="/wiki/Polymorphism_%28computer_science%29.html" title="Polymorphism (computer science)">polymorphic</a> type <code>α ref</code>, where <code>α</code> is to be replaced with the type of value pointed to. These mutable references can be pointed to different objects over their lifetime. For example, this permits building of circular data structures.</p>
+<p>To preserve safety and efficient implementations, references cannot be type-cast in ML, nor can pointer arithmetic be performed. It is important to note that in the functional paradigm, many structures that would be represented using pointers in a language like C are represented using other facilities, such as the powerful <a href="/wiki/Algebraic_datatype.html" title="Algebraic datatype">algebraic datatype</a> mechanism. The programmer is then able to enjoy certain properties (such as the guarantee of immutability) while programming, even though the compiler often uses machine pointers "under the hood".</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Abstraction_%28computer_science%29.html" title="Abstraction (computer science)">Abstraction (computer science)</a></li>
+<li><a href="/wiki/Magic_cookie.html" title="Magic cookie">Magic cookie</a></li>
+<li><a href="/wiki/Weak_reference.html" title="Weak reference">Weak reference</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://cslibrary.stanford.edu/104/">Pointer Fun With Binky</a> Introduction to pointers in a 3 minute educational video - Stanford Computer Science Education Library</li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:229292-0!1!0!default!!en!2 and timestamp 20060906012637 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Data types">Data types</a></span> | <span dir='ltr'><a  title="Category:Programming constructs">Programming constructs</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Reference_%28computer_science%29.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 22:47, 26 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv83 in 0.083 secs. --></body></html>

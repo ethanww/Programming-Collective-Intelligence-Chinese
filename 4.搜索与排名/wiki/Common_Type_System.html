@@ -1,0 +1,238 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Common Type System,.NET Framework,Active Template Library,C++,C Sharp,Common Language Runtime,Component Object Model,GUID,HRESULT,Microsoft Foundation Classes,Object-oriented" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Common Type System - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Common_Type_System";
+			var wgTitle = "Common Type System";
+			var wgArticleId = 4011524;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Common Type System</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>The <b>Common Type System</b> (CTS) is used by every language built on the <a href="/wiki/.NET_Framework.html" title=".NET Framework">.NET Framework</a>. A fundamental part of the .NET Framework is <a href="/wiki/Common_Language_Runtime.html" title="Common Language Runtime">Common Language Runtime</a> (CLR), the CTS specifies no particular syntax or keywords, but instead defines a common set of types that can be used with many different language syntaxes. Each language is free to define any syntax it wishes, but if that language is built on the CLR, it will use at least some of the types defined by the CTS. While the creator of a CLR-based language is free to implement only a subset of the types defined by the CTS. <a href="/wiki/VB.NET.html" title="VB.NET">Visual Basic.NET</a>, <a href="/wiki/C_Sharp.html" title="C Sharp">C#</a>, and pretty much every other language used with the .NET Framework rely heavily on the CTS.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Why the need for a CLR and CTS?</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">The functions of Common Type System</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Type categories</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Overview">edit</a>]</div>
+<p><a name="Overview" id="Overview"></a></p>
+<h2>Overview</h2>
+<p>The CTS provides every language running on the .NET platform with a base set of data types. While the CTS is responsible for defining the types that can be used across the .NET languages, most languages choose to implement aliases to those types. For example, a four-byte integer value is represented by the CTS type System.Int32. C# defines an alias for this called type called int.</p>
+<p>Everything in the CTS is an object. Not only is everything an object but even more importantly, all objects implicitly derive from a single base class defined as a part of the CTS. This base class is called System.Object. The designers of CTS were faced with the task of creating a type system in which every thing is an object, but the type system works in an efficient manner, when applicable.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Why the need for a CLR and CTS?">edit</a>]</div>
+<p><a name="Why_the_need_for_a_CLR_and_CTS.3F" id="Why_the_need_for_a_CLR_and_CTS.3F"></a></p>
+<h2>Why the need for a CLR and CTS?</h2>
+<p>Each programming language tends to bring its own datatypes with it. For example, VB represents strings using the BSTR struct, <a href="/wiki/C%2B%2B.html" title="C++">C++</a> offers char and wchar datatypes, and the <a href="/wiki/Microsoft_Foundation_Classes.html" title="Microsoft Foundation Classes">Microsoft Foundation Classes</a> offer the CString class. The C++ int datatype is a 32-bit value where the <a href="/wiki/Visual_Basic.html" title="Visual Basic">Visual Basic</a> integer datatype, prior to <a href="/wiki/VB.NET.html" title="VB.NET">VB.NET</a>, is a 16-bit value.</p>
+<p>One of the goals of the .NET platform is to make it easier for the developer to write applications. COM developers are exposed to a headache as they need to be concerned about <a href="/wiki/GUID.html" title="GUID">GUIDs</a>, <a href="/wiki/HRESULT.html" title="HRESULT">HRESULTs</a>, early versus Late binding, managing reference counts, the type of threading model your component will run in, and proxy and stub layers etc. Fortunately, some of the programming environment and frameworks such as Visual Basic and <a href="/wiki/Active_Template_Library.html" title="Active Template Library">Active Template Library</a> come to the rescue, reducing much of this complexity. Visual Basic, for example, automatically generates the appropriate GUIDs and manages reference counts for <a href="/wiki/Component_Object_Model.html" title="Component Object Model">Component Object Model</a> objects used within the application. Still, many developers will argue that Visual Basic's implementation of COM leaves a lot to be desired. The solution has been presented in the form of creating such a system which is common to all the languages related to this platform and so the common type system was created.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: The functions of Common Type System">edit</a>]</div>
+<p><a name="The_functions_of_Common_Type_System" id="The_functions_of_Common_Type_System"></a></p>
+<h2>The functions of Common Type System</h2>
+<ul>
+<li>Establishes a framework that helps enable cross-language integration, type safety, and high performance code execution.</li>
+</ul>
+<ul>
+<li>Provides an <a href="/wiki/Object-oriented.html" title="Object-oriented">object-oriented</a> model that supports the complete implementation of many programming languages.</li>
+</ul>
+<ul>
+<li>Defines rules that languages must follow, which helps ensure that objects written in different languages can interact with each other.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Type categories">edit</a>]</div>
+<p><a name="Type_categories" id="Type_categories"></a></p>
+<h2>Type categories</h2>
+<p>The common type system supports two general categories of types:</p>
+<ul>
+<li>Value types</li>
+</ul>
+<dl>
+<dd>Value types directly contain their data, and instances of value types are either allocated on the stack or allocated inline in a structure. Value types can be built-in (implemented by the runtime), user-defined, or enumerations.</dd>
+</dl>
+<ul>
+<li>Reference types</li>
+</ul>
+<dl>
+<dd>Reference types store a reference to the value's memory address, and are allocated on the heap. Reference types can be self-describing types, pointer types, or interface types. The type of a reference type can be determined from values of self-describing types. Self-describing types are further split into arrays and class types. The class types are user-defined classes, boxed value types, and delegates.</dd>
+</dl>
+<p><br />
+<i><b>The following example shows the difference between reference types and value types:</b></i></p>
+<pre>
+   <b>Imports System</b>
+   
+   Class Class1
+       Public Value As Integer = 0
+   End Class 'Class1
+   
+   Class Test    
+     Shared Sub Main()
+       Dim val1 As Integer = 0
+       Dim val2 As Integer = val1
+       val2 = 123
+       Dim ref1 As New Class1()
+       Dim ref2 As Class1 = ref1
+       ref2.Value = 123
+       Console.WriteLine("Values: {0}, {1}", val1, val2)
+       Console.WriteLine("Refs: {0}, {1}", ref1.Value, ref2.Value)
+     End Sub 'Main
+   End Class 'Test
+</pre>
+<p>The output of the above example</p>
+<p>Values: 0, 123<br />
+Refs: 123, 123</p>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:4011524-0!1!0!default!!en!2 and timestamp 20060906015229 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:.NET framework">.NET framework</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Common_Type_System.html">Article</a></li>
+				 <li id="ca-talk" class="new"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-ja"><a >日本語</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 06:42, 4 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv79 in 0.075 secs. --></body></html>

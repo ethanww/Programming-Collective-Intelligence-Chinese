@@ -1,0 +1,244 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Lookahead,ANTLR,Alpha-beta pruning,Artificial intelligence,Breadth-first search,Combinatorial search,Compiler,Computer Go,Computer chess,Exponential growth,Graph (data structure)" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Lookahead - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Lookahead";
+			var wgTitle = "Lookahead";
+			var wgArticleId = 565954;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Lookahead</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>Lookahead is a tool in algorithms for looking ahead a few more input items before making a cost effective decision at one stage of the algorithm.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Lookahead vs. Lazy evaluation</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Lookahead in search problems</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Lookahead in parsing</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<p><br /></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Lookahead vs. Lazy evaluation">edit</a>]</div>
+<p><a name="Lookahead_vs._Lazy_evaluation" id="Lookahead_vs._Lazy_evaluation"></a></p>
+<h2>Lookahead vs. <a href="/wiki/Lazy_evaluation.html" title="Lazy evaluation">Lazy evaluation</a></h2>
+<p>This is in contrast to another technique called lazy evaluation that delays the computation until it is really needed. Both techniques are used for economical usage of space or time. Lookahead makes the right decision and so avoids backtracking from undesirable stages at later stages of algorithm and so saves space. Lookahead adds slight time overhead of extra lookups. Lazy evaluation normally skips the unexplored algorithmic paths and thus saves both the time and space in general. Some applications of lazy evaluations are demand paging in <a href="/wiki/Operating_systems.html" title="Operating systems">operating systems</a> and lazy parse tables in compilers.</p>
+<p>In search space exploration, both the techniques are used. When there are already promising paths in the algorithm to evaluate, lazy evaluation is used and to be explored paths will be saved in the queue or stack. When there are no promising paths to evaluate and to check whether the new path can be a more promising path in leading to solution, lookahead is used.</p>
+<p>Compilers also use both the techniques. They will be lazy in generating parse tables from given rules, but they lookahead in parsing given input.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Lookahead in search problems">edit</a>]</div>
+<p><a name="Lookahead_in_search_problems" id="Lookahead_in_search_problems"></a></p>
+<h2>Lookahead in search problems</h2>
+<p>In <a href="/wiki/Artificial_intelligence.html" title="Artificial intelligence">artificial intelligence</a>, <b>lookahead</b> is an important component of <a href="/wiki/Combinatorial_search.html" title="Combinatorial search">combinatorial search</a> which specifies, roughly, how deeply the <a href="/wiki/Graph_%28data_structure%29.html" title="Graph (data structure)">graph</a> representing the problem is explored.</p>
+<p>The need for a specific limit on lookahead comes from the large problem graphs in many applications, such as <a href="/wiki/Computer_chess.html" title="Computer chess">computer chess</a> and <a href="/wiki/Computer_Go.html" title="Computer Go">computer Go</a>. A naive <a href="/wiki/Breadth-first_search.html" title="Breadth-first search">breadth-first search</a> of these graphs would quickly consume all the memory of any modern computer. But by setting a specific lookahead limit, the algorithm's time can be carefully controlled; its time <a href="/wiki/Exponential_growth.html" title="Exponential growth">increases exponentially</a> as the lookahead limit increases.</p>
+<p>More sophisticated search techniques such as <a href="/wiki/Alpha-beta_pruning.html" title="Alpha-beta pruning">alpha-beta pruning</a> are able to eliminate entire subtrees of the search tree from consideration at an earlier time. When these techniques are used, lookahead is not a precisely defined quantity, but instead either the maximum depth searched or some type of average.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Lookahead in parsing">edit</a>]</div>
+<p><a name="Lookahead_in_parsing" id="Lookahead_in_parsing"></a></p>
+<h2>Lookahead in parsing</h2>
+<p><b>Lookahead</b> is also an important concept in <a href="/wiki/Parser.html" title="Parser">parsers</a> in <a href="/wiki/Compiler.html" title="Compiler">compilers</a> which establishes the maximum number of incoming input tokens the parser can look at to decide which rule it should use.</p>
+<p>Lookahead is especially relevant to <a href="/wiki/LL_parser.html" title="LL parser">LL</a>, <a href="/wiki/LR_parser.html" title="LR parser">LR</a>, and <a href="/wiki/LALR_parser.html" title="LALR parser">LALR parsers</a>, where it is often explicitly indicated by affixing the lookahead to the algorithm name in parentheses, such as LALR(1).</p>
+<p>Most <a href="/wiki/Programming_language.html" title="Programming language">programming languages</a>, the primary target of parsers, are carefully defined in such a way that a parser with limited lookahead, typically one, can parse them, because parsers with limited lookahead are often more efficient. One important change to this trend came in 1990 when <a href="/wiki/Terence_Parr.html" title="Terence Parr">Terence Parr</a> created <a href="/wiki/ANTLR.html" title="ANTLR">ANTLR</a> for his Ph.D. thesis, a <a href="/wiki/Parser_generator.html" title="Parser generator">parser generator</a> for efficient LL(<i>k</i>) parsers, where <i>k</i> is any fixed value.</p>
+<p>Parsers typically have few actions after seeing each token on the way of parsing. They are shift (add this token to stack for later reduction), reduce (pop tokens from stack and form a syntatic construct), done, error (no known rule applies now) or conflict (does not know whether to shift or reduce at this stage).</p>
+<p>Lookahead has two advantages.</p>
+<ul>
+<li>It helps parser to take which action in case of conflicts in many cases. Parsing the if statement in the case of else clause is an example of this.</li>
+<li>It eliminates many duplicate states and eases the burden of extra stack. C Program nonlookahead parser will have around 10,000 states without lookahead. Lookahead parser will have around 300 states. Expression parsing given below is an example of this.</li>
+</ul>
+<p>e.g. Parsing Expression 1 + 2 * 3</p>
+<pre>
+ Set of expression parsing rules (called grammar) is as follows, <br />
+ Rule1:  E → E + E      Expression can be sum of two expressions.
+ Rule2:  E → E * E      Expression can be product of two expressions.
+ Rule3:  E → number     Expression can be simple number
+ Rule4:  + has less precedence than *
+</pre>
+<p>Many programming languages (except a few like APL) and algebraic formulas give more precedence to multiplication than addition. The correct interpretation is ( 1 + (2*3)) Note that in the above example, Rule4 is a semantical rule. It is possible to rewrite the grammar to incorporate this into syntax. However, not all semantic rules can be translated into syntax.</p>
+<p>Simple nonlookahead parser actions:</p>
+<pre>
+ 1. Reduces 1 to expression E on input 1 based on rule3.
+ 2. Shift + onto stack on input 1 in anticipation of rule1.
+ 3. Reduce stack element 2 to Expression E based on rule3.
+ 4. Reduce stack items E+ and new input E to E based on rule1.
+ 5. Shift * onto stack on input * in anticipation of rule2.
+ 6. Shift 3 onto stack on input 3 in anticipation of rule3.
+ 7. Reduce 3 to Expression E on input 3 based on rule3.
+ 8. Reduce stack items E* and new input E to E based on rule2.
+</pre>
+<p>The parse tree and resulting code from it is not correct according to language semantics.</p>
+<p>To correctly parse with no lookahead, there are three solutions.</p>
+<ul>
+<li>The user has to enclose expressions within brackets as a workaround. This is really not a solution.</li>
+<li>The parser needs to have more logic to backtrack and retry whenever a rule is violated or not complete. The similar method is followed in LL parsers.</li>
+<li>Alternatively, the parser or grammar needs to have extra logic not to reduce immediately and reduce only when it is absolutely sure which rule to reduce first. This method is used in LR parsers. This correctly parses the expression but with many more states and with a lot of stack depth.</li>
+</ul>
+<p><br />
+Lookahead parser actions:</p>
+<pre>
+ 1. shift 1 onto stack on input 1 in anticipation of rule3. It does not reduce immediately.
+ 2. reduce stack item 1 to simple Expression on input + based on rule3.  
+    The lookahead is +, so we are on path to E +, so we can reduce the stack to E.
+ 3. shift + onto stack on input + in anticipation of rule1.
+ 4. shift 2 onto stack on input 2 in anticipation of rule3.
+ 5. reduce stack item 2 to Expression on input * based on rule3. The lookahead * expects only E before it.
+ 6. Now stack has E + E and still the input is *. It has two choices now, either to shift based on rule2 or reduction based on rule1. 
+    Since * has more precedence than + based on rule4, so shift * onto stack in anticipation of rule2.
+ 7. shift 3 onto stack on input 3 in anticipation of rule3.
+ 8. reduce stack item 3 to Expression after seeing end of input based on rule3.
+ 9. reduce stack items E * E to E based on rule2.
+ 10. reduce stack items E + E to E based on rule1.
+</pre>
+<p>The parse tree generated is correct and simply more efficient than nonlookahead parsers. This is the strategy followed in LALR parsers.</p>
+<p><br /></p>
+<hr />
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:565954-0!1!0!default!!en!2 and timestamp 20060910151001 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Artificial intelligence">Artificial intelligence</a></span> | <span dir='ltr'><a  title="Category:Compilers">Compilers</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Lookahead.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 21:20, 6 June 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv117 in 0.565 secs. --></body></html>

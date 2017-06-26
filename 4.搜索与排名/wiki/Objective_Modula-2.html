@@ -1,0 +1,505 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Objective Modula-2,C++,Cocoa (API),Compiler,Delegation (programming),Dynamic typing,Fragile base class problem,GNUstep,Java programming language,Message (computer science),Method signature" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Objective Modula-2 - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Objective_Modula-2";
+			var wgTitle = "Objective Modula-2";
+			var wgArticleId = 2471974;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Objective Modula-2</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p><b>Objective Modula-2</b> (or <b>ObjM2</b>) is an extension to <a href="/wiki/Modula-2.html" title="Modula-2">Modula-2</a> which follows the <a href="/wiki/Objective-C.html" title="Objective-C">Objective-C</a> object model and retains the bracketed Smalltalk message passing syntax introduced in Objective-C. Like Objective-C, Objective Modula-2 is a <a href="/wiki/Reflection_%28computer_science%29.html" title="Reflection (computer science)">reflective</a>, <a href="/wiki/Object_oriented.html" title="Object oriented">object oriented</a> <a href="/wiki/Programming_language.html" title="Programming language">programming language</a> with both static and dynamic typing.</p>
+<p>It is intended as a safer alternative to Objective-C for <a href="/wiki/Cocoa_%28API%29.html" title="Cocoa (API)">Cocoa</a> and <a href="/wiki/GNUstep.html" title="GNUstep">GNUstep</a> software development. It retains most of Modula-2's features, most importantly data encapsulation with nested modules, explicit import and export lists and strict type checking. Objective Modula-2 can therefore be considered a much safer programming language than is Objective-C, yet it has all the capabilities of Objective-C. Classes written in Objective Modula-2 can be used within Objective-C and vice versa.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Language basics</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">1.1</span> <span class="toctext">Messages</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.2</span> <span class="toctext">Dynamic typing</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.3</span> <span class="toctext">Interfaces and implementations</span></a>
+<ul>
+<li class="toclevel-3"><a ><span class="tocnumber">1.3.1</span> <span class="toctext">Interface</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">1.3.2</span> <span class="toctext">Implementation</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.4</span> <span class="toctext">Categories</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.5</span> <span class="toctext">Protocols</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.6</span> <span class="toctext">Class Libraries</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Further Additions to the Language</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">2.1</span> <span class="toctext">Class Variables</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.2</span> <span class="toctext">Name Spaces</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.3</span> <span class="toctext">Automatic Garbage Collection</span></a></li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Language basics">edit</a>]</div>
+<p><a name="Language_basics" id="Language_basics"></a></p>
+<h2>Language basics</h2>
+<p>Objective Modula-2 is a "thin" layer on top of Modula-2. It is a superset of the Modula-2 base language. Objective Modula-2 borrows its syntax from both Modula-2 and Objective-C. Most of the syntax, including conventional function calls, is inherited from Modula-2, while the syntax for object-oriented features, including message-passing, is borrowed from Objective-C, which itself derived this syntax from <a href="/wiki/Smalltalk.html" title="Smalltalk">Smalltalk</a>.</p>
+<p>In addition to Modula-2 and Objective-C/Smalltalk derived features, Objective Modula-2 has several other features such as Modula-3 style aliased imports, C++ style single line comments, C style postfix increment and decrement operators, a binary function procedure, similar to C's ternary operator but without the ugly syntax, a built-in base type UNICHAR for unicode characters, a built-in type BCD for binary coded decimals and C style string literals with backslash escaped character code notation. Furthermore, the unsafe and highly criticised feature of variant records found in Pascal and Modula-2 has been omitted in Objective Modula-2 because it is outdated in the context of its object model. For backwards compatibility, variant records are flattened into non-variant equivalents.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Messages">edit</a>]</div>
+<p><a name="Messages" id="Messages"></a></p>
+<h3>Messages</h3>
+<p>The added syntax is for built-in support of the Objective-C object model, a flavour of <a href="/wiki/Object-oriented_programming.html" title="Object-oriented programming">Object-oriented programming</a> which is based on sending <a href="/wiki/Message_%28computer_science%29.html" title="Message (computer science)">messages</a> to objects, itself based on the object model of <a href="/wiki/Smalltalk.html" title="Smalltalk">Smalltalk</a>. This is distinct from the programming model of <a href="/wiki/Simula.html" title="Simula">Simula</a>, which is used by <a href="/wiki/C%2B%2B.html" title="C++">C++</a> among other programming languages. This distinction is semantically important. The main difference is that in Objective Modula-2, instead of <i>calling a method</i>, one <i>sends a message</i>.</p>
+<p>An object called <tt>obj</tt> whose class has a method <tt>doSomething</tt> implemented is said to <i>respond</i> to the message <tt>doSomething</tt>. If we wish to send a <tt>doSomething</tt> message to <tt>obj</tt>, we write</p>
+<pre>
+[obj doSomething];
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Dynamic typing">edit</a>]</div>
+<p><a name="Dynamic_typing" id="Dynamic_typing"></a></p>
+<h3>Dynamic typing</h3>
+<p>A major difference to <a href="/wiki/Statically_typed.html" title="Statically typed">statically typed</a> languages such as C++ and <a href="/wiki/Java_programming_language.html" title="Java programming language">Java</a> is that in Objective Modula-2 it is possible to send messages to objects that do <i>not</i> respond to them.</p>
+<p>This is because the object oriented part of Objective Modula-2 is <a href="/wiki/Dynamic_typing.html" title="Dynamic typing">dynamically typed</a>, just like Objective-C. This means that we can send a message to an object which does not have a method specified in its interface to respond to that message. This may seem like a bad idea, but in fact this allows for a great level of flexibility - in Objective Modula-2 an object can "capture" this message, and depending on the object, it can pass the message on to a different object which can respond to the message correctly and appropriately, or pass the message on yet again. In Objective-C parlance this is called "<a href="/wiki/Delegation_%28programming%29.html" title="Delegation (programming)">delegation</a>" (see below), also referred to as <i>message forwarding</i>. An error handler can be used in case the message cannot be forwarded. However if the object does not forward the message, nor handle the error, nor respond to it, a <a href="/wiki/Runtime.html" title="Runtime">runtime</a> error occurs.</p>
+<p>An example of a dynamically typed object in Objective Modula-2 is shown below:</p>
+<pre>
+VAR
+  anObject : OBJECT;
+</pre>
+<p>The type OBJECT in Objective Modula-2 is the equivalent of type id in Objective-C.</p>
+<p>Like other dynamically typed languages, there is the potential problem of an endless stream of <a href="/wiki/Run-time_error.html" title="Run-time error">run-time errors</a> that come from sending the wrong message to the wrong object. However, Objective Modula-2 allows the programmer to optionally specify the class of an object, and in such cases the <a href="/wiki/Compiler.html" title="Compiler">compiler</a> will treat the object as statically typed.</p>
+<p>An example of a statically typed object in Objective Modula-2 is shown below:</p>
+<pre>
+VAR
+  aString : NSString;
+</pre>
+<p>Unlike Objective-C, all classes are pointer types, they need not explicitly be referenced with "POINTER TO".</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Interfaces and implementations">edit</a>]</div>
+<p><a name="Interfaces_and_implementations" id="Interfaces_and_implementations"></a></p>
+<h3>Interfaces and implementations</h3>
+<p>Objective Modula-2 requires the interface and implementation of a class to be in separate modules, which can either be nested inside conventional Modula-2 library modules or standalone as separate compilation units. For this purpose two additional module types, a class interface module and a class implementation module were added to the language in addition to Modula-2's library definition and library implementation modules. Class modules can be bundled into library modules to create class clusters or class libraries, similar to the concept of packages in Java.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Interface">edit</a>]</div>
+<p><a name="Interface" id="Interface"></a></p>
+<h4>Interface</h4>
+<p>The interface of a class is defined in a class interface module.</p>
+<p>An example of a class interface module defining a class called FooBar as a descendant of superclass NSObject is shown below:</p>
+<pre>
+INTERFACE MODULE FooBar : NSObject;
+
+(* instance variables - by default access mode is private *)
+INSTANCE VAR
+   foo : Foo;
+   bar : Bar;
+
+(* constructor and initialiser *)
+CLASS METHOD newWithFoo: (foo : Foo)
+                 andBar: (bar : Bar) : OBJECT;
+
+(* accessor for foo *)
+INSTANCE METHOD foo : Foo;
+
+(* mutator for foo *)
+INSTANCE METHOD setFoo: (foo : Foo);
+
+END FooBar.
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Implementation">edit</a>]</div>
+<p><a name="Implementation" id="Implementation"></a></p>
+<h4>Implementation</h4>
+<p>While the class interface module only declares instance variables and prototypes of the class' methods, the implementation of methods is placed in the class' implementation module.</p>
+<p>An example of a class implementation module for the class FooBar is shown below:</p>
+<pre>
+IMPLEMENTATION MODULE FooBar;
+
+(* constructor and initialiser *)
+CLASS METHOD newWithFoo: (foo : Foo)
+                 andBar: (bar : Bar) : OBJECT;
+VAR
+  thisInstance : FooBar;
+
+BEGIN
+  thisInstance := [[FooBar alloc] init];
+  thisInstance^.foo := foo;
+  thisInstance^.bar := bar;
+  RETURN thisInstance;
+END;
+
+(* accessor for foo *)
+INSTANCE METHOD foo : Foo;
+BEGIN
+  RETURN SELF^.foo;
+END;
+
+(* mutator for foo *)
+INSTANCE METHOD setFoo: (foo : Foo);
+BEGIN
+  SELF^.foo := foo;
+END;
+
+END FooBar.
+</pre>
+<p>Methods are written in a different way than Modula-2 procedures. For example, a procedure in both Modula-2 and Objective Modula-2 follows this general form:</p>
+<pre>
+PROCEDURE ProcedureName (parameter : FormalType) : ReturnedType;
+VAR
+  (* local variables *)
+BEGIN
+  (* instructions *)
+   RETURN result;
+END;
+</pre>
+<p>However, the syntax for procedure headers cannot be used for methods because of the way in which the Smalltalk derived Objective-C object model and its message passing works. Therefore, additional syntax for declaring class and instance methods has been added to the language as shown in the FooBar class implementation example.</p>
+<p>This new syntax allows to define methods which follow the Smalltalk derived infix notation for sending messages. An example of how the methods in the FooBar class are used is shown below:</p>
+<pre>
+MODULE UseFoobar;
+
+IMPORT FooBar;
+
+VAR
+  foobar : FooBar;
+  someFoo: Foo;
+  someBar: Bar;
+
+BEGIN
+  (* some code to set someFoo and someBar *)
+
+  (* allocate and initialise a new instance of FooBar *)
+  foobar := [FooBar newWithFoo:someFoo andBar:someBar];
+
+  (* sending a foo message to foobar *)
+  someFoo := [foobar foo];
+
+  (* sending a setFoo: message to foobar *)
+  [foobar setFoo:someFoo];
+END UseFoobar.
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Categories">edit</a>]</div>
+<p><a name="Categories" id="Categories"></a></p>
+<h3>Categories</h3>
+<p>The Objective-C object model defines an instrument to extend an existing class with additional methods. In Objective-C parlance this is called a category. The methods within a category are added to a class at <a href="/wiki/Runtime.html" title="Runtime">runtime</a>. Thus, categories permit the programmer to add methods to an existing class without the need to recompile that class or even have access to its source code. For example, if the system you are supplied with does not contain a <a href="/wiki/Spell_checker.html" title="Spell checker">spell checker</a> in its String implementation, you can add it without modifying the String source code.</p>
+<p>Methods within categories become indistinguishable from the methods in a class when the program is run. A category has full access to all of the instance variables within the class, including private variables.</p>
+<p>Categories provide an elegant solution to the <a href="/wiki/Fragile_base_class_problem.html" title="Fragile base class problem">fragile base class problem</a> for methods.</p>
+<p>If you declare a method in a category with the same <a href="/wiki/Method_signature.html" title="Method signature">method signature</a> as an existing method in a class, the category's method is adopted. Thus categories can not only add methods to a class, but also replace existing methods. This feature can be used to fix bugs in other classes by rewriting their methods, or to cause a global change to a class's behavior within a program. If two categories have methods with the same method signature, it is undefined which category's method is adopted.</p>
+<p>To allow the declaration and implementation of categories, additional syntax has been added in Objective Modula-2. An example of a class interface module which declares a category called AdditionsToNSString targeting the NSString class is shown below:</p>
+<pre>
+INTERFACE MODULE AdditionsToNSString TARGETS NSString;
+
+(* declare a new method to be added to the target class *)
+INSTANCE METHOD stringByCollapsingWhitespace : NSString;
+
+END AdditionsToNSString.
+</pre>
+<p>The corresponding class implementation module to implement a category does not differ from any other class implementation module. An example of an implementation module for the category AdditionsToNSString is shown below:</p>
+<pre>
+IMPLEMENTATION MODULE AdditionsToNSString TARGETS NSString;
+
+INSTANCE METHOD stringByCollapsingWhitespace : NSString;
+(* code to implement the method *)
+END;
+
+END AdditionsToNSString.
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Protocols">edit</a>]</div>
+<p><a name="Protocols" id="Protocols"></a></p>
+<h3>Protocols</h3>
+<p>The Objective-C object model defines an instrument for multiple inheritance of specification (but not implementation). In Objective-C parlance this is called a protocol. There are two types of protocols: ad-hoc protocols, called <i>informal protocols</i>, and compiler enforced protocols called <i>formal protocols</i>.</p>
+<p>An informal protocol is a list of methods that a class may implement. It is specified in the documentation, since it has no presence in the language. Informal protocols often include optional methods, where implementing the method can change the behavior of a class. For example, a text field class might have a delegate that should implement an informal protocol with an optional autocomplete method. The text field discovers whether the delegate implements that method (via <a href="/wiki/Reflection_%28computer_science%29.html" title="Reflection (computer science)">reflection</a>), and if so, calls it to support autocomplete. The methods suggested by an informal protocol are often implemented using categories.</p>
+<p>A formal protocol is a collection of method declarations that any given class may adopt by implementing the methods declared by the protocol. A class which adopts a protocol must implement all methods declared by that protocol.</p>
+<p>To allow the declaration of formal protocols, additional syntax has been added in Objective Modula-2. An example of a protocol interface module which declares a formal protocol called Foobaring is shown below:</p>
+<pre>
+PROTOCOL INTERFACE MODULE Foobaring;
+
+(* method declarations *)
+
+END Foobaring.
+</pre>
+<p>To allow class modules to be declared to adopt formal protocols, further syntax has been added to Objective Modula-2. An example of a class interface module declaring a class Blob which adopts the Foobaring protocol is shown below:</p>
+<pre>
+INTERFACE MODULE Blob ADOPTS Foobaring;
+
+(* instance variables *)
+
+(* method declarations *)
+
+END Blob.
+</pre>
+<p>The corresponding class implementation module to implement a class which adopts one or more formal protocol does not differ from any other class implementation module. An example of an implementation module for the class Blob is shown below:</p>
+<pre>
+IMPLEMENTATION MODULE Blob;
+ 
+(* method implementations - including those declared by the Foobaring protocol *)
+
+END Blob.
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Class Libraries">edit</a>]</div>
+<p><a name="Class_Libraries" id="Class_Libraries"></a></p>
+<h3>Class Libraries</h3>
+<p>Objective Modula-2 allows classes to be bundled into class libraries or class clusters by placing the class modules inside a library module. The class modules inside a library module may be either complete module declarations and implementations or they may be references to external classes.</p>
+<p>An example of a library definition module representing a class cluster is shown below:</p>
+<pre>
+DEFINITION MODULE Blobs;
+
+EXPORT Blob, MutableBlob, AttributedBlob, MutableAttributedBlob;
+
+(* the base class of this class library *)
+INTERFACE MODULE Blob : NSObject;
+// instance variables
+// method declarations
+END Blob.
+
+(* the mutable variant of the base class *)
+INTERFACE MODULE MutableBlob : Blob;
+// instance variables
+// method declarations
+END MutableBlob.
+
+(* the attributed variant of the base class *)
+INTERFACE MODULE AttributedBlob : Blob;
+// instance variables
+// method declarations
+END AttributedBlob.
+
+(* the mutable variant of the attributed variant *)
+INTERFACE MODULE MutableAttributedBlob : AttributedBlob;
+// instance variables
+// method declarations
+END MutableAttributedBlob.
+
+END Blobs.
+</pre>
+<p>An example of the corresponding implementation module of the class cluster is shown below:</p>
+<pre>
+IMPLEMENTATION MODULE Blobs;
+
+(* the base class of this class library *)
+IMPLEMENTATION MODULE Blob;
+// method implementations
+END Blob.
+
+(* the mutable variant of the base class *)
+IMPLEMENTATION MODULE MutableBlob;
+// method implementations
+END MutableBlob.
+
+(* the attributed variant of the base class *)
+IMPLEMENTATION MODULE AttributedBlob;
+// method implementations
+END AttributedBlob.
+
+(* the mutable variant of the attributed variant *)
+IMPLEMENTATION MODULE MutableAttributedBlob;
+// method implementations
+END MutableAttributedBlob.
+
+END Blobs.
+</pre>
+<p>Both class interface modules and class implementation modules of member classes of a class library can be external to the library module which bundles them. A class interface or implementation which is external is referenced using the compiler directive "EXTERNAL". External classes may be written in Objective-C or Objective Modula-2. An example of such a class library is shown below:</p>
+<pre>
+DEFINITION MODULE MixedBag;
+
+EXPORT MyOwnBag, MyBrothersBag, SomeoneElsesBag;
+
+INTERFACE MODULE MyOwnBag : NSObject;
+// instance variables
+// method declarations
+END MyInternalClass.
+
+INTERFACE MODULE MyBrothersBag; &lt;*EXTERNAL=ObjM2*&gt;
+
+INTERFACE MODULE SomeoneElsesBag; &lt;*EXTERNAL=ObjC*&gt;
+
+END MixedBag.
+</pre>
+<p>In order to allow sharing of instance variables between classes in a library while at the same time restricting the visibility of such a variable outside of the class library, an additional access mode for instance variable has been added in Objective Modula-2 which is not available in Objective-C. An example of an instance variable with library or module-level access is shown below:</p>
+<pre>
+DEFINTION MODULE ClassLib;
+
+INTERFACE MODULE ClassA : NSObject;
+INSTANCE VAR
+  PUBLIC TO NEIGHBORS;
+  sharedVar : Boo;
+
+(* method declarations *)
+END ClassA.
+
+INTERFACE MODULE ClassB : NSObject;
+// declarations
+END ClassB.
+
+INTERFACE MODULE ClassC : NSObject;
+// declarations
+END ClassC.
+ 
+END ClassLib.
+</pre>
+<p>In the above example, instance variable "sharedVar" of class "ClassA" is declared "PUBLIC TO NEIGHBORS" which means it is visible from within other classes that are members of library ClassLib, in this case classes ClassB and ClassC, but it is invisible anywhere else. Note however, that Objective-C does not have any equivalent access mode. When a class which restricts visibility of an instance variable to neighbour classes is used from within an Objective-C class, that variable is treated as if it was declared with access mode "private" which means the Objective-C class does not have access to it. Other access modes in Objective Modula-2 are "PUBLIC TO ALL", which is equivalent to @public in Objective-C, "PUBLIC TO SUBCLASSES", which is equivalent to @protected in Objective-C and "PRIVATE" which is equivalent to @private in Objective-C.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Further Additions to the Language">edit</a>]</div>
+<p><a name="Further_Additions_to_the_Language" id="Further_Additions_to_the_Language"></a></p>
+<h2>Further Additions to the Language</h2>
+<p>Further additions to the Objective Modula-2 language are planned, most notably class variables, name spaces and automatic garbage collection.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Class Variables">edit</a>]</div>
+<p><a name="Class_Variables" id="Class_Variables"></a></p>
+<h3>Class Variables</h3>
+<p>Class variables will be supported through additional syntax which has already been entered into the language specification, but the semantics have yet to be finalised. This will be done in a way that guarantees full compatibility with the Objective-C runtime. An example of a class variable declaration is shown below:</p>
+<pre>
+INTERFACE MODULE BooBah : NSObject;
+
+CLASS VAR
+  thisIsAClassVariable : Boo;
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Name Spaces">edit</a>]</div>
+<p><a name="Name_Spaces" id="Name_Spaces"></a></p>
+<h3>Name Spaces</h3>
+<p>Name spaces are supported by utilising the data encapsulation features of modules and aliased imports, but how Objective-C will be able to address qualified Objective Modula-2 classes has yet to be finalised.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Automatic Garbage Collection">edit</a>]</div>
+<p><a name="Automatic_Garbage_Collection" id="Automatic_Garbage_Collection"></a></p>
+<h3>Automatic Garbage Collection</h3>
+<p>It is intended to support automatic garbage collection through adding methods and classes, similar to the way autorelease pools are implemented in Objective-C. This will allow the programmer to choose a memory management scheme on a per object basis. Objects can be manually managed, autoreleased or garbage collected simply by sending a message. An example is shown below:</p>
+<pre>
+VAR
+  garbageCollectedString : NSString = [[[NSString alloc] init] gc];
+  referenceCountedString : NSString = [[[NSString alloc] init] retain];
+  autoreleasedString : NSString = [[[NSString alloc] init] autorelease];
+</pre>
+<p>Note that Apple Computer is working on automatic garbage collection for Cocoa and depending on whether this will be released and when it will be released, further whether GNUstep will adopt the model, Objective Modula-2 may simply use the then built-in garbage collection scheme instead of providing its own.</p>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:2471974-0!1!0!default!!en!2 and timestamp 20060910133445 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Programming languages">Programming languages</a></span> | <span dir='ltr'><a  title="Category:Modula programming language family">Modula programming language family</a></span> | <span dir='ltr'><a  title="Category:Dynamic programming languages">Dynamic programming languages</a></span> | <span dir='ltr'><a  title="Category:Dynamically-typed programming languages">Dynamically-typed programming languages</a></span> | <span dir='ltr'><a  title="Category:Class-based programming languages">Class-based programming languages</a></span> | <span dir='ltr'><a  title="Category:Object-oriented programming languages">Object-oriented programming languages</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Objective_Modula-2.html">Article</a></li>
+				 <li id="ca-talk" class="new"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 23:58, 16 May 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv83 in 0.126 secs. --></body></html>

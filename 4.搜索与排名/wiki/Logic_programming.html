@@ -1,0 +1,301 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Logic programming,Actor model,Artificial Intelligence,Assertion,Automated theorem proving,Backtracking,Carl Hewitt,Common sense,Constraint logic programming,Denotational semantics,Disjunction" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Logic programming - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Logic_programming";
+			var wgTitle = "Logic programming";
+			var wgArticleId = 17927;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Logic programming</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p><b>Logic programming</b> (sometimes called <b>logical programming</b>) is programming that makes use of pattern-directed invocation of procedures from <a href="/wiki/Assertion.html" title="Assertion">assertions</a> and goals. <a href="/wiki/John_McCarthy_%28computer_scientist%29.html" title="John McCarthy (computer scientist)">John McCarthy</a> [1958] was the first to publish a proposal that <a href="/wiki/Mathematical_logic.html" title="Mathematical logic">mathematical logic</a> be used for programming. The first logic programming language was <a href="/wiki/Planner_programming_language.html" title="Planner programming language">Planner</a> which featured pattern-directed invocation of procedural plans from both assertions and goals. In order to cope with the very limited memory systems that were available when it was developed, Planner used <a href="/wiki/Backtracking.html" title="Backtracking">backtracking</a> control structure so that only one possible computation path had to be stored at a time. Subsequently, <a href="/wiki/Prolog.html" title="Prolog">Prolog</a> was developed as a simplification of Planner that had pattern-directed invocation only from goals (also based on backtracking). From Planner there developed the programming languages QA-4, Popler, Conniver, and QLISP. The programming languages <a href="/wiki/Mercury_programming_language.html" title="Mercury programming language">Mercury</a>, <a href="/wiki/Visual_Prolog.html" title="Visual Prolog">Visual Prolog</a>, <a href="/wiki/Oz_programming_language.html" title="Oz programming language">Oz</a> and <a href="/wiki/Fril.html" title="Fril">Fril</a> developed from Prolog. There are also concurrent logic programming languages (not based on backtracking) derived from Planner (<i>e.g.,</i> <a href="/wiki/Scientific_Community_Metaphor.html" title="Scientific Community Metaphor">Ether</a>) and derived from Prolog (see Shapiro [1989] for a survey).</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Basis in mathematical logic</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Prolog</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">2.1</span> <span class="toctext">Limitations of Prolog as logic programming</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Limitations of using mathematical logic for programming</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Concurrent logic programming</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Higher-order logic programming</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">Application domains</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">History</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">8</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">9</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">10</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Basis in mathematical logic">edit</a>]</div>
+<p><a name="Basis_in_mathematical_logic" id="Basis_in_mathematical_logic"></a></p>
+<h2>Basis in mathematical logic</h2>
+<p>The point of logic programming is to bring the style of <a href="/wiki/Mathematical_logic.html" title="Mathematical logic">mathematical logic</a> to computer programming. Mathematicians and philosophers find logic a successful tool for developing bodies of theory. Many problems are naturally expressed as a theory. To say a problem needs solving is often equivalent to asking if a new hypothesis is consistent with an existing theory. Logic provides a way to prove whether the question is true or false. The process of constructing a proof is well-known, so logic is thought to be a reliable way to answer questions. Logical programming systems automate this process. <a href="/wiki/Artificial_Intelligence.html" title="Artificial Intelligence">Artificial Intelligence</a> was an important influence on the development of logic programming.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Prolog">edit</a>]</div>
+<p><a name="Prolog" id="Prolog"></a></p>
+<h2>Prolog</h2>
+<p><a href="/wiki/Prolog.html" title="Prolog">Prolog</a> was an early programming language that was billed by its designers as being based on mathematical logic. The basis for this claim was that Prolog used backward chaining from goal to subgoal (as in <a href="/wiki/Planner_programming_language.html" title="Planner programming language">Planner</a>).</p>
+<p>Schematically, the process is:</p>
+<pre>
+   goal :-  subgoal<sub>1</sub>, ..., subgoal<sub>n</sub>.
+</pre>
+<p>which states that in order to prove <tt>goal</tt>, it is sufficient to prove <tt>subgoal<sub>1</sub></tt> through <tt>subgoal<sub>n</sub></tt>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Limitations of Prolog as logic programming">edit</a>]</div>
+<p><a name="Limitations_of_Prolog_as_logic_programming" id="Limitations_of_Prolog_as_logic_programming"></a></p>
+<h3>Limitations of Prolog as logic programming</h3>
+<p>However, Prolog did not include the <i>negation</i> or <i><a href="/wiki/Disjunction.html" title="Disjunction">disjunction</a></i> of mathematical logic because they are difficult to implement. For example if negation were included, the following Prolog program</p>
+<pre>
+       <i>not</i> Q.
+       Q :- P.
+</pre>
+<p>would be unable to prove <tt><i>not</i> P</tt> even though it follows by the rules of mathematical logic. This is an illustration of the fact that Prolog is unable to prove many of the logical consequences that follow from a declarative reading of its programs. However, certain dialects do implement <a href="/wiki/Negation_as_failure.html" title="Negation as failure">negation as failure</a> typically using the characters <b>\+</b> or <b>~</b>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Limitations of using mathematical logic for programming">edit</a>]</div>
+<p><a name="Limitations_of_using_mathematical_logic_for_programming" id="Limitations_of_using_mathematical_logic_for_programming"></a></p>
+<h2>Limitations of using mathematical logic for programming</h2>
+<p>John McCarthy proposed that mathematical logic be used as the foundation for the epistemology of computer systems. Under the leadership of <a href="/wiki/Marvin_Minsky.html" title="Marvin Minsky">Marvin Minsky</a> and <a href="/wiki/Seymour_Papert.html" title="Seymour Papert">Seymour Papert</a> a different approach based on procedural approaches developed at MIT. When <a href="/wiki/Planner_programming_language.html" title="Planner programming language">Planner</a> was developed, the question arose about the relationship between the two approaches. <a href="/wiki/Robert_Kowalski.html" title="Robert Kowalski">Robert Kowalski</a> developed the thesis that “computation could be subsumed by deduction” and quoted with approval “Computation is controlled deduction.” which he attributed to Pat Hayes in his 1988 paper on the early history of Prolog. Contrary to Kowalski and Hayes, <a href="/wiki/Carl_Hewitt.html" title="Carl Hewitt">Carl Hewitt</a> developed the thesis that logical deduction was incapable of carrying out concurrent computation in open systems. (See <a href="/wiki/Indeterminacy_in_computation.html" title="Indeterminacy in computation">Indeterminacy in computation</a>.)</p>
+<p>The answer to the question about the relationship between the logical and procedural approaches is that the procedural approach has a different mathematical semantics (see <a href="/wiki/Denotational_semantics.html" title="Denotational semantics">Denotational semantics</a>) from the semantics of mathematical logic (see <a href="/wiki/Model_theory.html" title="Model theory">Model theory</a>).</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Concurrent logic programming">edit</a>]</div>
+<p><a name="Concurrent_logic_programming" id="Concurrent_logic_programming"></a></p>
+<h2>Concurrent logic programming</h2>
+<p><a href="/wiki/Keith_Clark.html" title="Keith Clark">Keith Clark</a>, Hervé Gallaire, Steve Gregory, Vijay Saraswat, Udi Shapiro, Kazunori Ueda, etc. developed a family of <a href="/wiki/Prolog.html" title="Prolog">Prolog</a>-like concurrent message passing systems using unification of shared variables and data structure streams for messages. Efforts were made to base these systems on mathematical logic, and they were used as the basis of the <a href="/wiki/Fifth_generation_computer.html" title="Fifth generation computer">Japanese Fifth Generation Project (ICOT)</a>.</p>
+<p>Like the <a href="/wiki/Actor_model.html" title="Actor model">Actor model</a>, the Prolog-like concurrent systems were based on message passing and consequently were subject to the same indeterminacy. This was the basis of an argument by Carl Hewitt and Gul Agha [1988] claiming that the Prolog-like concurrent systems were neither deductive nor logical.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Higher-order logic programming">edit</a>]</div>
+<p><a name="Higher-order_logic_programming" id="Higher-order_logic_programming"></a></p>
+<h2>Higher-order logic programming</h2>
+<p>Several researchers have extended logic programming with <a href="/wiki/Higher-order_programming.html" title="Higher-order programming">higher-order programming</a> features derived from <a href="/wiki/Higher-order_logic.html" title="Higher-order logic">higher-order logic</a>, such as predicate variables. Such languages include the Prolog extensions <a  class="new" title="HiLog">HiLog</a> and <a href="/wiki/%CE%9BProlog.html" title="ΛProlog">λProlog</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Application domains">edit</a>]</div>
+<p><a name="Application_domains" id="Application_domains"></a></p>
+<h2>Application domains</h2>
+<ul>
+<li><a href="/wiki/Expert_system.html" title="Expert system">Expert systems</a>, where the program generates a recommendation or answer from a large model of the application domain.</li>
+<li><a href="/wiki/Automated_theorem_proving.html" title="Automated theorem proving">Automated theorem proving</a>, where the program generates novel theorems to extend some existing body of theory.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: History">edit</a>]</div>
+<p><a name="History" id="History"></a></p>
+<h2>History</h2>
+<p>Logic Programming is an idea that has been investigated in the context of artificial intelligence since at least the time of <a href="/wiki/John_McCarthy_%28computer_scientist%29.html" title="John McCarthy (computer scientist)">John McCarthy</a> [1958] which proposed</p>
+<dl>
+<dd>"programs to manipulate in a suitable formal language (most likely a part of the predicate calculus) common instrumental statements. The basic program will draw immediate conclusions from a list of premises. These conclusions will be either declarative or imperative sentences. When an imperative sentence is deduced the program takes a corresponding action.”</dd>
+</dl>
+<p><a href="/wiki/John_McCarthy_%28computer_scientist%29.html" title="John McCarthy (computer scientist)">McCarthy</a> justified his proposal as follows</p>
+<dl>
+<dd>"'The main advantages we expect the <i>advice taker</i> to have is that its behavior will be improvable merely by making statements to it, telling it about its symbolic environment and what is wanted from it. To make these statements will require little if any knowledge of the program or the previous knowledge of the advice taker. One will be able to assume that the advice taker will have available to it a fairly wide class of immediate logical consequences of anything it is told and its previous knowledge. This property is expected to have much in common with what makes us describe certain humans as having common sense. We shall therefore say that <i>a program has common sense if it automatically deduces for itself a sufficiently wide class of immediate consequences of anything it is told and what it already knows</i>."</dd>
+</dl>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Constraint_logic_programming.html" title="Constraint logic programming">Constraint logic programming</a></li>
+<li><a href="/wiki/Formal_methods.html" title="Formal methods">Formal methods</a></li>
+<li><a href="/wiki/Functional_programming.html" title="Functional programming">Functional programming</a></li>
+<li><a href="/wiki/Programming_paradigm.html" title="Programming paradigm">Programming paradigm</a></li>
+<li><a href="/wiki/Inductive_logic_programming.html" title="Inductive logic programming">Inductive logic programming</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<ul>
+<li>John McCarthy. <b>Programs with <a href="/wiki/Common_sense.html" title="Common sense">common sense</a></b> Symposium on Mechanization of Thought Processes. National Physical Laboratory. Teddington, England. 1958.</li>
+<li>Fisher Black. <b>A deductive question answering system</b> Harvard University. Thesis. 1964.</li>
+<li>James Slagle. <b>Experiments with a Deductive Question-Answering Program</b> CACM. December, 1965.</li>
+<li>Cordell Green. <b>Application of Theorem Proving to Problem Solving</b> IJCAI 1969.</li>
+<li>Carl Hewitt. <b>Planner: A Language for Proving Theorems in Robots</b> IJCAI 1969.</li>
+<li>Gerry Sussman and Terry Winograd. <b><a  class="external text" title="http://hdl.handle.net/1721.1/5833">Micro-planner Reference Manual</a></b> AI Memo No, 203, MIT Project MAC, July 1970.</li>
+<li>Carl Hewitt. <b>Procedural Embedding of Knowledge In Planner</b> IJCAI 1971.</li>
+<li>Terry Winograd. <b><a  class="external text" title="http://hdl.handle.net/1721.1/7095">Procedures as a Representation for Data in a Computer Program for Understanding Natural Language</a></b> MIT AI TR-235. January 1971.</li>
+<li>Bruce Anderson. <b>Documentation for LIB PICO-PLANNER</b> School of Artificial Intelligence, Edinburgh University. 1972</li>
+<li>Bruce Baumgart. <b>Micro-Planner Alternate Reference Manual</b> Stanford AI Lab Operating Note No. 67, April 1972.</li>
+<li>Julian Davies. <b>Popler 1.6 Reference Manual</b> University of Edinburgh, TPU Report No. 1, May 1973.</li>
+<li>Jeff Rulifson, Jan Derksen, and Richard Waldinger. <b>QA4, A Procedural Calculus for Intuitive Reasoning</b> SRI AI Center Technical Note 73, November 1973.</li>
+<li>Robert Kowalski <b>Predicate Logic as Programming Language</b> Memo 70, Department of Artificial Intelligence, Edinburgh University. 1973.</li>
+<li>Drew McDermott and Gerry Sussman. <b><a  class="external text" title="http://hdl.handle.net/1721.1/6204">The Conniver Reference Manual</a></b> MIT AI Memo 259A. January 1974.</li>
+<li>Earl Sacerdoti, <i>et al.</i> <b>QLISP: A Language for the Interactive Development of Complex Systems</b> AFIPS National Computer Conference. 1976.</li>
+<li>Bill Kornfeld and Carl Hewitt. <b>The Scientific Community Metaphor</b> IEEE Transactions on Systems, Man, and Cybernetics. January 1981.</li>
+<li>Bill Kornfeld. <b>The Use of Parallelism to Implement a Heuristic Search</b> IJCAI 1981.</li>
+<li>Bill Kornfeld. <b>Parallelism in Problem Solving</b> MIT EECS Doctoral Dissertation. August 1981.</li>
+<li>Bill Kornfeld. <b>Combinatorially Implosive Algorithms</b> CACM. 1982</li>
+<li>Carl Hewitt. <b>The Challenge of Open Systems</b> Byte Magazine. April 1985.</li>
+<li>Robert Kowalski. <b>The limitation of logic</b> Proceedings of the 1986 ACM fourteenth annual conference on Computer science.</li>
+<li>Ehud Shapiro (Editor). <b>Concurrent Prolog</b> MIT Press. 1987.</li>
+<li>Robert Kowalski. <b>The Early Years of Logic Programming</b> CACM. January 1988.</li>
+<li>Ehud Shapiro. <b>The family of concurrent logic programming languages</b> ACM Computing Surveys. September 1989.</li>
+<li>Carl Hewitt and Gul Agha. <b>Guarded Horn clause languages: are they deductive and Logical?</b> International Conference on Fifth Generation Computer Systems, Ohmsha 1988. Tokyo. Also in <i>Artificial Intelligence at MIT</i>, Vol. 2. MIT Press 1991.</li>
+<li>Shunichi Uchida and Kazuhiro Fuchi <b>Proceedings of the FGCS Project Evaluation Workshop</b> Institute for New Generation Computer Technology (ICOT). 1992.</li>
+<li>Carl Hewitt. <b>The repeated demise of logic programming and why it will be reincarnated</b> What Went Wrong and Why: Lessons from AI Research and Applications. Technical Report SS-06-08. AAAI Press. March 2006.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://vl.fmnet.info/logic-prog/"><i>Logic Programming</i> Virtual Library entry</a></li>
+<li><a  class="external text" title="http://liinwww.ira.uka.de/bibliography/LogicProgramming/">Bibliographies on Logic Programming</a></li>
+<li><a  class="external text" title="http://www.cs.kuleuven.be/~dtai/projects/ALP/">Association for Logic Programming (ALP)</a></li>
+<li><a  class="external text" title="http://www.cs.kuleuven.be/~dtai/projects/ALP/TPLP/">Theory and Practice of Logic Programming</a> journal</li>
+<li><a  class="external text" title="http://www.mozart-oz.org/documentation/tutorial/node12.html">Logic programming in</a> <a href="/wiki/Oz_programming_language.html" title="Oz programming language">Oz</a></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:17927-0!1!0!default!!en!2 and timestamp 20060906011305 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:Logic programming">Logic programming</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Logic_programming.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-bs"><a >Bosanski</a></li>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-io"><a >Ido</a></li>
+				<li class="interwiki-nl"><a >Nederlands</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+				<li class="interwiki-fi"><a >Suomi</a></li>
+				<li class="interwiki-th"><a >ไทย</a></li>
+				<li class="interwiki-zh"><a >中文</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 14:42, 19 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv109 in 0.080 secs. --></body></html>

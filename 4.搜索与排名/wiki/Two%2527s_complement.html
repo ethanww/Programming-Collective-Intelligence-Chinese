@@ -1,0 +1,622 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Two's complement,Booth's multiplication algorithm,1972,Arabic Numerals,Arithmetic overflow,Bill Gosper,Binary numeral system,Bit,Bitwise operation,Carry,Computer science" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Two's complement - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Two\'s_complement";
+			var wgTitle = "Two\'s complement";
+			var wgArticleId = 307145;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Two's complement</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p><b>Two's <a href="/wiki/Method_of_complements.html" title="Method of complements">complement</a></b> is the most popular <a href="/wiki/Signed_number_representations.html" title="Signed number representations">method of representing signed integers</a> in <a href="/wiki/Computer_science.html" title="Computer science">computer science</a>. It is also an operation of negation (converting positive to negative numbers or vice versa) in computers which represent negative numbers using two's complement. Its use is ubiquitous today because it doesn't require the addition and subtraction circuitry to examine the signs of the operands to determine whether to add or subtract, making it both simpler to implement and capable of easily handling higher precision arithmetic. Also, 0 has only a single representation, obviating the subtleties associated with <a href="/wiki/Negative_zero.html" title="Negative zero">negative zero</a> (which is a problem in <a href="/wiki/One%27s_complement.html" title="One's complement">one's complement</a>).</p>
+<div class="thumb tright" style="width:20em;">
+<table style="width:100%; margin-bottom:1em;" cellspacing="0">
+<tr>
+<td align="center" style="background-color:#ddeeff;">sign bit</td>
+<td align="center" colspan="9"></td>
+</tr>
+<tr>
+<td align="center" style="width:2em; background-color:#ddeeff; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa; border-left:1px solid #aaaaaa;"><b>0</b></td>
+<td align="center" style="width:2em; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa;"><b>1</b></td>
+<td align="center" style="width:2em; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa;"><b>1</b></td>
+<td align="center" style="width:2em; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa;"><b>1</b></td>
+<td align="center" style="width:2em; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa;"><b>1</b></td>
+<td align="center" style="width:2em; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa;"><b>1</b></td>
+<td align="center" style="width:2em; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa;"><b>1</b></td>
+<td align="center" style="width:2em; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa; border-right:1px solid #aaaaaa;"><b>1</b></td>
+<td align="center" style="width:2em;"><b>=</b></td>
+<td align="right" style="width:2em;"><b>127</b></td>
+</tr>
+<tr>
+<td align="center" style="width:2em; background-color:#ddeeff; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa; border-left:1px solid #aaaaaa;"><b>0</b></td>
+<td align="center" style="width:2em; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa;"><b>0</b></td>
+<td align="center" style="width:2em; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa;"><b>0</b></td>
+<td align="center" style="width:2em; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa;"><b>0</b></td>
+<td align="center" style="width:2em; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa;"><b>0</b></td>
+<td align="center" style="width:2em; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa;"><b>0</b></td>
+<td align="center" style="width:2em; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa;"><b>1</b></td>
+<td align="center" style="width:2em; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa; border-right:1px solid #aaaaaa;"><b>0</b></td>
+<td align="center" style="width:2em;"><b>=</b></td>
+<td align="right" style="width:2em;"><b>2</b></td>
+</tr>
+<tr>
+<td align="center" style="width:2em; background-color:#ddeeff; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa; border-left:1px solid #aaaaaa;"><b>0</b></td>
+<td align="center" style="width:2em; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa;"><b>0</b></td>
+<td align="center" style="width:2em; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa;"><b>0</b></td>
+<td align="center" style="width:2em; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa;"><b>0</b></td>
+<td align="center" style="width:2em; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa;"><b>0</b></td>
+<td align="center" style="width:2em; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa;"><b>0</b></td>
+<td align="center" style="width:2em; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa;"><b>0</b></td>
+<td align="center" style="width:2em; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa; border-right:1px solid #aaaaaa;"><b>1</b></td>
+<td align="center" style="width:2em;"><b>=</b></td>
+<td align="right" style="width:2em;"><b>1</b></td>
+</tr>
+<tr>
+<td align="center" style="width:2em; background-color:#ddeeff; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa; border-left:1px solid #aaaaaa;"><b>0</b></td>
+<td align="center" style="width:2em; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa;"><b>0</b></td>
+<td align="center" style="width:2em; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa;"><b>0</b></td>
+<td align="center" style="width:2em; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa;"><b>0</b></td>
+<td align="center" style="width:2em; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa;"><b>0</b></td>
+<td align="center" style="width:2em; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa;"><b>0</b></td>
+<td align="center" style="width:2em; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa;"><b>0</b></td>
+<td align="center" style="width:2em; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa; border-right:1px solid #aaaaaa;"><b>0</b></td>
+<td align="center" style="width:2em;"><b>=</b></td>
+<td align="right" style="width:2em;"><b>0</b></td>
+</tr>
+<tr>
+<td align="center" style="width:2em; background-color:#ddeeff; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa; border-left:1px solid #aaaaaa;"><b>1</b></td>
+<td align="center" style="width:2em; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa;"><b>1</b></td>
+<td align="center" style="width:2em; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa;"><b>1</b></td>
+<td align="center" style="width:2em; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa;"><b>1</b></td>
+<td align="center" style="width:2em; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa;"><b>1</b></td>
+<td align="center" style="width:2em; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa;"><b>1</b></td>
+<td align="center" style="width:2em; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa;"><b>1</b></td>
+<td align="center" style="width:2em; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa; border-right:1px solid #aaaaaa;"><b>1</b></td>
+<td align="center" style="width:2em;"><b>=</b></td>
+<td align="right" style="width:2em;"><b>−1</b></td>
+</tr>
+<tr>
+<td align="center" style="width:2em; background-color:#ddeeff; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa; border-left:1px solid #aaaaaa;"><b>1</b></td>
+<td align="center" style="width:2em; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa;"><b>1</b></td>
+<td align="center" style="width:2em; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa;"><b>1</b></td>
+<td align="center" style="width:2em; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa;"><b>1</b></td>
+<td align="center" style="width:2em; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa;"><b>1</b></td>
+<td align="center" style="width:2em; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa;"><b>1</b></td>
+<td align="center" style="width:2em; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa;"><b>1</b></td>
+<td align="center" style="width:2em; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa; border-right:1px solid #aaaaaa;"><b>0</b></td>
+<td align="center" style="width:2em;"><b>=</b></td>
+<td align="right" style="width:2em;"><b>−2</b></td>
+</tr>
+<tr>
+<td align="center" style="width:2em; background-color:#ddeeff; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa; border-left:1px solid #aaaaaa;"><b>1</b></td>
+<td align="center" style="width:2em; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa;"><b>0</b></td>
+<td align="center" style="width:2em; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa;"><b>0</b></td>
+<td align="center" style="width:2em; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa;"><b>0</b></td>
+<td align="center" style="width:2em; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa;"><b>0</b></td>
+<td align="center" style="width:2em; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa;"><b>0</b></td>
+<td align="center" style="width:2em; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa;"><b>0</b></td>
+<td align="center" style="width:2em; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa; border-right:1px solid #aaaaaa;"><b>1</b></td>
+<td align="center" style="width:2em;"><b>=</b></td>
+<td align="right" style="width:2em;"><b>−127</b></td>
+</tr>
+<tr>
+<td align="center" style="width:2em; background-color:#ddeeff; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa; border-left:1px solid #aaaaaa;"><b>1</b></td>
+<td align="center" style="width:2em; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa;"><b>0</b></td>
+<td align="center" style="width:2em; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa;"><b>0</b></td>
+<td align="center" style="width:2em; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa;"><b>0</b></td>
+<td align="center" style="width:2em; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa;"><b>0</b></td>
+<td align="center" style="width:2em; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa;"><b>0</b></td>
+<td align="center" style="width:2em; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa;"><b>0</b></td>
+<td align="center" style="width:2em; border-top:1px solid #aaaaaa; border-bottom:1px solid #aaaaaa; border-right:1px solid #aaaaaa;"><b>0</b></td>
+<td align="center" style="width:2em;"><b>=</b></td>
+<td align="right" style="width:2em;"><b>−128</b></td>
+</tr>
+</table>
+<div class="thumbcaption" style="font-size: 90%;">8-bit two's complement integers</div>
+</div>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Explanation</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">1.1</span> <span class="toctext">Calculating two's complement</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.2</span> <span class="toctext">Sign extension</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.3</span> <span class="toctext">The weird number</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.4</span> <span class="toctext">Why it works</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Arithmetic operations</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">2.1</span> <span class="toctext">Addition</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.2</span> <span class="toctext">Subtraction</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.3</span> <span class="toctext">Multiplication</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Two's complement and universal algebra</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">References</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Explanation">edit</a>]</div>
+<p><a name="Explanation" id="Explanation"></a></p>
+<h2>Explanation</h2>
+<div class="thumb tright" style="width:14em;">
+<table class="wikitable" style="width:100%;">
+<tr>
+<th>Two's complement</th>
+<th>Decimal</th>
+</tr>
+<tr>
+<td align="center">0001</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">0000</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">1111</td>
+<td align="center">-1</td>
+</tr>
+<tr>
+<td align="center">1110</td>
+<td align="center">-2</td>
+</tr>
+<tr>
+<td align="center">1101</td>
+<td align="center">-3</td>
+</tr>
+<tr>
+<td align="center">1100</td>
+<td align="center">-4</td>
+</tr>
+</table>
+<div class="thumbcaption" style="font-size: 90%;">Two's complement using a 4-bit integer</div>
+</div>
+<p>Put simply, two's complement is a way of writing integers. It is accomplished by counting backwards and wrapping around.</p>
+<p>The boundary between positive and negative numbers may theoretically be anywhere (as long as you check for it). For convenience, all numbers whose left-most bit is 1 are considered negative. The largest number representable this way with 4 bits is 0111 (7) and the lowest number is 1000 (-8).</p>
+<p>To understand its usefulness for computers, consider the following. Adding 0011 (3) to 1111 (-1) results in the seemingly-incorrect 10010. However, ignoring the 5th bit (from the right), as we did when we counted backwards, gives us the actual answer, 0010 (2). Ignoring the 5th bit will work in all cases (although you have to do the aforementioned overflow checks when, eg, 0100 is added to 0100). Thus, a circuit designed for addition can handle negative operands without also including a circuit capable of subtraction (and a circuit which switches between the two based on the sign). Moreover, by this method an addition circuit can even perform subtractions if you convert the necessary operand into the "counting-backwards" form. The procedure for doing so is called taking the two's complement (which, admittedly, requires either an extra cycle or its own adder circuit). Lastly, a very important reason for utilizing two's complement representation is that it would be considerably more complex to create a subtraction circuit which would take 0001 - 0010 and give 1001 (ie -001) than it is to make one that returns 1111. (Doing the former means you have to check the sign, then check if there will be a sign reversal, then possibly rearrange the numbers, and finally subtract. Doing the latter means you simply subtract, pretending there's an extra left-most bit hiding somewhere.)</p>
+<p>In an <i>n</i>-bit <a href="/wiki/Binary_numeral_system.html" title="Binary numeral system">binary number</a>, the <a href="/wiki/Most_significant_bit.html" title="Most significant bit">most significant bit</a> is usually the 2<sup><i>n</i>−1</sup>s place. But in the two's complement representation, its place value is negated; it becomes the −2<sup><i>n</i>−1</sup>s place and is called the <a href="/wiki/Sign_bit.html" title="Sign bit">sign bit</a>.</p>
+<p>If the sign bit is 0, the value is positive; if it is 1, the value is negative. To negate a two's complement number, invert all the bits then add 1 to the result.</p>
+<p>If all bits are 1, the value is −1. If the sign bit is 1 but the rest of the bits are 0, the value is the most negative number, −2<sup><i>n</i>−1</sup> for an <i>n</i>-bit number. The absolute value of the most negative number cannot be represented with the same number of bits, because it is greater than the most positive number that two's complement number by exactly 1.</p>
+<p>A two's complement 8-bit binary numeral can represent every integer in the range −128 to +127. If the sign bit is 0, then the largest value that can be stored in the remaining seven bits is 2<sup>7</sup>&#160;−&#160;1, or 127.</p>
+<p>Using two's complement to represent negative numbers allows only one representation of zero, and to have effective addition and subtraction while still having the most significant bit as the sign bit.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Calculating two's complement">edit</a>]</div>
+<p><a name="Calculating_two.27s_complement" id="Calculating_two.27s_complement"></a></p>
+<h3>Calculating two's complement</h3>
+<p>In finding the two's complement of a binary number, the <a href="/wiki/Bit.html" title="Bit">bits</a> are inverted, or "flipped", by using the <a href="/wiki/Bitwise_operation.html" title="Bitwise operation">bitwise NOT</a> operation; the value of 1 is then added to the resulting value. Bit overflow is ignored, which is the normal case with zero.</p>
+<p>For example, beginning with the signed 8-bit binary representation of the decimal value 5:</p>
+<dl>
+<dd>0000 0101 (5)</dd>
+</dl>
+<p>The first bit is 0, so the value represented is indeed a positive 5. To convert to −5 in two's complement notation, the bits are inverted; 0 becomes 1, and 1 becomes 0:</p>
+<dl>
+<dd>1111 1010</dd>
+</dl>
+<p>At this point, the numeral is the <a href="/wiki/Signed_number_representations.html" title="Signed number representations">ones' complement</a> of the decimal value 5. To obtain the two's complement, 1 is added to the result, giving:</p>
+<dl>
+<dd>1111 1011 (-5)</dd>
+</dl>
+<p>The result is a signed binary numeral representing the decimal value −5 in two's complement form. The most significant bit is 1, so the value is negative.</p>
+<p>The two's complement of a negative number is the corresponding positive value. For example, inverting the bits of −5 (above) gives:</p>
+<dl>
+<dd>0000 0100</dd>
+</dl>
+<p>And adding one gives the final value:</p>
+<dl>
+<dd>0000 0101 (5)</dd>
+</dl>
+<p>The decimal value of a two's complement binary number is calculated by taking the value of the most significant bit, where the value is negative when the bit is one, and adding to it the values for each power of two where there is a one. Example:</p>
+<dl>
+<dd>1111 1011 (−5) = −128 + 64 + 32 + 16 + 8 + 0 + 2 + 1 = (−2^7 + 2^6 + ...) = −5</dd>
+</dl>
+<p>Note that the two's complement of zero is zero: inverting gives all ones, and adding one changes the ones back to zeros (the overflow is ignored). Also the two's complement of the most negative number representable (e.g. a one as the sign bit and all other bits zero) is itself. This happens because the most negative number's "positive counterpart" is occupied by "0", which gets classed as a positive number in this argument. Hence, there appears to be an 'extra' negative number.</p>
+<p>A more formal definition of two's complement negative number (denoted by <i>N*</i> in this example) is derived from the equation <span class="texhtml"><i>N</i> * = 2<sup><i>n</i></sup> − <i>N</i></span>, where <i>N</i> is the corresponding positive number and <i>n</i> is the number of bits in the representation.</p>
+<p>For example, to find the 4 bit representation of -5:</p>
+<dl>
+<dd><i>N</i> (base 10) = 5, therefore <i>N</i> (base 2) = 0101</dd>
+<dd><i>n</i> = 4</dd>
+</dl>
+<p>Hence:</p>
+<dl>
+<dd><span class="texhtml"><i>N</i> * = 2<sup><i>n</i></sup> − <i>N</i> = [2<sup>4</sup>]<i>b</i><i>a</i><i>s</i><i>e</i>2 − 0101 = 10000 − 0101 = 1011</span></dd>
+</dl>
+<p>N.B. You can also think of the equation as being entirely in base 10, converting to base 2 at the end, e.g.:</p>
+<dl>
+<dd><span class="texhtml"><i>N</i> * = 2<sup><i>n</i></sup> − <i>N</i> = 2<sup>4</sup> − 5 = [11]<i>b</i><i>a</i><i>s</i><i>e</i>10 = [1011]<i>b</i><i>a</i><i>s</i><i>e</i>2</span></dd>
+</dl>
+<p>Obviously, "<i>N*</i> ... = 11" isn't strictly true but as long as you interpret the equals sign as "is represented by", it is perfectly acceptable to think of two's complements in this fashion.</p>
+<p>Nevertheless, a shortcut exists when converting a binary number in two's complement form.</p>
+<dl>
+<dd>0011 1100</dd>
+</dl>
+<p>Converting from right to left, copy all the zeros until the first 1 is reached. Copy down that one, and then flip the remaining bits. This will allow you to convert to two's complement without first converting to one's complement and adding 1 to the result. The two's complemented form of the number above in this case is:</p>
+<dl>
+<dd>1100 0100</dd>
+</dl>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Sign extension">edit</a>]</div>
+<p><a name="Sign_extension" id="Sign_extension"></a></p>
+<h3>Sign extension</h3>
+<div class="thumb tright" style="width:22em;">
+<table class="wikitable" style="width:100%;">
+<tr>
+<th>Decimal</th>
+<th>4-bit two's complement</th>
+<th>8-bit two's complement</th>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center">0101</td>
+<td align="center">0000 0101</td>
+</tr>
+<tr>
+<td align="center">-3</td>
+<td align="center">1101</td>
+<td align="center">1111 1101</td>
+</tr>
+</table>
+<div class="thumbcaption" style="font-size: 90%;">sign-bit repetition in 4 and 8-bit integers</div>
+</div>
+<p>When turning a two's complement number with a certain number of bits into one with more bits (e.g., when copying from a 1 byte variable to a two byte variable), the sign bit must be repeated in all the extra bits.</p>
+<p>Some processors have instructions to do this in a single instruction. On other processors a conditional must be used followed with code to set the relevant bits or bytes.</p>
+<p>Similarly, when a two's complement number is shifted to the right, the sign bit must be maintained. However when shifted to the left, a 0 is shifted in. These rules preserve the common semantics that left shifts multiply the number by two and right shifts divide the number by two.</p>
+<p>Both shifting and doubling the precision are important for some multiplication algorithms. Note that unlike addition and subtraction, precision extension and right shifting are done differently for signed vs unsigned numbers.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: The weird number">edit</a>]</div>
+<p><a name="The_weird_number" id="The_weird_number"></a></p>
+<h3>The weird number</h3>
+<p>With only one exception, when we start with any number in two's complement representation, if we flip all the bits and add 1, we get the two's complement representation of the negative of that number. Negative 12 becomes positive 12, positive 5 becomes negative 5, zero becomes zero, etc.</p>
+<div class="thumb tright" style="width:18em;">
+<table class="wikitable" style="width:100%;">
+<tr>
+<td align="center">−128</td>
+<td align="center">1000 0000</td>
+</tr>
+<tr>
+<td align="center">invert bits</td>
+<td align="center">0111 1111</td>
+</tr>
+<tr>
+<td align="center">add one</td>
+<td align="center">1000 0000</td>
+</tr>
+</table>
+<div class="thumbcaption" style="font-size: 90%;">The two's complement of -128 results in the same 8-bit binary number.</div>
+</div>
+<p>The most negative number in two's complement is sometimes called "the weird number" because it is the only exception.</p>
+<p>The two's complement of the minimum number in the range will not have the desired effect of negating the number. For example, the two's complement of -128 results in the same binary number. This is because a positive value of 128 cannot be represented with an 8-bit signed binary numeral. Note that this is detected as an overflow condition since there was a carry into but not out of the sign bit.</p>
+<p>Although the number is weird, it is a valid number. All arithmetic operations work with it both as an operand and (unless there was an overflow) a result.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Why it works">edit</a>]</div>
+<p><a name="Why_it_works" id="Why_it_works"></a></p>
+<h3>Why it works</h3>
+<p>The 2<sup><i>n</i></sup> possible values of n bits actually form a <a href="/wiki/Ring_%28mathematics%29.html" title="Ring (mathematics)">ring</a> of equivalence classes, namely the integers <a href="/wiki/Modular_arithmetic.html" title="Modular arithmetic">modulo</a> 2<sup><i>n</i></sup>, <b>Z/(2<sup><i>n</i></sup>)Z</b>. Each class represents a set {j&#160;+&#160;k·2<sup><i>n</i></sup> | <i>k</i> is an integer} for some integer j, 0 ≤ j ≤ 2<sup><i>n</i></sup>&#160;−&#160;1. There are 2<sup><i>n</i></sup> such sets, and addition and multiplication are <a href="/wiki/Well-defined.html" title="Well-defined">well-defined</a> on them.</p>
+<p>If the classes are taken to represent the numbers 0 to 2<sup><i>n</i></sup>&#160;−&#160;1, and overflow ignored, then these are the unsigned integers. But each of these numbers is equivalent to itself minus 2<sup><i>n</i></sup>. So the classes could be understood to represent −2<sup><i>n</i>−1</sup> to 2<sup><i>n</i>−1</sup>&#160;−&#160;1, by subtracting 2<sup><i>n</i></sup> from half of them (specifically [2<sup><i>n</i>−1</sup>, 2<sup><i>n</i></sup>−1]).</p>
+<p>For example, with eight bits, the unsigned bytes are 0 to 255. Subtracting 256 from the top half (128 to 255) yields the signed bytes −128 to 127.</p>
+<p>The relationship to two's complement is realised by noting that 256 = 255&#160;+&#160;1, and (255&#160;−&#160;<i>x</i>) is the <a href="/wiki/Signed_number_representations.html" title="Signed number representations">ones' complement</a> of <i>x</i>.</p>
+<div class="thumb tright" style="width:14em;">
+<table class="wikitable" style="width:100%;">
+<tr>
+<th>Decimal</th>
+<th>Two's complement</th>
+</tr>
+<tr>
+<td align="center">127</td>
+<td align="center">0111 1111</td>
+</tr>
+<tr>
+<td align="center">64</td>
+<td align="center">0100 0000</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">0000 0001</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">0000 0000</td>
+</tr>
+<tr>
+<td align="center">-1</td>
+<td align="center">1111 1111</td>
+</tr>
+<tr>
+<td align="center">-64</td>
+<td align="center">1100 0000</td>
+</tr>
+<tr>
+<td align="center">-127</td>
+<td align="center">1000 0001</td>
+</tr>
+<tr>
+<td align="center">-128</td>
+<td align="center">1000 0000</td>
+</tr>
+</table>
+<div class="thumbcaption" style="font-size: 90%;">Some special numbers to note</div>
+</div>
+<p><b>Example</b></p>
+<p>&#160;−95 modulo 256 is equivalent to 161 since</p>
+<dl>
+<dd>−95 + 256</dd>
+<dd>= −95 + 255 + 1</dd>
+<dd>= 255 − 95 + 1</dd>
+<dd>= 160 + 1</dd>
+<dd>= 161</dd>
+</dl>
+<pre>
+  1111 1111                       255 
+− 0101 1111                     −  95   
+===========                     =====
+  1010 0000  (ones' complement)   160
++         1                     +   1
+===========                     =====
+  1010 0001  (two's complement)   161
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Arithmetic operations">edit</a>]</div>
+<p><a name="Arithmetic_operations" id="Arithmetic_operations"></a></p>
+<h2>Arithmetic operations</h2>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Addition">edit</a>]</div>
+<p><a name="Addition" id="Addition"></a></p>
+<h3>Addition</h3>
+<p>Adding two's complement numbers requires no special processing if the operands have opposite signs: the sign of the result is determined automatically. For example, adding 15 and -5:</p>
+<pre>
+ 11111 111   (carry)
+  0000 1111  (15)
++ 1111 1011  (-5)
+
+  0000 1010  (10)
+</pre>
+<p>This process depends upon restricting to 8 bits of precision; a carry to the (nonexistent) 9th most significant bit is ignored, resulting in the arithmetically correct result of 10.</p>
+<p>The last two bits of the <a href="/wiki/Carry.html" title="Carry">carry</a> row (reading right-to-left) contain vital information: whether the calculation resulted in an <a href="/wiki/Arithmetic_overflow.html" title="Arithmetic overflow">arithmetic overflow</a>, a number too large for the binary system to represent (in this case greater than 8 bits). An overflow condition exists when a carry (an extra 1) is generated into but not out of the far left sign bit, or out of but not into the sign bit. As mentioned above, the sign bit is the leftmost bit of the result.</p>
+<p>In other terms, if the last two carry bits (the ones on the far left of the top row in these examples) are both 1's or 0's, the result is valid; if the last two carry bits are "1 0" or "0 1", a sign overflow has occurred. Conveniently, an <a href="/wiki/XOR.html" title="XOR">XOR</a> operation on these two bits can quickly determine if an overflow condition exists. As an example, consider the 4-bit addition of 7 and 3:</p>
+<pre>
+ 0111   (carry)
+  0111  (7)
++ 0011  (3)
+=============
+  1010  (−6)  invalid!
+</pre>
+<p>In this case, the far left two (MSB) carry bits are "01", which means there was a two's complement addition overflow. That is, <i>ten</i> is outside the permitted range of −8 to 7.</p>
+<p>This process depends upon restricting to 8 bits of precision; a carry to the (nonexistent) 9th most significant bit is ignored, resulting in the arithmetically correct result of 10.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Subtraction">edit</a>]</div>
+<p><a name="Subtraction" id="Subtraction"></a></p>
+<h3>Subtraction</h3>
+<p>Computers usually use the <a href="/wiki/Method_of_complements.html" title="Method of complements">method of complements</a> to implement subtraction. But although using complements for subtraction is related to using complements for representing signed numbers, they are independent; direct subtraction works with two's complement numbers as well. Like addition, the advantage of using two's complement is the elimination of examining the signs of the operands to determine if addition or subtraction is needed. For example, subtracting -5 from 15 is really adding 5 to 15, but this is hidden by the two's complement representation:</p>
+<pre>
+ 11110 000   (borrow)
+  0000 1111  (15)
+− 1111 1011  (−5)
+===========
+  0001 0100  (20)
+</pre>
+<p>Overflow is detected the same way as for addition, by examining the two leftmost (most significant) bits of the borrows; overflow occurred if they are different.</p>
+<p>Another example is a subtraction operation where the result is negative: 15 − 35 = −20:</p>
+<pre>
+ 11100 000   (borrow)
+  0000 1111  (15)
+− 0010 0011  (35)
+===========
+  1110 1100  (−20)
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Multiplication">edit</a>]</div>
+<p><a name="Multiplication" id="Multiplication"></a></p>
+<h3>Multiplication</h3>
+<p>The product of two <i>n</i>-bit numbers can potentially have 2<i>n</i> bits. If the precision of the two two's complement operands is doubled before the multiplication, direct multiplication (discarding any excess bits beyond that precision) will provide the correct result. For example, take 5   ×   −6 = −30. First, the precision is extended from 4 bits to 8. Then the numbers are multiplied, discarding the bits beyond 8 (shown by 'x'):</p>
+<pre>
+  00000101  (5)
+× 11111010  (−6)
+ =========
+         0
+      101
+       0
+    101
+   101
+  101
+ x01
+xx1
+=========
+xx11100010  (−30)
+</pre>
+<p>This is very inefficient; by doubling the precision ahead of time, all additions must be double-precision and at least twice as many partial products are needed than for the more efficient algorithms actually implemented in computers. Some multiplication algorithms are designed for two's complement, notably <a href="/wiki/Booth%27s_multiplication_algorithm.html" title="Booth's multiplication algorithm">Booth's algorithm</a>. Methods for multiplying sign-magnitude numbers don't work with two's complement numbers without adaptation. There isn't usually a problem when the multiplicand (the one being repeatedly added to form the product) is negative; the issue is setting the initial bits of the product correctly when the multiplier is negative. Two methods for adapting algorithms to handle two's complement numbers are common:</p>
+<ul>
+<li>First check to see if the multiplier is negative. If so, negate (i.e., take the two's complement of) both operands before multiplying. The multiplier will then be positive so the algorithm will work. And since both operands are negated, the result will still have the correct sign.</li>
+</ul>
+<ul>
+<li>Subtract the partial product resulting from the sign bit instead of adding it like the other partial products.</li>
+</ul>
+<p>As an example of the second method, take the common add-and-shift algorithm for multiplication. Instead of shifting partial products to the left as is done with pencil and paper, the accumulated product is shifted right, into a second register that will eventually hold the least significant half of the product. Since the least significant bits are not changed once they are calculated, the additions can be single precision, accumulating in the register that will eventually hold the most significant half of the product. In the following example, again multiplying 5 by −6, the two registers are separated by "|":</p>
+<pre>
+ 0101  (5)
+×1010 (−6)
+ ====|====
+ 0000|0000  (first partial product (rightmost bit is 0))
+ 0000|0000  (shift right)
+ 0101|0000  (add second partial product (next bit is 1))
+ 0010|1000  (shift right)
+ 0010|1000  (add third partial product: 0 so no change)
+ 0001|0100  (shift right)
+ 1100|0100  (<i>subtract</i> last partial product since it's from sign bit)
+ 1110|0010  (shift right, preserving sign bit, giving the final answer, −30)
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Two's complement and universal algebra">edit</a>]</div>
+<p><a name="Two.27s_complement_and_universal_algebra" id="Two.27s_complement_and_universal_algebra"></a></p>
+<h2>Two's complement and universal algebra</h2>
+<p>In a famous <a href="/wiki/1972.html" title="1972">1972</a> <a href="/wiki/HAKMEM.html" title="HAKMEM">HAKMEM</a> from the <a href="/wiki/MIT_AI_Lab.html" title="MIT AI Lab">MIT AI Lab</a>, <a href="/wiki/Bill_Gosper.html" title="Bill Gosper">Bill Gosper</a> noted that whether or not a machine's internal representation was two's complement could be determined by summing the successive powers of two. In a flight of fancy, he noted that the result of doing this algebraically indicated that "algebra is run on a machine (the universe) which is twos-complement." <sup id="_ref-0" class="reference"><a  title="">[1]</a></sup></p>
+<p>However, his reasoning is purely humor; Gosper uses a <a href="/wiki/False_proof.html" title="False proof">false proof</a> to get his result. His flawed step is <span class="texhtml">2<i>X</i> = <i>X</i> − 1</span> which isn't true at all but looks convincing when in the notation <span class="texhtml">...111 = ...110 + 1</span>, implying an infinite and therefore equivalent string of ones. In reality the sum of powers of two would never repeat and you would run out of paper doing the calculations. By Gosper's logic, this indicates String or BigNum representation, which is precisely true since we write numbers as strings of <a href="/wiki/Arabic_Numerals.html" title="Arabic Numerals">Arabic Numerals</a>. Neither Algebra nor the Universe have an intrinsic numeric representation and so Gosper's Method does not apply there, but interestingly, it does correctly detect the numeric representations of human calculators as well as electronic ones.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Method_of_complements.html" title="Method of complements">Method of complements</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<ol class="references">
+<li id="_note-0"><b><a  title="">^</a></b> <a  class="external free" title="http://www.inwap.com/pdp10/hbaker/hakmem/hacks.html#item154">http://www.inwap.com/pdp10/hbaker/hakmem/hacks.html#item154</a></li>
+</ol>
+<ul>
+<li>Ivan Flores, <i>The Logic of Computer Arithmetic</i>, Prentice-Hall (1963)</li>
+<li>Israel Koren, <i>Computer Arithmetic Algorithms</i>, A.K. Peters (2002), <a  class="internal">ISBN 1-56881-160-8</a></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:307145-0!1!0!default!!en!2 and timestamp 20060907090828 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:Computer arithmetic">Computer arithmetic</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Two%27s_complement.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-he"><a >עברית</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-fi"><a >Suomi</a></li>
+				<li class="interwiki-vi"><a >Tiếng Việt</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 08:32, 7 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv39 in 0.101 secs. --></body></html>

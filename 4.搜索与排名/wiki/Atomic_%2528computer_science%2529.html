@@ -1,0 +1,248 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Atomic operation,32-bit,64-bit,Atomicity (disambiguation),Compare-and-swap,Critical section,Debug,Fail,Flow of control,Garbage (computer science),Interrupt" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Atomic operation - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Atomic_operation";
+			var wgTitle = "Atomic operation";
+			var wgArticleId = 2114560;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Atomic operation</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub">(Redirected from <a  title="Atomic (computer science)">Atomic (computer science)</a>)</div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<div class="messagebox merge">
+<div class="floatleft"><span><a  class="image" title=""><img src="http://upload.wikimedia.org/wikipedia/commons/6/68/Merge-arrow.gif" alt="" width="50" height="20" longdesc="/wiki/Image:Merge-arrow.gif" /></a></span></div>
+It has been suggested that this article or section be <a  title="Wikipedia:Merging and moving pages">merged</a> into <i><a href="/wiki/Linearizability.html" title="Linearizability">Linearizability</a></i>. (<a  title="Talk:Linearizability">Discuss</a>)</div>
+<dl>
+<dd>
+<div class="dablink"><i>See also <a href="/wiki/Atomicity_%28disambiguation%29.html" title="Atomicity (disambiguation)">Atomicity (disambiguation)</a>.</i></div>
+</dd>
+</dl>
+<p>An <b>atomic operation</b> in computer science refers to a set of <a href="/wiki/Operation.html" title="Operation">operations</a> that can be combined so that they appear to the rest of the system to be a single operation.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Conditions</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Example</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">2.1</span> <span class="toctext">One process</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.2</span> <span class="toctext">Two processes</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Locking</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Conditions">edit</a>]</div>
+<p><a name="Conditions" id="Conditions"></a></p>
+<h2>Conditions</h2>
+<p>To accomplish this, two conditions must be met:</p>
+<ol>
+<li>Until the entire set of operations completes, no other <a href="/wiki/Process_%28computing%29.html" title="Process (computing)">process</a> can know about the changes being made; and</li>
+<li>If any of the operations <a href="/wiki/Fail.html" title="Fail">fail</a> then the entire set of operations fails, and the <a href="/wiki/State.html" title="State">state</a> of the system is restored to the state it was in before any of the operations began.</li>
+</ol>
+<p>To the rest of the system, it appears that the set of operations either succeeds or fails all at once. No in-between state is accessible. This is an <b>atomic operation</b>.</p>
+<p>Even without the complications of <a href="/wiki/Multiple_processing_units.html" title="Multiple processing units">multiple processing units</a>, this can be <a href="/wiki/Non-trivial.html" title="Non-trivial">non-trivial</a> to implement. As long as there is the possibility of a change in the <a href="/wiki/Flow_of_control.html" title="Flow of control">flow of control</a>, without atomicity there is the possibility that the system can enter an <a href="/wiki/Invalid_state.html" title="Invalid state">invalid state</a> (invalid as defined by the program, a so-called <a href="/wiki/Invariant_%28computer_science%29.html" title="Invariant (computer science)">invariant</a>).</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Example">edit</a>]</div>
+<p><a name="Example" id="Example"></a></p>
+<h2>Example</h2>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: One process">edit</a>]</div>
+<p><a name="One_process" id="One_process"></a></p>
+<h3>One process</h3>
+<p>For example, imagine a single process is running on a computer incrementing a <a href="/wiki/Memory_location.html" title="Memory location">memory location</a>. To increment that memory location:</p>
+<dl>
+<dd>
+<ol>
+<li>the process reads the value in the memory location;</li>
+<li>the process adds one to the value;</li>
+<li>the process writes the new value back into the memory location.</li>
+</ol>
+</dd>
+</dl>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Two processes">edit</a>]</div>
+<p><a name="Two_processes" id="Two_processes"></a></p>
+<h3>Two processes</h3>
+<p>Now, imagine 2 processes are running incrementing a single, shared memory location:</p>
+<ol>
+<li>the first process reads the value in memory location;</li>
+<li>the first process adds one to the value;</li>
+</ol>
+<p>but before it can write the new value back to the memory location it is suspended, and the second process is allowed to run:</p>
+<ol>
+<li>the second process reads the value in memory location, the <i>same</i> value that the first process read;</li>
+<li>the second process adds one to the value;</li>
+<li>the second process writes the new value into the memory location.</li>
+</ol>
+<p>The second process is suspended and the first process allowed to run again:</p>
+<ol>
+<li>the first process writes a now-wrong value into the memory location, unaware that the other process has already updated the value in the memory location.</li>
+</ol>
+<p>This is a trivial example. In a real system, the operations can be more complex and the errors introduced extremely subtle. For example, reading a <a href="/wiki/64-bit.html" title="64-bit">64-bit</a> value from memory may actually be implemented as 2 <a href="/wiki/Sequence.html" title="Sequence">sequential</a> reads of 2 <a href="/wiki/32-bit.html" title="32-bit">32-bit</a> memory locations. If a process has only read the first 32-bits, and before it reads the second 32-bits the value in memory gets changed, it will have neither the original value nor the new value but a mixed-up <a href="/wiki/Garbage_%28computer_science%29.html" title="Garbage (computer science)">garbage</a> value.</p>
+<p>Furthermore, the specific order in which the processes run can change the results, making such an error difficult to detect and <a href="/wiki/Debug.html" title="Debug">debug</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Locking">edit</a>]</div>
+<p><a name="Locking" id="Locking"></a></p>
+<h2>Locking</h2>
+<p>A clever programmer might suggest that a lock should be placed around this "<a href="/wiki/Critical_section.html" title="Critical section">critical section</a>". However, without hardware support in the processor, a lock is nothing more than a memory location which must be read, inspected, and written. Algorithms, such as <a href="/wiki/Spin_locking.html" title="Spin locking">spin locking</a>, have been devised that implement software-only locking, but these can be inefficient.</p>
+<p>Most modern processors have some facility which can be used to implement locking, such as an atomic <a href="/wiki/Test-and-set.html" title="Test-and-set">test-and-set</a> or <a href="/wiki/Compare-and-swap.html" title="Compare-and-swap">compare-and-swap</a> operation, or the ability to temporarily turn off <a href="/wiki/Interrupt.html" title="Interrupt">interrupts</a> ensuring that the currently running process cannot be suspended.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Load-Link/Store-Conditional.html" title="Load-Link/Store-Conditional">Load-Link/Store-Conditional</a></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:2114560-0!1!0!default!!en!2 and timestamp 20060910155906 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Articles to be merged">Articles to be merged</a></span> | <span dir='ltr'><a  title="Category:Concurrency control">Concurrency control</a></span> | <span dir='ltr'><a  title="Category:Operating system kernel">Operating system kernel</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Atomic_operation.html">Article</a></li>
+				 <li id="ca-talk" class="new"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-cs"><a >Česky</a></li>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-lt"><a >Lietuvių</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 05:14, 1 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv90 in 0.099 secs. --></body></html>

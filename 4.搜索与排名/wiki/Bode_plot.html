@@ -1,0 +1,303 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Bode plot,Butterworth filter,Cutoff frequency,Decibel,Feedback,Frequency,Frequency response,Hendrik Wade Bode,Hertz,Hilbert transform,LTI" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Bode plot - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Bode_plot";
+			var wgTitle = "Bode plot";
+			var wgArticleId = 155562;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Bode plot</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<div class="thumb tright">
+<div style="width:352px;"><a  class="internal" title="The Bode plot for a first-order Butterworth filter"><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Butterworth_filter_bode_plot.png/350px-Butterworth_filter_bode_plot.png" alt="The Bode plot for a first-order Butterworth filter" width="350" height="245" longdesc="/wiki/Image:Butterworth_filter_bode_plot.png" /></a>
+<div class="thumbcaption">
+<div class="magnify" style="float:right"><a  class="internal" title="Enlarge"><img src="/skins-1.5/common/images/magnify-clip.png" width="15" height="11" alt="Enlarge" /></a></div>
+The Bode plot for a first-order <a href="/wiki/Butterworth_filter.html" title="Butterworth filter">Butterworth filter</a></div>
+</div>
+</div>
+<p>A <b>Bode plot</b>, named for <a href="/wiki/Hendrik_Wade_Bode.html" title="Hendrik Wade Bode">Hendrik Wade Bode</a>, is usually a combination of a Bode magnitude plot and Bode phase plot:</p>
+<p>A <b>Bode magnitude plot</b> is a graph of <a href="/wiki/Logarithm.html" title="Logarithm">log</a> magnitude against log <a href="/wiki/Frequency.html" title="Frequency">frequency</a> often used in <a href="/wiki/Signal_processing.html" title="Signal processing">signal processing</a> to show the <a href="/wiki/Transfer_function.html" title="Transfer function">transfer function</a> or <a href="/wiki/Frequency_response.html" title="Frequency response">frequency response</a> of an <a href="/wiki/LTI.html" title="LTI">LTI</a> system.</p>
+<p>It makes multiplication of magnitudes a simple matter of adding distances on the graph, since</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/d/4/2/d4217d3f37bffd328e432d326682defd.png" alt="\log(a \cdot b) = \log(a) + \log(b)\," /></dd>
+</dl>
+<p>The Bode plot describes the output response of a frequency-dependent system for a normalised input. The magnitude axis of the Bode plot is often converted directly to <a href="/wiki/Decibel.html" title="Decibel">decibels</a>.</p>
+<p>A <b>Bode phase plot</b> is a graph of phase against log frequency, usually used in conjunction with the magnitude plot, to evaluate how much a frequency will be <a href="/wiki/Phase_shift.html" title="Phase shift">phase-shifted</a>. For example a signal described by: <i>A</i>sin(ω<i>t</i>) may be attenuated but also phase-shifted. If the system attenuates it by a factor <i>x</i> and phase shifts it by −Φ the signal out of the system will be (<i>A</i>/<i>x</i>)&#160;sin(ω<i>t</i>&#160;−&#160;Φ). The phase shift Φ is generally a function of frequency.</p>
+<p>The magnitude and phase Bode plots can seldom be changed independently of each other — if you change the amplitude response of the system you will most likely change the phase characteristics as well and vice versa. For minimum-phase systems the phase and amplitude characteristics can be obtained from each other with the use of the <a href="/wiki/Hilbert_transform.html" title="Hilbert transform">Hilbert Transform</a>.</p>
+<p>If the transfer function is a rational function, then the Bode plot can be approximated with straight lines. These asymptotic approximations are called <b>straight line Bode plots</b> or <b>uncorrected Bode plots</b> and are useful because they can be drawn by hand following a few simple rules. Simple plots can even be predicted without drawing them.</p>
+<p>The approximation can be taken further by <i>correcting</i> the value at each cutoff frequency. The plot is then called a <b>corrected Bode plot</b>.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Rules for hand-made Bode plot</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">1.1</span> <span class="toctext">Straight-line amplitude plot</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.2</span> <span class="toctext">Corrected amplitude plot</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.3</span> <span class="toctext">Straight-line phase plot</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Example</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Bode Plotter</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Rules for hand-made Bode plot">edit</a>]</div>
+<p><a name="Rules_for_hand-made_Bode_plot" id="Rules_for_hand-made_Bode_plot"></a></p>
+<h2>Rules for hand-made Bode plot</h2>
+<p>The main idea about Bode plots is that one can think of the log of a function in the form:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/8/e/b/8eb425d95499e6da0922c2056c781e2c.png" alt="f(x) = A \prod (x + c_n)^{a_n}" /></dd>
+</dl>
+<p>as a sum of the logs of its poles and zeros:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/2/9/0/290921d12048c80b7f6fbe26ea118099.png" alt="\log(f(x)) = \log(A) + \sum a_n log(x + c_n)" /></dd>
+</dl>
+<p>This idea is used explicitly in the method for drawing phase diagrams. The method for drawing amplitude plots implicitly uses this idea, but since the log of the amplitude of each pole or zero always starts at zero and only has one asymptote change (the straight lines), the method can be simplified.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Straight-line amplitude plot">edit</a>]</div>
+<p><a name="Straight-line_amplitude_plot" id="Straight-line_amplitude_plot"></a></p>
+<h3>Straight-line amplitude plot</h3>
+<p>Amplitude decibels is usually done using the <span class="texhtml">20<i>L</i><i>o</i><i>g</i><sub>10</sub>(<i>X</i>)</span> version. Given a transfer function in the form</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/1/8/e/18e462a4ab1d270e0cf17689b8cb9e14.png" alt="H(s) = A \prod \frac{(s + x_n)^{a_n}}{(s + y_n)^{b_n}}" />
+<dl>
+<dd>where s = jω, <span class="texhtml"><i>x</i><sub><i>n</i></sub></span> and <span class="texhtml"><i>y</i><sub><i>n</i></sub></span> are constants, and H is the transfer function:</dd>
+</dl>
+</dd>
+</dl>
+<ul>
+<li>at every value of s where <span class="texhtml">ω = <i>x</i><sub><i>n</i></sub></span> (a zero), <b>increase</b> the slope of the line by <img class='tex' src="http://upload.wikimedia.org/math/3/0/c/30c7d6eff81a2e263bdeac0d611844de.png" alt="20 \cdot a_n dB" /> per decade.</li>
+<li>at every value of s where <span class="texhtml">ω = <i>y</i><sub><i>n</i></sub></span> (a pole), <b>decrease</b> the slope of the line by <img class='tex' src="http://upload.wikimedia.org/math/c/2/8/c28ee36898eaf7448b58a86b30c5f8d8.png" alt="20 \cdot b_n dB" /> per decade.</li>
+<li>The initial value of the graph depends on your boundaries. The initial point is found by putting the initial angular frequency <i>ω</i> into the function and finding |H(jω)|.</li>
+<li>The initial slope of the function at the initial value depends on the number and order of zeros and poles that are at values below the initial value, and are found using the first two rules.</li>
+</ul>
+<p>To handle irreducible 2nd order polynomials, <img class='tex' src="http://upload.wikimedia.org/math/6/0/7/607a053b88fade6f621545cd00604faf.png" alt="ax^2 + bx + c \" /> can, in many cases, be approximated as <img class='tex' src="http://upload.wikimedia.org/math/7/7/1/77135f3219838369d7eeb53aabb0d741.png" alt="(\sqrt{a}x + \sqrt{c})^2" />.</p>
+<p>Note that zeros and poles happen when ω is <i>equal to</i> a certain <span class="texhtml"><i>x</i><sub><i>n</i></sub></span> or <span class="texhtml"><i>y</i><sub><i>n</i></sub></span>. This is because the function in question is the magnitude of H(jω), and since it is a complex function, <img class='tex' src="http://upload.wikimedia.org/math/9/d/a/9da88b6afb9c85c29f428aef186c98bf.png" alt="|H(j\omega)| = \sqrt{H \cdot H^* }" />. Thus at any place where there is a zero or pole involving the term <span class="texhtml">(<i>s</i> + <i>x</i><sub><i>n</i></sub>)</span>, the magnitude of that term is <img class='tex' src="http://upload.wikimedia.org/math/f/3/d/f3d431dd7cbaa19126f683eee3bb0299.png" alt="\sqrt{(x_n + j\omega) \cdot (x_n - j\omega)}= \sqrt{x_n^2+\omega^2}" />.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Corrected amplitude plot">edit</a>]</div>
+<p><a name="Corrected_amplitude_plot" id="Corrected_amplitude_plot"></a></p>
+<h3>Corrected amplitude plot</h3>
+<p>To correct a straight-line amplitude plot:</p>
+<ul>
+<li>at every zero, put a point <img class='tex' src="http://upload.wikimedia.org/math/5/5/4/554402988355f7157a22b01242d31de1.png" alt="3 \cdot a_n\ \mathrm{dB}" /> <b>above</b> the line,</li>
+<li>at every pole, put a point <img class='tex' src="http://upload.wikimedia.org/math/b/a/a/baaf2c7f4ad4fd4efb71b26824cf2914.png" alt="3 \cdot b_n\ \mathrm{dB}" /> <b>below</b> the line,</li>
+<li>draw a smooth line through those points using the straight lines as asymptotes (lines which the curve approaches).</li>
+</ul>
+<p>Note that this correction method does not incorporate how to handle complex values of <span class="texhtml"><i>x</i><sub><i>n</i></sub></span> or <span class="texhtml"><i>y</i><sub><i>n</i></sub></span>. In the case of an irreducible polynomial, the best way to correct the plot is to actually calculate the magnitude of the transfer funcition at the pole or zero corresponding to the irreducible polynomial, and put that dot over or under the line at that pole or zero.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Straight-line phase plot">edit</a>]</div>
+<p><a name="Straight-line_phase_plot" id="Straight-line_phase_plot"></a></p>
+<h3>Straight-line phase plot</h3>
+<p>Given a transfer function in the same form as above:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/1/8/e/18e462a4ab1d270e0cf17689b8cb9e14.png" alt="H(s) = A \prod \frac{(s + x_n)^{a_n}}{(s + y_n)^{b_n}}" /></dd>
+</dl>
+<p>the idea is to draw separate plots for each pole and zero, then add them up. The actual phase curve is given by <img class='tex' src="http://upload.wikimedia.org/math/5/4/9/549d4ccf4f04a713022f791b5c74ac9d.png" alt="- \mathbf{arctan}\bigg(\frac{\mathbf{im}[H(s)]}{\mathbf{re}[H(s)]}\bigg)" /></p>
+<p>To draw the phase plot, for <b>each</b> pole and zero:</p>
+<ul>
+<li>if A is positive, start line (with zero slope) at 0 degrees,</li>
+<li>if A is negative, start line (with zero slope) at 180 degrees,</li>
+<li>for a zero, slope the line <b>up</b> at <img class='tex' src="http://upload.wikimedia.org/math/9/d/9/9d91f2133e7cf28038394f50589749b0.png" alt="45 \cdot a_n" /> degrees per decade when <img class='tex' src="http://upload.wikimedia.org/math/0/2/e/02ec68572c8333f40da02ac51c5480df.png" alt="\omega = \frac{x_n}{10}" />,</li>
+<li>for a pole, slope the line <b>down</b> at <img class='tex' src="http://upload.wikimedia.org/math/a/b/3/ab34bd65b3ab6d75ff17fa1e5c9d261c.png" alt="45 \cdot b_n" /> degrees per decade when <img class='tex' src="http://upload.wikimedia.org/math/b/b/f/bbf55ed094f856f69f8ecd55c581093f.png" alt="\omega = \frac{y_n}{10}" />,</li>
+<li>flatten the slope again when the phase has changed by <img class='tex' src="http://upload.wikimedia.org/math/a/c/f/acf79cd31bedd121fdc6894c8a0151c3.png" alt="90 \cdot a_n" /> degrees (for a zero) or <img class='tex' src="http://upload.wikimedia.org/math/e/d/6/ed6c42b7814d04aa26cede7a33bfd143.png" alt="90 \cdot b_n" /> degrees (for a pole),</li>
+<li>After plotting one line for each pole or zero, add the lines together.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Example">edit</a>]</div>
+<p><a name="Example" id="Example"></a></p>
+<h2>Example</h2>
+<p>A <a href="/wiki/Lowpass.html" title="Lowpass">lowpass</a> <a href="/wiki/RC_circuit.html" title="RC circuit">RC filter</a>, for instance has the following frequency response:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/7/b/f/7bfded8aab6b1b554ee1863348627717.png" alt="H(f) = \frac{1}{1+j2\pi f R C}" /></dd>
+</dl>
+<p>The <a href="/wiki/Cutoff_frequency.html" title="Cutoff frequency">cutoff frequency</a> point <i>f</i><sub>c</sub> (in <a href="/wiki/Hertz.html" title="Hertz">hertz</a>) is at the frequency</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/c/e/5/ce57cbd859428320de4400e64cd112a2.png" alt="f_\mathrm{c} = {1 \over {2\pi RC}}" />.</dd>
+</dl>
+<p>The line approximation of the Bode plot consists of two lines:</p>
+<ul>
+<li>for frequencies below <i>f</i><sub>c</sub> it is a horizontal line at 0 dB,</li>
+<li>for frequencies above <i>f</i><sub>c</sub> it is a line with a slope of −20 dB per decade.</li>
+</ul>
+<p>These two lines meet at the <a href="/wiki/Cutoff_frequency.html" title="Cutoff frequency">cutoff frequency</a>. From the plot it can be seen that for frequencies well below the <a href="/wiki/Cutoff_frequency.html" title="Cutoff frequency">cutoff frequency</a> the circuit has an attenuation of 0dB, the filter does not change the amplitude. Frequencies above the <a href="/wiki/Cutoff_frequency.html" title="Cutoff frequency">cutoff frequency</a> are attenuated - the higher the frequency, the higher the attenuation.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Bode Plotter">edit</a>]</div>
+<p><a name="Bode_Plotter" id="Bode_Plotter"></a></p>
+<h2>Bode Plotter</h2>
+<p>An electronic instrument, named after <a href="/wiki/Hendrik_Wade_Bode.html" title="Hendrik Wade Bode">Hendrik Wade Bode</a>, an American Engineer and Academic, resembling an <a href="/wiki/Oscilloscope.html" title="Oscilloscope">oscilloscope</a>, which produces a <strong class="selflink">Bode diagram</strong>, or a graph, of a circuit's voltage gain or <a href="/wiki/Phase_shift.html" title="Phase shift">phase shift</a> plotted against <a href="/wiki/Frequency.html" title="Frequency">frequency</a> in a feedback control system or a filter. It is extremely useful for analyzing and testing filters and the stability of <a href="/wiki/Feedback.html" title="Feedback">feedback</a> control systems, through the measurement of corner (cutoff) frequencies and Gain and Phase Margins.</p>
+<p>This is identical to the function performed by a vector <a href="/wiki/Network_analyzer_%28electrical%29.html" title="Network analyzer (electrical)">network analyzer</a>, but the network analyzer is typically used at much higher frequencies.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Frequency_response.html" title="Frequency response">Frequency response</a></li>
+<li><a href="/wiki/Nyquist_plot.html" title="Nyquist plot">Nyquist plot</a></li>
+<li><a href="/wiki/Transfer_function.html" title="Transfer function">Transfer function</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external autonumber" title="http://www.oz.net/~coilgun/levitation/images/bode_phaselag.gif">[1]</a> <a  class="external autonumber" title="http://www.oz.net/~coilgun/levitation/images/bode_phaselead.gif">[2]</a> - Examples of Bode plots</li>
+<li><a  class="external text" title="http://www.facstaff.bucknell.edu/mastascu/eControlHTML/Freq/Freq5.html">Explanation of Bode plots with movies and examples</a></li>
+<li><a  class="external text" title="http://www.swarthmore.edu/NatSci/echeeve1/Ref/Bode/BodeHow.html">How to draw piecewise asymptotic Bode plots</a></li>
+<li><a  class="external text" title="http://lims.mech.northwestern.edu/~lynch/courses/ME391/2003/bodesketching.pdf">Summarized drawing rules</a> (<a href="/wiki/PDF.html" title="PDF">PDF</a>)</li>
+<li><a  class="external text" title="http://www.uwm.edu/People/msw/BodePlot/">Bode plot applet</a> - Accepts transfer function coefficients as input, and calculates magnitude and phase response</li>
+<li><a  class="external text" title="http://mickpc.pbwiki.com/index.php?wiki=BodePlot">Bode Plotting on the HP49</a></li>
+<li><a  class="external text" title="http://www.abc.chemistry.bsu.by/vi/fit.htm">Circuit analysis in electrochemistry</a></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:155562-0!1!0!default!!en!2 and timestamp 20060906010534 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:Signal processing">Signal processing</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Bode_plot.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-ar"><a >العربية</a></li>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 12:40, 4 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv100 in 0.094 secs. --></body></html>

@@ -1,0 +1,600 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Combinatory logic,APL,Associative,B,C,K,W System,B,C,K,W system,Beta normal form,Big O notation,Church-Turing thesis,Combinational logic,Computability theory,Computation" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Combinatory logic - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Combinatory_logic";
+			var wgTitle = "Combinatory logic";
+			var wgArticleId = 149848;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Combinatory logic</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<dl>
+<dd><i>This article is about a topic in mathematical logic and theoretical computer science, not to be confused with</i> <a href="/wiki/Combinational_logic.html" title="Combinational logic">combinational logic</a><i>, sometimes known as</i> combinatorial logic<i>, a topic in</i> <a href="/wiki/Digital_electronics.html" title="Digital electronics">digital electronics</a><i>.</i></dd>
+</dl>
+<p><b>Combinatory logic</b> is a notation introduced by <a href="/wiki/Moses_Sch%C3%B6nfinkel.html" title="Moses Schönfinkel">Moses Schönfinkel</a> and <a href="/wiki/Haskell_Curry.html" title="Haskell Curry">Haskell Curry</a> to eliminate the need for <a href="/wiki/Variable.html" title="Variable">variables</a> in <a href="/wiki/Mathematical_logic.html" title="Mathematical logic">mathematical logic</a>. It has more recently been used in computer science as a theoretical model of computation and also as a basis for the design of functional programming languages. It is based on <b>combinators</b>, which are <a href="/wiki/Higher-order_function.html" title="Higher-order function">higher-order functions</a> that solely use function application and possibly other, earlier defined combinators for defining a result from their arguments.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Combinatory logic in mathematics</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Combinatory logic in computing</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Summary of the lambda calculus</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Combinatory calculi</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">4.1</span> <span class="toctext">Combinatory terms</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.2</span> <span class="toctext">Examples of combinators</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.3</span> <span class="toctext">Completeness of the S-K basis</span></a>
+<ul>
+<li class="toclevel-3"><a ><span class="tocnumber">4.3.1</span> <span class="toctext">Conversion of a lambda term to an equivalent combinatorial term</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">4.3.2</span> <span class="toctext">Explanation of the T[&#160;] transformation</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.4</span> <span class="toctext">Simplifications of the transformation</span></a>
+<ul>
+<li class="toclevel-3"><a ><span class="tocnumber">4.4.1</span> <span class="toctext">η-reduction</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">4.4.2</span> <span class="toctext">One point basis</span></a></li>
+<li class="toclevel-3"><a ><span class="tocnumber">4.4.3</span> <span class="toctext">Combinators B, C of Curry</span></a>
+<ul>
+<li class="toclevel-4"><a ><span class="tocnumber">4.4.3.1</span> <span class="toctext">CLK versus CLI calculus</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.5</span> <span class="toctext">Reverse conversion</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Undecidability of combinatorial calculus</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">Combinatory terms as graphs</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">Applications</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">7.1</span> <span class="toctext">Compilation of functional languages</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">7.2</span> <span class="toctext">Logic</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">8</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">9</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">10</span> <span class="toctext">External links</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">11</span> <span class="toctext">Further reading</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Combinatory logic in mathematics">edit</a>]</div>
+<p><a name="Combinatory_logic_in_mathematics" id="Combinatory_logic_in_mathematics"></a></p>
+<h2>Combinatory logic in mathematics</h2>
+<p>Combinatory logic was intended as a simple 'pre-logic' which would clarify the meaning of variables in logical notation, and indeed eliminate the need for them.</p>
+<p>See Curry, 1958–1972.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Combinatory logic in computing">edit</a>]</div>
+<p><a name="Combinatory_logic_in_computing" id="Combinatory_logic_in_computing"></a></p>
+<h2>Combinatory logic in computing</h2>
+<p>In computer science, combinatory logic is used as a simplified model of <a href="/wiki/Computation.html" title="Computation">computation</a>, used in <a href="/wiki/Computability_theory.html" title="Computability theory">computability theory</a> (the study of what can be computed) and <a href="/wiki/Proof_theory.html" title="Proof theory">proof theory</a> (the study of what can be mathematically <a href="/wiki/Mathematical_proof.html" title="Mathematical proof">proven</a>). The theory, despite its simplicity, captures many essential features of the nature of computation.</p>
+<p>Combinatory logic can be looked at as a variation of the <a href="/wiki/Lambda_calculus.html" title="Lambda calculus">lambda calculus</a>, in which lambda expressions (used to allow for functional abstraction) are replaced by a limited set of <i>combinators</i>, primitive functions which contain no <a href="/wiki/Free_variable.html" title="Free variable">free variables</a>. It is easy to transform lambda expressions into combinator expressions, and since combinator reduction is much simpler than lambda reduction, it has been used as the basis for the implementation of some <a href="/wiki/Non-strict_programming_language.html" title="Non-strict programming language">non-strict</a> <a href="/wiki/Functional_programming.html" title="Functional programming">functional programming</a> languages in software and <a href="/wiki/Graph_reduction_machine.html" title="Graph reduction machine">hardware</a>. The purest form of this view is the programming language <a href="/wiki/Unlambda.html" title="Unlambda">Unlambda</a>, which has as primitives only the S and K combinators and character IO. Although it is not a practical programming language, it has some theoretical interest.</p>
+<p>It can also be looked at in a number of other manners, with many early papers showing the equivalence of various combinators to various logic axioms [Hindley and Meredith, 1990].</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Summary of the lambda calculus">edit</a>]</div>
+<p><a name="Summary_of_the_lambda_calculus" id="Summary_of_the_lambda_calculus"></a></p>
+<h2>Summary of the lambda calculus</h2>
+<dl>
+<dd>
+<div class="noprint"><i>Main article: <a href="/wiki/Lambda_calculus.html" title="Lambda calculus">lambda calculus</a></i></div>
+</dd>
+</dl>
+<p>The lambda calculus is concerned with objects called <i>lambda-terms</i>, which are strings of symbols of one of the following forms:</p>
+<ul>
+<li><i>v</i></li>
+<li><i>λv</i>.<i>E1</i></li>
+<li>(<i>E1</i> <i>E2</i>)</li>
+</ul>
+<p>where <i>v</i> is a variable name drawn from a predefined infinite set of variable names, and <i>E1</i> and <i>E2</i> are lambda-terms. Terms of the form <i>λv.E1</i> are called <i>abstractions</i>. The variable <i>v</i> is called the <a href="/wiki/Formal_parameter.html" title="Formal parameter">formal parameter</a> of the abstraction, and <i>E1</i> is the <i>body</i> of the abstraction.</p>
+<p>The term <i>λv.E1</i> represents the function which, applied to an argument, binds the formal parameter <i>v</i> to the argument and then computes the resulting value of <i>E1</i>---that is, it returns <i>E1</i>, with every occurrence of <i>v</i> replaced by the argument.</p>
+<p>Terms of the form <i>(E1 E2)</i> are called <i>applications</i>. Applications model function invocation or execution: the function represented by <i>E1</i> is to be invoked, with <i>E2</i> as its argument, and the result is computed. If <i>E1</i> (sometimes called the <i>applicand</i>) is an abstraction, the term may be <i>reduced</i>: <i>E2</i>, the argument, may be substituted into the body of <i>E1</i> in place of the formal parameter of <i>E1</i>, and the result is a new lambda term which is <i>equivalent</i> to the old one. If a lambda term contains no subterms of the form <i>(λv.E1 E2)</i> then it cannot be reduced, and is said to be in <a href="/wiki/Beta_normal_form.html" title="Beta normal form">normal form</a>.</p>
+<p>The expression <i>E</i>[<i>v</i>&#160;:= <i>a</i>] represents the result of taking the term <i>E</i> and replacing all free occurrences of <i>v</i> with <i>a</i>. Thus we write</p>
+<dl>
+<dd>(<i>λv.E</i> <i>a</i>) =&gt; <i>E</i>[<i>v</i>&#160;:= <i>a</i>]</dd>
+</dl>
+<p>By convention, we take <i>(a b c d ... z)</i> as short for <i>(...(((a b) c) d) ... z)</i>. (i.e., application is <a href="/wiki/Associative#Non-associativity.html" title="Associative">left associative</a>.)</p>
+<p>The motivation for this definition of reduction is that it captures the essential behavior of all mathematical functions. For example, consider the function that computes the square of a number. We might write</p>
+<dl>
+<dd>The square of <i>x</i> is <i>x</i>*<i>x</i></dd>
+</dl>
+<p>(Using "*" to indicate multiplication.) <i>x</i> here is the <a href="/wiki/Formal_parameter.html" title="Formal parameter">formal parameter</a> of the function. To evaluate the square for a particular argument, say 3, we insert it into the definition in place of the formal parameter:</p>
+<dl>
+<dd>The square of 3 is 3*3</dd>
+</dl>
+<p>To evaluate the resulting expression 3*3, we would have to resort to our knowledge of multiplication and the number 3. Since any computation is simply a composition of the evaluation of suitable functions on suitable primitive arguments, this simple substitution principle suffices to capture the essential mechanism of computation. Moreover, in the lambda calculus, notions such as '3' and '*' can be represented without any need for externally defined primitive operators or constants. It is possible to identify terms in the lambda calculus, which, when suitably interpreted, behave like the number 3 and like the multiplication operator.</p>
+<p>The lambda calculus is known to be computationally equivalent in power to many other plausible models for computation (including <a href="/wiki/Turing_machine.html" title="Turing machine">Turing machines</a>); that is, any calculation that can be accomplished in any of these other models can be expressed in the lambda calculus, and vice versa. According to the <a href="/wiki/Church-Turing_thesis.html" title="Church-Turing thesis">Church-Turing thesis</a>, both models can express any possible computation.</p>
+<p>It is perhaps surprising that lambda-calculus can represent any conceivable computation using only the simple notions of function abstraction and application based on simple textual substitution of terms for variables. But even more remarkable is that abstraction is not even required. <i>Combinatory logic</i> is a model of computation equivalent to the lambda calculus, but without abstraction.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Combinatory calculi">edit</a>]</div>
+<p><a name="Combinatory_calculi" id="Combinatory_calculi"></a></p>
+<h2>Combinatory calculi</h2>
+<p>Since abstraction is the only way to manufacture functions in the lambda calculus, something must replace it in the combinatory calculus. Instead of abstraction, combinatory calculus provides a limited set of primitive functions out of which other functions may be built.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Combinatory terms">edit</a>]</div>
+<p><a name="Combinatory_terms" id="Combinatory_terms"></a></p>
+<h3>Combinatory terms</h3>
+<p>A combinatory term has one of the following forms:</p>
+<ul>
+<li><i>v</i></li>
+<li><i>P</i></li>
+<li>(<i>E1</i> <i>E2</i>)</li>
+</ul>
+<p>where <i>v</i> is a variable, <i>P</i> is one of the primitive functions, and <i>E1</i> and <i>E2</i> are combinatory terms. The primitive functions themselves are <i>combinators</i>, or functions that contain no <a href="/wiki/Free_variable.html" title="Free variable">free variables</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Examples of combinators">edit</a>]</div>
+<p><a name="Examples_of_combinators" id="Examples_of_combinators"></a></p>
+<h3>Examples of combinators</h3>
+<p>The simplest example of a combinator is <b>I</b>, the identity combinator, defined by</p>
+<dl>
+<dd>(<b>I</b> <i>x</i>) = <i>x</i></dd>
+</dl>
+<p>for all terms <i>x</i>. Another simple combinator is <b>K</b>, which manufactures constant functions: (<b>K</b> <i>x</i>) is the function which, for any argument, returns <i>x</i>, so we say</p>
+<dl>
+<dd>((<b>K</b> <i>x</i>) <i>y</i>) = <i>x</i></dd>
+</dl>
+<p>for all terms <i>x</i> and <i>y</i>. Or, following the same convention for multiple application as in the lambda-calculus,</p>
+<dl>
+<dd>(<b>K</b> <i>x</i> <i>y</i>) = <i>x</i></dd>
+</dl>
+<p>A third combinator is <b>S</b>, which is a generalized version of application:</p>
+<dl>
+<dd>(<b>S</b> <i>x</i> <i>y</i> <i>z</i>) = (<i>x</i> <i>z</i> (<i>y</i> <i>z</i>))</dd>
+</dl>
+<p><b>S</b> applies <i>x</i> to <i>y</i> after first substituting <i>z</i> into each of them.</p>
+<p>Given <b>S</b> and <b>K</b>, <b>I</b> itself is unnecessary, since it can be built from the other two:</p>
+<dl>
+<dd>((<b>S</b> <b>K</b> <b>K</b>) <i>x</i>)
+<dl>
+<dd>= (<b>S</b> <b>K</b> <b>K</b> <i>x</i>)</dd>
+<dd>= (<b>K</b> <i>x</i> (<b>K</b> <i>x</i>))</dd>
+<dd>= <i>x</i></dd>
+</dl>
+</dd>
+</dl>
+<p>for any term <i>x</i>. Note that although ((<b>S</b> <b>K</b> <b>K</b>) <i>x</i>) = (<b>I</b> <i>x</i>) for any <i>x</i>, (<b>S</b> <b>K</b> <b>K</b>) itself is not equal to <b>I</b>. We say the terms are <a href="/wiki/Extensional_equality.html" title="Extensional equality">extensionally equal</a>. Extensional equality captures the mathematical notion of the equality of functions: that two functions are 'equal' if they always produce the same results for the same arguments. In contrast, the terms themselves capture the notion of <i>intensional equality</i> of functions: that two functions are 'equal' only if they have identical implementations. There are many ways to implement an identity function; (<b>S</b> <b>K</b> <b>K</b>) and <b>I</b> are among these ways. (<b>S</b> <b>K</b> <b>S</b>) is yet another. We will use the word <i>equivalent</i> to indicate extensional equality, reserving <i>equal</i> for identical combinatorial terms.</p>
+<p>A more interesting combinator is the <a href="/wiki/Fixed_point_combinator.html" title="Fixed point combinator">fixed point combinator</a> or <b>Y</b> combinator, which can be used to implement <a href="/wiki/Recursion.html" title="Recursion">recursion</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Completeness of the S-K basis">edit</a>]</div>
+<p><a name="Completeness_of_the_S-K_basis" id="Completeness_of_the_S-K_basis"></a></p>
+<h3>Completeness of the <b>S</b>-<b>K</b> basis</h3>
+<p>It is a perhaps astonishing fact that <b>S</b> and <b>K</b> can be composed to produce combinators that are extensionally equal to <i>any</i> lambda term, and therefore, by Church's thesis, to any computable function whatsoever. The proof is to present a transformation, <i>T</i>[&#160;], which converts an arbitrary lambda term into an equivalent combinator.</p>
+<p><i>T</i>[&#160;] may be defined as follows:</p>
+<ol>
+<li><i>T</i>[<i>V</i>] =&gt; <i>V</i></li>
+<li><i>T</i>[(<i>E1</i> <i>E2</i>)] =&gt; (<i>T</i>[<i>E1</i>] <i>T</i>[<i>E2</i>])</li>
+<li><i>T</i>[<i>λx</i>.<i>E</i>] =&gt; (<b>K</b> <i>T</i>[<i>E</i>]) (if <i>x</i> is not free in <i>E</i>)</li>
+<li><i>T</i>[<i>λx</i>.<i>x</i>] =&gt; <b>I</b></li>
+<li><i>T</i>[<i>λx</i>.<i>λy</i>.<i>E</i>] =&gt; <i>T</i>[<i>λx</i>.<i>T</i>[<i>λy</i>.<i>E</i>]] (if <i>x</i> is free in <i>E</i>)</li>
+<li><i>T</i>[<i>λx</i>.(<i>E1</i> <i>E2</i>)] =&gt; (<b>S</b> <i>T</i>[<i>λx</i>.<i>E1</i>] <i>T</i>[<i>λx</i>.<i>E2</i>])</li>
+</ol>
+<p>This process is also known as <i>abstraction elimination</i>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Conversion of a lambda term to an equivalent combinatorial term">edit</a>]</div>
+<p><a name="Conversion_of_a_lambda_term_to_an_equivalent_combinatorial_term" id="Conversion_of_a_lambda_term_to_an_equivalent_combinatorial_term"></a></p>
+<h4>Conversion of a lambda term to an equivalent combinatorial term</h4>
+<p>For example, we will convert the lambda term <i>λx</i>.<i>λy</i>.(<i>y</i> <i>x</i>) to a combinator:</p>
+<dl>
+<dd><i>T</i>[<i>λx</i>.<i>λy</i>.(<i>y</i> <i>x</i>)]
+<dl>
+<dd>= <i>T</i>[<i>λx</i>.<i>T</i>[<i>λy</i>.(<i>y</i> <i>x</i>)]] (by 5)</dd>
+<dd>= <i>T</i>[<i>λx</i>.(<b>S</b> <i>T</i>[<i>λy</i>.<i>y</i>] <i>T</i>[<i>λy</i>.<i>x</i>])] (by 6)</dd>
+<dd>= <i>T</i>[<i>λx</i>.(<b>S</b> <b>I</b> <i>T</i>[<i>λy</i>.<i>x</i>])] (by 4)</dd>
+<dd>= <i>T</i>[<i>λx</i>.(<b>S</b> <b>I</b> (<b>K</b> <i>x</i>))] (by 3)</dd>
+<dd>= (<b>S</b> <i>T</i>[<i>λx</i>.(<b>S</b> <b>I</b>)] <i>T</i>[<i>λx</i>.(<b>K</b> <i>x</i>)]) (by 6)</dd>
+<dd>= (<b>S</b> (<b>K</b> (<b>S</b> <b>I</b>)) <i>T</i>[<i>λx</i>.(<b>K</b> <i>x</i>)]) (by 3)</dd>
+<dd>= (<b>S</b> (<b>K</b> (<b>S</b> <b>I</b>)) (<b>S</b> <i>T</i>[<i>λx</i>.<b>K</b>] <i>T</i>[<i>λx</i>.<i>x</i>])) (by 6)</dd>
+<dd>= (<b>S</b> (<b>K</b> (<b>S</b> <b>I</b>)) (<b>S</b> (<b>K</b> <b>K</b>) <i>T</i>[<i>λx</i>.<i>x</i>])) (by 3)</dd>
+<dd>= (<b>S</b> (<b>K</b> (<b>S</b> <b>I</b>)) (<b>S</b> (<b>K</b> <b>K</b>) <b>I</b>)) (by 4)</dd>
+</dl>
+</dd>
+</dl>
+<p>If we apply this combinator to any two terms <i>x</i> and <i>y</i>, it reduces as follows:</p>
+<dl>
+<dd>(<b>S</b> (<b>K</b> (<b>S</b> <b>I</b>)) (<b>S</b> (<b>K</b> <b>K</b>) <b>I</b>) x y)
+<dl>
+<dd>= (<b>K</b> (<b>S</b> <b>I</b>) x (<b>S</b> (<b>K</b> <b>K</b>) <b>I</b> x) y)</dd>
+<dd>= (<b>S</b> <b>I</b> (<b>S</b> (<b>K</b> <b>K</b>) <b>I</b> x) y)</dd>
+<dd>= (<b>I</b> y (<b>S</b> (<b>K</b> <b>K</b>) <b>I</b> x y))</dd>
+<dd>= (y (<b>S</b> (<b>K</b> <b>K</b>) <b>I</b> x y))</dd>
+<dd>= (y (<b>K</b> <b>K</b> x (<b>I</b> x) y))</dd>
+<dd>= (y (<b>K</b> (<b>I</b> x) y))</dd>
+<dd>= (y (<b>I</b> x))</dd>
+<dd>= (y x)</dd>
+</dl>
+</dd>
+</dl>
+<p>The combinatory representation, (<b>S</b> (<b>K</b> (<b>S</b> <b>I</b>)) (<b>S</b> (<b>K</b> <b>K</b>) <b>I</b>)) is much longer than the representation as a lambda term, <i>λx</i>.<i>λy</i>.(y x). This is typical. In general, the <i>T</i>[&#160;] construction may expand a lambda term of length <i>n</i> to a combinatorial term of length <a href="/wiki/Big_O_notation.html" title="Big O notation">Θ</a>(3<sup><i>n</i></sup>).</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Explanation of the T[&amp;nbsp;] transformation">edit</a>]</div>
+<p><a name="Explanation_of_the_T.5B.C2.A0.5D_transformation" id="Explanation_of_the_T.5B.C2.A0.5D_transformation"></a></p>
+<h4>Explanation of the <i>T</i>[&#160;] transformation</h4>
+<p>The <i>T</i>[&#160;] transformation is motivated by a desire to eliminate abstraction. Two special cases, rules 3 and 4, are trivial: <i>λx</i>.<i>x</i> is clearly equivalent to <b>I</b>, and <i>λx</i>.<i>E</i> is clearly equivalent to (<b>K</b> <i>E</i>) if <i>x</i> does not appear free in <i>E</i>.</p>
+<p>The first two rules are also simple: Variables convert to themselves, and applications, which are allowed in combinatory terms, are converted to combinators simply by converting the applicand and the argument to combinators.</p>
+<p>It's rules 5 and 6 that are of interest. Rule 5 simply says that to convert a complex abstraction to a combinator, we must first convert its body to a combinator, and then eliminate the abstraction. Rule 6 actually eliminates the abstraction.</p>
+<p><i>λx</i>.(<i>E1</i> <i>E2</i>) is a function which takes an argument, say <i>a</i>, and substitutes it into the lambda term (<i>E1</i> <i>E2</i>) in place of <i>x</i>, yielding (<i>E1</i> <i>E2</i>)[<i>x</i>&#160;: = <i>a</i>]. But substituting <i>a</i> into (<i>E1</i> <i>E2</i>) in place of <i>x</i> is just the same as substituting it into both <i>E1</i> and <i>E2</i>, so</p>
+<pre>
+       (<i>E1</i> <i>E2</i>)[<i>x</i> := <i>a</i>] = (<i>E1</i>[<i>x</i> := <i>a</i>] <i>E2</i>[<i>x</i> := <i>a</i>])
+</pre>
+<p>(<i>λx</i>.(<i>E1</i> <i>E2</i>) <i>a</i>) = ((<i>λx</i>.<i>E1</i> <i>a</i>) (<i>λx</i>.<i>E2</i> <i>a</i>))</p>
+<pre>
+                      = (<b>S</b> <i>λx</i>.<i>E1</i> <i>λx</i>.<i>E2</i> <i>a</i>)
+                      = ((<b>S</b> <i>λx</i>.<i>E1</i> <i>λx</i>.<i>E2</i>) <i>a</i>)
+</pre>
+<p>By extensional equality,</p>
+<pre>
+       <i>λx</i>.(<i>E1</i> <i>E2</i>)     = (<b>S</b> <i>λx</i>.<i>E1</i> <i>λx</i>.<i>E2</i>)
+</pre>
+<p>Therefore, to find a combinator equivalent to <i>λx</i>.(<i>E1</i> <i>E2</i>), it is sufficient to find a combinator equivalent to (<b>S</b> <i>λx</i>.<i>E1</i> <i>λx</i>.<i>E2</i>), and</p>
+<pre>
+       (<b>S</b> <i>T</i>[<i>λx</i>.<i>E1</i>] <i>T</i>[<i>λx</i>.<i>E2</i>])
+</pre>
+<p>evidently fits the bill. <i>E1</i> and <i>E2</i> each contain strictly fewer applications than (<i>E1</i> <i>E2</i>), so the recursion must terminate in a lambda term with no applications at all---either a variable, or a term of the form <i>λx</i>.<i>E</i>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Simplifications of the transformation">edit</a>]</div>
+<p><a name="Simplifications_of_the_transformation" id="Simplifications_of_the_transformation"></a></p>
+<h3>Simplifications of the transformation</h3>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: η-reduction">edit</a>]</div>
+<p><a name=".CE.B7-reduction"></a></p>
+<h4>η-reduction</h4>
+<p>The combinators generated by the <b>T</b>[ ] transformation can be made smaller if we take into account the <i>η-reduction</i> rule:</p>
+<pre>
+       <i>T</i>[<i>λx</i>.(<i>E</i> <i>x</i>)] = <i>T</i>[<i>E</i>]   (if <i>x</i> is not free in <i>E</i>)
+</pre>
+<p>[[<i>λx</i>.(<i>E</i> x)]] is the function which takes an argument, <i>x</i>, and applies the function <i>E</i> to it; this is extensionally equal to the function <i>E</i> itself. It is therefore sufficient to convert <i>E</i> to combinatorial form.</p>
+<p>Taking this simplification into account, the example above becomes:</p>
+<pre>
+         <i>T</i>[<i>λx</i>.<i>λy</i>.(<i>y</i> <i>x</i>)] 
+       = ...
+       = (<b>S</b> (<b>K</b> (<b>S</b> <b>I</b>))   <i>T</i>[<i>λx</i>.(<b>K</b> <i>x</i>)])                 
+</pre>
+<pre>
+       = (<b>S</b> (<b>K</b> (<b>S</b> <b>I</b>))   <b>K</b>)                 (by η-reduction)
+</pre>
+<p>This combinator is equivalent to the earlier, longer one:</p>
+<pre>
+         (<b>S</b> (<b>K</b> (<b>S</b> <b>I</b>))   <b>K</b> <i>x</i> <i>y</i>)
+       = (<b>K</b> (<b>S</b> <b>I</b>) <i>x</i> (<b>K</b> <i>x</i>) <i>y</i>)
+       = (<b>S</b> <b>I</b> (<b>K</b> <i>x</i>) <i>y</i>)
+       = (<b>I</b> <i>y</i> (<b>K</b> <i>x</i> <i>y</i>))
+       = (<i>y</i> (<b>K</b> <i>x</i> <i>y</i>))
+       = (<i>y</i> <i>x</i>)
+</pre>
+<p>Similarly, the original version of the <b>T</b>[] transformation transformed the identity function <i>λf</i>.<i>λx</i>.(<i>f</i> <i>x</i>) into (<b>S</b> (<b>S</b> (<b>K</b> <b>S</b>) (<b>S</b> (<b>K</b> <b>K</b>) <b>I</b>)) (<b>K</b> <b>I</b>)). With the η-reduction rule, <i>λf</i>.<i>λx</i>.(<i>f</i> <i>x</i>) is transformed into <b>I</b>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: One point basis">edit</a>]</div>
+<p><a name="One_point_basis" id="One_point_basis"></a></p>
+<h4>One point basis</h4>
+<p>There are one point bases from which every combinator can be composed extentionally equal to <i>any</i> lambda term. The simplest example of such a basis is {<b>X</b>} where:</p>
+<pre>
+       <b>X</b> ≡ <i>λx</i>.(((x <b>K</b>)<b>S</b>)<b>K</b>)
+</pre>
+<p>It is not difficult to verify that:</p>
+<pre>
+       (<b>X</b> <b>X</b>) <b>X</b> =<sup>ηß</sup> <b>K</b> and
+       <b>X</b> (<b>X</b> <b>X</b>) =<sup>ηß</sup> <b>S</b>.
+</pre>
+<p>Since {<b>K</b>, <b>S</b>} is a basis, it follows that {<b>X</b>} is a basis too.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Combinators B, C of Curry">edit</a>]</div>
+<p><a name="Combinators_B.2C_C_of_Curry" id="Combinators_B.2C_C_of_Curry"></a></p>
+<h4>Combinators B, C of Curry</h4>
+<p>The combinators <b>S</b> and <b>K</b> already figure in the work of <a href="/wiki/Moses_Sch%C3%B6nfinkel.html" title="Moses Schönfinkel">Schönfinkel</a> (although symbol <b>C</b> was used instead of present <b>K</b>), <a href="/wiki/Haskell_Curry.html" title="Haskell Curry">Curry</a> introduced the use of <b>B</b>, <b>C</b>, <b>W</b> (and <b>K</b>), already in his <i>doctoral thesis of 1930</i> (see <a href="/wiki/B%2CC%2CK%2CW_System.html" title="B,C,K,W System">B,C,K,W System</a>). In <i>Combinatory Logic V. I</i>, we return to <b>S</b>, <b>K</b>, but (via <a href="/wiki/Markov%27s_algorithms.html" title="Markov's algorithms">Markov's algorithms</a>) he uses <b>B</b> and <b>C</b> to simplify many reductions. This seems to have been used, much later, by <a href="/wiki/David_Turner_%28computer_scientist%29.html" title="David Turner (computer scientist)">David Turner</a>, whose name has been bound to its computational use. Two new combinators are introduced:</p>
+<pre>
+       (<b>C</b> <i>a</i> <i>b</i> <i>c</i>) = (<i>a</i> <i>c</i> <i>b</i>)
+       (<b>B</b> <i>a</i> <i>b</i> <i>c</i>) = (<i>a</i> (<i>b</i> <i>c</i>))
+</pre>
+<p>Using these combinators, we can extend the rules for the transformation as follows:</p>
+<ol>
+<li><i>T</i>[<i>V</i>] =&gt; <i>V</i></li>
+<li><i>T</i>[(<i>E1</i> <i>E2</i>)] =&gt; (<i>T</i>[<i>E1</i>] <i>T</i>[<i>E2</i>])</li>
+<li><i>T</i>[<i>λx</i>.<i>E</i>] =&gt; (<b>K</b> <i>T</i>[<i>E</i>]) (if <i>x</i> is not free in <i>E</i>)</li>
+<li><i>T</i>[<i>λx</i>.<i>x</i>] =&gt; <b>I</b></li>
+<li><i>T</i>[<i>λx</i>.<i>λy</i>.<i>E</i>] =&gt; <i>T</i>[<i>λx</i>.<i>T</i>[<i>λy</i>.<i>E</i>]] (if <i>x</i> is free in <i>E</i>)</li>
+<li><i>T</i>[<i>λx</i>.(<i>E1</i> <i>E2</i>)] =&gt; (<b>S</b> <i>T</i>[<i>λx</i>.<i>E1</i>] <i>T</i>[<i>λx</i>.<i>E2</i>]) (if <i>x</i> is free in both <i>E1</i> and <i>E2</i>)</li>
+<li><i>T</i>[<i>λx</i>.(<i>E1</i> <i>E2</i>)] =&gt; (<b>C</b> <i>T</i>[<i>λx</i>.<i>E1</i>] <i>E2</i>) (if <i>x</i> is free in <i>E1</i> but not <i>E2</i>)</li>
+<li><i>T</i>[<i>λx</i>.(<i>E1</i> <i>E2</i>)] =&gt; (<b>B</b> <i>E1</i> <i>T</i>[<i>λx</i>.<i>E2</i>]) (if <i>x</i> is free in <i>E2</i> but not <i>E1</i>)</li>
+</ol>
+<p>Using <b>B</b> and <b>C</b> combinators, the transformation of <i>λx</i>.<i>λy</i>.(<i>y</i> <i>x</i>) looks like this:</p>
+<pre>
+         <i>T</i>[<i>λx</i>.<i>λy</i>.(<i>y</i> <i>x</i>)] 
+       = <i>T</i>[<i>λx</i>.<i>T</i>[<i>λy</i>.(<i>y</i> <i>x</i>)]]
+       = <i>T</i>[<i>λx</i>.(<b>C</b> <i>T</i>[<i>λy</i>.<i>y</i>] <i>x</i>)]     (by rule 7)
+       = <i>T</i>[<i>λx</i>.(<b>C</b> <b>I</b> <i>x</i>)]
+       = (<b>C</b> <b>I</b>)                   (η-reduction)
+       = <b>C</b><sub>*</sub>(traditional canonical notation : <b>X</b><sub>*</sub> = <b>X</b> <b>I</b>)
+       = <b>I'</b>(traditional canonical notation: <b>X'</b> = <b>C</b> <b>X</b>)  
+</pre>
+<p>And indeed, (<b>C</b> <b>I</b> <i>x</i> <i>y</i>) does reduce to (<i>y</i> <i>x</i>):</p>
+<pre>
+         (<b>C</b> <b>I</b> <i>x</i> <i>y</i>)
+       = (<b>I</b> <i>y</i> <i>x</i>)
+       = (<i>y</i> <i>x</i>)
+</pre>
+<p>The motivation here is that <b>B</b> and <b>C</b> are limited versions of <b>S</b>. Whereas <b>S</b> takes a value and substitutes it into both the applicand and its argument before performing the application, <b>C</b> performs the substitution only in the applicand, and <b>B</b> only in the argument.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: CLK versus CLI calculus">edit</a>]</div>
+<p><a name="CLK_versus_CLI_calculus" id="CLK_versus_CLI_calculus"></a></p>
+<h5><b>CL</b><sub>K</sub> versus <b>CL</b><sub>I</sub> calculus</h5>
+<p>A distinction must be made between the <b>CL</b><sub>K</sub> as described in this article and the <b>CL</b><sub>I</sub> calculus. The distinction corresponds to that between the λ<sub>K</sub> and the λ<sub>I</sub> calculus. Unlike the λ<sub>K</sub> calculus, the λ<sub>I</sub> calculus restricts abstractions to:</p>
+<dl>
+<dd>
+<dl>
+<dd><i>λv</i>.<i>E1</i> where v has at least one free occurrence in <i>E1</i>.</dd>
+</dl>
+</dd>
+</dl>
+<p>As a consequence, combinator <b>K</b> is not present in the λ<sub>I</sub> calculus nor in the <b>CL</b><sub>I</sub> calculus. The constants of <b>CL</b><sub>I</sub> are: <b>I</b>, <b>B</b>, <b>C</b> and <b>S</b>, which form a basis from which all <b>CL</b><sub>I</sub> terms can be composed (modulo equality) Together, <b>B</b> and <b>C</b> simulate <b>K</b>. Every λ<sub>I</sub> term can be converted into an equal <b>CL</b><sub>I</sub> combinator according to rules similar to those presented above for the conversion of λ<sub>K</sub> terms into <b>CL</b><sub>K</sub> combinators. See chapter 9 in Barendregt (1984).</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Reverse conversion">edit</a>]</div>
+<p><a name="Reverse_conversion" id="Reverse_conversion"></a></p>
+<h3>Reverse conversion</h3>
+<p>The conversion <i>L</i>[ ] from combinatorial terms to lambda terms is trivial:</p>
+<pre>
+       <i>L</i>[<b>I</b>]       = <i>λx</i>.<i>x</i>
+       <i>L</i>[<b>K</b>]       = <i>λx</i>.<i>λy</i>.<i>x</i>
+       <i>L</i>[<b>C</b>]       = <i>λx</i>.<i>λy</i>.<i>λz</i>.(<i>x</i> <i>z</i> <i>y</i>)
+       <i>L</i>[<b>B</b>]       = <i>λx</i>.<i>λy</i>.<i>λz</i>.(<i>x</i> (<i>y</i> <i>z</i>))
+       <i>L</i>[<b>S</b>]       = <i>λx</i>.<i>λy</i>.<i>λz</i>.(<i>x</i> <i>z</i> (<i>y</i> <i>z</i>))
+       <i>L</i>[(<i>E1</i> <i>E2</i>)] = (<i>L</i>[<i>E1</i>] <i>L</i>[<i>E2</i>])
+</pre>
+<p>Note, however, that this transformation is not the inverse transformation of any of the versions of <b>T</b>[ ] that we have seen.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Undecidability of combinatorial calculus">edit</a>]</div>
+<p><a name="Undecidability_of_combinatorial_calculus" id="Undecidability_of_combinatorial_calculus"></a></p>
+<h2>Undecidability of combinatorial calculus</h2>
+<p>It is undecidable whether a general combinatory term has a normal form; whether two combinatory terms are equivalent, etc. This is equivalent to the undecidability of the corresponding problems for lambda terms. However, a direct proof is as follows:</p>
+<p>First, observe that the term</p>
+<pre>
+       <b>Ω</b> = (<b>S</b> <b>I</b> <b>I</b> (<b>S</b> <b>I</b> <b>I</b>))
+</pre>
+<p>has no normal form, because it reduces to itself after three steps, as follows:</p>
+<pre>
+         (<b>S</b> <b>I</b> <b>I</b> (<b>S</b> <b>I</b> <b>I</b>))
+       = (<b>I</b> (<b>S</b> <b>I</b> <b>I</b>) (<b>I</b> (<b>S</b> <b>I</b> <b>I</b>)))
+       = (<b>S</b> <b>I</b> <b>I</b> (<b>I</b> (<b>S</b> <b>I</b> <b>I</b>)))
+       = (<b>S</b> <b>I</b> <b>I</b> (<b>S</b> <b>I</b> <b>I</b>))
+</pre>
+<p>and clearly no other reduction order can make the expression shorter.</p>
+<p>Now, suppose <b>N</b> were a combinator for detecting normal forms, such that</p>
+<pre>
+       (<b>N</b> <i>x</i>) =&gt; <b>T</b>, if <i>x</i> has a normal form
+                <b>F</b>, otherwise.
+</pre>
+<p>(Where <b>T</b> and <b>F</b> the transformations of the conventional lambda-calculus definitions of true and false, <i>λx</i>.<i>λy</i>.<i>x</i> and <i>λx</i>.<i>λy</i>.<i>y</i>. The combinatory versions have <b>T</b> = <b>K</b> and <b>F</b> = (<b>K</b> <b>I</b>).)</p>
+<p>Now let</p>
+<pre>
+       <i>Z</i> = (<b>C</b> (<b>C</b> (<b>B</b> <b>N</b> (<b>S</b> <b>I</b> <b>I</b>)) <b>Ω</b>) <b>I</b>)
+</pre>
+<p>now consider the term (<b>S</b> <b>I</b> <b>I</b> <i>Z</i>). Does (<b>S</b> <b>I</b> <b>I</b> <i>Z</i>) have a normal form? It does if and only if the following do also:</p>
+<pre>
+         (<b>S</b> <b>I</b> <b>I</b> <i>Z</i>)
+       = (<b>I</b> <i>Z</i> (<b>I</b> <i>Z</i>))
+       = (<i>Z</i> (<b>I</b> <i>Z</i>))
+       = (<i>Z</i> <i>Z</i>) 
+       = (<b>C</b> (<b>C</b> (<b>B</b> <b>N</b> (<b>S</b> <b>I</b> <b>I</b>)) <b>Ω</b>) <b>I</b> <i>Z</i>)           (definition of <i><b>Z</b></i>)
+       = (<b>C</b> (<b>B</b> <b>N</b> (<b>S</b> <b>I</b> <b>I</b>)) <b>Ω</b> <i>Z</i> <b>I</b>)
+       = (<b>B</b> <b>N</b> (<b>S</b> <b>I</b> <b>I</b>) <i>Z</i> <b>Ω</b> <b>I</b>)
+       = (<b>N</b> (<b>S</b> <b>I</b> <b>I</b> <i>Z</i>) <b>Ω</b> <b>I</b>)
+</pre>
+<p>Now we need to apply <b>N</b> to (<b>S</b> <b>I</b> <b>I</b> <i>Z</i>). Either (<b>S</b> <b>I</b> <b>I</b> <i>Z</i>) has a normal form, or it does not. If it <i>does</i> have a normal form, then the foregoing reduces as follows:</p>
+<pre>
+         (<b>N</b> (<b>S</b> <b>I</b> <b>I</b> <i>Z</i>) <b>Ω</b> <b>I</b>)
+       = (<b>K</b> <b>Ω</b> <b>I</b>)                               (definition of <b>N</b>)
+       = <b>Ω</b>
+</pre>
+<p>but <b>Ω</b> does <i>not</i> have a normal form, so we have a contradiction. But if (<b>S</b> <b>I</b> <b>I</b> <i>Z</i>) does <i>not</i> have a normal form, the foregoing reduces as follows:</p>
+<pre>
+         (<b>N</b> (<b>S</b> <b>I</b> <b>I</b> <i>Z</i>) <b>Ω</b> <b>I</b>)
+       = (<b>K</b> <b>I</b> <b>Ω</b> <b>I</b>)                             (definition of <b>N</b>)
+       = (<b>I</b> <b>I</b>)
+         <b>I</b>
+</pre>
+<p>which means that the normal form of (<b>S</b> <b>I</b> <b>I</b> <i>Z</i>) is simply <b>I</b>, another contradiction. Therefore, the hypothetical normal-form combinator <b>N</b> cannot exist.</p>
+<p>The combinatory logic analogue of <a href="/wiki/Rice%27s_theorem.html" title="Rice's theorem">Rice's theorem</a> says that there is no complete nontrivial predicate. A <i>predicate</i> is a combinator that, when applied, returns either <b>T</b> or <b>F</b>. A predicate <i>N</i> is <i>nontrivial</i> if there are two arguments <i>A</i> and <i>B</i> such that <i>NA</i>=<b>T</b> and <i>NB</i>=<b>F</b>. A combinator <i>N</i> is <i>complete</i> if and only if <i>NM</i> has a normal form for every argument <i>M</i>. The analogue of Rice's theorem then says that every complete predicate is trivial.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Combinatory terms as graphs">edit</a>]</div>
+<p><a name="Combinatory_terms_as_graphs" id="Combinatory_terms_as_graphs"></a></p>
+<h2>Combinatory terms as graphs</h2>
+<p>(TO DO: Add details with illustrations; don't forget to discuss the effect of fixed-point combinators.)</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Applications">edit</a>]</div>
+<p><a name="Applications" id="Applications"></a></p>
+<h2>Applications</h2>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Compilation of functional languages">edit</a>]</div>
+<p><a name="Compilation_of_functional_languages" id="Compilation_of_functional_languages"></a></p>
+<h3>Compilation of functional languages</h3>
+<p><a href="/wiki/Functional_programming_language.html" title="Functional programming language">Functional programming languages</a> are often based on the simple but universal semantics of the lambda calculus. (Add details.)</p>
+<p>David Turner used his combinators to implement the <a href="/wiki/SASL_programming_language.html" title="SASL programming language">SASL programming language</a>.</p>
+<p><a href="/wiki/Kenneth_E._Iverson.html" title="Kenneth E. Iverson">Kenneth E. Iverson</a> used primitives based on Curry's combinators in his <a href="/wiki/J_programming_language.html" title="J programming language">J programming language</a>, a successor to <a href="/wiki/APL.html" title="APL">APL</a>. This enabled what Iverson called tacit programming, that is, programming in functional expressions containing no variables, along with powerful tools for working with such programs. It turns out that tacit programming is possible in a clumsier manner in any APL-like language with user-defined operators (<a  class="external text" title="http://portal.acm.org/citation.cfm?id=114065&amp;dl=GUIDE&amp;coll=GUIDE">Pure Functions in APL and J</a>).</p>
+<p>(Discuss strict vs. <a href="/wiki/Lazy_evaluation.html" title="Lazy evaluation">lazy evaluation</a> semantics. Note implications of graph reduction implementation for lazy evaluation. Point out efficiency problem in lazy semantics: Repeated evaluation of the same expression, in, e.g. (square COMPLICATED) =&gt; (* COMPLICATED COMPLICATED), normally avoided by eager evaluation and call-by-value. Discuss benefit of graph reduction in this case: when (square COMPLICATED) is evaluated, the representation of COMPLICATED can be shared by both branches of the resulting graph for (* COMPLICATED COMPLICATED), and evaluated only once.)</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Logic">edit</a>]</div>
+<p><a name="Logic" id="Logic"></a></p>
+<h3>Logic</h3>
+<p>The <a href="/wiki/Curry-Howard_isomorphism.html" title="Curry-Howard isomorphism">Curry-Howard isomorphism</a> implies a relationship between logic and programming: Every valid proof of a theorem of logic corresponds directly to a reduction of a lambda term, and vice versa. Theorems themselves are identified with function type signatures. Specifically, typed combinatory logics correspond to <a  class="new" title="Hilbert system">Hilbert systems</a> in <a href="/wiki/Proof_theory.html" title="Proof theory">proof theory</a>.</p>
+<p>(Add: Demonstration that the proof system</p>
+<pre>
+       (a -&gt; (b -&gt; a))
+       (a -&gt; (b -&gt; c))  -&gt;  ((a -&gt; b) -&gt; (a -&gt; c))
+        a, a -&gt; b / b
+</pre>
+<p>is complete for the intuitionistic fragment of propositional logic.)</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/SKI_combinator_calculus.html" title="SKI combinator calculus">SKI combinator calculus</a></li>
+<li><a href="/wiki/B%2CC%2CK%2CW_system.html" title="B,C,K,W system">B,C,K,W system</a></li>
+<li><a href="/wiki/Fixed_point_combinator.html" title="Fixed point combinator">Fixed point combinator</a></li>
+<li><a href="/wiki/Graph_reduction_machine.html" title="Graph reduction machine">graph reduction machine</a></li>
+<li><a href="/wiki/Supercombinator.html" title="Supercombinator">supercombinators</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<ul>
+<li><a href="/wiki/Moses_Sch%C3%B6nfinkel.html" title="Moses Schönfinkel">Moses Schönfinkel</a>, 1924, "Über die Bausteine der mathematischen Logik," translated as "On the Building Blocks of Mathematical Logic" in <i>From Frege to Gödel: a source book in mathematical logic, 1879-1931</i>, <a href="/wiki/Jean_van_Heijenoort.html" title="Jean van Heijenoort">Jean van Heijenoort</a>, ed. Harvard University Press, 1967. <a  class="internal">ISBN 0-674-32449-8</a> The article that founded combinatory logic.</li>
+<li><a href="/wiki/Haskell_Curry.html" title="Haskell Curry">Haskell Curry</a>, Hindley, and Seldon, 1972. <i>Combinatory Logic</i>. North-Holland. <a  class="internal">ISBN 0-7204-2208-6</a> A comprehensive overview of combinatory logic, including a historical sketch.</li>
+<li>Field, Anthony J. and Peter G. Harrison, 1998. <i>Functional Programming</i>. . Addison-Wesley. <a  class="internal">ISBN 0-201-19249-7</a></li>
+<li>Paulson, Lawrence C., 1995. <i><a  class="external text" title="http://www.cl.cam.ac.uk/Teaching/Lectures/founds-fp/Founds-FP.ps.gz">Foundations of Functional Programming.</a></i> University of Cambridge.</li>
+<li>Sørensen, Morten Heine B. and Pawel Urzyczyn, 1999. <i><a  class="external text" title="http://folli.loria.fr/cds/1999/library/pdf/curry-howard.pdf">Lectures on the Curry-Howard Isomorphism.</a></i> University of Copenhagen and University of Warsaw, 1999.</li>
+<li><a  class="external text" title="http://www.sadl.uleth.ca/gsdl/cgi-bin/library?a=p&amp;p=about&amp;c=curry">1920-1931 Curry's block notes</a></li>
+<li>Hindley, Roger, and Meredith, 1990, "Principal Type-Schemes and Condensed Detachment," <i>Journal of Symbolic Logic 55</i>: 90-105</li>
+<li><a href="/wiki/Hendrik_Pieter_Barendregt.html" title="Hendrik Pieter Barendregt">Hendrik Pieter Barendregt</a>, 1984. <i>The Lambda Calculus, Its Syntax and Semantics</i>. Studies in Logic and the Foundations of Mathematics, Volume 103, North-Holland. <a  class="internal">ISBN 0-444-87508-5</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://cstein.kings.cam.ac.uk/~chris/combinators.html">"Drag 'n' Drop Combinators (Java Applet)"</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Further reading">edit</a>]</div>
+<p><a name="Further_reading" id="Further_reading"></a></p>
+<h2>Further reading</h2>
+<ul>
+<li><cite class="book" style="font-style:normal" id="Reference-Smullyan-1985"><a href="/wiki/Raymond_Smullyan.html" title="Raymond Smullyan">Smullyan, Raymond</a> (1985). <i>To Mock a Mockingbird</i>. Knopf. <a  class="internal">ISBN 0-394-53491-3</a>.</cite></li>
+</ul>
+
+<!-- 
+Pre-expand include size: 4490 bytes
+Post-expand include size: 734 bytes
+Template argument size: 815 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:149848-0!1!0!default!!en!2 and timestamp 20060909201636 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Lambda calculus">Lambda calculus</a></span> | <span dir='ltr'><a  title="Category:Logic in computer science">Logic in computer science</a></span> | <span dir='ltr'><a  title="Category:Mathematical logic">Mathematical logic</a></span> | <span dir='ltr'><a  title="Category:Theory of computation">Theory of computation</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Combinatory_logic.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-zh"><a >中文</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 17:35, 5 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv82 in 0.113 secs. --></body></html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="NetCDF,Application programming interface,Array,Attributes,Average,Binary file,C++,CDF,C programming language,Climate change,Climatology" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>NetCDF - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "NetCDF";
+			var wgTitle = "NetCDF";
+			var wgArticleId = 635452;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">NetCDF</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p><b>NetCDF</b> (<b>Network Common Data Form</b>) is a machine-independent, self-describing, <a href="/wiki/Binary_file.html" title="Binary file">binary</a> <a href="/wiki/Data.html" title="Data">data</a> <a href="/wiki/File_format.html" title="File format">format</a> standard for exchanging scientific data. The project homepage is hosted by the Unidata program at the <a href="/wiki/University_Corporation_for_Atmospheric_Research.html" title="University Corporation for Atmospheric Research">University Corporation for Atmospheric Research</a> (UCAR). They are also the chief source of netCDF software, standards development, updates etc. The format is an <a href="/wiki/Open_standard.html" title="Open standard">open standard</a>.</p>
+<p>The project is actively supported, currently at version 3, and with plans underway for a version 4. It is planned to merge the project in version 4 with the <a href="/wiki/HDF5.html" title="HDF5">HDF5</a> data file format, giving an alternative netCDF interface to HDF5 files.</p>
+<p>The format was originally based on the conceptual model of the <a href="/wiki/NASA.html" title="NASA">NASA</a> <a href="/wiki/CDF.html" title="CDF">CDF</a> but has since diverged and is not compatible with it.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Format description</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Software</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">2.1</span> <span class="toctext">Access libraries</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.2</span> <span class="toctext">Applications</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Common uses</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Format description">edit</a>]</div>
+<p><a name="Format_description" id="Format_description"></a></p>
+<h2>Format description</h2>
+<p>The data format is "self-describing". This means that there is a <a href="/wiki/Header_%28information_technology%29.html" title="Header (information technology)">header</a> which describes the layout of the rest of the file, in particular the data <a href="/wiki/Array.html" title="Array">arrays</a>, as well as arbitrary file metadata in the form of name/value <a href="/wiki/Attributes.html" title="Attributes">attributes</a>. The format is <a href="/wiki/Platform_independent.html" title="Platform independent">platform independent</a>, with issues such as <a href="/wiki/Endianness.html" title="Endianness">endianness</a> being addressed in the <a href="/wiki/Software_libraries.html" title="Software libraries">software libraries</a>. The data arrays are rectangular, not ragged, and stored in a simple and regular fashion that allows efficient subsetting.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Software">edit</a>]</div>
+<p><a name="Software" id="Software"></a></p>
+<h2>Software</h2>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Access libraries">edit</a>]</div>
+<p><a name="Access_libraries" id="Access_libraries"></a></p>
+<h3>Access libraries</h3>
+<p>The software libraries supplied by UCAR provide read-write access to netCDF files, encoding and decoding the necessary arrays and metadata. The core library is written in <a href="/wiki/C_programming_language.html" title="C programming language">C</a>, and provides an <a href="/wiki/Application_programming_interface.html" title="Application programming interface">API</a> for C, <a href="/wiki/C%2B%2B.html" title="C++">C++</a> and <a href="/wiki/Fortran.html" title="Fortran">Fortran</a> applications. An independent implementation, also developed and maintained by Unidata, is written in 100% <a href="/wiki/Java_programming_language.html" title="Java programming language">Java</a>, which extends the core data model and adds additional functionality. Interfaces to netCDF based on the C library are also available in other languages including <a href="/wiki/R_programming_language.html" title="R programming language">R</a> (<i><a  class="external text" title="http://cirrus.ucsd.edu/~pierce/ncdf/">ncdf</a></i> and <i>ncvar</i> packages), <a href="/wiki/Perl_Data_Language.html" title="Perl Data Language">Perl</a>, <a href="/wiki/Python_programming_language.html" title="Python programming language">Python</a>, <a href="/wiki/Ruby_programming_language.html" title="Ruby programming language">Ruby</a>, <a href="/wiki/Matlab.html" title="Matlab">Matlab</a>, <a href="/wiki/Interactive_Data_Language.html" title="Interactive Data Language">IDL</a>, and <a href="/wiki/GNU_Octave.html" title="GNU Octave">Octave</a>. The specification of the API calls is very similar across the different languages, apart from inevitable differences of syntax. The API calls for version 2 were rather different from those in version 3, but are also supported by version 3 for backward compatibility. Application programmers using supported languages need not normally be concerned with the file structure itself, even though it is available as an open format.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Applications">edit</a>]</div>
+<p><a name="Applications" id="Applications"></a></p>
+<h3>Applications</h3>
+<p>A wide range of application software has been written which makes use of netCDF files. These range from <a href="/wiki/Command_line.html" title="Command line">command line</a> utilities to graphical <a href="/wiki/Visualisation.html" title="Visualisation">visualisation</a> packages.</p>
+<ul>
+<li>A commonly used set of <a href="/wiki/Unix.html" title="Unix">Unix</a> command line utilities for netCDF files is the <a href="/wiki/NetCDF_Operators.html" title="NetCDF Operators">NetCDF Operators</a> (NCO) suite, which provide a range of commands for manipulation and analysis of netCDF files including basic record <a href="/wiki/Concatenate.html" title="Concatenate">concatenating</a>, <a href="/wiki/Slicing.html" title="Slicing">slicing</a> and <a href="/wiki/Average.html" title="Average">averaging</a>.</li>
+</ul>
+<ul>
+<li><a  class="external text" title="http://www.epic.noaa.gov/java/ncBrowse/">NcBrowse</a> is a generic netCDF file viewer that includes Java graphics, animations and 3D visualizations for a wide range of netCDF file conventions.</li>
+</ul>
+<ul>
+<li><a  class="external text" title="http://meteora.ucsd.edu/~pierce/ncview_home_page.html">ncview</a> is a visual browser for netCDF format files. Typically you would use ncview to get a quick and easy, push-button look at your netCDF files. You can view simple movies of the data, view along various dimensions, take a look at the actual data values, change color maps, invert the data, etc.</li>
+</ul>
+<ul>
+<li>The <a href="/wiki/NCAR_Command_Language.html" title="NCAR Command Language">NCAR Command Language</a> is used to analyze and visualize data in netCDF files (among other formats).</li>
+</ul>
+<ul>
+<li><a  class="external text" title="http://www.pyngl.ucar.edu/Nio.shtml">PyNIO</a> is a <a href="/wiki/Python_programming_language.html" title="Python programming language">Python programming language</a> module that allows read and/or write access to a variety of data formats using an interface modelled on netCDF.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Common uses">edit</a>]</div>
+<p><a name="Common_uses" id="Common_uses"></a></p>
+<h2>Common uses</h2>
+<p>It is commonly used in <a href="/wiki/Climatology.html" title="Climatology">climatology</a> applications (e.g., <a href="/wiki/Weather_forecasting.html" title="Weather forecasting">weather forecasting</a>, <a href="/wiki/Climate_change.html" title="Climate change">climate change</a>) and <a href="/wiki/Geographic_information_system.html" title="Geographic information system">GIS</a> applications.</p>
+<p>It is an input/output format for many GIS applications, and for general scientific data exchange. To quote from their site "NetCDF (network Common Data Form) is an interface for array-oriented data access and a library that provides an implementation of the interface. The netCDF library also defines a machine-independent format for representing scientific data."</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Common_Data_Format.html" title="Common Data Format">Common Data Format</a> (CDF)</li>
+<li><a href="/wiki/GRIB.html" title="GRIB">GRIB</a> (GRIdded Binary)</li>
+<li><a href="/wiki/Hierarchical_Data_Format.html" title="Hierarchical Data Format">Hierarchical Data Format</a> (HDF)</li>
+<li><a href="/wiki/FITS.html" title="FITS">FITS</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://www.unidata.ucar.edu/software/netcdf/">netCDF project page at the University Corporation for Atmospheric Research</a></li>
+<li><a  class="external text" title="http://www.unidata.ucar.edu/software/netcdf-java/">netCDF-Java project</a></li>
+<li><a  class="external text" title="http://www.unidata.ucar.edu/software/netcdf/netcdf-4/index.html">netCDF4 project page</a></li>
+<li><a  class="external text" title="http://www.epic.noaa.gov/java/ncBrowse/">ncBrowse</a> - generic netCDF file viewer - includes Java graphics, animations and 3D visualizations for wide range of netCDF file conventions</li>
+<li><a  class="external text" title="http://www.xi-advies.nl/downloads/AnIntroductionToDistributedVisualization.pdf">"An Introduction to Distributed Visualization"</a>; section 4.2 contains a comparison of CDF, HDF, and netCDF.</li>
+<li><a  class="external text" title="http://nco.sourceforge.net">NCO</a> a suite of programs known as operators, which facilitate manipulation and analysis of netCDF files</li>
+<li><a  class="external text" title="http://www.epic.noaa.gov/epic/software/dapper/">dapper</a> data server and <a  class="external text" title="http://www.epic.noaa.gov/epic/software/dchart/">DChart</a> web client for OPeNDAP in-situ data in netCDF format</li>
+</ul>
+<p><span class="boilerplate" id="foldoc"><i>This article was originally based on material from the <a href="/wiki/Free_On-line_Dictionary_of_Computing.html" title="Free On-line Dictionary of Computing">Free On-line Dictionary of Computing</a>, which is <a  title="Wikipedia:Foldoc license">licensed</a> under the <a href="/wiki/GNU_Free_Documentation_License.html" title="GNU Free Documentation License">GFDL</a>.</i></span></p>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:635452-0!1!0!default!!en!2 and timestamp 20060910163933 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Meteorological data and networks">Meteorological data and networks</a></span> | <span dir='ltr'><a  title="Category:FOLDOC sourced articles">FOLDOC sourced articles</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/NetCDF.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 20:46, 8 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv59 in 0.408 secs. --></body></html>

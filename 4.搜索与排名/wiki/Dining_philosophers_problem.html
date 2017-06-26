@@ -1,0 +1,268 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Dining philosophers problem,1971,Busy waiting,Chopsticks,Cigarette smokers problem,Computer science,Concurrency (computer science),Concurrent programming,Deadlock,Dining cryptographers protocol,Drinking philosophers problem" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Dining philosophers problem - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Dining_philosophers_problem";
+			var wgTitle = "Dining philosophers problem";
+			var wgArticleId = 285344;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Dining philosophers problem</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>In <a href="/wiki/Computer_science.html" title="Computer science">computer science</a>, the <b>dining philosophers problem</b> is an illustrative example of a common computing problem in <a href="/wiki/Concurrency_%28computer_science%29.html" title="Concurrency (computer science)">concurrency</a>. It is a classic <a href="/wiki/Parallel_programming.html" title="Parallel programming">multi-process</a> <a href="/wiki/Synchronization.html" title="Synchronization">synchronization</a> problem, and is included in nearly all college-level computer science curriculums.</p>
+<p>In <a href="/wiki/1971.html" title="1971">1971</a>, <a href="/wiki/Edsger_Dijkstra.html" title="Edsger Dijkstra">Edsger Dijkstra</a> set an examination question on a synchronization problem where five computers competed for access to five shared tape drive peripherals. Soon afterwards the problem was retold by <a href="/wiki/Tony_Hoare.html" title="Tony Hoare">Tony Hoare</a> as the dining philosopher's problem.</p>
+<p>Five philosophers spend their time eating and thinking. The college where they live has a dining table with a large bowl of spaghetti in the center of the table. There are five plates at the table and five forks set between the plates.</p>
+<div class="thumb tright">
+<div style="width:202px;"><a  class="internal" title="Illustration of the dining philosophers problem"><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Dining_philosophers.png/200px-Dining_philosophers.png" alt="Illustration of the dining philosophers problem" width="200" height="207" longdesc="/wiki/Image:Dining_philosophers.png" /></a>
+<div class="thumbcaption">
+<div class="magnify" style="float:right"><a  class="internal" title="Enlarge"><img src="/skins-1.5/common/images/magnify-clip.png" width="15" height="11" alt="Enlarge" /></a></div>
+Illustration of the dining philosophers problem</div>
+</div>
+</div>
+<p>Eating the spaghetti requires the use of two forks (often, the problem is explained with <a href="/wiki/Chopsticks.html" title="Chopsticks">chopsticks</a> instead of forks, because it is easier to understand requiring two chopsticks to eat spaghetti than two forks) which the philosophers pick up one at a time. The philosophers never speak to each other which creates a dangerous possibility of <a href="/wiki/Deadlock.html" title="Deadlock">deadlock</a> in which every philosopher holds a left fork and waits perpetually for a right fork (or vice versa).</p>
+<p>Originally used as a means of illustrating the problem of deadlock, this system reaches deadlock when there is a 'cycle of ungranted requests'. In this case philosopher <i>P<sub>1</sub></i> waits for the fork grabbed by philosopher <i>P<sub>2</sub></i> who is waiting for the fork of philosopher <i>P<sub>3</sub></i> and so forth, making a circular chain.</p>
+<p><a href="/wiki/Resource_starvation.html" title="Resource starvation">Starvation</a> (and the pun was intended in the original problem description) might also occur independently of deadlock if a philosopher is unable to acquire both forks due to a timing issue. For example there might be a rule that the philosophers put down a fork after waiting five minutes for the other fork to become available and wait a further five minutes before making their next attempt. This scheme eliminates the possibility of deadlock (the system can always advance to a different state) but still suffers from the problem of livelock. If all five philosophers appear in the dining room at <i>exactly</i> the same time and each picks up their left fork at the same time the philosophers will wait five minutes until they all put their forks down and then wait a further five minutes before they all pick them up again.</p>
+<p>The lack of available forks is an analogy to the locking of shared resources in real computer programming, a situation known as <a href="/wiki/Concurrent_programming.html" title="Concurrent programming">concurrency</a>. Locking a resource is a common technique to ensure the resource is accessed by only one program or chunk of code at a time. When the resource the program is interested in is already locked by another one, the program waits until it is unlocked. When several programs are involved in locking resources, deadlock might happen, depending on the circumstances. For example, one program needs two files to process. When two such programs lock one file each, both programs wait for the other one to unlock the other file, which will never happen.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Solutions</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">1.1</span> <span class="toctext">Dijkstra's Solution</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.2</span> <span class="toctext">Chandy / Misra Solution</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Solutions">edit</a>]</div>
+<p><a name="Solutions" id="Solutions"></a></p>
+<h2>Solutions</h2>
+<div class="messagebox cleanup metadata">This article or section may be <b>confusing or unclear</b> for some readers, and should be edited to rectify this.<br />
+Please improve the article, or discuss the issue on the <a  title="Talk:Dining philosophers problem">talk page</a>.</div>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Dijkstra's Solution">edit</a>]</div>
+<p><a name="Dijkstra.27s_Solution" id="Dijkstra.27s_Solution"></a></p>
+<h3>Dijkstra's Solution</h3>
+<div class="thumb tright">
+<div style="width:182px;"><a  class="internal" title="Positions of philosophers and forks in  ordering solution."><img src="http://upload.wikimedia.org/wikipedia/en/b/b0/Dining_philosophers.gif" alt="Positions of philosophers and forks in  ordering solution." width="180" height="180" longdesc="/wiki/Image:Dining_philosophers.gif" /></a>
+<div class="thumbcaption">
+<div class="magnify" style="float:right"><a  class="internal" title="Enlarge"><img src="/skins-1.5/common/images/magnify-clip.png" width="15" height="11" alt="Enlarge" /></a></div>
+Positions of philosophers and forks in ordering solution.</div>
+</div>
+</div>
+<p>One solution is to order the forks and require the philosophers to pick the forks up in increasing order. In this solution the philosophers are labeled P<sub>1</sub>, P<sub>2</sub>, P<sub>3</sub>, P<sub>4</sub>, and P<sub>5</sub> and the forks are likewise labeled F<sub>1</sub>, F<sub>2</sub>, F<sub>3</sub>, F<sub>4</sub>, and F<sub>5</sub>. The first philosopher (P<sub>1</sub>) will pick up the first fork (F<sub>1</sub>) before he is allowed to pick up the second fork (F<sub>2</sub>). Philosophers P<sub>2</sub> through P<sub>4</sub> will behave in a similar fashion, picking up the fork F<sub>x</sub> before picking up fork F<sub>x+1</sub>. Philosopher P<sub>5</sub> however picks up fork F<sub>1</sub> before picking up fork F<sub>5</sub>. This change in behavior for P<sub>5</sub> creates an asymmetry that prevents deadlock.</p>
+<p>Prevention of starvation is dependent on the employed method of <a href="/wiki/Mutual_exclusion.html" title="Mutual exclusion">mutual exclusion</a> enforcement. Implementations using <a href="/wiki/Spinlock.html" title="Spinlock">spinlocks</a> or <a href="/wiki/Busy_waiting.html" title="Busy waiting">busy waiting</a> can cause starvation through timing problems inherent in these methods. This problem is known as <a href="/wiki/Priority_inversion.html" title="Priority inversion">priority inversion</a>. Other methods of mutual exclusion that utilize <a href="/wiki/Queue.html" title="Queue">queues</a> can prevent starvation by enforcing equal access to a fork by the adjacent philosophers.</p>
+<p>Dijkstra's solution can be extrapolated to represent arbitrary contention between philosophers, but requires all the forks to be labeled correctly for such configurations.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Chandy / Misra Solution">edit</a>]</div>
+<p><a name="Chandy_.2F_Misra_Solution" id="Chandy_.2F_Misra_Solution"></a></p>
+<h3>Chandy / Misra Solution</h3>
+<p>In 1984, K. M. Chandy and J. Misra proposed a different solution to the Dining Philosophers problem to allow for arbitrary agents (numbered P<sub>1</sub>, ..., P<sub>n</sub>) to contend for an arbitrary number of resources (numbered R<sub>1</sub>, ..., R<sub>m</sub>). Unlike in Dijkstra's solution, these labelings can be arbitrary. They solved this general problem using an elegant solution:</p>
+<ol>
+<li>For every pair of philosophers contending for a resource, create a fork and give it to the philosopher with the lower ID. Each fork can either be <i>dirty</i> or <i>clean.</i> Initially, all forks are dirty.</li>
+<li>When a philosopher wants to use a set of resources (<i>i.e.</i> eat), he must obtain the forks from his contending neighbors. For all such forks he does not have, he sends a request message.</li>
+<li>When a philosopher with a fork receives a request message, he keeps the fork if it is clean, but gives it up when it is dirty. If he sends the fork over, he cleans the fork before doing so.</li>
+<li>After a philosopher is done eating, all his forks become dirty. If another philosopher had previously requested one of the forks, he cleans the fork and sends it.</li>
+</ol>
+<p>This solution also allows for a large degree of concurrency.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<ul>
+<li><cite class="book" style="font-style:normal">Silberschatz, Abraham; Peterson, James L. (1988). <i>Operating Systems Concepts</i>. Addison-Wesley. <a  class="internal">ISBN 0-201-18760-4</a>.</cite></li>
+<li>Chandy, K.M.; Misra, J. (1984). The Drinking Philosophers Problem. ACM Transactions on Programming Languages and Systems.</li>
+<li>Dijkstra, E. W. (1971, June). <a  class="external text" title="http://www.cs.utexas.edu/users/EWD/ewd03xx/EWD310.PDF">Hierarchical ordering of sequential processes</a>. Acta Informatica 1(2): 115-138.</li>
+<li>Lehmann, D. J., Rabin M. O, (1981). On the Advantages of Free Choice: A Symmetric and Fully Distributed Solution to the Dining Philosophers Problem. Principles Of Programming Languages 1981 (POPL'81), pages 133-138</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Drinking_philosophers_problem.html" title="Drinking philosophers problem">Drinking philosophers problem</a></li>
+<li><a href="/wiki/Sleeping_barber_problem.html" title="Sleeping barber problem">Sleeping barber problem</a></li>
+<li><a href="/wiki/Spontaneous_symmetry_breaking.html" title="Spontaneous symmetry breaking">Spontaneous symmetry breaking</a></li>
+<li><a href="/wiki/Cigarette_smokers_problem.html" title="Cigarette smokers problem">Cigarette smokers problem</a></li>
+<li><a href="/wiki/Dining_cryptographers_protocol.html" title="Dining cryptographers protocol">Dining cryptographers protocol</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://laser.cs.umass.edu/verification-examples/dp_standard/dp.html">Discussion of the problem with solution code for 2 or 4 philosophers</a></li>
+<li><a  class="external text" title="http://foldoc.doc.ic.ac.uk/foldoc/foldoc.cgi?Dining+Philosophers+Problem">Discussion of various solutions 1</a></li>
+<li><a  class="external text" title="http://www.cs.utk.edu/~plank/plank/classes/cs560/560/notes/Dphil/lecture.html">Discussion of various solutions 2</a></li>
+<li><a  class="external text" title="http://64.233.183.104/search?q=cache:MYHZ-zyFVdEJ:www.cs.purdue.edu/homes/clifton/cs603/Philosophers.ppt">Distributed symmetric solutions</a></li>
+<li><a  class="external text" title="http://jason.mchu.com/SDP/index.html">Programming the Dining Philosophers with Simulation</a></li>
+<li><a  class="external text" title="http://www.doc.ic.ac.uk/~jnm/concurrency/classes/Diners/Diners.html">Interactive example</a> of the Philosophers problem (<a  class="external text" title="http://jdl.sun.com/webapps/getjava/BrowserRedirect?locale=en&amp;host=www.java.com:80">Java</a> required)</li>
+<li><a  class="external text" title="http://www.crockford.com/ec/dining.html">Satan Comes to Dinner</a></li>
+</ul>
+
+<!-- 
+Pre-expand include size: 4065 bytes
+Post-expand include size: 940 bytes
+Template argument size: 875 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:285344-0!1!0!default!!en!2 and timestamp 20060910155414 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Wikipedia articles needing clarification">Wikipedia articles needing clarification</a></span> | <span dir='ltr'><a  title="Category:Concurrency">Concurrency</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Dining_philosophers_problem.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-ko"><a >한국어</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-he"><a >עברית</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-sk"><a >Slovenčina</a></li>
+				<li class="interwiki-fi"><a >Suomi</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 10:10, 31 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv44 in 0.239 secs. --></body></html>

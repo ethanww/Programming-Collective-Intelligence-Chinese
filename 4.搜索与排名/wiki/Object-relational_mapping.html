@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Object-relational mapping,Java Data Objects,Enterprise Java Beans,Hibernate (Java),Ruby on Rails,SPARQL,Caché (software),Resource Description Framework,ActiveRecord,Object database,Relational model" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Object-relational mapping - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Object-relational_mapping";
+			var wgTitle = "Object-relational mapping";
+			var wgArticleId = 59202;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Object-relational mapping</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p><b>Object-Relational mapping</b> (or <b>O/RM</b>), is a <a href="/wiki/Programming.html" title="Programming">programming</a> technique that links databases to <a href="/wiki/Object-oriented_programming.html" title="Object-oriented programming">object-oriented</a> language concepts, creating (in effect) a "virtual <a href="/wiki/Object_database.html" title="Object database">object database</a>." There are both free and commercial packages available that perform object-relational mapping, although some programmers opt to code their own object-relational mapping for their systems.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">The problem</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Relational database management systems (RDBMS)</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">The solution</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Object-oriented databases</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">References and notes</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: The problem">edit</a>]</div>
+<p><a name="The_problem" id="The_problem"></a></p>
+<h2>The problem</h2>
+<p>In object-oriented programming, programming objects represent real-world objects. To illustrate, consider the example of an address book, which contains listings of people along with zero or more phone numbers and zero or more addresses. In object-oriented terms this would be represented by a "person <a href="/wiki/Object_%28computing%29.html" title="Object (computing)">object</a>" with "slots" (fields, members, instance variables etc.) to hold the data that make up this listing: the person's name, a list (or <a href="/wiki/Array.html" title="Array">array</a>) of phone numbers, and a list of addresses.</p>
+<p>The crux of the problem is in translating those objects to forms which can be stored in files or databases, and which can later be retrieved easily while preserving the properties of the objects and their relationships; these objects can then be said to be <a href="/wiki/Persistence.html" title="Persistence">persistent</a>. Historically, there have been several approaches to solving this problem.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Relational database management systems (RDBMS)">edit</a>]</div>
+<p><a name="Relational_database_management_systems_.28RDBMS.29" id="Relational_database_management_systems_.28RDBMS.29"></a></p>
+<h2>Relational database management systems (RDBMS)</h2>
+<p>The solution to these sorts of data storage problems already exists: <a href="/wiki/Relational_database_management_system.html" title="Relational database management system">relational database management systems</a>. The primary kind of database used is the relational database, which predates the popularisation of object-oriented programming in the 1990s. Using relational databases to store object-oriented data leads to a <a href="/wiki/Semantic_gap.html" title="Semantic gap">semantic gap</a> where programmers would be required to allow their software to function in two different worlds — processing of data would be done in object-oriented form, but the same data would have to be stored in relational form. Requiring this constant conversion between two different forms of the same data not only had the effect of stifling performance, but imposed difficulties to the programmer as the relational or object-oriented forms would impose limitations on each other. For example, relational databases make complicated associations difficult, and they tend to "map" poorly into the OO world because they fail to implement the <a href="/wiki/Relational_model.html" title="Relational model">relational model</a>'s user-defined types. This problem is known as the <a href="/wiki/Object-Relational_impedance_mismatch.html" title="Object-Relational impedance mismatch">Object-Relational impedance mismatch</a>.</p>
+<p>Relational databases use a series of <i><a href="/wiki/Table_%28database%29.html" title="Table (database)">tables</a></i> representing simple data. Optional or related information is stored in other tables. A single (persistent object) record in the database often spans several of these tables, and requires a <i>join</i> to collect all of the related information back into a single piece of data for processing. This would be the case for the address book, which would likely include at least a user and address table, but perhaps even a phone number table as well.</p>
+<p>In the object world there is a clear sense of "<a href="/wiki/Ownership.html" title="Ownership">ownership</a>", where a particular person object owns a particular phone number. This is not the case in relational databases, where the tables have no idea how they relate to other tables at a fundamental level. Instead, the user must construct a "<a href="/wiki/Query.html" title="Query">query</a>" to gather the information back together. Queries not only request what information to return but also need to know how the tables involved are related to each other, illustrating the point that tables do not know their relationships when they are sitting in the database, these relationships are only known when a query is run to specify the relationships. Relational databases (which try to implement the Relational Model), do maintain relationships via constraints but the SQL query language is generally unaware of these.</p>
+<p>Because RDBMS usually don't implement relational awareness of the physical level, it can be very expensive to submit several queries in a row. One can't, for instance, expect good performance if one does a series of operations like "find this user, ok, now find this user's addresses, ok...". Instead, one must construct a single large SQL query that says "find this user and all their addresses and phone numbers and return them in this format."; this would enable a truly relational system's optimiser to reach much higher global performance than possible with OO hand-tuned access, even if probably some particular OO access paths will be faster.</p>
+<p>Some object-relational mappers automatically keep the loaded objects in memory in constant synchronisation with the database. For this to be possible, after construction of an object-to-SQL mapping query, first returned data is copied into the fields of the objects in question, like any object-SQL mapping package. Once there, the object has to watch to see if these values change, and then carefully reverse the process to write the data back out to the database.</p>
+<p>RDBMSs are generally capable of much faster performance on global queries that involve a large proportion of the database; however, object-oriented access is deemed to be more efficient when manipulating a smaller amount of data since the semantic gap between the object form and relational form is eliminated.</p>
+<p>Given these two very different worlds, object code for working with relational databases tends to be complex and susceptible to bugs. Database-driven software developers looked for a better way to achieve persistence for their objects.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: The solution">edit</a>]</div>
+<p><a name="The_solution" id="The_solution"></a></p>
+<h2>The solution</h2>
+<p>Many packages have been developed to take the strain of developing object-relational mapping systems from programmers.</p>
+<p><br />
+<a  class="external text" title="http://weblogs.asp.net/fbouma/archive/2004/10/09/240225.aspx">To O/R map or not To O/R map</a> - Different O/R mapping tools have completely excluded each others different approaches to object-oriented programming and will highly affect your design. It really matters if you will use Entity(Chen/Yourdon) approach or Domain model(Fowler/Evans) approach.</p>
+<p><a  class="external text" title="http://blogs.tedneward.com/PermaLink,guid,33e0e84c-1a82-4362-bb15-eb18a1a1d91f.aspx">Ted Neward also writes</a> a (pretty long) well thought out article explaining why he thinks that O/R Mapping is "the Vietnam of Computer Science".</p>
+<p>Object-Relational systems attempt to solve this problem by providing libraries of classes which are able to do this mapping automatically. Given a list of tables in the database, and objects in the program, they will automatically map requests from one to the other. Asking a person object for its phone numbers will result in the proper query being created and sent, and the results being "magically" translated directly into phone number objects inside the program.<sup id="_ref-0" class="reference"><a  title="">[1]</a></sup></p>
+<p>From a programmer's perspective, the system looks like a persistent object store. One can create objects and work with them as one would normally, and they automatically end up in the relational database.</p>
+<p>Things are never that simple though. All O/RM systems tend to make themselves visible in various ways, reducing to some degree one's ability to ignore the database. Worse, the translation layer can be slow and inefficient (notably in terms of the <a href="/wiki/SQL.html" title="SQL">SQL</a> it writes), resulting in programs that are slower and use more memory than code written "by hand."</p>
+<p>A number of O/RM systems have been created over the years, but their effect on the market seems mixed. Considered one of the best was <a href="/wiki/NeXT.html" title="NeXT">NeXT</a>'s <a href="/wiki/Enterprise_Objects_Framework.html" title="Enterprise Objects Framework">Enterprise Objects Framework</a> (EOF), but it failed to have a lasting impact on the market, chiefly because it was tightly tied to NeXT's entire toolkit, <a href="/wiki/OpenStep.html" title="OpenStep">OpenStep</a>. It was later integrated into <a href="/wiki/NeXT.html" title="NeXT">NeXT</a>'s <a href="/wiki/WebObjects.html" title="WebObjects">WebObjects</a>, the first object-oriented Web Application Server. Since <a href="/wiki/Apple_Computer.html" title="Apple Computer">Apple Computer</a> bought <a href="/wiki/NeXT.html" title="NeXT">NeXT</a> in 1997, EOF provides the technology behind the company's e-commerce Web site, the <a href="/wiki/.Mac.html" title=".Mac">.Mac</a> services and the <a href="/wiki/ITunes_Music_Store.html" title="ITunes Music Store">iTunes Music Store</a>. Apple provides EOF in two implementations: the Objective-C implementation that comes with the Apple Developers Tools and the Pure Java implementation that comes in <a href="/wiki/WebObjects.html" title="WebObjects">WebObjects</a> 5.2.</p>
+<p>Upon opening any developer journal or magazine these days, you will see advertisements for so-called post-SQL databases such as <a href="/wiki/Cach%C3%A9_%28software%29.html" title="Caché (software)">Caché</a>. These are identical to the usual object-relational mapping utilities except they are built on their own proprietary database software to maximise performance for both the object-oriented and relational view of the system.</p>
+<p>An alternative approach is being taken with technologies such as <a href="/wiki/Resource_Description_Framework.html" title="Resource Description Framework">RDF</a> and <a href="/wiki/SPARQL.html" title="SPARQL">SPARQL</a>, and the concept of the "<a  class="new" title="Triplestore">triplestore</a>". RDF is a serialization of the subject-predicate-object concept, <a  class="new" title="RDF/XML">RDF/XML</a> is an XML representation of it, <a href="/wiki/SPARQL.html" title="SPARQL">SPARQL</a> is an SQL-like query language, and a <a  class="new" title="Triplestore">triplestore</a> is a general description of any database that deals with a triple.</p>
+<p>More recently, a similar system has started to evolve in the Java world, known as <a href="/wiki/Java_Data_Objects.html" title="Java Data Objects">Java Data Objects</a> (JDO). Unlike EOF, JDO is a standard, and several implementations are available from different vendors. The <a href="/wiki/Enterprise_Java_Beans.html" title="Enterprise Java Beans">Enterprise Java Beans</a> 3.0 (EJB3) specification also covers this same area. There has been standards conflict between the two standards bodies in terms of pre-eminence. JDO has several commercial implementations, while EJB 3.0 is still under development. However, most recently another new standard has been announced by JCP to bring these two standards together and make the future standard something that works with various Java architectures. Another example to mention is <a href="/wiki/Hibernate_%28Java%29.html" title="Hibernate (Java)">Hibernate (Java)</a>, the most used framework of O/R mapping in the java world that has inspired the EJB3 specification.</p>
+<p>In the Web framework <a href="/wiki/Ruby_on_Rails.html" title="Ruby on Rails">Ruby on Rails</a>, object-relational mapping plays a central role and is handled by the <a href="/wiki/ActiveRecord.html" title="ActiveRecord">ActiveRecord</a> wrapping tool.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Object-oriented databases">edit</a>]</div>
+<p><a name="Object-oriented_databases" id="Object-oriented_databases"></a></p>
+<h2>Object-oriented databases</h2>
+<p>The ideal solution would be to use an <a href="/wiki/Object_database.html" title="Object database">object-oriented database management system</a>, which, as the name implies, is a database designed specifically to look at and work with object-oriented programs. Using an OODBMS would eliminate the need for converting data to and from its SQL form, as the data would be stored in its object representation. Object-oriented databases are yet to come into widespread use. One of their main limitations is that switching from an SQL DBMS to a purely object-oriented DBMS means you lose the capability to create <a href="/wiki/SQL.html" title="SQL">SQL</a> queries, which are excellent and well-suited for finding answers to ad-hoc queries. For this reason, many programmers find themselves more at home with an object-SQL mapping system, even though most commercial object-oriented databases are able to process SQL queries to a limited extent. However, object-oriented databases are beginning to gain popularity as programmers seek to improve on the performance of object-SQL mapping.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References and notes">edit</a>]</div>
+<p><a name="References_and_notes" id="References_and_notes"></a></p>
+<h2>References and notes</h2>
+<ol class="references">
+<li id="_note-0"><b><a  title="">^</a></b> <a  class="external text" title="http://www.service-architecture.com/object-relational-mapping/articles/transparent_persistence.html">Animation showing how an object-relational mapping utility works</a></li>
+</ol>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Object-relationship_modelling.html" title="Object-relationship modelling">Object-relationship modelling</a></li>
+<li><a href="/wiki/List_of_object-relational_mapping_software.html" title="List of object-relational mapping software">List of object-relational mapping software</a></li>
+<li><a href="/wiki/CORBA.html" title="CORBA">CORBA</a></li>
+<li><a href="/wiki/Database.html" title="Database">Database</a></li>
+<li><a href="/wiki/Object_database.html" title="Object database">Object database</a></li>
+<li><a href="/wiki/Object-relational_database.html" title="Object-relational database">Object-relational database</a></li>
+<li><a href="/wiki/Relational_model.html" title="Relational model">Relational model</a></li>
+<li><a href="/wiki/SQL.html" title="SQL">SQL</a></li>
+<li><a href="/wiki/Object-SQL_Impedance_Mismatch.html" title="Object-SQL Impedance Mismatch">Object-SQL_Impedance_Mismatch</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://about.ORMappers.com">ORMappers.Com: A community portal devoted to O/R Mappers managed by Roy Osherove</a></li>
+<li><a  class="external text" title="http://www.agiledata.org/essays/mappingObjects.html">Scott W. Ambler: Mapping Objects to Relational Databases: O/R Mapping In Detail</a></li>
+<li><a  class="external text" title="http://c2.com/cgi/wiki?ObjectRelationalToolComparisonDotNet">Object Relational Tool Comparison in .NET</a></li>
+<li><a  class="external text" title="http://java.sun.com/blueprints/corej2eepatterns/Patterns/DataAccessObject.html">Core J2EE Design Pattern: Data Access Objects</a></li>
+<li><a  class="external text" title="http://sourceforge.net/projects/orm-net/">ORM-Net, for .NET</a></li>
+<li><a  class="external text" title="http://citeseer.ist.psu.edu/cis?q=object+and+relational+and+mapping+and+database">Citations from CiteSeer</a></li>
+<li><a  class="external text" title="http://www.codefutures.com/weblog/andygrove/archives/2005/02/data_access_obj.html">Data Access Objects versus Object Relational Mapping</a></li>
+<li><a  class="external text" title="http://www.objectarchitects.de/ObjectArchitects/orpatterns/">Patterns for Object / Relational Mapping and Access Layers</a></li>
+<li><a  class="external text" title="http://db.apache.org/ojb/">ObJectRelationalBridge</a></li>
+<li><a  class="external text" title="http://www.polepos.org">PolePosition Benchmark</a> -- shows the performance trade-offs for solutions in the <a  class="new" title="Object-relational impedance mismatch">object-relational impedance mismatch</a> context.</li>
+<li><a  class="external text" title="http://madgeek.com/Articles/ORMapping/EN/mapping.htm">Choosing an Object-Relational mapping tool</a></li>
+<li><a  class="external text" title="http://www.omg.org/technology/documents/formal/relationship_service.htm">Relationship Service</a></li>
+<li><a  class="external text" title="http://www.omg.org/technology/documents/formal/persistent.htm">Persistent State Service</a></li>
+<li><a  class="external text" title="http://www.jdbcpersistence.org">JDBCPersistence Fast ORM for Java</a></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:59202-0!1!0!default!!en!2 and timestamp 20060908065437 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Databases">Databases</a></span> | <span dir='ltr'><a  title="Category:Database management systems">Database management systems</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Object-relational_mapping.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-id"><a >Bahasa Indonesia</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-pt"><a >Português</a></li>
+				<li class="interwiki-th"><a >ไทย</a></li>
+				<li class="interwiki-zh"><a >中文</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 10:10, 5 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv84 in 0.087 secs. --></body></html>

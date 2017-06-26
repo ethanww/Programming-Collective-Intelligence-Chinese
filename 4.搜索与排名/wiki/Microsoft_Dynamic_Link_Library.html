@@ -1,0 +1,443 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Dynamic-link library,16-bit,32-bit,ActiveX,Binary search,COM,C Plus Plus,C programming language,Code (computer programming),Component Object Model,Computer file" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Dynamic-link library - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Dynamic-link_library";
+			var wgTitle = "Dynamic-link library";
+			var wgArticleId = 2701077;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Dynamic-link library</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub">(Redirected from <a  title="Microsoft Dynamic Link Library">Microsoft Dynamic Link Library</a>)</div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<dl>
+<dd><i>This article is about dynamic libraries in <a href="/wiki/Microsoft_Windows.html" title="Microsoft Windows">Microsoft Windows</a>. For other uses of similar terms, see <a href="/wiki/Dynamic_library_%28disambiguation%29.html" title="Dynamic library (disambiguation)">dynamic library (disambiguation)</a>.</i></dd>
+</dl>
+<p><b>Dynamic-link library</b> (<b>DLL</b>), also known as <b>dynamic link <a href="/wiki/Library.html" title="Library">library</a></b> (without the hyphen), is <a href="/wiki/Microsoft.html" title="Microsoft">Microsoft</a>'s implementation of the <a href="/wiki/Shared_library.html" title="Shared library">shared library</a> concept in the <a href="/wiki/Microsoft_Windows.html" title="Microsoft Windows">Microsoft Windows</a> <a href="/wiki/Operating_system.html" title="Operating system">operating systems</a>. These libraries usually have the <a href="/wiki/File_extension.html" title="File extension">file extension</a> <tt>DLL</tt>, <tt>OCX</tt> (for libraries containing <a href="/wiki/ActiveX.html" title="ActiveX">ActiveX</a> controls), or <tt>DRV</tt> (for legacy <a href="/wiki/Device_driver.html" title="Device driver">system drivers</a>).</p>
+<p>The file formats for DLLs are the same as for Windows <a href="/wiki/EXE.html" title="EXE">EXE</a> files — that is, <a href="/wiki/Portable_Executable.html" title="Portable Executable">Portable Executable</a> (PE) for <a href="/wiki/32-bit.html" title="32-bit">32-bit</a> Windows, and <a href="/wiki/New_Executable.html" title="New Executable">New Executable</a> (NE) for <a href="/wiki/16-bit.html" title="16-bit">16-bit</a> Windows. As with EXEs, DLLs can contain <a href="/wiki/Code_%28computer_programming%29.html" title="Code (computer programming)">code</a>, <a href="/wiki/Data_%28computing%29.html" title="Data (computing)">data</a>, and <a href="/wiki/Resource_%28Windows%29.html" title="Resource (Windows)">resources</a>, in any combination.</p>
+<p>In the broader sense of the term, any data <a href="/wiki/Computer_file.html" title="Computer file">file</a> with the same <a href="/wiki/File_format.html" title="File format">file format</a> can be called a <i>resource DLL</i>. Examples of such DLLs include <i><a href="/wiki/Icon_%28computing%29.html" title="Icon (computing)">icon</a> libraries</i>, sometimes having the extension <tt>ICL</tt>, and <a href="/wiki/Typeface.html" title="Typeface">font</a> files, having the extensions <tt>FON</tt> and <tt>FOT</tt>.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Background</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Features</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">2.1</span> <span class="toctext">Memory management</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.2</span> <span class="toctext">Symbol resolution and binding</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.3</span> <span class="toctext">Explicit run-time linking</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Compiler and language considerations</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">3.1</span> <span class="toctext">Delphi</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.2</span> <span class="toctext">Microsoft Visual Basic</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.3</span> <span class="toctext">C and C++</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Programming examples</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">4.1</span> <span class="toctext">Creating DLL exports</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.2</span> <span class="toctext">Using DLL imports</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.3</span> <span class="toctext">Using explicit run-time linking</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Component Object Model</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">External links</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">8</span> <span class="toctext">References</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Background">edit</a>]</div>
+<p><a name="Background" id="Background"></a></p>
+<h2>Background</h2>
+<p>The original purpose for DLLs was saving both disk space and memory required for applications by storing it locally on the hard drive. In a conventional non-shared library, sections of code are simply added to the calling program. If two programs call the same routine, that code would be duplicated. Instead, any code which many applications share could be separated into a DLL which only exists as a single disk file and a single instance in memory. Extensive use of DLLs allowed early versions of Windows to work under tight memory conditions.</p>
+<p>DLLs provide the standard benefits of shared libraries, such as <a href="/wiki/Modularity_%28programming%29.html" title="Modularity (programming)">modularity</a>. Modularity allows changes to be made to code and data in a single self-contained DLL shared by several applications without any change to the applications themselves. This basic form of modularity allows for relatively compact patches and <a href="/wiki/Service_pack.html" title="Service pack">service packs</a> for large applications, such as <a href="/wiki/Microsoft_Office.html" title="Microsoft Office">Microsoft Office</a>, <a href="/wiki/Microsoft_Visual_Studio.html" title="Microsoft Visual Studio">Microsoft Visual Studio</a>, and even <a href="/wiki/Microsoft_Windows.html" title="Microsoft Windows">Microsoft Windows</a> itself.</p>
+<p>Another benefit of the modularity is the use of generic interfaces for plug-ins. A single interface may be developed which allows old as well as new modules to be integrated seamlessly at run-time into pre-existing applications, without any modification to the application itself. This concept of dynamic extensibility is taken to the extreme with <a href="/wiki/ActiveX.html" title="ActiveX">ActiveX</a>.</p>
+<p>With this many benefits, using DLLs also has a drawback: the <a href="/wiki/DLL_hell.html" title="DLL hell">DLL hell</a>, when several applications conflict on which version of a shared DLL library is to be used. Such conflicts can usually be resolved by placing the different versions of the problem DLL into the applications' folders, rather than a system-wide folder; however, this also nullifies the savings provided by using shared DLLs. Currently, <a href="/wiki/Microsoft_.NET.html" title="Microsoft .NET">Microsoft .NET</a> is targeted as a solution to the problem of DLL hell by allowing <a  class="new" title="Side-by-side">side-by-side</a> coexistence of different versions of a same shared library. With modern computers which have plenty of disk space and memory, it can be a reasonable approach.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Features">edit</a>]</div>
+<p><a name="Features" id="Features"></a></p>
+<h2>Features</h2>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Memory management">edit</a>]</div>
+<p><a name="Memory_management" id="Memory_management"></a></p>
+<h3>Memory management</h3>
+<p>In <a href="/wiki/Win32.html" title="Win32">Win32</a>, the DLL files are organized into <i>sections</i>. Each section has its own set of attributes, such as being writable or read-only, executable (for code) or non-executable (for data), and so on.</p>
+<p>The code in a DLL is usually shared among all the processes that use the DLL; that is, they occupy a single place in physical memory, and do not take up space in the <a href="/wiki/Page_file.html" title="Page file">page file</a>. If the physical memory occupied by a code section is to be reclaimed, its contents are discarded, and later reloaded directly from the DLL file as necessary.</p>
+<p>In contrast to code sections, the data sections of a DLL are usually private; that is, each process using the DLL has its own copy of all the DLL's data. Optionally, data sections can be made shared, allowing <a href="/wiki/Inter-process_communication.html" title="Inter-process communication">inter-process communication</a> via this shared memory area. However, because user restrictions do not apply to the use of shared DLL memory, this creates a <a href="/wiki/Vulnerability_%28computer_science%29.html" title="Vulnerability (computer science)">security hole</a>; namely, one process can corrupt the shared data, which will likely cause all other sharing processes to behave undesirably. For example, a process running under a guest account can in this way corrupt another process running under a privileged account. This is an important reason to avoid the use of shared sections in DLLs.</p>
+<p>If a DLL is compressed by an <a href="/wiki/Executable_compression.html" title="Executable compression">executable packer</a>, such as <a href="/wiki/UPX.html" title="UPX">UPX</a>, all of its code sections are marked as read-and-write, and will be unshared. Read-and-write code sections, much like private data sections, are private to each process and backed up by the page file. Thus, compressing DLLs increases <i>both</i> their memory and disk space consumption, and should be generally avoided for shared DLLs.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Symbol resolution and binding">edit</a>]</div>
+<p><a name="Symbol_resolution_and_binding" id="Symbol_resolution_and_binding"></a></p>
+<h3>Symbol resolution and binding</h3>
+<p>Each function exported by a DLL is identified by a numeric ordinal and optionally a name. Likewise, functions can be imported from a DLL either by ordinal or by name. It is common for internal functions to be exported by ordinal only. For most Windows API functions only the names are preserved across different Windows releases; the ordinals are subject to change. So, one cannot reliably import Windows API functions by their ordinals.</p>
+<p>Importing functions by ordinal does not necessarily provide better performance than importing them by name: export tables of DLLs are ordered by name, so <a href="/wiki/Binary_search.html" title="Binary search">binary search</a> can be used to find a function in this table by its name. On the other hand, only <a href="/wiki/Linear_search.html" title="Linear search">linear search</a> can be used to find a function by its ordinal.</p>
+<p>It is also possible to <i>bind</i> an executable to a specific version of DLL, that is, to resolve the addresses of imported functions at compile-time. For bound imports, the linker saves the timestamp and checksum of the DLL to which the import is bound. At run-time Windows checks to see if the same version of library is being used, and if so, Windows bypasses processing the imports. Otherwise, if the library is different from the one which was bound to, Windows processes the imports in a normal way.</p>
+<p>Bound executables load somewhat faster if they are run in the same environment that they were compiled for, and exactly the same time if they are run in a different environment, so there's no drawback for binding the imports. For example, all the standard Windows applications are bound to the system DLLs of their respective Windows release. A good opportunity to bind an application's imports to its target environment is during the application's installation.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Explicit run-time linking">edit</a>]</div>
+<p><a name="Explicit_run-time_linking" id="Explicit_run-time_linking"></a></p>
+<h3>Explicit run-time linking</h3>
+<p>DLL files may be explicitly loaded at run-time, a process referred to simply as <i>run-time dynamic linking</i> by Microsoft, by using the <tt>LoadLibrary</tt> (or <tt>LoadLibraryEx</tt>) API function. The <tt>GetProcAddress</tt> API function is used to lookup exported symbols by name, and <tt>FreeLibrary</tt> — to unload the DLL. These functions are analogous to <tt>dlopen</tt>, <tt>dlsym</tt>, and <tt>dlclose</tt> in the <a href="/wiki/POSIX.html" title="POSIX">POSIX</a> standard API.</p>
+<p>Note that with implicit run-time linking, referred to simply as <i>load-time dynamic linking</i> by Microsoft, if the linked <tt>DLL</tt> file cannot be found, Windows will display an error message and fail to load the application. The application developer cannot handle the absence of <tt>DLL</tt> files linked implicitly by the compile-time linker. On the other hand, with explicit run-time linking, developers have the opportunity to provide a graceful fall-back facility.</p>
+<p>The procedure for explicit run-time linking is the same in any language, since it depends on the <a href="/wiki/Windows_API.html" title="Windows API">Windows API</a> rather than language constructs.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Compiler and language considerations">edit</a>]</div>
+<p><a name="Compiler_and_language_considerations" id="Compiler_and_language_considerations"></a></p>
+<h2>Compiler and language considerations</h2>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Delphi">edit</a>]</div>
+<p><a name="Delphi" id="Delphi"></a></p>
+<h3><a href="/wiki/Delphi_programming_language.html" title="Delphi programming language">Delphi</a></h3>
+<p>In the heading of a source file, the keyword <tt>library</tt> is used instead of <tt>program</tt>. In the end of the file, the functions to be exported are listed in <tt>exports</tt> clause.</p>
+<p>Delphi does not require <tt>LIB</tt> files to import functions from DLLs. To link to a DLL, <tt>external</tt> keyword is used in function declaration.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Microsoft Visual Basic">edit</a>]</div>
+<p><a name="Microsoft_Visual_Basic" id="Microsoft_Visual_Basic"></a></p>
+<h3>Microsoft <a href="/wiki/Visual_Basic.html" title="Visual Basic">Visual Basic</a></h3>
+<p>In Visual Basic (VB), only run-time linking is supported; but in addition to using <tt>LoadLibrary</tt> and <tt>GetProcAddress</tt> API functions, <i>declarations</i> of imported functions are allowed.</p>
+<p>When importing DLL functions through declarations, VB will generate a run-time error if the <tt>DLL</tt> file cannot be found. The developer can catch the error and handle it appropriately.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: C and C++">edit</a>]</div>
+<p><a name="C_and_C.2B.2B" id="C_and_C.2B.2B"></a></p>
+<h3><a href="/wiki/C_programming_language.html" title="C programming language">C</a> and <a href="/wiki/C_Plus_Plus.html" title="C Plus Plus">C++</a></h3>
+<p>Microsoft <a href="/wiki/Visual_C_Plus_Plus.html" title="Visual C Plus Plus">Visual C++</a> (MSVC) provides a number of extensions to standard C++ which allow functions to be specified as imported or exported directly in the C++ code; these have been adopted by other Windows C and C++ compilers, including Windows versions of <a href="/wiki/GNU_Compiler_Collection.html" title="GNU Compiler Collection">GCC</a>. These extensions use the attribute <tt>__declspec</tt> before a function declaration. When external names follow the C naming conventions, they must also be declared as <tt>extern "C"</tt> in C++ code, in order to prevent it from using C++ naming conventions.</p>
+<p>Besides specifying imported or exported functions using <tt>__declspec</tt> attributes, they may be listed in IMPORT or EXPORTS section of the <tt><a  class="new" title=".def file">DEF</a></tt> file used by the project. The <tt>DEF</tt> file is processed by the linker, rather than the compiler, and thus it is not specific to C++.</p>
+<p>DLL compilation will produce both <tt>DLL</tt> and <tt>LIB</tt> files. The <tt>LIB</tt> file is used to link against a DLL at compile-time; it is not necessary for run-time linking. Unless your DLL is a <a href="/wiki/COM.html" title="COM">COM</a> server, the <tt>DLL</tt> file must be placed in one of the directories listed in the PATH environment variable, or the default system directory, or in the same directory as the program using it. COM server DLLs are registered using regsvr32.exe, which places the DLL's location and its globally unique ID (GUID) in the registry. Programs can then use the DLL by looking up its GUID in the registry to find its location.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Programming examples">edit</a>]</div>
+<p><a name="Programming_examples" id="Programming_examples"></a></p>
+<h2>Programming examples</h2>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Creating DLL exports">edit</a>]</div>
+<p><a name="Creating_DLL_exports" id="Creating_DLL_exports"></a></p>
+<h4>Creating DLL exports</h4>
+<p>The following examples show language specific bindings for exporting symbols from DLLs.</p>
+<p><b>Delphi</b></p>
+<pre>
+library Example;
+
+// Function that adds two numbers
+function AddNumbers(a, b: Double): Double; cdecl;
+begin
+AddNumbers := a + b
+end;
+
+// Export this function
+exports
+AddNumbers;
+
+// DLL initialization code: no special handling needed
+begin
+end.
+</pre>
+<p><b>C and C++</b></p>
+<pre>
+#include &lt;windows.h&gt;
+
+// Export this function
+extern "C" __declspec(dllexport) double AddNumbers(double a, double b);
+
+// DLL initialization function
+BOOL APIENTRY
+DllMain(HANDLE hModule, <a href="/wiki/DWORD.html" title="DWORD">DWORD</a> dwReason, LPVOID lpReserved)
+{
+        return TRUE;
+}
+
+
+// Function that adds two numbers
+double AddNumbers(double a, double b)
+{
+        return a + b;
+}
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Using DLL imports">edit</a>]</div>
+<p><a name="Using_DLL_imports" id="Using_DLL_imports"></a></p>
+<h4>Using DLL imports</h4>
+<p>The following examples show how to use language specific bindings to import symbols for linking against a DLL at compile-time.</p>
+<p><b>Delphi</b></p>
+<pre>
+program Example;
+{$APPTYPE CONSOLE}
+
+// Import function that adds two numbers
+function AddNumbers(a, b: Double): Double; cdecl; external 'Example.dll';
+
+var result: Double;
+begin
+  result := AddNumbers(1, 2);
+  Writeln('The result was: ', result)
+end.
+</pre>
+<p><b>C and C++</b></p>
+<pre>
+#include &lt;windows.h&gt;
+#include &lt;stdio.h&gt;
+
+// Import function that adds two numbers
+extern "C" __declspec(dllimport)double AddNumbers(double a, double b);
+
+int
+main(int argc, char **argv)
+{
+        double result = AddNumbers(1, 2);
+        printf("The result was: %f\n", result);
+        return 0;
+}
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Using explicit run-time linking">edit</a>]</div>
+<p><a name="Using_explicit_run-time_linking" id="Using_explicit_run-time_linking"></a></p>
+<h4>Using explicit run-time linking</h4>
+<p>The following examples show how to use the run-time loading and linking facilities using language specific WIN32 API bindings.</p>
+<p><b>Microsoft Visual Basic</b></p>
+<pre>
+Option Explicit
+Declare Function AddNumbers Lib "Example.dll" _ 
+(ByVal a As Double, ByVal b As Double) As Double
+
+Sub Main()
+Dim Result As Double
+Result = AddNumbers(1, 2)
+Debug.Print "The result was: " &amp; Result
+End Sub
+</pre>
+<p><b>C and C++</b></p>
+<pre>
+#include &lt;windows.h&gt;
+#include &lt;stdio.h&gt;
+
+// DLL function signature
+typedef double (*importFunction)(double, double);
+
+int
+main(int argc, char **argv)
+{
+        importFunction addNumbers;
+        double result;
+
+        // Load DLL file
+        HINSTANCE hinstLib = LoadLibrary("Example.dll");
+        if (hinstLib == NULL) {
+                printf("ERROR: unable to load DLL\n");
+                return 1;
+        }
+
+        // Get function pointer
+        addNumbers = (importFunction)GetProcAddress(hinstLib, "AddNumbers");
+        if (addNumbers == NULL) {
+                printf("ERROR: unable to find DLL function\n");
+                return 1;
+        }
+
+        // Call function.
+        result = addNumbers(1, 2);
+
+        // Unload DLL file
+        FreeLibrary(hinstLib);
+
+        // Display result
+        printf("The result was: %f\n", result);
+
+        return 0;
+}
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Component Object Model">edit</a>]</div>
+<p><a name="Component_Object_Model" id="Component_Object_Model"></a></p>
+<h2>Component Object Model</h2>
+<p>The <a href="/wiki/Component_Object_Model.html" title="Component Object Model">Component Object Model</a> (COM) extends the DLL concept to <a href="/wiki/Object-oriented_programming.html" title="Object-oriented programming">object-oriented programming</a>. Objects can be called from another process or hosted on another machine. COM objects have unique <a href="/wiki/GUID.html" title="GUID">GUIDs</a> and can be used to implement powerful back-ends to simple GUI front ends such as Visual Basic and ASP. They can also be programmed from scripting languages. COM objects are more complex to create and use than DLLs.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Dependency_walker.html" title="Dependency walker">Dependency walker</a>, a utility which displays exported and imported functions of DLL and EXE files.</li>
+<li><a href="/wiki/Dynamic_Library.html" title="Dynamic Library">Dynamic Library</a></li>
+<li><a href="/wiki/Library_Linking_%28Computer_Science%29.html" title="Library Linking (Computer Science)">Library Linking (Computer Science)</a></li>
+<li><a href="/wiki/Linker.html" title="Linker">Linker</a></li>
+<li><a href="/wiki/Loader_%28computing%29.html" title="Loader (computing)">Loader (computing)</a></li>
+<li><a href="/wiki/Object_File.html" title="Object File">Object File</a></li>
+<li><a href="/wiki/Shared_Library.html" title="Shared Library">Shared Library</a></li>
+<li><a href="/wiki/Static_Library.html" title="Static Library">Static Library</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://www.dllsupport.com">Dll files</a> Free Download Windows dll files.</li>
+<li><a  class="external text" title="http://www.dlldll.com">Windows dll files</a> Database of Windows dll files for free download.</li>
+<li><a  class="external text" title="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/vclang/html/_pluslang_Extended_Attribute_Syntax.asp">__declspec C++ Language Reference</a> on MSDN</li>
+<li><a  class="external text" title="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/vclang/html/_pluslang_the_dllexport_and_dllimport_attributes.asp">dllexport, dllimport</a> on MSDN</li>
+<li><a  class="external text" title="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/dllproc/base/dynamic_link_libraries.asp">Dynamic-Link Libraries</a> on MSDN</li>
+<li><a  class="external text" title="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/dllproc/base/dynamic_link_library_functions.asp">Dynamic-Link Library Functions</a> on MSDN</li>
+<li><a  class="external text" title="http://www.microsoft.com/whdc/system/platform/firmware/PECOFF.mspx">Microsoft Portable Executable and Common Object File Format Specification</a></li>
+<li><a  class="external text" title="http://www.dll-file.net">Dll Files</a> - Collection of useful dll files</li>
+<li><a  class="external text" title="http://www.functionx.com/visualc/libraries/win32dll.htm">Win32 DLL</a> on www.functionx.com. Tutorial for making and using DLLs</li>
+<li><a  class="external text" title="http://www.codemaestro.com/articles/article00000001.html">Delay Load Dlls Error Recovery</a> on www.codemaestro.com.</li>
+<li><a  class="external text" title="http://www.joachim-bauch.de/tutorials/load_dll_memory.html">Loading a DLL from memory</a></li>
+<li><a  class="external text" title="http://www.softwaretipsandtricks.com/dll/">List of DLL Files used on Windows XP</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<ul>
+<li>Hart, Johnson. <i>Windows System Programming Third Edition</i>. Addison-Wesley, 2005. <a  class="internal">ISBN 0-321-25619-0</a></li>
+<li>Rector, Brent et al. <i>Win32 Programming</i>. Addison-Wesley Developers Press, 1997. <a  class="internal">ISBN 0-201-63492-9</a>.</li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:2701077-0!1!0!default!!en!2 and timestamp 20060906011058 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Computer library">Computer library</a></span> | <span dir='ltr'><a  title="Category:Windows administration">Windows administration</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Dynamic-link_library.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-bg"><a >Български</a></li>
+				<li class="interwiki-ca"><a >Català</a></li>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-ko"><a >한국어</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-he"><a >עברית</a></li>
+				<li class="interwiki-hu"><a >Magyar</a></li>
+				<li class="interwiki-nl"><a >Nederlands</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-pt"><a >Português</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+				<li class="interwiki-sk"><a >Slovenčina</a></li>
+				<li class="interwiki-sv"><a >Svenska</a></li>
+				<li class="interwiki-vi"><a >Tiếng Việt</a></li>
+				<li class="interwiki-zh"><a >中文</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 13:39, 1 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv87 in 0.107 secs. --></body></html>

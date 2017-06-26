@@ -1,0 +1,439 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Fourier transform,AC power,Abelian,Acoustics,Amplitude,Angular frequency,Anisotropic,Bandpass filter,Basis function,Big O notation,Bispectrum" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Fourier transform - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Fourier_transform";
+			var wgTitle = "Fourier transform";
+			var wgArticleId = 11659;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Fourier transform</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<table class="infobox">
+<tr>
+<th style="background:#ccccff"><strong class="selflink">Fourier transforms</strong></th>
+</tr>
+<tr>
+<td><a href="/wiki/Continuous_Fourier_transform.html" title="Continuous Fourier transform">Continuous Fourier transform</a></td>
+</tr>
+<tr>
+<td><a href="/wiki/Fourier_series.html" title="Fourier series">Fourier series</a></td>
+</tr>
+<tr>
+<td><a href="/wiki/Discrete_Fourier_transform.html" title="Discrete Fourier transform">Discrete Fourier transform</a></td>
+</tr>
+<tr>
+<td><a href="/wiki/Discrete-time_Fourier_transform.html" title="Discrete-time Fourier transform">Discrete-time Fourier transform</a></td>
+</tr>
+<tr align="right">
+<td>
+<center><small><a href="/wiki/List_of_Fourier-related_transforms.html" title="List of Fourier-related transforms">Related transforms</a></small></center>
+<small class="plainlinksneverexpand"><a  class="external text" title="http://en.wikipedia.org/w/index.php?title=Template:Fourier_transforms&amp;action=edit">edit</a></small></td>
+</tr>
+</table>
+<div class="messagebox merge">
+<div class="floatleft"><span><a  class="image" title=""><img src="http://upload.wikimedia.org/wikipedia/commons/8/8b/Merge-arrows.gif" alt="" width="50" height="20" longdesc="/wiki/Image:Merge-arrows.gif" /></a></span></div>
+It has been suggested that this article or section be <a  title="Wikipedia:Merging and moving pages">merged</a> with <i><a href="/wiki/Continuous_Fourier_transform.html" title="Continuous Fourier transform">Continuous Fourier transform</a></i>. (<a  title="Talk:Fourier transform">Discuss</a>)</div>
+<p><br />
+The <b>Fourier transform</b>, named after <a href="/wiki/Joseph_Fourier.html" title="Joseph Fourier">Joseph Fourier</a>, is a reversible (i.e., invertible) <a href="/wiki/Integral_transform.html" title="Integral transform">integral transform</a> of one function into another. The second function, which is called a Fourier transform, gives the coefficients of <a href="/wiki/Trigonometric_function.html" title="Trigonometric function">sinusoidal</a> <a href="/wiki/Basis_function.html" title="Basis function">basis functions</a> (vs. their <a href="/wiki/Frequency.html" title="Frequency">frequencies</a>) whose sum is the original function. That recombination of sinusoidal basis functions is called an <b>inverse Fourier transform</b>.</p>
+<p>The Fourier transform has several specific variations, depending upon the type of function being transformed. These are described below. See also: <a href="/wiki/List_of_Fourier-related_transforms.html" title="List of Fourier-related transforms">List of Fourier-related transforms</a>.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Applications</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Variants of the Fourier transform</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">2.1</span> <span class="toctext">Continuous Fourier transform</span></a>
+<ul>
+<li class="toclevel-3"><a ><span class="tocnumber">2.1.1</span> <span class="toctext">Multi-dimensional version</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.2</span> <span class="toctext">Fourier series</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.3</span> <span class="toctext">Discrete-time Fourier transform</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.4</span> <span class="toctext">Discrete Fourier transform</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.5</span> <span class="toctext">Fast Fourier transform</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.6</span> <span class="toctext">Other variants</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.7</span> <span class="toctext">Family of Fourier transforms</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Interpretation in terms of time and frequency</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Applications in signal processing</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">About notation</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">8</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Applications">edit</a>]</div>
+<p><a name="Applications" id="Applications"></a></p>
+<h2>Applications</h2>
+<p>Fourier transforms have many scientific applications — in <a href="/wiki/Physics.html" title="Physics">physics</a>, <a href="/wiki/Number_theory.html" title="Number theory">number theory</a>, <a href="/wiki/Combinatorics.html" title="Combinatorics">combinatorics</a>, <a href="/wiki/Signal_processing.html" title="Signal processing">signal processing</a>, <a href="/wiki/Probability_theory.html" title="Probability theory">probability theory</a>, <a href="/wiki/Statistics.html" title="Statistics">statistics</a>, <a href="/wiki/Cryptography.html" title="Cryptography">cryptography</a>, <a href="/wiki/Acoustics.html" title="Acoustics">acoustics</a>, <a href="/wiki/Oceanography.html" title="Oceanography">oceanography</a>, <a href="/wiki/Optics.html" title="Optics">optics</a> and <a href="/wiki/Diffraction.html" title="Diffraction">diffraction</a>, <a href="/wiki/Geometry.html" title="Geometry">geometry</a>, and other areas. (In signal processing and related fields, the Fourier transform is typically thought of as decomposing a signal into its component <a href="/wiki/Frequency.html" title="Frequency">frequencies</a> and their <a href="/wiki/Amplitude.html" title="Amplitude">amplitudes</a>.) This wide applicability stems from many useful properties of the transforms:</p>
+<ul>
+<li>The transforms are <a href="/wiki/Linear_operator.html" title="Linear operator">linear operators</a> and, with proper normalization, are <a href="/wiki/Unitary_operator.html" title="Unitary operator">unitary</a> as well (a property known as <a href="/wiki/Parseval%27s_theorem.html" title="Parseval's theorem">Parseval's theorem</a> or, more generally, as the <a href="/wiki/Plancherel_theorem.html" title="Plancherel theorem">Plancherel theorem</a>, and most generally via <a href="/wiki/Pontryagin_duality.html" title="Pontryagin duality">Pontryagin duality</a>).</li>
+<li>The transforms are invertible, and in fact the inverse transform has almost the same form as the forward transform.</li>
+<li>The exponential basis functions are <a href="/wiki/Eigenfunctions.html" title="Eigenfunctions">eigenfunctions</a> of <a href="/wiki/Derivative.html" title="Derivative">differentiation</a>, which means that this representation transforms linear <a href="/wiki/Differential_equation.html" title="Differential equation">differential equations</a> with <a href="/wiki/Constant_coefficients.html" title="Constant coefficients">constant coefficients</a> into ordinary algebraic ones. (For example, in a linear time-invariant physical system, <a href="/wiki/Frequency.html" title="Frequency">frequency</a> is a conserved quantity, so the behavior at each frequency can be solved independently.)</li>
+<li>By the <a href="/wiki/Convolution_theorem.html" title="Convolution theorem">convolution theorem</a>, Fourier transforms turn the complicated <a href="/wiki/Convolution.html" title="Convolution">convolution</a> operation into simple multiplication, which means that they provide an efficient way to compute convolution-based operations such as <a href="/wiki/Polynomial.html" title="Polynomial">polynomial</a> multiplication and <a href="/wiki/Multiplication_algorithm.html" title="Multiplication algorithm">multiplying large numbers</a>.</li>
+<li>The discrete version of the Fourier transform (see below) can be evaluated quickly on computers using <a href="/wiki/Fast_Fourier_transform.html" title="Fast Fourier transform">fast Fourier transform</a> (FFT) algorithms.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Variants of the Fourier transform">edit</a>]</div>
+<p><a name="Variants_of_the_Fourier_transform" id="Variants_of_the_Fourier_transform"></a></p>
+<h2>Variants of the Fourier transform</h2>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Continuous Fourier transform">edit</a>]</div>
+<p><a name="Continuous_Fourier_transform" id="Continuous_Fourier_transform"></a></p>
+<h3>Continuous Fourier transform</h3>
+<p>Most often, the unqualified term "Fourier transform" refers to the <a href="/wiki/Continuous_Fourier_transform.html" title="Continuous Fourier transform">continuous Fourier transform</a>, representing any <a href="/wiki/Integrable_function#Square-integrable.html" title="Integrable function">square-integrable</a> function <img class='tex' src="http://upload.wikimedia.org/math/0/2/b/02bb836d72e1ce0943dab95373a46b12.png" alt="s \left( t \right)" /> as a linear combination of <a href="/wiki/Complex_exponential.html" title="Complex exponential">complex exponentials</a> with frequencies <img class='tex' src="http://upload.wikimedia.org/math/a/7/0/a70d0c9b2e529c999ec05569e1638668.png" alt="\omega\," /><b>:</b></p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/a/d/c/adc44e9e5a9ee9f004ac97b93b70d43d.png" alt="s \left( t \right) = \frac{1}{\sqrt{2\pi}} \int\limits_{-\infty}^\infty S\left( \omega\right) e^{i\omega t}\,d\omega." /></dd>
+</dl>
+<p>The quantity, <img class='tex' src="http://upload.wikimedia.org/math/7/8/9/789025e0e491c7ce3a8f88b9183dabca.png" alt="S(\omega)\," />, provides both the amplitude and initial phase (as a complex number) of basis function<b>:</b> <img class='tex' src="http://upload.wikimedia.org/math/3/5/c/35c693e5bbd3cc2e63e4c57a63125c61.png" alt="e^{i\omega t}\," />.</p>
+<p>The <b>function</b>, <img class='tex' src="http://upload.wikimedia.org/math/7/8/9/789025e0e491c7ce3a8f88b9183dabca.png" alt="S(\omega)\," />, is the <b>Fourier transform</b> of <img class='tex' src="http://upload.wikimedia.org/math/9/8/0/980c4ecdf45c9a0659ea9a425b556262.png" alt="s(t)\," />, denoted by the operator <img class='tex' src="http://upload.wikimedia.org/math/9/6/f/96f887381f6dc2d258d33fe1b2a97b66.png" alt="\mathcal{F}\," /><b>:</b></p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/9/f/d/9fd62c946656393529f7fdad9f4622b1.png" alt="S(\omega) = \left(\mathcal{F}s\right)(\omega)= \mathcal{F}\{s\}(\omega)\," /></dd>
+</dl>
+<p>And the inverse transform (shown above) is written<b>:</b></p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/f/7/f/f7f13fb39c0947be536452d0768fbc4c.png" alt="s(t) = \left(\mathcal{F}^{-1}S\right)(t)= \mathcal{F}^{-1}\{S\}(t)\," /></dd>
+</dl>
+<p>Together the two functions are referred to as a <i>transform pair</i>. See <a href="/wiki/Continuous_Fourier_transform.html" title="Continuous Fourier transform">continuous Fourier transform</a> for more information, including<b>:</b></p>
+<ul>
+<li>formula for the forward transform</li>
+<li>tabulated transforms of specific functions</li>
+<li>discussion of the transform properties</li>
+<li>various conventions for amplitude normalization and frequency scaling/units</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Multi-dimensional version">edit</a>]</div>
+<p><a name="Multi-dimensional_version" id="Multi-dimensional_version"></a></p>
+<h4>Multi-dimensional version</h4>
+<p>The formulation for the Fourier transform given above applies in one dimension. The Fourier transform, however, can be expanded to arbitrary dimension <span class="texhtml"><i>n</i></span>. The more generalised version of this transform in dimension <span class="texhtml"><i>n</i></span>, notated by <img class='tex' src="http://upload.wikimedia.org/math/d/2/2/d22dce62420aa310f9eb4e02e8e592ad.png" alt="\mathcal{F}_n" /> is:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/8/a/d/8ad7fb607c722ee687104250d1d9a717.png" alt="s \left( \mathbf{x} \right) = \left( \mathcal{F}^{-1}_n S \right) \left( \mathbf{x} \right) = \frac{1}{(2\pi)^{n/2}} \int S \left( \boldsymbol{\omega} \right) e^{i \left\langle \boldsymbol{\omega} ,\mathbf{x} \right\rangle} \, d \boldsymbol{\omega}," /></dd>
+</dl>
+<p>where <img class='tex' src="http://upload.wikimedia.org/math/3/c/6/3c66d9170d4c3fb75456e1a9fc6ead37.png" alt="\mathbf{x}" /> and <img class='tex' src="http://upload.wikimedia.org/math/c/a/3/ca3b2297d94c4cc04395f842ae3f8700.png" alt="\boldsymbol{\omega}" /> are <span class="texhtml"><i>n</i></span>-dimensional <a href="/wiki/Vector_%28mathematics%29.html" title="Vector (mathematics)">vectors</a>, <img class='tex' src="http://upload.wikimedia.org/math/2/2/9/229276cc4216e53169e49c9d68a8e90a.png" alt="\left\langle \boldsymbol{\omega} ,\mathbf{x} \right\rangle" /> is the <a href="/wiki/Inner_product.html" title="Inner product">inner product</a> of these two vectors, and the integration is performed over all <span class="texhtml"><i>n</i></span> dimensions.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Fourier series">edit</a>]</div>
+<p><a name="Fourier_series" id="Fourier_series"></a></p>
+<h3>Fourier series</h3>
+<p>The continuous transform is itself actually a generalization of an earlier concept, a <a href="/wiki/Fourier_series.html" title="Fourier series">Fourier series</a>, which was specific to periodic (or finite-domain) functions <img class='tex' src="http://upload.wikimedia.org/math/0/2/b/02bb836d72e1ce0943dab95373a46b12.png" alt="s \left( t \right)" /> (with period <img class='tex' src="http://upload.wikimedia.org/math/d/9/5/d95fd1519e587418ebe3da8fb081701f.png" alt="\tau \," />), and represents these functions as a <a href="/wiki/Series_%28mathematics%29.html" title="Series (mathematics)">series</a> of sinusoids<b>:</b></p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/2/5/1/25175dc52b749d8e0762ba08c36bde5f.png" alt="s(t) = \sum_{k=-\infty}^{\infty} S_k \cdot e^{i \omega_k t}, \," /></dd>
+</dl>
+<p>where <img class='tex' src="http://upload.wikimedia.org/math/8/7/2/8720912d4d1bf35c81a2b2d47ab3f16a.png" alt="\omega_k = 2\pi k / \tau \," />, and <img class='tex' src="http://upload.wikimedia.org/math/1/b/0/1b0cfd325a395787ea5044413a74bcc3.png" alt="S_k \," /> is a (complex) amplitude.</p>
+<p>For <a href="/wiki/Real_number.html" title="Real number">real</a>-valued <img class='tex' src="http://upload.wikimedia.org/math/9/8/0/980c4ecdf45c9a0659ea9a425b556262.png" alt="s(t)\," />, an equivalent variation is<b>:</b></p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/a/8/a/a8a6b903cf633713ab2c2062b5231951.png" alt="s(t) = \frac{1}{2}a_0 + \sum_{k=1}^\infty\left[a_k\cdot \cos(\omega_k t)+b_k\cdot \sin(\omega_k t)\right]," /></dd>
+</dl>
+<p>where <img class='tex' src="http://upload.wikimedia.org/math/5/e/3/5e3a883f66058a934d4d1e0e4cb2e049.png" alt="a_k = 2\cdot \operatorname{Re}\{S_k\} \," /> &#160; and &#160; <img class='tex' src="http://upload.wikimedia.org/math/6/3/b/63b58cb247107208eb69eec88e97668f.png" alt="b_k = -2\cdot \operatorname{Im}\{S_k\} \," />.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Discrete-time Fourier transform">edit</a>]</div>
+<p><a name="Discrete-time_Fourier_transform" id="Discrete-time_Fourier_transform"></a></p>
+<h3>Discrete-time Fourier transform</h3>
+<p>For use on computers, both for scientific computation and <a href="/wiki/Digital_signal_processing.html" title="Digital signal processing">digital signal processing</a>, one must have functions, x[n], that are defined for <a href="/wiki/Discrete_time.html" title="Discrete time">discrete</a> instead of <a href="/wiki/Continuous_time.html" title="Continuous time">continuous</a> domains, again finite or periodic. A useful "discrete-time" function can be obtained by <a href="/wiki/Sampling_%28signal_processing%29.html" title="Sampling (signal processing)">sampling</a> a "continuous-time" function, x(t). And similar to the continuous Fourier transform, the function can be represented as a sum of complex sinusoids<b>:</b></p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/d/9/1/d91c81c0f1e7a1a4fd8009ae385d6952.png" alt="x[n] = \frac{1}{2 \pi}\int_{-\pi}^{\pi} X(\omega)\cdot e^{i \omega n} \, d \omega." /></dd>
+</dl>
+<p>But in this case, the limits of integration need only span one period of the periodic function, <img class='tex' src="http://upload.wikimedia.org/math/5/6/7/5675631a6a6b18c5a23492abd1a9bb04.png" alt="X(\omega ) \," />, which is derived from the samples by the <a href="/wiki/Discrete-time_Fourier_transform.html" title="Discrete-time Fourier transform">discrete-time Fourier transform</a> (DTFT)<b>:</b></p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/f/b/1/fb125cb64ec3ad1c3ad5668ffe95973d.png" alt="X(\omega) = \sum_{n=-\infty}^{\infty} x[n] \,e^{-i \omega n}.\," /></dd>
+</dl>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Discrete Fourier transform">edit</a>]</div>
+<p><a name="Discrete_Fourier_transform" id="Discrete_Fourier_transform"></a></p>
+<h3>Discrete Fourier transform</h3>
+<p>The DTFT is defined on a continuous domain. So despite its periodicity, it still cannot be numerically evaluated for every unique frequency. But a very useful approximation can be made by evaluating it at regularly-spaced intervals, with arbitrarily small spacing. Due to periodicity, the number of unique coefficients (N) to be evaluated is always finite, leading to this simplification<b>:</b></p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/7/3/5/7354cbc835a4e51430e4026545f8103e.png" alt="X[k] = X\left(\frac{2 \pi }{N} k\right)= \sum_{n=-\infty}^{\infty} x[n] \,e^{-i 2 \pi \frac{k}{N} n}," /> &#160; &#160; for <img class='tex' src="http://upload.wikimedia.org/math/1/6/4/164b8dc57cdbdf61d008fbbf30b92b4f.png" alt="k =  0, 1, \dots, N-1. \," /></dd>
+</dl>
+<p>When the portion of x[n] between n=0 and n=N-1 is a good (or exact) representation of the entire x[n] sequence, it is useful to compute<b>:</b></p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/0/a/f/0af44259f8e607fd43128c464d4d7e1e.png" alt="X[k] = \sum_{n=0}^{N-1} x[n] \,e^{-i 2 \pi \frac{k}{N} n}," /></dd>
+</dl>
+<p>which is called <a href="/wiki/Discrete_Fourier_transform.html" title="Discrete Fourier transform">discrete Fourier transform</a> (DFT). Commonly the length of the x[n] sequence is finite, and a larger value of N is chosen. Effectively, the x[n] sequence is padded with zero-valued samples, referred to as <a  class="new" title="Zero padding">zero padding</a>.</p>
+<p>The inverse DFT represents x[n] as the sum of complex sinusoids<b>:</b></p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/4/2/6/4263c862c4c712d92c388afce576e1b3.png" alt="x[n] = \frac{1}{N} \sum_{k=0}^{N-1} X[k] e^{i 2 \pi \frac{k}{N} n}, \quad \quad n = 0, 1, \dots, N-1. \," /></dd>
+</dl>
+<p>The table below will note that this actually produces a periodic <i>x</i>[<i>n</i>]. If the original sequence was not periodic to begin with, this phenomenon is the time-domain consequence of approximating the continuous-domain DTFT function with the discrete-domain DFT function.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Fast Fourier transform">edit</a>]</div>
+<p><a name="Fast_Fourier_transform" id="Fast_Fourier_transform"></a></p>
+<h3>Fast Fourier transform</h3>
+<p>Computing a DFT directly requires O(<i>N</i><sup>2</sup>) operations (see <a href="/wiki/Big_O_notation.html" title="Big O notation">Big O notation</a>). But it can be computed in only O(<i>N</i> log <i>N</i>) operations using a <a href="/wiki/Fast_Fourier_transform.html" title="Fast Fourier transform">fast Fourier transform</a> (FFT) algorithm, which makes the DFT a practical and important transformation on computers.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Other variants">edit</a>]</div>
+<p><a name="Other_variants" id="Other_variants"></a></p>
+<h3>Other variants</h3>
+<p>The Fourier variants can also be generalized to Fourier transforms on arbitrary <a href="/wiki/Locally_compact.html" title="Locally compact">locally compact</a> <a href="/wiki/Abelian.html" title="Abelian">abelian</a> <a href="/wiki/Topological_group.html" title="Topological group">topological groups</a>, which are studied in <a href="/wiki/Harmonic_analysis.html" title="Harmonic analysis">harmonic analysis</a>; there, the Fourier transform takes functions on a group to functions on the <a href="/wiki/Dual_group.html" title="Dual group">dual group</a>. This treatment also allows a general formulation of the <a href="/wiki/Convolution_theorem.html" title="Convolution theorem">convolution theorem</a>, which relates Fourier transforms and <a href="/wiki/Convolution.html" title="Convolution">convolutions</a>. See also the <a href="/wiki/Pontryagin_duality.html" title="Pontryagin duality">Pontryagin duality</a> for the generalized underpinnings of the Fourier transform.</p>
+<p><a  class="new" title="Time-frequency transform">Time-frequency transforms</a> such as the <a href="/wiki/Short-time_Fourier_transform.html" title="Short-time Fourier transform">short-time Fourier transform</a>, <a href="/wiki/Wavelet_transform.html" title="Wavelet transform">wavelet transforms</a>, <a href="/wiki/Chirplet_transform.html" title="Chirplet transform">chirplet transforms</a>, and the <a href="/wiki/Fractional_Fourier_transform.html" title="Fractional Fourier transform">fractional Fourier transform</a> try to obtain frequency information from a signal as a function of time (or whatever the independent variable is), although the ability to simultaneously resolve frequency and time is limited by an (mathematical) <a href="/wiki/Uncertainty_principle.html" title="Uncertainty principle">uncertainty principle</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Family of Fourier transforms">edit</a>]</div>
+<p><a name="Family_of_Fourier_transforms" id="Family_of_Fourier_transforms"></a></p>
+<h3>Family of Fourier transforms</h3>
+<p>The following table summarizes the family of Fourier transforms. We see</p>
+<ul>
+<li>that discreteness in one domain implies periodicity in the opposite transformed domain and the converse is true.</li>
+<li>that continuity in one domain implies aperiodicity in the transformed domain and the converse is true.</li>
+<li>pure <i>reality</i> in one domain (i.e. imaginary part is zero everywhere) implies conjugate symmetry in the transformed domain and the converse is true.</li>
+</ul>
+<table class="wikitable">
+<tr>
+<th>Transform</th>
+<th>Time domain</th>
+<th>Frequency domain</th>
+</tr>
+<tr>
+<td><a href="/wiki/Continuous_Fourier_transform.html" title="Continuous Fourier transform">Continuous Fourier transform</a></td>
+<td>Continuous, Aperiodic</td>
+<td>Continuous, Aperiodic</td>
+</tr>
+<tr>
+<td><a href="/wiki/Fourier_series.html" title="Fourier series">Fourier series</a></td>
+<td>Continuous, Periodic</td>
+<td>Discrete, Aperiodic</td>
+</tr>
+<tr>
+<td><a href="/wiki/Discrete-time_Fourier_transform.html" title="Discrete-time Fourier transform">Discrete-time Fourier transform</a></td>
+<td>Discrete, Aperiodic</td>
+<td>Continuous, Periodic</td>
+</tr>
+<tr>
+<td><a href="/wiki/Discrete_Fourier_transform.html" title="Discrete Fourier transform">Discrete Fourier transform</a></td>
+<td>Discrete, Periodic</td>
+<td>Discrete, Periodic</td>
+</tr>
+</table>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Interpretation in terms of time and frequency">edit</a>]</div>
+<p><a name="Interpretation_in_terms_of_time_and_frequency" id="Interpretation_in_terms_of_time_and_frequency"></a></p>
+<h2>Interpretation in terms of time and frequency</h2>
+<p>In terms of <a href="/wiki/Signal_%28information_theory%29.html" title="Signal (information theory)">signal</a> processing, the transform takes a <a href="/wiki/Time_series.html" title="Time series">time series</a> representation of a signal function and maps it into a <a href="/wiki/Frequency_spectrum.html" title="Frequency spectrum">frequency spectrum</a>, where ω is <a href="/wiki/Angular_frequency.html" title="Angular frequency">angular frequency</a>. That is, it takes a function in the <a href="/wiki/Time.html" title="Time">time</a> domain into the <a href="/wiki/Frequency.html" title="Frequency">frequency</a> domain; it is a <a href="/wiki/Orthogonal_system.html" title="Orthogonal system">decomposition</a> of a function into <a href="/wiki/Harmonic.html" title="Harmonic">harmonics</a> of different frequencies.</p>
+<p>When the function <i>f</i> is a function of time and represents a physical <a href="/wiki/Signal_%28information_theory%29.html" title="Signal (information theory)">signal</a>, the transform has a standard interpretation as the frequency spectrum of the signal. The <a href="/wiki/Magnitude_%28mathematics%29.html" title="Magnitude (mathematics)">magnitude</a> of the resulting complex-valued function <i>F</i> at frequency ω represents the <a href="/wiki/Amplitude.html" title="Amplitude">amplitude</a> of a frequency component whose <a href="/wiki/Phase_%28waves%29.html" title="Phase (waves)">initial phase</a> is given by: <i>arctan (imaginary part/real part)</i>.</p>
+<p>However, it is important to realize that Fourier transforms are not limited to functions of time, and temporal frequencies. They can equally be applied to analyze <i>spatial</i> frequencies, and indeed for nearly any function domain.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Applications in signal processing">edit</a>]</div>
+<p><a name="Applications_in_signal_processing" id="Applications_in_signal_processing"></a></p>
+<h2>Applications in signal processing</h2>
+<p>In signal processing, Fourier transformation can isolate individual components of a complex signal, concentrating them for easier detection and/or removal. A large family of signal processing techniques consist of Fourier-transforming a signal (such as a clip of <a href="/wiki/Sound.html" title="Sound">audio</a> or an <a href="/wiki/Image.html" title="Image">image</a>), manipulating the Fourier-transformed data in a simple way, and reversing the transformation. Some examples include:</p>
+<ul>
+<li>Removal of unwanted frequencies from an audio recording (used to eliminate <a href="/wiki/Hum.html" title="Hum">hum</a> from leakage of <a href="/wiki/AC_power.html" title="AC power">AC power</a> into the signal, to eliminate the <a  class="new" title="Stereo subcarrier">stereo subcarrier</a> from <a href="/wiki/FM_radio.html" title="FM radio">FM radio</a> recordings, or to create <a href="/wiki/Karaoke.html" title="Karaoke">karaoke</a> tracks with the vocals removed);</li>
+<li><a href="/wiki/Noise_gating.html" title="Noise gating">Noise gating</a> of audio recordings to remove quiet background noise by eliminating Fourier components that do not exceed a preset amplitude;</li>
+<li><a href="/wiki/Equalization.html" title="Equalization">Equalization</a> of audio recordings with a series of <a href="/wiki/Bandpass_filter.html" title="Bandpass filter">bandpass filters</a>;</li>
+<li>Digital radio reception with no <a href="/wiki/Superheterodyne.html" title="Superheterodyne">superheterodyne</a> circuit, as in a modern <a href="/wiki/Cell_phone.html" title="Cell phone">cell phone</a> or <a href="/wiki/Radio_scanner.html" title="Radio scanner">radio scanner</a>;</li>
+<li><a href="/wiki/Image_processing.html" title="Image processing">Image processing</a> to remove periodic or <a href="/wiki/Anisotropic.html" title="Anisotropic">anisotropic</a> artifacts such as <a href="/wiki/Jaggies.html" title="Jaggies">jaggies</a> from interlaced video, stripe artifacts from <a href="/wiki/Strip_aerial_photography.html" title="Strip aerial photography">strip aerial photography</a>, or wave patterns from <a href="/wiki/Radio_frequency_interference.html" title="Radio frequency interference">radio frequency interference</a> in a digital camera;</li>
+<li><a href="/wiki/Cross_correlation.html" title="Cross correlation">Cross correlation</a> of similar images for <a  class="new" title="Co-alignment">co-alignment</a>;</li>
+<li><a href="/wiki/X-ray_crystallography.html" title="X-ray crystallography">X-ray crystallography</a> to reconstruct a protein's structure from its diffraction pattern;</li>
+<li><a href="/wiki/Fourier_transform_ion_cyclotron_resonance.html" title="Fourier transform ion cyclotron resonance">Fourier transform ion cyclotron resonance</a> mass spectrometry to determine the mass of ions from the frequency of cyclotron motion in a magnetic field.</li>
+</ul>
+<p>Fourier transformation is also useful as a compact representation of a signal. For example, <a href="/wiki/JPEG.html" title="JPEG">JPEG</a> compression uses Fourier transformation of small square pieces of a digital image. The Fourier components of each square are rounded to lower <a href="/wiki/Precision_%28arithmetic%29.html" title="Precision (arithmetic)">arithmetic precision</a>, and weak components are eliminated entirely, so that the remaining components can be stored very compactly. In image reconstruction, each Fourier-transformed image square is reassembled from the preserved approximate components, and then inverse-transformed to produce an approximation of the original image.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: About notation">edit</a>]</div>
+<p><a name="About_notation" id="About_notation"></a></p>
+<h2>About notation</h2>
+<p>The Fourier transform is a mapping on a function space. This mapping is here denoted <img class='tex' src="http://upload.wikimedia.org/math/2/6/a/26afd73f8c17f310707120691ccc4a35.png" alt="\mathcal{F}" /> and <img class='tex' src="http://upload.wikimedia.org/math/c/5/9/c59e2b71343d9c4e3b3d1887f97fd815.png" alt="\mathcal{F}\{s\}" /> is used to denote the Fourier transform of the function <i>s</i>. This mapping is linear, which means that <img class='tex' src="http://upload.wikimedia.org/math/2/6/a/26afd73f8c17f310707120691ccc4a35.png" alt="\mathcal{F}" /> can also be seen as a linear transformation on the function space and implies that the standard notation in linear algebra of applying a linear transformation to a vector (here the signal <i>s</i>) can be used to write <img class='tex' src="http://upload.wikimedia.org/math/f/0/e/f0eca9644fa0899259de553c4b596618.png" alt="\mathcal{F} s" /> instead of <img class='tex' src="http://upload.wikimedia.org/math/c/5/9/c59e2b71343d9c4e3b3d1887f97fd815.png" alt="\mathcal{F}\{s\}" />. Since the result of applying the Fourier transform is again a function, we can be interested in the value of this function evaluated at the value <span class="texhtml">ω</span> for its variable, and this is denoted either as <img class='tex' src="http://upload.wikimedia.org/math/f/f/4/ff4dbce0e76d60d695338a5045b99c58.png" alt="\mathcal{F}\{s\}(\omega)" /> or as <img class='tex' src="http://upload.wikimedia.org/math/8/c/9/8c9ed455464ecb4a178341b964364b67.png" alt="(\mathcal{F} s)(\omega)" />. Notice that in the former case, it is implicitly understood that <img class='tex' src="http://upload.wikimedia.org/math/2/6/a/26afd73f8c17f310707120691ccc4a35.png" alt="\mathcal{F}" /> is applied first to <i>s</i> and then the resulting function is evaluated at <span class="texhtml">ω</span>, not the other way around.</p>
+<p>In mathematics and various applied sciences it is often necessary distinguish between a function <i>s</i> and the value of <i>s</i> when its variable equals <i>t</i>, denoted <i>s(t)</i>. This means that a notation like <img class='tex' src="http://upload.wikimedia.org/math/8/a/b/8aba2850adc0c463c781f9c45201da1a.png" alt="\mathcal{F}\{s(t)\}" /> formally can be interpreted as the Fourier transform of the values of <i>s</i> at <i>t</i>, which must be considered as an ill-formed expression since it describes the Fourier transform of a function value rather than of a function. Despite this flaw, the previous notation appears frequently, often when a particular function or a function of a particular variable is to be transformed. For example, <img class='tex' src="http://upload.wikimedia.org/math/5/0/0/500244334427cafa356663cc507179ce.png" alt="\mathcal{F}\{ \mathrm{rect}(t) \} = \mathrm{sinc}(\omega)" /> is sometimes used to express that the Fourier transform of a rectangular function is a sinc function, or <img class='tex' src="http://upload.wikimedia.org/math/7/1/f/71f1d80715047ac1e0880c5cc6c27054.png" alt="\mathcal{F}\{s(t+t_{0})\} = \mathcal{F}\{s(t)\} e^{i \omega t_{0}}" /> is used to express the shift property of the Fourier transform. Notice, that the last example is only correct under the assumption that the transformed function is a function of <i>t</i>, not of <span class="texhtml"><i>t</i><sub>0</sub></span>. If possible, this informal usage of the <img class='tex' src="http://upload.wikimedia.org/math/2/6/a/26afd73f8c17f310707120691ccc4a35.png" alt="\mathcal{F}" /> operator should be avoided, in particular when it is not perfectly clear which variable the function to be transform depends on.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<ul>
+<li>Edward W. Kamen, Bonnie S. Heck, "Fundamentals of Signals and Systems Using the Web and Matlab", <a  class="internal">ISBN 0130172936</a></li>
+<li>E. M. Stein, G. Weiss, "Introduction to Fourier Analysis on Euclidean Spaces", Princeton University Press, 1971. <a  class="internal">ISBN 0-691-08078-X</a></li>
+<li>A. D. Polyanin and A. V. Manzhirov, <i>Handbook of Integral Equations</i>, CRC Press, Boca Raton, 1998. <a  class="internal">ISBN 0-8493-2876-4</a></li>
+<li>Smith, Steven W. <i>The Scientist and Engineer's Guide to Digital Signal Processing</i>, 2nd edition. San Diego: California Technical Publishing, 1999. <a  class="internal">ISBN 0-9660176-3-3</a>. <i>(also available online: <a  class="external autonumber" title="http://www.dspguide.com/pdfbook.htm">[1]</a>)</i></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Fractional_Fourier_transform.html" title="Fractional Fourier transform">fractional Fourier transform</a></li>
+<li><a href="/wiki/Bispectrum.html" title="Bispectrum">Bispectrum</a></li>
+<li><a href="/wiki/Characteristic_function_%28probability_theory%29.html" title="Characteristic function (probability theory)">Characteristic function (probability theory)</a></li>
+<li><a href="/wiki/Chirplet.html" title="Chirplet">Chirplet</a></li>
+<li><a href="/wiki/Number-theoretic_transform.html" title="Number-theoretic transform">Number-theoretic transform</a></li>
+<li><a href="/wiki/Laplace_transform.html" title="Laplace transform">Laplace transform</a></li>
+<li><a href="/wiki/Mellin_transform.html" title="Mellin transform">Mellin transform</a></li>
+<li><a href="/wiki/Orthogonal_functions.html" title="Orthogonal functions">Orthogonal functions</a></li>
+<li><a href="/wiki/Pontryagin_duality.html" title="Pontryagin duality">Pontryagin duality</a></li>
+<li><a href="/wiki/Schwartz_space.html" title="Schwartz space">Schwartz space</a></li>
+<li><a href="/wiki/Two-sided_Laplace_transform.html" title="Two-sided Laplace transform">Two-sided Laplace transform</a></li>
+<li><a href="/wiki/Wavelet.html" title="Wavelet">Wavelet</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://eqworld.ipmnet.ru/en/auxiliary/aux-inttrans.htm">Tables of Integral Transforms</a> at EqWorld: The World of Mathematical Equations.</li>
+<li><a  class="external text" title="http://cns-alumni.bu.edu/~slehar/fourier/fourier.html">An Intuitive Explanation of Fourier Theory</a> by Steven Lehar.</li>
+</ul>
+
+<!-- 
+Pre-expand include size: 1779 bytes
+Post-expand include size: 904 bytes
+Template argument size: 80 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:11659-0!1!0!default!!en!2 and timestamp 20060910142644 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Articles to be merged">Articles to be merged</a></span> | <span dir='ltr'><a  title="Category:Fourier analysis">Fourier analysis</a></span> | <span dir='ltr'><a  title="Category:Integral transforms">Integral transforms</a></span> | <span dir='ltr'><a  title="Category:Digital signal processing">Digital signal processing</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Fourier_transform.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-ar"><a >العربية</a></li>
+				<li class="interwiki-be"><a >Беларуская</a></li>
+				<li class="interwiki-cs"><a >Česky</a></li>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-eu"><a >Euskara</a></li>
+				<li class="interwiki-fa"><a >فارسی</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-gl"><a >Galego</a></li>
+				<li class="interwiki-id"><a >Bahasa Indonesia</a></li>
+				<li class="interwiki-is"><a >Íslenska</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-nl"><a >Nederlands</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-pt"><a >Português</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+				<li class="interwiki-sr"><a >Српски / Srpski</a></li>
+				<li class="interwiki-fi"><a >Suomi</a></li>
+				<li class="interwiki-sv"><a >Svenska</a></li>
+				<li class="interwiki-th"><a >ไทย</a></li>
+				<li class="interwiki-vi"><a >Tiếng Việt</a></li>
+				<li class="interwiki-tr"><a >Türkçe</a></li>
+				<li class="interwiki-zh"><a >中文</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 01:53, 5 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv55 in 0.106 secs. --></body></html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Binary tree,AVL tree,Acyclic graph,Array,B-tree,Binary heap,Binary search tree,Binary space partitioning,Breadth-first search,Catalan number,Child node" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Binary tree - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Binary_tree";
+			var wgTitle = "Binary tree";
+			var wgArticleId = 4321;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Binary tree</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>In <a href="/wiki/Computer_science.html" title="Computer science">computer science</a>, a <b>binary tree</b> is a <a href="/wiki/Tree_data_structure.html" title="Tree data structure">tree</a> <a href="/wiki/Data_structure.html" title="Data structure">data structure</a> in which each node has at most two <a href="/wiki/Child_node.html" title="Child node">children</a>. Typically the child nodes are called <i>left</i> and <i>right</i>. One common use of binary trees is <a href="/wiki/Binary_search_tree.html" title="Binary search tree">binary search trees</a>; another is <a href="/wiki/Binary_heap.html" title="Binary heap">binary heaps</a>.</p>
+<div class="thumb tright">
+<div style="width:182px;"><a  class="internal" title="A simple binary tree of size 9 and height 3, with a root node whose value is 2"><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Binary_tree.svg/180px-Binary_tree.svg.png" alt="A simple binary tree of size 9 and height 3, with a root node whose value is 2" width="180" height="158" longdesc="/wiki/Image:Binary_tree.svg" /></a>
+<div class="thumbcaption">
+<div class="magnify" style="float:right"><a  class="internal" title="Enlarge"><img src="/skins-1.5/common/images/magnify-clip.png" width="15" height="11" alt="Enlarge" /></a></div>
+A simple binary tree of size 9 and height 3, with a root node whose value is 2</div>
+</div>
+</div>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Definitions for rooted trees</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Types of binary trees</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Definition in graph theory</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Methods for storing binary trees</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Methods of iterating over binary trees</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">5.1</span> <span class="toctext">Pre-order, in-order, and post-order traversal</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">5.2</span> <span class="toctext">Depth-first order</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">5.3</span> <span class="toctext">Breadth-first order</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">Encodings</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">6.1</span> <span class="toctext">Succinct encodings</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">6.2</span> <span class="toctext">Encoding n-ary trees as binary trees</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">8</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Definitions for rooted trees">edit</a>]</div>
+<p><a name="Definitions_for_rooted_trees" id="Definitions_for_rooted_trees"></a></p>
+<h2>Definitions for rooted trees</h2>
+<p>A directed edge connects the <a href="/wiki/Parent_node.html" title="Parent node">parent</a> to the <a href="/wiki/Child_node.html" title="Child node">child</a>.</p>
+<p>A node that has no children is called a <a href="/wiki/Leaf_node.html" title="Leaf node">leaf</a>.</p>
+<p>The <b>depth</b> of a node n is the length of the path from the root to the node. The set of all nodes at a given depth is sometimes called a <b>level</b> of the tree.</p>
+<p>The <b>height</b> of a tree is the length of the path from the node n to its furthest leaf.</p>
+<p>Nodes that share parents are called <b>siblings</b>.</p>
+<p>If a path exists from node p to node q, then p is an <b>ancestor</b> of q and q is a <b>descendant</b> of p.</p>
+<p>The <b>size</b> of a node is the number of descendants it has including itself.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Types of binary trees">edit</a>]</div>
+<p><a name="Types_of_binary_trees" id="Types_of_binary_trees"></a></p>
+<h2>Types of binary trees</h2>
+<p>A <b>binary tree</b> is a <b>rooted</b> <a href="/wiki/Tree_data_structure.html" title="Tree data structure">tree</a> in which every node has at most two children.</p>
+<p>A <b>full binary tree</b> is a tree in which every node has zero or two children. Also known as a <b>proper binary tree</b>.</p>
+<p>A <b>perfect binary tree</b> is a full binary tree in which all <b>leaves</b> (vertices with zero children) are at the same <b>depth</b> (distance from the <b>root</b>, also called <b>height</b>).</p>
+<p>Sometimes the <b>perfect binary tree</b> is called the <b>complete binary tree</b>. Some others define a <b>complete binary tree</b> to be a full binary tree in which all leaves are at depth <i>n</i> or <i>n-1</i> for some <i>n</i>. In order for a tree to be the latter kind of complete binary tree, all the children on the last level must occupy the leftmost spots consecutively, with no spot left unoccupied in between any two. For example, if two nodes on the bottommost level each occupy a spot with an empty spot between the two of them, but the rest of the children nodes are tightly wedged together with no spots in between, then the tree cannot be a complete binary tree due to the empty spot.</p>
+<p>An <b>almost complete binary tree</b> is a tree in which each node that has a right child also has a left child. Having a left child does not require a node to have a right child. Stated alternately, an <b>almost complete binary tree</b> is a tree where for a right child, there is always a left child, but for a left child there may not be a right child..</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Definition in graph theory">edit</a>]</div>
+<p><a name="Definition_in_graph_theory" id="Definition_in_graph_theory"></a></p>
+<h2>Definition in graph theory</h2>
+<p><a href="/wiki/Graph_theory.html" title="Graph theory">Graph theorists</a> use the following definition: A binary tree is a <a href="/wiki/Connected_graph.html" title="Connected graph">connected</a> <a href="/wiki/Acyclic_graph.html" title="Acyclic graph">acyclic graph</a> such that the degree of each <a href="/wiki/Vertex.html" title="Vertex">vertex</a> is no more than 3. It can be shown that in any binary tree, there are exactly two more nodes of degree one than there are of degree three, but there can be any number of nodes of degree two. A <b>rooted binary tree</b> is such a graph that has one of its vertices of degree no more than 2 singled out as the root.</p>
+<p>With the root thus chosen, each vertex will have a uniquely defined parent, and up to two children; however, so far there is insufficient information to distinguish a left or right child. If we drop the connectedness requirement, allowing multiple <a href="/wiki/Connected_component_%28graph_theory%29.html" title="Connected component (graph theory)">connected components</a> in the graph, we call such a structure a forest.</p>
+<p>Another way of defining binary trees is a recursive definition on directed graphs. A binary tree is either:</p>
+<ul>
+<li>A single vertex.</li>
+<li>A graph formed by taking two binary trees, adding a vertex, and adding an edge directed from the new vertex to the root of each binary tree.</li>
+</ul>
+<p>This also does not establish the order of children, but does fix a specific root node.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Methods for storing binary trees">edit</a>]</div>
+<p><a name="Methods_for_storing_binary_trees" id="Methods_for_storing_binary_trees"></a></p>
+<h2>Methods for storing binary trees</h2>
+<p>Binary trees can be constructed from <a href="/wiki/Programming_language.html" title="Programming language">programming language</a> primitives in several ways. In a language with <a href="/wiki/Record_%28computer_science%29.html" title="Record (computer science)">records</a> and <a href="/wiki/Reference.html" title="Reference">references</a>, binary trees are typically constructed by having a tree node structure which contains some data and references to its left child and its right child. Sometimes it also contains a reference to its unique parent. If a node has fewer than two children, some of the child pointers may be set to a special null value, or to a special <a href="/wiki/Sentinel_%28computer_science%29.html" title="Sentinel (computer science)">sentinel</a> node.</p>
+<p>Binary trees can also be stored as an <a href="/wiki/Implicit_data_structure.html" title="Implicit data structure">implicit data structure</a> in <a href="/wiki/Array.html" title="Array">arrays</a>, and if the tree is a complete binary tree, this method wastes no space. In this compact arrangement, if a node has an index <i>i</i>, its children are found at indices 2<i>i</i>+1 and 2<i>i</i>+2, while its parent (if any) is found at index <i>floor((i-1)/2)</i> (assuming the root has index zero). This method benefits from more compact storage and better <a href="/wiki/Locality_of_reference.html" title="Locality of reference">locality of reference</a>, particularly during a preorder traversal. However, it is expensive to grow and wastes space proportional to 2<sup><i>h</i></sup> - <i>n</i> for a tree of height <i>h</i> with <i>n</i> nodes.</p>
+<center><a  class="image" title="A small complete binary tree stored in an array"><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Binary_tree_in_array.svg/300px-Binary_tree_in_array.svg.png" alt="A small complete binary tree stored in an array" width="300" height="75" longdesc="/wiki/Image:Binary_tree_in_array.svg" /></a></center>
+<p>In languages with <a href="/wiki/Tagged_union.html" title="Tagged union">tagged unions</a> such as <a href="/wiki/ML_programming_language.html" title="ML programming language">ML</a>, a tree node is often a tagged union of two types of nodes, one of which is a 3-tuple of data, left child, and right child, and the other of which is a "leaf" node, which contains no data and functions much like the null value in a language with pointers.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Methods of iterating over binary trees">edit</a>]</div>
+<p><a name="Methods_of_iterating_over_binary_trees" id="Methods_of_iterating_over_binary_trees"></a></p>
+<h2>Methods of iterating over binary trees</h2>
+<p>Often, one wishes to visit each of the nodes in a tree and examine the value there. There are several common orders in which the nodes can be visited, and each has useful properties that are exploited in algorithms based on binary trees.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Pre-order, in-order, and post-order traversal">edit</a>]</div>
+<p><a name="Pre-order.2C_in-order.2C_and_post-order_traversal" id="Pre-order.2C_in-order.2C_and_post-order_traversal"></a></p>
+<h3>Pre-order, in-order, and post-order traversal</h3>
+<p><i>Main article: <a href="/wiki/Tree_traversal.html" title="Tree traversal">Tree traversal</a>.</i></p>
+<p>Pre-order, in-order, and post-order traversal visit each node in a tree by recursively visiting each node in the left and right subtrees of the root. If the root node is visited before its subtrees, this is preorder; if after, postorder; if between, in-order. In-order traversal is useful in <a href="/wiki/Binary_search_tree.html" title="Binary search tree">binary search trees</a>, where this traversal visits the nodes in increasing order.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Depth-first order">edit</a>]</div>
+<p><a name="Depth-first_order" id="Depth-first_order"></a></p>
+<h3>Depth-first order</h3>
+<p>In depth-first order, we always attempt to visit the node farthest from the root that we can, but with the caveat that it must be a child of a node we have already visited. Unlike a depth-first search on graphs, there is no need to remember all the nodes we have visited, because a tree cannot contain cycles. Preorder, in-order, and postorder traversal are all special cases of this. See <a href="/wiki/Depth-first_search.html" title="Depth-first search">depth-first search</a> for more information.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Breadth-first order">edit</a>]</div>
+<p><a name="Breadth-first_order" id="Breadth-first_order"></a></p>
+<h3>Breadth-first order</h3>
+<p>Contrasting with depth-first order is breadth-first order, which always attempts to visit the node closest to the root that it has not already visited. See <a href="/wiki/Breadth-first_search.html" title="Breadth-first search">Breadth-first search</a> for more information.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Encodings">edit</a>]</div>
+<p><a name="Encodings" id="Encodings"></a></p>
+<h2>Encodings</h2>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Succinct encodings">edit</a>]</div>
+<p><a name="Succinct_encodings" id="Succinct_encodings"></a></p>
+<h3>Succinct encodings</h3>
+<p>A <a  class="new" title="Succinct data structure">succinct data structure</a> is one which takes the absolute minimum possible space, as established by <a href="/wiki/Information_theory.html" title="Information theory">information theoretical</a> lower bounds. The number of different binary trees on <span class="texhtml"><i>n</i></span> nodes is <span class="texhtml">C<sub><i>n</i></sub></span>, the <span class="texhtml"><i>n</i></span>th <a href="/wiki/Catalan_number.html" title="Catalan number">Catalan number</a> (assuming we view trees with identical <i>structure</i> as identical). For large <span class="texhtml"><i>n</i></span>, this is about <span class="texhtml">4<sup><i>n</i></sup></span>; thus we need at least about <span class="texhtml">log<sub>2</sub>4<sup><i>n</i></sup> = 2<i>n</i></span> bits to encode it. A succinct binary tree therefore would occupy only 2 bits per node.</p>
+<p>One simple representation which meets this bound is to visit the nodes of the tree in preorder, outputting "1" for an internal node and "0" for a leaf. <a  class="external autonumber" title="http://theory.csail.mit.edu/classes/6.897/spring03/scribe_notes/L12/lecture12.pdf">[1]</a> If the tree contains data, we can simply simultaneously store it in a consecutive array in preorder. This function accomplishes this:</p>
+<pre>
+<b>function</b> EncodeSuccinct(<i>node</i> n, <i>bitstring</i> structure, <i>array</i> data) {
+    <b>if</b> n = <i>nil</i> <b>then</b>
+        append 0 to structure
+    <b>else</b>
+        append 1 to structure
+        append n.data to data
+        EncodeSuccinct(n.left, structure, data)
+        EncodeSuccinct(n.right, structure, data)
+}
+</pre>
+<p>The string <i>structure</i> has only <span class="texhtml">2<i>n</i> + 1</span> bits in the end, where <span class="texhtml"><i>n</i></span> is the number of (internal) nodes; we don't even have to store its length. To show that no information is lost, we can convert the output back to the original tree like this:</p>
+<pre>
+<b>function</b> DecodeSuccinct(<i>bitstring</i> structure, <i>array</i> data) {
+    remove first bit of <i>structure</i> and put it in <i>b</i>
+    <b>if</b> b = 1 <b>then</b>
+        create a new node <i>n</i>
+        remove first element of data and put it in n.data
+        n.left = DecodeSuccinct(structure, data)
+        n.right = DecodeSuccinct(structure, data)
+        <b>return</b> n
+    <b>else</b>
+        <b>return</b> nil
+}
+</pre>
+<p>More sophisticated succinct representations allow not only compact storage of trees but even useful operations on those trees directly while they're still in their succinct form.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Encoding n-ary trees as binary trees">edit</a>]</div>
+<p><a name="Encoding_n-ary_trees_as_binary_trees" id="Encoding_n-ary_trees_as_binary_trees"></a></p>
+<h3>Encoding <i>n</i>-ary trees as binary trees</h3>
+<p>There is a one-to-one mapping between general ordered trees and binary trees, which in particular is used by <a href="/wiki/Lisp_programming_language.html" title="Lisp programming language">Lisp</a> to represent general ordered trees as binary trees. Each node <i>N</i> in the ordered tree corresponds to a node <i>N'</i> in the binary tree; the <i>left</i> child of <i>N'</i> is the node corresponding to the first child of <i>N</i>, and the <i>right</i> child of <i>N'</i> is the node corresponding to <i>N</i> 's next sibling --- that is, the next node in order among the children of the parent of <i>N</i></p>
+<p>One way of thinking about this is that each node's children are in a <a href="/wiki/Linked_list.html" title="Linked list">linked list</a>, chained together with their <i>right</i> fields, and the node only has a pointer to the beginning or head of this list, through its <i>left</i> field.</p>
+<p>For example, in the tree on the left, A has the 6 children {B,C,D,E,F,G}. It can be converted into the binary tree on the right.</p>
+<center>
+<p><a  class="image" title="An example of converting an n-ary tree to a binary tree"><img src="http://upload.wikimedia.org/wikipedia/en/0/02/Nary_to_binary_tree_conversion.png" alt="An example of converting an n-ary tree to a binary tree" width="400" height="250" longdesc="/wiki/Image:Nary_to_binary_tree_conversion.png" /></a></p>
+</center>
+<p>The binary tree can be thought of as the original tree tilted sideways, with the black left edges representing <i>first child</i> and the blue right edges representing <i>next sibling</i>. The leaves of the tree on the left would be written in Lisp as:</p>
+<dl>
+<dd>(((M N) H I) C D ((O) (P)) F (L))</dd>
+</dl>
+<p>which would be implemented in memory as the binary tree on the right, without any letters on those nodes that have a left child.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<ul>
+<li><a href="/wiki/Donald_Knuth.html" title="Donald Knuth">Donald Knuth</a>. <i>Fundamental Algorithms</i>, Third Edition. Addison-Wesley, 1997. <a  class="internal">ISBN 0-201-89683-4</a>. Section 2.3, especially subsections 2.3.1–2.3.2 (pp.318–348).</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/AVL_tree.html" title="AVL tree">AVL tree</a></li>
+<li><a href="/wiki/B-tree.html" title="B-tree">B-tree</a></li>
+<li><a href="/wiki/Binary_search_tree.html" title="Binary search tree">Binary search tree</a></li>
+<li><a href="/wiki/Binary_space_partitioning.html" title="Binary space partitioning">Binary space partitioning</a></li>
+<li><a href="/wiki/Red-black_tree.html" title="Red-black tree">Red-black tree</a></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:4321-0!1!0!default!!en!2 and timestamp 20060907072918 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:Trees (structure)">Trees (structure)</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Binary_tree.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-da"><a >Dansk</a></li>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-he"><a >עברית</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-ko"><a >한국어</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-sl"><a >Slovenščina</a></li>
+				<li class="interwiki-fi"><a >Suomi</a></li>
+				<li class="interwiki-sv"><a >Svenska</a></li>
+				<li class="interwiki-uk"><a >Українська</a></li>
+				<li class="interwiki-zh"><a >中文</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 07:13, 10 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv58 in 0.071 secs. --></body></html>

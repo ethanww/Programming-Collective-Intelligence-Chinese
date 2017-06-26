@@ -1,0 +1,242 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Fault-tolerant design,Chernobyl,Computer,Crossbar,Failure rate,Fault-tolerant system,Tandem Computers,Uptime,Western Electric" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Fault-tolerant design - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Fault-tolerant_design";
+			var wgTitle = "Fault-tolerant design";
+			var wgArticleId = 2573720;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Fault-tolerant design</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub">(Redirected from <a  title="Fault tolerant">Fault tolerant</a>)</div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<dl>
+<dd>
+<div class="dablink"><i>This article is about general fault-tolerant design theory. For specific implementations, see <a href="/wiki/Fault-tolerant_system.html" title="Fault-tolerant system">fault-tolerant system</a>.</i></div>
+</dd>
+</dl>
+<p><b>Fault tolerant design</b> refers to a method for designing a system so it will continue to operate, possibly at a reduced level (also known as "graceful degradation"), rather than failing completely, when some part of the system fails. The term is most commonly used to describe <a href="/wiki/Computer.html" title="Computer">computer</a>-based systems designed to continue more or less fully operational with, perhaps, a reduction in throughput or response time in the event of some partial failure. That is, the system as a whole is not stopped due to problems either in the hardware or the software. An example in another field is a motor vehicle designed so it will continue to be drivable if one of the tires is punctured.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Methods</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Disadvantages</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">When to use fault-tolerant design</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Examples</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Related terms</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Methods">edit</a>]</div>
+<p><a name="Methods" id="Methods"></a></p>
+<h2>Methods</h2>
+<ul>
+<li><b>Fault-tolerant components.</b> If each component, in turn, can continue to function when one of its subcomponents fails, this will allow the total system to continue to operate, as well. Using the motor vehicle example, some cars have "run flat" tires, which contain a solid rubber core that allows them to be used if the surface is punctured. They can only be used for a limited time at a reduced speed, but this is still a substantial improvement over traditional tires.</li>
+<li><b>Redundancy.</b> This means having backup components which automatically "kick in" should one component fail. For example, large cargo trucks can lose a tire without any major consequences. They have so many tires that no one tire is critical (with the exception of the front tires, which are used to steer).</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Disadvantages">edit</a>]</div>
+<p><a name="Disadvantages" id="Disadvantages"></a></p>
+<h2>Disadvantages</h2>
+<p>The advantages of fault tolerant design are obvious, while many of the disadvantages are not:</p>
+<ul>
+<li><b>Interference with fault detection in the same component.</b> To continue the same example, it may not be obvious to the driver when a tire has been punctured, with either of the fault tolerant systems. This is usually handled with a separate "automated fault detection system". In the case of the tire, an air pressure monitor detects the loss of pressure and notifies the driver. The alternative is a "manual fault detection system", such as manually inspecting all tires at each stop.</li>
+</ul>
+<ul>
+<li><b>Interference with fault detection in another component.</b> Another variation of this problem is when fault tolerance in one component prevents fault detection in a different component. For example, if component B performs some operation based on the output from component A, then fault tolerance in B can hide a problem with A. If component B is later changed (to a less fault tolerant design) the system may fail suddenly, making it appear that the new component B is the problem. Only after the system has been carefully scrutinized will it become clear that the root problem is actually with component A.</li>
+</ul>
+<ul>
+<li><b>Reduction of priority of fault correction.</b> Even if the operator is aware of the fault, having a fault tolerant system is likely to reduce the importance of repairing the fault. If the faults are not corrected, this will eventually lead to system failure, when the fault tolerant component fails completely or when all redundant components have also failed.</li>
+</ul>
+<ul>
+<li><b>Test difficulty.</b> For certain critical fault tolerant systems, such as a nuclear reactor, there is no easy way to verify that the backup components are functional. The most infamous example of this is <a href="/wiki/Chernobyl.html" title="Chernobyl">Chernobyl</a>, where operators tested the emergency backup cooling by disabling primary and secondary cooling. The backup failed, resulting in a core meltdown and massive release of radiation.</li>
+</ul>
+<ul>
+<li><b>Cost.</b> Both fault tolerant components and redundant components tend to increase cost. This can be a purely economic cost or can include other measures, such as weight. Manned spaceships, for example, have so many redundant and fault tolerant components that their weight is increased dramatically over unmanned systems, which don't require the same level of safety.</li>
+</ul>
+<ul>
+<li><b>Inferior components.</b> A fault-tolerant design may allow for the use of inferior components, which would have otherwise made the system inoperable. While this practice has the potential to mitigate the cost increase, use of multiple inferior components may lower the reliability of the system to a level equal to, or even worse than, a comparable non-fault-tolerant system.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: When to use fault-tolerant design">edit</a>]</div>
+<p><a name="When_to_use_fault-tolerant_design" id="When_to_use_fault-tolerant_design"></a></p>
+<h2>When to use fault-tolerant design</h2>
+<p>Providing fault-tolerant design for every component is normally not an option. In such cases the following criteria may be used to determine which components should be fault tolerant:</p>
+<ul>
+<li><b>How critical is the component?</b> In a car, the radio isn't critical, so this component has less need for fault tolerance.</li>
+</ul>
+<ul>
+<li><b>How likely is the component to fail&#160;?</b> Some components, like the drive shaft in a car, are not likely to fail, so no fault tolerance is needed.</li>
+</ul>
+<ul>
+<li><b>How expensive is it to make the component fault tolerant&#160;?</b> Requiring a redundant car engine, for example, would likely be too expensive both economically and in terms of weight and space, to be considered.</li>
+</ul>
+<p>An example of a component that passes all the tests is a car's occupant restraint system. While we don't normally think of the primary occupant restraint system, it is gravity. If the vehicle rolls over or undergoes severe g-forces, then this primary method of occupant restraint may fail. Restraining the occupants during such an accident is absolutely critical to safety, so we pass the first test. Accidents causing occupant ejection were quite common before seat belts, so we pass the second test. The cost of a redundant restraint method like seat belts is quite low, both economically and in terms or weight and space, so we pass the third test. Therefore, adding seat belts to all vehicles is an excellent idea. Other "supplemental restraint systems", such as airbags, are more expensive so may not pass that test. This is why inexpensive vehicles typically have fewer airbags than expensive vehicles.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Examples">edit</a>]</div>
+<p><a name="Examples" id="Examples"></a></p>
+<h2>Examples</h2>
+<p>Hardware fault tolerance sometimes requires that broken parts can be swapped out with new ones while the system is still operational. Such a system implemented with a single backup is known as <b>single point tolerant</b>, and represents the vast majority of fault tolerant systems. In such systems the <a href="/wiki/Failure_rate#Mean-time-between-failure_.28MTBF.29.html" title="Failure rate">mean time between failures</a> should be long enough for the operators to have time to fix the broken devices before the backup also fails. It helps if the time between failures is as long as possible, but this is not specifically required in a fault tolerant system.</p>
+<p>Fault tolerance is notably successful in computer applications. <a href="/wiki/Tandem_Computers.html" title="Tandem Computers">Tandem Computers</a> built their entire business on such machines, which used single point tolerance to create their <b>NonStop</b> systems with <a href="/wiki/Uptime.html" title="Uptime">uptimes</a> measured in decades.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Related terms">edit</a>]</div>
+<p><a name="Related_terms" id="Related_terms"></a></p>
+<h2>Related terms</h2>
+<p>There is a difference between fault tolerance (systems that work even when a fault occurs) and systems that rarely have problems. For instance, the <a href="/wiki/Western_Electric.html" title="Western Electric">Western Electric</a> <a href="/wiki/Crossbar.html" title="Crossbar">crossbar</a> systems had failure rates of two hours per forty years, and therefore were highly <b>fault resistant</b>. But when a fault did occur they still stopped operating completely, and therefore were not <i>fault tolerant</i>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://www.cs.rutgers.edu/~iftode/seminar04_papers.htm">Seminar on Self-Healing Systems</a></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:2573720-0!1!0!default!!en!2 and timestamp 20060906010128 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:Fault tolerance">Fault tolerance</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Fault-tolerant_design.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 21:42, 24 July 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv98 in 0.151 secs. --></body></html>

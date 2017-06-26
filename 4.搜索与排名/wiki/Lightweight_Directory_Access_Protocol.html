@@ -1,0 +1,589 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Lightweight Directory Access Protocol,AT&amp;T,Abstract syntax notation one,Active Directory,Apache Directory Server,Apache HTTP Server,Apache Software Foundation,Apple Computer,Authentication,Avaya,Banyan (company)" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Lightweight Directory Access Protocol - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Lightweight_Directory_Access_Protocol";
+			var wgTitle = "Lightweight Directory Access Protocol";
+			var wgArticleId = 18508;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Lightweight Directory Access Protocol</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>In <a href="/wiki/Computer_networking.html" title="Computer networking">computer networking</a>, the <b>Lightweight Directory Access Protocol</b>, or <b>LDAP</b> ("ell-dap"), is a <a href="/wiki/Networking_protocol.html" title="Networking protocol">networking protocol</a> for querying and modifying <a href="/wiki/Directory_service.html" title="Directory service">directory services</a> running over <a href="/wiki/Internet_protocol_suite.html" title="Internet protocol suite">TCP/IP</a>. An LDAP directory usually follows the <a href="/wiki/X.500.html" title="X.500">X.500</a> model: it is a tree of entries, each of which consists of a set of named attributes with values. While some services use a more complicated "forest" model, the vast majority use a simple starting point for their database organization.</p>
+<p>An LDAP directory often reflects various political, geographic, and/or organizational boundaries, depending on the model chosen. LDAP deployments today tend to use <a href="/wiki/Domain_Name_System.html" title="Domain Name System">Domain Name System</a> (DNS) names for structuring the most simple levels of the hierarchy. Further into the directory might appear entries representing people, organizational units, printers, documents, groups of people or anything else which represents a given tree entry, or multiple entries.</p>
+<p>Its current version is LDAPv3. LDAPv3 is specified in a series of <a href="/wiki/IETF.html" title="IETF">IETF</a> Standard Track <a href="/wiki/Request_for_Comments.html" title="Request for Comments">RFCs</a> as detailed in <a  class="external" title="http://tools.ietf.org/html/rfc4510">RFC 4510</a>.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Origin and influences</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Protocol overview</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Directory structure</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Operations</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">4.1</span> <span class="toctext">Bind (authenticate)</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.2</span> <span class="toctext">StartTLS</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.3</span> <span class="toctext">Search and Compare</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.4</span> <span class="toctext">Update operations</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.5</span> <span class="toctext">Extended operations</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.6</span> <span class="toctext">Abandon</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.7</span> <span class="toctext">Unbind</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">LDAP URLs</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">Schema</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">Variations</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">8</span> <span class="toctext">Other data models</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">9</span> <span class="toctext">Terminology</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">10</span> <span class="toctext">Supporting vendors</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">10.1</span> <span class="toctext">LDAP implementations</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">11</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">12</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">13</span> <span class="toctext">External links</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">13.1</span> <span class="toctext">Articles</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">13.2</span> <span class="toctext">LDAP fora</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">13.3</span> <span class="toctext">RFCs</span></a></li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Origin and influences">edit</a>]</div>
+<p><a name="Origin_and_influences" id="Origin_and_influences"></a></p>
+<h2>Origin and influences</h2>
+<p>LDAP was originally intended to be a lightweight alternative protocol for accessing <a href="/wiki/X.500.html" title="X.500">X.500</a> directory services. X.500 directory services were traditionally accessed via the X.500 Directory Access Protocol, or <a href="/wiki/Directory_Access_Protocol.html" title="Directory Access Protocol">DAP</a>, which required the cumbersome <a href="/wiki/Open_Systems_Interconnection.html" title="Open Systems Interconnection">Open Systems Interconnection</a> (OSI) protocol stack. With LDAP, a client could access these directory to LDAP. This model of directory access was borrowed from <a href="/wiki/DIXIE.html" title="DIXIE">DIXIE</a> and the <a href="/wiki/Directory_Assistance_Service.html" title="Directory Assistance Service">Directory Assistance Service</a>.</p>
+<p>Standalone LDAP directory servers soon followed, as did directory servers supporting both DAP and LDAP. The former has become popular in enterprises as they removed any need to deploy an OSI network. Today, X.500 directory protocols including DAP can also be used directly over <a href="/wiki/TCP/IP.html" title="TCP/IP">TCP/IP</a>.</p>
+<p>The protocol was originally created by <a href="/wiki/Tim_Howes.html" title="Tim Howes">Tim Howes</a> of the <a href="/wiki/University_of_Michigan.html" title="University of Michigan">University of Michigan</a>, <a href="/wiki/Steve_Kille.html" title="Steve Kille">Steve Kille</a> of <a href="/wiki/ISODE.html" title="ISODE">ISODE</a> and Wengyik Yeong of <a  class="new" title="Performance Systems International">Performance Systems International</a>, circa 1993. Further development has been done via the <a href="/wiki/Internet_Engineering_Task_Force.html" title="Internet Engineering Task Force">Internet Engineering Task Force</a> (IETF).</p>
+<p>Note that in the early engineering stages of LDAP, it was known as <i>Lightweight Directory Browsing Protocol</i> or <i>LDBP</i>. It was renamed as the scope of the protocol was expanded to not only include directory browsing functions (e.g., search) but also directory update functions (e.g., modify).</p>
+<p>LDAP has influenced subsequent Internet protocols, including later versions of <a href="/wiki/X.500.html" title="X.500">X.500</a>, <a href="/wiki/XML_Enabled_Directory.html" title="XML Enabled Directory">XML Enabled Directory (XED)</a>, <a href="/wiki/Directory_Service_Markup_Language.html" title="Directory Service Markup Language">Directory Services Markup Language (DSML)</a>, <a href="/wiki/SPML.html" title="SPML">Service Provisioning Markup Language (SPML)</a>, and the <a href="/wiki/Service_Location_Protocol.html" title="Service Location Protocol">Service Location Protocol (SLP)</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Protocol overview">edit</a>]</div>
+<p><a name="Protocol_overview" id="Protocol_overview"></a></p>
+<h2>Protocol overview</h2>
+<p>A client starts an LDAP session by connecting to an LDAP server, by default on <a href="/wiki/Transmission_Control_Protocol.html" title="Transmission Control Protocol">TCP</a> <a href="/wiki/TCP_and_UDP_port.html" title="TCP and UDP port">port</a> 389. The client then sends operation requests to the server, and the server sends responses in return. With some exceptions the client need not wait for a response before sending the next request, and the server may then send the responses in any order.</p>
+<p>The basic operations are, in order:</p>
+<ul>
+<li>Bind - <a href="/wiki/Authentication.html" title="Authentication">authenticate</a>, and specify LDAP protocol version,</li>
+<li>Start TLS - protect the connection with <a href="/wiki/Transport_Layer_Security.html" title="Transport Layer Security">Transport Layer Security</a> (TLS), to have a more secure connection,</li>
+<li>Search - search for and/or retrieve directory entries,</li>
+<li>Compare - test if a named entry contains a given attribute value,</li>
+<li>Add a new entry,</li>
+<li>Delete an entry,</li>
+<li>Modify an entry,</li>
+<li>Modify DN - move or rename an entry,</li>
+<li>Abandon - abort a previous request,</li>
+<li>Extended Operation - generic operation used to define other operations,</li>
+<li>Unbind - close the connection, not the inverse of Bind.</li>
+</ul>
+<p>In addition the server may send "Unsolicited Notifications" that are not responses to any request, e.g. before it times out a connection.</p>
+<p>A common alternate method of securing LDAP communication is using an SSL tunnel. This is denoted in LDAP URLs by using the URL scheme "ldaps". The standard port for LDAP over <a href="/wiki/Secure_Socket_Layer.html" title="Secure Socket Layer">SSL</a> is 636.</p>
+<p>LDAP is defined in terms of <a href="/wiki/Abstract_syntax_notation_one.html" title="Abstract syntax notation one">ASN.1</a>, and protocol messages are encoded in the binary format <a href="/wiki/Basic_encoding_rules.html" title="Basic encoding rules">BER</a>. It uses textual representations for a number of ASN.1 fields/types, however.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Directory structure">edit</a>]</div>
+<p><a name="Directory_structure" id="Directory_structure"></a></p>
+<h2>Directory structure</h2>
+<p>The protocol accesses LDAP directories, which follow the <a href="/wiki/X.500.html" title="X.500">X.500</a> model:</p>
+<p>A directory is a tree of directory entries.<br />
+An entry consists of a set of attributes.<br />
+An attribute has a name (an <i>attribute type</i> or <i>attribute description</i>) and one or more values.<br />
+The attributes are defined in a <i>schema</i> (see below).</p>
+<p>Each entry has a unique identifier: its <i>Distinguished Name</i> (DN). This consists of its <i>Relative Distinguished Name</i> (RDN) constructed from some attribute(s) in the entry, followed by the parent entry's DN. Think of the DN as a full filename and the RDN as a relative filename in a folder.</p>
+<p>Be aware that a DN may change over the lifetime of the entry, for instance, when entries are moved within a tree. To reliably and unambiguously identify entries, a <a href="/wiki/UUID.html" title="UUID">UUID</a> may be provided in the set of the entry's <i>operational attributes</i>.</p>
+<p>An entry can look like this when represented in <a href="/wiki/LDIF.html" title="LDIF">LDIF</a> format (LDAP itself is a binary protocol):</p>
+<pre>
+ dn: cn=John Doe,dc=example,dc=com
+ cn: John Doe
+ givenName: John
+ sn: Doe
+ telephoneNumber: +1 555 6789
+ telephoneNumber: +1 555 1234
+ mail: john@example.com
+ manager: cn=Barbara Doe,dc=example,dc=com
+ objectClass: inetOrgPerson
+ objectClass: organizationalPerson
+ objectClass: person
+ objectClass: top
+</pre>
+<p>dn is the name of the entry; it's not an attribute nor part of the entry. "cn=John Doe" is the entry's RDN, and "dc=example,dc=com" is the DN of the parent entry. The other lines show the attributes in the entry. Attribute names are typically mnemonic strings, like "cn" for common name, "dc" for domain component, and "mail" for e-mail address.</p>
+<p>A server holds a subtree starting from a specific entry, e.g. "dc=example,dc=com" and its children. Servers may also hold references to other servers, so an attempt to access "ou=Some department,dc=example,dc=com" could return a <i>referral</i> or <i>continuation reference</i> to a server which holds that part of the directory tree. The client can then contact the other server. Some servers also support <i>chaining</i>, which means the server contacts the other server and returns the results to the client.</p>
+<p>LDAP rarely defines any ordering: The server may return the values in an attribute, the attributes in an entry, and the entries found by a search operation in any order.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Operations">edit</a>]</div>
+<p><a name="Operations" id="Operations"></a></p>
+<h2>Operations</h2>
+<p>The client gives each request a positive Message ID, and the server response has the same Message ID. The response includes a numeric result code indicating success, some error condition or some other special cases. Before the response, the server may send other messages with other result data - for example each entry found by the Search operation is returned in such a message.</p>
+<p>Stub for discussion of referral responses to various operations, especially modify, for example where all modifies must be directed from replicas to a master directory.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Bind (authenticate)">edit</a>]</div>
+<p><a name="Bind_.28authenticate.29" id="Bind_.28authenticate.29"></a></p>
+<h3>Bind (authenticate)</h3>
+<p>The Bind operation authenticates the client to the server. Simple Bind sends the user's DN and password - in cleartext, so the connection should be protected using <a href="/wiki/Transport_Layer_Security.html" title="Transport Layer Security">Transport Layer Security</a> (TLS). The server typically checks the password against the userPassword attribute in the named entry. Anonymous Bind (with empty DN and password) resets the connection to anonymous state. <a href="/wiki/SASL.html" title="SASL">SASL</a> (Simple Authentication and Security Layer) Bind provides authentication services through a wide-range of mechanisms, e.g. <a href="/wiki/Kerberos_%28protocol%29.html" title="Kerberos (protocol)">Kerberos</a> or the client certificate sent with TLS.</p>
+<p>Bind also sets the LDAP protocol version. Normally clients should use LDAPv3, which is the default in the protocol but not always in LDAP libraries.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: StartTLS">edit</a>]</div>
+<p><a name="StartTLS" id="StartTLS"></a></p>
+<h3>StartTLS</h3>
+<p>The StartTLS operation establishes <a href="/wiki/Transport_Layer_Security.html" title="Transport Layer Security">Transport Layer Security</a> (the descendant of SSL) on the connection. That can provide data confidentiality (cannot be read by third parties) and/or data integrity protection (protect from tampering). During TLS negotiation the server sends its <a href="/wiki/X.509.html" title="X.509">X.509</a> certificate to prove its identity. The client may also send a certificate to prove its identity. After doing so, the client may then use SASL/EXTERNAL to have this identity used in determining the identity used in making LDAP authorization decisions.</p>
+<p>Servers also often support the non-standard "LDAPS" ("Secure LDAP", commonly known as "LDAP over SSL") protocol on a separate port, by default 636. The LDAPS differs from LDAP in two ways: 1) upon connect, the client and server establish TLS before any LDAP messages are transferred (without a Start TLS operation) and 2) the LDAPS connection must be closed upon TLS closure.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Search and Compare">edit</a>]</div>
+<p><a name="Search_and_Compare" id="Search_and_Compare"></a></p>
+<h3>Search and Compare</h3>
+<p>The Search operation is used to both search for and read entries. Its parameters are:</p>
+<ul>
+<li>baseObject - the DN (Distinguished Name) of the entry at which to start the search,</li>
+<li>scope - baseObject (search just the named entry, typically used to read one entry), singleLevel (entries immediately below the base DN), or wholeSubtree (the entire subtree starting at the base DN).</li>
+<li>filter - how to examine each entry in the scope. E.g. (&amp;(objectClass=person)(|(givenName=John)(mail=john*))) - search for persons who either have given name John or an e-mail address starting with john.</li>
+<li>derefAliases - whether and how to follow alias entries (entries which refer to other entries),</li>
+<li>attributes - which attributes to return in result entries.</li>
+<li>sizeLimit, timeLimit - max number of entries, and max search time.</li>
+<li>typesOnly - return attribute types only, not attribute values.</li>
+</ul>
+<p>The server returns the matching entries and maybe continuation references (in any order), followed by the final result with the result code.</p>
+<p>The Compare operation takes a DN, an attribute name and an attribute value, and checks if the named entry contains that attribute with that value.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Update operations">edit</a>]</div>
+<p><a name="Update_operations" id="Update_operations"></a></p>
+<h3>Update operations</h3>
+<p>Add, Delete, and Modify DN - all require the DN of the entry that is to be changed.</p>
+<p>Modify takes a list of attributes to modify and the modifications to each: Delete the attribute or some values, add new values, or replace the current values with the new ones.</p>
+<p>Add operations also can have additional attributes and values for those attributes.</p>
+<p>Modify DN (move/rename entry) takes the new RDN (Relative Distinguished Name), optionally the new parent's DN, and a flag which says whether to delete the value(s) in the entry which match the old RDN. The server may support renaming of entire directory subtrees.</p>
+<p>An update operation is atomic: Other operations will see either the new entry or the old one. On the other hand, LDAP does not define transactions of multiple operations: If you read an entry and then modify it, another client may have updated the entry in the mean time. Servers may implement extensions which support this, however.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Extended operations">edit</a>]</div>
+<p><a name="Extended_operations" id="Extended_operations"></a></p>
+<h3>Extended operations</h3>
+<p>The Extended Operation is a generic LDAP operation which can be used to define new operations. Examples include the Cancel, Password Modify and Start TLS operations.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Abandon">edit</a>]</div>
+<p><a name="Abandon" id="Abandon"></a></p>
+<h3>Abandon</h3>
+<p>The Abandon operation requests that the server aborts an operation named by a message ID. The server need not honor the request. Unfortunately, neither Abandon nor a successfully abandoned operation send a response. A similar Cancel extended operation has therefore been defined which does send responses, but not all implementations support this.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Unbind">edit</a>]</div>
+<p><a name="Unbind" id="Unbind"></a></p>
+<h3>Unbind</h3>
+<p>The Unbind operation abandons any outstanding operations and closes the connection. It has no response. The name is of historical origin: It is <i>not</i> the opposite of the Bind operation.</p>
+<p>Clients can abort a session by simply closing the connection, but they should use Unbind. Otherwise the server cannot tell the difference between a failed network connection (or a truncation attack) and a discourteous client.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: LDAP URLs">edit</a>]</div>
+<p><a name="LDAP_URLs" id="LDAP_URLs"></a></p>
+<h2>LDAP URLs</h2>
+<p>An LDAP <a href="/wiki/URL.html" title="URL">URL</a> format exists which clients support in varying degree, and which servers return in referrals and continuation references (see <a  class="external" title="http://tools.ietf.org/html/rfc4516">RFC 4516</a>):<br />
+"ldap://host:port/DN?attributes?scope?filter?extensions"<br />
+where most components after "ldap://" can be omitted.</p>
+<p><i>attributes</i> is a comma-separated list of attributes to retrieve.<br />
+<i>scope</i> can be "base" (the default), "one" or "sub".<br />
+<i>filter</i> e.g, (objectClass=*) see <a  class="external" title="http://tools.ietf.org/html/rfc4515">RFC 4515</a>.<br />
+<i>extensions</i> are extensions to the LDAP URL format.<br />
+As in other URLs, special characters must be escaped with %hex format.</p>
+<p>There is a similar non-standard "ldaps:" URL scheme for LDAP over SSL.</p>
+<p>For example, "ldap://ldap.example.com/cn=John%20Doe,dc=example,dc=com" refers to all user attributes in John Doe's entry in ldap.example.com. "ldap:///dc=example,dc=com??sub?(givenName=John)" searches for him in the default server.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Schema">edit</a>]</div>
+<p><a name="Schema" id="Schema"></a></p>
+<h2>Schema</h2>
+<p>The contents of the entries in a subtree is governed by a <a href="/wiki/Schema.html" title="Schema">schema</a>.</p>
+<p>The schema defines the <i>attribute types</i> that directory entries can contain. An attribute definition includes a <i>syntax</i>, and most non-binary values in LDAPv3 use <a href="/wiki/UTF-8.html" title="UTF-8">UTF-8</a> string syntax. For example, a "mail" attribute might contain the value "user@example.com". A "jpegPhoto" attribute would contain photograph(s) in binary <a href="/wiki/JPEG.html" title="JPEG">JPEG</a>/JFIF format. A "member" attribute contains the DNs of other directory entries. Attribute definitions also specify whether the attribute is single-valued or multi-valued, how to search/compare the attribute (e.g. case-sensitive vs. case-insensitive and whether substring matching is supported), etc.</p>
+<p>The schema defines <i>object classes</i>. Each entry must have an objectClass attribute, containing named classes defined in the schema. Typically, the objectClass attribute is multivalued, and contains the class "top" as well as some number of other classes. The schema definition for each class an entry belongs to defines what kind of object the entry may represent - e.g. a person, organization or domain. Practically this means that membership in a particular class gives the entry the option of containing one set of attributes (optional attributes), and the obligation of containing another set (mandatory or required attributes). For example, an entry representing a person might belong to the classes "top" and "person". Membership in the "person" class would require the entry to contain the "sn" and "cn" attributes, and allow the entry also to contain "userPassword", "telephoneNumber", and other attributes. Since entries may belong to multiple classes, each entry has a complex of optional and mandatory attribute sets formed from the union of the object classes it represents.</p>
+<p>The schema also includes various other information controlling directory entries.</p>
+<p>Most schema elements have a name and a globally unique <a href="/wiki/Object_identifier.html" title="Object identifier">Object identifier</a> (OID).</p>
+<p>Many directory servers publish the directory schema itself as a collection of LDAP entries rooted at the base DN cn=schema.</p>
+<p>Server administrators can define their own schemas in addition to the standard ones. A schema for representing individual people within organizations is termed a <a href="/wiki/White_pages_schema.html" title="White pages schema">white pages schema</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Variations">edit</a>]</div>
+<p><a name="Variations" id="Variations"></a></p>
+<h2>Variations</h2>
+<p>A <i>lot</i> of the server operation is left to the implementor or administrator to decide. Accordingly, servers may be set up to support a wide variety of scenarios.</p>
+<p>For example, data storage in the server is not specified - the server may use flat files, databases, or just be a gateway to some other server. Access control is not standardized, though there has been work on it and there are commonly used models. Users' passwords may be stored in their entries or elsewhere. The server may refuse to perform operations when it wishes, and impose various limits.</p>
+<p>Most parts of LDAP are extensible. Examples: One can define new operations. <i>Controls</i> may modify requests and responses, e.g. to request sorted search results. New search scopes and Bind methods can be defined. Attributes can have <i>options</i> that may modify their semantics.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Other data models">edit</a>]</div>
+<p><a name="Other_data_models" id="Other_data_models"></a></p>
+<h2>Other data models</h2>
+<p>As LDAP has gained momentum, vendors have provided it as an access protocol to other services. The implementation then recasts the data to mimic the LDAP/X.500 model, but how closely this model is followed varies. For example, there is software to access <a href="/wiki/SQL.html" title="SQL">SQL</a> databases through LDAP, even though LDAP does not readily lend itself to this. <a href="/wiki/X.500.html" title="X.500">X.500</a> servers may support LDAP as well.</p>
+<p>Similarly, data which were previously held in other types of data stores are sometimes moved to LDAP directories. For example, Unix user and group information can be stored in LDAP and accessed via <a href="/wiki/Pluggable_Authentication_Modules.html" title="Pluggable Authentication Modules">PAM</a> and <a href="/wiki/Name_Service_Switch.html" title="Name Service Switch">NSS</a> modules. LDAP is often used by other services for authentication.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Terminology">edit</a>]</div>
+<p><a name="Terminology" id="Terminology"></a></p>
+<h2>Terminology</h2>
+<p>Beware: The LDAP terminology one can encounter is quite a mess. Some of this is due to misunderstandings, other examples are due to its historical origins, others arise when used with non-X.500 services that use different terminology.</p>
+<p>For example, "LDAP" is sometimes used to refer to the protocol, other times to the protocol and the data. An "LDAP directory" may be the data or also the access point. An "attribute" may be the attribute type, or the contents of an attribute in a directory, or an attribute description (an attribute type with <i>options</i>). An "anonymous" and an "unauthenticated" Bind are different Bind methods that both produce anonymous authentication state, so both terms are being used for both variants. The "uid" attribute should hold user names rather than numeric user IDs.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Supporting vendors">edit</a>]</div>
+<p><a name="Supporting_vendors" id="Supporting_vendors"></a></p>
+<h2>Supporting vendors</h2>
+<p>LDAP has gained wide support from vendors such as:</p>
+<ul>
+<li><a href="/wiki/Apache_Software_Foundation.html" title="Apache Software Foundation">Apache</a> (through <a href="/wiki/Apache_Directory_Server.html" title="Apache Directory Server">Apache Directory Server</a>)</li>
+<li><a href="/wiki/Apple_Computer.html" title="Apple Computer">Apple</a> (through Open Directory/OpenLDAP)</li>
+<li><a href="/wiki/AT%26T.html" title="AT&amp;T">AT&amp;T</a></li>
+<li><a href="/wiki/Avaya.html" title="Avaya">Avaya</a> (through <a  class="new" title="Directory Enabled Management">Directory Enabled Management</a>)</li>
+<li><a href="/wiki/Banyan_%28company%29.html" title="Banyan (company)">Banyan</a></li>
+<li><a  class="external text" title="http://www.cisco.com/">Cisco</a></li>
+<li><a  class="external text" title="http://www.criticalpath.net/">Critical Path</a></li>
+<li><a href="/wiki/EB2Bcom.html" title="EB2Bcom">eB2Bcom</a> (through <a  class="new" title="View500">View500</a>)</li>
+<li><a href="/wiki/RedHat.html" title="RedHat">RedHat</a> through Fedora Directory Server aka Red Hat Directory server</li>
+<li><a href="/wiki/Hewlett-Packard.html" title="Hewlett-Packard">Hewlett-Packard</a></li>
+<li><a  class="new" title="Identyx">Identyx</a></li>
+<li><a href="/wiki/International_Business_Machines.html" title="International Business Machines">IBM</a>/<a href="/wiki/Lotus_Development.html" title="Lotus Development">Lotus</a></li>
+<li><a href="/wiki/ISODE.html" title="ISODE">ISODE</a> (through M-Vault server)</li>
+<li><a  class="external text" title="http://www.maxware.com/">MaXware</a> (through MaXware Virtual Directory)</li>
+<li><a href="/wiki/Microsoft.html" title="Microsoft">Microsoft</a> (through <a href="/wiki/Active_Directory.html" title="Active Directory">Active Directory</a>)</li>
+<li><a href="/wiki/Netscape.html" title="Netscape">Netscape</a> (now in <a href="/wiki/Sun_Microsystems.html" title="Sun Microsystems">Sun Microsystems</a> and <a href="/wiki/Red_Hat.html" title="Red Hat">Red Hat</a> products)</li>
+<li><a href="/wiki/Novell.html" title="Novell">Novell</a> (through <a href="/wiki/Novell_eDirectory.html" title="Novell eDirectory">eDirectory</a>)</li>
+<li><a href="/wiki/OctetString.html" title="OctetString">OctetString</a> (through VDE server)</li>
+<li><a href="/wiki/Oracle_Corporation.html" title="Oracle Corporation">Oracle</a> (through <a href="/wiki/Oracle_Internet_Directory.html" title="Oracle Internet Directory">Oracle Internet Directory</a>)</li>
+<li><a  class="new" title="Radiant Logic">Radiant Logic</a> (through RadiantOne Virtual Directory Server)</li>
+<li><a  class="external text" title="http://www.redhat.com/en_us/USA/home/solutions/directoryserver/">Red Hat Directory Server</a></li>
+<li><a href="/wiki/Siemens_AG.html" title="Siemens AG">Siemens AG</a> (through DirX server)</li>
+<li><a href="/wiki/Silicon_Graphics.html" title="Silicon Graphics">SGI</a> and</li>
+<li><a href="/wiki/Sun_Microsystems.html" title="Sun Microsystems">Sun</a> (through the <a href="/wiki/IPlanet.html" title="IPlanet">iPlanet</a> and <a href="/wiki/Sun_ONE.html" title="Sun ONE">Sun ONE</a> directory servers)</li>
+<li><a  class="external text" title="http://www.symlabs.com/">Symlabs</a> (through [<a  class="external text" title="http://www.symlabs.com/Products/DirExt.html">Directory Extender 3.0</a>])</li>
+</ul>
+<p>as well as in <a href="/wiki/Open_source.html" title="Open source">open source</a>/<a href="/wiki/Free_software.html" title="Free software">free software</a> implementations such as <a href="/wiki/OpenLDAP.html" title="OpenLDAP">OpenLDAP</a> and <a href="/wiki/Fedora_Directory_Server.html" title="Fedora Directory Server">Fedora Directory Server</a>. Also the <a href="/wiki/Apache_HTTP_Server.html" title="Apache HTTP Server">Apache HTTP Server</a> used as a <a href="/wiki/Proxy.html" title="Proxy">proxy</a> (by the module mod_proxy) supports LDAP.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: LDAP implementations">edit</a>]</div>
+<p><a name="LDAP_implementations" id="LDAP_implementations"></a></p>
+<h3>LDAP implementations</h3>
+<ul>
+<li><a  class="external text" title="http://directory.apache.org">Apache Directory Server</a></li>
+<li><a  class="external text" title="http://www.criticalpath.net/">Critical Path</a> Directory Server and Meta Directory Server</li>
+<li><a  class="external text" title="http://directory.fedora.redhat.com">Fedora Directory Server</a></li>
+<li><a  class="external text" title="http://www.redhat.com/software/rha/directory/">Red Hat Directory Server</a></li>
+<li><a href="/wiki/OpenLDAP.html" title="OpenLDAP">OpenLDAP</a></li>
+<li><a  class="external text" title="http://www.novell.com/products/edirectory/">Novell eDirectory</a></li>
+<li><a  class="external text" title="http://www.sun.com/dsee">Sun Directory Server Enterprise Edition</a></li>
+<li><a href="/wiki/IBM_SecureWay_Directory.html" title="IBM SecureWay Directory">IBM SecureWay Directory</a></li>
+<li><a href="/wiki/IBM_Tivoli_Directory_Server.html" title="IBM Tivoli Directory Server">IBM Tivoli Directory Server</a> (formerly IBM Directory Server)</li>
+<li><a href="/wiki/IBM_Lotus_Domino.html" title="IBM Lotus Domino">IBM Lotus Domino</a></li>
+<li><a  class="external text" title="http://www.microsoft.com/windowsserver2003/technologies/directory/activedirectory/default.mspx">Windows Server 2003 Active Directory</a></li>
+<li><a  class="external text" title="http://www.siemens.com">Siemens</a> DirX</li>
+<li><a  class="external text" title="http://www.view500.com">View500</a></li>
+<li><a  class="external text" title="http://en.wikipedia.org/wiki/Oracle_Internet_Directory">Oracle Internet Directory</a></li>
+<li><a  class="external text" title="http://www.fefe.de/tinyldap/">tinyldap</a> a small LDAP implementation</li>
+<li>LDAP clients and libraries:
+<ul>
+<li><a  class="external text" title="http://www.plangear.com/ldapxl/">LDAPxl</a>, A directory services add-in for Microsoft Office that allows you to query LDAP servers and import data directly into your Excel worksheet, Word document, and Access database.</li>
+<li><a href="/wiki/PhpLDAPadmin.html" title="PhpLDAPadmin">phpLDAPadmin</a>, a web-based LDAP browser/server manager</li>
+<li><a  class="external text" title="http://edsadmin.sourceforge.net/">EDS Admin tool</a></li>
+<li><a  class="external text" title="http://www.softerra.com/products/ldapbrowser.php">Softerra</a> Freeware Browser and paid for Administrator products</li>
+<li><a  class="external text" title="http://www.jxplorer.org">JXplorer java OSS LDAP Client</a></li>
+<li><a  class="new" title="GQ (software)">GQ</a> (<a  class="external text" title="http://sourceforge.net/projects/gqclient">Homepage</a>)</li>
+<li><a  class="new" title="Luma (Software)">Luma</a> (<a  class="external text" title="http://luma.sourceforge.net/">Homepage</a>)</li>
+<li><a  class="external text" title="http://search.cpan.org/~gbarr/perl-ldap/lib/Net/LDAP.pod">Net::LDAP</a> Perl API, written in Perl</li>
+<li><a  class="external text" title="http://www.perldap.org">PerLDAP</a>, an interface to the C SDK API, and a set of Object Oriented Perl classes</li>
+<li><a  class="external text" title="http://python-ldap.sourceforge.net/">Python-LDAP</a>, LDAP API for the <a href="/wiki/Python_programming_language.html" title="Python programming language">Python</a> language</li>
+<li><a  class="external text" title="http://rubyforge.org/projects/ruby-activeldap/">ActiveLDAP</a>, Object oriented LDAP API for <a href="/wiki/Ruby_programming_language.html" title="Ruby programming language">Ruby</a></li>
+<li><a  class="external text" title="http://rubyforge.org/projects/net-ldap/">Ruby Net::LDAP</a>, Pure <a href="/wiki/Ruby_programming_language.html" title="Ruby programming language">Ruby</a> LDAP API</li>
+<li><a  class="external text" title="http://www.maxware.com/">MaXware</a> - Directory Explorer (free Windows LDAP Browser client)</li>
+<li><a  class="external text" title="http://www.mozilla.org/directory/">Mozilla Directory (LDAP) SDK Project</a> - clients and C, Java and Perl libraries</li>
+<li><a  class="external text" title="http://oss.gonicus.de/gosa/index.php/Main_Page">Gosa</a> Gosa: A PHP Based Admin tool</li>
+<li><a  class="external text" title="http://jamm.sourceforge.net/">Jamm</a> Jamm, (Java Mail Manager) is a web application to manage virtual email account information stored in an LDAP directory.</li>
+<li><a  class="external text" title="http://ldapadmin.sourceforge.net/">LDAP Admin</a>, an open source LDAP client for Windows</li>
+<li><a  class="external text" title="http://www.symlabs.com/">Symlabs</a> Virtual Directory Server - LDAP Proxy - LDAP Gateway</li>
+</ul>
+</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<p><span class="boilerplate" id="foldoc"><i>This article was originally based on material from the <a href="/wiki/Free_On-line_Dictionary_of_Computing.html" title="Free On-line Dictionary of Computing">Free On-line Dictionary of Computing</a>, which is <a  title="Wikipedia:Foldoc license">licensed</a> under the <a href="/wiki/GNU_Free_Documentation_License.html" title="GNU Free Documentation License">GFDL</a>.</i></span></p>
+<ul>
+<li><a  class="external autonumber" title="http://csdl2.computer.org/persagen/DLAbsToc.jsp?resourcePath=/dl/mags/ic/&amp;toc=comp/mags/ic/2004/05/w5toc.xml&amp;DOI=10.1109/MIC.2004.44">[1]</a>LDAP: Framework, Practices, and Trends</li>
+<li>The <a href="/wiki/X.500.html" title="X.500">X.500</a> series - ITU-T Rec. X.500 to X.521</li>
+<li><a href="/wiki/Abstract_syntax_notation_one.html" title="Abstract syntax notation one">ITU-T Rec. X.680</a>, "Abstract Syntax Notation One (ASN.1) - Specification of Basic Notation", 1994</li>
+<li><a href="/wiki/Basic_encoding_rules.html" title="Basic encoding rules">Basic encoding rules</a> (BER) - ITU-T Rec. X.690, "Specification of ASN.1 encoding rules: Basic, Canonical, and Distinguished Encoding Rules", 1994</li>
+<li><a  class="external" title="http://tools.ietf.org/html/rfc4346">RFC 4346</a> - The <a href="/wiki/Transport_Layer_Security.html" title="Transport Layer Security">TLS</a> Protocol Version 1.1</li>
+<li><a  class="external" title="http://tools.ietf.org/html/rfc4422">RFC 4422</a> - Simple Authentication and Security Layer (<a href="/wiki/SASL.html" title="SASL">SASL</a>)</li>
+<li><a  class="external text" title="http://www.iana.org/assignments/sasl-mechanisms">SASL mechanisms</a> registered at IANA</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/LDAP_Data_Interchange_Format.html" title="LDAP Data Interchange Format">LDAP Data Interchange Format</a></li>
+<li><a href="/wiki/LDAP_Application_Program_Interface.html" title="LDAP Application Program Interface">LDAP Application Program Interface</a></li>
+<li><a href="/wiki/Directory_service.html" title="Directory service">Directory service</a></li>
+<li><a href="/wiki/X.500.html" title="X.500">X.500</a></li>
+<li><a href="/wiki/Transport_Layer_Security.html" title="Transport Layer Security">Transport Layer Security (TLS)</a></li>
+<li><a href="/wiki/SASL.html" title="SASL">Simple Authentication and Security Layer (SASL)</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://www.paldap.org/">PALDAP, A Lazy Directory Administrator's Pal</a> An LDAP Wiki</li>
+<li><a  class="external text" title="http://www.emailman.com/ldap/public.html">Public LDAP Servers</a> Look up people at many different universities, institutions, etc.</li>
+<li><a  class="external text" title="http://www.tldp.org/HOWTO/LDAP-HOWTO/">Linux LDAP HOWTO</a></li>
+<li><a  class="external text" title="http://www.bind9.net/ldap/">LDAP Articles, Links, Whitepapers</a></li>
+<li><a  class="external text" title="http://www.bind9.net/ldap-tools">LDAP Software, Tools &amp; Utilities</a></li>
+<li><a  class="external text" title="http://twistedmatrix.com/users/tv/ldap-intro/ldap-intro.html">Nice Neat Introduction To LDAP with examples</a></li>
+<li><a  class="external text" title="http://www.ilex.fr/openldap.htm">OpenLDAP install for Windows with support of the LDAPS protocol</a></li>
+<li><a  class="external text" title="http://www.metaconsultancy.com/whitepapers/ldap-linux.htm">LDAP Authentication for Linux - Integrating LDAP into PAM</a></li>
+<li><a  class="external text" title="http://forge.novell.com/modules/xfmod/project/showfiles.php?group_id=1318">LDAP Libraries for C#</a>.</li>
+<li><a  class="external text" title="http://www.zytrax.com/books/ldap/">LDAP for Rocket Scientists</a> - Comprehensive LDAP Guide/Tutorial</li>
+<li><a  class="external text" title="http://www.mark-macdonald.com/ldap/">OpenLDAP Chaining</a> - A guide to chaining implementation with OpenLDAP</li>
+<li><a  class="external text" title="http://www.freesoftwaremagazine.com/free_issues/issue_03/ldap/">The importance of LDAP</a> A commentary by Tom Jackiewicz about LDAP</li>
+<li><a  class="external text" title="http://nermus.its.ac.id/show/main.php?track0=3&amp;track1=0&amp;&amp;howto=central-auth&amp;xml=no">HOWTO on LDAP + SASL + KERBEROS Master/Slave Central Authentication</a> A Complex Howto By Danang Wijanarko</li>
+<li><a  class="external text" title="http://www.techie-blogs.com/wordpress/web/net/ldap-to-sql-perl-code/">LDAP to SQL</a> - Perl code extracting from a hierarchical structure and producing a relational one</li>
+<li><a  class="external text" title="http://wiki.debian.org/LDAP">A Wiki for using LDAP in Debian</a></li>
+<li><a  class="external text" title="http://yolinux.com/TUTORIALS/LinuxTutorialLDAP.html">A loose collection of Linux LDAP tutorials</a></li>
+<li><a  class="external text" title="http://www.nabber.org/projects/oneldap/">OneLDAP</a> An LDAP gateway to standard protocols like POP3 and IMAP.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Articles">edit</a>]</div>
+<p><a name="Articles" id="Articles"></a></p>
+<h3>Articles</h3>
+<ul>
+<li><a  class="external text" title="http://www.trizsite.com/articles/jul2006/Inventions%20on%20LDAP%20data%20storage-%20A%20study%20based%20on%20US%20patents.pdf">Inventions on LDAP data storage- A study based on US patents</a></li>
+<li><a  class="external text" title="http://www.trizsite.com/articles/jul2006/Inventions%20on%20LDAP%20data%20storage-%20A%20TRIZ%20based%20analysis.pdf">Inventions on LDAP data storage- A TRIZ based analysis</a></li>
+<li><a  class="external text" title="http://www.trizsite.com/articles/aug2006/Inventions%20on%20LDAP%20security-%20A%20TRIZ%20based%20analysis.pdf">Inventions on LDAP security- A TRIZ based analysis</a></li>
+<li><a  class="external text" title="http://www.trizsite.com/articles/aug2006/Inventions%20on%20LDAP%20data%20management-%20a%20TRIZ%20based%20analysis.pdf">Inventions on LDAP data management- a TRIZ based analysis</a></li>
+<li><a  class="external text" title="http://www.trizsite.com/articles/aug2006/Inventions%20on%20LDAP%20Administration-%20A%20TRIZ%20based%20analysis.pdf">Inventions on LDAP Administration- A TRIZ based analysis</a></li>
+<li><a  class="external text" title="http://www.trizsite.com/articles/aug2006/Inventions%20on%20Data%20Searching%20in%20LDAP.pdf">Inventions on Data Searching in LDAP- A TRIZ based analysis</a></li>
+<li><a  class="external text" title="http://www.trizsite.com/articles/aug2006/Inventions%20on%20LDAP%20access%20interface.pdf">Inventions on LDAP access interface- a TRIZ based analysis</a></li>
+<li><a  class="external text" title="http://www.trizsite.com/articles/sep2006/Inventions%20on%20Extending%20LDAP%20functionality.pdf">Inventions on Extending LDAP functionality- A TRIZ based Analysis</a></li>
+<li><a  class="external text" title="http://www.trizsite.com/articles/sep2006/Inventions%20on%20Integrating%20LDAP%20with%20other%20directories.pdf">Inventions on Integrating LDAP with other directories- A TRIZ based analysis</a></li>
+<li><a  class="external text" title="http://www.trizsite.com/articles/sep2006/Inventions%20on%20using%20LDAP%20for%20different%20purposes-Part-1.pdf">Inventions on using LDAP for different purposes-Part-1</a></li>
+<li><a  class="external text" title="http://www.trizsite.com/articles/sep2006/Inventions%20on%20using%20LDAP%20for%20different%20purposes-Part-2.pdf">Inventions on using LDAP for different purposes-Part-2</a></li>
+<li><a  class="external text" title="http://www.trizsite.com/articles/sep2006/Inventions%20on%20using%20LDAP%20for%20different%20purposes-Part-3.pdf">Inventions on using LDAP for different purposes-Part-3</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: LDAP fora">edit</a>]</div>
+<p><a name="LDAP_fora" id="LDAP_fora"></a></p>
+<h3>LDAP fora</h3>
+<ul>
+<li><a  class="external text" title="http://www.umich.edu/~dirsvcs/ldap/mailinglist.html">LDAP mailinglist at umich.edu</a></li>
+<li>"#ldap" <a href="/wiki/Internet_Relay_Chat.html" title="Internet Relay Chat">IRC</a> channel in the <a href="/wiki/Freenode.html" title="Freenode">freenode</a> IRC network</li>
+<li><a  class="external text" title="http://www.ietf.org/html.charters/ldapbis-charter.html">LDAP (v3) Revision (ldapbis) Working Group</a></li>
+<li><a  class="external text" title="https://www1.ietf.org/mailman/listinfo/ldapext">LDAPext</a> (LDAP Extensions) mailing list - originally created for an <a href="/wiki/IETF.html" title="IETF">IETF</a> <a href="/wiki/Working_group.html" title="Working group">working group</a>. The list is archived at <a href="/wiki/Gmane.html" title="Gmane">Gmane</a>.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: RFCs">edit</a>]</div>
+<p><a name="RFCs" id="RFCs"></a></p>
+<h3>RFCs</h3>
+<p>LDAP is currently specified in a series of <a href="/wiki/Request_for_Comments.html" title="Request for Comments">Request for Comments</a> documents:</p>
+<ul>
+<li><a  class="external" title="http://tools.ietf.org/html/rfc4510">RFC 4510</a> - Lighweight Directory Access Protocol (LDAP) Technical Specification Roadmap (replaced the previous LDAP Technical specification, <a  class="external" title="http://tools.ietf.org/html/rfc3377">RFC 3377</a>, in its entirety)</li>
+<li><a  class="external" title="http://tools.ietf.org/html/rfc4511">RFC 4511</a> - Lightweight Directory Access Protocol (LDAP): The Protocol</li>
+<li><a  class="external" title="http://tools.ietf.org/html/rfc4512">RFC 4512</a> - Lightweight Directory Access Protocol (LDAP): Directory Information Models</li>
+<li><a  class="external" title="http://tools.ietf.org/html/rfc4513">RFC 4513</a> - Lightweight Directory Access Protocol (LDAP): Authentication Methods and Security Mechanisms</li>
+<li><a  class="external" title="http://tools.ietf.org/html/rfc4514">RFC 4514</a> - Lightweight Directory Access Protocol (LDAP): String Representation of Distinguished Names</li>
+<li><a  class="external" title="http://tools.ietf.org/html/rfc4515">RFC 4515</a> - Lightweight Directory Access Protocol (LDAP): String Representation of Search Filters</li>
+<li><a  class="external" title="http://tools.ietf.org/html/rfc4516">RFC 4516</a> - Lightweight Directory Access Protocol (LDAP): Uniform Resource Locator</li>
+<li><a  class="external" title="http://tools.ietf.org/html/rfc4517">RFC 4517</a> - Lightweight Directory Access Protocol (LDAP): Syntaxes and Matching Rules</li>
+<li><a  class="external" title="http://tools.ietf.org/html/rfc4518">RFC 4518</a> - Lightweight Directory Access Protocol (LDAP): Internationalized String Preparation</li>
+<li><a  class="external" title="http://tools.ietf.org/html/rfc4519">RFC 4519</a> - Lightweight Directory Access Protocol (LDAP): Schema for User Applications</li>
+</ul>
+<p>The following RFCs detail LDAP-specific Best Current Practices:</p>
+<ul>
+<li><a  class="external" title="http://tools.ietf.org/html/rfc4520">RFC 4520</a> (also BCP 64) - Internet Assigned Numbers Authority (IANA) Considerations for the Lightweight Directory Access Protocol (LDAP) (replaced <a  class="external" title="http://tools.ietf.org/html/rfc3383">RFC 3383</a>)</li>
+<li><a  class="external" title="http://tools.ietf.org/html/rfc4521">RFC 4521</a> (also BCP 118) - Considerations for Lightweight Directory Access Protocol (LDAP) Extensions</li>
+</ul>
+<p>The following is a partial list of RFCs specifying LDAPv3 extensions:</p>
+<ul>
+<li><a  class="external" title="http://tools.ietf.org/html/rfc2247">RFC 2247</a> - Use of <a href="/wiki/Domain_Name_System.html" title="Domain Name System">DNS</a> domains in distinguished names</li>
+<li><a  class="external" title="http://tools.ietf.org/html/rfc2307">RFC 2307</a> - Using LDAP as a <a href="/wiki/Network_Information_Service.html" title="Network Information Service">Network Information Service</a></li>
+<li><a  class="external" title="http://tools.ietf.org/html/rfc2589">RFC 2589</a> - LDAPv3: Dynamic Directory Services Extensions</li>
+<li><a  class="external" title="http://tools.ietf.org/html/rfc2649">RFC 2649</a> - LDAPv3 Operational Signatures</li>
+<li><a  class="external" title="http://tools.ietf.org/html/rfc2696">RFC 2696</a> - LDAP Simple Paged Result Control</li>
+<li><a  class="external" title="http://tools.ietf.org/html/rfc2798">RFC 2798</a> - inetOrgPerson LDAP Object Class</li>
+<li><a  class="external" title="http://tools.ietf.org/html/rfc2849">RFC 2849</a> - The LDAP Data Interchange Format (<a href="/wiki/LDIF.html" title="LDIF">LDIF</a>)</li>
+<li><a  class="external" title="http://tools.ietf.org/html/rfc2891">RFC 2891</a> - Server Side Sorting of Search Results</li>
+<li><a  class="external" title="http://tools.ietf.org/html/rfc3045">RFC 3045</a> - Storing Vendor Information in the LDAP root DSE</li>
+<li><a  class="external" title="http://tools.ietf.org/html/rfc3062">RFC 3062</a> - LDAP Password Modify Extended Operation</li>
+<li><a  class="external" title="http://tools.ietf.org/html/rfc3296">RFC 3296</a> - Named Subordinate References in LDAP Directories</li>
+<li><a  class="external" title="http://tools.ietf.org/html/rfc3671">RFC 3671</a> - Collective Attributes in LDAP</li>
+<li><a  class="external" title="http://tools.ietf.org/html/rfc3672">RFC 3672</a> - Subentries in LDAP</li>
+<li><a  class="external" title="http://tools.ietf.org/html/rfc3673">RFC 3673</a> - LDAPv3: All Operational Attributes</li>
+<li><a  class="external" title="http://tools.ietf.org/html/rfc3687">RFC 3687</a> - LDAP Component Matching Rules</li>
+<li><a  class="external" title="http://tools.ietf.org/html/rfc3698">RFC 3698</a> - LDAP: Additional Matching Rules</li>
+<li><a  class="external" title="http://tools.ietf.org/html/rfc3829">RFC 3829</a> - LDAP Authorization Identity Controls</li>
+<li><a  class="external" title="http://tools.ietf.org/html/rfc3866">RFC 3866</a> - Language Tags and Ranges in LDAP</li>
+<li><a  class="external" title="http://tools.ietf.org/html/rfc3909">RFC 3909</a> - LDAP Cancel Operation</li>
+<li><a  class="external" title="http://tools.ietf.org/html/rfc3928">RFC 3928</a> - LDAP Client Update Protocol</li>
+<li><a  class="external" title="http://tools.ietf.org/html/rfc4370">RFC 4370</a> - LDAP Proxied Authorization Control</li>
+<li><a  class="external" title="http://tools.ietf.org/html/rfc4373">RFC 4373</a> - LBURP</li>
+<li><a  class="external" title="http://tools.ietf.org/html/rfc4403">RFC 4403</a> - LDAP Schema for UDDI</li>
+<li><a  class="external" title="http://tools.ietf.org/html/rfc4522">RFC 4522</a> - LDAP: Binary Encoding Option</li>
+<li><a  class="external" title="http://tools.ietf.org/html/rfc4523">RFC 4523</a> - LDAP: X.509 Certificate Schema</li>
+<li><a  class="external" title="http://tools.ietf.org/html/rfc4524">RFC 4524</a> - LDAP: COSINE Schema (replaces <a  class="external" title="http://tools.ietf.org/html/rfc1274">RFC 1274</a>)</li>
+<li><a  class="external" title="http://tools.ietf.org/html/rfc4525">RFC 4525</a> - LDAP: Modify-Increment Extension</li>
+<li><a  class="external" title="http://tools.ietf.org/html/rfc4526">RFC 4526</a> - LDAP: Absolute True and False Filters</li>
+<li><a  class="external" title="http://tools.ietf.org/html/rfc4527">RFC 4527</a> - LDAP: Read Entry Controls</li>
+<li><a  class="external" title="http://tools.ietf.org/html/rfc4528">RFC 4528</a> - LDAP: Assertion Control</li>
+<li><a  class="external" title="http://tools.ietf.org/html/rfc4529">RFC 4529</a> - LDAP: Requesting Attributes by Object Class</li>
+<li><a  class="external" title="http://tools.ietf.org/html/rfc4530">RFC 4530</a> - LDAP: entryUUID</li>
+<li><a  class="external" title="http://tools.ietf.org/html/rfc4531">RFC 4531</a> - LDAP Turn Operation</li>
+<li><a  class="external" title="http://tools.ietf.org/html/rfc4532">RFC 4532</a> - LDAP Who am I? Operation</li>
+<li><a  class="external" title="http://tools.ietf.org/html/rfc4533">RFC 4533</a> - LDAP Content Sync Operation</li>
+</ul>
+<p><br />
+LDAPv2 was specified in the following RFCs:</p>
+<ul>
+<li><a  class="external" title="http://tools.ietf.org/html/rfc1777">RFC 1777</a> - Lightweight Directory Access Protocol (replaced <a  class="external" title="http://tools.ietf.org/html/rfc1487">RFC 1487</a>)</li>
+<li><a  class="external" title="http://tools.ietf.org/html/rfc1778">RFC 1778</a> - The String Representation of Standard Attribute Syntaxes (replaced <a  class="external" title="http://tools.ietf.org/html/rfc1488">RFC 1488</a>)</li>
+<li><a  class="external" title="http://tools.ietf.org/html/rfc1779">RFC 1779</a> - A String Representation of Distinguished Names (replaced <a  class="external" title="http://tools.ietf.org/html/rfc1485">RFC 1485</a>)</li>
+</ul>
+<p>LDAPv2 was moved to historic status by the following RFC:</p>
+<ul>
+<li><a  class="external" title="http://tools.ietf.org/html/rfc3494">RFC 3494</a> - Lightweight Directory Access Protocol version 2 (LDAPv2) to Historic Status</li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:18508-0!1!0!default!!en!2 and timestamp 20060910153713 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:FOLDOC sourced articles">FOLDOC sourced articles</a></span> | <span dir='ltr'><a  title="Category:Internet protocols">Internet protocols</a></span> | <span dir='ltr'><a  title="Category:Internet standards">Internet standards</a></span> | <span dir='ltr'><a  title="Category:Identity management">Identity management</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Lightweight_Directory_Access_Protocol.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-ar"><a >العربية</a></li>
+				<li class="interwiki-bs"><a >Bosanski</a></li>
+				<li class="interwiki-bg"><a >Български</a></li>
+				<li class="interwiki-cv"><a >Чăвашла</a></li>
+				<li class="interwiki-cs"><a >Česky</a></li>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-eu"><a >Euskara</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-id"><a >Bahasa Indonesia</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-nl"><a >Nederlands</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-pt"><a >Português</a></li>
+				<li class="interwiki-ro"><a >Română</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+				<li class="interwiki-sk"><a >Slovenčina</a></li>
+				<li class="interwiki-fi"><a >Suomi</a></li>
+				<li class="interwiki-sv"><a >Svenska</a></li>
+				<li class="interwiki-zh"><a >中文</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 01:31, 9 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv90 in 0.093 secs. --></body></html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Fusebox (programming),API,Active Server Pages,ColdFusion,Framework,FuseDocs (programming),JavaServer Pages,Methodology,PHP,World Wide Web,XML" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Fusebox (programming) - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Fusebox_(programming)";
+			var wgTitle = "Fusebox (programming)";
+			var wgArticleId = 962972;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Fusebox (programming)</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p><b>Fusebox</b> is a popular <a href="/wiki/World_Wide_Web.html" title="World Wide Web">web</a> development framework for <a href="/wiki/ColdFusion.html" title="ColdFusion">ColdFusion</a> and other web development languages. Fusebox provides Web application developers with a standardised, structured way of developing their applications using a relatively straightforward and easy to learn set of core files and encouraged conventions. In addition to the framework itself, Fusebox has become closely associated with a Web application development methodology developed by its proponents known as "FLiP". (Many people refer to Fusebox as a "methodology", but in fact, as stated, it's a development framework. FLiP, however, is a methodology). Many frameworks provide comparable advantages, however, Fusebox (probably on account of both its relatively long history and the sizeable and active community that supports it) seems to be the most popular one for <a href="/wiki/ColdFusion.html" title="ColdFusion">ColdFusion</a>. Also the framework itself has been ported and used in <a href="/wiki/Active_Server_Pages.html" title="Active Server Pages">ASP</a>, <a href="/wiki/JavaServer_Pages.html" title="JavaServer Pages">JSP</a> and <a href="/wiki/PHP.html" title="PHP">PHP</a> as well.</p>
+<p>The concepts behind Fusebox are based on the household idiom of an electrical fusebox that controls a number of circuits, each one with its own fuse. In a Fusebox web application, all requests are routed through a single point (usually index.cfm for ColdFusion) and processed by the Fusebox core files. The application is divided into a number of circuits (usually in sub-directories) which are intended to contain related functionality. Each circuit in the application is further divided into small files called fuses that should perform simple tasks. URLs within a Fusebox web application are usually of the form index.cfm?fuseaction=cname.fname where "cname" is the name of a circuit and "fname" is an XML-defined "method" within that circuit known as a fuseaction.</p>
+<p>Fusebox encourages, but does not enforce, separation of presentation logic from business logic. It uses a number of file naming conventions to encourage this separation: presentation files begin with dsp (display) or lay (layout), database access files begin with qry (query) and general business files begin with act (action). Additional naming conventions are used by many Fusebox developers but these are the most common ones.</p>
+<p>Another concept that Fusebox encourages is to parameterize any exit points in a web page, coding them as variables that are set in the circuit control file. These exit points are known as XFAs - eXit FuseActions. The idea is that by parameterizing the exit points in a web page, the flow of control can be updated more easily, allowing more reuse of web pages or fragments thereof.</p>
+<p>Fusebox has had several major revisions over the years. The most popular versions in use today are Fusebox 3 and Fusebox 4 (including 4.1). In Fusebox 3, the control files were all written in the underlying programming language (e.g., fbx_Switch.cfm for ColdFusion). Fusebox 4 and later versions use <a href="/wiki/XML.html" title="XML">XML</a> for the control files (fusebox.xml and circuit.xml). This should help improve tool support for the framework in the future.</p>
+<p>Fusebox 4.1 introduces some new XML grammar elements that let you declare, instantiate and manipulate objects (COM, Java and ColdFusion Components) as well as web services. These features have provided Fusebox developers with the means of developing object-oriented models (i.e. business-logic).</p>
+<p>Associated with the framework, but not strictly part of it, is the concept of <a href="/wiki/FuseDocs_%28programming%29.html" title="FuseDocs (programming)">FuseDocs</a> which is a semi-formalized form of documentation written in XML that specifies the inputs and outputs of each fuse file. There are third-party tools available which can use FuseDocs to do things like generate test harness code.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">History</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">1.1</span> <span class="toctext">Fusebox (version 1)</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.2</span> <span class="toctext">Fusebox 2</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.3</span> <span class="toctext">XFB</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.4</span> <span class="toctext">Fusebox 3</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.5</span> <span class="toctext">Fusebox 4</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.6</span> <span class="toctext">Fusebox 5</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: History">edit</a>]</div>
+<p><a name="History" id="History"></a></p>
+<h2>History</h2>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Fusebox (version 1)">edit</a>]</div>
+<p><a name="Fusebox_.28version_1.29" id="Fusebox_.28version_1.29"></a></p>
+<h3>Fusebox (version 1)</h3>
+<p>Steve Nelson and Gabe Roffman are credited with creating the original Fusebox, a programming <a href="/wiki/Methodology.html" title="Methodology">methodology</a>, in 1998. The methodology was constantly evolving and no official documentation existed.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Fusebox 2">edit</a>]</div>
+<p><a name="Fusebox_2" id="Fusebox_2"></a></p>
+<h3>Fusebox 2</h3>
+<p>Steve Nelson and Craig Gerard wrote a book, Fusebox: Methodology and Techniques, which was published in 2000. Programmers who followed the practices described in the book were said to be doing "Fusebox 2." Programmers who followed the earlier traditions but didn't view the book as canonical were said to be doing "Fusebox 1."</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: XFB">edit</a>]</div>
+<p><a name="XFB" id="XFB"></a></p>
+<h3>XFB</h3>
+<p>Hal Helms built upon Fusebox 2 and called his ideas eXtended FuseBox, or XFB.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Fusebox 3">edit</a>]</div>
+<p><a name="Fusebox_3" id="Fusebox_3"></a></p>
+<h3>Fusebox 3</h3>
+<p>Fusebox 3 was an effort by leading members of the Fusebox community to incorporate XFB and other ideas into a reusable library, known as the "core files." A simple <a href="/wiki/API.html" title="API">API</a> allowed application code to communicate with the core files. At this point, Fusebox became a <a href="/wiki/Framework.html" title="Framework">framework</a> rather than a <a href="/wiki/Methodology.html" title="Methodology">methodology</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Fusebox 4">edit</a>]</div>
+<p><a name="Fusebox_4" id="Fusebox_4"></a></p>
+<h3>Fusebox 4</h3>
+<p>Fusebox 4 was a complete rewrite of Fusebox 3. The core files <a  class="external text" title="http://www.fusebox.org/index.cfm?fuseaction=fusebox.isFree">license</a> (which is open source) is held by a private company: <a  class="external text" title="https://esos.state.nv.us/SOSServices/AnonymousAccess/CorpSearch/CorpDetails.aspx?CorpID=483048">The Fusebox Corporation</a> (which appears to be a defunct corporation).</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Fusebox 5">edit</a>]</div>
+<p><a name="Fusebox_5" id="Fusebox_5"></a></p>
+<h3>Fusebox 5</h3>
+<p>In 2006, The Fusebox Corporation asked Sean Corfield to take the lead in developing the next iteration of Fusebox. Fusebox 5 was another complete rewrite with new features and improved performance. Fusebox 5 maintained backwards-compatibility with Fusebox 4.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://www.fusebox.org">Fusebox.org (The Fusebox Corporation)</a></li>
+<li><a  class="external text" title="http://www.cfconf.org/fusebox2005/">Fusebox annual conference</a></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:962972-0!1!0!default!!en!2 and timestamp 20060906010938 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:Web development software">Web development software</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Fusebox_%28programming%29.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 14:10, 1 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv111 in 0.089 secs. --></body></html>

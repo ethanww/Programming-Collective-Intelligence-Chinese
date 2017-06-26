@@ -1,0 +1,326 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Cyclone programming language,ANSI C,Bounds checking,Buffer overflow,C programming language,Control flow,Dangling pointer,Exception handling,GNU Compiler Collection,Garbage collection (computer science),Hello world" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Cyclone programming language - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Cyclone_programming_language";
+			var wgTitle = "Cyclone programming language";
+			var wgArticleId = 7645;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Cyclone programming language</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>The <b>Cyclone</b> <a href="/wiki/Programming_language.html" title="Programming language">programming language</a> is intended to be a safe dialect of the <a href="/wiki/C_programming_language.html" title="C programming language">C programming language</a>. Cyclone is designed to avoid <a href="/wiki/Buffer_overflow.html" title="Buffer overflow">buffer overflows</a> and other vulnerabilities that are endemic in C programs, without losing the power and convenience of C as a tool for <a href="/wiki/Systems_programming.html" title="Systems programming">systems programming</a>.</p>
+<p>Cyclone development was started as a joint project of AT&amp;T Labs Research and Greg Morrisett’s group at Cornell in 2001. Version 1.0 was released on May 8 2006.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Language features</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">1.1</span> <span class="toctext">Pointer/reference types</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.2</span> <span class="toctext">Dangling pointers and region analysis</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.3</span> <span class="toctext">Manual memory management</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Examples</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Language features">edit</a>]</div>
+<p><a name="Language_features" id="Language_features"></a></p>
+<h2>Language features</h2>
+<p>Cyclone attempts to avoid some of the common pitfalls of the <a href="/wiki/C_programming_language.html" title="C programming language">C programming language</a>, while still maintaining the look and performance of C. To this end, Cyclone places the following restrictions upon programs:</p>
+<ul>
+<li><code><a href="/wiki/NULL.html" title="NULL">NULL</a></code> checks are inserted to prevent <a href="/wiki/Segmentation_fault.html" title="Segmentation fault">segmentation faults</a></li>
+<li><a href="/wiki/Pointer_arithmetic.html" title="Pointer arithmetic">Pointer arithmetic</a> is restricted</li>
+<li>Pointers must be initialized before use</li>
+<li><a href="/wiki/Dangling_pointer.html" title="Dangling pointer">Dangling pointers</a> are prevented through region analysis and limitations on <a href="/wiki/Malloc.html" title="Malloc"><code>free()</code></a></li>
+<li>Only "safe" casts and unions are allowed</li>
+<li><a href="/wiki/Control_flow.html" title="Control flow"><code>goto</code></a> into scopes is disallowed</li>
+<li><a href="/wiki/Control_flow.html" title="Control flow"><code>switch</code></a> labels in different scopes are disallowed</li>
+<li>Pointer-returning functions must execute <code>return</code></li>
+<li><a href="/wiki/Setjmp/longjmp.html" title="Setjmp/longjmp"><code>setjmp</code> and <code>longjmp</code></a> are not supported</li>
+</ul>
+<p>In order to maintain the tool set that C programmers are used to, Cyclone provides the following extensions:</p>
+<ul>
+<li><b>Never-<code>NULL</code> pointers</b> do not require <code>NULL</code> checks</li>
+<li><b>"Fat" pointers</b> support pointer arithmetic with run-time <a href="/wiki/Bounds_checking.html" title="Bounds checking">bounds checking</a></li>
+<li><b>Growable regions</b> support a form of safe manual memory management</li>
+<li><b><a href="/wiki/Garbage_collection_%28computer_science%29.html" title="Garbage collection (computer science)">Garbage collection</a></b> for heap-allocated values</li>
+<li><b><a href="/wiki/Tagged_union.html" title="Tagged union">Tagged unions</a></b> support type-varying arguments</li>
+<li><b>Injections</b> help automate the use of tagged unions for programmers</li>
+<li><b><a href="/wiki/Polymorphism_%28computer_science%29.html" title="Polymorphism (computer science)">Polymorphism</a></b> replaces some uses of <a href="/wiki/Void_pointer.html" title="Void pointer"><code>void *</code></a></li>
+<li><b>varargs</b> are implemented as fat pointers</li>
+<li><b><a href="/wiki/Exception_handling.html" title="Exception handling">Exceptions</a></b> replace some uses of <code>setjmp</code> and <code>longjmp</code></li>
+</ul>
+<p>For a better high-level introduction to Cyclone, the reasoning behind Cyclone and the source of these lists, please see <a  class="external autonumber" title="http://www.research.att.com/projects/cyclone/papers/cyclone-safety.pdf">[1]</a>.</p>
+<p>Although Cyclone looks, in general, much like <a href="/wiki/C_programming_language.html" title="C programming language">C</a>, it should be thought of as a <a  class="new" title="Category:C dialects">C-like language</a>. With that, let us look at more features of the language, in depth.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Pointer/reference types">edit</a>]</div>
+<p><a name="Pointer.2Freference_types" id="Pointer.2Freference_types"></a></p>
+<h3>Pointer/reference types</h3>
+<p>Cyclone implements three kinds of <a href="/wiki/Reference.html" title="Reference">reference</a> (following C terminology these are called pointers):</p>
+<ul>
+<li><code>*</code> (the normal type)</li>
+<li><code>@</code> (the never-<code>NULL</code> pointer), and</li>
+<li><code>?</code> (the only type with <a href="/wiki/Pointer_arithmetic.html" title="Pointer arithmetic">pointer arithmetic</a> allowed, "fat" pointers).</li>
+</ul>
+<p>The purpose of introducing these new pointer types is to avoid common problems when using pointers. Take for instance a function, called <code>foo</code> that takes a pointer to an int:</p>
+<pre>
+int foo(int *);
+</pre>
+<p>Although the person who wrote the function <code>foo</code> could have inserted <code>NULL</code> checks, let us assume that for performance reasons they did not. Calling <code>foo(NULL);</code> will result in <a href="/wiki/Undefined_behavior.html" title="Undefined behavior">undefined behavior</a> (typically, although not necessarily, a <b>SIGSEGV</b> being sent to the application). To avoid such problems, Cyclone introduces the <code>@</code> pointer type, which can never be <code>NULL</code>. Thus, the "safe" version of <code>foo</code> would be:</p>
+<pre>
+int foo(int @);
+</pre>
+<p>This tells the Cyclone compiler that the argument to <code>foo</code> should never be <code>NULL</code>, avoiding the aforementioned undefined behavior. The simple change of <code>*</code> to <code>@</code> saves the programmer from having to write <code>NULL</code> checks and the operating system from having to trap <code>NULL</code> pointer dereferences. This extra restriction, however, can be a rather large stumbling block for most C programmers, who are used to being able to manipulate their pointers directly with arithmetic. Although this is desirable, it can lead to <a href="/wiki/Buffer_overflow.html" title="Buffer overflow">buffer overflows</a> and other "off-by-one"-style mistakes. To avoid this, the <code>?</code> pointer type is delimited by a known bound, the size of the array. Although this adds overhead due to the extra information stored about the pointer, it improves safety and security. Take for instance a simple (and naïve) <code>strlen</code> function, written in C:</p>
+<pre>
+int strlen(const char *s)
+{
+    int iter = 0;
+    if (s == NULL) return 0;
+    while (s[iter] != '\0') {
+       iter++;
+    }
+    return iter;
+}
+</pre>
+<p>This function assumes that the string being passed in is terminated by NUL (<code>'\0'</code>). However, what would happen if <code>char buf[] = {'h','e','l','l','o','!'};</code> were passed to this string? This is perfectly legal in C, yet would cause <code>strlen</code> to iterate through memory not necessarily associated with the string <code>s</code>. There are functions, such as <code>strnlen</code> which can be used to avoid such problems, but these functions are not standard with every implementation of <a href="/wiki/ANSI_C.html" title="ANSI C">ANSI C</a>. The Cyclone version of <code>strlen</code> is not so different from the C version:</p>
+<pre>
+int strlen(const char ? s)
+{
+   int iter, n = s.size;
+   if (s == NULL) return 0;
+   for (iter = 0; iter &lt; n; iter++, s++) {
+      if (*s == '\0') return iter;
+   }
+   return n;
+}
+</pre>
+<p>Here, <code>strlen</code> bounds itself by the length of the array passed to it, thus not going over the actual length. Each of the kinds of pointer type can be safely cast to each of the others, and arrays and strings are automagically cast to <code>?</code> by the compiler. (Casting from <code>?</code> to <code>*</code> invokes a <a href="/wiki/Bounds_checking.html" title="Bounds checking">bounds check</a>, and casting from <code>?</code> to <code>@</code> invokes both a <code>NULL</code> check and a bounds check. Casting from <code>*</code> or <code>@</code> results in no checks whatsoever; the resulting <code>?</code> pointer has a size of 1.)</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Dangling pointers and region analysis">edit</a>]</div>
+<p><a name="Dangling_pointers_and_region_analysis" id="Dangling_pointers_and_region_analysis"></a></p>
+<h3>Dangling pointers and region analysis</h3>
+<p>Consider the following code, in C:</p>
+<pre>
+char *itoa(int i)
+{
+   char buf[20];
+   sprintf(buf,"%d",i);
+   return buf;
+}
+</pre>
+<p>This returns an object that is allocated on the stack of the function <code>itoa</code>, which is not available after the function returns. While <a href="/wiki/GNU_Compiler_Collection.html" title="GNU Compiler Collection">gcc</a> and other compilers will warn about such code, this will typically compile without warnings:</p>
+<pre>
+char *itoa(int i)
+{
+   char buf[20], *z;
+   sprintf(buf,"%d",i);
+   z = buf;
+   return z;
+}
+</pre>
+<p>Cyclone does regional analysis of each segment of code, preventing dangling pointers, such as the one returned from this version of <code>itoa</code>. All of the local variables in a given scope are considered to be part of the same region, separate from the heap or any other local region. Thus, when analyzing <code>itoa</code>, the compiler would see that <code>z</code> is a pointer into the local stack, and would report an error.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Manual memory management">edit</a>]</div>
+<p><a name="Manual_memory_management" id="Manual_memory_management"></a></p>
+<h3>Manual memory management</h3>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Examples">edit</a>]</div>
+<p><a name="Examples" id="Examples"></a></p>
+<h2>Examples</h2>
+<p>The best example to start with is the classic <a href="/wiki/Hello_world.html" title="Hello world">Hello world</a> program:</p>
+<pre>
+#include &lt;stdio.h&gt;
+#include &lt;core.h&gt;
+using Core;
+int main(int argc, string_t ? args)
+{
+   if (argc &lt;= 1) {
+      printf("Usage: hello-cyclone &lt;name&gt;\n");
+      return 1;
+   } else {
+      printf("Hello from Cyclone, %s\n", args[1]);
+   }
+   return 0;
+}
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<ul>
+<li><a  class="external text" title="http://cyclone.thelanguage.org/wiki/User%20Manual">Cyclone User Manual</a></li>
+<li><a  class="external text" title="http://www.cs.umd.edu/~mwh/papers/cyclone-cuj.pdf">Cyclone: a Type-safe Dialect of C</a> by Dan Grossman, Michael Hicks, Trevor Jim, and Greg Morrisett - published January 2005</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://cyclone.thelanguage.org/">Cyclone Homepage</a></li>
+</ul>
+<p><br /></p>
+<table style="background-color:#F6ED9D; border:2px solid grey; padding: .5em;">
+<tr>
+<td align="left" rowspan="3"><a  class="image" title=""><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Steps.svg/32px-Steps.svg.png" alt="" width="32" height="32" longdesc="/wiki/Image:Steps.svg" /></a></td>
+</tr>
+<tr>
+<td><b>Preceding:</b></td>
+<td><a href="/wiki/C_programming_language.html" title="C programming language">C</a>,<a href="/wiki/ML_programming_language.html" title="ML programming language">ML</a></td>
+</tr>
+<tr>
+<td><b>Subsequent:</b></td>
+<td></td>
+</tr>
+</table>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:7645-0!1!0!default!!en!2 and timestamp 20060910145855 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:C programming language family">C programming language family</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Cyclone_programming_language.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 20:49, 29 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv12 in 0.294 secs. --></body></html>

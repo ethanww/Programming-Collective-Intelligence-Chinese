@@ -1,0 +1,677 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Birthday paradox,American Mathematical Monthly,Birthday,Birthday attack,Bit,Calculator,Combination,Complementary event,Cryptographic hash function,Event (probability theory),Exponential function" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Birthday paradox - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Birthday_paradox";
+			var wgTitle = "Birthday paradox";
+			var wgArticleId = 73242;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Birthday paradox</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>In <a href="/wiki/Probability_theory.html" title="Probability theory">probability theory</a>, the <b>birthday paradox</b> states that given a group of 23 (or more) randomly chosen people, the probability is more than 50% that at least two of them will have the same <a href="/wiki/Birthday.html" title="Birthday">birthday</a>. For 60 or more people, the probability is already greater than 99%, although it cannot actually be 100% unless there are at least 366 people. This is not a <a href="/wiki/Paradox.html" title="Paradox">paradox</a> in the sense of leading to a <a href="/wiki/Logic.html" title="Logic">logical</a> contradiction; it is described as a paradox because mathematical truth contradicts naive <a href="/wiki/Intuition_%28knowledge%29.html" title="Intuition (knowledge)">intuition</a>: most people estimate that the chance is much lower than 50%. Calculating this <a href="/wiki/Probability.html" title="Probability">probability</a> (and related ones) is the <b>birthday problem</b>. The mathematics behind it has been used to devise a well-known cryptographic attack named the <a href="/wiki/Birthday_attack.html" title="Birthday attack">birthday attack</a>.</p>
+<dl>
+<dd><i>Please note that it <b>is</b> possible for a group of 366 people to all have different birthdays, if one of the birthdays is February 29, and that therefore, the probability that two will be the same does not actually become 100% unless there are at least 367 people in the group. Also note that birthdays are not evenly distributed throughout the year; not only does February 29 occur significantly less than any other day, but the birth rates vary for the other 365 days as well. Therefore, to keep things simple, all calculations in this article will presume that there are 365 days in every year, and that birthdays are evenly distributed among those days. This will cause all these calculations to be very slightly wrong, but they are sufficiently accurate for illustration purposes.</i></dd>
+</dl>
+<div class="thumb tright">
+<div style="width:452px;"><a  class="internal" title="A graph showing the probability of at least two people sharing a birthday amongst a certain number of people."><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Birthday_paradox.png/450px-Birthday_paradox.png" alt="A graph showing the probability of at least two people sharing a birthday amongst a certain number of people." width="450" height="276" longdesc="/wiki/Image:Birthday_paradox.png" /></a>
+<div class="thumbcaption">
+<div class="magnify" style="float:right"><a  class="internal" title="Enlarge"><img src="/skins-1.5/common/images/magnify-clip.png" width="15" height="11" alt="Enlarge" /></a></div>
+A graph showing the probability of at least two people sharing a birthday amongst a certain number of people.</div>
+</div>
+</div>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Understanding the paradox</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Calculating the probability</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Alternative probability calculation</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">3.1</span> <span class="toctext">String permutations</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Approximations</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">4.1</span> <span class="toctext">A simple exponentiation</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.2</span> <span class="toctext">Poisson approximation</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.3</span> <span class="toctext">Approximation of number of people</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Same birthday as you</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">Reverse problem</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">6.1</span> <span class="toctext">Sample calculations</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">Generalization</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">8</span> <span class="toctext">Applications</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">9</span> <span class="toctext">An upper bound and a different perspective</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">10</span> <span class="toctext">Empirical test</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">11</span> <span class="toctext">Near matches</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">12</span> <span class="toctext">Collision counting</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">13</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">14</span> <span class="toctext">Notes</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">15</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Understanding the paradox">edit</a>]</div>
+<p><a name="Understanding_the_paradox" id="Understanding_the_paradox"></a></p>
+<h2>Understanding the paradox</h2>
+<p>One way to intuitively accept the birthday paradox is to realize that there are many possible unordered <i>pairs</i> of people whose birthdays could match. Specifically, among 23 people, there are <a href="/wiki/Combination.html" title="Combination">C</a>(23,2)&#160;=&#160;23&#160;×&#160;22/2 = 253 pairs, each of which is a potential candidate for a match. Looked at in this way, it doesn't seem that unlikely that one of these 253 pairs yields a match.</p>
+<p>The key to understanding this problem is to think about the chances of <i>no two people</i> sharing a birthday: what are the chances that person 1 has a different birthday from person 2 <i>and</i> that person 3 has a different birthday again <i>and</i> person 4, etc. As you add each person to the room, it becomes less and less likely that their birthday isn't already taken by someone else.</p>
+<p>The actual birthday problem is asking if <i>any</i> of the 23 people have a matching birthday with <i>any</i> of the others — not one in particular.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Calculating the probability">edit</a>]</div>
+<p><a name="Calculating_the_probability" id="Calculating_the_probability"></a></p>
+<h2>Calculating the probability</h2>
+<p>To compute the approximate probability that in a room of <i>n</i> people, at least two have the same birthday, we disregard variations in the distribution, such as <a href="/wiki/Leap_year.html" title="Leap year">leap years</a>, <a href="/wiki/Twin.html" title="Twin">twins</a>, seasonal or weekday variations, and assume that the 365 possible birthdays are equally likely. Real-life birthday distributions are not uniform since not all dates are equally likely.<sup id="ref_Distribution"><small><a  title="">1</a></small></sup></p>
+<p>It is easier to first calculate the probability <i><u style="text-decoration:overline">p</u></i>(<i>n</i>) that all <i>n</i> birthdays are <i>different</i>. If <i>n</i> &gt; 365, by the <a href="/wiki/Pigeonhole_principle.html" title="Pigeonhole principle">pigeonhole principle</a> this probability is 0. On the other hand, if <i>n</i> ≤ 365, it is given by</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/4/e/1/4e1df49e6c80dbcc2f7aa7c1310ebe32.png" alt="\bar p(n) = 1 \cdot \left(1-\frac{1}{365}\right) \cdot \left(1-\frac{2}{365}\right)  \cdots \left(1-\frac{n-1}{365}\right) = { 365 \cdot 364 \cdots (365-n+1) \over 365^n } = { 365! \over 365^n (365-n)!}," /></dd>
+</dl>
+<p>because the second person cannot have the same birthday as the first (364/365), the third cannot have the same birthday as the first two (363/365), etc.</p>
+<p>The <a href="/wiki/Event_%28probability_theory%29.html" title="Event (probability theory)">event</a> of at least two of the <i>n</i> persons having the same birthday is <a href="/wiki/Complementary_event.html" title="Complementary event">complementary</a> to all <i>n</i> birthdays being different. Therefore, its probability <i>p</i>(<i>n</i>) is</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/4/8/7/487dd1f762883174a0bd8017b30aeab2.png" alt="p(n) = 1 - \bar p(n) ." /></dd>
+</dl>
+<p>This probability surpasses 1/2 for <i>n</i> = 23 (with value about 50.7%). The following table shows the probability for some other values of <i>n</i> (This table ignores the existence of leap years, as described above):</p>
+<table class="wikitable">
+<tr>
+<th><i>n</i></th>
+<th><i>p</i>(<i>n</i>)</th>
+</tr>
+<tr>
+<td>10</td>
+<td>12%</td>
+</tr>
+<tr>
+<td>20</td>
+<td>41%</td>
+</tr>
+<tr>
+<td>30</td>
+<td>70%</td>
+</tr>
+<tr>
+<td>50</td>
+<td>97%</td>
+</tr>
+<tr>
+<td>100</td>
+<td>99.99996%</td>
+</tr>
+<tr>
+<td>200</td>
+<td>99.9999999999999999999999999998%</td>
+</tr>
+<tr>
+<td>300</td>
+<td>(1 − 7×10<sup>−73</sup>) × 100%</td>
+</tr>
+<tr>
+<td>350</td>
+<td>(1 − 3×10<sup>−131</sup>) × 100%</td>
+</tr>
+<tr>
+<td>366</td>
+<td>100%</td>
+</tr>
+</table>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Alternative probability calculation">edit</a>]</div>
+<p><a name="Alternative_probability_calculation" id="Alternative_probability_calculation"></a></p>
+<h2>Alternative probability calculation</h2>
+<p>Alternative closed forms for <i>p</i>(<i>n</i>) can be derived using the following approaches.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: String permutations">edit</a>]</div>
+<p><a name="String_permutations" id="String_permutations"></a></p>
+<h3>String permutations</h3>
+<p>Each day can be represented as a unique character in a 365-character alphabet. A string of length <i>n</i> (drawn from this alphabet) can be used to represent the birthdays of these <i>n</i> people. The probability <i>p</i>(<i>n</i>) can then be calculated by considering the space of all possible strings of this type.</p>
+<p>The total number of such strings is</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/3/0/8/308b7be2af967b242963d140c87e2eb5.png" alt="n_\mathrm{total} = 365^{n}\," /></dd>
+</dl>
+<p>The total number of strings with no repeated characters (for <i>n</i>&#160;≤&#160;365) is the number of <i>n</i>-permutations of the 365 characters</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/3/9/c/39cd933d9ca155e7c67e651a71928683.png" alt="n_\mathrm{unique} = \frac{365!}{(365-n)!}" /></dd>
+</dl>
+<p>If the strings are picked uniformly randomly from the set of all possible strings, then the probability that a string will contain at least one repeated character is</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/8/e/e/8eec74a6bf1c1c9c37d9a64cfc12792f.png" alt="p(n) = 1 - \frac{n_\mathrm{unique}}{n_\mathrm{total}} = 1 - \frac{\frac{365!}{(365-n)!}}{365^n}" /></dd>
+</dl>
+<p>for <i>n</i>&#160;≤&#160;365 and <i>p</i>(<i>n</i>)&#160;=&#160;1 for <i>n</i>&#160;&gt;&#160;365.</p>
+<p>Since</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/e/9/4/e94c46ca01c402108ed28a505ea97091.png" alt="\frac{\left(\frac{365!}{(365-n)!}\right)}{365^n}=\frac{365\cdot 364\cdot 363 \cdots (365-n+1)}{365^n}=" /></dd>
+</dl>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/d/9/e/d9e68b0623d3d01af316ecc27b9591df.png" alt="\frac{365}{365}\frac{364}{365}\frac{363}{365}\cdots \frac{365-n+1}{365}=1 \cdot \left(1-\frac{1}{365}\right) \cdot \left(1-\frac{2}{365}\right)  \cdots \left(1-\frac{n-1}{365}\right) ," /></dd>
+</dl>
+<p>this expression is equivalent to the one derived above.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Approximations">edit</a>]</div>
+<p><a name="Approximations" id="Approximations"></a></p>
+<h2>Approximations</h2>
+<p>Using the <a href="/wiki/Taylor_series.html" title="Taylor series">Taylor series</a> expansion (some might say the definition) of the <a href="/wiki/Exponential_function.html" title="Exponential function">exponential function</a></p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/e/a/2/ea2ddc811adb1bfa1df3ab0f8a9231c4.png" alt="e^x = 1 + x + \frac{x^2}{2!}+\cdots" /></dd>
+</dl>
+<div class="thumb tright">
+<div style="width:292px;"><a  class="internal" title="A graph showing the accuracy of the approximation 1&#160;−&#160;exp(−n2/(2⋅365))."><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/050329-birthday2.png/290px-050329-birthday2.png" alt="A graph showing the accuracy of the approximation 1&#160;−&#160;exp(−n2/(2⋅365))." width="290" height="172" longdesc="/wiki/Image:050329-birthday2.png" /></a>
+<div class="thumbcaption">
+<div class="magnify" style="float:right"><a  class="internal" title="Enlarge"><img src="/skins-1.5/common/images/magnify-clip.png" width="15" height="11" alt="Enlarge" /></a></div>
+A graph showing the accuracy of the approximation 1&#160;−&#160;exp(−<i>n</i><sup>2</sup>/(2⋅365)).</div>
+</div>
+</div>
+<p>the first expression derived for <i><u style="text-decoration:overline">p</u></i>(<i>n</i>) can be approximated as</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/a/9/f/a9ff7ec0a9f8d296335673f2ca2362b2.png" alt="\bar p(n) \approx 1 \cdot e^{-1/365} \cdot e^{-2/365} \cdots e^{-(n-1)/365}" /></dd>
+</dl>
+<dl>
+<dd>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/c/2/3/c231a46ccff8794215f114e1d2ab6f45.png" alt="= 1 \cdot e^{-(1+2+ \cdots +(n-1))/365}" /></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/5/0/2/502cf34ceffc749d2684506d8a3a44c0.png" alt="= e^{-(n(n-1))/2 \cdot 365}" /></dd>
+</dl>
+</dd>
+</dl>
+<p>Therefore,</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/6/3/d/63d3be07a83197156b45280d042f6c1b.png" alt="p(n) = 1-\bar p(n) \approx 1 - e^{-(n(n-1))/2 \cdot 365}" /></dd>
+</dl>
+<p>An even coarser approximation is given by</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/5/a/5/5a5af1f6ee940c7ee6435a72371633ea.png" alt="p(n)\approx 1-e^{-n^2/{2 \cdot 365}},\," /></dd>
+</dl>
+<p>which, as the graph illustrates, is still fairly accurate.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: A simple exponentiation">edit</a>]</div>
+<p><a name="A_simple_exponentiation" id="A_simple_exponentiation"></a></p>
+<h3>A simple exponentiation</h3>
+<p>Very basically, the probability of any two people not having the same birthday is 364/365. In a room of people of size <i>N</i>, there are <i>C</i>(<i>N</i>,&#160;2) pairs of people, i.e. <i>C</i>(<i>N</i>,&#160;2) events. We can approximate the probability of no two people sharing the same birthday by assuming that these events are independent and hence by multiplying their probability together. In short we multiply 364/365 by itself <i>C</i>(<i>N</i>,&#160;2) times, which gives us</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/7/d/3/7d375fa419a81ec23dbda8d0a40a2322.png" alt="\left(\frac{364}{365}\right)^{C(N,2)}" /></dd>
+</dl>
+<p>And obviously if this is the probability of no one having the same birthday, then the probability of someone sharing a birthday is</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/1/5/a/15aa5c5c716b54cd722f1c683b718ca6.png" alt="p(n)\approx 1 - \left(\frac{364}{365}\right)^{C(N,2)}." /></dd>
+</dl>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Poisson approximation">edit</a>]</div>
+<p><a name="Poisson_approximation" id="Poisson_approximation"></a></p>
+<h3>Poisson approximation</h3>
+<p>Using the <a href="/wiki/Poisson_distribution.html" title="Poisson distribution">Poisson</a> approximation for the binomial,</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/a/2/d/a2df0c68cd18d603c1e9da4c5018d06a.png" alt="\mathrm{Poi}\left(\frac{C(23, 2)}{365}\right) \approx \mathrm{Poi}\left(\frac{253}{365}\right) \approx \mathrm{Poi}(0.6932)" /></dd>
+</dl>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/f/e/6/fe62420606b3573b301835b466e90a64.png" alt="\Pr(X&gt;0)=1-\Pr(X=0)=1-e^{-0.6932}=1-0.499998=0.500002." /></dd>
+</dl>
+<p>Again, this is over 50%.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Approximation of number of people">edit</a>]</div>
+<p><a name="Approximation_of_number_of_people" id="Approximation_of_number_of_people"></a></p>
+<h3>Approximation of number of people</h3>
+<p>We can also approximate this using the following formula for the <i>number</i> of people necessary to have at least a 50% chance of matching:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/0/3/a/03a56b68f6155cac6747dbadee340db4.png" alt="N = \frac{1}{2} + \sqrt{\frac{1}{4} + 2 \times 365 \times \ln(2)} \approx 22.9999" /></dd>
+</dl>
+<p>This is a result of the good approximation that an event with 1 in <i>k</i> probability will have a 50% chance of occurring at least once if it is repeated <i>k</i>&#160;ln&#160;2 times.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Same birthday as you">edit</a>]</div>
+<p><a name="Same_birthday_as_you" id="Same_birthday_as_you"></a></p>
+<h2>Same birthday as you</h2>
+<div class="thumb tright">
+<div style="width:292px;"><a  class="internal" title="Comparing p(n) = probability of a birthday match with q(n) = probability of matching your birthday"><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/2/23/050329-birthday1.png/290px-050329-birthday1.png" alt="Comparing p(n) = probability of a birthday match with q(n) = probability of matching your birthday" width="290" height="170" longdesc="/wiki/Image:050329-birthday1.png" /></a>
+<div class="thumbcaption">
+<div class="magnify" style="float:right"><a  class="internal" title="Enlarge"><img src="/skins-1.5/common/images/magnify-clip.png" width="15" height="11" alt="Enlarge" /></a></div>
+Comparing <i>p</i>(<i>n</i>) = probability of a birthday match with <i>q</i>(<i>n</i>) = probability of matching <i>your</i> birthday</div>
+</div>
+</div>
+<p>Note that in the birthday problem, neither of the two people are chosen in advance. By way of contrast, the probability <i>q</i>(<i>n</i>) that someone in a room of <i>n</i> other people has the same birthday as a particular person (for example, you), is given by</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/6/6/b/66b8d8a52e85087af17420e1b2fd8080.png" alt="q(n) = 1 - \left( \frac{365-1}{365} \right)^n" /></dd>
+</dl>
+<p>Substituting <i>n</i> = 22 gives about 5.9%, which is only slightly better than 1 chance in 17. For a greater than 50% chance that one person in a roomful of <i>n</i> people has the same birthday as <i>you</i>, <i>n</i> would need to be at least 253. Note that this number is significantly higher than 365/2 = 182.5: the reason is that there are likely some birthday matches among the people in the room.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Reverse problem">edit</a>]</div>
+<p><a name="Reverse_problem" id="Reverse_problem"></a></p>
+<h2>Reverse problem</h2>
+<p>For a fixed probability <i>p</i>:</p>
+<ul>
+<li>Find the greatest <i>n</i> for which the probability <i>p</i>(<i>n</i>) is smaller than the given <i>p</i>, or</li>
+<li>Find the smallest <i>n</i> for which the probability <i>p</i>(<i>n</i>) is greater than the given <i>p</i>.</li>
+</ul>
+<p>An approximation to this can be derived by inverting the 'coarser' approximation above:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/7/5/2/752f8f6399419a19c6d8f86c275da6a9.png" alt="n(p)\approx \sqrt{2\cdot 365\ln\left({1 \over 1-p}\right)}." /></dd>
+</dl>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Sample calculations">edit</a>]</div>
+<p><a name="Sample_calculations" id="Sample_calculations"></a></p>
+<h3>Sample calculations</h3>
+<table class="wikitable">
+<tr>
+<td colspan="3">approximation</td>
+<td colspan="4">computation for <i>d</i> = 365</td>
+</tr>
+<tr>
+<td><i>p</i></td>
+<td><i>n</i> for generic <i>d</i></td>
+<td><i>n</i> for <i>d</i> = 365</td>
+<td><i>n</i>↓</td>
+<td><i>p</i>(<i>n</i>↓)</td>
+<td><i>n</i>↑</td>
+<td><i>p</i>(<i>n</i>↑)</td>
+</tr>
+<tr>
+<td>
+<div style="color:magenta">0.01</div>
+</td>
+<td>0.14178 √<i>d</i></td>
+<td>
+<div style="color:magenta">2.70864</div>
+</td>
+<td align="right">2</td>
+<td>0.00274</td>
+<td align="right">3</td>
+<td>
+<div style="color:magenta">0.00820</div>
+</td>
+</tr>
+<tr>
+<td>0.05</td>
+<td>0.32029 √<i>d</i></td>
+<td>6.11916</td>
+<td align="right">6</td>
+<td>0.04046</td>
+<td align="right">7</td>
+<td>0.05624</td>
+</tr>
+<tr>
+<td>
+<div style="color:magenta">0.1</div>
+</td>
+<td>0.45904 √<i>d</i></td>
+<td>
+<div style="color:magenta">8.77002</div>
+</td>
+<td align="right">8</td>
+<td>0.07434</td>
+<td align="right">9</td>
+<td>
+<div style="color:magenta">0.09462</div>
+</td>
+</tr>
+<tr>
+<td>
+<div style="color:magenta">0.2</div>
+</td>
+<td>0.66805 √<i>d</i></td>
+<td>
+<div style="color:magenta">12.76302</div>
+</td>
+<td align="right">12</td>
+<td>0.16702</td>
+<td align="right">13</td>
+<td>
+<div style="color:magenta">0.19441</div>
+</td>
+</tr>
+<tr>
+<td>0.3</td>
+<td>0.84460 √<i>d</i></td>
+<td>16.13607</td>
+<td align="right">16</td>
+<td>0.28360</td>
+<td align="right">17</td>
+<td>0.31501</td>
+</tr>
+<tr>
+<td>0.5</td>
+<td>1.17741 √<i>d</i></td>
+<td>22.49439</td>
+<td align="right">22</td>
+<td>0.47570</td>
+<td align="right">23</td>
+<td>0.50730</td>
+</tr>
+<tr>
+<td>0.7</td>
+<td>1.55176 √<i>d</i></td>
+<td>29.64625</td>
+<td align="right">29</td>
+<td>0.68097</td>
+<td align="right">30</td>
+<td>0.70632</td>
+</tr>
+<tr>
+<td>0.8</td>
+<td>1.79412 √<i>d</i></td>
+<td>34.27666</td>
+<td align="right">34</td>
+<td>0.79532</td>
+<td align="right">35</td>
+<td>0.81438</td>
+</tr>
+<tr>
+<td>0.9</td>
+<td>2.14597 √<i>d</i></td>
+<td>40.99862</td>
+<td align="right">40</td>
+<td>0.89123</td>
+<td align="right">41</td>
+<td>0.90315</td>
+</tr>
+<tr>
+<td>0.95</td>
+<td>2.44775 √<i>d</i></td>
+<td>46.76414</td>
+<td align="right">46</td>
+<td>0.94825</td>
+<td align="right">47</td>
+<td>0.95477</td>
+</tr>
+<tr>
+<td>
+<div style="color:magenta">0.99</div>
+</td>
+<td>3.03485 √d</td>
+<td>
+<div style="color:magenta">57.98081</div>
+</td>
+<td align="right">57</td>
+<td>
+<div style="color:magenta">0.99012</div>
+</td>
+<td align="right">58</td>
+<td>0.99166</td>
+</tr>
+</table>
+<p>Note: some values falling outside the bounds have been <span style="color:magenta">coloured</span> to show that the approximation is <b>not</b> always exact.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Generalization">edit</a>]</div>
+<p><a name="Generalization" id="Generalization"></a></p>
+<h2>Generalization</h2>
+<p>The birthday problem can be generalised as follows: given <i>n</i> random integers drawn from a <a href="/wiki/Uniform_distribution_%28discrete%29.html" title="Uniform distribution (discrete)">discrete uniform distribution</a> with range [1,<i>d</i>], what is the probability <i>p</i>(<i>n</i>;<i>d</i>) that at least two numbers are the same?</p>
+<p>The generic results can be derived using the same arguments given above.</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/c/b/f/cbf2d04f97c8516b244f1f4e2f2cc54c.png" alt="p(n;d) = \begin{cases} 1-\prod_{k=1}^{n-1}\left(1-{k \over d}\right) &amp; n\le d \\ 1 &amp; n &gt; d \end{cases}" /></dd>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/5/e/2/5e253550655d3384739a6495be5af2b1.png" alt="p(n;d) \approx 1 - e^{-(n(n-1))/2d}" /></dd>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/d/b/0/db0b6f200f7c2314e9510b494e39dd11.png" alt="q(n;d) = 1 - \left( \frac{d-1}{d} \right)^n" /></dd>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/0/a/c/0ac7f1cd70e2573cd65a36269c207cc8.png" alt="n(p;d)\approx \sqrt{2d\ln\left({1 \over 1-p}\right)}" /></dd>
+</dl>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Applications">edit</a>]</div>
+<p><a name="Applications" id="Applications"></a></p>
+<h2>Applications</h2>
+<p>The birthday paradox in its more generic sense applies to <a href="/wiki/Hash_function.html" title="Hash function">hash functions</a>: the number of <i>N</i>-<a href="/wiki/Bit.html" title="Bit">bit</a> hashes that can be generated before probably getting a collision is not 2<sup><i>N</i></sup>, but rather only 2<sup><i>N</i>/2</sup>. This is exploited by <a href="/wiki/Birthday_attack.html" title="Birthday attack">birthday attacks</a> on <a href="/wiki/Cryptographic_hash_function.html" title="Cryptographic hash function">cryptographic hash functions</a> and is the reason why a small number of collisions in a <a href="/wiki/Hash_table.html" title="Hash table">hash table</a> are, for all practical purposes, inevitable.</p>
+<p>The theory behind the birthday problem was used in [Schnabel 1938] under the name of <a href="/wiki/Mark_and_recapture.html" title="Mark and recapture">capture-recapture</a> statistics to estimate the size of fish population in lakes.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: An upper bound and a different perspective">edit</a>]</div>
+<p><a name="An_upper_bound_and_a_different_perspective" id="An_upper_bound_and_a_different_perspective"></a></p>
+<h2>An upper bound and a different perspective</h2>
+<p>The argument below is adapted from an argument of Paul Halmos.<sup id="ref_Halmos"><small><a  title="">2</a></small></sup></p>
+<p>Recollect from above that the probability that no two birthdays coincide is</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/8/b/c/8bc52ae565bbe22019af9e1648406dae.png" alt="1-p(n) = \bar p(n) = \prod_{k=1}^{n-1}\left(1-{k \over 365}\right) ." /></dd>
+</dl>
+<p>We are interested in the smallest <i>n</i> such that <i>p</i>(<i>n</i>)&#160;&gt;&#160;1/2; or equivalently, the smallest <i>n</i> such that <i><u style="text-decoration:overline">p</u></i>(<i>n</i>)&#160;&lt;&#160;1/2.</p>
+<p>Substituting, as above, 1&#160;-&#160;<i>k</i>/365 with <i>e</i><sup>−<i>k</i>/365</sup>, and using the inequality 1&#160;−&#160;<i>x</i>&#160;&lt;&#160;<i>e</i><sup>−<i>x</i></sup>, we have</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/1/1/c/11c41d4d72b3db328bb6bb353f2e5e04.png" alt="\bar p(n) = \prod_{k=1}^{n-1}\left(1-{k \over 365}\right) &lt; \prod_{k=1}^{n-1}\left(e^{-k/365}\right) = e^{-(n(n-1))/(2\cdot 365)} ." /></dd>
+</dl>
+<p>Therefore, we discover that the expression found above is not only an approximation, but also an <a href="/wiki/Upper_bound.html" title="Upper bound">upper bound</a> of <i><u style="text-decoration:overline">p</u></i>(<i>n</i>). The inequality</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/7/5/2/752f7fb0caf5365af77ae6fd72ab23af.png" alt="e^{-(n(n-1))/(2\cdot 365)} &lt; \frac{1}{2}" /></dd>
+</dl>
+<p>implies <i><u style="text-decoration:overline">p</u></i>(<i>n</i>) &lt; 1/2. Solving for <i>n</i> we find</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/3/c/a/3ca3bb70d8d9b132ff6c70e96af004aa.png" alt="n^2-n &gt; 2\cdot365\ln 2 \,\! ." /></dd>
+</dl>
+<p>Now, 730&#160;ln&#160;2 is approximately 505.997, which is barely below 506, the value of <i>n</i><sup>2</sup>&#160;−&#160;<i>n</i> attained when <i>n</i>&#160;=&#160;23. Therefore, 23 people suffice.</p>
+<p>Note that the derivation only shows that <i>at most</i> 23 people are needed to ensure a birthday match with even chance; since we haven't studied how close the binding approximation is, the argument leaves open the possibility that, say, <i>n</i>&#160;=&#160;22 could also work.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Empirical test">edit</a>]</div>
+<p><a name="Empirical_test" id="Empirical_test"></a></p>
+<h2>Empirical test</h2>
+<pre>
+days := 365;
+prob := 0.0;
+for (numPeople := 1; prob &lt; 0.5; numPeople++) {
+    prob := 1 - (1 - prob) * (1 - (numPeople - 1) / days);
+    print "Number of people: " + numPeople;
+    print "Prob. of same birthday: " + prob;
+}
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Near matches">edit</a>]</div>
+<p><a name="Near_matches" id="Near_matches"></a></p>
+<h2>Near matches</h2>
+<p>Another generalization is to ask how many people are needed in order to have a better than 50% chance that two people have a birthday within one day of each other, or within two, three, etc., days of each other. This is a more difficult problem and requires use of the <a href="/wiki/Inclusion-exclusion_principle.html" title="Inclusion-exclusion principle">inclusion-exclusion principle</a>. The results (assuming an equal distribution for birthdays) are just as surprising as in the standard birthday problem:</p>
+<table class="wikitable" style="text-align: center">
+<tr>
+<th>within k days</th>
+<th># people required</th>
+</tr>
+<tr>
+<td>0</td>
+<td>23</td>
+</tr>
+<tr>
+<td>1</td>
+<td>14</td>
+</tr>
+<tr>
+<td>2</td>
+<td>11</td>
+</tr>
+<tr>
+<td>3</td>
+<td>9</td>
+</tr>
+<tr>
+<td>4</td>
+<td>8</td>
+</tr>
+<tr>
+<td>5</td>
+<td>7</td>
+</tr>
+<tr>
+<td>7</td>
+<td>6</td>
+</tr>
+</table>
+<p>Thus in a group of just six random people, it is more likely than not that two of them will have a birthday within a week of each other.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Collision counting">edit</a>]</div>
+<p><a name="Collision_counting" id="Collision_counting"></a></p>
+<h2>Collision counting</h2>
+<p>The probability that the <i>k</i>th integer randomly chosen from [1, <i>d</i>] will repeat at least one previous choice equals <span class="texhtml"><i>q</i>(<i>k</i> − 1;<i>d</i>)</span> above. The expected total number of times a selection will repeat a previous selection as <i>n</i> such integers are chosen equals</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/8/9/4/894f9c0cb0b938642a45abd3a8da4b67.png" alt="\sum_{k=1}^n q(k-1;d) = n - d + d \left (\frac {d-1} {d} \right )^n." /></dd>
+</dl>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<ul>
+<li>Zoe Emily Schnabel: "The estimation of the total fish population of a lake", <i><a href="/wiki/American_Mathematical_Monthly.html" title="American Mathematical Monthly">American Mathematical Monthly</a></i> 45 (1938), pages 348-352</li>
+<li>M. Klamkin and D. Newman: "Extensions of the birthday surprise", <i>Journal of Combinatorial Theory</i> 3 (1967), pages 279-282.</li>
+<li>D. Bloom: "A birthday problem", <i><a href="/wiki/American_Mathematical_Monthly.html" title="American Mathematical Monthly">American Mathematical Monthly</a></i> 80 (1973), pages 1141-1142. This problem solution contains a proof that the probability of two matching birthdays is least for a uniform distribution of birthdays.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Notes">edit</a>]</div>
+<p><a name="Notes" id="Notes"></a></p>
+<h2>Notes</h2>
+<div id="endnote_Distribution"><sup><small><a  title="">1</a></small></sup> In particular, many children are born in the summer, especially the months of July, August and September <a  class="external autonumber" title="http://scienceworld.wolfram.com/astronomy/LeapDay.html">[1]</a>; additionally, in environments like classrooms where many people share a birth year, it becomes relevant that due to the way hospitals work, more children are born on Mondays and Tuesdays than on weekends. Both of these factors tend to increase the chance of identical birthdays, since a denser subset has more possible pairs (in the extreme case when everyone was born on three days, there would obviously be many identical birthdays). The birthday problem for such non-constant birthday probabilities was tackled by <a  class="new" title="Murray Klamkin">Murray Klamkin</a> in 1967.</div>
+<div id="endnote_Halmos"><sup><small><a  title="">2</a></small></sup> In his autobiography, Halmos criticized the form in which the birthday paradox is often presented, in terms of numerical computation. He believed that it should be used as an example in the use of more abstract mathematical concepts. He wrote:
+<blockquote>
+<p>The reasoning is based on important tools that all students of mathematics should have ready access to. The birthday problem used to be a splendid illustration of the advantages of pure thought over mechanical manipulation; the inequalities can be obtained in a minute or two, whereas the multiplications would take much longer, and be much more subject to error, whether the instrument is a pencil or an old-fashioned desk computer. What <a href="/wiki/Calculator.html" title="Calculator">calculators</a> do not yield is understanding, or mathematical facility, or a solid basis for more advanced, generalized theories.</p>
+</blockquote>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<a name="External_links" id="External_links"></a>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://www.mathcad.com/library/LibraryContent/puzzles/soln28/soln28.html">Complete solution for 2, 3, and a generalisation for n coinciding birthdays</a></li>
+<li><a  class="external free" title="http://www.efgh.com/math/birthday.htm">http://www.efgh.com/math/birthday.htm</a></li>
+<li>Eric W. Weisstein, <i><a  class="external text" title="http://mathworld.wolfram.com/BirthdayProblem.html">Birthday Problem</a></i> at <a href="/wiki/MathWorld.html" title="MathWorld">MathWorld</a>.</li>
+<li><a  class="external text" title="http://www.atriumtech.com/pongskorn/birthdayparadox/birthdayparadox.htm">Mathematica vs. birthday paradox</a></li>
+<li><a  class="external text" title="http://www.nestel.net/maple/bd/bd.html">Maple vs. birthday paradox</a></li>
+<li><a  class="external text" title="http://www-stat.stanford.edu/~susan/surprise/Birthday.html">Probability by Surprise Birthday Applet</a> An animation for simulating the birthday paradox.</li>
+<li><a  class="external text" title="http://www.damninteresting.com/?p=402">A humorous article explaining the paradox</a></li>
+<li><a  class="external text" title="http://www.excelexchange.com/Birthday%20Problem.xls">Birthday Problem Spreadsheet</a></li>
+</ul>
+</div>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:73242-0!1!0!default!!en!2 and timestamp 20060909094236 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Probability theory paradoxes">Probability theory paradoxes</a></span> | <span dir='ltr'><a  title="Category:Probability and statistics">Probability and statistics</a></span> | <span dir='ltr'><a  title="Category:Birthdays">Birthdays</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Birthday_paradox.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-hu"><a >Magyar</a></li>
+				<li class="interwiki-nl"><a >Nederlands</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-fi"><a >Suomi</a></li>
+				<li class="interwiki-zh"><a >中文</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 09:18, 9 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv115 in 0.077 secs. --></body></html>

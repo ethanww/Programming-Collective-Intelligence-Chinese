@@ -1,0 +1,394 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="C variable types and declarations,C Sharp,C programming language,C syntax,Dereference,Derived type,Header files,Java programming language,Reverse Polish Notation,The C Programming Language (book),Typecast (programming)" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>C variable types and declarations - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "C_variable_types_and_declarations";
+			var wgTitle = "C variable types and declarations";
+			var wgArticleId = 2214112;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">C variable types and declarations</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>The <a href="/wiki/C_programming_language.html" title="C programming language">C programming language</a> has an extensive system for declaring variables of different types. The rules for the more complex types can be confusing at times, due to the decisions taken over their design. The principle decision is that the declaration of a variable should be as similar, syntactically, as its use. This article presents a collection of variable declarations, starting at simple types, and proceeding to more complex types. No attempt is made to present code which actually uses the variables declared.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Basic types</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">1.1</span> <span class="toctext">Signedness</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.2</span> <span class="toctext">Size</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.3</span> <span class="toctext">Type qualifiers</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Pointer types</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">2.1</span> <span class="toctext">Pointers to pointers</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Arrays</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">3.1</span> <span class="toctext">Arrays of arrays</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.2</span> <span class="toctext">Arrays of pointers</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.3</span> <span class="toctext">Pointers to arrays</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Functions</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Basic types">edit</a>]</div>
+<p><a name="Basic_types" id="Basic_types"></a></p>
+<h2>Basic types</h2>
+<p>There are 4 basic types of variable in C; they are: <code>char</code>, <code>int</code>, <code>double</code> and <code>float</code>.</p>
+<table border="1" cellspacing="0" cellpadding="4">
+<tr>
+<th align="left">Type name</th>
+<th align="left">Meaning</th>
+</tr>
+<tr>
+<td><code>char</code></td>
+<td>The most basic unit addressable by the machine; typically a single byte. This is an integral type.</td>
+</tr>
+<tr>
+<td><code>int</code></td>
+<td>The most natural size of integer for the machine; typically a whole 16, 32 or 64 bit addressable word.</td>
+</tr>
+<tr>
+<td><code>float</code></td>
+<td>A single-precision floating point value.</td>
+</tr>
+<tr>
+<td><code>double</code></td>
+<td>A double-precision floating point value.</td>
+</tr>
+</table>
+<p>To declare a variable of any of these basic types, the name of the type is given first, then the name of the new variable second.</p>
+<pre>
+char red;
+int  blue;
+</pre>
+<p>Various qualifiers can be placed on these basic types, in order to further describe their type.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Signedness">edit</a>]</div>
+<p><a name="Signedness" id="Signedness"></a></p>
+<h3>Signedness</h3>
+<p>The two integral types, <code>char</code> and <code>int</code> can be marked with their signedness. By default, all <code>int</code> values are signed. To make either type unsigned, the <code>unsigned</code> keyword is used. When declaring an <code>unsigned int</code>, it is permissible to omit the <code>int</code> as this is implied. The following two declarations are equivalent.</p>
+<pre>
+unsigned int green;
+unsigned green;
+</pre>
+<p>The C specification does not define whether the <code>char</code> type is signed or unsigned; its signedness differs across implementations. If signedness matters for a particular variable, you can specify it explicitly.</p>
+<pre>
+unsigned char grey;
+signed char white;
+</pre>
+<p>The standard requires <code>char</code>, <code>signed char</code>, <code>unsigned char</code> to be different types. Since most standardized string functions take pointers to plain <code>char</code>, many C compilers correctly complain if one of the other character types is used for strings passed to these functions.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Size">edit</a>]</div>
+<p><a name="Size" id="Size"></a></p>
+<h3>Size</h3>
+<p>The <code>int</code> type can also be given a size qualifier, to specify more precicely the range of values (and memory size requirements) of the value stored.</p>
+<pre>
+short int yellow;
+long int orange;
+</pre>
+<p>When declaring a <code>short int</code> or <code>long int</code>, it is permissible to omit the <code>int</code>, as this is implied. The following two declarations are equivalent.</p>
+<pre>
+long int brown;
+long brown;
+</pre>
+<p>There is some confusion in novice C programmers as to how big these types are. The standard is specifically vague in this area:</p>
+<ul>
+<li>A <code>short int</code> must not be larger than an <code>int</code>.</li>
+<li>An <code>int</code> must not be larger than a <code>long int</code>.</li>
+<li>A <code>short int</code> must be at least 16 bits long.</li>
+<li>A <code>long int</code> must be at least 32 bits long.</li>
+</ul>
+<p>The standard does not require that any of these sizes are necessarily different. It is perfectly valid, for example, that all 3 types be 64 bits long. In order to allow a simple and concise description of the sizes a compiler will apply to each of the three types (and the size of a pointer type; see below), a simple naming scheme has been devised; see <a  class="external text" title="http://archive.opengroup.org/public/tech/aspen/lp64_wp.htm">64-Bit Programming Models</a>. Two popular schemes are <code>ILP32</code>, in which <code>int</code>, <code>long int</code> and pointer types are 32 bits long; and <code>LP64</code>, in which <code>long int</code> and pointers are 64 bits, and <code>int</code> are 32 bits. Most implementations under these schemes use 16 bit <code>short int</code>s.</p>
+<p>A <code>double</code> variable can be marked as being a <code>long double</code>, which the compiler may use to select a larger floating point representation than a plain <code>double</code>. Again, the standard is unspecific on the relative sizes of the floating point values, and only requires a <code>float</code> not to be larger than a <code>double</code>, which should not be larger than a <code>long double</code>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Type qualifiers">edit</a>]</div>
+<p><a name="Type_qualifiers" id="Type_qualifiers"></a></p>
+<h3>Type qualifiers</h3>
+<p>To help promote safety in programs, values can be marked as being constant with the <code>const</code> type qualifier. Compilers must diagnose, usually with an error, attempts to modify such variables. Since <code>const</code> variables cannot be assigned to, they must be initialized at the point of declaration.</p>
+<p>The C standard permits arbitrary ordering of type qualifiers, such as <code>const</code>, and type specifiers, such as <code>int</code>. Both the following declarations are therefore equivalent:</p>
+<pre>
+int const black = 12;
+const int black = 12;
+</pre>
+<p>While the former more closely reflects the use of <code>const</code> marking when used in pointer types, the latter form is more natural and almost ubiquitous.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Pointer types">edit</a>]</div>
+<p><a name="Pointer_types" id="Pointer_types"></a></p>
+<h2>Pointer types</h2>
+<p>Variables can be declared as being pointers to values of various types, by means of the <i>*</i> type qualifier. To declare a variable as a pointer, immediately precede its name with an asterisk.</p>
+<pre>
+char *square;
+long *circle;
+</pre>
+<p><a href="/wiki/The_C_Programming_Language_%28book%29.html" title="The C Programming Language (book)">K&amp;R</a> gives a good explanation for the slightly odd use of asterisks in this way, as well as a motivation for why they attach the asterisk onto the name of the variable, when it would seem to make more sense being attached to the name of the type. This is, that when you <a href="/wiki/Dereference.html" title="Dereference">dereference</a> the pointer, it has the type of the thing it points at. In this case, <code>*circle</code> is a value of type <code>long</code>. While this may be a subtle point to raise in this case, it starts to show its worth when more complex types are used. This is the reason for C's slightly odd way of declaring more complex types, when the name of the actual variable gets hidden within the type declaration, as further examples will show.</p>
+<p>There is a special type of value which cannot be directly used as a variable type, but only as pointed type in the case of pointer declarations.</p>
+<pre>
+void *triangle;
+</pre>
+<p>The pointed value here cannot be used directly; attempts to <a href="/wiki/Dereference.html" title="Dereference">dereference</a> this pointer will result in a compiler error. The utility here is that this is a <i>generic</i> pointer; useful when the pointed type does not matter, simply the pointer address is needed. It is usually used to store pointers in utility types, such as linked lists, or hash tables, where the code using the utility will <a href="/wiki/Typecast_%28programming%29.html" title="Typecast (programming)">typecast</a> it to a pointer of some specific type.</p>
+<p>The pointed type can take all of the usual markings given above; the following are all valid pointer declarations.</p>
+<pre>
+long int *rectangle;
+unsigned short int *rhombus;
+const char *kite;
+</pre>
+<p>Note specifically the use of <code>const</code> in this last case. Here, <code>kite</code> is a (non-<code>const</code>) pointer to a <code>const char</code>. The value of <code>kite</code> itself is not a constant, only the value of the <code>char</code> to which it points. The placement of <code>const</code> after the type, as noted above, gives motivation for the way a constant pointer is declared. As it is constant, it must be initialised when it is declared.</p>
+<pre>
+char * const pentagon = &amp;some_char;
+</pre>
+<p>Here, <code>pentagon</code> is a constant pointer, which points at a <code>char</code>. The value at which it points is not a constant; it will not be an error to modify the pointed character; only to modify the pointer itself. It is also possible to declare both the pointer and the pointed value as being constant. The following two declarations are equivalent.</p>
+<pre>
+char const * const hexagon = &amp;some_char;
+const char * const hexagon = &amp;some_char;
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Pointers to pointers">edit</a>]</div>
+<p><a name="Pointers_to_pointers" id="Pointers_to_pointers"></a></p>
+<h3>Pointers to pointers</h3>
+<p>Because, for example, <code>char *</code> is itself a type, pointer variables can be declared which point at values of such a type. These are pointers to pointers.</p>
+<pre>
+char **septagon;
+</pre>
+<p>As before, the usual type qualifiers and <code>const</code> marking can be applied.</p>
+<pre>
+unsigned long const int * const *octagon;
+</pre>
+<p>This declares <code>octagon</code> as a pointer to a constant pointer to a constant <code>unsigned long</code> integer. Pointer types can be arbitrarily nested below this, but their use is increasingly harder to think clearly about, the more levels of indirectness are involved. Any code using more than two levels of pointer probably requires a redesign, in terms of <code>struct</code> pointers.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Arrays">edit</a>]</div>
+<p><a name="Arrays" id="Arrays"></a></p>
+<h2>Arrays</h2>
+<p>To programmers of most other C-like languages, an array's type includes the number of elements it contains. Therefore, the following declaration would be used in languages like <a href="/wiki/Java_programming_language.html" title="Java programming language">Java</a> or <a href="/wiki/C_Sharp.html" title="C Sharp">C#</a> to declare an array of 10 integer values.</p>
+<pre>
+int[10] cat; /* THIS IS NOT VALID C CODE */
+</pre>
+<p>However, as noted above, the principal motivation in C's declaration syntax is that the declaration look as similar as the use of the variable. Because an access into this array would look like <code>cat[i]</code>, it is declared in a different syntax in C.</p>
+<pre>
+int cat[10];
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Arrays of arrays">edit</a>]</div>
+<p><a name="Arrays_of_arrays" id="Arrays_of_arrays"></a></p>
+<h3>Arrays of arrays</h3>
+<p>As with pointers, array types can be nested. Because the array notation, using square brackets (<code>[]</code>), is a <a href="/wiki/Reverse_Polish_Notation.html" title="Reverse Polish Notation">postfix notation</a>, the size of the inner nested array types is given after the outer type.</p>
+<pre>
+double dog[5][12];
+</pre>
+<p>This declares that <code>dog</code> is an array containing 5 elements. Each element is an array of 12 <code>double</code> values.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Arrays of pointers">edit</a>]</div>
+<p><a name="Arrays_of_pointers" id="Arrays_of_pointers"></a></p>
+<h3>Arrays of pointers</h3>
+<p>Because the element type of an array is itself a C type, arrays of pointers can of course be constructed.</p>
+<pre>
+char *mice[10];
+</pre>
+<p>This declares <code>mice</code> to be a 10 element array, where each element is a pointer to a <code>char</code>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Pointers to arrays">edit</a>]</div>
+<p><a name="Pointers_to_arrays" id="Pointers_to_arrays"></a></p>
+<h3>Pointers to arrays</h3>
+<p>To declare a variable as being a pointer to an array, we must make use of parentheses. In the same way that numerical operators have levels of precedence, and brackets must be used to distinguish between things like the following,</p>
+<pre>
+2 + 3 * 4
+(2 + 3) * 4
+</pre>
+<p>so too must we use brackets to distinguish precidence in type markings. Note that in the above example, the array marker (<code>[]</code>) binds more tightly than the pointer marker (<code>*</code>), so we therefore need to supply brackets to override this, if we wish to declare a pointer to an array.</p>
+<pre>
+double (*elephant)[20];
+</pre>
+<p>This declares that <code>elephant</code> is a pointer, and the type it points at is an array of 20 <code>double</code> values.</p>
+<p>To declare a pointer to an array of pointers, simply combine the notations.</p>
+<pre>
+int *(*crocodile)[15];
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Functions">edit</a>]</div>
+<p><a name="Functions" id="Functions"></a></p>
+<h2>Functions</h2>
+<p>A function declaration is an example of a <a href="/wiki/Derived_type.html" title="Derived type">derived type</a>. Because the function can take parameters, the type of each parameter must also be specified. The name of each parameter does not need to be given when declaring a function. The following declarations are equivalent.</p>
+<pre>
+long bat(char);
+long bat (char c);
+</pre>
+<p>While both forms are syntactically correct, it is usually considered bad form to omit the names of the parameters when writing function declarations in <a href="/wiki/Header_files.html" title="Header files">header files</a>. These names can provide valuable clues to readers of such files, as to their meaning and operation.</p>
+<p>Functions can take and return pointer types using the usual notation for a pointer.</p>
+<pre>
+int const *ball (long int l, int i, unsigned char *s);
+</pre>
+<p>The special type <code>void</code> is useful for declaring functions which do not take any parameters at all.</p>
+<pre>
+char *wicket(void);
+</pre>
+<p>This is quite different from the empty set of parameters, used in ANSI C, to declare a function, but give no information of its parameter types.</p>
+<pre>
+double umpire();
+</pre>
+<p>This declaration declares a function called <code>umpire</code> which returns a <code>double</code>, but says nothing about the parameters the function takes.</p>
+<p>In C, functions cannot directly take other functions as parameters, or return functions as results. However, they can take or return pointers to them. To declare that a function take a function pointer as an argument, use the standard notation as given above.</p>
+<pre>
+int crowd (char p1, int (*p2) (void));
+</pre>
+<p>Here, we have a function which takes two arguments. Its first argument, <code>p1</code>, is a plain <code>char</code>. Its second argument, <code>p2</code> is a pointer to a function. This pointed-to function should be given no arguments, and will return an <code>int</code>.</p>
+<p>To declare a function returning another function (a so-called functional) again requires parentheses, to properly apply the function markings.</p>
+<pre>
+long (*boundary (int height, int width)) (int x, int y);
+</pre>
+<p>As there are two sets of argument lists, this declaration should be read carefully, as it is quite subtle. Here, we are defining a function called <code>boundary</code>. This function takes two integer parameters, <code>height</code> and <code>width</code>, and returns a function pointer. The returned pointer points at a function that itself takes two integer parameters, <code>x</code> and <code>y</code>, and returns a <code>long</code>.</p>
+<p>This type of marking can be arbitrarily extended, to make functions that return pointers to functions that return pointers to functions, and so on, but it quickly gets very unreadable, and prone to bugs. If you find yourself needing to do this, you should consider either a redesign, or a <code>typedef</code>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/C_syntax.html" title="C syntax">C syntax</a></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:2214112-0!1!0!default!!en!2 and timestamp 20060906022132 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:C programming language">C programming language</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/C_variable_types_and_declarations.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-vi"><a >Tiếng Việt</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 20:34, 14 July 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv101 in 0.136 secs. --></body></html>

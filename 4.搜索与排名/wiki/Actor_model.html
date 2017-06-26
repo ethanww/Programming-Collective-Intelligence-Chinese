@@ -1,0 +1,500 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Actor model,Actor model,1997,64-bit,Actor model and process calculi,Actor model early history,Actor model implementation,Actor model later history,Actor model middle history,Actor model theory,Alan Kay" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Actor model - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Actor_model";
+			var wgTitle = "Actor model";
+			var wgArticleId = 1637868;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Actor model</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>In <a href="/wiki/Computer_science.html" title="Computer science">computer science</a>, the <b>Actor model</b> is a mathematical model of <a href="/wiki/Concurrent_computation.html" title="Concurrent computation">concurrent computation</a> that has its origins in a 1973 paper by <a href="/wiki/Carl_Hewitt.html" title="Carl Hewitt">Carl Hewitt</a>, <a  class="new" title="Peter Bishop">Peter Bishop</a>, and <a  class="new" title="Richard Steiger">Richard Steiger</a> <span class="reference"><sup id="ref_Hewitt" class="plainlinksneverexpand"><a  class="external autonumber" title="http://en.wikipedia.org/wiki/Actor_model#endnote_Hewitt">[1]</a></sup></span>. The Actor model treats “Actors” as the universal primitives of concurrent digital computation: in response to a message that it receives, an Actor can make local decisions, create more Actors, send more messages, and determine how to respond to the next message received. The Actor model has been used both as a framework within which to develop a <a href="/wiki/Actor_model_theory.html" title="Actor model theory">theoretical understanding</a> of <a href="/wiki/Concurrency_%28computer_science%29.html" title="Concurrency (computer science)">concurrency</a>, and as the theoretical basis for several <a href="/wiki/Actor_model_implementation.html" title="Actor model implementation">practical implementations</a> of <a href="/wiki/Concurrent_systems.html" title="Concurrent systems">concurrent systems</a>. The relationship of the model to other work is discussed in <a href="/wiki/Indeterminacy_in_computation.html" title="Indeterminacy in computation">Indeterminacy in computation</a> and <a href="/wiki/Actor_model_and_process_calculi.html" title="Actor model and process calculi">Actor model and process calculi</a>.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">History</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Fundamental concepts</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Formal systems</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Applications</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Models prior to the Actor model</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">5.1</span> <span class="toctext">Lambda calculus</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">5.2</span> <span class="toctext">Simula</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">5.3</span> <span class="toctext">Smalltalk</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">5.4</span> <span class="toctext">Petri nets</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">Message Passing Semantics</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">6.1</span> <span class="toctext">The unbounded nondeterminism controversy</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">6.2</span> <span class="toctext">Direct communication and asynchrony</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">6.3</span> <span class="toctext">Actor creation plus addresses in messages means variable topology</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">6.4</span> <span class="toctext">Inherently concurrent</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">6.5</span> <span class="toctext">No requirement on order of message arrival</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">6.6</span> <span class="toctext">Not sequentiality, not buffering, not synchrony and not fixed topology</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">6.7</span> <span class="toctext">Locality</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">6.8</span> <span class="toctext">Compositionality</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">6.9</span> <span class="toctext">Behaviors</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">6.10</span> <span class="toctext">Relationship to mathematical logic</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">6.11</span> <span class="toctext">Migration</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">6.12</span> <span class="toctext">Security</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">6.13</span> <span class="toctext">Synthesizing addresses of Actors</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">Why is the Actor model important now?</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">8</span> <span class="toctext">Actor researchers</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">9</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">10</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">11</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: History">edit</a>]</div>
+<p><a name="History" id="History"></a></p>
+<h2>History</h2>
+<dl>
+<dd>
+<div class="noprint"><i>Main article: <a href="/wiki/Actor_model_early_history.html" title="Actor model early history">Actor model early history</a></i></div>
+</dd>
+<dd>
+<div class="noprint"><i>Main article: <a href="/wiki/Actor_model_middle_history.html" title="Actor model middle history">Actor model middle history</a></i></div>
+</dd>
+<dd>
+<div class="noprint"><i>Main article: <a href="/wiki/Actor_model_later_history.html" title="Actor model later history">Actor model later history</a></i></div>
+</dd>
+</dl>
+<p>The Actor model differs from previous models of computation in that the Actor model was inspired by the laws of <a href="/wiki/Physics.html" title="Physics">physics</a> (<a href="/wiki/Physical_law.html" title="Physical law">physical laws</a>). It was also influenced by <a href="/wiki/Lisp_programming_language.html" title="Lisp programming language">Lisp</a>, <a href="/wiki/Simula.html" title="Simula">Simula</a>, <a href="/wiki/Capability_%28computers%29.html" title="Capability (computers)">capability-based systems</a>, <a href="/wiki/Packet_switching.html" title="Packet switching">packet switching</a> and early versions of <a href="/wiki/Smalltalk.html" title="Smalltalk">Smalltalk</a>. Development of the Actor model was "<i>motivated by the prospect of highly parallel computing machines consisting of dozens, hundreds or even thousands of independent microprocesors, each with its own local memory and communications processor, communicating via a high-performance communications network.</i>" <span class="reference"><sup id="ref_Clinger" class="plainlinksneverexpand"><a  class="external autonumber" title="http://en.wikipedia.org/wiki/Actor_model#endnote_Clinger">[2]</a></sup></span>. Since that time the motivation has broadened to include the prospect of massive concurrency due to the advent of <a href="/wiki/Web_Services.html" title="Web Services">Web Services</a> and <a  class="new" title="Many-core">many-core</a> computer architecture.</p>
+<p>Following Hewitt's 1973 publication, Irene Greif developed an <a href="/wiki/Operational_semantics.html" title="Operational semantics">operational semantics</a> for the Actors model as part of her doctoral research <span class="reference"><sup id="ref_Greif1975" class="plainlinksneverexpand"><a  class="external autonumber" title="http://en.wikipedia.org/wiki/Actor_model#endnote_Greif1975">[3]</a></sup></span>. Two years later, Henry Baker and Hewitt published a set of axiomatic laws for Actor systems <span class="reference"><sup id="ref_Baker1977" class="plainlinksneverexpand"><a  class="external autonumber" title="http://en.wikipedia.org/wiki/Actor_model#endnote_Baker1977">[4]</a></sup></span>. Other major milestones include William Clinger's dissertation, in 1981, introducing an Actor model <a href="/wiki/Denotational_semantics.html" title="Denotational semantics">denotational semantics</a> based on power domains <span class="reference"><sup id="ref_Clinger" class="plainlinksneverexpand"><a  class="external autonumber" title="http://en.wikipedia.org/wiki/Actor_model#endnote_Clinger">[5]</a></sup></span>, and Gul Agha's 1985 dissertation which further developed a transition-based semantic model that was complementary to Clinger's semantics <span class="reference"><sup id="ref_Agha" class="plainlinksneverexpand"><a  class="external autonumber" title="http://en.wikipedia.org/wiki/Actor_model#endnote_Agha">[6]</a></sup></span>. This resulted in the full development of <a href="/wiki/Actor_model_theory.html" title="Actor model theory">actor model theory</a>.</p>
+<p>Major software implementation work on the Actor model was performed by Russ Atkinson, Beppe Attardi, Henry Baker, Gerry Barber, Peter Bishop, Peter de Jong, Ken Kahn, Henry Lieberman, Carl Manning, Tom Reinhardt, Richard Steiger, and Dan Theriault in the Message Passing Semantics Group at MIT. Research groups under the leadership of Chuck Seitz at Caltech and Bill Dally at MIT constructed computer architectures that further developed the message passing in the Actor model. For further discussion see <a href="/wiki/Actor_model_implementation.html" title="Actor model implementation">Actor model implementation</a>.</p>
+<p>Research on the Actor model has been carried out at <a href="/wiki/California_Institute_of_Technology.html" title="California Institute of Technology">Caltech</a> Computer Science, <a href="/wiki/Kyoto_University.html" title="Kyoto University">Kyoto University</a> Tokoro Laboratory, <a href="/wiki/MCC.html" title="MCC">MCC</a>, <a href="/wiki/MIT_Artificial_Intelligence_Laboratory.html" title="MIT Artificial Intelligence Laboratory">MIT Artificial Intelligence Laboratory</a>, <a href="/wiki/SRI_International.html" title="SRI International">SRI</a>, <a href="/wiki/Stanford_University.html" title="Stanford University">Stanford University</a>, <a href="/wiki/University_of_Illinois_at_Urbana-Champaign.html" title="University of Illinois at Urbana-Champaign">University of Illinois at Urbana-Champaign</a> Open Systems Laboratory, <a href="/wiki/University_of_Paris.html" title="University of Paris">University of Paris 6</a>, <a href="/wiki/University_of_Pisa.html" title="University of Pisa">University of Pisa</a>, <a href="/wiki/University_of_Tokyo.html" title="University of Tokyo">University of Tokyo</a> Yonezawa Laboratory and elsewhere.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Fundamental concepts">edit</a>]</div>
+<p><a name="Fundamental_concepts" id="Fundamental_concepts"></a></p>
+<h2>Fundamental concepts</h2>
+<p>The Actor model adopts the philosophy that <i>everything is an Actor</i>. This is similar to the <i>everything is an object</i> philosophy used by some <a href="/wiki/Object-oriented_programming.html" title="Object-oriented programming">object-oriented programming languages</a>, but differs in that object-oriented software is typically executed sequentially, while the Actor model is inherently concurrent.</p>
+<p>An Actor is a computational entity with a behavior such that in response to each message received it can concurrently:</p>
+<ul>
+<li>send a finite number of messages to (other) Actors;</li>
+<li>create a finite number of new Actors;</li>
+<li>designate the behavior to be used for the next message received.</li>
+</ul>
+<p>Note that there is no assumed sequence to above actions and that they could in fact be carried out in parallel.</p>
+<p>Communications with other Actors occur asynchronously (<i>i.e.</i> the sending Actor does not wait until the message has been received before proceeding with computation).</p>
+<p>Messages are sent to specific Actors, identified by address (sometimes referred to as the Actor's “mailing address”). As a result, an Actor can only communicate with Actors for which it has an address which it might obtain in the following ways:</p>
+<ol>
+<li>The address is in the message received</li>
+<li>The address is one that the Actor already had; <i>i.e.</i> it was already an "acquaintance"</li>
+<li>The address is for a just created Actor</li>
+</ol>
+<p>The Actor model is characterized by inherent concurrency of computation within and among Actors, dynamic creation of Actors, inclusion of Actor addresses in messages, and interaction only through direct asynchronous <a href="/wiki/Message_passing.html" title="Message passing">message passing</a> with no restriction on message arrival order .</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Formal systems">edit</a>]</div>
+<p><a name="Formal_systems" id="Formal_systems"></a></p>
+<h2>Formal systems</h2>
+<p>Over the years, several different formal systems have been developed which permit reasoning about systems in the Actor model. These include:</p>
+<ul>
+<li><a href="/wiki/Operational_semantics.html" title="Operational semantics">Operational semantics</a> <span class="reference"><sup id="ref_Greif" class="plainlinksneverexpand"><a  class="external autonumber" title="http://en.wikipedia.org/wiki/Actor_model#endnote_Greif">[7]</a></sup></span>, <span class="reference"><sup id="ref_AghaMasonSmithTalcott" class="plainlinksneverexpand"><a  class="external autonumber" title="http://en.wikipedia.org/wiki/Actor_model#endnote_AghaMasonSmithTalcott">[8]</a></sup></span></li>
+<li>Laws for Actor systems<span class="reference"><sup id="ref_BakerHewitt" class="plainlinksneverexpand"><a  class="external autonumber" title="http://en.wikipedia.org/wiki/Actor_model#endnote_BakerHewitt">[9]</a></sup></span></li>
+<li><a href="/wiki/Denotational_semantics.html" title="Denotational semantics">Denotational semantics</a> <span class="reference"><sup id="ref_Clinger" class="plainlinksneverexpand"><a  class="external autonumber" title="http://en.wikipedia.org/wiki/Actor_model#endnote_Clinger">[10]</a></sup></span>, <span class="reference"><sup id="ref_Hewitt" class="plainlinksneverexpand"><a  class="external autonumber" title="http://en.wikipedia.org/wiki/Actor_model#endnote_Hewitt">[11]</a></sup></span></li>
+<li>Transition semantics <span class="reference"><sup id="ref_Agha" class="plainlinksneverexpand"><a  class="external autonumber" title="http://en.wikipedia.org/wiki/Actor_model#endnote_Agha">[12]</a></sup></span></li>
+</ul>
+<p>There are also formalisms that are not fully faithful to the Actor model in that they do not formalize the guaranteed delivery of messages including the following:</p>
+<ul>
+<li>Several different Actor algebras <span class="reference"><sup id="ref_Gaspari1997" class="plainlinksneverexpand"><a  class="external autonumber" title="http://en.wikipedia.org/wiki/Actor_model#endnote_Gaspari1997">[13]</a></sup></span>, <span class="reference"><sup id="ref_Gaspari1999" class="plainlinksneverexpand"><a  class="external autonumber" title="http://en.wikipedia.org/wiki/Actor_model#endnote_Gaspari1999">[14]</a></sup></span>, <span class="reference"><sup id="ref_AghaThati" class="plainlinksneverexpand"><a  class="external autonumber" title="http://en.wikipedia.org/wiki/Actor_model#endnote_AghaThati">[15]</a></sup></span></li>
+<li>Linear logic <span class="reference"><sup id="ref_DarlingtonGuo" class="plainlinksneverexpand"><a  class="external autonumber" title="http://en.wikipedia.org/wiki/Actor_model#endnote_DarlingtonGuo">[16]</a></sup></span></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Applications">edit</a>]</div>
+<p><a name="Applications" id="Applications"></a></p>
+<h2>Applications</h2>
+<p>The Actors model can be used as a framework for modelling, understanding, and reasoning about, a wide range of <a href="/wiki/Concurrent_systems.html" title="Concurrent systems">concurrent systems</a>. For example:</p>
+<ul>
+<li><a href="/wiki/Electronic_mail.html" title="Electronic mail">Electronic mail</a> can be modeled as an Actor system. Accounts are modeled as Actors and <a href="/wiki/E-mail_address.html" title="E-mail address">email addresses</a> as Actor addresses.</li>
+<li><a href="/wiki/Web_Services.html" title="Web Services">Web Services</a> can be modeled with <a href="/wiki/SOAP.html" title="SOAP">SOAP</a> endpoints modeled as Actor addresses.</li>
+<li>Objects with <a href="/wiki/Lock_%28computer_science%29.html" title="Lock (computer science)">locks</a> (<i>e.g.</i> as in <a href="/wiki/Java_programming_language.html" title="Java programming language">Java</a> and <a href="/wiki/C_sharp.html" title="C sharp">C#</a>) can be modeled as a <b>Serializer</b>, provided that their implementations are such that messages can continually arrive (perhaps by being stored in an internal queue). A serializer is an important kind of Actor defined by the property that it is continually available to the arrival of new messages; every message sent to a serializer is guaranteed to arrive.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Models prior to the Actor model">edit</a>]</div>
+<p><a name="Models_prior_to_the_Actor_model" id="Models_prior_to_the_Actor_model"></a></p>
+<h2>Models prior to the Actor model</h2>
+<p>The Actor model built on previous models of computation.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Lambda calculus">edit</a>]</div>
+<p><a name="Lambda_calculus" id="Lambda_calculus"></a></p>
+<h3>Lambda calculus</h3>
+<p>The <a href="/wiki/Lambda_calculus.html" title="Lambda calculus">lambda calculus</a> of <a href="/wiki/Alonzo_Church.html" title="Alonzo Church">Alonzo Church</a> can be viewed as the earliest <a href="/wiki/Message_passing.html" title="Message passing">message passing</a> <a href="/wiki/Programming_language.html" title="Programming language">programming language</a>. For example the lambda expression below implements a tree data structure when supplied with parameters for a <tt>leftSubTree</tt> and <tt>rightSubTree</tt>. When such a tree is given a parameter message <tt>"getLeft"</tt>, it returns <tt>leftSubTree</tt> and likewise when given the message <tt>"getRight"</tt> it returns <tt>rightSubTree</tt>.</p>
+<pre>
+ λ(leftSubTree,rightSubTree)
+   λ(message)
+     <i>if</i> (message == "getLeft") <i>then</i> leftSubTree
+     <i>else if</i> (message == "getRight") <i>then</i> rightSubTree
+</pre>
+<p>However, the semantics of the lambda calculus were expressed using <a href="/wiki/Mathematical_logic.html" title="Mathematical logic">variable substitution</a> in which the values of parameters were substituted into the body of an invoked lambda expression. The substitution model is unsuitable for concurrency because it does not allow the capability of <a href="/wiki/Sharing.html" title="Sharing">sharing</a> of changing resources. Inspired by the lambda calculus, the <a href="/wiki/Interpreter_%28computing%29.html" title="Interpreter (computing)">interpreter</a> for the programming language <a href="/wiki/Lisp_programming_language.html" title="Lisp programming language">Lisp</a> made use of a data structure called an environment so that the values of parameters did not have to be substituted into the body of an invoked lambda expression. This allowed for sharing of the <a href="/wiki/Side-effect_%28computer_science%29.html" title="Side-effect (computer science)">effects</a> of updating shared data structures but did not provide for concurrency.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Simula">edit</a>]</div>
+<p><a name="Simula" id="Simula"></a></p>
+<h3>Simula</h3>
+<p><a href="/wiki/SIMULA.html" title="SIMULA">Simula 67</a> pioneered using message passing for computation, motivated by discrete event simulation applications. These applications had become large and unmodular in previous simulation languages. At each time step, a large central program would have to go through and update the state of each simulation object that changed depending on the state of which ever simulation objects that it interacted with on that step. <a href="/wiki/Kristen_Nygaard.html" title="Kristen Nygaard">Kristen Nygaard</a> and <a href="/wiki/Ole-Johan_Dahl.html" title="Ole-Johan Dahl">Ole-Johan Dahl</a> developed the idea (first described in an IFIP workshop in 1967) of having <a href="/wiki/Method_%28computer_science%29.html" title="Method (computer science)">methods</a> on each <a href="/wiki/Object_%28computer_science%29.html" title="Object (computer science)">object</a> that would update its own local state based on messages from other objects. In addition they introduced a <a href="/wiki/Class_%28computer_science%29.html" title="Class (computer science)">class structure</a> for objects with <a href="/wiki/Inheritance_%28object-oriented_programming%29.html" title="Inheritance (object-oriented programming)">inheritance</a>. Their innovations considerably improved the modularity of programs.</p>
+<p>However, Simula used coroutine control structure instead of true concurrency.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Smalltalk">edit</a>]</div>
+<p><a name="Smalltalk" id="Smalltalk"></a></p>
+<h3>Smalltalk</h3>
+<p><a href="/wiki/Alan_Kay.html" title="Alan Kay">Alan Kay</a> was influenced by message passing in the pattern-directed invocation of <a href="/wiki/Planner_programming_language.html" title="Planner programming language">Planner</a> in developing <a href="/wiki/Smalltalk.html" title="Smalltalk">Smalltalk</a>-71. Hewitt was intrigued by Smalltalk-71 but was put off by the complexity of communication that included invocations with many fields including <i>global</i>, <i>sender</i>, <i>receiver</i>, <i>reply-style</i>, <i>status</i>, <i>reply</i>, <i>operator selector</i>, <i>etc.</i></p>
+<p>In 1972 Kay visited MIT and discussed some of his ideas for Smalltalk-72 building on the <a href="/wiki/Logo_programming_language.html" title="Logo programming language">Logo</a> work of <a href="/wiki/Seymour_Papert.html" title="Seymour Papert">Seymour Papert</a> and the "little person" model of computation used for teaching children to program. However, the message passing of Smalltalk-72 was quite complex. Code in the language was viewed by the interpreter as simply a stream of tokens. As <a href="/wiki/Dan_Ingalls.html" title="Dan Ingalls">Dan Ingalls</a> later described it:</p>
+<dl>
+<dd><i>The first (token) encountered (in a program) was looked up in the dynamic context, to determine the receiver of the subsequent message. The name lookup began with the class dictionary of the current activation. Failing there, it moved to the sender of that activation and so on up the sender chain. When a binding was finally found for the token, its value became the receiver of a new message, and the interpreter activated the code for that object's class.</i></dd>
+</dl>
+<p>This led some to believe that a new mathematical model of concurrent computation based on message passing should be simpler than Smalltalk-72.</p>
+<p>Subsequent versions of the Smalltalk language largely followed the path of using the virtual <a href="/wiki/Method_%28computer_science%29.html" title="Method (computer science)">methods</a> of Simula in the message passing structure of programs. However Smalltalk-72 made primitives such as integers, floating point numbers, <i>etc.</i> into <a href="/wiki/Object_%28computer_science%29.html" title="Object (computer science)">objects</a>. The authors of Simula had considered making such primitives into objects but refrained largely for efficiency reasons. <a href="/wiki/Java_programming_language.html" title="Java programming language">Java</a> at first used the expedient of having both primitive and object versions of integers, floating point numbers, <i>etc.</i> The <a href="/wiki/C_Sharp.html" title="C Sharp">C#</a> programming language (and later versions of Java, starting with Java 1.5) adopted the more elegant solution of using <i><a href="/wiki/Boxing_%28Computer_science%29.html" title="Boxing (Computer science)">boxing</a></i> and <i>unboxing</i>, a variant of which had been used earlier in some <a href="/wiki/Lisp_programming_language.html" title="Lisp programming language">Lisp</a> implementations.</p>
+<p>The Smalltalk system went on to become very influential, innovating in bitmap displays, personal computing, the class browser interface, and many other ways. For details see Kay's early history of Smalltalk. Meanwhile the Actor efforts at MIT remained focused on developing the science and engineering of higher level concurrency. (See the paper by Jean-Pierre Briot for ideas that were developed later on how to incorporate some kinds of Actor concurrency into later versions of Smalltalk.)</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Petri nets">edit</a>]</div>
+<p><a name="Petri_nets" id="Petri_nets"></a></p>
+<h3>Petri nets</h3>
+<p>Prior to the development of the Actor model, <a href="/wiki/Petri_net.html" title="Petri net">Petri nets</a> were widely used to model concurrent computation. However, they were widely acknowledged to have an important limitation: they modeled control flow but not data flow. Consequently they were not readily composable thereby limiting their modularity. Hewitt pointed out another difficulty with Petri nets: simultaneous action. <i>I.e.</i>, the atomic step of computation in Petri nets is a transition in which tokens <i>simultaneously</i> disappear from the input places of a transition and appear in the output places. The physical basis of using a primitive with this kind of simultaneity seemed questionable to him. Despite these apparent difficulties, Petri nets continue to be a popular approach to modelling concurrency, and are still the subject of active research.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Message Passing Semantics">edit</a>]</div>
+<p><a name="Message_Passing_Semantics" id="Message_Passing_Semantics"></a></p>
+<h2>Message Passing Semantics</h2>
+<p>The Actor model is about the semantics of message passing.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: The unbounded nondeterminism controversy">edit</a>]</div>
+<p><a name="The_unbounded_nondeterminism_controversy" id="The_unbounded_nondeterminism_controversy"></a></p>
+<h3>The unbounded nondeterminism controversy</h3>
+<p>Arguably, the first concurrent programs were <a href="/wiki/Interrupt_handler.html" title="Interrupt handler">interrupt handlers</a>. During the course of its normal operation, a computer needed to be able to receive information from outside (characters from a keyboard, packets from a network, <i>etc</i>.). So when the information arrived execution of the computer was "interrupted" and special code called an interrupt handler was called to <i>put</i> the information in a <a href="/wiki/Buffer.html" title="Buffer">buffer</a> where it could be subsequently <i>gotten</i>.</p>
+<p>This was the beginning of development of the "communicating sequential processes" paradigm in which concurrent programs were the parallel composition of sequential programs that communicated synchronously using buffers. Having parallelism with shared memory gave rise to the problem of <a href="/wiki/Concurrency_control.html" title="Concurrency control">concurrency control</a>. Originally this problem was conceived as being one of <a href="/wiki/Mutual_exclusion.html" title="Mutual exclusion">mutual exclusion</a> on a single computer. First <a href="/wiki/Edsger_Dijkstra.html" title="Edsger Dijkstra">Edsger Dijkstra</a> developed <a href="/wiki/Semaphore_%28programming%29.html" title="Semaphore (programming)">semaphores</a> and then <a href="/wiki/Tony_Hoare.html" title="Tony Hoare">Tony Hoare</a> [1974] and <a href="/wiki/Per_Brinch_Hansen.html" title="Per Brinch Hansen">Per Brinch Hansen</a> developed <a href="/wiki/Monitor_%28synchronization%29.html" title="Monitor (synchronization)">monitors</a> to solve the mutual exclusion problem. However, neither of these solutions provided a programming language construct that encapsulated access to shared resources. This encapsulation was later accomplished by the serializer construct ([Hewitt and Atkinson 1979] and [Atkinson 1980]).</p>
+<p>The first models of computation (<i>e.g.</i> <a href="/wiki/Turing_machines.html" title="Turing machines">Turing machines</a>, Post productions, the <a href="/wiki/Lambda_calculus.html" title="Lambda calculus">lambda calculus</a>, <i>etc.</i>) were based on mathematics and made use of a global state to represent a computational <i>step</i>. Each computational step was from one global state of the computation to the next global state. The global state approach was continued in <a href="/wiki/Automata_theory.html" title="Automata theory">automata theory</a> for <a href="/wiki/Finite_state_machine.html" title="Finite state machine">finite state</a> machines and <a href="/wiki/Stack_machine.html" title="Stack machine">push down stack</a> machines, including their <a href="/wiki/Nondeterministic.html" title="Nondeterministic">nondeterministic</a> versions. Such nondeterministic automata have the property of <a href="/wiki/Unbounded_nondeterminism.html" title="Unbounded nondeterminism">bounded nondeterminism</a>; that is, if a machine always halts when started in its initial state, then there is a bound on the number of states in which it halts.</p>
+<p><a href="/wiki/Edsger_Dijkstra.html" title="Edsger Dijkstra">Edsger Dijkstra</a> further developed the nondeterministic global state approach. Dijkstra's model gave rise to a controversy concerning <i>unbounded nondeterminism.</i> <a href="/wiki/Unbounded_nondeterminism.html" title="Unbounded nondeterminism">Unbounded nondeterminism</a> (also called <i>unbounded <a href="/wiki/Quantum_indeterminacy.html" title="Quantum indeterminacy">indeterminacy</a></i>, a title preferred by Hewitt following <a href="/wiki/Niels_Bohr.html" title="Niels Bohr">Niels Bohr</a>), is a property of <a href="/wiki/Concurrency_%28computer_science%29.html" title="Concurrency (computer science)">concurrency</a> by which the amount of delay in servicing a request can become unbounded as a result of arbitration of contention for shared resources <i>while still guaranteeing that the request will eventually be serviced</i>. Hewitt argued that the Actor model should provide the guarantee of service. In Dijkstra's model, although there could be an unbounded amount of time between the execution of sequential instructions on a computer, a (parallel) program that started out in a well defined state could terminate in only a bounded number of states [Dijkstra 1976]. Consequently, his model could not provide the guarantee of service. Dijkstra argued that it was impossible to implement unbounded nondeterminism.</p>
+<p>Hewitt argued otherwise: there is no bound that can be placed on how long it takes a computational circuit called an <a href="/wiki/Arbiter_%28electronics%29.html" title="Arbiter (electronics)"><i>arbiter</i></a> to settle (see <a href="/wiki/Metastability_in_electronics.html" title="Metastability in electronics">metastability in electronics</a>). Arbiters are used in computers to deal with the circumstance that computer clocks operate asynchronously with input from outside, <i>e.g.</i> keyboard input, disk access, network input, <i>etc.</i> So it could take an unbounded time for a message sent to a computer to be received and in the meantime the computer could traverse an unbounded number of states.</p>
+<p>The Actor Model features unbounded nondeterminism which was captured in a mathematical model by Will Clinger using <a href="/wiki/Domain_theory.html" title="Domain theory">domain theory</a>. There is no global state in the Actor model.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Direct communication and asynchrony">edit</a>]</div>
+<p><a name="Direct_communication_and_asynchrony" id="Direct_communication_and_asynchrony"></a></p>
+<h3>Direct communication and asynchrony</h3>
+<p>Messages in the Actor model are not necessarily buffered which was a sharp break with previous approaches to models of concurrent computation. The lack of buffering caused a great deal of misunderstanding at the time of the development of the Actor model and is still a controversial issue. Some researchers argued that the messages are buffered in the "ether" or the "environment". However, the "ether" doesn't make a very good buffer. Messages <i>put</i> in the Ether don't stay until they are <i>gotten</i>! Also, messages in the Actor model are simply sent (like <a href="/wiki/Packets.html" title="Packets">packets</a> in <a href="/wiki/Internet_Protocol.html" title="Internet Protocol">IP</a>); there is no requirement for a synchronous handshake with the recipient.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Actor creation plus addresses in messages means variable topology">edit</a>]</div>
+<p><a name="Actor_creation_plus_addresses_in_messages_means_variable_topology" id="Actor_creation_plus_addresses_in_messages_means_variable_topology"></a></p>
+<h3>Actor creation plus addresses in messages means variable topology</h3>
+<p>A natural development of the Actor model was to allow addresses in messages. Influenced by <a href="/wiki/Packet_switching.html" title="Packet switching">packet switched networks</a> [1961 and 1964], Hewitt proposed the development of a new model of concurrent computation in which communications would not have any required fields at all: they could be empty. Of course, if the sender of a communication desired a recipient to have access to addresses which the recipient did not already have, the address would have to be sent in the communication.</p>
+<p>A computation might need to send a message to a recipient from which it would later receive a response. The way to do this is to send a communication which has the message along with the address of another Actor called the <i>resumption</i> (sometimes also called <a href="/wiki/Continuation.html" title="Continuation">continuation</a> or <a href="/wiki/Stack_frame.html" title="Stack frame">stack frame</a>) along with the message. The recipient could then cause a response message to be sent to the resumption.</p>
+<p>Actor creation plus the inclusion of the addresses of Actors in messages means that Actors have a potentially variable topology in their relationship to one another much as the objects in Simula also had a variable topology in their relationship to one another.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Inherently concurrent">edit</a>]</div>
+<p><a name="Inherently_concurrent" id="Inherently_concurrent"></a></p>
+<h3>Inherently concurrent</h3>
+<p>As opposed to the previous approach based on composing sequential processes, the Actor model was developed as an inherently concurrent model. In the Actor model sequentiality was a special case that derived from concurrent computation as explained in <a href="/wiki/Actor_model_theory.html" title="Actor model theory">Actor model theory</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: No requirement on order of message arrival">edit</a>]</div>
+<p><a name="No_requirement_on_order_of_message_arrival" id="No_requirement_on_order_of_message_arrival"></a></p>
+<h3>No requirement on order of message arrival</h3>
+<p>Hewitt argued against adding the requirement that messages must arrive in the order in which they are sent to the Actor model. If output message ordering is desired then it can be modeled by a queue Actor that provides this functionality. Such a queue Actor would queue the messages that arrived so that they could be retrieved in <a href="/wiki/FIFO.html" title="FIFO">FIFO</a> order. So if an Actor <tt>X</tt> sent a message <tt>M1</tt> to an Actor <tt>Y</tt> and in response to a subsequent message that <tt>X</tt> received, it sent another message <tt>M2</tt> to <tt>Y</tt>, there is no requirement that <tt>M1</tt> arrives at <tt>Y</tt> before <tt>M2</tt>.</p>
+<p>In this respect the Actor model mirrors <a href="/wiki/Packet_switching.html" title="Packet switching">packet switching</a> systems which do not guarantee that packets must be received in the order sent. Not providing the order of delivery guarantee allows packet switching to buffer packets, use multiple paths to send packets, resend damaged packets, and to provide other optimizations.</p>
+<p>For example, Actors are allowed to pipeline the processing of messages. What this means is that in the course of processing a message <tt>M1</tt>, an Actor can designate the behavior to be used to process the next message, and then in fact begin processing another message <tt>M2</tt> before it has finished processing <tt>M1</tt>. Just because an Actor is allowed to pipeline the processing of messages does not mean that it <i>must</i> pipeline the processing. Whether a message is pipelined is an engineering tradeoff. How would an external observer know whether the processing of a message by an Actor has been pipelined? There is no ambiguity in the definition of an Actor created by the possibility of pipelining. Of course, it is possible to perform the pipeline optimization incorrectly in some implementations, in which case unexpected behavior may occur.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Not sequentiality, not buffering, not synchrony and not fixed topology">edit</a>]</div>
+<p><a name="Not_sequentiality.2C_not_buffering.2C_not_synchrony_and_not_fixed_topology" id="Not_sequentiality.2C_not_buffering.2C_not_synchrony_and_not_fixed_topology"></a></p>
+<h3>Not sequentiality, not buffering, not synchrony and not fixed topology</h3>
+<p><a href="/wiki/Robin_Milner.html" title="Robin Milner">Robin Milner</a>'s [1973] initial published work on concurrency was also notable in that it was not based on composing sequential processes. His work differed from the Actor model because it was based on a fixed number of processes of fixed topology communicating using synchronous buffered communication. The original <a href="/wiki/Communicating_Sequential_Processes.html" title="Communicating Sequential Processes">Communicating Sequential Processes</a> model published by <a href="/wiki/Tony_Hoare.html" title="Tony Hoare">Tony Hoare</a> [1978] differed from the Actor model because it was based on the parallel composition of a fixed number of sequential processes of fixed topology communicating using synchronous buffered communication.</p>
+<p>These early models by Milner and Hoare both had the property of bounded nondeterminism. Modern, theoretical <a href="/wiki/Communicating_sequential_processes.html" title="Communicating sequential processes">CSP</a> ([Hoare 1985] and [Roscoe 2005]) explicitly provides unbounded nondeterminism.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Locality">edit</a>]</div>
+<p><a name="Locality" id="Locality"></a></p>
+<h3>Locality</h3>
+<p>Another important characteristic of the Actor model is locality.</p>
+<p>Locality means that in processing a message: an Actor can send messages only to addresses that it receives in the message, addresses that it already had before it received the message and addresses for Actors that it creates while processing the message. (But see <a href="/wiki/Actor_model#Synthesizing_addresses_of_Actors.html" title="Actor model">Synthesizing Addresses of Actors</a>.)</p>
+<p>Also locality means that there is no simultaneous change in multiple locations. In this way it differs from some other models of concurrency, <i>e.g.</i>, the <a href="/wiki/Petri_net.html" title="Petri net">Petri net</a> model in which tokens are simultaneously removed from multiple locations and place in other locations.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Compositionality">edit</a>]</div>
+<p><a name="Compositionality" id="Compositionality"></a></p>
+<h3>Compositionality</h3>
+<p><a href="/wiki/Compositionality.html" title="Compositionality">Compositionality</a>, i.e., the ability to compose Actor systems into larger ones, is an important aspect of <a href="/wiki/Modularity_%28programming%29.html" title="Modularity (programming)">modularity</a> that was developed in Gul Agha's doctoral dissertation and later by Gul Agha, Ian Mason, Scott Smith, and Carolyn Talcott.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Behaviors">edit</a>]</div>
+<p><a name="Behaviors" id="Behaviors"></a></p>
+<h3>Behaviors</h3>
+<p>A key innovation was the introduction of <i>behavior</i> specified as a mathematical function to express what an Actor does when it processes a message including specifying a new behavior to process the next message that arrives. Behaviors provided a mechanism to mathematically model the sharing in concurrency.</p>
+<p>Behaviors also freed the Actor model from implementation details, <i>e.g.</i>, the Smalltalk-72 token stream interpreter. However, it is critical to understand that the efficient implementation of systems described by the Actor model require <i>extensive</i> optimization. See <a href="/wiki/Actor_model_implementation.html" title="Actor model implementation">Actor model implementation</a> for details.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Relationship to mathematical logic">edit</a>]</div>
+<p><a name="Relationship_to_mathematical_logic" id="Relationship_to_mathematical_logic"></a></p>
+<h3>Relationship to mathematical logic</h3>
+<p>The development of the Actor model has an interesting relationship to mathematical logic. One of the key motivations for its development was to understand and deal with the control structure issues that arose in development of the <a href="/wiki/Planner_programming_language.html" title="Planner programming language">Planner programming language</a>. Once the Actor model was initially defined, an important challenge was to understand the power of the model relative to Kowalski's thesis that "computation can be subsumed by deduction". Kowalski's thesis turned out to be false for the concurrent computation in the Actor model (see <a href="/wiki/Indeterminacy_in_computation.html" title="Indeterminacy in computation">Indeterminacy in computation</a>). This result is still somewhat controversial and it reversed previous expectations because Kowalski's thesis is true for sequential computation and even some kinds of parallel computation, <i>e.g.</i> the lambda calculus.</p>
+<p>Nevertheless attempts were made to extend <a href="/wiki/Logic_programming.html" title="Logic programming">logic programming</a> to concurrent computation. However, Hewitt and Agha [1991] pointed out that the resulting systems were not deductive in the following sense: computational steps of the concurrent logic programming systems do not follow deductively from previous steps (see <a href="/wiki/Indeterminacy_in_computation.html" title="Indeterminacy in computation">Indeterminacy in computation</a>).</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Migration">edit</a>]</div>
+<p><a name="Migration" id="Migration"></a></p>
+<h3>Migration</h3>
+<p>Migration in the Actor model is the ability of Actors to change locations. <i>E.g.</i>, in his dissertation, Aki Yonezawa modeled a post office that customer Actors could enter, change locations within while operating, and exit. An Actor that can migrate can be modeled by having a location Actor that changes when the Actor migrates. However the faithfullness of this modeling is controversial and the subject of research.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Security">edit</a>]</div>
+<p><a name="Security" id="Security"></a></p>
+<h3>Security</h3>
+<p>The security of Actors can be protected in the following ways:</p>
+<ul>
+<li><a href="/wiki/Hardwired.html" title="Hardwired">hardwiring</a> in which Actors are physically connected</li>
+<li><a href="/wiki/Hardware.html" title="Hardware">hardware</a> as in Burroughs B5000, <a href="/wiki/Lisp_machine.html" title="Lisp machine">Lisp machine</a>, <i>etc.</i></li>
+<li><a href="/wiki/Virtual_machines.html" title="Virtual machines">virtual machines</a> as in <a href="/wiki/Java_virtual_machine.html" title="Java virtual machine">Java virtual machine</a>, <a href="/wiki/Common_Language_Runtime.html" title="Common Language Runtime">Common Language Runtime</a>, <i>etc.</i></li>
+<li><a href="/wiki/Operating_systems.html" title="Operating systems">operating systems</a> as in <a href="/wiki/Capability_%28computers%29.html" title="Capability (computers)">capability-based systems</a></li>
+<li><a href="/wiki/Digital_signature.html" title="Digital signature">signing</a> and/or <a href="/wiki/Encryption.html" title="Encryption">encryption</a> of Actors and their addresses</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Synthesizing addresses of Actors">edit</a>]</div>
+<p><a name="Synthesizing_addresses_of_Actors" id="Synthesizing_addresses_of_Actors"></a></p>
+<h3>Synthesizing addresses of Actors</h3>
+<p>A delicate point in the Actor model is the ability to synthesize the address of an Actor. In some cases security can be used to prevent the synthesis of addresses (see <a href="/wiki/Actor_model#Security.html" title="Actor model">Security</a>). However, if an Actor address is simply a bit string then clearly it can be synthesized although it may be difficult or even impossible to guess the address of an Actor if the bit strings are long enough. <a href="/wiki/SOAP.html" title="SOAP">SOAP</a> uses a <a href="/wiki/URL.html" title="URL">URL</a> for the address of an endpoint where an Actor can be reached. Since a <a href="/wiki/URL.html" title="URL">URL</a> is a character string, it can clearly be synthesized although encryption can make it impossible to guess.</p>
+<p>Synthesizing the addresses of Actors is usually modeled using mapping. The idea is to use an Actor system to perform the mapping to the actual Actor addresses. For example, on a computer the memory structure of the computer can be modeled as an Actor system that does the mapping. In the case of <a href="/wiki/SOAP.html" title="SOAP">SOAP</a> addresses, it's modeling the <a href="/wiki/Domain_Name_System.html" title="Domain Name System">DNS</a> and rest of the <a href="/wiki/URL.html" title="URL">URL</a> mapping.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Why is the Actor model important now?">edit</a>]</div>
+<p><a name="Why_is_the_Actor_model_important_now.3F" id="Why_is_the_Actor_model_important_now.3F"></a></p>
+<h2>Why is the Actor model important now?</h2>
+<p>On the 40th anniversary of the publication of <a href="/wiki/Moore%27s_Law.html" title="Moore's Law">Moore's Law</a>, hardware development is furthering both local and nonlocal massive concurrency. Local concurrency is being enabled by new hardware for <a href="/wiki/64-bit.html" title="64-bit">64-bit</a> <a href="/wiki/Multicore.html" title="Multicore">multi-core</a> (<a  class="external text" title="http://www.intel.com/technology/techresearch/idf/platform-2015-keynote.htm">Platform 2015 Unveiled at IDF Spring 2005</a>) microprocessors, multi-chip modules, and high performance <a href="/wiki/Electrical_connection.html" title="Electrical connection">interconnect</a>. Nonlocal concurrency is being enabled by new hardware for wired and <a href="/wiki/Wireless.html" title="Wireless">wireless</a> <a href="/wiki/Broadband.html" title="Broadband">broadband</a> <a href="/wiki/Packet_switched.html" title="Packet switched">packet switched</a> communications (see <a href="/wiki/Wi-Fi.html" title="Wi-Fi">Wi-Fi</a> and <a href="/wiki/Ultra_wideband.html" title="Ultra wideband">Ultra wideband</a>). Both local and nonlocal storage capacities are growing exponentially.</p>
+<p>According to Hewitt [2006], the Actor model faces issues in computer and communications architecture, <a href="/wiki/Concurrent_programming_language.html" title="Concurrent programming language">concurrent programming languages</a>, and <a href="/wiki/Web_Services.html" title="Web Services">Web Services</a> including the following:</p>
+<ul>
+<li><b><a href="/wiki/Scalability.html" title="Scalability">scalability</a>:</b> the challenge of scaling up concurrency both locally and nonlocally.</li>
+<li><b><a href="/wiki/Transparency_%28computing%29.html" title="Transparency (computing)">transparency</a>:</b> bridging the chasm between local and nonlocal concurrency. Transparency is currently a controversial issue. Some researchers have advocated a strict separation between local concurrency using concurrent programming languages (e.g. <a href="/wiki/Java_programming_language.html" title="Java programming language">Java</a> and <a href="/wiki/C_sharp.html" title="C sharp">C#</a>) from nonlocal concurrency using <a href="/wiki/SOAP.html" title="SOAP">SOAP</a> for <a href="/wiki/Web_services.html" title="Web services">Web services</a>. Strict separation produces a lack of transparency that causes problems when it is desirable/necessary to change between local and nonlocal access to Web Services (see <a href="/wiki/Distributed_computing.html" title="Distributed computing">distributed computing</a>). Bridging the chasm may require making binary <a href="/wiki/XML.html" title="XML">XML</a> (including <a href="/wiki/XSD.html" title="XSD">XSD</a>) first-class data types in <a href="/wiki/Java_programming_language.html" title="Java programming language">Java</a> and <a href="/wiki/C_sharp.html" title="C sharp">C#</a> (see <a  class="external text" title="http://www.google.com/url?sa=t&amp;ct=res&amp;cd=2&amp;url=http%3A//msdn.microsoft.com/VBasic/Future/XLinq%2520Overview.doc&amp;ei=6DKaQ7LlBouaYJiGvfUL&amp;sig2=FMBzLdkoUaSX1JmCk9OH1w">XLINQ</a>).</li>
+<li><b><a href="/wiki/Inconsistency.html" title="Inconsistency">inconsistency</a>:</b> Inconsistency is the norm because all very large knowledge systems about human information system interactions are inconsistent. This inconsistency extends to the documentation and specifications of very large systems (e.g. Microsoft Windows software, etc.), which are internally inconsistent.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Actor researchers">edit</a>]</div>
+<p><a name="Actor_researchers" id="Actor_researchers"></a></p>
+<h2>Actor researchers</h2>
+<p>Gul Agha, Beppe Attardi, Henry Baker, Will Clinger, Irene Grief, Carl Manning, Ian Mason, Ugo Montanari, Maria Simi, Scott Smith, Carolyn Talcott, Prasanna Thati, and Aki Yonezawa have made important contributions to the semantics of Actors. Important contributions to the implementation of Actors have been made by Bill Athas, Russ Atkinson, Beppe Attardi, Henry Baker, Gerry Barber, Peter Bishop, Nanette Boden, Jean-Pierre Briot, Bill Dally, Peter de Jong, Jessie Dedecker, Ken Kahn, Henry Lieberman, Carl Manning, Tom Reinhardt, Chuck Seitz, Richard Steiger, Dan Theriault, Mario Tokoro, Darrell Woelk, and Carlos Varela.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Data_flow.html" title="Data flow">Data flow</a></li>
+<li><a href="/wiki/General_relativity.html" title="General relativity">General relativity</a> and <a href="/wiki/Quantum_physics.html" title="Quantum physics">Quantum physics</a>, for some physical motivation for the articles <a href="/wiki/Actor_model_theory.html" title="Actor model theory">Actor model theory</a> and <a href="/wiki/Indeterminacy_in_computation.html" title="Indeterminacy in computation">Indeterminacy in computation</a></li>
+<li><a href="/wiki/Multi-agent_system.html" title="Multi-agent system">Multi-agent system</a></li>
+<li><a href="/wiki/Neural_networks.html" title="Neural networks">Neural networks</a></li>
+<li><a href="/wiki/Ptolemy_Project.html" title="Ptolemy Project">Ptolemy Project</a></li>
+<li><a href="/wiki/Scientific_Community_Metaphor.html" title="Scientific Community Metaphor">Scientific Community Metaphor</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<ul>
+<li>Paul Baran. <b>On Distributed Communications Networks</b> <a  class="new" title="IEEE Transactions on Communications Systems">IEEE Transactions on Communications Systems</a>. March 1964.</li>
+<li><a href="/wiki/Peter_Landin.html" title="Peter Landin">Peter Landin</a>. <b>A Generalization of Jumps and Labels</b> Report. UNIVAC Systems Programming Research. August 1965. Reprinted in Higher Order and Symbolic Computation. 1998.</li>
+<li><a href="/wiki/Edsger_Dijkstra.html" title="Edsger Dijkstra">Edsger Dijkstra</a> <b>Solution of a Problem in Concurrent Programming Control</b> <a href="/wiki/Communications_of_the_ACM.html" title="Communications of the ACM">CACM</a>. 1965.</li>
+<li>Jack Dennis and Earl Van Horn. <b>Programming Semantics for Multiprogrammed Computations</b> CACM. March 1966.</li>
+<li><a href="/wiki/Ole-Johan_Dahl.html" title="Ole-Johan Dahl">Ole-Johan Dahl</a> and <a href="/wiki/Kristen_Nygaard.html" title="Kristen Nygaard">Kristen Nygaard</a>. <b>Class and subclass declarations</b> IFIP TC2 Conference on Simulation Programming Languages. May 1967.</li>
+<li><a href="/wiki/Carl_Hewitt.html" title="Carl Hewitt">Carl Hewitt</a>. <b>PLANNER: A Language for Proving Theorems in Robots</b> IJCAI 1969</li>
+<li>William A. Woods. <b>Transition network grammars for natural language analysis</b> CACM. 1970.</li>
+<li>Terry Winograd. <b>Procedures as a Representation for Data in a Computer Program for Understanding Natural Language</b> MIT AI TR-235. January 1971.</li>
+<li>Carl Hewitt. <b>Procedural Embedding of Knowledge In Planner</b> IJCAI 1971.</li>
+<li>G.M. Birtwistle, Ole-Johan Dahl, B. Myhrhaug and Kristen Nygaard. <b>SIMULA Begin</b> Auerbach Publishers Inc, 1973.</li>
+<li>Daniel Bobrow: <b>A Model for Control Structures for Artificial Intelligence Programming Languages</b> IJCAI 1973.</li>
+<li><cite id="endnote_Hewitt-"><a  title=""><b><sup>-</sup></b></a></cite>  Carl Hewitt, Peter Bishop and Richard Steiger. <b>A Universal Modular Actor Formalism for Artificial Intelligence</b> IJCAI 1973.</li>
+<li><a href="/wiki/Robin_Milner.html" title="Robin Milner">Robin Milner</a>. <b>Processes: A Mathematical Model of Computing Agents</b> in Logic Colloquium 1973.</li>
+<li>Carl Hewitt, <i>et. al.</i> <b>Actor Induction and Meta-evaluation</b> Conference Record of ACM Symposium on Principles of Programming Languages, January 1974.</li>
+<li>Carl Hewitt, <i>et. al.</i> <b>Behavioral Semantics of Nonrecursive Control Structure</b> Proceedings of Colloque sur la Programmation, April 1974.</li>
+<li><a href="/wiki/C.A.R._Hoare.html" title="C.A.R. Hoare">C.A.R. Hoare</a>. <b>Monitors: An Operating System Structuring Concept</b> CACM. October 1974.</li>
+<li>Irene Greif and Carl Hewitt. <b>Actor Semantics of PLANNER-73</b> Conference Record of ACM Symposium on Principles of Programming Languages. January 1975.</li>
+<li>Carl Hewitt. <b>How to Use What You Know</b> IJCAI. September, 1975.</li>
+<li><cite id="endnote_Greif-"><a  title=""><b><sup>-</sup></b></a></cite>  <a  class="new" title="Irene Greif">Irene Greif</a>: <b>Semantics of Communicating Parallel Processes</b> MIT EECS Doctoral Dissertation. August 1975.</li>
+<li>Alan Kay and Adele Goldberg. <b>Smalltalk-72 Instruction Manual</b> Xerox PARC Memo SSL-76-6. May 1976.</li>
+<li><a href="/wiki/Edsger_Dijkstra.html" title="Edsger Dijkstra">Edsger Dijkstra</a>. <b>A discipline of programming</b> Prentice Hall. 1976.</li>
+<li>Carl Hewitt and Henry Baker <b><a  class="external text" title="http://www.lcs.mit.edu/publications/pubs/pdf/MIT-LCS-TR-194.pdf">Actors and Continuous Functionals</a></b> Proceeding of IFIP Working Conference on Formal Description of Programming Concepts. August 1-5, 1977.</li>
+<li>Henry Baker and Carl Hewitt <b>The Incremental Garbage Collection of Processes</b> Proceeding of the Symposium on Artificial Intelligence Programming Languages. SIGPLAN Notices 12, August 1977.</li>
+<li><cite id="endnote_Baker1977-"><a  title=""><b><sup>-</sup></b></a></cite>  <a  class="new" title="Henry Baker and Carl Hewitt">Henry Baker and Carl Hewitt</a>: <b>Laws for Communicating Parallel Processes</b> IFIP. August 1977.</li>
+<li>Gilles Kahn and David MacQueen. <b>Coroutines and networks of parallel processes</b> IFIP. 1977</li>
+<li>Aki Yonezawa <b>Specification and Verification Techniques for Parallel Programs Based on Message Passing Semantics</b> MIT EECS Doctoral Dissertation. December 1977.</li>
+<li>Carl Hewitt. <b>Viewing Control Structures as Patterns of Passing Messages</b> Journal of Artificial Intelligence. June 1977.</li>
+<li>Henry Baker. <b>Actor Systems for Real-Time Computation</b> MIT EECS Doctoral Dissertation. January 1978.</li>
+<li>C.A.R. Hoare. <b>Communicating sequential processes</b> CACM. August 1978.</li>
+<li>Carl Hewitt and Russ Atkinson. <b>Specification and Proof Techniques for Serializers</b> IEEE Journal on Software Engineering. January 1979.</li>
+<li>Ken Kahn. <b>A Computational Theory of Animation</b> MIT EECS Doctoral Dissertation. August 1979.</li>
+<li>Carl Hewitt, Beppe Attardi, and Henry Lieberman. <b>Delegation in Message Passing</b> Proceedings of First International Conference on Distributed Systems Huntsville, AL. October 1979.</li>
+<li>Nissim Francez, C.A.R. Hoare, Daniel Lehmann, and <a  class="new" title="Willem-Paul de Roever">Willem-Paul de Roever</a>. <b>Semantics of nondetermiism, concurrency, and communication</b> Journal of Computer and System Sciences. December 1979.</li>
+<li><a href="/wiki/George_Milne.html" title="George Milne">George Milne</a> and <a href="/wiki/Robin_Milner.html" title="Robin Milner">Robin Milner</a>. <b>Concurrent processes and their syntax</b> JACM. April 1979.</li>
+<li>Russ Atkinson. <b>Automatic Verification of Serializers</b> MIT Doctoral Dissertation. June, 1980.</li>
+<li>Bill Kornfeld and Carl Hewitt. <b>The Scientific Community Metaphor</b> IEEE Transactions on Systems, Man, and Cybernetics. January 1981.</li>
+<li>Henry Lieberman. <b>Thinking About Lots of Things at Once without Getting Confused: Parallelism in Act 1</b> MIT AI memo 626. May 1981.</li>
+<li>Henry Lieberman. <b>A Preview of Act 1</b> MIT AI memo 625. June 1981.</li>
+<li>Bill Kornfeld. <b>Parallelism in Problem Solving</b> MIT EECS Doctoral Dissertation. August 1981.</li>
+<li><cite id="endnote_Clinger-"><a  title=""><b><sup>-</sup></b></a></cite>  William Clinger: <b><a  class="external text" title="https://dspace.mit.edu/handle/1721.1/6935">Foundations of Actor Semantics</a></b> MIT Mathematics Doctoral Dissertation. June 1981.</li>
+<li>Daniel Theriault. <b>A Primer for the Act-1 Language</b> MIT AI memo 672. April 1982.</li>
+<li>Daniel Theriault. <b>Issues in the Design and Implementation of Act 2</b> MIT AI technical report 728. June 1983.</li>
+<li>Henry Lieberman. <b>An Object-Oriented Simulator for the Apiary</b> Conference of the American Association for Artificial Intelligence, Washington, D. C., August 1983</li>
+<li>Carl Hewitt and Peter de Jong. <b>Analyzing the Roles of Descriptions and Actions in Open Systems</b> Proceedings of the National Conference on Artificial Intelligence. August 1983.</li>
+<li>Carl Hewitt and Henry Lieberman. <b>Design Issues in Parallel Architecture for Artificial Intelligence</b> MIT AI memo 750. Nov. 1983.</li>
+<li><a href="/wiki/Dan_Ingalls.html" title="Dan Ingalls">Daniel Ingalls</a>. <b>The Evolution of the Smalltalk Virtual Machine</b> in Smalltalk-80: Bits of History, Words of Advice. Addison Wesley. 1983.</li>
+<li><a href="/wiki/C.A.R._Hoare.html" title="C.A.R. Hoare">C.A.R. Hoare</a>. <b><a  class="external text" title="http://www.usingcsp.com/">Communicating Sequential Processes</a></b> Prentice Hall. 1985.</li>
+<li>Carl Hewitt. <b>The Challenge of Open Systems</b> Byte Magazine. April 1985. Reprinted in <i>The foundation of artificial intelligence---a sourcebook</i> Cambridge University Press. 1990.</li>
+<li><cite id="endnote_Agha-"><a  title=""><b><sup>-</sup></b></a></cite>  <a href="/wiki/Gul_Agha.html" title="Gul Agha">Gul Agha</a>: <b><a  class="external text" title="https://dspace.mit.edu/handle/1721.1/6952">Actors: A Model of Concurrent Computation in Distributed Systems</a></b> Doctoral Dissertation. MIT Press. 1986.</li>
+<li>Carl Manning. <b>Traveler: the actor observatory</b> ECOOP 1987. Also appears in <a href="/wiki/Lecture_Notes_in_Computer_Science.html" title="Lecture Notes in Computer Science">Lecture Notes in Computer Science</a>, vol. 276.</li>
+<li>William Athas and Charles Seitz <b>Multicomputers: message-passing concurrent computers</b> IEEE Computer August 1988.</li>
+<li>William Athas and Nanette Boden <b>Cantor: An Actor Programming System for Scientific Computing</b> in Proceedings of the NSF Workshop on Object-Based Concurrent Programming. 1988. Special Issue of SIGPLAN Notices.</li>
+<li>Jean-Pierre Briot. <b>From objects to actors: Study of a limited symbiosis in Smalltalk-80</b> Rapport de Recherche 88-58, RXF-LITP, Paris, France, September 1988</li>
+<li>William Dally and Wills, D. <b>Universal mechanisms for concurrency</b> PARLE 1989.</li>
+<li>W. Horwat, A. Chien, and W. Dally. <b>Experience with CST: Programming and Implementation</b> PLDI. 1989.</li>
+<li>Carl Hewitt. <b>Towards Open Information Systems Semantics</b> Proceedings of 10th International Workshop on Distributed Artificial Intelligence. October 23-27, 1990. Bandera, Texas.</li>
+<li>Akinori Yonezawa, Ed. <b>ABCL: An Object-Oriented Concurrent System</b> MIT Press. 1990.</li>
+<li>K. Kahn and Vijay A. Saraswat, "<a  class="external text" title="http://doi.acm.org/10.1145/97946.97955">Actors as a special case of concurrent constraint (logic) programming</a>", in SIGPLAN <i>Notices</i>, October 1990. Describes <a href="/wiki/Janus_computer_programming_language.html" title="Janus computer programming language">Janus</a>.</li>
+<li>Carl Hewitt. <b>Open Information Systems Semantics</b> Journal of Artificial Intelligence. January 1991.</li>
+<li>Carl Hewitt and Jeff Inman. <b>DAI Betwixt and Between: From "Intelligent Agents" to Open Systems Science</b> IEEE Transactions on Systems, Man, and Cybernetics. Nov./Dec. 1991.</li>
+<li>Carl Hewitt and Gul Agha. <b>Guarded Horn clause languages: are they deductive and Logical?</b> International Conference on Fifth Generation Computer Systems, Ohmsha 1988. Tokyo. Also in <i>Artificial Intelligence at MIT</i>, Vol. 2. MIT Press 1991.</li>
+<li>William Dally, <i>et al.</i> <b>The Message-Driven Processor: A Multicomputer Processing Node with Efficient Mechanisms</b> <a  class="new" title="IEEE Micro">IEEE Micro</a>. April 1992.</li>
+<li>S. Miriyala, G. Agha, and Y.Sami. <b>Visulatizing actor programs using predicate transition nets</b> Journal of Visual Programming. 1992.</li>
+<li><cite id="endnote_AghaMasonSmithTalcott-"><a  title=""><b><sup>-</sup></b></a></cite>  Gul Agha, Ian Mason, Scott Smith, and Carolyn Talcott: <b>A Foundation for Actor Computation</b>Journal of Functional Programming January 1993.</li>
+<li>Alan Kay. <b><a  class="external text" title="http://www.smalltalk.org/smalltalk/TheEarlyHistoryOfSmalltalk_Abstract.html">The Early History of Smalltalk</a></b> The second ACM conference on history of programming languages. 1993.</li>
+<li>Carl Hewitt and Carl Manning. <b>Negotiation Architecture for Large-Scale Crisis Management</b> AAAI-94 Workshop on Models of Conflict Management in Cooperative Problem Solving. Seattle, WA. Aug. 4, 1994.</li>
+<li><cite id="endnote_DarlingtonGuo-"><a  title=""><b><sup>-</sup></b></a></cite>  John Darlington and Y. K. Guo: <b>Formalizing Actors in Linear Logic</b> International Conference on Object-Oriented Information Systems. Springer-Verlag. 1994.</li>
+<li>Darrell Woelk. <b>Developing InfoSleuth Agents Using Rosette: An Actor Based Language</b> Proceedings of the CIKM '95 Workshop on Intelligent Information Agents. 1995.</li>
+<li>Carl Hewitt and Carl Manning. <b>Synthetic Infrastructures for Multi-Agency Systems</b> Proceedings of ICMAS '96. Kyoto, Japan. December 8–13, 1996.</li>
+<li>S. Frolund. <b>Coordinating Distributed Objects: An Actor-Based Approach for Synchronization</b> MIT Press. November 1996.</li>
+<li>W. Kim. <b>ThAL: An Actor System for Efficient and Scalable Concurrent Computing</b> PhD thesis. University of Illinois at Urbana Champaign. 1997.</li>
+<li><cite id="endnote_Gaspari1997-"><a  title=""><b><sup>-</sup></b></a></cite>  Mauro Gaspari and Gianluigi Zavattaro: <b>An Algebra of Actors</b>, Technical Report UBLCS-97-4, University of Bologna, May <a href="/wiki/1997.html" title="1997">1997</a></li>
+<li>Jean-Pierre Briot. <b>Acttalk: A framework for object-oriented concurrent programming-design and experience</b> 2nd France-Japan workshop. 1999.</li>
+<li><cite id="endnote_Gaspari1999-"><a  title=""><b><sup>-</sup></b></a></cite>  M. Gaspari and G. Zavattaro: <b>An Algebra of Actors</b> Formal Methods for Open Object Based Systems, 1999.</li>
+<li>N. Jamali, P. Thati, and G. Agha. <b>An actor based architecture for customizing and controlling agent ensembles</b> IEEE Intelligent Systems. 14(2). 1999.</li>
+<li>Don Box, David Ehnebuske, Gopal Kakivaya, Andrew Layman, Noah Mendelsohn, Henrik Nielsen, Satish Thatte, Dave Winer. <b>Simple Object Access Protocol (SOAP) 1.1</b> <a href="/wiki/W3C.html" title="W3C">W3C</a> Note. May 2000.</li>
+<li>M. Astley, D. Sturman, and G. Agha. <b>Customizable middleware for modular distributed software</b> CACM. 44(5) 2001.</li>
+<li>Carlos Varela. <b>Worldwide Computing with Universal Actors: Linguistic Abstractions for Naming, Migration, and Coordination</b> PhD thesis. U. of Illinois at Urbana-Champaign. 2001.</li>
+<li>N. Venkatasubramanian, C. Talcott, and G. Agha. <b>A formal model for reasoning about adaptive QoS-enabled middleware</b> Formal Methods Europe (FME). 2001.</li>
+<li>Edward Lee, S. Neuendorffer, and M. Wirthlin. <a  class="external text" title="http://ptolemy.eecs.berkeley.edu/papers/02/actorOrientedDesign/newFinal.pdf"><b>Actor-oriented design of embedded hardware and software systems</b></a> Journal of circuits, systems, and computers. 2002.</li>
+<li>P. Thati, R. Ziaei, and G. Agha. <b>A Theory of May Testing for Actors</b> Formal Methods for Open Object-based Distributed Systems. March 2002.</li>
+<li>P. Thati, R. Ziaei, and G. Agha. <b>A theory of may testing for asynchronous calculi with locality and no name matching</b> Algebraic Methodology and Software Technology. Springer Verlag. September 2002. LNCS 2422.</li>
+<li>Gul Agha and Carlos Varela. <b>Worldwide Computing Middleware</b> Practical Handbook on Internet Computing. CRC Press, 2004.</li>
+<li>Stephen Neuendorffer. <i>Actor-Oriented Metaprogramming</i> PhD Thesis. University of California, Berkeley. December, 2004</li>
+<li><cite id="endnote_AghaThati-"><a  title=""><b><sup>-</sup></b></a></cite>  Gul Agha and Prasanna Thati. <a  class="external text" title="http://formal.cs.uiuc.edu/papers/ATactors_festschrift.pdf"><b>An Algebraic Theory of Actors and Its Application to a Simple Object-Based Language</b></a>, From OO to FM (Dahl Festschrift) LNCS 2635. Springer-Verlag. 2004.</li>
+<li>Carl Hewitt. <b>The repeated demise of logic programming and why it will be reincarnated</b> What Went Wrong and Why: Lessons from AI Research and Applications. Technical Report SS-06-08. AAAI Press. March 2006.</li>
+<li><cite id="endnote_Hewitt-"><a  title=""><b><sup>-</sup></b></a></cite>  <a href="/wiki/Carl_Hewitt.html" title="Carl Hewitt">Carl Hewitt</a>: <a  class="external text" title="http://www.pcs.usp.br/~coin-aamas06/10_commitment-43_16pages.pdf"><b>What is Commitment? Physical, Organizational, and Social</b></a> COIN@AAMAS. April 27, 2006.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li>A now dated set of speculations by Paul Mackay can be found at <a  class="external text" title="http://www.doc.ic.ac.uk/~nd/surprise_97/journal/vol2/pjm2/"><i>Why has the actor model not succeeded?</i></a></li>
+</ul>
+
+<!-- 
+Pre-expand include size: 18760 bytes
+Post-expand include size: 4585 bytes
+Template argument size: 1036 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:1637868-0!1!0!default!!en!2 and timestamp 20060910155752 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:Actor model">Actor model</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Actor_model.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 12:44, 31 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv98 in 0.110 secs. --></body></html>

@@ -1,0 +1,378 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Ls,Ls (Unix),AT&amp;T,Anacron,Apple Computer,At (Unix),Awk,Banner (Unix),Bc (Unix),Berkeley Software Distribution,Cal (Unix)" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Ls - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Ls";
+			var wgTitle = "Ls";
+			var wgArticleId = 158682;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Ls</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<dl>
+<dd><span class="plainlinks"><i>The correct title of this article is <b>ls</b>. The initial letter is capitalized due to <a  title="Wikipedia:Naming conventions (technical restrictions)">technical restrictions</a>.</i></span></dd>
+<dd><i>L<sub>s</sub> is also the planetocentric longitude of Sun, see <a href="/wiki/Planetocentric_longitude.html" title="Planetocentric longitude">planetocentric longitude</a></i></dd>
+</dl>
+<p><b><tt>ls</tt></b> is a command specified by <a href="/wiki/POSIX.html" title="POSIX">POSIX</a> and the <a href="/wiki/Single_UNIX_Specification.html" title="Single UNIX Specification">Single UNIX Specification</a>, and is thus implemented in <a href="/wiki/Unix.html" title="Unix">Unix</a> and <a href="/wiki/Unix-like.html" title="Unix-like">Unix-like</a> operating systems. <tt>ls</tt>, an abbreviation of <b>l</b>i<b>s</b>t, lists files.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">History</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Behaviour</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Sample usage</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Options to ls</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">External links</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">6.1</span> <span class="toctext">Documentation</span></a></li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: History">edit</a>]</div>
+<p><a name="History" id="History"></a></p>
+<h2>History</h2>
+<p>An ls utility appeared in the original version of <a href="/wiki/AT%26T.html" title="AT&amp;T">AT&amp;T</a> <a href="/wiki/Unix.html" title="Unix">UNIX</a>. Its name derives from a similar command in <a href="/wiki/Multics.html" title="Multics">Multics</a> which meant "list segments". Today, two popular versions of ls are the <a href="/wiki/Free_Software_Foundation.html" title="Free Software Foundation">Free Software Foundation</a>'s (part of the <a href="/wiki/GNU.html" title="GNU">GNU</a> <a href="/wiki/Coreutils.html" title="Coreutils">coreutils</a> package) and the one released by various <a href="/wiki/Berkeley_Software_Distribution.html" title="Berkeley Software Distribution">BSD</a> variants, such as <a href="/wiki/FreeBSD.html" title="FreeBSD">FreeBSD</a>, <a href="/wiki/OpenBSD.html" title="OpenBSD">OpenBSD</a>, <a href="/wiki/NetBSD.html" title="NetBSD">NetBSD</a>, and <a href="/wiki/Apple_Computer.html" title="Apple Computer">Apple Computer</a>'s <a href="/wiki/Darwin_%28operating_system%29.html" title="Darwin (operating system)">Darwin</a>. Both are <a href="/wiki/Free_software.html" title="Free software">free software</a> and <a href="/wiki/Open_source.html" title="Open source">open source</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Behaviour">edit</a>]</div>
+<p><a name="Behaviour" id="Behaviour"></a></p>
+<h2>Behaviour</h2>
+<p><a href="/wiki/Unix.html" title="Unix">Unix</a> and <a href="/wiki/Unix-like.html" title="Unix-like">Unix-like</a> operating systems maintain the idea of a <i>current working <a href="/wiki/Directory_%28file_systems%29.html" title="Directory (file systems)">directory</a></i>, that is, where one is currently positioned in the hierarchy of directories.</p>
+<p><tt>ls</tt> when invoked without any arguments, lists the files in the current working directory. A directory that is not the current working directory can be specified and <tt>ls</tt> will list the files there. The user also may specify any list of files and directories. In this case, all files and all contents of specified directories will be listed.</p>
+<p>Files whose names start with "." are not listed, unless the -a flag is specified or the files are specified explicitly.</p>
+<p>Without options, <tt>ls</tt> displays files in a bare format. This bare format however makes it difficult to establish the type, permissions, and size of the files. The most common options to reveal this information or change the list of files are:</p>
+<ul>
+<li><tt>-l</tt> long format, displaying Unix file type, permissions, number of <a href="/wiki/Hard_link.html" title="Hard link">hard links</a>, owner, group, size, date, and filename</li>
+<li><tt>-F</tt> appends a character revealing the nature of a file, for example, <tt>*</tt> for an executable, or <tt>/</tt> for a directory. Regular files have no suffix.</li>
+<li><tt>-a</tt> lists all files in the given directory, including those whose names start with "." By default, these files are excluded from the list.</li>
+<li><tt>-R</tt> recursively lists subdirectories. The command <tt>ls -R /</tt> would therefore list all files.</li>
+</ul>
+<p>In some environments, providing the option <tt>--color</tt> (for <a href="/wiki/GNU.html" title="GNU">GNU</a> <tt>ls</tt>) or <tt>-G</tt> (<a href="/wiki/FreeBSD.html" title="FreeBSD">FreeBSD</a> <tt>ls</tt>) causes <tt>ls</tt> to highlight different types of files with different colors, instead of with characters as <tt>-F</tt> would. To determine what color to use for a file, GNU ls checks the Unix <a href="/wiki/File_%28Unix%29.html" title="File (Unix)">file type</a>, the file permissions, and the file extension, while FreeBSD ls checks only the Unix file type and file permissions.</p>
+<p>When the option to use color to indicate file types is selected, the output might look like:</p>
+<pre>
+<span style="background:#000000; color:#c0c0c0">
+ brw-r--r--    1 unixguy staff 64,  64 Jan 27 05:52 <span style="color:yellow">block         </span>
+ crw-r--r--    1 unixguy staff 64, 255 Jan 26 13:57 <span style="color:yellow">character     </span>
+ -rw-r--r--    1 unixguy staff     290 Jan 26 14:08 <span style="color:red">compressed.gz </span>
+ -rw-r--r--    1 unixguy staff  331836 Jan 26 14:06 <span style="color:purple">data.ppm      </span>
+ drwxrwx--x    2 unixguy staff      48 Jan 26 11:28 <span style="color:blue">dir           </span>
+ -rwxrwx--x    1 unixguy staff      29 Jan 26 14:03 <span style="color:green">executable    </span>
+ prw-r--r--    1 unixguy staff       0 Jan 26 11:50 <span style="color:lightyellow">fifo          </span>
+ lrwxrwxrwx    1 unixguy staff       3 Jan 26 11:44 <span style="color:lightblue">link</span> -&gt; <span style="color:blue">dir   </span>
+ -rw-rw----    1 unixguy staff     217 Jan 26 14:08 regularfile   </span>
+</pre>
+<p><tt>ls</tt> has a large number of other options, as can be discovered in the <tt><a href="/wiki/Unix_manual.html" title="Unix manual">man</a></tt> page. It is one of the most frequently used tools, and is virtually the <i>de</i>-<i>facto</i> interface to the file system via the <a href="/wiki/Command_line.html" title="Command line">command line</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Sample usage">edit</a>]</div>
+<p><a name="Sample_usage" id="Sample_usage"></a></p>
+<h2>Sample usage</h2>
+<p>The following example demonstrates the output of the ls command given two different arguments:</p>
+<pre>
+$ pwd
+/home/fred
+$ ls -l
+drwxr--r--   1 fred  editors   4096  drafts
+-rw-r--r--   1 fred  editors  30405  edition-32
+-r-xr-xr-x   1 fred  fred      8460  edit
+$ ls -F
+drafts/ 
+edition-32 
+edit*
+</pre>
+<p>Here we can see that the user <tt>fred</tt> has a directory named <tt>drafts</tt>, a regular file called <tt>edition-32</tt>, and an executable named <tt>edit</tt> in his home directory. <tt>ls</tt> uses a special <a href="/wiki/File_system_permissions.html" title="File system permissions">permissions</a> notation that describes what the user, group, and "world" (everyone else) can do to the file. The first character of the permissions line indicates type:</p>
+<table class="wikitable">
+<tr>
+<th style="text-align: left">Symbol</th>
+<th style="text-align: left">Meaning</th>
+</tr>
+<tr>
+<td><tt>-</tt></td>
+<td>Plain file</td>
+</tr>
+<tr>
+<td><tt>b</tt></td>
+<td><a href="/wiki/Device_node#Block_devices.html" title="Device node">Block device</a></td>
+</tr>
+<tr>
+<td><tt>c</tt></td>
+<td><a href="/wiki/Device_node#Character_devices.html" title="Device node">Character device</a></td>
+</tr>
+<tr>
+<td><tt>d</tt></td>
+<td><a href="/wiki/Directory_%28file_systems%29.html" title="Directory (file systems)">Directory</a></td>
+</tr>
+<tr>
+<td><tt>l</tt></td>
+<td><a href="/wiki/Symbolic_link.html" title="Symbolic link">Symbolic link</a></td>
+</tr>
+<tr>
+<td><tt>p</tt> or <tt>=</tt></td>
+<td><a href="/wiki/Named_pipe.html" title="Named pipe">Named pipe</a> or FIFO</td>
+</tr>
+<tr>
+<td><tt>s</tt></td>
+<td><a href="/wiki/Socket#Computer_sockets.html" title="Socket">Socket</a></td>
+</tr>
+</table>
+<p>The rest of the line is split into blocks of three characters each, with the presence of a <tt>r</tt>, <tt>w</tt>, and <tt>x</tt> signifying the ability to read, write, or execute respectively. The first block represents the permissions for the user, the second for the group, and the third for world. For example, the user <tt>fred</tt> can read and write the <tt>edition-32</tt> file, but not execute it; members of the group <tt>editors</tt> can only read this file and not write or execute it, as can everyone else.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Options to ls">edit</a>]</div>
+<p><a name="Options_to_ls" id="Options_to_ls"></a></p>
+<h2>Options to ls</h2>
+<p><i>These options are guaranteed by the <a href="/wiki/Single_Unix_Specification.html" title="Single Unix Specification">Single Unix Specification</a>. Other Unix or Unix-like operating systems may provide extra options</i></p>
+<dl>
+<dd>-C: multi-column output sorted down columns</dd>
+<dd>-F: do not follow links in command line; append a '/' after each directory, a '*' after each executable, a '|' after each <a href="/wiki/FIFO.html" title="FIFO">FIFO</a>, and an '@' after each link.</dd>
+<dd>-H: display details about link pointers, not about the links specified on the command line</dd>
+<dd>-L: display details about link pointers, not about the links anywhere</dd>
+<dd>-R: act recursively</dd>
+<dd>-a: show hidden files ( i.e. files which begin with a dot) also</dd>
+<dd>-c: use last modified status information instead of last modified file when sorting</dd>
+<dd>-d: do not follow links; do not treat directories differently</dd>
+<dd>-f: force each argument as directory</dd>
+<dd>-g: do not follow links in command line; use long format, but omit owner</dd>
+<dd>-i: show file serial number</dd>
+<dd>-l: do not follow links in command line; use long format</dd>
+<dd>-m: list files separated by commas</dd>
+<dd>-n: show owner UID and GID information numerically</dd>
+<dd>-o: do not follow links in command line; use long format, but omit group</dd>
+<dd>-p: only append a '/' after directories</dd>
+<dd>-q: display nonprintable filename characters as '?'</dd>
+<dd>-r: reverse sort order</dd>
+<dd>-s: display block size</dd>
+<dd>-t: sort by time modified</dd>
+<dd>-u: use time of last access instead of time of last modification</dd>
+<dd>-x: multi-column output, sorted across columns</dd>
+<dd>-1: one entry per line</dd>
+</dl>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Chown.html" title="Chown">chown</a> – Unix command to change the owner of a file</li>
+<li><a href="/wiki/Chgrp.html" title="Chgrp">chgrp</a> – Unix command to change group of a file</li>
+<li><a href="/wiki/User_identifier_%28Unix%29.html" title="User identifier (Unix)">User ID</a></li>
+<li><a href="/wiki/Group_identifier_%28Unix%29.html" title="Group identifier (Unix)">Group ID</a></li>
+<li><tt><a href="/wiki/Dir_%28DOS_Command%29.html" title="Dir (DOS Command)">dir</a></tt> – <a href="/wiki/DOS.html" title="DOS">DOS</a> command that lists files, similar to <tt>ls</tt>.</li>
+<li><a href="/wiki/List_of_Unix_programs.html" title="List of Unix programs">List of Unix programs</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://wiki.linuxquestions.org/wiki/Ls"><tt>ls</tt></a> at the LinuxQuestions.org <a href="/wiki/Wiki.html" title="Wiki">wiki</a>.</li>
+<li><a  class="external text" title="http://minnie.tuhs.org/UnixTree/V5/usr/source/s1/ls.c.html">ls.c</a> source code of the AT&amp;T Version 5 UNIX source code.</li>
+<li><a  class="external text" title="http://www.opengroup.org/onlinepubs/009695399/utilities/ls.html"><tt>ls</tt></a> specified by the <a href="/wiki/Single_Unix_Specification.html" title="Single Unix Specification">Single Unix Specification</a></li>
+<li><a  class="external text" title="http://ftp.gnu.org/pub/gnu/coreutils/">GNU ls source code (as part of coreutils)</a></li>
+<li><a  class="external text" title="http://www.xmission.com/~comphope/unix/uls.htm">Computer Hope: Linux / UNIX, Information about the Linux / UNIX ls command.</a></li>
+<li><a  class="external text" title="http://www.linux-command.com/ls.html"><tt>ls command</tt></a> at the linux-command.com <a href="/wiki/Wiki.html" title="Wiki">wiki</a>.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Documentation">edit</a>]</div>
+<p><a name="Documentation" id="Documentation"></a></p>
+<h3>Documentation</h3>
+<ul>
+<li><a  class="external free" title="http://www.freebsd.org/cgi/man.cgi?query=ls&amp;apropos=0&amp;sektion=0&amp;manpath=FreeBSD+5.3-RELEASE+and+Ports&amp;format=html">http://www.freebsd.org/cgi/man.cgi?query=ls&amp;apropos=0&amp;sektion=0&amp;manpath=FreeBSD+5.3-RELEASE+and+Ports&amp;format=html</a> <tt>ls</tt>] man page (<a href="/wiki/FreeBSD.html" title="FreeBSD">FreeBSD</a>)</li>
+<li><a  class="external text" title="http://www.gnu.org/software/coreutils/manual/html_chapter/coreutils_10.html#SEC52"><tt>ls</tt></a> documentation (<a href="/wiki/GNU.html" title="GNU">GNU</a> ls)</li>
+<li><a  class="external text" title="http://www.openbsd.org/cgi-bin/man.cgi?query=ls"><tt>ls</tt></a> man page (<a href="/wiki/OpenBSD.html" title="OpenBSD">OpenBSD</a>)</li>
+</ul>
+<p><br /></p>
+<table align="center" class="toccolours" cellspacing="0" cellpadding="5" width="75%">
+<tr bgcolor="#CCCCFF">
+<td align="center" colspan="4" style="margin: 0; padding: 1px;"><b><a href="/wiki/Unix.html" title="Unix">Unix</a> <a href="/wiki/Command_line.html" title="Command line">command line</a> programs</b> (<i><a href="/wiki/List_of_Unix_programs.html" title="List of Unix programs">more</a></i>)  <span class="noprint plainlinksneverexpand" id="Tnavbar-nodiv" style="white-space: nowrap; font-size:xx-small;"><a  class="external text" title="http://en.wikipedia.org/wiki/Template:Unix_commands"><span style="color:#002bb8;" title="View this template.">view</span></a> • <a  class="external text" title="http://en.wikipedia.org/wiki/Template_talk:Unix_commands"><span style="color:#002bb8;" title="Discussion about this template.">talk</span></a> • <a  class="external text" title="http://en.wikipedia.org/w/index.php?title=Template:Unix_commands&amp;action=edit"><span style="color:#002bb8;" title="You can edit this template. Please use the preview button before saving.">edit</span></a></span> </td>
+</tr>
+<tr>
+<td style="padding-left: 2em; border-top: 1px solid #bbbbff;"><b>File and file system management:</b></td>
+<td style="border-top: 1px solid #bbbbff;" colspan="3"><a href="/wiki/Cat_%28Unix%29.html" title="Cat (Unix)">cat</a> | <a href="/wiki/Chdir.html" title="Chdir">chdir</a>/<a href="/wiki/Chdir.html" title="Chdir">cd</a> | <a href="/wiki/Chmod.html" title="Chmod">chmod</a> | <a href="/wiki/Chown.html" title="Chown">chown</a> | <a href="/wiki/Chgrp.html" title="Chgrp">chgrp</a> | <a href="/wiki/Cp_%28Unix%29.html" title="Cp (Unix)">cp</a> | <a href="/wiki/Du_%28Unix%29.html" title="Du (Unix)">du</a> | <a href="/wiki/Df_%28Unix%29.html" title="Df (Unix)">df</a> | <a href="/wiki/File_%28Unix%29.html" title="File (Unix)">file</a> | <a href="/wiki/Fsck.html" title="Fsck">fsck</a> | <a href="/wiki/Ln_%28Unix%29.html" title="Ln (Unix)">ln</a> | <a href="/wiki/Ls_%28Unix%29.html" title="Ls (Unix)">ls</a> | <a href="/wiki/Lsof.html" title="Lsof">lsof</a> | <a href="/wiki/Mkdir.html" title="Mkdir">mkdir</a> | <a href="/wiki/More_%28Unix%29.html" title="More (Unix)">more</a> | <a href="/wiki/Mount_%28Unix%29.html" title="Mount (Unix)">mount</a> | <a href="/wiki/Mv.html" title="Mv">mv</a> | <a href="/wiki/Pwd.html" title="Pwd">pwd</a> | <a href="/wiki/Rcp_%28Unix%29.html" title="Rcp (Unix)">rcp</a> | <a href="/wiki/Rm_%28Unix%29.html" title="Rm (Unix)">rm</a> | <a href="/wiki/Rmdir.html" title="Rmdir">rmdir</a> | <a href="/wiki/Split_%28Unix%29.html" title="Split (Unix)">split</a> | <a href="/wiki/Touch_%28Unix%29.html" title="Touch (Unix)">touch</a> | <a href="/wiki/Tree_%28Unix%29.html" title="Tree (Unix)">tree</a></td>
+</tr>
+<tr>
+<td style="padding-left: 2em; border-top: 1px solid #bbbbff;"><b>Process management:</b></td>
+<td style="border-top: 1px solid #bbbbff;" colspan="3"><a href="/wiki/Anacron.html" title="Anacron">anacron</a> | <a href="/wiki/At_%28Unix%29.html" title="At (Unix)">at</a> | <a href="/wiki/Chroot.html" title="Chroot">chroot</a> | <a href="/wiki/Crontab.html" title="Crontab">cron</a>/<a href="/wiki/Crontab.html" title="Crontab">crontab</a> | <a href="/wiki/Kill_%28Unix%29.html" title="Kill (Unix)">kill</a> | <a href="/wiki/Nice_%28Unix%29.html" title="Nice (Unix)">nice</a> | <a href="/wiki/Ps_%28Unix%29.html" title="Ps (Unix)">ps</a> | <a href="/wiki/Sleep_%28Unix%29.html" title="Sleep (Unix)">sleep</a> | <a href="/wiki/GNU_Screen.html" title="GNU Screen">screen</a> | <a href="/wiki/Time_%28Unix%29.html" title="Time (Unix)">time</a> | <a href="/wiki/Timex_%28Unix%29.html" title="Timex (Unix)">timex</a> | <a href="/wiki/Top_%28Unix%29.html" title="Top (Unix)">top</a> | <a href="/wiki/Nice_%28Unix%29.html" title="Nice (Unix)">renice</a> | <a href="/wiki/Wait.html" title="Wait">wait</a></td>
+</tr>
+<tr>
+<td style="padding-left: 2em; border-top: 1px solid #bbbbff;"><b>User Management/Environment:</b></td>
+<td style="border-top: 1px solid #bbbbff;" colspan="3"><a href="/wiki/Env.html" title="Env">env</a> | <a href="/wiki/Finger_protocol.html" title="Finger protocol">finger</a> | <a href="/wiki/Id_%28Unix%29.html" title="Id (Unix)">id</a> | <a href="/wiki/Locale.html" title="Locale">locale</a> | <a href="/wiki/Mesg.html" title="Mesg">mesg</a> | <a href="/wiki/Passwd.html" title="Passwd">passwd</a> | <a href="/wiki/Su_%28Unix%29.html" title="Su (Unix)">su</a> | <a href="/wiki/Sudo.html" title="Sudo">sudo</a> | <a href="/wiki/Uname.html" title="Uname">uname</a> | <a href="/wiki/Uptime.html" title="Uptime">uptime</a> | <a href="/wiki/W_%28Unix%29.html" title="W (Unix)">w</a> | <a href="/wiki/Wall_%28Unix%29.html" title="Wall (Unix)">wall</a> | <a href="/wiki/Who_%28Unix%29.html" title="Who (Unix)">who</a> | <a href="/wiki/Write_%28Unix%29.html" title="Write (Unix)">write</a></td>
+</tr>
+<tr>
+<td style="padding-left: 2em; border-top: 1px solid #bbbbff;"><b>Text processing:</b></td>
+<td style="border-top: 1px solid #bbbbff;" colspan="3"><a href="/wiki/Awk.html" title="Awk">awk</a> | <a href="/wiki/Cut_%28Unix%29.html" title="Cut (Unix)">cut</a> | <a href="/wiki/Diff.html" title="Diff">diff</a> | <a href="/wiki/Ex_%28Unix%29.html" title="Ex (Unix)">ex</a> | <a href="/wiki/Head_%28Unix%29.html" title="Head (Unix)">head</a> | <a href="/wiki/Iconv.html" title="Iconv">iconv</a> | <a href="/wiki/Join_%28Unix%29.html" title="Join (Unix)">join</a> | <a href="/wiki/Less_%28Unix%29.html" title="Less (Unix)">less</a> | <a href="/wiki/More_%28Unix%29.html" title="More (Unix)">more</a> | <a href="/wiki/NKF_Japanese_Encoder.html" title="NKF Japanese Encoder">nkf</a> | <a href="/wiki/Paste_%28Unix%29.html" title="Paste (Unix)">paste</a> | <a href="/wiki/Sed.html" title="Sed">sed</a> | <a href="/wiki/Sort_%28Unix%29.html" title="Sort (Unix)">sort</a> | <a href="/wiki/Tail_%28Unix%29.html" title="Tail (Unix)">tail</a> | <a href="/wiki/Tr_%28Unix%29.html" title="Tr (Unix)">tr</a> | <a href="/wiki/Uniq.html" title="Uniq">uniq</a> | <a href="/wiki/Wc_%28Unix%29.html" title="Wc (Unix)">wc</a> | <a href="/wiki/Xargs.html" title="Xargs">xargs</a> | <a href="/wiki/Perl.html" title="Perl">perl</a></td>
+</tr>
+<tr>
+<td style="padding-left: 2em; border-top: 1px solid #bbbbff;"><b><a href="/wiki/Shell_%28computing%29.html" title="Shell (computing)">Shell</a> programming:</b></td>
+<td style="border-top: 1px solid #bbbbff; border-right: 1px solid #bbbbff;"><a href="/wiki/Echo_%28computing%29.html" title="Echo (computing)">echo</a> | <a href="/wiki/Expr_%28Unix%29.html" title="Expr (Unix)">expr</a> | <a href="/wiki/Unset.html" title="Unset">unset</a></td>
+<td style="padding-left: 2em; border-top: 1px solid #bbbbff;"><b>Printing:</b></td>
+<td style="border-top: 1px solid #bbbbff;"><a href="/wiki/Lp_%28Unix%29.html" title="Lp (Unix)">lp</a></td>
+</tr>
+<tr>
+<td align="center" style="vertical-align: top; border-top: 1px solid #bbbbff; border-right: 1px solid #bbbbff;"><b>Communications:</b><br />
+<span style="white-space: nowrap"><a href="/wiki/Inetd.html" title="Inetd">inetd</a> | <a href="/wiki/Netstat.html" title="Netstat">netstat</a> | <a href="/wiki/Ping_%28Unix%29.html" title="Ping (Unix)">ping</a> | <a href="/wiki/Rlogin.html" title="Rlogin">rlogin</a> | <a href="/wiki/Traceroute.html" title="Traceroute">traceroute</a></span></td>
+<td align="center" style="border-top: 1px solid #bbbbff; border-right: 1px solid #bbbbff;"><b>Searching:</b><br />
+<a href="/wiki/Find.html" title="Find">find</a> | <a href="/wiki/Grep.html" title="Grep">grep</a> | <a href="/wiki/Strings_%28Unix%29.html" title="Strings (Unix)">strings</a></td>
+<td align="center" style="border-top: 1px solid #bbbbff;" colspan="2"><b>Miscellaneous:</b><br />
+<a href="/wiki/Banner_%28Unix%29.html" title="Banner (Unix)">banner</a> | <a href="/wiki/Bc_%28Unix%29.html" title="Bc (Unix)">bc</a> | <a href="/wiki/Cal_%28Unix%29.html" title="Cal (Unix)">cal</a> | <a href="/wiki/Unix_manual.html" title="Unix manual">man</a> | <a href="/wiki/Yes_%28Unix%29.html" title="Yes (Unix)">yes</a></td>
+</tr>
+</table>
+
+<!-- 
+Pre-expand include size: 6544 bytes
+Post-expand include size: 5885 bytes
+Template argument size: 292 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:158682-0!1!0!default!!en!2 and timestamp 20060910145935 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Unix software">Unix software</a></span> | <span dir='ltr'><a  title="Category:Standard Unix programs">Standard Unix programs</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Ls.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-ar"><a >العربية</a></li>
+				<li class="interwiki-ca"><a >Català</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-ko"><a >한국어</a></li>
+				<li class="interwiki-nl"><a >Nederlands</a></li>
+				<li class="interwiki-pt"><a >Português</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+				<li class="interwiki-sv"><a >Svenska</a></li>
+				<li class="interwiki-zh"><a >中文</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 08:53, 8 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv40 in 0.099 secs. --></body></html>

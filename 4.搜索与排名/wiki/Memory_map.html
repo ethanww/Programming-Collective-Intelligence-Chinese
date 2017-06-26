@@ -1,0 +1,231 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Memory-mapped I/O,16-bit,32-bit,64-bit,8-bit,Address bus,Assembly language,Bank switching,Byte,Central processing unit,Commodore 64" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Memory-mapped I/O - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Memory-mapped_I/O";
+			var wgTitle = "Memory-mapped I/O";
+			var wgArticleId = 335157;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Memory-mapped I/O</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub">(Redirected from <a  title="Memory map">Memory map</a>)</div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<table class="messagebox merge">
+<tr>
+<td align="left"><a  class="image" title="Image:Split-arrows.gif"><img src="http://upload.wikimedia.org/wikipedia/commons/e/e0/Split-arrows.gif" alt="Image:Split-arrows.gif" width="60" height="20" longdesc="/wiki/Image:Split-arrows.gif" /></a></td>
+<td align="center">It has been suggested that this article be split into multiple articles accessible from a <a  title="Wikipedia:Disambiguation">disambiguation page</a>. (<a  title="Talk:Memory-mapped I/O">Discuss</a>)</td>
+</tr>
+</table>
+<div class="messagebox merge">
+<div class="floatleft"><span><a  class="image" title=""><img src="http://upload.wikimedia.org/wikipedia/commons/a/ae/Mergefrom.gif" alt="" width="50" height="20" longdesc="/wiki/Image:Mergefrom.gif" /></a></span></div>
+It has been suggested that <i><a href="/wiki/Memory_mapping.html" title="Memory mapping">Memory mapping</a></i> be <a  title="Wikipedia:Merging and moving pages">merged</a> into this article or section. (<a  title="Talk:Memory-mapped I/O">Discuss</a>)</div>
+<dl>
+<dd><i>For more generic meanings of input/output port, see <a href="/wiki/Computer_port_%28hardware%29.html" title="Computer port (hardware)">Computer port (hardware)</a>.</i></dd>
+</dl>
+<p><b>Memory-mapped I/O</b> (<b>MMIO</b>) and <b>port I/O</b> (also called <b>port-mapped I/O</b> or <b>PMIO</b>) are two complementary methods of performing <a href="/wiki/Input/output.html" title="Input/output">input/output</a> between the <a href="/wiki/Central_processing_unit.html" title="Central processing unit">CPU</a> and I/O devices in a <a href="/wiki/Computer.html" title="Computer">computer</a>. Another method is using dedicated I/O processors (<b>channels</b>, used in <a href="/wiki/IBM.html" title="IBM">IBM</a> <a href="/wiki/Mainframe.html" title="Mainframe">mainframe</a> computers).</p>
+<p>Memory-mapped I/O uses the same bus to address both memory and I/O devices, and the CPU instructions used to read and write to memory are also used in accessing I/O devices. In order to accommodate the I/O devices, areas of CPU addressable space must be reserved for I/O rather than memory. This does not have to be permanent, for example the <a href="/wiki/Commodore_64.html" title="Commodore 64">Commodore 64</a> could <a href="/wiki/Bank_switching.html" title="Bank switching">bank switch</a> between its I/O devices and regular memory. The I/O devices monitor the CPU's <a href="/wiki/Address_bus.html" title="Address bus">address bus</a> and respond to any CPU access of their assigned address space, mapping the address to their <a href="/wiki/Hardware_register.html" title="Hardware register">hardware registers</a>.</p>
+<p>Port-mapped I/O uses a special class of CPU instructions specifically for performing I/O. This is generally found on <a href="/wiki/List_of_Intel_microprocessors.html" title="List of Intel microprocessors">Intel microprocessors</a>, specifically the IN and OUT instructions which can read and write a single byte to an I/O device. I/O devices have a separate address space from general memory, either accomplished by an extra "I/O" pin on the CPU's physical interface, or an entire <a href="/wiki/Computer_bus.html" title="Computer bus">bus</a> dedicated to I/O.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Relative merits of the two I/O methods">edit</a>]</div>
+<p><a name="Relative_merits_of_the_two_I.2FO_methods" id="Relative_merits_of_the_two_I.2FO_methods"></a></p>
+<h2>Relative merits of the two I/O methods</h2>
+<p>The main advantage of using port-mapped I/O is on CPUs with a limited addressing capability. Because port-mapped I/O separates I/O access from memory access, the full address space can be used for memory. It is also obvious to a person reading an <a href="/wiki/Assembly_language.html" title="Assembly language">assembly language</a> program listing when I/O is being performed, due to the special instructions that can only be used for that purpose.</p>
+<p>The advantage of using memory mapped I/O is that, by discarding the extra complexity that port I/O brings, a CPU requires less internal logic and is thus cheaper, faster and easier to build; this follows the basic tenets of <a href="/wiki/RISC.html" title="RISC">reduced instruction set computing</a>. As <a href="/wiki/16-bit.html" title="16-bit">16-bit</a> CPU architectures have become obsolete and replaced with <a href="/wiki/32-bit.html" title="32-bit">32-bit</a> and <a href="/wiki/64-bit.html" title="64-bit">64-bit</a> architectures in general use, reserving space on the memory map for I/O devices is no longer a problem. The fact that regular memory instructions are used to address devices also means that all of the CPU's addressing modes are available for the I/O as well as the memory.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Example">edit</a>]</div>
+<p><a name="Example" id="Example"></a></p>
+<h2>Example</h2>
+<p>Consider a simple system built around an <a href="/wiki/8-bit.html" title="8-bit">8-bit</a> <a href="/wiki/Microprocessor.html" title="Microprocessor">microprocessor</a>. Such a CPU might provide 16-bit address lines, allowing it to address up to 64K <a href="/wiki/Byte.html" title="Byte">bytes</a> (65,535 bytes) of memory. On such a system, perhaps the first 32K of address space would be allotted to <a href="/wiki/Random_access_memory.html" title="Random access memory">Random access memory</a> (RAM), a further 16K to <a href="/wiki/Read_only_memory.html" title="Read only memory">Read only memory</a> (ROM) and the remainder to a variety of other devices such as timers, counters, video display chips, sound generating devices, and so forth. The hardware of the system is arranged so that devices on the address bus will only respond to particular addresses which are intended for them; all other addreses are ignored. This is the job of the address decoding circuitry, and it is this that establishes the memory map of the system. Some very simple decoding circuitry might allow a device to respond to several different addresses, effectively creating virtual copies of the device at different places in the memory map. Of course there is only one real device, so there is no particular advantage in doing this, except to simplify the decoder. The decoding itself may be programmable, allowing the system to reconfigure its own memory map as required. This is commonly done.</p>
+<p>Thus we might end up with a memory map like so:</p>
+<table border="1" cellpadding="1" cellspacing="0" style="font-size: 85%; border: gray solid 1px; border-collapse: collapse; text-align: center; width: 100%">
+<tr style="background: #ececec;">
+<th>Device</th>
+<th>Address range</th>
+<th>Size</th>
+</tr>
+<tr>
+<th>RAM</th>
+<th>$0000 - $7FFF</th>
+<th>32K</th>
+</tr>
+<tr>
+<th>ROM</th>
+<th>$8000 - $BFFF</th>
+<th>16K</th>
+</tr>
+<tr>
+<th>General purpose I/O</th>
+<th>$C000 - $C0FF</th>
+<th>256 bytes</th>
+</tr>
+<tr>
+<th>Sound controller</th>
+<th>$D000 - $D0FF</th>
+<th>256 bytes</th>
+</tr>
+<tr>
+<th>Video controller/text-mapped display RAM</th>
+<th>$E000 - $E7FF</th>
+<th>2048 bytes</th>
+</tr>
+</table>
+<p><br />
+Note that this memory map contains gaps; that is also quite common. Addresses here are in <a href="/wiki/Hexadecimal.html" title="Hexadecimal">hexadecimal</a> notation.</p>
+<p>For example if the fourth register of the video controller sets the background colour of the screen, the CPU can set this colour by writing a value to the memory location $E003 using its standard memory write instruction. Using the same method, characters can be displayed on a screen by writing character values into a special area of RAM within the video controller. Prior to bit-mapped displays, this was a popular technique for computer video displays.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Mmap.html" title="Mmap">mmap</a></li>
+<li><a href="/wiki/PDP-11.html" title="PDP-11">PDP-11</a> -- An early example of a computer architecture using memory-mapped I/O</li>
+<li><a href="/wiki/PDP-8.html" title="PDP-8">PDP-8</a> and <a href="/wiki/Data_General_Nova.html" title="Data General Nova">Nova</a> -- Two early examples using port-mapped I/O</li>
+<li><a href="/wiki/Unibus.html" title="Unibus">Unibus</a> -- The I/O bus used by the PDP-11</li>
+<li>Java 1.4's <a href="/wiki/New_I/O.html" title="New I/O">New I/O</a> (<a href="/wiki/New_I/O.html" title="New I/O">NIO</a>) provides memory-mapped I/O.</li>
+<li><a  class="external text" title="http://www.cs.nmsu.edu/~pfeiffer/classes/473/notes/io.html">University lecture notes about computer I/O</a></li>
+</ul>
+
+<!-- 
+Pre-expand include size: 1443 bytes
+Post-expand include size: 694 bytes
+Template argument size: 103 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:335157-0!1!0!default!!en!2 and timestamp 20060910152225 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Articles to be split">Articles to be split</a></span> | <span dir='ltr'><a  title="Category:Articles to be merged">Articles to be merged</a></span> | <span dir='ltr'><a  title="Category:Input/Output">Input/Output</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Memory-mapped_I/O.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 16:16, 29 July 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv96 in 0.310 secs. --></body></html>

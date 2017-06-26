@@ -1,0 +1,520 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Communicating sequential processes,1978,1985,Actor model,Actor model and process calculi,Alef programming language,Algebraic semantics,Ambient calculus,Arbiter,Bill Roscoe,C" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Communicating sequential processes - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Communicating_sequential_processes";
+			var wgTitle = "Communicating sequential processes";
+			var wgArticleId = 247370;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Communicating sequential processes</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub">(Redirected from <a  title="Communicating Sequential Processes">Communicating Sequential Processes</a>)</div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>In <a href="/wiki/Computer_science.html" title="Computer science">computer science</a>, <b>Communicating Sequential Processes</b> (<b>CSP</b>) is a <a href="/wiki/Specification_language.html" title="Specification language">formal language</a> for describing <a href="/wiki/Pattern.html" title="Pattern">patterns</a> of <a href="/wiki/Interaction.html" title="Interaction">interaction</a> in <a href="/wiki/Concurrent_systems.html" title="Concurrent systems">concurrent systems</a>. It is a member of the family of mathematical theories of concurrency known as process algebras, or <a href="/wiki/Process_calculus.html" title="Process calculus">process calculi</a>. CSP was first described in a <a href="/wiki/1978.html" title="1978">1978</a> paper<sup id="_ref-0" class="reference"><a  title="">[1]</a></sup> by <a href="/wiki/C._A._R._Hoare.html" title="C. A. R. Hoare">C. A. R. Hoare</a>, but has since evolved substantially. CSP has been practically applied in industry as a tool for <a href="/wiki/Formal_specification.html" title="Formal specification">specifying and verifying</a> the concurrent aspects of a variety of different systems (such as the T9000 <a href="/wiki/Transputer.html" title="Transputer">Transputer</a><sup id="_ref-barrett_0" class="reference"><a  title="">[2]</a></sup>, and a secure ecommerce system <sup id="_ref-hall_0" class="reference"><a  title="">[3]</a></sup>). The theory of CSP is still the subject of active research, including work to increase its range of practical applicability (e.g. increasing the scale of the systems that can be tractably analyzed<sup id="_ref-1" class="reference"><a  title="">[4]</a></sup>). CSP was influential in the development of the <a href="/wiki/Occam_programming_language.html" title="Occam programming language">occam</a> programming language <sup id="_ref-2" class="reference"><a  title="">[5]</a></sup><sup id="_ref-roscoe_0" class="reference"><a  title="">[6]</a></sup>.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">History</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Informal description</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">2.1</span> <span class="toctext">Primitives</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.2</span> <span class="toctext">Algebraic operators</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">2.3</span> <span class="toctext">Examples</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Formal definition</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">3.1</span> <span class="toctext">Syntax</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">3.2</span> <span class="toctext">Formal semantics</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Applications</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Tools</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">Criticisms</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">6.1</span> <span class="toctext">Synchronous channels</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">6.2</span> <span class="toctext">Lack of mobility</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">Related formalisms</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">8</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">9</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">10</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: History">edit</a>]</div>
+<p><a name="History" id="History"></a></p>
+<h2>History</h2>
+<p>The version of CSP presented in Hoare's original 1978 paper was essentially a concurrent programming language rather than a process calculus, and did not possess a mathematically defined semantics<sup id="_ref-hoare_0" class="reference"><a  title="">[7]</a></sup>. It also suffered from a number of limitations, including an inability to represent <a href="/wiki/Unbounded_nondeterminism.html" title="Unbounded nondeterminism">unbounded nondeterminism</a>. Subsequently, Hoare, <a  class="new" title="Stephen Brookes">Stephen Brookes</a>, and <a href="/wiki/Bill_Roscoe.html" title="Bill Roscoe">A. W. Roscoe</a> developed and refined the <i>theory</i> of CSP into its modern form<sup id="_ref-3" class="reference"><a  title="">[8]</a></sup>. The approach taken in developing the theoretical version of CSP was heavily influenced by <a href="/wiki/Robin_Milner.html" title="Robin Milner">Robin Milner</a>'s work on the <a href="/wiki/Calculus_of_Communicating_Systems.html" title="Calculus of Communicating Systems">Calculus of Communicating Systems</a> (CCS), and vice versa.</p>
+<p>The theoretical version of CSP was presented in Hoare's book <i>Communicating Sequential Processes</i><sup id="_ref-hoare_1" class="reference"><a  title="">[7]</a></sup>, which was published in <a href="/wiki/1985.html" title="1985">1985</a>. In May 2005, that book was still the <a  class="external text" title="http://citeseer.ist.psu.edu/articles.html">third-most cited</a> <a href="/wiki/Computer_science.html" title="Computer science">computer science</a> reference of all time according to <a href="/wiki/Citeseer.html" title="Citeseer">Citeseer</a> (albeit an unreliable source due to the nature of its sampling). The theory of CSP has undergone a few minor changes since the publication of Hoare's book. Most of these changes were motivated by the advent of automated tools for CSP process analysis and verification. The definitive text on modern CSP is Roscoe's <i>The Theory and Practice of Concurrency</i><sup id="_ref-roscoe_1" class="reference"><a  title="">[6]</a></sup>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Informal description">edit</a>]</div>
+<p><a name="Informal_description" id="Informal_description"></a></p>
+<h2>Informal description</h2>
+<p>As its name suggests, CSP allows the description of systems in terms of component processes that operate independently, and interact with each other solely through <a href="/wiki/Message_passing.html" title="Message passing">message-passing</a> communication. However, the <i>"Sequential"</i> part of the CSP name is now something of a misnomer, since modern CSP allows component processes to be defined both as sequential processes, and as the parallel composition of more primitive processes. The relationships between different processes, and the way each process communicates with its environment, are described using various <a href="/wiki/Process_calculi.html" title="Process calculi">process algebraic</a> operators. Using this algebraic approach, quite complex process descriptions can be easily constructed from a few primitive elements.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Primitives">edit</a>]</div>
+<p><a name="Primitives" id="Primitives"></a></p>
+<h3>Primitives</h3>
+<p>CSP provides two classes of primitives in its process algebra:</p>
+<ul>
+<li><b>Events</b> – represent communications or interactions; assumed to be indivisible and instantaneous
+<ul>
+<li>May be atomic names (e.g. <span class="texhtml"><i>o</i><i>n</i></span>, <span class="texhtml"><i>o</i><i>f</i><i>f</i></span>), compound names (e.g. <span class="texhtml"><i>v</i><i>a</i><i>l</i><i>v</i><i>e</i>.<i>o</i><i>p</i><i>e</i><i>n</i></span>, <span class="texhtml"><i>v</i><i>a</i><i>l</i><i>v</i><i>e</i>.<i>c</i><i>l</i><i>o</i><i>s</i><i>e</i></span>), or input/output events (e.g. <span class="texhtml"><i>m</i><i>o</i><i>u</i><i>s</i><i>e</i>?<i>x</i><i>y</i></span>, <span class="texhtml"><i>s</i><i>c</i><i>r</i><i>e</i><i>e</i><i>n</i>!<i>b</i><i>i</i><i>t</i><i>m</i><i>a</i><i>p</i></span>)</li>
+</ul>
+</li>
+<li><b>Primitive processes</b> – represent fundamental behaviors
+<ul>
+<li>Examples include <span class="texhtml"><i>S</i><i>T</i><i>O</i><i>P</i></span> (the process that communicates nothing, also called <a href="/wiki/Deadlock.html" title="Deadlock">deadlock</a>), and <span class="texhtml"><i>S</i><i>K</i><i>I</i><i>P</i></span> (which represents successful termination)</li>
+</ul>
+</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Algebraic operators">edit</a>]</div>
+<p><a name="Algebraic_operators" id="Algebraic_operators"></a></p>
+<h3>Algebraic operators</h3>
+<p>CSP has a wide range of algebraic operators. The principal ones are:</p>
+<ul>
+<li><b>Prefix</b> – the prefix operator combines an event and a process to produce a new process. For example,</li>
+</ul>
+<dl>
+<dd>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/c/1/d/c1d63eda3548581e0eb878875b4c1678.png" alt="a \rightarrow P" /></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>is the process which is willing to communicate <span class="texhtml"><i>a</i></span> with its environment, and, after <span class="texhtml"><i>a</i></span>, behaves like the process <span class="texhtml"><i>P</i></span>.</dd>
+</dl>
+<ul>
+<li><b>Deterministic Choice</b> – the deterministic (or external) choice operator allows the future evolution of a process to be defined as a choice between two component processes, and allows the environment to resolve the choice by communicating an initial event for one of the processes. For example,</li>
+</ul>
+<dl>
+<dd>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/f/6/2/f625c45b1ff455e45b0cf3983f4755ff.png" alt="\left(a \rightarrow P\right) \Box \left(b \rightarrow Q\right)" /></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>is the process which is willing to communicate the initial events <span class="texhtml"><i>a</i></span> and <span class="texhtml"><i>b</i></span>, and subsequently behaves as either <span class="texhtml"><i>P</i></span> or <span class="texhtml"><i>Q</i></span> depending on which initial event the environment chooses to communicate. If both <span class="texhtml"><i>a</i></span> and <span class="texhtml"><i>b</i></span> were communicated simultaneously the choice would be resolved nondeterministically.</dd>
+</dl>
+<ul>
+<li><b>Nondeterministic Choice</b> – the nondeterministic (or internal) choice operator allows the future evolution of a process to be defined as a choice between two component processes, but does not allow the environment any control over which of the component processes will be selected. For example,</li>
+</ul>
+<dl>
+<dd>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/a/9/e/a9e05e600da6adac1885adffb9129f25.png" alt="\left(a \rightarrow P\right) \sqcap \left(b \rightarrow Q\right)" /></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>can behave like either <img class='tex' src="http://upload.wikimedia.org/math/4/7/d/47de27d80c3b11427fbe9406a35b7c88.png" alt="\left(a \rightarrow P\right)" /> or <img class='tex' src="http://upload.wikimedia.org/math/4/e/3/4e3b12ac35f69859b1f779e1af3a473c.png" alt="\left(b \rightarrow Q\right)" />. It can refuse to accept <span class="texhtml"><i>a</i></span> or <span class="texhtml"><i>b</i></span>, and is only obliged to communicate if the environment offers both <span class="texhtml"><i>a</i></span> and <span class="texhtml"><i>b</i></span>. Nondeterminism can be inadvertently introduced into a nominally deterministic choice if the initial events of both sides of the choice are identical. So, for example,</dd>
+</dl>
+<dl>
+<dd>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/7/e/6/7e659c49ef9d2883561be767fb4b699c.png" alt="\left(a \rightarrow a \rightarrow STOP\right) \Box \left(a \rightarrow b \rightarrow STOP\right)" /></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>is equivalent to</dd>
+</dl>
+<dl>
+<dd>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/6/1/7/6175a7ad7ff841a9fb657d282c17d633.png" alt="a \rightarrow \left(\left(a \rightarrow STOP\right) \sqcap \left(b \rightarrow STOP\right)\right)" /></dd>
+</dl>
+</dd>
+</dl>
+<ul>
+<li><b>Interleaving</b> – the interleaving operator represents completely independent concurrent activity. The process</li>
+</ul>
+<dl>
+<dd>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/f/7/6/f765edd22d3bae51e329d62031473d76.png" alt="P \left\vert\left\vert\right\vert\right. Q" /></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>behaves as both <span class="texhtml"><i>P</i></span> and <span class="texhtml"><i>Q</i></span> simultaneously. The events from both processes are arbitrarily interleaved in time.</dd>
+</dl>
+<ul>
+<li><b>Interface Parallel</b> – the interface parallel operator represents concurrent activity that requires synchronization between the component processes – any event in the interface set can only occur when <i>all</i> component processes are able to engage in that event. For example, the process</li>
+</ul>
+<dl>
+<dd>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/3/b/a/3ba4a91e17c0a2e2953fad6c511f98bc.png" alt="P \left\vert\left[ \left\{ a \right\} \right]\right\vert Q" /></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>requires that <span class="texhtml"><i>P</i></span> and <span class="texhtml"><i>Q</i></span> must both be able to perform event <span class="texhtml"><i>a</i></span> before that event can occur. So, for example, the process</dd>
+</dl>
+<dl>
+<dd>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/1/7/e/17ed4c6537ad1f18a44333e330403a2b.png" alt="\left(a \rightarrow P\right) \left\vert\left[ \left\{ a \right\} \right]\right\vert \left(a \rightarrow Q\right)" /></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>can engage in event <span class="texhtml"><i>a</i></span>, and become the process</dd>
+</dl>
+<dl>
+<dd>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/3/b/a/3ba4a91e17c0a2e2953fad6c511f98bc.png" alt="P \left\vert\left[ \left\{ a \right\} \right]\right\vert Q" /></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>while</dd>
+</dl>
+<dl>
+<dd>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/a/f/2/af2882b9e28fef2689bb1cd8e481db46.png" alt="\left (a \rightarrow P\right ) \left\vert\left[ \left\{ a \right\} \right]\right\vert \left(b \rightarrow Q\right)" /></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>will simply deadlock.</dd>
+</dl>
+<ul>
+<li><b>Hiding</b> – the hiding operator provides a way to abstract processes, by making some events unobservable. A trivial example of hiding is</li>
+</ul>
+<dl>
+<dd>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/d/a/c/dac9323962352b263b13956619b5e258.png" alt="\left(a \rightarrow P\right) \setminus \left\{ a \right\}" /></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>which, assuming that the event <span class="texhtml"><i>a</i></span> doesn't appear in <span class="texhtml"><i>P</i></span>, simply reduces to</dd>
+</dl>
+<dl>
+<dd>
+<dl>
+<dd><span class="texhtml"><i>P</i></span></dd>
+</dl>
+</dd>
+</dl>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Examples">edit</a>]</div>
+<p><a name="Examples" id="Examples"></a></p>
+<h3>Examples</h3>
+<p>One of the archetypal CSP examples is an abstract <a href="/wiki/Representation.html" title="Representation">representation</a> of a chocolate vending machine, and its interactions with a person wishing to buy some chocolate. This vending machine might be able to carry out two different events, “coin” and “choc” which represent the insertion of payment and the delivery of a chocolate respectively. A machine which demands payment before offering a chocolate can be written as:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/5/2/6/526f37658b4d000051e1aabf18b02de3.png" alt="VendingMachine = coin \rightarrow choc \rightarrow STOP" /></dd>
+</dl>
+<p>A person who might choose to use a coin or card to make payments could be modelled as:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/a/3/c/a3c34074afd0001ce2158e89d8aa097e.png" alt="Person = (coin \rightarrow STOP) \Box (card \rightarrow STOP)" /></dd>
+</dl>
+<p>These two processes can be put in parallel, so that they can interact with each other. The behaviour of the composite process depends on the events that the two component processes must synchronise on. Thus,</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/3/3/3/333a70cf5e110ce80c9fc14ff5e563a8.png" alt="VendingMachine \left\vert\left[\left\{ coin, choc \right\}\right]\right\vert Person \equiv coin \rightarrow choc \rightarrow STOP" /></dd>
+</dl>
+<p>whereas if <a href="/wiki/Synchronization.html" title="Synchronization">synchronization</a> was only required on “coin”, we would obtain</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/c/0/1/c01f33d345b7fb96886f4fb0260a8664.png" alt="VendingMachine \left\vert\left[\left\{ coin \right\}\right]\right\vert Person \equiv \left (coin \rightarrow choc \rightarrow STOP\right ) \Box \left (card \rightarrow STOP\right )" /></dd>
+</dl>
+<p>If we abstract this latter composite process by hiding the “coin” and “card” events, i.e.</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/0/7/c/07c63e7e943b1d8c332895118a711439.png" alt="\left (\left (coin \rightarrow choc \rightarrow STOP\right ) \Box \left (card \rightarrow STOP\right )\right ) \setminus \left\{coin, card\right\}" /></dd>
+</dl>
+<p>we get the nondeterministic process</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/f/6/0/f600107f1565d4a69e861bd3d83b102b.png" alt="\left (choc \rightarrow STOP\right ) \sqcap STOP" /></dd>
+</dl>
+<p>This is a process which either offers a “choc” event and then stops, or just stops. In other words, if we treat the abstraction as an external view of the system (e.g., someone who does not see the <a href="/wiki/Decision.html" title="Decision">decision</a> reached by the <a href="/wiki/Person.html" title="Person">person</a>), <a href="/wiki/Nondeterminism.html" title="Nondeterminism">nondeterminism</a> has been introduced.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Formal definition">edit</a>]</div>
+<p><a name="Formal_definition" id="Formal_definition"></a></p>
+<h2>Formal definition</h2>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Syntax">edit</a>]</div>
+<p><a name="Syntax" id="Syntax"></a></p>
+<h3>Syntax</h3>
+<p>The syntax of CSP defines the “legal” ways in which processes and events may be combined. Let <span class="texhtml"><i>e</i></span> be an event, and <span class="texhtml"><i>X</i></span> be a set of events. Then the basic <a href="/wiki/Syntax.html" title="Syntax">syntax</a> of CSP can be defined as:</p>
+<dl>
+<dd><img class='tex' src="http://upload.wikimedia.org/math/b/8/c/b8c566e10424b560e451b220494fa300.png" alt="\begin{matrix} Proc &amp;&#160;::= &amp; STOP &amp; \; \\ &amp;|&amp; SKIP &amp; \; \\ &amp;|&amp; e \rightarrow Proc &amp; (prefixing)\\ &amp;|&amp; Proc \;\Box\; Proc &amp; (external \; choice)\\ &amp;|&amp; Proc \;\sqcap\; Proc &amp; (nondeterministic \; choice)\\ &amp;|&amp; Proc \;|||\; Proc &amp; (interleaving) \\ &amp;|&amp; Proc \;|[ \{ X \} ]| \;Proc &amp; (interface \; parallel)\\ &amp;|&amp; Proc \setminus X &amp; (hiding)\\ &amp;|&amp; Proc&#160;; Proc &amp; (sequential \; composition)\\ &amp;|&amp; \mathrm{if} \; b \; \mathrm{then} \; Proc\; \mathrm{else}\; Proc &amp; (boolean \; conditional)\\ &amp;|&amp; Proc \;\triangleright\; Proc &amp; (timeout)\\ &amp;|&amp; Proc \;\triangle\; Proc &amp; (interrupt)  \end{matrix}" /></dd>
+</dl>
+<p>Note that, in the interests of brevity, the syntax presented above omits the <img class='tex' src="http://upload.wikimedia.org/math/1/5/5/15541a1efdcb2cadeea1987b15f71ca0.png" alt="\mathbf{div}" /> process, which represents <a  class="new" title="Divergence (computer science)">divergence</a>, as well as various operators such as alphabetized parallel, piping, and indexed choices.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Formal semantics">edit</a>]</div>
+<p><a name="Formal_semantics" id="Formal_semantics"></a></p>
+<h3>Formal semantics</h3>
+<p>CSP has been imbued with several different <a href="/wiki/Semantics#In_mathematics_and_computer_science.html" title="Semantics">formal semantics</a>, which define the <i>meaning</i> of syntactically correct CSP expressions. The theory of CSP includes mutually consistent <a href="/wiki/Denotational_semantics.html" title="Denotational semantics">denotational semantics</a>, <a href="/wiki/Algebraic_semantics.html" title="Algebraic semantics">algebraic semantics</a>, and <a href="/wiki/Operational_semantics.html" title="Operational semantics">operational semantics</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Applications">edit</a>]</div>
+<p><a name="Applications" id="Applications"></a></p>
+<h2>Applications</h2>
+<div class="boilerplate metadata" id="stub"><a  class="image" title=""><img src="http://upload.wikimedia.org/wikipedia/en/thumb/6/6a/Wiki_letter_w.png/35px-Wiki_letter_w.png" alt="" width="35" height="35" longdesc="/wiki/Image:Wiki_letter_w.png" /></a><i>This section is a <a  title="Wikipedia:Perfect stub article">stub</a>. You can <a  title="Wikipedia:Stub">help</a> by <span class="plainlinks"><a  class="external text" title="http://en.wikipedia.org/w/index.php?title=Communicating_sequential_processes&amp;action=edit">adding to it</a></span>.</i></div>
+<ul>
+<li>Software design</li>
+<li>Hardware design</li>
+<li>Security protocol analysis</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Tools">edit</a>]</div>
+<p><a name="Tools" id="Tools"></a></p>
+<h2>Tools</h2>
+<div class="boilerplate metadata" id="stub"><a  class="image" title=""><img src="http://upload.wikimedia.org/wikipedia/en/thumb/6/6a/Wiki_letter_w.png/35px-Wiki_letter_w.png" alt="" width="35" height="35" longdesc="/wiki/Image:Wiki_letter_w.png" /></a><i>This section is a <a  title="Wikipedia:Perfect stub article">stub</a>. You can <a  title="Wikipedia:Stub">help</a> by <span class="plainlinks"><a  class="external text" title="http://en.wikipedia.org/w/index.php?title=Communicating_sequential_processes&amp;action=edit">adding to it</a></span>.</i></div>
+<p>Over the years, a number of tools for analyzing and understanding systems described using CSP have been produced. Early tool implementations used a variety of machine-readable syntaxes for CSP, making input files written for different tools incompatible However, most CSP tools have now standardized on the machine-readable dialect of CSP devised by Bryan Scattergood, sometimes referred to as CSP<sub><i>M</i></sub><sup id="_ref-4" class="reference"><a  title="">[9]</a></sup>. The CSP<sub><i>M</i></sub> dialect of CSP possesses a formally defined <a href="/wiki/Operational_semantics.html" title="Operational semantics">operational semantics</a>, which includes an embedded <a href="/wiki/Functional_programming_language.html" title="Functional programming language">functional programming language</a>.</p>
+<p>The most well-known CSP tool is probably <i>Failures/Divergence Refinement 2</i> (<i>FDR2</i>), which is a commercial product developed by Formal Systems Europe Ltd. FDR2 is often described as a <a href="/wiki/Model_checker.html" title="Model checker">model checker</a>, but is technically a <i>refinement</i> checker, in that it converts two CSP process expressions into labelled transition systems, and then determines whether one of the processes is a refinement of the other within some specified semantic model (traces, failures, or failures/divergence)<sup id="_ref-5" class="reference"><a  title="">[10]</a></sup>.</p>
+<p>Other CSP tools include</p>
+<ul>
+<li>ProBE</li>
+<li>ARC</li>
+<li>Casper</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Criticisms">edit</a>]</div>
+<p><a name="Criticisms" id="Criticisms"></a></p>
+<h2>Criticisms</h2>
+<div class="messagebox cleanup metadata">This article or section does not cite its <b><a  title="Wikipedia:Citing sources">references or sources</a>.</b><br />
+<small>You can <a  title="Wikipedia:WikiProject Fact and Reference Check">help</a> Wikipedia by introducing appropriate citations.</small></div>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Synchronous channels">edit</a>]</div>
+<p><a name="Synchronous_channels" id="Synchronous_channels"></a></p>
+<h3>Synchronous channels</h3>
+<p>Some people believe that the decision to use synchronous channels to represent communication in CSP introduces problems. Two specific objections to synchronous channels are typically raised:</p>
+<ol>
+<li>Implementing synchronous channels may introduce problems with starvation, livelock, and efficiency. For a description of this perspective see <a href="/wiki/Actor_model_and_process_calculi#Issues_with_synchronous_channels.html" title="Actor model and process calculi">issues with synchronous channels</a>. However:
+<ul>
+<li>CSP is intended as an abstract mathematical theory, rather than as an implementation model. Implementation problems are not a direct concern, while ease of reasoning is.</li>
+<li>Despite these potential problems, several implementations based on CSP have been successfully used in practice. These include the <a href="/wiki/Occam_programming_language.html" title="Occam programming language">occam</a> and <a href="/wiki/Occam-Pi.html" title="Occam-Pi">occam-π</a> languages, the <a href="/wiki/JCSP.html" title="JCSP">JCSP</a> concurrency library for Java, and <a  class="external text" title="http://www.cs.bell-labs.com/who/rsc/thread/">several languages from Bell Labs</a> (including <a href="/wiki/Alef_programming_language.html" title="Alef programming language">Alef</a> and <a href="/wiki/Limbo_%28programming_language%29.html" title="Limbo (programming language)">Limbo</a>).</li>
+</ul>
+</li>
+<li>The use of synchronous channels makes reasoning about fairness properties and guarantees of service difficult. However:
+<ul>
+<li>CSP was created for reasoning about properties other than fairness. CSP is a useful theory for analyzing systems that either don't depend on fairness properties to be “correct”, or need to operate “correctly” regardless of the fairness of the system components. Successful industrial uses of CSP (such as those reported by Barrett<sup id="_ref-barrett_1" class="reference"><a  title="">[2]</a></sup> or Hall<sup id="_ref-hall_1" class="reference"><a  title="">[3]</a></sup>) demonstrate that the inclusion of synchronous channels has not prevented CSP from being useful.</li>
+<li>When it is necessary to do so, fairness can be represented (and thus reasoned about) using <a href="/wiki/Arbiter.html" title="Arbiter">arbiter</a> processes (pp. 263-270 of Roscoe's text<sup id="_ref-roscoe_2" class="reference"><a  title="">[6]</a></sup>), although there are limitations on the type of algebraic manipulations that can be performed. Thus, where large-scale reasoning about fairness is necessary, other formalisms which permit direct reasoning about fairness (such as the <a href="/wiki/Actor_model.html" title="Actor model">Actor model</a>) may be a better choice.</li>
+</ul>
+</li>
+</ol>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Lack of mobility">edit</a>]</div>
+<p><a name="Lack_of_mobility" id="Lack_of_mobility"></a></p>
+<h3>Lack of mobility</h3>
+<p>CSP does not provide a way to directly represent and reason about dynamic communications topologies and migrating computational agents, which are an important aspect of many modern systems. Some people see this as a major drawback of the CSP theory. However:</p>
+<ul>
+<li>CSP is still extremely useful for reasoning about systems that have a static topology, as demonstrated by its wide use in industry.</li>
+<li>Where necessary, dynamic topologies can be simulated within CSP's static topology (for example a <a  class="external text" title="http://www.cs.york.ac.uk/nature/tuna/useful/MeetingReports/Updatedclumpingmodel.txt">CSP semantics for occam-π mobile channels</a>). However, this can become cumbersome for complex systems, in which case other formalisms which permit direct reasoning about mobility (such as the <a href="/wiki/Pi-calculus.html" title="Pi-calculus">π-calculus</a> or the <a href="/wiki/Ambient_calculus.html" title="Ambient calculus">ambient calculus</a>) may be a better choice.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Related formalisms">edit</a>]</div>
+<p><a name="Related_formalisms" id="Related_formalisms"></a></p>
+<h2>Related formalisms</h2>
+<p>Several other specification languages and formalisms have been derived from, or inspired by, the classic untimed CSP, including:</p>
+<ul>
+<li><a  class="external text" title="http://theory.lcs.mit.edu/~iandc/References/schneider1995:193.html">Timed CSP</a>, which incorporates timing information for reasoning about real-time systems</li>
+<li><a  class="external text" title="http://dx.doi.org/10.1007/BF01178564">Receptive Process Theory</a>, a specialization of CSP that assumes an asynchronous (i.e. nonblocking) send operation</li>
+<li><a  class="external text" title="http://www.wotug.org/paperdb/show_pap.php?f=1&amp;num=394">CSPP</a></li>
+<li><a  class="external text" title="http://www.wotug.org/paperdb/show_pap.php?f=1&amp;num=395">HCSP</a></li>
+<li><a href="/wiki/Wright_%28ADL%29.html" title="Wright (ADL)">Wright</a>, an architecture description language</li>
+<li><a  class="external text" title="http://www.comp.nus.edu.sg/~dongjs/tcoz.html">TCOZ</a>, an integration of Timed CSP and <a href="/wiki/Object_Z.html" title="Object Z">Object Z</a></li>
+<li><a  class="external text" title="http://www.cs.york.ac.uk/circus/">Circus</a>, an integration of CSP and <a href="/wiki/Z_specification_language.html" title="Z specification language">Z</a> based on the <a href="/wiki/Unifying_Theories_of_Programming.html" title="Unifying Theories of Programming">Unifying Theories of Programming</a></li>
+<li><a  class="external text" title="http://www.cs.swan.ac.uk/~csmarkus/Papers/cspcasl.ps">CspCASL</a>, an extension of <a href="/wiki/Common_Algebraic_Specification_Language.html" title="Common Algebraic Specification Language">CASL</a> that integrates CSP</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/JCSP.html" title="JCSP">JCSP</a> is a blending of CSP &amp; occam concepts in a <a href="/wiki/Java_programming_language.html" title="Java programming language">Java</a> thread support API.</li>
+<li><a href="/wiki/Limbo_%28programming_language%29.html" title="Limbo (programming language)">Limbo</a> is a language that implements concurrency inside the <a href="/wiki/Inferno_%28operating_system%29.html" title="Inferno (operating system)">Inferno</a> operating system, in a style inspired by CSP.</li>
+<li><a href="/wiki/Plan_9_from_Bell_Labs.html" title="Plan 9 from Bell Labs">Plan 9 from Bell Labs</a> and <a href="/wiki/Plan_9_from_User_Space.html" title="Plan 9 from User Space">Plan 9 from User Space</a> include the libthread library which allows the use of a CSP-inspired concurrency model from <a href="/wiki/C.html" title="C">C</a>.</li>
+<li><a href="/wiki/VerilogCSP.html" title="VerilogCSP">VerilogCSP</a> is a set of <a href="/wiki/Macro.html" title="Macro">macros</a> added to <a href="/wiki/Verilog_HDL.html" title="Verilog HDL">Verilog HDL</a> to support <strong class="selflink">Communicating Sequential Processes</strong> channel communications.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<div class="references-small">
+<ol class="references">
+<li id="_note-0"><b><a  title="">^</a></b> <cite style="font-style:normal"><a href="/wiki/C._A._R._Hoare.html" title="C. A. R. Hoare">Hoare, C. A. R.</a> (1978). "Communicating sequential processes". <i><a href="/wiki/Communications_of_the_ACM.html" title="Communications of the ACM">Communications of the ACM</a></i> <b>21</b> (8): 666–677. <a href="/wiki/Digital_object_identifier.html" title="Digital object identifier">DOI</a>:<a  class="external text" title="http://dx.doi.org/10.1145/359576.359585">10.1145/359576.359585</a>.</cite></li>
+<li id="_note-barrett">^ <a  title=""><sup><i><b>a</b></i></sup></a>&#160;<a  title=""><sup><i><b>b</b></i></sup></a> <cite style="font-style:normal">Barrett, G. (1995). "Model checking in practice: The T9000 Virtual Channel Processor". <i><a href="/wiki/IEEE.html" title="IEEE">IEEE</a> Transactions on Software Engineering</i> <b>21</b> (2): 69–78. <a href="/wiki/Digital_object_identifier.html" title="Digital object identifier">DOI</a>:<a  class="external text" title="http://dx.doi.org/10.1109/32.345823">10.1109/32.345823</a>.</cite></li>
+<li id="_note-hall">^ <a  title=""><sup><i><b>a</b></i></sup></a>&#160;<a  title=""><sup><i><b>b</b></i></sup></a> <cite style="font-style:normal">Hall, A, R. Chapman (2002). "<a  class="external text" title="http://www.anthonyhall.org/c_by_c_secure_system.pdf">Correctness by construction: Developing a commercial secure system</a>". <i><a href="/wiki/IEEE.html" title="IEEE">IEEE</a> Software</i> <b>19</b> (1): 18–25.</cite></li>
+<li id="_note-1"><b><a  title="">^</a></b> Creese, S. (2001). "<i>Data Independent Induction: CSP Model Checking of Arbitrary Sized Networks</i>". D. Phil.. <a href="/wiki/Oxford_University.html" title="Oxford University">Oxford University</a>.</li>
+<li id="_note-2"><b><a  title="">^</a></b> <cite class="book" style="font-style:normal"><a href="/wiki/INMOS.html" title="INMOS">INMOS</a> (1995-05-12). <i><a  class="external text" title="http://www.wotug.org/occam/documentation/oc21refman.pdf">occam 2.1 Reference Manual</a></i>. SGS-THOMSON Microelectronics Ltd..</cite>, INMOS document 72 occ 45 03</li>
+<li id="_note-roscoe">^ <a  title=""><sup><i><b>a</b></i></sup></a>&#160;<a  title=""><sup><i><b>b</b></i></sup></a>&#160;<a  title=""><sup><i><b>c</b></i></sup></a> <cite class="book" style="font-style:normal" id="Reference-Roscoe-1998"><a href="/wiki/Bill_Roscoe.html" title="Bill Roscoe">Roscoe, A. W.</a> (1998). <i>The Theory and Practice of Concurrency</i>. <a href="/wiki/Prentice_Hall.html" title="Prentice Hall">Prentice Hall</a>. <a  class="internal">ISBN 0-13-674409-5</a>.</cite>
+<ul>
+<li>Some links relating to this book are available <a  class="external text" title="http://web.comlab.ox.ac.uk/oucl/publications/books/concurrency/">here</a>. The full text is available for download as a <a  class="external text" title="http://web.comlab.ox.ac.uk/oucl/work/bill.roscoe/publications/68b.ps">PS</a> or <a  class="external text" title="http://web.comlab.ox.ac.uk/oucl/work/bill.roscoe/publications/68b.pdf">PDF</a> file from Bill Roscoe's <a  class="external text" title="http://web.comlab.ox.ac.uk/oucl/work/bill.roscoe/pubs.html">list</a> of academic publications.</li>
+</ul>
+</li>
+<li id="_note-hoare">^ <a  title=""><sup><i><b>a</b></i></sup></a>&#160;<a  title=""><sup><i><b>b</b></i></sup></a> <cite class="book" style="font-style:normal"><a href="/wiki/C._A._R._Hoare.html" title="C. A. R. Hoare">Hoare, C. A. R.</a>. <i>Communicating Sequential Processes</i>. Prentice Hall. <a  class="internal">ISBN 0-13-153271-8</a>.</cite>
+<ul>
+<li>This book has been updated by <a href="/wiki/Jim_Davies.html" title="Jim Davies">Jim Davies</a> at the <a href="/wiki/Oxford_University_Computing_Laboratory.html" title="Oxford University Computing Laboratory">Oxford University Computing Laboratory</a> and the new edition is available for download as a PDF file at the <a  class="external text" title="http://www.usingcsp.com/">Using CSP</a> website.</li>
+</ul>
+</li>
+<li id="_note-3"><b><a  title="">^</a></b> <cite style="font-style:normal">Brookes, Stephen, <a href="/wiki/C._A._R._Hoare.html" title="C. A. R. Hoare">C. A. R. Hoare</a> and <a href="/wiki/Bill_Roscoe.html" title="Bill Roscoe">A. W. Roscoe</a> (1984). "A Theory of Communicating Sequential Processes". <i><a href="/wiki/Journal_of_the_ACM.html" title="Journal of the ACM">Journal of the ACM</a></i> <b>31</b> (3): 560–599. <a href="/wiki/Digital_object_identifier.html" title="Digital object identifier">DOI</a>:<a  class="external text" title="http://dx.doi.org/10.1145/828.833">10.1145/828.833</a>.</cite></li>
+<li id="_note-4"><b><a  title="">^</a></b> Scattergood, J.B. (1998). "<i>The Semantics and Implementation of Machine-Readable CSP</i>". D.Phil.. <a href="/wiki/Oxford_University_Computing_Laboratory.html" title="Oxford University Computing Laboratory">Oxford University Computing Laboratory</a>.</li>
+<li id="_note-5"><b><a  title="">^</a></b> <a href="/wiki/Bill_Roscoe.html" title="Bill Roscoe">A.W. Roscoe</a> (1994). "<i>Model-checking CSP</i>". In <i>A Classical Mind: essays in Honour of C.A.R. Hoare</i>. Prentice Hall.</li>
+</ol>
+</div>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://vl.fmnet.info/csp/">The CSP Archive</a></li>
+<li><a  class="external text" title="http://www.wotug.org/">WoTUG</a>, a User Group for CSP and occam style systems, contains some information about CSP and useful links.</li>
+<li><a  class="external text" title="http://www.fsel.com/">Formal Systems Europe, Ltd.</a> develop CSP tools, some of which are freely downloadable.</li>
+<li><a  class="external text" title="http://citeseer.org/cs?q=Communicating+and+Sequential+and+Processes">CSP Citations from CiteSeer</a></li>
+<li><a  class="external text" title="http://www.cppcsp.net/">C++CSP</a> is an implementation of CSP/occam/JCSP ideas in C++, similar in style to JCSP.</li>
+<li><a  class="external text" title="http://www.cspdotnet.com">CSP.NET</a> is an implementation of a CSP style library for Microsoft .NET 2.0.</li>
+<li><a  class="external text" title="http://www.uoguelph.ca/%7Egardnerw/csp++/index.html">CSP++</a> is a software synthesis tool for making specifications written in CSPm executable via C++.</li>
+<li><a  class="external text" title="http://www.cliki.net/csp">csp</a> is a <a href="/wiki/Common_Lisp.html" title="Common Lisp">Common Lisp</a> library which allows use of a CSP-inspired concurrency model from <a href="/wiki/SBCL.html" title="SBCL">SBCL</a> and other multi-threaded <a href="/wiki/Common_Lisp.html" title="Common Lisp">Common Lisp</a> implementations.</li>
+</ul>
+
+<!-- 
+Pre-expand include size: 20934 bytes
+Post-expand include size: 7333 bytes
+Template argument size: 5191 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:247370-0!1!0!default!!en!2 and timestamp 20060910145457 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Articles with sections needing expansion">Articles with sections needing expansion</a></span> | <span dir='ltr'><a  title="Category:Articles lacking sources">Articles lacking sources</a></span> | <span dir='ltr'><a  title="Category:Process calculi">Process calculi</a></span> | <span dir='ltr'><a  title="Category:Specification languages">Specification languages</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Communicating_sequential_processes.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 15:28, 30 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv109 in 0.117 secs. --></body></html>

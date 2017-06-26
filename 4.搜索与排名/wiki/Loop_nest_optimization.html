@@ -1,0 +1,301 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Loop nest optimization,Algorithm,Compiler theory,Instruction set,Loop-invariant code motion,Loop blocking,Loop fission,Loop fusion,Loop interchange,Loop inversion,Loop peeling" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Loop nest optimization - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Loop_nest_optimization";
+			var wgTitle = "Loop nest optimization";
+			var wgArticleId = 805766;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Loop nest optimization</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>Most execution time of a scientific program is spent on loops. Thus a lot of compiler analysis and optimization techniques have been developed to make the execution of loops faster. In <a href="/wiki/Compiler_theory.html" title="Compiler theory">compiler theory</a>, <b>loop transformations</b> play an important role in improving cache performance and effective use of parallel processing capabilities. Common loop transformations include:</p>
+<ul>
+<li><a href="/wiki/Loop_interchange.html" title="Loop interchange">loop interchange</a></li>
+<li><a href="/wiki/Loop_splitting.html" title="Loop splitting">loop splitting</a>/<a href="/wiki/Loop_peeling.html" title="Loop peeling">Loop peeling</a></li>
+<li><a href="/wiki/Loop_fusion.html" title="Loop fusion">loop fusion</a></li>
+<li><a href="/wiki/Loop_fission.html" title="Loop fission">loop fission</a></li>
+<li><a href="/wiki/Loop_unrolling.html" title="Loop unrolling">loop unrolling</a></li>
+<li><a href="/wiki/Loop_tiling.html" title="Loop tiling">loop tiling</a>/<a href="/wiki/Loop_blocking.html" title="Loop blocking">loop blocking</a></li>
+<li><a  class="new" title="Loop skewing">loop skewing</a></li>
+<li><a href="/wiki/Loop_inversion.html" title="Loop inversion">loop inversion</a></li>
+<li><a href="/wiki/Loop-invariant_code_motion.html" title="Loop-invariant code motion">loop-invariant code motion</a></li>
+<li><a href="/wiki/Vectorization.html" title="Vectorization">vectorization</a></li>
+<li><a href="/wiki/Parallelization.html" title="Parallelization">parallelization</a>.</li>
+</ul>
+<p><b>Loop nest optimization</b> (LNO) is a special case of <b><a href="/wiki/Loop_transformation.html" title="Loop transformation">loop transformation</a></b> which deals with nested loops that makes possible large reductions in the cache bandwidth necessary for some pervasive <a href="/wiki/Algorithm.html" title="Algorithm">algorithms</a>.</p>
+<p>Since the 1990s, commodity CPUs attached to inexpensive memory systems have been able to deliver much of the performance of supercomputers with expensive high-bandwidth memory systems on certain problems. This development is due, in part, to ever-smaller processes making it possible to put very fast fully pipelined floating-point units onto commodity CPUs. But delivering that performance is also crucially dependent on compiler transformations that reduce the need for the high-bandwidth memory system.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: The transformation">edit</a>]</div>
+<p><a name="The_transformation" id="The_transformation"></a></p>
+<h2>The transformation</h2>
+<p>The essential transformation done by Loop Nest Optimization is to first change a simple loop nest like this:</p>
+<pre>
+ for( i=0; i &lt; N; i++ )
+   for( j=0; j &lt; N; j++ )
+     foo(i,j)
+</pre>
+<p>into an identical one that operates on blocks, like this:</p>
+<pre>
+ for( i=0; i &lt; N; i++ )
+   for( jj=0; jj &lt; N; jj += jb )
+     for( j=jj; j &lt; jj+jb; j++ )
+       foo(i,j)
+</pre>
+<p>The two above code sequences always have identical results, and the second is slightly worse because it has extra loop overhead. The crucial step is to perform a <a href="/wiki/Loop_interchange.html" title="Loop interchange">loop interchange</a> on the outer two loops, like this:</p>
+<pre>
+ for( jj=0; jj &lt; N; jj += jb )
+   for( i=0; i &lt; N; i++ )
+     for( j=jj; j &lt; jj+jb; j++ )
+       foo(i,j)
+</pre>
+<p>This code is not guaranteed to have identical results to the ones above. If later invocations of foo() depend on earlier invocations, and the order of those invocations are reversed, this transformed loop will generate potentially wrong answers. The compiler must detect this situation and avoid this transformation on such loops.</p>
+<p>The useful property of this interchange is that it changes the access patterns of array references inside the inner loop. The optimizer can exploit this change in pattern to improve register data reuse or the cache hit rate in the inner loop.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Example: matrix multiply">edit</a>]</div>
+<p><a name="Example:_matrix_multiply" id="Example:_matrix_multiply"></a></p>
+<h2>Example: matrix multiply</h2>
+<p>Many large mathematical operations on computers end up spending much of their time doing matrix multiplication. Examining this loop nest can be quite instructive. The operation is:</p>
+<pre>
+ C = A*B
+</pre>
+<p>where A, B, and C are NxN arrays. Subscripts, for the following description, are in the form C[row][column].</p>
+<p>The basic loop is:</p>
+<pre>
+ for( i=0; i &lt; N; i++ )
+   for( j=0; j &lt; N; j++ ) {
+     C[i][j] = 0;
+     for( k=0; k &lt; N; k++ )
+       C[i][j] += A[k][j] * B[i][k];
+   }
+</pre>
+<p>There are three problems to solve:</p>
+<ul>
+<li>Floating point additions take some number of cycles to complete. In order to keep an adder with multiple cycle latency busy, the code must update multiple accumulators in parallel.</li>
+</ul>
+<ul>
+<li>Machines can typically do just one memory operation per multiply-add, so values loaded must be reused at least twice.</li>
+</ul>
+<ul>
+<li>Typical PC memory systems can only sustain 1 8-byte doubleword per 10-30 double-precision multiply-adds, so values loaded into the cache must be reused many times.</li>
+</ul>
+<p>The original loop calculates the result for one entry in the result matrix at a time. By calculating a small block of entries simultaneously, the following loop reuses each loaded value twice, so that the inner loop has four loads and four multiply-adds, thus solving problem #2. By carrying four accumulators simultaneously, this code can keep a single floating point adder with a latency of 4 busy nearly all the time (problem #1). However, the code does not address the third problem. (Nor does it address the cleanup work necessary when N is odd. Such details will be left out of the following discussion.)</p>
+<pre>
+ for( i=0; i &lt; N; i += 2 )
+   for( j=0; j &lt; N; j +=2 ) {
+     acc00 = acc01 = acc10 = acc11 = 0;
+     for( k=0; k &lt; N; k++ ) {
+       acc00 += A[k][j+0] * B[i+0][k];
+       acc01 += A[k][j+1] * B[i+0][k];
+       acc10 += A[k][j+0] * B[i+1][k];
+       acc11 += A[k][j+1] * B[i+1][k];
+     }
+     C[i+0][j+0] = acc00;
+     C[i+0][j+1] = acc01;
+     C[i+1][j+0] = acc10;
+     C[i+1][j+1] = acc11;
+   }
+</pre>
+<p>This code has had both the i and j iterations blocked by a factor of two, and had both the resulting two-iteration inner loops completely unrolled.</p>
+<p>This code would run quite acceptably on a Cray Y-MP, which can sustain 0.8 multiply-adds per memory operation to main memory. The Y-MP was built in the early 1980s. A machine like a 2.8 GHz Pentium 4, built in 2003, has slightly less memory bandwidth and vastly better floating point, so that it can sustain 16.5 multiply-adds per memory operation. As a result, the code above will run slower on the 2.8 GHz Pentium 4 than on the 166 MHz Y-MP!</p>
+<p>A machine with a longer floating-point add latency or with multiple adders would require more accumulators to run in parallel. It is easy to change the loop above to compute a 3x3 block instead of a 2x2 block, but the resulting code is not always faster. The loop requires registers to hold both the accumulators and the loaded and reused A and B values. A 2x2 block requires 7 registers. A 3x3 block requires 13, which will not work on a machine with just 8 floating point registers in the <a href="/wiki/Instruction_set.html" title="Instruction set">ISA</a>. If the CPU does not have enough registers, the compiler will schedule extra loads and stores to spill the registers into stack slots, which will make the loop run slower than a smaller blocked loop.</p>
+<p>Matrix multiplication is like many other codes in that it can be memory bandwidth limited, and that more registers can help the compiler and programmer reduce the need for memory bandwidth. This <i>register pressure</i> is why vendors of RISC CPUs, who intended to build machines more parallel than the general purpose x86 and 68000 CPUs, adopted 32-entry floating point register files.</p>
+<p>The code above does not use the cache very well. During the calculation of a horizontal stripe of C results, one horizontal stripe of B is loaded and the entire matrix A is loaded. For the entire calculation, C is stored once (that's good), B is loaded into the cache once (assuming a stripe of B fits in the cache with a stripe of A), but A is loaded N/ib times, where ib is the size of the strip in the C matrix, for a total of N^3/ib doubleword loads from main memory. In the code above, ib is 2.</p>
+<p>The next step to reducing the memory traffic is to make ib as large as possible. We want it to be larger than the "balance" number reported by streams. In the case of one particular 2.8 GHz Pentium-4 system used for this example, the balance number is 16.5. The second code example above can't be extended directly, since that would require many more accumulator registers. Instead, we <i>block</i> the loop over i. (Technically, this is actually the second time we've blocked i, as the first time was the factor of 2.)</p>
+<pre>
+ for( ii=0; ii &lt; N; ii += ib )
+   for( j=0; j &lt; N; j += 2 )
+     for( i=ii; i &lt; ii+ib; i += 2 ) {
+       acc00 = acc01 = acc10 = acc11 = 0;
+       for( k=0; k &lt; N; k++ ) {
+         acc00 += A[k][j+0] * B[i+0][k];
+         acc01 += A[k][j+1] * B[i+0][k];
+         acc10 += A[k][j+0] * B[i+1][k];
+         acc11 += A[k][j+1] * B[i+1][k];
+       }
+       C[i+0][j+0] = acc00;
+       C[i+0][j+1] = acc01;
+       C[i+1][j+0] = acc10;
+       C[i+1][j+1] = acc11;
+     }
+</pre>
+<p>With this code, we can set ib to be anything we like, and the number of loads of the A matrix will be reduced by that factor. This freedom has a cost: we are now keeping a Nxib slice of the B matrix in the cache. So long as that fits, this code will not be limited by the memory system.</p>
+<p>So what size matrix fits? Our example system, a 2.8 GHz Pentium 4, has a 16KB primary data cache. With ib=20, the slice of the B matrix in this code will be larger than the primary cache when N &gt; 100. For problems larger than that, we'll need another trick.</p>
+<p>That trick is reducing the size of the stripe of the B matrix by blocking the k loop, so that the stripe is of size ib x kb. Blocking the k loop means that the C array will be loaded and stored N/kb times, for a total of 2*N^3/kb memory transfers. A is still transferred N/ib times, for N^3/ib transfers. So long as</p>
+<pre>
+ 2*N/kb + N/ib &lt; N/balance
+</pre>
+<p>the machine's memory system will keep up with the floating point unit and the code will run at maximum performance. The 16KB cache of the Pentium 4 is not quite big enough: we might choose ib=24 and kb=64, thus using 12KB of the cache -- we don't want to completely fill it, since the C and A arrays have to have some room to flow through. These numbers comes within 20% of the peak floating-point speed of the processor.</p>
+<p>Here is the code with loop k blocked.</p>
+<pre>
+ for( ii=0; ii &lt; N; ii += ib )
+   for( kk=0; kk &lt; N; kk += kb )
+     for( j=0; j &lt; N; j+= 2 )
+       for( i=ii; i &lt; ii+ib; i += 2 ) {
+         if( kk==0 )
+           acc00 = acc01 = acc10 = acc11 = 0;
+         else {
+           acc00 = C[i+0][j+0];
+           acc01 = C[i+0][j+1];
+           acc10 = C[i+1][j+0];
+           acc11 = C[i+1][j+1];
+         }
+         for( k=kk; k &lt; kk+kb; k++ ) {
+           acc00 += A[k][j+0] * B[i+0][k];
+           acc01 += A[k][j+1] * B[i+0][k];
+           acc10 += A[k][j+0] * B[i+1][k];
+           acc11 += A[k][j+1] * B[i+1][k];
+         }
+         C[i+0][j+0] = acc00;
+         C[i+0][j+1] = acc01;
+         C[i+1][j+0] = acc10;
+         C[i+1][j+1] = acc11;
+       }
+</pre>
+<p>The above code examples do not show the details of dealing with values of N which are not multiples of the blocking factors. Compilers which do loop nest optimization emit code to clean up the edges of the computation. For example, most LNO compilers would probably split the kk==0 iteration off from the rest of the kk iterations, in order to remove the if statement from the i loop. This is one of the values of such a compiler: while it is straightforward to code the simple cases of this optimization, keeping all the details correct as the code is replicated and transformed is an error-prone process.</p>
+<p>The above loop will only achieve 80% of peak flops on the example system when blocked for the 16KB L1 cache size. It will do worse on systems with even more unbalanced memory systems. Fortunately, the Pentium 4 has 256KB (or more, depending on the model) high-bandwidth level-2 cache as well as the level-1 cache. We are presented with a choice:</p>
+<ul>
+<li>We can adjust the block sizes for the level-2 cache. This will stress the processor's ability to keep many instructions in flight simultaneously, and there is a good chance it will be unable to achieve full bandwidth from the level-2 cache.</li>
+</ul>
+<ul>
+<li>We can block the loops again, again for the level-2 cache sizes. With a total of three levels of blocking (for the register file, for the L1 cache, and for the L2 cache), the code will minimize the required bandwidth at each level of the memory hierarchy. Unfortunately, the extra levels of blocking will incur still more loop overhead, which for some problem sizes on some hardware may be more time consuming than any shortcomings in the hardware's ability to stream data from the L2 cache.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://www.cs.virginia.edu/stream/standard/Balance.html">Streams benchmark results</a> - shows the overall balance between floating point operations and memory operations for many different computers.</li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:805766-0!1!0!default!!en!2 and timestamp 20060909194005 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Category</a>: <span dir='ltr'><a  title="Category:Compiler optimizations">Compiler optimizations</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Loop_nest_optimization.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 23:26, 7 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv46 in 0.064 secs. --></body></html>

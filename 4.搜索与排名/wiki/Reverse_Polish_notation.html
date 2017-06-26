@@ -1,0 +1,564 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Reverse Polish notation,1920,1950s,1972,Abstract syntax tree,Ada programming language,Algorithm,Associativity,Australia,Burroughs,Calculator" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Reverse Polish notation - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Reverse_Polish_notation";
+			var wgTitle = "Reverse Polish notation";
+			var wgArticleId = 26513;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Reverse Polish notation</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p><b>Reverse Polish notation</b> (<b>RPN</b>), also known as <b>postfix notation</b>, was invented by <a href="/wiki/Australia.html" title="Australia">Australian</a> philosopher and computer scientist <a  class="new" title="Charles Hamblin">Charles Hamblin</a> in the mid-<a href="/wiki/1950s.html" title="1950s">1950s</a>, to enable zero-address memory stores. It is derived from the <a href="/wiki/Polish_notation.html" title="Polish notation">Polish notation</a>, which was introduced in <a href="/wiki/1920.html" title="1920">1920</a> by the <a href="/wiki/Poland.html" title="Poland">Polish</a> mathematician <a href="/wiki/Jan_%C5%81ukasiewicz.html" title="Jan Łukasiewicz">Jan Łukasiewicz</a>. (Hence the suggested name <i>Zciweisakul notation</i>.) Hamblin presented his work at a conference in June 1957, and published it in 1957 and 1962.</p>
+<p>The first computers to implement architectures enabling RPN were the English Electric Company's KDF9 machine, which was announced in 1960 and delivered (i.e. made available commercially) in 1963, and the American <a href="/wiki/Burroughs.html" title="Burroughs">Burroughs</a> B5000, announced in 1961 and also delivered in 1963. One of the designers of the B5000, R. S. Barton, later wrote that he developed RPN independently of Hamblin, sometime in 1958 while reading a textbook on symbolic logic, and before he was aware of Hamblin's work.</p>
+<p><a href="/wiki/Friden%2C_Inc..html" title="Friden, Inc.">Friden</a> introduced RPN to the desktop calculator market with the EC-130 in June of 1963. <a href="/wiki/Hewlett-Packard.html" title="Hewlett-Packard">Hewlett-Packard</a> (HP) engineers designed the 9100A Desktop Calculator in 1968 with RPN. This calculator popularized RPN among the scientific and engineering communities, even though early advertisements for the 9100A failed to mention RPN. The <a href="/wiki/HP-35.html" title="HP-35">HP-35</a> handheld scientific <a href="/wiki/Calculator.html" title="Calculator">calculator</a> brought RPN to the first scientific pocket calculator in <a href="/wiki/1972.html" title="1972">1972</a>.</p>
+<p>In RPN the <a href="/wiki/Operand.html" title="Operand">operands</a> precede the <a href="/wiki/Operator.html" title="Operator">operator</a>, thus dispensing with the need for parentheses. For example, the expression 3 * ( 4 + 7) would be written as 3 4 7 + *, and done on an RPN calculator as "3", "Enter", "4", "Enter", "7", "+", "*". (Alternatively, and more compactly, it could also be re-ordered and written as 4 7 + 3 *, and done on an RPN calculator as "4", "Enter", "7", "+", "3", "*".)</p>
+<p>Implementations of RPN are <a href="/wiki/Stack_%28data_structure%29.html" title="Stack (data structure)">stack</a>-based; that is, operands are popped from a stack, and calculation results are pushed back onto it. Although this concept may seem obscure at first, RPN has the advantage of being extremely easy, and therefore fast, for a computer to analyze.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Practical implications</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Disadvantages</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Example</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Converting from infix notation</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">4.1</span> <span class="toctext">A simple conversion</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.2</span> <span class="toctext">The algorithm in detail</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">4.3</span> <span class="toctext">Complex example</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Real-world RPN use</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">7</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Practical implications">edit</a>]</div>
+<p><a name="Practical_implications" id="Practical_implications"></a></p>
+<h2>Practical implications</h2>
+<ul>
+<li>Calculations proceed from left to right.</li>
+<li>There are no brackets or parentheses, as they are unnecessary.</li>
+<li>There is no Equals key, but there is an Enter key.</li>
+<li>Operands precede their operator. They are removed as the operation is evaluated.</li>
+<li>When an operation is performed, the result becomes an operand itself (for later operators).</li>
+<li>There is no hidden state: no need to wonder if an operator was entered or not.</li>
+<li>Fewer keystrokes are needed on an RPN calculator than on an algebraic notation calculator for most computations.</li>
+<li>For a computer, it is easier and faster to evaluate mathematical expressions written in RPN than mathematical expressions written in infix notation.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Disadvantages">edit</a>]</div>
+<p><a name="Disadvantages" id="Disadvantages"></a></p>
+<h2>Disadvantages</h2>
+<ul>
+<li>A RPN electronic calculator requires the user to learn a new system of keying in equations, which may be difficult at first.</li>
+<li>The widespread use of standard ordered equations (<a href="/wiki/Infix_notation.html" title="Infix notation">infix</a>) in educational systems (and therefore infix electronic calculators being the norm in classrooms) can make RPN impractical, hard, and hindering at times. (However, it is easy for a computer to convert <a href="/wiki/Infix_notation.html" title="Infix notation">infix</a> notation to RPN, most notably Dijkstra's Shunting yard algorithm)</li>
+<li>Most RPN electronic calculators have programmable functions and multiple memory registers. In formal examinations (such as licensing examinations) calculators with such extended functions are often banned, but using a simple infix calculator is both allowed and available.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Example">edit</a>]</div>
+<p><a name="Example" id="Example"></a></p>
+<h2>Example</h2>
+<p>The calculation: 5 + ((1 + 2) * 4) + 3 can be written down like this in RPN:</p>
+<pre>
+5 1 2 + 4 * + 3 +
+</pre>
+<p>The expression is evaluated in the following way (the <i>Stack</i> is displayed after <i>Operation</i> has taken place):</p>
+<table border="1" cellspacing="0" cellpadding="4">
+<tr>
+<th>Input</th>
+<th>Operation</th>
+<th>Stack</th>
+</tr>
+<tr>
+<td>5</td>
+<td>Push operand</td>
+<td>5</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Push operand</td>
+<td>5, 1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Push operand</td>
+<td>5, 1, 2</td>
+</tr>
+<tr>
+<td>+</td>
+<td>Add</td>
+<td>5, 3</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Push operand</td>
+<td>5, 3, 4</td>
+</tr>
+<tr>
+<td>*</td>
+<td>Multiply</td>
+<td>5, 12</td>
+</tr>
+<tr>
+<td>+</td>
+<td>Add</td>
+<td>17</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Push operand</td>
+<td>17, 3</td>
+</tr>
+<tr>
+<td>+</td>
+<td>Add</td>
+<td>20</td>
+</tr>
+</table>
+<p>The final result, 20, lies on the top of the stack at the end of the calculation.</p>
+<p>An alternate way of viewing the stack during the above operation is shown below (as seen on HP48S calculator).</p>
+<pre>
++---------------+
+|               |
+|               |
+|             5 |  5 [enter]
++---------------+
+
++---------------+
+|               |
+|             5 |
+|             1 |  1 [enter]
++---------------+
+
++---------------+
+|             5 |
+|             1 |
+|             2 |  2 [enter]
++---------------+
+
++---------------+
+|               |
+|             5 |
+|             3 |  + 
++---------------+
+
++---------------+
+|             5 |
+|             3 |
+|             4 |  4 [enter]
++---------------+
+
++---------------+
+|               |
+|             5 |
+|            12 |  * 
++---------------+
+
++---------------+
+|               |
+|               |
+|            17 |  +
++---------------+
+
++---------------+
+|               |
+|            17 |
+|             3 |  3 [enter] 
++---------------+
+
++---------------+
+|               |
+|               |
+|            20 |  +
++---------------+
+</pre>
+<p><br />
+The enters are in brackets because they are optional when followed by an operator press. An enter is only needed to clear the insertion mark from the line. Thus, RPN allows the expression to be entered and evaluated in <i>nine</i> rather than twelve or thirteen steps.</p>
+<p><br />
+Not all RPN calculators behave the same way as above. More typically, when a number is pushed onto the stack, it also remains at the top of the stack until another number is entered, or an operator is pressed. On many RPN calculators, the problem illustrated above will be processed as follows:</p>
+<p>5 + ((1 + 2) * 4) + 3</p>
+<p><br />
+5 Enter</p>
+<p>Stack contains 5,5.</p>
+<p>1 Enter</p>
+<p>Stack contains 1,1,5.</p>
+<p>2 +</p>
+<p>Stack contains 3,5. (2 replaces the first 1, is added to the second 1. 2+1=3).</p>
+<p>4 *</p>
+<p>Stack contains 12,5. (4 * 3 = 12).</p>
+<p>+</p>
+<p>Stack contains 17. (12 + 5 = 17).</p>
+<p>3 +</p>
+<p>Stack contains 20. (17 + 3 = 20).</p>
+<p>The result is 20. This approach cuts the problem to 5 steps.</p>
+<p><br /></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Converting from infix notation">edit</a>]</div>
+<p><a name="Converting_from_infix_notation" id="Converting_from_infix_notation"></a></p>
+<h2>Converting from infix notation</h2>
+<div class="messagebox merge">
+<div class="floatleft"><span><a  class="image" title=""><img src="http://upload.wikimedia.org/wikipedia/commons/a/a9/Splitsection.gif" alt="" width="40" height="20" longdesc="/wiki/Image:Splitsection.gif" /></a></span></div>
+It has been suggested that this section be <b><a  title="Wikipedia:How to break up a page">split</a></b> into a new article titled <i><a href="/wiki/Shunting_yard_algorithm.html" title="Shunting yard algorithm">Shunting yard algorithm</a></i>. (<a  title="Talk:Reverse Polish notation">Discuss</a>)</div>
+<p><a href="/wiki/Edsger_Dijkstra.html" title="Edsger Dijkstra">Edsger Dijkstra</a> invented an algorithm, named the "shunting yard" algorithm because its operation resembles that of a <a href="/wiki/Classification_yard.html" title="Classification yard">railroad shunting yard</a>, which converts from <a href="/wiki/Infix_notation.html" title="Infix notation">infix notation</a> to RPN. Like the evaluation of RPN, the shunting yard algorithm is <a href="/wiki/Stack_%28data_structure%29.html" title="Stack (data structure)">stack</a>-based. Infix expressions are the form of math most people are used to, for instance 3+4 or 3+4*(2-1). For the conversion there are 2 text <a href="/wiki/Variable.html" title="Variable">variables</a> (<a href="/wiki/String_%28computer_science%29.html" title="String (computer science)">strings</a>), the input and the output. There is also a <a href="/wiki/Stack_%28data_structure%29.html" title="Stack (data structure)">stack</a> holding operators not yet added to the output stack. To convert, the program reads each letter in order and does something based on that letter.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: A simple conversion">edit</a>]</div>
+<p><a name="A_simple_conversion" id="A_simple_conversion"></a></p>
+<h3>A simple conversion</h3>
+<dl>
+<dd>Input: 3+4</dd>
+</dl>
+<ol>
+<li>Add 3 to the output <a href="/wiki/Queue_%28computing%29.html" title="Queue (computing)">queue</a> (whenever a number is read it is added to the output)</li>
+<li><a href="/wiki/Stack_%28data_structure%29#Basic_architecture_of_a_stack.html" title="Stack (data structure)">Push</a> + (or its ID) onto the operator <a href="/wiki/Stack_%28data_structure%29.html" title="Stack (data structure)">stack</a></li>
+<li>Add 4 to the output <a href="/wiki/Queue_%28computing%29.html" title="Queue (computing)">queue</a></li>
+<li>After reading expression <a href="/wiki/Stack_%28data_structure%29#Basic_architecture_of_a_stack.html" title="Stack (data structure)">pop</a> the operators off the stack and add them to the output.</li>
+<li>In this case there is only one, "+".</li>
+<li>Output 3 4 +</li>
+</ol>
+<p>This already shows a couple of rules:</p>
+<ul>
+<li>All numbers are added to the output when they are read.</li>
+<li>At the end of reading the expression, pop all operators off the stack and onto the output.</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: The algorithm in detail">edit</a>]</div>
+<p><a name="The_algorithm_in_detail" id="The_algorithm_in_detail"></a></p>
+<h3>The <a href="/wiki/Algorithm.html" title="Algorithm">algorithm</a> in detail</h3>
+<ul>
+<li>While there are tokens to be read:</li>
+</ul>
+<dl>
+<dd>
+<dl>
+<dd>Read a <a href="/wiki/Token_%28parser%29.html" title="Token (parser)">token</a>.
+<ul>
+<li>If the token is a number, then add it to the output queue.</li>
+<li>If the token is a <a href="/wiki/Function_%28mathematics%29.html" title="Function (mathematics)">function</a> token, then push it onto the stack.</li>
+<li>If the token is a function argument separator (e.g., a comma):</li>
+</ul>
+<dl>
+<dd>
+<dl>
+<dd>
+<ul>
+<li>Until the topmost element of the stack is a left parenthesis, pop the element onto the output queue. If no left parentheses are encountered, either the separator was misplaced or parentheses were mismatched.</li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+<ul>
+<li>If the token is an operator, o<sub>1</sub>, then:</li>
+</ul>
+<dl>
+<dd>1) while there is an operator, o<sub>2</sub>, at the top of the stack, and either
+<dl>
+<dd>
+<dl>
+<dd>
+<dl>
+<dd>o<sub>1</sub> is <a href="/wiki/Associativity.html" title="Associativity">associative</a> or left-associative and its <a href="/wiki/Order_of_operations.html" title="Order of operations">precedence</a> is less than or equal to that of o<sub>2</sub>, or</dd>
+<dd>o<sub>1</sub> is right-associative and its precedence is less than that of o<sub>2</sub>,<br /></dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dd>pop o<sub>2</sub> off the stack, onto the output queue;</dd>
+</dl>
+</dd>
+<dd>2) push o<sub>1</sub> onto the operator stack.</dd>
+</dl>
+<ul>
+<li>If the token is a left parenthesis, then push it onto the stack.</li>
+<li>If the token is a right parenthesis, then pop operators off the stack, onto the output queue, until the token at the top of the stack is a left parenthesis, at which point it is popped off the stack but not added to the output queue. At this point, if the token at the top of the stack is a function token, pop it too onto the output queue. If the stack runs out without finding a left parenthesis, then there are mismatched parentheses.</li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+<ul>
+<li>When there are no more tokens to read, pop all the operators, if any, off the stack, add each to the output as it is popped out and exit. (These must only be operators; if a left parenthesis is popped, then there are mismatched parentheses.)</li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Complex example">edit</a>]</div>
+<p><a name="Complex_example" id="Complex_example"></a></p>
+<h3>Complex example</h3>
+<pre>
+Input 3+4*2/(1-5)^2
+Read "3"
+ Add "3" to the output
+  Output: 3
+
+Read "+"
+ Push "+" onto the stack
+  Output: 3
+  Stack: +
+
+Read "4"
+ Add "4" to the output
+  Output: 3 4
+  Stack: +
+
+Read "*"
+ Push "*" onto the stack
+  Output: 3 4
+  Stack: + *
+
+Read "2"
+ Add "2" to the output
+  Output: 3 4 2
+  Stack: + *
+
+Read "/"
+ Pop "*" off stack and add it to output, push "/" onto the stack
+  Output: 3 4 2 *
+  Stack: + /
+
+Read "("
+ Push "(" onto the stack
+  Output: 3 4 2 *
+  Stack: + / (
+
+Read "1"
+ Add "1" to output
+  Output: 3 4 2 * 1
+  Stack: + / (
+
+Read "-"
+ Push "-" onto the stack
+  Output: 3 4 2 * 1
+  Stack: + / ( -
+
+Read "5"
+ Add "5" to output
+  Output: 3 4 2 * 1 5
+  Stack: + / ( -
+
+Read ")"
+ Pop "-" off stack and add it to the output, pop (
+  Output: 3 4 2 * 1 5 -
+  Stack: + /
+
+Read "^"
+ Push "^" onto stack
+  Output: 3 4 2 * 1 5 -
+  Stack: + / ^
+
+Read "2"
+ Add "2" to output
+  Output: 3 4 2 * 1 5 - 2
+  Stack: + / ^
+
+End of Expression
+ Pop stack to output
+  Output: 3 4 2 * 1 5 - 2 ^ / +
+</pre>
+<p>If you were writing an <a href="/wiki/Interpreter_%28computing%29.html" title="Interpreter (computing)">interpreter</a>, this output would be <a href="/wiki/Tokenize.html" title="Tokenize">tokenized</a> and written to a compiled file to be later <a href="/wiki/Interpreter_%28computing%29.html" title="Interpreter (computing)">interpreted</a>. Conversion from Infix to RPN can also allow for easier computer simplification of expressions. To do this, act like you are solving the RPN expression, however, whenever you come to a variable its value is null, and whenever an operator has a null value, it and its parameters are written to the output (this is a simplification, problems arise when the parameters are operators). When an operator has no null parameters its value can simply be written to the output. This method obviously doesn't include all the simplifications possible: It's more of a <a href="/wiki/Constant_folding.html" title="Constant folding">constant folding</a> opimization.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Real-world RPN use">edit</a>]</div>
+<p><a name="Real-world_RPN_use" id="Real-world_RPN_use"></a></p>
+<h2>Real-world RPN use</h2>
+<ul>
+<li><a href="/wiki/Forth_programming_language.html" title="Forth programming language">Forth programming language</a></li>
+<li><a href="/wiki/Factor_programming_language.html" title="Factor programming language">Factor programming language</a></li>
+<li><a href="/wiki/Hewlett-Packard.html" title="Hewlett-Packard">Hewlett-Packard</a> science/engineering <a href="/wiki/Calculator.html" title="Calculator">calculators</a></li>
+<li><a href="/wiki/PostScript.html" title="PostScript">PostScript</a> page description language</li>
+<li>TI-68k (<a href="/wiki/TI-89.html" title="TI-89">TI-89</a>) <a  class="external text" title="http://www.paxm.org/symbulator/download/rpn.html">implementation</a></li>
+<li><a href="/wiki/Unix.html" title="Unix">Unix system</a> calculator program <a href="/wiki/Dc_%28Unix%29.html" title="Dc (Unix)">dc</a></li>
+<li>Writing an <a href="/wiki/Interpreter_%28computing%29.html" title="Interpreter (computing)">Interpreter</a></li>
+<li>Interactive <a href="/wiki/JavaScript.html" title="JavaScript">JavaScript</a> <a  class="external text" title="http://main.linuxfocus.org/~guido/javascript/rpnjcalc.html">RPN calculator</a></li>
+<li>JavaScript <a  class="external text" title="http://dse.webonastick.com/rpncalc/">RPN calculator with keyboard-based user interface</a>, more like HP calculators</li>
+<li>Open source Java <a  class="external text" title="http://midp-calc.sourceforge.net">RPN calculator for mobile phones</a></li>
+<li><a  class="external text" title="http://www.lowth.com/rope/LanguageReference">Linux IpTables "Rope" programming language</a></li>
+<li><a  class="extiw" title="wikibooks:Ada_Programming/Mathematical_calculations">Wikibooks:Ada Programming/Mathematical calculations</a> <small>(RPN calculator implemented in <a href="/wiki/Ada_programming_language.html" title="Ada programming language">Ada</a>)</small></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/HP_calculators.html" title="HP calculators">HP calculators</a></li>
+<li><a href="/wiki/Infix_notation.html" title="Infix notation">Infix notation</a></li>
+<li><a href="/wiki/LIFO.html" title="LIFO">LIFO</a></li>
+<li><a href="/wiki/Polish_Notation.html" title="Polish Notation">Polish Notation</a></li>
+<li><a href="/wiki/Stack_machine.html" title="Stack machine">Stack machine</a></li>
+<li><a href="/wiki/Subject_Object_Verb.html" title="Subject Object Verb">Subject Object Verb</a></li>
+<li><a href="/wiki/Subject_Verb_Object.html" title="Subject Verb Object">Subject Verb Object</a></li>
+<li><a href="/wiki/Abstract_syntax_tree.html" title="Abstract syntax tree">Abstract syntax tree</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://www.mac-net.com/host/pages/hp35/calc.html">Online HP-35 RPN Calculator</a>– First RPN Calculator By Hewlett Packard</li>
+<li><a  class="external text" title="http://www.xnumber.com/xnumber/rpn_or_adl.htm"><i>RPN or DAL? A brief analysis of Reverse Polish Notation against Direct Algebraic Logic</i></a> – By James Redin</li>
+<li><a  class="external text" title="http://www.spsu.edu/cs/faculty/bbrown/web_lectures/postfix/">Postfix Notation Mini-Lecture</a> – By Bob Brown</li>
+<li><a  class="external text" title="http://www.langmaker.com/shallowfith.htm">Fith: An Alien Conlang With A LIFO Grammar</a> – By Jeffrey Henning</li>
+<li><a  class="external text" title="http://www.thetoolboxsite.com/RPN.aspx">An Online RPN Calculator</a> – By Tim Stall</li>
+<li><a  class="external text" title="http://www.tordivel.no/xcalc/">XCALC: A Windows freeware RPN Calculator</a> – By Bernt Ribbum</li>
+<li><a  class="external text" title="http://lashwhip.com/grpn.html">GRPN: A Graphical RPN Calculator</a> for Unix systems (GPL) – By Paul Wilkins</li>
+</ul>
+
+<!-- 
+Pre-expand include size: 1215 bytes
+Post-expand include size: 413 bytes
+Template argument size: 103 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:26513-0!1!0!default!!en!2 and timestamp 20060910150130 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Articles to be split">Articles to be split</a></span> | <span dir='ltr'><a  title="Category:Calculators">Calculators</a></span> | <span dir='ltr'><a  title="Category:Mathematical notation">Mathematical notation</a></span> | <span dir='ltr'><a  title="Category:Science and technology in Poland">Science and technology in Poland</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Reverse_Polish_notation.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-da"><a >Dansk</a></li>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-es"><a >Español</a></li>
+				<li class="interwiki-fr"><a >Français</a></li>
+				<li class="interwiki-ko"><a >한국어</a></li>
+				<li class="interwiki-it"><a >Italiano</a></li>
+				<li class="interwiki-he"><a >עברית</a></li>
+				<li class="interwiki-ja"><a >日本語</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-ru"><a >Русский</a></li>
+				<li class="interwiki-sl"><a >Slovenščina</a></li>
+				<li class="interwiki-sr"><a >Српски / Srpski</a></li>
+				<li class="interwiki-sv"><a >Svenska</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 06:42, 31 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv69 in 0.382 secs. --></body></html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="LPC programming language,C,Class (computer science),DGD,Genesis Mudlib,George Reese,Java programming language,LPMud,Lars Pensjö,MUD,MudOS" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>LPC programming language - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "LPC_programming_language";
+			var wgTitle = "LPC programming language";
+			var wgArticleId = 904645;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">LPC programming language</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>The <b>LPC programming language</b> is an <a href="/wiki/Object-oriented.html" title="Object-oriented">object-oriented</a> <a href="/wiki/Programming_language.html" title="Programming language">programming language</a> derived from <a href="/wiki/C.html" title="C">C</a> and developed by <a href="/wiki/Lars_Pensj%C3%B6.html" title="Lars Pensjö">Lars Pensjö</a> to facilitate <a href="/wiki/MUD.html" title="MUD">MUD</a> building on <a href="/wiki/LPMud.html" title="LPMud">LPMuds</a>. It has been used not only for mud game creation, but also has evolved into the <a href="/wiki/Pike_programming_language.html" title="Pike programming language">Pike programming language</a> used for various internet servers, multimedia applications and system administration tasks. LPC stands for '<a href="/wiki/Lars_Pensj%C3%B6.html" title="Lars Pensjö">Lars Pensjö</a> C'.</p>
+<p>LPC syntax is very similar to that of the <a href="/wiki/Java_programming_language.html" title="Java programming language">Java programming language</a>, but people used to programming in Java will notice the following key differences:</p>
+<ul>
+<li>Referencing a member of an object is done via the -&gt; operator instead of the . operator (ob-&gt;method() instead of ob.method()).</li>
+<li>LPC has no general support for threading and execution stacks are limited in duration before they "time out".</li>
+</ul>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Basic structure</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">1.1</span> <span class="toctext">A simple room in a Typical Mudlib</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.2</span> <span class="toctext">Data types</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.3</span> <span class="toctext">Passing values</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Basic structure">edit</a>]</div>
+<p><a name="Basic_structure" id="Basic_structure"></a></p>
+<h2>Basic structure</h2>
+<p>As in <a href="/wiki/Java_programming_language.html" title="Java programming language">Java</a>, almost everything in LPC is an <a href="/wiki/Object_%28computer_science%29.html" title="Object (computer science)">object</a>. Unlike Java, however, LPC has no concept of a <a href="/wiki/Class_%28computer_science%29.html" title="Class (computer science)">class</a> (MudOS has something called a class, but it is really a struct). Instead, LPC objects are <b>clones</b> of a <b>master object</b>. You can treat a master object as you would a class in Java, except you cannot specify attributes that belong only to the master object (static attributes, in Java terms).</p>
+<p>Each object has attributes and methods. The attributes define what the object is; the methods define what that object does. An object is uniquely defined by the name of the file in which it comes from plus a numeric identifier. Thus, the third clone of the object defined in the file <i>/lib/weapon.c</i> will be <i>/lib/weapon#3</i>. In a MUD game, common objects include rooms, weapons, armor, and <a href="/wiki/Non-player_character.html" title="Non-player character">NPCs</a>. Most <a href="/wiki/Mudlib.html" title="Mudlib">mudlibs</a> define inheritable objects for such common things. In the <a href="/wiki/Genesis_Mudlib.html" title="Genesis Mudlib">LPMud 2.4.5 mudlib</a>, for example, the parent object for all rooms is <i>/lib/room</i>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: A simple room in a Typical Mudlib">edit</a>]</div>
+<p><a name="A_simple_room_in_a_Typical_Mudlib" id="A_simple_room_in_a_Typical_Mudlib"></a></p>
+<h3>A simple room in a Typical <a href="/wiki/Mudlib.html" title="Mudlib">Mudlib</a></h3>
+<p>Because LPC is generally used to code MUDs, 'rooms' are often created as objects that store information describing a particular scene along with exits that point to other room objects. This is only common usage of LPC. Other uses that are not game related are possible.</p>
+<p>The following example shows a very simple room that leverages methods defined in the mudlib object <i>/lib/room</i>. However, not all mudlibs define or determine rooms in the same way. The following is typical of a traditional room, but is not the only method of defining a room.</p>
+<pre>
+
+inherit "/lib/room";
+
+void create() {
+  ::create();
+  set_short("a simple room");
+  set_long("A simple room in a simple building.");
+  set_description("This is a simple room in a simple building. It is very nice.");
+  add_exit("north", "/realms/descartes/north_room");
+}
+
+</pre>
+<p>The first line tells the object to inherit functionality from the <i>/lib/room</i> object. This example assumes the <i>/lib/room</i> object defines methods for ::create(), set_short(), set_long(), and add_exit().</p>
+<p>This example contains a single method, create(). Most drivers call or can be set to call create() to allow an object to initialize itself with startup values. In this case, the example calls functions that set up the basic room attributes in the inherited <i>/lib/room</i>. The functions you call here are highly dependent on the mudlib you are using since the mudlib defines the actual room parent.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Data types">edit</a>]</div>
+<p><a name="Data_types" id="Data_types"></a></p>
+<h3>Data types</h3>
+<p>Most LPC drivers have the following data types:</p>
+<ul>
+<li>object</li>
+<li>int</li>
+<li>string</li>
+<li>array</li>
+<li>mapping</li>
+<li>float</li>
+<li>status</li>
+</ul>
+<p><br />
+You can count on object, int, string, and array being available in most drivers.</p>
+<ul>
+<li>An object is any LPC object, including both masters and clones.</li>
+<li>An int is a 32-bit integer.</li>
+<li>A string is a variable length string. You do not need to do any form of memory management or bounds management. LPC handles that for you.</li>
+</ul>
+<p>In most drivers, you define an array by type in the same way you define a Java array:</p>
+<ul>
+<li>object[]</li>
+<li>int[]</li>
+<li>string[]</li>
+<li>string[][]</li>
+</ul>
+<p>Under <a href="/wiki/MudOS.html" title="MudOS">MudOS</a>, you can use the following:</p>
+<ul>
+<li>string array</li>
+<li>class</li>
+</ul>
+<p>Under <a href="/wiki/DGD.html" title="DGD">DGD</a>, you cannot use the following data types:</p>
+<ul>
+<li>array</li>
+<li>status</li>
+<li>class</li>
+</ul>
+<p>Most drivers support the mapping, float, and status data types.</p>
+<ul>
+<li>A mapping is a hash map of keys to values.</li>
+<li>A float is a floating point value.</li>
+<li>A status is a value that holds a 1 or a 0 and thus represents true or false. It is deprecated in MudOS.</li>
+</ul>
+<p>Class is unique to MudOS and behaves like a C <a href="/wiki/Struct.html" title="Struct">struct</a>. It is not a class in any object-oriented sense of the word.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Passing values">edit</a>]</div>
+<p><a name="Passing_values" id="Passing_values"></a></p>
+<h3>Passing values</h3>
+<p>Primitive LPC types (int, string, status) are passed by value. All other types are passed by reference in a thread of execution.</p>
+<p>This feature can be powerful, but it can also lead to security holes. In most mud systems, the people building the world are generally less trusted than the staff running the game. If an object passes a mapping with sensitive values like access control information, an author of another object can modify that and thus increase their access rights. Mudlib developers and game admins should thus be careful when passing complex types to lower access objects.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: See also">edit</a>]</div>
+<p><a name="See_also" id="See_also"></a></p>
+<h2>See also</h2>
+<ul>
+<li><a href="/wiki/Prototype-based_programming.html" title="Prototype-based programming">Prototype-based programming</a></li>
+<li><a href="/wiki/Pike_programming_language.html" title="Pike programming language">Pike programming language</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><i><a  class="external text" title="http://wl.mud.de/mud/doc/lpc/contents.html">LPC Basics</a></i> by <a href="/wiki/George_Reese.html" title="George Reese">George Reese</a> on Apr 23rd, 1993</li>
+<li><i><a  class="external text" title="http://mud.stack.nl/manuals/lysator/manual.html">NannyMUD LPC</a></i> by Mats H. Carlberg in March in 1998</li>
+<li><i><a  class="external text" title="http://www.geas.de/tutorial/lpc_toc.html">LPC Tutorial</a></i> by Ronny Wikh on Jul 8th, 2003</li>
+<li><i><a  class="external text" title="http://lpuni.sourceforge.net/">LPUniversity Foundation</a></i> - LPC community, standards, research, education, and more.</li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:904645-0!1!0!default!!en!2 and timestamp 20060909193739 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Domain-specific programming languages">Domain-specific programming languages</a></span> | <span dir='ltr'><a  title="Category:Curly bracket programming languages">Curly bracket programming languages</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/LPC_programming_language.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-de"><a >Deutsch</a></li>
+				<li class="interwiki-pl"><a >Polski</a></li>
+				<li class="interwiki-fi"><a >Suomi</a></li>
+				<li class="interwiki-sv"><a >Svenska</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 23:32, 30 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv77 in 0.352 secs. --></body></html>

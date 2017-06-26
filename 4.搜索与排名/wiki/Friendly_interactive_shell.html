@@ -1,0 +1,292 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Friendly interactive shell,Ars Technica,Bash,Clipboard,Command history,Computer terminal,Syntax highlighting,Tab completion,Ubuntu Linux,Unix,Unix shell" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Friendly interactive shell - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Friendly_interactive_shell";
+			var wgTitle = "Friendly interactive shell";
+			var wgArticleId = 1889847;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Friendly interactive shell</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<div class="floatright"><span><a  class="image" title="The friendly interactive shell running under Ubuntu Linux."><img src="http://upload.wikimedia.org/wikipedia/en/thumb/a/a8/Friendlyinteractiveshell.png/300px-Friendlyinteractiveshell.png" alt="The friendly interactive shell running under Ubuntu Linux." width="300" height="209" longdesc="/wiki/Image:Friendlyinteractiveshell.png" /></a></span></div>
+<p><b>fish</b> is a <a href="/wiki/Unix_shell.html" title="Unix shell">UNIX command shell</a>. Its name is an acronym for <b>f</b>riendly <b>i</b>nteractive <b>sh</b>ell.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">Highlights</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">Syntax</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">Helpful error messages</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">Universal variables</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">Other features</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Highlights">edit</a>]</div>
+<p><a name="Highlights" id="Highlights"></a></p>
+<h2>Highlights</h2>
+<p>fish focuses on interactive use, discoverability, and user friendliness. The design goal of fish is to give the user a rich set of powerful features in a way that is easy to discover, remember, and use. fish features a user-friendly and powerful tab-completion, including descriptions of every completion, tab-completion of strings with wildcards, and many command specific completions. It also features an extensive and discoverable help system. A special help command gives access to all the fish documentation in your preferred Web browser.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Syntax">edit</a>]</div>
+<p><a name="Syntax" id="Syntax"></a></p>
+<h2>Syntax</h2>
+<p>The fish syntax is slightly different from other shellscript languages. These changes were made to make the language more powerful as well as to make the language small and easy to learn. One obvious difference between fish and other shells like <a href="/wiki/Bash.html" title="Bash">bash</a> is that the contents of a variable is not subject to token separation, meaning that there is rarely a need to enclose variable dereferences within quotes.</p>
+<pre>
+# Variable assignment, set the variable 'foo' to the value 'bar'. 
+# Don't use the = operator, since it is inherently whitespace sensitive.
+# Also, the set command can easily be extended to work with arrays, scoping, etc.
+&gt; set foo bar
+&gt; echo $foo
+bar
+
+# Command substitution, assign the output of the command 'pwd' into the variable 'wd'.
+# Don't use `` since they can't be nested and look to much like like ' '. 
+# Don't use $() since $ is only used for variable expansion in fish.
+&gt; set wd (pwd)
+&gt; echo $wd
+~
+
+# Array variables. 'A' becomes an array with the values 3, 5, 7, 9, 12
+&gt; set A 3 5 7 9 12     
+&gt; echo $A[(seq 3)] 
+3 5 7
+# Array slicing. 'B' becomes the first and second element of 'A'
+&gt; set B $A[1 2]          
+&gt; echo $b
+3 5
+# Erase the third and fift elements of 'A'
+&gt; set -e A[$B]; echo $A  
+3 5 9
+
+# for-loop, convert jpegs to pngs
+&gt; for i in *.jpg; convert $i (basename $i .jpeg).png; end
+
+# while-loop, read lines /etc/passwd and output the fift 
+# colon-separated field from the file. This should be 
+# the user description.
+&gt; cat /etc/passwd|while read line; set arr (echo $line|tr : \n); echo $arr[5]; end
+
+</pre>
+<p>One important difference between fish and other shellscript languages is the lack of subshells. Many tasks like pipelines, functions and loops are implemented using so called subshells in other languages. Subshells are simply child programs that run a few commands for the shell and then exit. Unfortunatly, changes made inside a subshell do not have any effect in the main shell, meaning that actions such as variable assignments and the use of many builtin functions do not work as expected. Fish never ever forks off so called subshells, so all builtins are always fully functional.</p>
+<pre>
+# This will not work in most other shells, since the 'read' builtin
+# Will run in it's own subshell. fish and zsh work as expected.
+&gt; cat *.txt | read line
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Helpful error messages">edit</a>]</div>
+<p><a name="Helpful_error_messages" id="Helpful_error_messages"></a></p>
+<h2>Helpful error messages</h2>
+<p>Error messages in fish are designed to actually tell the user what went wrong and what can be done about it.</p>
+<pre>
+&gt; foo=bar
+fish: Unknown command “foo=bar”. Did you mean “set VARIABLE VALUE”? 
+For information on setting variable values, see the help section on 
+the set command by typing “help set”.
+
+&gt; echo ${foo}bar
+fish: Did you mean {$VARIABLE}? The '$' character begins a variable 
+name. A bracket, which directly followed a '$', is not allowed as a 
+part of a variable name, and variable names may not be zero characters 
+long. To learn more about variable expansion in fish, type “help 
+expand-variable”.
+
+&gt; echo $(pwd)
+fish: Did you mean (COMMAND)? In fish, the '$' character is only used 
+for accessing variables. To learn more about command substitution in 
+fish, type “help expand-command-substitution”.
+</pre>
+<p><br /></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Universal variables">edit</a>]</div>
+<p><a name="Universal_variables" id="Universal_variables"></a></p>
+<h2>Universal variables</h2>
+<p>Fish has a feature known as universal variables, which allow a user to permanently assign a value to a variable across all the users running fish shells. The variable value is remembered across logouts and reboots, and updates are instantly propagated to all running shells.</p>
+<pre>
+# This will make emacs the default text editor. The '-U' tells fish to 
+# make this a universal variable.
+&gt; set -U EDITOR emacs
+
+# This command will make the current working directory part of the fish 
+# prompt turn blue on all running fish instances. 
+&gt; set -U fish_color_cwd blue
+
+</pre>
+<p><br /></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Other features">edit</a>]</div>
+<p><a name="Other_features" id="Other_features"></a></p>
+<h2>Other features</h2>
+<ul>
+<li>Advanced <a href="/wiki/Tab_completion.html" title="Tab completion">tab completion</a></li>
+<li><a href="/wiki/Syntax_highlighting.html" title="Syntax highlighting">Syntax highlighting</a> with extensive error checking</li>
+<li>Support for the <a href="/wiki/X_Window_System.html" title="X Window System">X</a> <a href="/wiki/Clipboard.html" title="Clipboard">clipboard</a></li>
+<li>Smart <a href="/wiki/Computer_terminal.html" title="Computer terminal">terminal</a> handling based on terminfo</li>
+<li>Searchable <a href="/wiki/Command_history.html" title="Command history">command history</a></li>
+</ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://roo.no-ip.org/fish/">fish home page</a></li>
+<li><a  class="external text" title="http://lwn.net/Articles/136232/">An introductiory article about fish</a></li>
+<li><a  class="external text" title="http://arstechnica.com/articles/columns/linux/linux-20051218.ars/2">Fish: the friendly interactive shell</a> (an in-depth look at fish) at <a href="/wiki/Ars_Technica.html" title="Ars Technica">Ars Technica</a></li>
+</ul>
+<div class="boilerplate metadata" id="stub">
+<table cellpadding="0" cellspacing="0" style="background-color: transparent;">
+<tr>
+<td><a  class="image" title=""><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Poundexclam.svg/15px-Poundexclam.svg.png" alt="" width="15" height="15" longdesc="/wiki/Image:Poundexclam.svg" /></a></td>
+<td><i> This <a href="/wiki/Unix.html" title="Unix">Unix</a>-related article is a <a  title="Wikipedia:Perfect stub article">stub</a>. You can <a  title="Wikipedia:Find or fix a stub">help</a> Wikipedia by <a  class="external text" title="http://en.wikipedia.org/w/index.php?title=Friendly_interactive_shell&amp;action=edit">expanding it</a></i>.</td>
+</tr>
+</table>
+</div>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:1889847-0!1!0!default!!en!2 and timestamp 20060910151128 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:Unix shells">Unix shells</a></span> | <span dir='ltr'><a  title="Category:Scripting languages">Scripting languages</a></span> | <span dir='ltr'><a  title="Category:Unix stubs">Unix stubs</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Friendly_interactive_shell.html">Article</a></li>
+				 <li id="ca-talk" class="new"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>In other languages</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-fr"><a >Français</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 11:25, 10 September 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv61 in 0.136 secs. --></body></html>

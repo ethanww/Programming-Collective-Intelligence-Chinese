@@ -1,0 +1,398 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Const-correctness,Andrei Alexandrescu,Bjarne Stroustrup,Bruce Eckel,C++,C++/CLI,C/C++ Users Journal,C Sharp,C programming language,Cache,Class method" />
+<link rel="shortcut icon"  />
+<link rel="search" type="application/opensearchdescription+xml"  />
+<link rel="copyright"  />
+		<title>Const-correctness - Wikipedia, the free encyclopedia</title>
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?9"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print"  />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?1";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">
+			var skin = "monobook";
+			var stylepath = "/skins-1.5";
+
+			var wgArticlePath = "/wiki/$1";
+			var wgScriptPath = "/w";
+			var wgServer = "http://en.wikipedia.org";
+                        
+			var wgCanonicalNamespace = "";
+			var wgNamespaceNumber = 0;
+			var wgPageName = "Const-correctness";
+			var wgTitle = "Const-correctness";
+			var wgArticleId = 1639512;
+			var wgIsArticle = true;
+                        
+			var wgUserName = null;
+			var wgUserLanguage = "en";
+			var wgContentLanguage = "en";
+		</script>
+		                
+		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?1"><!-- wikibits js --></script>
+		<script type="text/javascript" src="/w/index.php?title=-&amp;action=raw&amp;gen=js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins-1.5/common/ajax.js"></script>
+	</head>
+<body  class="mediawiki ns-0 ltr">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><div style="text-align:right; font-size:80%">Your <b><a  class="extiw" title="wikimedia:Fundraising">continued donations</a></b> keep Wikipedia running!&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>		<h1 class="firstHeading">Const-correctness</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Wikipedia, the free encyclopedia</h3>
+			<div id="contentSub">(Redirected from <a  title="Const correctness">Const correctness</a>)</div>
+									<div id="jump-to-nav">Jump to: <a >navigation</a>, <a >search</a></div>			<!-- start content -->
+			<p>In <a href="/wiki/Computer_science.html" title="Computer science">computer science</a>, <b>const-correctness</b> is the form of program correctness that deals with the proper declaration of objects as <a href="/wiki/Mutable_object.html" title="Mutable object">mutable</a> or <a href="/wiki/Immutable_object.html" title="Immutable object">immutable</a>. The term is mostly used in a <a href="/wiki/C_programming_language.html" title="C programming language">C</a> or <a href="/wiki/C%2B%2B.html" title="C++">C++</a> context, and takes its name from the <code>const</code> keyword in those languages.</p>
+<p>The idea of const-ness does not imply that the variable as it is stored in the <a href="/wiki/Computer.html" title="Computer">computer</a>'s <a href="/wiki/Computer_storage.html" title="Computer storage">memory</a> is unwriteable. Rather, <code>const</code>-ness is a <a href="/wiki/Compile-time.html" title="Compile-time">compile-time</a> construct that indicates what a programmer <i>may</i> do, not necessarily what he or she <i>can</i> do.</p>
+<p>In addition, a <a href="/wiki/Class_method.html" title="Class method">class method</a> can be declared as <code>const</code>, indicating that calling that method does not change the object. Such <code>const</code> methods can only call other <code>const</code> methods but cannot assign <a href="/wiki/Field_%28computer_science%29.html" title="Field (computer science)">member variables</a>. (In C++, a member variable can be declared as <code>mutable</code>, indicating that a <code>const</code> method can change its value. Mutable member variables can be used for <a href="/wiki/Cache.html" title="Cache">caching</a> and <a href="/wiki/Reference_counting.html" title="Reference counting">reference counting</a>, where the logical meaning of the object is unchanged, but the object is not physically constant since its bitwise representation may change.)</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1"><a ><span class="tocnumber">1</span> <span class="toctext">C++ syntax</span></a>
+<ul>
+<li class="toclevel-2"><a ><span class="tocnumber">1.1</span> <span class="toctext">Simple data types</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.2</span> <span class="toctext">Pointers and references</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.3</span> <span class="toctext">Methods</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.4</span> <span class="toctext">Loopholes to const-correctness</span></a></li>
+<li class="toclevel-2"><a ><span class="tocnumber">1.5</span> <span class="toctext">Volatile-correctness</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a ><span class="tocnumber">2</span> <span class="toctext">restrict in C99</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">3</span> <span class="toctext">final in Java</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">4</span> <span class="toctext">const and readonly in C#</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">5</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1"><a ><span class="tocnumber">6</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script></p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: C++ syntax">edit</a>]</div>
+<p><a name="C.2B.2B_syntax" id="C.2B.2B_syntax"></a></p>
+<h2>C++ syntax</h2>
+<p>In C++, all data types, including those defined by the user, can be declared <code>const</code>, and all objects should be unless they need to be modified. Such proactive use of <code>const</code> makes values "easier to understand, track, and reason about,"<span class="reference"><sup id="ref_Sutter" class="plainlinksneverexpand"><a  class="external autonumber" title="http://en.wikipedia.org/wiki/Const-correctness#endnote_Sutter">[1]</a></sup></span> and thus, it increases the readability and comprehensibility of code and makes working in teams and maintaining code simpler because it communicates something about a value's intended use.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Simple data types">edit</a>]</div>
+<p><a name="Simple_data_types" id="Simple_data_types"></a></p>
+<h3>Simple data types</h3>
+<p>For simple data types, applying the <code>const</code> qualifier is straightforward. It can go on either side of the type for historical reasons (that is, <code>const char foo = 'a';</code> is equivalent to <code>char const foo = 'a';</code>). On some implementations, using <code>const</code> on both sides of the type (for instance, <code>const char const</code>) generates a warning but not an error.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Pointers and references">edit</a>]</div>
+<p><a name="Pointers_and_references" id="Pointers_and_references"></a></p>
+<h3>Pointers and references</h3>
+<p>For pointer and reference types, the syntax is slightly more subtle. A pointer object can be declared as a <code>const</code> pointer or a pointer to a <code>const</code> object (or both). A <code>const</code> pointer cannot be reassigned to point to a different object from the one it is initially assigned, but it can be used to modify the object that it points to (called the "pointee"). (Reference variables are thus an alternate syntax for <code>const</code> pointers.) A pointer to a <code>const</code> object, on the other hand, can be reassigned to point to another object of the same type or of a convertible type, but it cannot be used to modify any object. A <code>const</code> pointer to a <code>const</code> object can also be declared and can neither be used to modify the pointee nor be reassigned to point to another object. The following code illustrates these subtleties:</p>
+<pre>
+void Foo( int       *       ptr,
+          int const *       ptrToConst,
+          int       * const constPtr,
+          int const * const constPtrToConst )
+{
+    *ptr = 0; // OK: modifies the pointee
+    ptr  = 0; // OK: modifies the pointer
+
+    *ptrToConst = 0; // Error! Cannot modify the pointee
+    ptrToConst  = 0; // OK: modifies the pointer
+
+    *constPtr = 0; // OK: modifies the pointee
+    constPtr  = 0; // Error! Cannot modify the pointer
+
+    *constPtrToConst = 0; // Error! Cannot modify the pointee
+    constPtrToConst  = 0; // Error! Cannot modify the pointer
+}
+</pre>
+<p>To render the syntax for pointers more comprehensible, a <a href="/wiki/Rule_of_thumb.html" title="Rule of thumb">rule of thumb</a> is to read the declaration from right to left. Thus, everything before the star can be identified as the pointee type and everything to after are the pointer properties. (For instance, in our example above, <code>constPtrToConst</code> can be read as a <code>const</code> pointer that refers to a <code>const int</code>.)</p>
+<p>References follow similar rules. A declaration of a <code>const</code> reference is redundant since references can never be made to refer to another object:</p>
+<pre>
+int i = 42;
+int const &amp; refToConst = i; // OK
+int &amp; const constRef = i; // Error the "const" is redundant
+</pre>
+<p>Even more complicated declarations can result when using multidimensional arrays and references (or pointers) to pointers. Generally speaking, these should be avoided or replaced with higher level structures because they are confusing and prone to error.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Methods">edit</a>]</div>
+<p><a name="Methods" id="Methods"></a></p>
+<h3>Methods</h3>
+<p>In order to take advantage of the design-by-contract strategy for user-defined types (structs and classes), which can have methods as well as member data, the programmer must tag methods as <code>const</code> if they don't modify the object's data members. Applying the <code>const</code> qualifier to methods thus is an essential feature for const-correctness, and is not available in many other <a href="/wiki/Object-oriented.html" title="Object-oriented">object-oriented</a> languages such as <a href="/wiki/Java_programming_language.html" title="Java programming language">Java</a> and <a href="/wiki/C_Sharp.html" title="C Sharp">C#</a> or in <a href="/wiki/Microsoft.html" title="Microsoft">Microsoft</a>'s <a href="/wiki/C%2B%2B/CLI.html" title="C++/CLI">C++/CLI</a> or <a href="/wiki/Managed_C%2B%2B.html" title="Managed C++">Managed extensions for C++</a>. While <code>const</code> methods can be called by <code>const</code> and non-<code>const</code> objects alike, non-<code>const</code> methods can only be invoked by non-<code>const</code> objects. This example illustrates:</p>
+<pre>
+class C
+{
+    int i;
+  public:
+    int Get() const // Note the "const" tag
+      { return i; }
+    void Set(int j) // Note the lack of "const"
+      { i = j; }
+};
+
+void Foo(C&amp; nonConstC, const C&amp; constC)
+{
+    int y = nonConstC.Get(); // Ok
+    int x = constC.Get();    // Ok: Get() is const
+
+    nonConstC.Set(10); // Ok: nonConstC is modifiable
+    constC.Set(10);    // Error! Set() is a non-const method and constC is a const-qualified object
+}
+</pre>
+<p>Often the programmer will supply both a <code>const</code> and a non-<code>const</code> method with the same name (but possibly quite different uses) in a class to accommodate both types of callers. Consider:</p>
+<pre>
+class MyArray
+{
+    int data[100];
+public:
+    int &amp;       Get(int i)       { return data[i]; }
+    int const &amp; Get(int i) const { return data[i]; }
+};
+
+void Foo( MyArray &amp; array, MyArray const &amp; constArray )
+{
+    // Get a reference to an array element 
+    // and modify its referenced value.
+
+    array.Get( 5 )      = 42;
+    constArray.Get( 5 ) = 42; // Error!
+}
+</pre>
+<p>The <code>const</code>-ness of the calling object determines which version of <code>MyArray::Get()</code> will be invoked and thus whether or not the caller is given a reference with which he can manipulate or only observe the private data in the object. (Returning a <code>const</code> reference to an <code>int</code>, instead of merely returning the <code>int</code> by value, may be overkill in the second method, but the same technique can be used for arbitrary types, as in the <a href="/wiki/Standard_Template_Library.html" title="Standard Template Library">Standard Template Library</a>.)</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Loopholes to const-correctness">edit</a>]</div>
+<p><a name="Loopholes_to_const-correctness" id="Loopholes_to_const-correctness"></a></p>
+<h3>Loopholes to const-correctness</h3>
+<p>There are two loopholes to pure const-correctness in C and C++. They exist primarily for compatibility with existing code.</p>
+<p>The first, which applies only to C++, is the use of <code>const_cast</code>, which allows the programmer to strip the <code>const</code> qualifier, making any object modifiable. The necessity of stripping the qualifier arises when using existing code and libraries that cannot be modified but which are not const-correct. For instance, consider this code:</p>
+<pre>
+// Prototype for a function which we cannot change but which 
+// we know does not modify the pointee passed in.
+void LibraryFunc(int *ptr, int size);
+
+void CallLibraryFunc(int const *ptr, int size)
+{
+    LibraryFunc(ptr, size); // Error! Drops const qualifier
+
+    int *nonConstPtr = const_cast&lt;int*&gt;(ptr); // Strip qualifier
+    LibraryFunc(nonConstPtr, size);  // OK
+}
+</pre>
+<p>The other loophole applies both to C and C++. Specifically, the languages dictate that member pointers and references are "shallow" with respect to the <code>const</code>-ness of their owners — that is, a containing object that is <code>const</code> has all <code>const</code> members except that member pointees (and referees) are still mutable. To illustrate, consider this code:</p>
+<pre>
+struct S
+{ 
+    int val;
+    int *ptr;
+};
+
+void Foo(const S &amp; s)
+{
+    int i  = 42;
+    s.val  = i;  // Error: s is const, so val is a const int
+    s.ptr  = &amp;i; // Error: s is const, so ptr is a const pointer to int
+    *s.ptr = i;  // OK: the data pointed to by ptr is always mutable,
+                 //     even though this is sometimes not desirable
+}
+</pre>
+<p>Although the object <code>s</code> passed to <code>Foo()</code> is constant, which makes all of its members constant, the pointee accessible through <code>s.ptr</code> is still modifiable, though this is not generally desirable from the standpoint of <code>const</code>-correctness because <code>s</code> may solely own the pointee. For this reason, some have argued that the default for member pointers and references should be "deep" <code>const</code>-ness, which could be overridden by a <code>mutable</code> qualifier when the pointee is not owned by the container, but this strategy would create compatibility issues with existing code. Thus, for historical reasons, this loophole remains open in C and C++.</p>
+<p>The latter loophole can be closed by using a class to hide the pointer behind a <code>const</code>-correct interface, but such classes either don't support the usual copy semantics from a <code>const</code> object (implying that the containing class cannot be copied by the usual semantics either) or allow other loopholes by permitting the stripping of <code>const</code>-ness through inadvertent or intentional copying.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: Volatile-correctness">edit</a>]</div>
+<p><a name="Volatile-correctness" id="Volatile-correctness"></a></p>
+<h3>Volatile-correctness</h3>
+<p>Another qualifier in C and C++, <code>volatile</code>, indicates that an object may be changed by something external to the program at any time and so must be re-read from memory every time it is accessed. The qualifier is most often found in <a href="/wiki/Embedded_system.html" title="Embedded system">embedded systems</a>, in systems manipulating <a href="/wiki/Hardware.html" title="Hardware">hardware</a> directly, and in <a href="/wiki/Multithreaded.html" title="Multithreaded">multithreaded</a> applications. It can be used in exactly the same manner as <code>const</code> in declarations of variables, pointers, references, and member functions, and in fact, <code>volatile</code> is sometimes used to implement a similar design-by-contract strategy which might be called <code>volatile</code>-correctness,<span class="reference"><sup id="ref_Alexandrescu" class="plainlinksneverexpand"><a  class="external autonumber" title="http://en.wikipedia.org/wiki/Const-correctness#endnote_Alexandrescu">[2]</a></sup></span> though this is far less common than <code>const</code>-correctness. The <code>volatile</code> qualifier also can be stripped by <code>const_cast</code>, and it can be combined with the <code>const</code> qualifier as in this sample:</p>
+<pre>
+// Set up a reference to a read-only hardware register that is
+// mapped in a hard-coded memory location.
+const volatile int &amp; hardwareRegister  = *reinterpret_cast&lt;int*&gt;(0x8000);
+
+int currentValue = hardwareRegister; // Read the memory location
+int newValue = hardwareRegister; // Read it again
+
+hardwareRegister = 5; // Error! Cannot write to a const location
+</pre>
+<p>Because <code>hardwareRegister</code> is volatile, there is no guarantee that it will hold the same value on two successive reads even though the programmer cannot modify it. The semantics here indicate that the register's value is read-only but not necessarily unchanging.</p>
+<p>We can also create volatile pointers, though their applications are rarer:</p>
+<pre>
+// Set up a pointer to a read-only memory-mapped register that 
+// contains a memory address for us to dereference
+const int * volatile const tableLookup = reinterpret_cast&lt;int*&gt;(0x8004);
+
+int currentTableValue = *tableLookup; // Dereference the memory location
+int newTableValue = *tableLookup; // Dereference it again
+
+tableLookup = &amp;currentTableValue; // Error! Cannot modify a const pointer
+</pre>
+<p>Since the address held in the <code>tableLookup</code> pointer can change implicitly, each deference might take us to a different location in a memory-mapped <a href="/wiki/Lookup_table.html" title="Lookup table">lookup table</a>.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: restrict in C99">edit</a>]</div>
+<p><a name="restrict_in_C99" id="restrict_in_C99"></a></p>
+<h2>restrict in C99</h2>
+<p>The <a href="/wiki/C_programming_language.html" title="C programming language">C99</a> language special cases a <code>restrict</code> qualified pointer to a <code>const</code> qualified type in order to notify a compiler that it can assume "strong const" semantics. For example, a compiler is allowed to transform:</p>
+<pre>
+void foo(int *);
+
+int bar(int *a)
+{
+    const int * restrict b = a;
+    foo((int*)b);
+    return *b;
+}
+</pre>
+<p>into:</p>
+<pre>
+int bar(int *a)
+{
+    int ret = *a;
+    foo(a);
+    return ret;
+}
+</pre>
+<p>However, programmers shouldn't use the <code>restrict</code> qualifier unless they understand the formalism given in the standard because it's extremely easy to create undefined code like the seemingly benign:</p>
+<pre>
+int val;
+int * restrict a = &amp;val; // ok
+int * restrict b = &amp;val; // ok
+int * restrict c = a;    // undefined
+int *          d = a;    // ok
+int * restrict e = d;    // undefined
+</pre>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: final in Java">edit</a>]</div>
+<p><a name="final_in_Java" id="final_in_Java"></a></p>
+<h2>final in Java</h2>
+<p>In <a href="/wiki/Java_programming_language.html" title="Java programming language">Java</a>, the qualifier <code>final</code> states that the affected data member or variable is not assignable, as below:</p>
+<pre>
+final int i = 3;
+i = 4; // Error! Cannot modify a "final" object
+</pre>
+<p>It must be decidable by the compilers where the variable with the <code>final</code> marker is initialized, and it must be performed only once, or the class will not compile. Unlike C++'s <code>const</code>, the Java <code>final</code> keyword only protects a variable from assignment, and does not guarantee its immutability. The keyword <code>final</code> can be given to a method definition in Java, but unlike in C++ its semantics are that the method cannot be overridden in subclasses.</p>
+<p>It is interesting to note that whereas Java's <code>final</code> and C++'s <code>const</code> keywords have the same meaning when applied with primitive variables, their meanings diverge when applied to method definitions. Java cannot simulate C++'s <code>const</code> methods. Similarly, C++ does not have any feature equivalent to Java's <code>final</code> modifier for methods, although its effect on classes can be simulated by a clever abuse of the C++ <code>friend</code> keyword.<span class="reference"><sup id="ref_cleverabuse" class="plainlinksneverexpand"><a  class="external autonumber" title="http://en.wikipedia.org/wiki/Const-correctness#endnote_cleverabuse">[3]</a></sup></span></p>
+<p>Interestingly, the Java language specification regards <code>const</code> as a reserved keyword — i.e., one that cannot be used as variable identifier — but assigns no semantics to it. It is thought that the reservation of the keyword occurred to allow for an extension of the Java language to include C++-style <code>const</code> methods. The enhancement request ticket in the Java community process for implementing const correctness in Java was recently closed, implying that const correctness will probably never find its way into the official Java specification.</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: const and readonly in C#">edit</a>]</div>
+<p><a name="const_and_readonly_in_C.23" id="const_and_readonly_in_C.23"></a></p>
+<h2>const and readonly in C#</h2>
+<p>In <a href="/wiki/C_Sharp.html" title="C Sharp">C#</a>, the qualifier <code>readonly</code> has the same effect on data members that <code>final</code> does in Java; <code>const</code> has an effect similar (but not equivalent) to that of <code>const</code> in C and C++. (The other, inheritance-inhibiting effect of Java's <code>final</code> when applied to methods and classes is induced in C# with the aid of a third keyword, <code>sealed</code>.)</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: References">edit</a>]</div>
+<p><a name="References" id="References"></a></p>
+<h2>References</h2>
+<ol>
+<li><cite id="endnote_Sutter" style="font-style: normal;"><a  title=""><b>↑</b></a></cite>  <a href="/wiki/Herb_Sutter.html" title="Herb Sutter">Herb Sutter</a> and <a href="/wiki/Andrei_Alexandrescu.html" title="Andrei Alexandrescu">Andrei Alexandrescu</a> (2005). <i>C++ Coding Standards</i>. p. 30. Boston: Addison Wesley. <a  class="internal">ISBN 0-321-11358-6</a></li>
+<li><cite id="endnote_Alexandrescu" style="font-style: normal;"><a  title=""><b>↑</b></a></cite>  <a  class="external text" title="http://www.cuj.com/documents/s=7998/cujcexp1902alexandr/alexandr.htm">"Generic&lt;Programming&gt;: volatile — Multithreaded Programmer’s Best Friend Volatile-Correctness or How to Have Your Compiler Detect Race Conditions for You"</a> by Andrei Alexandrescu in the <i><a href="/wiki/C/C%2B%2B_Users_Journal.html" title="C/C++ Users Journal">C/C++ Users Journal</a></i>'s C++ Experts Forum</li>
+<li><cite id="endnote_cleverabuse" style="font-style: normal;"><a  title=""><b>↑</b></a></cite>  <a  class="external text" title="http://www.research.att.com/~bs/bs_faq2.html#no-derivation">C++ Style and Technique FAQ</a> by <a href="/wiki/Bjarne_Stroustrup.html" title="Bjarne Stroustrup">Bjarne Stroustrup</a></li>
+</ol>
+<div class="editsection" style="float:right;margin-left:5px;">[<a  title="Edit section: External links">edit</a>]</div>
+<p><a name="External_links" id="External_links"></a></p>
+<h2>External links</h2>
+<ul>
+<li><a  class="external text" title="http://gotw.ca/gotw/006.htm">"Const-Correctness"</a> by <a href="/wiki/Herb_Sutter.html" title="Herb Sutter">Herb Sutter</a></li>
+<li><a  class="external text" title="http://gotw.ca/gotw/081.htm">"Constant Optimization?"</a> by Herb Sutter</li>
+<li><a  class="external text" title="http://cprogramming.com/tutorial/const_correctness.html">"Const-Correctness Tutorial"</a> by Cprogramming.com</li>
+<li><a  class="external text" title="http://parashift.com/c++-faq-lite/const-correctness.html">The C++ FAQ Lite: Const correctness</a> by Marshall Cline</li>
+<li><a  class="external text" title="http://adtmag.com/joop/crarticle.asp?ID=1550">"Const_Cast: An Offspring from the Dark Side of C++"</a> by Karsten Weihe</li>
+<li>Section "<a  class="external text" title="http://www.mi.uni-koeln.de/c/mirror/www.codeguru.com/cpp/tic/tic_html.zip/tic0092.html">Value substitution</a>" from the free electronic book "Thinking in C++" by <a href="/wiki/Bruce_Eckel.html" title="Bruce Eckel">Bruce Eckel</a></li>
+</ul>
+
+<!-- 
+Pre-expand include size: 3936 bytes
+Post-expand include size: 962 bytes
+Template argument size: 116 bytes
+Maximum: 2048000 bytes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:1639512-0!1!0!default!!en!2 and timestamp 20060910163019 -->
+<div class="printfooter">
+Retrieved from "<a </div>
+			<div id="catlinks"><p class='catlinks'><a  title="Special:Categories">Categories</a>: <span dir='ltr'><a  title="Category:C programming language family">C programming language family</a></span> | <span dir='ltr'><a  title="Category:Data types">Data types</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Const-correctness.html">Article</a></li>
+				 <li id="ca-talk"><a >Discussion</a></li>
+				 <li id="ca-edit"><a >Edit this page</a></li>
+				 <li id="ca-history"><a >History</a></li>
+		</ul>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a >Sign in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/wiki-en.png);" href="/wiki/Main_Page.html" title="Main Page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="/wiki/Main_Page.html">Main Page</a></li>
+				<li id="n-portal"><a >Community Portal</a></li>
+				<li id="n-Featured-articles"><a >Featured articles</a></li>
+				<li id="n-currentevents"><a >Current events</a></li>
+				<li id="n-recentchanges"><a >Recent changes</a></li>
+				<li id="n-randompage"><a >Random article</a></li>
+				<li id="n-help"><a >Help</a></li>
+				<li id="n-contact"><a >Contact Wikipedia</a></li>
+				<li id="n-sitesupport"><a >Donations</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a >What links here</a></li>
+				<li id="t-recentchangeslinked"><a >Related changes</a></li>
+<li id="t-upload"><a >Upload file</a></li>
+<li id="t-specialpages"><a >Special pages</a></li>
+				<li id="t-print"><a >Printable version</a></li>				<li id="t-permalink"><a >Permanent link</a></li><li id="t-cite"><a >Cite this article</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a ><img src="/skins-1.5/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a ><img src="/images/wikimedia-button.png" border="0" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified 09:40, 28 August 2006.</li>
+				<li id="copyright">All text is available under the terms of the <a class='internal'  title="Wikipedia:Text of the GNU Free Documentation License">GNU Free Documentation License</a>. (See <b><a class='internal'  title="Wikipedia:Copyrights">Copyrights</a></b> for details.) <br /> Wikipedia&reg; is a registered trademark of the Wikimedia Foundation, Inc.<br /></li>
+				<li id="privacy"><a  title="wikimedia:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a  title="Wikipedia:About">About Wikipedia</a></li>
+				<li id="disclaimer"><a  title="Wikipedia:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv37 in 0.348 secs. --></body></html>
